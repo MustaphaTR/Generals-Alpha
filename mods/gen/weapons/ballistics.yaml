@@ -1,0 +1,376 @@
+^Cannon:
+	ReloadDelay: 50
+	Range: 3c768
+	Report: cannon1.aud
+	Projectile: Bullet
+		Speed: 682
+		Image: 120MM
+		Shadow: True
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 40
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
+	Warhead@3Eff: CreateEffect
+		Explosions: small_explosion
+		ImpactSounds: kaboom12.aud
+		ValidTargets: Ground, Ship
+	Warhead@4EffWater: CreateEffect
+		Explosions: small_splash
+		ImpactSounds: splash9.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure
+
+cannon.scorpion_tank:
+	Inherits: ^Cannon
+	ReloadDelay: 25
+	Report: cannon2.aud
+	Projectile: Bullet
+		Speed: 853
+		Image: 50CAL
+	Warhead@1Dam: SpreadDamage
+		Damage: 40
+		Versus:
+			infantry.normal: 10
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, ExplosionDeath
+	-Warhead@2Smu: LeaveSmudge
+	Warhead@3Eff: CreateEffect
+		-ImpactSounds:
+	Warhead@4EffWater: CreateEffect
+		-ImpactSounds:
+
+cannon.scorpion_tank.toxin:
+	Inherits: cannon.scorpion_tank
+	Warhead@1Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_alpha
+		Range: 0
+		Level: 1000
+		Falloff: 100, 90, 50, 0
+		MaxLevel: 2000
+
+cannon.scorpion_tank.toxin_beta:
+	Inherits: cannon.scorpion_tank.toxin
+	Warhead@1Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_beta
+
+cannon.crusader_tank:
+	Inherits: ^Cannon
+	ReloadDelay: 50
+	Warhead@1Dam: SpreadDamage
+		Damage: 60
+		Versus:
+			infantry.normal: 10
+
+cannon.battlemaster_tank:
+	Inherits: ^Cannon
+	ReloadDelay: 50
+	Warhead@1Dam: SpreadDamage
+		Damage: 60
+		Versus:
+			infantry.normal: 10
+
+cannon.paladin_tank:
+	Inherits: ^Cannon
+	ReloadDelay: 50
+	Warhead@1Dam: SpreadDamage
+		Damage: 60
+		Versus:
+			infantry.normal: 10
+
+cannon.marauder_tank:
+	Inherits: ^Cannon
+	ReloadDelay: 50
+	Warhead@1Dam: SpreadDamage
+		Damage: 60
+		Versus:
+			infantry.normal: 10
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, ExplosionDeath
+
+cannon.marauder_tank.toxin:
+	Inherits: cannon.marauder_tank
+	Warhead@1Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_alpha
+		Range: 0
+		Level: 1000
+		Falloff: 100, 90, 50, 0
+		MaxLevel: 2000
+
+cannon.marauder_tank.toxin_beta:
+	Inherits: cannon.marauder_tank.toxin
+	Warhead@1Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_beta
+
+cannon.overlord_tank:
+	Inherits: ^Cannon
+	ReloadDelay: 50
+	Burst: 2
+	BurstDelay: 6
+	Range: 4c384
+	Warhead@1Dam: SpreadDamage
+		Damage: 80
+		Versus:
+			infantry.normal: 10
+
+TurretGun:
+	Inherits: ^Cannon
+	ReloadDelay: 30
+	Range: 7c0
+	Report: turret1.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 60
+		Versus:
+			Wood: 50
+
+^Artillery:
+	Inherits: ^Cannon
+	ReloadDelay: 85
+	Range: 12c0
+	Projectile: Bullet
+		Speed: 204
+		Blockable: false
+		LaunchAngle: 62
+		Inaccuracy: 1c512
+	Warhead@1Dam: SpreadDamage
+		Spread: 426
+		Damage: 240
+		Versus:
+			None: 90
+			Wood: 40
+			Light: 60
+			Heavy: 25
+			Concrete: 50
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@3Eff: CreateEffect
+		Explosions: artillery_explosion
+		ImpactSounds: kaboom15.aud
+	Warhead@4EffWater: CreateEffect
+		Explosions: med_splash
+
+cannon.inferno_cannon:
+	Inherits: ^Artillery
+	ReloadDelay: 100
+	MinRange: 1c256
+	Range: 7c512
+	Report: tank5.aud
+	TargetActorCenter: true
+	Projectile: Bullet
+		TrailImage: fb2
+		Image: FB1
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+	Warhead@1Fire: SpawnActor
+		Actors: firestorm.normal
+	Warhead@3Eff: CreateEffect
+		Explosions: napalm
+		ImpactSounds: firebl3.aud
+
+cannon.inferno_cannon.blue:
+	Inherits: cannon.inferno_cannon
+	Projectile: Bullet
+		TrailImage: blue_fb2
+		Image: blue_FB1
+	Warhead@1Dam: SpreadDamage
+		Damage: 45
+	Warhead@1Fire: SpawnActor
+		Actors: firestorm.blue
+	Warhead@3Eff: CreateEffect
+		Explosions: blue_napalm
+
+cannon.nuke_cannon:
+	Inherits: ^Artillery
+	ReloadDelay: 250
+	Range: 8c768
+	MinRange: 5c0
+	Report: tank5.aud
+	TargetActorCenter: true
+	Projectile: Bullet
+		ContrailLength: 30
+	Warhead@1Dam_impact: SpreadDamage
+		Spread: 2c0
+		Damage: 400
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@5Dam_impact: SpreadDamage
+		Spread: 2c512
+		Damage: 20
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@3Smu_impact: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		Size: 2
+	Warhead@3Eff: CreateEffect
+		Explosions: nuke
+		ImpactSounds: kaboom1.aud
+	Warhead@4Radio: CreateRadioactivity
+		RadioactivityLayerName: radioactivity
+		Range: 2
+		Level: 2500
+		Falloff: 100, 90, 80
+		MaxLevel: 7500
+
+cannon.strategy_center:
+	ReloadDelay: 175
+	Range: 10c0
+	MinRange: 2c512
+	Report: turret1.aud
+	Projectile: Bullet
+		Speed: 200
+		Image: 120MM
+		Shadow: True
+		LaunchAngle: 62
+		Inaccuracy: 1c0
+		ContrailLength: 30
+	Warhead@1Dam: SpreadDamage
+		Spread: 512
+		Damage: 200
+		Falloff: 100, 50, 25, 12, 5, 0
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
+	Warhead@3Eff: CreateEffect
+		Explosions: artillery_explosion
+		ImpactSounds: kaboom15.aud
+		InvalidTargets: Water
+	Warhead@4EffWater: CreateEffect
+		Explosions: large_splash
+		ImpactSounds: splash9.aud
+		ValidTargets: Water
+
+cannon.crusader:
+	Inherits: ^Artillery
+	MinRange: 3c768
+	ReloadDelay: 250
+	Range: 15c0
+	Burst: 2
+	Report: turret1.aud
+	TargetActorCenter: true
+	Projectile: Bullet
+		Inaccuracy: 2c938
+		ContrailLength: 30
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 25
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Versus:
+			None: 60
+			Wood: 35
+			Light: 60
+			Heavy: 25
+			Concrete: 100
+	Warhead@4EffWater: CreateEffect
+		Explosions: large_splash
+
+2Inch:
+	Inherits: ^Cannon
+	ReloadDelay: 60
+	Range: 5c512
+	Report: cannon2.aud
+	InvalidTargets: Underwater
+	Projectile: Bullet
+		Speed: 426
+	Warhead@1Dam: SpreadDamage
+		Damage: 25
+		Versus:
+			None: 30
+
+molotov.angry_mob:
+	Inherits: ^Artillery
+	ReloadDelay: 13
+	Range: 2c512
+	MinRange: 0c341
+	Report: grenade1.aud
+	Projectile: Bullet
+		Speed: 136
+		Inaccuracy: 554
+		Image: BOMB
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Damage: 40
+		Versus:
+			vehicle.dragon_tank: 20
+			vehicle.toxin_tractor: 20
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, ExplosionDeath
+	Warhead@3Eff: CreateEffect
+		Explosions: med_explosion
+		ImpactSounds: kaboom25.aud
+	Warhead@4EffWater: CreateEffect
+		Explosions: small_splash
+
+grenade.ranger:
+	Inherits: ^Artillery
+	ReloadDelay: 50
+	Range: 4c384
+	MinRange: 0c512
+	InvalidTargets: Vehicle, Tank, Structure, Wall
+	Report: grenade1.aud
+	Projectile: Bullet
+		Speed: 128
+		Inaccuracy: 512
+		Image: BOMB
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Damage: 25
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+	Warhead@3Eff: CreateEffect
+		Explosions: flashbang
+		ImpactSounds: kaboom25.aud
+	Warhead@4EffWater: CreateEffect
+		Explosions: small_splash
+
+DepthCharge:
+	Inherits: ^Artillery
+	-Report:
+	ReloadDelay: 60
+	Range: 5c0
+	ValidTargets: Underwater
+	Projectile: Bullet
+		Speed: 85
+		Image: BOMB
+		Inaccuracy: 128
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 80
+		ValidTargets: Underwater, Water
+		InvalidTargets: Ship
+		Versus:
+			None: 30
+			Wood: 75
+			Light: 75
+			Heavy: 100
+			Concrete: 50
+		DamageTypes: ExplosionDeath
+	Warhead@4EffWater: CreateEffect
+		Explosions: large_splash
+		ImpactSounds: h2obomb2.aud
+		ValidTargets: Water, Underwater
+	Warhead@3Eff: CreateEffect
+		Explosions: small_explosion
+		ImpactSounds: kaboom15.aud
+		ValidTargets: Underwater
+
+ArtyBarrageWeapon:
+	Inherits: ^Artillery
+	ReloadDelay: 10
+	Report: turret1.aud
+	TargetActorCenter: true
+	Projectile: Bullet
+		Speed: 1024
+		Inaccuracy: 3c0

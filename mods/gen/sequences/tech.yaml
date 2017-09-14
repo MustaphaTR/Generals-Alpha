@@ -1,0 +1,97 @@
+tech.oil_derrick:
+	Defaults: oilb
+		Offset: 0,-6
+	idle: oilb
+	damaged-idle:
+		Start: 1
+		Length: *
+	make: oilb
+	bib: bib3
+		Length: *
+		Offset: 0,0
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+
+tech.hospital:
+	idle: hosp
+		Length: 4
+	damaged-idle: hosp
+		Start: 4
+		Length: 4
+	dead: hosp
+		Start: 8
+		Tick: 800
+	make: hospmake
+		Length: *
+	bib: mbHOSP
+		Length: *
+		Offset: 0,1
+		UseTilesetExtension: true
+	icon: hospicon
+
+tech.bio_lab:
+	idle: bio
+	damaged-idle: bio
+		Start: 1
+	dead: bio
+		Start: 2
+		Tick: 800
+	make: biomake
+		Length: *
+
+tech.communications_center:
+	idle: miss
+	damaged-idle: miss
+		Start: 1
+	dead: miss
+		Start: 2
+		Tick: 800
+	make: missmake
+		Length: *
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	icon: deteicon
+
+tech.forward_command:
+	idle: fcom
+	damaged-idle: fcom
+		Start: 1
+	make: fcommake
+		Length: *
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+
+tech.service_depot:
+	idle: tdfix
+		ZOffset: -1c511
+	damaged-idle: tdfix
+		Start: 7
+		ZOffset: -1c511
+	active: tdfix
+		Length: 7
+		ZOffset: -1c511
+	damaged-active: tdfix
+		Start: 7
+		Length: 7
+		ZOffset: -1c511
+	bib: mbFIX
+		Length: *
+		ZOffset: -1c511
+		Offset: 0,-4
+		UseTilesetExtension: true
+
+tech.shipyard:
+	idle: syrd
+	damaged-idle: syrd
+		Start: 1
+	make: syrdmake
+		Length: *
+	icon: syrdicon
+	fake-icon: syrficon

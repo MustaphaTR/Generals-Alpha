@@ -1,0 +1,49 @@
+ss:
+	idle:
+		Facings: 16
+	icon: ssicon
+
+vessel.cruiser:
+	idle: ca
+		Facings: 16
+	turret: turr
+		Facings: 32
+	muzzle: gunfire2
+		Length: 5
+	icon: caicon
+
+vessel.destroyer:
+	idle: dd
+		Facings: 16
+	turret: ssam
+		Facings: 32
+	icon: ddicon
+
+vessel.gunboat:
+	idle: pt
+		Facings: 16
+	turret: mgun
+		Facings: 32
+	muzzle: gunfire2
+		Length: 5
+	icon: pticon
+
+vessel.transport:
+	idle: lst
+	open: lst
+		Start: 1
+		Length: 4
+		Tick: 150
+	close: lst
+		Frames: 4, 3, 2, 1
+		Length: 4
+		Tick: 150
+	unload: lst
+		Start: 4
+		ZOffset: -511
+	icon: lsticon
+
+msub:
+	idle:
+		Facings: 16
+	icon: msubicon

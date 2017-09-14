@@ -1,0 +1,2048 @@
+^default.command_center:
+	Inherits: ^Building
+	Inherits@REVEAL: ^Reveal300
+	Building:
+		Footprint: xxX xxx XxX
+		Dimensions: 3,3
+	Buildable:
+		Queue: Building
+		Prerequisites: ~disabled
+		Description: Produces structures.
+	Health:
+		HP: 5000
+	Armor:
+		Type: building.tough
+	WithBuildingBib:
+	Production:
+		Produces: Building, Upgrade
+	Exit:
+	Valued:
+		Cost: 2000
+	CustomSellValue:
+		Value: 2000
+	BaseBuilding:
+	ProductionBar@Building:
+		ProductionType: Building
+	ProductionBar@Upgrade:
+		ProductionType: Upgrade
+		Color: 8A8A8A
+	BaseProvider:
+		Range: 16c0
+	WithBuildingPlacedAnimation:
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite:
+		Prerequisite: anycommand
+	Transforms:
+		IntoActor: vehicle.usa_mcc
+		Offset: 1,1
+		Facing: 96
+	WithTextDecoration@SIDE:
+		Text: 
+		ZOffset: 2048
+		ReferencePoint: Top
+	HitShape:
+		TargetableOffsets: 1273,939,0, -980,-640,0, -980,640,0
+		Type: Rectangle
+			TopLeft: -1536, -1536
+			BottomRight: 1536, 1536
+
+building.usa_command_center:
+	Inherits: ^default.command_center
+	Buildable:
+		BuildPaletteOrder: 1000
+	Tooltip:
+		Name: USA Command Center
+	Transforms:
+		IntoActor: vehicle.usa_mcc
+		Offset: 1,1
+		Facing: 96
+	SpawnActorPower@SPY_DRONE:
+		PauseOnCondition: emp
+		Actor: aircraft.spy_drone
+		Prerequisites: ~disabled, ~upgrade.spy_drone
+		LifeTime: -1
+		ChargeTime: 60
+		Icon: spy_drone
+		Description: Spy Drone
+		LongDesc: Spawns a Spy Drone anywhere on the map.
+		StartFullyCharged: false
+		OrderName: SpyDronePowerInfoOrder
+	SpawnActorPower@SPY_SATTELITE:
+		PauseOnCondition: emp
+		Actor: camera.spy_sattelite
+		Prerequisites: ~techlevel.low
+		LifeTime: 300
+		ChargeTime: 60
+		Icon: satellite
+		Description: Spy Satellite
+		LongDesc: Reveals are large area of map for a while.\n\nAlso detects cloaked units in that area.
+		StartFullyCharged: false
+		OrderName: SpySatellitePowerInfoOrder
+	AirstrikePower@FUEL_AIR_BOMB:
+		PauseOnCondition: disabled || emp
+		Prerequisites: ~building.gla_command_center, ~upgrade.fuel_air_bomb
+		Icon: fuel_air
+		ChargeTime: 360
+		SquadSize: 1
+		QuantizedFacings: 8
+		Description: Anthrax Bomb
+		LongDesc: A B-52 drops an Fuel Air Bomb at the target.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		UnitType: aircraft.badger.fuel_air_bomb
+		DisplayBeacon: True
+		BeaconPoster: fuelbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		OrderName: FuelAirBombPowerInfoOrder
+	WithTextDecoration@SIDE:
+		Text: USA
+		Color: 0000FF
+	ProvidesRadar:
+		RequiresCondition: !disabled && !emp
+
+building.gla_command_center:
+	Inherits: ^default.command_center
+	Buildable:
+		BuildPaletteOrder: 1001
+	Tooltip:
+		Name: GLA Command Center
+	SpawnActorOnDeath:
+		Actor: hole.command_center
+	AirstrikePower@ANTHRAX_BOMB:
+		PauseOnCondition: disabled || emp
+		Prerequisites: ~building.gla_command_center, ~upgrade.anthrax_bomb
+		Icon: thrax
+		ChargeTime: 360
+		SquadSize: 1
+		QuantizedFacings: 8
+		Description: Anthrax Bomb
+		LongDesc: A B-52 drops an Anthrax Bomb at the target.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		UnitType: aircraft.badger.anthrax_bomb
+		DisplayBeacon: True
+		BeaconPoster: thraxbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		OrderName: AnthraxBombPowerInfoOrder
+	WithTextDecoration@SIDE:
+		Text: GLA
+		Color: 00FF00
+	Transforms:
+		IntoActor: vehicle.gla_mcc
+
+building.prc_command_center:
+	Inherits: ^default.command_center
+	Buildable:
+		BuildPaletteOrder: 1002
+	Tooltip:
+		Name: PRC Command Center
+	ProvidesRadar:
+		RequiresCondition: prcradar && !disabled && !emp
+	GrantConditionOnPrerequisite@PRC_RADAR:
+		Condition: prcradar
+		Prerequisites: upgrade.radar
+	SpawnActorPower@ARTY_BARRAGE1:
+		PauseOnCondition: emp
+		Actor: ARTY_BARRAGER_1
+		Prerequisites: ~upgrade.arty_barrage1, ~!upgrade.arty_barrage2, ~!upgrade.arty_barrage3
+		LifeTime: 120
+		ChargeTime: 300
+		Icon: arty_barrage1
+		Description: Artillery Barrage
+		LongDesc: Fires 12 Artillery Shells anywhere on the map.
+		StartFullyCharged: false
+		OrderName: ArtilleryBarrage1PowerInfoOrder
+	SpawnActorPower@ARTY_BARRAGE2:
+		PauseOnCondition: emp
+		Actor: ARTY_BARRAGER_2
+		Prerequisites: ~upgrade.arty_barrage2, ~!upgrade.arty_barrage3
+		LifeTime: 120
+		ChargeTime: 300
+		Icon: arty_barrage2
+		Description: Artillery Barrage
+		LongDesc: Fires 24 Artillery Shells anywhere on the map.
+		StartFullyCharged: false
+		OrderName: ArtilleryBarrage2PowerInfoOrder
+	SpawnActorPower@ARTY_BARRAGE3:
+		PauseOnCondition: emp
+		Actor: ARTY_BARRAGER_3
+		Prerequisites: ~upgrade.arty_barrage3
+		LifeTime: 120
+		ChargeTime: 300
+		Icon: arty_barrage3
+		Description: Artillery Barrage
+		LongDesc: Fires 36 Artillery Shells anywhere on the map.
+		StartFullyCharged: false
+		OrderName: ArtilleryBarrage3PowerInfoOrder
+	AirstrikePower@EMP:
+		PauseOnCondition: disabled || emp
+		Prerequisites: ~building.prc_command_center, ~upgrade.emp
+		Icon: emp
+		ChargeTime: 360
+		SquadSize: 1
+		QuantizedFacings: 8
+		Description: E. M. Pulse
+		LongDesc: A Badger drops an EMP at the target.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		UnitType: aircraft.badger.emp
+		DisplayBeacon: True
+		BeaconPoster: empbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		OrderName: EMPPowerInfoOrder
+	WithTextDecoration@SIDE:
+		Text: PRC
+		Color: FF0000
+	Transforms:
+		IntoActor: vehicle.prc_mcc
+
+^default.reactor:
+	Inherits: ^Building
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		Queue: Building
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Armor:
+		Type: building.normal
+	WithBuildingBib:
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+
+building.cold_fusion_reactor:
+	Inherits: ^default.reactor
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
+	Buildable:
+		BuildPaletteOrder: 1
+		Prerequisites: ~building.usa_command_center, ~techlevel.infonly
+		Description: Provides power for other structures.
+		IconPalette: cnc
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Cold Fusion Reactor
+	Health:
+		HP: 800
+	Power:
+		Amount: 5
+		RequiresCondition: !emp
+	Pluggable@CONTROL_RODS:
+		Offset: 0,0
+		Conditions:
+			control_rods: control_rods
+	Power@CONTROL_RODS:
+		RequiresCondition: control_rods && !emp
+		Amount: 5
+
+building.nuclear_reactor:
+	Inherits: ^default.reactor
+	HitShape:
+		TargetableOffsets: 630,299,0
+	Buildable:
+		BuildPaletteOrder: 2
+		Prerequisites: ~building.prc_command_center, ~techlevel.infonly
+		Description: Provides power for other structures.\n\nCan be Overcharged to incrase power output, but damages the building by doing so.\n\nExplodes when destroyed.
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Nuclear Reactor
+	Health:
+		HP: 1500
+	Turreted:
+		TurnSpeed: 255
+	Armament:
+		Weapon: hack.nuclear_reactor
+		RequiresCondition: overcharge
+	Explodes:
+		Type: CenterPosition
+		Weapon: explosion.nuclear_reactor
+		EmptyWeapon: explosion.nuclear_reactor
+	AttackTurreted:
+	Power@notovercharged:
+		Amount: 10
+		RequiresCondition: !overcharge && !emp
+	Power@overcharged:
+		Amount: 15
+		RequiresCondition: overcharge && !emp
+	FireWeaponAtSelf:
+		Name: primary
+	WithDeathAnimation:
+		DeathSequencePalette: cncplayer
+	GrantConditionOnDeploy:
+		MakeAnimationDeployTypes:
+		DeployedCondition: overcharge
+	RenderSprites:
+		PlayerPalette: cncplayer
+
+^default.barracks:
+	Inherits: ^Building
+	Inherits@REVEAL: ^Reveal200
+	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@SHAPE: ^2x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+	Buildable:
+		Queue: Building
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Description: Trains infantry.
+	Valued:
+		Cost: 500
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 1000
+	Armor:
+		Type: building.normal
+	WithBuildingBib:
+	RallyPoint:
+	Production:
+		Produces: Infantry, Soldier
+	ProductionBar:
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite:
+		Prerequisite: barracks
+	RepairsUnits:
+		FinishRepairingNotification: UnitRepaired
+		PlayerExperience: 10
+
+building.usa_barracks:
+	Inherits: ^default.barracks
+	HitShape:
+		TargetableOffsets: 0,0,0, 840,-256,0, 840,512,0, 210,-512,0, -71,512,0
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 640
+	Buildable:
+		BuildPaletteOrder: 3
+		Prerequisites: ~building.usa_command_center, ~techlevel.infonly
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: USA Barracks
+	Exit@1:
+		SpawnOffset: -426,85,0
+		ExitCell: 0,1
+	Exit@2:
+		SpawnOffset: 298,298,0
+		ExitCell: 1,1
+	RenderSprites:
+		PlayerPalette: cncplayer
+
+building.gla_barracks:
+	Inherits: ^default.barracks
+	HitShape:
+		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
+	Buildable:
+		BuildPaletteOrder: 4
+		Prerequisites: ~building.gla_command_center, ~techlevel.infonly
+	Tooltip:
+		Name: GLA Barracks
+	Exit@1:
+		SpawnOffset: -42,810,0
+		ExitCell: 1,2
+	Exit@2:
+		SpawnOffset: -725,640,0
+		ExitCell: 0,2
+	SpawnActorPower@AMBUSH1:
+		PauseOnCondition: disabled || emp
+		Actor: infantry.ambush_rebel4
+		Prerequisites: ~building.gla_barracks, ~upgrade.ambush1, ~!upgrade.ambush2, ~!upgrade.ambush3
+		LifeTime: -1
+		ChargeTime: 240
+		Icon: ambush1
+		Description: Rebel Ambush
+		LongDesc: Spawns 4 Rebels anywhere on the map.
+		StartFullyCharged: false
+		OrderName: Ambush1PowerInfoOrder
+	SpawnActorPower@AMBUSH2:
+		PauseOnCondition: disabled || emp
+		Actor: infantry.ambush_rebel8
+		Prerequisites: ~building.gla_barracks, ~upgrade.ambush2, ~!upgrade.ambush3
+		LifeTime: -1
+		ChargeTime: 240
+		Icon: ambush2
+		Description: Rebel Ambush
+		LongDesc: Spawns 8 Rebels anywhere on the map.
+		StartFullyCharged: false
+		OrderName: Ambush2PowerInfoOrder
+	SpawnActorPower@AMBUSH3:
+		PauseOnCondition: disabled || emp
+		Actor: infantry.ambush_rebel16
+		Prerequisites: ~building.gla_barracks, ~upgrade.ambush3
+		LifeTime: -1
+		ChargeTime: 240
+		Icon: ambush3
+		Description: Rebel Ambush
+		LongDesc: Spawns 16 Rebels anywhere on the map.
+		StartFullyCharged: false
+		OrderName: Ambush3PowerInfoOrder
+
+building.prc_barracks:
+	Inherits: ^default.barracks
+	Inherits@REVEAL: ^Reveal150
+	HitShape:
+		TargetableOffsets: 0,0,0, 490,-470,0, 355,512,0, -355,-512,0, -630,512,0
+	Buildable:
+		BuildPaletteOrder: 5
+		Prerequisites: ~building.prc_command_center, ~techlevel.infonly
+	Tooltip:
+		Name: PRC Barracks
+	Exit@1:
+		SpawnOffset: -170,810,0
+		ExitCell: 1,2
+	Exit@2:
+		SpawnOffset: -725,640,0
+		ExitCell: 0,2
+
+building.mine:
+	Inherits: ^Mine
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 6
+		BuildDuration: 125
+		BuildDurationModifier: 100
+		Prerequisites: ~building.prc_command_center, ~techlevel.low
+		Description: Defensive structure. Explodes when an enemy unit moves over it.
+	Valued:
+		Cost: 250
+	Tooltip:
+		Name: Land Mine
+	Explodes:
+		Weapon: ATMine
+		EmptyWeapon: ATMine
+	RenderSprites:
+		Image: minp
+
+^default.supply_center:
+	Inherits: ^Building
+	Inherits@REVEAL: ^Reveal200
+	Buildable:
+		Queue: Building
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Description: Refines Ore and Gems\ninto credits.
+	Valued:
+		Cost: 1500
+	CustomSellValue:
+		Value: 750
+	Building:
+		Footprint: _x_ xxx === ===
+		Dimensions: 3,4
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 2000
+	Armor:
+		Type: building.normal
+	WithBuildingBib:
+	Refinery:
+		UseStorage: false
+	DockManager:
+		ExternalDocks: true
+	Dock@0:
+		DockAngle: 64
+		DockOffset: 1,2
+		ExitOffset: 0,1
+		Order: 0
+	Power:
+		Amount: -1
+	FreeActor:
+		Actor: aircraft.chinook
+		SpawnOffset: 1,2
+		Facing: 64
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite:
+		Prerequisite: anysupply
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+	DrawLineToTarget:
+	RallyPoint:
+	Production:
+		Produces: Aircraft, Chinook
+	ProductionBar:
+	PrimaryBuilding:
+		PrimaryCondition: primary
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+
+building.usa_supply_center:
+	Inherits: ^default.supply_center
+	Buildable:
+		BuildPaletteOrder: 7
+		Prerequisites: anypower, ~building.usa_command_center, ~techlevel.infonly
+	Valued:
+		Cost: 2000
+	CustomSellValue:
+		Value: 1000
+	Tooltip:
+		Name: USA Supply Center
+	Selectable:
+		Bounds: 72,56,0,12
+	SelectionDecorations:
+		VisualBounds: 72,70,0,-2
+	Exit@1:
+		SpawnOffset: 0,1024,0
+		ExitCell: 1,2
+		MoveIntoWorld: false
+		Facing: 224
+	WithDeathAnimation:
+		DeathSequencePalette: cncplayer
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -512
+			BottomRight: 1536, 853
+	HitShape@TOP:
+		Type: Rectangle
+			TopLeft: -512, -1450
+			BottomRight: 896, -512
+	RenderSprites:
+		PlayerPalette: cncplayer
+
+building.gla_supply_stash:
+	Inherits: ^default.supply_center
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1024, -512
+			BottomRight: 1024, 1536
+	Buildable:
+		BuildPaletteOrder: 8
+		Prerequisites: ~building.gla_command_center, ~techlevel.infonly
+	Tooltip:
+		Name: GLA Supply Stash
+	Building:
+		Footprint: xx x=
+		Dimensions: 2,2
+	Selectable:
+		Bounds: 48,48,0,12
+	Exit@1:
+		SpawnOffset: -96,768,0
+		ExitCell: 1,1
+	Production:
+		Produces: Infantry, Worker
+	Dock@0:
+		DockOffset: 1,1
+	RallyPoint:
+		Offset: 2,1
+	-WithMakeAnimation:
+	WithMakeAnimation@RA_SILO:
+		Sequence: make
+		BodyNames: rasilo
+	WithMakeAnimation@TD_SILO:
+		Sequence: make2
+		BodyNames: tdsilo
+	WithSpriteBody:
+		Name: rasilo
+	WithSpriteBody@TD_SILO:
+		Sequence: idle2
+		Name: tdsilo
+	-WithDeathAnimation:
+	FreeActor:
+		Actor: infantry.worker
+		SpawnOffset: 1,1
+	Power:
+		Amount: 0
+
+building.prc_supply_center:
+	Inherits: ^default.supply_center
+	Buildable:
+		BuildPaletteOrder: 9
+		Prerequisites: anypower, ~building.prc_command_center, ~techlevel.infonly
+	Tooltip:
+		Name: PRC Supply Center
+	Building:
+		Footprint: _X_ xxx X== ===
+	Selectable:
+		Bounds: 72,50,0,12
+	SelectionDecorations:
+		VisualBounds: 72,70,0,-2
+	Exit@1:
+		SpawnOffset: -42,810,0
+		ExitCell: 1,2
+	Production:
+		Produces: Vehicle, Truck
+	FreeActor:
+		Actor: vehicle.supply_truck
+	WithIdleOverlay@TOP:
+		Sequence: idle-top
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -512
+			BottomRight: 1536, 598
+	HitShape@TOP:
+		TargetableOffsets: 1680,0,0
+		Type: Rectangle
+			TopLeft: -512, -1536
+			BottomRight: 512, -512
+	HitShape@BOTTOMLEFT:
+		TargetableOffsets: -1260,-1024,0
+		Type: Rectangle
+			TopLeft: -1536, 598
+			BottomRight: -512, 1280
+
+building.patriot:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@REVEAL: ^Reveal360
+	Inherits@SHAPE: ^2x1Shape
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 10
+		BuildDuration: 625
+		BuildDurationModifier: 100
+		Prerequisites: anypower, ~building.usa_command_center, ~techlevel.low
+		Description: Anti-tank, anti-air base defense.
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Patriot Missile System
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	RequiresPower:
+	Health:
+		HP: 1000
+	Armor:
+		Type: building.defense
+	WithBuildingBib:
+		HasMinibib: Yes
+	Turreted:
+		TurnSpeed: 30
+		InitialFacing: 0
+	-WithSpriteBody:
+	WithTurretedSpriteBody:
+	Armament@AG:
+		Weapon: missile.patriot.ground
+		LocalOffset: 0,0,320
+		MuzzleSequence: muzzle
+	Armament@AA:
+		Weapon: missile.patriot.air
+		LocalOffset: 0,0,320
+		MuzzleSequence: muzzle
+	WithRangeCircle@AG:
+		Range: 5c640
+	WithRangeCircle@AA:
+		Range: 8c768
+	AttackTurreted:
+		RequiresCondition: !emp
+	WithMuzzleOverlay:
+	Power:
+		Amount: -3
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 5c0
+	BodyOrientation:
+		UseClassicFacingFudge: True
+
+building.demo_trap:
+	Inherits: ^Defense
+	Inherits@REVEAL: ^Reveal150
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 11
+		BuildDuration: 125
+		BuildDurationModifier: 100
+		Prerequisites: ~building.gla_command_center, ~techlevel.medium
+		Description: Stealth trap with explosives.
+	Valued:
+		Cost: 400
+	Health:
+		HP: 100
+	Explodes:
+		Weapon: explosion.demo_trap
+	Tooltip:
+		Name: Demo Trap
+	Building:
+		Adjacent: 4
+	Armor:
+		Type: building.normal
+	Cloak:
+		InitialDelay: 125
+		CloakDelay: 60
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled && !self_destruct && !emp
+	-ShakeOnDeath:
+	-SoundOnDamageTransition:
+	-WithMakeAnimation:
+	-RenderRangeCircle:
+	-Demolishable:
+	ExternalCondition@SELF_DESTRUCT:
+		Condition: self_destruct
+	WithColoredOverlay@DETECTED:
+		RequiresCondition: self_destruct
+		Palette: detected
+	WithRangeCircle:
+		Range: 1c512
+	AmbientSound:
+		SoundFiles: gdembeep.wav
+		Interval: 5
+		RequiresCondition: self_destruct
+	KillsSelf:
+		RequiresCondition: self_destruct
+		Delay: 20
+	GrantConditionOnDeploy:
+		DeployedCondition: self_destruct
+
+building.gatling_cannon:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@CHAIN_GUN: ^AfftectedByChainGun
+	Inherits@REVEAL: ^Reveal360
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 12
+		BuildDuration: 625
+		BuildDurationModifier: 100
+		Prerequisites: building.nuclear_reactor, ~building.prc_command_center, ~techlevel.low
+		Description: Anti-infantry/anti-air base defense.
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Gatling Cannon
+	Selectable:
+		Bounds: 24,24
+	SelectionDecorations:
+		VisualBounds: 24,32,0,-4
+	RequiresPower:
+	Health:
+		HP: 1000
+	Armor:
+		Type: building.defense
+	WithBuildingBib:
+		HasMinibib: Yes
+	Turreted:
+		TurnSpeed: 15
+		InitialFacing: 224
+	-WithSpriteBody:
+	WithTurretedSpriteBody:
+	ReloadDelayMultiplier@Gatling1:
+		RequiresCondition: gatling >= 1
+		Modifier: 50
+	ReloadDelayMultiplier@Gatling2:
+		RequiresCondition: gatling >= 2
+		Modifier: 50
+	Armament@GatlingAG:
+		Weapon: gatling.gatling_cannon.ground
+		LocalOffset: 520,100,450, 520,-150,450
+		MuzzleSequence: muzzle
+	Armament@GatlingAA:
+		Weapon: gatling.gatling_cannon.air
+		LocalOffset: 520,100,450, 520,-150,450
+		MuzzleSequence: muzzle
+	WithRangeCircle@AG:
+		Range: 5c640
+	WithRangeCircle@AA:
+		Range: 10c0
+	AttackTurreted:
+		RequiresCondition: !emp
+	WithMuzzleOverlay:
+	GrantStackableConditionOnFire@gatling:
+		Condition: gatling
+		ArmamentName: primary
+		RequiredShotsPerStack: 10
+		MaximumInstances: 2
+		RevokeDelay: 40
+		RevokeAll: true
+		IsCyclic: false
+	Power:
+		Amount: -3
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 5c0
+	DamageMultiplier@OVERLORD_GATLING:
+		RequiresCondition: overlord_gatling
+		Modifier: 90
+	FirepowerMultiplier@OVERLORD_GATLING:
+		RequiresCondition: overlord_gatling
+		Modifier: 110
+	GrantConditionOnPrerequisite@OVERLORD_GATLING:
+		Condition: overlord_gatling
+		Prerequisites: strategy.overlord_gatling
+	BodyOrientation:
+		UseClassicFacingFudge: True
+
+building.bunker:
+	Inherits: ^Defense
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@REVEAL: ^Reveal300
+	Inherits@SHAPE: ^2x2Shape
+	Tooltip:
+		Name: Bunker
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 13
+		BuildDuration: 125
+		BuildDurationModifier: 100
+		Prerequisites: building.prc_barracks, ~building.prc_command_center, ~!strategy.overlord_bunker, ~techlevel.infonly
+		Description: Static defense with fireports for 5\ngarrisoned soldiers.
+	Valued:
+		Cost: 500
+	Health:
+		HP: 1000
+	Armor:
+		Type: building.normal
+	Selectable:
+		Class: building.bunker
+	Turreted:
+		TurnSpeed: 255
+	-QuantizeFacingsFromSequence:
+	BodyOrientation:
+		QuantizedFacings: 8
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+		PipCount: 5
+		EjectOnDeath: true
+		PauseOnCondition: emp
+	AttackGarrisoned:
+		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 88, 88, 88, 88, 88, 88
+		RequiresCondition: !emp
+	RenderRangeCircle:
+		FallbackRange: 2c512
+	Power:
+		Amount: 0
+	DamageMultiplier@OVERLORD_BUNKER:
+		RequiresCondition: overlord_bunker
+		Modifier: 90
+	GrantConditionOnPrerequisite@OVERLORD_BUNKER:
+		Condition: overlord_bunker
+		Prerequisites: strategy.overlord_bunker
+
+building.bunker.strategy:
+	Inherits: building.bunker
+	Buildable:
+		BuildDurationModifier: 80
+		Prerequisites: building.prc_barracks, ~building.prc_command_center, ~strategy.overlord_bunker, ~techlevel.infonly
+	Valued:
+		Cost: 400
+	RenderSprites:
+		Image: building.bunker
+
+^default.war_factory:
+	Inherits: ^Building
+	Inherits@REVEAL: ^Reveal200
+	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@SHAPE: ^3x2Shape
+	Buildable:
+		Queue: Building
+		BuildDuration: 375
+		BuildDurationModifier: 100
+		Description: Produces vehicles.
+	Valued:
+		Cost: 2000
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 2000
+	Armor:
+		Type: building.normal
+	WithBuildingBib:
+	WithProductionDoorOverlay:
+		Sequence: build-top
+	RallyPoint:
+	Production:
+		Produces: Vehicle, WarFactory
+	Exit@1:
+		SpawnOffset: 213,-128,0
+		ExitCell: 1,2
+	ProductionBar:
+	Power:
+		Amount: -1
+	ProvidesPrerequisite@buildingname:
+	RepairsUnits:
+		FinishRepairingNotification: UnitRepaired
+		PlayerExperience: 15
+
+building.usa_war_factory:
+	Inherits: ^default.war_factory
+	Buildable:
+		BuildPaletteOrder: 14
+		Prerequisites: anysupply, ~building.usa_command_center, ~techlevel.low
+	Tooltip:
+		Name: USA War Factory
+	Building:
+		Footprint: xxx === ===
+	RallyPoint:
+		Offset: 0,2
+	Exit@1:
+		SpawnOffset: -512,-512,0
+		ExitCell: 0,1
+		ExitDelay: 3
+	Selectable:
+		Bounds: 72,48
+	SelectionDecorations:
+		VisualBounds: 72,64,0,-16
+	WithDeathAnimation:
+		DeathSequence: dead
+		DeathSequencePalette: cncplayer
+		UseDeathTypeSuffix: false
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,1024,0, 0,-1024,0
+		Type: Rectangle
+			TopLeft: -1536, -1024
+			BottomRight: 1536, 512
+	RenderSprites:
+		PlayerPalette: cncplayer
+
+building.arms_dealer:
+	Inherits: ^default.war_factory
+	Buildable:
+		BuildPaletteOrder: 15
+		Prerequisites: anysupply, ~building.gla_command_center, ~techlevel.low
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: GLA Arms Dealer
+	Power:
+		Amount: 0
+
+building.prc_war_factory:
+	Inherits: ^default.war_factory
+	Buildable:
+		BuildPaletteOrder: 16
+		Prerequisites: anysupply, ~building.prc_command_center, ~techlevel.low
+	Tooltip:
+		Name: PRC War Factory
+
+building.tunnel_network:
+	Inherits: ^Defense
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^2x2Shape
+	Tooltip:
+		Name: Tunnel Network
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 17
+		BuildDuration: 375
+		BuildDurationModifier: 100
+		Prerequisites: ~building.gla_command_center, building.gla_barracks, ~techlevel.infonly
+		Description: Allows unit movement from one to another quickly.\n\nArmed with a machine gun.\n\nComes with 2 RPG Troopers.
+	Valued:
+		Cost: 800
+	Health:
+		HP: 1000
+	Armor:
+		Type: building.normal
+	RallyPoint:
+		Offset: 0,2
+	Exit:
+		SpawnOffset: 0,0,0
+		ExitCell: 1,1
+	Turreted:
+		TurnSpeed: 12
+		InitialFacing: 56
+		Offset: 0,0,256
+	NydusPrimaryExit:
+	Nydus:
+	Power:
+		Amount: 0
+	FreeActor@1:
+		Actor: infantry.rpg_trooper
+		SpawnOffset: 0, 2
+	FreeActor@2:
+		Actor: infantry.rpg_trooper
+		SpawnOffset: 1, 2
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+	Armament:
+		Weapon: mg.tunnel_network
+		LocalOffset: 512,0,112
+		MuzzleSequence: muzzle
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 3c768
+	AttackTurreted:
+		RequiresCondition: !emp
+	WithSpriteTurret:
+	WithMuzzleOverlay:
+
+building.stinger_site:
+	Inherits: ^Defense
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AP_BULLETS: ^AfftectedByAPBullets
+	Inherits@REVEAL: ^Reveal400
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 18
+		BuildDuration: 375
+		BuildDurationModifier: 100
+		Prerequisites: ~building.gla_command_center, building.gla_barracks, ~techlevel.low
+		Description: Anti-Armor/anti-air base defense.\n\nLoses soldiers in it when damaged.
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Stinger Site
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 1000
+	Armor:
+		Type: building.stinger_site
+	WithBuildingBib:
+	Turreted:
+		TurnSpeed: 225
+	WithSpriteBody:
+	Armament@AG1:
+		Weapon: missile.stinger_site.ground
+	Armament@AA1:
+		Weapon: missile.stinger_site.air
+	Armament@AG2:
+		Weapon: missile.stinger_site.ground
+		FireDelay: 5
+		RequiresCondition: !heavily-damaged
+	Armament@AA2:
+		Weapon: missile.stinger_site.air
+		FireDelay: 5
+		RequiresCondition: !heavily-damaged
+	Armament@AG3:
+		Weapon: missile.stinger_site.ground
+		FireDelay: 10
+		RequiresCondition: !critically-damaged
+	Armament@AA3:
+		Weapon: missile.stinger_site.air
+		FireDelay: 10
+		RequiresCondition: !critically-damaged
+	WithRangeCircle@AG:
+		Range: 5c640
+	WithRangeCircle@AA:
+		Range: 10c0
+	AttackTurreted:
+		RequiresCondition: !emp
+	BodyOrientation:
+		QuantizedFacings: 8
+	WithMuzzleOverlay:
+	Power:
+		Amount: 0
+	GrantConditionOnDamageState@HEAVY:
+		Condition: heavily-damaged
+		ValidDamageStates: Critical, Heavy
+	GrantConditionOnDamageState@CRITICAL:
+		Condition: critically-damaged
+		ValidDamageStates: Critical
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 5c0
+
+^default.airfield:
+   	Inherits: ^Building
+   	Inherits@REVEAL: ^Reveal200
+   	Inherits@PRIMARY: ^PrimaryBuilding
+	Buildable:
+		Queue: Building
+		BuildDuration: 750
+		BuildDurationModifier: 100
+		Description: Produces and reloads aircraft.
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 1500
+	Armor:
+		Type: building.normal
+	Exit@1:
+		ExitCell: 1,1
+		Facing: 192
+		MoveIntoWorld: false
+	RallyPoint:
+	Production:
+		Produces: Aircraft, Plane
+	DockManager:
+		DockOnActor: true
+		DeadlockDetectionEnabled: false
+	Reservable:
+	RepairsUnits:
+		Interval: 14
+		HpPerStep: 5
+		PlayerExperience: 15
+	WithRepairAnimation:
+	WithRearmAnimation:
+	ProductionBar:
+	Power:
+		Amount: -1
+	ProvidesPrerequisite@buildingname:
+        
+building.usa_airfield:
+	Inherits: ^default.airfield
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,-512,256, 0,-1451,384, 0,512,128, 0,1536,85
+		Type: Rectangle
+			TopLeft: -2048, -1024
+			BottomRight: 2048, 1024
+	Buildable:
+		BuildPaletteOrder: 19
+		Prerequisites: anysupply, ~building.usa_command_center, ~techlevel.medium
+	Tooltip:
+		Name: USA Airfield
+	Building:
+		Footprint: XXXX xxxx
+		Dimensions: 4,2
+	Production:
+		Produces: Aircraft, Plane, Helicopter
+	Dock@0:
+		DockOffset: 2,0
+	Dock@1:
+		DockOffset: 3,0
+	Dock@2:
+		DockOffset: 2,1
+	Dock@3:
+		DockOffset: 3,1
+	WithIdleOverlay@DISH:
+		Sequence: idle-dish
+	Exit@1:
+		SpawnOffset: -1024,0,0
+	WithDeathAnimation:
+		DeathSequence: dead
+		DeathSequencePalette: cncplayer
+		UseDeathTypeSuffix: false
+	AirstrikePower@A101:
+		PauseOnCondition: disabled || emp
+		Prerequisites: ~building.usa_airfield, ~upgrade.a101, ~!upgrade.a102, ~!upgrade.a103
+		Icon: a101
+		ChargeTime: 240
+		SquadSize: 1
+		QuantizedFacings: 8
+		Description: A-10 Strike
+		LongDesc: 1 A-10 Thunderbolt strikes anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		UnitType: aircraft.a10
+		DisplayBeacon: True
+		BeaconPoster: a101bcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		OrderName: A101PowerInfoOrder
+	AirstrikePower@A102:
+		PauseOnCondition: disabled || emp
+		Prerequisites: ~building.usa_airfield, ~upgrade.a102, ~!upgrade.a103
+		Icon: a102
+		ChargeTime: 240
+		SquadSize: 2
+		QuantizedFacings: 8
+		Description: A-10 Strike
+		LongDesc: 2 A-10 Thunderbolt strikes anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		UnitType: aircraft.a10
+		DisplayBeacon: True
+		BeaconPoster: a102bcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		OrderName: A102PowerInfoOrder
+	AirstrikePower@A103:
+		PauseOnCondition: disabled || emp
+		Prerequisites: ~building.usa_airfield, ~upgrade.a103
+		Icon: a103
+		ChargeTime: 240
+		SquadSize: 3
+		QuantizedFacings: 8
+		Description: A-10 Strike
+		LongDesc: 3 A-10 Thunderbolt strikes anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		UnitType: aircraft.a10
+		DisplayBeacon: True
+		BeaconPoster: a103bcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		OrderName: A103PowerInfoOrder
+	RenderSprites:
+		PlayerPalette: cncplayer
+
+building.prc_airfield:
+	Inherits: ^default.airfield
+	Inherits@SHAPE: ^3x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: anysupply, ~building.prc_command_center, ~techlevel.medium
+	Tooltip:
+		Name: PRC Airfield
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Dock@0:
+		DockOffset: 1,0
+	Dock@1:
+		DockOffset: 2,0
+	Dock@2:
+		DockOffset: 1,1
+	Dock@3:
+		DockOffset: 2,1
+
+building.strategy_center:
+	Inherits: ^Building
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@REVEAL: ^Reveal400
+	Inherits@SHAPE: ^3x2Shape
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 21
+		BuildDuration: 1500
+		BuildDurationModifier: 100
+		Prerequisites: building.usa_war_factory, ~building.usa_command_center, ~techlevel.medium
+		Description: Provides USA advanced technologies.
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Strategy Center
+	ProvidesPrerequisite:
+		Prerequisite: techcenter
+	Building:
+		Footprint: Xxx xxX
+		Dimensions: 3,2
+	Selectable:
+		Bounds: 72,48
+	SelectionDecorations:
+		VisualBounds: 72,58,0,-10
+	Health:
+		HP: 1500
+	Armor:
+		Type: building.normal
+	WithBuildingBib:
+	RequiresPower:
+	Power:
+		Amount: -2
+	Turreted:
+		TurnSpeed: 5
+		InitialFacing: 96
+		Offset: -416, -576, 0
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 12c512
+		RequiresCondition: search_and_destroy && !emp
+	Armament:
+		Weapon: cannon.strategy_center
+		LocalOffset: 520,0,450
+		RequiresCondition: bombardment
+	DamageMultiplier@HOLD_THE_LINE:
+		RequiresCondition: hold_the_line
+		Modifier: 50
+	WithIdleOverlay@HOLD_THE_LINE:
+		Sequence: hold_the_line
+		Palette: effect
+		RequiresCondition: hold_the_line
+	WithIdleOverlay@SEARCH_AND_DESTROY:
+		Sequence: search_and_destroy
+		RequiresCondition: search_and_destroy
+	AttackTurreted:
+		RequiresCondition: !emp
+	RenderRangeCircle:
+	WithSpriteTurret:
+		RequiresCondition: bombardment
+	-CommandBarBlacklist:
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite:
+		Prerequisite: anytech
+
+building.palace:
+	Inherits: ^Building
+	Inherits@SHAPE: ^3x2Shape
+	Inherits@REVEAL: ^Reveal300
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 0,-896,0, 0,896,0, 840,0,0, -706,0,0, -706,-768,0, -706,640,0
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 22
+		BuildDuration: 1125
+		BuildDurationModifier: 100
+		Prerequisites: building.arms_dealer, ~building.gla_command_center, ~techlevel.medium
+		Description: Provides GLA advanced technologies.
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Palace
+	ProvidesPrerequisite:
+		Prerequisite: techcenter
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Selectable:
+		Bounds: 72,48
+	SelectionDecorations:
+		VisualBounds: 72,68,0,-12
+	Health:
+		HP: 3000
+	Armor:
+		Type: building.normal
+	WithBuildingBib:
+	Power:
+		Amount: 0
+	Turreted:
+		TurnSpeed: 255
+	-CommandBarBlacklist:
+	-QuantizeFacingsFromSequence:
+	BodyOrientation:
+		QuantizedFacings: 8
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+		PipCount: 5
+		EjectOnDeath: true
+		PauseOnCondition: emp
+	AttackGarrisoned:
+		PortOffsets: 0,-896,128, 0,896,128, 840,0,128, -706,0,128, -706,-768,128, -706,640,128
+		PortYaws: 256, 768, 0, 512, 384, 640
+		PortCones: 88, 88, 88, 88, 88, 88
+		RequiresCondition: !emp
+	RenderRangeCircle:
+		FallbackRange: 2c512
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite:
+		Prerequisite: anytech
+	WithDeathAnimation:
+		DeathSequence: dead
+		DeathSequencePalette: cncplayer
+		UseDeathTypeSuffix: false
+	RenderSprites:
+		PlayerPalette: cncplayer
+
+building.propaganda_center:
+	Inherits: ^Building
+	Inherits@SHAPE: ^3x2Shape
+	Inherits@REVEAL: ^Reveal200
+	HitShape:
+		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 23
+		BuildDuration: 1125
+		BuildDurationModifier: 100
+		Prerequisites: building.prc_war_factory, ~building.prc_command_center, ~techlevel.medium
+		Description: Provides PRC advanced technologies.
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Propaganda Center
+	ProvidesPrerequisite:
+		Prerequisite: techcenter
+	Building:
+		Footprint: XxX XxX
+		Dimensions: 3,2
+	Health:
+		HP: 1000
+	Armor:
+		Type: building.normal
+	WithBuildingBib:
+	Power:
+		Amount: -2
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite:
+		Prerequisite: anytech
+
+building.detention_camp:
+	Inherits: ^Building
+	Inherits@SHAPE: ^3x2Shape
+	Inherits@REVEAL: ^Reveal200
+	HitShape:
+		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 24
+		BuildDuration: 750
+		BuildDurationModifier: 100
+		Prerequisites: building.strategy_center, ~building.usa_command_center, ~techlevel.high
+		Description: Provides support power to reveal all enemy units for a while.
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Detention Camp
+	Building:
+		Footprint: XxX XxX
+		Dimensions: 3,2
+	Health:
+		HP: 2000
+	Armor:
+		Type: building.normal
+	WithBuildingBib:
+	Power:
+		Amount: 0
+	ProvidesPrerequisite@buildingname:
+	Production:
+		Produces: Intelligence
+	Exit:
+	ProduceActorPower@INTELLIGENCE:
+		PauseOnCondition: emp
+		Description: Intelligence
+		LongDesc: Makes all enemy units visible for 30 seconds.
+		Icon: intelligence
+		Actors: camera.intelligence
+		Type: Intelligence
+		ChargeTime: 180
+		OrderName: IntelligencePowerInfoOrder
+	SupportPowerChargeBar:
+	RenderSprites:
+		Image: tech.communications_center
+
+building.supply_drop_zone:
+	Inherits: ^Building
+	Inherits@SHAPE: ^2x2Shape
+	Inherits@REVEAL: ^Reveal100
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 25
+		BuildDuration: 1125
+		BuildDurationModifier: 100
+		Prerequisites: building.strategy_center, ~building.usa_command_center, ~techlevel.medium
+		Description: A Cargo Plane drops money crates here every 2 minutes.
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Supply Drop Zone
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+#	ProductionParadrop:
+#		Produces: Crate
+#		ActorType: aircraft.cargo_plane
+#	Exit:
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	WithBuildingBib:
+	Power:
+		Amount: -4
+	ProvidesPrerequisite@buildingname:
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+	CashTrickler:
+		Interval: 3000
+		Amount: 1500
+		RequiresCondition: !emp
+#	ProduceActorPower@SUPPLY_DROP:
+#		Description: Supply Drop
+#		LongDesc: A Cargo Plane drops a money crate on the Supply Drop Zone.
+#		Icon: supply
+#		Actors: SUPPLYCRATE
+#		Type: Crate
+#		ChargeTime: 120
+#		OrderName: SupplyDropPowerInfoOrder
+#	SupportPowerChargeBar:
+
+building.black_market:
+	Inherits: ^Building
+	Inherits@REVEAL: ^Reveal200
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,512,0, 420,-598,256
+		Type: Rectangle
+			TopLeft: -1024, -384
+			BottomRight: 1024, 1024
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Black Market
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 26
+		BuildDuration: 750
+		BuildDurationModifier: 100
+		Prerequisites: building.palace, ~building.gla_command_center, ~techlevel.medium
+		Description: Enables some upgrades.\n\nGives cash periodically.
+	Building:
+		Footprint: XX xx
+		Dimensions: 2,2
+	Selectable:
+		Bounds: 48,40,0,9
+	SelectionDecorations:
+		VisualBounds: 48,53,0,-4
+	CashTrickler:
+		Interval: 20
+		Amount: 20
+		RequiresCondition: !emp
+	Health:
+		HP: 1000
+	Armor:
+		Type: building.normal
+	WithBuildingBib:
+	Power:
+		Amount: 0
+	ProvidesPrerequisite@buildingname:
+	RenderSprites:
+		PlayerPalette: cncplayer
+
+building.speaker_tower:
+	Inherits: ^Building
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@REVEAL: ^Reveal200
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Speaker Tower
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 27
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: building.propaganda_center, ~building.prc_command_center, ~techlevel.medium
+		Description: Increases fire speed of nearby units and allows them to heal.
+	Selectable:
+		Bounds: 24,24
+	SelectionDecorations:
+		VisualBounds: 24,48,0,-12
+	RequiresPower:
+	WithSpriteBody:
+		PauseAnimationWhenDisabled: true
+	Health:
+		HP: 300
+	Armor:
+		Type: building.normal
+	WithBuildingBib:
+		HasMinibib: Yes
+	Power:
+		Amount: -1
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	Explodes:
+		Weapon: SmallBuildingExplode
+		EmptyWeapon: SmallBuildingExplode
+	DamageMultiplier@OVERLORD_SPEAKER:
+		RequiresCondition: overlord_speaker
+		Modifier: 80
+	GrantConditionOnPrerequisite@OVERLORD_SPEAKER:
+		Condition: overlord_speaker
+		Prerequisites: strategy.overlord_speaker
+	HitShape:
+		Type: Rectangle
+			TopLeft: -512, -512
+			BottomRight: 512, 512
+	ProximityExternalCondition@SPEAKER:
+		Condition: speaker_tower
+		Range: 4c0
+		RequiresCondition: !emp
+
+building.particle_cannon:
+	Inherits: ^Building
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@REVEAL: ^Reveal200
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,512,128, 420,-598,213
+		Type: Rectangle
+			TopLeft: -1024, -384
+			BottomRight: 1024, 1024
+	Valued:
+		Cost: 5000
+	Tooltip:
+		Name: Particle Uplink Cannon 
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 28
+		BuildDuration: 1500
+		BuildDurationModifier: 100
+		Prerequisites: building.strategy_center, ~building.usa_command_center, ~techlevel.unrestricted
+		BuildLimit: 1
+		Description: Provides Particle Cannon support power.
+	Building:
+		Footprint: XX xx
+		Dimensions: 2,2
+	Selectable:
+		Bounds: 48,40,0,9
+	SelectionDecorations:
+		VisualBounds: 48,53,0,-4
+	RequiresPower:
+	WithSpriteBody:
+		PauseAnimationWhenDisabled: true
+	Health:
+		HP: 4000
+	Armor:
+		Type: building.tough
+	WithBuildingBib:
+	IonCannonPower:
+		PauseOnCondition: disabled || emp
+		Icon: particle
+		ChargeTime: 300
+		Description: Particle Cannon
+		DisplayTimerStances: Enemy, Neutral, Ally
+		LongDesc: Initiates an Particle Cannon strike.
+		SelectTargetSpeechNotification: SelectTarget
+		OnFireSound: ion1.aud
+		EffectPalette: cnc
+	SupportPowerChargeBar:
+	Power:
+		Amount: -10
+	ProvidesPrerequisite@buildingname:
+	RevealsShroud@SW:
+		Range: 2c0
+		ValidStances: Enemy
+	RenderSprites:
+		PlayerPalette: cncplayer
+
+hack.scud_spawner:
+	Inherits: ^Building
+	Inherits@SHAPE: ^2x2Shape
+	SpawnActorOnDeath:
+		Actor: building.scud_storm
+	KillsSelf:
+	Valued:
+		Cost: 5000
+	Tooltip:
+		Name: SCUD Storm
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 29
+		BuildDuration: 1500
+		BuildDurationModifier: 100
+		Prerequisites: building.palace, ~building.gla_command_center, !building.scud_storm, ~techlevel.unrestricted
+		BuildLimit: 1
+		Description: Provides an atomic bomb.\nRequires power to operate.\n Special Ability: SCUD Storm\nMaximum 1 can be built.
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 3000
+	Armor:
+		Type: building.tough
+	-WithMakeAnimation:
+	-Explodes:
+	-ShakeOnDeath:
+	-SoundOnDamageTransition:
+	RenderSprites:
+		Image: building.scud_storm
+
+building.scud_storm:
+	Inherits: ^Building
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^2x2Shape
+	Valued:
+		Cost: 5000
+	Tooltip:
+		Name: SCUD Storm
+#	Buildable:
+#		Queue: Building
+#		BuildPaletteOrder: 29
+#		BuildDuration: 1500
+#		BuildDurationModifier: 100
+#		Prerequisites: building.palace, ~building.gla_command_center, ~techlevel.unrestricted
+#		BuildLimit: 1
+#		Description: Provides an atomic bomb.\nRequires power to operate.\n Special Ability: SCUD Storm\nMaximum 1 can be built.
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 3000
+	Armor:
+		Type: building.tough
+	Selectable:
+		Bounds: 48,48,0,0
+	AttackTurreted:
+		Armaments: A, B, C, D
+	Armament@NORMAL_A:
+		Name: A
+		Turret: A
+		Weapon: hack.scud_missile_spawner
+		RequiresCondition: !anthrax_beta
+	Armament@BETA_A:
+		Name: A
+		Turret: A
+		Weapon: hack.scud_missile_spawner.beta
+		RequiresCondition: anthrax_beta
+	Armament@NORMAL_B:
+		Name: B
+		Turret: B
+		Weapon: hack.scud_missile_spawner
+		RequiresCondition: !anthrax_beta
+	Armament@BETA_B:
+		Name: B
+		Turret: B
+		Weapon: hack.scud_missile_spawner.beta
+		RequiresCondition: anthrax_beta
+	Armament@NORMAL_C:
+		Name: C
+		Turret: C
+		Weapon: hack.scud_missile_spawner
+		RequiresCondition: !anthrax_beta
+	Armament@BETA_C:
+		Name: C
+		Turret: C
+		Weapon: hack.scud_missile_spawner.beta
+		RequiresCondition: anthrax_beta
+	Armament@NORMAL_D:
+		Name: D
+		Turret: D
+		Weapon: hack.scud_missile_spawner
+		RequiresCondition: !anthrax_beta
+	Armament@BETA_D:
+		Name: D
+		Turret: D
+		Weapon: hack.scud_missile_spawner.beta
+		RequiresCondition: anthrax_beta
+	Turreted@A:
+		Turret: A
+		TurnSpeed: 3
+		Offset: -512, -512, 0
+	Turreted@B:
+		Turret: B
+		TurnSpeed: 3
+		Offset: 512, -512, 0
+	Turreted@C:
+		Turret: C
+		TurnSpeed: 3
+		Offset: -512, 512, 0
+	Turreted@D:
+		Turret: D
+		TurnSpeed: 3
+		Offset: 512, 512, 0
+	AmmoPool:
+		Ammo: 4
+		PipCount: 0
+		SelfReloads: true
+		ReloadCount: 4
+		SelfReloadDelay: 100
+	WithReloadingSpriteTurret@A:
+		AmmoPoolName: primary
+		Turret: A
+		Sequence: turret.a
+	WithReloadingSpriteTurret@B:
+		AmmoPoolName: primary
+		Turret: B
+		Sequence: turret.b
+	WithReloadingSpriteTurret@C:
+		AmmoPoolName: primary
+		Turret: C
+		Sequence: turret.c
+	WithReloadingSpriteTurret@D:
+		AmmoPoolName: primary
+		Turret: D
+		Sequence: turret.d
+	RequiresPower:
+	SupportPowerChargeBar:
+	WithBuildingBib:
+	-WithMakeAnimation:
+	ProvidesPrerequisite@buildingname:
+	GrantConditionOnPrerequisite@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Prerequisites: upgrade.anthrax_beta
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	AttackOrderPower:
+		PauseOnCondition: disabled || emp
+		Icon: scud_storm
+		Cursor: nuke
+		ChargeTime: 300
+		Description: SCUD Storm
+		DisplayTimerStances: Enemy, Neutral, Ally
+		LongDesc: Fires 4 SCUD Missiles anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		DisplayBeacon: True
+		BeaconPoster: scudswbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		OrderName: SCUDStormPowerInfoOrder
+	RevealsShroud@SW:
+		Range: 2c0
+		ValidStances: Enemy
+
+building.missile_silo:
+	Inherits: ^Building
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^2x1Shape
+	Valued:
+		Cost: 5000
+	Tooltip:
+		Name: Nuclear Missile Silo
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 30
+		BuildDuration: 1500
+		BuildDurationModifier: 100
+		Prerequisites: building.propaganda_center, ~building.prc_command_center, ~techlevel.unrestricted
+		BuildLimit: 1
+		Description: Provides an atomic bomb.\nRequires power to operate.\n  Special Ability: Atom Bomb\nMaximum 1 can be built.
+	Building:
+		Footprint: xx ==
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	WithBuildingBib:
+	Health:
+		HP: 3000
+	Armor:
+		Type: building.tough
+	NukePower:
+		PauseOnCondition: disabled || emp
+		Cursor: nuke
+		Icon: abomb
+		ChargeTime: 300
+		Description: Atom Bomb
+		LongDesc: Launches a devastating atomic bomb\nat a target location.
+		BeginChargeSpeechNotification: AbombPrepping
+		EndChargeSpeechNotification: AbombReady
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		IncomingSpeechNotification: AbombLaunchDetected
+		MissileWeapon: atomic
+		SpawnOffset: 0,427,0
+		DisplayTimerStances: Enemy, Neutral, Ally
+		DisplayBeacon: True
+		DisplayRadarPing: True
+		BeaconPoster: nukeswbcon
+		FlashType: Nuke
+		CameraRange: 10c0
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+	RequiresPower:
+	SupportPowerChargeBar:
+	Power:
+		Amount: -10
+	ProvidesPrerequisite@buildingname:
+	RevealsShroud@SW:
+		Range: 2c0
+		ValidStances: Enemy
+	MustBeDestroyed:
+		RequiredForShortGame: false
+
+SBAG:
+	Inherits: ^Wall
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 40
+		Prerequisites: ~disabled
+		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
+	Valued:
+		Cost: 50
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: Sandbag Wall
+	Health:
+		HP: 300
+	Armor:
+		Type: building.normal
+	LineBuild:
+		Range: 8
+		NodeTypes: sandbag
+	LineBuildNode:
+		Types: sandbag
+	WithWallSpriteBody:
+		Type: sandbag
+
+FENC:
+	Inherits: ^Wall
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 45
+		Prerequisites:  ~disabled
+		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
+	Valued:
+		Cost: 50
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: Wire Fence
+	Health:
+		HP: 300
+	Armor:
+		Type: building.normal
+	LineBuild:
+		Range: 8
+		NodeTypes: fence
+	LineBuildNode:
+		Types: fence
+	WithWallSpriteBody:
+		Type: fence
+
+BRIK:
+	Inherits: ^Wall
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 50
+		Prerequisites: ~disabled
+		Description: Stop units and blocks enemy fire.
+	Valued:
+		Cost: 200
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: Concrete Wall
+	SoundOnDamageTransition:
+		DamagedSounds: crmble2.aud
+		DestroyedSounds: kaboom30.aud
+	Health:
+		HP: 500
+	Armor:
+		Type: building.wall
+	Crushable:
+		CrushClasses: wall
+	BlocksProjectiles:
+	LineBuild:
+		Range: 8
+		NodeTypes: concrete
+	LineBuildNode:
+		Types: concrete
+	WithWallSpriteBody:
+		Type: concrete
+
+VGATE:
+	Inherits: ^Gate
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -512, -1536
+			BottomRight: 512, 1536
+	Gate:
+		Footprint: x x x
+		Dimensions: 1,3
+	WithGateSpriteBody:
+		WallConnections: 0,-1, 0,3
+	LineBuildNode:
+		Connections: 0,-1, 0,1
+	Tooltip:
+		Name: Vertical Gate
+
+HGATE:
+	Inherits: ^Gate
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1536, -512
+			BottomRight: 1536, 512
+	Gate:
+		Footprint: xxx
+		Dimensions: 3,1
+	WithGateSpriteBody:
+		WallConnections: -1,0, 3,0
+	LineBuildNode:
+		Connections: -1,0, 1,0
+	Tooltip:
+		Name: Horizontal Gate
+	RenderSprites:
+		Image: agate
+		FactionImages:
+			usa: agate
+			gla: agate
+			prc: sgate
+
+CYCL:
+	Inherits: ^Wall
+	Tooltip:
+		Name: Chain-Link Barrier
+	Armor:
+		Type: building.normal
+	LineBuild:
+		NodeTypes: chain
+	LineBuildNode:
+		Types: chain
+	WithWallSpriteBody:
+		Type: chain
+
+BARB:
+	Inherits: ^Wall
+	Tooltip:
+		Name: Barbed-Wire Fence
+	Armor:
+		Type: building.normal
+	LineBuild:
+		NodeTypes: barbwire
+	LineBuildNode:
+		Types: barbwire
+	WithWallSpriteBody:
+		Type: barbwire
+
+WOOD:
+	Inherits: ^Wall
+	Tooltip:
+		Name: Wooden Fence
+	Armor:
+		Type: building.normal
+	LineBuild:
+		NodeTypes: woodfence
+	LineBuildNode:
+		Types: woodfence
+	WithWallSpriteBody:
+		Type: woodfence
+
+ANYCOMMAND:
+	AlwaysVisible:
+	Tooltip:
+		Name: Command Center
+	Buildable:
+		Description: Command Center
+
+ANYPOWER:
+	AlwaysVisible:
+	Tooltip:
+		Name: Power Plant
+	Buildable:
+		Description: Power Plant
+
+BARRACKS:
+	AlwaysVisible:
+	Tooltip:
+		Name: Infantry Production
+	Buildable:
+		Description: Infantry Production
+
+ANYSUPPLY:
+	AlwaysVisible:
+	Tooltip:
+		Name: Supply Center
+	Buildable:
+		Description: Supply Center
+
+ANYTECH:
+	AlwaysVisible:
+	Tooltip:
+		Name: Tech Center
+	Buildable:
+		Description: Tech Center

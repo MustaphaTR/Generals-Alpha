@@ -1,0 +1,1396 @@
+vehicle.supply_truck:
+	Inherits: ^Vehicle
+	Inherits@REVEAL: ^Reveal150
+	Inherits@CRUSH: ^CrushesInfantry
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: Truck
+		BuildPaletteOrder: 1
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~building.prc_supply_center, ~techlevel.infonly
+		Description: Collects Ore and Gems for processing.\n  Unarmed
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Supply Truck
+		GenericName: Harvester
+	Selectable:
+		Priority: 7
+	SelectionDecorations:
+		VisualBounds: 42,42
+	DockClient:
+	Harvester:
+		Capacity: 12
+		Resources: Ore,Gems
+		BaleUnloadDelay: 1
+		SearchFromProcRadius: 30
+		SearchFromOrderRadius: 11
+	Health:
+		HP: 300
+	Armor:
+		Type: vehicle.truck
+	Mobile:
+		Speed: 40
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	WithHarvestAnimation:
+		PrefixByFullness: empty-, half-, full-
+	WithDockingAnimation:
+	Explodes:
+		Weapon: OreExplosion
+	Voiced:
+		VoiceSet: SupplyTruckVoice
+
+vehicle.humvee:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@REVEAL: ^Reveal150
+	Inherits@PILOT: ^EjectsPilotOnGround
+	Inherits@CRUSH: ^CrushesInfantry
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !tow_missile
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything && !tow_missile
+	AutoTargetPriority@DEFAULT_TOW:
+		RequiresCondition: !stance-attackanything && tow_missile
+		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Defense
+		InvalidTargets: NoAutoTarget
+	AutoTargetPriority@ATTACKANYTHING_TOW:
+		RequiresCondition: stance-attackanything && tow_missile
+		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
+		InvalidTargets: NoAutoTarget
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 1
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~building.usa_war_factory, ~techlevel.low
+		Description: Fast scout & anti-infantry vehicle.
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Humvee
+	Health:
+		HP: 240
+	Armor:
+		Type: vehicle.humvee
+	Mobile:
+		TurnSpeed: 10
+		Speed: 60
+		Voice: Move
+		RequiresCondition: !notmobile && !disabled && !driver_killed && !emp
+	Crushable:
+		CrushClasses: vehicle
+	Turreted@MG:
+		TurnSpeed: 10
+		Offset: 32,0,85
+	Turreted@TOW:
+		Turret: tow
+		TurnSpeed: 6
+		Offset: -160,0,85
+	Armament@MG:
+		Weapon: mg.humvee
+		MuzzleSequence: muzzle
+	Armament@TOWAG:
+		Turret: tow
+		Weapon: missile.humvee.ground
+		RequiresCondition: tow_missile
+	Armament@TOWAA:
+		Turret: tow
+		Weapon: missile.humvee.air
+		RequiresCondition: tow_missile
+	AttackTurreted:
+		RequiresCondition: !disabled && !driver_killed && !emp
+	WithMuzzleOverlay:
+	WithSpriteTurret@MG:
+	WithSpriteTurret@TOW:
+		Turret: tow
+		Sequence: turret2
+		RequiresCondition: tow_missile
+	GrantConditionOnPrerequisite@TOW_MISSILE:
+		Condition: tow_missile
+		Prerequisites: upgrade.tow_missile
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+		PipCount: 5
+		LoadingCondition: notmobile
+		PauseOnCondition: disabled || driver_killed || emp
+	AttackGarrisoned:
+		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
+		PortYaws: 0, 0, 512, 512
+		PortCones: 512, 512, 512, 512
+	Voiced:
+		VoiceSet: HumveeVoice
+
+vehicle.technical:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AP_BULLETS: ^AfftectedByAPBullets
+	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
+	Inherits@REVEAL: ^Reveal150
+	Inherits@CRUSH: ^CrushesInfantry
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 2
+		BuildDuration: 75
+		BuildDurationModifier: 100
+		Prerequisites: ~building.arms_dealer, ~techlevel.low
+		Description: Fast scout & anti-infantry vehicle.
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Technical
+	Health:
+		HP: 180
+	Armor:
+		Type: vehicle.truck
+	Mobile:
+		TurnSpeed: 10
+		Speed: 90
+		Voice: Move
+		RequiresCondition: !notmobile && !disabled && !driver_killed && !emp
+	Crushable:
+		CrushClasses: vehicle
+	Turreted:
+		TurnSpeed: 10
+		Offset: 0,0,128
+	Armament:
+		Weapon: mg.technical
+		MuzzleSequence: muzzle
+		LocalOffset: 128,0,43
+	AttackTurreted:
+		RequiresCondition: !disabled && !driver_killed && !emp
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+		PipCount: 5
+		LoadingCondition: notmobile
+		PauseOnCondition: disabled || driver_killed || emp
+	ProducibleWithLevel:
+		Prerequisites: upgrade.tech_training
+	Voiced:
+		VoiceSet: TechnicalVoice
+
+vehicle.radar_van:
+	Inherits: ^Vehicle
+	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
+	Inherits@REVEAL: ^Reveal200
+	Inherits@CRUSH: ^CrushesInfantry
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Radar Van
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 4
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~building.arms_dealer, ~techlevel.low
+		Description: Provides radar.
+	Health:
+		HP: 200
+	Armor:
+		Type: vehicle.truck
+	Mobile:
+		Speed: 40
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	WithIdleOverlay@SPINNER:
+		Sequence: spinner
+		Offset: -256,0,256
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 5c0
+	ProvidesRadar:
+		RequiresCondition: !disabled && !emp
+	SpawnActorPower@RADAR_VAN_SCAN:
+		Actor: camera.radar_van_scan
+		Prerequisites: ~upgrade.radar_van_scan
+		LifeTime: 200
+		ChargeTime: 30
+		Icon: radarscan
+		Description: Radar Van Scan
+		LongDesc: Reveals are small area of map for a while.\n\nAlso detects cloaked units in that area.
+		AllowMultiple: true
+		StartFullyCharged: false
+		OrderName: RadarScanPowerInfoOrder
+	Voiced:
+		VoiceSet: RadarVanVoice
+
+vehicle.scorpion_tank:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
+	Inherits@REVEAL: ^Reveal150
+	Inherits@CRUSH: ^CrushesInfantry
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 6
+		BuildDuration: 175
+		BuildDurationModifier: 100
+		Prerequisites: ~building.arms_dealer, ~techlevel.low
+		Description: Light Tank, good for scouting.
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Scorpion Tank
+	Health:
+		HP: 370
+	Armor:
+		Type: vehicle.tank
+	Mobile:
+		Speed: 40
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	Turreted@Cannon:
+		TurnSpeed: 7
+	Turreted@SC_ROCKET:
+		TurnSpeed: 7
+		Turret: sc_rocket
+		Offset: 0,64,128
+	Armament@Cannon:
+		Weapon: cannon.scorpion_tank
+		Recoil: 85
+		RecoilRecovery: 25
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		RequiresCondition: !toxin_shells
+	Armament@TOXIN_SHELLS:
+		Weapon: cannon.scorpion_tank.toxin
+		Recoil: 85
+		RecoilRecovery: 25
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && !anthrax_beta
+	Armament@ANTHRAX_BETA:
+		Weapon: cannon.scorpion_tank.toxin_beta
+		Recoil: 85
+		RecoilRecovery: 25
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && anthrax_beta
+	Armament@SC_ROCKET:
+		Weapon: missile.scorpion_tank
+		AmmoPoolName: secondary
+		Turret: sc_rocket
+		RequiresCondition: sc_rocket
+	AttackTurreted:
+		RequiresCondition: !disabled && !driver_killed && !emp
+	WithMuzzleOverlay:
+	WithSpriteTurret@NORMAL:
+	AmmoPool@SC_ROCKET:
+		Name: secondary
+		Ammo: 1
+		PipCount: 0
+		SelfReloads: true
+		ReloadCount: 1
+		SelfReloadDelay: 300
+	WithReloadingSpriteTurret@SC_ROCKET:
+		AmmoPoolName: secondary
+		Sequence: rocket
+		Turret: sc_rocket
+		RequiresCondition: sc_rocket
+	GrantConditionOnPrerequisite@SC_ROCKET:
+		Condition: sc_rocket
+		Prerequisites: upgrade.sc_rocket
+	GrantConditionOnPrerequisite@TOXIN_SHELLS:
+		Condition: toxin_shells
+		Prerequisites: upgrade.toxin_shells
+	GrantConditionOnPrerequisite@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Prerequisites: upgrade.anthrax_beta
+	Voiced:
+		VoiceSet: ScorpionTankVoice
+
+vehicle.crusader_tank:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PILOT: ^EjectsPilotOnGround
+	Inherits@REVEAL: ^Reveal125
+	Inherits@CRUSH: ^CrushesInfantry
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 5
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~building.usa_war_factory, ~techlevel.low
+		Description: Main Battle Tank.
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Crusader Tank
+	Health:
+		HP: 480
+	Armor:
+		Type: vehicle.tank
+	Mobile:
+		Speed: 30
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	Turreted:
+		TurnSpeed: 5
+	Armament:
+		Weapon: cannon.crusader_tank
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		RequiresCondition: !disabled && !driver_killed && !emp
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	DamageMultiplier@COMPOSITE_ARMOR:
+		RequiresCondition: composite_armor
+		Modifier: 70
+	GrantConditionOnPrerequisite@COMPOSITE_ARMOR:
+		Condition: composite_armor
+		Prerequisites: upgrade.composite_armor
+	SelectionDecorations:
+		VisualBounds: 28,28
+	Voiced:
+		VoiceSet: CrusaderTankVoice
+
+vehicle.battlemaster_tank:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@NUCLEAR_TANKS: ^AfftectedByNuclearTanks
+	Inherits@URANIUM_SHELLS: ^AfftectedByUraniumShells
+	Inherits@HORDE_BONUS: ^Horde
+	Inherits@REVEAL: ^Reveal150
+	Inherits@CRUSH: ^CrushesInfantry
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 7
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~building.prc_war_factory, ~techlevel.low
+		Description: Heavy tank.
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Battlemaster Tank
+	Health:
+		HP: 400
+	Armor:
+		Type: vehicle.tank
+	Mobile:
+		Speed: 25
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	Turreted:
+		TurnSpeed: 5
+	Armament:
+		Weapon: cannon.battlemaster_tank
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		RequiresCondition: !disabled && !driver_killed && !emp
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	SelectionDecorations:
+		VisualBounds: 28,28
+	Voiced:
+		VoiceSet: BattlemasterTankVoice
+
+vehicle.ambulance:
+	Inherits: ^Vehicle
+	Inherits@PILOT: ^EjectsPilotOnGround
+	Inherits@REVEAL: ^Reveal100
+	Inherits@CRUSH: ^CrushesInfantry
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 8
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~building.usa_war_factory, ~techlevel.medium
+		Description: Heals nearby infantry.
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Ambulance
+	Health:
+		HP: 240
+	Armor:
+		Type: vehicle.toxin_tractor
+	Mobile:
+		Speed: 60
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	ProximityExternalCondition:
+		Condition: ambulanceheal
+		Range: 4c0
+	Cargo:
+		Types: Infantry
+		MaxWeight: 3
+		PipCount: 3
+		LoadingCondition: notmobile
+		PauseOnCondition: disabled || driver_killed || emp
+	Voiced:
+		VoiceSet: AmbulanceVoice
+
+vehicle.quad_cannon:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AP_BULLETS: ^AfftectedByAPBullets
+	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
+	Inherits@REVEAL: ^Reveal300
+	Inherits@CRUSH: ^CrushesInfantry
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Quad Cannon
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 9
+		BuildDuration: 150
+		BuildDurationModifier: 100
+		Prerequisites: ~building.arms_dealer, ~techlevel.low
+		Description: Anti-aircraft/anti-infantry vehicle.
+	Mobile:
+		Speed: 40
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	Health:
+		HP: 300
+	Armor:
+		Type: vehicle.anti-air
+	Turreted:
+		TurnSpeed: 8
+		Offset: -256,0,160
+	Armament@PRIMARY:
+		Weapon: mg.quad_cannon.ground
+		LocalOffset: 213,128,0, 213,-128,0
+		MuzzleSequence: muzzle
+	Armament@SECONDARY:
+		Weapon: mg.quad_cannon.air
+		LocalOffset: 213,128,0, 213,-128,0
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		RequiresCondition: !disabled && !driver_killed && !emp
+	WithSpriteTurret:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: QuadCannonVoice
+
+vehicle.gatling_tank:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@CHAIN_GUN: ^AfftectedByChainGun
+	Inherits@REVEAL: ^Reveal150
+	Inherits@CRUSH: ^CrushesInfantry
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Gatling Tank
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 10
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~building.prc_war_factory, ~techlevel.low
+		Description: Anti-aircraft/anti-infantry vehicle.
+	Mobile:
+		Speed: 40
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	Health:
+		HP: 300
+	Armor:
+		Type: vehicle.anti-air
+	Turreted:
+		TurnSpeed: 8
+		Offset: 0,0,160
+	ReloadDelayMultiplier@Gatling1:
+		RequiresCondition: gatling >= 1
+		Modifier: 50
+	ReloadDelayMultiplier@Gatling2:
+		RequiresCondition: gatling >= 2
+		Modifier: 50
+	Armament@GatlingAG:
+		Weapon: gatling.gatling_tank.ground
+		LocalOffset: 213,0,0
+		MuzzleSequence: muzzle
+	Armament@GatlingAA:
+		Weapon: gatling.gatling_tank.air
+		LocalOffset: 213,0,0
+		MuzzleSequence: muzzle
+	GrantStackableConditionOnFire@gatling:
+		Condition: gatling
+		ArmamentName: primary
+		RequiredShotsPerStack: 10
+		MaximumInstances: 2
+		RevokeDelay: 40
+		RevokeAll: true
+		IsCyclic: false
+	AttackTurreted:
+		RequiresCondition: !disabled && !driver_killed && !emp
+	WithSpriteTurret:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GatlingTankVoice
+
+vehicle.toxin_tractor:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@REVEAL: ^Reveal100
+	Inherits@CRUSH: ^CrushesInfantry
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Toxin Tractor
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 11
+		BuildDuration: 125
+		BuildDurationModifier: 100
+		Prerequisites: ~building.arms_dealer, ~techlevel.medium
+		Description: Toxin-throwing vehicle.
+	Mobile:
+		TurnSpeed: 5
+		Speed: 30
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	Health:
+		HP: 240
+	Armor:
+		Type: vehicle.toxin_tractor
+	Armament@ALPHA:
+		Weapon: ToxinLauncher
+		LocalOffset: 600,0,90
+		RequiresCondition: !anthrax_beta
+	Armament@BETA:
+		Weapon: ToxinLauncher.beta
+		LocalOffset: 600,0,90
+		RequiresCondition: anthrax_beta
+	AttackTurreted:
+		RequiresCondition: !disabled && !driver_killed && !emp
+	WithSpriteTurret:
+	Turreted:
+		TurnSpeed: 6
+		Offset: -192,0,160
+	GrantConditionOnPrerequisite@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Prerequisites: upgrade.anthrax_beta
+	Voiced:
+		VoiceSet: ToxinTractorVoice
+
+vehicle.dragon_tank:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@REVEAL: ^Reveal100
+	Inherits@CRUSH: ^CrushesInfantry
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Dragon Tank
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 12
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~building.prc_war_factory, ~techlevel.medium
+		Description: Flame-throwing vehicle.
+	Mobile:
+		TurnSpeed: 6
+		Speed: 30
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	Health:
+		HP: 280
+	Armor:
+		Type: vehicle.dragon_tank
+	Armament@Red:
+		Weapon: flamer.dragon_tank
+		LocalOffset: 512,128,42, 512,-128,42
+		RequiresCondition: !black_napalm
+	Armament@Blue:
+		Weapon: flamer.dragon_tank.blue
+		LocalOffset: 512,128,42, 512,-128,42
+		RequiresCondition: black_napalm
+	GrantConditionOnPrerequisite@BLACK_NAPALM:
+		Condition: black_napalm
+		Prerequisites: upgrade.black_napalm
+	AttackFrontal:
+		RequiresCondition: !disabled && !driver_killed && !emp
+	Voiced:
+		VoiceSet: DragonTankVoice
+
+vehicle.rocket_buggy:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AP_ROCKETS: ^AfftectedByAPRockets
+	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
+	Inherits@REVEAL: ^Reveal180
+	Inherits@CRUSH: ^CrushesInfantry
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Rocket Buggy
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 13
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: building.palace, ~building.arms_dealer, ~techlevel.medium
+		Description: Rocket artillery.
+	Mobile:
+		TurnSpeed: 10
+		Speed: 90
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	Health:
+		HP: 120
+	Armor:
+		Type: vehicle.truck
+	Armament@3:
+		Weapon: missile.rocket_buggy
+		LocalOffset: -128, -170, 170, -128, 170, 170
+		LocalYaw: 100, -100
+		RequiresCondition: !buggy_ammo
+	Armament@6:
+		Weapon: missile.rocket_buggy.upgraded
+		LocalOffset: -128, -170, 170, -128, 170, 170, -128, 0, 170
+		LocalYaw: 100, -100
+		RequiresCondition: buggy_ammo
+	Turreted:
+		TurnSpeed: 6
+		Offset: -196,0,85
+	WithSpriteTurret:
+		RequiresCondition: buggy_ammo
+	GrantConditionOnPrerequisite@BUGGY_AMMO:
+		Condition: buggy_ammo
+		Prerequisites: upgrade.buggy_ammo
+	AttackFrontal:
+		RequiresCondition: !disabled && !driver_killed && !emp
+	Voiced:
+		VoiceSet: RocketBuggyVoice
+
+vehicle.troop_crawler:
+	Inherits: ^Tank
+	Inherits@REVEAL: ^Reveal175
+	Inherits@CRUSH: ^CrushesInfantry
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 14
+		BuildDuration: 375
+		BuildDurationModifier: 100
+		Prerequisites: ~building.prc_war_factory, ~techlevel.low
+		Description: Tough infantry transport. Comes with 8 red guards.
+	Valued:
+		Cost: 1400
+	Tooltip:
+		Name: Troop Crawler
+	Health:
+		HP: 240
+	Armor:
+		Type: vehicle.tank
+	Mobile:
+		Speed: 40
+		Voice: Move
+		RequiresCondition: !notmobile && !disabled && !driver_killed && !emp
+	Crushable:
+		CrushClasses: vehicle
+	Cargo:
+		Types: Infantry
+		MaxWeight: 8
+		PipCount: 8
+		InitialUnits: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard
+		LoadingCondition: notmobile
+		PauseOnCondition: disabled || driver_killed || emp
+	AIDeployHelper:
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 4c384
+	Voiced:
+		VoiceSet: TroopCrawlerVoice
+
+vehicle.tomahawk_launcher:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PILOT: ^EjectsPilotOnGround
+	Inherits@REVEAL: ^Reveal180
+	Inherits@CRUSH: ^CrushesInfantry
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Tomahawk Launcher
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 15
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~techlevel.medium
+		Description: Long-range rocket artillery.
+	Mobile:
+		Speed: 30
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	Health:
+		HP: 180
+	Armor:
+		Type: vehicle.truck
+	Turreted:
+		TurnSpeed: 8
+		Offset: -128,0,128
+		RealignDelay: 0
+	Armament:
+		Weapon: missile.tomahawk_launcher
+		LocalOffset: 0,-171,0
+	AmmoPool:
+		Ammo: 1
+		PipCount: 0
+		SelfReloads: true
+		ReloadCount: 1
+		SelfReloadDelay: 90
+	AttackTurreted:
+		RequiresCondition: !disabled && !driver_killed && !emp
+	WithReloadingSpriteTurret:
+		AmmoPoolName: primary
+	Voiced:
+		VoiceSet: TomahawkLauncherVoice
+
+vehicle.scud_launcher:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
+	Inherits@REVEAL: ^Reveal180
+	Inherits@CRUSH: ^CrushesInfantry
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 16
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: building.palace, ~building.arms_dealer, ~techlevel.medium
+		Description: Long-range rocket artillery.
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: SCUD Launcher
+	Health:
+		HP: 180
+	Armor:
+		Type: vehicle.truck
+	Mobile:
+		Speed: 20
+		TurnSpeed: 3
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	Armament:
+		Weapon: missile.scud_launcher
+		RequiresCondition: !bio_bombs && !hi_explosive_bombs
+	Armament@BIO:
+		Weapon: missile.scud_launcher.toxin
+		RequiresCondition: bio_bombs && !anthrax_beta
+	Armament@BETA:
+		Weapon: missile.scud_launcher.toxin_beta
+		RequiresCondition: bio_bombs && anthrax_beta
+	Armament@EXP:
+		Weapon: missile.scud_launcher.explosive
+		RequiresCondition: hi_explosive_bombs
+	AttackFrontal:
+		RequiresCondition: !disabled && !driver_killed && !emp
+	Turreted:
+		TurnSpeed: 5
+	SelectionDecorations:
+		VisualBounds: 28,28
+	Explodes:
+		Weapon: V2Explode
+	GrantConditionOnPrerequisite@BIO_BOMBS:
+		Condition: bio_bombs
+		Prerequisites: strategy.bio_bombs
+	GrantConditionOnPrerequisite@HI_EXPLOSIVE_BOMBS:
+		Condition: hi_explosive_bombs
+		Prerequisites: strategy.hi_explosive_bombs
+	GrantConditionOnPrerequisite@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Prerequisites: upgrade.anthrax_beta
+	AmmoPool:
+		Ammo: 1
+		PipCount: 0
+		SelfReloads: true
+		ReloadCount: 1
+		SelfReloadDelay: 200
+	WithReloadingSpriteTurret:
+		AmmoPoolName: primary
+	Voiced:
+		VoiceSet: SCUDLauncherVoice
+
+vehicle.inferno_cannon:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@REVEAL: ^Reveal180
+	Inherits@CRUSH: ^CrushesInfantry
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 17
+		BuildDuration: 375
+		BuildDurationModifier: 100
+		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~techlevel.medium
+		Description: Long-range artillery.
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Inferno Cannon
+	Health:
+		HP: 120
+	Armor:
+		Type: vehicle.tank
+	Mobile:
+		TurnSpeed: 3
+		Speed: 20
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	Armament@Red:
+		Weapon: cannon.inferno_cannon
+		LocalOffset: 624,0,208
+		MuzzleSequence: muzzle
+		RequiresCondition: !black_napalm
+	Armament@Blue:
+		Weapon: cannon.inferno_cannon.blue
+		LocalOffset: 624,0,208
+		MuzzleSequence: muzzle
+		RequiresCondition: black_napalm
+	GrantConditionOnPrerequisite@BLACK_NAPALM:
+		Condition: black_napalm
+		Prerequisites: upgrade.black_napalm
+	AttackFrontal:
+		RequiresCondition: !disabled && !driver_killed && !emp
+	WithMuzzleOverlay:
+	Explodes:
+		Weapon: ArtilleryExplode
+		EmptyWeapon: UnitExplodeSmall
+		LoadedChance: 75
+	ProducibleWithLevel:
+		Prerequisites: upgrade.arty_training
+	Voiced:
+		VoiceSet: InfernoCannonVoice
+
+vehicle.paladin_tank:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PILOT: ^EjectsPilotOnGround
+	Inherits@REVEAL: ^Reveal150
+	Inherits@CRUSH: ^CrushesInfantry
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 18
+		BuildDuration: 300
+		BuildDurationModifier: 100
+		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~techlevel.high
+		Description: Heavy tank.\n\nCan deflect enemy missiles with laser.
+	Valued:
+		Cost: 1100
+	Tooltip:
+		Name: Paladin Tank
+	Health:
+		HP: 500
+	Armor:
+		Type: vehicle.tank
+	Mobile:
+		Speed: 30
+		Voiced: Move
+	Crushable:
+		CrushClasses: vehicle
+	Turreted:
+		TurnSpeed: 3
+		Offset: 0,0,160
+	Armament@Cannon:
+		Weapon: cannon.paladin_tank
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+	Armament@PDLASER:
+		Weapon: laser.paladin_tank
+		LocalOffset: 0,213,-85
+		Name: pdlaser
+	ShootsMissiles:
+		ShootStances: Neutral, Enemy
+		Armament: pdlaser
+	AttackTurreted:
+		Armaments: primary, pdlaser
+		RequiresCondition: !disabled && !driver_killed && !emp
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	DamageMultiplier@COMPOSITE_ARMOR:
+		RequiresCondition: composite_armor
+		Modifier: 83
+	GrantConditionOnPrerequisite@COMPOSITE_ARMOR:
+		Condition: composite_armor
+		Prerequisites: upgrade.composite_armor
+	SelfHealing:
+		Step: 1
+		Delay: 3
+		HealIfBelow: 50
+		DamageCooldown: 150
+	SelectionDecorations:
+		VisualBounds: 28,28,0,-4
+	Voiced:
+		VoiceSet: PaladinTankVoice
+
+vehicle.marauder_tank:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
+	Inherits@REVEAL: ^Reveal125
+	Inherits@CRUSH: ^CrushesInfantry
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 19
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~building.arms_dealer, building.palace, ~techlevel.high
+		Description: Medium tank.
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Marauder Tank
+	Health:
+		HP: 500
+	Armor:
+		Type: vehicle.tank
+	Mobile:
+		Speed: 40
+		Voiced: Move
+	Crushable:
+		CrushClasses: vehicle
+	Turreted:
+		TurnSpeed: 3
+		Offset: 128,0,-64
+	Armament@Cannon:
+		Weapon: cannon.marauder_tank
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+		RequiresCondition: !toxin_shells
+	Armament@TOXIN_SHELLS:
+		Weapon: cannon.marauder_tank.toxin
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && !anthrax_beta
+	Armament@ANTHRAX_BETA:
+		Weapon: cannon.marauder_tank.toxin_beta
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && anthrax_beta
+	AttackTurreted:
+		RequiresCondition: !disabled && !driver_killed && !emp
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	GrantConditionOnPrerequisite@TOXIN_SHELLS:
+		Condition: toxin_shells
+		Prerequisites: upgrade.toxin_shells
+	GrantConditionOnPrerequisite@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Prerequisites: upgrade.anthrax_beta
+	Voiced:
+		VoiceSet: MarauderTankVoice
+
+vehicle.overlord_tank:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@NUCLEAR_TANKS: ^AfftectedByNuclearTanks
+	Inherits@URANIUM_SHELLS: ^AfftectedByUraniumShells
+	Inherits@REVEAL: ^Reveal150
+	Inherits@CRUSH: ^CrushesVehicles
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !overlord_gatling
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: !stance-attackanything && !overlord_gatling
+	AutoTargetPriority@DEFAULT_GATLING:
+		RequiresCondition: !stance-attackanything && overlord_gatling
+		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Defense
+		InvalidTargets: NoAutoTarget
+	AutoTargetPriority@ATTACKANYTHING_GATLING:
+		RequiresCondition: stance-attackanything && overlord_gatling
+		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
+		InvalidTargets: NoAutoTarget
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 20
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~techlevel.high
+		Description: Big and slow tank.
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Overlord Tank
+	Health:
+		HP: 1100
+	Armor:
+		Type: vehicle.tank
+	Mobile:
+		Speed: 20
+		Voiced: Move
+		RequiresCondition: !notmobile && !disabled && !driver_killed && !emp
+	Turreted@Cannon:
+		TurnSpeed: 2
+	Turreted@Gatling:
+		Turret: gatling
+		TurnSpeed: 2
+		Offset: 0,0,384
+	Turreted@Bunker:
+		Turret: bunker
+		TurnSpeed: 255
+		Offset: 0,0,384
+	Turreted@Speaker:
+		Turret: speaker
+		TurnSpeed: 255
+		Offset: 0,0,256
+	Armament:
+		Weapon: cannon.overlord_tank
+		LocalOffset: 900,180,340, 900,-180,340
+		Recoil: 171
+		RecoilRecovery: 30
+		MuzzleSequence: muzzle
+	Armament@GatlingAG0:
+		Weapon: gatling.gatling_tank.ground
+		Name: gatling
+		Turret: gatling
+		LocalOffset: 213,0,0
+		MuzzleSequence: muzzle2
+		RequiresCondition: gatling == 0 && overlord_gatling
+	Armament@GatlingAA0:
+		Weapon: gatling.gatling_tank.air
+		Name: gatling
+		Turret: gatling
+		LocalOffset: 213,0,0
+		MuzzleSequence: muzzle2
+		RequiresCondition: gatling == 0 && overlord_gatling
+	Armament@GatlingAG1:
+		Weapon: gatling.gatling_tank.ground.1
+		Name: gatling
+		Turret: gatling
+		LocalOffset: 213,0,0
+		MuzzleSequence: muzzle2
+		RequiresCondition: gatling == 1 && overlord_gatling
+	Armament@GatlingAA1:
+		Weapon: gatling.gatling_tank.air.1
+		Name: gatling
+		Turret: gatling
+		LocalOffset: 213,0,0
+		MuzzleSequence: muzzle2
+		RequiresCondition: gatling == 1 && overlord_gatling
+	Armament@GatlingAG2:
+		Weapon: gatling.gatling_tank.ground.2
+		Name: gatling
+		Turret: gatling
+		LocalOffset: 213,0,0
+		MuzzleSequence: muzzle2
+		RequiresCondition: gatling == 2 && overlord_gatling
+	Armament@GatlingAA2:
+		Weapon: gatling.gatling_tank.air.2
+		Name: gatling
+		Turret: gatling
+		LocalOffset: 213,0,0
+		MuzzleSequence: muzzle2
+		RequiresCondition: gatling == 2 && overlord_gatling
+	AttackTurreted:
+		Armaments: gatling, primary
+		RequiresCondition: !disabled && !driver_killed && !emp
+	AttackGarrisoned:
+		Turret: bunker
+		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 88, 88, 88, 88, 88, 88
+		RequiresCondition: !disabled && !driver_killed && !emp && overlord_bunker
+	WithMuzzleOverlay:
+	WithSpriteTurret@Cannon:
+	WithSpriteTurret@Bunker:
+		Sequence: turret_bunker
+		Turret: bunker
+		RequiresCondition: overlord_bunker
+	WithSpriteTurret@Gatling:
+		Sequence: turret_gatling
+		Turret: gatling
+		RequiresCondition: overlord_gatling
+	WithSpriteTurret@Speaker:
+		Sequence: turret_speaker
+		Turret: speaker
+		RequiresCondition: overlord_speaker
+	SelfHealing:
+		Step: 1
+		Delay: 3
+		HealIfBelow: 50
+		DamageCooldown: 150
+	Cargo@OVERLORD_BUNKER:
+		Types: Infantry
+		MaxWeight: 5
+		PipCount: 5
+		PauseOnCondition: disabled || driver_killed || emp
+		LoadingCondition: notmobile
+		RequiresCondition: overlord_bunker
+	GrantConditionOnPrerequisite@OVERLORD_BUNKER:
+		Condition: overlord_bunker
+		Prerequisites: strategy.overlord_bunker
+	GrantConditionOnPrerequisite@OVERLORD_GATLING:
+		Condition: overlord_gatling
+		Prerequisites: strategy.overlord_gatling
+	GrantConditionOnPrerequisite@OVERLORD_SPEAKER:
+		Condition: overlord_speaker
+		Prerequisites: strategy.overlord_speaker
+	SelectionDecorations:
+		VisualBounds: 44,38,0,-4
+	GrantStackableConditionOnFire@gatling:
+		Condition: gatling
+		ArmamentName: gatling
+		RequiredShotsPerStack: 10
+		MaximumInstances: 2
+		RevokeDelay: 40
+		RevokeAll: true
+		IsCyclic: false
+	ProximityExternalCondition@SPEAKER:
+		Condition: speaker_tower
+		Range: 4c0
+		RequiresCondition: overlord_speaker
+	Voiced:
+		VoiceSet: OverlordTankVoice
+
+vehicle.bomb_truck:
+	Inherits: ^Vehicle
+	Inherits@REVEAL: ^Reveal150
+	Inherits@CRUSH: ^CrushesInfantry
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 21
+		BuildDuration: 375
+		BuildDurationModifier: 100
+		Prerequisites: building.palace, ~building.arms_dealer, ~techlevel.high
+		Description: Suicide vehicle.
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Bomb Truck
+		RequiresCondition: !disguise
+	DisguiseTooltip:
+		Name: Bomb Truck
+		GenericName: Vehicle
+		RequiresCondition: disguise
+	Health:
+		HP: 220
+	Armor:
+		Type: vehicle.truck
+	Mobile:
+		Speed: 50
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	Explodes@Normal:
+		Weapon: BombTruckExplosion
+		EmptyWeapon: BombTruckExplosion
+		RequiresCondition: !bio_bombs && !hi_explosive_bombs
+	Explodes@BIO_BOMBS:
+		Weapon: BombTruckExplosion.toxin
+		EmptyWeapon: BombTruckExplosion.toxin
+		RequiresCondition: bio_bombs && !anthrax_beta
+	Explodes@ANTHRAX_BETA:
+		Weapon: BombTruckExplosion.toxin_beta
+		EmptyWeapon: BombTruckExplosion.toxin_beta
+		RequiresCondition: bio_bombs && anthrax_beta
+	Explodes@HI_EXPLOSIVE_BOMBS:
+		Weapon: MiniNuke
+		EmptyWeapon: MiniNuke
+		RequiresCondition: hi_explosive_bombs
+	AttackSuicides:
+	GrantConditionOnPrerequisite@BIO_BOMBS:
+		Condition: bio_bombs
+		Prerequisites: strategy.bio_bombs
+	GrantConditionOnPrerequisite@HI_EXPLOSIVE_BOMBS:
+		Condition: hi_explosive_bombs
+		Prerequisites: strategy.hi_explosive_bombs
+	GrantConditionOnPrerequisite@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Prerequisites: upgrade.anthrax_beta
+	WithFacingSpriteBody:
+		RequiresCondition: !disguise
+	WithDisguisingFacingSpriteBody:
+		RequiresCondition: disguise
+	Disguise:
+		Types: Vehicle-Disguise
+		Voice: Move
+		RequiresCondition: disguise
+	GrantConditionOnPrerequisite@DISGUISE:
+		Condition: disguise
+		Prerequisites: strategy.disguise
+	Voiced:
+		VoiceSet: BombTruckVoice
+
+vehicle.nuke_cannon:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@REVEAL: ^Reveal180
+	Inherits@CRUSH: ^CrushesInfantry
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildPaletteOrder: 22
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~techlevel.high
+		Description: Heavy artillery unit armed with nuclear warheads.
+	Valued:
+		Cost: 1600
+	Tooltip:
+		Name: Nuke Cannon
+	Health:
+		HP: 240
+	Armor:
+		Type: vehicle.tank
+	Mobile:
+		Speed: 20
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	Turreted:
+		TurnSpeed: 3
+		Offset: 0,0,160
+	Armament:
+		Weapon: cannon.nuke_cannon
+		LocalOffset: 624,0,208
+		Recoil: 200
+		RecoilRecovery: 30
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		RequiresCondition: !disabled && !driver_killed && !emp
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	SelectionDecorations:
+		VisualBounds: 44,38,0,-4
+	ProducibleWithLevel:
+		Prerequisites: upgrade.arty_training
+	Voiced:
+		VoiceSet: NukeCannonVoice
+
+^default.mcc:
+	Inherits: ^Vehicle
+	Inherits@REVEAL: ^Reveal200
+	Inherits@CRUSH: ^CrushesInfantry
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: WarFactory
+		BuildDuration: 750
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 2000
+	Selectable:
+		Priority: 4
+	SelectionDecorations:
+		VisualBounds: 42,42
+	Health:
+		HP: 600
+	Armor:
+		Type: vehicle.truck
+	Mobile:
+		Speed: 25
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	Transforms:
+		IntoActor: building.usa_command_center
+		Offset: -1,-1
+		Facing: 96
+		TransformSounds: placbldg.aud, build5.aud
+		NoTransformNotification: BuildingCannotPlaceAudio
+		Voice: Deploy
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	BaseBuilding:
+	WithTextDecoration@SIDE:
+		Text: 
+		ZOffset: 2048
+		ReferencePoint: Top
+
+vehicle.usa_mcc:
+	Inherits: ^default.mcc
+	Inherits@PILOT: ^EjectsPilotOnGround
+	Buildable:
+		BuildPaletteOrder: 23
+		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~techlevel.medium
+		Description: Deploys into another USA Command Center.\n  Unarmed
+	Tooltip:
+		Name: USA Mobile Command Center
+	Voiced:
+		VoiceSet: USAMCCVoice
+	WithTextDecoration@SIDE:
+		Text: USA
+		Color: 0000FF
+
+vehicle.gla_mcc:
+	Inherits: ^default.mcc
+	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
+	Buildable:
+		BuildPaletteOrder: 24
+		Prerequisites: building.palace, ~building.arms_dealer, ~techlevel.medium
+		Description: Deploys into another GLA Command Center.\n  Unarmed
+	Tooltip:
+		Name: GLA Mobile Command Center
+	Transforms:
+		IntoActor: building.gla_command_center
+	Voiced:
+		VoiceSet: GLAMCCVoice
+	WithTextDecoration@SIDE:
+		Text: GLA
+		Color: 00FF00
+
+vehicle.prc_mcc:
+	Inherits: ^default.mcc
+	Inherits@REVEAL: ^Reveal150
+	Buildable:
+		BuildPaletteOrder: 25
+		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~techlevel.medium
+		Description: Deploys into another PRC Command Center.\n  Unarmed
+	Tooltip:
+		Name: PRC Mobile Command Center
+	Transforms:
+		IntoActor: building.prc_command_center
+	Voiced:
+		VoiceSet: PRCMCCVoice
+	WithTextDecoration@SIDE:
+		Text: PRC
+		Color: FF0000

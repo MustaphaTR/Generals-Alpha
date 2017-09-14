@@ -1,0 +1,641 @@
+^default.badger:
+	Inherits: ^NeutralPlane
+	Health:
+		HP: 1000
+	Armor:
+		Type: aircraft.normal
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 5
+		Speed: 150 #175
+		Repulsable: False
+		MaximumPitch: 56
+	-Selectable:
+	SelectionDecorations:
+		RenderSelectionBars: False
+	-Voiced:
+	Contrail@1:
+		Offset: -432,560,0
+	Contrail@2:
+		Offset: -432,-560,0
+	SpawnActorOnDeath:
+		Actor: husk.badger
+	SmokeTrailWhenDamaged@0:
+		Offset: -432,560,0
+		Interval: 2
+	SmokeTrailWhenDamaged@1:
+		Offset: -432,-560,0
+		Interval: 2
+	RejectsOrders:
+	RenderSprites:
+		Image: aircraft.badger
+	GivesExperience:
+		Experience: 1000
+
+aircraft.badger:
+	Inherits: ^default.badger
+	ParaDrop:
+		DropRange: 4c0
+	Cargo:
+		MaxWeight: 10
+	Tooltip:
+		Name: Cargo Plane
+
+aircraft.badger.fuel_air_bomb:
+	Inherits: ^default.badger
+	AttackBomber:
+	Armament:
+		Weapon: parabomb.fuel_air_bomb
+	AmmoPool:
+		Ammo: 1
+	Tooltip:
+		Name: B-52
+
+aircraft.badger.anthrax_bomb:
+	Inherits: ^default.badger
+	AttackBomber:
+	Armament@Normal:
+		Weapon: parabomb.anthrax
+		RequiresCondition: !anthrax_beta
+	Armament@ANTHRAX_BETA:
+		Weapon: parabomb.anthrax.beta
+		RequiresCondition: anthrax_beta
+	GrantConditionOnPrerequisite@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Prerequisites: upgrade.anthrax_beta
+	AmmoPool:
+		Ammo: 1
+	Tooltip:
+		Name: B-52
+
+aircraft.badger.emp:
+	Inherits: ^default.badger
+	AttackBomber:
+	Armament:
+		Weapon: parabomb.emp
+	AmmoPool:
+		Ammo: 1
+	Tooltip:
+		Name: Badger
+
+aircraft.cargo_plane:
+	Inherits: ^default.badger
+	Tooltip:
+		Name: Cargo Plane
+	Contrail@1:
+		Offset: -261,-650,0
+		TrailLength: 15
+	Contrail@2:
+		Offset: -85,-384,0
+		TrailLength: 16
+	Contrail@3:
+		Offset: -85,384,0
+		TrailLength: 16
+	Contrail@4:
+		Offset: -261,650,0
+		TrailLength: 15
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 326
+		Repulsable: False
+		MaximumPitch: 36
+	RenderSprites:
+		PlayerPalette: cncplayer
+
+aircraft.mig:
+	Inherits: ^Plane
+	Inherits@REVEAL: ^Reveal200
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 3
+		BuildDuration: 375
+		BuildDurationModifier: 100
+		Prerequisites: ~building.prc_airfield, ~techlevel.medium
+		Description: Multi-role fighter plane.
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: MiG
+	Health:
+		HP: 160
+	Armor:
+		Type: aircraft.normal
+	Armament@Red:
+		Weapon: missile.mig
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+		RequiresCondition: !black_napalm
+	Armament@Blue:
+		Weapon: missile.mig.blue
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+		RequiresCondition: black_napalm
+	GrantConditionOnPrerequisite@BLACK_NAPALM:
+		Condition: black_napalm
+		Prerequisites: upgrade.black_napalm
+	AttackPlane:
+		FacingTolerance: 20
+	DockClient:
+	RevealsShroud:
+		Type: CenterPosition
+	RevealsShroud@SEARCH_AND_DESTROY:
+		Type: CenterPosition
+	RevealsShroud@INTELLIGENCE:
+		Type: CenterPosition
+	Aircraft:
+		CruiseAltitude: 2560
+		InitialFacing: 192
+		TurnSpeed: 4
+		Speed: 160
+		RepulsionSpeed: 40
+		MaximumPitch: 56
+		Voice: Move
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+	AmmoPool:
+		Ammo: 2
+		ReloadDelay: 100
+	ReturnOnIdle:
+	Selectable:
+		Bounds: 36,28,0,2
+	SelectionDecorations:
+		VisualBounds: 40,29,0,1
+	Contrail@1:
+		Offset: -598,-683,0
+	Contrail@2:
+		Offset: -598,683,0
+	SpawnActorOnDeath:
+		Actor: husk.mig
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+	GrantConditionOnPrerequisite@MiGArmor:
+		Condition: mig_armor
+		Prerequisites: upgrade.mig_armor
+	DamageMultiplier:
+		Modifier: 80
+		RequiresCondition: mig_armor
+	Voiced:
+		VoiceSet: MiGVoice
+
+aircraft.raptor:
+	Inherits: ^Plane
+	Inherits@REVEAL: ^Reveal180
+	Inherits@LASER_MISSILES: ^AfftectedByLaserGuidedMissiles
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 2
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: ~building.usa_airfield, ~techlevel.medium
+		Description: Multi-role fighter plane.
+	Valued:
+		Cost: 1400
+	Tooltip:
+		Name: Raptor
+	Health:
+		HP: 160
+	Armor:
+		Type: aircraft.normal
+	Armament:
+		Weapon: missile.raptor
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+	AttackPlane:
+		FacingTolerance: 20
+	DockClient:
+	RevealsShroud:
+		Type: CenterPosition
+	RevealsShroud@SEARCH_AND_DESTROY:
+		Type: CenterPosition
+	RevealsShroud@INTELLIGENCE:
+		Type: CenterPosition
+	Aircraft:
+		CruiseAltitude: 2560
+		InitialFacing: 192
+		TurnSpeed: 4
+		Speed: 175
+		RepulsionSpeed: 40
+		MaximumPitch: 56
+		Voice: Move
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+	AmmoPool:
+		Ammo: 4
+		ReloadDelay: 50
+	ReturnOnIdle:
+	Selectable:
+		Bounds: 36,28,0,2
+	SelectionDecorations:
+		VisualBounds: 40,29,0,1
+	Contrail@1:
+		Offset: -598,-683,0
+	Contrail@2:
+		Offset: -598,683,0
+	SpawnActorOnDeath:
+		Actor: husk.raptor
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+	Voiced:
+		VoiceSet: RaptorVoice
+	RenderSprites:
+		Scale: 0.9
+
+aircraft.stealth_fighter:
+	Inherits: ^Plane
+	Inherits@REVEAL: ^Reveal180
+	Inherits@LASER_MISSILES: ^AfftectedByLaserGuidedMissiles
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 5
+		BuildDuration: 625
+		BuildDurationModifier: 100
+		Prerequisites: ~building.usa_airfield, ~techlevel.high
+		Description: Stealth fighter plane.
+	Valued:
+		Cost: 1600
+	Tooltip:
+		Name: Stealth Fighter
+	Health:
+		HP: 120
+	Armor:
+		Type: aircraft.normal
+	Armament:
+		Weapon: missile.stealth_fighter
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+	AttackPlane:
+		FacingTolerance: 20
+	DockClient:
+	RevealsShroud:
+		Type: CenterPosition
+	RevealsShroud@SEARCH_AND_DESTROY:
+		Type: CenterPosition
+	RevealsShroud@INTELLIGENCE:
+		Type: CenterPosition
+	Aircraft:
+		CruiseAltitude: 2560
+		InitialFacing: 192
+		TurnSpeed: 4
+		Speed: 175
+		RepulsionSpeed: 40
+		MaximumPitch: 56
+		Voice: Move
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+	AmmoPool:
+		Ammo: 2
+		ReloadDelay: 100
+	ReturnOnIdle:
+	Selectable:
+		Bounds: 36,28,0,2
+	SelectionDecorations:
+		VisualBounds: 40,29,0,1
+	Contrail@1:
+		Offset: -598,-683,0
+	Contrail@2:
+		Offset: -598,683,0
+	SpawnActorOnDeath:
+		Actor: husk.stealth_fighter
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+	Cloak:
+		InitialDelay: 125
+		CloakDelay: 60
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	Voiced:
+		VoiceSet: StealthFighterVoice
+	RenderSprites:
+		Scale: 0.9
+
+aircraft.aurora:
+	Inherits: ^Plane
+	Inherits@REVEAL: ^Reveal180
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 6
+		BuildDuration: 625
+		BuildDurationModifier: 100
+		Prerequisites: ~building.usa_airfield, building.strategy_center, ~techlevel.high
+		Description: Fast fighter plane.\n\nCan not be damaged while attacking.\n\nSlows down and becomes vulnerable after attacking.
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Aurora
+	Health:
+		HP: 80
+	Armor:
+		Type: aircraft.normal
+	Armament:
+		Weapon: missile.aurora
+		LocalYaw: -40, 24
+	AttackPlane:
+		FacingTolerance: 20
+	DockClient:
+	RevealsShroud:
+		Type: CenterPosition
+	RevealsShroud@SEARCH_AND_DESTROY:
+		Type: CenterPosition
+	RevealsShroud@INTELLIGENCE:
+		Type: CenterPosition
+	Aircraft:
+		CruiseAltitude: 2560
+		InitialFacing: 192
+		TurnSpeed: 6
+		Speed: 180
+		RepulsionSpeed: 40
+		MaximumPitch: 56
+		Voice: Move
+	GrantConditionOnAttack:
+		Condition: supersonic
+	SpeedMultiplier:
+		Modifier: 266
+		RequiresCondition: supersonic
+	DamageMultiplier@SUPERSONIC:
+		RequiresCondition: supersonic
+		Modifier: 0
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+	AmmoPool:
+		Ammo: 1
+		ReloadDelay: 125
+	ReturnOnIdle:
+	Selectable:
+		Bounds: 36,28,0,2
+	SelectionDecorations:
+		VisualBounds: 40,29,0,1
+	Contrail@1:
+		Offset: -598,-683,0
+	Contrail@2:
+		Offset: -598,683,0
+	SpawnActorOnDeath:
+		Actor: husk.aurora
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+	Voiced:
+		VoiceSet: AuroraVoice
+	RenderSprites:
+		Scale: 0.9
+
+aircraft.spy_drone:
+	Inherits: ^Plane
+	Inherits@REVEAL: ^Reveal250
+	Valued:
+		Cost: 250
+	Tooltip:
+		Name: Spy Drone
+	Health:
+		HP: 200
+	Armor:
+		Type: aircraft.normal
+	RevealsShroud:
+		Type: CenterPosition
+	RevealsShroud@SEARCH_AND_DESTROY:
+		Type: CenterPosition
+	RevealsShroud@INTELLIGENCE:
+		Type: CenterPosition
+	Aircraft:
+		-RearmBuildings:
+		-RepairBuildings:
+		CruiseAltitude: 2560
+		InitialFacing: 192
+		TurnSpeed: 8
+		Speed: 65
+		RepulsionSpeed: 40
+		MaximumPitch: 56
+	SelectionDecorations:
+		VisualBounds: 30,28,0,2
+	Cloak:
+		InitialDelay: 0
+		CloakDelay: 50
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	Contrail:
+		Offset: -853,0,0
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 6c256
+	SpawnActorOnDeath:
+		Actor: husk.spy_drone
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,0
+		Interval: 2
+	RenderSprites:
+		Scale: 0.5
+
+aircraft.a10:
+	Inherits: ^NeutralPlane
+	Tooltip:
+		Name: A-10 Thunderbolt
+	Health:
+		HP: 600
+	Armor:
+		Type: Heavy
+	Valued:
+		Cost: 2000
+	Aircraft:
+		TurnSpeed: 4
+		Speed: 120
+		Repulsable: False
+	AttackBomber:
+		Armaments: gun, bombs
+	Armament@GUNS:
+		Name: gun
+		Weapon: mg.a10
+		LocalOffset: 1024,0,-85
+	WithMuzzleOverlay:
+	Armament@BOMBS:
+		Name: bombs
+		Weapon: A10Bombs
+		LocalOffset: 0,-256,-43, 0,256,-43
+	Contrail@1:
+		Offset: -640,171,0
+		TrailLength: 15
+	Contrail@2:
+		Offset: -640,-171,0
+		TrailLength: 15
+	-Selectable:
+	SelectionDecorations:
+		RenderSelectionBars: False
+	-Voiced:
+	RejectsOrders:
+	SpawnActorOnDeath:
+		Actor: husk.a10
+	RenderSprites:
+		PlayerPalette: cncplayer
+
+aircraft.chinook:
+	Inherits: ^Vehicle
+	Inherits@REVEAL: ^Reveal300
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Chinook
+		BuildPaletteOrder: 1
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~building.usa_supply_center, ~techlevel.infonly
+		Description: Transport and collector helicopter.
+	HitShape:
+		TargetableOffsets: 0,0,2048
+		Type: Circle
+			Radius: 512
+			VerticalTopOffset: 2048
+			VerticalBottomOffset: 2048
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Chinook
+	Health:
+		HP: 300
+	Armor:
+		Type: aircraft.chinook
+	Mobile:
+		Speed: 60
+		TurnSpeed: 5
+		Voice: Move
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Ore: 100
+			Gems: 100
+			Beach: 100
+			Water: 100
+			Rock: 100
+	DockClient:
+	Harvester:
+		Capacity: 24
+		Resources: Ore,Gems
+		PipCount: 8
+		BaleUnloadDelay: 1
+		SearchFromProcRadius: 30
+		SearchFromOrderRadius: 11
+	WithIdleOverlay@ROTOR1AIR:
+		Offset: 597,0,213
+		Sequence: rotor
+	WithIdleOverlay@ROTOR2AIR:
+		Offset: -597,0,341
+		Sequence: rotor2
+	WithDockingAnimation:
+	Hovers:
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 8
+		PipCount: 8
+	Targetable:
+		TargetTypes: Air
+	-Capturable:
+	-ProximityExternalCondition@SELF_DESTRUCT:
+	-AcceptsDeliveredExperience:
+	-SpawnActorOnDeath@CRATE:
+	-SelfHealing@EMERGENCY_REPAIR:
+	-WithIdleOverlay@Repair:
+	-ExternalCondition@EMERGENCY_REPAIR:
+#	SpawnActorOnDeath:
+#		Actor: husk.chinook
+	Selectable:
+		Bounds: 40,36,0,-50
+	SelectionDecorations:
+		VisualBounds: 40,36,0,-50
+	Voiced:
+		VoiceSet: ChinookVoice
+
+aircraft.comanche:
+	Inherits: ^Helicopter
+	Inherits@REVEAL: ^Reveal180
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@PILOT: ^EjectsPilotOnAir
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 4
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: ~building.usa_airfield, ~techlevel.medium
+		Description: Helicopter gunship armed with multi-purpose missiles.
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Comanche
+	Health:
+		HP: 220
+	Armor:
+		Type: aircraft.comanche
+	Armament@MG:
+		Weapon: mg.comanche
+		LocalOffset: 0,0,-85
+		MuzzleSequence: muzzle
+	Armament@Rocket:
+		AmmoPoolName: secondary
+		Weapon: missile.comanche
+		LocalOffset: 0,213,-85
+		RequiresCondition: rocket_pods
+	GrantConditionOnPrerequisite@ROCKET_PODS:
+		Condition: rocket_pods
+		Prerequisites: upgrade.rocket_pods
+	AmmoPool:
+		Name: secondary
+		Ammo: 12
+		ReloadCount: 12
+		PipCount: 0
+		SelfReloads: true
+		SelfReloadDelay: 360
+	AttackHeli:
+		FacingTolerance: 20
+	RevealsShroud:
+		Type: CenterPosition
+	RevealsShroud@SEARCH_AND_DESTROY:
+		Type: CenterPosition
+	RevealsShroud@INTELLIGENCE:
+		Type: CenterPosition
+	Aircraft:
+		LandWhenIdle: false
+		InitialFacing: 224
+		TurnSpeed: 4
+		Speed: 120
+		Voice: Move
+	WithIdleOverlay@ROTORAIR:
+		Offset: 0,0,85
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTORGROUND:
+		Offset: 0,0,85
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	AmmoPool:
+		Ammo: 8
+	SelectionDecorations:
+		VisualBounds: 36,28
+	SpawnActorOnDeath:
+		Actor: husk.comanche
+	SmokeTrailWhenDamaged:
+		Offset: -427,0,0
+	Voiced:
+		VoiceSet: ComancheVoice

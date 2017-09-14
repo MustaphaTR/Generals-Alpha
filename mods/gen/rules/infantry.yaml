@@ -1,0 +1,968 @@
+infantry.pilot:
+	Inherits@1: ^Soldier
+	Inherits@REVEAL: ^Reveal150
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Pilot
+	DeliversExperience:
+	Health:
+		HP: 100
+	Armor:
+		Type: infantry.normal
+	Mobile:
+		Speed: 30
+		Voice: Move
+	Voiced:
+		VoiceSet: PilotVoice
+	RenderSprites:
+		Image: E2
+
+infantry.pilot.level1:
+	Inherits@1: infantry.pilot
+	ProducibleWithLevel:
+
+infantry.pilot.level2:
+	Inherits@1: infantry.pilot
+	ProducibleWithLevel:
+		InitialLevels: 2
+
+infantry.pilot.level3:
+	Inherits@1: infantry.pilot
+	ProducibleWithLevel:
+		InitialLevels: 3
+
+infantry.pilot.level4:
+	Inherits@1: infantry.pilot
+	ProducibleWithLevel:
+		InitialLevels: 4
+
+infantry.worker:
+	Inherits@1: ^Soldier
+	Inherits@REVEAL: ^Reveal100
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Worker
+		BuildPaletteOrder: 1
+		BuildDuration: 75
+		BuildDurationModifier: 100
+		Prerequisites: ~building.gla_supply_stash, ~techlevel.infonly
+		Description: Collects Ore and Gems for processing.
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Worker
+	Health:
+		HP: 100
+	Armor:
+		Type: infantry.normal
+	Mobile:
+		Speed: 25
+		Voice: Move
+	DockClient:
+	Harvester:
+		Capacity: 3
+		Resources: Ore,Gems
+		BaleUnloadDelay: 1
+		BaleLoadDelay: 2
+		PipCount: 6
+		SearchFromProcRadius: 30
+		SearchFromOrderRadius: 11
+		MaxUnloadQueue: 15
+	DetectCloaked:
+		CloakTypes: Mine
+		Range: 2c512
+	WithSpriteBody:
+	WithDockingAnimation:
+	Captures:
+		CaptureTypes: hole, driverless_vehcile
+		Voice: Repair
+	Voiced:
+		VoiceSet: WorkerVoice
+	RenderSprites:
+		Image: C1
+
+^default.mg_infantry:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@REVEAL: ^Reveal100
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildDuration: 125
+		BuildDurationModifier: 100
+		Description: General-purpose infantry.
+	Valued:
+		Cost: 150
+	Health:
+		HP: 120
+	Armor:
+		Type: infantry.normal
+	Mobile:
+		Speed: 20
+		Voice: Move
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	ExternalCaptures:
+		CaptureTypes: building
+		PlayerExperience: 25
+		Voice: Capture
+		CapturingCondition: capturing
+		RequiresCondition: capture_building
+	GrantConditionOnPrerequisite@CAPTURE_BUILDING:
+		Condition: capture_building
+		Prerequisites: upgrade.capture_building
+
+infantry.ranger:
+	Inherits: ^default.mg_infantry
+	Buildable:
+		BuildPaletteOrder: 2
+		Prerequisites: ~building.usa_barracks, ~techlevel.infonly
+	Valued:
+		Cost: 225
+	Tooltip:
+		Name: Ranger
+	Health:
+		HP: 180
+	Armament@PRIMARY:
+		Weapon: mg.ranger
+	Armament@GRENADE:
+		Weapon: grenade.ranger
+		RequiresCondition: flashbang_grenades
+#	GrantConditionOnDeploy: # This is not conditional. :(
+#		DeployedCondition: deployed
+#		RequiresCondition: flashbang_grenades
+	GrantConditionOnPrerequisite@FLASHBANG:
+		Condition: flashbang_grenades
+		Prerequisites: upgrade.flashbang_grenades
+	Voiced:
+		VoiceSet: RangerVoice
+
+infantry.rebel:
+	Inherits: ^default.mg_infantry
+	Inherits@AP_BULLETS: ^AfftectedByAPBullets
+	Inherits@REVEAL: ^Reveal150
+	Buildable:
+		BuildPaletteOrder: 3
+		Prerequisites: ~building.gla_barracks, ~techlevel.infonly
+	Selectable:
+		Class: infantry.rebel
+	Tooltip:
+		Name: Rebel
+	Armament@PRIMARY:
+		Weapon: mg.rebel
+	Cloak:
+		InitialDelay: 200
+		CloakDelay: 100
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled && !capturing && camouflage
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	GrantConditionOnPrerequisite@CAMOUFLAGE:
+		Condition: camouflage
+		Prerequisites: upgrade.camouflage
+	Voiced:
+		VoiceSet: RebelVoice
+	RenderSprites:
+		Image: infantry.rebel
+
+infantry.red_guard:
+	Inherits: ^default.mg_infantry
+	Inherits@HORDE_BONUS: ^Horde
+	Buildable:
+		BuildPaletteOrder: 4
+		BuildDurationModifier: 50
+		Prerequisites: ~building.prc_barracks, ~techlevel.infonly
+	Mobile:
+		Speed: 25
+	Tooltip:
+		Name: Red Guard
+	Armament@PRIMARY:
+		Weapon: mg.red_guard
+	Voiced:
+		VoiceSet: RedGuardVoice
+	ProducibleWithLevel:
+		Prerequisites: upgrade.red_training
+
+^default.rocket_infantry:
+	Inherits: ^Soldier
+	Inherits@REVEAL: ^Reveal150
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildDuration: 125
+		BuildDurationModifier: 100
+		Description: Anti-tank/Anti-aircraft infantry.
+	Valued:
+		Cost: 300
+	Health:
+		HP: 100
+	Armor:
+		Type: infantry.normal
+	Mobile:
+		Speed: 20
+		Voice: Move
+	Armament@PRIMARY:
+		Weapon: missile.missile_defender
+		LocalOffset: 0,0,555
+	TakeCover:
+		ProneOffset: 384,0,-395
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	AutoTarget:
+		ScanRadius: 5
+
+infantry.missile_defender:
+	Inherits: ^default.rocket_infantry
+	Buildable:
+		BuildPaletteOrder: 5
+		Prerequisites: ~building.usa_barracks, ~techlevel.infonly
+	Tooltip:
+		Name: Missile Defender
+	Voiced:
+		VoiceSet: MissileDefenderVoice
+
+infantry.rpg_trooper:
+	Inherits: ^default.rocket_infantry
+	Inherits@AP_ROCKETS: ^AfftectedByAPRockets
+	Buildable:
+		BuildPaletteOrder: 6
+		Prerequisites: ~building.gla_barracks, ~techlevel.infonly
+	Armament@PRIMARY:
+		Weapon: missile.rpg_trooper
+		LocalOffset: 0,0,555
+	Tooltip:
+		Name: RPG Trooper
+	Voiced:
+		VoiceSet: RPGTrooperVoice
+
+infantry.tank_hunter:
+	Inherits: ^default.rocket_infantry
+	Inherits@HORDE_BONUS: ^Horde
+	Buildable:
+		BuildPaletteOrder: 7
+		BuildDuration: 140
+		BuildDurationModifier: 100
+		Prerequisites: ~building.prc_barracks, ~techlevel.infonly
+	Tooltip:
+		Name: Tank Hunter
+	Voiced:
+		VoiceSet: TankHunterVoice
+
+infantry.pathfinder:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@REVEAL: ^Reveal200
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Pathfinder
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 8
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~building.usa_barracks, building.strategy_center, ~techlevel.medium
+		Description: Elite sniper infantry.
+	Health:
+		HP: 120
+	Armor:
+		Type: infantry.normal
+	Mobile:
+		Speed: 30
+		Voice: Move
+	AutoTargetPriority@DEFAULT:
+		Types: Infantry
+	Armament@PRIMARY:
+		Weapon: sniper.pathfinder
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Cloak:
+		InitialDelay: 250
+		CloakDelay: 120
+		CloakSound:
+		UncloakSound:
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 5c0
+	-MustBeDestroyed:
+	Voiced:
+		VoiceSet: PathfinderVoice
+
+infantry.terrorist:
+	Inherits: ^Soldier
+	Inherits@REVEAL: ^Reveal150
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 9
+		BuildDuration: 125
+		BuildDurationModifier: 100
+		Prerequisites: ~building.gla_barracks, ~techlevel.low
+		Description: Explodes.
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Terrorist
+	Health:
+		HP: 120
+	Armor:
+		Type: infantry.normal
+	Mobile:
+		Voice: Move
+		Speed: 25
+	Explodes:
+		Weapon: explosion.terrorist
+		EmptyWeapon: explosion.terrorist
+	AttackSuicides:
+	Voiced:
+		VoiceSet: TerroristVoice
+	RenderSprites:
+		Image: C3
+	Health:
+		HP: 120
+	Armor:
+		Type: infantry.normal
+	Mobile:
+		Voice: Move
+		Speed: 25
+
+^default.angry_mob:
+	Inherits: ^Soldier
+	Inherits@REVEAL: ^Reveal150
+	Valued:
+		Cost: 160
+	Tooltip:
+		Name: Angry Mob
+	-SelectionDecorations:
+	Health:
+		HP: 50
+	Armor:
+		Type: infantry.normal
+	Mobile:
+		Speed: 18
+	RejectsOrders@slaved:
+	MobSpawnerSlave:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Selectable:
+		Class: angry_mob
+	Voiced:
+		VoiceSet: AngryMobVoice
+
+hack.angry_mob.male:
+	Inherits: ^default.angry_mob
+	Inherits@AP_BULLETS: ^AfftectedByAPBullets
+	RenderSprites:
+		Image: C1
+	Armament@pistol:
+		Weapon: pistol.angry_mob
+		RequiresCondition: !arm_the_mob
+	Armament@ak47:
+		Weapon: mg.angry_mob
+		RequiresCondition: arm_the_mob
+	AttackFrontal:
+	GrantConditionOnPrerequisite@ARM_THE_MOB:
+		Condition: arm_the_mob
+		Prerequisites: upgrade.arm_the_mob
+
+hack.angry_mob.female:
+	Inherits: ^default.angry_mob
+	Inherits@AP_BULLETS: ^AfftectedByAPBullets
+	RenderSprites:
+		Image: C2
+	Armament@pistol:
+		Weapon: pistol.angry_mob
+		RequiresCondition: !arm_the_mob
+	Armament@ak47:
+		Weapon: mg.angry_mob
+		RequiresCondition: arm_the_mob
+	AttackFrontal:
+	GrantConditionOnPrerequisite@ARM_THE_MOB:
+		Condition: arm_the_mob
+		Prerequisites: upgrade.arm_the_mob
+
+hack.angry_mob.molotov:
+	Inherits: ^default.angry_mob
+	RenderSprites:
+		Image: E2
+	Armament:
+		Weapon: molotov.angry_mob
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: throw
+
+infantry.angry_mob:
+	Inherits@1: ^ExistsInWorld
+	Inherits@4: ^SpriteActor
+	Inherits@REVEAL: ^Reveal150
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	-AppearsOnRadar:
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		BuildDuration: 375
+		BuildDurationModifier: 100
+		Prerequisites: ~building.gla_barracks, building.palace, ~techlevel.medium
+		Description: Group of civilians armed with pistols and molotov coctails.
+	Tooltip:
+		Name: Angry Mob
+		GenericName: Soldier
+	Valued:
+		Cost: 800
+	MobSpawnerMaster@Unupgraded:
+		Actors: hack.angry_mob.male, hack.angry_mob.male, hack.angry_mob.male, hack.angry_mob.male, hack.angry_mob.female, hack.angry_mob.female, hack.angry_mob.female, hack.angry_mob.molotov, hack.angry_mob.molotov, hack.angry_mob.molotov
+		SpawnReplaceDelay: 750
+		ExitByBudding: false
+		OneShot: false
+		AggregateHealth: true
+	Health:
+		HP: 100
+	AttackOmni:
+	Armament@PRIMARY:
+		Weapon: hack.angry_mob.weapon
+	Mobile:
+		Speed: 18
+		Crushes: mine, crate
+		SharesCell: true
+		OccupySpace: false
+		Voice: Move
+		TerrainSpeeds:
+			Clear: 90
+			Rough: 80
+			Road: 100
+			Bridge: 100
+			Ore: 80
+			Gems: 80
+			Tiberium: 80
+			Beach: 80
+	Voiced:
+		VoiceSet: AngryMobVoice
+	SelectionDecorations:
+	Selectable:
+		Bounds: 24, 24
+	AttackMove:
+	HiddenUnderFog:
+	BodyOrientation:
+		UseClassicFacingFudge: True
+	HitShape:
+	EditorTilesetFilter:
+		Categories: Infantry
+	SpeedMultiplier@Generic:
+		Modifier: 200
+	DamageMultiplier@invincible:
+		Modifier: 0
+
+infantry.hacker:
+	Inherits: ^Soldier
+	Inherits@REVEAL: ^Reveal150
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 11
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: ~building.prc_barracks, building.propaganda_center, ~techlevel.medium
+		Description: Hacks internet to gain money while deployed.
+	Valued:
+		Cost: 625
+	Tooltip:
+		Name: Hacker
+	Health:
+		HP: 100
+	Armor:
+		Type: infantry.normal
+	Mobile:
+		Speed: 20
+		Voice: Move
+		RequiresCondition: !deployed
+	Passenger:
+		PipType: Yellow
+		Voice: Move
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		Facing: 128
+	WithInfantryBody:
+		RequiresCondition: !deployed
+	WithSpriteBody@DEPLOYED:
+		Sequence: repair
+		RequiresCondition: deployed
+	CashTrickler@RANK-0:
+		Interval: 40
+		Amount: 5
+		RequiresCondition: deployed && rank-veteran == 0
+	CashTrickler@RANK-1:
+		Interval: 35
+		Amount: 6
+		RequiresCondition: deployed && rank-veteran == 1
+	CashTrickler@RANK-2:
+		Interval: 30
+		Amount: 7
+		RequiresCondition: deployed && rank-veteran == 2
+	CashTrickler@RANK-3:
+		Interval: 25
+		Amount: 8
+		RequiresCondition: deployed && rank-veteran == 3
+	CashTrickler@RANK-ELITE:
+		Interval: 20
+		Amount: 10
+		RequiresCondition: deployed && rank-elite
+	Voiced:
+		VoiceSet: HackerVoice
+
+infantry.hijacker:
+	Inherits: ^Soldier
+	Inherits@REVEAL: ^Reveal100
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 12
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~building.gla_barracks, building.palace, ~techlevel.medium
+		Description: Hijacks enemy vehicles.
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: Hijacker
+		RequiresCondition: !disguise
+	DisguiseTooltip:
+		Name: Hijacker
+		GenericName: Soldier
+		RequiresCondition: disguise
+	Health:
+		HP: 100
+	Armor:
+		Type: infantry.normal
+	Mobile:
+		Voice: Move
+		Speed: 30
+	Passenger:
+		PipType: Yellow
+	Captures:
+		CaptureTypes: vehicle
+		PlayerExperience: 50
+	Voiced:
+		VoiceSet: HijackerVoice
+	-TakeCover:
+	WithInfantryBody:
+		-IdleSequences:
+		StandSequences: stand
+		RequiresCondition: !disguise
+	Crushable:
+		WarnProbability: 95
+	Disguise:
+		Types: Infantry-Disguise
+		Voice: Move
+		DisguisedCondition: disguised
+		RequiresCondition: disguise
+	WithDisguisingInfantryBody:
+		StandSequences: stand
+		RequiresCondition: disguise
+	Cloak:
+		InitialDelay: 250
+		CloakDelay: 120
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled && !disguised
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	GrantConditionOnPrerequisite@DISGUISE:
+		Condition: disguise
+		Prerequisites: strategy.disguise
+
+infantry.colonel_burton:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@REVEAL: ^Reveal150
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Colonel Burton
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 13
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: ~building.usa_barracks, building.strategy_center, ~techlevel.high
+		BuildLimit: 1
+		Description: Elite commando infantry.\n\nCan place C4 charges on structures.
+	Mobile:
+		Speed: 30
+		Voice: Move
+		TerrainSpeeds:
+			Rock: 67
+	Crushable:
+		CrushClasses: hero
+	Guard:
+		Voice: Move
+	Health:
+		HP: 200
+	Armor:
+		Type: infantry.normal
+	Passenger:
+		PipType: Red
+		Voice: Move
+	AutoTarget:
+		ScanRadius: 8
+	Demolition:
+		DetonationDelay: 45
+		Voice: Demolish
+	Armament:
+		Weapon: mg.colonel_burton
+	AttackFrontal:
+		Voice: Attack
+	AttackMove:
+		Voice: Attack
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences: idle1,idle2,idle3
+	Cloak:
+		InitialDelay: 250
+		CloakDelay: 120
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	Voiced:
+		VoiceSet: BurtonVoice
+
+infantry.jarmen_kell:
+	Inherits: ^Soldier
+	Inherits@REVEAL: ^Reveal200
+	Inherits@AP_BULLETS: ^AfftectedByAPBullets
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Jarmen Kell
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 14
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: ~building.gla_barracks, building.palace, ~techlevel.high
+		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing your infantry to capture them.
+	Health:
+		HP: 200
+	Armor:
+		Type: infantry.normal
+	Mobile:
+		Voice: Move
+		Speed: 30
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: ReturnFire
+	AutoTargetPriority@DEFAULT:
+		Types: Infantry
+	Armament@PRIMARY:
+		Weapon: sniper.jarmen_kell
+	Armament@DRIVER_SNIPE:
+		Weapon: sniper.jarmen_kell.vehicle
+		AmmoPoolName: driver_snipe
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Cloak:
+		InitialDelay: 250
+		CloakDelay: 120
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	AmmoPool:
+		Ammo: 1
+		Name: driver_snipe
+		ReloadDelay: 750
+	Voiced:
+		VoiceSet: JarmenVoice
+	-MustBeDestroyed:
+
+infantry.black_lotus:
+	Inherits: ^Soldier
+	Inherits@REVEAL: ^Reveal300
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 15
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: ~building.prc_barracks, building.propaganda_center, ~techlevel.high
+		Description: Can capture enemy structures from a distance.\n\nCan disable enemy vehicles.
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Black Lotus
+	Health:
+		HP: 200
+	Armor:
+		Type: infantry.normal
+	Mobile:
+		Speed: 30
+		Voice: Move
+	Passenger:
+		PipType: Yellow
+		Voice: Move
+	WithInfantryBody:
+		DefaultAttackSequence: stand2
+	Cloak:
+		InitialDelay: 250
+		CloakDelay: 120
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 7c512
+	Armament@CaptureAnim:
+		Name: capture
+		Weapon: capture.black_lotus.anim
+		LocalOffset: 0,0,196
+		RequiresCondition: end_capture == 0
+	Armament@CaptureEnd:
+		Name: capture
+		Weapon: capture.black_lotus.end
+		LocalOffset: 0,0,196
+		RequiresCondition: end_capture == 1
+	Armament@DisableAnim:
+		Name: disable
+		Weapon: disable.black_lotus.anim
+		LocalOffset: 0,0,196
+		RequiresCondition: end_disable == 0
+	Armament@DisableEnd:
+		Name: disable
+		Weapon: disable.black_lotus.end
+		LocalOffset: 0,0,196
+		RequiresCondition: end_disable == 1
+	GrantStackableConditionOnFire@EndCapture:
+		Condition: end_capture
+		ArmamentName: capture
+		RequiredShotsPerStack: 25
+		MaximumInstances: 2
+		RevokeDelay: 20
+		RevokeAll: true
+		IsCyclic: false
+	GrantStackableConditionOnFire@EndDisable:
+		Condition: end_disable
+		ArmamentName: disable
+		RequiredShotsPerStack: 10
+		MaximumInstances: 2
+		RevokeDelay: 20
+		RevokeAll: true
+		IsCyclic: false
+	AttackFrontal@Capture:
+		Armaments: capture
+		Voice: Capture
+	AttackFrontal@Disable:
+		Armaments: disable
+		Voice: Disable
+	Voiced:
+		VoiceSet: LotusVoice
+
+EINSTEIN:
+	Inherits: ^CivInfantry
+	-Wanders:
+	Tooltip:
+		Name: Prof. Einstein
+	Mobile:
+		Speed: 71
+	Voiced:
+		VoiceSet: EinsteinVoice
+
+DELPHI:
+	Inherits: ^CivInfantry
+	-Wanders:
+	Tooltip:
+		Name: Agent Delphi
+	Mobile:
+		Speed: 71
+
+CHAN:
+	Inherits: ^CivInfantry
+	Valued:
+		Cost: 500
+	Selectable:
+		Class: CHAN
+	Tooltip:
+		Name: Scientist
+
+GNRL:
+	Inherits@1: ^CivInfantry
+	Inherits@2: ^ArmedCivilian
+	-Wanders:
+	Tooltip:
+		Name: General
+	Selectable:
+		Class: GNRL
+	Mobile:
+		Voice: Move
+	AttackFrontal:
+		Voice: Attack
+	AttackMove:
+		Voice: Move
+	Passenger:
+		Voice: Move
+	Guard:
+		Voice: Move
+	Voiced:
+		VoiceSet: StavrosVoice
+	-ScaredyCat:
+	WithInfantryBody:
+		IdleSequences: idle1
+
+Zombie:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Zombie
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 200
+		Prerequisites: ~barracks, ~bio
+		Description: Slow undead. Attacks in close combat.
+	Health:
+		HP: 250
+	Mobile:
+		Speed: 42
+	AutoTarget:
+		ScanRadius: 5
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: bite
+		IdleSequences: idle1
+	Armament:
+		Weapon: claw
+	Voiced:
+		VoiceSet: AntVoice
+	-TakeCover:
+
+Ant:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Giant Ant
+		GenericName: Ant
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 1954
+		Prerequisites: ~barracks, ~bio
+		Description: Irradiated insect that grew oversize.
+	Selectable:
+		Bounds: 24,24,0,-5
+	SelectionDecorations:
+		VisualBounds: 30,30,0,-2
+	Health:
+		HP: 750
+	Mobile:
+		Speed: 99
+		TurnSpeed: 12
+		SharesCell: no
+	-Crushable:
+	AutoTarget:
+		ScanRadius: 5
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: bite
+	Armament:
+		Weapon: mandible
+	Targetable:
+		TargetTypes: Ground, Infantry, Ant
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	Voiced:
+		VoiceSet: AntVoice
+	HitShape:
+		Type: Circle
+			Radius: 469
+
+infantry.ambush_rebel4:
+	Inherits: infantry.rebel
+	-Buildable:
+	FreeActor@1:
+		Actor: infantry.rebel
+		SpawnOffset: 0, 1
+	FreeActor@2:
+		Actor: infantry.rebel
+		SpawnOffset: 1, 2
+	FreeActor@3:
+		Actor: infantry.rebel
+		SpawnOffset: -1, 2
+
+infantry.ambush_rebel8:
+	Inherits: infantry.ambush_rebel4
+	FreeActor@4:
+		Actor: infantry.rebel
+		SpawnOffset: 1, -1
+	FreeActor@5:
+		Actor: infantry.rebel
+		SpawnOffset: 1, 1
+	FreeActor@6:
+		Actor: infantry.rebel
+		SpawnOffset: -1, -1
+	FreeActor@7:
+		Actor: infantry.rebel
+		SpawnOffset: -1, 1
+
+infantry.ambush_rebel16:
+	Inherits: infantry.ambush_rebel8
+	FreeActor@2:
+		Actor: infantry.rebel
+		SpawnOffset: 0, 2
+	FreeActor@8:
+		Actor: infantry.rebel
+		SpawnOffset: 1, 0
+	FreeActor@9:
+		Actor: infantry.rebel
+		SpawnOffset: -1, 0
+	FreeActor@10:
+		Actor: infantry.rebel
+		SpawnOffset: -2, 0
+	FreeActor@11:
+		Actor: infantry.rebel
+		SpawnOffset: -2, -1
+	FreeActor@12:
+		Actor: infantry.rebel
+		SpawnOffset: -2, 1
+	FreeActor@13:
+		Actor: infantry.rebel
+		SpawnOffset: 0, -1
+	FreeActor@14:
+		Actor: infantry.rebel
+		SpawnOffset: 0, -2
+	FreeActor@15:
+		Actor: infantry.rebel
+		SpawnOffset: -1, -2

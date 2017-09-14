@@ -1,0 +1,181 @@
+vessel.transport:
+	Inherits: ^Ship
+	Inherits@REVEAL: ^Reveal150
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: Vessel
+		BuildPaletteOrder: 26
+		Prerequisites: ~tech.shipyard, ~techlevel.infonly
+		Description: General-purpose naval transport.\n\nCan carry infantry and tanks.
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Transport Boat
+	Health:
+		HP: 300
+	Armor:
+		Type: vehicle.truck
+	Mobile:
+		TurnSpeed: 10
+		Speed: 50
+		TerrainSpeeds:
+			Beach: 70
+		RequiresCondition: !notmobile && !disabled && !driver_killed && !emp
+	SelectionDecorations:
+		VisualBounds: 36,36
+	WithLandingCraftAnimation:
+		OpenTerrainTypes: Clear, Rough, Road, Ore, Gems, Beach
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 8
+		PipCount: 8
+		PassengerFacing: 0
+		LoadingCondition: notmobile
+		PauseOnCondition: disabled || driver_killed || emp
+
+vessel.gunboat:
+	Inherits: ^Ship
+	Inherits@REVEAL: ^Reveal150
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: Vessel
+		BuildPaletteOrder: 27
+		Prerequisites: ~tech.shipyard, ~techlevel.low
+		Description: Light scout & support ship.
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Gunboat
+	Health:
+		HP: 250
+	Armor:
+		Type: vehicle.truck
+	Mobile:
+		TurnSpeed: 7
+		Speed: 60
+	Turreted:
+		TurnSpeed: 7
+		Offset: 512,0,0
+	Armament@PRIMARY:
+		Weapon: 2Inch
+		LocalOffset: 208,0,48
+		MuzzleSequence: muzzle
+		RequiresCondition: !disabled && !driver_killed
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: DepthCharge
+		MuzzleSequence: muzzle
+		RequiresCondition: !disabled && !driver_killed
+	AttackTurreted:
+	WithMuzzleOverlay:
+	SelectionDecorations:
+		VisualBounds: 36,36
+	WithSpriteTurret:
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 4c0
+	RenderDetectionCircle:
+
+vessel.destroyer:
+	Inherits: ^Ship
+	Inherits@REVEAL: ^Reveal150
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: Vessel
+		BuildPaletteOrder: 28
+		Prerequisites: ~tech.shipyard, anytech, ~techlevel.medium
+		Description: Fast multi-role ship.
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Destroyer
+	Health:
+		HP: 400
+	Armor:
+		Type: vehicle.tank
+	Mobile:
+		TurnSpeed: 7
+		Speed: 40
+	Turreted:
+		TurnSpeed: 7
+		Offset: 341,0,128
+	Armament@PRIMARY:
+		Weapon: Stinger
+		LocalOffset: 0,-100,0, 0,100,0
+		LocalYaw: 64, -64
+		RequiresCondition: !disabled && !driver_killed
+	Armament@SECONDARY:
+		Weapon: DepthCharge
+		LocalOffset: 0,-100,0, 0,100,0
+		LocalYaw: 80, -80
+		RequiresCondition: !disabled && !driver_killed
+	Armament@TERTIARY:
+		Weapon: StingerAA
+		LocalOffset: 0,-100,0, 0,100,0
+		LocalYaw: 64, -64
+		RequiresCondition: !disabled && !driver_killed
+	AttackTurreted:
+	SelectionDecorations:
+		VisualBounds: 38,38
+	WithSpriteTurret:
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 4c0
+	RenderDetectionCircle:
+
+vessel.cruiser:
+	Inherits: ^Ship
+	Inherits@REVEAL: ^Reveal180
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: Vessel
+		BuildPaletteOrder: 29
+		Prerequisites: ~tech.shipyard, anytech, ~techlevel.high
+		Description: Very slow long-range ship.
+	Valued:
+		Cost: 2400
+	Tooltip:
+		Name: Cruiser
+	Health:
+		HP: 600
+	Armor:
+		Type: vehicle.tank
+	Mobile:
+		TurnSpeed: 3
+		Speed: 20
+	Turreted@PRIMARY:
+		Turret: primary
+		Offset: -864,0,128
+		TurnSpeed: 3
+	Turreted@SECONDARY:
+		Turret: secondary
+		Offset: 768,0,128
+		TurnSpeed: 3
+	Armament@PRIMARY:
+		Turret: primary
+		Weapon: cannon.crusader
+		LocalOffset: 480,-100,40, 480,100,40
+		Recoil: 171
+		RecoilRecovery: 34
+		MuzzleSequence: muzzle
+		RequiresCondition: !disabled && !driver_killed
+	Armament@SECONDARY:
+		Name: secondary
+		Turret: secondary
+		Weapon: cannon.crusader
+		LocalOffset: 480,-100,40, 480,100,40
+		Recoil: 171
+		RecoilRecovery: 34
+		MuzzleSequence: muzzle
+		RequiresCondition: !disabled && !driver_killed
+	AttackTurreted:
+	WithMuzzleOverlay:
+	SelectionDecorations:
+		VisualBounds: 44,44
+	WithSpriteTurret@PRIMARY:
+		Turret: primary
+	WithSpriteTurret@SECONDARY:
+		Turret: secondary

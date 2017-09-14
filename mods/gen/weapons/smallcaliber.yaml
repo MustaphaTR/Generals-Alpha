@@ -1,0 +1,573 @@
+^HeavyMG:
+	ReloadDelay: 30
+	Range: 6c0
+	Report: gun13.aud
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 30
+		Versus:
+			None: 100
+			Wood: 50
+			Light: 60
+			Heavy: 25
+			Concrete: 25
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piffs
+		ValidTargets: Ground, Ship, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: water_piffs
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure
+
+^LightMG:
+	Inherits: ^HeavyMG
+	Warhead@1Dam: SpreadDamage
+		Damage: 15
+		Versus:
+			Wood: 10
+			Light: 30
+			Heavy: 10
+			Concrete: 10
+
+Vulcan:
+	Inherits: ^HeavyMG
+	Warhead@1Dam: SpreadDamage
+		Damage: 10
+		Versus:
+			None: 200
+	Warhead@4Dam_2: SpreadDamage
+		Spread: 128
+		Damage: 10
+		Delay: 2
+		Versus:
+			None: 200
+			Wood: 50
+			Light: 60
+			Heavy: 25
+			Concrete: 25
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+	Warhead@4Eff_2: CreateEffect
+		Explosions: piffs
+		ValidTargets: Ground
+		Delay: 2
+	Warhead@4Eff_2Water: CreateEffect
+		Explosions: water_piffs
+		ValidTargets: Water
+		Delay: 2
+	Warhead@5Dam_3: SpreadDamage
+		Spread: 128
+		Damage: 10
+		Delay: 4
+		Versus:
+			None: 200
+			Wood: 50
+			Light: 60
+			Heavy: 25
+			Concrete: 25
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+	Warhead@6Eff_3: CreateEffect
+		Explosions: piffs
+		ValidTargets: Ground
+		Delay: 4
+	Warhead@6Eff_3Water: CreateEffect
+		Explosions: water_piffs
+		ValidTargets: Water
+		Delay: 4
+	Warhead@7Dam_4: SpreadDamage
+		Spread: 128
+		Damage: 10
+		Delay: 6
+		Versus:
+			None: 200
+			Wood: 50
+			Light: 60
+			Heavy: 25
+			Concrete: 25
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+	Warhead@8Eff_4: CreateEffect
+		Explosions: piffs
+		ValidTargets: Ground
+		Delay: 6
+	Warhead@8Eff_4Water: CreateEffect
+		Explosions: water_piffs
+		ValidTargets: Water
+		Delay: 6
+	Warhead@9Dam_5: SpreadDamage
+		Spread: 128
+		Damage: 10
+		Delay: 8
+		Versus:
+			None: 200
+			Wood: 50
+			Light: 60
+			Heavy: 25
+			Concrete: 25
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+	Warhead@10Eff_5: CreateEffect
+		Explosions: piffs
+		ValidTargets: Ground
+		Delay: 8
+	Warhead@10Eff_5Water: CreateEffect
+		Explosions: water_piffs
+		ValidTargets: Water
+		Delay: 8
+	Warhead@11Dam_6: SpreadDamage
+		Spread: 128
+		Damage: 10
+		Delay: 10
+		Versus:
+			None: 200
+			Wood: 50
+			Light: 60
+			Heavy: 25
+			Concrete: 25
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+	Warhead@12Eff_6: CreateEffect
+		Explosions: piffs
+		ValidTargets: Ground
+		Delay: 10
+	Warhead@12Eff_6Water: CreateEffect
+		Explosions: water_piffs
+		ValidTargets: Water
+		Delay: 10
+
+mg.comanche:
+	Inherits: ^HeavyMG
+	ReloadDelay: 3
+	Range: 5c0
+	MinRange: 0c768
+	Projectile: Bullet
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Damage: 6
+		Versus:
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.tank: 25
+			vehicle.dragon_tank: 25
+			aircraft.normal: 120
+			aircraft.comanche: 120
+			aircraft.chinook: 50
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
+			building.wall: 6
+
+Pistol:
+	Inherits: ^LightMG
+	ReloadDelay: 7
+	Range: 3c0
+	Report: gun27.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 1
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+	Warhead@3EffWater: CreateEffect
+		Explosions: water_piff
+
+pistol.angry_mob:
+	Inherits: ^LightMG
+	ReloadDelay: 75
+	Burst: 8
+	BurstDelay: 6
+	Range: 2c512
+	Report: gun27.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 10
+		Versus:
+			vehicle.dragon_tank: 20
+			vehicle.toxin_tractor: 20
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, BulletDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+	Warhead@3EffWater: CreateEffect
+		Explosions: water_piff
+
+mg.angry_mob:
+	Inherits: ^LightMG
+	ReloadDelay: 6
+	Range: 3c0
+	Report: gun11.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 20
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, BulletDeath
+
+mg.ranger:
+	Inherits: ^LightMG
+	ReloadDelay: 18
+	Range: 2c512
+	Burst: 3
+	BurstDelay: 3
+	Report: gun11.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 5
+		Versus:
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.tank: 25
+			vehicle.dragon_tank: 25
+			aircraft.normal: 120
+			aircraft.comanche: 120
+			aircraft.chinook: 50
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
+			building.wall: 6
+            
+mg.rebel:
+	Inherits: mg.ranger
+	Warhead@1Dam: SpreadDamage
+    	DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, BulletDeath
+
+mg.red_guard:
+	Inherits: ^LightMG
+	ReloadDelay: 25
+	Range: 2c512
+	Report: gun5.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 15
+		Versus:
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.tank: 25
+			vehicle.dragon_tank: 25
+			aircraft.normal: 120
+			aircraft.comanche: 120
+			aircraft.chinook: 50
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
+			building.wall: 6
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+
+mg.colonel_burton:
+	Inherits: ^LightMG
+	ReloadDelay: 3
+	Range: 3c128
+	Report: gun11.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 40
+		Versus:
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.tank: 25
+			vehicle.dragon_tank: 25
+			aircraft.normal: 120
+			aircraft.comanche: 120
+			aircraft.chinook: 50
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
+			building.wall: 6
+
+M60mg:
+	Inherits: ^LightMG
+	ReloadDelay: 30
+	Range: 4c0
+	Report: pillbox1.aud
+	Burst: 5
+
+mg.humvee:
+	Inherits: ^LightMG
+	ReloadDelay: 5
+	Range: 3c768
+	Report: pillbox1.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 8
+		Versus:
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.tank: 25
+			vehicle.dragon_tank: 25
+			aircraft.normal: 120
+			aircraft.comanche: 120
+			aircraft.chinook: 50
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
+			building.wall: 6
+
+mg.technical:
+	Inherits: ^LightMG
+	ReloadDelay: 5
+	Range: 3c0
+	Report: pillbox1.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 8
+		Versus:
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.tank: 25
+			vehicle.dragon_tank: 25
+			aircraft.normal: 120
+			aircraft.comanche: 120
+			aircraft.chinook: 50
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
+			building.wall: 6
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, BulletDeath
+
+mg.tunnel_network:
+	Inherits: ^LightMG
+	ReloadDelay: 6
+	Range: 4c384
+	Report: pillbox1.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 10
+		Versus:
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.tank: 25
+			vehicle.dragon_tank: 25
+			aircraft.normal: 120
+			aircraft.comanche: 120
+			aircraft.chinook: 50
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
+			building.wall: 6
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, BulletDeath
+
+mg.quad_cannon.ground:
+	Inherits: ^LightMG
+	ReloadDelay: 3
+	Range: 3c768
+	Report: pillbox1.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 10
+		Versus:
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.tank: 10
+			vehicle.dragon_tank: 25
+			aircraft.normal: 120
+			aircraft.comanche: 120
+			aircraft.chinook: 50
+			building.normal: 10
+			building.tough: 10
+			building.defense: 25
+			building.stinger_site: 10
+			building.wall: 6
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, BulletDeath
+
+mg.quad_cannon.air:
+	Inherits: mg.quad_cannon.ground
+	Range: 8c768
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		Damage: 5
+		ValidTargets: Air
+
+gatling.gatling_tank.ground:
+	Inherits: ^LightMG
+	ReloadDelay: 10
+	Range: 4c384
+	Report: pillbox1.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 20
+		Versus:
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.tank: 10
+			vehicle.dragon_tank: 25
+			aircraft.normal: 120
+			aircraft.comanche: 120
+			aircraft.chinook: 50
+			building.normal: 10
+			building.tough: 10
+			building.defense: 25
+			building.stinger_site: 10
+			building.wall: 6
+
+gatling.gatling_tank.ground.1:
+	Inherits: gatling.gatling_tank.ground
+	ReloadDelay: 5
+
+gatling.gatling_tank.ground.2:
+	Inherits: gatling.gatling_tank.ground
+	ReloadDelay: 3
+
+gatling.gatling_tank.air:
+	Inherits: gatling.gatling_tank.ground
+	ValidTargets: Air
+	Range: 8c768
+	Warhead@1Dam: SpreadDamage
+		Damage: 12
+		ValidTargets: Air
+
+gatling.gatling_tank.air.1:
+	Inherits: gatling.gatling_tank.air
+	ReloadDelay: 5
+
+gatling.gatling_tank.air.2:
+	Inherits: gatling.gatling_tank.air
+	ReloadDelay: 3
+
+gatling.gatling_cannon.ground:
+	Inherits: ^LightMG
+	ReloadDelay: 6
+	Range: 5c640
+	Report: pillbox1.aud
+	Burst: 2
+	Warhead@1Dam: SpreadDamage
+		Damage: 10
+		Versus:
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.tank: 10
+			vehicle.dragon_tank: 25
+			aircraft.normal: 120
+			aircraft.comanche: 120
+			aircraft.chinook: 50
+			building.normal: 10
+			building.tough: 10
+			building.defense: 25
+			building.stinger_site: 10
+			building.wall: 6
+
+gatling.gatling_cannon.air:
+	Inherits: gatling.gatling_cannon.ground
+	ValidTargets: Air
+	Range: 10c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 5
+		ValidTargets: Air
+
+^SnipeWeapon:
+	ReloadDelay: 80
+	Range: 2c512
+	Report: gun5.aud
+	ValidTargets: Ground, Infantry
+	InvalidTargets: Vehicle, Tank, Water, Structure, Wall, Husk
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 150
+		ValidTargets: Barrel, Infantry
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+
+SilencedPPK:
+	Inherits: ^SnipeWeapon
+	Report: silppk.aud
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+	Warhead@2Eff: CreateEffect
+		Explosions: piffs
+		ValidTargets: Ground, Ship, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: water_piffs
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure
+
+Colt45:
+	Inherits: ^SnipeWeapon
+	ReloadDelay: 5
+	Range: 7c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+		ValidTargets: Ground, Ship, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: water_piff
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure
+
+sniper.jarmen_kell:
+	Inherits: ^SnipeWeapon
+	ReloadDelay: 25
+	Range: 5c640
+	Warhead@1Dam: SpreadDamage
+		Damage: 180
+		Versus:
+			infantry.normal: 200
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, BulletDeath
+
+sniper.jarmen_kell.vehicle:
+	Inherits: ^SnipeWeapon
+	ReloadDelay: 750
+	Range: 5c640
+	ValidTargets: Vehicle, Tank, Ship
+	InvalidTargets: Infantry, Structure, Wall, Husk
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Vehicle, Tank, Ship
+	Warhead@2Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 500
+		ValidTargets: Vehicle, Tank
+		Condition: driver_killed
+	Warhead@3Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 500
+		ValidTargets: Ship
+		Condition: disabled
+
+sniper.pathfinder:
+	Inherits: ^SnipeWeapon
+	ReloadDelay: 50
+	Range: 7c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 100
+		Versus:
+			infantry.normal: 200
+
+mg.a10:
+	Inherits: ^HeavyMG
+	Range: 11c128
+	Burst: 12
+	BurstDelay: 2
+	FirstBurstTargetOffset: -2984,0,0
+	FollowingBurstTargetOffset: 746,0,0
+	ReloadDelay: 125
+	Report: gun5.aud
+	Warhead@1Dam: SpreadDamage
+		Spread: 426
+		Damage: 10
+		Versus:
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.tank: 10
+			vehicle.dragon_tank: 25
+			aircraft.normal: 120
+			aircraft.comanche: 120
+			aircraft.chinook: 50
+			building.normal: 10
+			building.tough: 10
+			building.defense: 25
+			building.stinger_site: 10
+			building.wall: 6

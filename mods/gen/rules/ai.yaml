@@ -1,0 +1,1294 @@
+Player:
+	HackyAI@RushAI:
+		Name: Rush AI
+		Type: rush
+		MinimumExcessPower: 3
+		BuildingQueues: Building, Upgrade
+		DefenseQueues: Building
+		UnitQueues: Infantry, Vehicle, Aircraft
+		BuildingCommonNames:
+			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center
+			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
+			Power: building.cold_fusion_reactor, building.nuclear_reactor
+			Barracks: building.usa_barracks, building.gla_barracks, building.prc_barracks
+			VehiclesFactory: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
+			NavalProduction: tech,shipyard
+			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory
+		UnitsCommonNames:
+			Mcv: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+#		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.red_guard
+#		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.communications_center, tech.forward_command, tech.shipyard, tech.service_depot
+		BuildingLimits:
+			building.usa_supply_center: 4
+			building.gla_supply_stash: 4
+			building.prc_supply_center: 4
+			building.usa_barracks: 1
+			building.gla_barracks: 1
+			building.prc_barracks: 1
+			building.usa_war_factory: 1
+			building.arms_dealer: 1
+			building.prc_war_factory: 1
+			building.land_mine: 4
+			building.strategy_center: 1
+			building.palace: 1
+			building.propaganda_center: 1
+			building.detention_camp: 1
+			building.supply_drop_zone: 2
+			building.black_market: 2
+			building.usa_airfield: 1
+			building.prc_airfield: 1
+		BuildingFractions:
+			building.usa_supply_center: 30%
+			building.gla_supply_stash: 30%
+			building.prc_supply_center: 30%
+			building.cold_fusion_reactor: 15%
+			building.nuclear_reactor: 15%
+			building.usa_barracks: 1%
+			building.gla_barracks: 1%
+			building.prc_barracks: 1%
+			building.usa_war_factory: 1%
+			building.arms_dealer: 1%
+			building.prc_war_factory: 1%
+			building.patriot: 3%
+			building.land_mine: 1%
+			building.stinger_site: 2%
+			building.gatling_cannon: 3%
+			building.bunker: 1%
+			building.tunnel_network: 1%
+			building.speaker_tower: 1%
+			building.strategy_center: 1%
+			building.palace: 1%
+			building.propaganda_center: 1%
+			building.detention_camp: 1%
+			building.supply_drop_zone: 1%
+			building.black_market: 1%
+			building.usa_airfield: 1%
+			building.prc_airfield: 1%
+			upgrade.spy_drone: 1%
+			upgrade.radar: 1%
+#			upgrade.control_rods: 1%
+			upgrade.capture_building: 1%
+			upgrade.flashbang_grenades: 1%
+			upgrade.ambush1: 1%
+			upgrade.ambush2: 1%
+			upgrade.ambush3: 1%
+			upgrade.tow_missile: 1%
+			upgrade.sc_rocket: 1%
+			upgrade.black_napalm: 1%
+			upgrade.arty_barrage1: 1%
+			upgrade.arty_barrage2: 1%
+			upgrade.arty_barrage3: 1%
+			upgrade.a101: 1%
+			upgrade.a102: 1%
+			upgrade.a103: 1%
+			upgrade.rocket_pods: 1%
+			upgrade.mig_armor: 1%
+			upgrade.adv_training: 1%
+			upgrade.tech_training: 1%
+			upgrade.red_training: 1%
+			upgrade.arty_training: 1%
+			upgrade.toxin_shells: 1%
+			upgrade.anthrax_beta: 1%
+			upgrade.camouflage: 1%
+			upgrade.subliminal_messaging: 1%
+			upgrade.radar_van_scan: 1%
+			upgrade.ap_bullets: 1%
+			upgrade.ap_rockets: 1%
+			upgrade.junk_repair: 1%
+			upgrade.buggy_ammo: 1%
+			upgrade.nuclear_tanks: 1%
+			upgrade.uranium_shells: 1%
+			upgrade.fuel_air_bomb: 1%
+			upgrade.anthrax_bomb: 1%
+			upgrade.emp: 1%
+			strategy.bombardment: 1%
+			strategy.search_and_destroy: 5%
+			strategy.hold_the_line: 1%
+			strategy.bio_bombs: 3%
+			strategy.hi_explosive_bombs: 3%
+			strategy.overlord_gatling: 4%
+			strategy.overlord_speaker: 2%
+		UnitsToBuild:
+			infantry.ranger: 75%
+			infantry.rebel: 75%
+			infantry.red_guard: 75%
+			infantry.missile_defender: 30%
+			infantry.rpg_trooper: 30%
+			infantry.tank_hunter: 30%
+			infantry.pathfinder: 3%
+			infantry.angry_mob: 3%
+			infantry.colonel_burton: 0.5%
+			infantry.jarmen_kell: 0.5%
+			infantry.black_lotus: 0.5%
+			infantry.worker: 150%
+			vehicle.supply_truck: 10%
+			vehicle.humvee: 50%
+			vehicle.technical: 50%
+			vehicle.troop_crawler: 50%
+			vehicle.quad_cannon: 30%
+			vehicle.tomahawk_launcher: 10%
+			vehicle.inferno_cannon: 10%
+			vehicle.scud_launcher: 10%
+			vehicle.dragon_tank: 20%
+			vehicle.rocket_buggy: 20%
+			vehicle.toxin_tractor: 10%
+			vehicle.scorpion_tank: 15%
+			vehicle.crusader_tank: 15%
+			vehicle.battlemaster_tank: 15%
+			vehicle.overlord_tank: 8%
+			vehicle.paladin_tank: 8%
+			vehicle.marauder_tank: 8%
+			vehicle.radar_van: 1%
+			aircraft.chinook: 10%
+			aircraft.mig: 2%
+			aircraft.raptor: 2%
+			aircraft.stealth_fighter: 1%
+			aircraft.aurora: 0.5%
+			aircraft.comanche: 2%
+		UnitLimits:
+			infantry.colonel_burton: 1
+			infantry.jarmen_kell: 1
+			infantry.black_lotus: 1
+			infantry.worker: 32
+			aircraft.mig: 4
+			aircraft.raptor: 2
+			aircraft.stealth_fighter: 1
+			aircraft.aurora: 1
+			aircraft.comanche: 4
+			aircraft.chinook: 8
+			vehicle.supply_truck: 8
+			vehicle.radar_van: 2
+		SquadSize: 20
+#		SupportPowerDecision@spydrone:
+#			OrderName: SpyDronePowerInfoOrder
+#			MinimumAttractiveness: 1
+#			Consideration@1:
+#				Against: Enemy
+#				Types: Structure
+#				Attractiveness: 1
+#				TargetMetric: None
+#				CheckRadius: 5c0
+		SupportPowerDecision@radar_van_scan:
+			OrderName: RadarScanPowerInfoOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@spy_satellite:
+			OrderName: SpySatellitePowerInfoOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@a101:
+			OrderName: A101PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@a102:
+			OrderName: A102PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@a103:
+			OrderName: A1032PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@arty_barrage1:
+			OrderName: ArtilleryBarrage1PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@arty_barrage2:
+			OrderName: ArtilleryBarrage2PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@arty_barrage3:
+			OrderName: ArtilleryBarrage3PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@ambush1:
+			OrderName: Ambush1PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@ambush2:
+			OrderName: Ambush2PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@ambush3:
+			OrderName: Ambush3PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@fuel_air_bomb:
+			OrderName: FuelAirBombPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@anthrax_bomb:
+			OrderName: AnthraxBombPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Infantry, Vehicle
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@emp:
+			OrderName: EMPPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure, Vehicle
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@ParticleCannonPower:
+			OrderName: IonCannonPowerInfoOrder
+			MinimumAttractiveness: 1000
+			FineScanRadius: 2
+			Consideration@1:
+				Against: Enemy
+				Types: Air, Tank, Vehicle, Infantry, Water
+				Attractiveness: 2
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@3:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 3c0
+		SupportPowerDecision@scud_storm:
+			OrderName: SCUDStormPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@nukepower:
+			OrderName: NukePowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@SupplyDrop:
+			OrderName: SupplyDropPowerInfoOrder
+			Consideration@1:
+				Against: Ally
+		SupportPowerDecision@Intelligence:
+			OrderName: IntelligencePowerInfoOrder
+			Consideration@1:
+				Against: Ally
+	HackyAI@NormalAI:
+		Name: Normal AI
+		Type: normal
+		MinimumExcessPower: 3
+		BuildingQueues: Building, Upgrade
+		DefenseQueues: Building
+		UnitQueues: Infantry, Vehicle, Aircraft
+		BuildingCommonNames:
+			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center
+			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
+			Power: building.cold_fusion_reactor, building.nuclear_reactor
+			Barracks: building.usa_barracks, building.gla_barracks, building.prc_barracks
+			VehiclesFactory: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
+			NavalProduction: tech,shipyard
+			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory
+		UnitsCommonNames:
+			Mcv: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+#		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.red_guard
+#		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.communications_center, tech.forward_command, tech.shipyard, tech.service_depot
+		BuildingLimits:
+			building.usa_supply_center: 4
+			building.gla_supply_stash: 4
+			building.prc_supply_center: 4
+			building.usa_barracks: 1
+			building.gla_barracks: 1
+			building.prc_barracks: 1
+			building.usa_war_factory: 1
+			building.arms_dealer: 1
+			building.prc_war_factory: 1
+			building.land_mine: 8
+			building.strategy_center: 1
+			building.palace: 1
+			building.propaganda_center: 1
+			building.detention_camp: 1
+			building.supply_drop_zone: 2
+			building.black_market: 2
+			building.usa_airfield: 1
+			building.prc_airfield: 1
+			building.particle_cannon: 1
+			hack.scud_spawner: 1
+			building.missile_silo: 1
+		BuildingFractions:
+			building.usa_supply_center: 30%
+			building.gla_supply_stash: 30%
+			building.prc_supply_center: 30%
+			building.cold_fusion_reactor: 15%
+			building.nuclear_reactor: 15%
+			building.usa_barracks: 1%
+			building.gla_barracks: 1%
+			building.prc_barracks: 1%
+			building.usa_war_factory: 1%
+			building.arms_dealer: 1%
+			building.prc_war_factory: 1%
+			building.patriot: 5%
+			building.land_mine: 1%
+			building.stinger_site: 3%
+			building.gatling_cannon: 5%
+			building.bunker: 1%
+			building.tunnel_network: 2%
+			building.speaker_tower: 2%
+			building.strategy_center: 1%
+			building.palace: 1%
+			building.propaganda_center: 1%
+			building.detention_camp: 1%
+			building.supply_drop_zone: 1%
+			building.black_market: 1%
+			building.usa_airfield: 1%
+			building.prc_airfield: 1%
+			building.particle_cannon: 1%
+			hack.scud_spawner: 1%
+			building.missile_silo: 1%
+			upgrade.spy_drone: 1%
+			upgrade.radar: 1%
+#			upgrade.control_rods: 1%
+			upgrade.capture_building: 1%
+			upgrade.flashbang_grenades: 1%
+			upgrade.ambush1: 1%
+			upgrade.ambush2: 1%
+			upgrade.ambush3: 1%
+			upgrade.tow_missile: 1%
+			upgrade.sc_rocket: 1%
+			upgrade.black_napalm: 1%
+			upgrade.arty_barrage1: 1%
+			upgrade.arty_barrage2: 1%
+			upgrade.arty_barrage3: 1%
+			upgrade.a101: 1%
+			upgrade.a102: 1%
+			upgrade.a103: 1%
+			upgrade.rocket_pods: 1%
+			upgrade.mig_armor: 1%
+			upgrade.adv_training: 1%
+			upgrade.tech_training: 1%
+			upgrade.red_training: 1%
+			upgrade.arty_training: 1%
+			upgrade.toxin_shells: 1%
+			upgrade.anthrax_beta: 1%
+			upgrade.camouflage: 1%
+			upgrade.subliminal_messaging: 1%
+			upgrade.radar_van_scan: 1%
+			upgrade.ap_bullets: 1%
+			upgrade.ap_rockets: 1%
+			upgrade.junk_repair: 1%
+			upgrade.buggy_ammo: 1%
+			upgrade.nuclear_tanks: 1%
+			upgrade.uranium_shells: 1%
+			upgrade.fuel_air_bomb: 1%
+			upgrade.anthrax_bomb: 1%
+			upgrade.emp: 1%
+			strategy.bombardment: 2%
+			strategy.search_and_destroy: 3%
+			strategy.hold_the_line: 2%
+			strategy.bio_bombs: 3%
+			strategy.hi_explosive_bombs: 3%
+			strategy.overlord_gatling: 3%
+			strategy.overlord_speaker: 3%
+		UnitsToBuild:
+			infantry.ranger: 60%
+			infantry.rebel: 60%
+			infantry.red_guard: 60%
+			infantry.missile_defender: 35%
+			infantry.rpg_trooper: 35%
+			infantry.tank_hunter: 35%
+			infantry.pathfinder: 4%
+			infantry.angry_mob: 4%
+			infantry.colonel_burton: 0.5%
+			infantry.jarmen_kell: 0.5%
+			infantry.black_lotus: 0.5%
+			infantry.worker: 150%
+			vehicle.supply_truck: 10%
+			vehicle.humvee: 35%
+			vehicle.technical: 35%
+			vehicle.troop_crawler: 35%
+			vehicle.quad_cannon: 40%
+			vehicle.tomahawk_launcher: 20%
+			vehicle.inferno_cannon: 20%
+			vehicle.scud_launcher: 20%
+			vehicle.dragon_tank: 25%
+			vehicle.rocket_buggy: 25%
+			vehicle.toxin_tractor: 15%
+			vehicle.scorpion_tank: 35%
+			vehicle.crusader_tank: 35%
+			vehicle.battlemaster_tank: 35%
+			vehicle.overlord_tank: 12%
+			vehicle.paladin_tank: 12%
+			vehicle.marauder_tank: 12%
+			vehicle.radar_van: 1%
+			aircraft.chinook: 10%
+			aircraft.mig: 2%
+			aircraft.raptor: 2%
+			aircraft.stealth_fighter: 2%
+			aircraft.aurora: 1%
+			aircraft.comanche: 2%
+		UnitLimits:
+			infantry.colonel_burton: 1
+			infantry.jarmen_kell: 1
+			infantry.black_lotus: 1
+			infantry.worker: 32
+			aircraft.mig: 4
+			aircraft.raptor: 2
+			aircraft.stealth_fighter: 1
+			aircraft.aurora: 1
+			aircraft.comanche: 4
+			aircraft.chinook: 8
+			vehicle.supply_truck: 8
+			vehicle.radar_van: 2
+		SquadSize: 40
+#		SupportPowerDecision@spydrone:
+#			OrderName: SpyDronePowerInfoOrder
+#			MinimumAttractiveness: 1
+#			Consideration@1:
+#				Against: Enemy
+#				Types: Structure
+#				Attractiveness: 1
+#				TargetMetric: None
+#				CheckRadius: 5c0
+		SupportPowerDecision@radar_van_scan:
+			OrderName: RadarScanPowerInfoOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@spy_satellite:
+			OrderName: SpySatellitePowerInfoOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@a101:
+			OrderName: A101PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@a102:
+			OrderName: A102PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@a103:
+			OrderName: A1032PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@arty_barrage1:
+			OrderName: ArtilleryBarrage1PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@arty_barrage2:
+			OrderName: ArtilleryBarrage2PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@arty_barrage3:
+			OrderName: ArtilleryBarrage3PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@ambush1:
+			OrderName: Ambush1PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@ambush2:
+			OrderName: Ambush2PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@ambush3:
+			OrderName: Ambush3PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@fuel_air_bomb:
+			OrderName: FuelAirBombPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@anthrax_bomb:
+			OrderName: AnthraxBombPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Infantry, Vehicle
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@emp:
+			OrderName: EMPPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure, Vehicle
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@ParticleCannonPower:
+			OrderName: IonCannonPowerInfoOrder
+			MinimumAttractiveness: 1000
+			FineScanRadius: 2
+			Consideration@1:
+				Against: Enemy
+				Types: Air, Tank, Vehicle, Infantry, Water
+				Attractiveness: 2
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@3:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 3c0
+		SupportPowerDecision@scud_storm:
+			OrderName: SCUDStormPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@nukepower:
+			OrderName: NukePowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@SupplyDrop:
+			OrderName: SupplyDropPowerInfoOrder
+			Consideration@1:
+				Against: Ally
+		SupportPowerDecision@Intelligence:
+			OrderName: IntelligencePowerInfoOrder
+			Consideration@1:
+				Against: Ally
+	HackyAI@TurtleAI:
+		Name: Turtle AI
+		Type: turtle
+		MinimumExcessPower: 3
+		BuildingQueues: Building, Upgrade
+		DefenseQueues: Building
+		UnitQueues: Infantry, Vehicle, Aircraft
+		BuildingCommonNames:
+			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center
+			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
+			Power: building.cold_fusion_reactor, building.nuclear_reactor
+			Barracks: building.usa_barracks, building.gla_barracks, building.prc_barracks
+			VehiclesFactory: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
+			NavalProduction: tech,shipyard
+			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory
+		UnitsCommonNames:
+			Mcv: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+#		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.red_guard
+#		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.communications_center, tech.forward_command, tech.shipyard, tech.service_depot
+		BuildingLimits:
+			building.usa_supply_center: 4
+			building.gla_supply_stash: 4
+			building.prc_supply_center: 4
+			building.usa_barracks: 1
+			building.gla_barracks: 1
+			building.prc_barracks: 1
+			building.usa_war_factory: 1
+			building.arms_dealer: 1
+			building.prc_war_factory: 1
+			building.land_mine: 12
+			building.strategy_center: 1
+			building.palace: 1
+			building.propaganda_center: 1
+			building.detention_camp: 1
+			building.supply_drop_zone: 2
+			building.black_market: 2
+			building.usa_airfield: 1
+			building.prc_airfield: 1
+			building.particle_cannon: 1
+			hack.scud_spawner: 1
+			building.missile_silo: 1
+		BuildingFractions:
+			building.usa_supply_center: 30%
+			building.gla_supply_stash: 30%
+			building.prc_supply_center: 30%
+			building.cold_fusion_reactor: 15%
+			building.nuclear_reactor: 15%
+			building.usa_barracks: 1%
+			building.gla_barracks: 1%
+			building.prc_barracks: 1%
+			building.usa_war_factory: 1%
+			building.arms_dealer: 1%
+			building.prc_war_factory: 1%
+			building.patriot: 7%
+			building.land_mine: 1%
+			building.stinger_site: 4%
+			building.gatling_cannon: 7%
+			building.bunker: 1%
+			building.tunnel_network: 3%
+			building.speaker_tower: 3%
+			building.strategy_center: 1%
+			building.palace: 1%
+			building.propaganda_center: 1%
+			building.detention_camp: 1%
+			building.supply_drop_zone: 1%
+			building.black_market: 1%
+			building.usa_airfield: 1%
+			building.prc_airfield: 1%
+			building.particle_cannon: 1%
+			hack.scud_spawner: 1%
+			building.missile_silo: 1%
+			upgrade.spy_drone: 1%
+			upgrade.radar: 1%
+#			upgrade.control_rods: 1%
+			upgrade.capture_building: 1%
+			upgrade.flashbang_grenades: 1%
+			upgrade.ambush1: 1%
+			upgrade.ambush2: 1%
+			upgrade.ambush3: 1%
+			upgrade.tow_missile: 1%
+			upgrade.sc_rocket: 1%
+			upgrade.black_napalm: 1%
+			upgrade.arty_barrage1: 1%
+			upgrade.arty_barrage2: 1%
+			upgrade.arty_barrage3: 1%
+			upgrade.a101: 1%
+			upgrade.a102: 1%
+			upgrade.a103: 1%
+			upgrade.rocket_pods: 1%
+			upgrade.mig_armor: 1%
+			upgrade.adv_training: 1%
+			upgrade.tech_training: 1%
+			upgrade.red_training: 1%
+			upgrade.arty_training: 1%
+			upgrade.toxin_shells: 1%
+			upgrade.anthrax_beta: 1%
+			upgrade.camouflage: 1%
+			upgrade.subliminal_messaging: 1%
+			upgrade.radar_van_scan: 1%
+			upgrade.ap_bullets: 1%
+			upgrade.ap_rockets: 1%
+			upgrade.junk_repair: 1%
+			upgrade.buggy_ammo: 1%
+			upgrade.nuclear_tanks: 1%
+			upgrade.uranium_shells: 1%
+			upgrade.fuel_air_bomb: 1%
+			upgrade.anthrax_bomb: 1%
+			upgrade.emp: 1%
+			strategy.bombardment: 3%
+			strategy.search_and_destroy: 1%
+			strategy.hold_the_line: 3%
+			strategy.bio_bombs: 3%
+			strategy.hi_explosive_bombs: 3%
+			strategy.overlord_gatling: 2%
+			strategy.overlord_speaker: 4%
+		UnitsToBuild:
+			infantry.ranger: 40%
+			infantry.rebel: 40%
+			infantry.red_guard: 40%
+			infantry.missile_defender: 30%
+			infantry.rpg_trooper: 30%
+			infantry.tank_hunter: 30%
+			infantry.pathfinder: 5%
+			infantry.angry_mob: 5%
+			infantry.colonel_burton: 0.5%
+			infantry.jarmen_kell: 0.5%
+			infantry.black_lotus: 0.5%
+			infantry.worker: 150%
+			vehicle.supply_truck: 10%
+			vehicle.humvee: 25%
+			vehicle.technical: 25%
+			vehicle.troop_crawler: 25%
+			vehicle.quad_cannon: 50%
+			vehicle.tomahawk_launcher: 30%
+			vehicle.inferno_cannon: 30%
+			vehicle.scud_launcher: 30%
+			vehicle.dragon_tank: 30%
+			vehicle.rocket_buggy: 30%
+			vehicle.toxin_tractor: 20%
+			vehicle.scorpion_tank: 45%
+			vehicle.crusader_tank: 45%
+			vehicle.battlemaster_tank: 45%
+			vehicle.overlord_tank: 16%
+			vehicle.paladin_tank: 16%
+			vehicle.marauder_tank: 16%
+			vehicle.radar_van: 1%
+			aircraft.chinook: 10%
+			aircraft.mig: 2%
+			aircraft.raptor: 1%
+			aircraft.stealth_fighter: 2%
+			aircraft.aurora: 1%
+			aircraft.comanche: 2%
+		UnitLimits:
+			infantry.colonel_burton: 1
+			infantry.jarmen_kell: 1
+			infantry.black_lotus: 1
+			infantry.worker: 32
+			aircraft.mig: 4
+			aircraft.raptor: 2
+			aircraft.stealth_fighter: 1
+			aircraft.aurora: 1
+			aircraft.comanche: 4
+			aircraft.chinook: 8
+			vehicle.supply_truck: 8
+			vehicle.radar_van: 2
+		SquadSize: 10
+#		SupportPowerDecision@spydrone:
+#			OrderName: SpyDronePowerInfoOrder
+#			MinimumAttractiveness: 1
+#			Consideration@1:
+#				Against: Enemy
+#				Types: Structure
+#				Attractiveness: 1
+#				TargetMetric: None
+#				CheckRadius: 5c0
+		SupportPowerDecision@radar_van_scan:
+			OrderName: RadarScanPowerInfoOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@spy_satellite:
+			OrderName: SpySatellitePowerInfoOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@a101:
+			OrderName: A101PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@a102:
+			OrderName: A102PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@a103:
+			OrderName: A1032PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@arty_barrage1:
+			OrderName: ArtilleryBarrage1PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@arty_barrage2:
+			OrderName: ArtilleryBarrage2PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@arty_barrage3:
+			OrderName: ArtilleryBarrage3PowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@ambush1:
+			OrderName: Ambush1PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@ambush2:
+			OrderName: Ambush2PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@ambush3:
+			OrderName: Ambush3PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@fuel_air_bomb:
+			OrderName: FuelAirBombPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@anthrax_bomb:
+			OrderName: AnthraxBombPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Infantry, Vehicle
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@emp:
+			OrderName: EMPPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure, Vehicle
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@ParticleCannonPower:
+			OrderName: IonCannonPowerInfoOrder
+			MinimumAttractiveness: 1000
+			FineScanRadius: 2
+			Consideration@1:
+				Against: Enemy
+				Types: Air, Tank, Vehicle, Infantry, Water
+				Attractiveness: 2
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@3:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 3c0
+		SupportPowerDecision@scud_storm:
+			OrderName: SCUDStormPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@nukepower:
+			OrderName: NukePowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@SupplyDrop:
+			OrderName: SupplyDropPowerInfoOrder
+			Consideration@1:
+				Against: Ally
+		SupportPowerDecision@Intelligence:
+			OrderName: IntelligencePowerInfoOrder
+			Consideration@1:
+				Against: Ally

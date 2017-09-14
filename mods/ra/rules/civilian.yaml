@@ -1,0 +1,767 @@
+C1:
+	Inherits@1: ^CivInfantry
+	Inherits@2: ^ArmedCivilian
+
+C2:
+	Inherits: ^CivInfantry
+	Voiced:
+		VoiceSet: CivilianFemaleVoice
+
+C3:
+	Inherits: ^CivInfantry
+
+C4:
+	Inherits: ^CivInfantry
+	RenderSprites:
+		Image: C2
+	Voiced:
+		VoiceSet: CivilianFemaleVoice
+
+C5:
+	Inherits: ^CivInfantry
+	RenderSprites:
+		Image: C1
+
+C6:
+	Inherits: ^CivInfantry
+	RenderSprites:
+		Image: C2
+	Voiced:
+		VoiceSet: CivilianFemaleVoice
+
+C7:
+	Inherits@1: ^CivInfantry
+	Inherits@2: ^ArmedCivilian
+	RenderSprites:
+		Image: C1
+
+C8:
+	Inherits: ^CivInfantry
+	RenderSprites:
+		Image: C2
+	Voiced:
+		VoiceSet: CivilianFemaleVoice
+
+C9:
+	Inherits: ^CivInfantry
+	RenderSprites:
+		Image: C1
+
+C10:
+	Inherits: ^CivInfantry
+	RenderSprites:
+		Image: C2
+	Voiced:
+		VoiceSet: CivilianFemaleVoice
+
+TECN:
+	Inherits@1: ^CivInfantry
+	Inherits@2: ^ArmedCivilian
+	Tooltip:
+		Name: Technician
+	RenderSprites:
+		Image: C1
+
+FCOM:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Valued:
+		Cost: 2000
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	Tooltip:
+		Name: Forward Command
+	RevealsShroud:
+		Range: 10c0
+	WithBuildingBib:
+	Power:
+		Amount: -200
+	ProvidesPrerequisite@buildingname:
+
+HOSP:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Priority: 0
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 800
+	ExternalCapturable:
+	ExternalCapturableBar:
+	EngineerRepairable:
+	Tooltip:
+		Name: Hospital
+	RevealsShroud:
+		Range: 4c0
+	WithBuildingBib:
+		HasMinibib: Yes
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+	ProvidesPrerequisite@buildingname:
+	GpsDot:
+		String: Hospital
+
+V01:
+	Inherits: ^CivBuilding
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Church
+	RevealsShroud:
+		Range: 10c0
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -490,-384,0, 0,0,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -768, -597
+			BottomRight: 896, 683
+
+V02:
+	Inherits: ^CivBuilding
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -490,-512,0, 0,0,0, 0,512,0
+		Type: Rectangle
+			TopLeft: -1024, -512
+			BottomRight: 1024, 597
+
+V03:
+	Inherits: ^CivBuilding
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -490,-512,0, 0,0,0, 421,512,0, -210,512,0
+		Type: Rectangle
+			TopLeft: -1024, -597
+			BottomRight: 1024, 597
+
+V04:
+	Inherits: ^CivBuilding
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, -421,-256,0, -421,256,0
+		Type: Rectangle
+			TopLeft: -683, -432
+			BottomRight: 683, 683
+
+V05:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+
+V06:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+
+V07:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+
+V08:
+	Inherits: ^CivBuilding
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+
+V09:
+	Inherits: ^CivBuilding
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+
+V10:
+	Inherits: ^CivBuilding
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+
+V11:
+	Inherits: ^CivBuilding
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+
+V12:
+	Inherits: ^CivBuilding
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+
+V13:
+	Inherits: ^CivBuilding
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+
+V14:
+	Inherits: ^CivField
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+
+V15:
+	Inherits: ^CivField
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+
+V16:
+	Inherits: ^CivField
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+
+V17:
+	Inherits: ^CivField
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+
+V18:
+	Inherits: ^CivField
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT, INTERIOR
+
+V19:
+	Inherits: ^CivBuilding
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Oil Pump
+	-SpawnActorOnDeath@1:
+	-SpawnActorOnDeath@2:
+	-SpawnActorOnDeath@3:
+	SpawnActorOnDeath:
+		Actor: V19.Husk
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NoAutoTarget
+
+V19.Husk:
+	Inherits: ^CivBuilding
+	EditorTilesetFilter:
+		ExcludeTilesets: DESERT
+	Tooltip:
+		Name: Husk (Oil Pump)
+	RenderSprites:
+	WithSpriteBody:
+	WithIdleOverlay:
+		StartSequence: fire-start
+		Sequence: fire-loop
+	-Selectable:
+	SelectionDecorations:
+		RenderSelectionBars: False
+	-Targetable:
+	-Demolishable:
+
+BARL:
+	Inherits: ^TechBuilding
+	-Selectable:
+	SelectionDecorations:
+		RenderSelectionBars: False
+	CustomSelectionSize:
+		CustomBounds: 24,24
+	Health:
+		HP: 10
+	Explodes:
+		Weapon: BarrelExplode
+	Tooltip:
+		Name: Explosive Barrel
+		ShowOwnerRow: False
+	Armor:
+		Type: None
+	Targetable:
+		TargetTypes: Ground, DemoTruck, Barrel, NoAutoTarget
+	-ShakeOnDeath:
+	-SoundOnDamageTransition:
+	-Demolishable:
+	EditorTilesetFilter:
+		Categories: Decoration
+
+BRL3:
+	Inherits: ^TechBuilding
+	-Selectable:
+	SelectionDecorations:
+		RenderSelectionBars: False
+	CustomSelectionSize:
+		CustomBounds: 24,24
+	Health:
+		HP: 10
+	Explodes:
+		Weapon: BarrelExplode
+	Tooltip:
+		Name: Explosive Barrel
+		ShowOwnerRow: False
+	Armor:
+		Type: None
+	Targetable:
+		TargetTypes: Ground, DemoTruck, Barrel, NoAutoTarget
+	-ShakeOnDeath:
+	-SoundOnDamageTransition:
+	-Demolishable:
+	EditorTilesetFilter:
+		Categories: Decoration
+
+AMMOBOX1:
+	Inherits: ^AmmoBox
+
+AMMOBOX2:
+	Inherits: ^AmmoBox
+
+AMMOBOX3:
+	Inherits: ^AmmoBox
+
+MISS:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^3x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 840,0,0, 840,-1024,0, 420,768,0, -840,0,0, -840,-1024,0, -840,1024,0
+	Selectable:
+		Priority: 0
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Valued:
+		Cost: 2000
+	Health:
+		HP: 400
+	RevealsShroud:
+		Range: 3c0
+	Armor:
+		Type: Wood
+	Tooltip:
+		Name: Technology Center
+	WithBuildingBib:
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+	ProvidesPrerequisite@buildingname:
+
+BIO:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	RevealsShroud:
+		Range: 3c0
+	ExternalCapturable:
+	ExternalCapturableBar:
+	EngineerRepairable:
+	Tooltip:
+		Name: Biological Lab
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+	ProvidesPrerequisite@buildingname:
+	GpsDot:
+		String: Biohazard
+
+OILB:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 630,-300,0, 420,512,0, -420,-512,0, -630,300,0
+	Selectable:
+		Priority: 0
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 800
+	RevealsShroud:
+		Range: 4c0
+	ExternalCapturable:
+	ExternalCapturableBar:
+	EngineerRepairable:
+	CashTrickler:
+		Interval: 375
+		Amount: 100
+	Tooltip:
+		Name: Oil Derrick
+	Explodes:
+		Weapon: BarrelExplode
+	GpsDot:
+		String: Oil
+	GivesCashOnCapture:
+		Amount: 100
+
+BR1:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 235
+		DamagedTemplate: 236
+		DestroyedTemplate: 237
+		SouthOffset: 0,2
+	FreeActor:
+		Actor: bridgehut
+		SpawnOffset: 2,0
+
+BR2:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 238
+		DamagedTemplate: 239
+		DestroyedTemplate: 240
+		NorthOffset: 3,0
+	FreeActor:
+		Actor: bridgehut
+		SpawnOffset: 1,1
+
+BR3:
+	Inherits: ^Bridge
+	Bridge:
+		Long: yes
+		ShorePieces: br1,br2
+		Template: 241
+		DamagedTemplate: 242
+		DestroyedTemplate: 243
+		DestroyedPlusNorthTemplate: 245
+		DestroyedPlusSouthTemplate: 244
+		DestroyedPlusBothTemplate: 246
+		NorthOffset: 2,0
+		SouthOffset: 0,1
+
+BRIDGE1:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 131
+		DamagedTemplate: 378
+		DestroyedTemplate: 132
+	Building:
+		Footprint: _____ _____ _____
+		Dimensions: 5,3
+	CustomSelectionSize:
+		CustomBounds: 120,72
+	FreeActor@north:
+		Actor: bridgehut
+		SpawnOffset: 2,-1
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 0,1
+
+BRIDGE2:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 133
+		DamagedTemplate: 379
+		DestroyedTemplate: 134
+	Building:
+		Footprint: _____ _____
+		Dimensions: 5,2
+	CustomSelectionSize:
+		CustomBounds: 120,48
+	FreeActor@north:
+		Actor: bridgehut
+		SpawnOffset: 0,-1
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 2,1
+
+SBRIDGE1:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 520
+		DamagedTemplate: 521
+		DestroyedTemplate: 522
+	Building:
+		Footprint: ___ ___
+		Dimensions: 3,2
+	CustomSelectionSize:
+		CustomBounds: 72,48
+	FreeActor@north:
+		Actor: bridgehut.small
+		SpawnOffset: 1,0
+	FreeActor@south:
+		Actor: bridgehut.small
+		SpawnOffset: 1,1
+
+SBRIDGE2:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 531
+		DamagedTemplate: 532
+		DestroyedTemplate: 533
+	Building:
+		Footprint: __ __ __
+		Dimensions: 2,3
+	CustomSelectionSize:
+		CustomBounds: 48,72
+	FreeActor@west:
+		Actor: bridgehut.small
+		SpawnOffset: 0,1
+	FreeActor@east:
+		Actor: bridgehut.small
+		SpawnOffset: 1,1
+
+SBRIDGE3:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 523
+		DamagedTemplate: 524
+		DestroyedTemplate: 525
+	FreeActor@north:
+		Actor: bridgehut
+		SpawnOffset: 2,-1
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 0,1
+
+SBRIDGE4:
+	Inherits: ^Bridge
+	Bridge:
+		Template: 527
+		DamagedTemplate: 528
+		DestroyedTemplate: 529
+	FreeActor@north:
+		Actor: bridgehut
+		SpawnOffset: 0,-1
+	FreeActor@south:
+		Actor: bridgehut
+		SpawnOffset: 2,1
+
+BRIDGEHUT:
+	AlwaysVisible:
+	Building:
+		Footprint: __ __
+		Dimensions: 2,2
+	Selectable:
+		Bounds: 48,48
+		Priority: 2
+	LegacyBridgeHut:
+	Targetable:
+		TargetTypes: BridgeHut, C4
+
+BRIDGEHUT.small:
+	AlwaysVisible:
+	Building:
+		Footprint: _
+		Dimensions: 1,1
+	Selectable:
+		Bounds: 24,24
+		Priority: 2
+	LegacyBridgeHut:
+	Targetable:
+		TargetTypes: BridgeHut, C4
+
+V20:
+	Inherits: ^DesertCivBuilding
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -840,-512,0, 0,0,0, -840,512,0
+		Type: Rectangle
+			TopLeft: -1024, -512
+			BottomRight: 1024, 896
+
+V21:
+	Inherits: ^DesertCivBuilding
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 840,-512,0, 420,0,0, 840,512,0
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 0
+	HitShape@WELL:
+		TargetableOffsets: -770,512,0
+		Type: Rectangle
+			TopLeft: 0, 0
+			BottomRight: 1024, 598
+
+V22:
+	Inherits: ^DesertCivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+
+V23:
+	Inherits: ^DesertCivBuilding
+
+V24:
+	Inherits: ^DesertCivBuilding
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -630,-512,0, 0,0,0, -630,256,0, 420,-512,0
+		Type: Rectangle
+			TopLeft: -1024, -683
+			BottomRight: 640, 853
+
+V25:
+	Inherits: ^DesertCivBuilding
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: Church
+	RevealsShroud:
+		Range: 10c0
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,-128,0, 420,512,0
+		Type: Rectangle
+			TopLeft: -683, -683
+			BottomRight: 1024, 512
+
+V26:
+	Inherits: ^DesertCivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+
+V27:
+	Inherits: ^DesertCivBuilding
+
+V28:
+	Inherits: ^DesertCivBuilding
+
+V29:
+	Inherits: ^DesertCivBuilding
+
+V30:
+	Inherits: ^DesertCivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+
+V31:
+	Inherits: ^DesertCivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+
+V32:
+	Inherits: ^DesertCivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+
+V33:
+	Inherits: ^DesertCivBuilding
+	Inherits@shape: ^2x1Shape
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+
+V34:
+	Inherits: ^DesertCivBuilding
+
+V35:
+	Inherits: ^DesertCivBuilding
+
+V36:
+	Inherits: ^DesertCivBuilding
+
+V37:
+	Inherits: ^DesertCivBuilding
+	Building:
+		Footprint: __xx_ ___xx
+		Dimensions: 5,2
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 0,1024,0
+		Type: Rectangle
+			TopLeft: -512, -597
+			BottomRight: 1536, 597
+
+RICE:
+	Inherits: ^CivField
+	EditorTilesetFilter:
+		RequireTilesets: TEMPERAT
+
+RUSHOUSE:
+	Inherits: ^CivBuilding
+	EditorTilesetFilter:
+		RequireTilesets: TEMPERAT
+	Building:
+		Footprint: x x
+		Dimensions: 1,2
+	HitShape:
+		UseTargetableCellsOffsets: false
+
+ASIANHUT:
+	Inherits: ^CivBuilding
+	EditorTilesetFilter:
+		RequireTilesets: TEMPERAT
+
+SNOWHUT:
+	Inherits: ^CivBuilding
+	EditorTilesetFilter:
+		RequireTilesets: SNOW
+	Building:
+		Footprint: x x
+		Dimensions: 1,2
+	RenderSprites:
+		Scale: 0.7
+	HitShape:
+		UseTargetableCellsOffsets: false
+
+LHUS:
+	Inherits: ^CivBuilding
+	EditorTilesetFilter:
+		RequireTilesets: TEMPERAT
+	Selectable:
+		Bounds: 24,48,0,-16
+	Tooltip:
+		Name: Lighthouse
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+
+WINDMILL:
+	Inherits: ^CivBuilding
+	EditorTilesetFilter:
+		RequireTilesets: TEMPERAT
+	Selectable:
+		Bounds: 24,24,0,-14
+	SelectionDecorations:
+		VisualBounds: 36,36,0,-14
+	Tooltip:
+		Name: Windmill
+	Building:
+		Footprint: x
+		Dimensions: 1,1

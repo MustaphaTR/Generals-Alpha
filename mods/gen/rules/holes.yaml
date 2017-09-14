@@ -1,0 +1,14 @@
+hole.command_center:
+	Inherits: ^Hole
+	Inherits@SHAPE: ^3x3Shape
+	Inherits@REVEAL: ^Reveal150
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	Health:
+		HP: 500
+	TransformOnCapture:
+		IntoActor: building.gla_command_center
+	RenderSprites:
+		Scale: 3
+		Image: minv

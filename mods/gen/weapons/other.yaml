@@ -1,0 +1,351 @@
+^FireWeapon:
+	ValidTargets: Ground, Water, Trees
+	ReloadDelay: 65
+	Range: 5c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 150
+		ValidTargets: Ground, Water, Trees
+		Versus:
+			None: 90
+			Wood: 50
+			Light: 60
+			Heavy: 25
+			Concrete: 20
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Structure, Wall
+	Warhead@3Eff: CreateEffect
+		Explosions: napalm
+		ImpactSounds: firebl3.aud
+		VictimScanRadius: 0
+
+flamer.dragon_tank:
+	Inherits: ^FireWeapon
+	Burst: 2
+	ReloadDelay: 25
+	BurstDelay: 25
+	Range: 1c896
+	Projectile: Bullet
+		Speed: 250
+		TrailImage: fb2
+		Image: FB1
+	Warhead@1Dam: SpreadDamage
+		Damage: 150
+		Versus:
+			infantry.normal: 150
+			vehicle.humvee: 50
+			vehicle.tank: 25
+			vehicle.dragon_tank: 0
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
+	Warhead@1Fire: SpawnActor
+		Actors: firestorm.normal
+
+flamer.dragon_tank.blue:
+	Inherits: flamer.dragon_tank
+	Projectile: Bullet
+		TrailImage: blue_fb2
+		Image: blue_FB1
+	Warhead@1Dam: SpreadDamage
+		Damage: 200
+	Warhead@1Fire: SpawnActor
+		Actors: firestorm.blue
+	Warhead@3Eff: CreateEffect
+		Explosions: blue_napalm
+
+Flamer:
+	Inherits: ^FireWeapon
+	ReloadDelay: 50
+	Burst: 15
+	BurstDelay: 1
+	Projectile: Bullet
+		Speed: 170
+		TrailImage: fb4
+		Image: fb3
+		LaunchAngle: 62
+		Inaccuracy: 853
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 8
+		Versus:
+			Wood: 100
+	Warhead@3Eff: CreateEffect
+		Explosions: small_napalm
+
+Napalm:
+	Inherits: ^FireWeapon
+	ReloadDelay: 20
+	Range: 4c512
+	Projectile: Bullet
+		Image: BOMBLET
+		Speed: 85
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Spread: 170
+		Damage: 100
+		Versus:
+			Wood: 100
+			Concrete: 50
+
+Heal:
+	ReloadDelay: 80
+	Range: 4c0
+	Report: heal2.aud
+	ValidTargets: Infantry
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: -50
+		ValidStances: Ally
+		ValidTargets: Infantry
+		DebugOverlayColor: 00FF00
+
+Repair:
+	Inherits: Heal
+	Report: fixit1.aud
+	ValidTargets: Repair
+	Warhead@1Dam: SpreadDamage
+		Damage: -20
+		ValidTargets: Repair
+
+Crush:
+	Warhead@1Dam: SpreadDamage
+		Damage: 100
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: squishy2.aud
+
+Demolish:
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: DefaultDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: building
+		ImpactSounds: kaboom25.aud
+
+Claw:
+	ReloadDelay: 30
+	Range: 1c512
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 33
+		Versus:
+			None: 90
+			Wood: 10
+			Light: 30
+			Heavy: 10
+			Concrete: 10
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+
+Mandible:
+	Inherits: Claw
+	ReloadDelay: 10
+	Warhead@1Dam: SpreadDamage
+		Damage: 60
+
+MADTankThump:
+	InvalidTargets: MADTank, Infantry
+	Warhead@1Dam: HealthPercentageDamage
+		Spread: 7c0
+		Damage: 1
+		InvalidTargets: MADTank, Infantry
+
+MADTankDetonate:
+	InvalidTargets: MADTank, Infantry
+	Warhead@1Dam: HealthPercentageDamage
+		Spread: 7c0
+		Damage: 19
+		InvalidTargets: MADTank, Infantry
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		Size: 7,6
+	Warhead@3Eff: CreateEffect
+		Explosions: med_explosion
+		ImpactSounds: mineblo1.aud
+		VictimScanRadius: 0
+
+hack.nuclear_reactor:
+	ReloadDelay: 25
+	Range: 2c0
+	Projectile: InstantHit
+	Warhead@1Dam: HealthPercentageDamage
+		Spread: 0c128
+		Damage: 3
+		AffectsParent: true
+
+hack.firestorm.normal:
+	ReloadDelay: 15
+	Range: 2c0
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c96
+		Damage: 30
+		Versus:
+			infantry.normal: 150
+			vehicle.humvee: 50
+			vehicle.tank: 25
+			vehicle.dragon_tank: 0
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+
+hack.firestorm.blue:
+	Inherits: hack.firestorm.normal
+	Warhead@1Dam: SpreadDamage
+		Damage: 45
+
+A10Bombs:
+	Inherits: ^FireWeapon
+	ReloadDelay: 5
+	Range: 2c0
+	Burst: 2
+	BurstDelay: 2
+	Projectile: GravityBomb
+		Image: BOMBLET
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 30
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Versus:
+			Wood: 35
+			Heavy: 80
+
+laser.paladin_tank:
+	ReloadDelay: 25
+	Range: 3c0
+	Report: vpalwe2d.aud
+	InvalidTargets: Vehicle, Tank, Structure, Wall
+	Projectile: LaserZap
+		Width: 60
+		ZOffset: 2047
+		Color: FF0000
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 100
+		Versus:
+			infantry.normal: 50
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+
+ToxinLauncher:
+	InvalidTargets: Structure, Wall
+	Range: 2c512
+	ReloadDelay: 6
+	Projectile: RadBeam
+		ZOffset: 1024
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 10
+		Versus:
+			None: 100
+			Light: 50
+			Heavy: 20
+			Wood: 0
+			Concrete: 0
+		DamageTypes: FireDeath, DropCrate, TakesBounty
+	Warhead@2Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_alpha
+		Range: 1
+		Level: 500
+		Falloff: 100, 90, 50, 0
+		MaxLevel: 5000
+
+ToxinLauncher.beta:
+	Inherits: ToxinLauncher
+	Projectile: RadBeam
+		Color: 0000FF
+	Warhead@1Dam: SpreadDamage
+		Damage: 13
+	Warhead@2Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_beta
+
+hack.angry_mob.weapon:
+	ReloadDelay: 30
+	Range: 2c384
+	ValidTargets: Ground, Water
+	Projectile: Bullet
+		Speed: 10c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 1
+		Damage: 0
+		ValidTargets: Ground, Water
+
+capture.black_lotus.anim:
+	ReloadDelay: 15
+	Range: 8c128
+	ValidTargets: Structure
+	Report: ucapture.wav
+	Projectile: LaserZap
+		Width: 60
+		BeamDuration: 2
+		Color: 00FF0070
+		SecondaryBeam: true
+		SecondaryBeamWidth: 90
+		SecondaryBeamColor: FF000035
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Structure
+		ValidStances: Enemy, Neutral
+
+capture.black_lotus.end:
+	ReloadDelay: 25
+	Range: 8c128
+	ValidTargets: Structure
+	Report: ucapture.wav
+	Projectile: LaserZap
+		Width: 60
+		BeamDuration: 2
+		Color: 00FF0070
+		SecondaryBeam: true
+		SecondaryBeamWidth: 90
+		SecondaryBeamColor: FF000035
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Structure
+		ValidStances: Enemy, Neutral
+	Warhead@2Cap: CaptureActor
+		IgnoreCaptureThreshold: true
+		PlayerExperience: 25
+
+disable.black_lotus.anim:
+	ReloadDelay: 15
+	Range: 3c768
+	ValidTargets: Vehicle, Tank
+	Report: ucapture.wav
+	Projectile: LaserZap
+		Width: 60
+		BeamDuration: 2
+		Color: 00FF0070
+		SecondaryBeam: true
+		SecondaryBeamWidth: 90
+		SecondaryBeamColor: FF000035
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Vehicle, Tank
+		ValidStances: Enemy, Neutral
+
+disable.black_lotus.end:
+	ReloadDelay: 25
+	Range: 3c768
+	ValidTargets: Vehicle, Tank
+	Report: ucapture.wav
+	Projectile: LaserZap
+		Width: 60
+		BeamDuration: 2
+		Color: 00FF0070
+		SecondaryBeam: true
+		SecondaryBeamWidth: 90
+		SecondaryBeamColor: FF000035
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Vehicle, Tank
+		ValidStances: Enemy, Neutral
+	Warhead@2Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 375
+		Condition: disabled

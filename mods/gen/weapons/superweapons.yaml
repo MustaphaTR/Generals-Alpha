@@ -1,0 +1,294 @@
+^ParaBomb:
+	ReloadDelay: 10
+	Range: 1c0
+	Report: chute1.aud
+	Projectile: GravityBomb
+		Image: PARABOMB
+		OpenSequence: open
+		Velocity: 0, 0, -86
+		Acceleration: 0, 0, 0
+		Shadow: False
+
+parabomb.fuel_air_bomb:
+	Inherits: ^ParaBomb
+	Warhead@1Dam: SpreadDamage
+		Spread: 2c0
+		Damage: 1200
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Dam: SpreadDamage
+		Spread: 5c0
+		Damage: 400
+		Delay: 5
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@3Eff_impact: CreateEffect
+		Explosions: nuke
+		ImpactSounds: kaboom1.aud
+		VictimScanRadius: 0
+	Warhead@4Dam_areanuke2: SpreadDamage
+		Spread: 5c0
+		Damage: 120
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Delay: 5
+		ValidTargets: Trees
+		DamageTypes: Incendiary
+	Warhead@5Smu_impact: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		Size: 2
+	Warhead@6Smu_impact: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		Delay: 5
+		Size: 4
+
+parabomb.anthrax:
+	Inherits: ^ParaBomb
+	Warhead@1Dam: SpreadDamage
+		Spread: 2c512
+		Damage: 100
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, FireDeath
+	Warhead@2Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_alpha
+		Range: 1
+		Level: 3000
+		Falloff: 100, 50, 0
+		MaxLevel: 6000
+	Warhead@3Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_alpha
+		Range: 3
+		Level: 2500
+		Falloff: 100, 50, 0
+		MaxLevel: 6000
+	Warhead@4Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_alpha
+		Range: 5
+		Level: 2000
+		Falloff: 100, 50, 0
+		MaxLevel: 6000
+	Warhead@5EffWater: CreateEffect
+		Explosions: small_splash
+		ImpactSounds: splash9.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure
+
+parabomb.anthrax.beta:
+	Inherits: parabomb.anthrax
+	Warhead@2Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_beta
+	Warhead@3Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_beta
+	Warhead@4Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_beta
+
+parabomb.emp:
+	Inherits: ^ParaBomb
+	Warhead@1Dam: SpreadDamage
+		Spread: 2c512
+		Damage: 100
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Dis: GrantExternalCondition
+		Range: 7c0
+		Duration: 750
+		Condition: emp
+	Warhead@5EffWater: CreateEffect
+		Explosions: emp
+
+Atomic:
+	ValidTargets: Ground, Trees, Water, Underwater, Air
+	Warhead@1Dam_impact: SpreadDamage
+		Spread: 1c0
+		Damage: 150
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		ValidTargets: Ground, Trees, Water, Underwater, Air
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Res_impact: DestroyResource
+		Size: 1
+	Warhead@3Smu_impact: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		Size: 1
+	Warhead@4Eff_impact: CreateEffect
+		Explosions: nuke
+		ImpactSounds: kaboom1.aud
+		VictimScanRadius: 0
+	Warhead@5Radio: CreateRadioactivity
+		RadioactivityLayerName: radioactivity
+		Range: 1
+		Level: 2000
+		Falloff: 100, 90, 80
+		MaxLevel: 6000
+	Warhead@6Dam_areanuke1: SpreadDamage
+		Spread: 2c0
+		Damage: 60
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Delay: 5
+		ValidTargets: Ground, Trees, Water, Underwater, Air
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@7Res_areanuke1: DestroyResource
+		Size: 2
+		Delay: 5
+	Warhead@8Smu_areanuke1: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
+		Size: 2
+		Delay: 5
+	Warhead@9Eff_areanuke1: CreateEffect
+		ImpactSounds: kaboom22.aud
+		Delay: 5
+		VictimScanRadius: 0
+	Warhead@10Radio: CreateRadioactivity
+		RadioactivityLayerName: radioactivity
+		Range: 2
+		Level: 2000
+		Falloff: 100, 90, 80
+		MaxLevel: 6000
+		Delay: 5
+	Warhead@11Dam_areanuke2: SpreadDamage
+		Spread: 3c0
+		Damage: 60
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Delay: 10
+		ValidTargets: Ground, Water, Underwater, Air
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@12Dam_areanuke2: SpreadDamage
+		Spread: 3c0
+		Damage: 120
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Delay: 15
+		ValidTargets: Trees
+		DamageTypes: Incendiary
+	Warhead@13Res_areanuke2: DestroyResource
+		Size: 3
+		Delay: 10
+	Warhead@14Smu_areanuke2: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
+		Size: 3
+		Delay: 10
+	Warhead@15Radio: CreateRadioactivity
+		RadioactivityLayerName: radioactivity
+		Range: 3
+		Level: 2000
+		Falloff: 100, 90, 80
+		MaxLevel: 6000
+		Delay: 10
+	Warhead@16Dam_areanuke3: SpreadDamage
+		Spread: 4c0
+		Damage: 60
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Delay: 15
+		ValidTargets: Ground, Water, Underwater, Air
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@17Dam_areanuke3: SpreadDamage
+		Spread: 4c0
+		Damage: 120
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Delay: 15
+		ValidTargets: Trees
+		DamageTypes: Incendiary
+	Warhead@18Res_areanuke3: DestroyResource
+		Size: 4
+		Delay: 15
+	Warhead@19Smu_areanuke3: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
+		Size: 4
+		Delay: 15
+	Warhead@20Radio: CreateRadioactivity
+		RadioactivityLayerName: radioactivity
+		Range: 4
+		Level: 2000
+		Falloff: 100, 90, 80
+		MaxLevel: 6000
+		Delay: 15
+	Warhead@21Dam_areanuke4: SpreadDamage
+		Spread: 5c0
+		Damage: 60
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Delay: 20
+		ValidTargets: Ground, Water, Underwater, Air
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@22Dam_areanuke4: SpreadDamage
+		Spread: 5c0
+		Damage: 120
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Delay: 20
+		ValidTargets: Trees
+		DamageTypes: Incendiary
+	Warhead@23Res_areanuke4: DestroyResource
+		Size: 5
+		Delay: 20
+	Warhead@24Smu_areanuke4: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
+		Size: 5
+		Delay: 20
+	Warhead@25Radio: CreateRadioactivity
+		RadioactivityLayerName: radioactivity
+		Range: 5
+		Level: 2000
+		Falloff: 100, 90, 80
+		MaxLevel: 6000
+		Delay: 20
+
+IonCannon:
+	ValidTargets: Ground, Air, Trees
+	Warhead@1Dam_impact: SpreadDamage
+		Range: 0, 1c1, 2c1, 2c512
+		Damage: 100
+		Falloff: 1000, 1000, 250, 100
+		ValidTargets: Ground, Air, Trees
+		AffectsParent: True
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+	Warhead@2Smu_impact: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+	Warhead@3Smu_area: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+		Size: 1
+		Delay: 3
+	Warhead@4Res_area2: DestroyResource
+		Size: 2
+		Delay: 6
+	Warhead@5Smu_area2: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+		Size: 2,1
+		Delay: 6

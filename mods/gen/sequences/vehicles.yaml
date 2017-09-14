@@ -1,0 +1,604 @@
+vehicle.supply_truck:
+	idle: harvempty
+		Facings: 32
+		UseClassicFacingFudge: True
+	harvest: harvempty
+		Start: 32
+		Length: 8
+		Facings: 8
+	empty-idle: harvempty
+		Facings: 32
+		UseClassicFacingFudge: True
+	empty-harvest: harvempty
+		Start: 32
+		Length: 8
+		Facings: 8
+	half-idle: harvhalf
+		Facings: 32
+		UseClassicFacingFudge: True
+	half-harvest: harvhalf
+		Start: 32
+		Length: 8
+		Facings: 8
+	full-idle: harv
+		Facings: 32
+		UseClassicFacingFudge: True
+	full-harvest: harv
+		Start: 32
+		Length: 8
+		Facings: 8
+	dock: harv
+		Start: 96
+		Length: 8
+	dock-loop: harv
+		Start: 104
+		Length: 7
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: harvicon
+		Start: 0
+
+husk.supply_truck.full:
+	idle: hhusk
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -1023
+
+husk.supply_truck.empty:
+	idle: hhusk2
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -1023
+
+vehicle.humvee:
+	idle: humv
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: humv
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret2: stnk
+		Start: 38
+		Facings: 32
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: humvicon
+
+vehicle.technical:
+	idle: jeep
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: jeep
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: techicon
+
+vehicle.radar_van:
+	idle: mrj
+		Facings: 32
+		UseClassicFacingFudge: True
+	spinner: mrj
+		Start: 32
+		Length: 32
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: radvanicon
+
+vehicle.scorpion_tank:
+	idle: 1tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: 1tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	rocket: missile
+		Facings: 32
+	rocket1: missile
+		Facings: 32
+	rocket0: invis
+		Facings: 1
+	muzzle: gunfire2
+		Length: 2
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: scorpicon
+
+husk.scorpion_tank:
+	idle: 1tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: 1tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	rocket: missile
+		Facings: 32
+	rocket1: missile
+		Facings: 32
+	rocket0: invis
+		Facings: 1
+
+vehicle.crusader_tank:
+	idle: mtnk
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: mtnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 5
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: crusicon
+
+husk.crusader_tank:
+	idle: mtnk
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: mtnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
+vehicle.battlemaster_tank:
+	idle: 3tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: 2tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 5
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: bmstricon
+
+husk.battlemaster_tank:
+	idle: 3tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: 2tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
+vehicle.ambulance:
+	idle: truk
+		Facings: 32
+		UseClassicFacingFudge: True
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: ambuicon
+
+vehicle.quad_cannon:
+	idle: mgg
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: msam
+		Start: 64
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: quadicon
+
+vehicle.gatling_tank:
+	idle: 1tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: gattnk
+		Start: 64
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: gattnkicon
+
+vehicle.rocket_buggy:
+	idle: bggy
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: stnk
+		Start: 38
+		Facings: 32
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: rbggyicon
+
+vehicle.toxin_tractor:
+	idle: truk
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: 1tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: ttrkicon
+
+vehicle.dragon_tank:
+	idle: ftnk
+		Facings: 32
+		UseClassicFacingFudge: True
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: dragonicon
+
+vehicle.troop_crawler:
+	idle: apc
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	open: apc
+		Start: 32
+		Length: 3
+	unload: apc
+		Start: 32
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: apcicon
+
+vehicle.tomahawk_launcher:
+	idle: mlrs
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: mlrs
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret2: mlrs
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret1: mlrs
+		Start: 64
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret0: mlrs
+		Start: 96
+		Facings: 32
+		UseClassicFacingFudge: True
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: thwkicon
+
+vehicle.scud_launcher:
+	idle: invis
+	turret: v2rl
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret1: v2rl
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret0: v2rl
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: scudlicon
+
+vehicle.inferno_cannon:
+	idle: arty
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 5
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: artyicon
+
+vehicle.paladin_tank:
+	idle: 5tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: mtnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 5
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: palicon
+
+husk.paladin_tank:
+	idle: 5tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: 2tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
+vehicle.marauder_tank:
+	idle: 2tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: 1tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 5
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: maraudericon
+
+husk.marauder_tank:
+	idle: 2tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: 1tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
+vehicle.overlord_tank:
+	idle: 4tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: 4tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret_gatling: gattnk
+		Start: 64
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret_bunker: 4tnkpbox
+	turret_speaker: 4tnkgap
+		Length: 32
+	muzzle: gunfire2
+		Length: 5
+	muzzle2: minigun
+		Length: 6
+		Facings: 8
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: lordicon
+
+husk.overlord_tank:
+	idle: 4tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: 4tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
+colorpicker.overlord_tank:
+	idle: 4tnk
+		Facings: 32
+		Offset: -16, 0
+		UseClassicFacingFudge: True
+	turret: 4tnk
+		Start: 32
+		Facings: 32
+		Offset: -16, 0
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 5
+
+vehicle.bomb_truck:
+	idle: dtrk
+		Facings: 32
+		UseClassicFacingFudge: True
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: bombicon
+
+vehicle.nuke_cannon:
+	idle: 4tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: artytur
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 5
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: nkcanicon
+
+husk.nuke_cannon:
+	idle: 4tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: artytur
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
+vehicle.usa_mcc:
+	idle: mcv
+		Facings: 32
+		UseClassicFacingFudge: True
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: usmccicon
+
+vehicle.gla_mcc:
+	idle: mcv
+		Facings: 32
+		UseClassicFacingFudge: True
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: glamccicon
+
+vehicle.prc_mcc:
+	idle: mcv
+		Facings: 32
+		UseClassicFacingFudge: True
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: prcmccicon
+
+husk.mcc:
+	idle: mcvhusk
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -1023
+
+mnly:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	icon: mnlyicon
+
+mgg:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	spinner:
+		Start: 32
+		Length: 8
+	spinner-idle:
+		Start: 32
+		Length: 1
+	icon: mggicon
+
+mgg.destroyed:
+	idle: mgg
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	spinner: mgg
+		Start: 32
+		Length: 8
+		ZOffset: -512
+	spinner-idle: mgg
+		Start: 32
+
+ttnk:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	spinner:
+		Start: 32
+		Length: 32
+	icon: ttnkicon
+
+ftrk:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 2
+	icon: ftrkicon
+
+ctnk:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 5
+	icon: ctnkicon
+
+qtnk:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	piston:
+		Start: 32
+		Facings: 8
+		Length: 8
+	icon: qtnkicon
+
+stnk:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret:
+		Start: 38
+		Facings: 32
+	icon: stnkicon
