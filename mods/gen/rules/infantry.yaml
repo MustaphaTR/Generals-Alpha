@@ -663,6 +663,7 @@ infantry.jarmen_kell:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_barracks, building.palace, ~techlevel.high
+		BuildLimit: 1
 		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing your infantry to capture them.
 	Health:
 		HP: 200
@@ -712,6 +713,7 @@ infantry.black_lotus:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_barracks, building.propaganda_center, ~techlevel.high
+		BuildLimit: 1
 		Description: Can capture enemy structures from a distance.\n\nCan disable enemy vehicles.
 	Valued:
 		Cost: 1500
