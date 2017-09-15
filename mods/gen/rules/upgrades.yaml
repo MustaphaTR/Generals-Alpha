@@ -10,56 +10,57 @@
 	RenderSprites:
 		Image: hack.cameo_filler
 
-upgrade.emergency_repair1:
+^default.upgrade:
 	AlwaysVisible:
+	Buildable:
+		BuildDurationModifier: 100
+		Queue: Upgrade
+		BuildLimit: 1
+	RenderSprites:
+	ProvidesPrerequisite@upgradename:
+
+^default.strategy:
+	Inherits: ^default.upgrade
+	Buildable:
+		BuildDurationModifier: 0
+	Valued:
+		Cost: 0
+
+upgrade.emergency_repair1:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Emergency Repair - Level 1
 	Buildable:
 		BuildPaletteOrder: 1
 		BuildDuration: 250
-		BuildDurationModifier: 100
 		Prerequisites: ~anycommand, ~techlevel.low
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Enables Emergency Repair support power from Command Center.
 	Valued:
 		Cost: 750
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.emergency_repair2:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Emergency Repair - Level 2
 	Buildable:
 		BuildPaletteOrder: 2
 		BuildDuration: 375
-		BuildDurationModifier: 100
 		Prerequisites: ~anycommand, upgrade.emergency_repair1, ~techlevel.low
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Upgrades Emergency Repair support power to Level 2.
 	Valued:
 		Cost: 1250
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.emergency_repair3:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Emergency Repair - Level 3
 	Buildable:
 		BuildPaletteOrder: 3
 		BuildDuration: 500
-		BuildDurationModifier: 100
 		Prerequisites: ~anycommand, upgrade.emergency_repair2, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Upgrades Emergency Repair support power to Level 3.
 	Valued:
 		Cost: 1750
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 hack.cameo_filler.1:
 	Inherits: ^default.cameo_filler
@@ -68,38 +69,28 @@ hack.cameo_filler.1:
 		Prerequisites: ~anycommand, disabled, ~techlevel.low, ~!techlevel.medium
 
 upgrade.spy_drone:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Spy Drone
 	Buildable:
 		BuildPaletteOrder: 5
 		BuildDuration: 500
-		BuildDurationModifier: 100
 		Prerequisites: ~disabled
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Enables Spy Drone support power from Command Center.
 	Valued:
 		Cost: 600
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.radar:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Radar
 	Buildable:
 		BuildPaletteOrder: 6
 		BuildDuration: 500
-		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_command_center, ~techlevel.infonly
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Allows Commandand Center to provide Radar.
 	Valued:
 		Cost: 500
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.control_rods:
 	AlwaysVisible:
@@ -134,38 +125,28 @@ hack.cameo_filler.3:
 		Prerequisites: ~building.usa_command_center, disabled, ~techlevel.low
 
 upgrade.capture_building:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Capture Building
 	Buildable:
 		BuildPaletteOrder: 10
 		BuildDuration: 750
-		BuildDurationModifier: 100
 		Prerequisites: barracks, ~techlevel.infonly
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Allows AP Infantry to capture enemy and neutral structures.
 	Valued:
 		Cost: 1000
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.flashbang_grenades:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Flashbang Grenades
 	Buildable:
 		BuildPaletteOrder: 11
 		BuildDuration: 750
-		BuildDurationModifier: 100
 		Prerequisites: barracks, ~building.usa_command_center, ~techlevel.low
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Gives Rangers ability to use to flashbang grenades.
 	Valued:
 		Cost: 800
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 hack.cameo_filler.4:
 	Inherits: ^default.cameo_filler
@@ -186,123 +167,88 @@ hack.cameo_filler.6:
 		Prerequisites: ~building.prc_command_center, disabled
 
 upgrade.ambush1:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Rebel Ambush - Level 1
 	Buildable:
 		BuildPaletteOrder: 15
 		BuildDuration: 625
-		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.gla_barracks, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Enables Rebel Ambush support power from Command Center.
 	Valued:
 		Cost: 1250
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.ambush2:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Rebel Ambush - Level 2
 	Buildable:
 		BuildPaletteOrder: 16
 		BuildDuration: 875
-		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.gla_barracks, upgrade.ambush1, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Upgrades Rebel Ambush support power to Level 2.
 	Valued:
 		Cost: 1250
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.ambush3:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Rebel Ambush - Level 3
 	Buildable:
 		BuildPaletteOrder: 17
 		BuildDuration: 1125
-		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.gla_barracks, upgrade.ambush2, ~techlevel.high
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Upgrades Rebel Ambush support power to Level 3.
 	Valued:
 		Cost: 2250
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.tow_missile:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: TOW Missile
 	Buildable:
 		BuildPaletteOrder: 18
 		BuildDuration: 750
-		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_command_center, building.usa_war_factory, ~techlevel.low
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Allows Humvees to fire Missiles. 
 	Valued:
 		Cost: 1200
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.sc_rocket:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Scorpion Rocket
 	Buildable:
 		BuildPaletteOrder: 19
 		BuildDuration: 750
-		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.arms_dealer, ~techlevel.low
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Gives Scorpion Tanks a rocket.
 	Valued:
 		Cost: 1000
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.chain_gun:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Chain Gun
 	Buildable:
 		BuildPaletteOrder: 20
 		BuildDuration: 1125
-		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_command_center, building.prc_war_factory, ~techlevel.low
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Increases damage of gatling weapons by 25%. 
 	Valued:
 		Cost: 1500
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.black_napalm:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Black Napalm
 	Buildable:
 		BuildPaletteOrder: 21
 		BuildDuration: 1125
-		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_command_center, building.prc_war_factory, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Increases damage of fire based weapons. 
 	Valued:
 		Cost: 2000
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 hack.cameo_filler.7:
 	Inherits: ^default.cameo_filler
@@ -311,140 +257,100 @@ hack.cameo_filler.7:
 		Prerequisites: ~building.prc_command_center, disabled, ~techlevel.low
 
 upgrade.arty_barrage1:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Artillery Barrage - Level 1
 	Buildable:
 		BuildPaletteOrder: 23
 		BuildDuration: 625
-		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_command_center, building.prc_war_factory, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Enables Artillery Barrage support power from Command Center.
 	Valued:
 		Cost: 1600
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.arty_barrage2:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Artillery Barrage - Level 2
 	Buildable:
 		BuildPaletteOrder: 24
 		BuildDuration: 875
-		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_command_center, building.prc_war_factory, upgrade.arty_barrage1, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Upgrades Artillery Barrage support power to Level 2.
 	Valued:
 		Cost: 1600
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.arty_barrage3:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Artillery Barrage - Level 3
 	Buildable:
 		BuildPaletteOrder: 25
 		BuildDuration: 1125
-		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_command_center, building.prc_war_factory, upgrade.arty_barrage2, ~techlevel.high
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Upgrades Artillery Barrage support power to Level 3.
 	Valued:
 		Cost: 1600
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.a101:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: A-10 Strike - Level 1
 	Buildable:
 		BuildPaletteOrder: 26
 		BuildDuration: 625
-		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_command_center, building.usa_airfield, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Enables A-10 Strike support power from Command Center.
 	Valued:
 		Cost: 1600
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.a102:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: A-10 Strike - Level 2
 	Buildable:
 		BuildPaletteOrder: 27
 		BuildDuration: 875
-		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_command_center, building.usa_airfield, upgrade.a101, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Upgrades A-10 Strike support power to Level 2.
 	Valued:
 		Cost: 1600
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.a103:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: A-10 Strike - Level 3
 	Buildable:
 		BuildPaletteOrder: 28
 		BuildDuration: 1125
-		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_command_center, building.usa_airfield, upgrade.a102, ~techlevel.high
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Upgrades A-10 Strike support power to Level 3.
 	Valued:
 		Cost: 1600
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.rocket_pods:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Rocket Pods
 	Buildable:
 		BuildPaletteOrder: 29
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_command_center, building.usa_airfield, ~techlevel.high
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Allows Comanches to fire Missiles. 
 	Valued:
 		Cost: 800
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.laser_guided_missiles:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Laser-Guided Missiles
 	Buildable:
 		BuildPaletteOrder: 30
 		BuildDuration: 1000
-		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_command_center, building.usa_airfield, ~techlevel.high
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Increases the damage output of Raptor and Stealth Bomber by 25%.
 	Valued:
 		Cost: 1500
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 hack.cameo_filler.8:
 	Inherits: ^default.cameo_filler
@@ -459,106 +365,76 @@ hack.cameo_filler.9:
 		Prerequisites: ~building.usa_command_center, disabled, ~!techlevel.low
 
 upgrade.mig_armor:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: MiG Armor
 	Buildable:
 		BuildPaletteOrder: 33
 		BuildDuration: 1000
-		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_command_center, building.prc_airfield, ~techlevel.high
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Increases MiGs' armor.
 	Valued:
 		Cost: 1200
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.adv_training:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Advanced Training
 	Buildable:
 		BuildPaletteOrder: 34
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_command_center, building.strategy_center, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Doubles the rate units gain veterancy.
 	Valued:
 		Cost: 1500
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.tech_training:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Technical Training
 	Buildable:
 		BuildPaletteOrder: 35
 		BuildDuration: 1125
-		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.palace, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Makes Technicals trained as veteran.
 	Valued:
 		Cost: 1200
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.red_training:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Red Guard Training
 	Buildable:
 		BuildPaletteOrder: 36
 		BuildDuration: 1000
-		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_command_center, building.propaganda_center, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Makes Red Guards trained as veteran.
 	Valued:
 		Cost: 1000
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.arty_training:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Red Guard Training
 	Buildable:
 		BuildPaletteOrder: 37
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_command_center, building.propaganda_center, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Makes Inferno and Nuke Cannons trained as veteran.
 	Valued:
 		Cost: 2000
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.composite_armor:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Composite Armor
 	Buildable:
 		BuildPaletteOrder: 38
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_command_center, building.strategy_center, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Increases Crusader Tank armor by 40%.\n\nIncreases Paladin Tank armor by 20%.
 	Valued:
 		Cost: 2000
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 hack.cameo_filler.10:
 	Inherits: ^default.cameo_filler
@@ -573,84 +449,61 @@ hack.cameo_filler.11:
 		Prerequisites: ~building.usa_command_center, disabled, ~!techlevel.low
 
 upgrade.camouflage:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Camouflage
 	Buildable:
 		BuildPaletteOrder: 41
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.palace, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
-		Description: Allows Rebels to cloak when not firing.
+		Description: Allows Rebels to cloak while not firing.
 	Valued:
 		Cost: 2000
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.arm_the_mob:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Arm The Mob
 	Buildable:
 		BuildPaletteOrder: 42
 		BuildDuration: 750
-		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.palace, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Replaces pistols of Angry Mobs with AK-47s.
 	Valued:
 		Cost: 1000
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.toxin_shells:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Toxin Shells
 	Buildable:
 		BuildPaletteOrder: 43
 		BuildDuration: 750
-		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.palace, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Makes Scorpion and Marauder tank shells leave toxin.
 	Valued:
 		Cost: 1000
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.anthrax_beta:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Anthrax Beta
 	Buildable:
 		BuildPaletteOrder: 44
 		BuildDuration: 750
-		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.palace, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Increases all toxin weapons' damage by 25%.
 	Valued:
 		Cost: 2500
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.nationalism:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Nationalism
 	Buildable:
 		BuildPaletteOrder: 45
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_command_center, building.propaganda_center, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Makes Horde Bonus give an additional 25% firing speed.
 	Valued:
 		Cost: 2000
@@ -658,21 +511,16 @@ upgrade.nationalism:
 	ProvidesPrerequisite@upgradename:
 
 upgrade.subliminal_messaging:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Subliminal Messaging
 	Buildable:
 		BuildPaletteOrder: 46
 		BuildDuration: 1000
-		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_command_center, building.propaganda_center, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Doubles the efficency of Speaker Towers.
 	Valued:
 		Cost: 500
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 hack.cameo_filler.12:
 	Inherits: ^default.cameo_filler
@@ -687,89 +535,64 @@ hack.cameo_filler.13:
 		Prerequisites: ~building.prc_command_center, disabled, ~techlevel.high
 
 upgrade.ap_bullets:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Armor-Piercing Bullets
 	Buildable:
 		BuildPaletteOrder: 49
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.black_market, ~techlevel.high
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Increases bullet weapons' damage by 25%.
 	Valued:
 		Cost: 2000
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.ap_rockets:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Armor-Piercing Rockets
 	Buildable:
 		BuildPaletteOrder: 50
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.black_market, ~techlevel.high
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Increases rocket weapons' damage by 25%.
 	Valued:
 		Cost: 2000
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.radar_van_scan:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Radar Van Scan
 	Buildable:
 		BuildPaletteOrder: 51
 		BuildDuration: 500
-		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.black_market, ~techlevel.high
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Gives you a Radar Van Scan support power for each Radar Van you have.
 	Valued:
 		Cost: 500
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.junk_repair:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Junk Repair
 	Buildable:
 		BuildPaletteOrder: 52
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.black_market, ~techlevel.high
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Allows vehicles to repair themselves on field.
 	Valued:
 		Cost: 2000
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.buggy_ammo:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Buggy Ammo
 	Buildable:
 		BuildPaletteOrder: 53
 		BuildDuration: 750
-		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.black_market, ~techlevel.high
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Doubles the rockets fired from Rocket Buggies.
 	Valued:
 		Cost: 1200
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 hack.cameo_filler.14:
 	Inherits: ^default.cameo_filler
@@ -778,104 +601,73 @@ hack.cameo_filler.14:
 		Prerequisites: ~building.gla_command_center, disabled, ~techlevel.medium, ~!techlevel.unrestricted
 
 upgrade.nuclear_tanks:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Nuclear Tanks
 	Buildable:
 		BuildPaletteOrder: 55
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_command_center, building.missile_silo, ~techlevel.unrestricted
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Increases Overlord and Battlemaster speed by 25%. 
 	Valued:
 		Cost: 2000
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.uranium_shells:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Uranium Shells
 	Buildable:
 		BuildPaletteOrder: 56
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_command_center, building.missile_silo, ~techlevel.unrestricted
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Increases Overlord and Battlemaster damage by 25%. 
 	Valued:
 		Cost: 2500
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.fuel_air_bomb:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Fuel Air Bomb
 	Buildable:
 		BuildPaletteOrder: 57
 		BuildDuration: 3000
-		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_command_center, building.particle_cannon, ~techlevel.unrestricted
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Enables Fuel Air Bomb support power from Command Center.
 	Valued:
 		Cost: 4000
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.anthrax_bomb:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Anthrax Bomb
 	Buildable:
 		BuildPaletteOrder: 58
 		BuildDuration: 3000
-		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.scud_storm, ~techlevel.unrestricted
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Enables Anthrax Bomb support power from Command Center.
 	Valued:
 		Cost: 4000
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 upgrade.emp:
-	AlwaysVisible:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: E. M. Pulse
 	Buildable:
 		BuildPaletteOrder: 59
 		BuildDuration: 3000
-		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_command_center, building.missile_silo, ~techlevel.unrestricted
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Enables E. M. Pulse support power from Command Center.
 	Valued:
 		Cost: 4000
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 strategy.bombardment:
-	AlwaysVisible:
+	Inherits: ^default.strategy
 	Tooltip:
 		Name: Bombardment
 	Buildable:
 		BuildPaletteOrder: 60
-		BuildDurationModifier: 0
 		Prerequisites: ~building.usa_command_center, !strategy.search_and_destroy, !strategy.hold_the_line, ~techlevel.infonly
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Increases all units' damage by 20%.\n\nGives Strategy Center an Artillery piece.
-	Valued:
-		Cost: 0
-	RenderSprites:
 #	BodyOrientation:
 #		QuantizedFacings: 1
 #	Health:
@@ -883,22 +675,15 @@ strategy.bombardment:
 #	HitShape:
 #	Doctrine:
 #		Type: strategy.usa
-	ProvidesPrerequisite@upgradename:
 
 strategy.search_and_destroy:
-	AlwaysVisible:
+	Inherits: ^default.strategy
 	Tooltip:
 		Name: Search and Destroy
 	Buildable:
 		BuildPaletteOrder: 61
-		BuildDurationModifier: 0
 		Prerequisites: ~building.usa_command_center, !strategy.bombardment, !strategy.hold_the_line, ~techlevel.infonly
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Increases all units' vision range by 20%.\n\nGives Strategy Center ability to detect stealth units. 
-	Valued:
-		Cost: 0
-	RenderSprites:
 #	BodyOrientation:
 #		QuantizedFacings: 1
 #	Health:
@@ -906,22 +691,15 @@ strategy.search_and_destroy:
 #	HitShape:
 #	Doctrine:
 #		Type: strategy.usa
-	ProvidesPrerequisite@upgradename:
 
 strategy.hold_the_line:
-	AlwaysVisible:
+	Inherits: ^default.strategy
 	Tooltip:
 		Name: Hold the Line
 	Buildable:
 		BuildPaletteOrder: 62
-		BuildDurationModifier: 0
 		Prerequisites: ~building.usa_command_center, !strategy.bombardment, !strategy.search_and_destroy, ~techlevel.infonly
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Increases all units' armor by 10%.\n\nDoubles Strategy Center's armor.
-	Valued:
-		Cost: 0
-	RenderSprites:
 #	BodyOrientation:
 #		QuantizedFacings: 1
 #	Health:
@@ -929,103 +707,60 @@ strategy.hold_the_line:
 #	HitShape:
 #	Doctrine:
 #		Type: strategy.usa
-	ProvidesPrerequisite@upgradename:
 
 strategy.bio_bombs:
-	AlwaysVisible:
+	Inherits: ^default.strategy
 	Tooltip:
 		Name: Bio Bombs
 	Buildable:
 		BuildPaletteOrder: 63
-		BuildDurationModifier: 0
 		Prerequisites: ~building.gla_command_center, !strategy.hi_explosive_bombs, !strategy.disguise, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Makes Bomb Truck and SCUD Launchers leave toxins.
-	Valued:
-		Cost: 0
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 strategy.hi_explosive_bombs:
-	AlwaysVisible:
+	Inherits: ^default.strategy
 	Tooltip:
 		Name: High Explosive Bomb
 	Buildable:
 		BuildPaletteOrder: 64
-		BuildDurationModifier: 0
 		Prerequisites: ~building.gla_command_center, !strategy.bio_bombs, !strategy.disguise, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Arms Bomb Trucks and SCUD Launchers with High Explosive Bombs, increasing their damage.
-	Valued:
-		Cost: 0
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 strategy.disguise:
-	AlwaysVisible:
+	Inherits: ^default.strategy
 	Tooltip:
 		Name: Disguise
 	Buildable:
 		BuildPaletteOrder: 65
-		BuildDurationModifier: 0
 		Prerequisites: ~building.gla_command_center, !strategy.bio_bombs, !strategy.hi_explosive_bombs, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Allows Bomb Trucks and Hijackers to disguise as an enemy unit.
-	Valued:
-		Cost: 0
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 strategy.overlord_bunker:
-	AlwaysVisible:
+	Inherits: ^default.strategy
 	Tooltip:
 		Name: Overlord Bunker
 	Buildable:
 		BuildPaletteOrder: 66
-		BuildDurationModifier: 0
 		Prerequisites: ~building.prc_command_center, !strategy.overlord_gatling, !strategy.overlord_speaker, ~techlevel.infonly
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Arms Overlord Tanks with a Bunker.\n\nIncreases Bunker armor by 10%.\n\nDecreases bunker cost and build time by 20%.
-	Valued:
-		Cost: 0
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 strategy.overlord_gatling:
-	AlwaysVisible:
+	Inherits: ^default.strategy
 	Tooltip:
 		Name: Overlord Gatling Cannon
 	Buildable:
 		BuildPaletteOrder: 67
-		BuildDurationModifier: 0
 		Prerequisites: ~building.prc_command_center, !strategy.overlord_bunker, !strategy.overlord_speaker, ~techlevel.low
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Arms Overlord Tanks with a Gatling Cannon.\n\nIncreases Gatling Cannon armor and damage by 10%.
-	Valued:
-		Cost: 0
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 strategy.overlord_speaker:
-	AlwaysVisible:
+	Inherits: ^default.strategy
 	Tooltip:
 		Name: Overlord Speaker Tower
 	Buildable:
 		BuildPaletteOrder: 68
-		BuildDurationModifier: 0
 		Prerequisites: ~building.prc_command_center, !strategy.overlord_bunker, !strategy.overlord_gatling, ~techlevel.medium
-		Queue: Upgrade
-		BuildLimit: 1
 		Description: Arms Overlord Tanks with a Speaker Tower.\n\nIncreases Speaker Tower armor by 25%.
-	Valued:
-		Cost: 0
-	RenderSprites:
-	ProvidesPrerequisite@upgradename:
 
 !strategy.bombardment:
 	AlwaysVisible:
