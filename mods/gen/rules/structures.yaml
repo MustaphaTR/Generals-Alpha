@@ -1463,8 +1463,10 @@ building.supply_drop_zone:
 	ProvidesPrerequisite@buildingname:
 	CashTrickler:
 		Interval: 3000
+		InitialDelay: 3000
 		Amount: 1500
 		RequiresCondition: !emp
+	CashTricklerBar:
 #	ProduceActorPower@SUPPLY_DROP:
 #		Description: Supply Drop
 #		LongDesc: A Cargo Plane drops a money crate on the Supply Drop Zone.
