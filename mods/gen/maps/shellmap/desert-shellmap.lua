@@ -8,18 +8,25 @@
 ]]
 ProducedUnitTypes =
 {
-	{ factory = PRCBarracks1, types = { "infantry.red_guard", "infantry.tank_hunter" } },
-	{ factory = PRCBarracks2, types = { "infantry.red_guard", "infantry.tank_hunter" } },
 	{ factory = USABarracks1, types = { "infantry.ranger", "infantry.missile_defender", "infantry.pathfinder" } },
 	{ factory = USABarracks2, types = { "infantry.ranger", "infantry.missile_defender", "infantry.pathfinder" } },
 	{ factory = GLABarracks1, types = { "infantry.rebel", "infantry.rpg_trooper", "infantry.terrorist", "infantry.angry_mob" } },
 	{ factory = GLABarracks2, types = { "infantry.rebel", "infantry.rpg_trooper", "infantry.terrorist", "infantry.angry_mob" } },
+	{ factory = PRCBarracks1, types = { "infantry.red_guard", "infantry.tank_hunter" } },
+	{ factory = PRCBarracks2, types = { "infantry.red_guard", "infantry.tank_hunter" } },
 	{ factory = USAWarFactory, types = { "vehicle.humvee", "vehicle.crusader_tank", "vehicle.tomahawk_launcher", "vehicle.paladin_tank" } },
 	{ factory = GLAWarFactory, types = { "vehicle.technical", "vehicle.scorpion_tank", "vehicle.quad_cannon", "vehicle.rocket_buggy", "vehicle.toxin_tractor", "vehicle.marauder_tank", "vehicle.scud_launcher" } },
 	{ factory = PRCWarFactory, types = { "vehicle.battlemaster_tank", "vehicle.gatling_tank", "vehicle.dragon_tank", "vehicle.inferno_cannon", "vehicle.overlord_tank" } },
 	{ factory = USAAirfield1, types = { "aircraft.comanche" } },
 	{ factory = USAAirfield2, types = { "aircraft.comanche" } },
-	{ factory = USAAirfield3, types = { "aircraft.comanche" } }
+	{ factory = USAAirfield3, types = { "aircraft.comanche" } },
+}
+
+StrategyTypes =
+{
+	{ factory = USACommand, types = { "strategy.bombardment", "strategy.search_and_destroy", "strategy.hold_the_line" } },
+	{ factory = GLACommand, types = { "strategy.bio_bombs", "strategy.hi_explosive_bombs", "strategy.disguise" } },
+	{ factory = PRCCommand, types = { "strategy.overlord_bunker", "strategy.overlord_gatling", "strategy.overlord_speaker" } }
 }
 
 Raptor1Waypoints = { Raptor11, Raptor12, Raptor13, Raptor14 }
@@ -67,6 +74,14 @@ ProduceUnits = function(t)
 		factory.Wait(Actor.BuildTime(unitType))
 		factory.Produce(unitType)
 		factory.CallFunc(function() ProduceUnits(t) end)
+	end
+end
+
+SelectStrategy = function(t)
+	local factory = t.factory
+	if not factory.IsDead then
+		local strategyType = t.types[Utils.RandomInteger(1, #t.types + 1)]
+		factory.Produce(strategyType)
 	end
 end
 
@@ -133,6 +148,7 @@ WorldLoaded = function()
 	SetupDefensiveUnits()
 	SetupFactories()
 	Utils.Do(ProducedUnitTypes, ProduceUnits)
+	Utils.Do(StrategyTypes, SelectStrategy)
 	
 	DeployMe(Hacker1)
 	DeployMe(Hacker2)
