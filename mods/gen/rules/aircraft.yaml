@@ -167,6 +167,7 @@ aircraft.mig:
 		Offset: -598,-683,0
 	Contrail@2:
 		Offset: -598,683,0
+	-RevealOnDeath:
 	SpawnActorOnDeath:
 		Actor: husk.mig
 	SmokeTrailWhenDamaged:
@@ -238,6 +239,7 @@ aircraft.raptor:
 		Offset: -598,-683,0
 	Contrail@2:
 		Offset: -598,683,0
+	-RevealOnDeath:
 	SpawnActorOnDeath:
 		Actor: husk.raptor
 	SmokeTrailWhenDamaged:
@@ -305,6 +307,7 @@ aircraft.stealth_fighter:
 		Offset: -598,-683,0
 	Contrail@2:
 		Offset: -598,683,0
+	-RevealOnDeath:
 	SpawnActorOnDeath:
 		Actor: husk.stealth_fighter
 	SmokeTrailWhenDamaged:
@@ -388,6 +391,7 @@ aircraft.aurora:
 		Offset: -598,-683,0
 	Contrail@2:
 		Offset: -598,683,0
+	-RevealOnDeath:
 	SpawnActorOnDeath:
 		Actor: husk.aurora
 	SmokeTrailWhenDamaged:
@@ -437,14 +441,15 @@ aircraft.spy_drone:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
 	Contrail:
-		Offset: -853,0,0
+		Offset: -511,0,0
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 6c256
+	-RevealOnDeath:
 	SpawnActorOnDeath:
 		Actor: husk.spy_drone
 	SmokeTrailWhenDamaged:
-		Offset: -853,0,0
+		Offset: -511,0,0
 		Interval: 2
 	RenderSprites:
 		Scale: 0.5
@@ -637,5 +642,6 @@ aircraft.comanche:
 		Actor: husk.comanche
 	SmokeTrailWhenDamaged:
 		Offset: -427,0,0
+	-RevealOnDeath:
 	Voiced:
 		VoiceSet: ComancheVoice
