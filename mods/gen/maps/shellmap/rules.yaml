@@ -156,3 +156,11 @@ building.gla_supply_stash:
 
 building.prc_supply_center:
 	-FreeActor:
+
+crate.scrap:
+	GiveCashCrateAction@1:
+		UseCashTick: false
+	GiveCashCrateAction@2:
+		UseCashTick: false
+	GiveCashCrateAction@3:
+		UseCashTick: false
