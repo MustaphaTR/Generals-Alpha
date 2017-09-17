@@ -43,7 +43,7 @@ flamer.dragon_tank:
 			building.defense: 50
 			building.stinger_site: 50
 	Warhead@1Fire: SpawnActor
-		Actors: firestorm.normal
+		Actors: firestorm.normal.50
 
 flamer.dragon_tank.blue:
 	Inherits: flamer.dragon_tank
@@ -53,7 +53,7 @@ flamer.dragon_tank.blue:
 	Warhead@1Dam: SpreadDamage
 		Damage: 200
 	Warhead@1Fire: SpawnActor
-		Actors: firestorm.blue
+		Actors: firestorm.blue.50
 	Warhead@3Eff: CreateEffect
 		Explosions: blue_napalm
 

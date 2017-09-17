@@ -255,6 +255,11 @@ firestorm.normal:
 	KillsSelf:
 		RemoveInstead: true
 		Delay: 150
+        
+firestorm.normal.50:
+	Inherits: firestorm.normal
+	FirepowerMultiplier:
+		Modifier: 50
 
 firestorm.blue:
 	Inherits: firestorm.normal
@@ -262,6 +267,11 @@ firestorm.blue:
 		Weapon: hack.firestorm.blue
 	RenderSprites:
 		Image: blue_burn-l
+
+firestorm.blue.50:
+	Inherits: firestorm.blue
+	FirepowerMultiplier:
+		Modifier: 50
 
 hack.scud_missile_damager:
 	Inherits: firestorm.normal

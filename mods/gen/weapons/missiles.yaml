@@ -63,7 +63,7 @@ missile.mig:
 			building.stinger_site: 40
 			aircraft.normal: 25
 	Warhead@1Fire: SpawnActor
-		Actors: firestorm.normal
+		Actors: firestorm.normal.50
 	Warhead@3Eff: CreateEffect
 		Explosions: napalm
 		ImpactSounds: firebl3.aud
@@ -73,7 +73,7 @@ missile.mig.blue:
 	Warhead@1Dam: SpreadDamage
 		Damage: 180
 	Warhead@1Fire: SpawnActor
-		Actors: firestorm.blue
+		Actors: firestorm.blue.50
 	Warhead@3Eff: CreateEffect
 		Explosions: blue_napalm
 
