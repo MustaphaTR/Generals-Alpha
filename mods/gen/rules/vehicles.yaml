@@ -1221,6 +1221,8 @@ vehicle.bomb_truck:
 		Voice: Move
 	Crushable:
 		CrushClasses: vehicle
+#	Turreted:
+#		TurnSpeed: 255
 	Explodes@Normal:
 		Weapon: BombTruckExplosion
 		EmptyWeapon: BombTruckExplosion
@@ -1251,6 +1253,13 @@ vehicle.bomb_truck:
 		RequiresCondition: !disguise
 	WithDisguisingFacingSpriteBody:
 		RequiresCondition: disguise
+#	WithDisguisingSpriteTurret:
+#		RequiresCondition: disguise
+#	Armament@ThisLooksRequired:
+#		Weapon: BombTruckExplosion
+#		RequiresCondition: keep_me_disabled
+#	AttackFrontal:
+#		RequiresCondition: keep_me_disabled
 	Disguise:
 		Types: Vehicle-Disguise
 		Voice: Move
