@@ -2,6 +2,7 @@ vehicle.supply_truck:
 	idle: harvempty
 		Facings: 32
 		UseClassicFacingFudge: True
+	turret: invis
 	harvest: harvempty
 		Start: 32
 		Length: 8
@@ -93,6 +94,7 @@ vehicle.radar_van:
 	idle: mrj
 		Facings: 32
 		UseClassicFacingFudge: True
+	turret: invis
 	spinner: mrj
 		Start: 32
 		Length: 32
@@ -199,6 +201,7 @@ vehicle.ambulance:
 	idle: truk
 		Facings: 32
 		UseClassicFacingFudge: True
+	turret: invis
 	repair: allyrepair
 		Length: *
 		Tick: 160
@@ -243,7 +246,8 @@ vehicle.rocket_buggy:
 	idle: bggy
 		Facings: 32
 		UseClassicFacingFudge: True
-	turret: stnk
+	turret: invis
+	turret2: stnk
 		Start: 38
 		Facings: 32
 	repair: allyrepair
@@ -270,6 +274,7 @@ vehicle.dragon_tank:
 	idle: ftnk
 		Facings: 32
 		UseClassicFacingFudge: True
+	turret: invis
 	repair: allyrepair
 		Length: *
 		Tick: 160
@@ -280,6 +285,7 @@ vehicle.troop_crawler:
 	idle: apc
 		Facings: 32
 		UseClassicFacingFudge: True
+	turret: invis
 	muzzle: minigun
 		Length: 6
 		Facings: 8
@@ -338,6 +344,7 @@ vehicle.inferno_cannon:
 	idle: arty
 		Facings: 32
 		UseClassicFacingFudge: True
+	turret: invis
 	muzzle: gunfire2
 		Length: 5
 	repair: allyrepair
@@ -490,6 +497,7 @@ vehicle.usa_mcc:
 	idle: mcv
 		Facings: 32
 		UseClassicFacingFudge: True
+	turret: invis
 	repair: allyrepair
 		Length: *
 		Tick: 160
@@ -500,6 +508,7 @@ vehicle.gla_mcc:
 	idle: mcv
 		Facings: 32
 		UseClassicFacingFudge: True
+	turret: invis
 	repair: allyrepair
 		Length: *
 		Tick: 160
@@ -510,6 +519,7 @@ vehicle.prc_mcc:
 	idle: mcv
 		Facings: 32
 		UseClassicFacingFudge: True
+	turret: invis
 	repair: allyrepair
 		Length: *
 		Tick: 160

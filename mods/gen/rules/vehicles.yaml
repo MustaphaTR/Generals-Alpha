@@ -685,6 +685,7 @@ vehicle.rocket_buggy:
 		TurnSpeed: 6
 		Offset: -196,0,85
 	WithSpriteTurret:
+		Sequence: turret2
 		RequiresCondition: buggy_ammo
 	GrantConditionOnPrerequisite@BUGGY_AMMO:
 		Condition: buggy_ammo
