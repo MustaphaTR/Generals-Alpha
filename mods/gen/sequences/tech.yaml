@@ -41,20 +41,19 @@ tech.bio_lab:
 		Length: *
 
 tech.communications_center:
-	idle: miss
-	damaged-idle: miss
+	idle: dome
+		Offset: 0,-4
+	damaged-idle: dome
 		Start: 1
-	dead: miss
-		Start: 2
-		Tick: 800
-	make: missmake
+		Offset: 0,-4
+	make: domemake
 		Length: *
-	bib: bib2
+		Offset: 0,-4
+	bib: bib3
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
-	icon: deteicon
 
 tech.forward_command:
 	idle: fcom

@@ -551,6 +551,22 @@ building.scud_storm:
 			INTERIOR: TEMPERAT
 	icon: scudsicon
 
+building.detention_camp:
+	idle: miss
+	damaged-idle: miss
+		Start: 1
+	dead: miss
+		Start: 2
+		Tick: 800
+	make: missmake
+		Length: *
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	icon: deteicon
+
 building.stinger_site:
 	idle: stinger
 	damaged-idle: stinger
@@ -737,23 +753,6 @@ kenn:
 		Length: *
 		UseTilesetExtension: true
 	icon: kennicon
-
-dome:
-	idle:
-		Offset: 0,-4
-	damaged-idle:
-		Start: 1
-		Offset: 0,-4
-	make: domemake
-		Length: *
-		Offset: 0,-4
-	bib: bib3
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-	icon: domeicon
-	fake-icon: domficon
 
 spen:
 	idle:
