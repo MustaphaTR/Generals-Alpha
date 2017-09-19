@@ -840,6 +840,33 @@ GNRL:
 	WithInfantryBody:
 		IdleSequences: idle1
 
+DOG:
+	Inherits: ^CivInfantry
+	Tooltip:
+		Name: Dog
+		GenericName: Dog
+	Selectable:
+		Bounds: 12,17,-1,-4
+	SelectionDecorations:
+		VisualBounds: 12,17,-1,-4
+	Health:
+		HP: 18
+	Mobile:
+		Speed: 50
+		Voice: Move
+	Guard:
+		Voice: Move
+	Passenger:
+		Voice: Move
+	Targetable:
+		TargetTypes: Ground, Infantry
+	WithInfantryBody:
+		StandSequences: stand
+	DetectCloaked:
+		CloakTypes: Cloak
+	Voiced:
+		VoiceSet: DogVoice
+
 Zombie:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGround
