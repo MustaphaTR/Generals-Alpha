@@ -99,6 +99,67 @@ building.nuclear_reactor:
 		Length: *
 	icon: nkpwricon
 
+building.usa_barracks:
+	idle: pyle
+		Length: 10
+		Tick: 100
+	damaged-idle: pyle
+		Start: 10
+		Length: 10
+		Tick: 100
+	dead: pyle
+		Start: 20
+		Tick: 800
+	make: pylemake
+		Length: *
+		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	icon: pyleicon
+
+building.gla_barracks:
+	Defaults: tent
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle: tent
+		Length: 10
+	damaged-idle: tent
+		Start: 10
+		Length: 10
+	make: tentmake
+		Length: *
+	bib: bib3
+		Length: *
+	icon: tenticon
+		UseTilesetExtension: false
+	fake-icon: faketenticon
+		UseTilesetExtension: false
+
+building.prc_barracks:
+	idle: barr
+		Length: 10
+		Offset: 0,-6
+	damaged-idle: barr
+		Start: 10
+		Length: 10
+		Offset: 0,-6
+	make: barrmake
+		Length: *
+		Offset: 0,-6
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	icon: barricon
+
+building.mine:
+	idle: minp
+		ZOffset: -512
+	icon: lminicon
+
 building.usa_supply_center:
 	idle: usproc
 		Length: 6
@@ -174,66 +235,250 @@ building.prc_supply_center:
 			INTERIOR: TEMPERAT
 	icon: procicon
 
-building.usa_barracks:
-	idle: pyle
-		Length: 10
-		Tick: 100
-	damaged-idle: pyle
-		Start: 10
-		Length: 10
-		Tick: 100
-	dead: pyle
-		Start: 20
-		Tick: 800
-	make: pylemake
+building.patriot:
+	idle: sam2
+		Facings: 32
+		UseClassicFacingFudge: True
+		Offset: -2,-2
+	damaged-idle: sam2
+		Start: 34
+		Facings: 32
+		UseClassicFacingFudge: True
+		Offset: -2,-2
+	make: sammake
 		Length: *
-		Tick: 80
-	bib: bib3
+		Offset: -2,-2
+	muzzle: samfire
+		Length: 18
+		Facings: 8
+		Offset: -2,6
+	bib: mbSAM
+		Length: *
+		Offset: 0,1
 		UseTilesetExtension: true
-		Length: *
-	icon: pyleicon
-
-building.gla_barracks:
-	Defaults: tent
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-	idle: tent
-		Length: 10
-	damaged-idle: tent
-		Start: 10
-		Length: 10
-	make: tentmake
-		Length: *
-	bib: bib3
-		Length: *
-	icon: tenticon
-		UseTilesetExtension: false
-	fake-icon: faketenticon
-		UseTilesetExtension: false
-
-building.prc_barracks:
-	idle: barr
-		Length: 10
-		Offset: 0,-6
-	damaged-idle: barr
-		Start: 10
-		Length: 10
-		Offset: 0,-6
-	make: barrmake
-		Length: *
-		Offset: 0,-6
-	bib: bib3
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-	icon: barricon
+	icon: samicon
 
 building.demo_trap:
 	idle: dmtrp
 		Offset: 2, 0
 	icon: demoicon
+
+building.gatling_cannon:
+	idle: agun
+		Facings: 32
+		UseClassicFacingFudge: True
+		Offset: 0,-13
+	recoil: agun
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		Offset: 0,-13
+	make: agunmake
+		Length: *
+		Offset: 0,-13
+	damaged-idle: agun
+		Start: 64
+		Facings: 32
+		UseClassicFacingFudge: True
+		Offset: 0,-13
+	damaged-recoil: agun
+		Start: 96
+		Facings: 32
+		UseClassicFacingFudge: True
+		Offset: 0,-13
+	muzzle: gunfire2
+		Start: 1
+		Length: 4
+	bib: mbAGUN
+		Length: *
+		UseTilesetExtension: true
+	icon: gatcanicon
+
+building.bunker:
+	idle: pbox
+	damaged-idle: pbox
+		Start: 1
+	make: pboxmake
+		Length: *
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	bib: mbPBOX
+		Length: *
+		Offset: 0,-2
+		UseTilesetExtension: true
+	icon: bunkericon
+
+building.usa_war_factory:
+	Defaults: usweap
+		Offset: 0,-12
+	idle: usweap
+		ZOffset: -511
+	damaged-idle: usweap
+		Start: 1
+		ZOffset: -511
+	dead: usweap
+		Start: 2
+		Tick: 800
+	build-top: usweap2
+		Length: 10
+		ZOffset: -1024
+	damaged-build-top: usweap2
+		Start: 10
+		Length: 10
+		ZOffset: -1024
+	make: usweapmake
+		Length: *
+		Tick: 80
+	bib: bib2
+		UseTilesetExtension: true
+		Length: *
+		Offset: 0,0
+	icon: usweapicon
+		Offset: 0,0
+
+building.arms_dealer:
+	idle: weap
+	damaged-idle: weap
+		Start: 1
+	make: weapmake
+		Length: *
+	build-top: weap3
+		Length: 10
+	damaged-build-top: weap2
+		Start: 4
+		Length: 4
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	icon: dealicon
+	fake-icon: fakedealicon
+
+building.prc_war_factory:
+	idle: weap
+	damaged-idle: weap
+		Start: 1
+	make: weapmake
+		Length: *
+	build-top: weap3
+		Length: 10
+	damaged-build-top: weap2
+		Start: 4
+		Length: 4
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	icon: weapicon
+
+building.tunnel_network:
+	Defaults: hbox
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	idle: hbox
+	damaged-idle: hbox
+		Start: 2
+	make: hboxmake
+		Length: *
+	turret: gun
+		Facings: 32
+		UseClassicFacingFudge: True
+		UseTilesetExtension: false
+	muzzle: gunfire2
+		Length: 5
+		UseTilesetExtension: false
+	icon: tunnelicon
+		UseTilesetExtension: false
+
+building.stinger_site:
+	idle: stinger
+	damaged-idle: stinger
+		Start: 1
+	dead: stinger
+		Start: 2
+		Tick: 800
+	make:
+		Combine:
+			stingermake:
+				Length: 17
+			stingermake:
+				Start: 19
+		Length: 18
+		Tick: 80
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	icon: stngricon
+
+building.usa_airfield:
+	idle: usafld
+		Tick: 120
+		ZOffset: -1023
+	damaged-idle: usafld
+		Start: 16
+		Tick: 120
+		ZOffset: -1023
+	active: usafld
+		Length: 16
+		Tick: 120
+		ZOffset: -1023
+	damaged-active: usafld
+		Start: 16
+		Length: 16
+		Tick: 120
+		ZOffset: -1023
+	idle-dish: usafld_d
+		Length: 16
+		Tick: 160
+	damaged-idle-dish: usafld_d
+		Start: 16
+		Length: 16
+		Tick: 160
+	dead: usafld
+		Start: 32
+		ZOffset: -1023
+		Tick: 800
+	make: usafldmake
+		Length: *
+		Tick: 80
+	icon: usafldicon
+
+building.prc_airfield:
+	idle: afldidle
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	damaged-idle: afldidle
+		Start: 8
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	active: afld
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	damaged-active: afld
+		Start: 8
+		Length: 8
+		Tick: 160
+		ZOffset: -1023
+		Offset: 0,-4
+	make: afldmake
+		Length: *
+		Offset: 0,-4
+	icon: afldicon
 
 building.strategy_center:
 	Defaults: atek
@@ -313,71 +558,21 @@ building.propaganda_center:
 			INTERIOR: TEMPERAT
 	icon: stekicon
 
-building.prc_war_factory:
-	idle: weap
-	damaged-idle: weap
+building.detention_camp:
+	idle: miss
+	damaged-idle: miss
 		Start: 1
-	make: weapmake
-		Length: *
-	build-top: weap3
-		Length: 10
-	damaged-build-top: weap2
-		Start: 4
-		Length: 4
-	bib: bib2
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-	icon: weapicon
-	fake-icon: weaficon
-
-building.arms_dealer:
-	idle: weap
-	damaged-idle: weap
-		Start: 1
-	make: weapmake
-		Length: *
-	build-top: weap3
-		Length: 10
-	damaged-build-top: weap2
-		Start: 4
-		Length: 4
-	bib: bib2
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-	icon: dealicon
-	fake-icon: fakedealicon
-
-building.usa_war_factory:
-	Defaults: usweap
-		Offset: 0,-12
-	idle: usweap
-		ZOffset: -511
-	damaged-idle: usweap
-		Start: 1
-		ZOffset: -511
-	dead: usweap
+	dead: miss
 		Start: 2
 		Tick: 800
-	build-top: usweap2
-		Length: 10
-		ZOffset: -1024
-	damaged-build-top: usweap2
-		Start: 10
-		Length: 10
-		ZOffset: -1024
-	make: usweapmake
+	make: missmake
 		Length: *
-		Tick: 80
 	bib: bib2
-		UseTilesetExtension: true
 		Length: *
-		Offset: 0,0
-	icon: usweapicon
-		Offset: 0,0
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	icon: deteicon
 
 building.supply_drop_zone:
 	idle: hpad
@@ -397,67 +592,6 @@ building.supply_drop_zone:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 	icon: sdropicon
-
-building.usa_airfield:
-	idle: usafld
-		Tick: 120
-		ZOffset: -1023
-	damaged-idle: usafld
-		Start: 16
-		Tick: 120
-		ZOffset: -1023
-	active: usafld
-		Length: 16
-		Tick: 120
-		ZOffset: -1023
-	damaged-active: usafld
-		Start: 16
-		Length: 16
-		Tick: 120
-		ZOffset: -1023
-	idle-dish: usafld_d
-		Length: 16
-		Tick: 160
-	damaged-idle-dish: usafld_d
-		Start: 16
-		Length: 16
-		Tick: 160
-	dead: usafld
-		Start: 32
-		ZOffset: -1023
-		Tick: 800
-	make: usafldmake
-		Length: *
-		Tick: 80
-	icon: usafldicon
-
-building.prc_airfield:
-	idle: afldidle
-		Length: 8
-		Tick: 160
-		ZOffset: -1023
-		Offset: 0,-4
-	damaged-idle: afldidle
-		Start: 8
-		Length: 8
-		Tick: 160
-		ZOffset: -1023
-		Offset: 0,-4
-	active: afld
-		Length: 8
-		Tick: 160
-		ZOffset: -1023
-		Offset: 0,-4
-	damaged-active: afld
-		Start: 8
-		Length: 8
-		Tick: 160
-		ZOffset: -1023
-		Offset: 0,-4
-	make: afldmake
-		Length: *
-		Offset: 0,-4
-	icon: afldicon
 
 building.black_market:
 	idle: bmrkt
@@ -480,6 +614,22 @@ building.black_market:
 			INTERIOR: TEMPERAT
 	icon: bmrkticon
 	fake-icon: fakebmrkticon
+
+building.speaker_tower:
+	idle: gap
+		Length: 32
+		Offset: 0,-14
+	damaged-idle: gap
+		Start: 32
+		Length: 32
+		Offset: 0,-14
+	make: gapmake
+		Length: *
+		Offset: 0,-14
+	bib: mbGAP
+		Length: *
+		UseTilesetExtension: true
+	icon: speakicon
 
 building.particle_cannon:
 	idle: pcan
@@ -551,47 +701,6 @@ building.scud_storm:
 			INTERIOR: TEMPERAT
 	icon: scudsicon
 
-building.detention_camp:
-	idle: miss
-	damaged-idle: miss
-		Start: 1
-	dead: miss
-		Start: 2
-		Tick: 800
-	make: missmake
-		Length: *
-	bib: bib2
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-	icon: deteicon
-
-building.stinger_site:
-	idle: stinger
-	damaged-idle: stinger
-		Start: 1
-	dead: stinger
-		Start: 2
-		Tick: 800
-	make:
-		Combine:
-			stingermake:
-				Length: 17
-			stingermake:
-				Start: 19
-		Length: 18
-		Tick: 80
-	muzzle: minigun
-		Length: 6
-		Facings: 8
-	bib: bib3
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-	icon: stngricon
-
 building.missile_silo:
 	Defaults: mslo
 		UseTilesetExtension: true
@@ -617,111 +726,6 @@ building.missile_silo:
 		UseTilesetExtension: false
 	fake-icon: mslficon
 		UseTilesetExtension: false
-
-building.gatling_cannon:
-	idle: agun
-		Facings: 32
-		UseClassicFacingFudge: True
-		Offset: 0,-13
-	recoil: agun
-		Start: 32
-		Facings: 32
-		UseClassicFacingFudge: True
-		Offset: 0,-13
-	make: agunmake
-		Length: *
-		Offset: 0,-13
-	damaged-idle: agun
-		Start: 64
-		Facings: 32
-		UseClassicFacingFudge: True
-		Offset: 0,-13
-	damaged-recoil: agun
-		Start: 96
-		Facings: 32
-		UseClassicFacingFudge: True
-		Offset: 0,-13
-	muzzle: gunfire2
-		Start: 1
-		Length: 4
-	bib: mbAGUN
-		Length: *
-		UseTilesetExtension: true
-	icon: gatcanicon
-
-building.patriot:
-	idle: sam2
-		Facings: 32
-		UseClassicFacingFudge: True
-		Offset: -2,-2
-	damaged-idle: sam2
-		Start: 34
-		Facings: 32
-		UseClassicFacingFudge: True
-		Offset: -2,-2
-	make: sammake
-		Length: *
-		Offset: -2,-2
-	muzzle: samfire
-		Length: 18
-		Facings: 8
-		Offset: -2,6
-	bib: mbSAM
-		Length: *
-		Offset: 0,1
-		UseTilesetExtension: true
-	icon: samicon
-
-building.bunker:
-	idle: pbox
-	damaged-idle: pbox
-		Start: 1
-	make: pboxmake
-		Length: *
-	muzzle: minigun
-		Length: 6
-		Facings: 8
-	bib: mbPBOX
-		Length: *
-		Offset: 0,-2
-		UseTilesetExtension: true
-	icon: bunkericon
-
-building.tunnel_network:
-	Defaults: hbox
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-	idle: hbox
-	damaged-idle: hbox
-		Start: 2
-	make: hboxmake
-		Length: *
-	turret: gun
-		Facings: 32
-		UseClassicFacingFudge: True
-		UseTilesetExtension: false
-	muzzle: gunfire2
-		Length: 5
-		UseTilesetExtension: false
-	icon: tunnelicon
-		UseTilesetExtension: false
-
-building.speaker_tower:
-	idle: gap
-		Length: 32
-		Offset: 0,-14
-	damaged-idle: gap
-		Start: 32
-		Length: 32
-		Offset: 0,-14
-	make: gapmake
-		Length: *
-		Offset: 0,-14
-	bib: mbGAP
-		Length: *
-		UseTilesetExtension: true
-	icon: speakicon
 
 apwr:
 	idle:
