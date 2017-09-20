@@ -353,6 +353,14 @@
 		Condition: hold_the_line
 		Prerequisites: strategy.hold_the_line
 
+^AffectedByScrapCratePowerups:
+	ExternalCondition@CRATE_ARMOR:
+		Condition: crate.armor
+	ExternalCondition@CRATE_FIREPOWER:
+		Condition: crate.firepower
+	ExternalCondition@CRATE_SPEED:
+		Condition: crate.speed
+
 ^Reveal100:
 	RevealsShroud:
 		Range: 2c512
@@ -609,6 +617,7 @@
 	Inherits@11: ^AfftectedByDriverKill
 	Inherits@12: ^AfftectedByEMP
 	Inherits@13: ^AfftectedByEmergencyRepair
+	Inherits@14: ^AffectedByScrapCratePowerups
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -740,6 +749,7 @@
 	Inherits@5: ^AfftectedByBombardment
 	Inherits@6: ^AfftectedByHoldTheLine
 	Inherits@7: ^AffectsDemoTrap
+	Inherits@8: ^AffectedByScrapCratePowerups
 	Huntable:
 	DrawLineToTarget:
 	Health:
@@ -940,6 +950,7 @@
 	Inherits@8: ^AffectsDemoTrap
 	Inherits@9: ^AfftectedByHacking
 	Inherits@10: ^AfftectedByEMP
+	Inherits@11: ^AffectedByScrapCratePowerups
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
