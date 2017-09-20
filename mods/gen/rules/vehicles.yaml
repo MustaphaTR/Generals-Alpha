@@ -1216,13 +1216,15 @@ vehicle.bomb_truck:
 		HP: 220
 	Armor:
 		Type: vehicle.truck
+	SelectionDecorations:
+		VisualBounds: 42,42 #so mcc's WithTextDecoration's will be at correft place, this is not conditional right now, so i can't do that.
 	Mobile:
 		Speed: 50
 		Voice: Move
 	Crushable:
 		CrushClasses: vehicle
-#	Turreted:
-#		TurnSpeed: 255
+	DisguisingTurreted:
+		TurnSpeed: 255
 	Explodes@Normal:
 		Weapon: BombTruckExplosion
 		EmptyWeapon: BombTruckExplosion
@@ -1253,17 +1255,45 @@ vehicle.bomb_truck:
 		RequiresCondition: !disguise
 	WithDisguisingFacingSpriteBody:
 		RequiresCondition: disguise
-#	WithDisguisingSpriteTurret:
-#		RequiresCondition: disguise
-#	Armament@ThisLooksRequired:
-#		Weapon: BombTruckExplosion
-#		RequiresCondition: keep_me_disabled
-#	AttackFrontal:
-#		RequiresCondition: keep_me_disabled
+	WithDisguisingSpriteTurret:
+		RequiresCondition: disguise
+	Armament@ThisLooksRequired:
+		Weapon: BombTruckExplosion
+		RequiresCondition: keep_me_disabled
+	AttackFrontal:
+		RequiresCondition: keep_me_disabled
 	Disguise:
 		Types: Vehicle-Disguise
 		Voice: Move
 		RequiresCondition: disguise
+	GrantConditionByDisguisedActor:
+		Conditions:
+			vehicle.radar_van: radar_van
+			vehicle.usa_mcc: usa_mcc
+			vehicle.gla_mcc: gla_mcc
+			vehicle.prc_mcc: prc_mcc
+	WithIdleOverlay@RADAR_VAN_SPINNER:
+		Sequence: radar_van_spinner
+		Offset: -256,0,256
+		RequiresCondition: radar_van
+	WithTextDecoration@SIDE_USA:
+		Text: USA
+		ZOffset: 2048
+		ReferencePoint: Top
+		Color: 0000FF
+		RequiresCondition: usa_mcc
+	WithTextDecoration@SIDE_GLA:
+		Text: GLA
+		ZOffset: 2048
+		ReferencePoint: Top
+		Color: 00FF00
+		RequiresCondition: gla_mcc
+	WithTextDecoration@SIDE_PRC:
+		Text: PRC
+		ZOffset: 2048
+		ReferencePoint: Top
+		Color: FF0000
+		RequiresCondition: prc_mcc
 	GrantConditionOnPrerequisite@DISGUISE:
 		Condition: disguise
 		Prerequisites: strategy.disguise
