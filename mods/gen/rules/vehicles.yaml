@@ -23,6 +23,7 @@ vehicle.supply_truck:
 	Harvester:
 		Capacity: 12
 		Resources: Ore,Gems
+		BaleLoadDelay: 10
 		BaleUnloadDelay: 2
 		SearchFromProcRadius: 30
 		SearchFromOrderRadius: 11
@@ -38,8 +39,6 @@ vehicle.supply_truck:
 	WithHarvestAnimation:
 		PrefixByFullness: empty-, half-, full-
 	WithDockingAnimation:
-	Explodes:
-		Weapon: OreExplosion
 	Voiced:
 		VoiceSet: SupplyTruckVoice
 
