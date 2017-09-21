@@ -25,6 +25,11 @@
 		BuildDurationModifier: 0
 	Valued:
 		Cost: 0
+	BodyOrientation:
+		QuantizedFacings: 1
+	Health:
+		HP: 1
+	HitShape:
 
 upgrade.emergency_repair1:
 	Inherits: ^default.upgrade
@@ -668,13 +673,8 @@ strategy.bombardment:
 		BuildPaletteOrder: 60
 		Prerequisites: ~building.usa_command_center, !strategy.search_and_destroy, !strategy.hold_the_line, ~techlevel.infonly
 		Description: Increases all units' damage by 20%.\n\nGives Strategy Center an Artillery piece.
-#	BodyOrientation:
-#		QuantizedFacings: 1
-#	Health:
-#		HP: 1
-#	HitShape:
-#	Doctrine:
-#		Type: strategy.usa
+	Doctrine:
+		Type: strategy.usa
 
 strategy.search_and_destroy:
 	Inherits: ^default.strategy
@@ -684,13 +684,8 @@ strategy.search_and_destroy:
 		BuildPaletteOrder: 61
 		Prerequisites: ~building.usa_command_center, !strategy.bombardment, !strategy.hold_the_line, ~techlevel.infonly
 		Description: Increases all units' vision range by 20%.\n\nGives Strategy Center ability to detect stealth units. 
-#	BodyOrientation:
-#		QuantizedFacings: 1
-#	Health:
-#		HP: 1
-#	HitShape:
-#	Doctrine:
-#		Type: strategy.usa
+	Doctrine:
+		Type: strategy.usa
 
 strategy.hold_the_line:
 	Inherits: ^default.strategy
@@ -700,13 +695,8 @@ strategy.hold_the_line:
 		BuildPaletteOrder: 62
 		Prerequisites: ~building.usa_command_center, !strategy.bombardment, !strategy.search_and_destroy, ~techlevel.infonly
 		Description: Increases all units' armor by 10%.\n\nDoubles Strategy Center's armor.
-#	BodyOrientation:
-#		QuantizedFacings: 1
-#	Health:
-#		HP: 1
-#	HitShape:
-#	Doctrine:
-#		Type: strategy.usa
+	Doctrine:
+		Type: strategy.usa
 
 strategy.bio_bombs:
 	Inherits: ^default.strategy
@@ -716,6 +706,8 @@ strategy.bio_bombs:
 		BuildPaletteOrder: 63
 		Prerequisites: ~building.gla_command_center, !strategy.hi_explosive_bombs, !strategy.disguise, ~techlevel.medium
 		Description: Makes Bomb Truck and SCUD Launchers leave toxins.
+	Doctrine:
+		Type: strategy.gla
 
 strategy.hi_explosive_bombs:
 	Inherits: ^default.strategy
@@ -725,6 +717,8 @@ strategy.hi_explosive_bombs:
 		BuildPaletteOrder: 64
 		Prerequisites: ~building.gla_command_center, !strategy.bio_bombs, !strategy.disguise, ~techlevel.medium
 		Description: Arms Bomb Trucks and SCUD Launchers with High Explosive Bombs, increasing their damage.
+	Doctrine:
+		Type: strategy.gla
 
 strategy.disguise:
 	Inherits: ^default.strategy
@@ -734,6 +728,8 @@ strategy.disguise:
 		BuildPaletteOrder: 65
 		Prerequisites: ~building.gla_command_center, !strategy.bio_bombs, !strategy.hi_explosive_bombs, ~techlevel.medium
 		Description: Allows Bomb Trucks and Hijackers to disguise as an enemy unit.
+	Doctrine:
+		Type: strategy.gla
 
 strategy.overlord_bunker:
 	Inherits: ^default.strategy
@@ -743,6 +739,8 @@ strategy.overlord_bunker:
 		BuildPaletteOrder: 66
 		Prerequisites: ~building.prc_command_center, !strategy.overlord_gatling, !strategy.overlord_speaker, ~techlevel.infonly
 		Description: Arms Overlord Tanks with a Bunker.\n\nIncreases Bunker armor by 10%.\n\nDecreases bunker cost and build time by 20%.
+	Doctrine:
+		Type: strategy.prc
 
 strategy.overlord_gatling:
 	Inherits: ^default.strategy
@@ -752,6 +750,8 @@ strategy.overlord_gatling:
 		BuildPaletteOrder: 67
 		Prerequisites: ~building.prc_command_center, !strategy.overlord_bunker, !strategy.overlord_speaker, ~techlevel.low
 		Description: Arms Overlord Tanks with a Gatling Cannon.\n\nIncreases Gatling Cannon armor and damage by 10%.
+	Doctrine:
+		Type: strategy.prc
 
 strategy.overlord_speaker:
 	Inherits: ^default.strategy
@@ -761,6 +761,8 @@ strategy.overlord_speaker:
 		BuildPaletteOrder: 68
 		Prerequisites: ~building.prc_command_center, !strategy.overlord_bunker, !strategy.overlord_gatling, ~techlevel.medium
 		Description: Arms Overlord Tanks with a Speaker Tower.\n\nIncreases Speaker Tower armor by 25%.
+	Doctrine:
+		Type: strategy.prc
 
 !strategy.bombardment:
 	AlwaysVisible:
