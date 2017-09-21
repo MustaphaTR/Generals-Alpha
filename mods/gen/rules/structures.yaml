@@ -1461,7 +1461,7 @@ building.supply_drop_zone:
 		Interval: 3000
 		InitialDelay: 3000
 		Amount: 1500
-		RequiresCondition: !emp
+		PauseOnCondition: emp
 	CashTricklerBar:
 #	ProduceActorPower@SUPPLY_DROP:
 #		Description: Supply Drop
@@ -1502,7 +1502,7 @@ building.black_market:
 	CashTrickler:
 		Interval: 25
 		Amount: 20
-		RequiresCondition: !emp
+		PauseOnCondition: emp
 	Health:
 		HP: 1000
 	Armor:
