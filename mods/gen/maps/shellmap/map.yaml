@@ -240,9 +240,6 @@ Actors:
 	Entry3: waypoint
 		Location: 10,1
 		Owner: Neutral
-	Entry4: waypoint
-		Location: 84,1
-		Owner: Neutral
 	Entry5: waypoint
 		Location: 126,27
 		Owner: Neutral
@@ -261,20 +258,11 @@ Actors:
 	LstUnload: waypoint
 		Location: 60,93
 		Owner: Neutral
-	Chinook1Entry: waypoint
-		Location: 44,126
-		Owner: Neutral
-	Chinook2Entry: waypoint
-		Location: 47,126
-		Owner: Neutral
 	Paradrop1: waypoint
 		Location: 70,50
 		Owner: Neutral
 	Paradrop2: waypoint
 		Location: 39,50
-		Owner: Neutral
-	Paradrop3: waypoint
-		Location: 81,60
 		Owner: Neutral
 	Paradrop4: waypoint
 		Location: 28,64
@@ -2508,5 +2496,66 @@ Actors:
 		Location: 110,76
 		SubCell: 3
 		Facing: 92
+	ChinookRally: waypoint
+		Owner: Neutral
+		Location: 61,79
+	ChinookEntry: waypoint
+		Owner: Neutral
+		Location: 1,107
+	ArtyBarrWaypoint: waypoint
+		Owner: Neutral
+		Location: 96,56
+	Actor746: building.mine
+		Owner: PRC
+		Location: 68,76
+	Actor747: building.mine
+		Owner: PRC
+		Location: 69,75
+	Actor748: building.mine
+		Owner: PRC
+		Location: 72,75
+	Actor749: building.mine
+		Owner: PRC
+		Location: 73,75
+	Actor750: building.mine
+		Owner: PRC
+		Location: 76,75
+	Actor751: building.mine
+		Owner: PRC
+		Location: 77,76
+	RocketBuggy: vehicle.rocket_buggy
+		Owner: GLA
+		Location: 37,37
+		Facing: 0
+		TurretFacing: 0
+	TroopCrawler: vehicle.troop_crawler
+		Owner: PRC
+		Location: 87,85
+		Facing: 0
+	Battlemaster6: vehicle.battlemaster_tank
+		Owner: PRC
+		Location: 98,66
+		Facing: 224
+		TurretFacing: 224
+	BombTruckEntry: waypoint
+		Location: 84,1
+		Owner: Neutral
+	BombTruckRally: waypoint
+		Location: 80,62
+		Owner: Neutral
+	Ambulance1: vehicle.ambulance
+		Owner: USA
+		Location: 108,50
+		Facing: 64
+	Humvee1: vehicle.humvee
+		Owner: USA
+		Location: 119,37
+		Facing: 96
+		TurretFacing: 96
+	Humvee2: vehicle.humvee
+		Owner: USA
+		Location: 117,34
+		Facing: 64
+		TurretFacing: 64
 
 Rules: rules.yaml

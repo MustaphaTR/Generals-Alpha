@@ -84,6 +84,13 @@ World:
 	ExternalCondition@UNKILLABLE:
 		Condition: unkillable
 
+tech.communications_center:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
 ^Wall:
 	GivesBounty:
 		Percentage: 0
@@ -164,3 +171,37 @@ crate.scrap:
 		UseCashTick: false
 	GiveCashCrateAction@3:
 		UseCashTick: false
+
+ARTY_BARRAGER_3:
+	KillsSelf:
+		Delay: 120
+
+aircraft.chinook:
+	Health:
+		HP: 80
+
+vehicle.bomb_truck:
+	Health:
+		HP: 20
+	-Tooltip:
+	DisguiseTooltip:
+		Name: Bomb Truck
+		GenericName: Vehicle
+		-RequiresCondition:
+	DisguisingTurreted:
+		TurnSpeed: 255
+	-WithFacingSpriteBody:
+	WithDisguisingFacingSpriteBody:
+		-RequiresCondition:
+	WithDisguisingSpriteTurret:
+		-RequiresCondition:
+	Disguise:
+		Types: Vehicle-Disguise
+		Voice: Move
+		-RequiresCondition:
+	GrantConditionByDisguisedActor:
+		Conditions:
+			vehicle.radar_van: radar_van
+			vehicle.usa_mcc: usa_mcc
+			vehicle.gla_mcc: gla_mcc
+			vehicle.prc_mcc: prc_mcc

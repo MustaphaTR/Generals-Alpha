@@ -26,11 +26,27 @@ StrategyTypes =
 {
 	{ factory = USACommand, types = { "strategy.bombardment", "strategy.search_and_destroy", "strategy.hold_the_line" } },
 	{ factory = GLACommand, types = { "strategy.bio_bombs", "strategy.hi_explosive_bombs", "strategy.disguise" } },
-	{ factory = PRCCommand, types = { "strategy.overlord_bunker", "strategy.overlord_gatling", "strategy.overlord_speaker" } }
+	{ factory = PRCCommand, types = { "strategy.overlord_gatling", "strategy.overlord_bunker", "strategy.overlord_speaker" } }
 }
 
 Raptor1Waypoints = { Raptor11, Raptor12, Raptor13, Raptor14 }
 Raptor2Waypoints = { Raptor21, Raptor22, Raptor23, Raptor24 }
+
+ChinookReinforcements =
+{
+	{ "vehicle.humvee", "infantry.ranger", "infantry.ranger", "infantry.missile_defender", "infantry.missile_defender", "infantry.ranger" },
+	{ "vehicle.crusader_tank", "infantry.ranger", "infantry.ranger", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender" },
+	{ "vehicle.ambulance", "infantry.ranger", "infantry.ranger", "infantry.missile_defender", "infantry.missile_defender", "infantry.ranger" },
+	{ "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.ranger" },
+	{ "infantry.ranger", "infantry.missile_defender", "infantry.ranger", "infantry.missile_defender", "infantry.ranger", "infantry.missile_defender", "infantry.ranger", "infantry.missile_defender" },
+	{ "vehicle.crusader_tank", "vehicle.crusader_tank", "infantry.ranger", "infantry.missile_defender" },
+	{ "vehicle.paladin_tank", "vehicle.crusader_tank", "infantry.ranger", "infantry.missile_defender" },
+	{ "vehicle.humvee", "vehicle.humvee", "infantry.ranger", "infantry.ranger" }
+}
+ChinookPaths = { ChinookEntry.Location, ChinookRally.Location }
+
+BombTruckDisguises = { CrusaderTank1, Ambulance1, TomahawkLauncher1, PaladinTank1, Humvee1 }
+BombTruckPaths = { BombTruckEntry.Location, BombTruckRally.Location }
 
 BindActorTriggers = function(a)
 	if a.HasProperty("Hunt") then
@@ -77,6 +93,28 @@ ProduceUnits = function(t)
 	end
 end
 
+SendChinook = function()
+	Trigger.AfterDelay(DateTime.Seconds(40), function()
+		local units = Reinforcements.ReinforceWithTransport(usa, "aircraft.chinook", ChinookReinforcements[Utils.RandomInteger(1, #ChinookReinforcements + 1)], ChinookPaths, { ChinookPaths[1] })[2]
+		Utils.Do(units, BindActorTriggers)
+
+		SendChinook()
+	end)
+end
+
+SendBombTruck = function()
+	Trigger.AfterDelay(DateTime.Seconds(65), function()
+		local units = Reinforcements.Reinforce(gla, { "vehicle.bomb_truck" }, BombTruckPaths )
+		Utils.Do(units, function(unit)
+			Trigger.AfterDelay(DateTime.Seconds(1), function()
+				unit.DisguiseAs(BombTruckDisguises[Utils.RandomInteger(1, #BombTruckDisguises + 1)])
+			end)
+		end)
+
+		SendBombTruck()
+	end)
+end
+
 SelectStrategy = function(t)
 	local factory = t.factory
 	if not factory.IsDead then
@@ -110,6 +148,14 @@ SendRaptors = function(waypoints)
 	end)
 
 	Trigger.AfterDelay(DateTime.Seconds(40), function() SendRaptors(waypoints) end)
+end
+
+UseArtilleryBarrage = function()
+	Trigger.AfterDelay(DateTime.Minutes(6), function()
+		Actor.Create("ARTY_BARRAGER_3", true, { Owner = prc, Location = ArtyBarrWaypoint.Location})
+		
+		UseArtilleryBarrage()
+	end)
 end
 
 SummonRebel = function(loc)
@@ -147,9 +193,12 @@ WorldLoaded = function()
 	
 	SetupDefensiveUnits()
 	SetupFactories()
+	SendChinook()
+	SendBombTruck()
+	UseArtilleryBarrage()
 	Utils.Do(ProducedUnitTypes, ProduceUnits)
 	Utils.Do(StrategyTypes, SelectStrategy)
-	
+
 	DeployMe(Hacker1)
 	DeployMe(Hacker2)
 	DeployMe(Hacker3)
