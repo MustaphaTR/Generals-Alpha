@@ -382,6 +382,8 @@ mg.quad_cannon.air:
 	Inherits: mg.quad_cannon.ground
 	Range: 8c768
 	ValidTargets: Air
+	Projectile: Bullet
+		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 5
 		ValidTargets: Air
@@ -421,6 +423,8 @@ gatling.gatling_tank.air:
 	Inherits: gatling.gatling_tank.ground
 	ValidTargets: Air
 	Range: 8c768
+	Projectile: Bullet
+		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 12
 		ValidTargets: Air
@@ -461,6 +465,8 @@ gatling.gatling_cannon.air:
 	Inherits: gatling.gatling_cannon.ground
 	ValidTargets: Air
 	Range: 10c0
+	Projectile: Bullet
+		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 5
 		ValidTargets: Air
@@ -553,6 +559,8 @@ mg.a10:
 	FollowingBurstTargetOffset: 746,0,0
 	ReloadDelay: 125
 	Report: gun5.aud
+	Projectile: Bullet
+		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Spread: 426
 		Damage: 10
