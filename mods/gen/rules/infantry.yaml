@@ -15,27 +15,6 @@ infantry.pilot:
 		Voice: Move
 	Voiced:
 		VoiceSet: PilotVoice
-	RenderSprites:
-		Image: E2
-
-infantry.pilot.level1:
-	Inherits@1: infantry.pilot
-	ProducibleWithLevel:
-
-infantry.pilot.level2:
-	Inherits@1: infantry.pilot
-	ProducibleWithLevel:
-		InitialLevels: 2
-
-infantry.pilot.level3:
-	Inherits@1: infantry.pilot
-	ProducibleWithLevel:
-		InitialLevels: 3
-
-infantry.pilot.level4:
-	Inherits@1: infantry.pilot
-	ProducibleWithLevel:
-		InitialLevels: 4
 
 infantry.worker:
 	Inherits@1: ^Soldier
@@ -392,10 +371,10 @@ hack.angry_mob.female:
 
 hack.angry_mob.molotov:
 	Inherits: ^default.angry_mob
-	RenderSprites:
-		Image: E2
 	Armament:
 		Weapon: molotov.angry_mob
+		LocalOffset: 0,0,555
+		FireDelay: 15
 	AttackFrontal:
 	WithInfantryBody:
 		DefaultAttackSequence: throw

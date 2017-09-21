@@ -1,35 +1,51 @@
-hack.angry_mob.male:
-	idle: invis
-		Facings: 1
-	stand: mob_male
+infantry.pilot:
+	stand: gnrl
 		Facings: 8
-	panic-stand: mob_male
-		Start: 8
-		Stride: 6
-		Facings: 8
-	panic-run: mob_male
+	run: gnrl
 		Start: 8
 		Length: 6
 		Facings: 8
-	shoot: mob_male
-		Start: 120
+		Tick: 100
+	shoot: gnrl
+		Start: 56
 		Length: 4
 		Facings: 8
-	die1: mob_male
+	prone-stand: gnrl
+		Start: 104
+		Stride: 4
+		Facings: 8
+	prone-run: gnrl
+		Start: 104
+		Length: 4
+		Facings: 8
+		Tick: 100
+	standup: gnrl
+		Start: 136
+		Length: 2
+		Facings: 8
+	prone-shoot: gnrl
 		Start: 152
+		Length: 4
+		Facings: 8
+	idle1: gnrl
+		Start: 184
+		Length: 26
+		Tick: 120
+	die1: gnrl
+		Start: 210
 		Length: 8
-	die2: mob_male
-		Start: 160
+	die2: gnrl
+		Start: 218
 		Length: 8
-	die3: mob_male
-		Start: 168
+	die3: gnrl
+		Start: 226
+		Length: 8
+	die4: gnrl
+		Start: 234
 		Length: 12
-	die4: mob_male
-		Start: 180
+	die5: gnrl
+		Start: 246
 		Length: 18
-	die5: mob_male
-		Start: 160
-		Length: 8
 	die6: electro
 		Length: *
 		UseTilesetExtension: true
@@ -44,119 +60,6 @@ hack.angry_mob.male:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
-	run: mob_male
-		Start: 56
-		Length: 6
-		Facings: 8
-		Tick: 80
-	dock: invis
-		Start: 0
-		Length: 1
-	dock-loop: invis
-		Start: 0
-		Length: 1
-	icon: workicon
-
-hack.angry_mob.female:
-	stand: mob_female
-		Facings: 8
-	panic-stand: mob_female
-		Start: 8
-		Stride: 6
-		Facings: 8
-	panic-run: mob_female
-		Start: 8
-		Length: 6
-		Facings: 8
-	shoot: mob_female
-		Start: 120
-		Length: 4
-		Facings: 8
-	die1: mob_female
-		Start: 152
-		Length: 8
-	die2: mob_female
-		Start: 160
-		Length: 8
-	die3: mob_female
-		Start: 168
-		Length: 12
-	die4: mob_female
-		Start: 180
-		Length: 18
-	die5: mob_female
-		Start: 160
-		Length: 8
-	die6: electro
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	die-crushed: corpse1
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	run: mob_female
-		Start: 56
-		Length: 6
-		Facings: 8
-		Tick: 80
-
-infantry.terrorist:
-	stand: terror
-		Facings: 8
-	panic-stand: terror
-		Start: 8
-		Stride: 6
-		Facings: 8
-	panic-run: terror
-		Start: 8
-		Length: 6
-		Facings: 8
-	shoot: terror
-		Start: 120
-		Length: 4
-		Facings: 8
-	die1: terror
-		Start: 152
-		Length: 8
-	die2: terror
-		Start: 160
-		Length: 8
-	die3: terror
-		Start: 168
-		Length: 12
-	die4: terror
-		Start: 180
-		Length: 18
-	die5: terror
-		Start: 160
-		Length: 8
-	die6: electro
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	die-crushed: corpse1
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	run: terror
-		Start: 56
-		Length: 6
-		Facings: 8
-		Tick: 80
-	icon: terroricon
 
 infantry.ranger:
 	stand: e1
@@ -404,172 +307,6 @@ infantry.red_guard:
 		Facings: 8
 	icon: rgrdicon
 
-infantry.pathfinder:
-	stand: sniper
-		Facings: 8
-	stand2: sniper
-		Start: 8
-		Facings: 8
-	run: sniper
-		Start: 16
-		Length: 6
-		Facings: 8
-		Tick: 100
-	shoot: sniper
-		Start: 64
-		Length: 16
-		Facings: 8
-	prone-stand: sniper
-		Start: 208
-		Stride: 4
-		Facings: 8
-	prone-stand2: sniper
-		Start: 208
-		Stride: 4
-		Facings: 8
-	prone-run: sniper
-		Start: 208
-		Length: 4
-		Facings: 8
-		Tick: 100
-	liedown: sniper
-		Start: 192
-		Length: 2
-		Facings: 8
-	standup: sniper
-		Start: 240
-		Length: 2
-		Facings: 8
-	prone-shoot: sniper
-		Start: 256
-		Length: 16
-		Facings: 8
-	idle1: sniper
-		Start: 384
-		Length: 14
-		Tick: 120
-	idle2: sniper
-		Start: 399
-		Length: 16
-		Tick: 120
-	die1: sniper
-		Start: 416
-		Length: 8
-	die2: sniper
-		Start: 424
-		Length: 8
-	die3: sniper
-		Start: 432
-		Length: 8
-	die4: sniper
-		Start: 440
-		Length: 12
-	die5: sniper
-		Start: 452
-		Length: 18
-	die6: electro
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	die-crushed: corpse1
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	garrison-muzzle: minigun
-		Length: 3
-		Stride: 6
-		Facings: 8
-	icon: pathicon
-
-infantry.jarmen_kell:
-	stand: kell
-		Facings: 8
-	stand2: kell
-		Start: 8
-		Facings: 8
-	run: kell
-		Start: 16
-		Length: 6
-		Facings: 8
-		Tick: 100
-	shoot: kell
-		Start: 64
-		Length: 16
-		Facings: 8
-	prone-stand: kell
-		Start: 208
-		Stride: 4
-		Facings: 8
-	prone-stand2: kell
-		Start: 208
-		Stride: 4
-		Facings: 8
-	prone-run: kell
-		Start: 208
-		Length: 4
-		Facings: 8
-		Tick: 100
-	liedown: kell
-		Start: 192
-		Length: 2
-		Facings: 8
-	standup: kell
-		Start: 240
-		Length: 2
-		Facings: 8
-	prone-shoot: kell
-		Start: 256
-		Length: 16
-		Facings: 8
-	idle1: kell
-		Start: 384
-		Length: 14
-		Tick: 120
-	idle2: kell
-		Start: 399
-		Length: 16
-		Tick: 120
-	die1: kell
-		Start: 416
-		Length: 8
-	die2: kell
-		Start: 424
-		Length: 8
-	die3: kell
-		Start: 432
-		Length: 8
-	die4: kell
-		Start: 440
-		Length: 12
-	die5: kell
-		Start: 452
-		Length: 18
-	die6: electro
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	die-crushed: corpse1
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	garrison-muzzle: minigun
-		Length: 3
-		Stride: 6
-		Facings: 8
-	icon: kellicon
-
 infantry.missile_defender:
 	stand: e3
 		Facings: 8
@@ -783,39 +520,68 @@ infantry.tank_hunter:
 		Facings: 8
 	icon: hunticon
 
-infantry.black_lotus:
-	stand: e6
+infantry.pathfinder:
+	stand: sniper
 		Facings: 8
-	stand2: e6
+	stand2: sniper
 		Start: 8
 		Facings: 8
-	run: e6
+	run: sniper
 		Start: 16
 		Length: 6
 		Facings: 8
 		Tick: 100
-	idle1: e6
-		Start: 121
-		Length: 8
-		Tick: 120
-	idle2: e6
-		Start: 130
+	shoot: sniper
+		Start: 64
+		Length: 16
+		Facings: 8
+	prone-stand: sniper
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-stand2: sniper
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-run: sniper
+		Start: 208
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown: sniper
+		Start: 192
+		Length: 2
+		Facings: 8
+	standup: sniper
+		Start: 240
+		Length: 2
+		Facings: 8
+	prone-shoot: sniper
+		Start: 256
+		Length: 16
+		Facings: 8
+	idle1: sniper
+		Start: 384
 		Length: 14
 		Tick: 120
-	die1: e6
-		Start: 146
+	idle2: sniper
+		Start: 399
+		Length: 16
+		Tick: 120
+	die1: sniper
+		Start: 416
 		Length: 8
-	die2: e6
-		Start: 154
+	die2: sniper
+		Start: 424
 		Length: 8
-	die3: e6
-		Start: 162
+	die3: sniper
+		Start: 432
 		Length: 8
-	die4: e6
-		Start: 170
+	die4: sniper
+		Start: 440
 		Length: 12
-	die5: e6
-		Start: 182
+	die5: sniper
+		Start: 452
 		Length: 18
 	die6: electro
 		Length: *
@@ -831,20 +597,357 @@ infantry.black_lotus:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
-	prone-stand: e6
-		Start: 82
+	garrison-muzzle: minigun
+		Length: 3
+		Stride: 6
+		Facings: 8
+	icon: pathicon
+
+infantry.terrorist:
+	stand: terror
+		Facings: 8
+	panic-stand: terror
+		Start: 8
+		Stride: 6
+		Facings: 8
+	panic-run: terror
+		Start: 8
+		Length: 6
+		Facings: 8
+	shoot: terror
+		Start: 120
+		Length: 4
+		Facings: 8
+	die1: terror
+		Start: 152
+		Length: 8
+	die2: terror
+		Start: 160
+		Length: 8
+	die3: terror
+		Start: 168
+		Length: 12
+	die4: terror
+		Start: 180
+		Length: 18
+	die5: terror
+		Start: 160
+		Length: 8
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	run: terror
+		Start: 56
+		Length: 6
+		Facings: 8
+		Tick: 80
+	icon: terroricon
+
+hack.angry_mob.male:
+	idle: invis
+		Facings: 1
+	stand: mob_male
+		Facings: 8
+	panic-stand: mob_male
+		Start: 8
+		Stride: 6
+		Facings: 8
+	panic-run: mob_male
+		Start: 8
+		Length: 6
+		Facings: 8
+	shoot: mob_male
+		Start: 120
+		Length: 4
+		Facings: 8
+	die1: mob_male
+		Start: 152
+		Length: 8
+	die2: mob_male
+		Start: 160
+		Length: 8
+	die3: mob_male
+		Start: 168
+		Length: 12
+	die4: mob_male
+		Start: 180
+		Length: 18
+	die5: mob_male
+		Start: 160
+		Length: 8
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	run: mob_male
+		Start: 56
+		Length: 6
+		Facings: 8
+		Tick: 80
+	dock: invis
+		Start: 0
+		Length: 1
+	dock-loop: invis
+		Start: 0
+		Length: 1
+	icon: workicon
+
+hack.angry_mob.female:
+	stand: mob_female
+		Facings: 8
+	panic-stand: mob_female
+		Start: 8
+		Stride: 6
+		Facings: 8
+	panic-run: mob_female
+		Start: 8
+		Length: 6
+		Facings: 8
+	shoot: mob_female
+		Start: 120
+		Length: 4
+		Facings: 8
+	die1: mob_female
+		Start: 152
+		Length: 8
+	die2: mob_female
+		Start: 160
+		Length: 8
+	die3: mob_female
+		Start: 168
+		Length: 12
+	die4: mob_female
+		Start: 180
+		Length: 18
+	die5: mob_female
+		Start: 160
+		Length: 8
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	run: mob_female
+		Start: 56
+		Length: 6
+		Facings: 8
+		Tick: 80
+
+hack.angry_mob.molotov:
+	stand: e2
+		Facings: 8
+	stand2: e2
+		Start: 8
+		Facings: 8
+	run: e2
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 80
+	throw: e2
+		Start: 64
+		Length: 20
+		Facings: 8
+	idle1: e2
+		Start: 384
+		Length: 14
+		Tick: 120
+	idle2: e2
+		Start: 399
+		Length: 16
+		Tick: 120
+	die1: e2
+		Start: 416
+		Length: 8
+	die2: e2
+		Start: 424
+		Length: 8
+	die3: e2
+		Start: 432
+		Length: 8
+	die4: e2
+		Start: 440
+		Length: 12
+	die5: e2
+		Start: 452
+		Length: 18
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	prone-stand: e2
+		Start: 240
 		Stride: 4
 		Facings: 8
-	prone-stand2: e6
-		Start: 82
+	prone-stand2: e2
+		Start: 240
 		Stride: 4
 		Facings: 8
-	prone-run: e6
-		Start: 82
+	prone-run: e2
+		Start: 240
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-throw: e2
+		Start: 288
+		Length: 12
+		Facings: 8
+
+infantry.angry_mob:
+	idle: invis
+	icon: amobicon
+
+infantry.hacker:
+	stand: mech
+		Facings: 8
+	run: mech
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	repair: mech
+		Start: 56
+		Length: 58
+		Tick: 120
+	standup: mech
+		Start: 114
+		Length: 2
+		Facings: 8
+	idle1: mech
+		Start: 163
+		Length: 14
+		Tick: 120
+	idle2: mech
+		Start: 178
+		Length: 14
+		Tick: 120
+	die1: mech
+		Start: 193
+		Length: 7
+	die2: mech
+		Start: 201
+		Length: 8
+	die3: mech
+		Start: 209
+		Length: 8
+	die4: mech
+		Start: 217
+		Length: 12
+	die5: mech
+		Start: 229
+		Length: 18
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	prone-stand: mech
+		Start: 130
+		Stride: 4
+		Facings: 8
+	prone-run: mech
+		Start: 130
 		Length: 4
 		Facings: 8
 		Tick: 100
-	icon: lotusicon
+	icon: hackericon
+
+infantry.hijacker:
+	stand: thf
+		Facings: 8
+	run: thf
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	die1: thf
+		Start: 139
+		Length: 8
+	die2: thf
+		Start: 147
+		Length: 8
+	die3: thf
+		Start: 155
+		Length: 8
+	die4: thf
+		Start: 163
+		Length: 12
+	die5: thf
+		Start: 175
+		Length: 18
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	prone-stand: thf
+		Start: 72
+		Stride: 4
+		Facings: 8
+	prone-run: thf
+		Start: 72
+		Length: 4
+		Facings: 8
+		Tick: 80
+	icon: hjckricon
 
 infantry.colonel_burton:
 	stand: rmbo
@@ -936,6 +1039,152 @@ infantry.colonel_burton:
 		ZOffset: -511
 	icon: colbicon
 
+infantry.jarmen_kell:
+	stand: kell
+		Facings: 8
+	stand2: kell
+		Start: 8
+		Facings: 8
+	run: kell
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot: kell
+		Start: 64
+		Length: 16
+		Facings: 8
+	prone-stand: kell
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-stand2: kell
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-run: kell
+		Start: 208
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown: kell
+		Start: 192
+		Length: 2
+		Facings: 8
+	standup: kell
+		Start: 240
+		Length: 2
+		Facings: 8
+	prone-shoot: kell
+		Start: 256
+		Length: 16
+		Facings: 8
+	idle1: kell
+		Start: 384
+		Length: 14
+		Tick: 120
+	idle2: kell
+		Start: 399
+		Length: 16
+		Tick: 120
+	die1: kell
+		Start: 416
+		Length: 8
+	die2: kell
+		Start: 424
+		Length: 8
+	die3: kell
+		Start: 432
+		Length: 8
+	die4: kell
+		Start: 440
+		Length: 12
+	die5: kell
+		Start: 452
+		Length: 18
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	garrison-muzzle: minigun
+		Length: 3
+		Stride: 6
+		Facings: 8
+	icon: kellicon
+
+infantry.black_lotus:
+	stand: e6
+		Facings: 8
+	stand2: e6
+		Start: 8
+		Facings: 8
+	run: e6
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	idle1: e6
+		Start: 121
+		Length: 8
+		Tick: 120
+	idle2: e6
+		Start: 130
+		Length: 14
+		Tick: 120
+	die1: e6
+		Start: 146
+		Length: 8
+	die2: e6
+		Start: 154
+		Length: 8
+	die3: e6
+		Start: 162
+		Length: 8
+	die4: e6
+		Start: 170
+		Length: 12
+	die5: e6
+		Start: 182
+		Length: 18
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	prone-stand: e6
+		Start: 82
+		Stride: 4
+		Facings: 8
+	prone-stand2: e6
+		Start: 82
+		Stride: 4
+		Facings: 8
+	prone-run: e6
+		Start: 82
+		Length: 4
+		Facings: 8
+		Tick: 100
+	icon: lotusicon
+
 medi:
 	stand:
 		Facings: 8
@@ -999,187 +1248,6 @@ medi:
 		Facings: 8
 		Tick: 100
 	icon: mediicon
-
-infantry.hacker:
-	stand: mech
-		Facings: 8
-	run: mech
-		Start: 8
-		Length: 6
-		Facings: 8
-		Tick: 100
-	repair: mech
-		Start: 56
-		Length: 58
-		Tick: 120
-	standup: mech
-		Start: 114
-		Length: 2
-		Facings: 8
-	idle1: mech
-		Start: 163
-		Length: 14
-		Tick: 120
-	idle2: mech
-		Start: 178
-		Length: 14
-		Tick: 120
-	die1: mech
-		Start: 193
-		Length: 7
-	die2: mech
-		Start: 201
-		Length: 8
-	die3: mech
-		Start: 209
-		Length: 8
-	die4: mech
-		Start: 217
-		Length: 12
-	die5: mech
-		Start: 229
-		Length: 18
-	die6: electro
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	die-crushed: corpse1
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	prone-stand: mech
-		Start: 130
-		Stride: 4
-		Facings: 8
-	prone-run: mech
-		Start: 130
-		Length: 4
-		Facings: 8
-		Tick: 100
-	icon: hackericon
-
-e2:
-	stand:
-		Facings: 8
-	stand2:
-		Start: 8
-		Facings: 8
-	run:
-		Start: 16
-		Length: 6
-		Facings: 8
-		Tick: 80
-	throw:
-		Start: 64
-		Length: 20
-		Facings: 8
-	idle1:
-		Start: 384
-		Length: 14
-		Tick: 120
-	idle2:
-		Start: 399
-		Length: 16
-		Tick: 120
-	die1:
-		Start: 416
-		Length: 8
-	die2:
-		Start: 424
-		Length: 8
-	die3:
-		Start: 432
-		Length: 8
-	die4:
-		Start: 440
-		Length: 12
-	die5:
-		Start: 452
-		Length: 18
-	die6: electro
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	die-crushed: corpse1
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	prone-stand:
-		Start: 240
-		Stride: 4
-		Facings: 8
-	prone-stand2:
-		Start: 240
-		Stride: 4
-		Facings: 8
-	prone-run:
-		Start: 240
-		Length: 4
-		Facings: 8
-		Tick: 80
-	prone-throw:
-		Start: 288
-		Length: 12
-		Facings: 8
-	icon: e2icon
-
-dog:
-	stand:
-		Facings: 8
-	run:
-		Start: 8
-		Length: 6
-		Facings: 8
-		Tick: 80
-	idle1:
-		Start: 216
-		Length: 7
-		Tick: 120
-	idle2:
-		Start: 224
-		Length: 11
-		Tick: 120
-	die1:
-		Start: 236
-		Length: 6
-	die2:
-		Start: 242
-		Length: 9
-	die3:
-		Start: 236
-		Length: 6
-	die4:
-		Start: 242
-		Length: 9
-	die5:
-		Start: 251
-		Length: 14
-	die6: electdog
-		Length: *
-	die-crushed: corpse1
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	shoot: dogbullt
-		Length: 4
-		Facings: 8
-	icon: dogicon
 
 spy:
 	stand:
@@ -1251,106 +1319,6 @@ spy:
 		Length: 8
 		Facings: 8
 	icon: spyicon
-
-thf:
-	stand:
-		Facings: 8
-	run:
-		Start: 8
-		Length: 6
-		Facings: 8
-		Tick: 100
-	die1:
-		Start: 139
-		Length: 8
-	die2:
-		Start: 147
-		Length: 8
-	die3:
-		Start: 155
-		Length: 8
-	die4:
-		Start: 163
-		Length: 12
-	die5:
-		Start: 175
-		Length: 18
-	die6: electro
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	die-crushed: corpse1
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	prone-stand:
-		Start: 72
-		Stride: 4
-		Facings: 8
-	prone-run:
-		Start: 72
-		Length: 4
-		Facings: 8
-		Tick: 80
-	icon: thficon
-
-infantry.hijacker:
-	stand: thf
-		Facings: 8
-	run: thf
-		Start: 8
-		Length: 6
-		Facings: 8
-		Tick: 100
-	die1: thf
-		Start: 139
-		Length: 8
-	die2: thf
-		Start: 147
-		Length: 8
-	die3: thf
-		Start: 155
-		Length: 8
-	die4: thf
-		Start: 163
-		Length: 12
-	die5: thf
-		Start: 175
-		Length: 18
-	die6: electro
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	die-crushed: corpse1
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	prone-stand: thf
-		Start: 72
-		Stride: 4
-		Facings: 8
-	prone-run: thf
-		Start: 72
-		Length: 4
-		Facings: 8
-		Tick: 80
-	icon: hjckricon
-
-infantry.angry_mob:
-	idle: invis
-	icon: amobicon
 
 e7:
 	stand:
@@ -1490,69 +1458,6 @@ e4:
 		Length: 16
 		Facings: 8
 	icon: e4icon
-
-gnrl:
-	stand:
-		Facings: 8
-	run:
-		Start: 8
-		Length: 6
-		Facings: 8
-		Tick: 100
-	shoot:
-		Start: 56
-		Length: 4
-		Facings: 8
-	prone-stand:
-		Start: 104
-		Stride: 4
-		Facings: 8
-	prone-run:
-		Start: 104
-		Length: 4
-		Facings: 8
-		Tick: 100
-	standup:
-		Start: 136
-		Length: 2
-		Facings: 8
-	prone-shoot:
-		Start: 152
-		Length: 4
-		Facings: 8
-	idle1:
-		Start: 184
-		Length: 26
-		Tick: 120
-	die1:
-		Start: 210
-		Length: 8
-	die2:
-		Start: 218
-		Length: 8
-	die3:
-		Start: 226
-		Length: 8
-	die4:
-		Start: 234
-		Length: 12
-	die5:
-		Start: 246
-		Length: 18
-	die6: electro
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	die-crushed: corpse1
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
 
 shok:
 	stand:
@@ -1788,6 +1693,52 @@ c3:
 		Length: 6
 		Facings: 8
 		Tick: 80
+
+dog:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 80
+	idle1:
+		Start: 216
+		Length: 7
+		Tick: 120
+	idle2:
+		Start: 224
+		Length: 11
+		Tick: 120
+	die1:
+		Start: 236
+		Length: 6
+	die2:
+		Start: 242
+		Length: 9
+	die3:
+		Start: 236
+		Length: 6
+	die4:
+		Start: 242
+		Length: 9
+	die5:
+		Start: 251
+		Length: 14
+	die6: electdog
+		Length: *
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	shoot: dogbullt
+		Length: 4
+		Facings: 8
+	icon: dogicon
 
 einstein:
 	stand:
