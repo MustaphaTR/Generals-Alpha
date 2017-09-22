@@ -151,7 +151,7 @@ SendRaptors = function(waypoints)
 end
 
 UseArtilleryBarrage = function()
-	Trigger.AfterDelay(DateTime.Minutes(6), function()
+	Trigger.AfterDelay(DateTime.Minutes(5), function()
 		Actor.Create("ARTY_BARRAGER_3", true, { Owner = prc, Location = ArtyBarrWaypoint.Location})
 		
 		UseArtilleryBarrage()
@@ -159,7 +159,7 @@ UseArtilleryBarrage = function()
 end
 
 SummonRebel = function(loc)
-	Trigger.AfterDelay(DateTime.Seconds(1), function()
+	Trigger.AfterDelay(DateTime.Minutes(4), function()
 		local a = Actor.Create("infantry.rebel", true, { Owner = gla, Facing = 0, Location = loc})
 		if a.HasProperty("Hunt") then
 			Trigger.OnIdle(a, function(a)
@@ -168,6 +168,8 @@ SummonRebel = function(loc)
 				end
 			end)
 		end
+		
+		SummonRebel(loc)
 	end)
 end
 
@@ -209,12 +211,12 @@ WorldLoaded = function()
 	Trigger.AfterDelay(DateTime.Seconds(25), function() SendRaptors(Raptor1Waypoints) end)
 	Trigger.AfterDelay(DateTime.Seconds(25), function() SendRaptors(Raptor2Waypoints) end)
 
---	SummonRebel(AmbushLocation1.Location)
---	SummonRebel(AmbushLocation2.Location)
---	SummonRebel(AmbushLocation3.Location)
---	SummonRebel(AmbushLocation4.Location)
---	SummonRebel(AmbushLocation5.Location)
---	SummonRebel(AmbushLocation6.Location)
---	SummonRebel(AmbushLocation7.Location)
---	SummonRebel(AmbushLocation8.Location)
+	SummonRebel(AmbushLocation1.Location)
+	SummonRebel(AmbushLocation2.Location)
+	SummonRebel(AmbushLocation3.Location)
+	SummonRebel(AmbushLocation4.Location)
+	SummonRebel(AmbushLocation5.Location)
+	SummonRebel(AmbushLocation6.Location)
+	SummonRebel(AmbushLocation7.Location)
+	SummonRebel(AmbushLocation8.Location)
 end
