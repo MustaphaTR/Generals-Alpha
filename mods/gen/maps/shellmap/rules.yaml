@@ -141,10 +141,6 @@ building.bunker:
 	Cargo:
 		InitialUnits: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, infantry.tank_hunter
 
-building.tunnel_network:
-	-FreeActor@1:
-	-FreeActor@2:
-
 infantry.hacker:
 	ExternalCondition@deployed:
 		Condition: deployed
@@ -156,9 +152,6 @@ infantry.black_lotus:
 		InitialDelay: 0
 
 building.usa_supply_center:
-	-FreeActor:
-
-building.gla_supply_stash:
 	-FreeActor:
 
 building.prc_supply_center:

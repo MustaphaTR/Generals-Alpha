@@ -1,14 +1,125 @@
 hole.command_center:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^3x3Shape
-	Inherits@REVEAL: ^Reveal150
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
-	Health:
-		HP: 500
+	Tooltip:
+		Name: GLA Hole (Command Center)
 	TransformOnCapture:
 		IntoActor: building.gla_command_center
 	RenderSprites:
 		Scale: 3
+		Image: minv
+
+hole.barracks:
+	Inherits: ^Hole
+	Inherits@SHAPE: ^2x2Shape
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: GLA Hole (Barracks)
+	TransformOnCapture:
+		IntoActor: building.gla_barracks
+	RenderSprites:
+		Scale: 2
+		Image: minv
+
+hole.supply_stash:
+	Inherits: ^Hole
+	Inherits@SHAPE: ^2x2Shape
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: GLA Hole (Supply Stash)
+	TransformOnCapture:
+		IntoActor: building.gla_supply_stash.no_free_actor
+	RenderSprites:
+		Scale: 2
+		Image: minv
+
+hole.arms_dealer:
+	Inherits: ^Hole
+	Inherits@SHAPE: ^3x3Shape
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	Tooltip:
+		Name: GLA Hole (Arms Dealer)
+	TransformOnCapture:
+		IntoActor: building.arms_dealer
+	RenderSprites:
+		Scale: 3
+		Image: minv
+
+hole.palace:
+	Inherits: ^Hole
+	Inherits@SHAPE: ^3x2Shape
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Tooltip:
+		Name: GLA Hole (Palace)
+	TransformOnCapture:
+		IntoActor: building.palace
+	RenderSprites:
+		Scale: 2
+		Image: minv
+
+hole.black_market:
+	Inherits: ^Hole
+	Inherits@SHAPE: ^2x2Shape
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: GLA Hole (Black Market)
+	TransformOnCapture:
+		IntoActor: building.black_market
+	RenderSprites:
+		Scale: 2
+		Image: minv
+
+hole.scud_storm:
+	Inherits: ^Hole
+	Inherits@SHAPE: ^2x2Shape
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: GLA Hole (Scud Storm)
+	TransformOnCapture:
+		IntoActor: building.scud_storm
+	RenderSprites:
+		Scale: 2
+		Image: minv
+
+hole.tunnel_network:
+	Inherits: ^Hole
+	Inherits@SHAPE: ^2x2Shape
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: GLA Hole (Tunnel Network)
+	TransformOnCapture:
+		IntoActor: building.tunnel_network.no_free_actor
+	RenderSprites:
+		Scale: 2
+		Image: minv
+
+hole.stinger_site:
+	Inherits: ^Hole
+	Inherits@SHAPE: ^2x2Shape
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Tooltip:
+		Name: GLA Hole (Stinger Site)
+	TransformOnCapture:
+		IntoActor: building.stinger_site
+	RenderSprites:
+		Scale: 2
 		Image: minv

@@ -1191,6 +1191,7 @@
 
 ^Hole:
 	Inherits: ^BasicBuilding
+	Inherits@REVEAL: ^Reveal100
 	Capturable:
 		Type: hole
 		AllowAllies: true
@@ -1200,10 +1201,13 @@
 	Tooltip:
 		Name: GLA Hole
 		GenericName: Hole
+	Health:
+		HP: 500
 	Armor:
 		Type: building.normal
 	TransformOnCapture:
-		ForceHealthPercentage: 25
+		Type: hole
+		ForceHealthPercentage: 20
 	EditorTilesetFilter:
 		Categories: GLA Hole
 

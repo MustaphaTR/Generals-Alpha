@@ -111,8 +111,6 @@ building.gla_command_center:
 		BuildPaletteOrder: 1001
 	Tooltip:
 		Name: GLA Command Center
-	SpawnActorOnDeath:
-		Actor: hole.command_center
 	AirstrikePower@ANTHRAX_BOMB:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~building.gla_command_center, ~upgrade.anthrax_bomb
@@ -134,6 +132,8 @@ building.gla_command_center:
 	WithTextDecoration@SIDE:
 		Text: GLA
 		Color: 00FF00
+	SpawnActorOnDeath:
+		Actor: hole.command_center
 	Transforms:
 		IntoActor: vehicle.gla_mcc
 
@@ -400,6 +400,8 @@ building.gla_barracks:
 		LongDesc: Spawns 16 Rebels anywhere on the map.
 		StartFullyCharged: false
 		OrderName: Ambush3PowerInfoOrder
+	SpawnActorOnDeath:
+		Actor: hole.barracks
 
 building.prc_barracks:
 	Inherits: ^default.barracks
@@ -541,13 +543,13 @@ building.gla_supply_stash:
 		Footprint: xx x=
 		Dimensions: 2,2
 	Selectable:
+		Class: building.gla_supply_stash
 		Bounds: 48,48,0,12
 	Exit@1:
 		SpawnOffset: -96,768,0
 		ExitCell: 1,1
 	Production:
-		Produces: Infantry, Worker
-	Dock@0:
+		Produces: Infantry, Worker	Dock@0:
 		DockOffset: 1,1
 	RallyPoint:
 		Offset: 2,1
@@ -567,8 +569,17 @@ building.gla_supply_stash:
 	FreeActor:
 		Actor: infantry.worker
 		SpawnOffset: 1,1
+	SpawnActorOnDeath:
+		Actor: hole.supply_stash
 	Power:
 		Amount: 0
+
+building.gla_supply_stash.no_free_actor:
+	Inherits: building.gla_supply_stash
+	-Buildable:
+	-FreeActor:
+	RenderSprites:
+		Image: building.gla_supply_stash
 
 building.prc_supply_center:
 	Inherits: ^default.supply_center
@@ -931,6 +942,8 @@ building.arms_dealer:
 		Cost: 2500
 	Tooltip:
 		Name: GLA Arms Dealer
+	SpawnActorOnDeath:
+		Actor: hole.arms_dealer
 	Power:
 		Amount: 0
 
@@ -965,6 +978,8 @@ building.tunnel_network:
 		HP: 1000
 	Armor:
 		Type: building.normal
+	Selectable:
+		Class: building.tunnel_network
 	RallyPoint:
 		Offset: 0,2
 	Exit:
@@ -1002,6 +1017,16 @@ building.tunnel_network:
 		RequiresCondition: !emp
 	WithSpriteTurret:
 	WithMuzzleOverlay:
+	SpawnActorOnDeath:
+		Actor: hole.tunnel_network
+
+building.tunnel_network.no_free_actor:
+	Inherits: building.tunnel_network
+	-Buildable:
+	-FreeActor@1:
+	-FreeActor@2:
+	RenderSprites:
+		Image: building.tunnel_network
 
 building.stinger_site:
 	Inherits: ^Defense
@@ -1070,6 +1095,8 @@ building.stinger_site:
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
+	SpawnActorOnDeath:
+		Actor: hole.stinger_site
 
 ^default.airfield:
    	Inherits: ^Building
@@ -1346,6 +1373,8 @@ building.palace:
 		DeathSequence: dead
 		DeathSequencePalette: cncplayer
 		UseDeathTypeSuffix: false
+	SpawnActorOnDeath:
+		Actor: hole.palace
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -1511,6 +1540,8 @@ building.black_market:
 	Power:
 		Amount: 0
 	ProvidesPrerequisite@buildingname:
+	SpawnActorOnDeath:
+		Actor: hole.black_market
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -1789,6 +1820,8 @@ building.scud_storm:
 	RevealsShroud@SW:
 		Range: 2c0
 		ValidStances: Enemy
+	SpawnActorOnDeath:
+		Actor: hole.scud_storm
 
 building.missile_silo:
 	Inherits: ^Building
