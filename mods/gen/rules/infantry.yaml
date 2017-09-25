@@ -62,7 +62,7 @@ infantry.worker:
 
 ^default.mg_infantry:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@REVEAL: ^Reveal100
 	Buildable:
 		Queue: Infantry
@@ -169,7 +169,7 @@ infantry.red_guard:
 ^default.rocket_infantry:
 	Inherits: ^Soldier
 	Inherits@REVEAL: ^Reveal150
-	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
@@ -235,7 +235,7 @@ infantry.tank_hunter:
 
 infantry.pathfinder:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@REVEAL: ^Reveal200
 	Valued:
 		Cost: 600
@@ -319,7 +319,7 @@ infantry.terrorist:
 
 ^default.angry_mob:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@REVEAL: ^Reveal150
 	Valued:
 		Cost: 160
@@ -383,7 +383,7 @@ infantry.angry_mob:
 	Inherits@1: ^ExistsInWorld
 	Inherits@4: ^SpriteActor
 	Inherits@REVEAL: ^Reveal150
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	-AppearsOnRadar:
 	Buildable:
 		Queue: Infantry
@@ -563,7 +563,7 @@ infantry.hijacker:
 
 infantry.colonel_burton:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@REVEAL: ^Reveal150
 	Valued:
 		Cost: 1500
@@ -842,7 +842,7 @@ DOG:
 
 Zombie:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 100
 	Tooltip:
@@ -871,7 +871,7 @@ Zombie:
 
 Ant:
 	Inherits: ^Infantry
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 300
 	Tooltip:

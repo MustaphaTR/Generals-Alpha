@@ -44,7 +44,7 @@ vehicle.supply_truck:
 
 vehicle.humvee:
 	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@REVEAL: ^Reveal150
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@CRUSH: ^CrushesInfantry
@@ -127,7 +127,7 @@ vehicle.humvee:
 
 vehicle.technical:
 	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@AP_BULLETS: ^AfftectedByAPBullets
 	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
 	Inherits@REVEAL: ^Reveal150
@@ -227,7 +227,7 @@ vehicle.radar_van:
 
 vehicle.scorpion_tank:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
 	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesInfantry
@@ -314,7 +314,7 @@ vehicle.scorpion_tank:
 
 vehicle.crusader_tank:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal125
 	Inherits@CRUSH: ^CrushesInfantry
@@ -364,7 +364,7 @@ vehicle.crusader_tank:
 
 vehicle.battlemaster_tank:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@NUCLEAR_TANKS: ^AfftectedByNuclearTanks
 	Inherits@URANIUM_SHELLS: ^AfftectedByUraniumShells
 	Inherits@HORDE_BONUS: ^Horde
@@ -448,7 +448,7 @@ vehicle.ambulance:
 
 vehicle.quad_cannon:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@AP_BULLETS: ^AfftectedByAPBullets
 	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
@@ -494,7 +494,7 @@ vehicle.quad_cannon:
 
 vehicle.gatling_tank:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CHAIN_GUN: ^AfftectedByChainGun
 	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesInfantry
@@ -553,7 +553,7 @@ vehicle.gatling_tank:
 
 vehicle.toxin_tractor:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@REVEAL: ^Reveal100
 	Inherits@CRUSH: ^CrushesInfantry
 	Valued:
@@ -602,7 +602,7 @@ vehicle.toxin_tractor:
 
 vehicle.dragon_tank:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@REVEAL: ^Reveal100
 	Inherits@CRUSH: ^CrushesInfantry
 	Valued:
@@ -645,7 +645,7 @@ vehicle.dragon_tank:
 
 vehicle.rocket_buggy:
 	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@AP_ROCKETS: ^AfftectedByAPRockets
 	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
 	Inherits@REVEAL: ^Reveal180
@@ -738,7 +738,7 @@ vehicle.troop_crawler:
 
 vehicle.tomahawk_launcher:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal180
 	Inherits@CRUSH: ^CrushesInfantry
@@ -785,7 +785,7 @@ vehicle.tomahawk_launcher:
 
 vehicle.scud_launcher:
 	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
 	Inherits@REVEAL: ^Reveal180
 	Inherits@CRUSH: ^CrushesInfantry
@@ -853,7 +853,7 @@ vehicle.scud_launcher:
 
 vehicle.inferno_cannon:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@REVEAL: ^Reveal180
 	Inherits@CRUSH: ^CrushesInfantry
 	Buildable:
@@ -905,7 +905,7 @@ vehicle.inferno_cannon:
 
 vehicle.paladin_tank:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesInfantry
@@ -969,7 +969,7 @@ vehicle.paladin_tank:
 
 vehicle.marauder_tank:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
 	Inherits@REVEAL: ^Reveal125
 	Inherits@CRUSH: ^CrushesInfantry
@@ -1033,7 +1033,7 @@ vehicle.marauder_tank:
 
 vehicle.overlord_tank:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@NUCLEAR_TANKS: ^AfftectedByNuclearTanks
 	Inherits@URANIUM_SHELLS: ^AfftectedByUraniumShells
 	Inherits@REVEAL: ^Reveal150
@@ -1304,7 +1304,7 @@ vehicle.bomb_truck:
 
 vehicle.nuke_cannon:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@REVEAL: ^Reveal180
 	Inherits@CRUSH: ^CrushesInfantry
 	Buildable:

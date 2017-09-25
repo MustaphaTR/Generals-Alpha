@@ -106,7 +106,7 @@ aircraft.cargo_plane:
 aircraft.mig:
 	Inherits: ^Plane
 	Inherits@REVEAL: ^Reveal200
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -187,7 +187,7 @@ aircraft.raptor:
 	Inherits: ^Plane
 	Inherits@REVEAL: ^Reveal180
 	Inherits@LASER_MISSILES: ^AfftectedByLaserGuidedMissiles
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -255,7 +255,7 @@ aircraft.stealth_fighter:
 	Inherits: ^Plane
 	Inherits@REVEAL: ^Reveal180
 	Inherits@LASER_MISSILES: ^AfftectedByLaserGuidedMissiles
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -332,7 +332,7 @@ aircraft.stealth_fighter:
 aircraft.aurora:
 	Inherits: ^Plane
 	Inherits@REVEAL: ^Reveal180
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -580,7 +580,7 @@ aircraft.chinook:
 aircraft.comanche:
 	Inherits: ^Helicopter
 	Inherits@REVEAL: ^Reveal180
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@PILOT: ^EjectsPilotOnAir
 	Buildable:
 		Queue: Aircraft
