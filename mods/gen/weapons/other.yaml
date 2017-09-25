@@ -350,3 +350,31 @@ disable.black_lotus.end:
 		Range: 0c512
 		Duration: 375
 		Condition: disabled
+
+hack.spawn_4_rebels:
+	ReloadDelay: 5
+	Range: 1c0
+	Projectile: Bullet
+		Speed: 10c0
+	Warhead@1Dam: TargetDamage
+	Warhead@2Spawner: SpawnActor
+		Actors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel
+		InvalidTargets: Water
+
+hack.spawn_8_rebels:
+	ReloadDelay: 5
+	Range: 1c0
+	Projectile: Bullet
+		Speed: 10c0
+	Warhead@1Dam: TargetDamage
+	Warhead@2Spawner: SpawnActor
+		Actors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel
+
+hack.spawn_16_rebels:
+	ReloadDelay: 5
+	Range: 1c0
+	Projectile: Bullet
+		Speed: 10c0
+	Warhead@1Dam: TargetDamage
+	Warhead@2Spawner: SpawnActor
+		Actors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel

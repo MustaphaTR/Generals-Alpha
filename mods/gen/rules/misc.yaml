@@ -347,6 +347,27 @@ ARTY_BARRAGER_3:
 	FireWeaponAtSelf@3:
 		Name: 3
 
+hack.rebel_spawner.4:
+	Inherits: CAMERA
+	-RevealsShroud:
+	Armament@1:
+		Name: 1
+		Weapon: hack.spawn_4_rebels
+	FireWeaponAtSelf@1:
+		Name: 1
+	AttackTurreted:
+	Turreted:
+
+hack.rebel_spawner.8:
+	Inherits: hack.rebel_spawner.4
+	Armament@1:
+		Weapon: hack.spawn_8_rebels
+
+hack.rebel_spawner.16:
+	Inherits: hack.rebel_spawner.8
+	Armament@1:
+		Weapon: hack.spawn_16_rebels
+
 MINE:
 	Inherits@1: ^SpriteActor
 	HiddenUnderShroud:

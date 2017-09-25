@@ -369,9 +369,9 @@ building.gla_barracks:
 		ExitCell: 0,2
 	SpawnActorPower@AMBUSH1:
 		PauseOnCondition: disabled || emp
-		Actor: infantry.ambush_rebel4
+		Actor: hack.rebel_spawner.4
 		Prerequisites: ~building.gla_barracks, ~upgrade.ambush1, ~!upgrade.ambush2, ~!upgrade.ambush3
-		LifeTime: -1
+		LifeTime: 2
 		ChargeTime: 240
 		Icon: ambush1
 		Description: Rebel Ambush
@@ -380,9 +380,9 @@ building.gla_barracks:
 		OrderName: Ambush1PowerInfoOrder
 	SpawnActorPower@AMBUSH2:
 		PauseOnCondition: disabled || emp
-		Actor: infantry.ambush_rebel8
+		Actor: hack.rebel_spawner.8
 		Prerequisites: ~building.gla_barracks, ~upgrade.ambush2, ~!upgrade.ambush3
-		LifeTime: -1
+		LifeTime: 2
 		ChargeTime: 240
 		Icon: ambush2
 		Description: Rebel Ambush
@@ -391,9 +391,9 @@ building.gla_barracks:
 		OrderName: Ambush2PowerInfoOrder
 	SpawnActorPower@AMBUSH3:
 		PauseOnCondition: disabled || emp
-		Actor: infantry.ambush_rebel16
+		Actor: hack.rebel_spawner.16
 		Prerequisites: ~building.gla_barracks, ~upgrade.ambush3
-		LifeTime: -1
+		LifeTime: 2
 		ChargeTime: 240
 		Icon: ambush3
 		Description: Rebel Ambush
