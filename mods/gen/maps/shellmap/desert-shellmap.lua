@@ -203,5 +203,5 @@ WorldLoaded = function()
 	Trigger.AfterDelay(DateTime.Seconds(25), function() SendRaptors(Raptor2Waypoints) end)
 
 	SummonActor("hack.rebel_spawner.8", gla, AmbushLocation1.Location, DateTime.Minutes(4))
-	SummonActor("ARTY_BARRAGER_3", prc, ArtyBarrWaypoint.Location, DateTime.Minutes(5))
+	SummonActor("hack.artillery_barrager.3", prc, ArtyBarrWaypoint.Location, DateTime.Minutes(5))
 end

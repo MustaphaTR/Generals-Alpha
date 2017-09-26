@@ -150,7 +150,7 @@ building.prc_command_center:
 		Prerequisites: upgrade.radar
 	SpawnActorPower@ARTY_BARRAGE1:
 		PauseOnCondition: emp
-		Actor: ARTY_BARRAGER_1
+		Actor: hack.artillery_barrager.1
 		Prerequisites: ~upgrade.arty_barrage1, ~!upgrade.arty_barrage2, ~!upgrade.arty_barrage3
 		LifeTime: 120
 		ChargeTime: 300
@@ -161,7 +161,7 @@ building.prc_command_center:
 		OrderName: ArtilleryBarrage1PowerInfoOrder
 	SpawnActorPower@ARTY_BARRAGE2:
 		PauseOnCondition: emp
-		Actor: ARTY_BARRAGER_2
+		Actor: hack.artillery_barrager.2
 		Prerequisites: ~upgrade.arty_barrage2, ~!upgrade.arty_barrage3
 		LifeTime: 120
 		ChargeTime: 300
@@ -172,7 +172,7 @@ building.prc_command_center:
 		OrderName: ArtilleryBarrage2PowerInfoOrder
 	SpawnActorPower@ARTY_BARRAGE3:
 		PauseOnCondition: emp
-		Actor: ARTY_BARRAGER_3
+		Actor: hack.artillery_barrager.3
 		Prerequisites: ~upgrade.arty_barrage3
 		LifeTime: 120
 		ChargeTime: 300

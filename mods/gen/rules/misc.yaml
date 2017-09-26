@@ -316,7 +316,7 @@ FLARE:
 	EditorTilesetFilter:
 		Categories: Decoration
 
-ARTY_BARRAGER_1:
+hack.artillery_barrager.1:
 	Inherits: CAMERA
 	RevealsShroud:
 		Range: 5c0
@@ -329,8 +329,8 @@ ARTY_BARRAGER_1:
 	AttackTurreted:
 	Turreted:
 
-ARTY_BARRAGER_2:
-	Inherits: ARTY_BARRAGER_1
+hack.artillery_barrager.2:
+	Inherits: hack.artillery_barrager.1
 	Armament@2:
 		Name: 2
 		Weapon: ArtyBarrageWeapon
@@ -338,8 +338,8 @@ ARTY_BARRAGER_2:
 	FireWeaponAtSelf@2:
 		Name: 2
 
-ARTY_BARRAGER_3:
-	Inherits: ARTY_BARRAGER_2
+hack.artillery_barrager.3:
+	Inherits: hack.artillery_barrager.2
 	Armament@3:
 		Name: 3
 		Weapon: ArtyBarrageWeapon
