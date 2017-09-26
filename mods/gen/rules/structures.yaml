@@ -688,8 +688,6 @@ building.demo_trap:
 		Cost: 400
 	Health:
 		HP: 100
-	Explodes:
-		Weapon: explosion.demo_trap
 	Tooltip:
 		Name: Demo Trap
 	Building:
@@ -702,7 +700,8 @@ building.demo_trap:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
 		CloakTypes: Cloak
 		IsPlayerPalette: true
-		RequiresCondition: !cloak-force-disabled && !self_destruct && !emp
+		RequiresCondition: !cloak-force-disabled && !emp
+	-Explodes:
 	-ShakeOnDeath:
 	-SoundOnDamageTransition:
 	-WithMakeAnimation:
@@ -710,20 +709,33 @@ building.demo_trap:
 	-Demolishable:
 	ExternalCondition@SELF_DESTRUCT:
 		Condition: self_destruct
-	WithColoredOverlay@DETECTED:
-		RequiresCondition: self_destruct
-		Palette: detected
 	WithRangeCircle:
 		Range: 1c512
+	KillsSelf:
+		RequiresCondition: self_destruct
+	SpawnActorOnDeath:
+		Actor: building.demo_trap.explode
+	GrantConditionOnDeploy:
+		DeployedCondition: self_destruct
+
+building.demo_trap.explode:
+	Inherits: building.demo_trap
+	-Buildable:
+	-Cloak:
+	-Targetable:
+	-SpawnActorOnDeath:
+	Explodes:
+		Weapon: explosion.demo_trap
+	KillsSelf:
+		-RequiresCondition:
+		Delay: 20
 	AmbientSound:
 		SoundFiles: gdembeep.wav
 		Interval: 5
-		RequiresCondition: self_destruct
-	KillsSelf:
-		RequiresCondition: self_destruct
-		Delay: 20
-	GrantConditionOnDeploy:
-		DeployedCondition: self_destruct
+	WithColoredOverlay@DETECTED:
+		Palette: detected
+	RenderSprites:
+		Image: building.demo_trap
 
 building.gatling_cannon:
 	Inherits: ^Defense
