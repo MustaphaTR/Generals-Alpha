@@ -943,6 +943,10 @@ vehicle.paladin_tank:
 		Weapon: laser.paladin_tank
 		LocalOffset: 0,213,-85
 		Name: pdlaser
+	FirepowerMultiplier@CRATE_FIREPOWER:
+		RequiresCondition: crate.firepower
+		Type: pdlaser
+		Modifier: 110
 	ShootsMissiles:
 		ShootStances: Neutral, Enemy
 		Armament: pdlaser
@@ -1036,6 +1040,7 @@ vehicle.overlord_tank:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@NUCLEAR_TANKS: ^AfftectedByNuclearTanks
 	Inherits@URANIUM_SHELLS: ^AfftectedByUraniumShells
+	Inherits@CHAIN_GUN: ^AfftectedByChainGun
 	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesVehicles
 	AutoTargetPriority@DEFAULT:
@@ -1050,6 +1055,16 @@ vehicle.overlord_tank:
 		RequiresCondition: stance-attackanything && overlord_gatling
 		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
 		InvalidTargets: NoAutoTarget
+	FirepowerMultiplier@CHAIN_GUN:
+		Type: gatling
+	ReloadDelayMultiplier@Gatling1:
+		RequiresCondition: gatling >= 1
+		Type: gatling
+		Modifier: 50
+	ReloadDelayMultiplier@Gatling2:
+		RequiresCondition: gatling >= 2
+		Type: gatling
+		Modifier: 50
 	Buildable:
 		Queue: Vehicle
 		BuildAtProductionType: WarFactory
@@ -1090,48 +1105,20 @@ vehicle.overlord_tank:
 		Recoil: 171
 		RecoilRecovery: 30
 		MuzzleSequence: muzzle
-	Armament@GatlingAG0:
+	Armament@GatlingAG:
 		Weapon: gatling.gatling_tank.ground
 		Name: gatling
 		Turret: gatling
 		LocalOffset: 213,0,0
 		MuzzleSequence: muzzle2
-		RequiresCondition: gatling == 0 && overlord_gatling
-	Armament@GatlingAA0:
+		RequiresCondition: overlord_gatling
+	Armament@GatlingAA:
 		Weapon: gatling.gatling_tank.air
 		Name: gatling
 		Turret: gatling
 		LocalOffset: 213,0,0
 		MuzzleSequence: muzzle2
-		RequiresCondition: gatling == 0 && overlord_gatling
-	Armament@GatlingAG1:
-		Weapon: gatling.gatling_tank.ground.1
-		Name: gatling
-		Turret: gatling
-		LocalOffset: 213,0,0
-		MuzzleSequence: muzzle2
-		RequiresCondition: gatling == 1 && overlord_gatling
-	Armament@GatlingAA1:
-		Weapon: gatling.gatling_tank.air.1
-		Name: gatling
-		Turret: gatling
-		LocalOffset: 213,0,0
-		MuzzleSequence: muzzle2
-		RequiresCondition: gatling == 1 && overlord_gatling
-	Armament@GatlingAG2:
-		Weapon: gatling.gatling_tank.ground.2
-		Name: gatling
-		Turret: gatling
-		LocalOffset: 213,0,0
-		MuzzleSequence: muzzle2
-		RequiresCondition: gatling == 2 && overlord_gatling
-	Armament@GatlingAA2:
-		Weapon: gatling.gatling_tank.air.2
-		Name: gatling
-		Turret: gatling
-		LocalOffset: 213,0,0
-		MuzzleSequence: muzzle2
-		RequiresCondition: gatling == 2 && overlord_gatling
+		RequiresCondition: overlord_gatling
 	AttackTurreted:
 		Armaments: gatling, primary
 		RequiresCondition: !disabled && !driver_killed && !emp

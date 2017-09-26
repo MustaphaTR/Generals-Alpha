@@ -411,14 +411,6 @@ gatling.gatling_tank.ground:
 			building.stinger_site: 10
 			building.wall: 6
 
-gatling.gatling_tank.ground.1:
-	Inherits: gatling.gatling_tank.ground
-	ReloadDelay: 5
-
-gatling.gatling_tank.ground.2:
-	Inherits: gatling.gatling_tank.ground
-	ReloadDelay: 3
-
 gatling.gatling_tank.air:
 	Inherits: gatling.gatling_tank.ground
 	ValidTargets: Air
@@ -428,14 +420,6 @@ gatling.gatling_tank.air:
 	Warhead@1Dam: SpreadDamage
 		Damage: 12
 		ValidTargets: Air
-
-gatling.gatling_tank.air.1:
-	Inherits: gatling.gatling_tank.air
-	ReloadDelay: 5
-
-gatling.gatling_tank.air.2:
-	Inherits: gatling.gatling_tank.air
-	ReloadDelay: 3
 
 gatling.gatling_cannon.ground:
 	Inherits: ^LightMG
