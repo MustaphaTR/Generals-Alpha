@@ -354,6 +354,15 @@
 		Prerequisites: strategy.hold_the_line
 
 ^AffectedByScrapCratePowerups:
+	DamageMultiplier@CRATE_ARMOR:
+		RequiresCondition: crate.armor
+		Modifier: 90
+	FirepowerMultiplier@CRATE_FIREPOWER:
+		RequiresCondition: crate.firepower
+		Modifier: 110
+	SpeedMultiplier@CRATE_SPEED:
+		RequiresCondition: crate.speed
+		Modifier: 110
 	ExternalCondition@CRATE_ARMOR:
 		Condition: crate.armor
 	ExternalCondition@CRATE_FIREPOWER:
