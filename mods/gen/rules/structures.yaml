@@ -59,6 +59,8 @@ building.usa_command_center:
 		IntoActor: vehicle.usa_mcc
 		Offset: 1,1
 		Facing: 96
+	Voiced:
+		VoiceSet: USACommandCenterVoice
 	SpawnActorPower@SPY_DRONE:
 		PauseOnCondition: emp
 		Actor: aircraft.spy_drone
@@ -111,6 +113,8 @@ building.gla_command_center:
 		BuildPaletteOrder: 1001
 	Tooltip:
 		Name: GLA Command Center
+	Voiced:
+		VoiceSet: GLACommandCenterVoice
 	AirstrikePower@ANTHRAX_BOMB:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~building.gla_command_center, ~upgrade.anthrax_bomb
@@ -148,6 +152,8 @@ building.prc_command_center:
 	GrantConditionOnPrerequisite@PRC_RADAR:
 		Condition: prcradar
 		Prerequisites: upgrade.radar
+	Voiced:
+		VoiceSet: PRCCommandCenterVoice
 	SpawnActorPower@ARTY_BARRAGE1:
 		PauseOnCondition: emp
 		Actor: hack.artillery_barrager.1
@@ -254,6 +260,8 @@ building.cold_fusion_reactor:
 	Power@CONTROL_RODS:
 		RequiresCondition: control_rods && !emp
 		Amount: 5
+	Voiced:
+		VoiceSet: ColdFusionReactorVoice
 
 building.nuclear_reactor:
 	Inherits: ^default.reactor
@@ -292,6 +300,8 @@ building.nuclear_reactor:
 	GrantConditionOnDeploy:
 		MakeAnimationDeployTypes:
 		DeployedCondition: overcharge
+	Voiced:
+		VoiceSet: NuclearReactorVoice
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -349,6 +359,8 @@ building.usa_barracks:
 	Exit@2:
 		SpawnOffset: 298,298,0
 		ExitCell: 1,1
+	Voiced:
+		VoiceSet: USABarracksVoice
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -402,6 +414,8 @@ building.gla_barracks:
 		OrderName: Ambush3PowerInfoOrder
 	SpawnActorOnDeath:
 		Actor: hole.barracks
+	Voiced:
+		VoiceSet: GLABarracksVoice
 
 building.prc_barracks:
 	Inherits: ^default.barracks
@@ -419,6 +433,8 @@ building.prc_barracks:
 	Exit@2:
 		SpawnOffset: -725,640,0
 		ExitCell: 0,2
+	Voiced:
+		VoiceSet: PRCBarracksVoice
 
 building.mine:
 	Inherits: ^Mine
@@ -524,6 +540,8 @@ building.usa_supply_center:
 		Type: Rectangle
 			TopLeft: -512, -1450
 			BottomRight: 896, -512
+	Voiced:
+		VoiceSet: USASupplyVoice
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -574,6 +592,8 @@ building.gla_supply_stash:
 		Actor: hole.supply_stash
 	Power:
 		Amount: 0
+	Voiced:
+		VoiceSet: GLASupplyVoice
 
 building.gla_supply_stash.no_free_actor:
 	Inherits: building.gla_supply_stash
@@ -618,6 +638,8 @@ building.prc_supply_center:
 		Type: Rectangle
 			TopLeft: -1536, 598
 			BottomRight: -512, 1280
+	Voiced:
+		VoiceSet: PRCSupplyVoice
 
 building.patriot:
 	Inherits: ^Defense
@@ -673,6 +695,8 @@ building.patriot:
 		Range: 5c0
 	BodyOrientation:
 		UseClassicFacingFudge: True
+	Voiced:
+		VoiceSet: PatriotVoice
 
 building.demo_trap:
 	Inherits: ^Defense
@@ -815,6 +839,8 @@ building.gatling_cannon:
 		Prerequisites: strategy.overlord_gatling
 	BodyOrientation:
 		UseClassicFacingFudge: True
+	Voiced:
+		VoiceSet: GatlingCannonVoice
 
 building.bunker:
 	Inherits: ^Defense
@@ -867,6 +893,8 @@ building.bunker:
 	GrantConditionOnPrerequisite@OVERLORD_BUNKER:
 		Condition: overlord_bunker
 		Prerequisites: strategy.overlord_bunker
+	Voiced:
+		VoiceSet: BunkerVoice
 
 building.bunker.strategy:
 	Inherits: building.bunker
@@ -943,6 +971,8 @@ building.usa_war_factory:
 		Type: Rectangle
 			TopLeft: -1536, -1024
 			BottomRight: 1536, 512
+	Voiced:
+		VoiceSet: USAWarFactoryVoice
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -959,6 +989,8 @@ building.arms_dealer:
 		Actor: hole.arms_dealer
 	Power:
 		Amount: 0
+	Voiced:
+		VoiceSet: GLAArmsDealerVoice
 
 building.prc_war_factory:
 	Inherits: ^default.war_factory
@@ -967,6 +999,8 @@ building.prc_war_factory:
 		Prerequisites: anysupply, ~building.prc_command_center, ~techlevel.low
 	Tooltip:
 		Name: PRC War Factory
+	Voiced:
+		VoiceSet: PRCWarFactoryVoice
 
 building.tunnel_network:
 	Inherits: ^Defense
@@ -1032,6 +1066,8 @@ building.tunnel_network:
 	WithMuzzleOverlay:
 	SpawnActorOnDeath:
 		Actor: hole.tunnel_network
+	Voiced:
+		VoiceSet: TunnelNetworkVoice
 
 building.tunnel_network.no_free_actor:
 	Inherits: building.tunnel_network
@@ -1110,6 +1146,8 @@ building.stinger_site:
 		Range: 5c0
 	SpawnActorOnDeath:
 		Actor: hole.stinger_site
+	Voiced:
+		VoiceSet: StingerSiteVoice
 
 ^default.airfield:
    	Inherits: ^Building
@@ -1235,6 +1273,8 @@ building.usa_airfield:
 		ClockSequence: clock
 		CircleSequence: circles
 		OrderName: A103PowerInfoOrder
+	Voiced:
+		VoiceSet: USAAirfieldVoice
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -1260,6 +1300,8 @@ building.prc_airfield:
 		DockOffset: 1,1
 	Dock@3:
 		DockOffset: 2,1
+	Voiced:
+		VoiceSet: PRCAirfieldVoice
 
 building.strategy_center:
 	Inherits: ^Building
@@ -1325,6 +1367,8 @@ building.strategy_center:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: anytech
+	Voiced:
+		VoiceSet: StrategyCenterVoice
 
 building.palace:
 	Inherits: ^Building
@@ -1390,6 +1434,8 @@ building.palace:
 		Actor: hole.palace
 	RenderSprites:
 		PlayerPalette: cncplayer
+	Voiced:
+		VoiceSet: PalaceVoice
 
 building.propaganda_center:
 	Inherits: ^Building
@@ -1423,6 +1469,8 @@ building.propaganda_center:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: anytech
+	Voiced:
+		VoiceSet: PropagandaCenterVoice
 
 building.detention_camp:
 	Inherits: ^Building
@@ -1465,6 +1513,8 @@ building.detention_camp:
 		ChargeTime: 180
 		OrderName: IntelligencePowerInfoOrder
 	SupportPowerChargeBar:
+	Voiced:
+		VoiceSet: DetentionCampVoice
 
 building.supply_drop_zone:
 	Inherits: ^Building
@@ -1514,6 +1564,8 @@ building.supply_drop_zone:
 #		ChargeTime: 120
 #		OrderName: SupplyDropPowerInfoOrder
 #	SupportPowerChargeBar:
+	Voiced:
+		VoiceSet: SupplyDropVoice
 
 building.black_market:
 	Inherits: ^Building
@@ -1555,6 +1607,8 @@ building.black_market:
 	ProvidesPrerequisite@buildingname:
 	SpawnActorOnDeath:
 		Actor: hole.black_market
+	Voiced:
+		VoiceSet: BlackMarketVoice
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -1609,6 +1663,8 @@ building.speaker_tower:
 		Condition: speaker_tower
 		Range: 4c0
 		RequiresCondition: !emp
+	Voiced:
+		VoiceSet: SpeakerTowerVoice
 
 building.particle_cannon:
 	Inherits: ^Building
@@ -1622,7 +1678,7 @@ building.particle_cannon:
 	Valued:
 		Cost: 5000
 	Tooltip:
-		Name: Particle Uplink Cannon 
+		Name: Particle Uplink Cannon
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 28
@@ -1663,6 +1719,8 @@ building.particle_cannon:
 	RevealsShroud@SW:
 		Range: 2c0
 		ValidStances: Enemy
+	Voiced:
+		VoiceSet: ParticleCannonVoice
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -1835,6 +1893,8 @@ building.scud_storm:
 		ValidStances: Enemy
 	SpawnActorOnDeath:
 		Actor: hole.scud_storm
+	Voiced:
+		VoiceSet: SCUDStormVoice
 
 building.missile_silo:
 	Inherits: ^Building
@@ -1893,8 +1953,8 @@ building.missile_silo:
 	RevealsShroud@SW:
 		Range: 2c0
 		ValidStances: Enemy
-	MustBeDestroyed:
-		RequiredForShortGame: false
+	Voiced:
+		VoiceSet: MissileSiloVoice
 
 SBAG:
 	Inherits: ^Wall
