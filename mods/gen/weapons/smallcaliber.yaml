@@ -258,8 +258,10 @@ mg.colonel_burton:
 	ReloadDelay: 3
 	Range: 3c128
 	Report: gun11.aud
+	InvalidTargets: Structure
 	Warhead@1Dam: SpreadDamage
 		Damage: 40
+		InvalidTargets: Structure
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
