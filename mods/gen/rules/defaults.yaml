@@ -1242,6 +1242,8 @@
 		HP: 500
 	Armor:
 		Type: building.normal
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, Hole
 	TransformOnCapture:
 		Type: hole
 		ForceHealthPercentage: 20

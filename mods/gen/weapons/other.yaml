@@ -294,6 +294,7 @@ capture.black_lotus.anim:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Structure
+		InvalidTargets: Hole
 		ValidStances: Enemy, Neutral
 
 capture.black_lotus.end:
@@ -310,6 +311,7 @@ capture.black_lotus.end:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Structure
+		InvalidTargets: Hole
 		ValidStances: Enemy, Neutral
 	Warhead@2Cap: CaptureActor
 		IgnoreCaptureThreshold: true
