@@ -223,7 +223,7 @@
 	WithColoredOverlay@DRIVER_KILLED:
 		RequiresCondition: driver_killed
 		Palette: driver_killed
-	ExternalCondition@DRIVER_KILLED:
+	ExternalConditionThatRevokedOnCapture@DRIVER_KILLED:
 		Condition: driver_killed
 	TimedConditionBar@DRIVER_KILLED:
 		Condition: driver_killed
@@ -231,7 +231,10 @@
 	Capturable@DRIVER_KILLED:
 		Type: driverless_vehcile
 		CaptureThreshold: 100
+		AllowAllies: true
 		RequiresCondition: driver_killed
+	MustBeDestroyed:
+		RequiresCondition: !driver_killed
 
 ^CanCaptureDriverlessVehicles:
 	Captures:
@@ -666,7 +669,10 @@
 		Bounds: 24, 24
 	Targetable:
 		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack
-		RequiresCondition: !parachute
+		RequiresCondition: !parachute && !driver_killed
+	Targetable@DRIVER_KILLED:
+		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, NoAutoTarget
+		RequiresCondition: driver_killed
 	RepairableNear:
 		Buildings: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
 		CloseEnough: 3c0
@@ -763,6 +769,10 @@
 			Beach: 70
 	Targetable:
 		TargetTypes: Ground, C4, Repair, Tank, Vehicle-Disguise, DetonateAttack
+		RequiresCondition: !parachute && !driver_killed
+	Targetable@DRIVER_KILLED:
+		TargetTypes: Ground, C4, Repair, Tank, Vehicle-Disguise, DetonateAttack, NoAutoTarget
+		RequiresCondition: driver_killed
 	ProximityCaptor:
 		Types: Tank
 	Tooltip:
