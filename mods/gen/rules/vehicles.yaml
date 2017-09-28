@@ -1270,18 +1270,21 @@ vehicle.bomb_truck:
 		ZOffset: 2048
 		ReferencePoint: Top
 		Color: 0000FF
+		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: usa_mcc
 	WithTextDecoration@SIDE_GLA:
 		Text: GLA
 		ZOffset: 2048
 		ReferencePoint: Top
 		Color: 00FF00
+		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: gla_mcc
 	WithTextDecoration@SIDE_PRC:
 		Text: PRC
 		ZOffset: 2048
 		ReferencePoint: Top
 		Color: FF0000
+		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: prc_mcc
 	GrantConditionOnPrerequisite@DISGUISE:
 		Condition: disguise
@@ -1373,6 +1376,7 @@ vehicle.nuke_cannon:
 		Text: 
 		ZOffset: 2048
 		ReferencePoint: Top
+		ValidStances: Ally, Neutral, Enemy
 
 vehicle.usa_mcc:
 	Inherits: ^default.mcc
