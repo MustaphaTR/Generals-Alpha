@@ -203,23 +203,6 @@ hack.firestorm.blue:
 	Warhead@1Dam: SpreadDamage
 		Damage: 45
 
-A10Bombs:
-	Inherits: ^FireWeapon
-	ReloadDelay: 5
-	Range: 2c0
-	Burst: 2
-	BurstDelay: 2
-	Projectile: GravityBomb
-		Image: BOMBLET
-		Shadow: true
-	Warhead@1Dam: SpreadDamage
-		Spread: 341
-		Damage: 30
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		Versus:
-			Wood: 35
-			Heavy: 80
-
 laser.paladin_tank:
 	ReloadDelay: 25
 	Range: 3c0

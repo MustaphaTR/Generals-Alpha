@@ -470,22 +470,32 @@ aircraft.a10:
 		Speed: 120
 		Repulsable: False
 	AttackBomber:
-		Armaments: gun, bombs
+		Armaments: gun, missile
 	Armament@GUNS:
 		Name: gun
 		Weapon: mg.a10
 		LocalOffset: 1024,0,-85
 	WithMuzzleOverlay:
-	Armament@BOMBS:
-		Name: bombs
-		Weapon: A10Bombs
-		LocalOffset: 0,-256,-43, 0,256,-43
+	Armament@MISSILES1:
+		Name: missile
+		AmmoPoolName: missile
+		Weapon: missile.a10
+		LocalOffset: 0,384,0
+	Armament@MISSILES2:
+		Name: missile
+		AmmoPoolName: missile
+		Weapon: missile.a10
+		LocalOffset: 0,-384,0
 	Contrail@1:
 		Offset: -640,171,0
 		TrailLength: 15
 	Contrail@2:
 		Offset: -640,-171,0
 		TrailLength: 15
+	AmmoPool:
+		Name: missile
+		Ammo: 8
+		PipCount: 0
 	-Selectable:
 	SelectionDecorations:
 		RenderSelectionBars: False
