@@ -510,7 +510,7 @@ aircraft.chinook:
 	Inherits: ^Vehicle
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
-		Queue: Aircraft
+		Queue: Collector
 		BuildAtProductionType: Chinook
 		BuildPaletteOrder: 1
 		BuildDuration: 250
@@ -527,6 +527,7 @@ aircraft.chinook:
 		Cost: 1200
 	Tooltip:
 		Name: Chinook
+		GenericName: Collector
 	Health:
 		HP: 300
 	Armor:

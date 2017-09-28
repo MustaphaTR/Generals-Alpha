@@ -13,16 +13,20 @@ Player:
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
 		SpeedUp: False
+	ClassicProductionQueue@Collector:
+		Type: Collector
+		LowPowerSlowdown: 3
+		SpeedUp: True
+	ClassicProductionQueue@Infantry:
+		Type: Infantry
+		LowPowerSlowdown: 3
+		SpeedUp: True
 	ClassicProductionQueue@Vehicle:
 		Type: Vehicle
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		SpeedUp: True
 		BuildTimeSpeedReduction: 100, 75, 60, 50
-	ClassicProductionQueue@Infantry:
-		Type: Infantry
-		LowPowerSlowdown: 3
-		SpeedUp: True
 	ClassicProductionQueue@Aircraft:
 		Type: Aircraft
 		LowPowerSlowdown: 3

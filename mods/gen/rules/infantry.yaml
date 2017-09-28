@@ -20,9 +20,9 @@ infantry.worker:
 	Inherits@1: ^Soldier
 	Inherits@REVEAL: ^Reveal100
 	Buildable:
-		Queue: Infantry
+		Queue: Collector
 		BuildAtProductionType: Worker
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 2
 		BuildDuration: 75
 		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_supply_stash, ~techlevel.infonly
@@ -31,6 +31,7 @@ infantry.worker:
 		Cost: 200
 	Tooltip:
 		Name: Worker
+		GenericName: Collector
 	Health:
 		HP: 100
 	Armor:

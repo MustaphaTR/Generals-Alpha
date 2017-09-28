@@ -3,18 +3,18 @@ vehicle.supply_truck:
 	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesInfantry
 	Buildable:
-		Queue: Vehicle
+		Queue: Collector
 		BuildAtProductionType: Truck
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 3
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_supply_center, ~techlevel.infonly
-		Description: Collects Ore and Gems for processing.\n  Unarmed
+		Description: Collects Ore and Gems for processing.
 	Valued:
 		Cost: 600
 	Tooltip:
 		Name: Supply Truck
-		GenericName: Harvester
+		GenericName: Collector
 	Selectable:
 		Priority: 7
 	SelectionDecorations:

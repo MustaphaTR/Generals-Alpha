@@ -498,7 +498,7 @@ building.mine:
 	DrawLineToTarget:
 	RallyPoint:
 	Production:
-		Produces: Aircraft, Chinook
+		Produces: Collector, Chinook
 	ProductionBar:
 	PrimaryBuilding:
 		PrimaryCondition: primary
@@ -567,7 +567,7 @@ building.gla_supply_stash:
 		SpawnOffset: -96,768,0
 		ExitCell: 1,1
 	Production:
-		Produces: Infantry, Worker
+		Produces: Collector, Worker
 	Dock@0:
 		DockOffset: 1,1
 	RallyPoint:
@@ -619,7 +619,7 @@ building.prc_supply_center:
 		SpawnOffset: -42,810,0
 		ExitCell: 1,2
 	Production:
-		Produces: Vehicle, Truck
+		Produces: Collector, Truck
 	FreeActor:
 		Actor: vehicle.supply_truck
 	WithIdleOverlay@TOP:
