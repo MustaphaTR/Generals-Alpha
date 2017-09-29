@@ -139,7 +139,7 @@ vehicle.technical:
 		BuildDuration: 75
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.low
-		Description: Fast scout & anti-infantry vehicle.\n\nCan carry 5 infantry.
+		Description: Fast scout & anti-infantry vehicle.\n\nCan carry 5 infantry.\n\nPassengers can survive when it dies.
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -170,6 +170,7 @@ vehicle.technical:
 		Types: Infantry
 		MaxWeight: 5
 		PipCount: 5
+		EjectOnDeath: true
 		LoadingCondition: notmobile
 		PauseOnCondition: disabled || driver_killed || emp
 	ProducibleWithLevel:
@@ -420,7 +421,7 @@ vehicle.ambulance:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, ~techlevel.medium
-		Description: Heals nearby infantry.\n\nCan carry 3 infantry.
+		Description: Heals nearby infantry.\n\nCan carry 3 infantry.\n\nPassengers can survive when it dies.
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -441,6 +442,7 @@ vehicle.ambulance:
 		Types: Infantry
 		MaxWeight: 3
 		PipCount: 3
+		EjectOnDeath: true
 		LoadingCondition: notmobile
 		PauseOnCondition: disabled || driver_killed || emp
 	Voiced:
@@ -707,7 +709,7 @@ vehicle.troop_crawler:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.low
-		Description: Tough infantry transport. Comes with 8 red guards.
+		Description: Tough infantry transport.\n\nComes with 8 red guards.\n\nPassengers can survive when it dies.
 	Valued:
 		Cost: 1400
 	Tooltip:
@@ -727,6 +729,7 @@ vehicle.troop_crawler:
 		MaxWeight: 8
 		PipCount: 8
 		InitialUnits: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard
+		EjectOnDeath: true
 		LoadingCondition: notmobile
 		PauseOnCondition: disabled || driver_killed || emp
 	AIDeployHelper:
