@@ -184,6 +184,9 @@ camera.radar_van_scan:
 		Range: 3c768
 	DetectCloaked:
 		Range: 3c768
+	AmbientSound:
+		SoundFiles: vradscan.wav
+		Interval: 201
 
 camera.spy_sattelite:
 	Inherits: CAMERA
@@ -193,6 +196,9 @@ camera.spy_sattelite:
 		Range: 7c512
 	DetectCloaked:
 		Range: 7c512
+	AmbientSound:
+		SoundFiles: sspysate.wav
+		Interval: 301
 
 camera.intelligence:
 	Inherits: CAMERA
@@ -214,6 +220,9 @@ camera.emergency_repair.1:
 	KillsSelf:
 		RemoveInstead: true
 		Delay: 151
+	AmbientSound:
+		SoundFiles: srepaira.wav
+		Interval: 20
 
 camera.emergency_repair.2:
 	Inherits: CAMERA
@@ -224,6 +233,9 @@ camera.emergency_repair.2:
 	KillsSelf:
 		RemoveInstead: true
 		Delay: 301
+	AmbientSound:
+		SoundFiles: srepaira.wav
+		Interval: 20
 
 camera.emergency_repair.3:
 	Inherits: CAMERA
@@ -234,6 +246,9 @@ camera.emergency_repair.3:
 	KillsSelf:
 		RemoveInstead: true
 		Delay: 451
+	AmbientSound:
+		SoundFiles: srepaira.wav
+		Interval: 20
 
 firestorm.normal:
 	Inherits: ^SpriteActor
@@ -324,29 +339,47 @@ hack.artillery_barrager.1:
 	Armament@1:
 		Name: 1
 		Weapon: ArtyBarrageWeapon
+		FireDelay: 25
 		LocalOffset: 0,0,20000
 	FireWeaponAtSelf@1:
 		Name: 1
 	AttackTurreted:
 	Turreted:
+	AmmoPool@1:
+		Name: 1
+		Ammo: 12
+		PipCount: 0
+	AmbientSound:
+		SoundFiles: sartweaa.wav
+		Interval: 125
 
 hack.artillery_barrager.2:
 	Inherits: hack.artillery_barrager.1
 	Armament@2:
 		Name: 2
 		Weapon: ArtyBarrageWeapon
+		FireDelay: 25
 		LocalOffset: 0,0,20000
 	FireWeaponAtSelf@2:
 		Name: 2
+	AmmoPool@2:
+		Name: 2
+		Ammo: 12
+		PipCount: 0
 
 hack.artillery_barrager.3:
 	Inherits: hack.artillery_barrager.2
 	Armament@3:
 		Name: 3
 		Weapon: ArtyBarrageWeapon
+		FireDelay: 25
 		LocalOffset: 0,0,20000
 	FireWeaponAtSelf@3:
 		Name: 3
+	AmmoPool@3:
+		Name: 2
+		Ammo: 12
+		PipCount: 0
 
 hack.rebel_spawner.4:
 	Inherits: CAMERA

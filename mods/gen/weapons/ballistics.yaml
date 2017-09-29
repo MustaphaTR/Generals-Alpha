@@ -375,3 +375,9 @@ ArtyBarrageWeapon:
 	Projectile: Bullet
 		Speed: 1024
 		Inaccuracy: 3c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 105
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
