@@ -86,12 +86,12 @@ building.usa_command_center:
 		OrderName: SpySatellitePowerInfoOrder
 	AirstrikePower@FUEL_AIR_BOMB:
 		PauseOnCondition: disabled || emp
-		Prerequisites: ~building.gla_command_center, ~upgrade.fuel_air_bomb
+		Prerequisites: ~building.usa_command_center, ~upgrade.fuel_air_bomb
 		Icon: fuel_air
 		ChargeTime: 360
 		SquadSize: 1
 		QuantizedFacings: 8
-		Description: Anthrax Bomb
+		Description: Fuel Air Bomb
 		LongDesc: A B-52 drops an Fuel Air Bomb at the target.
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
