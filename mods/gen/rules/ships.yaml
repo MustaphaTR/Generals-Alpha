@@ -5,6 +5,8 @@ vessel.transport:
 		Queue: Vehicle
 		BuildAtProductionType: Vessel
 		BuildPaletteOrder: 26
+		BuildDuration: 250
+		BuildDurationModifier: 100
 		Prerequisites: ~tech.shipyard, ~techlevel.infonly
 		Description: General-purpose naval transport.\n\nCan carry infantry and tanks.
 	Valued:
@@ -41,6 +43,8 @@ vessel.gunboat:
 		Queue: Vehicle
 		BuildAtProductionType: Vessel
 		BuildPaletteOrder: 27
+		BuildDuration: 200
+		BuildDurationModifier: 100
 		Prerequisites: ~tech.shipyard, ~techlevel.low
 		Description: Light scout & support ship.
 	Valued:
@@ -85,6 +89,8 @@ vessel.destroyer:
 		Queue: Vehicle
 		BuildAtProductionType: Vessel
 		BuildPaletteOrder: 28
+		BuildDuration: 375
+		BuildDurationModifier: 100
 		Prerequisites: ~tech.shipyard, anytech, ~techlevel.medium
 		Description: Fast multi-role ship.
 	Valued:
@@ -133,6 +139,8 @@ vessel.cruiser:
 		Queue: Vehicle
 		BuildAtProductionType: Vessel
 		BuildPaletteOrder: 29
+		BuildDuration: 500
+		BuildDurationModifier: 100
 		Prerequisites: ~tech.shipyard, anytech, ~techlevel.high
 		Description: Very slow long-range ship.
 	Valued:
