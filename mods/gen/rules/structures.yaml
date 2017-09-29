@@ -52,6 +52,7 @@
 
 building.usa_command_center:
 	Inherits: ^default.command_center
+	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
 		BuildPaletteOrder: 1000
 	Tooltip:
@@ -237,6 +238,7 @@ building.prc_command_center:
 
 building.cold_fusion_reactor:
 	Inherits: ^default.reactor
+	Inherits@RANGER: ^EmitRangersOnDeath
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
@@ -342,6 +344,7 @@ building.nuclear_reactor:
 
 building.usa_barracks:
 	Inherits: ^default.barracks
+	Inherits@RANGER: ^EmitRangersOnDeath
 	HitShape:
 		TargetableOffsets: 0,0,0, 840,-256,0, 840,512,0, 210,-512,0, -71,512,0
 		Type: Rectangle
@@ -513,6 +516,7 @@ building.mine:
 
 building.usa_supply_center:
 	Inherits: ^default.supply_center
+	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
 		BuildPaletteOrder: 7
 		Prerequisites: anypower, ~building.usa_command_center, ~techlevel.infonly
@@ -648,6 +652,7 @@ building.patriot:
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@REVEAL: ^Reveal360
 	Inherits@SHAPE: ^2x1Shape
+	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 10
@@ -946,6 +951,7 @@ building.bunker.strategy:
 
 building.usa_war_factory:
 	Inherits: ^default.war_factory
+	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
 		BuildPaletteOrder: 14
 		Prerequisites: anysupply, ~building.usa_command_center, ~techlevel.low
@@ -1189,6 +1195,7 @@ building.stinger_site:
         
 building.usa_airfield:
 	Inherits: ^default.airfield
+	Inherits@RANGER: ^EmitRangersOnDeath
 	HitShape:
 		TargetableOffsets: 0,0,0, 0,-512,256, 0,-1451,384, 0,512,128, 0,1536,85
 		Type: Rectangle
@@ -1309,6 +1316,7 @@ building.strategy_center:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SHAPE: ^3x2Shape
+	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 21
@@ -1477,6 +1485,7 @@ building.detention_camp:
 	Inherits: ^Building
 	Inherits@SHAPE: ^3x2Shape
 	Inherits@REVEAL: ^Reveal200
+	Inherits@RANGER: ^EmitRangersOnDeath
 	HitShape:
 		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	Buildable:
@@ -1521,6 +1530,7 @@ building.supply_drop_zone:
 	Inherits: ^Building
 	Inherits@SHAPE: ^2x2Shape
 	Inherits@REVEAL: ^Reveal100
+	Inherits@RANGER: ^EmitRangersOnDeath
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
@@ -1671,6 +1681,7 @@ building.particle_cannon:
 	Inherits: ^Building
 	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@REVEAL: ^Reveal200
+	Inherits@RANGER: ^EmitRangersOnDeath
 	HitShape:
 		TargetableOffsets: 0,0,0, 0,512,128, 420,-598,213
 		Type: Rectangle
