@@ -1154,6 +1154,7 @@ vehicle.overlord_tank:
 		Types: Infantry
 		MaxWeight: 5
 		PipCount: 5
+		EjectOnDeath: true
 		PauseOnCondition: disabled || driver_killed || emp
 		LoadingCondition: notmobile
 		RequiresCondition: overlord_bunker
