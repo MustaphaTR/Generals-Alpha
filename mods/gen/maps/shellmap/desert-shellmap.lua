@@ -184,7 +184,7 @@ WorldLoaded = function()
 	gla = Player.GetPlayer("GLA")
 	prc = Player.GetPlayer("PRC")
 	viewportOrigin = Camera.Position
-	
+
 	SetupDefensiveUnits()
 	SetupFactories()
 	SendChinook()
