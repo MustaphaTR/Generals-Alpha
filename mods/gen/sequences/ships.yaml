@@ -1,33 +1,3 @@
-ss:
-	idle:
-		Facings: 16
-	icon: ssicon
-
-vessel.cruiser:
-	idle: ca
-		Facings: 16
-	turret: turr
-		Facings: 32
-	muzzle: gunfire2
-		Length: 5
-	icon: caicon
-
-vessel.destroyer:
-	idle: dd
-		Facings: 16
-	turret: ssam
-		Facings: 32
-	icon: ddicon
-
-vessel.gunboat:
-	idle: pt
-		Facings: 16
-	turret: mgun
-		Facings: 32
-	muzzle: gunfire2
-		Length: 5
-	icon: pticon
-
 vessel.transport:
 	idle: lst
 	open: lst
@@ -41,9 +11,63 @@ vessel.transport:
 	unload: lst
 		Start: 4
 		ZOffset: -511
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
 	icon: lsticon
+
+vessel.gunboat:
+	idle: pt
+		Facings: 16
+	turret: mgun
+		Facings: 32
+	muzzle: gunfire2
+		Length: 5
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: pticon
+
+vessel.destroyer:
+	idle: dd
+		Facings: 16
+	turret: ssam
+		Facings: 32
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: ddicon
+
+vessel.cruiser:
+	idle: ca
+		Facings: 16
+	turret: turr
+		Facings: 32
+	muzzle: gunfire2
+		Length: 5
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: caicon
+
+ss:
+	idle:
+		Facings: 16
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: ssicon
 
 msub:
 	idle:
 		Facings: 16
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
 	icon: msubicon
