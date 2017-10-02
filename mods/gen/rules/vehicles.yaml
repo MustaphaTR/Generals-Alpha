@@ -732,6 +732,8 @@ vehicle.troop_crawler:
 		EjectOnDeath: true
 		LoadingCondition: notmobile
 		PauseOnCondition: disabled || driver_killed || emp
+	Passenger:
+		Weight: 8
 	AIDeployHelper:
 	RenderDetectionCircle:
 	DetectCloaked:
@@ -1370,6 +1372,8 @@ vehicle.nuke_cannon:
 		Voice: Move
 	Crushable:
 		CrushClasses: vehicle
+	Passenger:
+		Weight: 5
 	Transforms:
 		IntoActor: building.usa_command_center
 		Offset: -1,-1
