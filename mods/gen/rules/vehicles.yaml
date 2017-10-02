@@ -1331,6 +1331,10 @@ vehicle.nuke_cannon:
 		Recoil: 200
 		RecoilRecovery: 30
 		MuzzleSequence: muzzle
+	Explodes:
+		Weapon: explosion.nuke_cannon
+		EmptyWeapon: explosion.nuke_cannon
+	-Passenger:
 	AttackTurreted:
 		RequiresCondition: !disabled && !driver_killed && !emp
 	WithMuzzleOverlay:

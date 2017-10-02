@@ -443,3 +443,18 @@ explosion.nuclear_reactor:
 		Level: 2500
 		Falloff: 100, 90, 80
 		MaxLevel: 7500
+
+explosion.nuke_cannon:
+	Warhead@3Smu_impact: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		Size: 1
+	Warhead@3Eff: CreateEffect
+		Explosions: nuke
+		ImpactSounds: kaboom1.aud
+	Warhead@4Radio: CreateRadioactivity
+		RadioactivityLayerName: radioactivity
+		Range: 2
+		Level: 1500
+		Falloff: 100, 90, 80
+		MaxLevel: 7500
