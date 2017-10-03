@@ -48,6 +48,13 @@
 			TopLeft: -1536, -1536
 			BottomRight: 1536, 1536
 
+^4x3Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -2048, -1536
+			BottomRight: 2048, 1536
+
 ^GainsExperience:
 	GainsExperience:
 		Conditions:
@@ -1259,7 +1266,7 @@
 ^Wall:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
-	Inherits@shape: ^1x1Shape
+	Inherits@SHAPE: ^1x1Shape
 	Building:
 		Dimensions: 1,1
 		Footprint: x
@@ -1386,7 +1393,7 @@
 
 ^Tree:
 	Inherits@1: ^SpriteActor
-	Inherits@shape: ^1x1Shape
+	Inherits@SHAPE: ^1x1Shape
 	Tooltip:
 		Name: Tree
 		ShowOwnerRow: false
@@ -1513,7 +1520,7 @@
 		Radius: 3c0
 
 ^Bridge:
-	Inherits@shape: ^1x1Shape
+	Inherits@SHAPE: ^1x1Shape
 	AlwaysVisible:
 	Tooltip:
 		Name: Bridge

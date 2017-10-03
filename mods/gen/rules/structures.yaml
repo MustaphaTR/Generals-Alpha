@@ -1288,26 +1288,32 @@ building.usa_airfield:
 
 building.prc_airfield:
 	Inherits: ^default.airfield
-	Inherits@SHAPE: ^3x2Shape
+	Inherits@SHAPE: ^4x3Shape
 	HitShape:
 		UseTargetableCellsOffsets: false
-		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
+		TargetableOffsets: 0,0,0, 420,512,0, 420,-512,0, 420,1536,0, 420,-1536,0, -777,512,0, -777,-512,0, -777,1536,0, -777,-1536,0
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites: anysupply, ~building.prc_command_center, ~techlevel.medium
 	Tooltip:
 		Name: PRC Airfield
 	Building:
-		Footprint: xxx xxx
-		Dimensions: 3,2
+		Footprint: xxxx xxxx xxxx
+		Dimensions: 4,3
 	Dock@0:
-		DockOffset: 1,0
+		DockOffset: 0,1
 	Dock@1:
-		DockOffset: 2,0
-	Dock@2:
 		DockOffset: 1,1
-	Dock@3:
+	Dock@2:
 		DockOffset: 2,1
+	Dock@3:
+		DockOffset: 3,1
+	Selectable:
+		Bounds: 96,64,0,-4
+	SelectionDecorations:
+		VisualBounds: 96,64,0,-4
+	WithIdleOverlay@FLAG:
+		Sequence: idle-flag
 	Voiced:
 		VoiceSet: PRCAirfieldVoice
 
