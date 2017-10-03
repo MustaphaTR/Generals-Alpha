@@ -1,8 +1,11 @@
 hole.command_center:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^3x3Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 768,0,0, -768,0,0, 0,768,0, 0,-768,0
 	Building:
-		Footprint: xxx xxx xxx
+		Footprint: XxX xxx XxX
 		Dimensions: 3,3
 	Tooltip:
 		Name: GLA Hole (Command Center)
@@ -15,8 +18,11 @@ hole.command_center:
 hole.barracks:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^2x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 512,0,0, -512,0,0, 0,512,0, 0,-512,0
 	Building:
-		Footprint: xx xx
+		Footprint: XX XX
 		Dimensions: 2,2
 	Tooltip:
 		Name: GLA Hole (Barracks)
@@ -29,8 +35,11 @@ hole.barracks:
 hole.supply_stash:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^2x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 512,0,0, -512,0,0, 0,512,0, 0,-512,0
 	Building:
-		Footprint: xx xx
+		Footprint: XX XX
 		Dimensions: 2,2
 	Tooltip:
 		Name: GLA Hole (Supply Stash)
@@ -43,8 +52,11 @@ hole.supply_stash:
 hole.arms_dealer:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^3x3Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 768,0,0, -768,0,0, 0,768,0, 0,-768,0
 	Building:
-		Footprint: xxx xxx xxx
+		Footprint: XxX xxx XxX
 		Dimensions: 3,3
 	Tooltip:
 		Name: GLA Hole (Arms Dealer)
@@ -57,6 +69,9 @@ hole.arms_dealer:
 hole.palace:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^3x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 640,0,0, -640,0,0, 0,640,0, 0,-640,0
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
@@ -65,14 +80,17 @@ hole.palace:
 	TransformOnCapture:
 		IntoActor: building.palace
 	RenderSprites:
-		Scale: 2
+		Scale: 2.5
 		Image: minv
 
 hole.black_market:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^2x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 512,0,0, -512,0,0, 0,512,0, 0,-512,0
 	Building:
-		Footprint: xx xx
+		Footprint: XX XX
 		Dimensions: 2,2
 	Tooltip:
 		Name: GLA Hole (Black Market)
@@ -85,8 +103,11 @@ hole.black_market:
 hole.scud_storm:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^2x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 512,0,0, -512,0,0, 0,512,0, 0,-512,0
 	Building:
-		Footprint: xx xx
+		Footprint: XX XX
 		Dimensions: 2,2
 	Tooltip:
 		Name: GLA Hole (Scud Storm)
@@ -99,8 +120,11 @@ hole.scud_storm:
 hole.tunnel_network:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^2x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 512,0,0, -512,0,0, 0,512,0, 0,-512,0
 	Building:
-		Footprint: xx xx
+		Footprint: XX XX
 		Dimensions: 2,2
 	Tooltip:
 		Name: GLA Hole (Tunnel Network)
@@ -113,8 +137,11 @@ hole.tunnel_network:
 hole.stinger_site:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^2x2Shape
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 512,0,0, -512,0,0, 0,512,0, 0,-512,0
 	Building:
-		Footprint: xx xx
+		Footprint: XX XX
 		Dimensions: 2,2
 	Tooltip:
 		Name: GLA Hole (Stinger Site)
