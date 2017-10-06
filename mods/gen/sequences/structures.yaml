@@ -422,34 +422,42 @@ building.stinger_site:
 building.usa_airfield:
 	idle: usafld
 		Tick: 120
+		Offset: 0,8
 		ZOffset: -1023
 	damaged-idle: usafld
 		Start: 16
 		Tick: 120
+		Offset: 0,8
 		ZOffset: -1023
 	active: usafld
 		Length: 16
 		Tick: 120
+		Offset: 0,8
 		ZOffset: -1023
 	damaged-active: usafld
 		Start: 16
 		Length: 16
 		Tick: 120
+		Offset: 0,8
 		ZOffset: -1023
 	idle-dish: usafld_d
 		Length: 16
 		Tick: 160
+		Offset: 0,8
 	damaged-idle-dish: usafld_d
 		Start: 16
 		Length: 16
 		Tick: 160
+		Offset: 0,8
 	dead: usafld
 		Start: 32
-		ZOffset: -1023
 		Tick: 800
+		Offset: 0,8
+		ZOffset: -1023
 	make: usafldmake
 		Length: *
 		Tick: 80
+		Offset: 0,8
 	icon: usafldicon
 
 building.prc_airfield:

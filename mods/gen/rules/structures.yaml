@@ -1197,24 +1197,24 @@ building.usa_airfield:
 	Inherits: ^default.airfield
 	Inherits@RANGER: ^EmitRangersOnDeath
 	HitShape:
-		TargetableOffsets: 0,0,0, 0,-512,256, 0,-1451,384, 0,512,128, 0,1536,85
+		TargetableOffsets: 0,0,0, 0,-256,384, 0,-1451,512
 		Type: Rectangle
-			TopLeft: -2048, -1024
-			BottomRight: 2048, 1024
+			TopLeft: -2048, -1280
+			BottomRight: 2048, 1536
 	Buildable:
 		BuildPaletteOrder: 19
 		Prerequisites: anysupply, ~building.usa_command_center, ~techlevel.medium
 	Tooltip:
 		Name: USA Airfield
 	Building:
-		Footprint: XXXX xxxx
-		Dimensions: 4,2
+		Footprint: XXXX xxxx xxxx
+		Dimensions: 4,3
 	Production:
 		Produces: Aircraft, Plane, Helicopter
 	Dock@0:
-		DockOffset: 2,0
+		DockOffset: 2,2
 	Dock@1:
-		DockOffset: 3,0
+		DockOffset: 3,2
 	Dock@2:
 		DockOffset: 2,1
 	Dock@3:
@@ -1283,8 +1283,6 @@ building.usa_airfield:
 		OrderName: A103PowerInfoOrder
 	Voiced:
 		VoiceSet: USAAirfieldVoice
-	RenderSprites:
-		PlayerPalette: cncplayer
 
 building.prc_airfield:
 	Inherits: ^default.airfield
