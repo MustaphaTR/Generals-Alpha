@@ -20,9 +20,8 @@ infantry.worker:
 	Inherits@1: ^Soldier
 	Inherits@REVEAL: ^Reveal100
 	Buildable:
-		Queue: Collector
-		BuildAtProductionType: Worker
-		BuildPaletteOrder: 2
+		Queue: queue.gla_collector
+		BuildPaletteOrder: 1
 		BuildDuration: 75
 		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_supply_stash, ~techlevel.infonly
@@ -66,8 +65,7 @@ infantry.worker:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@REVEAL: ^Reveal100
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 1
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Description: General-purpose infantry.
@@ -97,7 +95,7 @@ infantry.worker:
 infantry.ranger:
 	Inherits: ^default.mg_infantry
 	Buildable:
-		BuildPaletteOrder: 2
+		Queue: queue.usa_infantry
 		Prerequisites: ~building.usa_barracks, ~techlevel.infonly
 	Valued:
 		Cost: 225
@@ -124,7 +122,7 @@ infantry.rebel:
 	Inherits@AP_BULLETS: ^AfftectedByAPBullets
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		BuildPaletteOrder: 3
+		Queue: queue.gla_infantry
 		Prerequisites: ~building.gla_barracks, ~techlevel.infonly
 	Selectable:
 		Class: infantry.rebel
@@ -154,7 +152,7 @@ infantry.red_guard:
 	Inherits: ^default.mg_infantry
 	Inherits@HORDE_BONUS: ^Horde
 	Buildable:
-		BuildPaletteOrder: 4
+		Queue: queue.prc_infantry
 		BuildDurationModifier: 50
 		Prerequisites: ~building.prc_barracks, ~techlevel.infonly
 	Mobile:
@@ -173,8 +171,7 @@ infantry.red_guard:
 	Inherits@REVEAL: ^Reveal150
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 2
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Description: Anti-tank/Anti-aircraft infantry.
@@ -201,7 +198,7 @@ infantry.red_guard:
 infantry.missile_defender:
 	Inherits: ^default.rocket_infantry
 	Buildable:
-		BuildPaletteOrder: 5
+		Queue: queue.usa_infantry
 		Prerequisites: ~building.usa_barracks, ~techlevel.infonly
 	Tooltip:
 		Name: Missile Defender
@@ -212,7 +209,7 @@ infantry.rpg_trooper:
 	Inherits: ^default.rocket_infantry
 	Inherits@AP_ROCKETS: ^AfftectedByAPRockets
 	Buildable:
-		BuildPaletteOrder: 6
+		Queue: queue.gla_infantry
 		Prerequisites: ~building.gla_barracks, ~techlevel.infonly
 	Armament@PRIMARY:
 		Weapon: missile.rpg_trooper
@@ -226,7 +223,7 @@ infantry.tank_hunter:
 	Inherits: ^default.rocket_infantry
 	Inherits@HORDE_BONUS: ^Horde
 	Buildable:
-		BuildPaletteOrder: 7
+		Queue: queue.prc_infantry
 		BuildDuration: 140
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_barracks, ~techlevel.infonly
@@ -244,9 +241,8 @@ infantry.pathfinder:
 	Tooltip:
 		Name: Pathfinder
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 8
+		Queue: queue.usa_infantry
+		BuildPaletteOrder: 4
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_barracks, building.strategy_center, ~techlevel.medium
@@ -287,9 +283,8 @@ infantry.terrorist:
 	Inherits: ^Soldier
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 9
+		Queue: queue.gla_infantry
+		BuildPaletteOrder: 4
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_barracks, ~techlevel.low
@@ -388,9 +383,8 @@ infantry.angry_mob:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	-AppearsOnRadar:
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 10
+		Queue: queue.gla_infantry
+		BuildPaletteOrder: 5
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_barracks, building.palace, ~techlevel.medium
@@ -447,9 +441,8 @@ infantry.hacker:
 	Inherits: ^Soldier
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 11
+		Queue: queue.prc_infantry
+		BuildPaletteOrder: 4
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_barracks, building.propaganda_center, ~techlevel.medium
@@ -504,9 +497,8 @@ infantry.hijacker:
 	Inherits: ^Soldier
 	Inherits@REVEAL: ^Reveal100
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 12
+		Queue: queue.gla_infantry
+		BuildPaletteOrder: 7
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_barracks, building.palace, ~techlevel.medium
@@ -572,9 +564,8 @@ infantry.colonel_burton:
 	Tooltip:
 		Name: Colonel Burton
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 13
+		Queue: queue.usa_infantry
+		BuildPaletteOrder: 5
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_barracks, building.strategy_center, ~techlevel.high
@@ -632,9 +623,8 @@ infantry.jarmen_kell:
 	Tooltip:
 		Name: Jarmen Kell
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 14
+		Queue: queue.gla_infantry
+		BuildPaletteOrder: 8
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_barracks, building.palace, ~techlevel.high
@@ -685,9 +675,8 @@ infantry.black_lotus:
 	Inherits: ^Soldier
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 15
+		Queue: queue.prc_infantry
+		BuildPaletteOrder: 4
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_barracks, building.propaganda_center, ~techlevel.high

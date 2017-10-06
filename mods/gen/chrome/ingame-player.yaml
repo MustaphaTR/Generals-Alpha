@@ -279,68 +279,9 @@ Container@PLAYER_WIDGETS:
 					X: 9
 					Y: 7
 					Children:
-						Button@BEACON_BUTTON:
-							Logic: BeaconOrderButtonLogic, AddFactionSuffixLogic
-							Width: 28
-							Height: 28
-							Background: sidebar-button
-							TooltipText: Place Beacon
-							TooltipContainer: TOOLTIP_CONTAINER
-							VisualHeight: 0
-							Children:
-								Image@ICON:
-									X: 6
-									Y: 6
-									ImageCollection: order-icons
-						Button@SELL_BUTTON:
-							Logic: SellOrderButtonLogic, AddFactionSuffixLogic
-							X: 32
-							Width: 28
-							Height: 28
-							Background: sidebar-button
-							TooltipText: Sell
-							TooltipContainer: TOOLTIP_CONTAINER
-							VisualHeight: 0
-							Children:
-								Image@ICON:
-									X: 6
-									Y: 6
-									ImageCollection: order-icons
-						Button@REPAIR_BUTTON:
-							Logic: RepairOrderButtonLogic, AddFactionSuffixLogic
-							X: 64
-							Width: 28
-							Height: 28
-							Background: sidebar-button
-							TooltipText: Repair
-							TooltipContainer: TOOLTIP_CONTAINER
-							VisualHeight: 0
-							Children:
-								Image@ICON:
-									X: 6
-									Y: 6
-									ImageCollection: order-icons
-						MenuButton@DEBUG_BUTTON:
-							Logic: AddFactionSuffixLogic
-							Key: escape Shift
-							X: 96
-							Width: 28
-							Height: 28
-							Background: sidebar-button
-							TooltipText: Debug Menu
-							TooltipContainer: TOOLTIP_CONTAINER
-							DisableWorldSounds: true
-							VisualHeight: 0
-							Children:
-								Image@ICON:
-									X: 6
-									Y: 6
-									ImageCollection: order-icons
-									ImageName: debug
 						MenuButton@OPTIONS_BUTTON:
 							Logic: AddFactionSuffixLogic
 							Key: escape
-							X: 192
 							Width: 28
 							Height: 28
 							Background: sidebar-button
@@ -354,6 +295,23 @@ Container@PLAYER_WIDGETS:
 									Y: 6
 									ImageCollection: order-icons
 									ImageName: options
+						MenuButton@DEBUG_BUTTON:
+							Logic: AddFactionSuffixLogic
+							Key: escape Shift
+							X: 32
+							Width: 28
+							Height: 28
+							Background: sidebar-button
+							TooltipText: Debug Menu
+							TooltipContainer: TOOLTIP_CONTAINER
+							DisableWorldSounds: true
+							VisualHeight: 0
+							Children:
+								Image@ICON:
+									X: 6
+									Y: 6
+									ImageCollection: order-icons
+									ImageName: debug
 				Container@RADAR:
 					Logic: IngameRadarDisplayLogic
 					Children:
@@ -460,96 +418,58 @@ Container@PLAYER_WIDGETS:
 					Width: 29
 					Height: 240
 					Children:
-						ProductionTypeButton@BUILDING:
-							Logic: AddFactionSuffixLogic
+						Button@REPAIR_BUTTON:
+							Logic: RepairOrderButtonLogic, AddFactionSuffixLogic
 							Width: 28
 							Height: 28
-							VisualHeight: 0
 							Background: sidebar-button
-							TooltipText: Buildings
+							TooltipText: Repair
 							TooltipContainer: TOOLTIP_CONTAINER
-							ProductionGroup: Building
-							HotkeyName: ProductionTypeBuildingKey
+							VisualHeight: 0
 							Children:
 								Image@ICON:
 									X: 6
 									Y: 6
-									ImageCollection: production-icons
-						ProductionTypeButton@UPGRADE:
-							Logic: AddFactionSuffixLogic
+									ImageCollection: order-icons
+						Button@SELL_BUTTON:
+							Logic: SellOrderButtonLogic, AddFactionSuffixLogic
 							Y: 31
 							Width: 28
 							Height: 28
-							VisualHeight: 0
 							Background: sidebar-button
-							TooltipText: Upgrade
+							TooltipText: Sell
 							TooltipContainer: TOOLTIP_CONTAINER
-							ProductionGroup: Upgrade
-							HotkeyName: ProductionTypeUpgradeKey
+							VisualHeight: 0
 							Children:
 								Image@ICON:
 									X: 6
 									Y: 6
-									ImageCollection: production-icons
-						ProductionTypeButton@COLLECTOR:
-							Logic: AddFactionSuffixLogic
+									ImageCollection: order-icons
+						Button@BEACON_BUTTON:
+							Logic: BeaconOrderButtonLogic, AddFactionSuffixLogic
 							Y: 62
 							Width: 28
 							Height: 28
-							VisualHeight: 0
 							Background: sidebar-button
-							TooltipText: Collector
+							TooltipText: Place Beacon
 							TooltipContainer: TOOLTIP_CONTAINER
-							ProductionGroup: Collector
-							HotkeyName: ProductionTypeNavalKey
+							VisualHeight: 0
 							Children:
 								Image@ICON:
 									X: 6
 									Y: 6
-									ImageCollection: production-icons
-						ProductionTypeButton@INFANTRY:
+									ImageCollection: order-icons
+						ProductionTypeButton@GENERAL:
 							Logic: AddFactionSuffixLogic
 							Y: 93
 							Width: 28
 							Height: 28
 							VisualHeight: 0
 							Background: sidebar-button
-							TooltipText: Infantry
+							TooltipText: General's Powers
 							TooltipContainer: TOOLTIP_CONTAINER
-							ProductionGroup: Infantry
-							HotkeyName: ProductionTypeInfantryKey
-							Children:
-								Image@ICON:
-									X: 6
-									Y: 6
-									ImageCollection: production-icons
-						ProductionTypeButton@VEHICLE:
-							Logic: AddFactionSuffixLogic
-							Y: 124
-							Width: 28
-							Height: 28
-							VisualHeight: 0
-							Background: sidebar-button
-							TooltipText: Vehicles
-							TooltipContainer: TOOLTIP_CONTAINER
-							ProductionGroup: Vehicle
-							HotkeyName: ProductionTypeVehicleKey
-							Children:
-								Image@ICON:
-									X: 6
-									Y: 6
-									ImageCollection: production-icons
-						ProductionTypeButton@AIRCRAFT:
-							Logic: AddFactionSuffixLogic
-							Y: 155
-							Width: 28
-							Height: 28
-							VisualHeight: 0
-							Background: sidebar-button
-							TooltipText: Aircraft
-							TooltipContainer: TOOLTIP_CONTAINER
-							ProductionGroup: Aircraft
-							HotkeyName: ProductionTypeAircraftKey
+							ProductionGroup: General
+							HotkeyName: ProductionTypeUpgradeKey
 							Children:
 								Image@ICON:
 									X: 6
@@ -557,7 +477,7 @@ Container@PLAYER_WIDGETS:
 									ImageCollection: production-icons
 						Button@SCROLL_UP_BUTTON:
 							Logic: AddFactionSuffixLogic
-							Y: 186
+							Y: 124
 							Width: 28
 							Height: 22
 							VisualHeight: 0
@@ -572,7 +492,7 @@ Container@PLAYER_WIDGETS:
 									ImageName: up_arrow
 						Button@SCROLL_DOWN_BUTTON:
 							Logic: AddFactionSuffixLogic
-							Y: 211
+							Y: 149
 							Width: 28
 							Height: 22
 							VisualHeight: 0

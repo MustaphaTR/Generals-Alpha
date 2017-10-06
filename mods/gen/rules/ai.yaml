@@ -3,9 +3,9 @@ Player:
 		Name: Rush AI
 		Type: rush
 		MinimumExcessPower: 3
-		BuildingQueues: Building, Upgrade
-		DefenseQueues: Building
-		UnitQueues: Collector, Infantry, Vehicle, Aircraft
+		BuildingQueues: queue.usa_building, queue.gla_building, queue.prc_building, queue.cold_fusion_reactor, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, General
+		DefenseQueues: queue.usa_building, queue.gla_building, queue.prc_building
+		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.prc_infantry, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.prc_aircraft, queue.vessel
 		BuildingCommonNames:
 			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center
 			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -20,6 +20,7 @@ Player:
 		UnitsCommonNames:
 			Mcv: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
+			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.red_guard
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.communications_center, tech.forward_command, tech.shipyard, tech.service_depot
 		BuildingLimits:
@@ -71,22 +72,15 @@ Player:
 			upgrade.spy_drone: 1%
 			upgrade.radar: 1%
 #			upgrade.control_rods: 1%
-			upgrade.capture_building: 1%
-			upgrade.flashbang_grenades: 1%
 			upgrade.ambush1: 1%
 			upgrade.ambush2: 1%
 			upgrade.ambush3: 1%
-			upgrade.tow_missile: 1%
-			upgrade.sc_rocket: 1%
-			upgrade.black_napalm: 1%
 			upgrade.arty_barrage1: 1%
 			upgrade.arty_barrage2: 1%
 			upgrade.arty_barrage3: 1%
 			upgrade.a101: 1%
 			upgrade.a102: 1%
 			upgrade.a103: 1%
-			upgrade.rocket_pods: 1%
-			upgrade.mig_armor: 1%
 			upgrade.adv_training: 1%
 			upgrade.tech_training: 1%
 			upgrade.red_training: 1%
@@ -128,6 +122,7 @@ Player:
 			vehicle.supply_truck: 10%
 			vehicle.humvee: 50%
 			vehicle.technical: 50%
+			vehicle.gatling_tank: 50%
 			vehicle.troop_crawler: 50%
 			vehicle.quad_cannon: 30%
 			vehicle.tomahawk_launcher: 10%
@@ -149,6 +144,15 @@ Player:
 			aircraft.stealth_fighter: 1%
 			aircraft.aurora: 0.5%
 			aircraft.comanche: 2%
+			upgrade.capture_building: 100%
+			upgrade.flashbang_grenades: 50%
+			upgrade.tow_missile: 100%
+			upgrade.sc_rocket: 75%
+			upgrade.chain_gun: 50%
+			upgrade.black_napalm: 50%
+			upgrade.rocket_pods: 5%
+			upgrade.laser_guided_missiles: 5%
+			upgrade.mig_armor: 5%
 		UnitLimits:
 			infantry.colonel_burton: 1
 			infantry.jarmen_kell: 1
@@ -434,9 +438,9 @@ Player:
 		Name: Normal AI
 		Type: normal
 		MinimumExcessPower: 3
-		BuildingQueues: Building, Upgrade
-		DefenseQueues: Building
-		UnitQueues: Collector, Infantry, Vehicle, Aircraft
+		BuildingQueues: queue.usa_building, queue.gla_building, queue.prc_building, queue.cold_fusion_reactor, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, General
+		DefenseQueues: queue.usa_building, queue.gla_building, queue.prc_building
+		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.prc_infantry, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.prc_aircraft, queue.vessel
 		BuildingCommonNames:
 			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center
 			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -451,6 +455,7 @@ Player:
 		UnitsCommonNames:
 			Mcv: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
+			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.red_guard
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.communications_center, tech.forward_command, tech.shipyard, tech.service_depot
 		BuildingLimits:
@@ -508,22 +513,15 @@ Player:
 			upgrade.spy_drone: 1%
 			upgrade.radar: 1%
 #			upgrade.control_rods: 1%
-			upgrade.capture_building: 1%
-			upgrade.flashbang_grenades: 1%
 			upgrade.ambush1: 1%
 			upgrade.ambush2: 1%
 			upgrade.ambush3: 1%
-			upgrade.tow_missile: 1%
-			upgrade.sc_rocket: 1%
-			upgrade.black_napalm: 1%
 			upgrade.arty_barrage1: 1%
 			upgrade.arty_barrage2: 1%
 			upgrade.arty_barrage3: 1%
 			upgrade.a101: 1%
 			upgrade.a102: 1%
 			upgrade.a103: 1%
-			upgrade.rocket_pods: 1%
-			upgrade.mig_armor: 1%
 			upgrade.adv_training: 1%
 			upgrade.tech_training: 1%
 			upgrade.red_training: 1%
@@ -565,6 +563,7 @@ Player:
 			vehicle.supply_truck: 10%
 			vehicle.humvee: 35%
 			vehicle.technical: 35%
+			vehicle.gatling_tank: 35%
 			vehicle.troop_crawler: 35%
 			vehicle.quad_cannon: 40%
 			vehicle.tomahawk_launcher: 20%
@@ -586,6 +585,15 @@ Player:
 			aircraft.stealth_fighter: 2%
 			aircraft.aurora: 1%
 			aircraft.comanche: 2%
+			upgrade.capture_building: 90%
+			upgrade.flashbang_grenades: 50%
+			upgrade.tow_missile: 100%
+			upgrade.sc_rocket: 75%
+			upgrade.chain_gun: 50%
+			upgrade.black_napalm: 50%
+			upgrade.rocket_pods: 5%
+			upgrade.laser_guided_missiles: 5%
+			upgrade.mig_armor: 5%
 		UnitLimits:
 			infantry.colonel_burton: 1
 			infantry.jarmen_kell: 1
@@ -871,9 +879,9 @@ Player:
 		Name: Turtle AI
 		Type: turtle
 		MinimumExcessPower: 3
-		BuildingQueues: Building, Upgrade
-		DefenseQueues: Building
-		UnitQueues: Collector, Infantry, Vehicle, Aircraft
+		BuildingQueues: queue.usa_building, queue.gla_building, queue.prc_building, queue.cold_fusion_reactor, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, General
+		DefenseQueues: queue.usa_building, queue.gla_building, queue.prc_building
+		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.prc_infantry, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.prc_aircraft, queue.vessel
 		BuildingCommonNames:
 			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center
 			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -888,6 +896,7 @@ Player:
 		UnitsCommonNames:
 			Mcv: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
+			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.red_guard
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.communications_center, tech.forward_command, tech.shipyard, tech.service_depot
 		BuildingLimits:
@@ -945,22 +954,15 @@ Player:
 			upgrade.spy_drone: 1%
 			upgrade.radar: 1%
 #			upgrade.control_rods: 1%
-			upgrade.capture_building: 1%
-			upgrade.flashbang_grenades: 1%
 			upgrade.ambush1: 1%
 			upgrade.ambush2: 1%
 			upgrade.ambush3: 1%
-			upgrade.tow_missile: 1%
-			upgrade.sc_rocket: 1%
-			upgrade.black_napalm: 1%
 			upgrade.arty_barrage1: 1%
 			upgrade.arty_barrage2: 1%
 			upgrade.arty_barrage3: 1%
 			upgrade.a101: 1%
 			upgrade.a102: 1%
 			upgrade.a103: 1%
-			upgrade.rocket_pods: 1%
-			upgrade.mig_armor: 1%
 			upgrade.adv_training: 1%
 			upgrade.tech_training: 1%
 			upgrade.red_training: 1%
@@ -1002,6 +1004,7 @@ Player:
 			vehicle.supply_truck: 10%
 			vehicle.humvee: 25%
 			vehicle.technical: 25%
+			vehicle.gatling_tank: 25%
 			vehicle.troop_crawler: 25%
 			vehicle.quad_cannon: 50%
 			vehicle.tomahawk_launcher: 30%
@@ -1023,6 +1026,15 @@ Player:
 			aircraft.stealth_fighter: 2%
 			aircraft.aurora: 1%
 			aircraft.comanche: 2%
+			upgrade.capture_building: 100%
+			upgrade.flashbang_grenades: 75%
+			upgrade.tow_missile: 100%
+			upgrade.sc_rocket: 100%
+			upgrade.chain_gun: 75%
+			upgrade.black_napalm: 75%
+			upgrade.rocket_pods: 7%
+			upgrade.laser_guided_missiles: 7%
+			upgrade.mig_armor: 7%
 		UnitLimits:
 			infantry.colonel_burton: 1
 			infantry.jarmen_kell: 1

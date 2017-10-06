@@ -2,9 +2,8 @@ vessel.transport:
 	Inherits: ^Ship
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		Queue: Vehicle
-		BuildAtProductionType: Vessel
-		BuildPaletteOrder: 26
+		Queue: queue.vessel
+		BuildPaletteOrder: 1
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~tech.shipyard, ~techlevel.infonly
@@ -40,9 +39,8 @@ vessel.gunboat:
 	Inherits@REVEAL: ^Reveal150
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Vehicle
-		BuildAtProductionType: Vessel
-		BuildPaletteOrder: 27
+		Queue: queue.vessel
+		BuildPaletteOrder: 2
 		BuildDuration: 200
 		BuildDurationModifier: 100
 		Prerequisites: ~tech.shipyard, ~techlevel.low
@@ -86,9 +84,8 @@ vessel.destroyer:
 	Inherits@REVEAL: ^Reveal150
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Buildable:
-		Queue: Vehicle
-		BuildAtProductionType: Vessel
-		BuildPaletteOrder: 28
+		Queue: queue.vessel
+		BuildPaletteOrder: 3
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~tech.shipyard, anytech, ~techlevel.medium
@@ -136,9 +133,8 @@ vessel.cruiser:
 	Inherits@REVEAL: ^Reveal180
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Vehicle
-		BuildAtProductionType: Vessel
-		BuildPaletteOrder: 29
+		Queue: queue.vessel
+		BuildPaletteOrder: 4
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~tech.shipyard, anytech, ~techlevel.high

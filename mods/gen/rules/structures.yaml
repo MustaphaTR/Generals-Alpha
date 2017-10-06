@@ -5,7 +5,7 @@
 		Footprint: xxX xxx XxX
 		Dimensions: 3,3
 	Buildable:
-		Queue: Building
+		Queue: queue.usa_building, queue.gla_building, queue.prc_building
 		Prerequisites: ~disabled
 		Description: Produces structures.
 	Health:
@@ -13,19 +13,12 @@
 	Armor:
 		Type: building.tough
 	WithBuildingBib:
-	Production:
-		Produces: Building, Upgrade
 	Exit:
 	Valued:
 		Cost: 2000
 	CustomSellValue:
 		Value: 2000
 	BaseBuilding:
-	ProductionBar@Building:
-		ProductionType: Building
-	ProductionBar@Upgrade:
-		ProductionType: Upgrade
-		Color: 8A8A8A
 	BaseProvider:
 		Range: 16c0
 	WithBuildingPlacedAnimation:
@@ -63,6 +56,17 @@ building.usa_command_center:
 		Facing: 96
 	Voiced:
 		VoiceSet: USACommandCenterVoice
+	Production:
+		Produces: queue.usa_building
+	ProductionBar@USA_BUILDING:
+		ProductionType: queue.usa_building
+	ProductionQueue@USA_BUILDING:
+		Type: queue.usa_building
+		Group: Building
+		LowPowerSlowdown: 3
+		RequireOwner: false
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
 	SpawnActorPower@SPY_DRONE:
 		PauseOnCondition: emp
 		Actor: aircraft.spy_drone
@@ -117,6 +121,17 @@ building.gla_command_center:
 		Name: GLA Command Center
 	Voiced:
 		VoiceSet: GLACommandCenterVoice
+	Production:
+		Produces: queue.gla_building
+	ProductionBar@GLA_BUILDING:
+		ProductionType: queue.gla_building
+	ProductionQueue@GLA_BUILDING:
+		Type: queue.gla_building
+		Group: Building
+		LowPowerSlowdown: 3
+		RequireOwner: false
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
 	AirstrikePower@ANTHRAX_BOMB:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~building.gla_command_center, ~upgrade.anthrax_bomb
@@ -156,6 +171,17 @@ building.prc_command_center:
 		Prerequisites: upgrade.radar
 	Voiced:
 		VoiceSet: PRCCommandCenterVoice
+	Production:
+		Produces: queue.prc_building
+	ProductionBar@PRC_BUILDING:
+		ProductionType: queue.prc_building
+	ProductionQueue@PRC_BUILDING:
+		Type: queue.prc_building
+		Group: Building
+		LowPowerSlowdown: 3
+		RequireOwner: false
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
 	SpawnActorPower@ARTY_BARRAGE1:
 		PauseOnCondition: emp
 		Actor: hack.artillery_barrager.1
@@ -220,7 +246,6 @@ building.prc_command_center:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: Building
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Building:
@@ -243,6 +268,7 @@ building.cold_fusion_reactor:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
 	Buildable:
+		Queue: queue.usa_building
 		BuildPaletteOrder: 1
 		Prerequisites: ~building.usa_command_center, ~techlevel.infonly
 		Description: Provides power for other structures.
@@ -253,6 +279,15 @@ building.cold_fusion_reactor:
 		Name: Cold Fusion Reactor
 	Health:
 		HP: 800
+	Production:
+		Produces: queue.cold_fusion_reactor
+	ProductionQueue:
+		Type: queue.cold_fusion_reactor
+		Group: Tech
+		RequireOwner: false
+		LowPowerSlowdown: 3
+		ReadyAudio: ConstructionComplete
+	ProductionBar:
 	Power:
 		Amount: 5
 		RequiresCondition: !emp
@@ -271,7 +306,8 @@ building.nuclear_reactor:
 	HitShape:
 		TargetableOffsets: 630,299,0
 	Buildable:
-		BuildPaletteOrder: 2
+		Queue: queue.prc_building
+		BuildPaletteOrder: 1
 		Prerequisites: ~building.prc_command_center, ~techlevel.infonly
 		Description: Provides power for other structures.\n\nCan be Overcharged to incrase power output, but damages the building by doing so.\n\nExplodes when destroyed.
 	Valued:
@@ -311,12 +347,10 @@ building.nuclear_reactor:
 ^default.barracks:
 	Inherits: ^Building
 	Inherits@REVEAL: ^Reveal200
-	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@SHAPE: ^2x2Shape
 	HitShape:
 		UseTargetableCellsOffsets: false
 	Buildable:
-		Queue: Building
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Description: Trains infantry.
@@ -332,9 +366,6 @@ building.nuclear_reactor:
 		Type: building.normal
 	WithBuildingBib:
 	RallyPoint:
-	Production:
-		Produces: Infantry, Soldier
-	ProductionBar:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: barracks
@@ -351,12 +382,21 @@ building.usa_barracks:
 			TopLeft: -1024, -1024
 			BottomRight: 1024, 640
 	Buildable:
-		BuildPaletteOrder: 3
+		Queue: queue.usa_building
+		BuildPaletteOrder: 2
 		Prerequisites: ~building.usa_command_center, ~techlevel.infonly
 	Valued:
 		Cost: 600
 	Tooltip:
 		Name: USA Barracks
+	Production:
+		Produces: queue.usa_infantry
+	ProductionQueue:
+		Type: queue.usa_infantry
+		Group: Infantry
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
 	Exit@1:
 		SpawnOffset: -426,85,0
 		ExitCell: 0,1
@@ -373,10 +413,19 @@ building.gla_barracks:
 	HitShape:
 		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
 	Buildable:
-		BuildPaletteOrder: 4
+		Queue: queue.gla_building
+		BuildPaletteOrder: 1
 		Prerequisites: ~building.gla_command_center, ~techlevel.infonly
 	Tooltip:
 		Name: GLA Barracks
+	Production:
+		Produces: queue.gla_infantry
+	ProductionQueue:
+		Type: queue.gla_infantry
+		Group: Infantry
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
 	Exit@1:
 		SpawnOffset: -42,810,0
 		ExitCell: 1,2
@@ -427,10 +476,19 @@ building.prc_barracks:
 	HitShape:
 		TargetableOffsets: 0,0,0, 490,-470,0, 355,512,0, -355,-512,0, -630,512,0
 	Buildable:
-		BuildPaletteOrder: 5
+		Queue: queue.prc_building
+		BuildPaletteOrder: 2
 		Prerequisites: ~building.prc_command_center, ~techlevel.infonly
 	Tooltip:
 		Name: PRC Barracks
+	Production:
+		Produces: queue.prc_infantry
+	ProductionQueue:
+		Type: queue.prc_infantry
+		Group: Infantry
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
 	Exit@1:
 		SpawnOffset: -170,810,0
 		ExitCell: 1,2
@@ -443,7 +501,7 @@ building.prc_barracks:
 building.mine:
 	Inherits: ^Mine
 	Buildable:
-		Queue: Building
+		Queue: queue.prc_building
 		BuildPaletteOrder: 6
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -461,7 +519,6 @@ building.mine:
 	Inherits: ^Building
 	Inherits@REVEAL: ^Reveal200
 	Buildable:
-		Queue: Building
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Description: Refines Ore and Gems\ninto credits.
@@ -501,24 +558,13 @@ building.mine:
 		UseDeathTypeSuffix: false
 	DrawLineToTarget:
 	RallyPoint:
-	Production:
-		Produces: Collector, Chinook
-	ProductionBar:
-	PrimaryBuilding:
-		PrimaryCondition: primary
-	WithDecoration@primary:
-		RequiresSelection: true
-		Image: pips
-		Sequence: tag-primary
-		ReferencePoint: Top
-		ZOffset: 256
-		RequiresCondition: primary
 
 building.usa_supply_center:
 	Inherits: ^default.supply_center
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
-		BuildPaletteOrder: 7
+		Queue: queue.usa_building
+		BuildPaletteOrder: 3
 		Prerequisites: anypower, ~building.usa_command_center, ~techlevel.infonly
 	Valued:
 		Cost: 2000
@@ -530,6 +576,14 @@ building.usa_supply_center:
 		Bounds: 72,56,0,12
 	SelectionDecorations:
 		VisualBounds: 72,70,0,-2
+	Production:
+		Produces: queue.usa_collector
+	ProductionQueue:
+		Type: queue.usa_collector
+		Group: Collector
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
 	Exit@1:
 		SpawnOffset: 0,1024,0
 		ExitCell: 1,2
@@ -558,7 +612,8 @@ building.gla_supply_stash:
 			TopLeft: -1024, -512
 			BottomRight: 1024, 1536
 	Buildable:
-		BuildPaletteOrder: 8
+		Queue: queue.gla_building
+		BuildPaletteOrder: 2
 		Prerequisites: ~building.gla_command_center, ~techlevel.infonly
 	Tooltip:
 		Name: GLA Supply Stash
@@ -568,11 +623,17 @@ building.gla_supply_stash:
 	Selectable:
 		Class: building.gla_supply_stash
 		Bounds: 48,48,0,12
+	Production:
+		Produces: queue.gla_collector
+	ProductionQueue:
+		Type: queue.gla_collector
+		Group: Collector
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
 	Exit@1:
 		SpawnOffset: -96,768,0
 		ExitCell: 1,1
-	Production:
-		Produces: Collector, Worker
 	Dock@0:
 		DockOffset: 1,1
 	RallyPoint:
@@ -610,7 +671,8 @@ building.gla_supply_stash.no_free_actor:
 building.prc_supply_center:
 	Inherits: ^default.supply_center
 	Buildable:
-		BuildPaletteOrder: 9
+		Queue: queue.prc_building
+		BuildPaletteOrder: 4
 		Prerequisites: anypower, ~building.prc_command_center, ~techlevel.infonly
 	Tooltip:
 		Name: PRC Supply Center
@@ -620,11 +682,17 @@ building.prc_supply_center:
 		Bounds: 72,50,0,12
 	SelectionDecorations:
 		VisualBounds: 72,70,0,-2
+	Production:
+		Produces: queue.prc_collector
+	ProductionQueue:
+		Type: queue.prc_collector
+		Group: Collector
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
 	Exit@1:
 		SpawnOffset: -42,810,0
 		ExitCell: 1,2
-	Production:
-		Produces: Collector, Truck
 	FreeActor:
 		Actor: vehicle.supply_truck
 	WithIdleOverlay@TOP:
@@ -654,8 +722,8 @@ building.patriot:
 	Inherits@SHAPE: ^2x1Shape
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 10
+		Queue: queue.usa_building
+		BuildPaletteOrder: 4
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: anypower, ~building.usa_command_center, ~techlevel.low
@@ -708,8 +776,8 @@ building.demo_trap:
 	Inherits: ^Defense
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 11
+		Queue: queue.gla_building
+		BuildPaletteOrder: 3
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, ~techlevel.medium
@@ -774,8 +842,8 @@ building.gatling_cannon:
 	Inherits@CHAIN_GUN: ^AfftectedByChainGun
 	Inherits@REVEAL: ^Reveal360
 	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 12
+		Queue: queue.prc_building
+		BuildPaletteOrder: 5
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: building.nuclear_reactor, ~building.prc_command_center, ~techlevel.low
@@ -859,8 +927,8 @@ building.bunker:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 13
+		Queue: queue.prc_building
+		BuildPaletteOrder: 7
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: building.prc_barracks, ~building.prc_command_center, ~!strategy.overlord_bunker, ~techlevel.infonly
@@ -915,10 +983,8 @@ building.bunker.strategy:
 ^default.war_factory:
 	Inherits: ^Building
 	Inherits@REVEAL: ^Reveal200
-	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: Building
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Description: Produces vehicles.
@@ -936,12 +1002,9 @@ building.bunker.strategy:
 	WithProductionDoorOverlay:
 		Sequence: build-top
 	RallyPoint:
-	Production:
-		Produces: Vehicle, WarFactory
 	Exit@1:
 		SpawnOffset: 213,-128,0
 		ExitCell: 1,2
-	ProductionBar:
 	Power:
 		Amount: -1
 	ProvidesPrerequisite@buildingname:
@@ -953,7 +1016,8 @@ building.usa_war_factory:
 	Inherits: ^default.war_factory
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
-		BuildPaletteOrder: 14
+		Queue: queue.usa_building
+		BuildPaletteOrder: 5
 		Prerequisites: anysupply, ~building.usa_command_center, ~techlevel.low
 	Tooltip:
 		Name: USA War Factory
@@ -961,6 +1025,14 @@ building.usa_war_factory:
 		Footprint: xxx === ===
 	RallyPoint:
 		Offset: 0,2
+	Production:
+		Produces: queue.usa_vehicle
+	ProductionQueue:
+		Type: queue.usa_vehicle
+		RequireOwner: false
+		Group: Vehicle
+		LowPowerSlowdown: 3
+	ProductionBar:
 	Exit@1:
 		SpawnOffset: -512,-512,0
 		ExitCell: 0,1
@@ -986,12 +1058,21 @@ building.usa_war_factory:
 building.arms_dealer:
 	Inherits: ^default.war_factory
 	Buildable:
-		BuildPaletteOrder: 15
+		Queue: queue.gla_building
+		BuildPaletteOrder: 4
 		Prerequisites: anysupply, ~building.gla_command_center, ~techlevel.low
 	Valued:
 		Cost: 2500
 	Tooltip:
 		Name: GLA Arms Dealer
+	Production:
+		Produces: queue.gla_vehicle
+	ProductionQueue:
+		Type: queue.gla_vehicle
+		RequireOwner: false
+		Group: Vehicle
+		LowPowerSlowdown: 3
+	ProductionBar:
 	SpawnActorOnDeath:
 		Actor: hole.arms_dealer
 	Power:
@@ -1002,10 +1083,18 @@ building.arms_dealer:
 building.prc_war_factory:
 	Inherits: ^default.war_factory
 	Buildable:
-		BuildPaletteOrder: 16
+		Queue: queue.prc_building
+		BuildPaletteOrder: 8
 		Prerequisites: anysupply, ~building.prc_command_center, ~techlevel.low
 	Tooltip:
 		Name: PRC War Factory
+	Production:
+		Produces: queue.prc_vehicle
+	ProductionQueue:
+		Type: queue.prc_vehicle
+		RequireOwner: false
+		Group: Vehicle
+		LowPowerSlowdown: 3
 	Voiced:
 		VoiceSet: PRCWarFactoryVoice
 
@@ -1020,8 +1109,8 @@ building.tunnel_network:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 17
+		Queue: queue.gla_building
+		BuildPaletteOrder: 5
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.gla_barracks, ~techlevel.infonly
@@ -1090,8 +1179,8 @@ building.stinger_site:
 	Inherits@AP_BULLETS: ^AfftectedByAPBullets
 	Inherits@REVEAL: ^Reveal400
 	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 18
+		Queue: queue.gla_building
+		BuildPaletteOrder: 6
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_command_center, building.gla_barracks, ~techlevel.low
@@ -1159,9 +1248,7 @@ building.stinger_site:
 ^default.airfield:
    	Inherits: ^Building
    	Inherits@REVEAL: ^Reveal200
-   	Inherits@PRIMARY: ^PrimaryBuilding
 	Buildable:
-		Queue: Building
 		BuildDuration: 750
 		BuildDurationModifier: 100
 		Description: Produces and reloads aircraft.
@@ -1176,8 +1263,6 @@ building.stinger_site:
 		Facing: 192
 		MoveIntoWorld: false
 	RallyPoint:
-	Production:
-		Produces: Aircraft, Plane
 	DockManager:
 		DockOnActor: true
 		DeadlockDetectionEnabled: false
@@ -1188,7 +1273,6 @@ building.stinger_site:
 		PlayerExperience: 15
 	WithRepairAnimation:
 	WithRearmAnimation:
-	ProductionBar:
 	Power:
 		Amount: -1
 	ProvidesPrerequisite@buildingname:
@@ -1202,7 +1286,8 @@ building.usa_airfield:
 			TopLeft: -2048, -1280
 			BottomRight: 2048, 1536
 	Buildable:
-		BuildPaletteOrder: 19
+		Queue: queue.usa_building
+		BuildPaletteOrder: 6
 		Prerequisites: anysupply, ~building.usa_command_center, ~techlevel.medium
 	Tooltip:
 		Name: USA Airfield
@@ -1210,7 +1295,13 @@ building.usa_airfield:
 		Footprint: XXXX xxxx xxxx
 		Dimensions: 4,3
 	Production:
-		Produces: Aircraft, Plane, Helicopter
+		Produces: queue.usa_aircraft
+	ProductionQueue:
+		Type: queue.usa_aircraft
+		Group: Aircraft
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
 	Dock@0:
 		DockOffset: 2,2
 	Dock@1:
@@ -1290,13 +1381,22 @@ building.prc_airfield:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 420,512,0, 420,-512,0, 420,1536,0, 420,-1536,0, -777,512,0, -777,-512,0, -777,1536,0, -777,-1536,0
 	Buildable:
-		BuildPaletteOrder: 20
+		Queue: queue.prc_building
+		BuildPaletteOrder: 9
 		Prerequisites: anysupply, ~building.prc_command_center, ~techlevel.medium
 	Tooltip:
 		Name: PRC Airfield
 	Building:
 		Footprint: xxxx xxxx xxxx
 		Dimensions: 4,3
+	Production:
+		Produces: queue.prc_aircraft
+	ProductionQueue:
+		Type: queue.prc_aircraft
+		Group: Aircraft
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
 	Dock@0:
 		DockOffset: 0,1
 	Dock@1:
@@ -1321,8 +1421,8 @@ building.strategy_center:
 	Inherits@SHAPE: ^3x2Shape
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 21
+		Queue: queue.usa_building
+		BuildPaletteOrder: 7
 		BuildDuration: 1500
 		BuildDurationModifier: 100
 		Prerequisites: building.usa_war_factory, ~building.usa_command_center, ~techlevel.medium
@@ -1331,8 +1431,6 @@ building.strategy_center:
 		Cost: 2500
 	Tooltip:
 		Name: Strategy Center
-	ProvidesPrerequisite:
-		Prerequisite: techcenter
 	Building:
 		Footprint: Xxx xxX
 		Dimensions: 3,2
@@ -1348,6 +1446,15 @@ building.strategy_center:
 	RequiresPower:
 	Power:
 		Amount: -2
+	Production:
+		Produces: queue.strategy_center
+	ProductionQueue:
+		Type: queue.strategy_center
+		Group: Tech
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
+	Exit:
 	Turreted:
 		TurnSpeed: 5
 		InitialFacing: 96
@@ -1390,8 +1497,8 @@ building.palace:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 0,-896,0, 0,896,0, 840,0,0, -706,0,0, -706,-768,0, -706,640,0
 	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 22
+		Queue: queue.gla_building
+		BuildPaletteOrder: 7
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 		Prerequisites: building.arms_dealer, ~building.gla_command_center, ~techlevel.medium
@@ -1400,8 +1507,6 @@ building.palace:
 		Cost: 2500
 	Tooltip:
 		Name: Palace
-	ProvidesPrerequisite:
-		Prerequisite: techcenter
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
@@ -1438,6 +1543,15 @@ building.palace:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: anytech
+	Production:
+		Produces: queue.palace
+	ProductionQueue:
+		Type: queue.palace
+		Group: Tech
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
+	Exit:
 	WithDeathAnimation:
 		DeathSequence: dead
 		DeathSequencePalette: cncplayer
@@ -1456,8 +1570,8 @@ building.propaganda_center:
 	HitShape:
 		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 23
+		Queue: queue.prc_building
+		BuildPaletteOrder: 10
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 		Prerequisites: building.prc_war_factory, ~building.prc_command_center, ~techlevel.medium
@@ -1466,8 +1580,6 @@ building.propaganda_center:
 		Cost: 2000
 	Tooltip:
 		Name: Propaganda Center
-	ProvidesPrerequisite:
-		Prerequisite: techcenter
 	Building:
 		Footprint: XxX XxX
 		Dimensions: 3,2
@@ -1476,6 +1588,15 @@ building.propaganda_center:
 	Armor:
 		Type: building.normal
 	WithBuildingBib:
+	Production:
+		Produces: queue.propaganda_center
+	ProductionQueue:
+		Type: queue.propaganda_center
+		Group: Tech
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
+	Exit:
 	Power:
 		Amount: -2
 	ProvidesPrerequisite@buildingname:
@@ -1492,8 +1613,8 @@ building.detention_camp:
 	HitShape:
 		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 24
+		Queue: queue.usa_building
+		BuildPaletteOrder: 8
 		BuildDuration: 750
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~building.usa_command_center, ~techlevel.high
@@ -1538,8 +1659,8 @@ building.supply_drop_zone:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
 	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 25
+		Queue: queue.usa_building
+		BuildPaletteOrder: 9
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~building.usa_command_center, ~techlevel.medium
@@ -1594,8 +1715,8 @@ building.black_market:
 	Tooltip:
 		Name: Black Market
 	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 26
+		Queue: queue.gla_building
+		BuildPaletteOrder: 8
 		BuildDuration: 750
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~building.gla_command_center, ~techlevel.medium
@@ -1607,6 +1728,15 @@ building.black_market:
 		Bounds: 48,40,0,9
 	SelectionDecorations:
 		VisualBounds: 48,53,0,-4
+	Production:
+		Produces: queue.black_market
+	ProductionQueue:
+		Type: queue.black_market
+		Group: Tech
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
+	Exit:
 	CashTrickler:
 		Interval: 25
 		Amount: 20
@@ -1635,8 +1765,8 @@ building.speaker_tower:
 	Tooltip:
 		Name: Speaker Tower
 	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 27
+		Queue: queue.prc_building
+		BuildPaletteOrder: 11
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, ~building.prc_command_center, ~techlevel.medium
@@ -1695,8 +1825,8 @@ building.particle_cannon:
 	Tooltip:
 		Name: Particle Uplink Cannon
 	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 28
+		Queue: queue.usa_building
+		BuildPaletteOrder: 10
 		BuildDuration: 1500
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~building.usa_command_center, ~techlevel.unrestricted
@@ -1750,8 +1880,8 @@ hack.scud_spawner:
 	Tooltip:
 		Name: SCUD Storm
 	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 29
+		Queue: queue.gla_building
+		BuildPaletteOrder: 9
 		BuildDuration: 1500
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~building.gla_command_center, !building.scud_storm, ~techlevel.unrestricted
@@ -1781,8 +1911,8 @@ building.scud_storm:
 	Tooltip:
 		Name: SCUD Storm
 #	Buildable:
-#		Queue: Building
-#		BuildPaletteOrder: 29
+#		Queue: queue.gla_building
+#		BuildPaletteOrder: 9
 #		BuildDuration: 1500
 #		BuildDurationModifier: 100
 #		Prerequisites: building.palace, ~building.gla_command_center, ~techlevel.unrestricted
@@ -1921,8 +2051,8 @@ building.missile_silo:
 	Tooltip:
 		Name: Nuclear Missile Silo
 	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 30
+		Queue: queue.prc_building
+		BuildPaletteOrder: 12
 		BuildDuration: 1500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, ~building.prc_command_center, ~techlevel.unrestricted
@@ -1937,6 +2067,15 @@ building.missile_silo:
 		HP: 3000
 	Armor:
 		Type: building.tough
+	Production:
+		Produces: queue.missile_silo
+	ProductionQueue:
+		Type: queue.missile_silo
+		Group: Tech
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
+	Exit:
 	NukePower:
 		PauseOnCondition: disabled || emp
 		Cursor: nuke
@@ -1974,7 +2113,7 @@ building.missile_silo:
 SBAG:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Building
+		Queue: queue.usa_building, queue.gla_building, queue.prc_building
 		BuildPaletteOrder: 40
 		Prerequisites: ~disabled
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
@@ -1999,7 +2138,7 @@ SBAG:
 FENC:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Building
+		Queue: queue.usa_building, queue.gla_building, queue.prc_building
 		BuildPaletteOrder: 45
 		Prerequisites:  ~disabled
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
@@ -2024,7 +2163,7 @@ FENC:
 BRIK:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Building
+		Queue: queue.usa_building, queue.gla_building, queue.prc_building
 		BuildPaletteOrder: 50
 		Prerequisites: ~disabled
 		Description: Stop units and blocks enemy fire.

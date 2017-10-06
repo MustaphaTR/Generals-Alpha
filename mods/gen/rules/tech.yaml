@@ -211,7 +211,6 @@ tech.service_depot:
 tech.shipyard:
 	Inherits: ^TechBuilding
 #	Inherits@EMP: ^AfftectedByEMP
-   	Inherits@PRIMARY: ^PrimaryBuilding
    	Inherits@REVEAL: ^Reveal180
 	Valued:
 		Cost: 1000
@@ -249,12 +248,17 @@ tech.shipyard:
 		Facing: 32
 		ExitCell: 2,0
 	Production:
-		Produces: Vehicle, Vessel
+		Produces: queue.vessel
+	ProductionQueue:
+		Type: queue.vessel
+		Group: Vehicle
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
 	RallyPoint:
-	ProductionBar:
 	ProvidesPrerequisite@buildingname:
 	EditorTilesetFilter:
 		ExcludeTilesets: INTERIOR

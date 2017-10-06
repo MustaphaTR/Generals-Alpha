@@ -108,9 +108,8 @@ aircraft.mig:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Aircraft
-		BuildAtProductionType: Plane
-		BuildPaletteOrder: 3
+		Queue: queue.prc_aircraft
+		BuildPaletteOrder: 1
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_airfield, ~techlevel.medium
@@ -189,9 +188,8 @@ aircraft.raptor:
 	Inherits@LASER_MISSILES: ^AfftectedByLaserGuidedMissiles
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Aircraft
-		BuildAtProductionType: Plane
-		BuildPaletteOrder: 2
+		Queue: queue.usa_aircraft
+		BuildPaletteOrder: 1
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_airfield, ~techlevel.medium
@@ -257,9 +255,8 @@ aircraft.stealth_fighter:
 	Inherits@LASER_MISSILES: ^AfftectedByLaserGuidedMissiles
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Aircraft
-		BuildAtProductionType: Plane
-		BuildPaletteOrder: 5
+		Queue: queue.usa_aircraft
+		BuildPaletteOrder: 4
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_airfield, ~techlevel.high
@@ -334,9 +331,8 @@ aircraft.aurora:
 	Inherits@REVEAL: ^Reveal180
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Aircraft
-		BuildAtProductionType: Plane
-		BuildPaletteOrder: 6
+		Queue: queue.usa_aircraft
+		BuildPaletteOrder: 5
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_airfield, building.strategy_center, ~techlevel.high
@@ -510,8 +506,7 @@ aircraft.chinook:
 	Inherits: ^Vehicle
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
-		Queue: Collector
-		BuildAtProductionType: Chinook
+		Queue: queue.usa_collector
 		BuildPaletteOrder: 1
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -595,9 +590,8 @@ aircraft.comanche:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@PILOT: ^EjectsPilotOnAir
 	Buildable:
-		Queue: Aircraft
-		BuildAtProductionType: Helicopter
-		BuildPaletteOrder: 4
+		Queue: queue.usa_aircraft
+		BuildPaletteOrder: 2
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_airfield, ~techlevel.medium
