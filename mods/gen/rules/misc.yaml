@@ -303,6 +303,30 @@ hack.scud_missile_damager.beta:
 	Armament:
 		Weapon: missile.scud_storm.beta
 
+hack.mine:
+	Inherits: ^Mine
+	-Building:
+	Mobile:
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Road: 100
+			Bridge: 100
+			Ore: 100
+			Gems: 100
+			Beach: 100
+	-Sellable:
+	Valued:
+		Cost: 250
+	Tooltip:
+		Name: Land Mine
+	RejectsOrders:
+	Explodes:
+		Weapon: ATMine
+		EmptyWeapon: ATMine
+	RenderSprites:
+		Image: building.mine
+
 SONAR:
 	Inherits: camera.spyplane
 	EditorOnlyTooltip:

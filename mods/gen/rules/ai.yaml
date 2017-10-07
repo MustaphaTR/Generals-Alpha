@@ -72,6 +72,9 @@ Player:
 			upgrade.spy_drone: 1%
 			upgrade.radar: 1%
 #			upgrade.control_rods: 1%
+			upgrade.paradrop1: 1%
+			upgrade.paradrop2: 1%
+			upgrade.paradrop3: 1%
 			upgrade.ambush1: 1%
 			upgrade.ambush2: 1%
 			upgrade.ambush3: 1%
@@ -99,6 +102,7 @@ Player:
 			upgrade.fuel_air_bomb: 1%
 			upgrade.anthrax_bomb: 1%
 			upgrade.emp: 1%
+			upgrade.cluster_mines: 1%
 			strategy.bombardment: 1%
 			strategy.search_and_destroy: 5%
 			strategy.hold_the_line: 1%
@@ -284,6 +288,66 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 2c0
+		SupportPowerDecision@cluster_mines:
+			OrderName: ClusterMinesPowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@paradrop1:
+			OrderName: Paradrop1PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@paradrop2:
+			OrderName: Paradrop2PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@paradrop3:
+			OrderName: Paradrop3PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
 		SupportPowerDecision@ambush1:
 			OrderName: Ambush1PowerInfoOrder
 			MinimumAttractiveness: 5
@@ -513,6 +577,9 @@ Player:
 			upgrade.spy_drone: 1%
 			upgrade.radar: 1%
 #			upgrade.control_rods: 1%
+			upgrade.paradrop1: 1%
+			upgrade.paradrop2: 1%
+			upgrade.paradrop3: 1%
 			upgrade.ambush1: 1%
 			upgrade.ambush2: 1%
 			upgrade.ambush3: 1%
@@ -540,6 +607,7 @@ Player:
 			upgrade.fuel_air_bomb: 1%
 			upgrade.anthrax_bomb: 1%
 			upgrade.emp: 1%
+			upgrade.cluster_mines: 1%
 			strategy.bombardment: 2%
 			strategy.search_and_destroy: 3%
 			strategy.hold_the_line: 2%
@@ -725,6 +793,66 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 2c0
+		SupportPowerDecision@cluster_mines:
+			OrderName: ClusterMinesPowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@paradrop1:
+			OrderName: Paradrop1PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@paradrop2:
+			OrderName: Paradrop2PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@paradrop3:
+			OrderName: Paradrop3PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
 		SupportPowerDecision@ambush1:
 			OrderName: Ambush1PowerInfoOrder
 			MinimumAttractiveness: 5
@@ -954,6 +1082,9 @@ Player:
 			upgrade.spy_drone: 1%
 			upgrade.radar: 1%
 #			upgrade.control_rods: 1%
+			upgrade.paradrop1: 1%
+			upgrade.paradrop2: 1%
+			upgrade.paradrop3: 1%
 			upgrade.ambush1: 1%
 			upgrade.ambush2: 1%
 			upgrade.ambush3: 1%
@@ -981,6 +1112,7 @@ Player:
 			upgrade.fuel_air_bomb: 1%
 			upgrade.anthrax_bomb: 1%
 			upgrade.emp: 1%
+			upgrade.cluster_mines: 1%
 			strategy.bombardment: 3%
 			strategy.search_and_destroy: 1%
 			strategy.hold_the_line: 3%
@@ -1166,6 +1298,66 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 2c0
+		SupportPowerDecision@cluster_mines:
+			OrderName: ClusterMinesPowerInfoOrder
+			MinimumAttractiveness: 2000
+			Consideration@1:
+				Against: Enemy
+				Types: Vehicle, Infantry
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 2c0
+			Consideration@2:
+				Against: Ally
+				Types: Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 2c0
+		SupportPowerDecision@paradrop1:
+			OrderName: Paradrop1PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@paradrop2:
+			OrderName: Paradrop2PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@paradrop3:
+			OrderName: Paradrop3PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
 		SupportPowerDecision@ambush1:
 			OrderName: Ambush1PowerInfoOrder
 			MinimumAttractiveness: 5

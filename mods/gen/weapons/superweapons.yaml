@@ -108,6 +108,12 @@ parabomb.emp:
 	Warhead@5EffWater: CreateEffect
 		Explosions: emp
 
+parabomb.cluster_mines:
+	Inherits: ^ParaBomb
+	Warhead@1Dam: TargetDamage
+	Warhead@2Spawner: SpawnActor
+		Actors: hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine
+
 Atomic:
 	ValidTargets: Ground, Trees, Water, Underwater, Air
 	Warhead@1Dam_impact: SpreadDamage

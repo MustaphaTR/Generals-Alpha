@@ -89,9 +89,122 @@ building.usa_command_center:
 		LongDesc: Reveals are large area of map for a while.\n\nAlso detects cloaked units in that area.
 		StartFullyCharged: false
 		OrderName: SpySatellitePowerInfoOrder
+	ParatroopersPower@PARADROP1:
+		PauseOnCondition: disabled || emp
+		OrderName: Paradrop1PowerInfoOrder
+		Prerequisites: ~upgrade.paradrop1, ~!upgrade.paradrop2, ~!upgrade.paradrop3
+		Icon: paradrop1
+		ChargeTime: 240
+		Description: ParaDrop
+		LongDesc: A B-52 drops 5 Rangers\nanywhere on the map.
+		UnitType: aircraft.badger
+		DropItems: infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: true
+		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+	ParatroopersPower@PARADROP2:
+		PauseOnCondition: disabled || emp
+		OrderName: Paradrop2PowerInfoOrder
+		Prerequisites: ~upgrade.paradrop2, ~!upgrade.paradrop3
+		Icon: paradrop2
+		ChargeTime: 240
+		Description: ParaDrop
+		LongDesc: 2 B-52 drop total of 10 Rangers\nanywhere on the map.
+		UnitType: aircraft.badger
+		DropItems: infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger
+		SquadSize: 2
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: true
+		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+	ParatroopersPower@PARADROP3:
+		PauseOnCondition: disabled || emp
+		OrderName: Paradrop3PowerInfoOrder
+		Prerequisites: ~upgrade.paradrop3
+		Icon: paradrop3
+		ChargeTime: 240
+		Description: ParaDrop
+		LongDesc: 4 B-52s drop total of 20 Rangers\nanywhere on the map.
+		UnitType: aircraft.badger
+		DropItems: infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger
+		SquadSize: 4
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: true
+		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+	AirstrikePower@A101:
+		PauseOnCondition: disabled || emp
+		Prerequisites: ~upgrade.a101, ~!upgrade.a102, ~!upgrade.a103
+		Icon: a101
+		ChargeTime: 240
+		SquadSize: 1
+		QuantizedFacings: 8
+		Description: A-10 Strike
+		LongDesc: 1 A-10 Thunderbolt strikes anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		UnitType: aircraft.a10
+		DisplayBeacon: True
+		BeaconPoster: a101bcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		OrderName: A101PowerInfoOrder
+	AirstrikePower@A102:
+		PauseOnCondition: disabled || emp
+		Prerequisites: ~upgrade.a102, ~!upgrade.a103
+		Icon: a102
+		ChargeTime: 240
+		SquadSize: 2
+		QuantizedFacings: 8
+		Description: A-10 Strike
+		LongDesc: 2 A-10 Thunderbolt strikes anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		UnitType: aircraft.a10
+		DisplayBeacon: True
+		BeaconPoster: a102bcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		OrderName: A102PowerInfoOrder
+	AirstrikePower@A103:
+		PauseOnCondition: disabled || emp
+		Prerequisites: ~upgrade.a103
+		Icon: a103
+		ChargeTime: 240
+		SquadSize: 3
+		QuantizedFacings: 8
+		Description: A-10 Strike
+		LongDesc: 3 A-10 Thunderbolt strikes anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		UnitType: aircraft.a10
+		DisplayBeacon: True
+		BeaconPoster: a103bcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		OrderName: A103PowerInfoOrder
 	AirstrikePower@FUEL_AIR_BOMB:
 		PauseOnCondition: disabled || emp
-		Prerequisites: ~building.usa_command_center, ~upgrade.fuel_air_bomb
+		Prerequisites: ~upgrade.fuel_air_bomb
 		Icon: fuel_air
 		ChargeTime: 360
 		SquadSize: 1
@@ -132,9 +245,42 @@ building.gla_command_center:
 		RequireOwner: false
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
+	SpawnActorPower@AMBUSH1:
+		PauseOnCondition: disabled || emp
+		Actor: hack.rebel_spawner.4
+		Prerequisites: ~upgrade.ambush1, ~!upgrade.ambush2, ~!upgrade.ambush3
+		LifeTime: 2
+		ChargeTime: 240
+		Icon: ambush1
+		Description: Rebel Ambush
+		LongDesc: Spawns 4 Rebels anywhere on the map.
+		StartFullyCharged: false
+		OrderName: Ambush1PowerInfoOrder
+	SpawnActorPower@AMBUSH2:
+		PauseOnCondition: disabled || emp
+		Actor: hack.rebel_spawner.8
+		Prerequisites: ~upgrade.ambush2, ~!upgrade.ambush3
+		LifeTime: 2
+		ChargeTime: 240
+		Icon: ambush2
+		Description: Rebel Ambush
+		LongDesc: Spawns 8 Rebels anywhere on the map.
+		StartFullyCharged: false
+		OrderName: Ambush2PowerInfoOrder
+	SpawnActorPower@AMBUSH3:
+		PauseOnCondition: disabled || emp
+		Actor: hack.rebel_spawner.16
+		Prerequisites: ~upgrade.ambush3
+		LifeTime: 2
+		ChargeTime: 240
+		Icon: ambush3
+		Description: Rebel Ambush
+		LongDesc: Spawns 16 Rebels anywhere on the map.
+		StartFullyCharged: false
+		OrderName: Ambush3PowerInfoOrder
 	AirstrikePower@ANTHRAX_BOMB:
 		PauseOnCondition: disabled || emp
-		Prerequisites: ~building.gla_command_center, ~upgrade.anthrax_bomb
+		Prerequisites: ~upgrade.anthrax_bomb
 		Icon: thrax
 		ChargeTime: 360
 		SquadSize: 1
@@ -215,9 +361,27 @@ building.prc_command_center:
 		LongDesc: Fires 36 Artillery Shells anywhere on the map.
 		StartFullyCharged: false
 		OrderName: ArtilleryBarrage3PowerInfoOrder
+	AirstrikePower@CLUSTER_MINES:
+		PauseOnCondition: disabled || emp
+		Prerequisites: ~upgrade.cluster_mines
+		Icon: cluster
+		ChargeTime: 240
+		SquadSize: 1
+		QuantizedFacings: 8
+		Description: Cluster Mines
+		LongDesc: A Badger drops 13 Land Mines at the target.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		UnitType: aircraft.badger.cluster_mines
+		DisplayBeacon: True
+		BeaconPoster: empbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		OrderName: ClusterMinesPowerInfoOrder
 	AirstrikePower@EMP:
 		PauseOnCondition: disabled || emp
-		Prerequisites: ~building.prc_command_center, ~upgrade.emp
+		Prerequisites: ~upgrade.emp
 		Icon: emp
 		ChargeTime: 360
 		SquadSize: 1
@@ -432,39 +596,6 @@ building.gla_barracks:
 	Exit@2:
 		SpawnOffset: -725,640,0
 		ExitCell: 0,2
-	SpawnActorPower@AMBUSH1:
-		PauseOnCondition: disabled || emp
-		Actor: hack.rebel_spawner.4
-		Prerequisites: ~building.gla_barracks, ~upgrade.ambush1, ~!upgrade.ambush2, ~!upgrade.ambush3
-		LifeTime: 2
-		ChargeTime: 240
-		Icon: ambush1
-		Description: Rebel Ambush
-		LongDesc: Spawns 4 Rebels anywhere on the map.
-		StartFullyCharged: false
-		OrderName: Ambush1PowerInfoOrder
-	SpawnActorPower@AMBUSH2:
-		PauseOnCondition: disabled || emp
-		Actor: hack.rebel_spawner.8
-		Prerequisites: ~building.gla_barracks, ~upgrade.ambush2, ~!upgrade.ambush3
-		LifeTime: 2
-		ChargeTime: 240
-		Icon: ambush2
-		Description: Rebel Ambush
-		LongDesc: Spawns 8 Rebels anywhere on the map.
-		StartFullyCharged: false
-		OrderName: Ambush2PowerInfoOrder
-	SpawnActorPower@AMBUSH3:
-		PauseOnCondition: disabled || emp
-		Actor: hack.rebel_spawner.16
-		Prerequisites: ~building.gla_barracks, ~upgrade.ambush3
-		LifeTime: 2
-		ChargeTime: 240
-		Icon: ambush3
-		Description: Rebel Ambush
-		LongDesc: Spawns 16 Rebels anywhere on the map.
-		StartFullyCharged: false
-		OrderName: Ambush3PowerInfoOrder
 	SpawnActorOnDeath:
 		Actor: hole.barracks
 	Voiced:
@@ -1318,60 +1449,6 @@ building.usa_airfield:
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
-	AirstrikePower@A101:
-		PauseOnCondition: disabled || emp
-		Prerequisites: ~building.usa_airfield, ~upgrade.a101, ~!upgrade.a102, ~!upgrade.a103
-		Icon: a101
-		ChargeTime: 240
-		SquadSize: 1
-		QuantizedFacings: 8
-		Description: A-10 Strike
-		LongDesc: 1 A-10 Thunderbolt strikes anywhere on the map.
-		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
-		UnitType: aircraft.a10
-		DisplayBeacon: True
-		BeaconPoster: a101bcon
-		ArrowSequence: arrow
-		ClockSequence: clock
-		CircleSequence: circles
-		OrderName: A101PowerInfoOrder
-	AirstrikePower@A102:
-		PauseOnCondition: disabled || emp
-		Prerequisites: ~building.usa_airfield, ~upgrade.a102, ~!upgrade.a103
-		Icon: a102
-		ChargeTime: 240
-		SquadSize: 2
-		QuantizedFacings: 8
-		Description: A-10 Strike
-		LongDesc: 2 A-10 Thunderbolt strikes anywhere on the map.
-		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
-		UnitType: aircraft.a10
-		DisplayBeacon: True
-		BeaconPoster: a102bcon
-		ArrowSequence: arrow
-		ClockSequence: clock
-		CircleSequence: circles
-		OrderName: A102PowerInfoOrder
-	AirstrikePower@A103:
-		PauseOnCondition: disabled || emp
-		Prerequisites: ~building.usa_airfield, ~upgrade.a103
-		Icon: a103
-		ChargeTime: 240
-		SquadSize: 3
-		QuantizedFacings: 8
-		Description: A-10 Strike
-		LongDesc: 3 A-10 Thunderbolt strikes anywhere on the map.
-		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
-		UnitType: aircraft.a10
-		DisplayBeacon: True
-		BeaconPoster: a103bcon
-		ArrowSequence: arrow
-		ClockSequence: clock
-		CircleSequence: circles
-		OrderName: A103PowerInfoOrder
 	Voiced:
 		VoiceSet: USAAirfieldVoice
 

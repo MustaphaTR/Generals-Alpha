@@ -35,9 +35,9 @@
 aircraft.badger:
 	Inherits: ^default.badger
 	ParaDrop:
-		DropRange: 4c0
+		DropRange: 5c0
 	Cargo:
-		MaxWeight: 10
+		MaxWeight: 20
 	Tooltip:
 		Name: Cargo Plane
 
@@ -73,6 +73,16 @@ aircraft.badger.emp:
 	AttackBomber:
 	Armament:
 		Weapon: parabomb.emp
+	AmmoPool:
+		Ammo: 1
+	Tooltip:
+		Name: Badger
+
+aircraft.badger.cluster_mines:
+	Inherits: ^default.badger
+	AttackBomber:
+	Armament:
+		Weapon: parabomb.cluster_mines
 	AmmoPool:
 		Ammo: 1
 	Tooltip:
