@@ -164,7 +164,7 @@ infantry.red_guard:
 	Voiced:
 		VoiceSet: RedGuardVoice
 	ProducibleWithLevel:
-		Prerequisites: upgrade.red_training
+		Prerequisites: generals_power.red_training
 
 ^default.rocket_infantry:
 	Inherits: ^Soldier
@@ -245,7 +245,7 @@ infantry.pathfinder:
 		BuildPaletteOrder: 4
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_barracks, building.strategy_center, ~techlevel.medium
+		Prerequisites: ~building.usa_barracks, building.strategy_center, generals_power.pathfinder, ~techlevel.medium
 		Description: Elite sniper infantry.
 	Health:
 		HP: 120
@@ -501,7 +501,7 @@ infantry.hijacker:
 		BuildPaletteOrder: 7
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.gla_barracks, building.palace, ~techlevel.medium
+		Prerequisites: ~building.gla_barracks, building.palace, ~generals_power.hijacker, ~techlevel.medium
 		Description: Hijacks enemy vehicles.
 	Valued:
 		Cost: 400

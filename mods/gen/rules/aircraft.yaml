@@ -278,7 +278,7 @@ aircraft.stealth_fighter:
 		BuildPaletteOrder: 4
 		BuildDuration: 625
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_airfield, ~techlevel.high
+		Prerequisites: ~building.usa_airfield, ~generals_power.stealth_fighter, ~techlevel.high
 		Description: Stealth fighter plane.
 	Valued:
 		Cost: 1600

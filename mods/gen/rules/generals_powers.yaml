@@ -1,0 +1,410 @@
+^default.generals_power:
+	AlwaysVisible:
+	Buildable:
+		BuildDurationModifier: 100
+		Queue: General
+		BuildLimit: 1
+	RenderSprites:
+	ProvidesPrerequisite@powername:
+
+generals_power.spy_drone:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Spy Drone
+	Buildable:
+		BuildPaletteOrder: 1
+		BuildDuration: 500
+		Prerequisites: ~disabled
+		Description: Enables Spy Drone support power from Command Center.
+	Valued:
+		Cost: 600
+
+hack.cameo_filler.1:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 2
+		Prerequisites: ~building.usa_command_center, ~disabled
+
+hack.cameo_filler.2:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 3
+		Prerequisites: ~building.usa_command_center, ~disabled
+
+generals_power.tech_training:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Technical Training
+	Buildable:
+		BuildPaletteOrder: 4
+		BuildDuration: 1125
+		Prerequisites: ~building.gla_command_center, ~techlevel.medium
+		Description: Makes Technicals trained as veteran.
+	Valued:
+		Cost: 1200
+
+hack.cameo_filler.3:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 5
+		Prerequisites: ~building.gla_command_center, disabled
+
+hack.cameo_filler.4:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 6
+		Prerequisites: ~building.gla_command_center, disabled
+
+generals_power.red_training:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Red Guard Training
+	Buildable:
+		BuildPaletteOrder: 7
+		BuildDuration: 1000
+		Prerequisites: ~building.prc_command_center, ~techlevel.medium
+		Description: Makes Red Guards trained as veteran.
+	Valued:
+		Cost: 1000
+
+generals_power.arty_training:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Artillery Training
+	Buildable:
+		BuildPaletteOrder: 8
+		BuildDuration: 1500
+		Prerequisites: ~building.prc_command_center, ~techlevel.medium
+		Description: Makes Inferno and Nuke Cannons trained as veteran.
+	Valued:
+		Cost: 2000
+
+generals_power.nuke_cannon:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Nuke Cannon
+	Buildable:
+		BuildPaletteOrder: 9
+		BuildDuration: 2000
+		Prerequisites: ~building.prc_command_center, ~techlevel.high
+		Description: Enables Nuke Cannon.
+	Valued:
+		Cost: 1600
+
+generals_power.paladin_tank:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Paladin Tank
+	Buildable:
+		BuildPaletteOrder: 10
+		BuildDuration: 1200
+		Prerequisites: ~building.usa_command_center, ~techlevel.high
+		Description: Enables Paladin Tank.
+	Valued:
+		Cost: 1100
+
+generals_power.stealth_fighter:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Stealth Fighter
+	Buildable:
+		BuildPaletteOrder: 11
+		BuildDuration: 2500
+		Prerequisites: ~building.usa_command_center, ~techlevel.high
+		Description: Enables Stealth Fighter.
+	Valued:
+		Cost: 1600
+
+generals_power.pathfinder:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Pathfinder
+	Buildable:
+		BuildPaletteOrder: 12
+		BuildDuration: 1000
+		Prerequisites: ~building.usa_command_center, building.usa_barracks, ~techlevel.high
+		Description: Enables Pathfinder.
+	Valued:
+		Cost: 600
+
+generals_power.marauder_tank:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Marauder Tank
+	Buildable:
+		BuildPaletteOrder: 13
+		BuildDuration: 1000
+		Prerequisites: ~building.gla_command_center, ~techlevel.high
+		Description: Enables Marauder Tank.
+	Valued:
+		Cost: 800
+
+generals_power.scud_launcher:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: SCUD Launcher
+	Buildable:
+		BuildPaletteOrder: 14
+		BuildDuration: 1000
+		Prerequisites: ~building.gla_command_center, ~techlevel.medium
+		Description: Enables Marauder Tank.
+	Valued:
+		Cost: 1200
+
+generals_power.hijacker:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Hijacker
+	Buildable:
+		BuildPaletteOrder: 15
+		BuildDuration: 1000
+		Prerequisites: ~building.gla_command_center, building.gla_barracks, ~techlevel.medium
+		Description: Enables Hijacker.
+	Valued:
+		Cost: 400
+
+generals_power.emergency_repair1:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Emergency Repair - Level 1
+	Buildable:
+		BuildPaletteOrder: 16
+		BuildDuration: 250
+		Prerequisites: ~anycommand, ~techlevel.low
+		Description: Enables Emergency Repair support power from Command Center.
+	Valued:
+		Cost: 750
+
+generals_power.emergency_repair2:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Emergency Repair - Level 2
+	Buildable:
+		BuildPaletteOrder: 17
+		BuildDuration: 375
+		Prerequisites: ~anycommand, generals_power.emergency_repair1, ~techlevel.low
+		Description: Upgrades Emergency Repair support power to Level 2.
+	Valued:
+		Cost: 1250
+
+generals_power.emergency_repair3:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Emergency Repair - Level 3
+	Buildable:
+		BuildPaletteOrder: 18
+		BuildDuration: 500
+		Prerequisites: ~anycommand, generals_power.emergency_repair2, ~techlevel.medium
+		Description: Upgrades Emergency Repair support power to Level 3.
+	Valued:
+		Cost: 1750
+
+generals_power.paradrop1:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Paradrop - Level 1
+	Buildable:
+		BuildPaletteOrder: 19
+		BuildDuration: 625
+		Prerequisites: ~building.usa_command_center, building.usa_barracks, ~techlevel.medium
+		Description: Enables Paradrop support power from Command Center.
+	Valued:
+		Cost: 1250
+
+generals_power.paradrop2:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Paradrop - Level 2
+	Buildable:
+		BuildPaletteOrder: 20
+		BuildDuration: 875
+		Prerequisites: ~building.usa_command_center, building.usa_barracks, generals_power.paradrop1, ~techlevel.medium
+		Description: Upgrades Paradrop support power to Level 2.
+	Valued:
+		Cost: 1250
+
+generals_power.paradrop3:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Paradrop - Level 3
+	Buildable:
+		BuildPaletteOrder: 21
+		BuildDuration: 1125
+		Prerequisites: ~building.usa_command_center, building.usa_barracks, generals_power.paradrop2, ~techlevel.high
+		Description: Upgrades Paradrop support power to Level 3.
+	Valued:
+		Cost: 2250
+
+generals_power.ambush1:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Rebel Ambush - Level 1
+	Buildable:
+		BuildPaletteOrder: 22
+		BuildDuration: 625
+		Prerequisites: ~building.gla_command_center, building.gla_barracks, ~techlevel.medium
+		Description: Enables Rebel Ambush support power from Command Center.
+	Valued:
+		Cost: 1250
+
+generals_power.ambush2:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Rebel Ambush - Level 2
+	Buildable:
+		BuildPaletteOrder: 23
+		BuildDuration: 875
+		Prerequisites: ~building.gla_command_center, building.gla_barracks, generals_power.ambush1, ~techlevel.medium
+		Description: Upgrades Rebel Ambush support power to Level 2.
+	Valued:
+		Cost: 1250
+
+generals_power.ambush3:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Rebel Ambush - Level 3
+	Buildable:
+		BuildPaletteOrder: 24
+		BuildDuration: 1125
+		Prerequisites: ~building.gla_command_center, building.gla_barracks, generals_power.ambush2, ~techlevel.high
+		Description: Upgrades Rebel Ambush support power to Level 3.
+	Valued:
+		Cost: 2250
+
+generals_power.a101:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: A-10 Strike - Level 1
+	Buildable:
+		BuildPaletteOrder: 25
+		BuildDuration: 625
+		Prerequisites: ~building.usa_command_center, building.usa_airfield, ~techlevel.medium
+		Description: Enables A-10 Strike support power from Command Center.
+	Valued:
+		Cost: 1600
+
+generals_power.a102:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: A-10 Strike - Level 2
+	Buildable:
+		BuildPaletteOrder: 26
+		BuildDuration: 875
+		Prerequisites: ~building.usa_command_center, building.usa_airfield, generals_power.a101, ~techlevel.medium
+		Description: Upgrades A-10 Strike support power to Level 2.
+	Valued:
+		Cost: 1600
+
+generals_power.a103:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: A-10 Strike - Level 3
+	Buildable:
+		BuildPaletteOrder: 27
+		BuildDuration: 1125
+		Prerequisites: ~building.usa_command_center, building.usa_airfield, generals_power.a102, ~techlevel.high
+		Description: Upgrades A-10 Strike support power to Level 3.
+	Valued:
+		Cost: 1600
+
+generals_power.arty_barrage1:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Artillery Barrage - Level 1
+	Buildable:
+		BuildPaletteOrder: 28
+		BuildDuration: 625
+		Prerequisites: ~building.prc_command_center, building.prc_war_factory, ~techlevel.medium
+		Description: Enables Artillery Barrage support power from Command Center.
+	Valued:
+		Cost: 1600
+
+generals_power.arty_barrage2:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Artillery Barrage - Level 2
+	Buildable:
+		BuildPaletteOrder: 29
+		BuildDuration: 875
+		Prerequisites: ~building.prc_command_center, building.prc_war_factory, generals_power.arty_barrage1, ~techlevel.medium
+		Description: Upgrades Artillery Barrage support power to Level 2.
+	Valued:
+		Cost: 1600
+
+generals_power.arty_barrage3:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Artillery Barrage - Level 3
+	Buildable:
+		BuildPaletteOrder: 30
+		BuildDuration: 1125
+		Prerequisites: ~building.prc_command_center, building.prc_war_factory, generals_power.arty_barrage2, ~techlevel.high
+		Description: Upgrades Artillery Barrage support power to Level 3.
+	Valued:
+		Cost: 1600
+
+generals_power.cluster_mines:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Cluster Mines
+	Buildable:
+		BuildPaletteOrder: 31
+		BuildDuration: 1125
+		Prerequisites: ~building.prc_command_center, building.prc_airfield, ~techlevel.high
+		Description: Enables Cluster Mines support power from Command Center.
+	Valued:
+		Cost: 1750
+
+hack.cameo_filler.6:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 32
+		Prerequisites: ~building.prc_command_center, disabled
+
+hack.cameo_filler.7:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 33
+		Prerequisites: ~building.prc_command_center, disabled
+
+generals_power.fuel_air_bomb:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Fuel Air Bomb
+	Buildable:
+		BuildPaletteOrder: 34
+		BuildDuration: 3000
+		Prerequisites: ~building.usa_command_center, building.particle_cannon, ~techlevel.unrestricted
+		Description: Enables Fuel Air Bomb support power from Command Center.
+	Valued:
+		Cost: 4000
+
+generals_power.anthrax_bomb:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Anthrax Bomb
+	Buildable:
+		BuildPaletteOrder: 35
+		BuildDuration: 3000
+		Prerequisites: ~building.gla_command_center, building.scud_storm, ~techlevel.unrestricted
+		Description: Enables Anthrax Bomb support power from Command Center.
+	Valued:
+		Cost: 4000
+
+generals_power.emp:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: E. M. Pulse
+	Buildable:
+		BuildPaletteOrder: 36
+		BuildDuration: 3000
+		Prerequisites: ~building.prc_command_center, building.missile_silo, ~techlevel.unrestricted
+		Description: Enables E. M. Pulse support power from Command Center.
+	Valued:
+		Cost: 4000

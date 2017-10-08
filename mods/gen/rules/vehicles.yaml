@@ -171,7 +171,7 @@ vehicle.technical:
 		LoadingCondition: notmobile
 		PauseOnCondition: disabled || driver_killed || emp
 	ProducibleWithLevel:
-		Prerequisites: upgrade.tech_training
+		Prerequisites: generals_power.tech_training
 	Voiced:
 		VoiceSet: TechnicalVoice
 
@@ -786,7 +786,7 @@ vehicle.scud_launcher:
 		BuildPaletteOrder: 11
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: building.palace, ~building.arms_dealer, ~techlevel.medium
+		Prerequisites: building.palace, ~building.arms_dealer, ~generals_power.scud_launcher, ~techlevel.medium
 		Description: Long-range rocket artillery.
 	Valued:
 		Cost: 1200
@@ -890,7 +890,7 @@ vehicle.inferno_cannon:
 		EmptyWeapon: UnitExplodeSmall
 		LoadedChance: 75
 	ProducibleWithLevel:
-		Prerequisites: upgrade.arty_training
+		Prerequisites: generals_power.arty_training
 	Voiced:
 		VoiceSet: InfernoCannonVoice
 
@@ -905,7 +905,7 @@ vehicle.paladin_tank:
 		BuildPaletteOrder: 7
 		BuildDuration: 300
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~techlevel.high
+		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~generals_power.paladin_tank, ~techlevel.high
 		Description: Heavy tank.\n\nCan deflect enemy missiles with laser.
 	Valued:
 		Cost: 1100
@@ -972,7 +972,7 @@ vehicle.marauder_tank:
 		BuildPaletteOrder: 10
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.arms_dealer, building.palace, ~techlevel.high
+		Prerequisites: ~building.arms_dealer, building.palace, ~generals_power.marauder_tank, ~techlevel.high
 		Description: Medium tank.
 	Valued:
 		Cost: 800
@@ -1290,7 +1290,7 @@ vehicle.nuke_cannon:
 		BuildPaletteOrder: 10
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~techlevel.high
+		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~generals_power.nuke_cannon, ~techlevel.high
 		Description: Heavy artillery unit armed with nuclear warheads.
 	Valued:
 		Cost: 1600
@@ -1325,7 +1325,7 @@ vehicle.nuke_cannon:
 	SelectionDecorations:
 		VisualBounds: 44,38,0,-4
 	ProducibleWithLevel:
-		Prerequisites: upgrade.arty_training
+		Prerequisites: generals_power.arty_training
 	Voiced:
 		VoiceSet: NukeCannonVoice
 
