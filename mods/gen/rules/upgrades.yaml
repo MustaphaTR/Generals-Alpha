@@ -34,6 +34,13 @@
 hack.cameo_filler.8:
 	Inherits: ^default.cameo_filler
 	Buildable:
+		Queue: queue.usa_infantry
+		BuildPaletteOrder: 5
+		Prerequisites: disabled, ~!generals_power.pathfinder
+
+hack.cameo_filler.9:
+	Inherits: ^default.cameo_filler
+	Buildable:
 		Queue: queue.gla_infantry
 		BuildPaletteOrder: 6
 		Prerequisites: disabled, ~generals_power.hijacker
@@ -71,14 +78,14 @@ upgrade.control_rods:
 	KillsSelf:
 		RemoveInstead: true
 
-hack.cameo_filler.9:
+hack.cameo_filler.10:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.usa_aircraft
 		BuildPaletteOrder: 5
 		Prerequisites: disabled, ~!generals_power.stealth_fighter
 
-hack.cameo_filler.10:
+hack.cameo_filler.11:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.prc_aircraft
