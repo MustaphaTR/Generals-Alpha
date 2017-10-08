@@ -35,11 +35,20 @@
 aircraft.badger:
 	Inherits: ^default.badger
 	ParaDrop:
+		DropRange: 4c0
+	Cargo:
+		MaxWeight: 10
+	Tooltip:
+		Name: Cargo Plane
+
+aircraft.badger.paradrop:
+	Inherits: ^default.badger
+	ParaDrop:
 		DropRange: 5c0
 	Cargo:
 		MaxWeight: 20
 	Tooltip:
-		Name: Cargo Plane
+		Name: B-52
 
 aircraft.badger.fuel_air_bomb:
 	Inherits: ^default.badger
