@@ -275,12 +275,48 @@ generals_power.ambush3:
 	Valued:
 		Cost: 2250
 
+generals_power.cash_hack1:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Cash Hack - Level 1
+	Buildable:
+		BuildPaletteOrder: 25
+		BuildDuration: 1025
+		Prerequisites: ~building.prc_command_center, building.prc_barracks, ~techlevel.medium
+		Description: Enables Cash Hack support power from Command Center.
+	Valued:
+		Cost: 500
+
+generals_power.cash_hack2:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Cash Hack - Level 2
+	Buildable:
+		BuildPaletteOrder: 26
+		BuildDuration: 1275
+		Prerequisites: ~building.prc_command_center, building.prc_barracks, generals_power.cash_hack1, ~techlevel.medium
+		Description: Upgrades Cash Hack support power to Level 2.
+	Valued:
+		Cost: 500
+
+generals_power.cash_hack3:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Cash Hack - Level 3
+	Buildable:
+		BuildPaletteOrder: 27
+		BuildDuration: 1625
+		Prerequisites: ~building.prc_command_center, building.prc_barracks, generals_power.cash_hack2, ~techlevel.high
+		Description: Upgrades Cash Hack support power to Level 3.
+	Valued:
+		Cost: 1000
+
 generals_power.a101:
 	Inherits: ^default.generals_power
 	Tooltip:
 		Name: A-10 Strike - Level 1
 	Buildable:
-		BuildPaletteOrder: 25
+		BuildPaletteOrder: 28
 		BuildDuration: 625
 		Prerequisites: ~building.usa_command_center, building.usa_airfield, ~techlevel.medium
 		Description: Enables A-10 Strike support power from Command Center.
@@ -292,7 +328,7 @@ generals_power.a102:
 	Tooltip:
 		Name: A-10 Strike - Level 2
 	Buildable:
-		BuildPaletteOrder: 26
+		BuildPaletteOrder: 29
 		BuildDuration: 875
 		Prerequisites: ~building.usa_command_center, building.usa_airfield, generals_power.a101, ~techlevel.medium
 		Description: Upgrades A-10 Strike support power to Level 2.
@@ -304,7 +340,7 @@ generals_power.a103:
 	Tooltip:
 		Name: A-10 Strike - Level 3
 	Buildable:
-		BuildPaletteOrder: 27
+		BuildPaletteOrder: 30
 		BuildDuration: 1125
 		Prerequisites: ~building.usa_command_center, building.usa_airfield, generals_power.a102, ~techlevel.high
 		Description: Upgrades A-10 Strike support power to Level 3.
@@ -316,7 +352,7 @@ generals_power.arty_barrage1:
 	Tooltip:
 		Name: Artillery Barrage - Level 1
 	Buildable:
-		BuildPaletteOrder: 28
+		BuildPaletteOrder: 31
 		BuildDuration: 625
 		Prerequisites: ~building.prc_command_center, building.prc_war_factory, ~techlevel.medium
 		Description: Enables Artillery Barrage support power from Command Center.
@@ -328,7 +364,7 @@ generals_power.arty_barrage2:
 	Tooltip:
 		Name: Artillery Barrage - Level 2
 	Buildable:
-		BuildPaletteOrder: 29
+		BuildPaletteOrder: 32
 		BuildDuration: 875
 		Prerequisites: ~building.prc_command_center, building.prc_war_factory, generals_power.arty_barrage1, ~techlevel.medium
 		Description: Upgrades Artillery Barrage support power to Level 2.
@@ -340,7 +376,7 @@ generals_power.arty_barrage3:
 	Tooltip:
 		Name: Artillery Barrage - Level 3
 	Buildable:
-		BuildPaletteOrder: 30
+		BuildPaletteOrder: 33
 		BuildDuration: 1125
 		Prerequisites: ~building.prc_command_center, building.prc_war_factory, generals_power.arty_barrage2, ~techlevel.high
 		Description: Upgrades Artillery Barrage support power to Level 3.
@@ -352,7 +388,7 @@ generals_power.cluster_mines:
 	Tooltip:
 		Name: Cluster Mines
 	Buildable:
-		BuildPaletteOrder: 31
+		BuildPaletteOrder: 34
 		BuildDuration: 1125
 		Prerequisites: ~building.prc_command_center, building.prc_airfield, ~techlevel.high
 		Description: Enables Cluster Mines support power from Command Center.
@@ -363,14 +399,14 @@ hack.cameo_filler.6:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
-		BuildPaletteOrder: 32
+		BuildPaletteOrder: 35
 		Prerequisites: ~building.prc_command_center, disabled
 
 hack.cameo_filler.7:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
-		BuildPaletteOrder: 33
+		BuildPaletteOrder: 36
 		Prerequisites: ~building.prc_command_center, disabled
 
 generals_power.fuel_air_bomb:
@@ -378,7 +414,7 @@ generals_power.fuel_air_bomb:
 	Tooltip:
 		Name: Fuel Air Bomb
 	Buildable:
-		BuildPaletteOrder: 34
+		BuildPaletteOrder: 37
 		BuildDuration: 3000
 		Prerequisites: ~building.usa_command_center, building.particle_cannon, ~techlevel.unrestricted
 		Description: Enables Fuel Air Bomb support power from Command Center.
@@ -390,7 +426,7 @@ generals_power.anthrax_bomb:
 	Tooltip:
 		Name: Anthrax Bomb
 	Buildable:
-		BuildPaletteOrder: 35
+		BuildPaletteOrder: 38
 		BuildDuration: 3000
 		Prerequisites: ~building.gla_command_center, building.scud_storm, ~techlevel.unrestricted
 		Description: Enables Anthrax Bomb support power from Command Center.
@@ -402,7 +438,7 @@ generals_power.emp:
 	Tooltip:
 		Name: E. M. Pulse
 	Buildable:
-		BuildPaletteOrder: 36
+		BuildPaletteOrder: 39
 		BuildDuration: 3000
 		Prerequisites: ~building.prc_command_center, building.missile_silo, ~techlevel.unrestricted
 		Description: Enables E. M. Pulse support power from Command Center.
