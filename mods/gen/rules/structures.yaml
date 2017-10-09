@@ -329,7 +329,7 @@ building.prc_command_center:
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
 	SpawnActorPower@ARTY_BARRAGE1:
-		PauseOnCondition: emp
+		PauseOnCondition: disabled || emp
 		Actor: hack.artillery_barrager.1
 		Prerequisites: ~generals_power.arty_barrage1, ~!generals_power.arty_barrage2, ~!generals_power.arty_barrage3
 		LifeTime: 120
@@ -340,7 +340,7 @@ building.prc_command_center:
 		StartFullyCharged: false
 		OrderName: ArtilleryBarrage1PowerInfoOrder
 	SpawnActorPower@ARTY_BARRAGE2:
-		PauseOnCondition: emp
+		PauseOnCondition: disabled || emp
 		Actor: hack.artillery_barrager.2
 		Prerequisites: ~generals_power.arty_barrage2, ~!generals_power.arty_barrage3
 		LifeTime: 120
@@ -351,7 +351,7 @@ building.prc_command_center:
 		StartFullyCharged: false
 		OrderName: ArtilleryBarrage2PowerInfoOrder
 	SpawnActorPower@ARTY_BARRAGE3:
-		PauseOnCondition: emp
+		PauseOnCondition: disabled || emp
 		Actor: hack.artillery_barrager.3
 		Prerequisites: ~generals_power.arty_barrage3
 		LifeTime: 120
