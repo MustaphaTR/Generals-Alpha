@@ -50,7 +50,7 @@ upgrade.radar:
 	Tooltip:
 		Name: Radar
 	Buildable:
-		Queue: queue.prc_building
+		Queue: queue.prc_command_center
 		BuildPaletteOrder: 3
 		BuildDuration: 500
 		Prerequisites: ~building.prc_command_center, ~techlevel.infonly
@@ -88,7 +88,7 @@ hack.cameo_filler.10:
 hack.cameo_filler.11:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.prc_aircraft
+		Queue: queue.prc_collector
 		BuildPaletteOrder: 2
 		Prerequisites: disabled
 

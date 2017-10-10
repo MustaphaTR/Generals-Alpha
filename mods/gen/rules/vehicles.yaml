@@ -130,6 +130,7 @@ vehicle.technical:
 	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
 	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@BOUNTY: ^TakesBounty
 	Buildable:
 		Queue: queue.gla_vehicle
 		BuildPaletteOrder: 1
@@ -180,6 +181,7 @@ vehicle.radar_van:
 	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
 	Inherits@REVEAL: ^Reveal200
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@BOUNTY: ^TakesBounty
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -1341,10 +1343,11 @@ vehicle.nuke_cannon:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@CRUSH: ^CrushesInfantry
 	Buildable:
-		BuildDuration: 750
+		BuildDuration: 125
 		BuildDurationModifier: 100
+		Description: Allows construction around themselves.\n  Unarmed
 	Valued:
-		Cost: 2000
+		Cost: 1000
 	Selectable:
 		Priority: 4
 	SelectionDecorations:
@@ -1360,16 +1363,13 @@ vehicle.nuke_cannon:
 		CrushClasses: vehicle
 	Passenger:
 		Weight: 5
-	Transforms:
-		IntoActor: building.usa_command_center
-		Offset: -1,-1
-		Facing: 96
-		TransformSounds: placbldg.aud, build5.aud
-		NoTransformNotification: BuildingCannotPlaceAudio
-		Voice: Deploy
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	BaseBuilding:
+	BaseProvider:
+		Range: 8c0
+	GivesBuildableArea:
+	ProvidesPrerequisite@vehiclename:
 	WithTextDecoration@SIDE:
 		Text: 
 		ZOffset: 2048
@@ -1380,12 +1380,22 @@ vehicle.usa_mcc:
 	Inherits: ^default.mcc
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Buildable:
-		Queue: queue.usa_vehicle
-		BuildPaletteOrder: 6
-		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~techlevel.medium
-		Description: Deploys into another USA Command Center.\n  Unarmed
+		Queue: queue.usa_command_center
+		BuildPaletteOrder: 1
+		Prerequisites: building.usa_command_center, ~techlevel.infonly
 	Tooltip:
-		Name: USA Mobile Command Center
+		Name: USA Construction Vehicle
+	Production:
+		Produces: queue.usa_building
+	ProductionBar@USA_BUILDING:
+		ProductionType: queue.usa_building
+	ProductionQueue@USA_BUILDING:
+		Type: queue.usa_building
+		Group: Building
+		LowPowerSlowdown: 3
+		RequireOwner: false
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
 	Voiced:
 		VoiceSet: USAMCCVoice
 	WithTextDecoration@SIDE:
@@ -1394,16 +1404,24 @@ vehicle.usa_mcc:
 
 vehicle.gla_mcc:
 	Inherits: ^default.mcc
-	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
+	Inherits@PILOT: ^EjectsPilotOnGround
 	Buildable:
-		Queue: queue.gla_vehicle
-		BuildPaletteOrder: 9
-		Prerequisites: building.palace, ~building.arms_dealer, ~techlevel.medium
-		Description: Deploys into another GLA Command Center.\n  Unarmed
+		Queue: queue.gla_command_center
+		BuildPaletteOrder: 1
+		Prerequisites: building.gla_command_center, ~techlevel.infonly
 	Tooltip:
-		Name: GLA Mobile Command Center
-	Transforms:
-		IntoActor: building.gla_command_center
+		Name: GLA Construction Vehicle
+	Production:
+		Produces: queue.gla_building
+	ProductionBar@GLA_BUILDING:
+		ProductionType: queue.gla_building
+	ProductionQueue@GLA_BUILDING:
+		Type: queue.gla_building
+		Group: Building
+		LowPowerSlowdown: 3
+		RequireOwner: false
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
 	Voiced:
 		VoiceSet: GLAMCCVoice
 	WithTextDecoration@SIDE:
@@ -1414,14 +1432,22 @@ vehicle.prc_mcc:
 	Inherits: ^default.mcc
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		Queue: queue.prc_vehicle
-		BuildPaletteOrder: 9
-		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~techlevel.medium
-		Description: Deploys into another PRC Command Center.\n  Unarmed
+		Queue: queue.prc_command_center
+		BuildPaletteOrder: 1
+		Prerequisites: building.prc_command_center, ~techlevel.infonly
 	Tooltip:
-		Name: PRC Mobile Command Center
-	Transforms:
-		IntoActor: building.prc_command_center
+		Name: PRC Construction Vehicle
+	Production:
+		Produces: queue.prc_building
+	ProductionBar@PRC_BUILDING:
+		ProductionType: queue.prc_building
+	ProductionQueue@PRC_BUILDING:
+		Type: queue.prc_building
+		Group: Building
+		LowPowerSlowdown: 3
+		RequireOwner: false
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
 	Voiced:
 		VoiceSet: PRCMCCVoice
 	WithTextDecoration@SIDE:

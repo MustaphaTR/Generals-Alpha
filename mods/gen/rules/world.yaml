@@ -91,22 +91,31 @@ World:
 		ClassName: Comm. Center Only
 		Factions: usa
 		BaseActor: building.usa_command_center
+		SupportActors: vehicle.usa_mcc
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
 	MPStartUnits@commonlygla:
 		Class: none
 		ClassName: Comm. Center Only
 		Factions: gla
 		BaseActor: building.gla_command_center
+		SupportActors: vehicle.gla_mcc
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
 	MPStartUnits@commonlyprc:
 		Class: none
 		ClassName: Comm. Center Only
 		Factions: prc
 		BaseActor: building.prc_command_center
+		SupportActors: vehicle.prc_mcc
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
 	MPStartUnits@lightusa:
 		Class: light
 		ClassName: Light Support
 		Factions: usa
 		BaseActor: building.usa_command_center
-		SupportActors: infantry.ranger, infantry.ranger, infantry.missile_defender, vehicle.humvee
+		SupportActors: vehicle.usa_mcc, infantry.ranger, infantry.ranger, infantry.missile_defender, vehicle.humvee
 		InnerSupportRadius: 3
 		OuterSupportRadius: 6
 	MPStartUnits@lightgla:
@@ -114,7 +123,7 @@ World:
 		ClassName: Light Support
 		Factions: gla
 		BaseActor: building.gla_command_center
-		SupportActors: infantry.rebel, infantry.rebel, infantry.rpg_trooper, vehicle.technical
+		SupportActors: vehicle.gla_mcc, infantry.rebel, infantry.rebel, infantry.rpg_trooper, vehicle.technical
 		InnerSupportRadius: 3
 		OuterSupportRadius: 6
 	MPStartUnits@lightprc:
@@ -122,7 +131,7 @@ World:
 		ClassName: Light Support
 		Factions: prc
 		BaseActor: building.prc_command_center
-		SupportActors: infantry.red_guard, infantry.red_guard, infantry.tank_hunter, vehicle.gatling_tank
+		SupportActors: vehicle.prc_mcc, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, vehicle.gatling_tank
 		InnerSupportRadius: 3
 		OuterSupportRadius: 6
 	MPStartUnits@mediumusa:
@@ -130,7 +139,7 @@ World:
 		ClassName: Medium Support
 		Factions: usa
 		BaseActor: building.usa_command_center
-		SupportActors: infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, vehicle.humvee, vehicle.crusader_tank
+		SupportActors: vehicle.usa_mcc, infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, vehicle.humvee, vehicle.crusader_tank
 		InnerSupportRadius: 3
 		OuterSupportRadius: 6
 	MPStartUnits@mediumgla:
@@ -138,7 +147,7 @@ World:
 		ClassName: Medium Support
 		Factions: gla
 		BaseActor: building.gla_command_center
-		SupportActors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rpg_trooper, vehicle.technical, vehicle.scorpion_tank
+		SupportActors: vehicle.gla_mcc, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rpg_trooper, vehicle.technical, vehicle.scorpion_tank
 		InnerSupportRadius: 3
 		OuterSupportRadius: 6
 	MPStartUnits@mediumprc:
@@ -146,7 +155,7 @@ World:
 		ClassName: Medium Support
 		Factions: prc
 		BaseActor: building.prc_command_center
-		SupportActors: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, vehicle.gatling_tank, vehicle.battlemaster_tank
+		SupportActors: vehicle.prc_mcc, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, vehicle.gatling_tank, vehicle.battlemaster_tank
 		InnerSupportRadius: 3
 		OuterSupportRadius: 6
 	MPStartUnits@heavyusa:
@@ -154,7 +163,7 @@ World:
 		ClassName: Heavy Support
 		Factions: usa
 		BaseActor: building.usa_command_center
-		SupportActors: infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, infantry.missile_defender, vehicle.humvee, vehicle.crusader_tank, vehicle.ambulance
+		SupportActors: vehicle.usa_mcc, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, infantry.missile_defender, vehicle.humvee, vehicle.crusader_tank, vehicle.ambulance
 		InnerSupportRadius: 3
 		OuterSupportRadius: 6
 	MPStartUnits@heavygla:
@@ -162,7 +171,7 @@ World:
 		ClassName: Heavy Support
 		Factions: gla
 		BaseActor: building.gla_command_center
-		SupportActors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rpg_trooper, infantry.rpg_trooper, vehicle.technical, vehicle.scorpion_tank, vehicle.toxin_tractor
+		SupportActors: vehicle.gla_mcc, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rpg_trooper, infantry.rpg_trooper, vehicle.technical, vehicle.scorpion_tank, vehicle.toxin_tractor
 		InnerSupportRadius: 3
 		OuterSupportRadius: 6
 	MPStartUnits@heavyprc:
@@ -170,7 +179,31 @@ World:
 		ClassName: Heavy Support
 		Factions: prc
 		BaseActor: building.prc_command_center
-		SupportActors: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, infantry.tank_hunter, vehicle.gatling_tank, vehicle.battlemaster_tank, vehicle.dragon_tank
+		SupportActors: vehicle.prc_mcc, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, infantry.tank_hunter, vehicle.gatling_tank, vehicle.battlemaster_tank, vehicle.dragon_tank
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@allusa:
+		Class: all
+		ClassName: All Tech
+		Factions: usa
+		BaseActor: building.usa_command_center
+		SupportActors: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@allgla:
+		Class: all
+		ClassName: All Tech
+		Factions: gla
+		BaseActor: building.gla_command_center
+		SupportActors: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@allprc:
+		Class: all
+		ClassName: All Tech
+		Factions: prc
+		BaseActor: building.prc_command_center
+		SupportActors: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		InnerSupportRadius: 3
 		OuterSupportRadius: 6
 	MPStartLocations:

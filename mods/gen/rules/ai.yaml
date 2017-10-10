@@ -5,7 +5,7 @@ Player:
 		MinimumExcessPower: 3
 		BuildingQueues: queue.usa_building, queue.gla_building, queue.prc_building, queue.cold_fusion_reactor, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, General
 		DefenseQueues: queue.usa_building, queue.gla_building, queue.prc_building
-		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.prc_infantry, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.prc_aircraft, queue.vessel
+		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.prc_infantry, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel
 		BuildingCommonNames:
 			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center
 			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -18,12 +18,14 @@ Player:
 			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.bunker, building.gatling_cannon, building.land_mine
 			StaticAntiAir: building.patriot, building.stinger_site, building.gatling_cannon
 		UnitsCommonNames:
-			Mcv: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
-			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor
+			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.red_guard
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.communications_center, tech.forward_command, tech.shipyard, tech.service_depot
 		BuildingLimits:
+			building.usa_command_center: 1
+			building.gla_command_center: 1
+			building.prc_command_center: 1
 			building.usa_supply_center: 4
 			building.gla_supply_stash: 4
 			building.prc_supply_center: 4
@@ -43,6 +45,9 @@ Player:
 			building.usa_airfield: 1
 			building.prc_airfield: 1
 		BuildingFractions:
+			building.usa_command_center: 100%
+			building.gla_command_center: 100%
+			building.prc_command_center: 100%
 			building.usa_supply_center: 30%
 			building.gla_supply_stash: 30%
 			building.prc_supply_center: 30%
@@ -101,6 +106,9 @@ Player:
 			generals_power.a101: 1%
 			generals_power.a102: 1%
 			generals_power.a103: 1%
+			generals_power.cash_bounty1: 1%
+			generals_power.cash_bounty2: 1%
+			generals_power.cash_bounty3: 1%
 			generals_power.arty_barrage1: 1%
 			generals_power.arty_barrage2: 1%
 			generals_power.arty_barrage3: 1%
@@ -147,6 +155,9 @@ Player:
 			vehicle.paladin_tank: 8%
 			vehicle.marauder_tank: 8%
 			vehicle.radar_van: 1%
+			vehicle.usa_mcc: 2%
+			vehicle.gla_mcc: 2%
+			vehicle.prc_mcc: 2%
 			aircraft.chinook: 10%
 			aircraft.mig: 2%
 			aircraft.raptor: 2%
@@ -175,16 +186,19 @@ Player:
 			aircraft.chinook: 8
 			vehicle.supply_truck: 8
 			vehicle.radar_van: 2
+			vehicle.usa_mcc: 2
+			vehicle.gla_mcc: 2
+			vehicle.prc_mcc: 2
 		SquadSize: 20
-#		SupportPowerDecision@spydrone:
-#			OrderName: SpyDronePowerInfoOrder
-#			MinimumAttractiveness: 1
-#			Consideration@1:
-#				Against: Enemy
-#				Types: Structure
-#				Attractiveness: 1
-#				TargetMetric: None
-#				CheckRadius: 5c0
+		SupportPowerDecision@spydrone:
+			OrderName: SpyDronePowerInfoOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
 		SupportPowerDecision@radar_van_scan:
 			OrderName: RadarScanPowerInfoOrder
 			MinimumAttractiveness: 1
@@ -522,12 +536,14 @@ Player:
 			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.bunker, building.gatling_cannon, building.land_mine
 			StaticAntiAir: building.patriot, building.stinger_site, building.gatling_cannon
 		UnitsCommonNames:
-			Mcv: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
-			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor
+			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.red_guard
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.communications_center, tech.forward_command, tech.shipyard, tech.service_depot
 		BuildingLimits:
+			building.usa_command_center: 1
+			building.gla_command_center: 1
+			building.prc_command_center: 1
 			building.usa_supply_center: 4
 			building.gla_supply_stash: 4
 			building.prc_supply_center: 4
@@ -550,6 +566,9 @@ Player:
 			hack.scud_spawner: 1
 			building.missile_silo: 1
 		BuildingFractions:
+			building.usa_command_center: 150%
+			building.gla_command_center: 150%
+			building.prc_command_center: 150%
 			building.usa_supply_center: 30%
 			building.gla_supply_stash: 30%
 			building.prc_supply_center: 30%
@@ -611,6 +630,9 @@ Player:
 			generals_power.a101: 1%
 			generals_power.a102: 1%
 			generals_power.a103: 1%
+			generals_power.cash_bounty1: 1%
+			generals_power.cash_bounty2: 1%
+			generals_power.cash_bounty3: 1%
 			generals_power.arty_barrage1: 1%
 			generals_power.arty_barrage2: 1%
 			generals_power.arty_barrage3: 1%
@@ -657,6 +679,9 @@ Player:
 			vehicle.paladin_tank: 12%
 			vehicle.marauder_tank: 12%
 			vehicle.radar_van: 1%
+			vehicle.usa_mcc: 2%
+			vehicle.gla_mcc: 2%
+			vehicle.prc_mcc: 2%
 			aircraft.chinook: 10%
 			aircraft.mig: 2%
 			aircraft.raptor: 2%
@@ -685,16 +710,19 @@ Player:
 			aircraft.chinook: 8
 			vehicle.supply_truck: 8
 			vehicle.radar_van: 2
+			vehicle.usa_mcc: 2
+			vehicle.gla_mcc: 2
+			vehicle.prc_mcc: 2
 		SquadSize: 40
-#		SupportPowerDecision@spydrone:
-#			OrderName: SpyDronePowerInfoOrder
-#			MinimumAttractiveness: 1
-#			Consideration@1:
-#				Against: Enemy
-#				Types: Structure
-#				Attractiveness: 1
-#				TargetMetric: None
-#				CheckRadius: 5c0
+		SupportPowerDecision@spydrone:
+			OrderName: SpyDronePowerInfoOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
 		SupportPowerDecision@radar_van_scan:
 			OrderName: RadarScanPowerInfoOrder
 			MinimumAttractiveness: 1
@@ -1032,12 +1060,14 @@ Player:
 			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.bunker, building.gatling_cannon, building.land_mine
 			StaticAntiAir: building.patriot, building.stinger_site, building.gatling_cannon
 		UnitsCommonNames:
-			Mcv: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
-			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor
+			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.red_guard
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.communications_center, tech.forward_command, tech.shipyard, tech.service_depot
 		BuildingLimits:
+			building.usa_command_center: 1
+			building.gla_command_center: 1
+			building.prc_command_center: 1
 			building.usa_supply_center: 4
 			building.gla_supply_stash: 4
 			building.prc_supply_center: 4
@@ -1060,6 +1090,9 @@ Player:
 			hack.scud_spawner: 1
 			building.missile_silo: 1
 		BuildingFractions:
+			building.usa_command_center: 200%
+			building.gla_command_center: 200%
+			building.prc_command_center: 200%
 			building.usa_supply_center: 30%
 			building.gla_supply_stash: 30%
 			building.prc_supply_center: 30%
@@ -1121,6 +1154,9 @@ Player:
 			generals_power.a101: 1%
 			generals_power.a102: 1%
 			generals_power.a103: 1%
+			generals_power.cash_bounty1: 1%
+			generals_power.cash_bounty2: 1%
+			generals_power.cash_bounty3: 1%
 			generals_power.arty_barrage1: 1%
 			generals_power.arty_barrage2: 1%
 			generals_power.arty_barrage3: 1%
@@ -1167,6 +1203,9 @@ Player:
 			vehicle.paladin_tank: 16%
 			vehicle.marauder_tank: 16%
 			vehicle.radar_van: 1%
+			vehicle.usa_mcc: 2%
+			vehicle.gla_mcc: 2%
+			vehicle.prc_mcc: 2%
 			aircraft.chinook: 10%
 			aircraft.mig: 2%
 			aircraft.raptor: 1%
@@ -1195,16 +1234,19 @@ Player:
 			aircraft.chinook: 8
 			vehicle.supply_truck: 8
 			vehicle.radar_van: 2
+			vehicle.usa_mcc: 2
+			vehicle.gla_mcc: 2
+			vehicle.prc_mcc: 2
 		SquadSize: 10
-#		SupportPowerDecision@spydrone:
-#			OrderName: SpyDronePowerInfoOrder
-#			MinimumAttractiveness: 1
-#			Consideration@1:
-#				Against: Enemy
-#				Types: Structure
-#				Attractiveness: 1
-#				TargetMetric: None
-#				CheckRadius: 5c0
+		SupportPowerDecision@spydrone:
+			OrderName: SpyDronePowerInfoOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
 		SupportPowerDecision@radar_van_scan:
 			OrderName: RadarScanPowerInfoOrder
 			MinimumAttractiveness: 1
