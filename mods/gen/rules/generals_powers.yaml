@@ -15,7 +15,7 @@ generals_power.spy_drone:
 	Buildable:
 		BuildPaletteOrder: 1
 		BuildDuration: 500
-		Prerequisites: ~disabled
+		Prerequisites: ~building.usa_command_center, ~techlevel.infonly
 		Description: Enables Spy Drone support power from Command Center.
 	Valued:
 		Cost: 600
@@ -25,14 +25,14 @@ hack.cameo_filler.1:
 	Buildable:
 		Queue: General
 		BuildPaletteOrder: 2
-		Prerequisites: ~building.usa_command_center, ~disabled
+		Prerequisites: ~building.usa_command_center
 
 hack.cameo_filler.2:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
 		BuildPaletteOrder: 3
-		Prerequisites: ~building.usa_command_center, ~disabled
+		Prerequisites: ~building.usa_command_center
 
 generals_power.tech_training:
 	Inherits: ^default.generals_power

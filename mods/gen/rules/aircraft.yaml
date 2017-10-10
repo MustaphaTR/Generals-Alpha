@@ -459,11 +459,11 @@ aircraft.spy_drone:
 	Contrail:
 		Offset: -511,0,0
 	RenderDetectionCircle:
+	AutoTakesOff:
 	DetectCloaked:
 		Range: 6c256
-	-RevealOnDeath:
-	SpawnActorOnDeath:
-		Actor: husk.spy_drone
+	-Selectable:
+	-SpawnActorOnDeath:
 	SmokeTrailWhenDamaged:
 		Offset: -511,0,0
 		Interval: 2
