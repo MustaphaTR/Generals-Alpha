@@ -940,6 +940,7 @@ building.patriot:
 building.demo_trap:
 	Inherits: ^Defense
 	Inherits@REVEAL: ^Reveal150
+	Inherits@BOUNTY: ^TakesBounty
 	Buildable:
 		Queue: queue.gla_building
 		BuildPaletteOrder: 3
@@ -1269,6 +1270,7 @@ building.tunnel_network:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
+	Inherits@BOUNTY: ^TakesBounty
 	Tooltip:
 		Name: Tunnel Network
 	Building:
@@ -1344,6 +1346,7 @@ building.stinger_site:
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@AP_BULLETS: ^AfftectedByAPBullets
 	Inherits@REVEAL: ^Reveal400
+	Inherits@BOUNTY: ^TakesBounty
 	Buildable:
 		Queue: queue.gla_building
 		BuildPaletteOrder: 6
@@ -1605,6 +1608,7 @@ building.palace:
 	Inherits: ^Building
 	Inherits@SHAPE: ^3x2Shape
 	Inherits@REVEAL: ^Reveal300
+	Inherits@BOUNTY: ^TakesBounty
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 0,-896,0, 0,896,0, 840,0,0, -706,0,0, -706,-768,0, -706,640,0
@@ -2018,6 +2022,7 @@ building.scud_storm:
 	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
+	Inherits@BOUNTY: ^TakesBounty
 	Valued:
 		Cost: 5000
 	Tooltip:

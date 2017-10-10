@@ -203,7 +203,36 @@
 ^EmitRangersOnDeath:
 	EmitInfantryOnDeath:
 		ActorTypes: infantry.ranger
-        
+
+^TakesBounty:
+	TakesBounty@CASH_BOUNTY1:
+		Percentage: 5
+		LevelMod: 100
+		RequiresCondition: cash_bounty1 && !cash_bounty2 && !cash_bounty3
+	TakesBounty@CASH_BOUNTY2:
+		Percentage: 10
+		LevelMod: 100
+		RequiresCondition: cash_bounty2 && !cash_bounty3
+	TakesBounty@CASH_BOUNTY3:
+		Percentage: 20
+		LevelMod: 100
+		RequiresCondition: cash_bounty3
+	ExternalCondition@CASH_BOUNTY1:
+		Condition: cash_bounty1
+	ExternalCondition@CASH_BOUNTY2:
+		Condition: cash_bounty2
+	ExternalCondition@CASH_BOUNTY3:
+		Condition: cash_bounty3
+	GrantConditionOnPrerequisite@CASH_BOUNTY1:
+		Condition: cash_bounty1
+		Prerequisites: generals_power.cash_bounty1
+	GrantConditionOnPrerequisite@CASH_BOUNTY2:
+		Condition: cash_bounty2
+		Prerequisites: generals_power.cash_bounty2
+	GrantConditionOnPrerequisite@CASH_BOUNTY3:
+		Condition: cash_bounty3
+		Prerequisites: generals_power.cash_bounty3
+
 ^AffectsDemoTrap:
 	ProximityExternalCondition@SELF_DESTRUCT:
 		Condition: self_destruct
@@ -692,7 +721,6 @@
 	ProximityCaptor:
 		Types: Vehicle
 	GivesBounty:
-		DeathTypes: TakesBounty
 	GpsDot:
 		String: Vehicle
 	WithDamageOverlay:
@@ -844,7 +872,6 @@
 	HiddenUnderFog:
 	ActorLostNotification:
 	GivesBounty:
-		DeathTypes: TakesBounty
 	GpsDot:
 		String: Infantry
 	Crushable:
@@ -1011,7 +1038,6 @@
 	ProximityCaptor:
 		Types: Ship
 	GivesBounty:
-		DeathTypes: TakesBounty
 	Chronoshiftable:
 	RepairableNear:
 		Buildings: tech.shipyard
@@ -1091,7 +1117,6 @@
 	ProximityCaptor:
 		Types: Plane
 	GivesBounty:
-		DeathTypes: TakesBounty
 	GpsDot:
 		String: Plane
 	Tooltip:
@@ -1171,7 +1196,6 @@
 	ProximityCaptor:
 		Types: Building
 	GivesBounty:
-		DeathTypes: TakesBounty
 	Guardable:
 		Range: 3c0
 	FrozenUnderFog:

@@ -34,7 +34,7 @@ cannon.scorpion_tank:
 		Damage: 40
 		Versus:
 			infantry.normal: 10
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, ExplosionDeath
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
 	-Warhead@2Smu: LeaveSmudge
 	Warhead@3Eff: CreateEffect
 		-ImpactSounds:
@@ -86,7 +86,7 @@ cannon.marauder_tank:
 		Damage: 60
 		Versus:
 			infantry.normal: 10
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, ExplosionDeath
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
 
 cannon.marauder_tank.toxin:
 	Inherits: cannon.marauder_tank
@@ -308,7 +308,7 @@ molotov.angry_mob:
 		Versus:
 			vehicle.dragon_tank: 20
 			vehicle.toxin_tractor: 20
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, ExplosionDeath
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion
 		ImpactSounds: kaboom25.aud

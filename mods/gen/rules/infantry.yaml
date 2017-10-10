@@ -19,6 +19,7 @@ infantry.pilot:
 infantry.worker:
 	Inherits@1: ^Soldier
 	Inherits@REVEAL: ^Reveal100
+	Inherits@BOUNTY: ^TakesBounty
 	Buildable:
 		Queue: queue.gla_collector
 		BuildPaletteOrder: 1
@@ -121,6 +122,7 @@ infantry.rebel:
 	Inherits: ^default.mg_infantry
 	Inherits@AP_BULLETS: ^AfftectedByAPBullets
 	Inherits@REVEAL: ^Reveal150
+	Inherits@BOUNTY: ^TakesBounty
 	Buildable:
 		Queue: queue.gla_infantry
 		Prerequisites: ~building.gla_barracks, ~techlevel.infonly
@@ -208,6 +210,7 @@ infantry.missile_defender:
 infantry.rpg_trooper:
 	Inherits: ^default.rocket_infantry
 	Inherits@AP_ROCKETS: ^AfftectedByAPRockets
+	Inherits@BOUNTY: ^TakesBounty
 	Buildable:
 		Queue: queue.gla_infantry
 		Prerequisites: ~building.gla_barracks, ~techlevel.infonly
@@ -282,6 +285,7 @@ infantry.pathfinder:
 infantry.terrorist:
 	Inherits: ^Soldier
 	Inherits@REVEAL: ^Reveal150
+	Inherits@BOUNTY: ^TakesBounty
 	Buildable:
 		Queue: queue.gla_infantry
 		BuildPaletteOrder: 4
@@ -318,6 +322,7 @@ infantry.terrorist:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@REVEAL: ^Reveal150
+	Inherits@BOUNTY: ^TakesBounty
 	Valued:
 		Cost: 160
 	Tooltip:
@@ -496,6 +501,7 @@ infantry.hacker:
 infantry.hijacker:
 	Inherits: ^Soldier
 	Inherits@REVEAL: ^Reveal100
+	Inherits@BOUNTY: ^TakesBounty
 	Buildable:
 		Queue: queue.gla_infantry
 		BuildPaletteOrder: 7
@@ -618,6 +624,7 @@ infantry.jarmen_kell:
 	Inherits: ^Soldier
 	Inherits@REVEAL: ^Reveal200
 	Inherits@AP_BULLETS: ^AfftectedByAPBullets
+	Inherits@BOUNTY: ^TakesBounty
 	Valued:
 		Cost: 1500
 	Tooltip:

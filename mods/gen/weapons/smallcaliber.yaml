@@ -183,7 +183,7 @@ pistol.angry_mob:
 		Versus:
 			vehicle.dragon_tank: 20
 			vehicle.toxin_tractor: 20
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, BulletDeath
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, BulletDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
 	Warhead@3EffWater: CreateEffect
@@ -196,7 +196,7 @@ mg.angry_mob:
 	Report: gun11.aud
 	Warhead@1Dam: SpreadDamage
 		Damage: 20
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, BulletDeath
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, BulletDeath
 
 mg.ranger:
 	Inherits: ^LightMG
@@ -226,7 +226,7 @@ mg.ranger:
 mg.rebel:
 	Inherits: mg.ranger
 	Warhead@1Dam: SpreadDamage
-    	DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, BulletDeath
+    	DamageTypes: Prone50Percent, TriggerProne, DropCrate, BulletDeath
 
 mg.red_guard:
 	Inherits: ^LightMG
@@ -330,7 +330,7 @@ mg.technical:
 			building.defense: 50
 			building.stinger_site: 50
 			building.wall: 6
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, BulletDeath
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, BulletDeath
 
 mg.tunnel_network:
 	Inherits: ^LightMG
@@ -354,7 +354,7 @@ mg.tunnel_network:
 			building.defense: 50
 			building.stinger_site: 50
 			building.wall: 6
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, BulletDeath
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, BulletDeath
 
 mg.quad_cannon.ground:
 	Inherits: ^LightMG
@@ -378,7 +378,7 @@ mg.quad_cannon.ground:
 			building.defense: 25
 			building.stinger_site: 10
 			building.wall: 6
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, BulletDeath
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, BulletDeath
 
 mg.quad_cannon.air:
 	Inherits: mg.quad_cannon.ground
@@ -506,7 +506,7 @@ sniper.jarmen_kell:
 		Damage: 180
 		Versus:
 			infantry.normal: 200
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, TakesBounty, BulletDeath
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, BulletDeath
 
 sniper.jarmen_kell.vehicle:
 	Inherits: ^SnipeWeapon
