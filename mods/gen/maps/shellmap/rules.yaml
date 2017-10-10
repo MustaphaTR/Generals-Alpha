@@ -133,9 +133,13 @@ building.supply_drop_zone:
 	CashTrickler:
 		ShowTicks: false
 
+TRAN.Husk1:
+	-WithColoredOverlay@IDISABLE:
+	-Burns:
+
 TRAN.Husk2:
-	Burns:
-		Damage: 0
+	-WithColoredOverlay@IDISABLE:
+	-Burns:
 
 building.bunker:
 	Cargo:

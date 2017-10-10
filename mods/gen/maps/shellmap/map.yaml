@@ -33,16 +33,24 @@ Players:
 		Faction: usa
 		Color: ABB7E4
 		Enemies: GLA, PRC
+		Allies: USA2
+	PlayerReference@USA2:
+		Name: USA2
+		Faction: usa
+		Color: ABB7E4
+		Allies: USA, GLA, PRC
 	PlayerReference@GLA:
 		Name: GLA
 		Faction: gla
 		Color: B3EAA5
 		Enemies: USA, PRC
+		Allies: USA2
 	PlayerReference@PRC:
 		Name: PRC
 		Faction: prc
 		Color: FE1100
 		Enemies: USA, GLA
+		Allies: USA2
 
 Actors:
 	Actor0: rock6
@@ -122,9 +130,6 @@ Actors:
 		Owner: Neutral
 	Actor15: tech.oil_derrick
 		Location: 56,33
-		Owner: Neutral
-	Actor164: flare
-		Location: 14,56
 		Owner: Neutral
 	Actor95: rock6
 		Location: 10,76
@@ -2473,5 +2478,238 @@ Actors:
 	Actor753: building.prc_airfield
 		Owner: PRC
 		Location: 89,82
+	SpyDrone: aircraft.spy_drone
+		Owner: USA2
+		Location: 84,78
+		Facing: 92
+	USAMCC1: vehicle.usa_mcc
+		Owner: USA
+		Location: 97,32
+		Facing: 64
+	USAMCC2: vehicle.usa_mcc
+		Owner: USA
+		Location: 105,45
+		Facing: 0
+	PRCMCC1: vehicle.prc_mcc
+		Owner: PRC
+		Location: 61,65
+		Facing: 32
+	PRCMCC2: vehicle.prc_mcc
+		Owner: PRC
+		Location: 77,91
+		Facing: 128
+	PRCMCC3: vehicle.prc_mcc
+		Owner: PRC
+		Location: 87,64
+		Facing: 64
+	USAMCC3: vehicle.usa_mcc
+		Owner: USA
+		Location: 31,7
+		Facing: 0
+	USAMCC4: vehicle.usa_mcc
+		Owner: USA
+		Location: 32,7
+		Facing: 0
+	GLAMCC1: vehicle.gla_mcc
+		Owner: GLA
+		Location: 29,53
+		Facing: 96
+	GLAMCC2: vehicle.gla_mcc
+		Owner: GLA
+		Location: 35,61
+		Facing: 224
+	GLAMCC3: vehicle.gla_mcc
+		Owner: GLA
+		Location: 122,71
+		Facing: 0
+	Actor755: building.scud_storm
+		Owner: GLA
+		Location: 16,60
+		TurretFacing: 192
+	Actor756: sbag
+		Owner: Neutral
+		Location: 18,58
+	Actor757: sbag
+		Owner: Neutral
+		Location: 17,58
+	Actor758: sbag
+		Owner: Neutral
+		Location: 16,58
+	Actor759: sbag
+		Owner: Neutral
+		Location: 15,58
+	Actor760: sbag
+		Owner: Neutral
+		Location: 15,59
+	Actor761: sbag
+		Owner: Neutral
+		Location: 15,60
+	Actor762: sbag
+		Owner: Neutral
+		Location: 15,61
+	Actor763: sbag
+		Owner: Neutral
+		Location: 15,62
+	Actor764: sbag
+		Owner: Neutral
+		Location: 15,63
+	Actor765: sbag
+		Owner: Neutral
+		Location: 16,63
+	Actor766: sbag
+		Owner: Neutral
+		Location: 17,63
+	Actor767: sbag
+		Owner: Neutral
+		Location: 18,63
+	Rebel2: infantry.rebel
+		Owner: GLA
+		Location: 18,59
+		SubCell: 3
+		Facing: 192
+		TurretFacing: 192
+	Rebel3: infantry.rebel
+		Owner: GLA
+		Location: 18,59
+		SubCell: 1
+		Facing: 192
+		TurretFacing: 192
+	Rebel4: infantry.rebel
+		Owner: GLA
+		Location: 18,59
+		SubCell: 2
+		Facing: 192
+		TurretFacing: 192
+	Rebel5: infantry.rebel
+		Owner: GLA
+		Location: 18,59
+		SubCell: 4
+		Facing: 192
+		TurretFacing: 192
+	Rebel6: infantry.rebel
+		Owner: GLA
+		Location: 18,62
+		SubCell: 3
+		Facing: 192
+		TurretFacing: 192
+	Rebel7: infantry.rebel
+		Owner: GLA
+		Location: 18,62
+		SubCell: 1
+		Facing: 192
+		TurretFacing: 192
+	Rebel8: infantry.rebel
+		Owner: GLA
+		Location: 18,62
+		SubCell: 2
+		Facing: 192
+		TurretFacing: 192
+	Rebel9: infantry.rebel
+		Owner: GLA
+		Location: 18,62
+		SubCell: 4
+		Facing: 192
+		TurretFacing: 192
+	Rebel10: infantry.rebel
+		Owner: GLA
+		Location: 18,62
+		SubCell: 5
+		Facing: 192
+		TurretFacing: 192
+	Rebel11: infantry.rebel
+		Owner: GLA
+		Location: 18,59
+		SubCell: 5
+		Facing: 192
+		TurretFacing: 192
+	Hijacker1: infantry.hijacker
+		Owner: GLA
+		Location: 113,66
+		SubCell: 3
+		Facing: 96
+	Hijacker2: infantry.hijacker
+		Owner: GLA
+		Location: 115,68
+		SubCell: 3
+		Facing: 96
+	Actor768: v25
+		Owner: Neutral
+		Location: 108,63
+	Actor769: v21
+		Owner: Neutral
+		Location: 105,65
+	Actor770: v22
+		Owner: Neutral
+		Location: 105,69
+	Actor771: tc01
+		Owner: Neutral
+		Location: 100,67
+	Actor772: rock4
+		Owner: Neutral
+		Location: 103,62
+	Actor773: c8
+		Owner: Neutral
+		Location: 106,67
+		SubCell: 3
+		Facing: 92
+	Actor774: c3
+		Owner: Neutral
+		Location: 109,65
+		SubCell: 3
+		Facing: 92
+	Actor775: cycl
+		Owner: PRC
+		Location: 109,97
+	Actor776: cycl
+		Owner: PRC
+		Location: 108,97
+	Actor777: cycl
+		Owner: PRC
+		Location: 107,97
+	Actor778: cycl
+		Owner: PRC
+		Location: 107,96
+	Actor779: cycl
+		Owner: PRC
+		Location: 107,95
+	Actor780: tech.bio_lab
+		Owner: GLA
+		Location: 108,95
+	ToxinTractor1: vehicle.toxin_tractor
+		Owner: GLA
+		Location: 107,94
+		Facing: 0
+		TurretFacing: 0
+	Terrorist1: infantry.terrorist
+		Owner: GLA
+		Location: 110,93
+		SubCell: 3
+		Facing: 32
+		TurretFacing: 32
+	Actor783: tran.husk1
+		Owner: USA2
+		Location: 38,85
+		Facing: 92
+	Actor784: flare
+		Owner: USA2
+		Location: 41,83
+	Pilot1: infantry.pilot
+		Owner: USA2
+		Location: 37,83
+		SubCell: 3
+		Facing: 0
+		TurretFacing: 0
+	Ranger13: infantry.ranger
+		Owner: USA2
+		Location: 39,82
+		SubCell: 3
+		Facing: 224
+		TurretFacing: 224
+	Ranger14: infantry.ranger
+		Owner: USA2
+		Location: 40,83
+		SubCell: 3
+		Facing: 224
+		TurretFacing: 224
 
 Rules: rules.yaml

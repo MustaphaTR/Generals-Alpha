@@ -45,7 +45,7 @@ ChinookReinforcements =
 }
 ChinookPaths = { ChinookEntry.Location, ChinookRally.Location }
 
-BombTruckDisguises = { CrusaderTank1, Ambulance1, TomahawkLauncher1, PaladinTank1, Humvee1 }
+BombTruckDisguises = { CrusaderTank1, Ambulance1, TomahawkLauncher1, PaladinTank1, Humvee1, USAMCC1 }
 BombTruckPaths = { BombTruckEntry.Location, BombTruckRally.Location }
 
 BindActorTriggers = function(a)
