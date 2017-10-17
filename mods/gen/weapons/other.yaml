@@ -366,3 +366,12 @@ hack.spawn_16_rebels:
 	Warhead@1Dam: TargetDamage
 	Warhead@2Spawner: SpawnActor
 		Actors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel
+
+hack.spawn_1_rpg_trooper:
+	ReloadDelay: 5
+	Range: 1c0
+	Projectile: Bullet
+		Speed: 10c0
+	Warhead@1Dam: TargetDamage
+	Warhead@2Spawner: SpawnActor
+		Actors: infantry.rpg_trooper

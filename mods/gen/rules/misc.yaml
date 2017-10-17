@@ -426,6 +426,13 @@ hack.rebel_spawner.16:
 	Armament@1:
 		Weapon: hack.spawn_16_rebels
 
+hack.rpg_trooper_spawner.1:
+	Inherits: hack.rebel_spawner.4
+	Armament@1:
+		Weapon: hack.spawn_1_rpg_trooper
+	KillsSelf:
+		Delay: 1
+
 MINE:
 	Inherits@1: ^SpriteActor
 	HiddenUnderShroud:
