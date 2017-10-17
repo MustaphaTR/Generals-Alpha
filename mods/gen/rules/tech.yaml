@@ -1,6 +1,6 @@
 tech.oil_derrick:
 	Inherits: ^TechBuilding
-	Inherits@EMP: ^AfftectedByEMP
+	Inherits@EMP: ^AffectedByEMP
    	Inherits@REVEAL: ^Reveal180
 	Inherits@SHAPE: ^2x2Shape
 	HitShape:
@@ -33,7 +33,7 @@ tech.oil_derrick:
 
 tech.hospital:
 	Inherits: ^TechBuilding
-#	Inherits@EMP: ^AfftectedByEMP
+#	Inherits@EMP: ^AffectedByEMP
    	Inherits@REVEAL: ^Reveal180
 	Inherits@SHAPE: ^2x2Shape
 	Selectable:
@@ -61,7 +61,7 @@ tech.hospital:
 
 tech.bio_lab:
 	Inherits: ^TechBuilding
-#	Inherits@EMP: ^AfftectedByEMP
+#	Inherits@EMP: ^AffectedByEMP
    	Inherits@REVEAL: ^Reveal180
 	Inherits@SHAPE: ^2x2Shape
 	Selectable:
@@ -87,7 +87,7 @@ tech.bio_lab:
 
 tech.communications_center:
 	Inherits: ^TechBuilding
-	Inherits@EMP: ^AfftectedByEMP
+	Inherits@EMP: ^AffectedByEMP
    	Inherits@REVEAL: ^Reveal600
 	Inherits@SHAPE: ^2x2Shape
 	HitShape:
@@ -130,7 +130,7 @@ tech.communications_center:
 
 tech.forward_command:
 	Inherits: ^TechBuilding
-#	Inherits@EMP: ^AfftectedByEMP
+#	Inherits@EMP: ^AffectedByEMP
    	Inherits@REVEAL: ^Reveal180
 	Inherits@SHAPE: ^2x2Shape
 	Building:
@@ -159,7 +159,7 @@ tech.forward_command:
 
 tech.service_depot:
 	Inherits: ^TechBuilding
-	Inherits@EMP: ^AfftectedByEMP
+	Inherits@EMP: ^AffectedByEMP
    	Inherits@REVEAL: ^Reveal180
 	HitShape:
 		Type: Rectangle
@@ -210,7 +210,7 @@ tech.service_depot:
 
 tech.shipyard:
 	Inherits: ^TechBuilding
-#	Inherits@EMP: ^AfftectedByEMP
+#	Inherits@EMP: ^AffectedByEMP
    	Inherits@REVEAL: ^Reveal180
 	Valued:
 		Cost: 1000

@@ -47,6 +47,8 @@ vehicle.humvee:
 	Inherits@REVEAL: ^Reveal150
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !tow_missile
 	AutoTargetPriority@ATTACKANYTHING:
@@ -116,6 +118,7 @@ vehicle.humvee:
 		PipCount: 5
 		LoadingCondition: notmobile
 		PauseOnCondition: disabled || driver_killed || emp
+	AcceptsDeliveredExperience:
 	AttackGarrisoned:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
@@ -126,11 +129,12 @@ vehicle.humvee:
 vehicle.technical:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@AP_BULLETS: ^AfftectedByAPBullets
-	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
+	Inherits@AP_BULLETS: ^AffectedByAPBullets
+	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: queue.gla_vehicle
 		BuildPaletteOrder: 1
@@ -171,6 +175,7 @@ vehicle.technical:
 		EjectOnDeath: true
 		LoadingCondition: notmobile
 		PauseOnCondition: disabled || driver_killed || emp
+	AcceptsDeliveredExperience:
 	ProducibleWithLevel:
 		Prerequisites: generals_power.tech_training
 	Voiced:
@@ -178,7 +183,7 @@ vehicle.technical:
 
 vehicle.radar_van:
 	Inherits: ^Vehicle
-	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
+	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal200
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@BOUNTY: ^TakesBounty
@@ -227,10 +232,11 @@ vehicle.radar_van:
 vehicle.scorpion_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
+	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: queue.gla_vehicle
 		BuildPaletteOrder: 2
@@ -308,6 +314,7 @@ vehicle.scorpion_tank:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
+	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: ScorpionTankVoice
 
@@ -317,6 +324,8 @@ vehicle.crusader_tank:
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal125
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_vehicle
 		BuildPaletteOrder: 2
@@ -357,17 +366,19 @@ vehicle.crusader_tank:
 		Prerequisites: upgrade.composite_armor
 	SelectionDecorations:
 		VisualBounds: 28,28
+	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: CrusaderTankVoice
 
 vehicle.battlemaster_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@NUCLEAR_TANKS: ^AfftectedByNuclearTanks
-	Inherits@URANIUM_SHELLS: ^AfftectedByUraniumShells
+	Inherits@NUCLEAR_TANKS: ^AffectedByNuclearTanks
+	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
 	Inherits@HORDE_BONUS: ^Horde
 	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: queue.prc_vehicle
 		BuildAtProductionType: WarFactory
@@ -403,6 +414,7 @@ vehicle.battlemaster_tank:
 	WithSpriteTurret:
 	SelectionDecorations:
 		VisualBounds: 28,28
+	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: BattlemasterTankVoice
 
@@ -447,11 +459,12 @@ vehicle.ambulance:
 vehicle.quad_cannon:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@AP_BULLETS: ^AfftectedByAPBullets
-	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
+	Inherits@AP_BULLETS: ^AffectedByAPBullets
+	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
 		Cost: 700
 	Tooltip:
@@ -488,15 +501,17 @@ vehicle.quad_cannon:
 		RequiresCondition: !disabled && !driver_killed && !emp
 	WithSpriteTurret:
 	WithMuzzleOverlay:
+	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: QuadCannonVoice
 
 vehicle.gatling_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@CHAIN_GUN: ^AfftectedByChainGun
+	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -546,6 +561,7 @@ vehicle.gatling_tank:
 		RequiresCondition: !disabled && !driver_killed && !emp
 	WithSpriteTurret:
 	WithMuzzleOverlay:
+	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: GatlingTankVoice
 
@@ -555,6 +571,7 @@ vehicle.toxin_tractor:
 	Inherits@REVEAL: ^Reveal100
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -595,6 +612,7 @@ vehicle.toxin_tractor:
 		Prerequisites: upgrade.anthrax_beta
 	-DamagedByRadioactivity@ANTHRAX_ALPHA:
 	-DamagedByRadioactivity@ANTHRAX_BETA:
+	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: ToxinTractorVoice
 
@@ -603,6 +621,7 @@ vehicle.dragon_tank:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@REVEAL: ^Reveal100
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -637,17 +656,19 @@ vehicle.dragon_tank:
 		Prerequisites: upgrade.black_napalm
 	AttackFrontal:
 		RequiresCondition: !disabled && !driver_killed && !emp
+	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: DragonTankVoice
 
 vehicle.rocket_buggy:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@AP_ROCKETS: ^AfftectedByAPRockets
-	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
+	Inherits@AP_ROCKETS: ^AffectedByAPRockets
+	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal180
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -690,6 +711,7 @@ vehicle.rocket_buggy:
 		Prerequisites: upgrade.buggy_ammo
 	AttackFrontal:
 		RequiresCondition: !disabled && !driver_killed && !emp
+	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: RocketBuggyVoice
 
@@ -741,6 +763,8 @@ vehicle.tomahawk_launcher:
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal180
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -778,16 +802,18 @@ vehicle.tomahawk_launcher:
 		RequiresCondition: !disabled && !driver_killed && !emp
 	WithReloadingSpriteTurret:
 		AmmoPoolName: primary
+	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: TomahawkLauncherVoice
 
 vehicle.scud_launcher:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
+	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal180
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: queue.gla_vehicle
 		BuildPaletteOrder: 11
@@ -846,6 +872,7 @@ vehicle.scud_launcher:
 		SelfReloadDelay: 200
 	WithReloadingSpriteTurret:
 		AmmoPoolName: primary
+	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: SCUDLauncherVoice
 
@@ -854,6 +881,7 @@ vehicle.inferno_cannon:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@REVEAL: ^Reveal180
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: queue.prc_vehicle
 		BuildAtProductionType: WarFactory
@@ -898,6 +926,7 @@ vehicle.inferno_cannon:
 		LoadedChance: 75
 	ProducibleWithLevel:
 		Prerequisites: generals_power.arty_training
+	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: InfernoCannonVoice
 
@@ -907,6 +936,8 @@ vehicle.paladin_tank:
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_vehicle
 		BuildPaletteOrder: 7
@@ -965,16 +996,18 @@ vehicle.paladin_tank:
 		DamageCooldown: 150
 	SelectionDecorations:
 		VisualBounds: 28,28,0,-4
+	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: PaladinTankVoice
 
 vehicle.marauder_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@JUNK_REPAIR: ^AfftectedByJunkRepair
+	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal125
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: queue.gla_vehicle
 		BuildPaletteOrder: 10
@@ -1029,17 +1062,19 @@ vehicle.marauder_tank:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
+	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: MarauderTankVoice
 
 vehicle.overlord_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@NUCLEAR_TANKS: ^AfftectedByNuclearTanks
-	Inherits@URANIUM_SHELLS: ^AfftectedByUraniumShells
-	Inherits@CHAIN_GUN: ^AfftectedByChainGun
+	Inherits@NUCLEAR_TANKS: ^AffectedByNuclearTanks
+	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
+	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesVehicles
+	Inherits@EXPERIENCE: ^GainsExperience
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !overlord_gatling
 	AutoTargetPriority@ATTACKANYTHING:
@@ -1174,6 +1209,7 @@ vehicle.overlord_tank:
 		Condition: speaker_tower
 		Range: 4c0
 		RequiresCondition: overlord_speaker
+	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: OverlordTankVoice
 
@@ -1294,6 +1330,7 @@ vehicle.nuke_cannon:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@REVEAL: ^Reveal180
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: queue.prc_vehicle
 		BuildPaletteOrder: 10
@@ -1335,6 +1372,7 @@ vehicle.nuke_cannon:
 		VisualBounds: 44,38,0,-4
 	ProducibleWithLevel:
 		Prerequisites: generals_power.arty_training
+	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: NukeCannonVoice
 

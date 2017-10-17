@@ -1,5 +1,5 @@
 ^default.badger:
-	Inherits: ^NeutralPlane
+	Inherits: ^Plane
 	Health:
 		HP: 1000
 	Armor:
@@ -126,6 +126,7 @@ aircraft.mig:
 	Inherits: ^Plane
 	Inherits@REVEAL: ^Reveal200
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: queue.prc_aircraft
 		BuildPaletteOrder: 1
@@ -204,8 +205,10 @@ aircraft.mig:
 aircraft.raptor:
 	Inherits: ^Plane
 	Inherits@REVEAL: ^Reveal180
-	Inherits@LASER_MISSILES: ^AfftectedByLaserGuidedMissiles
+	Inherits@LASER_MISSILES: ^AffectedByLaserGuidedMissiles
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft
 		BuildPaletteOrder: 1
@@ -271,8 +274,10 @@ aircraft.raptor:
 aircraft.stealth_fighter:
 	Inherits: ^Plane
 	Inherits@REVEAL: ^Reveal180
-	Inherits@LASER_MISSILES: ^AfftectedByLaserGuidedMissiles
+	Inherits@LASER_MISSILES: ^AffectedByLaserGuidedMissiles
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft
 		BuildPaletteOrder: 4
@@ -349,6 +354,8 @@ aircraft.aurora:
 	Inherits: ^Plane
 	Inherits@REVEAL: ^Reveal180
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft
 		BuildPaletteOrder: 5
@@ -471,7 +478,7 @@ aircraft.spy_drone:
 		Scale: 0.5
 
 aircraft.a10:
-	Inherits: ^NeutralPlane
+	Inherits: ^Plane
 	Tooltip:
 		Name: A-10 Thunderbolt
 	Health:
@@ -586,7 +593,6 @@ aircraft.chinook:
 	-Passenger:
 	-Capturable:
 	-ProximityExternalCondition@SELF_DESTRUCT:
-	-AcceptsDeliveredExperience:
 	-SpawnActorOnDeath@CRATE:
 	-SelfHealing@EMERGENCY_REPAIR:
 	-WithIdleOverlay@Repair:
@@ -608,6 +614,8 @@ aircraft.comanche:
 	Inherits@REVEAL: ^Reveal180
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@PILOT: ^EjectsPilotOnAir
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft
 		BuildPaletteOrder: 2

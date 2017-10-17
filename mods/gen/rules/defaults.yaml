@@ -159,12 +159,6 @@
 		ReferencePoint: Bottom, Right
 		RequiresCondition: rank-elite
 		ZOffset: 256
-	GainsExperienceMultiplier@ADV_TRAINING:
-		RequiresCondition: adv_training
-		Modifier: 200
-	GrantConditionOnPrerequisite@ADV_TRAINING:
-		Condition: adv_training
-		Prerequisites: upgrade.adv_training
 
 ^IronCurtainable:
 	WithColoredOverlay@IRONCURTAIN:
@@ -239,7 +233,15 @@
 		ValidStances: enemy
 		Range: 1c512
 
-^AfftectedByEMP:
+^AffectedByAdvancedTraining:
+	GainsExperienceMultiplier@ADV_TRAINING:
+		RequiresCondition: adv_training
+		Modifier: 200
+	GrantConditionOnPrerequisite@ADV_TRAINING:
+		Condition: adv_training
+		Prerequisites: upgrade.adv_training
+
+^AffectedByEMP:
 	WithColoredOverlay@EMP:
 		RequiresCondition: emp
 		Palette: disabled
@@ -249,7 +251,7 @@
 	ExternalCondition@EMP:
 		Condition: emp
 
-^AfftectedByHacking:
+^AffectedByHacking:
 	WithColoredOverlay@DISABLED:
 		RequiresCondition: disabled
 		Palette: disabled
@@ -259,7 +261,7 @@
 	ExternalCondition@DISABLED:
 		Condition: disabled
 
-^AfftectedByDriverKill:
+^AffectedByDriverKill:
 	WithColoredOverlay@DRIVER_KILLED:
 		RequiresCondition: driver_killed
 		Palette: driver_killed
@@ -282,7 +284,7 @@
 		CaptureTypes: driverless_vehcile
 		PlayerExperience: 25
 
-^AfftectedBySpeakerTower:
+^AffectedBySpeakerTower:
 	ReloadDelayMultiplier@SPEAKER_NORMAL:
 		RequiresCondition: speaker_tower && !subliminal_messaging
 		Modifier: 90
@@ -307,7 +309,7 @@
 		Condition: subliminal_messaging
 		Prerequisites: upgrade.subliminal_messaging
 
-^AfftectedByEmergencyRepair:
+^AffectedByEmergencyRepair:
 	SelfHealing@EMERGENCY_REPAIR:
 		PercentageStep: 5
 		Delay: 25
@@ -322,7 +324,7 @@
 	ExternalCondition@EMERGENCY_REPAIR:
 		Condition: emergency_repair
 
-^AfftectedByJunkRepair:
+^AffectedByJunkRepair:
 	SelfHealing@JUNK_REPAIR:
 		Step: 2
 		Delay: 20
@@ -333,7 +335,7 @@
 		Condition: junk_repair
 		Prerequisites: upgrade.junk_repair
 
-^AfftectedByChainGun:
+^AffectedByChainGun:
 	FirepowerMultiplier@CHAIN_GUN:
 		RequiresCondition: chain_gun
 		Modifier: 125
@@ -341,7 +343,7 @@
 		Condition: chain_gun
 		Prerequisites: upgrade.chain_gun
 
-^AfftectedByNuclearTanks:
+^AffectedByNuclearTanks:
 	SpeedMultiplier@NUCLEAR_TANKS:
 		RequiresCondition: nuclear_tanks
 		Modifier: 125
@@ -349,7 +351,7 @@
 		Condition: nuclear_tanks
 		Prerequisites: upgrade.nuclear_tanks
 
-^AfftectedByUraniumShells:
+^AffectedByUraniumShells:
 	FirepowerMultiplier@URANIUM_SHELLS:
 		RequiresCondition: uranium_shells
 		Modifier: 125
@@ -357,7 +359,7 @@
 		Condition: uranium_shells
 		Prerequisites: upgrade.uranium_shells
 
-^AfftectedByLaserGuidedMissiles:
+^AffectedByLaserGuidedMissiles:
 	FirepowerMultiplier@LASER_GUIDED_MISSILES:
 		RequiresCondition: laser_guided_missiles
 		Modifier: 125
@@ -365,7 +367,7 @@
 		Condition: laser_guided_missiles
 		Prerequisites: upgrade.laser_guided_missiles
 
-^AfftectedByAPBullets:
+^AffectedByAPBullets:
 	FirepowerMultiplier@AP_BULLETS:
 		RequiresCondition: ap_bullets
 		Modifier: 125
@@ -373,7 +375,7 @@
 		Condition: ap_bullets
 		Prerequisites: upgrade.ap_bullets
 
-^AfftectedByAPRockets:
+^AffectedByAPRockets:
 	FirepowerMultiplier@AP_ROCKETS:
 		RequiresCondition: ap_rockets
 		Modifier: 125
@@ -381,7 +383,7 @@
 		Condition: ap_rockets
 		Prerequisites: upgrade.ap_rockets
 
-^AfftectedByBombardment:
+^AffectedByBombardment:
 	FirepowerMultiplier@BOMBARDMENT:
 		RequiresCondition: bombardment
 		Modifier: 120
@@ -389,7 +391,7 @@
 		Condition: bombardment
 		Prerequisites: strategy.bombardment
 
-^AfftectedByHoldTheLine:
+^AffectedByHoldTheLine:
 	DamageMultiplier@HOLD_THE_LINE:
 		RequiresCondition: hold_the_line
 		Modifier: 90
@@ -665,19 +667,18 @@
 
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
-	Inherits@2: ^GainsExperience
-	Inherits@3: ^IronCurtainable
-	Inherits@4: ^SpriteActor
-	Inherits@5: ^AfftectedBySpeakerTower
-	Inherits@6: ^AfftectedByBombardment
-	Inherits@7: ^AfftectedByHoldTheLine
-	Inherits@8: ^AffectsDemoTrap
-	Inherits@9: ^DropsScrapCrate
-	Inherits@10: ^AfftectedByHacking
-	Inherits@11: ^AfftectedByDriverKill
-	Inherits@12: ^AfftectedByEMP
-	Inherits@13: ^AfftectedByEmergencyRepair
-	Inherits@14: ^AffectedByScrapCratePowerups
+	Inherits@2: ^IronCurtainable
+	Inherits@3: ^SpriteActor
+	Inherits@4: ^AffectedBySpeakerTower
+	Inherits@5: ^AffectedByBombardment
+	Inherits@6: ^AffectedByHoldTheLine
+	Inherits@7: ^AffectsDemoTrap
+	Inherits@8: ^DropsScrapCrate
+	Inherits@9: ^AffectedByHacking
+	Inherits@10: ^AffectedByDriverKill
+	Inherits@11: ^AffectedByEMP
+	Inherits@12: ^AffectedByEmergencyRepair
+	Inherits@13: ^AffectedByScrapCratePowerups
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -694,7 +695,6 @@
 		RequiresCondition: !driver_killed && !disabled && !emp
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
-	AcceptsDeliveredExperience:
 	Selectable:
 		Bounds: 24, 24
 	Targetable:
@@ -809,13 +809,12 @@
 
 ^Infantry:
 	Inherits@1: ^ExistsInWorld
-	Inherits@2: ^GainsExperience
-	Inherits@3: ^SpriteActor
-	Inherits@4: ^AfftectedBySpeakerTower
-	Inherits@5: ^AfftectedByBombardment
-	Inherits@6: ^AfftectedByHoldTheLine
-	Inherits@7: ^AffectsDemoTrap
-	Inherits@8: ^AffectedByScrapCratePowerups
+	Inherits@2: ^SpriteActor
+	Inherits@3: ^AffectedBySpeakerTower
+	Inherits@4: ^AffectedByBombardment
+	Inherits@5: ^AffectedByHoldTheLine
+	Inherits@6: ^AffectsDemoTrap
+	Inherits@7: ^AffectedByScrapCratePowerups
 	Huntable:
 	DrawLineToTarget:
 	Health:
@@ -1006,17 +1005,16 @@
 
 ^Ship:
 	Inherits@1: ^ExistsInWorld
-	Inherits@2: ^GainsExperience
-	Inherits@3: ^IronCurtainable
-	Inherits@4: ^SpriteActor
-	Inherits@5: ^AfftectedBySpeakerTower
-	Inherits@6: ^AfftectedByBombardment
-	Inherits@7: ^AfftectedByHoldTheLine
-	Inherits@8: ^AffectsDemoTrap
-	Inherits@9: ^AfftectedByHacking
-	Inherits@10: ^AfftectedByEMP
-	Inherits@11: ^AffectedByScrapCratePowerups
-	Inherits@12: ^AfftectedByEmergencyRepair
+	Inherits@2: ^IronCurtainable
+	Inherits@3: ^SpriteActor
+	Inherits@4: ^AffectedBySpeakerTower
+	Inherits@5: ^AffectedByBombardment
+	Inherits@6: ^AffectedByHoldTheLine
+	Inherits@7: ^AffectsDemoTrap
+	Inherits@8: ^AffectedByHacking
+	Inherits@9: ^AffectedByEMP
+	Inherits@10: ^AffectedByScrapCratePowerups
+	Inherits@11: ^AffectedByEmergencyRepair
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -1081,13 +1079,13 @@
 		Condition: search_and_destroy
 		Prerequisites: strategy.search_and_destroy
 
-^NeutralPlane:
+^Plane:
 	Inherits@1: ^ExistsInWorld
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^SpriteActor
-	Inherits@5: ^AfftectedBySpeakerTower
-	Inherits@6: ^AfftectedByBombardment
-	Inherits@7: ^AfftectedByHoldTheLine
+	Inherits@5: ^AffectedBySpeakerTower
+	Inherits@6: ^AffectedByBombardment
+	Inherits@7: ^AffectedByHoldTheLine
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -1144,10 +1142,6 @@
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
 
-^Plane:
-	Inherits: ^NeutralPlane
-	Inherits@2: ^GainsExperience
-
 ^Helicopter:
 	Inherits: ^Plane
 	Tooltip:
@@ -1169,8 +1163,8 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^IronCurtainable
 	Inherits@3: ^SpriteActor
-	Inherits@4: ^AfftectedByBombardment
-	Inherits@5: ^AfftectedByHoldTheLine
+	Inherits@4: ^AffectedByBombardment
+	Inherits@5: ^AffectedByHoldTheLine
 	Inherits@6: ^AffectsDemoTrap
 	Inherits@shape: ^1x1Shape
 	SelectionDecorations:
@@ -1214,7 +1208,7 @@
 
 ^Building:
 	Inherits: ^BasicBuilding
-	Inherits@EMP: ^AfftectedByEMP
+	Inherits@EMP: ^AffectedByEMP
 	Huntable:
 	UpdatesPlayerStatistics:
 	GivesBuildableArea:
