@@ -107,7 +107,7 @@ upgrade.capture_building:
 		Queue: queue.usa_infantry, queue.gla_infantry, queue.prc_infantry
 		BuildPaletteOrder: 3
 		BuildDuration: 750
-		Prerequisites: barracks, ~techlevel.infonly
+		Prerequisites: prerequisite.barracks, ~techlevel.infonly
 		Description: Allows AP Infantry to capture enemy and neutral structures.
 	Valued:
 		Cost: 1000
