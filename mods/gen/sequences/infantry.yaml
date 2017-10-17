@@ -1878,37 +1878,37 @@ chan:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
 
-zombie:
-	stand:
+infantry.zombie:
+	stand: zombie
 		Facings: 8
-	stand2:
+	stand2: zombie
 		Start: 8
 		Length: 8
-	run:
+	run: zombie
 		Start: 16
 		Length: 6
 		Facings: 8
-	bite:
+	bite: zombie
 		Start: 64
 		Length: 4
 		Facings: 8
-	idle1:
+	idle1: zombie
 		Start: 96
 		Length: 10
 		Tick: 120
-	die1:
+	die1: zombie
 		Start: 106
 		Length: 7
-	die2:
+	die2: zombie
 		Start: 106
 		Length: 7
-	die3:
+	die3: zombie
 		Start: 106
 		Length: 7
-	die4:
+	die4: zombie
 		Start: 106
 		Length: 7
-	die5:
+	die5: zombie
 		Start: 114
 		Length: 18
 	die6: electro
@@ -1927,7 +1927,7 @@ zombie:
 			INTERIOR: TEMPERAT
 	icon: zombicon
 
-ant:
+infantry.giant_ant:
 	stand: ant1
 		Facings: 8
 	stand2: ant1

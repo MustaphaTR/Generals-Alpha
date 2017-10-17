@@ -776,7 +776,7 @@ infantry.black_lotus:
 	Voiced:
 		VoiceSet: LotusVoice
 
-Zombie:
+infantry.zombie:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -785,15 +785,14 @@ Zombie:
 	Tooltip:
 		Name: Zombie
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 200
-		Prerequisites: ~barracks, ~bio
+		Queue: queue.usa_infantry, queue.gla_infantry, queue.prc_infantry
+		BuildPaletteOrder: 199
+		Prerequisites: ~tech.bio_lab
 		Description: Slow undead. Attacks in close combat.
 	Health:
-		HP: 250
+		HP: 150
 	Mobile:
-		Speed: 42
+		Speed: 25
 	AutoTarget:
 		ScanRadius: 5
 	AttackFrontal:
@@ -806,7 +805,7 @@ Zombie:
 		VoiceSet: AntVoice
 	-TakeCover:
 
-Ant:
+infantry.giant_ant:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -816,22 +815,22 @@ Ant:
 		Name: Giant Ant
 		GenericName: Ant
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 1954
-		Prerequisites: ~barracks, ~bio
+		Queue: queue.usa_infantry, queue.gla_infantry, queue.prc_infantry
+		BuildPaletteOrder: 200
+		Prerequisites: ~tech.bio_lab
 		Description: Irradiated insect that grew oversize.
 	Selectable:
 		Bounds: 24,24,0,-5
 	SelectionDecorations:
 		VisualBounds: 30,30,0,-2
 	Health:
-		HP: 750
+		HP: 500
 	Mobile:
-		Speed: 99
+		Speed: 40
 		TurnSpeed: 12
 		SharesCell: no
-	-Crushable:
+	Crushable:
+		CrushClasses: Vehicle
 	AutoTarget:
 		ScanRadius: 5
 	AttackFrontal:
