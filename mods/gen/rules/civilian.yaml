@@ -62,6 +62,84 @@ TECN:
 	RenderSprites:
 		Image: C1
 
+EINSTEIN:
+	Inherits: ^CivInfantry
+	-Wanders:
+	Tooltip:
+		Name: Prof. Einstein
+	Mobile:
+		Speed: 71
+	Voiced:
+		VoiceSet: EinsteinVoice
+
+DELPHI:
+	Inherits: ^CivInfantry
+	-Wanders:
+	Tooltip:
+		Name: Agent Delphi
+	Mobile:
+		Speed: 71
+
+CHAN:
+	Inherits: ^CivInfantry
+	Valued:
+		Cost: 500
+	Selectable:
+		Class: CHAN
+	Tooltip:
+		Name: Scientist
+
+GNRL:
+	Inherits@1: ^CivInfantry
+	Inherits@2: ^ArmedCivilian
+	-Wanders:
+	Tooltip:
+		Name: General
+	Selectable:
+		Class: GNRL
+	Mobile:
+		Voice: Move
+	AttackFrontal:
+		Voice: Attack
+	AttackMove:
+		Voice: Move
+	Passenger:
+		Voice: Move
+	Guard:
+		Voice: Move
+	Voiced:
+		VoiceSet: StavrosVoice
+	-ScaredyCat:
+	WithInfantryBody:
+		IdleSequences: idle1
+
+DOG:
+	Inherits: ^CivInfantry
+	Tooltip:
+		Name: Dog
+		GenericName: Dog
+	Selectable:
+		Bounds: 12,17,-1,-4
+	SelectionDecorations:
+		VisualBounds: 12,17,-1,-4
+	Health:
+		HP: 18
+	Mobile:
+		Speed: 50
+		Voice: Move
+	Guard:
+		Voice: Move
+	Passenger:
+		Voice: Move
+	Targetable:
+		TargetTypes: Ground, Infantry
+	WithInfantryBody:
+		StandSequences: stand
+	DetectCloaked:
+		CloakTypes: Cloak
+	Voiced:
+		VoiceSet: DogVoice
+
 V01:
 	Inherits: ^CivBuilding
 	Building:
