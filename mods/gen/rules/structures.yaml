@@ -43,12 +43,10 @@
 		ValidStances: Ally, Neutral, Enemy
 	HitShape:
 		TargetableOffsets: 1273,939,0, -980,-640,0, -980,640,0
-		Type: Rectangle
-			TopLeft: -1536, -1536
-			BottomRight: 1536, 1536
 
 building.usa_command_center:
 	Inherits: ^default.command_center
+	Inherits@shape: ^3x2Shape
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
 		Queue: queue.usa_building
@@ -59,6 +57,8 @@ building.usa_command_center:
 		Name: USA Command Center
 	Voiced:
 		VoiceSet: USACommandCenterVoice
+	Building:
+		Footprint: XXX xxx XXX
 	Production:
 		Produces: queue.usa_command_center
 	ProductionBar@USA_COMMAND_CENTER:
@@ -228,6 +228,10 @@ building.usa_command_center:
 		Color: 0000FF
 	ProvidesRadar:
 		RequiresCondition: !disabled && !emp
+	RenderSprites:
+		PlayerPalette: cncplayer
+	HitShape:
+		TargetableOffsets: 768,1024,0, 768,-1024,0, 768,0,0, -896,0,0
 
 building.gla_command_center:
 	Inherits: ^default.command_center
@@ -307,6 +311,10 @@ building.gla_command_center:
 		Color: 00FF00
 	SpawnActorOnDeath:
 		Actor: hole.command_center
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -1536
+			BottomRight: 1536, 1536
 
 building.prc_command_center:
 	Inherits: ^default.command_center
@@ -440,6 +448,10 @@ building.prc_command_center:
 	WithTextDecoration@SIDE:
 		Text: PRC
 		Color: FF0000
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -1536
+			BottomRight: 1536, 1536
 
 ^default.reactor:
 	Inherits: ^Building

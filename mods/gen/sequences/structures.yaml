@@ -1,24 +1,29 @@
 building.usa_command_center:
-	idle: fact
-	make: factmake
-		Length: *
-	build: fact
-		Start: 1
-		Length: 25
-	damaged-idle: fact
-		Start: 26
-	damaged-build: fact
-		Start: 27
-		Length: 25
-	dead: factdead
+	build: usfact
+		Start: 4
+		Length: 20
+		Tick: 100
+	idle: usfact
+		Length: 4
+		Tick: 100
+	damaged-idle: usfact
+		Start: 24
+		Length: 4
+		Tick: 100
+	damaged-build: usfact
+		Start: 28
+		Length: 20
+		Tick: 100
+	dead: usfact
+		Start: 48
 		Tick: 800
-	bib: bib2
+	make: usfactmake
 		Length: *
+		Tick: 80
+	bib: bib2
 		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		Length: *
 	icon: usfacticon
-	fake-icon: facficon
 
 building.gla_command_center:
 	idle: fact
@@ -62,7 +67,6 @@ building.prc_command_center:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 	icon: facticon
-	fake-icon: facficon
 
 building.cold_fusion_reactor:
 	idle: powr
