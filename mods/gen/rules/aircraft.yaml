@@ -582,6 +582,14 @@ aircraft.chinook:
 	WithIdleOverlay@ROTOR2AIR:
 		Offset: -597,0,341
 		Sequence: rotor2
+	WithSpriteTurret@SHADOW:
+		Sequence: shadow
+	Turreted:
+	Armament@ThisLooksRequired:
+		Weapon: mg.comanche
+		RequiresCondition: keep_me_disabled
+	AttackFrontal:
+		RequiresCondition: keep_me_disabled
 	WithDockingAnimation:
 	Hovers:
 	Cargo:
