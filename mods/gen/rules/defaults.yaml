@@ -602,7 +602,7 @@
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything
 		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Defense
-		InvalidTargets: NoAutoTarget
+		InvalidTargets: NoAutoTarget, WaterStructure
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: stance-attackanything
 		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Structure, Defense
@@ -629,7 +629,7 @@
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything
 		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Defense
-		InvalidTargets: NoAutoTarget
+		InvalidTargets: NoAutoTarget, WaterStructure
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: stance-attackanything
 		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
