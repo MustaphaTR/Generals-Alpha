@@ -175,7 +175,7 @@ generals_power.emergency_repair1:
 	Buildable:
 		BuildPaletteOrder: 16
 		BuildDuration: 250
-		Prerequisites: ~anycommand, ~techlevel.low
+		Prerequisites: ~prerequisite.command_center, ~techlevel.low
 		Description: Enables Emergency Repair support power from Command Center.
 	Valued:
 		Cost: 750
@@ -187,7 +187,7 @@ generals_power.emergency_repair2:
 	Buildable:
 		BuildPaletteOrder: 17
 		BuildDuration: 375
-		Prerequisites: ~anycommand, generals_power.emergency_repair1, ~techlevel.low
+		Prerequisites: ~prerequisite.command_center, generals_power.emergency_repair1, ~techlevel.low
 		Description: Upgrades Emergency Repair support power to Level 2.
 	Valued:
 		Cost: 1250
@@ -199,7 +199,7 @@ generals_power.emergency_repair3:
 	Buildable:
 		BuildPaletteOrder: 18
 		BuildDuration: 500
-		Prerequisites: ~anycommand, generals_power.emergency_repair2, ~techlevel.medium
+		Prerequisites: ~prerequisite.command_center, generals_power.emergency_repair2, ~techlevel.medium
 		Description: Upgrades Emergency Repair support power to Level 3.
 	Valued:
 		Cost: 1750

@@ -7,13 +7,12 @@ Player:
 #		QueuedAudio: Building
 #		ReadyAudio: ConstructionComplete
 #		SpeedUp: True
-	ClassicProductionQueue@General:
+	ParallelClassicProductionQueue@General:
 		Type: General
 		LowPowerSlowdown: 1
 		QueuedAudio:
 		ReadyAudio:
 		ParallelBuild: true
-		SpeedUp: False
 #	ClassicProductionQueue@Collector:
 #		Type: Collector
 #		LowPowerSlowdown: 3
@@ -83,7 +82,7 @@ Player:
 		Produces: General
 	SpawnActorPower@EMERGENCY_REPAIR1:
 		Actor: camera.emergency_repair.1
-		Prerequisites: ~anycommand, ~generals_power.emergency_repair1, ~!generals_power.emergency_repair2, ~!generals_power.emergency_repair3
+		Prerequisites: ~prerequisite.command_center, ~generals_power.emergency_repair1, ~!generals_power.emergency_repair2, ~!generals_power.emergency_repair3
 		ChargeTime: 240
 		Icon: repair1
 		Description: Emergency Repair
@@ -92,7 +91,7 @@ Player:
 		OrderName: EmergencyRepair1PowerInfoOrder
 	SpawnActorPower@EMERGENCY_REPAIR2:
 		Actor: camera.emergency_repair.2
-		Prerequisites: ~anycommand, ~generals_power.emergency_repair2, ~!generals_power.emergency_repair3
+		Prerequisites: ~prerequisite.command_center, ~generals_power.emergency_repair2, ~!generals_power.emergency_repair3
 		ChargeTime: 240
 		Icon: repair2
 		Description: Emergency Repair
@@ -101,7 +100,7 @@ Player:
 		OrderName: EmergencyRepair2PowerInfoOrder
 	SpawnActorPower@EMERGENCY_REPAIR3:
 		Actor: camera.emergency_repair.3
-		Prerequisites: ~anycommand, ~generals_power.emergency_repair3
+		Prerequisites: ~prerequisite.command_center, ~generals_power.emergency_repair3
 		ChargeTime: 240
 		Icon: repair3
 		Description: Emergency Repair
