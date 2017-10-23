@@ -353,6 +353,45 @@ building.prc_command_center:
 		RequireOwner: false
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
+	GrantExternalConditionPower@FRENZY1:
+		PauseOnCondition: disabled || emp
+		Prerequisites: ~generals_power.frenzy1, ~!generals_power.frenzy2, ~!generals_power.frenzy3
+		Icon: frenzy1
+		ChargeTime: 120
+		Range: 2
+		Description: Frenzy
+		LongDesc: Makes a group of units deal 10% more damage\nfor 10 seconds.
+		Duration: 250
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		Condition: frenzy1
+		OrderName: Frenzy1PowerInfoOrder
+	GrantExternalConditionPower@FRENZY2:
+		PauseOnCondition: disabled || emp
+		Prerequisites: ~generals_power.frenzy2, ~!generals_power.frenzy3
+		Icon: frenzy2
+		ChargeTime: 120
+		Range: 2
+		Description: Frenzy
+		LongDesc: Makes a group of units deal 20% more damage\nfor 20 seconds.
+		Duration: 500
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		Condition: frenzy2
+		OrderName: Frenzy2PowerInfoOrder
+	GrantExternalConditionPower@FRENZY3:
+		PauseOnCondition: disabled || emp
+		Prerequisites: ~generals_power.frenzy3
+		Icon: frenzy3
+		ChargeTime: 120
+		Range: 2
+		Description: Frenzy
+		LongDesc: Makes a group of units deal 30% more damage\nfor 30 seconds.
+		Duration: 750
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		Condition: frenzy3
+		OrderName: Frenzy3PowerInfoOrder
 	CashHackPower@CASH_HACK1:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~generals_power.cash_hack1, ~!generals_power.cash_hack2, ~!generals_power.cash_hack3

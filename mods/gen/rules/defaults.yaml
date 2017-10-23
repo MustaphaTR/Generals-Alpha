@@ -166,10 +166,39 @@
 	DamageMultiplier@IRONCURTAIN:
 		RequiresCondition: invulnerability
 		Modifier: 0
-	TimedConditionBar:
+	TimedConditionBar@IRONCURTAIN:
 		Condition: invulnerability
 	ExternalCondition@INVULNERABILITY:
 		Condition: invulnerability
+
+^AffectedByFrenzy:
+	WithColoredOverlay@FRENZY:
+		Palette: frenzy
+		RequiresCondition: frenzy1 || frenzy2 || frenzy3
+	FirepowerMultiplier@FRENZY1:
+		RequiresCondition: frenzy1
+		Modifier: 110
+	FirepowerMultiplier@FRENZY2:
+		RequiresCondition: frenzy2
+		Modifier: 120
+	FirepowerMultiplier@FRENZY3:
+		RequiresCondition: frenzy3
+		Modifier: 130
+	TimedConditionBar@FRENZY1:
+		Color: FF0000
+		Condition: frenzy1
+	TimedConditionBar@FRENZY2:
+		Color: FF0000
+		Condition: frenzy2
+	TimedConditionBar@FRENZY3:
+		Color: FF0000
+		Condition: frenzy3
+	ExternalCondition@FRENZY1:
+		Condition: frenzy1
+	ExternalCondition@FRENZY2:
+		Condition: frenzy2
+	ExternalCondition@FRENZY3:
+		Condition: frenzy3
 
 ^Horde:
 	GrantHordeBonus:
@@ -679,6 +708,7 @@
 	Inherits@11: ^AffectedByEMP
 	Inherits@12: ^AffectedByEmergencyRepair
 	Inherits@13: ^AffectedByScrapCratePowerups
+	Inherits@14: ^AffectedByFrenzy
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -812,6 +842,7 @@
 	Inherits@5: ^AffectedByHoldTheLine
 	Inherits@6: ^AffectsDemoTrap
 	Inherits@7: ^AffectedByScrapCratePowerups
+	Inherits@8: ^AffectedByFrenzy
 	Huntable:
 	DrawLineToTarget:
 	Health:
@@ -1010,6 +1041,7 @@
 	Inherits@9: ^AffectedByEMP
 	Inherits@10: ^AffectedByScrapCratePowerups
 	Inherits@11: ^AffectedByEmergencyRepair
+	Inherits@12: ^AffectedByFrenzy
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
