@@ -1249,42 +1249,42 @@ medi:
 		Tick: 100
 	icon: mediicon
 
-spy:
-	stand:
+infantry.saboteur:
+	stand: saboteur
 		Facings: 8
-	stand2:
+	stand2: saboteur
 		Start: 8
 		Facings: 8
-	run:
+	run: saboteur
 		Start: 16
 		Length: 6
 		Facings: 8
 		Tick: 100
-	shoot:
+	shoot: saboteur
 		Start: 64
 		Length: 8
 		Facings: 8
-	idle1:
+	idle1: saboteur
 		Start: 256
 		Length: 14
 		Tick: 120
-	idle2:
+	idle2: saboteur
 		Start: 271
 		Length: 16
 		Tick: 120
-	die1:
+	die1: saboteur
 		Start: 288
 		Length: 8
-	die2:
+	die2: saboteur
 		Start: 296
 		Length: 8
-	die3:
+	die3: saboteur
 		Start: 304
 		Length: 8
-	die4:
+	die4: saboteur
 		Start: 312
 		Length: 12
-	die5:
+	die5: saboteur
 		Start: 324
 		Length: 18
 	die6: electro
@@ -1301,24 +1301,24 @@ spy:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
-	prone-stand:
+	prone-stand: saboteur
 		Start: 144
 		Stride: 4
 		Facings: 8
-	prone-stand2:
+	prone-stand2: saboteur
 		Start: 144
 		Stride: 4
 		Facings: 8
-	prone-run:
+	prone-run: saboteur
 		Start: 144
 		Length: 4
 		Facings: 8
 		Tick: 100
-	prone-shoot:
+	prone-shoot: saboteur
 		Start: 192
 		Length: 8
 		Facings: 8
-	icon: spyicon
+	icon: saboticon
 
 e7:
 	stand:
@@ -1458,6 +1458,95 @@ e4:
 		Length: 16
 		Facings: 8
 	icon: e4icon
+
+infantry.toxin_rebel:
+	stand: e5
+		Facings: 8
+	stand2: e5
+		Start: 8
+		Facings: 8
+	run: e5
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot: e5
+		Start: 64
+		Length: 16
+		Facings: 8
+	liedown: e5
+		Start: 192
+		Length: 2
+		Facings: 8
+	standup: e5
+		Start: 240
+		Length: 2
+		Facings: 8
+	prone-stand: e5
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-stand2: e5
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-run: e5
+		Start: 208
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-shoot: e5
+		Start: 256
+		Length: 16
+		Facings: 8
+	idle1: e5
+		Start: 384
+		Length: 16
+		Tick: 120
+	idle2: e5
+		Start: 400
+		Length: 16
+		Tick: 120
+	cheer: e5
+		Start: 588
+		Length: 3
+		Facings: 8
+		Tick: 120	
+	die1: e5
+		Start: 509
+		Length: 9
+		Tick: 80
+	die2: e5
+		Start: 518
+		Length: 8
+		Tick: 80
+	die3: e5
+		Start: 526
+		Length: 8
+		Tick: 80
+	die4: e5
+		Start: 534
+		Length: 12
+		Tick: 80
+	die5: e5
+		Start: 546
+		Length: 18
+		Tick: 80
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	icon: trebelicon
 
 shok:
 	stand:
