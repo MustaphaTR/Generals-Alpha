@@ -31,26 +31,82 @@
 		HP: 1
 	HitShape:
 
-hack.cameo_filler.8:
+hack.cameo_filler.14:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.usa_infantry
+		BuildPaletteOrder: 4
+		Prerequisites: disabled, ~!techlevel.high, ~techlevel.low
+
+hack.cameo_filler.15:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.usa_infantry
 		BuildPaletteOrder: 5
-		Prerequisites: disabled, ~!generals_power.pathfinder
+		Prerequisites: disabled, ~!generals_power.pathfinder, ~techlevel.low
 
-hack.cameo_filler.9:
+hack.cameo_filler.16:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.gla_infantry
 		BuildPaletteOrder: 6
 		Prerequisites: disabled, ~generals_power.hijacker
 
-hack.cameo_filler.10:
+hack.cameo_filler.17:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.prc_infantry
+		BuildPaletteOrder: 4
+		Prerequisites: disabled, ~!techlevel.medium
+
+hack.cameo_filler.18:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.prc_infantry
+		BuildPaletteOrder: 5
+		Prerequisites: disabled, ~!techlevel.high
+
+hack.cameo_filler.19:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.gla_infantry
 		BuildPaletteOrder: 9
 		Prerequisites: disabled, ~tech.bio_lab, ~generals_power.hijacker
+
+hack.cameo_filler.20:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.prc_collector
+		BuildPaletteOrder: 2
+		Prerequisites: disabled
+
+hack.cameo_filler.21:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.prc_vehicle
+		BuildPaletteOrder: 5
+		Prerequisites: disabled, ~!techlevel.medium, ~techlevel.low
+
+hack.cameo_filler.22:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.prc_vehicle
+		BuildPaletteOrder: 8
+		Prerequisites: disabled, ~!techlevel.high, ~techlevel.medium
+
+hack.cameo_filler.23:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.usa_aircraft
+		BuildPaletteOrder: 5
+		Prerequisites: disabled, ~!generals_power.stealth_fighter, ~techlevel.high
+
+hack.cameo_filler.24:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.prc_aircraft
+		BuildPaletteOrder: 2
+		Prerequisites: disabled, ~!techlevel.high
 
 upgrade.radar:
 	Inherits: ^default.upgrade
@@ -74,7 +130,7 @@ upgrade.control_rods:
 		BuildPaletteOrder: 1
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: building.cold_fusion_reactor, ~techlevel.low
+		Prerequisites: building.cold_fusion_reactor, ~techlevel.infonly
 		Description: Doubles power output of a Cold Fusion Reactor.
 	Valued:
 		Cost: 500
@@ -84,20 +140,6 @@ upgrade.control_rods:
 	RenderSprites:
 	KillsSelf:
 		RemoveInstead: true
-
-hack.cameo_filler.11:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.usa_aircraft
-		BuildPaletteOrder: 5
-		Prerequisites: disabled, ~!generals_power.stealth_fighter
-
-hack.cameo_filler.12:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.prc_collector
-		BuildPaletteOrder: 2
-		Prerequisites: disabled
 
 upgrade.capture_building:
 	Inherits: ^default.upgrade

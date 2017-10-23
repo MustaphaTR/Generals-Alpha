@@ -15,7 +15,7 @@ generals_power.spy_drone:
 	Buildable:
 		BuildPaletteOrder: 1
 		BuildDuration: 500
-		Prerequisites: ~building.usa_command_center, ~techlevel.infonly
+		Prerequisites: ~building.usa_command_center, ~techlevel.low
 		Description: Enables Spy Drone support power from Command Center.
 	Valued:
 		Cost: 600
@@ -25,14 +25,14 @@ hack.cameo_filler.1:
 	Buildable:
 		Queue: General
 		BuildPaletteOrder: 2
-		Prerequisites: ~building.usa_command_center
+		Prerequisites: ~building.usa_command_center, disabled, ~techlevel.low
 
 hack.cameo_filler.2:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
 		BuildPaletteOrder: 3
-		Prerequisites: ~building.usa_command_center
+		Prerequisites: ~building.usa_command_center, disabled, ~techlevel.low
 
 generals_power.tech_training:
 	Inherits: ^default.generals_power
@@ -51,14 +51,14 @@ hack.cameo_filler.3:
 	Buildable:
 		Queue: General
 		BuildPaletteOrder: 5
-		Prerequisites: ~building.gla_command_center, disabled
+		Prerequisites: ~building.gla_command_center, disabled, ~techlevel.medium
 
 hack.cameo_filler.4:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
 		BuildPaletteOrder: 6
-		Prerequisites: ~building.gla_command_center, disabled
+		Prerequisites: ~building.gla_command_center, disabled, ~techlevel.medium
 
 generals_power.red_training:
 	Inherits: ^default.generals_power
@@ -83,6 +83,13 @@ generals_power.arty_training:
 		Description: Makes Inferno and Nuke Cannons trained as veteran.
 	Valued:
 		Cost: 2000
+
+hack.cameo_filler.5:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 9
+		Prerequisites: ~building.prc_command_center, disabled, ~!techlevel.high, ~techlevel.medium
 
 generals_power.nuke_cannon:
 	Inherits: ^default.generals_power
@@ -151,7 +158,7 @@ generals_power.scud_launcher:
 	Buildable:
 		BuildPaletteOrder: 14
 		BuildDuration: 1000
-		Prerequisites: ~building.gla_command_center, ~techlevel.medium
+		Prerequisites: ~building.gla_command_center, ~techlevel.high
 		Description: Enables Marauder Tank.
 	Valued:
 		Cost: 1200
@@ -163,7 +170,7 @@ generals_power.hijacker:
 	Buildable:
 		BuildPaletteOrder: 15
 		BuildDuration: 1000
-		Prerequisites: ~building.gla_command_center, building.gla_barracks, ~techlevel.medium
+		Prerequisites: ~building.gla_command_center, building.gla_barracks, ~techlevel.high
 		Description: Enables Hijacker.
 	Valued:
 		Cost: 400
@@ -211,7 +218,7 @@ generals_power.paradrop1:
 	Buildable:
 		BuildPaletteOrder: 19
 		BuildDuration: 625
-		Prerequisites: ~building.usa_command_center, building.usa_barracks, ~techlevel.medium
+		Prerequisites: ~building.usa_command_center, building.usa_barracks, ~techlevel.infonly
 		Description: Enables Paradrop support power from Command Center.
 	Valued:
 		Cost: 1250
@@ -240,6 +247,13 @@ generals_power.paradrop3:
 	Valued:
 		Cost: 2250
 
+hack.cameo_filler.6:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 21
+		Prerequisites: ~building.usa_command_center, disabled, ~!techlevel.high, ~techlevel.medium
+
 generals_power.ambush1:
 	Inherits: ^default.generals_power
 	Tooltip:
@@ -247,7 +261,7 @@ generals_power.ambush1:
 	Buildable:
 		BuildPaletteOrder: 22
 		BuildDuration: 625
-		Prerequisites: ~building.gla_command_center, building.gla_barracks, ~techlevel.medium
+		Prerequisites: ~building.gla_command_center, building.gla_barracks, ~techlevel.infonly
 		Description: Enables Rebel Ambush support power from Command Center.
 	Valued:
 		Cost: 1250
@@ -275,6 +289,13 @@ generals_power.ambush3:
 		Description: Upgrades Rebel Ambush support power to Level 3.
 	Valued:
 		Cost: 2250
+
+hack.cameo_filler.7:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 24
+		Prerequisites: ~building.gla_command_center, disabled, ~!techlevel.high, ~techlevel.medium
 
 generals_power.frenzy1:
 	Inherits: ^default.generals_power
@@ -348,6 +369,13 @@ generals_power.cash_hack3:
 	Valued:
 		Cost: 1000
 
+hack.cameo_filler.8:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 30
+		Prerequisites: ~building.prc_command_center, disabled, ~!techlevel.high, ~techlevel.medium
+
 generals_power.a101:
 	Inherits: ^default.generals_power
 	Tooltip:
@@ -383,6 +411,13 @@ generals_power.a103:
 		Description: Upgrades A-10 Strike support power to Level 3.
 	Valued:
 		Cost: 1600
+
+hack.cameo_filler.9:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 33
+		Prerequisites: ~building.usa_command_center, disabled, ~!techlevel.high, ~techlevel.medium
 
 generals_power.cash_bounty1:
 	Inherits: ^default.generals_power
@@ -420,6 +455,13 @@ generals_power.cash_bounty3:
 	Valued:
 		Cost: 1000
 
+hack.cameo_filler.10:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 36
+		Prerequisites: ~building.gla_command_center, disabled, ~!techlevel.high, ~techlevel.medium
+
 generals_power.arty_barrage1:
 	Inherits: ^default.generals_power
 	Tooltip:
@@ -456,6 +498,13 @@ generals_power.arty_barrage3:
 	Valued:
 		Cost: 1600
 
+hack.cameo_filler.11:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 39
+		Prerequisites: ~building.prc_command_center, disabled, ~!techlevel.high, ~techlevel.medium
+
 generals_power.cluster_mines:
 	Inherits: ^default.generals_power
 	Tooltip:
@@ -468,19 +517,19 @@ generals_power.cluster_mines:
 	Valued:
 		Cost: 1750
 
-hack.cameo_filler.6:
+hack.cameo_filler.12:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
-		BuildPaletteOrder: 38
-		Prerequisites: ~building.prc_command_center, disabled
+		BuildPaletteOrder: 41
+		Prerequisites: ~building.prc_command_center, disabled, ~techlevel.high
 
-hack.cameo_filler.7:
+hack.cameo_filler.13:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
-		BuildPaletteOrder: 39
-		Prerequisites: ~building.prc_command_center, disabled
+		BuildPaletteOrder: 42
+		Prerequisites: ~building.prc_command_center, disabled, ~techlevel.high
 
 generals_power.fuel_air_bomb:
 	Inherits: ^default.generals_power
