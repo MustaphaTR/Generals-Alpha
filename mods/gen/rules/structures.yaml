@@ -80,6 +80,7 @@ building.usa_command_center:
 		Description: Spy Drone
 		LongDesc: Spawns a Spy Drone anywhere on the map.
 		StartFullyCharged: false
+		SelectTargetSpeechNotification: SelectTarget
 		OrderName: SpyDronePowerInfoOrder
 	SpawnActorPower@SPY_SATTELITE:
 		PauseOnCondition: emp
@@ -91,6 +92,7 @@ building.usa_command_center:
 		Description: Spy Satellite
 		LongDesc: Reveals are large area of map for a while.\n\nAlso detects cloaked units in that area.
 		StartFullyCharged: false
+		SelectTargetSpeechNotification: SelectTarget
 		OrderName: SpySatellitePowerInfoOrder
 	ParatroopersPower@PARADROP1:
 		PauseOnCondition: disabled || emp
@@ -267,6 +269,8 @@ building.gla_command_center:
 		Description: Rebel Ambush
 		LongDesc: Spawns 4 Rebels anywhere on the map.
 		StartFullyCharged: false
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: Ambush1PowerInfoOrder
 	SpawnActorPower@AMBUSH2:
 		PauseOnCondition: disabled || emp
@@ -278,6 +282,8 @@ building.gla_command_center:
 		Description: Rebel Ambush
 		LongDesc: Spawns 8 Rebels anywhere on the map.
 		StartFullyCharged: false
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: Ambush2PowerInfoOrder
 	SpawnActorPower@AMBUSH3:
 		PauseOnCondition: disabled || emp
@@ -289,6 +295,8 @@ building.gla_command_center:
 		Description: Rebel Ambush
 		LongDesc: Spawns 16 Rebels anywhere on the map.
 		StartFullyCharged: false
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: Ambush3PowerInfoOrder
 	AirstrikePower@ANTHRAX_BOMB:
 		PauseOnCondition: disabled || emp
@@ -355,6 +363,8 @@ building.prc_command_center:
 		LongDesc: Steals $1000 credits from enemy.\n\nTarget their Supply Center or Stash to do so.
 		StartFullyCharged: false
 		OnFireSound: scashhac.wav
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: CashHack1PowerInfoOrder
 	CashHackPower@CASH_HACK2:
 		PauseOnCondition: disabled || emp
@@ -366,6 +376,8 @@ building.prc_command_center:
 		LongDesc: Steals $2000 credits from enemy.\n\nTarget their Supply Center or Stash to do so.
 		StartFullyCharged: false
 		OnFireSound: scashhac.wav
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: CashHack2PowerInfoOrder
 	CashHackPower@CASH_HACK3:
 		PauseOnCondition: disabled || emp
@@ -377,6 +389,8 @@ building.prc_command_center:
 		LongDesc: Steals $4000 credits from enemy.\n\nTarget their Supply Center or Stash to do so.
 		StartFullyCharged: false
 		OnFireSound: scashhac.wav
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: CashHack3PowerInfoOrder
 	SpawnActorPower@ARTY_BARRAGE1:
 		PauseOnCondition: disabled || emp
@@ -388,6 +402,8 @@ building.prc_command_center:
 		Description: Artillery Barrage
 		LongDesc: Fires 12 Artillery Shells anywhere on the map.
 		StartFullyCharged: false
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: ArtilleryBarrage1PowerInfoOrder
 	SpawnActorPower@ARTY_BARRAGE2:
 		PauseOnCondition: disabled || emp
@@ -399,6 +415,8 @@ building.prc_command_center:
 		Description: Artillery Barrage
 		LongDesc: Fires 24 Artillery Shells anywhere on the map.
 		StartFullyCharged: false
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: ArtilleryBarrage2PowerInfoOrder
 	SpawnActorPower@ARTY_BARRAGE3:
 		PauseOnCondition: disabled || emp
@@ -410,6 +428,8 @@ building.prc_command_center:
 		Description: Artillery Barrage
 		LongDesc: Fires 36 Artillery Shells anywhere on the map.
 		StartFullyCharged: false
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: ArtilleryBarrage3PowerInfoOrder
 	AirstrikePower@CLUSTER_MINES:
 		PauseOnCondition: disabled || emp
