@@ -619,6 +619,21 @@ building.nuclear_reactor:
 	RenderSprites:
 		PlayerPalette: cncplayer
 
+building.advanced_nuclear_reactor:
+	Inherits: building.nuclear_reactor
+	Buildable:
+		Prerequisites: ~disabled
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Advanced Nuclear Reactor
+	Power@notovercharged:
+		Amount: 18
+		RequiresCondition: !overcharge && !emp
+	Power@overcharged:
+		Amount: 27
+		RequiresCondition: overcharge && !emp
+
 ^default.barracks:
 	Inherits: ^Building
 	Inherits@REVEAL: ^Reveal200

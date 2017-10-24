@@ -103,6 +103,25 @@ building.nuclear_reactor:
 		Length: *
 	icon: nkpwricon
 
+building.advanced_nuclear_reactor:
+	idle: nuk2
+		Length: 4
+		Tick: 1000
+	damaged-idle: nuk2
+		Start: 4
+		Length: 4
+		Tick: 1000
+	dead: nuk2
+		Start: 8
+		Tick: 800
+	make: nuk2make
+		Length: *
+		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	icon: advnukeicon
+
 building.usa_barracks:
 	idle: pyle
 		Length: 10
