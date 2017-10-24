@@ -456,6 +456,72 @@ vehicle.ambulance:
 	Voiced:
 		VoiceSet: AmbulanceVoice
 
+vehicle.sentry_drone:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@REVEAL: ^Reveal200
+	Buildable:
+		Queue: queue.usa_vehicle
+		BuildPaletteOrder: 4
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~building.usa_war_factory, ~techlevel.low
+		Description: Detection vehicle that is cloaked while not moving.
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Sentry Drone
+	Health:
+		HP: 300
+	Armor:
+		Type: vehicle.humvee
+	Mobile:
+		TurnSpeed: 8
+		Speed: 60
+		Voice: Move
+	Crushable:
+		CrushClasses: vehicle
+	Targetable:
+		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, NoDriverKill
+		RequiresCondition: !parachute
+	-Targetable@DRIVER_KILLED:
+	-Capturable:
+	-CaptureNotification:
+	-Capturable@DRIVER_KILLED:
+	-WithColoredOverlay@DRIVER_KILLED:
+	-ExternalConditionThatRevokedOnCapture@DRIVER_KILLED:
+	-TimedConditionBar@DRIVER_KILLED:
+	Cloak:
+		InitialDelay: 100
+		CloakDelay: 50
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 5c640
+	Turreted:
+		TurnSpeed: 8
+	Armament:
+		Weapon: mg.humvee
+		MuzzleSequence: muzzle
+		RequiresCondition: sentry_gun
+	AttackTurreted:
+		RequiresCondition: sentry_gun && !disabled && !driver_killed && !emp
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+		Sequence: turret2
+		RequiresCondition: sentry_gun
+	GrantConditionOnPrerequisite@SENTRY_GUN:
+		Condition: sentry_gun
+		Prerequisites: upgrade.sentry_gun
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	-MustBeDestroyed:
+	-Voiced:
+
 vehicle.quad_cannon:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove

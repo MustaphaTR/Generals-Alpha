@@ -176,9 +176,22 @@ upgrade.tow_missile:
 		BuildPaletteOrder: 3
 		BuildDuration: 750
 		Prerequisites: building.usa_war_factory, ~techlevel.low
-		Description: Allows Humvees to fire Missiles. 
+		Description: Allows Humvees to fire Missiles.
 	Valued:
 		Cost: 1200
+
+upgrade.sentry_gun:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Sentry Drone Gun
+	Buildable:
+		Queue: queue.usa_vehicle
+		BuildPaletteOrder: 6
+		BuildDuration: 250
+		Prerequisites: building.usa_war_factory, ~techlevel.low, ~disabled
+		Description: Allows Senrty Drones to fire.
+	Valued:
+		Cost: 1000
 
 upgrade.sc_rocket:
 	Inherits: ^default.upgrade
