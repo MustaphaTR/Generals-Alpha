@@ -507,6 +507,7 @@ infantry.hacker:
 		RequiresCondition: deployed && rank-elite
 	Voiced:
 		VoiceSet: HackerVoice
+	-MustBeDestroyed:
 
 infantry.hijacker:
 	Inherits: ^Soldier
