@@ -372,6 +372,14 @@
 		Condition: chain_gun
 		Prerequisites: upgrade.chain_gun
 
+^AffectedByWorkerShoes:
+	SpeedMultiplier@WORKER_SHOES:
+		RequiresCondition: worker_shoes
+		Modifier: 110
+	GrantConditionOnPrerequisite@WORKER_SHOES:
+		Condition: worker_shoes
+		Prerequisites: upgrade.worker_shoes
+
 ^AffectedByNuclearTanks:
 	SpeedMultiplier@NUCLEAR_TANKS:
 		RequiresCondition: nuclear_tanks
