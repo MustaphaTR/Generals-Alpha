@@ -72,6 +72,18 @@ generals_power.red_training:
 	Valued:
 		Cost: 1000
 
+generals_power.battlemaster_training:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Battlemaster Elite Training
+	Buildable:
+		BuildPaletteOrder: 8
+		BuildDuration: 1000
+		Prerequisites: ~building.prc_command_center, ~techlevel.infonly, ~disabled
+		Description: Makes Battlemaster Tanks trained as veteran.
+	Valued:
+		Cost: 1000
+
 generals_power.arty_training:
 	Inherits: ^default.generals_power
 	Tooltip:

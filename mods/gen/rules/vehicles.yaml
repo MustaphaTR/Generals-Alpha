@@ -417,6 +417,9 @@ vehicle.battlemaster_tank:
 	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: BattlemasterTankVoice
+	ProducibleWithLevel:
+		InitialLevels: 2
+		Prerequisites: generals_power.battlemaster_training
 
 vehicle.ambulance:
 	Inherits: ^Vehicle
