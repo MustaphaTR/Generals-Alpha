@@ -1237,6 +1237,40 @@ building.bunker.strategy:
 	RenderSprites:
 		Image: building.bunker
 
+building.fotified_bunker:
+	Inherits: building.bunker
+	Buildable:
+		BuildDuration: 200
+		Prerequisites: building.prc_barracks, ~techlevel.infonly, ~disabled
+		Description: Static defense with fireports for 10\ngarrisoned soldiers.\n\nComes with some mines around.
+	Tooltip:
+		Name: Fortified Bunker
+	Valued:
+		Cost: 700
+	Selectable:
+		Class: building.fotified_bunker
+	Armor:
+		Type: building.tough
+	Cargo:
+		MaxWeight: 10
+		PipCount: 10
+	FreeActor@1:
+		Actor: hack.mine_spawner.2
+		SpawnOffset: 0, 0
+	FreeActor@2:
+		Actor: hack.mine_spawner.2
+		SpawnOffset: 1, 1
+
+building.fotified_bunker.strategy:
+	Inherits: building.fotified_bunker
+	Buildable:
+		BuildDurationModifier: 80
+		Prerequisites: building.prc_barracks, ~strategy.overlord_bunker, ~techlevel.infonly, ~disabled
+	Valued:
+		Cost: 560
+	RenderSprites:
+		Image: building.fotified_bunker
+
 ^default.war_factory:
 	Inherits: ^Building
 	Inherits@REVEAL: ^Reveal200

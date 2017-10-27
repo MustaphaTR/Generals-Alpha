@@ -416,6 +416,13 @@ hack.rpg_trooper_spawner.1:
 	KillsSelf:
 		Delay: 1
 
+hack.mine_spawner.2:
+	Inherits: hack.rebel_spawner.4
+	Armament@1:
+		Weapon: hack.spawn_2_mines
+	KillsSelf:
+		Delay: 1
+
 MINE:
 	Inherits@1: ^SpriteActor
 	HiddenUnderShroud:

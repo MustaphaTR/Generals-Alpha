@@ -332,6 +332,21 @@ building.bunker:
 		UseTilesetExtension: true
 	icon: bunkericon
 
+building.fotified_bunker:
+	idle: pbox
+	damaged-idle: pbox
+		Start: 1
+	make: pboxmake
+		Length: *
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	bib: mbPBOX
+		Length: *
+		Offset: 0,-2
+		UseTilesetExtension: true
+	icon: fortbicon
+
 building.usa_war_factory:
 	Defaults: usweap
 		Offset: 0,-12
