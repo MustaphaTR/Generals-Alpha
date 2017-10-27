@@ -173,6 +173,44 @@ infantry.red_guard:
 	ProducibleWithLevel:
 		Prerequisites: generals_power.red_training
 
+infantry.minigunner:
+	Inherits: ^default.mg_infantry
+	Inherits@CHAIN_GUN: ^AffectedByChainGun
+	Inherits@HORDE_BONUS: ^Horde
+	Buildable:
+		Queue: queue.prc_infantry
+		BuildDuration: 250
+		Prerequisites: ~building.prc_barracks, ~techlevel.infonly, ~disabled
+	Valued:
+		Cost: 350
+	Mobile:
+		Speed: 25
+	Tooltip:
+		Name: Minigunner
+	ReloadDelayMultiplier@Gatling1:
+		RequiresCondition: gatling >= 1
+		Modifier: 50
+	ReloadDelayMultiplier@Gatling2:
+		RequiresCondition: gatling >= 2
+		Modifier: 50
+	Armament@GatlingAG:
+		Weapon: gatling.minigunner.ground
+	Armament@GatlingAA:
+		Weapon: gatling.minigunner.air
+	GrantStackableConditionOnFire@gatling:
+		Condition: gatling
+		ArmamentName: primary
+		RequiredShotsPerStack: 12
+		MaximumInstances: 2
+		RevokeDelay: 40
+		RevokeAll: true
+		IsCyclic: false
+	Voiced:
+		VoiceSet: MinigunnerVoice
+	ProducibleWithLevel:
+		InitialLevels: 2
+		Prerequisites: generals_power.minigunner_training
+
 ^default.rocket_infantry:
 	Inherits: ^Soldier
 	Inherits@REVEAL: ^Reveal150

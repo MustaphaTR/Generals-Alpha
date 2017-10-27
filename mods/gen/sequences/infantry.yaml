@@ -307,6 +307,88 @@ infantry.red_guard:
 		Facings: 8
 	icon: rgrdicon
 
+infantry.minigunner:
+	stand: e1
+		Facings: 8
+	stand2: e1
+		Start: 8
+		Facings: 8
+	run: e1
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot: e1
+		Start: 64
+		Length: 8
+		Facings: 8
+	prone-stand: e1
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-stand2: e1
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-run: e1
+		Start: 144
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown: e1
+		Start: 128
+		Length: 2
+		Facings: 8
+	standup: e1
+		Start: 176
+		Length: 2
+		Facings: 8
+	prone-shoot: e1
+		Start: 192
+		Length: 8
+		Facings: 8
+	idle1: e1
+		Start: 256
+		Length: 16
+		Tick: 120
+	idle2: e1
+		Start: 272
+		Length: 16
+		Tick: 120
+	die1: e1
+		Start: 288
+		Length: 8
+	die2: e1
+		Start: 296
+		Length: 8
+	die3: e1
+		Start: 304
+		Length: 8
+	die4: e1
+		Start: 312
+		Length: 12
+	die5: e1
+		Start: 324
+		Length: 18
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	die-crushed: corpse1
+		Length: *
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	garrison-muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: minigunicon
+
 infantry.missile_defender:
 	stand: e3
 		Facings: 8

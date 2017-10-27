@@ -390,6 +390,39 @@ mg.quad_cannon.air:
 		Damage: 5
 		ValidTargets: Air
 
+gatling.minigunner.ground:
+	Inherits: ^LightMG
+	ReloadDelay: 12
+	Range: 3c128
+	Report: gun11.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 10
+		Versus:
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.tank: 10
+			vehicle.dragon_tank: 25
+			aircraft.normal: 120
+			aircraft.comanche: 120
+			aircraft.chinook: 50
+			building.normal: 10
+			building.tough: 10
+			building.defense: 25
+			building.stinger_site: 10
+			building.wall: 6
+
+gatling.minigunner.air:
+	Inherits: gatling.gatling_tank.ground
+	ValidTargets: Air
+	Range: 8c768
+	Projectile: Bullet
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Damage: 10
+		ValidTargets: Air
+
 gatling.gatling_tank.ground:
 	Inherits: ^LightMG
 	ReloadDelay: 10

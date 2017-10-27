@@ -72,6 +72,18 @@ generals_power.red_training:
 	Valued:
 		Cost: 1000
 
+generals_power.minigunner_training:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Minigunner Elite Training
+	Buildable:
+		BuildPaletteOrder: 7
+		BuildDuration: 1000
+		Prerequisites: ~building.prc_command_center, ~techlevel.infonly, ~disabled
+		Description: Makes Minigunners trained at Rank 2.
+	Valued:
+		Cost: 1000
+
 generals_power.battlemaster_training:
 	Inherits: ^default.generals_power
 	Tooltip:
@@ -80,7 +92,7 @@ generals_power.battlemaster_training:
 		BuildPaletteOrder: 8
 		BuildDuration: 1000
 		Prerequisites: ~building.prc_command_center, ~techlevel.infonly, ~disabled
-		Description: Makes Battlemaster Tanks trained as veteran.
+		Description: Makes Battlemaster Tanks trained at Rank 2.
 	Valued:
 		Cost: 1000
 
