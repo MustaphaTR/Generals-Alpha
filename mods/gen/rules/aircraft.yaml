@@ -686,6 +686,19 @@ aircraft.comanche:
 		Actor: husk.comanche
 	SmokeTrailWhenDamaged:
 		Offset: -427,0,0
+	Cloak:
+		InitialDelay: 120
+		CloakDelay: 60
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled && stealth_comanche
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	GrantConditionOnPrerequisite@STEALTH_COMANCHE:
+		Condition: stealth_comanche
+		Prerequisites: upgrade.stealth_comanche
 	-RevealOnDeath:
 	Voiced:
 		VoiceSet: ComancheVoice

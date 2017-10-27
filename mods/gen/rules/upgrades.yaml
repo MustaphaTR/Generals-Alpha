@@ -289,6 +289,19 @@ upgrade.laser_guided_missiles:
 	Valued:
 		Cost: 1500
 
+upgrade.stealth_comanche:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Stealth Comanche
+	Buildable:
+		Queue: queue.usa_aircraft
+		BuildPaletteOrder: 9
+		BuildDuration: 750
+		Prerequisites: building.usa_airfield, ~techlevel.high, ~disabled
+		Description: Allows Comanches to stealth when not firing.
+	Valued:
+		Cost: 1500
+
 upgrade.mig_armor:
 	Inherits: ^default.upgrade
 	Tooltip:
