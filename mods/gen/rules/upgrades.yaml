@@ -141,6 +141,17 @@ upgrade.control_rods:
 	KillsSelf:
 		RemoveInstead: true
 
+upgrade.advanced_control_rods:
+	Inherits: upgrade.control_rods
+	Tooltip:
+		Name: Advanced Control Rods
+	Buildable:
+		Queue: queue.advanced_cold_fusion_reactor
+		Prerequisites: building.cold_fusion_reactor, ~techlevel.infonly, ~disabled
+		Description: Doubles power output of a Cold Fusion Reactor.
+	Plug:
+		Type: advanced_control_rods
+
 upgrade.capture_building:
 	Inherits: ^default.upgrade
 	Tooltip:

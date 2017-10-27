@@ -84,6 +84,21 @@ building.cold_fusion_reactor:
 	icon: powricon
 	fake-icon: fpwricon
 
+building.advanced_cold_fusion_reactor:
+	idle: powr
+	damaged-idle: powr
+		Start: 1
+	make: powrmake
+		Length: *
+	dead: powrdead
+		Tick: 800
+	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	icon: advpowricon
+
 building.nuclear_reactor:
 	idle: nuke
 		Length: 4
