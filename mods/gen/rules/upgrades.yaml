@@ -121,6 +121,26 @@ upgrade.radar:
 	Valued:
 		Cost: 500
 
+upgrade.neutron_mine:
+	AlwaysVisible:
+	Tooltip:
+		Name: Neutron Mine
+	Buildable:
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.prc_vehicle, queue.prc_aircraft, queue.propaganda_center, queue.missile_silo
+		BuildPaletteOrder: 10
+		BuildDuration: 375
+		BuildDurationModifier: 100
+		Prerequisites: building.cold_fusion_reactor, ~techlevel.infonly, ~disabled
+		Description: Upgrades a mine to a neutron mine, which kills vehicle drivers.
+	Valued:
+		Cost: 500
+	Plug:
+		Type: neutron_mine
+	Building:
+	RenderSprites:
+	KillsSelf:
+		RemoveInstead: true
+
 upgrade.control_rods:
 	AlwaysVisible:
 	Tooltip:

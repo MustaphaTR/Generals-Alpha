@@ -213,7 +213,7 @@ explosion.terrorist:
 		Size: 2
 		Delay: 5
 
-ATMine:
+explosion.mine:
 	Warhead@1Dam: SpreadDamage
 		Spread: 256
 		Damage: 400
@@ -226,15 +226,21 @@ ATMine:
 		SmudgeType: Crater
 		InvalidTargets: Structure, Wall, Trees
 
-APMine:
-	Inherits: ATMine
+explosion.mine.neutron:
 	Warhead@1Dam: SpreadDamage
-		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
-	Warhead@2Eff: CreateEffect
-		Explosions: napalm
-		ImpactSounds: mine1.aud
-	Warhead@Smu: LeaveSmudge
-		SmudgeType: Scorch
+		Spread: 256
+		Damage: 400
+		AffectsParent: true
+		InvalidTargets: Vehicle, Tank 
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+	Warhead@2Dis: GrantExternalCondition
+		Range: 0c768
+		AffectsParent: true
+		ValidTargets: Vehicle, Tank
+		Condition: driver_killed
+	Warhead@3Eff: CreateEffect
+		Explosions: large_explosion
+		ImpactSounds: mineblo1.aud
 
 OreExplosion:
 	Warhead@1Dam: SpreadDamage

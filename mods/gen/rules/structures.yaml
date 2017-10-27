@@ -787,9 +787,18 @@ building.mine:
 		Cost: 250
 	Tooltip:
 		Name: Land Mine
-	Explodes:
-		Weapon: ATMine
-		EmptyWeapon: ATMine
+	Explodes@Normal:
+		Weapon: explosion.mine
+		EmptyWeapon: explosion.mine
+		RequiresCondition: !neutron_mine
+	Explodes@Neutron:
+		Weapon: explosion.mine.neutron
+		EmptyWeapon: explosion.mine.neutron
+		RequiresCondition: neutron_mine
+	Pluggable@NEUTRON_MINE:
+		Offset: 0,0
+		Conditions:
+			neutron_mine: neutron_mine
 
 ^default.supply_center:
 	Inherits: ^Building
