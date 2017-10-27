@@ -523,7 +523,8 @@ vehicle.sentry_drone:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
 	-MustBeDestroyed:
-	-Voiced:
+	Voiced:
+		VoiceSet: SentryDroneVoice
 
 vehicle.quad_cannon:
 	Inherits: ^Tank
