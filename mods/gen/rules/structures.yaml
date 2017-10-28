@@ -470,6 +470,66 @@ building.prc_command_center:
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: ArtilleryBarrage3PowerInfoOrder
+	ParatroopersPower@TANK_DROP1:
+		PauseOnCondition: disabled || emp
+		OrderName: TankDrop1PowerInfoOrder
+		Prerequisites: ~generals_power.tank_drop1, ~!generals_power.tank_drop2, ~!generals_power.tank_drop3
+		Icon: tank_drop1
+		ChargeTime: 240
+		Description: Tank Drop
+		LongDesc: A Badger drops 1 Battlemaster Tank\nanywhere on the map.
+		UnitType: aircraft.badger.tank_drop
+		DropItems: vehicle.battlemaster_tank
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: true
+		BeaconPoster: tank_drop1bcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+	ParatroopersPower@TANK_DROP2:
+		PauseOnCondition: disabled || emp
+		OrderName: TankDrop2PowerInfoOrder
+		Prerequisites: ~generals_power.tank_drop2, ~!generals_power.tank_drop3
+		Icon: tank_drop2
+		ChargeTime: 240
+		Description: Tank Drop
+		LongDesc: A Badger drops 2 Battlemaster Tanks\nanywhere on the map.
+		UnitType: aircraft.badger.tank_drop
+		DropItems: vehicle.battlemaster_tank, vehicle.battlemaster_tank
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: true
+		BeaconPoster: tank_drop2bcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+	ParatroopersPower@TANK_DROP3:
+		PauseOnCondition: disabled || emp
+		OrderName: TankDrop3PowerInfoOrder
+		Prerequisites: ~generals_power.tank_drop3
+		Icon: tank_drop3
+		ChargeTime: 240
+		Description: Tank Drop
+		LongDesc: A Badger drops 4 Battlemaster Tanks\nanywhere on the map.
+		UnitType: aircraft.badger.tank_drop
+		DropItems: vehicle.battlemaster_tank, vehicle.battlemaster_tank, vehicle.battlemaster_tank, vehicle.battlemaster_tank
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: true
+		BeaconPoster: tank_drop3bcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
 	AirstrikePower@CLUSTER_MINES:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~generals_power.cluster_mines
