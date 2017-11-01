@@ -98,6 +98,19 @@ missile.raptor:
 			building.stinger_site: 40
 			aircraft.normal: 25
 
+missile.king_raptor:
+	Inherits: missile.raptor
+	ReloadDelay: 2
+	Range: 8c768
+	Warhead@1Dam: SpreadDamage
+		Damage: 125
+		Versus:
+			vehicle.anti-air: 30
+			vehicle.humvee: 30
+			building.defense: 25
+			building.stinger_site: 40
+			aircraft.normal: 25
+
 missile.stealth_fighter:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 5

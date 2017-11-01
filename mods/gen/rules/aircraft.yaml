@@ -276,6 +276,31 @@ aircraft.raptor:
 	RenderSprites:
 		Scale: 0.9
 
+aircraft.king_raptor:
+	Inherits: aircraft.raptor
+	Inherits@REVEAL: ^Reveal200
+	Buildable:
+		Prerequisites: ~building.usa_airfield, ~techlevel.medium, ~disabled
+	Valued:
+		Cost: 1100
+	Health:
+		HP: 240
+	Armament:
+		Weapon: missile.king_raptor
+	Armament@PDLASER:
+		Weapon: laser.king_raptor
+		LocalOffset: 0,213,-85
+		Name: pdlaser
+		AmmoPoolName: pdlaser
+	ShootsMissiles:
+		ShootStances: Neutral, Enemy
+		Armament: pdlaser
+	AmmoPool:
+		Ammo: 6
+		ReloadDelay: 6
+	Voiced:
+		VoiceSet: KingRaptorVoice
+
 aircraft.stealth_fighter:
 	Inherits: ^Plane
 	Inherits@REVEAL: ^Reveal180

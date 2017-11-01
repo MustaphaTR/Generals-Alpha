@@ -220,6 +220,9 @@ laser.paladin_tank:
 		InvalidTargets: Vehicle, Tank, Structure, Wall
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath
 
+laser.king_raptor:
+	Inherits: laser.paladin_tank
+
 ToxinLauncher:
 	InvalidTargets: Structure, Wall
 	Range: 2c512
