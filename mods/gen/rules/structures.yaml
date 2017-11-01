@@ -434,6 +434,68 @@ building.prc_command_center:
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: CashHack3PowerInfoOrder
+	ParatroopersPower@PRC_PARADROP1:
+		PauseOnCondition: disabled || emp
+		OrderName: PRCParadrop1PowerInfoOrder
+		Prerequisites: ~generals_power.paradrop1, ~!generals_power.paradrop2, ~!generals_power.paradrop3, ~disabled
+		Icon: paradrop1
+		ChargeTime: 240
+		Description: ParaDrop
+		LongDesc: A Badger drops 5 Minigunners\nanywhere on the map.
+		UnitType: aircraft.badger.prc_paradrop
+		DropItems: infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: true
+		BeaconPoster: paradrop1bcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+	ParatroopersPower@PRC_PARADROP2:
+		PauseOnCondition: disabled || emp
+		OrderName: PRCParadrop2PowerInfoOrder
+		Prerequisites: ~generals_power.paradrop2, ~!generals_power.paradrop3, ~disabled
+		Icon: paradrop2
+		ChargeTime: 240
+		Description: ParaDrop
+		LongDesc: 2 Badgers drop total of 10 Minigunners\nanywhere on the map.
+		UnitType: aircraft.badger.prc_paradrop
+		DropItems: infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner
+		SquadSize: 2
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: true
+		BeaconPoster: paradrop2bcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+	ParatroopersPower@PRC_PARADROP3:
+		PauseOnCondition: disabled || emp
+		OrderName: PRCParadrop3PowerInfoOrder
+		Prerequisites: ~generals_power.paradrop3, ~disabled
+		Icon: paradrop3
+		ChargeTime: 240
+		Description: ParaDrop
+		LongDesc: 3 Badgers drop total of 15 Minigunners\nanywhere on the map.
+		UnitType: aircraft.badger.prc_paradrop
+		DropItems: infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner
+		SquadSize: 3
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: true
+		BeaconPoster: paradrop3bcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
 	SpawnActorPower@ARTY_BARRAGE1:
 		PauseOnCondition: disabled || emp
 		Actor: hack.artillery_barrager.1

@@ -50,6 +50,15 @@ aircraft.badger.paradrop:
 	Tooltip:
 		Name: B-52
 
+aircraft.badger.prc_paradrop:
+	Inherits: ^default.badger
+	ParaDrop:
+		DropRange: 5c0
+	Cargo:
+		MaxWeight: 20
+	Tooltip:
+		Name: Badger
+
 aircraft.badger.tank_drop:
 	Inherits: aircraft.badger
 	Tooltip:
