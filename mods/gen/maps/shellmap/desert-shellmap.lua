@@ -48,6 +48,8 @@ ChinookPaths = { ChinookEntry.Location, ChinookRally.Location }
 BombTruckDisguises = { CrusaderTank1, Ambulance1, TomahawkLauncher1, PaladinTank1, Humvee1, USAMCC1 }
 BombTruckPaths = { BombTruckEntry.Location, BombTruckRally.Location }
 
+ParadropWaypoints = { Paradrop1 }
+
 BindActorTriggers = function(a)
 	if a.HasProperty("Hunt") then
 		if a.Owner == prc then
@@ -150,6 +152,17 @@ SendRaptors = function(waypoints)
 	Trigger.AfterDelay(DateTime.Seconds(40), function() SendRaptors(waypoints) end)
 end
 
+SendParadrop = function()
+	local lz = Utils.Random(ParadropWaypoints)
+	local units = powerproxy.SendParatroopers(lz.CenterPosition)
+
+	Utils.Do(units, function(a)
+		BindActorTriggers(a)
+	end)
+
+	Trigger.AfterDelay(DateTime.Minutes(4), SendParadrop)
+end
+
 SummonActor = function(actor, owner, location, date_time)
 	Trigger.AfterDelay(date_time, function()
 		local a = Actor.Create(actor, true, { Owner = owner, Facing = 0, Location = location})
@@ -198,10 +211,13 @@ WorldLoaded = function()
 	DeployMe(Hacker4)
 	DeployMe(Hacker5)
 	DeployMe(Hacker6)
+	
+	powerproxy = Actor.Create("powerproxy.paradrop", false, { Owner = usa })
 
 	Trigger.AfterDelay(DateTime.Seconds(25), function() SendRaptors(Raptor1Waypoints) end)
 	Trigger.AfterDelay(DateTime.Seconds(25), function() SendRaptors(Raptor2Waypoints) end)
 
+	Trigger.AfterDelay(DateTime.Minutes(4), function() SendParadrop() end)
 	SummonActor("hack.rebel_spawner.8", gla, AmbushLocation1.Location, DateTime.Minutes(4))
 	SummonActor("hack.artillery_barrager.3", prc, ArtyBarrWaypoint.Location, DateTime.Minutes(5))
 end
