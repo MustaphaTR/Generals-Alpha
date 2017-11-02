@@ -48,7 +48,7 @@ ChinookPaths = { ChinookEntry.Location, ChinookRally.Location }
 BombTruckDisguises = { CrusaderTank1, Ambulance1, TomahawkLauncher1, PaladinTank1, Humvee1, USAMCC1 }
 BombTruckPaths = { BombTruckEntry.Location, BombTruckRally.Location }
 
-ParadropWaypoints = { Paradrop1 }
+ParadropWaypoints = { Paradrop1, Paradrop2, Paradrop3, Paradrop4 }
 
 BindActorTriggers = function(a)
 	if a.HasProperty("Hunt") then
