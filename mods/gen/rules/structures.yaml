@@ -7,6 +7,7 @@
 	Buildable:
 		BuildDuration: 1125
 		BuildDurationModifier: 100
+		Prerequisites: ~techlevel.infonly
 		Queue: queue.usa_building, queue.gla_building, queue.prc_building
 	Health:
 		HP: 5000
@@ -50,7 +51,6 @@ building.usa_command_center:
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
 		Queue: queue.usa_building
-		Prerequisites: vehicle.usa_mcc
 		BuildPaletteOrder: 11
 		Description: Produces construction vehicles.\n\nResearches General's Powers\n\nProvides Radar.\n\nProvides Spy Sattalite support power.
 	Tooltip:
@@ -244,7 +244,6 @@ building.gla_command_center:
 	Inherits: ^default.command_center
 	Buildable:
 		Queue: queue.gla_building
-		Prerequisites: vehicle.gla_mcc
 		BuildPaletteOrder: 10
 		Description: Produces construction vehicles.\n\nResearches General's Powers
 	Tooltip:
@@ -333,7 +332,6 @@ building.prc_command_center:
 	Inherits: ^default.command_center
 	Buildable:
 		Queue: queue.prc_building
-		Prerequisites: vehicle.prc_mcc
 		BuildPaletteOrder: 13
 		Description: Produces construction vehicles.\n\nResearches General's Powers
 	Tooltip:
