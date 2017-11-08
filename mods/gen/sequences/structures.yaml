@@ -82,7 +82,6 @@ building.cold_fusion_reactor:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 	icon: powricon
-	fake-icon: fpwricon
 
 building.advanced_cold_fusion_reactor:
 	idle: powr
@@ -786,8 +785,6 @@ building.missile_silo:
 			INTERIOR: TEMPERAT
 	icon: nukeicon
 		UseTilesetExtension: false
-	fake-icon: mslficon
-		UseTilesetExtension: false
 
 apwr:
 	idle:
@@ -807,7 +804,6 @@ apwr:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 	icon: apwricon
-	fake-icon: fapwicon
 
 kenn:
 	idle:
@@ -830,7 +826,6 @@ spen:
 		Length: *
 		Offset: 0,2
 	icon: spenicon
-	fake-icon: speficon
 
 fix:
 	idle:
@@ -859,7 +854,6 @@ fix:
 		Offset: 0,-4
 		UseTilesetExtension: true
 	icon: fixicon
-	fake-icon: fixficon
 
 gun:
 	idle:
@@ -963,7 +957,6 @@ pdox:
 		Offset: 0,-4
 		UseTilesetExtension: true
 	icon: pdoxicon
-	fake-icon: pdoficon
 
 brik:
 	idle:
