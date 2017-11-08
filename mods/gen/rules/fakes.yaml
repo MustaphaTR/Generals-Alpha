@@ -1,0 +1,515 @@
+fake.command_center:
+	Inherits: ^FakeBuilding
+#	Inherits@Infiltrate: ^InfiltratableFake
+	Inherits@REVEAL: ^Reveal300
+	Inherits@SHAPE: ^3x3Shape
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -1536
+			BottomRight: 1536, 1536
+	Buildable:
+		BuildPaletteOrder: 23
+		BuildDuration: 750
+		BuildDurationModifier: 100
+		Queue: queue.gla_building
+		Prerequisites: ~techlevel.infonly, ~disabled
+		Description: Looks like a Command Center.
+		Icon: fake-icon
+	Tooltip:
+		Name: Fake Command Center
+		GenericName: GLA Command Center
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Building:
+		Footprint: xxX xxx XxX
+		Dimensions: 3,3
+	Health:
+		HP: 1250
+	Armor:
+		Type: building.tough
+	WithBuildingBib:
+	WithTextDecoration@SIDE:
+		Text: GLA
+		Color: 00FF00
+		ZOffset: 2048
+		ReferencePoint: Top
+		ValidStances: Ally, Neutral, Enemy
+	RenderSprites:
+		Image: building.gla_command_center
+	Valued:
+		Cost: 500
+	Voiced:
+		VoiceSet: GLACommandCenterVoice
+
+fake.barracks:
+	Inherits: ^FakeBuilding
+#	Inherits@Infiltrate: ^InfiltratableFake
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^2x2Shape
+	HitShape:
+		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
+	Buildable:
+		BuildPaletteOrder: 14
+		BuildDuration: 125
+		BuildDurationModifier: 100
+		Queue: queue.gla_building
+		Prerequisites: ~techlevel.infonly, ~disabled
+		Description: Looks like a Barracks.
+		Icon: fake-icon
+	Tooltip:
+		Name: Fake Barracks
+		GenericName: GLA Barracks
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Building:
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 125
+	Armor:
+		Type: building.normal
+	WithBuildingBib:
+	RenderSprites:
+		Image: building.gla_barracks
+	Valued:
+		Cost: 125
+	Voiced:
+		VoiceSet: GLABarracksVoice
+
+fake.supply_stash:
+	Inherits: ^FakeBuilding
+	Inherits@Infiltrate: ^InfiltratableFake
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^2x2Shape
+	HitShape:
+		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
+	Buildable:
+		BuildPaletteOrder: 15
+		BuildDuration: 125
+		BuildDurationModifier: 100
+		Queue: queue.gla_building
+		Prerequisites: ~techlevel.infonly, ~disabled
+		Description: Looks like a Supply Stash.
+		Icon: fake-icon
+	Tooltip:
+		Name: Fake Supply Stash
+		GenericName: GLA Supply Stash
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Building:
+		Footprint: xx x=
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Class: building.gla_supply_stash
+		Bounds: 48,48,0,12
+	Health:
+		HP: 250
+	Armor:
+		Type: building.normal
+	WithBuildingBib:
+	WithMakeAnimation@RA_SILO:
+		Sequence: make
+		BodyNames: rasilo
+	WithMakeAnimation@TD_SILO:
+		Sequence: make2
+		BodyNames: tdsilo
+	WithSpriteBody:
+		Name: rasilo
+	WithSpriteBody@TD_SILO:
+		Sequence: idle2
+		Name: tdsilo
+	RenderSprites:
+		Image: building.gla_supply_stash
+	Valued:
+		Cost: 375
+	Voiced:
+		VoiceSet: GLASupplyVoice
+
+fake.arms_dealer:
+	Inherits: ^FakeBuilding
+#	Inherits@Infiltrate: ^InfiltratableFake
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^3x2Shape
+	Buildable:
+		BuildPaletteOrder: 17
+		BuildDuration: 125
+		BuildDurationModifier: 100
+		Queue: queue.gla_building
+		Prerequisites: building.gla_supply_stash, ~techlevel.low, ~disabled
+		Description: Looks like an Arms Dealer.
+		Icon: fake-icon
+	Tooltip:
+		Name: Fake Arms Dealer
+		GenericName: GLA Arms Dealer
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Health:
+		HP: 500
+	Armor:
+		Type: building.normal
+	WithBuildingBib:
+	WithProductionDoorOverlay:
+		Sequence: build-top
+	RenderSprites:
+		Image: building.arms_dealer
+	Valued:
+		Cost: 625
+	Voiced:
+		VoiceSet: GLAArmsDealerVoice
+
+fake.palace:
+	Inherits: ^FakeBuilding
+#	Inherits@Infiltrate: ^InfiltratableFake
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^3x2Shape
+	Buildable:
+		BuildPaletteOrder: 20
+		BuildDuration: 125
+		BuildDurationModifier: 100
+		Queue: queue.gla_building
+		Prerequisites: building.arms_dealer, ~techlevel.medium, ~disabled
+		Description: Looks like a Palace.
+		Icon: fake-icon
+	Tooltip:
+		Name: Fake Palace
+		GenericName: Palace
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Selectable:
+		Bounds: 72,48
+	SelectionDecorations:
+		VisualBounds: 72,68,0,-12
+	Health:
+		HP: 300
+	Armor:
+		Type: building.normal
+	Cargo:
+		Types: fake
+		MaxWeight: 5
+		PipCount: 5
+	WithBuildingBib:
+	RenderSprites:
+		Image: building.palace
+		PlayerPalette: cncplayer
+	Valued:
+		Cost: 625
+	Voiced:
+		VoiceSet: PalaceVoice
+
+fake.black_market:
+	Inherits: ^FakeBuilding
+#	Inherits@Infiltrate: ^InfiltratableFake
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		BuildPaletteOrder: 21
+		BuildDuration: 125
+		BuildDurationModifier: 100
+		Queue: queue.gla_building
+		Prerequisites: building.palace, ~techlevel.medium, ~disabled
+		Description: Looks like a Black Market.
+		Icon: fake-icon
+	Tooltip:
+		Name: Fake Black Market
+		GenericName: Black Market
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Building:
+		Footprint: XX xx
+		Dimensions: 2,2
+	Selectable:
+		Bounds: 48,40,0,9
+	SelectionDecorations:
+		VisualBounds: 48,53,0,-4
+	Health:
+		HP: 125
+	Armor:
+		Type: building.normal
+	WithBuildingBib:
+	RenderSprites:
+		Image: building.black_market
+		PlayerPalette: cncplayer
+	Valued:
+		Cost: 625
+	Voiced:
+		VoiceSet: BlackMarketVoice
+
+hack.fake_scud_spawner:
+	Inherits: ^FakeBuilding
+#	Inherits@Infiltrate: ^InfiltratableFake
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		BuildPaletteOrder: 22
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Queue: queue.gla_building
+		Prerequisites: building.palace, ~techlevel.unrestricted, ~disabled
+		Description: Looks like a SCUD Storm.
+		Icon: fake-icon
+	Tooltip:
+		Name: Fake SCUD Storm
+		GenericName: SCUD Storm
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 300
+	Armor:
+		Type: building.tough
+	WithBuildingBib:
+	RenderSprites:
+		Image: building.scud_storm
+	Valued:
+		Cost: 1000
+	RevealsShroud@SW:
+		Range: 2c0
+		ValidStances: Enemy
+	SpawnActorOnDeath:
+		Actor: fake.scud_storm
+	KillsSelf:
+	-WithMakeAnimation:
+	-Explodes:
+	-ShakeOnDeath:
+	-SoundOnDamageTransition:
+	Voiced:
+		VoiceSet: SCUDStormVoice
+
+fake.scud_storm:
+	Inherits: ^FakeBuilding
+#	Inherits@Infiltrate: ^InfiltratableFake
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^2x2Shape
+#	Buildable:
+#		BuildPaletteOrder: 22
+#		BuildDuration: 250
+#		BuildDurationModifier: 100
+#		Queue: queue.gla_building
+#		Prerequisites: building.palace, ~techlevel.unrestricted, ~disabled
+#		Description: Looks like a SCUD Storm.
+#		Icon: fake-icon
+	Tooltip:
+		Name: Fake SCUD Storm
+		GenericName: SCUD Storm
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 300
+	Armor:
+		Type: building.tough
+	Selectable:
+		Bounds: 48,48,0,0
+	AttackTurreted:
+		Armaments: A, B, C, D
+	Armament@NORMAL_A:
+		Name: A
+		Turret: A
+		Weapon: hack.scud_missile_spawner
+		RequiresCondition: !anthrax_beta
+	Armament@BETA_A:
+		Name: A
+		Turret: A
+		Weapon: hack.scud_missile_spawner.beta
+		RequiresCondition: anthrax_beta
+	Armament@NORMAL_B:
+		Name: B
+		Turret: B
+		Weapon: hack.scud_missile_spawner
+		RequiresCondition: !anthrax_beta
+	Armament@BETA_B:
+		Name: B
+		Turret: B
+		Weapon: hack.scud_missile_spawner.beta
+		RequiresCondition: anthrax_beta
+	Armament@NORMAL_C:
+		Name: C
+		Turret: C
+		Weapon: hack.scud_missile_spawner
+		RequiresCondition: !anthrax_beta
+	Armament@BETA_C:
+		Name: C
+		Turret: C
+		Weapon: hack.scud_missile_spawner.beta
+		RequiresCondition: anthrax_beta
+	Armament@NORMAL_D:
+		Name: D
+		Turret: D
+		Weapon: hack.scud_missile_spawner
+		RequiresCondition: !anthrax_beta
+	Armament@BETA_D:
+		Name: D
+		Turret: D
+		Weapon: hack.scud_missile_spawner.beta
+		RequiresCondition: anthrax_beta
+	Turreted@A:
+		Turret: A
+		TurnSpeed: 3
+		Offset: -512, -512, 0
+	Turreted@B:
+		Turret: B
+		TurnSpeed: 3
+		Offset: 512, -512, 0
+	Turreted@C:
+		Turret: C
+		TurnSpeed: 3
+		Offset: -512, 512, 0
+	Turreted@D:
+		Turret: D
+		TurnSpeed: 3
+		Offset: 512, 512, 0
+	AmmoPool:
+		Ammo: 4
+		PipCount: 0
+		SelfReloads: true
+		ReloadCount: 4
+		SelfReloadDelay: 100
+	WithReloadingSpriteTurret@A:
+		AmmoPoolName: primary
+		Turret: A
+		Sequence: turret.a
+	WithReloadingSpriteTurret@B:
+		AmmoPoolName: primary
+		Turret: B
+		Sequence: turret.b
+	WithReloadingSpriteTurret@C:
+		AmmoPoolName: primary
+		Turret: C
+		Sequence: turret.c
+	WithReloadingSpriteTurret@D:
+		AmmoPoolName: primary
+		Turret: D
+		Sequence: turret.d
+	WithBuildingBib:
+	-WithMakeAnimation:
+	RenderSprites:
+		Image: building.scud_storm
+	Valued:
+		Cost: 1000
+	RevealsShroud@SW:
+		Range: 2c0
+		ValidStances: Enemy
+	Voiced:
+		VoiceSet: SCUDStormVoice
+
+fake.demo_trap:
+	Inherits: ^FakeBuilding
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		BuildPaletteOrder: 16
+		BuildDuration: 25
+		BuildDurationModifier: 100
+		Queue: queue.gla_building
+		Prerequisites: ~techlevel.medium
+		Description: Looks like a Demo Trap.
+		Icon: fake-icon
+	Tooltip:
+		Name: Fake Demo Trap
+		GenericName: Demo Trap
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Health:
+		HP: 15
+	Armor:
+		Type: building.normal
+	Cloak:
+		InitialDelay: 125
+		CloakDelay: 60
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled && !emp
+	-WithMakeAnimation:
+	RenderSprites:
+		Image: building.demo_trap
+	Valued:
+		Cost: 50
+
+fake.tunnel_network:
+	Inherits: ^FakeBuilding
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		BuildPaletteOrder: 18
+		BuildDuration: 125
+		BuildDurationModifier: 100
+		Queue: queue.gla_building
+		Prerequisites: gla_barracks, ~techlevel.infonly, ~disabled
+		Description: Looks like a Tunnel Network.
+		Icon: fake-icon
+	Tooltip:
+		Name: Fake Tunnel Network
+		GenericName: Tunnel Network
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 125
+	Armor:
+		Type: building.stinger_site
+	Turreted:
+		TurnSpeed: 12
+		InitialFacing: 56
+		Offset: 0,0,256
+	Armament:
+		Weapon: mg.tunnel_network
+		LocalOffset: 512,0,112
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		RequiresCondition: keep_me_disabled
+	WithSpriteTurret:
+	RenderSprites:
+		Image: building.tunnel_network
+	Valued:
+		Cost: 100
+	Voiced:
+		VoiceSet: TunnelNetworkVoice
+
+fake.stinger_site:
+	Inherits: ^FakeBuilding
+	Inherits@REVEAL: ^Reveal150
+	Inherits@SHAPE: ^1x1Shape
+	Buildable:
+		BuildPaletteOrder: 19
+		BuildDuration: 125
+		BuildDurationModifier: 100
+		Queue: queue.gla_building
+		Prerequisites: gla_barracks, ~techlevel.low, ~disabled
+		Description: Looks like a Stinger Site.
+		Icon: fake-icon
+	Tooltip:
+		Name: Fake Stinger Site
+		GenericName: Stinger Site
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 125
+	Armor:
+		Type: building.normal
+	WithBuildingBib:
+	RenderSprites:
+		Image: building.stinger_site
+	Valued:
+		Cost: 100
+	Voiced:
+		VoiceSet: StingerSiteVoice

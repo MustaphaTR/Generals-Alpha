@@ -108,6 +108,20 @@ hack.cameo_filler.24:
 		BuildPaletteOrder: 2
 		Prerequisites: disabled, ~!techlevel.high
 
+hack.cameo_filler.25:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.gla_building
+		BuildPaletteOrder: 11
+		Prerequisites: ~disabled
+
+hack.cameo_filler.26:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.gla_building
+		BuildPaletteOrder: 12
+		Prerequisites: ~disabled
+
 upgrade.radar:
 	Inherits: ^default.upgrade
 	Tooltip:

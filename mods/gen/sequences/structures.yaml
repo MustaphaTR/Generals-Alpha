@@ -250,6 +250,7 @@ building.gla_supply_stash:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 	icon: siloicon
+	fake-icon: fakescudsicon
 
 building.prc_supply_center:
 	idle: proc
@@ -299,6 +300,7 @@ building.demo_trap:
 	idle: dmtrp
 		Offset: 2, 0
 	icon: demoicon
+	fake-icon: fakedemoicon
 
 building.gatling_cannon:
 	idle: agun
@@ -445,6 +447,8 @@ building.tunnel_network:
 		UseTilesetExtension: false
 	icon: tunnelicon
 		UseTilesetExtension: false
+	fake-icon: faketunnelicon
+		UseTilesetExtension: false
 
 building.stinger_site:
 	idle: stinger
@@ -470,6 +474,7 @@ building.stinger_site:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 	icon: stngricon
+	fake-icon: fakestngricon
 
 building.usa_airfield:
 	idle: usafld
@@ -761,6 +766,7 @@ building.scud_storm:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 	icon: scudsicon
+	fake-icon: fakescudsicon
 
 building.missile_silo:
 	Defaults: mslo
