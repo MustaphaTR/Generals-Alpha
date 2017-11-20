@@ -4,55 +4,49 @@ C1:
 
 C2:
 	Inherits: ^CivInfantry
-	Voiced:
-		VoiceSet: CivilianFemaleVoice
+	Inherits@2: ^ArmedCivilian
 
 C3:
 	Inherits: ^CivInfantry
+	Inherits@2: ^ArmedCivilian
+	Voiced:
+		VoiceSet: CivilianFemaleVoice
 
 C4:
 	Inherits: ^CivInfantry
-	RenderSprites:
-		Image: C2
+	Inherits@2: ^ArmedCivilian
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
 
 C5:
 	Inherits: ^CivInfantry
-	RenderSprites:
-		Image: C1
+	Inherits@2: ^ArmedCivilian
+	Voiced:
+		VoiceSet: CivilianFemaleVoice
 
 C6:
 	Inherits: ^CivInfantry
-	RenderSprites:
-		Image: C2
-	Voiced:
-		VoiceSet: CivilianFemaleVoice
+	Inherits@2: ^ArmedCivilian
 
 C7:
 	Inherits@1: ^CivInfantry
 	Inherits@2: ^ArmedCivilian
-	RenderSprites:
-		Image: C1
 
 C8:
 	Inherits: ^CivInfantry
-	RenderSprites:
-		Image: C2
-	Voiced:
-		VoiceSet: CivilianFemaleVoice
+	Inherits@2: ^ArmedCivilian
 
 C9:
 	Inherits: ^CivInfantry
-	RenderSprites:
-		Image: C1
+	Inherits@2: ^ArmedCivilian
 
 C10:
 	Inherits: ^CivInfantry
-	RenderSprites:
-		Image: C2
-	Voiced:
-		VoiceSet: CivilianFemaleVoice
+	Inherits@2: ^ArmedCivilian
+
+C11:
+	Inherits: ^CivInfantry
+	Inherits@2: ^ArmedCivilian
 
 TECN:
 	Inherits@1: ^CivInfantry
@@ -87,7 +81,7 @@ CHAN:
 	Selectable:
 		Class: CHAN
 	Tooltip:
-		Name: Scientist
+		Name: Agent Chan
 
 GNRL:
 	Inherits@1: ^CivInfantry
