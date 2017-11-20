@@ -413,3 +413,85 @@ TANKTRAP2:
 	EditorTilesetFilter:
 		ExcludeTilesets: DESERT
 		RequireTilesets: TEMPERAT, SNOW, INTERIOR
+
+^default.flag:
+	Inherits: ^TechBuilding
+	Health:
+		HP: 200
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Tooltip:
+		Name: Flag
+		GenericName: Flag
+	WithBuildingBib:
+		HasMinibib: Yes
+	-Selectable:
+	Targetable:
+	RenderSprites:
+		Palette: player
+
+flag.british:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: British Flag
+
+flag.french:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: French Flag
+
+flag.german:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: German Flag
+
+flag.greek:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: Greek Flag
+
+flag.spanish:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: Greek Flag
+
+flag.turkish:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: Turkish Flag
+
+flag.american:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: American Flag
+
+flag.irish:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: Irish Flag
+
+flag.italian:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: Italian Flag
+
+flag.polish:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: Polish Flag
+
+flag.ussr:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: Soviet Flag
+
+flag.russian_sfsr:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: Russian SFSR Flag
+
+flag.ukrainian_ssr:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: Ukrainian SSR Flag

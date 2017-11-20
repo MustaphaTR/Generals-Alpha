@@ -118,6 +118,15 @@ tech.communications_center:
 	ExternalCondition@UNKILLABLE:
 		Condition: unkillable
 
+^Flag:
+	GivesBounty:
+		Percentage: 0
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
 tech.oil_derrick:
 	CashTrickler:
 		ShowTicks: false
