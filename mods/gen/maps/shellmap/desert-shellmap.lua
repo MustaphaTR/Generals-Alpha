@@ -24,9 +24,9 @@ ProducedUnitTypes =
 
 StrategyTypes =
 {
-	{ factory = USACommand, types = { "strategy.bombardment", "strategy.search_and_destroy", "strategy.hold_the_line" } },
-	{ factory = GLACommand, types = { "strategy.bio_bombs", "strategy.hi_explosive_bombs", "strategy.disguise" } },
-	{ factory = PRCCommand, types = { "strategy.overlord_gatling", "strategy.overlord_bunker", "strategy.overlord_speaker" } }
+	{ factory = USAStrategy, types = { "strategy.bombardment", "strategy.search_and_destroy", "strategy.hold_the_line" } },
+	{ factory = GLAPalace, types = { "strategy.bio_bombs", "strategy.hi_explosive_bombs", "strategy.disguise" } },
+	{ factory = PRCPropaganda, types = { "strategy.overlord_gatling", "strategy.overlord_bunker", "strategy.overlord_speaker" } }
 }
 
 Raptor1Waypoints = { Raptor11, Raptor12, Raptor13, Raptor14 }
@@ -211,7 +211,7 @@ WorldLoaded = function()
 	DeployMe(Hacker4)
 	DeployMe(Hacker5)
 	DeployMe(Hacker6)
-	
+
 	powerproxy = Actor.Create("powerproxy.paradrop", false, { Owner = usa })
 
 	Trigger.AfterDelay(DateTime.Seconds(25), function() SendRaptors(Raptor1Waypoints) end)
