@@ -428,6 +428,8 @@ TANKTRAP2:
 		HasMinibib: Yes
 	-Selectable:
 	Targetable:
+	EditorTilesetFilter:
+		Categories: Flag
 	RenderSprites:
 		Palette: player
 
@@ -437,6 +439,11 @@ flag.british:
 		Name: British Flag
 
 flag.french:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: French Flag
+
+flag.french.2:
 	Inherits: ^default.flag
 	Tooltip:
 		Name: French Flag
@@ -496,10 +503,20 @@ flag.hungarian:
 	Tooltip:
 		Name: Hungarian Flag
 
+flag.bulgarian:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: Bulgarian Flag
+
 flag.irish:
 	Inherits: ^default.flag
 	Tooltip:
 		Name: Irish Flag
+
+flag.danish:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: Danish Flag
 
 flag.finnish:
 	Inherits: ^default.flag
@@ -521,6 +538,11 @@ flag.japanese:
 	Tooltip:
 		Name: Japanese Flag
 
+flag.indonesian:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: Indonesian Flag
+
 flag.chinese:
 	Inherits: ^default.flag
 	Tooltip:
@@ -531,6 +553,11 @@ flag.ussr:
 	Tooltip:
 		Name: Soviet Flag
 
+flag.russian:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: Russian Flag
+
 flag.russian_sfsr:
 	Inherits: ^default.flag
 	Tooltip:
@@ -540,6 +567,16 @@ flag.ukrainian_ssr:
 	Inherits: ^default.flag
 	Tooltip:
 		Name: Ukrainian SSR Flag
+
+flag.libyan_green:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: Libyan Flag
+
+flag.saudi:
+	Inherits: ^default.flag
+	Tooltip:
+		Name: Saudi Flag
 
 flag.gla:
 	Inherits: ^default.flag
