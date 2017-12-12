@@ -132,6 +132,8 @@ upgrade.radar:
 		BuildDuration: 500
 		Prerequisites: ~building.prc_command_center, ~techlevel.infonly
 		Description: Allows Commandand Center to provide Radar.
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 500
 
@@ -146,6 +148,8 @@ upgrade.neutron_mine:
 		BuildDurationModifier: 100
 		Prerequisites: building.cold_fusion_reactor, ~techlevel.infonly, ~disabled
 		Description: Upgrades a mine to a neutron mine, which kills vehicle drivers.
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 500
 	Plug:
@@ -166,6 +170,8 @@ upgrade.control_rods:
 		BuildDurationModifier: 100
 		Prerequisites: building.cold_fusion_reactor, ~techlevel.infonly
 		Description: Doubles power output of a Cold Fusion Reactor.
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 500
 	Plug:
@@ -183,6 +189,8 @@ upgrade.advanced_control_rods:
 		Queue: queue.advanced_cold_fusion_reactor
 		Prerequisites: building.cold_fusion_reactor, ~techlevel.infonly, ~disabled
 		Description: Doubles power output of a Cold Fusion Reactor.
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
 	Plug:
 		Type: advanced_control_rods
 
@@ -196,6 +204,8 @@ upgrade.capture_building:
 		BuildDuration: 750
 		Prerequisites: prerequisite.barracks, ~techlevel.infonly
 		Description: Allows AP Infantry to capture enemy and neutral structures.
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 1000
 
@@ -209,6 +219,8 @@ upgrade.flashbang_grenades:
 		BuildDuration: 750
 		Prerequisites: building.usa_barracks, ~techlevel.low
 		Description: Gives Rangers ability to use to flashbang grenades.
+		QueuedAudio: NoAudio
+		ReadyAudio: Flashbang
 	Valued:
 		Cost: 800
 
@@ -222,6 +234,8 @@ upgrade.tow_missile:
 		BuildDuration: 750
 		Prerequisites: building.usa_war_factory, ~techlevel.low
 		Description: Allows Humvees to fire Missiles.
+		QueuedAudio: NoAudio
+		ReadyAudio: TOW
 	Valued:
 		Cost: 1200
 
@@ -235,6 +249,8 @@ upgrade.sentry_gun:
 		BuildDuration: 250
 		Prerequisites: building.usa_war_factory, ~techlevel.low, ~disabled
 		Description: Allows Senrty Drones to fire.
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 1000
 
@@ -248,6 +264,8 @@ upgrade.sc_rocket:
 		BuildDuration: 750
 		Prerequisites: building.arms_dealer, ~techlevel.low
 		Description: Gives Scorpion Tanks a rocket.
+		QueuedAudio: NoAudio
+		ReadyAudio: ScorpionRocket
 	Valued:
 		Cost: 1000
 
@@ -260,7 +278,9 @@ upgrade.chain_gun:
 		BuildPaletteOrder: 3
 		BuildDuration: 1125
 		Prerequisites: building.prc_war_factory, ~techlevel.low
-		Description: Increases damage of gatling weapons by 25%. 
+		Description: Increases damage of gatling weapons by 25%.
+		QueuedAudio: NoAudio
+		ReadyAudio: ChainGun
 	Valued:
 		Cost: 1500
 
@@ -273,7 +293,9 @@ upgrade.black_napalm:
 		BuildPaletteOrder: 6
 		BuildDuration: 1125
 		Prerequisites: building.prc_war_factory, ~techlevel.medium
-		Description: Increases damage of fire based weapons. 
+		Description: Increases damage of fire based weapons.
+		QueuedAudio: NoAudio
+		ReadyAudio: BlackNapalm
 	Valued:
 		Cost: 2000
 
@@ -286,7 +308,9 @@ upgrade.rocket_pods:
 		BuildPaletteOrder: 3
 		BuildDuration: 1500
 		Prerequisites: building.usa_airfield, ~techlevel.high
-		Description: Allows Comanches to fire Missiles. 
+		Description: Allows Comanches to fire Missiles.
+		QueuedAudio: NoAudio
+		ReadyAudio: RocketPods
 	Valued:
 		Cost: 800
 
@@ -300,6 +324,8 @@ upgrade.laser_guided_missiles:
 		BuildDuration: 1000
 		Prerequisites: building.usa_airfield, ~techlevel.high
 		Description: Increases the damage output of Raptor and Stealth Bomber by 25%.
+		QueuedAudio: NoAudio
+		ReadyAudio: LaserGuide
 	Valued:
 		Cost: 1500
 
@@ -313,6 +339,8 @@ upgrade.stealth_comanche:
 		BuildDuration: 750
 		Prerequisites: building.usa_airfield, ~techlevel.high, ~disabled
 		Description: Allows Comanches to stealth when not firing.
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 1500
 
@@ -326,6 +354,8 @@ upgrade.mig_armor:
 		BuildDuration: 1000
 		Prerequisites: building.prc_airfield, ~techlevel.high
 		Description: Increases MiGs' armor.
+		QueuedAudio: NoAudio
+		ReadyAudio: MiGArmor
 	Valued:
 		Cost: 1200
 
@@ -339,6 +369,8 @@ upgrade.adv_training:
 		BuildDuration: 1500
 		Prerequisites: building.strategy_center, ~techlevel.medium
 		Description: Doubles the rate units gain veterancy.
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 1500
 
@@ -352,6 +384,8 @@ upgrade.composite_armor:
 		BuildDuration: 1500
 		Prerequisites: building.strategy_center, ~techlevel.medium
 		Description: Increases Crusader Tank armor by 40%.\n\nIncreases Paladin Tank armor by 20%.
+		QueuedAudio: NoAudio
+		ReadyAudio: CompositeArmor
 	Valued:
 		Cost: 2000
 
@@ -365,6 +399,8 @@ upgrade.camouflage:
 		BuildDuration: 1500
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Allows Rebels to cloak while not firing.
+		QueuedAudio: NoAudio
+		ReadyAudio: Camouflage
 	Valued:
 		Cost: 2000
 
@@ -378,6 +414,8 @@ upgrade.arm_the_mob:
 		BuildDuration: 750
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Replaces pistols of Angry Mobs with AK-47s.
+		QueuedAudio: NoAudio
+		ReadyAudio: ArmTheMob
 	Valued:
 		Cost: 1000
 
@@ -391,6 +429,8 @@ upgrade.toxin_shells:
 		BuildDuration: 750
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Makes Scorpion and Marauder tank shells leave toxin.
+		QueuedAudio: NoAudio
+		ReadyAudio: ToxinShells
 	Valued:
 		Cost: 1000
 
@@ -404,6 +444,8 @@ upgrade.anthrax_beta:
 		BuildDuration: 750
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Increases all toxin weapons' damage by 25%.
+		QueuedAudio: NoAudio
+		ReadyAudio: AnthraxBeta
 	Valued:
 		Cost: 2500
 
@@ -417,6 +459,8 @@ upgrade.nationalism:
 		BuildDuration: 1500
 		Prerequisites: building.propaganda_center, ~techlevel.medium
 		Description: Makes Horde Bonus give an additional 25% firing speed.
+		QueuedAudio: NoAudio
+		ReadyAudio: Nationalism
 	Valued:
 		Cost: 2000
 	RenderSprites:
@@ -432,6 +476,8 @@ upgrade.subliminal_messaging:
 		BuildDuration: 1000
 		Prerequisites: building.propaganda_center, ~techlevel.medium
 		Description: Doubles the efficency of Speaker Towers.
+		QueuedAudio: NoAudio
+		ReadyAudio: Subliminal
 	Valued:
 		Cost: 500
 
@@ -445,6 +491,8 @@ upgrade.ap_bullets:
 		BuildDuration: 1500
 		Prerequisites:building.black_market, ~techlevel.high
 		Description: Increases bullet weapons' damage by 25%.
+		QueuedAudio: NoAudio
+		ReadyAudio: APBullets
 	Valued:
 		Cost: 2000
 
@@ -458,6 +506,8 @@ upgrade.ap_rockets:
 		BuildDuration: 1500
 		Prerequisites: building.black_market, ~techlevel.high
 		Description: Increases rocket weapons' damage by 25%.
+		QueuedAudio: NoAudio
+		ReadyAudio: APRockets
 	Valued:
 		Cost: 2000
 
@@ -471,6 +521,8 @@ upgrade.radar_van_scan:
 		BuildDuration: 500
 		Prerequisites: building.black_market, ~techlevel.high
 		Description: Gives you a Radar Van Scan support power for each Radar Van you have.
+		QueuedAudio: NoAudio
+		ReadyAudio: RadarVanScan
 	Valued:
 		Cost: 500
 
@@ -484,6 +536,8 @@ upgrade.junk_repair:
 		BuildDuration: 1500
 		Prerequisites: building.black_market, ~techlevel.high
 		Description: Allows vehicles to repair themselves on field.
+		QueuedAudio: NoAudio
+		ReadyAudio: JunkRepair
 	Valued:
 		Cost: 2000
 
@@ -497,6 +551,8 @@ upgrade.buggy_ammo:
 		BuildDuration: 750
 		Prerequisites: building.black_market, ~techlevel.high
 		Description: Doubles the rockets fired from Rocket Buggies.
+		QueuedAudio: NoAudio
+		ReadyAudio: BuggyAmmo
 	Valued:
 		Cost: 1200
 
@@ -510,6 +566,8 @@ upgrade.worker_shoes:
 		BuildDuration: 250
 		Prerequisites: building.black_market, ~techlevel.high, ~disabled
 		Description: Increases worker speed by 10$.
+		QueuedAudio: NoAudio
+		ReadyAudio: WorkerShoes
 	Valued:
 		Cost: 1000
 
@@ -522,7 +580,9 @@ upgrade.nuclear_tanks:
 		BuildPaletteOrder: 1
 		BuildDuration: 1500
 		Prerequisites: building.missile_silo, ~techlevel.unrestricted
-		Description: Increases Overlord and Battlemaster speed by 25%. 
+		Description: Increases Overlord and Battlemaster speed by 25%.
+		QueuedAudio: NoAudio
+		ReadyAudio: NuclearTanks
 	Valued:
 		Cost: 2000
 
@@ -535,7 +595,9 @@ upgrade.uranium_shells:
 		BuildPaletteOrder: 2
 		BuildDuration: 1500
 		Prerequisites: building.missile_silo, ~techlevel.unrestricted
-		Description: Increases Overlord and Battlemaster damage by 25%. 
+		Description: Increases Overlord and Battlemaster damage by 25%.
+		QueuedAudio: NoAudio
+		ReadyAudio: UraniumShells
 	Valued:
 		Cost: 2500
 
@@ -548,6 +610,8 @@ strategy.bombardment:
 		BuildPaletteOrder: 1
 		Prerequisites: !strategy.search_and_destroy, !strategy.hold_the_line, ~techlevel.infonly
 		Description: Increases all units' damage by 20%.\n\nGives Strategy Center an Artillery piece.
+		QueuedAudio: NoAudio
+		ReadyAudio: Bombardment
 	Doctrine:
 		Type: strategy.usa
 
@@ -559,7 +623,9 @@ strategy.search_and_destroy:
 		Queue: queue.strategy_center
 		BuildPaletteOrder: 2
 		Prerequisites: !strategy.bombardment, !strategy.hold_the_line, ~techlevel.infonly
-		Description: Increases all units' vision range by 20%.\n\nGives Strategy Center ability to detect stealth units. 
+		Description: Increases all units' vision range by 20%.\n\nGives Strategy Center ability to detect stealth units.
+		QueuedAudio: NoAudio
+		ReadyAudio: SearchAndDestroy
 	Doctrine:
 		Type: strategy.usa
 
@@ -572,6 +638,8 @@ strategy.hold_the_line:
 		BuildPaletteOrder: 3
 		Prerequisites: !strategy.bombardment, !strategy.search_and_destroy, ~techlevel.infonly
 		Description: Increases all units' armor by 10%.\n\nDoubles Strategy Center's armor.
+		QueuedAudio: NoAudio
+		ReadyAudio: HoldTheLine
 	Doctrine:
 		Type: strategy.usa
 
@@ -584,6 +652,8 @@ strategy.bio_bombs:
 		BuildPaletteOrder: 1
 		Prerequisites: !strategy.hi_explosive_bombs, !strategy.disguise, ~techlevel.medium
 		Description: Makes Bomb Truck and SCUD Launchers leave toxins.
+		QueuedAudio: NoAudio
+		ReadyAudio: BioBombs
 	Doctrine:
 		Type: strategy.gla
 
@@ -596,6 +666,8 @@ strategy.hi_explosive_bombs:
 		BuildPaletteOrder: 2
 		Prerequisites: !strategy.bio_bombs, !strategy.disguise, ~techlevel.medium
 		Description: Arms Bomb Trucks and SCUD Launchers with High Explosive Bombs, increasing their damage.
+		QueuedAudio: NoAudio
+		ReadyAudio: HiExplosiveBombs
 	Doctrine:
 		Type: strategy.gla
 
@@ -608,6 +680,8 @@ strategy.disguise:
 		BuildPaletteOrder: 3
 		Prerequisites: !strategy.bio_bombs, !strategy.hi_explosive_bombs, ~techlevel.medium
 		Description: Allows Bomb Trucks and Hijackers to disguise as an enemy unit.
+		QueuedAudio: NoAudio
+		ReadyAudio: Disguise
 	Doctrine:
 		Type: strategy.gla
 
@@ -620,6 +694,8 @@ strategy.overlord_bunker:
 		BuildPaletteOrder: 1
 		Prerequisites: !strategy.overlord_gatling, !strategy.overlord_speaker, ~techlevel.infonly
 		Description: Arms Overlord Tanks with a Bunker.\n\nIncreases Bunker armor by 10%.\n\nDecreases bunker cost and build time by 20%.
+		QueuedAudio: NoAudio
+		ReadyAudio: Bunker
 	Doctrine:
 		Type: strategy.prc
 
@@ -632,6 +708,8 @@ strategy.overlord_gatling:
 		BuildPaletteOrder: 2
 		Prerequisites: !strategy.overlord_bunker, !strategy.overlord_speaker, ~techlevel.low
 		Description: Arms Overlord Tanks with a Gatling Cannon.\n\nIncreases Gatling Cannon armor and damage by 10%.
+		QueuedAudio: NoAudio
+		ReadyAudio: Gatling
 	Doctrine:
 		Type: strategy.prc
 
@@ -644,6 +722,8 @@ strategy.overlord_speaker:
 		BuildPaletteOrder: 3
 		Prerequisites: !strategy.overlord_bunker, !strategy.overlord_gatling, ~techlevel.medium
 		Description: Arms Overlord Tanks with a Speaker Tower.\n\nIncreases Speaker Tower armor by 25%.
+		QueuedAudio: NoAudio
+		ReadyAudio: Speaker
 	Doctrine:
 		Type: strategy.prc
 

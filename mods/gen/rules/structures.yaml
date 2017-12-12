@@ -65,11 +65,9 @@ building.usa_command_center:
 		ProductionType: queue.usa_command_center
 	ProductionQueue@USA_COMMAND_CENTER:
 		Type: queue.usa_command_center
-		Group: Building
+		Group: Command
 		LowPowerSlowdown: 3
 		RequireOwner: false
-		QueuedAudio: Building
-		ReadyAudio: ConstructionComplete
 	SpawnActorPower@SPY_DRONE:
 		PauseOnCondition: emp
 		Actor: aircraft.spy_drone
@@ -256,11 +254,9 @@ building.gla_command_center:
 		ProductionType: queue.gla_command_center
 	ProductionQueue@GLA_COMMAND_CENTER:
 		Type: queue.gla_command_center
-		Group: Building
+		Group: Command
 		LowPowerSlowdown: 3
 		RequireOwner: false
-		QueuedAudio: Building
-		ReadyAudio: ConstructionComplete
 	SpawnActorPower@AMBUSH1:
 		PauseOnCondition: disabled || emp
 		Actor: hack.rebel_spawner.4
@@ -349,11 +345,9 @@ building.prc_command_center:
 		ProductionType: queue.prc_command_center
 	ProductionQueue@PRC_COMMAND_CENTER:
 		Type: queue.prc_command_center
-		Group: Building
+		Group: Command
 		LowPowerSlowdown: 3
 		RequireOwner: false
-		QueuedAudio: Building
-		ReadyAudio: ConstructionComplete
 	GrantExternalConditionPower@FRENZY1:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~generals_power.frenzy1, ~!generals_power.frenzy2, ~!generals_power.frenzy3
@@ -906,6 +900,8 @@ building.mine:
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.infonly
 		Description: Defensive structure. Explodes when an enemy unit moves over it.
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 250
 	Tooltip:
