@@ -305,6 +305,7 @@ upgrade.rocket_pods:
 		Name: Rocket Pods
 	Buildable:
 		Queue: queue.usa_aircraft
+		BuildAtProductionType: queue.usa_air_upgrade
 		BuildPaletteOrder: 3
 		BuildDuration: 1500
 		Prerequisites: building.usa_airfield, ~techlevel.high
@@ -320,6 +321,7 @@ upgrade.laser_guided_missiles:
 		Name: Laser-Guided Missiles
 	Buildable:
 		Queue: queue.usa_aircraft
+		BuildAtProductionType: queue.usa_air_upgrade
 		BuildPaletteOrder: 6
 		BuildDuration: 1000
 		Prerequisites: building.usa_airfield, ~techlevel.high
@@ -335,6 +337,7 @@ upgrade.stealth_comanche:
 		Name: Stealth Comanche
 	Buildable:
 		Queue: queue.usa_aircraft
+		BuildAtProductionType: queue.usa_air_upgrade
 		BuildPaletteOrder: 9
 		BuildDuration: 750
 		Prerequisites: building.usa_airfield, ~techlevel.high, ~disabled

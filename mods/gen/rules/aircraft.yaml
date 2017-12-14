@@ -225,6 +225,7 @@ aircraft.raptor:
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft
+		BuildAtProductionType: queue.usa_plane
 		BuildPaletteOrder: 1
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -319,6 +320,7 @@ aircraft.stealth_fighter:
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft
+		BuildAtProductionType: queue.usa_plane
 		BuildPaletteOrder: 4
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -397,6 +399,7 @@ aircraft.aurora:
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft
+		BuildAtProductionType: queue.usa_plane
 		BuildPaletteOrder: 5
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -665,6 +668,7 @@ aircraft.comanche:
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft
+		BuildAtProductionType: queue.usa_helicopter
 		BuildPaletteOrder: 2
 		BuildDuration: 500
 		BuildDurationModifier: 100

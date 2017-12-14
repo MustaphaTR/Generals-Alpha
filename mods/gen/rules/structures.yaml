@@ -1721,7 +1721,7 @@ building.stinger_site:
 	Power:
 		Amount: -1
 	ProvidesPrerequisite@buildingname:
-        
+
 building.usa_airfield:
 	Inherits: ^default.airfield
 	Inherits@RANGER: ^EmitRangersOnDeath
@@ -1740,7 +1740,7 @@ building.usa_airfield:
 		Footprint: XXXX xxxx xxxx
 		Dimensions: 4,3
 	Production:
-		Produces: queue.usa_aircraft
+		Produces: queue.usa_aircraft, queue.usa_plane, queue.usa_helicopter, queue.usa_air_upgrade
 	ProductionQueue:
 		Type: queue.usa_aircraft
 		Group: Aircraft
@@ -1757,8 +1757,21 @@ building.usa_airfield:
 		DockOffset: 3,1
 	WithIdleOverlay@DISH:
 		Sequence: idle-dish
+	Exit@0:
+		ProductionTypes: queue.usa_air_upgrade
 	Exit@1:
+		ProductionTypes: queue.usa_plane
+		SpawnOffset: 512,512,0
+	Exit@2:
+		ExitCell: 1,1
+		Facing: 192
 		SpawnOffset: -1024,0,0
+		ProductionTypes: queue.usa_helicopter
+	Exit@3:
+		ExitCell: 1,2
+		Facing: 192
+		SpawnOffset: -1024,544,0
+		ProductionTypes: queue.usa_helicopter
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
