@@ -290,6 +290,7 @@ hack.scud_missile_damager.beta:
 hack.mine:
 	Inherits: ^Mine
 	-Building:
+	-RequiresBuildableArea:
 	Mobile:
 		TerrainSpeeds:
 			Clear: 100
