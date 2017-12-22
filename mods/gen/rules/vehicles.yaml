@@ -1292,6 +1292,7 @@ vehicle.overlord_tank:
 vehicle.bomb_truck:
 	Inherits: ^Vehicle
 	Inherits@REVEAL: ^Reveal150
+	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@BOUNTY: ^TakesBounty
 	Buildable:
@@ -1521,7 +1522,7 @@ vehicle.usa_mcc:
 
 vehicle.gla_mcc:
 	Inherits: ^default.mcc
-	Inherits@PILOT: ^EjectsPilotOnGround
+	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Buildable:
 		Queue: queue.gla_command_center
 		BuildPaletteOrder: 1
