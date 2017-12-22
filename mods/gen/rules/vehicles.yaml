@@ -286,17 +286,20 @@ vehicle.scorpion_tank:
 		RequiresCondition: toxin_shells && anthrax_beta
 	Armament@SC_ROCKET:
 		Weapon: missile.scorpion_tank
-		AmmoPoolName: secondary
+		Name: sc_rocket
 		Turret: sc_rocket
 		RequiresCondition: sc_rocket
+		PauseOnCondition: !ammo
 	AttackTurreted:
 		RequiresCondition: !disabled && !driver_killed && !emp
 	WithMuzzleOverlay:
 	WithSpriteTurret@NORMAL:
 	AmmoPool@SC_ROCKET:
 		Name: secondary
+		Armaments: sc_rocket
 		Ammo: 1
 		PipCount: 0
+		AmmoCondition: ammo
 	WithReloadingSpriteTurret@SC_ROCKET:
 		AmmoPoolName: secondary
 		Sequence: rocket
@@ -865,9 +868,11 @@ vehicle.tomahawk_launcher:
 	Armament:
 		Weapon: missile.tomahawk_launcher
 		LocalOffset: 0,-171,0
+		PauseOnCondition: !ammo
 	AmmoPool:
 		Ammo: 1
 		PipCount: 0
+		AmmoCondition: ammo
 	AttackTurreted:
 		RequiresCondition: !disabled && !driver_killed && !emp
 	WithReloadingSpriteTurret:
@@ -911,15 +916,19 @@ vehicle.scud_launcher:
 	Armament:
 		Weapon: missile.scud_launcher
 		RequiresCondition: !bio_bombs && !hi_explosive_bombs
+		PauseOnCondition: !ammo
 	Armament@BIO:
 		Weapon: missile.scud_launcher.toxin
 		RequiresCondition: bio_bombs && !anthrax_beta
+		PauseOnCondition: !ammo
 	Armament@BETA:
 		Weapon: missile.scud_launcher.toxin_beta
 		RequiresCondition: bio_bombs && anthrax_beta
+		PauseOnCondition: !ammo
 	Armament@EXP:
 		Weapon: missile.scud_launcher.explosive
 		RequiresCondition: hi_explosive_bombs
+		PauseOnCondition: !ammo
 	AttackFrontal:
 		RequiresCondition: !disabled && !driver_killed && !emp
 	Turreted:
@@ -939,6 +948,7 @@ vehicle.scud_launcher:
 	AmmoPool:
 		Ammo: 1
 		PipCount: 0
+		AmmoCondition: ammo
 	WithReloadingSpriteTurret:
 		AmmoPoolName: primary
 	AcceptsDeliveredExperience:
