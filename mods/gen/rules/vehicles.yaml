@@ -291,6 +291,8 @@ vehicle.scorpion_tank:
 		RequiresCondition: sc_rocket
 		PauseOnCondition: !ammo
 	AttackTurreted:
+		Armaments: primary, sc_rocket
+		Turrets: primary, sc_rocket
 		RequiresCondition: !disabled && !driver_killed && !emp
 	WithMuzzleOverlay:
 	WithSpriteTurret@NORMAL:
