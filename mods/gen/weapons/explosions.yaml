@@ -157,7 +157,7 @@ explosion.demo_trap:
 			building.tough: 80
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@2Dam: SpreadDamage
- 		Spread: 2c0
+		Spread: 2c0
 		Damage: 400
 		Delay: 5
 		ValidTargets: Ground, Trees
@@ -191,7 +191,7 @@ explosion.terrorist:
 			building.tough: 80
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@2Dam: SpreadDamage
- 		Spread: 2c0
+		Spread: 2c0
 		Damage: 300
 		Delay: 5
 		ValidTargets: Ground, Trees
@@ -231,7 +231,7 @@ explosion.mine.neutron:
 		Spread: 256
 		Damage: 400
 		AffectsParent: true
-		InvalidTargets: Vehicle, Tank 
+		InvalidTargets: Vehicle, Tank
 		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c768

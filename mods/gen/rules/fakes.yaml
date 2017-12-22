@@ -130,7 +130,6 @@ fake.supply_stash:
 fake.arms_dealer:
 	Inherits: ^FakeBuilding
 #	Inherits@Infiltrate: ^InfiltratableFake
-	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
@@ -188,7 +187,7 @@ fake.palace:
 	Selectable:
 		Bounds: 72,48
 	SelectionDecorations:
-		VisualBounds: 72,68,0,-12
+		DecorationBounds: 72,68,0,-12
 	Health:
 		HP: 300
 	Armor:
@@ -230,7 +229,7 @@ fake.black_market:
 	Selectable:
 		Bounds: 48,40,0,9
 	SelectionDecorations:
-		VisualBounds: 48,53,0,-4
+		DecorationBounds: 48,53,0,-4
 	Health:
 		HP: 125
 	Armor:
@@ -375,9 +374,6 @@ fake.scud_storm:
 	AmmoPool:
 		Ammo: 4
 		PipCount: 0
-		SelfReloads: true
-		ReloadCount: 4
-		SelfReloadDelay: 100
 	WithReloadingSpriteTurret@A:
 		AmmoPoolName: primary
 		Turret: A
@@ -405,6 +401,9 @@ fake.scud_storm:
 		ValidStances: Enemy
 	Voiced:
 		VoiceSet: SCUDStormVoice
+	ReloadAmmoPool@1:
+		Delay: 100
+		Count: 4
 
 fake.demo_trap:
 	Inherits: ^FakeBuilding

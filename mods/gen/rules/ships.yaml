@@ -23,7 +23,6 @@ vessel.transport:
 			Beach: 70
 		RequiresCondition: !notmobile && !disabled && !driver_killed && !emp
 	SelectionDecorations:
-		VisualBounds: 36,36
 	WithLandingCraftAnimation:
 		OpenTerrainTypes: Clear, Rough, Road, Ore, Gems, Beach
 	Cargo:
@@ -33,6 +32,8 @@ vessel.transport:
 		PassengerFacing: 0
 		LoadingCondition: notmobile
 		PauseOnCondition: disabled || driver_killed || emp
+	Selectable:
+		DecorationBounds: 36,36
 
 vessel.gunboat:
 	Inherits: ^Ship
@@ -73,12 +74,13 @@ vessel.gunboat:
 	AttackTurreted:
 	WithMuzzleOverlay:
 	SelectionDecorations:
-		VisualBounds: 36,36
 	WithSpriteTurret:
 	DetectCloaked:
 		CloakTypes: Underwater
 		Range: 4c0
 	RenderDetectionCircle:
+	Selectable:
+		DecorationBounds: 36,36
 
 vessel.destroyer:
 	Inherits: ^Ship
@@ -123,12 +125,13 @@ vessel.destroyer:
 		RequiresCondition: !disabled && !driver_killed
 	AttackTurreted:
 	SelectionDecorations:
-		VisualBounds: 38,38
 	WithSpriteTurret:
 	DetectCloaked:
 		CloakTypes: Underwater
 		Range: 4c0
 	RenderDetectionCircle:
+	Selectable:
+		DecorationBounds: 38,38
 
 vessel.cruiser:
 	Inherits: ^Ship
@@ -170,7 +173,6 @@ vessel.cruiser:
 		MuzzleSequence: muzzle
 		RequiresCondition: !disabled && !driver_killed
 	Armament@SECONDARY:
-		Name: secondary
 		Turret: secondary
 		Weapon: cannon.crusader
 		LocalOffset: 480,-100,40, 480,100,40
@@ -179,10 +181,12 @@ vessel.cruiser:
 		MuzzleSequence: muzzle
 		RequiresCondition: !disabled && !driver_killed
 	AttackTurreted:
+		Turrets: primary, secondary
 	WithMuzzleOverlay:
 	SelectionDecorations:
-		VisualBounds: 44,44
 	WithSpriteTurret@PRIMARY:
 		Turret: primary
 	WithSpriteTurret@SECONDARY:
 		Turret: secondary
+	Selectable:
+		DecorationBounds: 44,44

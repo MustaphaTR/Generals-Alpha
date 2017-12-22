@@ -1,7 +1,7 @@
 tech.oil_derrick:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
-   	Inherits@REVEAL: ^Reveal180
+	Inherits@REVEAL: ^Reveal180
 	Inherits@SHAPE: ^2x2Shape
 	HitShape:
 		UseTargetableCellsOffsets: false
@@ -17,6 +17,8 @@ tech.oil_derrick:
 	ExternalCapturable:
 	ExternalCapturableBar:
 	EngineerRepairable:
+	GivesBuildableArea:
+		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 15
 		PlayerExperience: 25
@@ -33,8 +35,8 @@ tech.oil_derrick:
 
 tech.hospital:
 	Inherits: ^TechBuilding
-#	Inherits@EMP: ^AffectedByEMP
-   	Inherits@REVEAL: ^Reveal180
+	Inherits@EMP: ^AffectedByEMP
+	Inherits@REVEAL: ^Reveal180
 	Inherits@SHAPE: ^2x2Shape
 	Selectable:
 		Priority: 0
@@ -47,6 +49,8 @@ tech.hospital:
 	ExternalCapturable:
 	ExternalCapturableBar:
 	EngineerRepairable:
+	GivesBuildableArea:
+		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 15
 		PlayerExperience: 25
@@ -58,11 +62,12 @@ tech.hospital:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
 	ProvidesPrerequisite@buildingname:
+		RequiresCondition: !emp
 
 tech.bio_lab:
 	Inherits: ^TechBuilding
 #	Inherits@EMP: ^AffectedByEMP
-   	Inherits@REVEAL: ^Reveal180
+	Inherits@REVEAL: ^Reveal180
 	Inherits@SHAPE: ^2x2Shape
 	Selectable:
 		Priority: 0
@@ -75,6 +80,8 @@ tech.bio_lab:
 	ExternalCapturable:
 	ExternalCapturableBar:
 	EngineerRepairable:
+	GivesBuildableArea:
+		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 15
 		PlayerExperience: 25
@@ -88,7 +95,7 @@ tech.bio_lab:
 tech.communications_center:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
-   	Inherits@REVEAL: ^Reveal600
+	Inherits@REVEAL: ^Reveal600
 	Inherits@SHAPE: ^2x2Shape
 	HitShape:
 		UseTargetableCellsOffsets: false
@@ -123,6 +130,8 @@ tech.communications_center:
 	ExternalCapturable:
 	ExternalCapturableBar:
 	EngineerRepairable:
+	GivesBuildableArea:
+		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 15
 		PlayerExperience: 25
@@ -130,8 +139,7 @@ tech.communications_center:
 
 tech.forward_command:
 	Inherits: ^TechBuilding
-#	Inherits@EMP: ^AffectedByEMP
-   	Inherits@REVEAL: ^Reveal180
+	Inherits@REVEAL: ^Reveal180
 	Inherits@SHAPE: ^2x2Shape
 	Building:
 		Footprint: xx xx ==
@@ -149,6 +157,7 @@ tech.forward_command:
 		CaptureCompleteTime: 30
 	ExternalCapturableBar:
 	GivesBuildableArea:
+		AreaTypes: building, mine
 	BaseProvider:
 		Range: 8c0
 	EngineerRepairable:
@@ -160,7 +169,7 @@ tech.forward_command:
 tech.service_depot:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
-   	Inherits@REVEAL: ^Reveal180
+	Inherits@REVEAL: ^Reveal180
 	HitShape:
 		Type: Rectangle
 			TopLeft: -1536, -683
@@ -176,17 +185,19 @@ tech.service_depot:
 		Footprint: _X_ xxx _X_
 		Dimensions: 3,3
 	Capturable:
-	ExternalCapturable: 
+	ExternalCapturable:
 	ExternalCapturableBar:
 	EngineerRepairable:
+	GivesBuildableArea:
+		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 15
 		PlayerExperience: 25
 	Selectable:
 		Priority: 0
 		Bounds: 64,34,0,3
+		DecorationBounds: 72,48
 	SelectionDecorations:
-		VisualBounds: 72,48
 	Health:
 		HP: 800
 	WithBuildingBib:
@@ -210,8 +221,8 @@ tech.service_depot:
 
 tech.shipyard:
 	Inherits: ^TechBuilding
-#	Inherits@EMP: ^AffectedByEMP
-   	Inherits@REVEAL: ^Reveal180
+	Inherits@EMP: ^AffectedByEMP
+	Inherits@REVEAL: ^Reveal180
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -249,6 +260,7 @@ tech.shipyard:
 		ExitCell: 2,0
 	Production:
 		Produces: queue.vessel
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.vessel
 		Group: Vehicle

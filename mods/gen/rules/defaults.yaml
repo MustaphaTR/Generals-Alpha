@@ -10,7 +10,6 @@
 ^SpriteActor:
 	BodyOrientation:
 	QuantizeFacingsFromSequence:
-	AutoSelectionSize:
 	RenderSprites:
 
 ^1x1Shape:
@@ -301,10 +300,10 @@
 		Condition: driver_killed
 		Color: AAAAAA
 	Capturable@DRIVER_KILLED:
-		Type: driverless_vehcile
+		Types: driverless_vehcile
 		CaptureThreshold: 100
-		AllowAllies: true
 		RequiresCondition: driver_killed
+		ValidStances: Enemy, Neutral, Ally
 	MustBeDestroyed:
 		RequiresCondition: !driver_killed
 
@@ -764,7 +763,7 @@
 	Tooltip:
 		GenericName: Vehicle
 	Capturable:
-		Type: vehicle
+		Types: vehicle
 		CaptureThreshold: 100
 		CancelActivity: True
 	CaptureNotification:
@@ -1182,6 +1181,7 @@
 		CanHover: True
 		CruisingCondition: cruising
 		WaitDistanceFromResupplyBase: 4c0
+		VTOL: true
 	Hovers@CRUISING:
 		RequiresCondition: cruising
 	BodyOrientation:
@@ -1233,6 +1233,8 @@
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
 		Condition: search_and_destroy
 		Prerequisites: strategy.search_and_destroy
+	RequiresBuildableArea:
+		AreaTypes: building
 
 ^Building:
 	Inherits: ^BasicBuilding
@@ -1240,6 +1242,7 @@
 	Huntable:
 	UpdatesPlayerStatistics:
 	GivesBuildableArea:
+		AreaTypes: building, mine
 	RepairableBuilding:
 		RepairStep: 15
 		PlayerExperience: 25
@@ -1300,11 +1303,9 @@
 	Inherits: ^BasicBuilding
 	Inherits@REVEAL: ^Reveal100
 	Capturable:
-		Type: hole
-		AllowAllies: true
-		AllowNeutral: false
-		AllowEnemies: false
+		Types: hole
 		CaptureThreshold: 100
+		ValidStances: Ally
 	Tooltip:
 		Name: GLA Hole
 		GenericName: Hole
@@ -1324,11 +1325,11 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
 	Inherits@SHAPE: ^1x1Shape
+	Interactable:
 	Building:
 		Dimensions: 1,1
 		Footprint: x
 		BuildSounds: placbldg.aud
-		Adjacent: 7
 		TerrainTypes: Clear,Road
 	SoundOnDamageTransition:
 		DamagedSounds: sandbag2.aud
@@ -1355,6 +1356,9 @@
 		HP: 100
 	EditorTilesetFilter:
 		Categories: Wall
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 7
 
 ^Gate:
 	Inherits: ^BasicBuilding
@@ -1366,20 +1370,22 @@
 		Type: building.wall
 	LineBuildNode:
 		Types: concrete, gate
-	-Building:
 	-WithSpriteBody:
 	WithGateSpriteBody:
 	Tooltip:
 		Name: Gate
-	Gate:
-		Adjacent: 4
-		BlocksProjectilesHeight: 0
+	Building:
 		BuildSounds: place2.aud
-		OpeningSound: cashturn.aud
-		ClosingSound: cashturn.aud
 		TerrainTypes: Clear, Road
 	EditorTilesetFilter:
 		Categories: Wall
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 4
+	Gate:
+		OpeningSound: cashturn.aud
+		ClosingSound: cashturn.aud
+		BlocksProjectilesHeight: 0
 
 ^TechBuilding:
 	Inherits: ^BasicBuilding
@@ -1400,8 +1406,6 @@
 	-Selectable:
 	SelectionDecorations:
 		RenderSelectionBars: False
-	CustomSelectionSize:
-		CustomBounds: 24,24
 	Health:
 		HP: 10
 	Explodes:
@@ -1414,6 +1418,8 @@
 		Type: building.normal
 	EditorTilesetFilter:
 		Categories: Decoration
+	Interactable:
+		Bounds: 24,24
 
 ^CivBuilding:
 	Inherits: ^TechBuilding
@@ -1447,10 +1453,12 @@
 	-Explodes:
 	EditorTilesetFilter:
 		ExcludeTilesets: INTERIOR
+	Interactable:
 
 ^Tree:
 	Inherits@1: ^SpriteActor
 	Inherits@SHAPE: ^1x1Shape
+	Interactable:
 	Tooltip:
 		Name: Tree
 		ShowOwnerRow: false
@@ -1492,6 +1500,7 @@
 
 ^TreeHusk:
 	Inherits@1: ^SpriteActor
+	Interactable:
 	AppearsOnRadar:
 	Building:
 		Footprint: x
@@ -1507,6 +1516,7 @@
 
 ^BasicHusk:
 	Inherits@1: ^SpriteActor
+	Interactable:
 	Health:
 		HP: 280
 	Armor:
@@ -1526,9 +1536,9 @@
 	Burns:
 		Damage: 2
 	Capturable:
-		Type: husk
-		AllowAllies: true
+		Types: husk
 		CaptureThreshold: 100
+		ValidStances: Enemy, Neutral, Ally
 	TransformOnCapture:
 		ForceHealthPercentage: 25
 	WithColoredOverlay@IDISABLE:
@@ -1569,6 +1579,7 @@
 		GenericName: Destroyed Helicopter
 	Aircraft:
 		CanHover: True
+		VTOL: true
 	FallsToEarth:
 		Explosion: UnitExplodeHeli
 	BodyOrientation:
@@ -1589,8 +1600,6 @@
 	Building:
 		Footprint: ____ ____
 		Dimensions: 4,2
-	CustomSelectionSize:
-		CustomBounds: 96,48
 	Health:
 		HP: 1000
 	Armor:
@@ -1600,9 +1609,12 @@
 	ScriptTriggers:
 	BodyOrientation:
 		QuantizedFacings: 1
+	Interactable:
+		Bounds: 96,48
 
 ^Rock:
 	Inherits@1: ^SpriteActor
+	Interactable:
 	Tooltip:
 		Name: Rock
 		ShowOwnerRow: false
@@ -1630,6 +1642,7 @@
 
 ^Crate:
 	Inherits@1: ^SpriteActor
+	Interactable:
 	HiddenUnderFog:
 	Tooltip:
 		Name: Crate
@@ -1664,6 +1677,7 @@
 ^Mine:
 	Inherits: ^SpriteActor
 	Inherits@REVEAL: ^Reveal100
+	Interactable:
 	WithSpriteBody:
 	ConditionManager:
 	HiddenUnderFog:
@@ -1677,7 +1691,6 @@
 		Type: building.normal
 	Building:
 		TerrainTypes: Clear,Road
-		Adjacent: 1
 		BuildSounds: placbldg.aud
 		Dimensions: 1,1
 		Footprint: x
@@ -1696,19 +1709,30 @@
 	HitShape:
 	EditorTilesetFilter:
 		Categories: System
+	RequiresBuildableArea:
+		AreaTypes: mine
+		Adjacent: 1
 
-^DisabledOverlay:
+^DisableOnLowPower:
 	WithColoredOverlay@IDISABLE:
 		RequiresCondition: disabled
 		Palette: disabled
-	GrantConditionOnDisabled@IDISABLE:
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower
 		Condition: disabled
 
 ^DisabledByPowerOutage:
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: disabled
+		Palette: disabled
+	GrantCondition@IDISABLE:
+		RequiresCondition: power-outage
+		Condition: disabled
 	AffectedByPowerOutage:
 		Condition: power-outage
 	InfiltrateForPowerOutage:
-	DisableOnCondition@POWER_OUTAGE:
-		RequiresCondition: power-outage
 	Power:
-		RequiresCondition: !power-outage
+		RequiresCondition: !disabled

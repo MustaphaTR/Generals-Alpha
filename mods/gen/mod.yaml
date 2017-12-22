@@ -115,14 +115,12 @@ ChromeLayout:
 	gen|chrome/lobby-options.yaml
 	gen|chrome/lobby-music.yaml
 	gen|chrome/lobby-kickdialogs.yaml
-	gen|chrome/lobby-globalchat.yaml
 	gen|chrome/color-picker.yaml
 	gen|chrome/map-chooser.yaml
 	gen|chrome/multiplayer.yaml
 	gen|chrome/multiplayer-browser.yaml
 	gen|chrome/multiplayer-createserver.yaml
 	gen|chrome/multiplayer-directconnect.yaml
-	gen|chrome/multiplayer-globalchat.yaml
 	gen|chrome/connection.yaml
 	gen|chrome/replaybrowser.yaml
 	gen|chrome/dropdowns.yaml
@@ -152,6 +150,13 @@ Music:
 
 Translations:
 	gen|languages/english.yaml
+
+Hotkeys:
+	gen|hotkeys/game.yaml
+	gen|hotkeys/observer.yaml
+	gen|hotkeys/production.yaml
+	gen|hotkeys/supportpowers.yaml
+	gen|hotkeys/viewport.yaml
 
 LoadScreen: LogoStripeLoadScreen
 	Image: gen|uibits/loadscreen.png

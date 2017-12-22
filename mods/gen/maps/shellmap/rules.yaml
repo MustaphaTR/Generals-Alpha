@@ -206,19 +206,23 @@ vehicle.bomb_truck:
 	WithDisguisingSpriteTurret:
 		-RequiresCondition:
 	Disguise:
-		Types: Vehicle-Disguise
-		Voice: Move
 		-RequiresCondition:
-	GrantConditionByDisguisedActor:
-		Conditions:
-			vehicle.radar_van: radar_van
-			vehicle.usa_mcc: usa_mcc
-			vehicle.gla_mcc: gla_mcc
-			vehicle.prc_mcc: prc_mcc
 
 powerproxy.paradrop:
+	AlwaysVisible:
 	ParatroopersPower:
-		DisplayBeacon: false
+		Icon: paradrop2
+		Description: ParaDrop
+		LongDesc: 2 B-52 drop total of 10 Rangers\nanywhere on the map.
 		UnitType: aircraft.badger.paradrop
 		DropItems: infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger
 		SquadSize: 2
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: false
+		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles

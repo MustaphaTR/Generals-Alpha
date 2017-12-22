@@ -1,37 +1,11 @@
 Player:
 	AlwaysVisible:
 	TechTree:
-#	ClassicProductionQueue@Building:
-#		Type: Building
-#		LowPowerSlowdown: 3
-#		QueuedAudio: Building
-#		ReadyAudio: ConstructionComplete
-#		SpeedUp: True
-	ParallelClassicProductionQueue@General:
+	ClassicProductionQueue@General:
 		Type: General
 		LowPowerSlowdown: 1
 		QueuedAudio:
 		ReadyAudio:
-		ParallelBuild: true
-#	ClassicProductionQueue@Collector:
-#		Type: Collector
-#		LowPowerSlowdown: 3
-#		SpeedUp: True
-#	ClassicProductionQueue@Infantry:
-#		Type: Infantry
-#		LowPowerSlowdown: 3
-#		SpeedUp: True
-#	ClassicProductionQueue@Vehicle:
-#		Type: Vehicle
-#		LowPowerSlowdown: 3
-#		QueuedAudio: Building
-#		SpeedUp: True
-#		BuildTimeSpeedReduction: 100, 75, 60, 50
-#	ClassicProductionQueue@Aircraft:
-#		Type: Aircraft
-#		LowPowerSlowdown: 3
-#		QueuedAudio: Building
-#		SpeedUp: True
 	PlaceBuilding:
 	SupportPowerManager:
 	ScriptTriggers:
@@ -44,8 +18,10 @@ Player:
 		DefaultCash: 10000
 		InsufficientFundsNotification: InsufficientFunds
 	DeveloperMode:
+		CheckboxDisplayOrder: 5
 	GpsWatcher:
 	Shroud:
+		FogCheckboxDisplayOrder: 3
 	FrozenActorLayer:
 	BaseAttackNotifier:
 	PlayerStatistics:

@@ -37,8 +37,10 @@
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.command_center
+	RallyPoint:
+		Offset: 3,3
 	WithTextDecoration@SIDE:
-		Text: 
+		Text:
 		ZOffset: 2048
 		ReferencePoint: Top
 		ValidStances: Ally, Neutral, Enemy
@@ -61,6 +63,7 @@ building.usa_command_center:
 		Footprint: XXX xxx XXX
 	Production:
 		Produces: queue.usa_command_center
+		PauseOnCondition: emp
 	ProductionBar@USA_COMMAND_CENTER:
 		ProductionType: queue.usa_command_center
 	ProductionQueue@USA_COMMAND_CENTER:
@@ -250,6 +253,7 @@ building.gla_command_center:
 		VoiceSet: GLACommandCenterVoice
 	Production:
 		Produces: queue.gla_command_center
+		PauseOnCondition: emp
 	ProductionBar@GLA_COMMAND_CENTER:
 		ProductionType: queue.gla_command_center
 	ProductionQueue@GLA_COMMAND_CENTER:
@@ -341,6 +345,7 @@ building.prc_command_center:
 		VoiceSet: PRCCommandCenterVoice
 	Production:
 		Produces: queue.prc_command_center
+		PauseOnCondition: emp
 	ProductionBar@PRC_COMMAND_CENTER:
 		ProductionType: queue.prc_command_center
 	ProductionQueue@PRC_COMMAND_CENTER:
@@ -633,7 +638,6 @@ building.prc_command_center:
 
 ^default.reactor:
 	Inherits: ^Building
-	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
@@ -673,6 +677,7 @@ building.cold_fusion_reactor:
 		HP: 800
 	Production:
 		Produces: queue.cold_fusion_reactor
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.cold_fusion_reactor
 		Group: Tech
@@ -817,6 +822,7 @@ building.usa_barracks:
 		Name: USA Barracks
 	Production:
 		Produces: queue.usa_infantry
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.usa_infantry
 		Group: Infantry
@@ -846,6 +852,7 @@ building.gla_barracks:
 		Name: GLA Barracks
 	Production:
 		Produces: queue.gla_infantry
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.gla_infantry
 		Group: Infantry
@@ -876,6 +883,7 @@ building.prc_barracks:
 		Name: PRC Barracks
 	Production:
 		Produces: queue.prc_infantry
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.prc_infantry
 		Group: Infantry
@@ -979,10 +987,11 @@ building.usa_supply_center:
 		Name: USA Supply Center
 	Selectable:
 		Bounds: 72,56,0,12
+		DecorationBounds: 72,70,0,-2
 	SelectionDecorations:
-		VisualBounds: 72,70,0,-2
 	Production:
 		Produces: queue.usa_collector
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.usa_collector
 		Group: Collector
@@ -1026,10 +1035,11 @@ building.gla_supply_stash:
 		Footprint: xx x=
 		Dimensions: 2,2
 	Selectable:
-		Class: building.gla_supply_stash
 		Bounds: 48,48,0,12
+		Class: building.gla_supply_stash
 	Production:
 		Produces: queue.gla_collector
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.gla_collector
 		Group: Collector
@@ -1085,10 +1095,11 @@ building.prc_supply_center:
 		Footprint: _X_ xxx X== ===
 	Selectable:
 		Bounds: 72,50,0,12
+		DecorationBounds: 72,70,0,-2
 	SelectionDecorations:
-		VisualBounds: 72,70,0,-2
 	Production:
 		Produces: queue.prc_collector
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.prc_collector
 		Group: Collector
@@ -1121,7 +1132,7 @@ building.prc_supply_center:
 
 building.patriot:
 	Inherits: ^Defense
-	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@REVEAL: ^Reveal360
 	Inherits@SHAPE: ^2x1Shape
@@ -1140,7 +1151,6 @@ building.patriot:
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
-	RequiresPower:
 	Health:
 		HP: 1000
 	Armor:
@@ -1151,7 +1161,7 @@ building.patriot:
 		TurnSpeed: 30
 		InitialFacing: 0
 	-WithSpriteBody:
-	WithTurretedSpriteBody:
+	WithEmbeddedTurretSpriteBody:
 	Armament@AG:
 		Weapon: missile.patriot.ground
 		LocalOffset: 0,0,320
@@ -1241,7 +1251,7 @@ building.demo_trap.explode:
 
 building.gatling_cannon:
 	Inherits: ^Defense
-	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@REVEAL: ^Reveal360
@@ -1258,9 +1268,8 @@ building.gatling_cannon:
 		Name: Gatling Cannon
 	Selectable:
 		Bounds: 24,24
+		DecorationBounds: 24,32,0,-4
 	SelectionDecorations:
-		VisualBounds: 24,32,0,-4
-	RequiresPower:
 	Health:
 		HP: 1000
 	Armor:
@@ -1271,7 +1280,7 @@ building.gatling_cannon:
 		TurnSpeed: 15
 		InitialFacing: 224
 	-WithSpriteBody:
-	WithTurretedSpriteBody:
+	WithEmbeddedTurretSpriteBody:
 	ReloadDelayMultiplier@Gatling1:
 		RequiresCondition: gatling >= 1
 		Modifier: 50
@@ -1465,6 +1474,7 @@ building.usa_war_factory:
 		Offset: 0,2
 	Production:
 		Produces: queue.usa_vehicle
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.usa_vehicle
 		RequireOwner: false
@@ -1478,7 +1488,7 @@ building.usa_war_factory:
 	Selectable:
 		Bounds: 72,48
 	SelectionDecorations:
-		VisualBounds: 72,64,0,-16
+		DecorationBounds: 72,64,0,-16
 	WithDeathAnimation:
 		DeathSequence: dead
 		DeathSequencePalette: cncplayer
@@ -1507,6 +1517,7 @@ building.arms_dealer:
 		Name: GLA Arms Dealer
 	Production:
 		Produces: queue.gla_vehicle
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.gla_vehicle
 		RequireOwner: false
@@ -1530,6 +1541,7 @@ building.prc_war_factory:
 		Name: PRC War Factory
 	Production:
 		Produces: queue.prc_vehicle
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.prc_vehicle
 		RequireOwner: false
@@ -1691,8 +1703,8 @@ building.stinger_site:
 		VoiceSet: StingerSiteVoice
 
 ^default.airfield:
-   	Inherits: ^Building
-   	Inherits@REVEAL: ^Reveal200
+	Inherits: ^Building
+	Inherits@REVEAL: ^Reveal200
 	Buildable:
 		BuildDuration: 750
 		BuildDurationModifier: 100
@@ -1741,6 +1753,7 @@ building.usa_airfield:
 		Dimensions: 4,3
 	Production:
 		Produces: queue.usa_aircraft, queue.usa_plane, queue.usa_helicopter, queue.usa_air_upgrade
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.usa_aircraft
 		Group: Aircraft
@@ -1797,6 +1810,7 @@ building.prc_airfield:
 		Dimensions: 4,3
 	Production:
 		Produces: queue.prc_aircraft
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.prc_aircraft
 		Group: Aircraft
@@ -1814,7 +1828,7 @@ building.prc_airfield:
 	Selectable:
 		Bounds: 96,64,0,-4
 	SelectionDecorations:
-		VisualBounds: 96,64,0,-4
+		DecorationBounds: 96,64,0,-4
 	WithIdleOverlay@FLAG:
 		Sequence: idle-flag
 	ProvidesPrerequisite:
@@ -1844,18 +1858,21 @@ building.strategy_center:
 		Dimensions: 3,2
 	Selectable:
 		Bounds: 72,48
+		DecorationBounds: 72,58,0,-10
 	SelectionDecorations:
-		VisualBounds: 72,58,0,-10
 	Health:
 		HP: 1500
 	Armor:
 		Type: building.normal
 	WithBuildingBib:
-	RequiresPower:
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
 	Power:
 		Amount: -2
 	Production:
 		Produces: queue.strategy_center
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.strategy_center
 		Group: Tech
@@ -1922,7 +1939,7 @@ building.palace:
 	Selectable:
 		Bounds: 72,48
 	SelectionDecorations:
-		VisualBounds: 72,68,0,-12
+		DecorationBounds: 72,68,0,-12
 	Health:
 		HP: 3000
 	Armor:
@@ -1954,6 +1971,7 @@ building.palace:
 		Prerequisite: prerequisite.tech_center
 	Production:
 		Produces: queue.palace
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.palace
 		Group: Tech
@@ -1999,6 +2017,7 @@ building.propaganda_center:
 	WithBuildingBib:
 	Production:
 		Produces: queue.propaganda_center
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.propaganda_center
 		Group: Tech
@@ -2135,10 +2154,11 @@ building.black_market:
 		Dimensions: 2,2
 	Selectable:
 		Bounds: 48,40,0,9
+		DecorationBounds: 48,53,0,-4
 	SelectionDecorations:
-		VisualBounds: 48,53,0,-4
 	Production:
 		Produces: queue.black_market
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.black_market
 		Group: Tech
@@ -2167,7 +2187,7 @@ building.black_market:
 
 building.speaker_tower:
 	Inherits: ^Building
-	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@REVEAL: ^Reveal200
 	Valued:
 		Cost: 500
@@ -2182,11 +2202,10 @@ building.speaker_tower:
 		Description: Increases fire speed of nearby units and allows them to heal.
 	Selectable:
 		Bounds: 24,24
+		DecorationBounds: 24,48,0,-12
 	SelectionDecorations:
-		VisualBounds: 24,48,0,-12
-	RequiresPower:
 	WithSpriteBody:
-		PauseAnimationWhenDisabled: true
+		PauseOnCondition: disabled
 	Health:
 		HP: 300
 	Armor:
@@ -2221,7 +2240,7 @@ building.speaker_tower:
 
 building.particle_cannon:
 	Inherits: ^Building
-	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@REVEAL: ^Reveal200
 	Inherits@RANGER: ^EmitRangersOnDeath
 	HitShape:
@@ -2246,11 +2265,10 @@ building.particle_cannon:
 		Dimensions: 2,2
 	Selectable:
 		Bounds: 48,40,0,9
+		DecorationBounds: 48,53,0,-4
 	SelectionDecorations:
-		VisualBounds: 48,53,0,-4
-	RequiresPower:
 	WithSpriteBody:
-		PauseAnimationWhenDisabled: true
+		PauseOnCondition: disabled
 	Health:
 		HP: 4000
 	Armor:
@@ -2312,7 +2330,6 @@ hack.scud_spawner:
 
 building.scud_storm:
 	Inherits: ^Building
-	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Inherits@BOUNTY: ^TakesBounty
@@ -2338,47 +2355,48 @@ building.scud_storm:
 	Selectable:
 		Bounds: 48,48,0,0
 	AttackTurreted:
-		Armaments: A, B, C, D
+		Turrets: A, B, C, D
 	Armament@NORMAL_A:
-		Name: A
 		Turret: A
 		Weapon: hack.scud_missile_spawner
 		RequiresCondition: !anthrax_beta
+		PauseOnCondition: !ammo
 	Armament@BETA_A:
-		Name: A
 		Turret: A
 		Weapon: hack.scud_missile_spawner.beta
 		RequiresCondition: anthrax_beta
+		PauseOnCondition: !ammo
 	Armament@NORMAL_B:
-		Name: B
 		Turret: B
 		Weapon: hack.scud_missile_spawner
 		RequiresCondition: !anthrax_beta
+		PauseOnCondition: !ammo
 	Armament@BETA_B:
-		Name: B
 		Turret: B
 		Weapon: hack.scud_missile_spawner.beta
 		RequiresCondition: anthrax_beta
+		PauseOnCondition: !ammo
 	Armament@NORMAL_C:
-		Name: C
 		Turret: C
 		Weapon: hack.scud_missile_spawner
 		RequiresCondition: !anthrax_beta
+		PauseOnCondition: !ammo
 	Armament@BETA_C:
 		Name: C
 		Turret: C
 		Weapon: hack.scud_missile_spawner.beta
 		RequiresCondition: anthrax_beta
+		PauseOnCondition: !ammo
 	Armament@NORMAL_D:
-		Name: D
 		Turret: D
 		Weapon: hack.scud_missile_spawner
 		RequiresCondition: !anthrax_beta
+		PauseOnCondition: !ammo
 	Armament@BETA_D:
-		Name: D
 		Turret: D
 		Weapon: hack.scud_missile_spawner.beta
 		RequiresCondition: anthrax_beta
+		PauseOnCondition: !ammo
 	Turreted@A:
 		Turret: A
 		TurnSpeed: 3
@@ -2398,9 +2416,7 @@ building.scud_storm:
 	AmmoPool:
 		Ammo: 4
 		PipCount: 0
-		SelfReloads: true
-		ReloadCount: 4
-		SelfReloadDelay: 100
+		AmmoCondition: ammo
 	WithReloadingSpriteTurret@A:
 		AmmoPoolName: primary
 		Turret: A
@@ -2417,7 +2433,6 @@ building.scud_storm:
 		AmmoPoolName: primary
 		Turret: D
 		Sequence: turret.d
-	RequiresPower:
 	SupportPowerChargeBar:
 	WithBuildingBib:
 	-WithMakeAnimation:
@@ -2450,10 +2465,13 @@ building.scud_storm:
 		Actor: hole.scud_storm
 	Voiced:
 		VoiceSet: SCUDStormVoice
+	ReloadAmmoPool:
+		Delay: 100
+		Count: 4
 
 building.missile_silo:
 	Inherits: ^Building
-	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x1Shape
 	Valued:
@@ -2479,6 +2497,7 @@ building.missile_silo:
 		Type: building.tough
 	Production:
 		Produces: queue.missile_silo
+		PauseOnCondition: emp
 	ProductionQueue:
 		Type: queue.missile_silo
 		Group: Tech
@@ -2509,7 +2528,6 @@ building.missile_silo:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
-	RequiresPower:
 	SupportPowerChargeBar:
 	Power:
 		Amount: -10
@@ -2519,6 +2537,7 @@ building.missile_silo:
 		ValidStances: Enemy
 	Voiced:
 		VoiceSet: MissileSiloVoice
+	WithNukeLaunchAnimation:
 
 SBAG:
 	Inherits: ^Wall
@@ -2550,7 +2569,7 @@ FENC:
 	Buildable:
 		Queue: queue.usa_building, queue.gla_building, queue.prc_building
 		BuildPaletteOrder: 45
-		Prerequisites:  ~disabled
+		Prerequisites: ~disabled
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Valued:
 		Cost: 50
@@ -2608,7 +2627,7 @@ VGATE:
 		Type: Rectangle
 			TopLeft: -512, -1536
 			BottomRight: 512, 1536
-	Gate:
+	Building:
 		Footprint: x x x
 		Dimensions: 1,3
 	WithGateSpriteBody:
@@ -2617,6 +2636,7 @@ VGATE:
 		Connections: 0,-1, 0,1
 	Tooltip:
 		Name: Vertical Gate
+	Gate:
 
 HGATE:
 	Inherits: ^Gate
@@ -2625,7 +2645,7 @@ HGATE:
 		Type: Rectangle
 			TopLeft: -1536, -512
 			BottomRight: 1536, 512
-	Gate:
+	Building:
 		Footprint: xxx
 		Dimensions: 3,1
 	WithGateSpriteBody:
@@ -2640,6 +2660,7 @@ HGATE:
 			usa: agate
 			gla: agate
 			prc: sgate
+	Gate:
 
 CYCL:
 	Inherits: ^Wall

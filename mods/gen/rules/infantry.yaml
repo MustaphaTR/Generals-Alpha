@@ -1,6 +1,7 @@
 infantry.pilot:
 	Inherits@1: ^Soldier
 	Inherits@REVEAL: ^Reveal150
+	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
 		Cost: 100
 	Tooltip:
@@ -590,7 +591,7 @@ infantry.hijacker:
 	Crushable:
 		WarnProbability: 95
 	Disguise:
-		Types: Infantry-Disguise
+		TargetTypes: Infantry-Disguise
 		Voice: Move
 		DisguisedCondition: disguised
 		RequiresCondition: disguise
@@ -707,9 +708,11 @@ infantry.jarmen_kell:
 	Armament@PRIMARY:
 		Weapon: sniper.jarmen_kell
 	Armament@DRIVER_SNIPE:
+		Name: driver_snipe
 		Weapon: sniper.jarmen_kell.vehicle
-		AmmoPoolName: driver_snipe
+		PauseOnCondition: !ammo
 	AttackFrontal:
+		Armaments: primary, driver_snipe
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	Cloak:
@@ -724,9 +727,12 @@ infantry.jarmen_kell:
 		ValidDamageStates: Critical
 	AmmoPool:
 		Ammo: 1
+		Armaments: driver_snipe
 		Name: driver_snipe
-		SelfReloads: true
-		SelfReloadDelay: 750
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		AmmoPool: driver_snipe
+		Delay: 750
 	Voiced:
 		VoiceSet: JarmenVoice
 	-MustBeDestroyed:
@@ -864,7 +870,7 @@ infantry.giant_ant:
 	Selectable:
 		Bounds: 24,24,0,-5
 	SelectionDecorations:
-		VisualBounds: 30,30,0,-2
+		DecorationBounds: 30,30,0,-2
 	Health:
 		HP: 500
 	Mobile:

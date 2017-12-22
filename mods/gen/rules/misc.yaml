@@ -128,6 +128,7 @@ crate.scrap:
 		Image: wcrate
 
 CAMERA:
+	Interactable:
 	EditorOnlyTooltip:
 		Name: (reveals area to owner)
 	AlwaysVisible:
@@ -310,14 +311,6 @@ hack.mine:
 	RenderSprites:
 		Image: building.mine
 
-SONAR:
-	Inherits: camera.spyplane
-	EditorOnlyTooltip:
-		Name: (support power proxy camera)
-	-RevealsShroud:
-	DetectCloaked:
-		CloakTypes: Underwater
-
 FLARE:
 	Immobile:
 		OccupiesSpace: false
@@ -335,9 +328,9 @@ FLARE:
 	Tooltip:
 		Name: Flare
 		ShowOwnerRow: false
-	AutoSelectionSize:
 	EditorTilesetFilter:
 		Categories: Decoration
+	Interactable:
 
 hack.artillery_barrager.1:
 	Inherits: CAMERA
@@ -425,6 +418,7 @@ hack.mine_spawner.2:
 
 MINE:
 	Inherits@1: ^SpriteActor
+	Interactable:
 	HiddenUnderShroud:
 	Tooltip:
 		Name: Ore Mine
@@ -443,6 +437,7 @@ MINE:
 
 GMINE:
 	Inherits@1: ^SpriteActor
+	Interactable:
 	HiddenUnderShroud:
 	Tooltip:
 		Name: Gem Mine
@@ -462,6 +457,7 @@ GMINE:
 
 RAILMINE:
 	Inherits@1: ^SpriteActor
+	Interactable:
 	HiddenUnderShroud:
 	Tooltip:
 		Name: Abandoned Mine
@@ -478,6 +474,7 @@ RAILMINE:
 QUEE:
 	Inherits@1: ^SpriteActor
 	Inherits@shape: ^2x1Shape
+	Interactable:
 	HiddenUnderShroud:
 	Tooltip:
 		Name: Queen Ant
@@ -493,6 +490,7 @@ QUEE:
 LAR1:
 	Inherits@1: ^SpriteActor
 	Inherits@shape: ^1x1Shape
+	Interactable:
 	HiddenUnderShroud:
 	Tooltip:
 		Name: Ant Larva
@@ -512,69 +510,8 @@ LAR2:
 	Tooltip:
 		Name: Ant Larvae
 
-powerproxy.parabombs:
-	AlwaysVisible:
-	AirstrikePower:
-		Icon: parabombs
-		Description: Parabombs (Single Use)
-		LongDesc: A Badger drops a load of parachuted\nbombs on your target.
-		OneShot: true
-		AllowMultiple: true
-		UnitType: badr.bomber
-		SelectTargetSpeechNotification: SelectTarget
-		QuantizedFacings: 8
-		DisplayBeacon: True
-		BeaconPoster: pbmbicon
-		CameraActor: camera
-		ArrowSequence: arrow
-		ClockSequence: clock
-		CircleSequence: circles
-
-powerproxy.sonarpulse:
-	AlwaysVisible:
-	SpawnActorPower:
-		Icon: sonar
-		Description: Sonar Pulse
-		LongDesc: Reveals all submarines in the vicinity for a \nshort time.
-		ChargeTime: 30
-		EndChargeSpeechNotification: SonarPulseReady
-		SelectTargetSpeechNotification: SelectTarget
-		Actor: sonar
-		LifeTime: 250
-		DeploySound: sonpulse.aud
-		EffectImage: moveflsh
-		EffectPalette: moveflash
-
-powerproxy.paradrop:
-	AlwaysVisible:
-	ParatroopersPower:
-		Icon: paratroopers
-		Description: Paratroopers
-		LongDesc: A Badger drops a squad of infantry\nanywhere on the map.
-		DropItems: E1,E1,E1,E3,E3
-		SelectTargetSpeechNotification: SelectTarget
-		AllowImpassableCells: false
-		QuantizedFacings: 8
-		CameraActor: camera.paradrop
-		DisplayBeacon: true
-		BeaconPoster: pinficon
-		ArrowSequence: arrow
-		ClockSequence: clock
-		CircleSequence: circles
-
-barracks.upgraded:
-	AlwaysVisible:
-	ProvidesPrerequisite:
-
-vehicles.upgraded:
-	AlwaysVisible:
-	ProvidesPrerequisite:
-
-aircraft.upgraded:
-	AlwaysVisible:
-	ProvidesPrerequisite:
-
 mpspawn:
+	Interactable:
 	EditorOnlyTooltip:
 		Name: (multiplayer player starting point)
 	AlwaysVisible:
@@ -588,6 +525,7 @@ mpspawn:
 		Categories: System
 
 waypoint:
+	Interactable:
 	EditorOnlyTooltip:
 		Name: (waypoint for scripted behavior)
 	AlwaysVisible:
@@ -599,6 +537,7 @@ waypoint:
 		QuantizedFacings: 1
 	EditorTilesetFilter:
 		Categories: System
+
 
 ^colorpicker.overlord_tank:
 	Inherits: vehicle.overlord_tank
@@ -634,3 +573,4 @@ CTFLAG:
 	-Targetable:
 	EditorTilesetFilter:
 		Categories: Decoration
+	Interactable:

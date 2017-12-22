@@ -222,11 +222,11 @@ mg.ranger:
 			building.defense: 50
 			building.stinger_site: 50
 			building.wall: 6
-            
+
 mg.rebel:
 	Inherits: mg.ranger
 	Warhead@1Dam: SpreadDamage
-    	DamageTypes: Prone50Percent, TriggerProne, DropCrate, BulletDeath
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, BulletDeath
 
 mg.red_guard:
 	Inherits: ^LightMG

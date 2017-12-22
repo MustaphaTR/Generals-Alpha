@@ -545,7 +545,7 @@ missile.scud_launcher.toxin:
 		Level: 2500
 		Falloff: 100, 50, 0
 		MaxLevel: 2500
-        
+
 missile.scud_launcher.toxin_beta:
 	Inherits: missile.scud_launcher.toxin
 	Warhead@5Radio: CreateRadioactivity
@@ -573,12 +573,12 @@ hack.scud_missile_spawner:
 		LaunchAngle: 62
 	Warhead@1Hack: SpawnActor
 		Actors: hack.scud_missile_damager
-        
+
 hack.scud_missile_spawner.beta:
 	Inherits: hack.scud_missile_spawner
 	Warhead@1Hack: SpawnActor
 		Actors: hack.scud_missile_damager.beta
-        
+
 missile.scud_storm:
 	Inherits: missile.scud_launcher.toxin
 	ReloadDelay: 10

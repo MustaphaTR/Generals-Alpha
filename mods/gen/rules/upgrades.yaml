@@ -1,4 +1,5 @@
 ^default.cameo_filler:
+	Interactable:
 	AlwaysVisible:
 	Tooltip:
 		Name: Filler
@@ -11,6 +12,7 @@
 		Image: hack.cameo_filler
 
 ^default.upgrade:
+	Interactable:
 	AlwaysVisible:
 	Buildable:
 		BuildDurationModifier: 100
@@ -492,7 +494,7 @@ upgrade.ap_bullets:
 		Queue: queue.black_market
 		BuildPaletteOrder: 1
 		BuildDuration: 1500
-		Prerequisites:building.black_market, ~techlevel.high
+		Prerequisites: building.black_market, ~techlevel.high
 		Description: Increases bullet weapons' damage by 25%.
 		QueuedAudio: NoAudio
 		ReadyAudio: APBullets

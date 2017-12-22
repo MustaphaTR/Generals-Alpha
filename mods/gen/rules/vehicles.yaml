@@ -16,8 +16,8 @@ vehicle.supply_truck:
 		GenericName: Collector
 	Selectable:
 		Priority: 7
+		DecorationBounds: 42,42
 	SelectionDecorations:
-		VisualBounds: 42,42
 	DockClient:
 	Harvester:
 		Capacity: 12
@@ -297,9 +297,6 @@ vehicle.scorpion_tank:
 		Name: secondary
 		Ammo: 1
 		PipCount: 0
-		SelfReloads: true
-		ReloadCount: 1
-		SelfReloadDelay: 300
 	WithReloadingSpriteTurret@SC_ROCKET:
 		AmmoPoolName: secondary
 		Sequence: rocket
@@ -317,6 +314,10 @@ vehicle.scorpion_tank:
 	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: ScorpionTankVoice
+	ReloadAmmoPool:
+		AmmoPool: secondary
+		Delay: 300
+		Count: 1
 
 vehicle.crusader_tank:
 	Inherits: ^Tank
@@ -365,10 +366,11 @@ vehicle.crusader_tank:
 		Condition: composite_armor
 		Prerequisites: upgrade.composite_armor
 	SelectionDecorations:
-		VisualBounds: 28,28
 	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: CrusaderTankVoice
+	Selectable:
+		DecorationBounds: 28,28
 
 vehicle.battlemaster_tank:
 	Inherits: ^Tank
@@ -413,13 +415,14 @@ vehicle.battlemaster_tank:
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	SelectionDecorations:
-		VisualBounds: 28,28
 	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: BattlemasterTankVoice
 	ProducibleWithLevel:
 		InitialLevels: 2
 		Prerequisites: generals_power.battlemaster_training
+	Selectable:
+		DecorationBounds: 28,28
 
 vehicle.ambulance:
 	Inherits: ^Vehicle
@@ -865,9 +868,6 @@ vehicle.tomahawk_launcher:
 	AmmoPool:
 		Ammo: 1
 		PipCount: 0
-		SelfReloads: true
-		ReloadCount: 1
-		SelfReloadDelay: 90
 	AttackTurreted:
 		RequiresCondition: !disabled && !driver_killed && !emp
 	WithReloadingSpriteTurret:
@@ -875,6 +875,9 @@ vehicle.tomahawk_launcher:
 	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: TomahawkLauncherVoice
+	ReloadAmmoPool:
+		Delay: 90
+		Count: 1
 
 vehicle.scud_launcher:
 	Inherits: ^Vehicle
@@ -922,7 +925,6 @@ vehicle.scud_launcher:
 	Turreted:
 		TurnSpeed: 5
 	SelectionDecorations:
-		VisualBounds: 28,28
 	Explodes:
 		Weapon: V2Explode
 	GrantConditionOnPrerequisite@BIO_BOMBS:
@@ -937,14 +939,16 @@ vehicle.scud_launcher:
 	AmmoPool:
 		Ammo: 1
 		PipCount: 0
-		SelfReloads: true
-		ReloadCount: 1
-		SelfReloadDelay: 200
 	WithReloadingSpriteTurret:
 		AmmoPoolName: primary
 	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: SCUDLauncherVoice
+	ReloadAmmoPool:
+		Delay: 200
+		Count: 1
+	Selectable:
+		DecorationBounds: 28,28
 
 vehicle.inferno_cannon:
 	Inherits: ^Tank
@@ -1065,10 +1069,11 @@ vehicle.paladin_tank:
 		HealIfBelow: 50
 		DamageCooldown: 150
 	SelectionDecorations:
-		VisualBounds: 28,28,0,-4
 	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: PaladinTankVoice
+	Selectable:
+		DecorationBounds: 28,28,0,-4
 
 vehicle.marauder_tank:
 	Inherits: ^Tank
@@ -1266,7 +1271,6 @@ vehicle.overlord_tank:
 		Condition: overlord_speaker
 		Prerequisites: strategy.overlord_speaker
 	SelectionDecorations:
-		VisualBounds: 44,38,0,-4
 	GrantStackableConditionOnFire@gatling:
 		Condition: gatling
 		ArmamentName: gatling
@@ -1282,6 +1286,8 @@ vehicle.overlord_tank:
 	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: OverlordTankVoice
+	Selectable:
+		DecorationBounds: 44,38,0,-4
 
 vehicle.bomb_truck:
 	Inherits: ^Vehicle
@@ -1309,7 +1315,6 @@ vehicle.bomb_truck:
 	Armor:
 		Type: vehicle.truck
 	SelectionDecorations:
-		VisualBounds: 42,42 #so mcc's WithTextDecoration's will be at correft place, this is not conditional right now, so i can't do that.
 	Mobile:
 		Speed: 50
 		Voice: Move
@@ -1355,11 +1360,10 @@ vehicle.bomb_truck:
 	AttackFrontal:
 		RequiresCondition: keep_me_disabled
 	Disguise:
-		Types: Vehicle-Disguise
+		TargetTypes: Vehicle-Disguise
 		Voice: Move
 		RequiresCondition: disguise
-	GrantConditionByDisguisedActor:
-		Conditions:
+		DisguisedAsConditions:
 			vehicle.radar_van: radar_van
 			vehicle.usa_mcc: usa_mcc
 			vehicle.gla_mcc: gla_mcc
@@ -1394,6 +1398,8 @@ vehicle.bomb_truck:
 		Prerequisites: strategy.disguise
 	Voiced:
 		VoiceSet: BombTruckVoice
+	Selectable:
+		DecorationBounds: 42,42
 
 vehicle.nuke_cannon:
 	Inherits: ^Tank
@@ -1439,12 +1445,13 @@ vehicle.nuke_cannon:
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	SelectionDecorations:
-		VisualBounds: 44,38,0,-4
 	ProducibleWithLevel:
 		Prerequisites: generals_power.arty_training
 	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: NukeCannonVoice
+	Selectable:
+		DecorationBounds: 44,38,0,-4
 
 ^default.mcc:
 	Inherits: ^Vehicle
@@ -1458,8 +1465,8 @@ vehicle.nuke_cannon:
 		Cost: 1000
 	Selectable:
 		Priority: 4
+		DecorationBounds: 42,42
 	SelectionDecorations:
-		VisualBounds: 42,42
 	Health:
 		HP: 600
 	Armor:
@@ -1477,9 +1484,10 @@ vehicle.nuke_cannon:
 	BaseProvider:
 		Range: 8c0
 	GivesBuildableArea:
+		AreaTypes: building
 	ProvidesPrerequisite@vehiclename:
 	WithTextDecoration@SIDE:
-		Text: 
+		Text:
 		ZOffset: 2048
 		ReferencePoint: Top
 		ValidStances: Ally, Neutral, Enemy
@@ -1495,6 +1503,7 @@ vehicle.usa_mcc:
 		Name: USA Construction Vehicle
 	Production:
 		Produces: queue.usa_building
+		PauseOnCondition: emp
 	ProductionBar@USA_BUILDING:
 		ProductionType: queue.usa_building
 	ProductionQueue@USA_BUILDING:
@@ -1521,6 +1530,7 @@ vehicle.gla_mcc:
 		Name: GLA Construction Vehicle
 	Production:
 		Produces: queue.gla_building
+		PauseOnCondition: emp
 	ProductionBar@GLA_BUILDING:
 		ProductionType: queue.gla_building
 	ProductionQueue@GLA_BUILDING:
@@ -1547,6 +1557,7 @@ vehicle.prc_mcc:
 		Name: PRC Construction Vehicle
 	Production:
 		Produces: queue.prc_building
+		PauseOnCondition: emp
 	ProductionBar@PRC_BUILDING:
 		ProductionType: queue.prc_building
 	ProductionQueue@PRC_BUILDING:

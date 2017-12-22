@@ -7,7 +7,7 @@
 	Aircraft:
 		CruiseAltitude: 2560
 		TurnSpeed: 5
-		Speed: 150 #175
+		Speed: 150
 		Repulsable: False
 		MaximumPitch: 56
 	-Selectable:
@@ -31,6 +31,7 @@
 		Image: aircraft.badger
 	GivesExperience:
 		Experience: 1000
+	Interactable:
 
 aircraft.badger:
 	Inherits: ^default.badger
@@ -69,8 +70,10 @@ aircraft.badger.fuel_air_bomb:
 	AttackBomber:
 	Armament:
 		Weapon: parabomb.fuel_air_bomb
+		PauseOnCondition: !ammo
 	AmmoPool:
 		Ammo: 1
+		AmmoCondition: ammo
 	Tooltip:
 		Name: B-52
 
@@ -80,14 +83,17 @@ aircraft.badger.anthrax_bomb:
 	Armament@Normal:
 		Weapon: parabomb.anthrax
 		RequiresCondition: !anthrax_beta
+		PauseOnCondition: !ammo
 	Armament@ANTHRAX_BETA:
 		Weapon: parabomb.anthrax.beta
 		RequiresCondition: anthrax_beta
+		PauseOnCondition: !ammo
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
 	AmmoPool:
 		Ammo: 1
+		AmmoCondition: ammo
 	Tooltip:
 		Name: B-52
 
@@ -96,8 +102,10 @@ aircraft.badger.emp:
 	AttackBomber:
 	Armament:
 		Weapon: parabomb.emp
+		PauseOnCondition: !ammo
 	AmmoPool:
 		Ammo: 1
+		AmmoCondition: ammo
 	Tooltip:
 		Name: Badger
 
@@ -106,8 +114,10 @@ aircraft.badger.cluster_mines:
 	AttackBomber:
 	Armament:
 		Weapon: parabomb.cluster_mines
+		PauseOnCondition: !ammo
 	AmmoPool:
 		Ammo: 1
+		AmmoCondition: ammo
 	Tooltip:
 		Name: Badger
 
@@ -161,11 +171,13 @@ aircraft.mig:
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
 		RequiresCondition: !black_napalm
+		PauseOnCondition: !ammo
 	Armament@Blue:
 		Weapon: missile.mig.blue
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
 		RequiresCondition: black_napalm
+		PauseOnCondition: !ammo
 	GrantConditionOnPrerequisite@BLACK_NAPALM:
 		Condition: black_napalm
 		Prerequisites: upgrade.black_napalm
@@ -192,11 +204,12 @@ aircraft.mig:
 	AmmoPool:
 		Ammo: 2
 		ReloadDelay: 100
+		AmmoCondition: ammo
 	ReturnOnIdle:
 	Selectable:
 		Bounds: 36,28,0,2
+		DecorationBounds: 40,29,0,1
 	SelectionDecorations:
-		VisualBounds: 40,29,0,1
 	Contrail@1:
 		Offset: -598,-683,0
 	Contrail@2:
@@ -243,6 +256,7 @@ aircraft.raptor:
 		Weapon: missile.raptor
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
+		PauseOnCondition: !ammo
 	AttackPlane:
 		FacingTolerance: 20
 	DockClient:
@@ -266,11 +280,12 @@ aircraft.raptor:
 	AmmoPool:
 		Ammo: 4
 		ReloadDelay: 50
+		AmmoCondition: ammo
 	ReturnOnIdle:
 	Selectable:
 		Bounds: 36,28,0,2
+		DecorationBounds: 40,29,0,1
 	SelectionDecorations:
-		VisualBounds: 40,29,0,1
 	Contrail@1:
 		Offset: -598,-683,0
 	Contrail@2:
@@ -297,6 +312,7 @@ aircraft.king_raptor:
 		HP: 240
 	Armament:
 		Weapon: missile.king_raptor
+		PauseOnCondition: !ammo
 	Armament@PDLASER:
 		Weapon: laser.king_raptor
 		LocalOffset: 0,213,-85
@@ -308,6 +324,7 @@ aircraft.king_raptor:
 	AmmoPool:
 		Ammo: 6
 		ReloadDelay: 6
+		AmmoCondition: ammo
 	Voiced:
 		VoiceSet: KingRaptorVoice
 
@@ -338,6 +355,7 @@ aircraft.stealth_fighter:
 		Weapon: missile.stealth_fighter
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
+		PauseOnCondition: !ammo
 	AttackPlane:
 		FacingTolerance: 20
 	DockClient:
@@ -361,11 +379,12 @@ aircraft.stealth_fighter:
 	AmmoPool:
 		Ammo: 2
 		ReloadDelay: 100
+		AmmoCondition: ammo
 	ReturnOnIdle:
 	Selectable:
 		Bounds: 36,28,0,2
+		DecorationBounds: 40,29,0,1
 	SelectionDecorations:
-		VisualBounds: 40,29,0,1
 	Contrail@1:
 		Offset: -598,-683,0
 	Contrail@2:
@@ -416,6 +435,7 @@ aircraft.aurora:
 	Armament:
 		Weapon: missile.aurora
 		LocalYaw: -40, 24
+		PauseOnCondition: !ammo
 	AttackPlane:
 		FacingTolerance: 20
 	DockClient:
@@ -447,11 +467,12 @@ aircraft.aurora:
 	AmmoPool:
 		Ammo: 1
 		ReloadDelay: 125
+		AmmoCondition: ammo
 	ReturnOnIdle:
 	Selectable:
 		Bounds: 36,28,0,2
+		DecorationBounds: 40,29,0,1
 	SelectionDecorations:
-		VisualBounds: 40,29,0,1
 	Contrail@1:
 		Offset: -598,-683,0
 	Contrail@2:
@@ -494,7 +515,6 @@ aircraft.spy_drone:
 		RepulsionSpeed: 40
 		MaximumPitch: 56
 	SelectionDecorations:
-		VisualBounds: 30,28,0,2
 	Cloak:
 		InitialDelay: 0
 		CloakDelay: 50
@@ -518,6 +538,8 @@ aircraft.spy_drone:
 		Interval: 2
 	RenderSprites:
 		Scale: 0.5
+	Interactable:
+		DecorationBounds: 30,28,0,2
 
 aircraft.a10:
 	Inherits: ^Plane
@@ -539,17 +561,17 @@ aircraft.a10:
 		Name: gun
 		Weapon: mg.a10
 		LocalOffset: 1024,0,-85
-	WithMuzzleOverlay:
 	Armament@MISSILES1:
 		Name: missile
-		AmmoPoolName: missile
 		Weapon: missile.a10
 		LocalOffset: 0,384,0
+		PauseOnCondition: !ammo
 	Armament@MISSILES2:
 		Name: missile
-		AmmoPoolName: missile
 		Weapon: missile.a10
 		LocalOffset: 0,-384,0
+		PauseOnCondition: !ammo
+	WithMuzzleOverlay:
 	Contrail@1:
 		Offset: -640,171,0
 		TrailLength: 15
@@ -558,8 +580,10 @@ aircraft.a10:
 		TrailLength: 15
 	AmmoPool:
 		Name: missile
+		Armaments: missile
 		Ammo: 8
 		PipCount: 0
+		AmmoCondition: ammo
 	-Selectable:
 	SelectionDecorations:
 		RenderSelectionBars: False
@@ -569,6 +593,7 @@ aircraft.a10:
 		Actor: husk.a10
 	RenderSprites:
 		PlayerPalette: cncplayer
+	Interactable:
 
 aircraft.chinook:
 	Inherits: ^Vehicle
@@ -650,12 +675,10 @@ aircraft.chinook:
 	-DamagedByRadioactivity@ANTHRAX_ALPHA:
 	-DamagedByRadioactivity@ANTHRAX_BETA:
 	-DamagedByRadioactivity@RADIOACTIVITY:
-#	SpawnActorOnDeath:
-#		Actor: husk.chinook
 	Selectable:
 		Bounds: 40,36,0,-50
+		DecorationBounds: 40,36,0,-50
 	SelectionDecorations:
-		VisualBounds: 40,36,0,-50
 	Voiced:
 		VoiceSet: ChinookVoice
 
@@ -687,20 +710,20 @@ aircraft.comanche:
 		LocalOffset: 0,0,-85
 		MuzzleSequence: muzzle
 	Armament@Rocket:
-		AmmoPoolName: secondary
+		Name: secondary
 		Weapon: missile.comanche
 		LocalOffset: 0,213,-85
 		RequiresCondition: rocket_pods
+		PauseOnCondition: !ammo
 	GrantConditionOnPrerequisite@ROCKET_PODS:
 		Condition: rocket_pods
 		Prerequisites: upgrade.rocket_pods
 	AmmoPool:
 		Name: secondary
+		Armaments: secondary
 		Ammo: 12
-		ReloadCount: 12
 		PipCount: 0
-		SelfReloads: true
-		SelfReloadDelay: 375
+		AmmoCondition: ammo
 	AttackHeli:
 		FacingTolerance: 20
 	RevealsShroud:
@@ -724,7 +747,6 @@ aircraft.comanche:
 		Sequence: slow-rotor
 		RequiresCondition: !airborne
 	SelectionDecorations:
-		VisualBounds: 36,28
 	SpawnActorOnDeath:
 		Actor: husk.comanche
 	SmokeTrailWhenDamaged:
@@ -745,3 +767,9 @@ aircraft.comanche:
 	-RevealOnDeath:
 	Voiced:
 		VoiceSet: ComancheVoice
+	ReloadAmmoPool:
+		AmmoPool: secondary
+		Delay: 375
+		Count: 12
+	Selectable:
+		DecorationBounds: 36,28
