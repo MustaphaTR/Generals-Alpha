@@ -1239,6 +1239,7 @@ vehicle.overlord_tank:
 		RequiresCondition: overlord_gatling
 	AttackTurreted:
 		Armaments: gatling, primary
+		Turrets: gatling, primary
 		RequiresCondition: !disabled && !driver_killed && !emp
 	AttackGarrisoned:
 		Turret: bunker
