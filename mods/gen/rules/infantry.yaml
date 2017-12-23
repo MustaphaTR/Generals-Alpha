@@ -358,15 +358,10 @@ infantry.terrorist:
 		Weapon: explosion.terrorist
 		EmptyWeapon: explosion.terrorist
 	AttackSuicides:
+	Targetable:
+		TargetTypes: Ground, Infantry, Infantry-Disguise, DetonateAttack, Terrorist
 	Voiced:
 		VoiceSet: TerroristVoice
-	Health:
-		HP: 120
-	Armor:
-		Type: infantry.normal
-	Mobile:
-		Voice: Move
-		Speed: 25
 
 ^default.angry_mob:
 	Inherits: ^Soldier

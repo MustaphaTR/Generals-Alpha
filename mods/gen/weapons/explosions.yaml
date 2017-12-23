@@ -185,6 +185,18 @@ explosion.terrorist:
 		Spread: 1c0
 		Damage: 500
 		ValidTargets: Ground, Trees
+		ValidStances: Enemy, Neutral
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, DropCrate, Incendiary
+	Warhead@1DamAlly: SpreadDamage
+		Spread: 1c0
+		Damage: 500
+		ValidTargets: Ground, Trees
+		ValidStances: Ally
+		InvalidTargets: Terrorist
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -195,6 +207,19 @@ explosion.terrorist:
 		Damage: 300
 		Delay: 5
 		ValidTargets: Ground, Trees
+		ValidStances: Enemy, Neutral
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, DropCrate, Incendiary
+	Warhead@2DamAlly: SpreadDamage
+		Spread: 2c0
+		Damage: 300
+		Delay: 5
+		ValidTargets: Ground, Trees
+		ValidStances: Ally
+		InvalidTargets: Terrorist
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
