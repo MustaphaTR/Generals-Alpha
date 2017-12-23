@@ -1175,7 +1175,7 @@ building.patriot:
 	WithRangeCircle@AA:
 		Range: 8c768
 	AttackTurreted:
-		RequiresCondition: !emp
+		PauseOnCondition: emp || disabled
 	WithMuzzleOverlay:
 	Power:
 		Amount: -3
@@ -1300,7 +1300,7 @@ building.gatling_cannon:
 	WithRangeCircle@AA:
 		Range: 10c0
 	AttackTurreted:
-		RequiresCondition: !emp
+		PauseOnCondition: emp || disabled
 	WithMuzzleOverlay:
 	GrantStackableConditionOnFire@gatling:
 		Condition: gatling
