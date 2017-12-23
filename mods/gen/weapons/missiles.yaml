@@ -258,53 +258,6 @@ missile.comanche:
 			aircraft.chinook: 50
 			building.tough: 80
 
-HellfireAA:
-	Inherits: ^AntiAirMissile
-	ReloadDelay: 60
-	MinRange: 1c256
-	Burst: 2
-	BurstDelay: 10
-	Projectile: Missile
-		Speed: 384
-		Inaccuracy: 128
-		HorizontalRateOfTurn: 10
-		RangeLimit: 7c0
-	Warhead@1Dam: SpreadDamage
-		Damage: 40
-		ValidTargets: Air
-		Versus:
-			Light: 75
-	Warhead@3Eff: CreateEffect
-		Explosions: med_explosion_air
-
-MammothTusk:
-	Inherits: ^AntiGroundMissile
-	ReloadDelay: 60
-	Range: 8c0
-	Burst: 2
-	ValidTargets: Air, Infantry
-	Projectile: Missile
-		Speed: 341
-		HorizontalRateOfTurn: 15
-		RangeLimit: 9c614
-	Warhead@1Dam: SpreadDamage
-		Spread: 256
-		Damage: 50
-		ValidTargets: Air, Infantry
-		Versus:
-			None: 100
-			Light: 60
-			Heavy: 25
-			Concrete: 50
-		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
-	Warhead@3Eff: CreateEffect
-		ImpactSounds: kaboom12.aud
-		ValidTargets: Ground
-	Warhead@5EffAir: CreateEffect
-		Explosions: med_explosion_air
-		ImpactSounds: kaboom25.aud
-		ValidTargets: Air
-
 missile.patriot.ground:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 50
