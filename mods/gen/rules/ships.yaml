@@ -62,7 +62,7 @@ vessel.gunboat:
 		TurnSpeed: 7
 		Offset: 512,0,0
 	Armament:
-		Weapon: 2Inch
+		Weapon: cannon.gunboat
 		LocalOffset: 208,0,48
 		MuzzleSequence: muzzle
 		RequiresCondition: !disabled && !driver_killed
@@ -104,12 +104,12 @@ vessel.destroyer:
 		TurnSpeed: 7
 		Offset: 341,0,128
 	Armament@AG:
-		Weapon: Stinger
+		Weapon: missile.destroyer.ground
 		LocalOffset: 0,-100,0, 0,100,0
 		LocalYaw: 64, -64
 		RequiresCondition: !disabled && !driver_killed
 	Armament@AA:
-		Weapon: StingerAA
+		Weapon: missile.destroyer.air
 		LocalOffset: 0,-100,0, 0,100,0
 		LocalYaw: 64, -64
 		RequiresCondition: !disabled && !driver_killed
@@ -156,7 +156,7 @@ vessel.cruiser:
 		TurnSpeed: 3
 	Armament@PRIMARY:
 		Turret: primary
-		Weapon: cannon.crusader
+		Weapon: cannon.cruiser
 		LocalOffset: 480,-100,40, 480,100,40
 		Recoil: 171
 		RecoilRecovery: 34
@@ -164,7 +164,7 @@ vessel.cruiser:
 		RequiresCondition: !disabled && !driver_killed
 	Armament@SECONDARY:
 		Turret: secondary
-		Weapon: cannon.crusader
+		Weapon: cannon.cruiser
 		LocalOffset: 480,-100,40, 480,100,40
 		Recoil: 171
 		RecoilRecovery: 34

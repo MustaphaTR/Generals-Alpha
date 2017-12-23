@@ -255,7 +255,7 @@ cannon.strategy_center:
 		ImpactSounds: splash9.aud
 		ValidTargets: Water
 
-cannon.crusader:
+cannon.cruiser:
 	Inherits: ^Artillery
 	MinRange: 3c768
 	ReloadDelay: 250
@@ -279,7 +279,7 @@ cannon.crusader:
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
 
-2Inch:
+cannon.gunboat:
 	Inherits: ^Cannon
 	ReloadDelay: 60
 	Range: 5c512

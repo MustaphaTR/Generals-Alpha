@@ -405,7 +405,7 @@ missile.stinger_site.air:
 			aircraft.chinook: 50
 			building.tough: 80
 
-Stinger:
+missile.destroyer.ground:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 60
 	Range: 7c512
@@ -426,8 +426,8 @@ Stinger:
 			Light: 75
 			Concrete: 50
 
-StingerAA:
-	Inherits: Stinger
+missile.destroyer.air:
+	Inherits: missile.destroyer.ground
 	ValidTargets: Air
 	Projectile: Missile
 		Speed: 255
