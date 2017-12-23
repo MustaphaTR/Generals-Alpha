@@ -7,8 +7,9 @@
 		Speed: 213
 		Arm: 2
 		Blockable: false
-		ContrailLength: 10
 		Inaccuracy: 128
+		TrailImage: smokey
+		TrailInterval: 1
 		Image: DRAGON
 		Shadow: True
 		HorizontalRateOfTurn: 5
@@ -402,7 +403,6 @@ missile.rocket_buggy:
 	Projectile: Bullet
 		Inaccuracy: 853
 		LaunchAngle: 62
-		ContrailLength: 10
 		Speed: 341
 	Warhead@1Dam: SpreadDamage
 		Spread: 683
@@ -567,7 +567,6 @@ missile.tomahawk_launcher:
 	Projectile: Missile
 		Speed: 170
 		Blockable: false
-		ContrailLength: 8
 		Inaccuracy: 196
 		Image: MISSILE
 		RangeLimit: 11c0
