@@ -93,25 +93,55 @@ World:
 		TechLevelDropdownDisplayOrder: 2
 		GameSpeedDropdownDisplayOrder: 3
 	CreateMPPlayers:
+	MPStartUnits@cvonlyusa:
+		Class: cvonly
+		ClassName: Constr. Veh. Only
+		Factions: usa
+		BaseActor: vehicle.usa_mcc
+	MPStartUnits@cvonlygla:
+		Class: cvonly
+		ClassName: Constr. Veh. Only
+		Factions: gla
+		BaseActor: vehicle.gla_mcc
+	MPStartUnits@cvonlyprc:
+		Class: cvonly
+		ClassName: Constr. Veh. Only
+		Factions: prc
+		BaseActor: vehicle.prc_mcc
 	MPStartUnits@commonlyusa:
+		Class: commonly
+		ClassName: Comm. Cent. Only
+		Factions: usa
+		BaseActor: building.usa_command_center
+	MPStartUnits@commonlygla:
+		Class: commonly
+		ClassName: Comm. Cent. Only
+		Factions: gla
+		BaseActor: building.gla_command_center
+	MPStartUnits@commonlyprc:
+		Class: commonly
+		ClassName: Comm. Cent. Only
+		Factions: prc
+		BaseActor: building.prc_command_center
+	MPStartUnits@commandcvusa:
 		Class: none
-		ClassName: Comm. Center Only
+		ClassName: CC and CV
 		Factions: usa
 		BaseActor: building.usa_command_center
 		SupportActors: vehicle.usa_mcc
 		InnerSupportRadius: 3
 		OuterSupportRadius: 6
-	MPStartUnits@commonlygla:
+	MPStartUnits@commandcvgla:
 		Class: none
-		ClassName: Comm. Center Only
+		ClassName: CC and CV
 		Factions: gla
 		BaseActor: building.gla_command_center
 		SupportActors: vehicle.gla_mcc
 		InnerSupportRadius: 3
 		OuterSupportRadius: 6
-	MPStartUnits@commonlyprc:
+	MPStartUnits@commandcvprc:
 		Class: none
-		ClassName: Comm. Center Only
+		ClassName: CC and CV
 		Factions: prc
 		BaseActor: building.prc_command_center
 		SupportActors: vehicle.prc_mcc
