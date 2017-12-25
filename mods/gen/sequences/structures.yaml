@@ -457,17 +457,9 @@ building.stinger_site:
 	dead: stinger
 		Start: 2
 		Tick: 800
-	make:
-		Combine:
-			stingermake:
-				Length: 17
-			stingermake:
-				Start: 19
-		Length: 18
+	make: stingermake
+		Length: *
 		Tick: 80
-	muzzle: minigun
-		Length: 6
-		Facings: 8
 	bib: bib3
 		Length: *
 		UseTilesetExtension: true
