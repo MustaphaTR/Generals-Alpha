@@ -1,7 +1,7 @@
 husk.scorpion_tank:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Husk (Scorpion Tank)
+		Name: Scorpion Tank (Destroyed)
 	ThrowsParticle@turret:
 		Anim: turret
 	TransformOnCapture:
@@ -10,7 +10,7 @@ husk.scorpion_tank:
 husk.crusader_tank:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Husk (Crusader Tank)
+		Name: Crusader Tank (Destroyed)
 	ThrowsParticle@turret:
 		Anim: turret
 	TransformOnCapture:
@@ -19,7 +19,7 @@ husk.crusader_tank:
 husk.battlemaster_tank:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Husk (Battlemaster Tank)
+		Name: Battlemaster Tank (Destroyed)
 	ThrowsParticle@turret:
 		Anim: turret
 	TransformOnCapture:
@@ -28,7 +28,7 @@ husk.battlemaster_tank:
 husk.overlord_tank:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Husk (Overlord Tank)
+		Name: Overlord Tank (Destroyed)
 	ThrowsParticle@turret:
 		Anim: turret
 	TransformOnCapture:
@@ -37,7 +37,7 @@ husk.overlord_tank:
 husk.paladin_tank:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Husk (Paladin Tank)
+		Name: Paladin Tank (Destroyed)
 	ThrowsParticle@turret:
 		Anim: turret
 	TransformOnCapture:
@@ -46,7 +46,7 @@ husk.paladin_tank:
 husk.marauder_tank:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Husk (Marauder Tank)
+		Name: Marauder Tank (Destroyed)
 	ThrowsParticle@turret:
 		Anim: turret
 	TransformOnCapture:
@@ -55,7 +55,7 @@ husk.marauder_tank:
 husk.nuke_cannon:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Husk (Nuke Cannon)
+		Name: Nuke Cannon (Destroyed)
 	ThrowsParticle@turret:
 		Anim: turret
 	TransformOnCapture:
@@ -64,21 +64,21 @@ husk.nuke_cannon:
 husk.supply_truck.full:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Husk (Supply Truck)
+		Name: Supply Truck (Destroyed)
 	TransformOnCapture:
 		IntoActor: vehicle.supply_truck
 
 husk.supply_truck.empty:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Husk (Supply Truck)
+		Name: Supply Truck (Destroyed)
 	TransformOnCapture:
 		IntoActor: vehicle.supply_truck
 
 husk.usa_mcc:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Husk (Mobile Command Center)
+		Name: Construction Vehicle (Destroyed)
 	TransformOnCapture:
 		IntoActor: vehicle.usa_mcc
 	RenderSprites:
@@ -87,7 +87,7 @@ husk.usa_mcc:
 husk.gla_mcc:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Husk (Mobile Command Center)
+		Name: Construction Vehicle (Destroyed)
 	TransformOnCapture:
 		IntoActor: vehicle.gla_mcc
 	RenderSprites:
@@ -96,16 +96,30 @@ husk.gla_mcc:
 husk.prc_mcc:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Husk (Mobile Command Center)
+		Name: Construction Vehicle (Destroyed)
 	TransformOnCapture:
 		IntoActor: vehicle.prc_mcc
 	RenderSprites:
 		Image: husk.mcc
 
+TRAN.Husk1:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Chinook (Destroyed)
+	RenderSprites:
+		Image: tran1husk
+
+TRAN.Husk2:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Chinook (Destroyed)
+	RenderSprites:
+		Image: tran2husk
+
 husk.chinook:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Transport Helicopter
+		Name: Chinook
 	Aircraft:
 		TurnSpeed: 4
 		Speed: 60
@@ -121,21 +135,7 @@ husk.chinook:
 	RenderSprites:
 		Image: aircraft.chinook
 
-TRAN.Husk1:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (Transport Helicopter)
-	RenderSprites:
-		Image: tran1husk
-
-TRAN.Husk2:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (Transport Helicopter)
-	RenderSprites:
-		Image: tran2husk
-
-BADR.Husk:
+husk.badger:
 	Inherits: ^PlaneHusk
 	Tooltip:
 		Name: Badger
@@ -222,6 +222,32 @@ husk.raptor:
 		Image: aircraft.raptor
 		Scale: 0.9
 
+husk.king_raptor:
+	Inherits: ^PlaneHusk
+	Inherits@REVEAL: ^Reveal200
+	Tooltip:
+		Name: King Raptor
+	Contrail@1:
+		Offset: -598,-683,0
+	Contrail@2:
+		Offset: -598,683,0
+	RevealsShroud:
+		Type: CenterPosition
+	RevealsShroud@SEARCH_AND_DESTROY:
+		Type: CenterPosition
+	RevealsShroud@INTELLIGENCE:
+		Type: CenterPosition
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 175
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+		MinDamage: Undamaged
+	RenderSprites:
+		Image: aircraft.king_raptor
+		Scale: 0.9
+
 husk.stealth_fighter:
 	Inherits: ^PlaneHusk
 	Inherits@REVEAL: ^Reveal180
@@ -273,30 +299,6 @@ husk.aurora:
 	RenderSprites:
 		Image: aircraft.aurora
 		Scale: 0.9
-
-husk.spy_drone:
-	Inherits: ^PlaneHusk
-	Inherits@REVEAL: ^Reveal250
-	Tooltip:
-		Name: Spy Drone
-	Contrail:
-		Offset: -853,0,0
-	RevealsShroud:
-		Type: CenterPosition
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Type: CenterPosition
-	RevealsShroud@INTELLIGENCE:
-		Type: CenterPosition
-	Aircraft:
-		TurnSpeed: 5
-		Speed: 65
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,0
-		Interval: 2
-		MinDamage: Undamaged
-	RenderSprites:
-		Image: aircraft.spy_drone
-		Scale: 0.5
 
 husk.comanche:
 	Inherits: ^HelicopterHusk

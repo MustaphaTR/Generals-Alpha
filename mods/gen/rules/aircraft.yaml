@@ -308,6 +308,8 @@ aircraft.king_raptor:
 		Prerequisites: ~building.usa_airfield, ~techlevel.medium, ~disabled
 	Valued:
 		Cost: 1100
+	Tooltip:
+		Name: King Raptor
 	Health:
 		HP: 240
 	Armament:
@@ -325,6 +327,8 @@ aircraft.king_raptor:
 		Ammo: 6
 		ReloadDelay: 6
 		AmmoCondition: ammo
+	SpawnActorOnDeath:
+		Actor: husk.king_raptor
 	Voiced:
 		VoiceSet: KingRaptorVoice
 

@@ -26,19 +26,3 @@ World:
 		TechLevelLocked: True
 		ShortGameLocked: True
 		ShortGameEnabled: False
-
-E7:
-	-Crushable:
-
-E7.noautotarget:
-	Inherits: E7
-	-AutoTarget:
-	-AutoTargetPriority@DEFAULT:
-	-AutoTargetPriority@ATTACKANYTHING:
-	AttackMove:
-		-AssaultMoveScanCondition:
-	RenderSprites:
-		Image: E7
-
-^Vehicle:
-	Demolishable:

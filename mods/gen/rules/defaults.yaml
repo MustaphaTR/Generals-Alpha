@@ -1535,16 +1535,6 @@
 	Inherits: ^BasicHusk
 	Husk:
 		AllowedTerrain: Clear, Rough, Road, Ore, Gems, Beach
-	Burns:
-		Damage: 2
-	Capturable:
-		Types: husk
-		CaptureThreshold: 100
-		ValidStances: Enemy, Neutral, Ally
-	TransformOnCapture:
-		ForceHealthPercentage: 25
-	WithColoredOverlay@IDISABLE:
-		Palette: disabled
 	Targetable:
 		TargetTypes: Ground, Husk, NoAutoTarget
 		RequiresForceFire: true
