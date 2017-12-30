@@ -1,6 +1,6 @@
 Metadata:
 	Title: Generals Alpha
-	Version: gen-20171226
+	Version: gen-20171230
 
 PackageFormats: Mix
 
@@ -31,13 +31,15 @@ Packages:
 	gen|bits
 	gen|bits/audio
 	gen|bits/beacons
+	gen|bits/cars
 	gen|bits/cameos
 	gen|bits/desert
+	gen|bits/flags
 	gen|uibits
 
 MapFolders:
 	gen|maps: System
-	~^maps/gen/gen-20171226: User
+	~^maps/gen/gen-20171230: User
 
 Rules:
 	gen|rules/misc.yaml
@@ -71,6 +73,7 @@ Sequences:
 	gen|sequences/ships.yaml
 	gen|sequences/generals_powers.yaml
 	gen|sequences/upgrades.yaml
+	gen|sequences/civilian.yaml
 
 TileSets:
 	gen|tilesets/snow.yaml
