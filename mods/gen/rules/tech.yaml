@@ -110,17 +110,17 @@ tech.communications_center:
 	Tooltip:
 		Name: Communications Center
 	RevealsShroud:
-		RequiresCondition: !emp
+		RequiresCondition: !emp && !search_and_destroy
 	RevealsShroud@SEARCH_AND_DESTROY:
-		RequiresCondition: !emp
+		RequiresCondition: !emp && search_and_destroy
 	RevealsShroud@INTELLIGENCE:
 		RequiresCondition: intelligence && !emp
 	RevealsShroud@EMP:
 		Range: 4c512
-		RequiresCondition: emp
+		RequiresCondition: emp && !search_and_destroy
 	RevealsShroud@SEARCH_AND_DESTROY_EMP:
 		Range: 5c409
-		RequiresCondition: emp
+		RequiresCondition: emp && search_and_destroy
 	RevealsShroud@INTELLIGENCE_EMP:
 		Range: 4c512
 		ValidStances: Enemy
