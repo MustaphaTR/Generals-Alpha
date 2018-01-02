@@ -59,7 +59,7 @@ Player:
 	SpawnActorPower@EMERGENCY_REPAIR1:
 		Actor: camera.emergency_repair.1
 		Prerequisites: ~prerequisite.command_center, ~generals_power.emergency_repair1, ~!generals_power.emergency_repair2, ~!generals_power.emergency_repair3
-		ChargeTime: 240
+		ChargeInterval: 6000
 		Icon: repair1
 		Description: Emergency Repair
 		LongDesc: Repairs vehicles in 3 cell range by 30%.
@@ -68,7 +68,7 @@ Player:
 	SpawnActorPower@EMERGENCY_REPAIR2:
 		Actor: camera.emergency_repair.2
 		Prerequisites: ~prerequisite.command_center, ~generals_power.emergency_repair2, ~!generals_power.emergency_repair3
-		ChargeTime: 240
+		ChargeInterval: 6000
 		Icon: repair2
 		Description: Emergency Repair
 		LongDesc: Repairs vehicles in 4 cell range by 60%.
@@ -77,7 +77,7 @@ Player:
 	SpawnActorPower@EMERGENCY_REPAIR3:
 		Actor: camera.emergency_repair.3
 		Prerequisites: ~prerequisite.command_center, ~generals_power.emergency_repair3
-		ChargeTime: 240
+		ChargeInterval: 6000
 		Icon: repair3
 		Description: Emergency Repair
 		LongDesc: Repairs vehicles in 5 cell range by 90%.
