@@ -452,6 +452,7 @@ vehicle.ambulance:
 	Mobile:
 		Speed: 60
 		Voice: Move
+		RequiresCondition: !notmobile && !disabled && !driver_killed && !emp
 	Crushable:
 		CrushClasses: vehicle
 	ProximityExternalCondition:
