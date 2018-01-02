@@ -482,6 +482,11 @@
 	RevealOnDeath:
 		Duration: 100
 		Radius: 1c128
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+	ExternalCondition@INTELLIGENCE:
+		Condition: intelligence
 
 ^Reveal125:
 	RevealsShroud:
@@ -496,6 +501,11 @@
 	RevealOnDeath:
 		Duration: 100
 		Radius: 1c576
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+	ExternalCondition@INTELLIGENCE:
+		Condition: intelligence
 
 ^Reveal150:
 	RevealsShroud:
@@ -510,6 +520,11 @@
 	RevealOnDeath:
 		Duration: 100
 		Radius: 1c896
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+	ExternalCondition@INTELLIGENCE:
+		Condition: intelligence
 
 ^Reveal175:
 	RevealsShroud:
@@ -524,6 +539,11 @@
 	RevealOnDeath:
 		Duration: 100
 		Radius: 2c192
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+	ExternalCondition@INTELLIGENCE:
+		Condition: intelligence
 
 ^Reveal180:
 	RevealsShroud:
@@ -538,6 +558,11 @@
 	RevealOnDeath:
 		Duration: 100
 		Radius: 2c256
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+	ExternalCondition@INTELLIGENCE:
+		Condition: intelligence
 
 ^Reveal200:
 	RevealsShroud:
@@ -552,6 +577,11 @@
 	RevealOnDeath:
 		Duration: 100
 		Radius: 2c512
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+	ExternalCondition@INTELLIGENCE:
+		Condition: intelligence
 
 ^Reveal250:
 	RevealsShroud:
@@ -566,6 +596,11 @@
 	RevealOnDeath:
 		Duration: 100
 		Radius: 3c128
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+	ExternalCondition@INTELLIGENCE:
+		Condition: intelligence
 
 ^Reveal300:
 	RevealsShroud:
@@ -580,6 +615,11 @@
 	RevealOnDeath:
 		Duration: 100
 		Radius: 3c768
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+	ExternalCondition@INTELLIGENCE:
+		Condition: intelligence
 
 ^Reveal350:
 	RevealsShroud:
@@ -594,6 +634,11 @@
 	RevealOnDeath:
 		Duration: 100
 		Radius: 4c384
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+	ExternalCondition@INTELLIGENCE:
+		Condition: intelligence
 
 ^Reveal360:
 	RevealsShroud:
@@ -608,6 +653,11 @@
 	RevealOnDeath:
 		Duration: 100
 		Radius: 4c512
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+	ExternalCondition@INTELLIGENCE:
+		Condition: intelligence
 
 ^Reveal400:
 	RevealsShroud:
@@ -622,6 +672,11 @@
 	RevealOnDeath:
 		Duration: 100
 		Radius: 5c0
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+	ExternalCondition@INTELLIGENCE:
+		Condition: intelligence
 
 ^Reveal600:
 	RevealsShroud:
@@ -636,6 +691,11 @@
 	RevealOnDeath:
 		Duration: 100
 		Radius: 7c512
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+	ExternalCondition@INTELLIGENCE:
+		Condition: intelligence
 
 ^CrushesCrates:
 	Mobile:
@@ -814,11 +874,6 @@
 	HitShape:
 	SpeedMultiplier@Generic:
 		Modifier: 200
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 	EditorTilesetFilter:
 		Categories: Vehicle
 
@@ -917,9 +972,6 @@
 	HitShape:
 	SpeedMultiplier@Generic:
 		Modifier: 200
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 	EditorTilesetFilter:
 		Categories: Civilian vehicle
 
@@ -940,15 +992,6 @@
 		HP: 25
 	Armor:
 		Type: infantry.normal
-	RevealsShroud:
-		Range: 4c0
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 4c819
-		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
-		Range: 4c0
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	Mobile:
 		Speed: 56
 		SharesCell: true
@@ -1044,11 +1087,6 @@
 	HitShape:
 		Type: Circle
 			Radius: 128
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 	EditorTilesetFilter:
 		Categories: Infantry
 
@@ -1069,6 +1107,7 @@
 
 ^CivInfantry:
 	Inherits: ^Infantry
+	Inherits@REVEAL: ^Reveal100
 	Selectable:
 		Class: CivInfantry
 	Valued:
@@ -1076,15 +1115,6 @@
 	Tooltip:
 		Name: Civilian
 		GenericVisibility: None
-	RevealsShroud:
-		Range: 3c0
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 3c307
-		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
-		Range: 3c0
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	ProximityCaptor:
 		Types: CivilianInfantry
 	ScaredyCat:
@@ -1160,9 +1190,6 @@
 		VoiceSet: VehicleVoice
 	WithFacingSpriteBody:
 	HitShape:
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 
 ^Plane:
 	Inherits@1: ^ExistsInWorld
@@ -1212,11 +1239,6 @@
 	SpeedMultiplier@Generic:
 		Modifier: 150
 	HitShape:
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 	EditorTilesetFilter:
 		Categories: Aircraft
 	SpawnActorOnDeath:
@@ -1282,11 +1304,6 @@
 	EditorTilesetFilter:
 		Categories: Building
 	CommandBarBlacklist:
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 	RequiresBuildableArea:
 		AreaTypes: building
 
