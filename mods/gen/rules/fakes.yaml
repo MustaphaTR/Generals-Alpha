@@ -448,7 +448,7 @@ fake.tunnel_network:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
-		Prerequisites: gla_barracks, ~techlevel.infonly, ~disabled
+		Prerequisites: building.gla_barracks, ~techlevel.infonly, ~disabled
 		Description: Looks like a Tunnel Network.
 		Icon: fake-icon
 	Tooltip:
@@ -490,7 +490,7 @@ fake.stinger_site:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
-		Prerequisites: gla_barracks, ~techlevel.low, ~disabled
+		Prerequisites: building.gla_barracks, ~techlevel.low, ~disabled
 		Description: Looks like a Stinger Site.
 		Icon: fake-icon
 	Tooltip:
