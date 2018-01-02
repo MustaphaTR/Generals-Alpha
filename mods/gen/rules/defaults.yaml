@@ -452,6 +452,23 @@
 	ExternalCondition@CRATE_SPEED:
 		Condition: crate.speed
 
+^AffectedByRadiationAndToxins:
+	DamagedByRadioactivity@ANTHRAX_ALPHA:
+		RadioactivityLayerName: anthrax_alpha
+		DamageCoeff: 20
+		DamageInterval: 16
+		DamageTypes: FireDeath
+	DamagedByRadioactivity@ANTHRAX_BETA:
+		RadioactivityLayerName: anthrax_beta
+		DamageCoeff: 25
+		DamageInterval: 16
+		DamageTypes: FireDeath
+	DamagedByRadioactivity@RADIOACTIVITY:
+		RadioactivityLayerName: radioactivity
+		DamageCoeff: 20
+		DamageInterval: 16
+		DamageTypes: FireDeath
+
 ^Reveal100:
 	RevealsShroud:
 		Range: 2c512
@@ -716,6 +733,7 @@
 	Inherits@12: ^AffectedByEmergencyRepair
 	Inherits@13: ^AffectedByScrapCratePowerups
 	Inherits@14: ^AffectedByFrenzy
+	Inherits@15: ^AffectedByRadiationAndToxins
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -796,21 +814,6 @@
 	HitShape:
 	SpeedMultiplier@Generic:
 		Modifier: 200
-	DamagedByRadioactivity@ANTHRAX_ALPHA:
-		RadioactivityLayerName: anthrax_alpha
-		DamageCoeff: 20
-		DamageInterval: 16
-		DamageTypes: FireDeath
-	DamagedByRadioactivity@ANTHRAX_BETA:
-		RadioactivityLayerName: anthrax_beta
-		DamageCoeff: 25
-		DamageInterval: 16
-		DamageTypes: FireDeath
-	DamagedByRadioactivity@RADIOACTIVITY:
-		RadioactivityLayerName: radioactivity
-		DamageCoeff: 20
-		DamageInterval: 16
-		DamageTypes: FireDeath
 	ExternalCondition@INTELLIGENCE:
 		Condition: intelligence
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
@@ -850,6 +853,8 @@
 	Inherits@6: ^AffectsDemoTrap
 	Inherits@7: ^AffectedByScrapCratePowerups
 	Inherits@8: ^AffectedByFrenzy
+	Inherits@9: ^CrushesCrates
+	Inherits@10: ^AffectedByRadiationAndToxins
 	Huntable:
 	DrawLineToTarget:
 	Health:
@@ -867,7 +872,6 @@
 		RequiresCondition: intelligence
 	Mobile:
 		Speed: 56
-		Crushes: mine, crate
 		SharesCell: true
 		TerrainSpeeds:
 			Clear: 90
@@ -961,21 +965,6 @@
 	HitShape:
 		Type: Circle
 			Radius: 128
-	DamagedByRadioactivity@ANTHRAX_ALPHA:
-		RadioactivityLayerName: anthrax_alpha
-		DamageCoeff: 20
-		DamageInterval: 16
-		DamageTypes: FireDeath
-	DamagedByRadioactivity@ANTHRAX_BETA:
-		RadioactivityLayerName: anthrax_beta
-		DamageCoeff: 25
-		DamageInterval: 16
-		DamageTypes: FireDeath
-	DamagedByRadioactivity@RADIOACTIVITY:
-		RadioactivityLayerName: radioactivity
-		DamageCoeff: 20
-		DamageInterval: 16
-		DamageTypes: FireDeath
 	ExternalCondition@INTELLIGENCE:
 		Condition: intelligence
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
@@ -1049,6 +1038,7 @@
 	Inherits@10: ^AffectedByScrapCratePowerups
 	Inherits@11: ^AffectedByEmergencyRepair
 	Inherits@12: ^AffectedByFrenzy
+	Inherits@13: ^AffectedByRadiationAndToxins
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -1087,21 +1077,6 @@
 		Categories: Naval
 	SpeedMultiplier@Generic:
 		Modifier: 200
-	DamagedByRadioactivity@ANTHRAX_ALPHA:
-		RadioactivityLayerName: anthrax_alpha
-		DamageCoeff: 20
-		DamageInterval: 16
-		DamageTypes: FireDeath
-	DamagedByRadioactivity@ANTHRAX_BETA:
-		RadioactivityLayerName: anthrax_beta
-		DamageCoeff: 25
-		DamageInterval: 16
-		DamageTypes: FireDeath
-	DamagedByRadioactivity@RADIOACTIVITY:
-		RadioactivityLayerName: radioactivity
-		DamageCoeff: 20
-		DamageInterval: 16
-		DamageTypes: FireDeath
 	Voiced:
 		VoiceSet: VehicleVoice
 	WithFacingSpriteBody:
