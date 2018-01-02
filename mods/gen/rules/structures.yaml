@@ -1243,8 +1243,9 @@ building.demo_trap.explode:
 	-Cloak:
 	-Targetable:
 	-SpawnActorOnDeath:
-	-GrantConditionOnDeploy:
+	-ExternalCondition@SELF_DESTRUCT:
 	-GrantConditionOnDamageState@UNCLOAK:
+	-GrantConditionOnDeploy:
 	Explodes:
 		Weapon: explosion.demo_trap
 	KillsSelf:
