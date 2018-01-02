@@ -717,3 +717,39 @@ windmill:
 		Start: 8
 		Length: 8
 		Tick: 80
+
+car.automobile_1:
+	idle: bcar
+		Facings: -32
+		ShadowStart: 32
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+
+car.automobile_2:
+	idle: belair
+		Facings: -32
+		ShadowStart: 32
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+
+car.fire_truck:
+	idle: fire
+		Facings: -32
+		ShadowStart: 32
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+
+car.school_bus:
+	idle: sbus
+		Facings: -32
+		ShadowStart: 32
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047

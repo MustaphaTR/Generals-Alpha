@@ -844,6 +844,85 @@
 	Tooltip:
 		GenericName: Tank
 
+^Car:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Inherits@3: ^AffectsDemoTrap
+	Inherits@4: ^AffectedByHacking
+	Inherits@5: ^AffectedByEMP
+	Inherits@6: ^AffectedByEmergencyRepair
+	Inherits@CRUSH: ^CrushesCrates
+	Inherits@REVEAL: ^Reveal100
+	Huntable:
+	DrawLineToTarget:
+	UpdatesPlayerStatistics:
+	Mobile:
+		Speed: 30
+		TerrainSpeeds:
+			Clear: 80
+			Rough: 40
+			Road: 100
+			Bridge: 100
+			Ore: 70
+			Gems: 70
+			Beach: 40
+		TurnSpeed: 5
+		RequiresCondition: !disabled && !emp
+	SelectionDecorations:
+	WithSpriteControlGroupDecoration:
+	Selectable:
+		Bounds: 24, 24
+	DockClient:
+	Repairable:
+		RepairBuildings: tech.service_depot
+		Voice: Move
+	Passenger:
+		Weight: 3
+		CargoType: Vehicle
+	NydusTransportable:
+	HiddenUnderFog:
+	WithDamageOverlay:
+	Guardable:
+	Capturable:
+		Types: car
+		CaptureThreshold: 100
+		CancelActivity: True
+	Tooltip:
+		Name: Automobile
+		GenericName: Automobile
+	Health:
+		HP: 100
+	Parachutable:
+		FallRate: 26
+		KilledOnImpassableTerrain: true
+		GroundCorpseSequence:
+		GroundCorpsePalette:
+		WaterCorpseSequence:
+		WaterCorpsePalette:
+		ParachutingCondition: parachute
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	WithFacingSpriteBody:
+	WithParachute:
+		ShadowImage: parach-shadow
+		ShadowSequence: idle
+		Image: parach
+		Sequence: idle
+		OpeningSequence: open
+		Offset: 0,0,200
+		RequiresCondition: parachute
+	BodyOrientation:
+		UseClassicFacingFudge: True
+	HitShape:
+	SpeedMultiplier@Generic:
+		Modifier: 200
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+	EditorTilesetFilter:
+		Categories: Civilian vehicle
+
 ^Infantry:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor

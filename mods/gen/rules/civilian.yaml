@@ -713,3 +713,19 @@ WINDMILL:
 	Building:
 		Footprint: x
 		Dimensions: 1,1
+
+car.automobile_1:
+	Inherits: ^Car
+
+car.automobile_2:
+	Inherits: ^Car
+
+car.fire_truck:
+	Inherits: ^Car
+	Tooltip:
+		Name: Fire Truck
+
+car.school_bus:
+	Inherits: ^Car
+	Tooltip:
+		Name: School Bus
