@@ -94,7 +94,6 @@ infantry.worker:
 		PlayerExperience: 25
 		Voice: Capture
 		CaptureCompleteVoice: CaptureComplete
-		CapturingCondition: capturing
 		RequiresCondition: capture_building
 	GrantConditionOnPrerequisite@CAPTURE_BUILDING:
 		Condition: capture_building
@@ -140,6 +139,8 @@ infantry.rebel:
 		Name: Rebel
 	Armament@PRIMARY:
 		Weapon: mg.rebel
+	ExternalCaptures:
+		CapturingCondition: capturing
 	Cloak:
 		InitialDelay: 200
 		CloakDelay: 100
