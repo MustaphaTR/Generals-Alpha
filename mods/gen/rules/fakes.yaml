@@ -409,6 +409,9 @@ fake.demo_trap:
 		CloakTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled && !emp
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
 	-WithMakeAnimation:
 	RenderSprites:
 		Image: building.demo_trap
