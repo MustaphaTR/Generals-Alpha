@@ -1,6 +1,6 @@
 Metadata:
 	Title: Generals Alpha
-	Version: gen-20171230
+	Version: gen-20180102
 
 PackageFormats: Mix
 
@@ -39,7 +39,7 @@ Packages:
 
 MapFolders:
 	gen|maps: System
-	~^maps/gen/gen-20171230: User
+	~^maps/gen/gen-20180102: User
 
 Rules:
 	gen|rules/misc.yaml
@@ -116,10 +116,11 @@ ChromeLayout:
 	gen|chrome/lobby-options.yaml
 	gen|chrome/lobby-music.yaml
 	gen|chrome/lobby-kickdialogs.yaml
+	gen|chrome/lobby-servers.yaml
 	gen|chrome/color-picker.yaml
 	gen|chrome/map-chooser.yaml
-	gen|chrome/multiplayer.yaml
 	gen|chrome/multiplayer-browser.yaml
+	gen|chrome/multiplayer-browserpanels.yaml
 	gen|chrome/multiplayer-createserver.yaml
 	gen|chrome/multiplayer-directconnect.yaml
 	gen|chrome/connection.yaml

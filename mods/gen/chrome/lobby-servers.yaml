@@ -1,22 +1,11 @@
-Background@MULTIPLAYER_PANEL:
-	Logic: MultiplayerLogic
-	X: (WINDOW_RIGHT - WIDTH) / 2
-	Y: (WINDOW_BOTTOM - HEIGHT) / 2
-	Width: 808
-	Height: 550
+Container@LOBBY_SERVERS_BIN:
+	Logic: ServerListLogic
+	Width: PARENT_RIGHT
+	Height: PARENT_BOTTOM
 	Children:
-		Label@TITLE:
-			Y: 15
-			Width: PARENT_RIGHT
-			Height: 25
-			Text: Multiplayer
-			Align: Center
-			Font: Bold
 		Container@LABEL_CONTAINER:
-			X: 20
-			Y: 42
+			Y: 0 - 25
 			Width: PARENT_RIGHT
-			Height: PARENT_BOTTOM
 			Children:
 				Label@NAME:
 					X: 5
@@ -45,8 +34,6 @@ Background@MULTIPLAYER_PANEL:
 					Font: Bold
 		LogicTicker@NOTICE_WATCHER:
 		Background@NOTICE_CONTAINER:
-			X: 20
-			Y: 67
 			Width: 583
 			Height: 20
 			Background: dialog2
@@ -73,11 +60,8 @@ Background@MULTIPLAYER_PANEL:
 					Text: A preview of the next OpenRA release is available for testing. Download the playtest from www.openra.net
 					Font: TinyBold
 		ScrollPanel@SERVER_LIST:
-			X: 20
-			Y: 67
-			Width: 583
-			Height: PARENT_BOTTOM - 119
-			TopBottomSpacing: 2
+			Width: PARENT_RIGHT
+			Height: PARENT_BOTTOM
 			Children:
 				ScrollItem@HEADER_TEMPLATE:
 					X: 2
@@ -126,17 +110,37 @@ Background@MULTIPLAYER_PANEL:
 							Width: 50
 							Height: 25
 		Label@PROGRESS_LABEL:
-			X: 20
-			Y: 67 + (PARENT_BOTTOM - 119 - HEIGHT) / 2
-			Width: 582
+			Y: (PARENT_BOTTOM - HEIGHT) / 2
+			Width: PARENT_RIGHT
 			Height: 25
 			Font: Bold
 			Align: Center
 			Visible: false
+		DropDownButton@FILTERS_DROPDOWNBUTTON:
+			Y: PARENT_BOTTOM + 5
+			Width: 147
+			Height: 25
+			Text: Filter Games
+			Font: Bold
+		Button@RELOAD_BUTTON:
+			X: 152
+			Y: PARENT_BOTTOM + 5
+			Width: 26
+			Height: 25
+			Children:
+				Image@IMAGE_RELOAD:
+					X: 5
+					Y: 5
+					Width: 16
+					Height: 16
+					ImageCollection: reload-icon
+					ImageName: enabled
+					IgnoreMouseOver: True
+					Children:
+						LogicTicker@ANIMATION:
 		Container@SELECTED_SERVER:
-			X: PARENT_RIGHT - WIDTH - 20
-			Y: 67
-			Width: 174
+			X: PARENT_RIGHT + 11
+			Width: 174  
 			Height: 280
 			Children:
 				Background@MAP_BG:
@@ -180,67 +184,3 @@ Background@MULTIPLAYER_PANEL:
 					Height: 25
 					Font: TinyBold
 					Align: Center
-				Container@CLIENT_LIST_CONTAINER:
-					Y: 240
-					Width: PARENT_RIGHT
-					Height: 166
-				Button@JOIN_BUTTON:
-					Key: return
-					Y: 255
-					Width: PARENT_RIGHT
-					Height: 25
-					Text: Join
-					Font: Bold
-		DropDownButton@FILTERS_DROPDOWNBUTTON:
-			X: 20
-			Y: PARENT_BOTTOM - HEIGHT - 20
-			Width: 158
-			Height: 25
-			Text: Filter Games
-			Font: Bold
-		Button@RELOAD_BUTTON:
-			X: 182
-			Y: PARENT_BOTTOM - HEIGHT - 20
-			Width: 26
-			Height: 25
-			Children:
-				Image@IMAGE_RELOAD:
-					X: 5
-					Y: 5
-					Width: 16
-					Height: 16
-					ImageCollection: reload-icon
-					ImageName: enabled
-					IgnoreMouseOver: True
-					Children:
-						LogicTicker@ANIMATION:
-		Label@PLAYER_COUNT:
-			X: 208
-			Y: PARENT_BOTTOM - HEIGHT - 20
-			Width: 190
-			Height: 25
-			Align: Center
-			Font: Bold
-		Button@DIRECTCONNECT_BUTTON:
-			X: 398
-			Y: PARENT_BOTTOM - HEIGHT - 20
-			Width: 100
-			Height: 25
-			Text: Direct IP
-			Font: Bold
-		Button@CREATE_BUTTON:
-			X: 503
-			Y: PARENT_BOTTOM - HEIGHT - 20
-			Width: 100
-			Height: 25
-			Text: Create
-			Font: Bold
-		Button@BACK_BUTTON:
-			Key: escape
-			X: PARENT_RIGHT - WIDTH - 20
-			Y: PARENT_BOTTOM - HEIGHT - 20
-			Width: 174
-			Height: 25
-			Text: Back
-			Font: Bold
-		TooltipContainer@TOOLTIP_CONTAINER:
