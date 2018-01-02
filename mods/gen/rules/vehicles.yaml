@@ -520,7 +520,7 @@ vehicle.sentry_drone:
 		MuzzleSequence: muzzle
 		RequiresCondition: sentry_gun
 	AttackTurreted:
-		RequiresCondition: sentry_gun && !disabled && !driver_killed && !emp
+		RequiresCondition: sentry_gun && !disabled && !emp
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 		Sequence: turret2
