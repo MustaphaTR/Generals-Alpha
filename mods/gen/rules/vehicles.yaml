@@ -491,6 +491,7 @@ vehicle.sentry_drone:
 		TurnSpeed: 8
 		Speed: 60
 		Voice: Move
+		RequiresCondition: !disabled && !emp
 	Crushable:
 		CrushClasses: vehicle
 	Targetable:
