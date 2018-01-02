@@ -1224,6 +1224,9 @@ building.demo_trap:
 	-Demolishable:
 	ExternalCondition@SELF_DESTRUCT:
 		Condition: self_destruct
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
 	WithRangeCircle:
 		Range: 1c512
 	KillsSelf:
@@ -1239,6 +1242,7 @@ building.demo_trap.explode:
 	-Cloak:
 	-Targetable:
 	-SpawnActorOnDeath:
+	-GrantConditionOnDeploy:
 	Explodes:
 		Weapon: explosion.demo_trap
 	KillsSelf:
