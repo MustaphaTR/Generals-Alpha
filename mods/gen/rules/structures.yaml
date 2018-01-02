@@ -78,7 +78,7 @@ building.usa_command_center:
 		Actor: aircraft.spy_drone
 		Prerequisites: ~generals_power.spy_drone
 		LifeTime: -1
-		ChargeTime: 60
+		ChargeTime: 1500
 		Icon: spy_drone
 		Description: Spy Drone
 		LongDesc: Spawns a Spy Drone anywhere on the map.
@@ -90,7 +90,7 @@ building.usa_command_center:
 		Actor: camera.spy_sattelite
 		Prerequisites: ~techlevel.low
 		LifeTime: 300
-		ChargeTime: 60
+		ChargeTime: 1500
 		Icon: satellite
 		Description: Spy Satellite
 		LongDesc: Reveals are large area of map for a while.\n\nAlso detects cloaked units in that area.
@@ -102,7 +102,7 @@ building.usa_command_center:
 		OrderName: Paradrop1PowerInfoOrder
 		Prerequisites: ~generals_power.paradrop1, ~!generals_power.paradrop2, ~!generals_power.paradrop3
 		Icon: paradrop1
-		ChargeTime: 240
+		ChargeTime: 6000
 		Description: ParaDrop
 		LongDesc: A B-52 drops 5 Rangers\nanywhere on the map.
 		UnitType: aircraft.badger.paradrop
@@ -122,7 +122,7 @@ building.usa_command_center:
 		OrderName: Paradrop2PowerInfoOrder
 		Prerequisites: ~generals_power.paradrop2, ~!generals_power.paradrop3
 		Icon: paradrop2
-		ChargeTime: 240
+		ChargeTime: 6000
 		Description: ParaDrop
 		LongDesc: 2 B-52 drop total of 10 Rangers\nanywhere on the map.
 		UnitType: aircraft.badger.paradrop
@@ -143,7 +143,7 @@ building.usa_command_center:
 		OrderName: Paradrop3PowerInfoOrder
 		Prerequisites: ~generals_power.paradrop3
 		Icon: paradrop3
-		ChargeTime: 240
+		ChargeTime: 6000
 		Description: ParaDrop
 		LongDesc: 4 B-52s drop total of 20 Rangers\nanywhere on the map.
 		UnitType: aircraft.badger.paradrop
@@ -163,7 +163,7 @@ building.usa_command_center:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~generals_power.a101, ~!generals_power.a102, ~!generals_power.a103
 		Icon: a101
-		ChargeTime: 240
+		ChargeTime: 6000
 		SquadSize: 1
 		QuantizedFacings: 8
 		Description: A-10 Strike
@@ -181,7 +181,7 @@ building.usa_command_center:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~generals_power.a102, ~!generals_power.a103
 		Icon: a102
-		ChargeTime: 240
+		ChargeTime: 6000
 		SquadSize: 2
 		QuantizedFacings: 8
 		Description: A-10 Strike
@@ -199,7 +199,7 @@ building.usa_command_center:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~generals_power.a103
 		Icon: a103
-		ChargeTime: 240
+		ChargeTime: 6000
 		SquadSize: 3
 		QuantizedFacings: 8
 		Description: A-10 Strike
@@ -217,7 +217,7 @@ building.usa_command_center:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~generals_power.fuel_air_bomb
 		Icon: fuel_air
-		ChargeTime: 360
+		ChargeTime: 9000
 		SquadSize: 1
 		QuantizedFacings: 8
 		Description: Fuel Air Bomb
@@ -269,7 +269,7 @@ building.gla_command_center:
 		Actor: hack.rebel_spawner.4
 		Prerequisites: ~generals_power.ambush1, ~!generals_power.ambush2, ~!generals_power.ambush3
 		LifeTime: 2
-		ChargeTime: 240
+		ChargeTime: 6000
 		Icon: ambush1
 		Description: Rebel Ambush
 		LongDesc: Spawns 4 Rebels anywhere on the map.
@@ -282,7 +282,7 @@ building.gla_command_center:
 		Actor: hack.rebel_spawner.8
 		Prerequisites: ~generals_power.ambush2, ~!generals_power.ambush3
 		LifeTime: 2
-		ChargeTime: 240
+		ChargeTime: 6000
 		Icon: ambush2
 		Description: Rebel Ambush
 		LongDesc: Spawns 8 Rebels anywhere on the map.
@@ -295,7 +295,7 @@ building.gla_command_center:
 		Actor: hack.rebel_spawner.16
 		Prerequisites: ~generals_power.ambush3
 		LifeTime: 2
-		ChargeTime: 240
+		ChargeTime: 6000
 		Icon: ambush3
 		Description: Rebel Ambush
 		LongDesc: Spawns 16 Rebels anywhere on the map.
@@ -307,7 +307,7 @@ building.gla_command_center:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~generals_power.anthrax_bomb
 		Icon: thrax
-		ChargeTime: 360
+		ChargeTime: 9000
 		SquadSize: 1
 		QuantizedFacings: 8
 		Description: Anthrax Bomb
@@ -361,7 +361,7 @@ building.prc_command_center:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~generals_power.frenzy1, ~!generals_power.frenzy2, ~!generals_power.frenzy3
 		Icon: frenzy1
-		ChargeTime: 240
+		ChargeTime: 6000
 		Range: 2
 		Description: Frenzy
 		LongDesc: Makes a group of units deal 10% more damage\nfor 10 seconds.
@@ -374,7 +374,7 @@ building.prc_command_center:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~generals_power.frenzy2, ~!generals_power.frenzy3
 		Icon: frenzy2
-		ChargeTime: 240
+		ChargeTime: 6000
 		Range: 2
 		Description: Frenzy
 		LongDesc: Makes a group of units deal 20% more damage\nfor 20 seconds.
@@ -387,7 +387,7 @@ building.prc_command_center:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~generals_power.frenzy3
 		Icon: frenzy3
-		ChargeTime: 240
+		ChargeTime: 6000
 		Range: 2
 		Description: Frenzy
 		LongDesc: Makes a group of units deal 30% more damage\nfor 30 seconds.
@@ -399,7 +399,7 @@ building.prc_command_center:
 	CashHackPower@CASH_HACK1:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~generals_power.cash_hack1, ~!generals_power.cash_hack2, ~!generals_power.cash_hack3
-		ChargeTime: 240
+		ChargeTime: 6000
 		Maximum: 1000
 		Icon: cash1
 		Description: Cash Hack
@@ -412,7 +412,7 @@ building.prc_command_center:
 	CashHackPower@CASH_HACK2:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~generals_power.cash_hack2, ~!generals_power.cash_hack3
-		ChargeTime: 240
+		ChargeTime: 6000
 		Maximum: 2000
 		Icon: cash2
 		Description: Cash Hack
@@ -425,7 +425,7 @@ building.prc_command_center:
 	CashHackPower@CASH_HACK3:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~generals_power.cash_hack3
-		ChargeTime: 240
+		ChargeTime: 6000
 		Maximum: 4000
 		Icon: cash3
 		Description: Cash Hack
@@ -440,7 +440,7 @@ building.prc_command_center:
 		OrderName: PRCParadrop1PowerInfoOrder
 		Prerequisites: ~generals_power.paradrop1, ~!generals_power.paradrop2, ~!generals_power.paradrop3, ~disabled
 		Icon: paradrop1
-		ChargeTime: 240
+		ChargeTime: 6000
 		Description: ParaDrop
 		LongDesc: A Badger drops 5 Minigunners\nanywhere on the map.
 		UnitType: aircraft.badger.prc_paradrop
@@ -460,7 +460,7 @@ building.prc_command_center:
 		OrderName: PRCParadrop2PowerInfoOrder
 		Prerequisites: ~generals_power.paradrop2, ~!generals_power.paradrop3, ~disabled
 		Icon: paradrop2
-		ChargeTime: 240
+		ChargeTime: 6000
 		Description: ParaDrop
 		LongDesc: 2 Badgers drop total of 10 Minigunners\nanywhere on the map.
 		UnitType: aircraft.badger.prc_paradrop
@@ -481,7 +481,7 @@ building.prc_command_center:
 		OrderName: PRCParadrop3PowerInfoOrder
 		Prerequisites: ~generals_power.paradrop3, ~disabled
 		Icon: paradrop3
-		ChargeTime: 240
+		ChargeTime: 6000
 		Description: ParaDrop
 		LongDesc: 3 Badgers drop total of 15 Minigunners\nanywhere on the map.
 		UnitType: aircraft.badger.prc_paradrop
@@ -502,7 +502,7 @@ building.prc_command_center:
 		Actor: hack.artillery_barrager.1
 		Prerequisites: ~generals_power.arty_barrage1, ~!generals_power.arty_barrage2, ~!generals_power.arty_barrage3
 		LifeTime: 120
-		ChargeTime: 300
+		ChargeTime: 7500
 		Icon: arty_barrage1
 		Description: Artillery Barrage
 		LongDesc: Fires 12 Artillery Shells anywhere on the map.
@@ -515,7 +515,7 @@ building.prc_command_center:
 		Actor: hack.artillery_barrager.2
 		Prerequisites: ~generals_power.arty_barrage2, ~!generals_power.arty_barrage3
 		LifeTime: 120
-		ChargeTime: 300
+		ChargeTime: 7500
 		Icon: arty_barrage2
 		Description: Artillery Barrage
 		LongDesc: Fires 24 Artillery Shells anywhere on the map.
@@ -528,7 +528,7 @@ building.prc_command_center:
 		Actor: hack.artillery_barrager.3
 		Prerequisites: ~generals_power.arty_barrage3
 		LifeTime: 120
-		ChargeTime: 300
+		ChargeTime: 7500
 		Icon: arty_barrage3
 		Description: Artillery Barrage
 		LongDesc: Fires 36 Artillery Shells anywhere on the map.
@@ -541,7 +541,7 @@ building.prc_command_center:
 		OrderName: TankDrop1PowerInfoOrder
 		Prerequisites: ~generals_power.tank_drop1, ~!generals_power.tank_drop2, ~!generals_power.tank_drop3
 		Icon: tank_drop1
-		ChargeTime: 240
+		ChargeTime: 6000
 		Description: Tank Drop
 		LongDesc: A Badger drops 1 Battlemaster Tank\nanywhere on the map.
 		UnitType: aircraft.badger.tank_drop
@@ -561,7 +561,7 @@ building.prc_command_center:
 		OrderName: TankDrop2PowerInfoOrder
 		Prerequisites: ~generals_power.tank_drop2, ~!generals_power.tank_drop3
 		Icon: tank_drop2
-		ChargeTime: 240
+		ChargeTime: 6000
 		Description: Tank Drop
 		LongDesc: A Badger drops 2 Battlemaster Tanks\nanywhere on the map.
 		UnitType: aircraft.badger.tank_drop
@@ -581,7 +581,7 @@ building.prc_command_center:
 		OrderName: TankDrop3PowerInfoOrder
 		Prerequisites: ~generals_power.tank_drop3
 		Icon: tank_drop3
-		ChargeTime: 240
+		ChargeTime: 6000
 		Description: Tank Drop
 		LongDesc: A Badger drops 4 Battlemaster Tanks\nanywhere on the map.
 		UnitType: aircraft.badger.tank_drop
@@ -600,7 +600,7 @@ building.prc_command_center:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~generals_power.cluster_mines
 		Icon: cluster
-		ChargeTime: 240
+		ChargeTime: 6000
 		SquadSize: 1
 		QuantizedFacings: 8
 		Description: Cluster Mines
@@ -618,7 +618,7 @@ building.prc_command_center:
 		PauseOnCondition: disabled || emp
 		Prerequisites: ~generals_power.emp
 		Icon: emp
-		ChargeTime: 360
+		ChargeTime: 9000
 		SquadSize: 1
 		QuantizedFacings: 8
 		Description: E. M. Pulse
@@ -2283,7 +2283,7 @@ building.particle_cannon:
 	IonCannonPower:
 		PauseOnCondition: disabled || emp
 		Icon: particle
-		ChargeTime: 300
+		ChargeTime: 7500
 		Description: Particle Cannon
 		DisplayTimerStances: Enemy, Neutral, Ally
 		LongDesc: Initiates an Particle Cannon strike.
@@ -2452,7 +2452,7 @@ building.scud_storm:
 		PauseOnCondition: emp
 		Icon: scud_storm
 		Cursor: nuke
-		ChargeTime: 300
+		ChargeTime: 7500
 		Description: SCUD Storm
 		DisplayTimerStances: Enemy, Neutral, Ally
 		LongDesc: Fires 4 SCUD Missiles anywhere on the map.
@@ -2515,7 +2515,7 @@ building.missile_silo:
 		PauseOnCondition: disabled || emp
 		Cursor: nuke
 		Icon: abomb
-		ChargeTime: 300
+		ChargeTime: 7500
 		Description: Atom Bomb
 		LongDesc: Launches a devastating atomic bomb\nat a target location.
 		BeginChargeSpeechNotification: AbombPrepping
