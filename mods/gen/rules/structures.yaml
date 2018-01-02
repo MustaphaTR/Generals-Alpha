@@ -1,5 +1,6 @@
 ^default.command_center:
 	Inherits: ^Building
+	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@REVEAL: ^Reveal300
 	Building:
 		Footprint: xxX xxx XxX
