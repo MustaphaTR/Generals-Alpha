@@ -50,15 +50,15 @@ vehicle.humvee:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	AutoTargetPriority@DEFAULT:
-		RequiresCondition: !stance-attackanything && !tow_missile
+		RequiresCondition: !stance-attackanything && !assault-move && !tow_missile
 	AutoTargetPriority@ATTACKANYTHING:
-		RequiresCondition: stance-attackanything && !tow_missile
+		RequiresCondition: (stance-attackanything || assault-move) && !tow_missile
 	AutoTargetPriority@DEFAULT_TOW:
-		RequiresCondition: !stance-attackanything && tow_missile
+		RequiresCondition: !stance-attackanything && !assault-move && tow_missile
 		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Defense
 		InvalidTargets: NoAutoTarget
 	AutoTargetPriority@ATTACKANYTHING_TOW:
-		RequiresCondition: stance-attackanything && tow_missile
+		RequiresCondition: (stance-attackanything || assault-move) && tow_missile
 		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	Buildable:
@@ -1163,15 +1163,15 @@ vehicle.overlord_tank:
 	Inherits@CRUSH: ^CrushesVehicles
 	Inherits@EXPERIENCE: ^GainsExperience
 	AutoTargetPriority@DEFAULT:
-		RequiresCondition: !stance-attackanything && !overlord_gatling
+		RequiresCondition: !stance-attackanything && !assault-move && !overlord_gatling
 	AutoTargetPriority@ATTACKANYTHING:
-		RequiresCondition: !stance-attackanything && !overlord_gatling
+		RequiresCondition: (stance-attackanything || assault-move) && !overlord_gatling
 	AutoTargetPriority@DEFAULT_GATLING:
-		RequiresCondition: !stance-attackanything && overlord_gatling
+		RequiresCondition: !stance-attackanything && !assault-move && overlord_gatling
 		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Defense
 		InvalidTargets: NoAutoTarget
 	AutoTargetPriority@ATTACKANYTHING_GATLING:
-		RequiresCondition: stance-attackanything && overlord_gatling
+		RequiresCondition: (stance-attackanything || assault-move) && overlord_gatling
 		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	FirepowerMultiplier@CHAIN_GUN:
