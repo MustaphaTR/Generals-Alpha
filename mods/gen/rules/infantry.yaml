@@ -527,17 +527,33 @@ infantry.hacker:
 		Interval: 40
 		Amount: 5
 		RequiresCondition: deployed && rank-veteran == 0
+	ExperienceTrickler@RANK-0:
+		Interval: 40
+		Amount: 1950
+		RequiresCondition: deployed && rank-veteran == 0
 	CashTrickler@RANK-1:
 		Interval: 35
 		Amount: 6
+		RequiresCondition: deployed && rank-veteran == 1
+	ExperienceTrickler@RANK-1:
+		Interval: 35
+		Amount: 1950
 		RequiresCondition: deployed && rank-veteran == 1
 	CashTrickler@RANK-2:
 		Interval: 30
 		Amount: 7
 		RequiresCondition: deployed && rank-veteran == 2
+	ExperienceTrickler@RANK-2:
+		Interval: 30
+		Amount: 1950
+		RequiresCondition: deployed && rank-veteran == 2
 	CashTrickler@RANK-3:
 		Interval: 25
 		Amount: 8
+		RequiresCondition: deployed && rank-veteran == 3
+	ExperienceTrickler@RANK-3:
+		Interval: 25
+		Amount: 1950
 		RequiresCondition: deployed && rank-veteran == 3
 	CashTrickler@RANK-ELITE:
 		Interval: 20
