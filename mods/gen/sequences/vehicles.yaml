@@ -304,9 +304,6 @@ vehicle.troop_crawler:
 		Facings: 32
 		UseClassicFacingFudge: True
 	turret: invis
-	muzzle: minigun
-		Length: 6
-		Facings: 8
 	open: apc
 		Start: 32
 		Length: 3
@@ -317,6 +314,46 @@ vehicle.troop_crawler:
 		Tick: 160
 		ZOffset: 2047
 	icon: apcicon
+
+vehicle.listening_outpost:
+	idle: mnly
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: invis
+	spinner: mrj
+		Start: 32
+		Length: 32
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: louticon
+
+vehicle.microwave_tank:
+	idle: humv
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: mrj
+		Start: 32
+		Facings: 32
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: mwaveicon
+
+vehicle.ecm_tank:
+	idle: apc
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: mrj
+		Start: 32
+		Facings: 32
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+	icon: ecmicon
 
 vehicle.tomahawk_launcher:
 	idle: mlrs
@@ -548,12 +585,6 @@ husk.mcc:
 		Facings: 32
 		UseClassicFacingFudge: True
 		ZOffset: -1023
-
-mnly:
-	idle:
-		Facings: 32
-		UseClassicFacingFudge: True
-	icon: mnlyicon
 
 mgg:
 	idle:
