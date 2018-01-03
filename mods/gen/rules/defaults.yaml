@@ -940,6 +940,11 @@
 		Types: car
 		CaptureThreshold: 100
 		CancelActivity: True
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: !car_bomb
+	GrantConditionOnCapture:
+		Condition: car_bomb
+		CaptureTypes: car
 	Tooltip:
 		Name: Automobile
 		GenericName: Automobile
@@ -956,6 +961,13 @@
 	Explodes:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
+		RequiresCondition: !car_bomb
+	Explodes@CAR_BOMB:
+		Weapon: explosion.terrorist
+		EmptyWeapon: explosion.terrorist
+		RequiresCondition: car_bomb
+	AttackSuicides:
+		RequiresCondition: car_bomb
 	WithFacingSpriteBody:
 	WithParachute:
 		ShadowImage: parach-shadow
@@ -965,11 +977,18 @@
 		OpeningSequence: open
 		Offset: 0,0,200
 		RequiresCondition: parachute
+	WithIdleOverlay@CAR_BOMB:
+		Sequence: car_bomb
+		Palette: player
+		RequiresCondition: car_bomb
 	BodyOrientation:
 		UseClassicFacingFudge: True
 	HitShape:
 	SpeedMultiplier@Generic:
 		Modifier: 200
+	Targetable:
+		TargetTypes: Ground, C4, Repair, Tank, Vehicle-Disguise, DetonateAttack
+		RequiresCondition: !parachute
 	EditorTilesetFilter:
 		Categories: Civilian vehicle
 
