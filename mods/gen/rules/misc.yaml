@@ -27,6 +27,15 @@ CRATE:
 		MaxAmount: 5
 		MinAmount: 1
 		MaxDuplicateValue: 1500
+	GiveUnitCrateAction@minigunner:
+		SelectionShares: 2
+		Units: infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner
+	GiveUnitCrateAction@listening_outpost:
+		SelectionShares: 2
+		Units: vehicle.listening_outpost
+	GiveUnitCrateAction@sentry_drone:
+		SelectionShares: 2
+		Units: vehicle.sentry_drone
 	GiveMcvCrateAction@usa:
 		SelectionShares: 0
 		NoBaseSelectionShares: 100
