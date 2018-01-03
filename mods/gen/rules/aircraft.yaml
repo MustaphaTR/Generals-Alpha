@@ -699,7 +699,7 @@ aircraft.comanche:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_airfield, ~techlevel.medium
-		Description: Helicopter gunship armed with multi-purpose missiles.
+		Description: Helicopter gunship armed with machine gun.
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -783,3 +783,68 @@ aircraft.comanche:
 		Count: 12
 	Selectable:
 		DecorationBounds: 36,28
+
+aircraft.helix:
+	Inherits: ^Helicopter
+	Inherits@REVEAL: ^Reveal200
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Buildable:
+		Queue: queue.prc_aircraft
+		BuildPaletteOrder: 2
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: ~building.prc_airfield, ~techlevel.medium, ~disabled
+		Description: Helicopter gunship armed with machine gun.\n\nCan carry 5 infantry.
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Helix
+	Health:
+		HP: 300
+	Armor:
+		Type: aircraft.chinook
+	Armament@MG:
+		Weapon: mg.helix
+		LocalOffset: 1024,0,-125
+		MuzzleSequence: muzzle
+	WithMuzzleOverlay:
+	AttackHeli:
+		FacingTolerance: 20
+	RevealsShroud:
+		Type: CenterPosition
+	RevealsShroud@SEARCH_AND_DESTROY:
+		Type: CenterPosition
+	RevealsShroud@INTELLIGENCE:
+		Type: CenterPosition
+	Aircraft:
+		InitialFacing: 192
+		TurnSpeed: 3
+		Speed: 75
+		Voice: Move
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Gems
+		AltitudeVelocity: 0c58
+	WithIdleOverlay@ROTORAIR:
+		Offset: 0,0,85
+		Sequence: rotor
+		RequiresCondition: airborne
+	WithIdleOverlay@ROTORGROUND:
+		Offset: 0,0,85
+		Sequence: slow-rotor
+		RequiresCondition: !airborne
+	SelectionDecorations:
+	SpawnActorOnDeath:
+		Actor: husk.helix
+	SmokeTrailWhenDamaged:
+		Offset: -427,0,0
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 5
+		PipCount: 5
+	-RevealOnDeath:
+	Voiced:
+		VoiceSet: HelixVoice
+	Selectable:
+		DecorationBounds: 40,35
+	RenderSprites:
+		Scale: 1.3

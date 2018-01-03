@@ -323,6 +323,30 @@ husk.comanche:
 	RenderSprites:
 		Image: aircraft.comanche
 
+husk.helix:
+	Inherits: ^HelicopterHusk
+	Inherits@REVEAL: ^Reveal200
+	Tooltip:
+		Name: Helix
+	Aircraft:
+		TurnSpeed: 3
+		Speed: 75
+	RevealsShroud:
+		Type: CenterPosition
+	RevealsShroud@SEARCH_AND_DESTROY:
+		Type: CenterPosition
+	RevealsShroud@INTELLIGENCE:
+		Type: CenterPosition
+	WithIdleOverlay:
+		Offset: 0,0,85
+		Sequence: rotor
+	SmokeTrailWhenDamaged:
+		Offset: -427,0,0
+		MinDamage: Undamaged
+	RenderSprites:
+		Image: aircraft.helix
+		Scale: 1.3
+
 T01.Husk:
 	Inherits: ^TreeHusk
 	Building:

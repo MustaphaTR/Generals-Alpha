@@ -159,6 +159,31 @@ mg.comanche:
 			building.stinger_site: 50
 			building.wall: 6
 
+mg.helix:
+	Inherits: ^HeavyMG
+	ReloadDelay: 3
+	Range: 2c896
+	MinRange: 0c768
+	Projectile: Bullet
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Damage: 6
+		Versus:
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.tank: 25
+			vehicle.dragon_tank: 25
+			aircraft.normal: 120
+			aircraft.comanche: 120
+			aircraft.chinook: 50
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
+			building.wall: 6
+
 Pistol:
 	Inherits: ^LightMG
 	ReloadDelay: 7
