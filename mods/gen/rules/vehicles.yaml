@@ -935,8 +935,11 @@ vehicle.scud_launcher:
 		PauseOnCondition: !ammo
 	AttackFrontal:
 		RequiresCondition: !disabled && !driver_killed && !emp
-	Turreted:
-		TurnSpeed: 5
+	WithFacingSpriteBody:
+		RequiresCondition: ammo
+	WithFacingSpriteBody@EMPTY:
+		RequiresCondition: !ammo
+		Sequence: empty-idle
 	SelectionDecorations:
 	Explodes:
 		Weapon: V2Explode
@@ -953,14 +956,12 @@ vehicle.scud_launcher:
 		Ammo: 1
 		PipCount: 0
 		AmmoCondition: ammo
-	WithReloadingSpriteTurret:
-		AmmoPoolName: primary
-	AcceptsDeliveredExperience:
-	Voiced:
-		VoiceSet: SCUDLauncherVoice
 	ReloadAmmoPool:
 		Delay: 200
 		Count: 1
+	AcceptsDeliveredExperience:
+	Voiced:
+		VoiceSet: SCUDLauncherVoice
 	Selectable:
 		DecorationBounds: 28,28
 

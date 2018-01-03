@@ -341,14 +341,10 @@ vehicle.tomahawk_launcher:
 	icon: thwkicon
 
 vehicle.scud_launcher:
-	idle: invis
-	turret: v2rl
+	idle: v2rl
 		Facings: 32
 		UseClassicFacingFudge: True
-	turret1: v2rl
-		Facings: 32
-		UseClassicFacingFudge: True
-	turret0: v2rl
+	empty-idle: v2rl
 		Start: 32
 		Facings: 32
 		UseClassicFacingFudge: True
