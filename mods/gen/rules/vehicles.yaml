@@ -838,6 +838,69 @@ vehicle.troop_crawler:
 	Voiced:
 		VoiceSet: TroopCrawlerVoice
 
+vehicle.listening_outpost:
+	Inherits: ^Tank
+	Inherits@REVEAL: ^Reveal250
+	Inherits@CRUSH: ^CrushesInfantry
+	Buildable:
+		Queue: queue.prc_vehicle
+		BuildPaletteOrder: 4
+		BuildDuration: 375
+		BuildDurationModifier: 100
+		Prerequisites: ~building.prc_war_factory, ~techlevel.low, ~disabled
+		Description: Stealth detector unit.\n\nCan carry 2 infantry that can fire outside.\n\nComes with 2 tank hunters.\n\nPassengers can survive when it dies.
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Listening Outpost
+	Health:
+		HP: 240
+	Armor:
+		Type: vehicle.tank
+	Mobile:
+		Speed: 40
+		Voice: Move
+		RequiresCondition: !notmobile && !disabled && !driver_killed && !emp
+	Crushable:
+		CrushClasses: vehicle
+	Cargo:
+		Types: Infantry, Pilot
+		MaxWeight: 2
+		PipCount: 2
+		InitialUnits: infantry.tank_hunter, infantry.tank_hunter
+		EjectOnDeath: true
+		LoadingCondition: notmobile
+		PauseOnCondition: disabled || driver_killed || emp
+	Passenger:
+		Weight: 8
+	AIDeployHelper:
+	AttackGarrisoned:
+		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
+		PortYaws: 0, 0, 512, 512
+		PortCones: 512, 512, 512, 512
+	Cloak:
+		InitialDelay: 100
+		CloakDelay: 50
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	WithIdleOverlay@SPINNER:
+		Sequence: spinner
+		Offset: -256,0,256
+		PauseOnCondition: moving
+	GrantConditionOnMovement:
+		Condition: moving
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 7c512
+		RequiresCondition: !moving
+	Voiced:
+		VoiceSet: TroopCrawlerVoice
+
 vehicle.tomahawk_launcher:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
