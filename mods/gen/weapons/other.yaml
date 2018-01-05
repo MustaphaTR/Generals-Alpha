@@ -1,7 +1,7 @@
 ^FireWeapon:
 	ValidTargets: Ground, Water, Trees
 	ReloadDelay: 65
-	Range: 5c0
+	Range: 3c768
 	Warhead@1Dam: SpreadDamage
 		Spread: 213
 		Damage: 150
@@ -58,7 +58,26 @@ flamer.dragon_tank.blue:
 	Warhead@3Eff: CreateEffect
 		Explosions: blue_napalm
 
-Flamer:
+flamer.flame_tower:
+	Inherits: ^FireWeapon
+	Burst: 2
+	BurstDelays: 20
+	Projectile: Bullet
+		Speed: 250
+		TrailImage: fb2
+		Image: FB1
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			infantry.normal: 150
+			vehicle.humvee: 50
+			vehicle.tank: 25
+			vehicle.dragon_tank: 0
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
+
+flamer.flamethrower:
 	Inherits: ^FireWeapon
 	ReloadDelay: 50
 	Burst: 15
@@ -71,9 +90,15 @@ Flamer:
 		Inaccuracy: 853
 	Warhead@1Dam: SpreadDamage
 		Spread: 341
-		Damage: 8
+		Damage: 10
 		Versus:
-			Wood: 100
+			infantry.normal: 150
+			vehicle.humvee: 50
+			vehicle.tank: 25
+			vehicle.dragon_tank: 0
+			building.tough: 80
+			building.defense: 50
+			building.stinger_site: 50
 	Warhead@3Eff: CreateEffect
 		Explosions: small_napalm
 
@@ -337,7 +362,45 @@ disable.black_lotus.end:
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c512
 		Duration: 375
-		Condition: disabled
+		Condition: hacked
+
+disable.hacker.anim:
+	ReloadDelay: 15
+	Range: 3c768
+	ValidTargets: Structure
+	TargetActorCenter: true
+	Report: ucapture.wav
+	Projectile: LaserZap
+		Width: 60
+		BeamDuration: 2
+		Color: 00FF0070
+		SecondaryBeam: true
+		SecondaryBeamWidth: 90
+		SecondaryBeamColor: FF000035
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Structure
+		ValidStances: Enemy, Neutral
+
+disable.hacker.end:
+	ReloadDelay: 25
+	Range: 3c768
+	ValidTargets: Structure
+	TargetActorCenter: true
+	Report: ucapture.wav
+	Projectile: LaserZap
+		Width: 60
+		BeamDuration: 2
+		Color: 00FF0070
+		SecondaryBeam: true
+		SecondaryBeamWidth: 90
+		SecondaryBeamColor: FF000035
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Structure
+		ValidStances: Enemy, Neutral
+	Warhead@2Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 50
+		Condition: hacked
 
 hack.spawn_4_rebels:
 	ReloadDelay: 5

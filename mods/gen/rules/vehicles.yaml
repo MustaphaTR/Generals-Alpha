@@ -80,7 +80,7 @@ vehicle.humvee:
 		TurnSpeed: 10
 		Speed: 60
 		Voice: Move
-		RequiresCondition: !notmobile && !disabled && !driver_killed && !emp
+		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
 	Crushable:
 		CrushClasses: vehicle
 	Turreted@MG:
@@ -102,7 +102,7 @@ vehicle.humvee:
 		Weapon: missile.humvee.air
 		RequiresCondition: tow_missile
 	AttackTurreted:
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	WithMuzzleOverlay:
 	WithSpriteTurret@MG:
 	WithSpriteTurret@TOW:
@@ -117,7 +117,7 @@ vehicle.humvee:
 		MaxWeight: 5
 		PipCount: 5
 		LoadingCondition: notmobile
-		PauseOnCondition: disabled || driver_killed || emp
+		PauseOnCondition: hacked || driver_killed || emp
 	AcceptsDeliveredExperience:
 	AttackGarrisoned:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
@@ -154,7 +154,7 @@ vehicle.technical:
 		TurnSpeed: 10
 		Speed: 90
 		Voice: Move
-		RequiresCondition: !notmobile && !disabled && !driver_killed && !emp
+		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
 	Crushable:
 		CrushClasses: vehicle
 	Turreted:
@@ -165,7 +165,7 @@ vehicle.technical:
 		MuzzleSequence: muzzle
 		LocalOffset: 128,0,43
 	AttackTurreted:
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	Cargo:
@@ -174,7 +174,7 @@ vehicle.technical:
 		PipCount: 5
 		EjectOnDeath: true
 		LoadingCondition: notmobile
-		PauseOnCondition: disabled || driver_killed || emp
+		PauseOnCondition: hacked || driver_killed || emp
 	AcceptsDeliveredExperience:
 	ProducibleWithLevel:
 		Prerequisites: generals_power.tech_training
@@ -214,7 +214,7 @@ vehicle.radar_van:
 	DetectCloaked:
 		Range: 5c0
 	ProvidesRadar:
-		RequiresCondition: !disabled && !emp
+		RequiresCondition: !hacked && !emp
 	SpawnActorPower@RADAR_VAN_SCAN:
 		Actor: camera.radar_van_scan
 		Prerequisites: ~upgrade.radar_van_scan
@@ -293,7 +293,7 @@ vehicle.scorpion_tank:
 	AttackTurreted:
 		Armaments: primary, sc_rocket
 		Turrets: primary, sc_rocket
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	WithMuzzleOverlay:
 	WithSpriteTurret@NORMAL:
 	AmmoPool@SC_ROCKET:
@@ -361,7 +361,7 @@ vehicle.crusader_tank:
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
 	AttackTurreted:
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	DamageMultiplier@COMPOSITE_ARMOR:
@@ -416,7 +416,7 @@ vehicle.battlemaster_tank:
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
 	AttackTurreted:
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	SelectionDecorations:
@@ -452,7 +452,7 @@ vehicle.ambulance:
 	Mobile:
 		Speed: 60
 		Voice: Move
-		RequiresCondition: !notmobile && !disabled && !driver_killed && !emp
+		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
 	Crushable:
 		CrushClasses: vehicle
 	ProximityExternalCondition:
@@ -464,7 +464,7 @@ vehicle.ambulance:
 		PipCount: 3
 		EjectOnDeath: true
 		LoadingCondition: notmobile
-		PauseOnCondition: disabled || driver_killed || emp
+		PauseOnCondition: hacked || driver_killed || emp
 	Voiced:
 		VoiceSet: AmbulanceVoice
 
@@ -492,7 +492,7 @@ vehicle.sentry_drone:
 		TurnSpeed: 8
 		Speed: 60
 		Voice: Move
-		RequiresCondition: !disabled && !emp
+		RequiresCondition: !hacked && !emp
 	Crushable:
 		CrushClasses: vehicle
 	Targetable:
@@ -522,7 +522,7 @@ vehicle.sentry_drone:
 		MuzzleSequence: muzzle
 		RequiresCondition: sentry_gun
 	AttackTurreted:
-		RequiresCondition: sentry_gun && !disabled && !emp
+		RequiresCondition: sentry_gun && !hacked && !emp
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 		Sequence: turret2
@@ -579,7 +579,7 @@ vehicle.quad_cannon:
 		LocalOffset: 213,128,0, 213,-128,0
 		MuzzleSequence: muzzle
 	AttackTurreted:
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	WithSpriteTurret:
 	WithMuzzleOverlay:
 	AcceptsDeliveredExperience:
@@ -639,7 +639,7 @@ vehicle.gatling_tank:
 		RevokeAll: true
 		IsCyclic: false
 	AttackTurreted:
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	WithSpriteTurret:
 	WithMuzzleOverlay:
 	AcceptsDeliveredExperience:
@@ -683,7 +683,7 @@ vehicle.toxin_tractor:
 		LocalOffset: 600,0,90
 		RequiresCondition: anthrax_beta
 	AttackTurreted:
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	WithSpriteTurret:
 	Turreted:
 		TurnSpeed: 6
@@ -736,7 +736,7 @@ vehicle.dragon_tank:
 		Condition: black_napalm
 		Prerequisites: upgrade.black_napalm
 	AttackFrontal:
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: DragonTankVoice
@@ -791,7 +791,7 @@ vehicle.rocket_buggy:
 		Condition: buggy_ammo
 		Prerequisites: upgrade.buggy_ammo
 	AttackFrontal:
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	AcceptsDeliveredExperience:
 	Voiced:
 		VoiceSet: RocketBuggyVoice
@@ -818,7 +818,7 @@ vehicle.troop_crawler:
 	Mobile:
 		Speed: 40
 		Voice: Move
-		RequiresCondition: !notmobile && !disabled && !driver_killed && !emp
+		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
 	Crushable:
 		CrushClasses: vehicle
 	Cargo:
@@ -828,7 +828,7 @@ vehicle.troop_crawler:
 		InitialUnits: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard
 		EjectOnDeath: true
 		LoadingCondition: notmobile
-		PauseOnCondition: disabled || driver_killed || emp
+		PauseOnCondition: hacked || driver_killed || emp
 	Passenger:
 		Weight: 8
 	AIDeployHelper:
@@ -860,7 +860,7 @@ vehicle.listening_outpost:
 	Mobile:
 		Speed: 40
 		Voice: Move
-		RequiresCondition: !notmobile && !disabled && !driver_killed && !emp
+		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
 	Crushable:
 		CrushClasses: vehicle
 	Cargo:
@@ -870,7 +870,7 @@ vehicle.listening_outpost:
 		InitialUnits: infantry.tank_hunter, infantry.tank_hunter
 		EjectOnDeath: true
 		LoadingCondition: notmobile
-		PauseOnCondition: disabled || driver_killed || emp
+		PauseOnCondition: hacked || driver_killed || emp
 	Passenger:
 		Weight: 8
 	AIDeployHelper:
@@ -894,6 +894,7 @@ vehicle.listening_outpost:
 		PauseOnCondition: moving
 	GrantConditionOnMovement:
 		Condition: moving
+		ConsiderTurning: true
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 7c512
@@ -942,7 +943,7 @@ vehicle.tomahawk_launcher:
 		PipCount: 0
 		AmmoCondition: ammo
 	AttackTurreted:
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	WithReloadingSpriteTurret:
 		AmmoPoolName: primary
 	AcceptsDeliveredExperience:
@@ -998,7 +999,7 @@ vehicle.scud_launcher:
 		RequiresCondition: hi_explosive_bombs
 		PauseOnCondition: !ammo
 	AttackFrontal:
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	WithFacingSpriteBody:
 		RequiresCondition: ammo
 	WithFacingSpriteBody@EMPTY:
@@ -1071,7 +1072,7 @@ vehicle.inferno_cannon:
 		Condition: black_napalm
 		Prerequisites: upgrade.black_napalm
 	AttackFrontal:
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	WithMuzzleOverlay:
 	Explodes:
 		Weapon: ArtilleryExplode
@@ -1133,7 +1134,7 @@ vehicle.paladin_tank:
 		Armament: pdlaser
 	AttackTurreted:
 		Armaments: primary, pdlaser
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	DamageMultiplier@COMPOSITE_ARMOR:
@@ -1207,7 +1208,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && anthrax_beta
 	AttackTurreted:
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	GrantConditionOnPrerequisite@TOXIN_SHELLS:
@@ -1269,7 +1270,7 @@ vehicle.overlord_tank:
 	Mobile:
 		Speed: 20
 		Voiced: Move
-		RequiresCondition: !notmobile && !disabled && !driver_killed && !emp
+		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
 	Turreted@Cannon:
 		TurnSpeed: 2
 	Turreted@Gatling:
@@ -1307,13 +1308,13 @@ vehicle.overlord_tank:
 	AttackTurreted:
 		Armaments: gatling, primary
 		Turrets: gatling, primary
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	AttackGarrisoned:
 		Turret: bunker
 		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
-		RequiresCondition: !disabled && !driver_killed && !emp && overlord_bunker
+		RequiresCondition: !hacked && !driver_killed && !emp && overlord_bunker
 	WithMuzzleOverlay:
 	WithSpriteTurret@Cannon:
 	WithSpriteTurret@Bunker:
@@ -1338,7 +1339,7 @@ vehicle.overlord_tank:
 		MaxWeight: 5
 		PipCount: 5
 		EjectOnDeath: true
-		PauseOnCondition: disabled || driver_killed || emp
+		PauseOnCondition: hacked || driver_killed || emp
 		LoadingCondition: notmobile
 		RequiresCondition: overlord_bunker
 	GrantConditionOnPrerequisite@OVERLORD_BUNKER:
@@ -1522,7 +1523,7 @@ vehicle.nuke_cannon:
 		EmptyWeapon: explosion.nuke_cannon
 	-Passenger:
 	AttackTurreted:
-		RequiresCondition: !disabled && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	SelectionDecorations:

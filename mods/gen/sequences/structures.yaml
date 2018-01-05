@@ -784,25 +784,6 @@ building.missile_silo:
 	icon: nukeicon
 		UseTilesetExtension: false
 
-apwr:
-	idle:
-		Offset: 0,-10
-	damaged-idle:
-		Start: 1
-		Offset: 0,-10
-	make: apwrmake
-		Length: *
-		Offset: 0,-10
-	dead: apwrdead
-		Tick: 800
-		Offset: 0,-10
-	bib: bib2
-		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-	icon: apwricon
-
 kenn:
 	idle:
 	damaged-idle:
@@ -878,20 +859,6 @@ gun:
 		Offset: -1,-1
 		UseTilesetExtension: true
 	icon: gunicon
-
-ftur:
-	idle:
-		Offset: 0,-2
-	damaged-idle:
-		Start: 1
-		Offset: 0,-2
-	make: fturmake
-		Length: *
-		Offset: 0,-2
-	bib: mbFTUR
-		Length: *
-		UseTilesetExtension: true
-	icon: fturicon
 
 tsla:
 	idle:

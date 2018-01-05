@@ -271,11 +271,9 @@ cannon.cruiser:
 		Damage: 25
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		Versus:
-			None: 60
-			Wood: 35
-			Light: 60
-			Heavy: 25
-			Concrete: 100
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
 
@@ -290,7 +288,9 @@ cannon.gunboat:
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
 		Versus:
-			None: 30
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
 
 molotov.angry_mob:
 	Inherits: ^Artillery
@@ -332,6 +332,28 @@ grenade.ranger:
 		InvalidTargets: Vehicle, Tank, Structure, Wall
 	Warhead@3Eff: CreateEffect
 		Explosions: flashbang
+		ImpactSounds: kaboom25.aud
+	Warhead@4EffWater: CreateEffect
+		Explosions: small_splash
+
+grenade.grenadier:
+	Inherits: ^Artillery
+	ReloadDelay: 60
+	Range: 3c0
+	Report: grenade1.aud
+	Projectile: Bullet
+		Speed: 136
+		Inaccuracy: 554
+		Image: GRENADE
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Damage: 60
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+	Warhead@3Eff: CreateEffect
+		Explosions: med_explosion
 		ImpactSounds: kaboom25.aud
 	Warhead@4EffWater: CreateEffect
 		Explosions: small_splash

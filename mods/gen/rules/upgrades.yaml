@@ -71,9 +71,9 @@ hack.cameo_filler.18:
 hack.cameo_filler.19:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.gla_infantry
-		BuildPaletteOrder: 9
-		Prerequisites: disabled, ~tech.bio_lab, ~generals_power.hijacker
+		Queue: queue.soviet_infantry
+		BuildPaletteOrder: 4
+		Prerequisites: disabled, ~techlevel.low
 
 hack.cameo_filler.20:
 	Inherits: ^default.cameo_filler

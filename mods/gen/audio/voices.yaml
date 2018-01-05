@@ -4,7 +4,9 @@ GenericVoice:
 		gla: .v01,.v03
 		prc: .r01,.r03
 	Voices:
+		Attack: ackno,affirm1,noprob,overout,ritaway,roger,ugotit
 		Select: await1,ready,report1,yessir1
+		Move: ackno,affirm1,noprob,overout,ritaway,roger,ugotit
 		Action: ackno,affirm1,noprob,overout,ritaway,roger,ugotit
 		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
 		Burned: dedman10
@@ -423,6 +425,22 @@ RedGuardVoice:
 		Burned: ireddia, ireddib, ireddic, ireddid, ireddie, ireddif, ireddig, ireddih, ireddii, ireddij, ireddik, ireddil
 		Zapped: ireddia, ireddib, ireddic, ireddid, ireddie, ireddif, ireddig, ireddih, ireddii, ireddij, ireddik, ireddil
 
+ConscriptVoice:
+	Variants:
+		usa: .wav
+		gla: .wav
+		prc: .wav
+	Voices:
+		Attack: iconata, iconatb, iconatc, iconatd
+		Select: iconsea, iconseb, iconsec, iconsed
+		Move: iconmoa, iconmob, iconmoc
+		Action: iconata, iconatb, iconatc, iconatd
+		Capture: iredcaa, iredcab, iredcac, iredcad, iredcae
+		CaptureComplete: iredcoa, iredcob, iredcoc, iredcod, iredcoe
+		Die: icondia, icondib, icondic, icondid, icondie
+		Burned: icondia, icondib, icondic, icondid, icondie
+		Zapped: icondia, icondib, icondic, icondid, icondie
+
 MinigunnerVoice:
 	Variants:
 		usa: .wav
@@ -529,10 +547,10 @@ HackerVoice:
 		gla: .wav
 		prc: .wav
 	Voices:
-		Attack: iterata, iteratb, iteratc, iteratd, iterate
+		Attack: ihacata, ihacatb, ihacatc, ihacatd, ihacate, ihacatf
 		Select: ihacsea, ihacseb, ihacsec, ihacsed, ihacsee, ihacsef
 		Move: ihacmoa, ihacmob, ihacmoc, ihacmod, ihacmoe
-		Action: iterata, iteratb, iteratc, iteratd, iterate
+		Action: ihacata, ihacatb, ihacatc, ihacatd, ihacate, ihacatf
 		Die: ihacdia, ihacdib, ihacdic, ihacdid, ihacdie
 		Burned: ihacdia, ihacdib, ihacdic, ihacdid, ihacdie
 		Zapped: ihacdia, ihacdib, ihacdic, ihacdid, ihacdie

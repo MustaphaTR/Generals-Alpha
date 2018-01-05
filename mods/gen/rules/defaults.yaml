@@ -270,23 +270,25 @@
 		Prerequisites: upgrade.adv_training
 
 ^AffectedByEMP:
-	WithColoredOverlay@EMP:
-		RequiresCondition: emp
-		Palette: disabled
+	Inherits@DISABLED: ^WithDisabledOverlay
 	TimedConditionBar@EMP:
 		Condition: emp
 		Color: 333333
 	ExternalCondition@EMP:
 		Condition: emp
+	GrantCondition@DISABLED-EMP:
+		RequiresCondition: emp
+		Condition: disabled
 
 ^AffectedByHacking:
-	WithColoredOverlay@DISABLED:
-		RequiresCondition: disabled
-		Palette: disabled
-	TimedConditionBar@DISABLED:
-		Condition: disabled
+	Inherits@DISABLED: ^WithDisabledOverlay
+	TimedConditionBar@HACKED:
+		Condition: hacked
 		Color: 333333
-	ExternalCondition@DISABLED:
+	ExternalCondition@HACKED:
+		Condition: hacked
+	GrantCondition@DISABLED-HACK:
+		RequiresCondition: hacked
 		Condition: disabled
 
 ^AffectedByDriverKill:
@@ -1323,6 +1325,7 @@
 ^Building:
 	Inherits: ^BasicBuilding
 	Inherits@EMP: ^AffectedByEMP
+	Inherits@HACK: ^AffectedByHacking
 	Huntable:
 	UpdatesPlayerStatistics:
 	GivesBuildableArea:
@@ -1790,29 +1793,30 @@
 		AreaTypes: mine
 		Adjacent: 1
 
-^DisableOnLowPower:
+^WithDisabledOverlay:
 	WithColoredOverlay@IDISABLE:
 		RequiresCondition: disabled
 		Palette: disabled
+
+^DisableOnLowPower:
+	Inherits@DISABLED: ^WithDisabledOverlay
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
-	GrantCondition@IDISABLE:
+	GrantCondition@DISABLED-LP:
 		RequiresCondition: lowpower
 		Condition: disabled
 
 ^DisabledByPowerOutage:
-	WithColoredOverlay@IDISABLE:
-		RequiresCondition: disabled
-		Palette: disabled
-	GrantCondition@IDISABLE:
-		RequiresCondition: power-outage
-		Condition: disabled
+	Inherits@DISABLED: ^WithDisabledOverlay
 	AffectedByPowerOutage:
 		Condition: power-outage
 	InfiltrateForPowerOutage:
 	Power:
-		RequiresCondition: !disabled
+		RequiresCondition: !power-outage
+	GrantCondition@DISABLED-PO:
+		RequiresCondition: power-outage
+		Condition: disabled
 
 ^ChecksForGeneralsPowerCount.USA:
 	ProvidesPrerequisite@ENOUGH_POWERS_USA:

@@ -65,7 +65,7 @@ building.usa_command_center:
 		Footprint: XXX xxx XXX
 	Production:
 		Produces: queue.usa_command_center
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionBar@USA_COMMAND_CENTER:
 		ProductionType: queue.usa_command_center
 	ProductionQueue@USA_COMMAND_CENTER:
@@ -74,7 +74,7 @@ building.usa_command_center:
 		LowPowerSlowdown: 3
 		RequireOwner: false
 	SpawnActorPower@SPY_DRONE:
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 		Actor: aircraft.spy_drone
 		Prerequisites: ~generals_power.spy_drone
 		LifeTime: -1
@@ -86,7 +86,7 @@ building.usa_command_center:
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: SpyDronePowerInfoOrder
 	SpawnActorPower@SPY_SATTELITE:
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 		Actor: camera.spy_sattelite
 		Prerequisites: ~techlevel.low
 		LifeTime: 300
@@ -98,7 +98,7 @@ building.usa_command_center:
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: SpySatellitePowerInfoOrder
 	ParatroopersPower@PARADROP1:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		OrderName: Paradrop1PowerInfoOrder
 		Prerequisites: ~generals_power.paradrop1, ~!generals_power.paradrop2, ~!generals_power.paradrop3
 		Icon: paradrop1
@@ -118,7 +118,7 @@ building.usa_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 	ParatroopersPower@PARADROP2:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		OrderName: Paradrop2PowerInfoOrder
 		Prerequisites: ~generals_power.paradrop2, ~!generals_power.paradrop3
 		Icon: paradrop2
@@ -139,7 +139,7 @@ building.usa_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 	ParatroopersPower@PARADROP3:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		OrderName: Paradrop3PowerInfoOrder
 		Prerequisites: ~generals_power.paradrop3
 		Icon: paradrop3
@@ -160,7 +160,7 @@ building.usa_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 	AirstrikePower@A101:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Prerequisites: ~generals_power.a101, ~!generals_power.a102, ~!generals_power.a103
 		Icon: a101
 		ChargeInterval: 6000
@@ -178,7 +178,7 @@ building.usa_command_center:
 		CircleSequence: circles
 		OrderName: A101PowerInfoOrder
 	AirstrikePower@A102:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Prerequisites: ~generals_power.a102, ~!generals_power.a103
 		Icon: a102
 		ChargeInterval: 6000
@@ -196,7 +196,7 @@ building.usa_command_center:
 		CircleSequence: circles
 		OrderName: A102PowerInfoOrder
 	AirstrikePower@A103:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Prerequisites: ~generals_power.a103
 		Icon: a103
 		ChargeInterval: 6000
@@ -214,7 +214,7 @@ building.usa_command_center:
 		CircleSequence: circles
 		OrderName: A103PowerInfoOrder
 	AirstrikePower@FUEL_AIR_BOMB:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Prerequisites: ~generals_power.fuel_air_bomb
 		Icon: fuel_air
 		ChargeInterval: 9000
@@ -237,7 +237,7 @@ building.usa_command_center:
 		Text: USA
 		Color: 0000FF
 	ProvidesRadar:
-		RequiresCondition: !disabled && !emp
+		RequiresCondition: !emp && !hacked && !lowpower
 	RenderSprites:
 		PlayerPalette: cncplayer
 	HitShape:
@@ -256,7 +256,7 @@ building.gla_command_center:
 		VoiceSet: GLACommandCenterVoice
 	Production:
 		Produces: queue.gla_command_center
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionBar@GLA_COMMAND_CENTER:
 		ProductionType: queue.gla_command_center
 	ProductionQueue@GLA_COMMAND_CENTER:
@@ -265,7 +265,7 @@ building.gla_command_center:
 		LowPowerSlowdown: 3
 		RequireOwner: false
 	SpawnActorPower@AMBUSH1:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Actor: hack.rebel_spawner.4
 		Prerequisites: ~generals_power.ambush1, ~!generals_power.ambush2, ~!generals_power.ambush3
 		LifeTime: 2
@@ -278,7 +278,7 @@ building.gla_command_center:
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: Ambush1PowerInfoOrder
 	SpawnActorPower@AMBUSH2:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Actor: hack.rebel_spawner.8
 		Prerequisites: ~generals_power.ambush2, ~!generals_power.ambush3
 		LifeTime: 2
@@ -291,7 +291,7 @@ building.gla_command_center:
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: Ambush2PowerInfoOrder
 	SpawnActorPower@AMBUSH3:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Actor: hack.rebel_spawner.16
 		Prerequisites: ~generals_power.ambush3
 		LifeTime: 2
@@ -304,7 +304,7 @@ building.gla_command_center:
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: Ambush3PowerInfoOrder
 	AirstrikePower@ANTHRAX_BOMB:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Prerequisites: ~generals_power.anthrax_bomb
 		Icon: thrax
 		ChargeInterval: 9000
@@ -341,7 +341,7 @@ building.prc_command_center:
 	Tooltip:
 		Name: PRC Command Center
 	ProvidesRadar:
-		RequiresCondition: prcradar && !disabled && !emp
+		RequiresCondition: prcradar && !emp && !hacked && !lowpower
 	GrantConditionOnPrerequisite@PRC_RADAR:
 		Condition: prcradar
 		Prerequisites: upgrade.radar
@@ -349,7 +349,7 @@ building.prc_command_center:
 		VoiceSet: PRCCommandCenterVoice
 	Production:
 		Produces: queue.prc_command_center
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionBar@PRC_COMMAND_CENTER:
 		ProductionType: queue.prc_command_center
 	ProductionQueue@PRC_COMMAND_CENTER:
@@ -358,7 +358,7 @@ building.prc_command_center:
 		LowPowerSlowdown: 3
 		RequireOwner: false
 	GrantExternalConditionPower@FRENZY1:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Prerequisites: ~generals_power.frenzy1, ~!generals_power.frenzy2, ~!generals_power.frenzy3
 		Icon: frenzy1
 		ChargeInterval: 6000
@@ -371,7 +371,7 @@ building.prc_command_center:
 		Condition: frenzy1
 		OrderName: Frenzy1PowerInfoOrder
 	GrantExternalConditionPower@FRENZY2:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Prerequisites: ~generals_power.frenzy2, ~!generals_power.frenzy3
 		Icon: frenzy2
 		ChargeInterval: 6000
@@ -384,7 +384,7 @@ building.prc_command_center:
 		Condition: frenzy2
 		OrderName: Frenzy2PowerInfoOrder
 	GrantExternalConditionPower@FRENZY3:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Prerequisites: ~generals_power.frenzy3
 		Icon: frenzy3
 		ChargeInterval: 6000
@@ -397,7 +397,7 @@ building.prc_command_center:
 		Condition: frenzy3
 		OrderName: Frenzy3PowerInfoOrder
 	CashHackPower@CASH_HACK1:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Prerequisites: ~generals_power.cash_hack1, ~!generals_power.cash_hack2, ~!generals_power.cash_hack3
 		ChargeInterval: 6000
 		Maximum: 1000
@@ -410,7 +410,7 @@ building.prc_command_center:
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: CashHack1PowerInfoOrder
 	CashHackPower@CASH_HACK2:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Prerequisites: ~generals_power.cash_hack2, ~!generals_power.cash_hack3
 		ChargeInterval: 6000
 		Maximum: 2000
@@ -423,7 +423,7 @@ building.prc_command_center:
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: CashHack2PowerInfoOrder
 	CashHackPower@CASH_HACK3:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Prerequisites: ~generals_power.cash_hack3
 		ChargeInterval: 6000
 		Maximum: 4000
@@ -436,7 +436,7 @@ building.prc_command_center:
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: CashHack3PowerInfoOrder
 	ParatroopersPower@PRC_PARADROP1:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		OrderName: PRCParadrop1PowerInfoOrder
 		Prerequisites: ~generals_power.paradrop1, ~!generals_power.paradrop2, ~!generals_power.paradrop3, ~disabled
 		Icon: paradrop1
@@ -456,7 +456,7 @@ building.prc_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 	ParatroopersPower@PRC_PARADROP2:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		OrderName: PRCParadrop2PowerInfoOrder
 		Prerequisites: ~generals_power.paradrop2, ~!generals_power.paradrop3, ~disabled
 		Icon: paradrop2
@@ -477,7 +477,7 @@ building.prc_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 	ParatroopersPower@PRC_PARADROP3:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		OrderName: PRCParadrop3PowerInfoOrder
 		Prerequisites: ~generals_power.paradrop3, ~disabled
 		Icon: paradrop3
@@ -498,7 +498,7 @@ building.prc_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 	SpawnActorPower@ARTY_BARRAGE1:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Actor: hack.artillery_barrager.1
 		Prerequisites: ~generals_power.arty_barrage1, ~!generals_power.arty_barrage2, ~!generals_power.arty_barrage3
 		LifeTime: 120
@@ -511,7 +511,7 @@ building.prc_command_center:
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: ArtilleryBarrage1PowerInfoOrder
 	SpawnActorPower@ARTY_BARRAGE2:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Actor: hack.artillery_barrager.2
 		Prerequisites: ~generals_power.arty_barrage2, ~!generals_power.arty_barrage3
 		LifeTime: 120
@@ -524,7 +524,7 @@ building.prc_command_center:
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: ArtilleryBarrage2PowerInfoOrder
 	SpawnActorPower@ARTY_BARRAGE3:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Actor: hack.artillery_barrager.3
 		Prerequisites: ~generals_power.arty_barrage3
 		LifeTime: 120
@@ -537,7 +537,7 @@ building.prc_command_center:
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: ArtilleryBarrage3PowerInfoOrder
 	ParatroopersPower@TANK_DROP1:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		OrderName: TankDrop1PowerInfoOrder
 		Prerequisites: ~generals_power.tank_drop1, ~!generals_power.tank_drop2, ~!generals_power.tank_drop3
 		Icon: tank_drop1
@@ -557,7 +557,7 @@ building.prc_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 	ParatroopersPower@TANK_DROP2:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		OrderName: TankDrop2PowerInfoOrder
 		Prerequisites: ~generals_power.tank_drop2, ~!generals_power.tank_drop3
 		Icon: tank_drop2
@@ -577,7 +577,7 @@ building.prc_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 	ParatroopersPower@TANK_DROP3:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		OrderName: TankDrop3PowerInfoOrder
 		Prerequisites: ~generals_power.tank_drop3
 		Icon: tank_drop3
@@ -597,7 +597,7 @@ building.prc_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 	AirstrikePower@CLUSTER_MINES:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Prerequisites: ~generals_power.cluster_mines
 		Icon: cluster
 		ChargeInterval: 6000
@@ -615,7 +615,7 @@ building.prc_command_center:
 		CircleSequence: circles
 		OrderName: ClusterMinesPowerInfoOrder
 	AirstrikePower@EMP:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Prerequisites: ~generals_power.emp
 		Icon: emp
 		ChargeInterval: 9000
@@ -681,7 +681,7 @@ building.cold_fusion_reactor:
 		HP: 800
 	Production:
 		Produces: queue.cold_fusion_reactor
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.cold_fusion_reactor
 		Group: Tech
@@ -691,13 +691,13 @@ building.cold_fusion_reactor:
 	ProductionBar:
 	Power:
 		Amount: 5
-		RequiresCondition: !emp
+		RequiresCondition: !emp && !hacked
 	Pluggable@CONTROL_RODS:
 		Offset: 0,0
 		Conditions:
 			control_rods: control_rods
 	Power@CONTROL_RODS:
-		RequiresCondition: control_rods && !emp
+		RequiresCondition: control_rods && !emp && !hacked
 		Amount: 5
 	Voiced:
 		VoiceSet: ColdFusionReactorVoice
@@ -718,7 +718,7 @@ building.advanced_cold_fusion_reactor:
 			advanced_control_rods: advanced_control_rods
 	-Power@CONTROL_RODS:
 	Power@ADVANCED_CONTROL_RODS:
-		RequiresCondition: advanced_control_rods && !emp
+		RequiresCondition: advanced_control_rods && !emp && !hacked
 		Amount: 15
 
 building.nuclear_reactor:
@@ -748,10 +748,10 @@ building.nuclear_reactor:
 	AttackTurreted:
 	Power@notovercharged:
 		Amount: 10
-		RequiresCondition: !overcharge && !emp
+		RequiresCondition: !overcharge && !emp && !hacked
 	Power@overcharged:
 		Amount: 15
-		RequiresCondition: overcharge && !emp
+		RequiresCondition: overcharge && !emp && !hacked
 	FireWeaponAtSelf:
 		Name: primary
 	WithDeathAnimation:
@@ -774,10 +774,10 @@ building.advanced_nuclear_reactor:
 		Name: Advanced Nuclear Reactor
 	Power@notovercharged:
 		Amount: 18
-		RequiresCondition: !overcharge && !emp
+		RequiresCondition: !overcharge && !emp && !hacked
 	Power@overcharged:
 		Amount: 27
-		RequiresCondition: overcharge && !emp
+		RequiresCondition: overcharge && !emp && !hacked
 
 ^default.barracks:
 	Inherits: ^Building
@@ -826,7 +826,7 @@ building.usa_barracks:
 		Name: USA Barracks
 	Production:
 		Produces: queue.usa_infantry
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.usa_infantry
 		Group: Infantry
@@ -856,7 +856,7 @@ building.gla_barracks:
 		Name: GLA Barracks
 	Production:
 		Produces: queue.gla_infantry
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.gla_infantry
 		Group: Infantry
@@ -887,7 +887,7 @@ building.prc_barracks:
 		Name: PRC Barracks
 	Production:
 		Produces: queue.prc_infantry
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.prc_infantry
 		Group: Infantry
@@ -995,7 +995,7 @@ building.usa_supply_center:
 	SelectionDecorations:
 	Production:
 		Produces: queue.usa_collector
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.usa_collector
 		Group: Collector
@@ -1043,7 +1043,7 @@ building.gla_supply_stash:
 		Class: building.gla_supply_stash
 	Production:
 		Produces: queue.gla_collector
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.gla_collector
 		Group: Collector
@@ -1103,7 +1103,7 @@ building.prc_supply_center:
 	SelectionDecorations:
 	Production:
 		Produces: queue.prc_collector
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.prc_collector
 		Group: Collector
@@ -1179,7 +1179,7 @@ building.patriot:
 	WithRangeCircle@AA:
 		Range: 8c768
 	AttackTurreted:
-		PauseOnCondition: emp || disabled
+		PauseOnCondition: emp || hacked || lowpower
 	WithMuzzleOverlay:
 	Power:
 		Amount: -3
@@ -1216,7 +1216,7 @@ building.demo_trap:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
 		CloakTypes: Cloak
 		IsPlayerPalette: true
-		RequiresCondition: !cloak-force-disabled && !emp
+		RequiresCondition: !cloak-force-disabled && !emp && !hacked
 	-Explodes:
 	-ShakeOnDeath:
 	-SoundOnDamageTransition:
@@ -1310,7 +1310,7 @@ building.gatling_cannon:
 	WithRangeCircle@AA:
 		Range: 10c0
 	AttackTurreted:
-		PauseOnCondition: emp || disabled
+		PauseOnCondition: emp || hacked || lowpower
 	WithMuzzleOverlay:
 	GrantStackableConditionOnFire@gatling:
 		Condition: gatling
@@ -1374,12 +1374,12 @@ building.bunker:
 		MaxWeight: 5
 		PipCount: 5
 		EjectOnDeath: true
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	AttackGarrisoned:
 		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
-		RequiresCondition: !emp
+		RequiresCondition: !emp && !hacked
 	RenderRangeCircle:
 		FallbackRange: 2c512
 	Power:
@@ -1484,7 +1484,7 @@ building.usa_war_factory:
 		Offset: 0,2
 	Production:
 		Produces: queue.usa_vehicle
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.usa_vehicle
 		RequireOwner: false
@@ -1527,7 +1527,7 @@ building.arms_dealer:
 		Name: GLA Arms Dealer
 	Production:
 		Produces: queue.gla_vehicle
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.gla_vehicle
 		RequireOwner: false
@@ -1551,7 +1551,7 @@ building.prc_war_factory:
 		Name: PRC War Factory
 	Production:
 		Produces: queue.prc_vehicle
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.prc_vehicle
 		RequireOwner: false
@@ -1623,7 +1623,7 @@ building.tunnel_network:
 	DetectCloaked:
 		Range: 3c768
 	AttackTurreted:
-		RequiresCondition: !emp
+		RequiresCondition: !emp && !hacked
 	WithSpriteTurret:
 	WithMuzzleOverlay:
 	SpawnActorOnDeath:
@@ -1692,7 +1692,7 @@ building.stinger_site:
 	WithRangeCircle@AA:
 		Range: 10c0
 	AttackTurreted:
-		RequiresCondition: !emp
+		RequiresCondition: !emp && !hacked
 	BodyOrientation:
 		QuantizedFacings: 8
 	Power:
@@ -1762,7 +1762,7 @@ building.usa_airfield:
 		Dimensions: 4,3
 	Production:
 		Produces: queue.usa_aircraft, queue.usa_plane, queue.usa_helicopter, queue.usa_air_upgrade
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.usa_aircraft
 		Group: Aircraft
@@ -1819,7 +1819,7 @@ building.prc_airfield:
 		Dimensions: 4,3
 	Production:
 		Produces: queue.prc_aircraft
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.prc_aircraft
 		Group: Aircraft
@@ -1878,7 +1878,7 @@ building.strategy_center:
 		Amount: -2
 	Production:
 		Produces: queue.strategy_center
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.strategy_center
 		Group: Tech
@@ -1893,7 +1893,7 @@ building.strategy_center:
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 12c512
-		RequiresCondition: search_and_destroy && !emp
+		RequiresCondition: search_and_destroy && !emp && !hacked
 	Armament:
 		Weapon: cannon.strategy_center
 		LocalOffset: 520,0,450
@@ -1909,7 +1909,7 @@ building.strategy_center:
 		Sequence: search_and_destroy
 		RequiresCondition: search_and_destroy
 	AttackTurreted:
-		RequiresCondition: !emp
+		RequiresCondition: !emp && !hacked
 	RenderRangeCircle:
 	WithSpriteTurret:
 		RequiresCondition: bombardment
@@ -1964,7 +1964,7 @@ building.palace:
 		MaxWeight: 5
 		PipCount: 5
 		EjectOnDeath: true
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	AttackGarrisoned:
 		PortOffsets: 0,-896,128, 0,896,128, 840,0,128, -706,0,128, -706,-768,128, -706,640,128
 		PortYaws: 256, 768, 0, 512, 384, 640
@@ -1977,7 +1977,7 @@ building.palace:
 		Prerequisite: prerequisite.tech_center
 	Production:
 		Produces: queue.palace
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.palace
 		Group: Tech
@@ -2023,7 +2023,7 @@ building.propaganda_center:
 	WithBuildingBib:
 	Production:
 		Produces: queue.propaganda_center
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.propaganda_center
 		Group: Tech
@@ -2072,7 +2072,7 @@ building.detention_camp:
 		Produces: Intelligence
 	Exit:
 	ProduceActorPower@INTELLIGENCE:
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 		Description: Intelligence
 		LongDesc: Makes all enemy units visible for 30 seconds.
 		Icon: intelligence
@@ -2122,7 +2122,7 @@ building.supply_drop_zone:
 		Interval: 3000
 		InitialDelay: 3000
 		Amount: 1500
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	CashTricklerBar:
 #	ProduceActorPower@SUPPLY_DROP:
 #		Description: Supply Drop
@@ -2164,7 +2164,7 @@ building.black_market:
 	SelectionDecorations:
 	Production:
 		Produces: queue.black_market
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.black_market
 		Group: Tech
@@ -2175,7 +2175,7 @@ building.black_market:
 	CashTrickler:
 		Interval: 25
 		Amount: 20
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	Health:
 		HP: 1000
 	Armor:
@@ -2211,7 +2211,7 @@ building.speaker_tower:
 		DecorationBounds: 24,48,0,-12
 	SelectionDecorations:
 	WithSpriteBody:
-		PauseOnCondition: disabled
+		PauseOnCondition: emp || hacked || lowpower
 	Health:
 		HP: 300
 	Armor:
@@ -2240,7 +2240,7 @@ building.speaker_tower:
 	ProximityExternalCondition@SPEAKER:
 		Condition: speaker_tower
 		Range: 4c0
-		RequiresCondition: !emp
+		RequiresCondition: !emp && !hacked
 	Voiced:
 		VoiceSet: SpeakerTowerVoice
 
@@ -2274,14 +2274,14 @@ building.particle_cannon:
 		DecorationBounds: 48,53,0,-4
 	SelectionDecorations:
 	WithSpriteBody:
-		PauseOnCondition: disabled
+		PauseOnCondition: emp || hacked || lowpower
 	Health:
 		HP: 4000
 	Armor:
 		Type: building.tough
 	WithBuildingBib:
 	IonCannonPower:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Icon: particle
 		ChargeInterval: 7500
 		Description: Particle Cannon
@@ -2449,7 +2449,7 @@ building.scud_storm:
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	AttackOrderPower:
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 		Icon: scud_storm
 		Cursor: nuke
 		ChargeInterval: 7500
@@ -2503,7 +2503,7 @@ building.missile_silo:
 		Type: building.tough
 	Production:
 		Produces: queue.missile_silo
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.missile_silo
 		Group: Tech
@@ -2512,7 +2512,7 @@ building.missile_silo:
 	ProductionBar:
 	Exit:
 	NukePower:
-		PauseOnCondition: disabled || emp
+		PauseOnCondition: emp || hacked || lowpower
 		Cursor: nuke
 		Icon: abomb
 		ChargeInterval: 7500

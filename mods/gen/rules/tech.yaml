@@ -1,6 +1,7 @@
 tech.oil_derrick:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
+	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal180
 	Inherits@SHAPE: ^2x2Shape
 	HitShape:
@@ -25,7 +26,7 @@ tech.oil_derrick:
 	CashTrickler:
 		Interval: 300
 		Amount: 200
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hack
 	Tooltip:
 		Name: Oil Derrick
 	Explodes:
@@ -36,6 +37,7 @@ tech.oil_derrick:
 tech.hospital:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
+	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal180
 	Inherits@SHAPE: ^2x2Shape
 	Selectable:
@@ -62,11 +64,11 @@ tech.hospital:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
 	ProvidesPrerequisite@buildingname:
-		RequiresCondition: !emp
+		RequiresCondition: !emp && !hacked
 
 tech.bio_lab:
 	Inherits: ^TechBuilding
-#	Inherits@EMP: ^AffectedByEMP
+	Inherits@EMP: ^AffectedByEMP
 	Inherits@REVEAL: ^Reveal180
 	Inherits@SHAPE: ^2x2Shape
 	Selectable:
@@ -87,6 +89,20 @@ tech.bio_lab:
 		PlayerExperience: 25
 	Tooltip:
 		Name: Biological Lab
+	Exit@1:
+		SpawnOffset: 0,-426,0
+		ExitCell: 0,-1
+	Production:
+		Produces: queue.bio_lab
+		PauseOnCondition: emp || hacked
+	ProductionQueue:
+		Type: queue.bio_lab
+		Group: Infantry
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
+	RallyPoint:
+		Offset: -1,-1
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
@@ -95,6 +111,7 @@ tech.bio_lab:
 tech.communications_center:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
+	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SHAPE: ^2x2Shape
 	HitShape:
@@ -110,21 +127,21 @@ tech.communications_center:
 	Tooltip:
 		Name: Communications Center
 	RevealsShroud:
-		RequiresCondition: !emp && !search_and_destroy
+		RequiresCondition: !emp && !hacked && !search_and_destroy
 	RevealsShroud@SEARCH_AND_DESTROY:
-		RequiresCondition: !emp && search_and_destroy
+		RequiresCondition: !emp && !hacked && search_and_destroy
 	RevealsShroud@INTELLIGENCE:
-		RequiresCondition: intelligence && !emp
+		RequiresCondition: intelligence && !emp && !hacked
 	RevealsShroud@EMP:
 		Range: 4c512
-		RequiresCondition: emp && !search_and_destroy
+		RequiresCondition: (emp || hacked) && !search_and_destroy
 	RevealsShroud@SEARCH_AND_DESTROY_EMP:
 		Range: 5c409
-		RequiresCondition: emp && search_and_destroy
+		RequiresCondition: (emp || hacked) && search_and_destroy
 	RevealsShroud@INTELLIGENCE_EMP:
 		Range: 4c512
 		ValidStances: Enemy
-		RequiresCondition: intelligence && emp
+		RequiresCondition: intelligence && (emp || hacked)
 	WithBuildingBib:
 	Capturable:
 	ExternalCapturable:
@@ -137,8 +154,10 @@ tech.communications_center:
 		PlayerExperience: 25
 	ProvidesPrerequisite@buildingname:
 
-tech.forward_command:
+tech.soviet_barracks:
 	Inherits: ^TechBuilding
+	Inherits@EMP: ^AffectedByEMP
+	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal180
 	Inherits@SHAPE: ^2x2Shape
 	Building:
@@ -150,25 +169,121 @@ tech.forward_command:
 	Health:
 		HP: 800
 	Tooltip:
-		Name: Forward Command
+		Name: Soviet Barracks
+	Production:
+		Produces: queue.soviet_infantry
+		PauseOnCondition: emp || hacked
+	ProductionQueue:
+		Type: queue.soviet_infantry
+		Group: Infantry
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
+	RallyPoint:
+		Offset: 0, 2
+	Exit@1:
+		SpawnOffset: -725,640,0
+		ExitCell: 1,2
+	Exit@2:
+		SpawnOffset: -725,640,0
+		ExitCell: 0,2
 	WithBuildingBib:
 	Capturable:
 	ExternalCapturable:
-		CaptureCompleteTime: 30
 	ExternalCapturableBar:
-	GivesBuildableArea:
-		AreaTypes: building, mine
-	BaseProvider:
-		Range: 8c0
 	EngineerRepairable:
+	GivesBuildableArea:
+		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 15
 		PlayerExperience: 25
+	RepairsUnits:
+		FinishRepairingNotification: UnitRepaired
+		PlayerExperience: 10
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite:
+		Prerequisite: prerequisite.barracks
+
+tech.flame_tower:
+	Inherits: ^Defense
+	Inherits@LOWPOWER: ^DisableOnLowPower
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@REVEAL: ^Reveal250
+	Inherits@SHAPE: ^1x1Shape
+	Buildable:
+		Queue: queue.soviet_infantry
+		BuildPaletteOrder: 5
+		Prerequisites: ~techlevel.low
+		Description: Anti-infantry base defense.
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Flame Tower
+	Building:
+	Health:
+		HP: 400
+	WithBuildingBib:
+		HasMinibib: Yes
+	Turreted:
+		TurnSpeed: 255
+		Offset: 0,0,112
+	Armament:
+		Weapon: flamer.flame_tower
+		LocalOffset: 512,0,0
+	AttackTurreted:
+	-QuantizeFacingsFromSequence:
+	BodyOrientation:
+		QuantizedFacings: 8
+	Power:
+		Amount: -3
+	DetectCloaked:
+		Range: 5c0
+	ProvidesPrerequisite@buildingname:
+	Explodes:
+		Weapon: BuildingExplode
+		EmptyWeapon: BuildingExplode
+
+tech.power_plant:
+	Inherits: ^TechBuilding
+	Inherits@EMP: ^AffectedByEMP
+	Inherits@HACK: ^AffectedByHacking
+	Inherits@REVEAL: ^Reveal180
+	Inherits@SHAPE: ^3x2Shape
+	HitShape:
+		TargetableOffsets: -355,-1024,0
+	Tooltip:
+		Name: Power Plant
+	Building:
+		Footprint: xxx Xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Priority: 0
+		Bounds: 72,48
+		DecorationBounds: 72,68,0,-10
+	Health:
+		HP: 600
+	WithBuildingBib:
+	Capturable:
+	ExternalCapturable:
+	ExternalCapturableBar:
+	EngineerRepairable:
+	GivesBuildableArea:
+		AreaTypes: mine
+	RepairableBuilding:
+		RepairStep: 15
+		PlayerExperience: 25
+	Power:
+		Amount: 10
+		RequiresCondition: !emp && !hacked
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite:
+		Prerequisite: prerequisite.reactor
 
 tech.service_depot:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
+	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal180
 	HitShape:
 		Type: Rectangle
@@ -212,7 +327,7 @@ tech.service_depot:
 	RepairsUnits:
 		Interval: 15
 		PlayerExperience: 25
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 	RallyPoint:
 	WithRepairAnimation:
 	ProvidesPrerequisite@buildingname:
@@ -222,6 +337,7 @@ tech.service_depot:
 tech.shipyard:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
+	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal180
 	Valued:
 		Cost: 1000
@@ -260,7 +376,7 @@ tech.shipyard:
 		ExitCell: 2,0
 	Production:
 		Produces: queue.vessel
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hack
 	ProductionQueue:
 		Type: queue.vessel
 		Group: Vehicle

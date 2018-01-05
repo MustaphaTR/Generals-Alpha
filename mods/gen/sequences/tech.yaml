@@ -55,13 +55,42 @@ tech.communications_center:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 
-tech.forward_command:
+tech.soviet_barracks:
 	idle: fcom
 	damaged-idle: fcom
 		Start: 1
 	make: fcommake
 		Length: *
 	bib: bib3
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+
+tech.flame_tower:
+	idle: ftur
+		Offset: 0,-2
+	damaged-idle: ftur
+		Start: 1
+		Offset: 0,-2
+	make: fturmake
+		Length: *
+		Offset: 0,-2
+	bib: mbFTUR
+		Length: *
+		UseTilesetExtension: true
+	icon: fturicon
+
+tech.power_plant:
+	idle: apwr
+		Offset: 0,-10
+	damaged-idle: apwr
+		Start: 1
+		Offset: 0,-10
+	make: apwrmake
+		Length: *
+		Offset: 0,-10
+	bib: bib2
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:

@@ -104,7 +104,7 @@ infantry.ranger:
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_infantry
-		Prerequisites: ~building.usa_barracks, ~techlevel.infonly
+		Prerequisites: ~techlevel.infonly
 	Valued:
 		Cost: 225
 	Tooltip:
@@ -132,7 +132,7 @@ infantry.rebel:
 	Inherits@BOUNTY: ^TakesBounty
 	Buildable:
 		Queue: queue.gla_infantry
-		Prerequisites: ~building.gla_barracks, ~techlevel.infonly
+		Prerequisites: ~techlevel.infonly
 	Selectable:
 		Class: infantry.rebel
 	Tooltip:
@@ -165,7 +165,7 @@ infantry.red_guard:
 	Buildable:
 		Queue: queue.prc_infantry
 		BuildDurationModifier: 50
-		Prerequisites: ~building.prc_barracks, ~techlevel.infonly
+		Prerequisites: ~techlevel.infonly
 	Mobile:
 		Speed: 25
 	Tooltip:
@@ -184,7 +184,7 @@ infantry.minigunner:
 	Buildable:
 		Queue: queue.prc_infantry
 		BuildDuration: 250
-		Prerequisites: ~building.prc_barracks, ~techlevel.infonly, ~disabled
+		Prerequisites: ~techlevel.infonly, ~disabled
 	Valued:
 		Cost: 350
 	Mobile:
@@ -214,6 +214,23 @@ infantry.minigunner:
 	ProducibleWithLevel:
 		InitialLevels: 2
 		Prerequisites: generals_power.minigunner_training
+
+infantry.conscript:
+	Inherits: ^default.mg_infantry
+	Buildable:
+		Queue: queue.soviet_infantry
+		BuildDuration: 100
+		Prerequisites: ~techlevel.infonly
+	Valued:
+		Cost: 100
+	Mobile:
+		Speed: 25
+	Tooltip:
+		Name: Conscript
+	Armament@PRIMARY:
+		Weapon: mg.ranger
+	Voiced:
+		VoiceSet: ConscriptVoice
 
 ^default.rocket_infantry:
 	Inherits: ^Soldier
@@ -250,7 +267,7 @@ infantry.missile_defender:
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_infantry
-		Prerequisites: ~building.usa_barracks, ~techlevel.infonly
+		Prerequisites: ~techlevel.infonly
 	Tooltip:
 		Name: Missile Defender
 	Voiced:
@@ -262,7 +279,7 @@ infantry.rpg_trooper:
 	Inherits@BOUNTY: ^TakesBounty
 	Buildable:
 		Queue: queue.gla_infantry
-		Prerequisites: ~building.gla_barracks, ~techlevel.infonly
+		Prerequisites: ~techlevel.infonly
 	Armament@PRIMARY:
 		Weapon: missile.rpg_trooper
 		LocalOffset: 0,0,555
@@ -278,11 +295,37 @@ infantry.tank_hunter:
 		Queue: queue.prc_infantry
 		BuildDuration: 140
 		BuildDurationModifier: 100
-		Prerequisites: ~building.prc_barracks, ~techlevel.infonly
+		Prerequisites: ~techlevel.infonly
 	Tooltip:
 		Name: Tank Hunter
 	Voiced:
 		VoiceSet: TankHunterVoice
+
+infantry.grenadier:
+	Inherits: ^default.rocket_infantry
+	Buildable:
+		Queue: queue.soviet_infantry
+		BuildDuration: 140
+		BuildDurationModifier: 100
+		Prerequisites: ~techlevel.infonly
+		Description: Anti-tank infantry.
+	Tooltip:
+		Name: Grendier
+	Mobile:
+		Speed: 25
+	Armament@PRIMARY:
+		Weapon: grenade.grenadier
+		LocalOffset: 0,0,555
+		FireDelay: 15
+	TakeCover:
+		ProneOffset: 256,64,-331
+	WithInfantryBody:
+		DefaultAttackSequence: throw
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	Voiced:
+		VoiceSet: GenericVoice
 
 infantry.pathfinder:
 	Inherits: ^Soldier
@@ -366,6 +409,34 @@ infantry.terrorist:
 		TargetTypes: Ground, Infantry, Infantry-Disguise, DetonateAttack, Terrorist
 	Voiced:
 		VoiceSet: TerroristVoice
+
+infantry.flamethrower:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: queue.soviet_infantry
+		BuildPaletteOrder: 3
+		Prerequisites: tech.flamethrower, ~techlevel.low
+		Description: Advanced anti-structure unit.
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Flamethrower
+	Health:
+		HP: 120
+	Armor:
+		Type: infantry.normal
+	Mobile:
+		Speed: 20
+	Armament@PRIMARY:
+		Weapon: flamer.flamethrower
+		LocalOffset: 700,0,500
+		FireDelay: 8
+	TakeCover:
+		ProneOffset: 160,0,-288
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
 
 ^default.angry_mob:
 	Inherits: ^Soldier
@@ -502,7 +573,7 @@ infantry.hacker:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_barracks, building.propaganda_center, ~techlevel.medium
-		Description: Hacks internet to gain money while deployed.
+		Description: Hacks internet to gain money while deployed.\n\nCan disable enemy structures.
 	Valued:
 		Cost: 625
 	Tooltip:
@@ -518,13 +589,32 @@ infantry.hacker:
 	Passenger:
 		PipType: Yellow
 		Voice: Move
+	Armament@Anim:
+		Weapon: disable.hacker.anim
+		LocalOffset: 0,0,196
+		RequiresCondition: end_disable == 0 && !deployed
+	Armament@End:
+		Weapon: disable.hacker.end
+		LocalOffset: 0,0,196
+		RequiresCondition: end_disable == 1 && !deployed
+	GrantStackableConditionOnFire@End:
+		Condition: end_disable
+		ArmamentName: primary
+		RequiredShotsPerStack: 13
+		MaximumInstances: 2
+		RevokeDelay: 20
+		RevokeAll: true
+		IsCyclic: false
+	AttackFrontal:
+		RequiresCondition: !deployed
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
 		Facing: 128
 	WithInfantryBody:
+		DefaultAttackSequence: hack
 		RequiresCondition: !deployed
 	WithSpriteBody@DEPLOYED:
-		Sequence: repair
+		Sequence: hack
 		RequiresCondition: deployed
 	CashTrickler@RANK-0:
 		Interval: 40
@@ -850,7 +940,7 @@ infantry.zombie:
 	Tooltip:
 		Name: Zombie
 	Buildable:
-		Queue: queue.usa_infantry, queue.gla_infantry, queue.prc_infantry
+		Queue: queue.bio_lab
 		BuildPaletteOrder: 199
 		Prerequisites: ~tech.bio_lab
 		Description: Slow undead. Attacks in close combat.
@@ -880,7 +970,7 @@ infantry.giant_ant:
 		Name: Giant Ant
 		GenericName: Ant
 	Buildable:
-		Queue: queue.usa_infantry, queue.gla_infantry, queue.prc_infantry
+		Queue: queue.bio_lab
 		BuildPaletteOrder: 200
 		Prerequisites: ~tech.bio_lab
 		Description: Irradiated insect that grew oversize.
