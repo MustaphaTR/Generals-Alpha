@@ -26,7 +26,7 @@ tech.oil_derrick:
 	CashTrickler:
 		Interval: 300
 		Amount: 200
-		PauseOnCondition: emp || hack
+		PauseOnCondition: emp || hacked
 	Tooltip:
 		Name: Oil Derrick
 	Explodes:
@@ -69,6 +69,7 @@ tech.hospital:
 tech.bio_lab:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
+	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal180
 	Inherits@SHAPE: ^2x2Shape
 	Selectable:
@@ -376,7 +377,7 @@ tech.shipyard:
 		ExitCell: 2,0
 	Production:
 		Produces: queue.vessel
-		PauseOnCondition: emp || hack
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.vessel
 		Group: Vehicle
