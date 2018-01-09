@@ -252,7 +252,10 @@ infantry.conscript:
 		Speed: 20
 		Voice: Move
 	Armament@PRIMARY:
-		Weapon: missile.missile_defender
+		Weapon: missile.missile_defender.ground
+		LocalOffset: 0,0,555
+	Armament@SECONDARY:
+		Weapon: missile.missile_defender.air
 		LocalOffset: 0,0,555
 	TakeCover:
 		ProneOffset: 384,0,-395
@@ -281,8 +284,9 @@ infantry.rpg_trooper:
 		Queue: queue.gla_infantry
 		Prerequisites: ~techlevel.infonly
 	Armament@PRIMARY:
-		Weapon: missile.rpg_trooper
-		LocalOffset: 0,0,555
+		Weapon: missile.rpg_trooper.ground
+	Armament@SECONDARY:
+		Weapon: missile.rpg_trooper.air
 	Tooltip:
 		Name: RPG Trooper
 	Voiced:

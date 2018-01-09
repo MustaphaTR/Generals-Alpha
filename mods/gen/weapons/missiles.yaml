@@ -41,6 +41,8 @@
 ^AntiAirMissile:
 	Inherits: ^AntiGroundMissile
 	ValidTargets: Air
+	Projectile: Missile
+		Speed: 384
 	Warhead@3Eff: CreateEffect
 		VictimScanRadius: 0
 
@@ -200,11 +202,10 @@ missile.scorpion_tank:
 			building.tough: 80
 		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
 
-missile.missile_defender:
+missile.missile_defender.ground:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 25
 	Range: 4c384
-	ValidTargets: Ground, Water, Air
 	Projectile: Missile
 		TrailImage: smokey
 	Warhead@1Dam: SpreadDamage
@@ -225,8 +226,38 @@ missile.missile_defender:
 			building.stinger_site: 25
 			building.wall: 25
 
-missile.rpg_trooper:
-	Inherits: missile.missile_defender
+missile.missile_defender.air:
+	Inherits: ^AntiAirMissile
+	ReloadDelay: 25
+	Range: 6c0
+	Projectile: Missile
+		TrailImage: smokey
+		RangeLimit: 7c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 40
+		Versus:
+			infantry.normal: 10
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.dragon_tank: 20
+			aircraft.normal: 120
+			aircraft.comanche: 120
+			aircraft.chinook: 25
+			building.normal: 50
+			building.tough: 50
+			building.defense: 25
+			building.stinger_site: 25
+			building.wall: 25
+
+missile.rpg_trooper.ground:
+	Inherits: missile.missile_defender.ground
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
+
+missile.rpg_trooper.air:
+	Inherits: missile.missile_defender.air
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
 
@@ -242,6 +273,21 @@ missile.stinger_site.ground:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+
+missile.stinger_site.air:
+	Inherits: NikeAA
+	ReloadDelay: 50
+	Range: 10c0
+	Projectile: Missile
+		TrailImage: smokey
+		RangeLimit: 10c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+
 
 missile.comanche:
 	Inherits: ^AntiGroundMissile
@@ -294,7 +340,6 @@ missile.patriot.air:
 		Image: MISSILE
 		HorizontalRateOfTurn: 25
 		RangeLimit: 9c0
-		Speed: 341
 		LaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
@@ -318,7 +363,6 @@ NikeAA:
 		Image: MISSILE
 		HorizontalRateOfTurn: 25
 		RangeLimit: 9c0
-		Speed: 341
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
 		ValidTargets: Air
@@ -336,7 +380,7 @@ RedEye:
 	Projectile: Missile
 		Inaccuracy: 0
 		HorizontalRateOfTurn: 20
-		Speed: 298
+		Speed: 384
 	Warhead@1Dam: SpreadDamage
 		Damage: 40
 		ValidTargets: Air
@@ -344,20 +388,6 @@ RedEye:
 			Wood: 75
 			Light: 60
 			Heavy: 25
-
-missile.stinger_site.air:
-	Inherits: NikeAA
-	ReloadDelay: 50
-	Range: 10c0
-	Projectile: Missile
-		TrailImage: smokey
-		RangeLimit: 10c512
-	Warhead@1Dam: SpreadDamage
-		Damage: 30
-		Versus:
-			aircraft.comanche: 130
-			aircraft.chinook: 50
-			building.tough: 80
 
 missile.destroyer.ground:
 	Inherits: ^AntiGroundMissile
@@ -384,7 +414,7 @@ missile.destroyer.air:
 	Inherits: missile.destroyer.ground
 	ValidTargets: Air
 	Projectile: Missile
-		Speed: 255
+		Speed: 384
 		CloseEnough: 298
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion_air
@@ -439,7 +469,6 @@ missile.humvee.air:
 	ReloadDelay: 50
 	Range: 8c0
 	Projectile: Missile
-		Speed: 298
 		TrailImage: smokey
 		HorizontalRateOfTurn: 10
 		RangeLimit: 8c512
