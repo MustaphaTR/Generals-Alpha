@@ -14,11 +14,12 @@ Player:
 			VehiclesFactory: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
 			NavalProduction: tech.shipyard
 			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory
-			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_napalm, building.propaganda_center
-			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.bunker, building.gatling_cannon, building.land_mine
+			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center
+			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.gatling_cannon, building.land_mine
 			StaticAntiAir: building.patriot, building.stinger_site, building.gatling_cannon
 		UnitsCommonNames:
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
+			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
 			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.red_guard
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
@@ -59,12 +60,11 @@ Player:
 			building.usa_war_factory: 1%
 			building.arms_dealer: 1%
 			building.prc_war_factory: 1%
-			building.patriot: 3%
-			building.land_mine: 1%
-			building.stinger_site: 2%
-			building.gatling_cannon: 3%
-			building.bunker: 1%
-			building.tunnel_network: 1%
+			building.patriot: 4%
+			building.land_mine: 2%
+			building.stinger_site: 3%
+			building.gatling_cannon: 4%
+			building.tunnel_network: 2%
 			building.speaker_tower: 1%
 			building.strategy_center: 1%
 			building.palace: 1%
@@ -138,6 +138,8 @@ Player:
 			infantry.colonel_burton: 0.5%
 			infantry.jarmen_kell: 0.5%
 			infantry.black_lotus: 0.5%
+			infantry.zombie: 0.5%
+			infantry.giant_ant: 2%
 			infantry.worker: 150%
 			vehicle.supply_truck: 10%
 			vehicle.humvee: 50%
@@ -167,6 +169,9 @@ Player:
 			aircraft.stealth_fighter: 1%
 			aircraft.aurora: 0.5%
 			aircraft.comanche: 2%
+			vessel.gunboat: 1%
+			vessel.destroyer: 1%
+			vessel.cruiser: 0.25%
 			upgrade.capture_building: 100%
 			upgrade.flashbang_grenades: 50%
 			upgrade.tow_missile: 100%
@@ -185,7 +190,7 @@ Player:
 			aircraft.raptor: 2
 			aircraft.stealth_fighter: 1
 			aircraft.aurora: 1
-			aircraft.comanche: 4
+			aircraft.comanche: 2
 			aircraft.chinook: 8
 			vehicle.supply_truck: 8
 			vehicle.radar_van: 2
@@ -535,11 +540,12 @@ Player:
 			VehiclesFactory: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
 			NavalProduction: tech.shipyard
 			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory
-			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_napalm, building.propaganda_center, building.particle_cannon, hack.scud_spawner, building.missile_silo
-			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.bunker, building.gatling_cannon, building.land_mine
+			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, hack.scud_spawner, building.missile_silo
+			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.gatling_cannon, building.land_mine
 			StaticAntiAir: building.patriot, building.stinger_site, building.gatling_cannon
 		UnitsCommonNames:
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
+			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
 			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.red_guard
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
@@ -583,12 +589,11 @@ Player:
 			building.usa_war_factory: 1%
 			building.arms_dealer: 1%
 			building.prc_war_factory: 1%
-			building.patriot: 5%
-			building.land_mine: 1%
-			building.stinger_site: 3%
-			building.gatling_cannon: 5%
-			building.bunker: 1%
-			building.tunnel_network: 2%
+			building.patriot: 6%
+			building.land_mine: 2%
+			building.stinger_site: 4%
+			building.gatling_cannon: 6%
+			building.tunnel_network: 3%
 			building.speaker_tower: 2%
 			building.strategy_center: 1%
 			building.palace: 1%
@@ -665,6 +670,8 @@ Player:
 			infantry.colonel_burton: 0.5%
 			infantry.jarmen_kell: 0.5%
 			infantry.black_lotus: 0.5%
+			infantry.zombie: 0.5%
+			infantry.giant_ant: 2%
 			infantry.worker: 150%
 			vehicle.supply_truck: 10%
 			vehicle.humvee: 35%
@@ -694,6 +701,9 @@ Player:
 			aircraft.stealth_fighter: 2%
 			aircraft.aurora: 1%
 			aircraft.comanche: 2%
+			vessel.gunboat: 0.75%
+			vessel.destroyer: 1%
+			vessel.cruiser: 0.3%
 			upgrade.capture_building: 90%
 			upgrade.flashbang_grenades: 50%
 			upgrade.tow_missile: 100%
@@ -712,7 +722,7 @@ Player:
 			aircraft.raptor: 2
 			aircraft.stealth_fighter: 1
 			aircraft.aurora: 1
-			aircraft.comanche: 4
+			aircraft.comanche: 2
 			aircraft.chinook: 8
 			vehicle.supply_truck: 8
 			vehicle.radar_van: 2
@@ -1062,11 +1072,12 @@ Player:
 			VehiclesFactory: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
 			NavalProduction: tech.shipyard
 			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory
-			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_napalm, building.propaganda_center, building.particle_cannon, hack.scud_spawner, building.missile_silo
-			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.bunker, building.gatling_cannon, building.land_mine
+			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, hack.scud_spawner, building.missile_silo
+			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.gatling_cannon, building.land_mine
 			StaticAntiAir: building.patriot, building.stinger_site, building.gatling_cannon
 		UnitsCommonNames:
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
+			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
 			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.red_guard
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
@@ -1110,12 +1121,11 @@ Player:
 			building.usa_war_factory: 1%
 			building.arms_dealer: 1%
 			building.prc_war_factory: 1%
-			building.patriot: 7%
-			building.land_mine: 1%
-			building.stinger_site: 4%
-			building.gatling_cannon: 7%
-			building.bunker: 1%
-			building.tunnel_network: 3%
+			building.patriot: 8%
+			building.land_mine: 2%
+			building.stinger_site: 5%
+			building.gatling_cannon: 8%
+			building.tunnel_network: 4%
 			building.speaker_tower: 3%
 			building.strategy_center: 1%
 			building.palace: 1%
@@ -1192,6 +1202,8 @@ Player:
 			infantry.colonel_burton: 0.5%
 			infantry.jarmen_kell: 0.5%
 			infantry.black_lotus: 0.5%
+			infantry.zombie: 0.5%
+			infantry.giant_ant: 2%
 			infantry.worker: 150%
 			vehicle.supply_truck: 10%
 			vehicle.humvee: 25%
@@ -1221,6 +1233,9 @@ Player:
 			aircraft.stealth_fighter: 2%
 			aircraft.aurora: 1%
 			aircraft.comanche: 2%
+			vessel.gunboat: 0.5%
+			vessel.destroyer: 1%
+			vessel.cruiser: 0.5%
 			upgrade.capture_building: 100%
 			upgrade.flashbang_grenades: 75%
 			upgrade.tow_missile: 100%
@@ -1239,7 +1254,7 @@ Player:
 			aircraft.raptor: 2
 			aircraft.stealth_fighter: 1
 			aircraft.aurora: 1
-			aircraft.comanche: 4
+			aircraft.comanche: 2
 			aircraft.chinook: 8
 			vehicle.supply_truck: 8
 			vehicle.radar_van: 2
