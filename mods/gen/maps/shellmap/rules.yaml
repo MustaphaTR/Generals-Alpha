@@ -132,6 +132,7 @@ tech.oil_derrick:
 		ShowTicks: false
 
 building.demo_trap:
+	-ExternalCondition@UNKILLABLE:
 	-DamageMultiplier@UNKILLABLE:
 
 building.black_market:
@@ -193,11 +194,7 @@ aircraft.chinook:
 vehicle.bomb_truck:
 	Health:
 		HP: 20
-	-Tooltip:
-	DisguiseTooltip:
-		Name: Bomb Truck
-		GenericName: Vehicle
-		-RequiresCondition:
+	-DisguiseTooltip:
 	DisguisingTurreted:
 		TurnSpeed: 255
 	-WithFacingSpriteBody:
