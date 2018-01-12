@@ -326,6 +326,7 @@ building.gla_command_center:
 		Color: 00FF00
 	SpawnActorOnDeath:
 		Actor: hole.command_center
+		SpawnAfterDefeat: false
 	HitShape:
 		Type: Rectangle
 			TopLeft: -1536, -1536
@@ -871,6 +872,7 @@ building.gla_barracks:
 		ExitCell: 0,2
 	SpawnActorOnDeath:
 		Actor: hole.barracks
+		SpawnAfterDefeat: false
 	Voiced:
 		VoiceSet: GLABarracksVoice
 
@@ -1075,6 +1077,7 @@ building.gla_supply_stash:
 		SpawnOffset: 1,1
 	SpawnActorOnDeath:
 		Actor: hole.supply_stash
+		SpawnAfterDefeat: false
 	Power:
 		Amount: 0
 	Voiced:
@@ -1536,6 +1539,7 @@ building.arms_dealer:
 	ProductionBar:
 	SpawnActorOnDeath:
 		Actor: hole.arms_dealer
+		SpawnAfterDefeat: false
 	Power:
 		Amount: 0
 	Voiced:
@@ -1628,6 +1632,7 @@ building.tunnel_network:
 	WithMuzzleOverlay:
 	SpawnActorOnDeath:
 		Actor: hole.tunnel_network
+		SpawnAfterDefeat: false
 	Voiced:
 		VoiceSet: TunnelNetworkVoice
 
@@ -1708,6 +1713,7 @@ building.stinger_site:
 		Range: 5c0
 	SpawnActorOnDeath:
 		Actor: hole.stinger_site
+		SpawnAfterDefeat: false
 	Voiced:
 		VoiceSet: StingerSiteVoice
 
@@ -1991,6 +1997,7 @@ building.palace:
 		UseDeathTypeSuffix: false
 	SpawnActorOnDeath:
 		Actor: hole.palace
+		SpawnAfterDefeat: false
 	RenderSprites:
 		PlayerPalette: cncplayer
 	Voiced:
@@ -2186,6 +2193,7 @@ building.black_market:
 	ProvidesPrerequisite@buildingname:
 	SpawnActorOnDeath:
 		Actor: hole.black_market
+		SpawnAfterDefeat: false
 	Voiced:
 		VoiceSet: BlackMarketVoice
 	RenderSprites:
@@ -2307,6 +2315,7 @@ hack.scud_spawner:
 	Inherits@SHAPE: ^2x2Shape
 	SpawnActorOnDeath:
 		Actor: building.scud_storm
+		SpawnAfterDefeat: false
 	KillsSelf:
 	Valued:
 		Cost: 5000
@@ -2469,6 +2478,7 @@ building.scud_storm:
 		ValidStances: Enemy
 	SpawnActorOnDeath:
 		Actor: hole.scud_storm
+		SpawnAfterDefeat: false
 	Voiced:
 		VoiceSet: SCUDStormVoice
 	ReloadAmmoPool:
