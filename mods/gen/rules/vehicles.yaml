@@ -1436,6 +1436,8 @@ vehicle.bomb_truck:
 		RequiresCondition: disguise
 	WithDisguisingSpriteTurret:
 		RequiresCondition: disguise
+	GrantConditionOnAttack:
+		Condition: keep_me_disabled
 	Armament@ThisLooksRequired:
 		Weapon: BombTruckExplosion
 		RequiresCondition: keep_me_disabled

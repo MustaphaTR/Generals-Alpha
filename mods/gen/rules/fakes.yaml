@@ -446,10 +446,13 @@ fake.tunnel_network:
 		TurnSpeed: 12
 		InitialFacing: 56
 		Offset: 0,0,256
+	GrantConditionOnAttack:
+		Condition: keep_me_disabled
 	Armament:
 		Weapon: mg.tunnel_network
 		LocalOffset: 512,0,112
 		MuzzleSequence: muzzle
+		RequiresCondition: keep_me_disabled
 	AttackTurreted:
 		RequiresCondition: keep_me_disabled
 	WithSpriteTurret:

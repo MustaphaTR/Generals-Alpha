@@ -654,6 +654,8 @@ aircraft.chinook:
 	WithSpriteTurret@SHADOW:
 		Sequence: shadow
 	Turreted:
+	GrantConditionOnAttack:
+		Condition: keep_me_disabled
 	Armament@ThisLooksRequired:
 		Weapon: mg.comanche
 		RequiresCondition: keep_me_disabled

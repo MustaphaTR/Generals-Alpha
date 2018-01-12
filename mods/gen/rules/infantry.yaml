@@ -566,7 +566,7 @@ infantry.angry_mob:
 		GenericName: Soldier
 	Valued:
 		Cost: 800
-	MobSpawnerMaster@Unupgraded:
+	MobSpawnerMaster:
 		Actors: hack.angry_mob.male, hack.angry_mob.male, hack.angry_mob.male, hack.angry_mob.male, hack.angry_mob.female, hack.angry_mob.female, hack.angry_mob.female, hack.angry_mob.molotov, hack.angry_mob.molotov, hack.angry_mob.molotov
 		SpawnReplaceDelay: 750
 		ExitByBudding: false
@@ -599,6 +599,13 @@ infantry.angry_mob:
 		Bounds: 24, 24
 	AttackMove:
 	HiddenUnderFog:
+		Type: CenterPosition
+	RevealsShroud:
+		Type: CenterPosition
+	RevealsShroud@SEARCH_AND_DESTROY:
+		Type: CenterPosition
+	RevealsShroud@INTELLIGENCE:
+		Type: CenterPosition
 	BodyOrientation:
 		UseClassicFacingFudge: True
 	HitShape:
