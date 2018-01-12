@@ -712,16 +712,10 @@ aircraft.comanche:
 		Weapon: mg.comanche
 		LocalOffset: 512,0,-85
 		MuzzleSequence: muzzle
-	Armament@Rocket1:
+	Armament:
 		Name: secondary
 		Weapon: missile.comanche
-		LocalOffset: 384,-213,-85
-		RequiresCondition: rocket_pods
-		PauseOnCondition: !ammo
-	Armament@Rocket2:
-		Name: secondary
-		Weapon: missile.comanche
-		LocalOffset: 384,213,-85
+		LocalOffset: 384,213,-85, 384,-213,-85
 		RequiresCondition: rocket_pods
 		PauseOnCondition: !ammo
 	WithMuzzleOverlay:
