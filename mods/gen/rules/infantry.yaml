@@ -159,6 +159,46 @@ infantry.rebel:
 	RenderSprites:
 		Image: infantry.rebel
 
+infantry.toxin_rebel:
+	Inherits: ^default.mg_infantry
+	Inherits@REVEAL: ^Reveal150
+	Inherits@BOUNTY: ^TakesBounty
+	Buildable:
+		Queue: queue.gla_infantry
+		Prerequisites: ~techlevel.infonly, ~disabled
+	Tooltip:
+		Name: Toxin Rebel
+	Armament@ALPHA:
+		Weapon: toxin.toxin_rebel
+		LocalOffset: 350,0,375
+		RequiresCondition: !anthrax_beta
+	Armament@BETA:
+		Weapon: toxin.toxin_rebel.beta
+		LocalOffset: 350,0,375
+		RequiresCondition: anthrax_beta
+	ExternalCaptures:
+		CapturingCondition: capturing
+	Cloak:
+		InitialDelay: 200
+		CloakDelay: 100
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled && !capturing && camouflage
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	GrantConditionOnPrerequisite@CAMOUFLAGE:
+		Condition: camouflage
+		Prerequisites: upgrade.camouflage
+	GrantConditionOnPrerequisite@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Prerequisites: upgrade.anthrax_beta
+	-DamagedByRadioactivity@ANTHRAX_ALPHA:
+	-DamagedByRadioactivity@ANTHRAX_BETA:
+	Voiced:
+		VoiceSet: RebelVoice
+
 infantry.red_guard:
 	Inherits: ^default.mg_infantry
 	Inherits@HORDE_BONUS: ^Horde

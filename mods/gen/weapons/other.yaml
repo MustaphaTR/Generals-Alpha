@@ -258,11 +258,15 @@ ToxinLauncher:
 		Spread: 341
 		Damage: 10
 		Versus:
-			None: 100
-			Light: 50
-			Heavy: 20
-			Wood: 0
-			Concrete: 0
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 0
+			vehicle.tank: 25
+			vehicle.dragon_tank: 25
+			aircraft.normal: 25
+			aircraft.comanche: 25
+			aircraft.chinook: 25
 		DamageTypes: FireDeath, DropCrate
 	Warhead@2Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_alpha
@@ -279,6 +283,16 @@ ToxinLauncher.beta:
 		Damage: 13
 	Warhead@2Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_beta
+
+toxin.toxin_rebel:
+	Inherits: ToxinLauncher
+	Warhead@1Dam: SpreadDamage
+		Damage: 8
+
+toxin.toxin_rebel.beta:
+	Inherits: ToxinLauncher.beta
+	Warhead@1Dam: SpreadDamage
+		Damage: 10
 
 hack.angry_mob.weapon:
 	ReloadDelay: 30
