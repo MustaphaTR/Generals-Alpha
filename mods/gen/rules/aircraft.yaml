@@ -147,9 +147,9 @@ aircraft.cargo_plane:
 
 aircraft.mig:
 	Inherits: ^Plane
-	Inherits@REVEAL: ^Reveal200
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal200
 	Buildable:
 		Queue: queue.prc_aircraft
 		BuildPaletteOrder: 1
@@ -230,10 +230,10 @@ aircraft.mig:
 
 aircraft.raptor:
 	Inherits: ^Plane
-	Inherits@REVEAL: ^Reveal180
-	Inherits@LASER_MISSILES: ^AffectedByLaserGuidedMissiles
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@LASER_MISSILES: ^AffectedByLaserGuidedMissiles
+	Inherits@REVEAL: ^Reveal180
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft
@@ -333,10 +333,10 @@ aircraft.king_raptor:
 
 aircraft.stealth_fighter:
 	Inherits: ^Plane
-	Inherits@REVEAL: ^Reveal180
-	Inherits@LASER_MISSILES: ^AffectedByLaserGuidedMissiles
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@LASER_MISSILES: ^AffectedByLaserGuidedMissiles
+	Inherits@REVEAL: ^Reveal180
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft
@@ -415,9 +415,9 @@ aircraft.stealth_fighter:
 
 aircraft.aurora:
 	Inherits: ^Plane
-	Inherits@REVEAL: ^Reveal180
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal180
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft
@@ -689,10 +689,10 @@ aircraft.chinook:
 
 aircraft.comanche:
 	Inherits: ^Helicopter
-	Inherits@REVEAL: ^Reveal180
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@PILOT: ^EjectsPilotOnAir
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^EjectsPilotOnAir
+	Inherits@REVEAL: ^Reveal180
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft
@@ -782,9 +782,9 @@ aircraft.comanche:
 
 aircraft.helix:
 	Inherits: ^Helicopter
-	Inherits@REVEAL: ^Reveal200
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal200
 	Buildable:
 		Queue: queue.prc_aircraft
 		BuildPaletteOrder: 2

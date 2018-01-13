@@ -50,9 +50,9 @@
 
 building.usa_command_center:
 	Inherits: ^default.command_center
-	Inherits@SHAPE: ^3x2Shape
-	Inherits@RANGER: ^EmitRangersOnDeath
 	Inherits@GPCHECK: ^ChecksForGeneralsPowerCount.USA
+	Inherits@RANGER: ^EmitRangersOnDeath
+	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: queue.usa_building
 		BuildPaletteOrder: 11
@@ -1139,11 +1139,11 @@ building.prc_supply_center:
 
 building.patriot:
 	Inherits: ^Defense
-	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@LOWPOWER: ^DisableOnLowPower
+	Inherits@RANGER: ^EmitRangersOnDeath
 	Inherits@REVEAL: ^Reveal360
 	Inherits@SHAPE: ^2x1Shape
-	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
 		Queue: queue.usa_building
 		BuildPaletteOrder: 4
@@ -1196,8 +1196,8 @@ building.patriot:
 
 building.demo_trap:
 	Inherits: ^Defense
-	Inherits@REVEAL: ^Reveal150
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.gla_building
 		BuildPaletteOrder: 3
@@ -1264,9 +1264,9 @@ building.demo_trap.explode:
 
 building.gatling_cannon:
 	Inherits: ^Defense
-	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
+	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@REVEAL: ^Reveal360
 	Buildable:
 		Queue: queue.prc_building
@@ -1570,9 +1570,9 @@ building.prc_war_factory:
 building.tunnel_network:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@BOUNTY: ^TakesBounty
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
-	Inherits@BOUNTY: ^TakesBounty
 	Tooltip:
 		Name: Tunnel Network
 	Building:
@@ -1646,10 +1646,10 @@ building.tunnel_network.no_free_actor:
 
 building.stinger_site:
 	Inherits: ^Defense
-	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
-	Inherits@REVEAL: ^Reveal400
+	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@REVEAL: ^Reveal400
 	Buildable:
 		Queue: queue.gla_building
 		BuildPaletteOrder: 6
@@ -1854,9 +1854,9 @@ building.prc_airfield:
 building.strategy_center:
 	Inherits: ^Building
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@RANGER: ^EmitRangersOnDeath
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SHAPE: ^3x2Shape
-	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
 		Queue: queue.usa_building
 		BuildPaletteOrder: 7
@@ -1928,9 +1928,9 @@ building.strategy_center:
 
 building.palace:
 	Inherits: ^Building
+	Inherits@BOUNTY: ^TakesBounty
 	Inherits@SHAPE: ^3x2Shape
 	Inherits@REVEAL: ^Reveal300
-	Inherits@BOUNTY: ^TakesBounty
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 0,-896,0, 0,896,0, 840,0,0, -706,0,0, -706,-768,0, -706,640,0
@@ -2049,8 +2049,8 @@ building.propaganda_center:
 building.detention_camp:
 	Inherits: ^Building
 	Inherits@SHAPE: ^3x2Shape
-	Inherits@REVEAL: ^Reveal200
 	Inherits@RANGER: ^EmitRangersOnDeath
+	Inherits@REVEAL: ^Reveal200
 	HitShape:
 		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	Buildable:
@@ -2094,8 +2094,8 @@ building.detention_camp:
 building.supply_drop_zone:
 	Inherits: ^Building
 	Inherits@SHAPE: ^2x2Shape
-	Inherits@REVEAL: ^Reveal100
 	Inherits@RANGER: ^EmitRangersOnDeath
+	Inherits@REVEAL: ^Reveal100
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
@@ -2255,8 +2255,8 @@ building.speaker_tower:
 building.particle_cannon:
 	Inherits: ^Building
 	Inherits@LOWPOWER: ^DisableOnLowPower
-	Inherits@REVEAL: ^Reveal200
 	Inherits@RANGER: ^EmitRangersOnDeath
+	Inherits@REVEAL: ^Reveal200
 	HitShape:
 		TargetableOffsets: 0,0,0, 0,512,128, 420,-598,213
 		Type: Rectangle
@@ -2345,9 +2345,9 @@ hack.scud_spawner:
 
 building.scud_storm:
 	Inherits: ^Building
+	Inherits@BOUNTY: ^TakesBounty
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
-	Inherits@BOUNTY: ^TakesBounty
 	Valued:
 		Cost: 5000
 	Tooltip:

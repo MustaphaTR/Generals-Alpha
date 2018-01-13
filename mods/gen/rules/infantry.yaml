@@ -1,7 +1,7 @@
 infantry.pilot:
 	Inherits@1: ^Soldier
-	Inherits@REVEAL: ^Reveal150
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal150
 	Valued:
 		Cost: 100
 	Tooltip:
@@ -21,8 +21,8 @@ infantry.pilot:
 
 infantry.worker:
 	Inherits@1: ^Soldier
-	Inherits@REVEAL: ^Reveal100
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@REVEAL: ^Reveal100
 	Inherits@SHOES: ^AffectedByWorkerShoes
 	Buildable:
 		Queue: queue.gla_collector
@@ -70,8 +70,8 @@ infantry.worker:
 ^default.mg_infantry:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@REVEAL: ^Reveal100
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal100
 	Buildable:
 		BuildPaletteOrder: 1
 		BuildDuration: 125
@@ -128,8 +128,8 @@ infantry.ranger:
 infantry.rebel:
 	Inherits: ^default.mg_infantry
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
-	Inherits@REVEAL: ^Reveal150
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.gla_infantry
 		Prerequisites: ~techlevel.infonly
@@ -161,8 +161,8 @@ infantry.rebel:
 
 infantry.toxin_rebel:
 	Inherits: ^default.mg_infantry
-	Inherits@REVEAL: ^Reveal150
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.gla_infantry
 		Prerequisites: ~techlevel.infonly, ~disabled
@@ -276,9 +276,9 @@ infantry.conscript:
 
 ^default.rocket_infantry:
 	Inherits: ^Soldier
-	Inherits@REVEAL: ^Reveal150
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		BuildPaletteOrder: 2
 		BuildDuration: 125
@@ -376,8 +376,8 @@ infantry.grenadier:
 infantry.pathfinder:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@REVEAL: ^Reveal200
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal200
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Valued:
 		Cost: 600
@@ -424,8 +424,8 @@ infantry.pathfinder:
 
 infantry.terrorist:
 	Inherits: ^Soldier
-	Inherits@REVEAL: ^Reveal150
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.gla_infantry
 		BuildPaletteOrder: 4
@@ -491,9 +491,9 @@ infantry.flamethrower:
 ^default.angry_mob:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@REVEAL: ^Reveal150
 	Inherits@BOUNTY: ^TakesBounty
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal150
 	Valued:
 		Cost: 160
 	Tooltip:
@@ -555,8 +555,8 @@ hack.angry_mob.molotov:
 infantry.angry_mob:
 	Inherits@1: ^ExistsInWorld
 	Inherits@4: ^SpriteActor
-	Inherits@REVEAL: ^Reveal150
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@REVEAL: ^Reveal150
 	-AppearsOnRadar:
 	Buildable:
 		Queue: queue.gla_infantry
@@ -622,8 +622,8 @@ infantry.angry_mob:
 
 infantry.hacker:
 	Inherits: ^Soldier
-	Inherits@REVEAL: ^Reveal150
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.prc_infantry
 		BuildPaletteOrder: 4
@@ -715,8 +715,8 @@ infantry.hacker:
 
 infantry.hijacker:
 	Inherits: ^Soldier
-	Inherits@REVEAL: ^Reveal100
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@REVEAL: ^Reveal100
 	Buildable:
 		Queue: queue.gla_infantry
 		BuildPaletteOrder: 7
@@ -779,8 +779,8 @@ infantry.hijacker:
 infantry.colonel_burton:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@REVEAL: ^Reveal150
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal150
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Valued:
 		Cost: 1500
@@ -839,10 +839,10 @@ infantry.colonel_burton:
 
 infantry.jarmen_kell:
 	Inherits: ^Soldier
-	Inherits@REVEAL: ^Reveal200
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
 	Inherits@BOUNTY: ^TakesBounty
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal200
 	Valued:
 		Cost: 1500
 	Tooltip:

@@ -1,7 +1,7 @@
 vehicle.supply_truck:
 	Inherits: ^Vehicle
-	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.prc_collector
 		BuildPaletteOrder: 1
@@ -44,10 +44,10 @@ vehicle.supply_truck:
 vehicle.humvee:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@REVEAL: ^Reveal150
-	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^EjectsPilotOnGround
+	Inherits@REVEAL: ^Reveal150
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !tow_missile
@@ -128,13 +128,13 @@ vehicle.humvee:
 
 vehicle.technical:
 	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BOUNTY: ^TakesBounty
+	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal150
-	Inherits@CRUSH: ^CrushesInfantry
-	Inherits@BOUNTY: ^TakesBounty
-	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: queue.gla_vehicle
 		BuildPaletteOrder: 1
@@ -183,10 +183,10 @@ vehicle.technical:
 
 vehicle.radar_van:
 	Inherits: ^Vehicle
+	Inherits@BOUNTY: ^TakesBounty
+	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal200
-	Inherits@CRUSH: ^CrushesInfantry
-	Inherits@BOUNTY: ^TakesBounty
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -232,11 +232,11 @@ vehicle.radar_van:
 vehicle.scorpion_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BOUNTY: ^TakesBounty
+	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal150
-	Inherits@CRUSH: ^CrushesInfantry
-	Inherits@BOUNTY: ^TakesBounty
-	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: queue.gla_vehicle
 		BuildPaletteOrder: 2
@@ -327,10 +327,10 @@ vehicle.scorpion_tank:
 vehicle.crusader_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@PILOT: ^EjectsPilotOnGround
-	Inherits@REVEAL: ^Reveal125
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^EjectsPilotOnGround
+	Inherits@REVEAL: ^Reveal125
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_vehicle
@@ -380,12 +380,12 @@ vehicle.crusader_tank:
 vehicle.battlemaster_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@NUCLEAR_TANKS: ^AffectedByNuclearTanks
-	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
-	Inherits@HORDE_BONUS: ^Horde
-	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@HORDE_BONUS: ^Horde
+	Inherits@NUCLEAR_TANKS: ^AffectedByNuclearTanks
+	Inherits@REVEAL: ^Reveal150
+	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
 	Buildable:
 		Queue: queue.prc_vehicle
 		BuildAtProductionType: WarFactory
@@ -431,9 +431,9 @@ vehicle.battlemaster_tank:
 
 vehicle.ambulance:
 	Inherits: ^Vehicle
+	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal100
-	Inherits@CRUSH: ^CrushesInfantry
 	Buildable:
 		Queue: queue.usa_vehicle
 		BuildPaletteOrder: 4
@@ -471,8 +471,8 @@ vehicle.ambulance:
 vehicle.sentry_drone:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@REVEAL: ^Reveal200
 	Inherits@CRUSH: ^CrushesCrates
+	Inherits@REVEAL: ^Reveal200
 	Buildable:
 		Queue: queue.usa_vehicle
 		BuildPaletteOrder: 4
@@ -539,13 +539,13 @@ vehicle.sentry_drone:
 
 vehicle.quad_cannon:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BOUNTY: ^TakesBounty
+	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
-	Inherits@CRUSH: ^CrushesInfantry
-	Inherits@BOUNTY: ^TakesBounty
-	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
 		Cost: 700
 	Tooltip:
@@ -590,9 +590,9 @@ vehicle.gatling_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
-	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal150
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -649,10 +649,10 @@ vehicle.gatling_tank:
 vehicle.toxin_tractor:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@REVEAL: ^Reveal100
-	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal100
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -700,9 +700,9 @@ vehicle.toxin_tractor:
 vehicle.dragon_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@REVEAL: ^Reveal100
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal100
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -743,13 +743,13 @@ vehicle.dragon_tank:
 
 vehicle.rocket_buggy:
 	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@AP_ROCKETS: ^AffectedByAPRockets
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BOUNTY: ^TakesBounty
+	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal180
-	Inherits@CRUSH: ^CrushesInfantry
-	Inherits@BOUNTY: ^TakesBounty
-	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -798,8 +798,8 @@ vehicle.rocket_buggy:
 
 vehicle.troop_crawler:
 	Inherits: ^Tank
-	Inherits@REVEAL: ^Reveal175
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@REVEAL: ^Reveal175
 	Buildable:
 		Queue: queue.prc_vehicle
 		BuildPaletteOrder: 4
@@ -840,8 +840,8 @@ vehicle.troop_crawler:
 
 vehicle.listening_outpost:
 	Inherits: ^Tank
-	Inherits@REVEAL: ^Reveal250
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@REVEAL: ^Reveal250
 	Buildable:
 		Queue: queue.prc_vehicle
 		BuildPaletteOrder: 4
@@ -905,10 +905,10 @@ vehicle.listening_outpost:
 vehicle.tomahawk_launcher:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@PILOT: ^EjectsPilotOnGround
-	Inherits@REVEAL: ^Reveal180
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^EjectsPilotOnGround
+	Inherits@REVEAL: ^Reveal180
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Valued:
 		Cost: 1200
@@ -956,11 +956,11 @@ vehicle.tomahawk_launcher:
 vehicle.scud_launcher:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BOUNTY: ^TakesBounty
+	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal180
-	Inherits@CRUSH: ^CrushesInfantry
-	Inherits@BOUNTY: ^TakesBounty
-	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: queue.gla_vehicle
 		BuildPaletteOrder: 11
@@ -1033,9 +1033,9 @@ vehicle.scud_launcher:
 vehicle.inferno_cannon:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@REVEAL: ^Reveal180
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal180
 	Buildable:
 		Queue: queue.prc_vehicle
 		BuildAtProductionType: WarFactory
@@ -1087,10 +1087,10 @@ vehicle.inferno_cannon:
 vehicle.paladin_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@PILOT: ^EjectsPilotOnGround
-	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^EjectsPilotOnGround
+	Inherits@REVEAL: ^Reveal150
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_vehicle
@@ -1158,11 +1158,11 @@ vehicle.paladin_tank:
 vehicle.marauder_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BOUNTY: ^TakesBounty
+	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal125
-	Inherits@CRUSH: ^CrushesInfantry
-	Inherits@BOUNTY: ^TakesBounty
-	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: queue.gla_vehicle
 		BuildPaletteOrder: 10
@@ -1224,12 +1224,12 @@ vehicle.marauder_tank:
 vehicle.overlord_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@NUCLEAR_TANKS: ^AffectedByNuclearTanks
-	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
-	Inherits@CHAIN_GUN: ^AffectedByChainGun
-	Inherits@REVEAL: ^Reveal150
 	Inherits@CRUSH: ^CrushesVehicles
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAIN_GUN: ^AffectedByChainGun
+	Inherits@NUCLEAR_TANKS: ^AffectedByNuclearTanks
+	Inherits@REVEAL: ^Reveal150
+	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !overlord_gatling
 	AutoTargetPriority@ATTACKANYTHING:
@@ -1372,10 +1372,10 @@ vehicle.overlord_tank:
 
 vehicle.bomb_truck:
 	Inherits: ^Vehicle
-	Inherits@REVEAL: ^Reveal150
-	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
-	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
+	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.gla_vehicle
 		BuildPaletteOrder: 8
@@ -1488,9 +1488,9 @@ vehicle.bomb_truck:
 vehicle.nuke_cannon:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@REVEAL: ^Reveal180
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal180
 	Buildable:
 		Queue: queue.prc_vehicle
 		BuildPaletteOrder: 10
@@ -1539,8 +1539,8 @@ vehicle.nuke_cannon:
 
 ^default.mcc:
 	Inherits: ^Vehicle
-	Inherits@REVEAL: ^Reveal200
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@REVEAL: ^Reveal200
 	Buildable:
 		BuildDuration: 125
 		BuildDurationModifier: 100
