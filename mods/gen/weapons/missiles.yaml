@@ -273,6 +273,7 @@ missile.stinger_site.ground:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
 
 missile.stinger_site.air:
 	Inherits: NikeAA
@@ -287,6 +288,7 @@ missile.stinger_site.air:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
 
 missile.comanche:
 	Inherits: ^AntiGroundMissile
