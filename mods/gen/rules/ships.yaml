@@ -37,9 +37,9 @@ vessel.transport:
 
 vessel.gunboat:
 	Inherits: ^Ship
-	Inherits@REVEAL: ^Reveal150
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.vessel
 		BuildPaletteOrder: 2
@@ -79,9 +79,9 @@ vessel.gunboat:
 
 vessel.destroyer:
 	Inherits: ^Ship
-	Inherits@REVEAL: ^Reveal150
-	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.vessel
 		BuildPaletteOrder: 3
@@ -125,9 +125,9 @@ vessel.destroyer:
 
 vessel.cruiser:
 	Inherits: ^Ship
-	Inherits@REVEAL: ^Reveal180
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal180
 	Buildable:
 		Queue: queue.vessel
 		BuildPaletteOrder: 4
