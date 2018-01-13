@@ -872,7 +872,7 @@
 	BodyOrientation:
 		UseClassicFacingFudge: True
 	HitShape:
-	SpeedMultiplier@Generic:
+	SpeedMultiplier@GENERIC:
 		Modifier: 200
 	EditorTilesetFilter:
 		Categories: Vehicle
@@ -986,7 +986,7 @@
 	BodyOrientation:
 		UseClassicFacingFudge: True
 	HitShape:
-	SpeedMultiplier@Generic:
+	SpeedMultiplier@GENERIC:
 		Modifier: 200
 	Targetable:
 		TargetTypes: Ground, C4, Repair, Tank, Vehicle-Disguise, DetonateAttack
@@ -1099,7 +1099,7 @@
 		OpeningSequence: open
 		Offset: 0,0,427
 		RequiresCondition: parachute
-	SpeedMultiplier@Generic:
+	SpeedMultiplier@GENERIC:
 		Modifier: 200
 	HitShape:
 		Type: Circle
@@ -1201,7 +1201,7 @@
 	EditorTilesetFilter:
 		ExcludeTilesets: INTERIOR
 		Categories: Naval
-	SpeedMultiplier@Generic:
+	SpeedMultiplier@GENERIC:
 		Modifier: 200
 	Voiced:
 		VoiceSet: VehicleVoice
@@ -1251,7 +1251,7 @@
 		ZOffset: -129
 	WithFacingSpriteBody:
 	MustBeDestroyed:
-	SpeedMultiplier@Generic:
+	SpeedMultiplier@GENERIC:
 		Modifier: 150
 	HitShape:
 	EditorTilesetFilter:

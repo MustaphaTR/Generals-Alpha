@@ -499,13 +499,14 @@ infantry.flamethrower:
 	Tooltip:
 		Name: Angry Mob
 	-SelectionDecorations:
+	-WithSpriteControlGroupDecoration:
 	Health:
 		HP: 50
 	Armor:
 		Type: infantry.normal
 	Mobile:
 		Speed: 18
-	RejectsOrders@slaved:
+	RejectsOrders@SLAVED:
 	MobSpawnerSlave:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
@@ -574,8 +575,6 @@ infantry.angry_mob:
 		Actors: hack.angry_mob.male, hack.angry_mob.male, hack.angry_mob.male, hack.angry_mob.male, hack.angry_mob.female, hack.angry_mob.female, hack.angry_mob.female, hack.angry_mob.molotov, hack.angry_mob.molotov, hack.angry_mob.molotov
 		SpawnReplaceDelay: 750
 		ExitByBudding: false
-		OneShot: false
-		AggregateHealth: true
 	Health:
 		HP: 100
 	AttackOmni:
@@ -599,9 +598,11 @@ infantry.angry_mob:
 	Voiced:
 		VoiceSet: AngryMobVoice
 	SelectionDecorations:
+	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24, 24
+		Bounds: 32, 32
 	AttackMove:
+	WithSpriteBody:
 	HiddenUnderFog:
 		Type: CenterPosition
 	RevealsShroud:
@@ -617,7 +618,7 @@ infantry.angry_mob:
 		Categories: Infantry
 	SpeedMultiplier@Generic:
 		Modifier: 200
-	DamageMultiplier@invincible:
+	DamageMultiplier@INVINCIBLE:
 		Modifier: 0
 
 infantry.hacker:
