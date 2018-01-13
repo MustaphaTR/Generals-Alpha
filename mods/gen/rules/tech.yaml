@@ -13,7 +13,7 @@ tech.oil_derrick:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 800
+		HP: 1000
 	Capturable:
 	ExternalCapturable:
 	ExternalCapturableBar:
@@ -46,7 +46,7 @@ tech.hospital:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 800
+		HP: 1000
 	Capturable:
 	ExternalCapturable:
 	ExternalCapturableBar:
@@ -78,7 +78,7 @@ tech.bio_lab:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 800
+		HP: 1000
 	Capturable:
 	ExternalCapturable:
 	ExternalCapturableBar:
@@ -124,7 +124,7 @@ tech.communications_center:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 600
+		HP: 750
 	Tooltip:
 		Name: Communications Center
 	RevealsShroud:
@@ -168,7 +168,7 @@ tech.soviet_barracks:
 	Selectable:
 		Priority: 0
 	Health:
-		HP: 800
+		HP: 1000
 	Tooltip:
 		Name: Soviet Barracks
 	Production:
@@ -220,9 +220,10 @@ tech.flame_tower:
 		Cost: 600
 	Tooltip:
 		Name: Flame Tower
-	Building:
 	Health:
-		HP: 400
+		HP: 750
+	Armor:
+		Type: building.defense
 	WithBuildingBib:
 		HasMinibib: Yes
 	Turreted:
@@ -261,7 +262,7 @@ tech.power_plant:
 		Bounds: 72,48
 		DecorationBounds: 72,68,0,-10
 	Health:
-		HP: 600
+		HP: 750
 	WithBuildingBib:
 	Capturable:
 	ExternalCapturable:
@@ -313,7 +314,7 @@ tech.service_depot:
 		DecorationBounds: 72,48
 	SelectionDecorations:
 	Health:
-		HP: 800
+		HP: 1000
 	WithBuildingBib:
 		HasMinibib: Yes
 	DockManager:
@@ -356,7 +357,7 @@ tech.shipyard:
 		RepairStep: 15
 		PlayerExperience: 25
 	Health:
-		HP: 800
+		HP: 1000
 	Exit@1:
 		SpawnOffset: -1024,1024,0
 		Facing: 160
