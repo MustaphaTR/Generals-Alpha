@@ -626,6 +626,8 @@ aircraft.chinook:
 		Speed: 60
 		TurnSpeed: 5
 		Voice: Move
+		BlockerActors: aircraft.chinook
+		-NonBlockerActors:
 		TerrainSpeeds:
 			Clear: 100
 			Rough: 100

@@ -800,6 +800,7 @@
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
 	Mobile:
+		NonBlockerActors: aircraft.chinook
 		TerrainSpeeds:
 			Clear: 80
 			Rough: 40
@@ -912,6 +913,7 @@
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
 	Mobile:
+		NonBlockerActors: aircraft.chinook
 		Speed: 30
 		TerrainSpeeds:
 			Clear: 80
@@ -1012,6 +1014,7 @@
 	Armor:
 		Type: infantry.normal
 	Mobile:
+		NonBlockerActors: aircraft.chinook
 		Speed: 56
 		SharesCell: true
 		TerrainSpeeds:
@@ -1170,6 +1173,7 @@
 	UpdatesPlayerStatistics:
 	Mobile:
 		Crushes: crate
+		NonBlockerActors: aircraft.chinook
 		TerrainSpeeds:
 			Water: 100
 		RequiresCondition: !disabled && !emp
