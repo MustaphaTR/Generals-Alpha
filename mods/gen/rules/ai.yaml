@@ -13,15 +13,18 @@ Player:
 			Barracks: building.usa_barracks, building.gla_barracks, building.prc_barracks
 			VehiclesFactory: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
 			NavalProduction: tech.shipyard
-			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory
+			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, usa_airfield, prc_airfield
 			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center
-			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.gatling_cannon, building.land_mine
+			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.gatling_cannon, building.land_mine, tech.flame_tower
 			StaticAntiAir: building.patriot, building.stinger_site, building.gatling_cannon
 		UnitsCommonNames:
+			Dozer: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+			FragileDeployer: infantry.hacker
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
-			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
-		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.red_guard
+			Collector: aircraft.chinook, infantry.worker, vehicle.supply_truck
+			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor
+		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
 		BuildingLimits:
 			building.usa_command_center: 1
@@ -41,10 +44,11 @@ Player:
 			building.palace: 1
 			building.propaganda_center: 1
 			building.detention_camp: 1
-			building.supply_drop_zone: 2
-			building.black_market: 2
+			building.supply_drop_zone: 3
+			building.black_market: 3
 			building.usa_airfield: 1
 			building.prc_airfield: 1
+			tech.flame_tower: 1
 		BuildingFractions:
 			building.usa_command_center: 100%
 			building.gla_command_center: 100%
@@ -74,6 +78,7 @@ Player:
 			building.black_market: 1%
 			building.usa_airfield: 1%
 			building.prc_airfield: 1%
+			tech.flame_tower: 2%
 			upgrade.radar: 1%
 #			upgrade.control_rods: 1%
 			upgrade.adv_training: 1%
@@ -134,6 +139,7 @@ Player:
 			infantry.grenadier: 15%
 			infantry.pathfinder: 3%
 			infantry.angry_mob: 3%
+			infantry.hacker: 6%
 			infantry.flamethrower: 3%
 			infantry.colonel_burton: 0.5%
 			infantry.jarmen_kell: 0.5%
@@ -186,6 +192,7 @@ Player:
 			infantry.jarmen_kell: 1
 			infantry.black_lotus: 1
 			infantry.worker: 32
+			infantry.hacker: 12
 			aircraft.mig: 4
 			aircraft.raptor: 2
 			aircraft.stealth_fighter: 1
@@ -539,15 +546,18 @@ Player:
 			Barracks: building.usa_barracks, building.gla_barracks, building.prc_barracks
 			VehiclesFactory: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
 			NavalProduction: tech.shipyard
-			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory
+			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, usa_airfield, prc_airfield
 			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, hack.scud_spawner, building.missile_silo
-			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.gatling_cannon, building.land_mine
+			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.gatling_cannon, building.land_mine, tech.flame_tower
 			StaticAntiAir: building.patriot, building.stinger_site, building.gatling_cannon
 		UnitsCommonNames:
+			Dozer: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+			FragileDeployer: infantry.hacker
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
-			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
-		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.red_guard
+			Collector: aircraft.chinook, infantry.worker, vehicle.supply_truck
+			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor
+		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
 		BuildingLimits:
 			building.usa_command_center: 1
@@ -567,13 +577,14 @@ Player:
 			building.palace: 1
 			building.propaganda_center: 1
 			building.detention_camp: 1
-			building.supply_drop_zone: 2
-			building.black_market: 2
+			building.supply_drop_zone: 3
+			building.black_market: 3
 			building.usa_airfield: 1
 			building.prc_airfield: 1
 			building.particle_cannon: 1
 			hack.scud_spawner: 1
 			building.missile_silo: 1
+			tech.flame_tower: 1
 		BuildingFractions:
 			building.usa_command_center: 150%
 			building.gla_command_center: 150%
@@ -606,6 +617,7 @@ Player:
 			building.particle_cannon: 1%
 			hack.scud_spawner: 1%
 			building.missile_silo: 1%
+			tech.flame_tower: 3%
 			upgrade.radar: 1%
 #			upgrade.control_rods: 1%
 			upgrade.adv_training: 1%
@@ -666,6 +678,7 @@ Player:
 			infantry.grenadier: 20%
 			infantry.pathfinder: 4%
 			infantry.angry_mob: 4%
+			infantry.hacker: 8%
 			infantry.flamethrower: 4%
 			infantry.colonel_burton: 0.5%
 			infantry.jarmen_kell: 0.5%
@@ -718,6 +731,7 @@ Player:
 			infantry.jarmen_kell: 1
 			infantry.black_lotus: 1
 			infantry.worker: 32
+			infantry.hacker: 12
 			aircraft.mig: 4
 			aircraft.raptor: 2
 			aircraft.stealth_fighter: 1
@@ -1071,15 +1085,18 @@ Player:
 			Barracks: building.usa_barracks, building.gla_barracks, building.prc_barracks
 			VehiclesFactory: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
 			NavalProduction: tech.shipyard
-			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory
+			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, usa_airfield, prc_airfield
 			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, hack.scud_spawner, building.missile_silo
-			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.gatling_cannon, building.land_mine
+			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.gatling_cannon, building.land_mine, tech.flame_tower
 			StaticAntiAir: building.patriot, building.stinger_site, building.gatling_cannon
 		UnitsCommonNames:
+			Dozer: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+			FragileDeployer: infantry.hacker
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
-			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
-		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.red_guard
+			Collector: aircraft.chinook, infantry.worker, vehicle.supply_truck
+			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor
+		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
 		BuildingLimits:
 			building.usa_command_center: 1
@@ -1099,13 +1116,14 @@ Player:
 			building.palace: 1
 			building.propaganda_center: 1
 			building.detention_camp: 1
-			building.supply_drop_zone: 2
-			building.black_market: 2
+			building.supply_drop_zone: 3
+			building.black_market: 3
 			building.usa_airfield: 1
 			building.prc_airfield: 1
 			building.particle_cannon: 1
 			hack.scud_spawner: 1
 			building.missile_silo: 1
+			tech.flame_tower: 1
 		BuildingFractions:
 			building.usa_command_center: 200%
 			building.gla_command_center: 200%
@@ -1138,6 +1156,7 @@ Player:
 			building.particle_cannon: 1%
 			hack.scud_spawner: 1%
 			building.missile_silo: 1%
+			tech.flame_tower: 4%
 			upgrade.radar: 1%
 #			upgrade.control_rods: 1%
 			upgrade.adv_training: 1%
@@ -1198,6 +1217,7 @@ Player:
 			infantry.grenadier: 15%
 			infantry.pathfinder: 5%
 			infantry.angry_mob: 5%
+			infantry.hacker: 10%
 			infantry.flamethrower: 5%
 			infantry.colonel_burton: 0.5%
 			infantry.jarmen_kell: 0.5%
@@ -1250,6 +1270,7 @@ Player:
 			infantry.jarmen_kell: 1
 			infantry.black_lotus: 1
 			infantry.worker: 32
+			infantry.hacker: 12
 			aircraft.mig: 4
 			aircraft.raptor: 2
 			aircraft.stealth_fighter: 1
