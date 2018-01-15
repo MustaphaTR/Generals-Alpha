@@ -2299,6 +2299,8 @@ building.particle_cannon:
 		SelectTargetSpeechNotification: SelectTarget
 		OnFireSound: ion1.aud
 		EffectPalette: cnc
+		CameraActor: camera.particle_cannon
+		CameraRemoveDelay: 50
 	SupportPowerChargeBar:
 	Power:
 		Amount: -10
@@ -2541,7 +2543,9 @@ building.missile_silo:
 		DisplayRadarPing: True
 		BeaconPoster: nukeswbcon
 		FlashType: Nuke
-		CameraRange: 10c0
+		CameraRange: 8c0
+		CameraSpawnAdvance: 0
+		CameraRemoveDelay: 50
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
