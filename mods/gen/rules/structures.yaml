@@ -1854,6 +1854,7 @@ building.prc_airfield:
 building.strategy_center:
 	Inherits: ^Building
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SHAPE: ^3x2Shape
@@ -1899,7 +1900,7 @@ building.strategy_center:
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 12c512
-		RequiresCondition: search_and_destroy && !emp && !hacked
+		RequiresCondition: search_and_destroy && !emp && !hacked && !lowpower
 	Armament:
 		Weapon: cannon.strategy_center
 		LocalOffset: 520,0,450
@@ -1915,7 +1916,7 @@ building.strategy_center:
 		Sequence: search_and_destroy
 		RequiresCondition: search_and_destroy
 	AttackTurreted:
-		RequiresCondition: !emp && !hacked
+		RequiresCondition: !emp && !hacked && !lowpower
 	RenderRangeCircle:
 	WithSpriteTurret:
 		RequiresCondition: bombardment
