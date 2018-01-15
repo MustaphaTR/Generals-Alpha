@@ -719,7 +719,7 @@ windmill:
 		Tick: 80
 
 car.automobile_1:
-	idle: bcar
+	idle: bcab
 		Facings: -32
 		ShadowStart: 32
 	car_bomb: mouse
@@ -735,6 +735,84 @@ car.automobile_2:
 	idle: belair
 		Facings: -32
 		ShadowStart: 32
+	car_bomb: mouse
+		Start: 116
+		Length: 3
+		ZOffset: 2047
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+
+car.automobile_3:
+	idle: bcar
+		Facings: -64
+		ShadowStart: 64
+	car_bomb: mouse
+		Start: 116
+		Length: 3
+		ZOffset: 2047
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+
+car.automobile_4:
+	idle: budgatti
+		Facings: -64
+		ShadowStart: 64
+	car_bomb: mouse
+		Start: 116
+		Length: 3
+		ZOffset: 2047
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+
+car.automobile_5:
+	idle: stang
+		Facings: -64
+		ShadowStart: 64
+	car_bomb: mouse
+		Start: 116
+		Length: 3
+		ZOffset: 2047
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+
+car.automobile_6:
+	idle: porsche90
+		Facings: -64
+		ShadowStart: 64
+	car_bomb: mouse
+		Start: 116
+		Length: 3
+		ZOffset: 2047
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+
+car.taxi:
+	idle: taxi
+		Facings: -64
+		ShadowStart: 64
+	car_bomb: mouse
+		Start: 116
+		Length: 3
+		ZOffset: 2047
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+
+car.police_car:
+	idle: cop
+		Facings: -64
+		ShadowStart: 64
 	car_bomb: mouse
 		Start: 116
 		Length: 3
