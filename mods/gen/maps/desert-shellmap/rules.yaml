@@ -1,0 +1,242 @@
+Player:
+	-ConquestVictoryConditions:
+
+World:
+	-CrateSpawner:
+	-SpawnMPUnits:
+	-MPStartLocations:
+	MusicPlaylist:
+		BackgroundMusic: intro
+		DisableWorldSounds: true
+	ResourceType@ore:
+		ValuePerUnit: 0
+	ResourceType@gem:
+		ValuePerUnit: 0
+	LuaScript:
+		Scripts: desert-shellmap.lua
+	-StartGameNotification:
+
+^Vehicle:
+	GivesBounty:
+		Percentage: 0
+	GainsExperience:
+		Conditions:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Tank:
+	GivesBounty:
+		Percentage: 0
+	GainsExperience:
+		Conditions:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Infantry:
+	GivesBounty:
+		Percentage: 0
+	GainsExperience:
+		Conditions:
+	DeathSounds@NORMAL:
+		VolumeMultiplier: 0.1
+	DeathSounds@BURNED:
+		VolumeMultiplier: 0.1
+	DeathSounds@ZAPPED:
+		VolumeMultiplier: 0.1
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Ship:
+	GivesBounty:
+		Percentage: 0
+	GainsExperience:
+		Conditions:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Plane:
+	GivesBounty:
+		Percentage: 0
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Building:
+	GivesBounty:
+		Percentage: 0
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+tech.communications_center:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Wall:
+	GivesBounty:
+		Percentage: 0
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Gate:
+	GivesBounty:
+		Percentage: 0
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Mine:
+	GivesBounty:
+		Percentage: 0
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Flag:
+	GivesBounty:
+		Percentage: 0
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+tech.oil_derrick:
+	CashTrickler:
+		ShowTicks: false
+
+tech.shipyard:
+	GivesBounty:
+		Percentage: 0
+	GainsExperience:
+		Conditions:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+building.demo_trap:
+	-ExternalCondition@UNKILLABLE:
+	-DamageMultiplier@UNKILLABLE:
+
+building.usa_airfield:
+	Exit@2:
+		ProductionTypes: queue.usa_aircraft, queue.usa_helicopter
+	Exit@3:
+		ProductionTypes: queue.usa_aircraft, queue.usa_helicopter
+
+building.black_market:
+	CashTrickler:
+		ShowTicks: false
+
+building.supply_drop_zone:
+	CashTrickler:
+		ShowTicks: false
+
+building.bunker:
+	Cargo:
+		InitialUnits: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, infantry.tank_hunter
+
+infantry.hacker:
+	ExternalCondition@deployed:
+		Condition: deployed
+	CashTrickler@RANK-0:
+		ShowTicks: false
+	CashTrickler@RANK-1:
+		ShowTicks: false
+	CashTrickler@RANK-2:
+		ShowTicks: false
+	CashTrickler@RANK-3:
+		ShowTicks: false
+	CashTrickler@RANK-ELITE:
+		ShowTicks: false
+
+infantry.black_lotus:
+	Cloak:
+		InitialDelay: 0
+
+building.usa_supply_center:
+	-FreeActor:
+
+building.prc_supply_center:
+	-FreeActor:
+
+crate.scrap:
+	GiveCashCrateAction@1:
+		UseCashTick: false
+	GiveCashCrateAction@2:
+		UseCashTick: false
+	GiveCashCrateAction@3:
+		UseCashTick: false
+
+hack.artillery_barrager.3:
+	KillsSelf:
+		Delay: 120
+
+hack.rebel_spawner.8:
+	KillsSelf:
+		Delay: 2
+
+aircraft.chinook:
+	Health:
+		HP: 80
+
+vehicle.bomb_truck:
+	Health:
+		HP: 20
+	-DisguiseTooltip:
+	DisguisingTurreted:
+		TurnSpeed: 255
+	-WithFacingSpriteBody:
+	WithDisguisingFacingSpriteBody:
+		-RequiresCondition:
+	WithDisguisingSpriteTurret:
+		-RequiresCondition:
+	Disguise:
+		-RequiresCondition:
+
+powerproxy.paradrop:
+	AlwaysVisible:
+	ParatroopersPower:
+		Icon: paradrop2
+		Description: ParaDrop
+		LongDesc: 2 B-52 drop total of 10 Rangers\nanywhere on the map.
+		UnitType: aircraft.badger.paradrop
+		DropItems: infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger
+		SquadSize: 2
+		SelectTargetSpeechNotification: SelectTarget
+		AllowImpassableCells: false
+		QuantizedFacings: 8
+		CameraActor: camera.paradrop
+		DisplayBeacon: false
+		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles

@@ -13,7 +13,7 @@ World:
 	ResourceType@gem:
 		ValuePerUnit: 0
 	LuaScript:
-		Scripts: desert-shellmap.lua
+		Scripts: temperate-shellmap.lua
 	-StartGameNotification:
 
 ^Vehicle:
@@ -135,6 +135,20 @@ building.demo_trap:
 	-ExternalCondition@UNKILLABLE:
 	-DamageMultiplier@UNKILLABLE:
 
+building.usa_airfield:
+	Exit@2:
+		ProductionTypes: queue.usa_aircraft, queue.usa_helicopter
+	Exit@3:
+		ProductionTypes: queue.usa_aircraft, queue.usa_helicopter
+
+aircraft.comanche:
+	Buildable:
+		BuildAtProductionType: queue.aircraft
+
+building.cold_fusion_reactor:
+	Power:
+		Amount: 6
+
 building.black_market:
 	CashTrickler:
 		ShowTicks: false
@@ -160,6 +174,10 @@ infantry.hacker:
 		ShowTicks: false
 	CashTrickler@RANK-ELITE:
 		ShowTicks: false
+
+infantry.jarmen_kell:
+	Cloak:
+		InitialDelay: 0
 
 infantry.black_lotus:
 	Cloak:
@@ -188,8 +206,8 @@ hack.rebel_spawner.8:
 		Delay: 2
 
 aircraft.chinook:
-	Health:
-		HP: 80
+	Targetable:
+		TargetTypes: Air, Chinook
 
 vehicle.bomb_truck:
 	Health:
@@ -220,6 +238,22 @@ powerproxy.paradrop:
 		CameraActor: camera.paradrop
 		DisplayBeacon: false
 		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+
+powerproxy.a10:
+	AlwaysVisible:
+	AirstrikePower:
+		Icon: a102
+		Description: A-10 Strike
+		LongDesc: 2 A-10 Thunderbolt strikes anywhere on the map.
+		SquadSize: 2
+		QuantizedFacings: 8
+		SelectTargetSpeechNotification: SelectTarget
+		UnitType: aircraft.a10
+		DisplayBeacon: false
+		BeaconPoster: a102bcon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
