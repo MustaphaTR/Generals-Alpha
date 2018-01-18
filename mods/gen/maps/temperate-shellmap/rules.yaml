@@ -24,6 +24,8 @@ World:
 	DamageMultiplier@UNKILLABLE:
 		RequiresCondition: unkillable
 		Modifier: 0
+	Crushable:
+		RequiresCondition: !unkillable
 	ExternalCondition@UNKILLABLE:
 		Condition: unkillable
 
@@ -35,6 +37,8 @@ World:
 	DamageMultiplier@UNKILLABLE:
 		RequiresCondition: unkillable
 		Modifier: 0
+	Crushable:
+		RequiresCondition: !unkillable
 	ExternalCondition@UNKILLABLE:
 		Condition: unkillable
 
@@ -43,15 +47,11 @@ World:
 		Percentage: 0
 	GainsExperience:
 		Conditions:
-	DeathSounds@NORMAL:
-		VolumeMultiplier: 0.1
-	DeathSounds@BURNED:
-		VolumeMultiplier: 0.1
-	DeathSounds@ZAPPED:
-		VolumeMultiplier: 0.1
 	DamageMultiplier@UNKILLABLE:
 		RequiresCondition: unkillable
 		Modifier: 0
+	Crushable:
+		RequiresCondition: !unkillable
 	ExternalCondition@UNKILLABLE:
 		Condition: unkillable
 
@@ -97,6 +97,8 @@ tech.communications_center:
 	DamageMultiplier@UNKILLABLE:
 		RequiresCondition: unkillable
 		Modifier: 0
+	Crushable:
+		RequiresCondition: !unkillable
 	ExternalCondition@UNKILLABLE:
 		Condition: unkillable
 

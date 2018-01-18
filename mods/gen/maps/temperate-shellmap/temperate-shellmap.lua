@@ -194,8 +194,8 @@ WorldLoaded = function()
 	Trigger.AfterDelay(DateTime.Seconds(40), function() SendMiGs(MiG1Waypoints) end)
 	Trigger.AfterDelay(DateTime.Seconds(40), function() SendMiGs(MiG2Waypoints) end)
 
-	Trigger.AfterDelay(DateTime.Minutes(4), function() SendParadrop() end)
-	Trigger.AfterDelay(DateTime.Minutes(4), function() SendA10s() end)
+	Trigger.AfterDelay(DateTime.Minutes(4) + DateTime.Seconds(15), function() SendParadrop() end)
+	Trigger.AfterDelay(DateTime.Minutes(4) + DateTime.Seconds(25), function() SendA10s() end)
 	SummonActor("hack.rebel_spawner.8", gla, AmbushLocation1.Location, DateTime.Minutes(4))
 	SummonActor("hack.artillery_barrager.3", prc, ArtyBarrWaypoint.Location, DateTime.Minutes(5))
 end
