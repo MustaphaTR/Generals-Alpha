@@ -18,10 +18,17 @@ Player:
 		DefaultCash: 10000
 		InsufficientFundsNotification: InsufficientFunds
 	DeveloperMode:
-		CheckboxDisplayOrder: 5
+		CheckboxDisplayOrder: 6
 	GpsWatcher:
 	Shroud:
 		FogCheckboxDisplayOrder: 3
+	LobbyPrerequisiteCheckbox@GLOBALLIMITSW:
+		ID: limitsw
+		Label: Limit SWs
+		Description: Allow only 1 Super Weapon to be built.
+		Enabled: True
+		DisplayOrder: 5
+		Prerequisites: prerequisite.limited_sw
 	FrozenActorLayer:
 	BaseAttackNotifier:
 	PlayerStatistics:

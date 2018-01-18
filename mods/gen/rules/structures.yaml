@@ -2272,8 +2272,7 @@ building.particle_cannon:
 		BuildPaletteOrder: 10
 		BuildDuration: 1500
 		BuildDurationModifier: 100
-		Prerequisites: building.strategy_center, ~techlevel.unrestricted
-		BuildLimit: 1
+		Prerequisites: building.strategy_center, !prerequisite.enough_particle, ~techlevel.unrestricted
 		Description: Provides Particle Cannon support power.
 	Building:
 		Footprint: XX xx
@@ -2297,6 +2296,8 @@ building.particle_cannon:
 		DisplayTimerStances: Enemy, Neutral, Ally
 		LongDesc: Initiates an Particle Cannon strike.
 		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		AllowMultiple: True
 		OnFireSound: ion1.aud
 		EffectPalette: cnc
 		CameraActor: camera.particle_cannon
@@ -2305,6 +2306,12 @@ building.particle_cannon:
 	Power:
 		Amount: -10
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@LIMIT:
+		Prerequisite: prerequisite.enough_particle
+		RequiresCondition: limited_sw
+	GrantConditionOnPrerequisite@LIMIT:
+		Condition: limited_sw
+		Prerequisites: prerequisite.limited_sw
 	RevealsShroud@SW:
 		Range: 2c0
 		ValidStances: Enemy
@@ -2329,9 +2336,8 @@ hack.scud_spawner:
 		BuildPaletteOrder: 9
 		BuildDuration: 1500
 		BuildDurationModifier: 100
-		Prerequisites: building.palace, !building.scud_storm, ~techlevel.unrestricted
-		BuildLimit: 1
-		Description: Provides an atomic bomb.\nRequires power to operate.\n Special Ability: SCUD Storm\nMaximum 1 can be built.
+		Prerequisites: building.palace, !prerequisite.enough_scud, ~techlevel.unrestricted
+		Description: Provides SCUD Storm support power.
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -2360,9 +2366,8 @@ building.scud_storm:
 #		BuildPaletteOrder: 9
 #		BuildDuration: 1500
 #		BuildDurationModifier: 100
-#		Prerequisites: building.palace, ~techlevel.unrestricted
-#		BuildLimit: 1
-#		Description: Provides an atomic bomb.\nRequires power to operate.\n Special Ability: SCUD Storm\nMaximum 1 can be built.
+#		Prerequisites: building.palace, !prerequisite.enough_scud, ~techlevel.unrestricted
+#		Description: Provides SCUD Storm support power.
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -2454,7 +2459,6 @@ building.scud_storm:
 	SupportPowerChargeBar:
 	WithBuildingBib:
 	-WithMakeAnimation:
-	ProvidesPrerequisite@buildingname:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
@@ -2470,12 +2474,20 @@ building.scud_storm:
 		LongDesc: Fires 4 SCUD Missiles anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
+		AllowMultiple: True
 		DisplayBeacon: True
 		BeaconPoster: scudswbcon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
 		OrderName: SCUDStormPowerInfoOrder
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@LIMIT:
+		Prerequisite: prerequisite.enough_scud
+		RequiresCondition: limited_sw
+	GrantConditionOnPrerequisite@LIMIT:
+		Condition: limited_sw
+		Prerequisites: prerequisite.limited_sw
 	RevealsShroud@SW:
 		Range: 2c0
 		ValidStances: Enemy
@@ -2502,9 +2514,8 @@ building.missile_silo:
 		BuildPaletteOrder: 12
 		BuildDuration: 1500
 		BuildDurationModifier: 100
-		Prerequisites: building.propaganda_center, ~techlevel.unrestricted
-		BuildLimit: 1
-		Description: Provides an atomic bomb.\nRequires power to operate.\n  Special Ability: Atom Bomb\nMaximum 1 can be built.
+		Prerequisites: building.propaganda_center, !prerequisite.enough_nuke, ~techlevel.unrestricted
+		Description: Provides Atom Bomb support power.
 	Building:
 		Footprint: xx ==
 		Dimensions: 2,2
@@ -2536,6 +2547,7 @@ building.missile_silo:
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
 		IncomingSpeechNotification: AbombLaunchDetected
+		AllowMultiple: True
 		MissileWeapon: atomic
 		SpawnOffset: 0,427,0
 		DisplayTimerStances: Enemy, Neutral, Ally
@@ -2553,6 +2565,12 @@ building.missile_silo:
 	Power:
 		Amount: -10
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@LIMIT:
+		Prerequisite: prerequisite.enough_nuke
+		RequiresCondition: limited_sw
+	GrantConditionOnPrerequisite@LIMIT:
+		Condition: limited_sw
+		Prerequisites: prerequisite.limited_sw
 	RevealsShroud@SW:
 		Range: 2c0
 		ValidStances: Enemy
