@@ -1672,30 +1672,6 @@
 		Duration: 60
 		Radius: 3c0
 
-^Bridge:
-	Inherits@SHAPE: ^1x1Shape
-	AlwaysVisible:
-	Tooltip:
-		Name: Bridge
-		ShowOwnerRow: false
-	Targetable:
-		TargetTypes: Ground, Water
-		RequiresForceFire: true
-	Building:
-		Footprint: ____ ____
-		Dimensions: 4,2
-	Health:
-		HP: 1000
-	Armor:
-		Type: building.wall
-	DamageMultiplier@IMMUNE:
-		Modifier: 0
-	ScriptTriggers:
-	BodyOrientation:
-		QuantizedFacings: 1
-	Interactable:
-		Bounds: 96,48
-
 ^Rock:
 	Inherits@1: ^SpriteActor
 	Interactable:
