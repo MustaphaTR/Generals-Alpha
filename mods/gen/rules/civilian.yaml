@@ -578,15 +578,22 @@ car.automobile_5:
 car.automobile_6:
 	Inherits: ^Car
 
+car.automobile_7:
+	Inherits: ^Car
+
 car.ambulance:
 	Inherits: ^Car
 	Tooltip:
 		Name: Ambulance
+	Mobile:
+		Speed: 80
 
 car.cement_mixer:
 	Inherits: ^Car
 	Tooltip:
 		Name: Cement Mixer
+	Mobile:
+		Speed: 75
 
 car.taxi:
 	Inherits: ^Car
@@ -607,8 +614,19 @@ car.fire_truck:
 	Inherits: ^Car
 	Tooltip:
 		Name: Fire Truck
+	Mobile:
+		Speed: 75
+
+car.pickup_truck:
+	Inherits: ^Car
+	Tooltip:
+		Name: Pickup Truck
+	Mobile:
+		Speed: 80
 
 car.school_bus:
 	Inherits: ^Car
 	Tooltip:
 		Name: School Bus
+	Mobile:
+		Speed: 75

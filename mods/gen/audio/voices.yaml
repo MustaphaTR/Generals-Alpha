@@ -522,6 +522,7 @@ TerroristVoice:
 		Select: itersea, iterseb, itersec, itersed, itersee, itersef, iterseg
 		Move: itermoa, itermob, itermoc, itermod, itermoe, itermof, itermog
 		Action: iterata, iteratb, iteratc, iteratd, iterate
+		Capture: itera2a, itera2b, itera2c, itera2d, itera2e
 		Die: iterdia, iterdib, iterdic, iterdid, iterdie
 		Burned: iterdia, iterdib, iterdic, iterdid, iterdie
 		Zapped: iterdia, iterdib, iterdic, iterdid, iterdie
@@ -611,6 +612,17 @@ LotusVoice:
 		Die: ibladia, ibladib, ibladic, ibladid, ibladie
 		Burned: ibladia, ibladib, ibladic, ibladid, ibladie
 		Zapped: ibladia, ibladib, ibladic, ibladid, ibladie
+
+CarVoice:
+	Variants:
+		usa: .wav
+		gla: .wav
+		prc: .wav
+	Voices:
+		Attack: vcarata, vcaratb, vcaratc, vcaratd, vcarate
+		Select: vcarsea, vcarseb, vcarsec, vcarsed, vcarsee, vcarsef
+		Move: vcarmoa, vcarmob, vcarmoc, vcarmod, vcarmoe
+		Action: vcarata, vcaratb, vcaratc, vcaratd, vcarate
 
 SupplyTruckVoice:
 	Variants:

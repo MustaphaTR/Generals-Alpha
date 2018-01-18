@@ -471,6 +471,25 @@
 		DamageInterval: 16
 		DamageTypes: FireDeath
 
+^Reveal80:
+	RevealsShroud:
+		Range: 2c0
+	RevealsShroud@SEARCH_AND_DESTROY:
+		Range: 2c409
+		RequiresCondition: search_and_destroy
+	RevealsShroud@INTELLIGENCE:
+		Range: 2c0
+		ValidStances: Enemy
+		RequiresCondition: intelligence
+	RevealOnDeath:
+		Duration: 100
+		Radius: 1c128
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+	ExternalCondition@INTELLIGENCE:
+		Condition: intelligence
+
 ^Reveal100:
 	RevealsShroud:
 		Range: 2c512
@@ -908,13 +927,13 @@
 	Inherits@5: ^AffectedByEMP
 	Inherits@6: ^AffectedByEmergencyRepair
 	Inherits@CRUSH: ^CrushesCrates
-	Inherits@REVEAL: ^Reveal100
+	Inherits@REVEAL: ^Reveal80
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
 	Mobile:
 		NonBlockerActors: aircraft.chinook
-		Speed: 30
+		Speed: 90
 		TerrainSpeeds:
 			Clear: 80
 			Rough: 40
@@ -995,6 +1014,8 @@
 		RequiresCondition: !parachute
 	EditorTilesetFilter:
 		Categories: Civilian vehicle
+	Voiced:
+		VoiceSet: CarVoice
 
 ^Infantry:
 	Inherits@1: ^ExistsInWorld
@@ -1015,7 +1036,7 @@
 		Type: infantry.normal
 	Mobile:
 		NonBlockerActors: aircraft.chinook
-		Speed: 56
+		Speed: 20
 		SharesCell: true
 		TerrainSpeeds:
 			Clear: 90
