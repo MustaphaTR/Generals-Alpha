@@ -131,6 +131,17 @@ tech.oil_derrick:
 	CashTrickler:
 		ShowTicks: false
 
+tech.shipyard:
+	GivesBounty:
+		Percentage: 0
+	GainsExperience:
+		Conditions:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
 building.demo_trap:
 	-ExternalCondition@UNKILLABLE:
 	-DamageMultiplier@UNKILLABLE:
