@@ -136,10 +136,14 @@ building.demo_trap:
 	-DamageMultiplier@UNKILLABLE:
 
 building.usa_airfield:
-	Exit@2:
-		ProductionTypes: queue.usa_aircraft, queue.usa_helicopter
-	Exit@3:
-		ProductionTypes: queue.usa_aircraft, queue.usa_helicopter
+	Exit@4:
+		ExitCell: 1,1
+		Facing: 192
+		SpawnOffset: -1024,0,0
+	Exit@5:
+		ExitCell: 1,2
+		Facing: 192
+		SpawnOffset: -1024,544,0
 
 aircraft.comanche:
 	Buildable:
