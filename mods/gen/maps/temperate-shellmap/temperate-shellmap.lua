@@ -9,7 +9,8 @@
 ProducedUnitTypes =
 {
 	{ factory = USABarracks1, types = { "infantry.ranger", "infantry.missile_defender", "infantry.pathfinder" } },
-	{ factory = USABarracks2, types = { "infantry.conscript", "infantry.grenadier", "infantry.flamethrower" } },
+	{ factory = USABarracks2, types = { "infantry.ranger", "infantry.missile_defender", "infantry.pathfinder" } },
+	{ factory = USABarracks3, types = { "infantry.conscript", "infantry.grenadier", "infantry.flamethrower" } },
 	{ factory = GLABarracks, types = { "infantry.rebel", "infantry.rpg_trooper", "infantry.terrorist", "infantry.angry_mob" } },
 	{ factory = PRCBarracks, types = { "infantry.red_guard", "infantry.tank_hunter" } },
 	{ factory = GLAWarFactory, types = { "vehicle.technical", "vehicle.scorpion_tank", "vehicle.quad_cannon", "vehicle.rocket_buggy", "vehicle.toxin_tractor", "vehicle.marauder_tank", "vehicle.scud_launcher" } },
