@@ -796,6 +796,32 @@ car.automobile_6:
 		Tick: 160
 		ZOffset: 2047
 
+car.ambulance:
+	idle: amb
+		Facings: -64
+		ShadowStart: 64
+	car_bomb: mouse
+		Start: 116
+		Length: 3
+		ZOffset: 2047
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+
+car.cement_mixer:
+	idle: cement
+		Facings: -64
+		ShadowStart: 64
+	car_bomb: mouse
+		Start: 116
+		Length: 3
+		ZOffset: 2047
+	repair: allyrepair
+		Length: *
+		Tick: 160
+		ZOffset: 2047
+
 car.taxi:
 	idle: taxi
 		Facings: -64
