@@ -30,7 +30,7 @@ infantry.worker:
 		BuildDuration: 75
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.infonly
-		Description: Collects Ore and Gems for processing.\n\nCan repair GLA Holes.
+		Description: Collects supplies.\n\nCan repair GLA Holes.
 	Valued:
 		Cost: 200
 	Tooltip:
@@ -76,7 +76,7 @@ infantry.worker:
 		BuildPaletteOrder: 1
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Description: General-purpose infantry.
+		Description: General-purpose infantry armed with a automatic rifle.
 	Valued:
 		Cost: 150
 	Health:
@@ -166,6 +166,7 @@ infantry.toxin_rebel:
 	Buildable:
 		Queue: queue.gla_infantry
 		Prerequisites: ~techlevel.infonly, ~disabled
+		Description: General-purpose infantry armed with toxins.
 	Tooltip:
 		Name: Toxin Rebel
 	Armament@ALPHA:
@@ -206,6 +207,7 @@ infantry.red_guard:
 		Queue: queue.prc_infantry
 		BuildDurationModifier: 50
 		Prerequisites: ~techlevel.infonly
+		Description: General-purpose infantry armed with a rifle.
 	Mobile:
 		Speed: 25
 	Tooltip:
@@ -225,6 +227,7 @@ infantry.minigunner:
 		Queue: queue.prc_infantry
 		BuildDuration: 250
 		Prerequisites: ~techlevel.infonly, ~disabled
+		Description: General-purpose infantry armed with a minigun.
 	Valued:
 		Cost: 350
 	Mobile:
@@ -283,7 +286,7 @@ infantry.conscript:
 		BuildPaletteOrder: 2
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Description: Anti-tank/Anti-aircraft infantry.
+		Description: Anti-tank & anti-air infantry.
 	Valued:
 		Cost: 300
 	Health:
@@ -467,7 +470,7 @@ infantry.flamethrower:
 		Queue: queue.soviet_infantry
 		BuildPaletteOrder: 3
 		Prerequisites: tech.flame_tower, ~techlevel.low
-		Description: Advanced anti-structure unit.
+		Description: Advanced anti-structure infantry.
 	Valued:
 		Cost: 300
 	Tooltip:
@@ -857,7 +860,7 @@ infantry.jarmen_kell:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_barracks, building.palace, ~techlevel.high
 		BuildLimit: 1
-		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing your infantry to capture them.
+		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.
 	Health:
 		HP: 200
 	Armor:

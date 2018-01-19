@@ -249,7 +249,7 @@ building.gla_command_center:
 	Buildable:
 		Queue: queue.gla_building
 		BuildPaletteOrder: 10
-		Description: Produces construction vehicles.\n\nResearches General's Powers
+		Description: Produces construction vehicles.\n\nResearches and Provides General's Powers
 	Tooltip:
 		Name: GLA Command Center
 	Voiced:
@@ -338,7 +338,7 @@ building.prc_command_center:
 	Buildable:
 		Queue: queue.prc_building
 		BuildPaletteOrder: 13
-		Description: Produces construction vehicles.\n\nResearches General's Powers
+		Description: Produces construction vehicles.\n\nResearches and Provides General's Powers
 	Tooltip:
 		Name: PRC Command Center
 	ProvidesRadar:
@@ -939,7 +939,7 @@ building.mine:
 	Buildable:
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Description: Refines Ore and Gems\ninto credits.
+		Description: Deposit for the collected supplies.
 	Valued:
 		Cost: 1500
 	CustomSellValue:
@@ -985,6 +985,7 @@ building.usa_supply_center:
 		Queue: queue.usa_building
 		BuildPaletteOrder: 3
 		Prerequisites: prerequisite.reactor, ~techlevel.infonly
+		Description: Deposit for the collected supplies.\n\nProduces chinooks.
 	Valued:
 		Cost: 2000
 	CustomSellValue:
@@ -1035,6 +1036,7 @@ building.gla_supply_stash:
 		Queue: queue.gla_building
 		BuildPaletteOrder: 2
 		Prerequisites: ~techlevel.infonly
+		Description: Deposit for the collected supplies.\n\nTrains workers.
 	Tooltip:
 		Name: GLA Supply Stash
 	Building:
@@ -1096,6 +1098,7 @@ building.prc_supply_center:
 		Queue: queue.prc_building
 		BuildPaletteOrder: 4
 		Prerequisites: prerequisite.reactor, ~techlevel.infonly
+		Description: Deposit for the collected supplies.\n\nProduces supply trucks.
 	Tooltip:
 		Name: PRC Supply Center
 	Building:
@@ -1150,7 +1153,7 @@ building.patriot:
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.reactor, ~techlevel.low
-		Description: Anti-tank, anti-air base defense.
+		Description: Anti-tank & anti-air base defense.
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -1274,7 +1277,7 @@ building.gatling_cannon:
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.reactor, ~techlevel.low
-		Description: Anti-infantry/anti-air base defense.
+		Description: Anti-infantry & anti-air base defense.
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -1656,7 +1659,7 @@ building.stinger_site:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.gla_barracks, ~techlevel.low
-		Description: Anti-Armor/anti-air base defense.\n\nLoses soldiers in it when damaged.
+		Description: Anti-tank & anti-air base defense.\n\nLoses soldiers in it when damaged.
 	Valued:
 		Cost: 900
 	Tooltip:

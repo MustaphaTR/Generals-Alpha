@@ -8,7 +8,7 @@ vehicle.supply_truck:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_supply_center, ~techlevel.infonly
-		Description: Collects Ore and Gems for processing.
+		Description: Collects supplies.
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -243,7 +243,7 @@ vehicle.scorpion_tank:
 		BuildDuration: 175
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.low
-		Description: Light Tank, good for scouting.
+		Description: Lightly armored main battle tank.
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -338,7 +338,7 @@ vehicle.crusader_tank:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, ~techlevel.low
-		Description: Main Battle Tank.
+		Description: Medium armored main battle tank.
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -393,7 +393,7 @@ vehicle.battlemaster_tank:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.low
-		Description: Heavy tank.
+		Description: Medium armored main battle tank.
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -557,7 +557,7 @@ vehicle.quad_cannon:
 		BuildDuration: 150
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.low
-		Description: Anti-aircraft/anti-infantry vehicle.
+		Description: Anti-infantry & anti-air vehicle.
 	Mobile:
 		Speed: 40
 		Voice: Move
@@ -603,7 +603,7 @@ vehicle.gatling_tank:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.low
-		Description: Anti-aircraft/anti-infantry vehicle.
+		Description: Anti-infantry & anti-air vehicle.
 	Mobile:
 		Speed: 40
 		Voice: Move
@@ -1544,7 +1544,7 @@ vehicle.nuke_cannon:
 	Buildable:
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Description: Allows construction around themselves.\n  Unarmed
+		Description: Allows construction around themselves.
 	Valued:
 		Cost: 1000
 	Selectable:
