@@ -331,128 +331,95 @@ CrateNuke:
 		ValidTargets: Trees
 		DamageTypes: Incendiary
 
-MiniNuke:
+BombTruckExplosion:
 	ValidTargets: Ground, Trees, Water, Underwater
 	Warhead@1Dam_impact: SpreadDamage
-		Spread: 1c0
-		Damage: 150
+		Spread: 0c768
+		Damage: 120
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		ValidTargets: Ground, Trees, Water
 		Versus:
-			Wood: 25
-			Concrete: 25
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
 		AffectsParent: true
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
-	Warhead@2Res_impact: DestroyResource
-		Size: 1
 	Warhead@3Eff_impact: CreateEffect
-		Explosions: nuke
+		Explosions: mininuke
 		ImpactSounds: kaboom1.aud
 		VictimScanRadius: 0
 	Warhead@4Dam_areanuke1: SpreadDamage
-		Spread: 2c0
-		Damage: 60
+		Spread: 1c512
+		Damage: 50
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		Delay: 5
 		ValidTargets: Ground, Trees, Water, Underwater
 		Versus:
-			Wood: 50
-			Concrete: 25
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
 		AffectsParent: true
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
-	Warhead@5Res_areanuke1: DestroyResource
-		Size: 2
-		Delay: 5
 	Warhead@6Eff_areanuke1: CreateEffect
 		ImpactSounds: kaboom22.aud
-		Delay: 5
 		VictimScanRadius: 0
 	Warhead@7Dam_areanuke2: SpreadDamage
-		Spread: 3c0
-		Damage: 60
+		Spread: 2c256
+		Damage: 50
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		Delay: 10
 		ValidTargets: Ground, Water, Underwater
 		Versus:
-			Wood: 50
-			Concrete: 25
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
 		AffectsParent: true
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
 	Warhead@8Dam_areanuke2: SpreadDamage
-		Spread: 3c0
+		Spread: 2c256
 		Damage: 120
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		Delay: 10
 		ValidTargets: Trees
 		DamageTypes: Incendiary
-	Warhead@9Res_areanuke2: DestroyResource
-		Size: 3
-		Delay: 10
-	Warhead@10Dam_areanuke3: SpreadDamage
-		Spread: 4c0
-		Damage: 60
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		Delay: 15
-		ValidTargets: Ground, Water, Underwater
-		Versus:
-			Concrete: 25
-		AffectsParent: true
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
-	Warhead@11Dam_areanuke3: SpreadDamage
-		Spread: 4c0
-		Damage: 180
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		Delay: 15
-		ValidTargets: Trees
-		DamageTypes: Incendiary
-	Warhead@12Res_areanuke3: DestroyResource
-		Size: 4
-		Delay: 15
 	Warhead@13Smu_areanuke3: LeaveSmudge
 		SmudgeType: Scorch
 		InvalidTargets: Vehicle, Tank, Structure, Wall, Trees
-		Size: 4
-		Delay: 15
+		Size: 2
 
-BombTruckExplosion:
-	Inherits: MiniNuke
-	-Warhead@10Dam_areanuke3:
-	-Warhead@11Dam_areanuke3:
-	-Warhead@12Res_areanuke3:
-	Warhead@13Smu_areanuke3:
+BombTruckExplosion.hi_exp:
+	Inherits: BombTruckExplosion
+	Warhead@1Dam_impact: SpreadDamage
+		Spread: 1c0
+		Damage: 150
+	Warhead@4Dam_areanuke1: SpreadDamage
+		Spread: 2c0
+		Damage: 60
+	Warhead@7Dam_areanuke2: SpreadDamage
+		Spread: 3c0
+		Damage: 60
+	Warhead@8Dam_areanuke2: SpreadDamage
+		Spread: 3c0
+	Warhead@13Smu_areanuke3: LeaveSmudge
 		Size: 3
-		Delay: 10
 
 BombTruckExplosion.toxin:
 	Inherits: BombTruckExplosion
 	Warhead@10Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_alpha
 		Range: 1
-		Level: 2000
+		Level: 3000
 		Falloff: 100, 90, 60, 0
-		MaxLevel: 5000
+		MaxLevel: 6000
 	Warhead@11Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_alpha
-		Delay: 5
 		Range: 2
-		Level: 2000
+		Level: 3000
 		Falloff: 100, 90, 60, 0
-		MaxLevel: 5000
-	Warhead@12Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_alpha
-		Delay: 10
-		Range: 3
-		Level: 2000
-		Falloff: 100, 90, 60, 0
-		MaxLevel: 5000
+		MaxLevel: 6000
 
 BombTruckExplosion.toxin_beta:
 	Inherits: BombTruckExplosion.toxin
 	Warhead@10Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_beta
 	Warhead@11Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_beta
-	Warhead@12Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_beta
 
 explosion.nuclear_reactor:

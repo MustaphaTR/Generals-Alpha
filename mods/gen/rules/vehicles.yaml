@@ -1417,8 +1417,8 @@ vehicle.bomb_truck:
 		EmptyWeapon: BombTruckExplosion.toxin_beta
 		RequiresCondition: bio_bombs && anthrax_beta
 	Explodes@HI_EXPLOSIVE_BOMBS:
-		Weapon: MiniNuke
-		EmptyWeapon: MiniNuke
+		Weapon: BombTruckExplosion.hi_exp
+		EmptyWeapon: BombTruckExplosion.hi_exp
 		RequiresCondition: hi_explosive_bombs
 	AttackSuicides:
 	GrantConditionOnPrerequisite@BIO_BOMBS:
