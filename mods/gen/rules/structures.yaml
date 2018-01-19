@@ -56,7 +56,7 @@ building.usa_command_center:
 	Buildable:
 		Queue: queue.usa_building
 		BuildPaletteOrder: 11
-		Description: Produces construction vehicles.\n\nResearches General's Powers\n\nProvides Radar.\n\nProvides Spy Sattalite support power.
+		Description: Produces construction vehicles.\n\nResearches and Provides General's Powers\n\nProvides Radar.\n\nProvides Spy Satellite support power.
 	Tooltip:
 		Name: USA Command Center
 	Voiced:
@@ -85,9 +85,9 @@ building.usa_command_center:
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: SpyDronePowerInfoOrder
-	SpawnActorPower@SPY_SATTELITE:
+	SpawnActorPower@SPY_SATELLITE:
 		PauseOnCondition: emp || hacked
-		Actor: camera.spy_sattelite
+		Actor: camera.spy_satellite
 		Prerequisites: ~techlevel.low
 		LifeTime: 300
 		ChargeInterval: 1500
