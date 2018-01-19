@@ -398,7 +398,8 @@ infantry.pathfinder:
 		Speed: 30
 		Voice: Move
 	AutoTargetPriority@DEFAULT:
-		Types: Infantry
+		ValidTargets: Infantry
+		InvalidTargets: NoAutoTarget
 	Armament@PRIMARY:
 		Weapon: sniper.pathfinder
 	AttackFrontal:
@@ -870,7 +871,8 @@ infantry.jarmen_kell:
 		InitialStance: HoldFire
 		InitialStanceAI: ReturnFire
 	AutoTargetPriority@DEFAULT:
-		Types: Infantry
+		ValidTargets: Infantry
+		InvalidTargets: NoAutoTarget
 	Armament@PRIMARY:
 		Weapon: sniper.jarmen_kell
 	Armament@DRIVER_SNIPE:
