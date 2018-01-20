@@ -182,7 +182,7 @@ explosion.demo_trap:
 explosion.terrorist:
 	Inherits: ^Explosion
 	Warhead@1Dam: SpreadDamage
-		Spread: 1c0
+		Spread: 0c768
 		Damage: 500
 		ValidTargets: Ground, Trees
 		ValidStances: Enemy, Neutral
@@ -192,7 +192,7 @@ explosion.terrorist:
 			building.tough: 80
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@1DamAlly: SpreadDamage
-		Spread: 1c0
+		Spread: 0c768
 		Damage: 500
 		ValidTargets: Ground, Trees
 		ValidStances: Ally
@@ -203,9 +203,8 @@ explosion.terrorist:
 			building.tough: 80
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@2Dam: SpreadDamage
-		Spread: 2c0
+		Spread: 1c512
 		Damage: 300
-		Delay: 5
 		ValidTargets: Ground, Trees
 		ValidStances: Enemy, Neutral
 		Versus:
@@ -214,9 +213,8 @@ explosion.terrorist:
 			building.tough: 80
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@2DamAlly: SpreadDamage
-		Spread: 2c0
+		Spread: 1c512
 		Damage: 300
-		Delay: 5
 		ValidTargets: Ground, Trees
 		ValidStances: Ally
 		InvalidTargets: Terrorist
@@ -228,15 +226,10 @@ explosion.terrorist:
 	Warhead@2Eff: CreateEffect
 		Explosions: napalm
 		ImpactSounds: firebl3.aud
-		Delay: 5
 	-Warhead@3EffWater: CreateEffect
 	Warhead@Smu: LeaveSmudge
 		SmudgeType: Scorch
 		Size: 1
-	Warhead@Smu2: LeaveSmudge
-		SmudgeType: Scorch
-		Size: 2
-		Delay: 5
 
 explosion.mine:
 	Warhead@1Dam: SpreadDamage
