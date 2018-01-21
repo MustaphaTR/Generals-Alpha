@@ -18,17 +18,24 @@ Player:
 		DefaultCash: 10000
 		InsufficientFundsNotification: InsufficientFunds
 	DeveloperMode:
-		CheckboxDisplayOrder: 6
+		CheckboxDisplayOrder: 7
 	GpsWatcher:
 	Shroud:
 		FogCheckboxDisplayOrder: 3
 	LobbyPrerequisiteCheckbox@GLOBALLIMITSW:
 		ID: limitsw
-		Label: Limit SWs
-		Description: Allow only 1 Super Weapon to be built.
+		Label: Limit Superweapons
+		Description: Allow only 1 Superweapon to be built.
 		Enabled: True
 		DisplayOrder: 5
 		Prerequisites: prerequisite.limited_sw
+	LobbyPrerequisiteCheckbox@GLOBALLIMITGP:
+		ID: limitgp
+		Label: Limit General's Powers
+		Description: Allow only 7 General's Powers to be researched.
+		Enabled: True
+		DisplayOrder: 6
+		Prerequisites: prerequisite.limited_gp
 	FrozenActorLayer:
 	BaseAttackNotifier:
 	PlayerStatistics:

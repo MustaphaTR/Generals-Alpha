@@ -1824,7 +1824,7 @@
 ^ChecksForGeneralsPowerCount.USA:
 	ProvidesPrerequisite@ENOUGH_POWERS_USA:
 		Prerequisite: enough_powers.usa
-		RequiresCondition: usa_generals_power_check >= 7
+		RequiresCondition: usa_generals_power_check >= 7 && limited_gp
 	GrantConditionOnPrerequisite@SPY_DRONE_CHECK:
 		Condition: usa_generals_power_check
 		Prerequisites: generals_power.spy_drone
@@ -1867,11 +1867,14 @@
 	GrantConditionOnPrerequisite@FUEL_AIR_BOMB_CHECK:
 		Condition: usa_generals_power_check
 		Prerequisites: generals_power.fuel_air_bomb
+	GrantConditionOnPrerequisite@GLOBALLIMITGP:
+		Condition: limited_gp
+		Prerequisites: prerequisite.limited_gp
 
 ^ChecksForGeneralsPowerCount.GLA:
 	ProvidesPrerequisite@ENOUGH_POWERS_GLA:
 		Prerequisite: enough_powers.gla
-		RequiresCondition: gla_generals_power_check >= 7
+		RequiresCondition: gla_generals_power_check >= 7 && limited_gp
 	GrantConditionOnPrerequisite@TECHNICIAL_TRAINING_CHECK:
 		Condition: gla_generals_power_check
 		Prerequisites: generals_power.tech_training
@@ -1914,11 +1917,14 @@
 	GrantConditionOnPrerequisite@ANTHRAX_BOMB_CHECK:
 		Condition: gla_generals_power_check
 		Prerequisites: generals_power.anthrax_bomb
+	GrantConditionOnPrerequisite@GLOBALLIMITGP:
+		Condition: limited_gp
+		Prerequisites: prerequisite.limited_gp
 
 ^ChecksForGeneralsPowerCount.PRC:
 	ProvidesPrerequisite@ENOUGH_POWERS_PRC:
 		Prerequisite: enough_powers.prc
-		RequiresCondition: prc_generals_power_check >= 7
+		RequiresCondition: prc_generals_power_check >= 7 && limited_gp
 	GrantConditionOnPrerequisite@RED_GUARD_TRAINING_CHECK:
 		Condition: prc_generals_power_check
 		Prerequisites: generals_power.red_training
@@ -1985,3 +1991,6 @@
 	GrantConditionOnPrerequisite@EMP_CHECK:
 		Condition: prc_generals_power_check
 		Prerequisites: generals_power.emp
+	GrantConditionOnPrerequisite@GLOBALLIMITGP:
+		Condition: limited_gp
+		Prerequisites: prerequisite.limited_gp
