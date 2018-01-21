@@ -193,7 +193,7 @@ cannon.nuke_cannon:
 	Projectile: Bullet
 		ContrailLength: 30
 	Warhead@1Dam_impact: SpreadDamage
-		Spread: 2c0
+		Spread: 1c512
 		Damage: 400
 		Versus:
 			aircraft.comanche: 130
@@ -201,7 +201,7 @@ cannon.nuke_cannon:
 			building.tough: 80
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
 	Warhead@5Dam_impact: SpreadDamage
-		Spread: 2c512
+		Spread: 2c0
 		Damage: 20
 		Versus:
 			aircraft.comanche: 130
@@ -211,14 +211,20 @@ cannon.nuke_cannon:
 	Warhead@3Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
 		InvalidTargets: Vehicle, Tank, Structure, Wall
-		Size: 2
+		Size: 1
 	Warhead@3Eff: CreateEffect
-		Explosions: nuke
+		Explosions: mininuke
 		ImpactSounds: kaboom1.aud
 	Warhead@4Radio: CreateRadioactivity
 		RadioactivityLayerName: radioactivity
+		Range: 1
+		Level: 1000
+		Falloff: 100, 90, 80
+		MaxLevel: 7500
+	Warhead@5Radio: CreateRadioactivity
+		RadioactivityLayerName: radioactivity
 		Range: 2
-		Level: 2500
+		Level: 2000
 		Falloff: 100, 90, 80
 		MaxLevel: 7500
 
