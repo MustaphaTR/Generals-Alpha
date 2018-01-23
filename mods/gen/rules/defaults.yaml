@@ -346,10 +346,15 @@
 		HealIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: emergency_repair
-	WithIdleOverlay@EMERGENCY_REPAIR:
+	WithDecoration@EMERGENCY_REPAIR:
+		RequiresSelection: false
+		Image: allyrepair
 		Sequence: repair
 		Palette: player
 		IsPlayerPalette: true
+		ReferencePoint: Center
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: emergency_repair
 	ExternalCondition@EMERGENCY_REPAIR:
 		Condition: emergency_repair
@@ -1002,9 +1007,13 @@
 		OpeningSequence: open
 		Offset: 0,0,200
 		RequiresCondition: parachute
-	WithIdleOverlay@CAR_BOMB:
-		Sequence: car_bomb
-		Palette: player
+	WithDecoration@CAR_BOMB:
+		RequiresSelection: false
+		Image: car_bomb
+		Sequence: c4
+		ReferencePoint: Center
+		ZOffset: 256
+		ValidStances: Ally
 		RequiresCondition: car_bomb
 	BodyOrientation:
 		UseClassicFacingFudge: True
