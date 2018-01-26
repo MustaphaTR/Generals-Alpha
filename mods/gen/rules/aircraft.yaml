@@ -671,8 +671,9 @@ aircraft.chinook:
 		PipCount: 8
 	Targetable:
 		TargetTypes: Air
-	-Passenger:
 	-Capturable:
+	-Passenger:
+	-RepairableNear:
 	-ProximityExternalCondition@SELF_DESTRUCT:
 	-SpawnActorOnDeath@CRATE:
 	-SelfHealing@EMERGENCY_REPAIR:
