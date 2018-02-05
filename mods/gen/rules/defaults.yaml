@@ -991,13 +991,14 @@
 	Explodes:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
-		RequiresCondition: !car_bomb
 	Explodes@CAR_BOMB:
 		Weapon: explosion.terrorist
 		EmptyWeapon: explosion.terrorist
+		DeathTypes: Suicide
 		RequiresCondition: car_bomb
 	AttackSuicides:
 		RequiresCondition: car_bomb
+		DamageTypes: Suicide
 	WithFacingSpriteBody:
 	WithParachute:
 		ShadowImage: parach-shadow
