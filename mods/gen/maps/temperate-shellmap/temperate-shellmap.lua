@@ -19,7 +19,7 @@ ProducedUnitTypes =
 	{ factory = USAAirfield2, types = { "aircraft.comanche" } },
 	{ factory = USAShipyard, types = { "vessel.gunboat", "vessel.destroyer" } },
 	{ factory = GLAShipyard, types = { "vessel.gunboat", "vessel.gunboat", "vessel.destroyer" } },
-	{ factory = PRCShipyard, types = { "vessel.gunboat", "vessel.destroyer" } },
+	{ factory = PRCShipyard, types = { "vessel.gunboat", "vessel.destroyer" } }
 }
 
 StrategyTypes =
@@ -35,33 +35,47 @@ MiG2Waypoints = { MiG21, MiG22, MiG23 }
 ParadropWaypoints = { Paradrop1, Paradrop2, Paradrop3 }
 
 BindActorTriggers = function(a)
-	if a.HasProperty("Hunt") then
-		if a.Owner == gla then
-			Trigger.OnIdle(a, function(a)
-				if a.IsInWorld then
-					a.AttackMove(USASupplyDrop2.Location)
-				end
-			end)
-		else
-			Trigger.OnIdle(a, function(a)
-				if a.IsInWorld then
-					a.AttackMove(GLACommand.Location)
-				end
-			end)
-		end
+	if a.HasProperty("DetonateAttack") then
+		Trigger.OnIdle(a, function(a)
+			if a.IsInWorld then
+				a.DetonateAttack(USASupplyDrop2)
+			end
+		end)
+
+		Trigger.OnDamaged(a, function()
+			if a.Health <= 15 then
+				a.Detonate()
+			end
+		end)
 	else
-		if a.Owner == gla then
-			Trigger.OnIdle(a, function(a)
-				if a.IsInWorld then
-					a.Move(USASupplyDrop2.Location)
-				end
-			end)
+		if a.HasProperty("Hunt") then
+			if a.Owner == gla then
+				Trigger.OnIdle(a, function(a)
+					if a.IsInWorld then
+						a.AttackMove(USASupplyDrop2.Location)
+					end
+				end)
+			else
+				Trigger.OnIdle(a, function(a)
+					if a.IsInWorld then
+						a.AttackMove(GLACommand.Location)
+					end
+				end)
+			end
 		else
-			Trigger.OnIdle(a, function(a)
-				if a.IsInWorld then
-					a.Move(GLACommand.Location)
-				end
-			end)
+			if a.Owner == gla then
+				Trigger.OnIdle(a, function(a)
+					if a.IsInWorld then
+						a.Move(USASupplyDrop2.Location)
+					end
+				end)
+			else
+				Trigger.OnIdle(a, function(a)
+					if a.IsInWorld then
+						a.Move(GLACommand.Location)
+					end
+				end)
+			end
 		end
 	end
 

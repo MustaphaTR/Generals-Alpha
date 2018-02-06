@@ -19,7 +19,7 @@ ProducedUnitTypes =
 	{ factory = PRCWarFactory, types = { "vehicle.battlemaster_tank", "vehicle.gatling_tank", "vehicle.dragon_tank", "vehicle.inferno_cannon", "vehicle.overlord_tank" } },
 	{ factory = USAAirfield1, types = { "aircraft.comanche" } },
 	{ factory = USAAirfield2, types = { "aircraft.comanche" } },
-	{ factory = USAAirfield3, types = { "aircraft.comanche" } },
+	{ factory = USAAirfield3, types = { "aircraft.comanche" } }
 }
 
 StrategyTypes =
@@ -51,27 +51,41 @@ BombTruckPaths = { BombTruckEntry.Location, BombTruckRally.Location }
 ParadropWaypoints = { Paradrop1, Paradrop2, Paradrop3, Paradrop4 }
 
 BindActorTriggers = function(a)
-	if a.HasProperty("Hunt") then
-		if a.Owner == prc then
-			Trigger.OnIdle(a, function(a)
-				if a.IsInWorld then
-					a.Hunt()
-				end
-			end)
-		else
-			Trigger.OnIdle(a, function(a)
-				if a.IsInWorld then
-					a.AttackMove(NukeSilo.Location)
-				end
-			end)
-		end
+	if a.HasProperty("DetonateAttack") then
+		Trigger.OnIdle(a, function(a)
+			if a.IsInWorld then
+				a.DetonateAttack(NukeSilo)
+			end
+		end)
+
+		Trigger.OnDamaged(a, function()
+			if a.Health <= 15 then
+				a.Detonate()
+			end
+		end)
 	else
-		if a.Owner ~= prc then
-			Trigger.OnIdle(a, function(a)
-				if a.IsInWorld then
-					a.Move(NukeSilo.Location)
-				end
-			end)
+		if a.HasProperty("Hunt") then
+			if a.Owner == prc then
+				Trigger.OnIdle(a, function(a)
+					if a.IsInWorld then
+						a.Hunt()
+					end
+				end)
+			else
+				Trigger.OnIdle(a, function(a)
+					if a.IsInWorld then
+						a.AttackMove(NukeSilo.Location)
+					end
+				end)
+			end
+		else
+			if a.Owner ~= prc then
+				Trigger.OnIdle(a, function(a)
+					if a.IsInWorld then
+						a.Move(NukeSilo.Location)
+					end
+				end)
+			end
 		end
 	end
 
