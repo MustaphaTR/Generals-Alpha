@@ -113,6 +113,12 @@ hole.scud_storm:
 		Name: GLA Hole (Scud Storm)
 	TransformOnCapture:
 		IntoActor: building.scud_storm
+	ProvidesPrerequisite@LIMIT:
+		Prerequisite: prerequisite.enough_scud
+		RequiresCondition: limited_sw
+	GrantConditionOnPrerequisite@LIMIT:
+		Condition: limited_sw
+		Prerequisites: prerequisite.limited_sw
 	RenderSprites:
 		Scale: 2
 		Image: minv
