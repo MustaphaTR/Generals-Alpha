@@ -206,12 +206,14 @@ hack.nuclear_reactor:
 		AffectsParent: true
 
 hack.firestorm.normal:
+	ValidTargets: Ground, Water, Trees
 	ReloadDelay: 15
 	Range: 2c0
 	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c96
 		Damage: 30
+		ValidTargets: Ground, Water, Trees
 		Versus:
 			infantry.normal: 150
 			vehicle.humvee: 50

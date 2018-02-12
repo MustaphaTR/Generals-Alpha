@@ -48,6 +48,7 @@
 
 missile.mig:
 	Inherits: ^AntiGroundMissile
+	ValidTargets: Ground, Water, Trees
 	ReloadDelay: 8
 	Range: 8c0
 	MinRange: 2c0
@@ -59,6 +60,7 @@ missile.mig:
 		RangeLimit: 14c410
 	Warhead@1Dam: SpreadDamage
 		Damage: 120
+		ValidTargets: Ground, Water, Trees
 		Versus:
 			vehicle.anti-air: 30
 			vehicle.humvee: 30
