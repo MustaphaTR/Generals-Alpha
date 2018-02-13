@@ -123,6 +123,15 @@ vehicle.humvee:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
 		PortCones: 512, 512, 512, 512
+	ThrowsShrapnel@Turret1:
+		Weapons: debris.humvee.turret
+		Pieces: 1, 1
+		Range: 1c0, 1c0
+	ThrowsShrapnel@Turret2:
+		Weapons: debris.rocket_buggy.turret
+		Pieces: 1, 1
+		Range: 1c0, 1c0
+		RequiresCondition: tow_missile
 	Voiced:
 		VoiceSet: HumveeVoice
 
@@ -176,6 +185,23 @@ vehicle.technical:
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp
 	AcceptsDeliveredExperience:
+	ThrowsShrapnel@Mobile:
+		Weapons: debris.technical.body
+		Pieces: 1, 1
+		Range: 2c0, 2c0
+		CondierFacing: true
+		RequiresCondition: moving
+	ThrowsShrapnel@Static:
+		Weapons: debris.technical.body
+		Pieces: 1, 1
+		Range: 1c0, 1c0
+		RequiresCondition: !moving
+	ThrowsShrapnel@Turret:
+		Weapons: debris.technical.turret
+		Pieces: 1, 1
+		Range: 1c0, 1c0
+	GrantConditionOnMovement:
+		Condition: moving
 	ProducibleWithLevel:
 		Prerequisites: generals_power.tech_training
 	Voiced:
@@ -226,6 +252,10 @@ vehicle.radar_van:
 		AllowMultiple: true
 		StartFullyCharged: false
 		OrderName: RadarScanPowerInfoOrder
+	ThrowsShrapnel:
+		Weapons: debris.radar_van
+		Pieces: 1, 1
+		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: RadarVanVoice
 
@@ -317,6 +347,10 @@ vehicle.scorpion_tank:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
 	AcceptsDeliveredExperience:
+	ThrowsShrapnel:
+		Weapons: debris.scorpion_tank
+		Pieces: 1, 1
+		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: ScorpionTankVoice
 	ReloadAmmoPool:
@@ -372,6 +406,10 @@ vehicle.crusader_tank:
 		Prerequisites: upgrade.composite_armor
 	SelectionDecorations:
 	AcceptsDeliveredExperience:
+	ThrowsShrapnel:
+		Weapons: debris.crusader_tank
+		Pieces: 1, 1
+		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: CrusaderTankVoice
 	Selectable:
@@ -421,6 +459,10 @@ vehicle.battlemaster_tank:
 	WithSpriteTurret:
 	SelectionDecorations:
 	AcceptsDeliveredExperience:
+	ThrowsShrapnel:
+		Weapons: debris.battlemaster_tank
+		Pieces: 1, 1
+		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: BattlemasterTankVoice
 	ProducibleWithLevel:
@@ -583,6 +625,10 @@ vehicle.quad_cannon:
 	WithSpriteTurret:
 	WithMuzzleOverlay:
 	AcceptsDeliveredExperience:
+	ThrowsShrapnel:
+		Weapons: debris.quad_cannon
+		Pieces: 1, 1
+		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: QuadCannonVoice
 
@@ -643,6 +689,10 @@ vehicle.gatling_tank:
 	WithSpriteTurret:
 	WithMuzzleOverlay:
 	AcceptsDeliveredExperience:
+	ThrowsShrapnel:
+		Weapons: debris.gatling_tank
+		Pieces: 1, 1
+		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: GatlingTankVoice
 
@@ -694,6 +744,10 @@ vehicle.toxin_tractor:
 	-DamagedByRadioactivity@ANTHRAX_ALPHA:
 	-DamagedByRadioactivity@ANTHRAX_BETA:
 	AcceptsDeliveredExperience:
+	ThrowsShrapnel:
+		Weapons: debris.scorpion_tank
+		Pieces: 1, 1
+		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: ToxinTractorVoice
 
@@ -793,6 +847,24 @@ vehicle.rocket_buggy:
 	AttackFrontal:
 		RequiresCondition: !hacked && !driver_killed && !emp
 	AcceptsDeliveredExperience:
+	ThrowsShrapnel@Mobile:
+		Weapons: debris.rocket_buggy.body
+		Pieces: 1, 1
+		Range: 2c0, 2c0
+		CondierFacing: true
+		RequiresCondition: moving
+	ThrowsShrapnel@Static:
+		Weapons: debris.rocket_buggy.body
+		Pieces: 1, 1
+		Range: 1c0, 1c0
+		RequiresCondition: !moving
+	ThrowsShrapnel@Turret:
+		Weapons: debris.rocket_buggy.turret
+		Pieces: 1, 1
+		Range: 1c0, 1c0
+		RequiresCondition: buggy_ammo
+	GrantConditionOnMovement:
+		Condition: moving
 	Voiced:
 		VoiceSet: RocketBuggyVoice
 
@@ -899,6 +971,10 @@ vehicle.listening_outpost:
 	DetectCloaked:
 		Range: 7c512
 		RequiresCondition: !moving
+	ThrowsShrapnel:
+		Weapons: debris.radar_van
+		Pieces: 1, 1
+		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: ListeningOutpostVoice
 
@@ -947,6 +1023,11 @@ vehicle.tomahawk_launcher:
 	WithReloadingSpriteTurret:
 		AmmoPoolName: primary
 	AcceptsDeliveredExperience:
+	ThrowsShrapnel:
+		Weapons: debris.tomahawk_launcher
+		Pieces: 1, 1
+		Range: 1c0, 1c0
+		RequiresCondition: ammo
 	Voiced:
 		VoiceSet: TomahawkLauncherVoice
 	ReloadAmmoPool:
@@ -1025,6 +1106,11 @@ vehicle.scud_launcher:
 		Delay: 200
 		Count: 1
 	AcceptsDeliveredExperience:
+	ThrowsShrapnel:
+		Weapons: debris.scud_launcher
+		Pieces: 1, 1
+		Range: 1c0, 1c0
+		RequiresCondition: ammo
 	Voiced:
 		VoiceSet: SCUDLauncherVoice
 	Selectable:
@@ -1081,6 +1167,10 @@ vehicle.inferno_cannon:
 	ProducibleWithLevel:
 		Prerequisites: generals_power.arty_training
 	AcceptsDeliveredExperience:
+	ThrowsShrapnel:
+		Weapons: debris.nuke_cannon
+		Pieces: 1, 1
+		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: InfernoCannonVoice
 
@@ -1150,6 +1240,10 @@ vehicle.paladin_tank:
 		DamageCooldown: 150
 	SelectionDecorations:
 	AcceptsDeliveredExperience:
+	ThrowsShrapnel:
+		Weapons: debris.crusader_tank
+		Pieces: 1, 1
+		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: PaladinTankVoice
 	Selectable:
@@ -1218,6 +1312,10 @@ vehicle.marauder_tank:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
 	AcceptsDeliveredExperience:
+	ThrowsShrapnel:
+		Weapons: debris.scorpion_tank
+		Pieces: 1, 1
+		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: MarauderTankVoice
 
@@ -1365,6 +1463,15 @@ vehicle.overlord_tank:
 		Range: 4c0
 		RequiresCondition: overlord_speaker
 	AcceptsDeliveredExperience:
+	ThrowsShrapnel@Turret:
+		Weapons: debris.overlord_tank
+		Pieces: 1, 1
+		Range: 1c0, 1c0
+	ThrowsShrapnel@Gatling:
+		Weapons: debris.gatling_tank
+		Pieces: 1, 1
+		Range: 1c0, 1c0
+		RequiresCondition: overlord_gatling
 	Voiced:
 		VoiceSet: OverlordTankVoice
 	Selectable:
@@ -1514,6 +1621,8 @@ vehicle.nuke_cannon:
 	Turreted:
 		TurnSpeed: 3
 		Offset: 0,0,160
+	Selectable:
+		DecorationBounds: 44,38,0,-4
 	Armament:
 		Weapon: cannon.nuke_cannon
 		LocalOffset: 624,0,208
@@ -1532,10 +1641,12 @@ vehicle.nuke_cannon:
 	ProducibleWithLevel:
 		Prerequisites: generals_power.arty_training
 	AcceptsDeliveredExperience:
+	ThrowsShrapnel:
+		Weapons: debris.nuke_cannon
+		Pieces: 1, 1
+		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: NukeCannonVoice
-	Selectable:
-		DecorationBounds: 44,38,0,-4
 
 ^default.mcc:
 	Inherits: ^Vehicle

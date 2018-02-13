@@ -76,6 +76,10 @@ vessel.gunboat:
 	RenderDetectionCircle:
 	Selectable:
 		DecorationBounds: 36,36
+	ThrowsShrapnel:
+		Weapons: debris.gunboat
+		Pieces: 1, 1
+		Range: 1c0, 1c0
 
 vessel.destroyer:
 	Inherits: ^Ship
@@ -122,6 +126,10 @@ vessel.destroyer:
 	RenderDetectionCircle:
 	Selectable:
 		DecorationBounds: 38,38
+	ThrowsShrapnel:
+		Weapons: debris.destroyer
+		Pieces: 1, 1
+		Range: 1c0, 1c0
 
 vessel.cruiser:
 	Inherits: ^Ship
@@ -180,3 +188,7 @@ vessel.cruiser:
 		Turret: secondary
 	Selectable:
 		DecorationBounds: 44,44
+	ThrowsShrapnel:
+		Weapons: debris.cruiser
+		Pieces: 1, 2
+		Range: 1c0, 1c0

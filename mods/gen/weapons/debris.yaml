@@ -1,0 +1,143 @@
+^default.big_debris:
+	ReloadDelay: 60
+	Range: 2c768
+	Projectile: Bullet
+		Speed: 96
+		Blockable: false
+		LaunchAngle: 192
+		Palette: player
+		IsPlayerPalette: true
+		Shadow: true
+		AirburstAltitude: 768
+	Warhead@1Eff: CreateEffect
+		Explosions: building
+		ValidTargets: Ground, Air
+	Warhead@2Eff: CreateEffect
+		Explosions: big_splash
+		ImpactSounds: splash9.aud
+		ValidTargets: Water, Underwater
+
+^default.small_debris:
+	Inherits: ^default.big_debris
+	Projectile: Bullet
+		AirburstAltitude: 0
+	Warhead@1Eff: CreateEffect
+		Explosions: med_explosion_air
+	Warhead@2Eff: CreateEffect
+		Explosions: small_splash
+
+debris.technical.body:
+	Inherits: ^default.big_debris
+	Projectile: Bullet
+		Image: vehicle.technical
+
+debris.technical.turret:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vehicle.technical
+		Sequences: turret
+
+debris.humvee.turret:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vehicle.humvee
+		Sequences: turret
+
+debris.rocket_buggy.body:
+	Inherits: ^default.big_debris
+	Projectile: Bullet
+		Image: vehicle.rocket_buggy
+
+debris.rocket_buggy.turret:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vehicle.rocket_buggy
+		Sequences: turret2
+
+debris.nuke_cannon:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vehicle.nuke_cannon
+		Sequences: turret
+
+debris.radar_van:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vehicle.radar_van
+		Sequences: spinner
+
+debris.crusader_tank:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vehicle.crusader_tank
+		Sequences: turret
+
+debris.scorpion_tank:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vehicle.scorpion_tank
+		Sequences: turret
+
+debris.battlemaster_tank:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vehicle.battlemaster_tank
+		Sequences: turret
+
+debris.overlord_tank:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vehicle.overlord_tank
+		Sequences: turret
+	Warhead@1Eff: CreateEffect
+		Explosions: building
+	Warhead@2Eff: CreateEffect
+		Explosions: big_splash
+
+debris.gatling_tank:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vehicle.gatling_tank
+		Sequences: turret
+
+debris.quad_cannon:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vehicle.quad_cannon
+		Sequences: turret
+
+debris.tomahawk_launcher:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: MISSILE
+	Warhead@1Eff: CreateEffect
+		Explosions: med_explosion
+	Warhead@2Eff: CreateEffect
+		Explosions: med_splash
+
+debris.scud_launcher:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: V2
+	Warhead@1Eff: CreateEffect
+		Explosions: artillery_explosion
+	Warhead@2Eff: CreateEffect
+		Explosions: big_splash
+
+debris.gunboat:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vessel.gunboat
+		Sequences: turret
+
+debris.destroyer:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vessel.destroyer
+		Sequences: turret
+
+debris.cruiser:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vessel.cruiser
+		Sequences: turret
