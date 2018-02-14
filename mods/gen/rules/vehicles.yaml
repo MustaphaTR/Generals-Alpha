@@ -497,6 +497,8 @@ vehicle.ambulance:
 		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
 	Crushable:
 		CrushClasses: vehicle
+	WithRangeCircle:
+		Range: 4c0
 	ProximityExternalCondition:
 		Condition: ambulanceheal
 		Range: 4c0
@@ -1458,6 +1460,9 @@ vehicle.overlord_tank:
 		RevokeDelay: 40
 		RevokeAll: true
 		IsCyclic: false
+	WithRangeCircle:
+		Range: 4c0
+		RequiresCondition: overlord_speaker
 	ProximityExternalCondition@SPEAKER:
 		Condition: speaker_tower
 		Range: 4c0

@@ -872,6 +872,9 @@ aircraft.helix:
 		RevokeDelay: 40
 		RevokeAll: true
 		IsCyclic: false
+	WithRangeCircle:
+		Range: 4c0
+		RequiresCondition: overlord_speaker
 	ProximityExternalCondition@SPEAKER:
 		Condition: speaker_tower
 		Range: 4c0
