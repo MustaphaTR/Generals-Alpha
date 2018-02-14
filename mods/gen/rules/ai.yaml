@@ -23,7 +23,7 @@ Player:
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
 			Collector: aircraft.chinook, infantry.worker, vehicle.supply_truck
-			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor
+			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sentry_gun, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
 		BuildingLimits:
@@ -91,6 +91,7 @@ Player:
 			upgrade.ap_rockets: 1%
 			upgrade.junk_repair: 1%
 			upgrade.buggy_ammo: 1%
+			upgrade.worker_shoes: 1%
 			upgrade.nuclear_tanks: 1%
 			upgrade.uranium_shells: 1%
 			generals_power.spy_drone: 1%
@@ -166,6 +167,8 @@ Player:
 			vehicle.paladin_tank: 8%
 			vehicle.marauder_tank: 8%
 			vehicle.radar_van: 1%
+			vehicle.sentry_drone: 1%
+			vehicle.listening_outpost: 1%
 			vehicle.usa_mcc: 2%
 			vehicle.gla_mcc: 2%
 			vehicle.prc_mcc: 2%
@@ -175,12 +178,14 @@ Player:
 			aircraft.stealth_fighter: 1%
 			aircraft.aurora: 0.5%
 			aircraft.comanche: 2%
+			aircraft.helix: 2%
 			vessel.gunboat: 1%
 			vessel.destroyer: 1%
 			vessel.cruiser: 0.25%
 			upgrade.capture_building: 100%
 			upgrade.flashbang_grenades: 50%
 			upgrade.tow_missile: 100%
+			upgrade.sentry_gun: 25%
 			upgrade.sc_rocket: 75%
 			upgrade.chain_gun: 50%
 			upgrade.black_napalm: 50%
@@ -198,9 +203,12 @@ Player:
 			aircraft.stealth_fighter: 1
 			aircraft.aurora: 1
 			aircraft.comanche: 2
+			aircraft.helix: 2
 			aircraft.chinook: 8
 			vehicle.supply_truck: 8
 			vehicle.radar_van: 2
+			vehicle.sentry_drone: 2
+			vehicle.listening_outpost: 2
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
@@ -532,6 +540,10 @@ Player:
 			OrderName: IntelligencePowerInfoOrder
 			Consideration@1:
 				Against: Ally
+		SupportPowerDecision@IntelligenceZH:
+			OrderName: IntelligenceZHPowerInfoOrder
+			Consideration@1:
+				Against: Ally
 	HackyAI@NormalAI:
 		Name: Normal AI
 		Type: normal
@@ -556,7 +568,7 @@ Player:
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
 			Collector: aircraft.chinook, infantry.worker, vehicle.supply_truck
-			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor
+			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sentry_gun, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
 		BuildingLimits:
@@ -630,6 +642,7 @@ Player:
 			upgrade.ap_rockets: 1%
 			upgrade.junk_repair: 1%
 			upgrade.buggy_ammo: 1%
+			upgrade.worker_shoes: 1%
 			upgrade.nuclear_tanks: 1%
 			upgrade.uranium_shells: 1%
 			generals_power.spy_drone: 1%
@@ -705,6 +718,8 @@ Player:
 			vehicle.paladin_tank: 12%
 			vehicle.marauder_tank: 12%
 			vehicle.radar_van: 1%
+			vehicle.sentry_drone: 1%
+			vehicle.listening_outpost: 1%
 			vehicle.usa_mcc: 2%
 			vehicle.gla_mcc: 2%
 			vehicle.prc_mcc: 2%
@@ -714,12 +729,14 @@ Player:
 			aircraft.stealth_fighter: 2%
 			aircraft.aurora: 1%
 			aircraft.comanche: 2%
+			aircraft.helix: 2%
 			vessel.gunboat: 0.75%
 			vessel.destroyer: 1%
 			vessel.cruiser: 0.3%
 			upgrade.capture_building: 90%
 			upgrade.flashbang_grenades: 50%
 			upgrade.tow_missile: 100%
+			upgrade.sentry_gun: 25%
 			upgrade.sc_rocket: 75%
 			upgrade.chain_gun: 50%
 			upgrade.black_napalm: 50%
@@ -737,9 +754,12 @@ Player:
 			aircraft.stealth_fighter: 1
 			aircraft.aurora: 1
 			aircraft.comanche: 2
+			aircraft.helix: 2
 			aircraft.chinook: 8
 			vehicle.supply_truck: 8
 			vehicle.radar_van: 2
+			vehicle.sentry_drone: 2
+			vehicle.listening_outpost: 2
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
@@ -1071,6 +1091,10 @@ Player:
 			OrderName: IntelligencePowerInfoOrder
 			Consideration@1:
 				Against: Ally
+		SupportPowerDecision@IntelligenceZH:
+			OrderName: IntelligenceZHPowerInfoOrder
+			Consideration@1:
+				Against: Ally
 	HackyAI@TurtleAI:
 		Name: Turtle AI
 		Type: turtle
@@ -1095,7 +1119,7 @@ Player:
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
 			Collector: aircraft.chinook, infantry.worker, vehicle.supply_truck
-			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor
+			ExcludeFromSquads: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sentry_gun, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.mig_armor
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
 		BuildingLimits:
@@ -1169,6 +1193,7 @@ Player:
 			upgrade.ap_rockets: 1%
 			upgrade.junk_repair: 1%
 			upgrade.buggy_ammo: 1%
+			upgrade.worker_shoes: 1%
 			upgrade.nuclear_tanks: 1%
 			upgrade.uranium_shells: 1%
 			generals_power.spy_drone: 1%
@@ -1244,6 +1269,8 @@ Player:
 			vehicle.paladin_tank: 16%
 			vehicle.marauder_tank: 16%
 			vehicle.radar_van: 1%
+			vehicle.sentry_drone: 1%
+			vehicle.listening_outpost: 1%
 			vehicle.usa_mcc: 2%
 			vehicle.gla_mcc: 2%
 			vehicle.prc_mcc: 2%
@@ -1253,12 +1280,14 @@ Player:
 			aircraft.stealth_fighter: 2%
 			aircraft.aurora: 1%
 			aircraft.comanche: 2%
+			aircraft.helix: 2%
 			vessel.gunboat: 0.5%
 			vessel.destroyer: 1%
 			vessel.cruiser: 0.5%
 			upgrade.capture_building: 100%
 			upgrade.flashbang_grenades: 75%
 			upgrade.tow_missile: 100%
+			upgrade.sentry_gun: 25%
 			upgrade.sc_rocket: 100%
 			upgrade.chain_gun: 75%
 			upgrade.black_napalm: 75%
@@ -1276,9 +1305,12 @@ Player:
 			aircraft.stealth_fighter: 1
 			aircraft.aurora: 1
 			aircraft.comanche: 2
+			aircraft.helix: 2
 			aircraft.chinook: 8
 			vehicle.supply_truck: 8
 			vehicle.radar_van: 2
+			vehicle.sentry_drone: 2
+			vehicle.listening_outpost: 2
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
@@ -1608,5 +1640,9 @@ Player:
 				Against: Ally
 		SupportPowerDecision@Intelligence:
 			OrderName: IntelligencePowerInfoOrder
+			Consideration@1:
+				Against: Ally
+		SupportPowerDecision@IntelligenceZH:
+			OrderName: IntelligenceZHPowerInfoOrder
 			Consideration@1:
 				Against: Ally

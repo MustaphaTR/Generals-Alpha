@@ -12,7 +12,7 @@ fake.command_center:
 		BuildDuration: 750
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
-		Prerequisites: ~techlevel.infonly, ~disabled
+		Prerequisites: ~techlevel.infonly, ~prerequisite.zh_units
 		Description: Looks like a Command Center.
 		Icon: fake-icon
 	Tooltip:
@@ -53,7 +53,7 @@ fake.barracks:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
-		Prerequisites: ~techlevel.infonly, ~disabled
+		Prerequisites: ~techlevel.infonly, ~prerequisite.zh_units
 		Description: Looks like a Barracks.
 		Icon: fake-icon
 	Tooltip:
@@ -89,7 +89,7 @@ fake.supply_stash:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
-		Prerequisites: ~techlevel.infonly, ~disabled
+		Prerequisites: ~techlevel.infonly, ~prerequisite.zh_units
 		Description: Looks like a Supply Stash.
 		Icon: fake-icon
 	Tooltip:
@@ -137,7 +137,7 @@ fake.arms_dealer:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
-		Prerequisites: building.gla_supply_stash, ~techlevel.low, ~disabled
+		Prerequisites: building.gla_supply_stash, ~techlevel.low, ~prerequisite.zh_units
 		Description: Looks like an Arms Dealer.
 		Icon: fake-icon
 	Tooltip:
@@ -173,7 +173,7 @@ fake.palace:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
-		Prerequisites: building.arms_dealer, ~techlevel.medium, ~disabled
+		Prerequisites: building.arms_dealer, ~techlevel.medium, ~prerequisite.zh_units
 		Description: Looks like a Palace.
 		Icon: fake-icon
 	Tooltip:
@@ -215,7 +215,7 @@ fake.black_market:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
-		Prerequisites: building.palace, ~techlevel.medium, ~disabled
+		Prerequisites: building.palace, ~techlevel.medium, ~prerequisite.zh_units
 		Description: Looks like a Black Market.
 		Icon: fake-icon
 	Tooltip:
@@ -253,7 +253,7 @@ hack.fake_scud_spawner:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
-		Prerequisites: building.palace, ~techlevel.unrestricted, ~disabled
+		Prerequisites: building.palace, ~techlevel.unrestricted, ~prerequisite.zh_units
 		Description: Looks like a SCUD Storm.
 		Icon: fake-icon
 	Tooltip:
@@ -390,7 +390,7 @@ fake.demo_trap:
 		BuildDuration: 25
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
-		Prerequisites: ~techlevel.medium, ~disabled
+		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
 		Description: Looks like a Demo Trap.
 		Icon: fake-icon
 	Tooltip:
@@ -427,7 +427,7 @@ fake.tunnel_network:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
-		Prerequisites: building.gla_barracks, ~techlevel.infonly, ~disabled
+		Prerequisites: building.gla_barracks, ~techlevel.infonly, ~prerequisite.zh_units
 		Description: Looks like a Tunnel Network.
 		Icon: fake-icon
 	Tooltip:
@@ -472,7 +472,7 @@ fake.stinger_site:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
-		Prerequisites: building.gla_barracks, ~techlevel.low, ~disabled
+		Prerequisites: building.gla_barracks, ~techlevel.low, ~prerequisite.zh_units
 		Description: Looks like a Stinger Site.
 		Icon: fake-icon
 	Tooltip:

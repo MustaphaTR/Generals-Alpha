@@ -520,7 +520,7 @@ vehicle.sentry_drone:
 		BuildPaletteOrder: 4
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_war_factory, ~techlevel.low, ~disabled
+		Prerequisites: ~building.usa_war_factory, ~techlevel.low, ~prerequisite.zh_units
 		Description: Detection vehicle that is cloaked while not moving.
 	Valued:
 		Cost: 800
@@ -916,10 +916,10 @@ vehicle.listening_outpost:
 	Inherits@REVEAL: ^Reveal250
 	Buildable:
 		Queue: queue.prc_vehicle
-		BuildPaletteOrder: 4
+		BuildPaletteOrder: 7
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: ~building.prc_war_factory, ~techlevel.low, ~disabled
+		Prerequisites: ~building.prc_war_factory, ~techlevel.low, ~prerequisite.zh_units
 		Description: Stealth detector unit.\n\nCan carry 2 infantry that can fire outside.\n\nComes with 2 tank hunters.\n\nPassengers can survive when it dies.
 	Valued:
 		Cost: 800
@@ -992,7 +992,7 @@ vehicle.tomahawk_launcher:
 		Name: Tomahawk Launcher
 	Buildable:
 		Queue: queue.usa_vehicle
-		BuildPaletteOrder: 5
+		BuildPaletteOrder: 6
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~techlevel.medium
@@ -1125,7 +1125,7 @@ vehicle.inferno_cannon:
 	Buildable:
 		Queue: queue.prc_vehicle
 		BuildAtProductionType: WarFactory
-		BuildPaletteOrder: 8
+		BuildPaletteOrder: 9
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~techlevel.medium
@@ -1352,7 +1352,7 @@ vehicle.overlord_tank:
 		Modifier: 50
 	Buildable:
 		Queue: queue.prc_vehicle
-		BuildPaletteOrder: 7
+		BuildPaletteOrder: 8
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~techlevel.high
@@ -1699,6 +1699,7 @@ vehicle.usa_mcc:
 	Production:
 		Produces: queue.usa_building
 		PauseOnCondition: emp
+		RequiresCondition: !driver_killed
 	ProductionBar@USA_BUILDING:
 		ProductionType: queue.usa_building
 	ProductionQueue@USA_BUILDING:
@@ -1726,6 +1727,7 @@ vehicle.gla_mcc:
 	Production:
 		Produces: queue.gla_building
 		PauseOnCondition: emp
+		RequiresCondition: !driver_killed
 	ProductionBar@GLA_BUILDING:
 		ProductionType: queue.gla_building
 	ProductionQueue@GLA_BUILDING:
@@ -1753,6 +1755,7 @@ vehicle.prc_mcc:
 	Production:
 		Produces: queue.prc_building
 		PauseOnCondition: emp
+		RequiresCondition: !driver_killed
 	ProductionBar@PRC_BUILDING:
 		ProductionType: queue.prc_building
 	ProductionQueue@PRC_BUILDING:

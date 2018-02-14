@@ -303,6 +303,42 @@ building.gla_command_center:
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: Ambush3PowerInfoOrder
+	GrantExternalConditionPower@GPS_SCRAMBLER1:
+		PauseOnCondition: emp || hacked || lowpower
+		Prerequisites: ~generals_power.gps_scrambler1, ~!generals_power.gps_scrambler2, ~!generals_power.gps_scrambler3
+		Icon: scrambler1
+		ChargeInterval: 6000
+		Range: 0
+		Description: GPS Scrambler
+		LongDesc: Makes a unit invisible while not firing.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		Condition: gps_scrambler
+		OrderName: GPSScrambler1PowerInfoOrder
+	GrantExternalConditionPower@GPS_SCRAMBLER2:
+		PauseOnCondition: emp || hacked || lowpower
+		Prerequisites: ~generals_power.gps_scrambler2, ~!generals_power.gps_scrambler3
+		Icon: scrambler2
+		ChargeInterval: 6000
+		Range: 1
+		Description: GPS Scrambler
+		LongDesc: Makes 5 units invisible while not firing.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		Condition: gps_scrambler
+		OrderName: GPSScrambler2PowerInfoOrder
+	GrantExternalConditionPower@GPS_SCRAMBLER3:
+		PauseOnCondition: emp || hacked || lowpower
+		Prerequisites: ~generals_power.gps_scrambler3
+		Icon: scrambler3
+		ChargeInterval: 6000
+		Range: 2
+		Description: GPS Scrambler
+		LongDesc: Makes 13 units invisible while not firing.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		Condition: gps_scrambler
+		OrderName: GPSScrambler3PowerInfoOrder
 	AirstrikePower@ANTHRAX_BOMB:
 		PauseOnCondition: emp || hacked || lowpower
 		Prerequisites: ~generals_power.anthrax_bomb
@@ -732,6 +768,15 @@ building.nuclear_reactor:
 		HP: 1500
 	Turreted:
 		TurnSpeed: 255
+	Production:
+		Produces: queue.just_mine
+		PauseOnCondition: emp || hacked
+	ProductionQueue:
+		Type: queue.just_mine
+		Group: Building
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
 	Armament:
 		Weapon: hack.nuclear_reactor
 		RequiresCondition: overcharge
@@ -901,7 +946,7 @@ building.prc_barracks:
 building.mine:
 	Inherits: ^Mine
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.prc_vehicle, queue.prc_aircraft, queue.propaganda_center, queue.missile_silo
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.prc_vehicle, queue.prc_aircraft, queue.propaganda_center, queue.missile_silo, queue.just_mine
 		BuildPaletteOrder: 9
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -1271,6 +1316,8 @@ building.gatling_cannon:
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.reactor, ~techlevel.low
 		Description: Anti-infantry & anti-air base defense.
+	GivesBuildableArea:
+		AreaTypes: mine
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -1283,6 +1330,16 @@ building.gatling_cannon:
 		HP: 1000
 	Armor:
 		Type: building.defense
+	Production:
+		Produces: queue.just_mine
+		PauseOnCondition: emp || hacked
+	ProductionQueue:
+		Type: queue.just_mine
+		Group: Building
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
+	ProvidesPrerequisite@buildingname:
 	WithBuildingBib:
 		HasMinibib: Yes
 	Turreted:
@@ -1355,6 +1412,8 @@ building.bunker:
 		BuildDurationModifier: 100
 		Prerequisites: building.prc_barracks, ~!strategy.overlord_bunker, ~techlevel.infonly
 		Description: Static defense with fireports for 5\ngarrisoned soldiers.
+	GivesBuildableArea:
+		AreaTypes: mine
 	Valued:
 		Cost: 500
 	Health:
@@ -1363,6 +1422,16 @@ building.bunker:
 		Type: building.normal
 	Selectable:
 		Class: building.bunker
+	Production:
+		Produces: queue.just_mine
+		PauseOnCondition: emp || hacked
+	ProductionQueue:
+		Type: queue.just_mine
+		Group: Building
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
+	ProvidesPrerequisite@buildingname:
 	Turreted:
 		TurnSpeed: 255
 	-QuantizeFacingsFromSequence:
@@ -1729,7 +1798,6 @@ building.stinger_site:
 	Exit@1:
 		ExitCell: 1,1
 		Facing: 192
-		MoveIntoWorld: false
 	RallyPoint:
 	DockManager:
 		DockOnActor: true
@@ -1880,7 +1948,7 @@ building.strategy_center:
 	Power:
 		Amount: -2
 	Production:
-		Produces: queue.strategy_center
+		Produces: queue.strategy_center, Intelligence
 		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.strategy_center
@@ -1920,6 +1988,17 @@ building.strategy_center:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.tech_center
+	ProduceActorPower@INTELLIGENCE:
+		PauseOnCondition: emp || hacked
+		Description: Intelligence
+		LongDesc: Makes all enemy units visible for 30 seconds.
+		Prerequisites: prerequisite.zh_units
+		Icon: intelligence
+		Actors: camera.intelligence
+		Type: Intelligence
+		ChargeInterval: 4500
+		OrderName: IntelligenceZHPowerInfoOrder
+	SupportPowerChargeBar:
 	Voiced:
 		VoiceSet: StrategyCenterVoice
 
@@ -2055,7 +2134,7 @@ building.detention_camp:
 		BuildPaletteOrder: 8
 		BuildDuration: 750
 		BuildDurationModifier: 100
-		Prerequisites: building.strategy_center, ~techlevel.high
+		Prerequisites: building.strategy_center, ~techlevel.high, ~!prerequisite.zh_units
 		Description: Provides support power to reveal all enemy units for a while.
 	Valued:
 		Cost: 1000

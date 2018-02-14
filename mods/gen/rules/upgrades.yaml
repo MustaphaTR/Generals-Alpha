@@ -115,14 +115,35 @@ hack.cameo_filler.25:
 	Buildable:
 		Queue: queue.gla_building
 		BuildPaletteOrder: 11
-		Prerequisites: ~disabled
+		Prerequisites: ~prerequisite.zh_units, disabled
 
 hack.cameo_filler.26:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.gla_building
 		BuildPaletteOrder: 12
-		Prerequisites: ~disabled
+		Prerequisites: ~prerequisite.zh_units, disabled
+
+hack.cameo_filler.27:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.propaganda_center, queue.missile_silo
+		BuildPaletteOrder: 10
+		Prerequisites: ~prerequisite.zh_units, disabled
+
+hack.cameo_filler.28:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.just_mine, queue.prc_aircraft, queue.propaganda_center, queue.missile_silo
+		BuildPaletteOrder: 11
+		Prerequisites: ~prerequisite.zh_units, disabled
+
+hack.cameo_filler.29:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.prc_vehicle
+		BuildPaletteOrder: 11
+		Prerequisites: ~prerequisite.zh_units, !generals_power.nuke_cannon, disabled
 
 upgrade.radar:
 	Inherits: ^default.upgrade
@@ -145,11 +166,11 @@ upgrade.neutron_mine:
 	Tooltip:
 		Name: Neutron Mine
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.prc_vehicle, queue.prc_aircraft, queue.propaganda_center, queue.missile_silo
-		BuildPaletteOrder: 10
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.prc_vehicle, queue.prc_aircraft, queue.propaganda_center, queue.missile_silo, queue.just_mine
+		BuildPaletteOrder: 12
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: building.cold_fusion_reactor, ~techlevel.infonly, ~disabled
+		Prerequisites: ~techlevel.infonly, ~prerequisite.zh_units
 		Description: Upgrades a mine to a neutron mine, which kills vehicle drivers.
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
@@ -237,9 +258,9 @@ upgrade.sentry_gun:
 		Name: Sentry Drone Gun
 	Buildable:
 		Queue: queue.usa_vehicle
-		BuildPaletteOrder: 6
+		BuildPaletteOrder: 5
 		BuildDuration: 250
-		Prerequisites: building.usa_war_factory, ~techlevel.low, ~disabled
+		Prerequisites: building.usa_war_factory, ~techlevel.low, ~prerequisite.zh_units
 		Description: Allows Senrty Drones to fire.
 		QueuedAudio: NoAudio
 		ReadyAudio: ConstructionComplete
@@ -559,7 +580,7 @@ upgrade.worker_shoes:
 		Queue: queue.black_market
 		BuildPaletteOrder: 6
 		BuildDuration: 250
-		Prerequisites: building.black_market, ~techlevel.high, ~disabled
+		Prerequisites: building.black_market, ~techlevel.high, ~prerequisite.zh_units
 		Description: Increases worker speed by 10%.
 		QueuedAudio: NoAudio
 		ReadyAudio: WorkerShoes

@@ -359,6 +359,17 @@
 	ExternalCondition@EMERGENCY_REPAIR:
 		Condition: emergency_repair
 
+^AffectedByGPSScambler:
+	Cloak@GPS_SCRAMBLER:
+		InitialDelay: 250
+		CloakDelay: 250
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: gps_scrambler
+	ExternalCondition@GPS_SCRAMBLER:
+		Condition: gps_scrambler
+
 ^AffectedByJunkRepair:
 	SelfHealing@JUNK_REPAIR:
 		Step: 2
@@ -820,6 +831,7 @@
 	Inherits@13: ^AffectedByScrapCratePowerups
 	Inherits@14: ^AffectedByFrenzy
 	Inherits@15: ^AffectedByRadiationAndToxins
+	Inherits@16: ^AffectedByGPSScambler
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -931,6 +943,7 @@
 	Inherits@4: ^AffectedByHacking
 	Inherits@5: ^AffectedByEMP
 	Inherits@6: ^AffectedByEmergencyRepair
+	Inherits@7: ^AffectedByGPSScambler
 	Inherits@CRUSH: ^CrushesCrates
 	Inherits@REVEAL: ^Reveal80
 	Huntable:
@@ -1040,6 +1053,7 @@
 	Inherits@8: ^AffectedByFrenzy
 	Inherits@9: ^CrushesCrates
 	Inherits@10: ^AffectedByRadiationAndToxins
+	Inherits@11: ^AffectedByGPSScambler
 	Huntable:
 	DrawLineToTarget:
 	Health:
@@ -1201,6 +1215,7 @@
 	Inherits@11: ^AffectedByEmergencyRepair
 	Inherits@12: ^AffectedByFrenzy
 	Inherits@13: ^AffectedByRadiationAndToxins
+	Inherits@14: ^AffectedByGPSScambler
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -1924,6 +1939,15 @@
 	GrantConditionOnPrerequisite@CASH_BOUNTY3_CHECK:
 		Condition: gla_generals_power_check
 		Prerequisites: generals_power.cash_bounty3
+	GrantConditionOnPrerequisite@GPS_SCRAMBLER1_CHECK:
+		Condition: gla_generals_power_check
+		Prerequisites: generals_power.gps_scrambler1
+	GrantConditionOnPrerequisite@GPS_SCRAMBLER2_CHECK:
+		Condition: gla_generals_power_check
+		Prerequisites: generals_power.gps_scrambler2
+	GrantConditionOnPrerequisite@GPS_SCRAMBLER3_CHECK:
+		Condition: gla_generals_power_check
+		Prerequisites: generals_power.gps_scrambler3
 	GrantConditionOnPrerequisite@ANTHRAX_BOMB_CHECK:
 		Condition: gla_generals_power_check
 		Prerequisites: generals_power.anthrax_bomb

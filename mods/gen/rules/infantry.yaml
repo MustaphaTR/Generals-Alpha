@@ -95,6 +95,9 @@ infantry.worker:
 		Voice: Capture
 		CaptureCompleteVoice: CaptureComplete
 		RequiresCondition: capture_building
+		CapturingCondition: capturing
+	Cloak@GPS_SCRAMBLER:
+		RequiresCondition: gps_scrambler && !capturing
 	GrantConditionOnPrerequisite@CAPTURE_BUILDING:
 		Condition: capture_building
 		Prerequisites: upgrade.capture_building
@@ -139,8 +142,6 @@ infantry.rebel:
 		Name: Rebel
 	Armament@PRIMARY:
 		Weapon: mg.rebel
-	ExternalCaptures:
-		CapturingCondition: capturing
 	Cloak:
 		InitialDelay: 200
 		CloakDelay: 100
