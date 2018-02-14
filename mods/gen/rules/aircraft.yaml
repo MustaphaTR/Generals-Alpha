@@ -786,6 +786,7 @@ aircraft.comanche:
 aircraft.helix:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal200
 	Buildable:
@@ -795,6 +796,16 @@ aircraft.helix:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_airfield, ~techlevel.medium, ~disabled
 		Description: Helicopter gunship armed with machine gun.\n\nCan carry 5 infantry.
+	FirepowerMultiplier@CHAIN_GUN:
+		Type: gatling
+	ReloadDelayMultiplier@Gatling1:
+		RequiresCondition: gatling >= 1
+		Type: gatling
+		Modifier: 50
+	ReloadDelayMultiplier@Gatling2:
+		RequiresCondition: gatling >= 2
+		Type: gatling
+		Modifier: 50
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -807,8 +818,15 @@ aircraft.helix:
 		Weapon: mg.helix
 		LocalOffset: 1024,0,-125
 		MuzzleSequence: muzzle
+	Armament@Gatling:
+		Weapon: gatling.gatling_tank.ground
+		Name: gatling
+		LocalOffset: 95,-256,-85, 95,256,-85
+		MuzzleSequence: muzzle
+		RequiresCondition: overlord_gatling
 	WithMuzzleOverlay:
 	AttackHeli:
+		Armaments: primary, gatling
 		FacingTolerance: 20
 	RevealsShroud:
 		Type: CenterPosition
@@ -840,6 +858,33 @@ aircraft.helix:
 		Types: Infantry, Vehicle
 		MaxWeight: 5
 		PipCount: 5
+		LoadedCondition: loaded
+	AttackGarrisoned:
+		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 88, 88, 88, 88, 88, 88
+		RequiresCondition: overlord_bunker && loaded
+	GrantStackableConditionOnFire@gatling:
+		Condition: gatling
+		ArmamentName: gatling
+		RequiredShotsPerStack: 10
+		MaximumInstances: 2
+		RevokeDelay: 40
+		RevokeAll: true
+		IsCyclic: false
+	ProximityExternalCondition@SPEAKER:
+		Condition: speaker_tower
+		Range: 4c0
+		RequiresCondition: overlord_speaker
+	GrantConditionOnPrerequisite@OVERLORD_BUNKER:
+		Condition: overlord_bunker
+		Prerequisites: strategy.overlord_bunker
+	GrantConditionOnPrerequisite@OVERLORD_GATLING:
+		Condition: overlord_gatling
+		Prerequisites: strategy.overlord_gatling
+	GrantConditionOnPrerequisite@OVERLORD_SPEAKER:
+		Condition: overlord_speaker
+		Prerequisites: strategy.overlord_speaker
 	-RevealOnDeath:
 	Voiced:
 		VoiceSet: HelixVoice
