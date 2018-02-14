@@ -263,6 +263,19 @@ missile.rpg_trooper.air:
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
 
+missile.hellfire_drone:
+	Inherits: ^AntiGroundMissile
+	ReloadDelay: 25
+	Range: 3c768
+	Projectile: Missile
+		TrailImage: smokey
+	Warhead@1Dam: SpreadDamage
+		Damage: 40
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+
 missile.stinger_site.ground:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 50

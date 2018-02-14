@@ -3,7 +3,7 @@ Player:
 		Name: Rush AI
 		Type: rush
 		MinimumExcessPower: 3
-		BuildingQueues: queue.usa_building, queue.gla_building, queue.prc_building, queue.cold_fusion_reactor, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, General
+		BuildingQueues: queue.usa_building, queue.gla_building, queue.prc_building, queue.cold_fusion_reactor, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.drone, General
 		DefenseQueues: queue.usa_building, queue.gla_building, queue.prc_building
 		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.prc_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel
 		BuildingCommonNames:
@@ -83,6 +83,7 @@ Player:
 			upgrade.control_rods: 1%
 			upgrade.adv_training: 1%
 			upgrade.composite_armor: 1%
+			upgrade.drone_armor: 1%
 			upgrade.toxin_shells: 1%
 			upgrade.anthrax_beta: 1%
 			upgrade.camouflage: 1%
@@ -96,6 +97,9 @@ Player:
 			upgrade.worker_shoes: 1%
 			upgrade.nuclear_tanks: 1%
 			upgrade.uranium_shells: 1%
+			upgrade.scout_drone: 1%
+			upgrade.battle_drone: 5%
+			upgrade.hellfire_drone: 5%
 			generals_power.spy_drone: 1%
 			generals_power.tech_training: 1%
 			generals_power.red_training: 1%
@@ -550,7 +554,7 @@ Player:
 		Name: Normal AI
 		Type: normal
 		MinimumExcessPower: 3
-		BuildingQueues: queue.usa_building, queue.gla_building, queue.prc_building, queue.cold_fusion_reactor, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, General
+		BuildingQueues: queue.usa_building, queue.gla_building, queue.prc_building, queue.cold_fusion_reactor, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.drone, General
 		DefenseQueues: queue.usa_building, queue.gla_building, queue.prc_building
 		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.prc_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel
 		BuildingCommonNames:
@@ -636,6 +640,7 @@ Player:
 			upgrade.control_rods: 1%
 			upgrade.adv_training: 1%
 			upgrade.composite_armor: 1%
+			upgrade.drone_armor: 1%
 			upgrade.toxin_shells: 1%
 			upgrade.anthrax_beta: 1%
 			upgrade.camouflage: 1%
@@ -649,6 +654,9 @@ Player:
 			upgrade.worker_shoes: 1%
 			upgrade.nuclear_tanks: 1%
 			upgrade.uranium_shells: 1%
+			upgrade.scout_drone: 2%
+			upgrade.battle_drone: 5%
+			upgrade.hellfire_drone: 5%
 			generals_power.spy_drone: 1%
 			generals_power.tech_training: 1%
 			generals_power.red_training: 1%
@@ -1103,7 +1111,7 @@ Player:
 		Name: Turtle AI
 		Type: turtle
 		MinimumExcessPower: 3
-		BuildingQueues: queue.usa_building, queue.gla_building, queue.prc_building, queue.cold_fusion_reactor, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, General
+		BuildingQueues: queue.usa_building, queue.gla_building, queue.prc_building, queue.cold_fusion_reactor, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.drone, General
 		DefenseQueues: queue.usa_building, queue.gla_building, queue.prc_building
 		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.prc_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel
 		BuildingCommonNames:
@@ -1189,6 +1197,7 @@ Player:
 			upgrade.control_rods: 1%
 			upgrade.adv_training: 1%
 			upgrade.composite_armor: 1%
+			upgrade.drone_armor: 1%
 			upgrade.toxin_shells: 1%
 			upgrade.anthrax_beta: 1%
 			upgrade.camouflage: 1%
@@ -1202,6 +1211,9 @@ Player:
 			upgrade.worker_shoes: 1%
 			upgrade.nuclear_tanks: 1%
 			upgrade.uranium_shells: 1%
+			upgrade.scout_drone: 3%
+			upgrade.battle_drone: 5%
+			upgrade.hellfire_drone: 5%
 			generals_power.spy_drone: 1%
 			generals_power.tech_training: 1%
 			generals_power.red_training: 1%

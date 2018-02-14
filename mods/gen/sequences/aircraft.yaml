@@ -31,10 +31,28 @@ aircraft.stealth_fighter:
 aircraft.spy_drone:
 	idle: yak
 		Facings: 16
+	icon: sdrnicon
+
+aircraft.scout_drone:
+	idle: yak
+		Facings: 16
+	icon: drscticon
+
+aircraft.battle_drone:
+	idle: hind
+		Facings: 32
+		UseClassicFacingFudge: True
+	rotor: lrotorlg
+		Length: 4
 	muzzle: minigun
 		Length: 6
 		Facings: 8
-	icon: yakicon
+	icon: drbaticon
+
+aircraft.hellfire_drone:
+	idle: mig
+		Facings: 16
+	icon: drhllicon
 
 aircraft.comanche:
 	idle: heli

@@ -390,13 +390,28 @@ upgrade.adv_training:
 	Valued:
 		Cost: 1500
 
+upgrade.drone_armor:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Drone Armor
+	Buildable:
+		Queue: queue.strategy_center
+		BuildPaletteOrder: 5
+		BuildDuration: 1000
+		Prerequisites: building.strategy_center, ~techlevel.medium
+		Description: Increases Drones' armor by 50%.
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
+	Valued:
+		Cost: 500
+
 upgrade.composite_armor:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Composite Armor
 	Buildable:
 		Queue: queue.strategy_center
-		BuildPaletteOrder: 5
+		BuildPaletteOrder: 6
 		BuildDuration: 1500
 		Prerequisites: building.strategy_center, ~techlevel.medium
 		Description: Increases Crusader Tank armor by 40%.\n\nIncreases Paladin Tank armor by 20%.
@@ -616,6 +631,52 @@ upgrade.uranium_shells:
 		ReadyAudio: UraniumShells
 	Valued:
 		Cost: 2500
+
+upgrade.scout_drone:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Scout Drone
+	Buildable:
+		Queue: queue.drone
+		BuildPaletteOrder: 1
+		BuildDuration: 125
+		Description: Gives vehicle a scout drone that can detect steath.
+		BuildLimit: 0
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
+	Valued:
+		Cost: 100
+
+upgrade.battle_drone:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Battle Drone
+	Buildable:
+		Queue: queue.drone
+		BuildPaletteOrder: 2
+		BuildDuration: 125
+		Description: Gives vehicle a battle drone that armed with a machine gun.
+		BuildLimit: 0
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
+	Valued:
+		Cost: 300
+
+upgrade.hellfire_drone:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Hellfire Drone
+	Buildable:
+		Queue: queue.drone
+		BuildPaletteOrder: 3
+		BuildDuration: 125
+		Prerequisites: ~prerequisite.zh_units
+		Description: Gives vehicle a hellfire drone that armed with a rocket launcher.
+		BuildLimit: 0
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
+	Valued:
+		Cost: 500
 
 strategy.bombardment:
 	Inherits: ^default.strategy

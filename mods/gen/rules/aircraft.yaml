@@ -493,6 +493,7 @@ aircraft.aurora:
 
 aircraft.spy_drone:
 	Inherits: ^Plane
+	Inherits@DRONE_ARMOR: ^AffectedByDroneArmor
 	Inherits@REVEAL: ^Reveal250
 	Valued:
 		Cost: 250
@@ -543,6 +544,62 @@ aircraft.spy_drone:
 		Scale: 0.5
 	Interactable:
 		DecorationBounds: 30,28,0,2
+
+aircraft.scout_drone:
+	Inherits: aircraft.spy_drone
+	Inherits@REVEAL: ^Reveal150
+	Tooltip:
+		Name: Scout Drone
+	Health:
+		HP: 20
+	Armor:
+		Type: vehicle.tank
+	DetectCloaked:
+		Range: 3c768
+	Aircraft:
+		CruiseAltitude: 896
+	FlyCircleOnIdle:
+	-Cloak:
+	-GrantConditionOnDamageState@UNCLOAK:
+	MobSpawnerSlave:
+
+aircraft.battle_drone:
+	Inherits: aircraft.scout_drone
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Tooltip:
+		Name: Battle Drone
+	Health:
+		HP: 100
+	-Contrail:
+	-DetectCloaked:
+	-RenderDetectionCircle:
+	Armament@MG:
+		Weapon: mg.battle_drone
+		LocalOffset: 393,0,-42
+		MuzzleSequence: muzzle
+	WithMuzzleOverlay:
+	AttackHeli:
+		Armaments: primary
+		FacingTolerance: 20
+	WithIdleOverlay@ROTOR:
+		Offset: 0,0,85
+		Sequence: rotor
+	MobSpawnerSlave:
+
+aircraft.hellfire_drone:
+	Inherits: aircraft.scout_drone
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Tooltip:
+		Name: Hellfire Drone
+	-DetectCloaked:
+	-RenderDetectionCircle:
+	Armament:
+		Weapon: missile.hellfire_drone
+		LocalOffset: 0,-320,0, 0,320,0
+		LocalYaw: -40, 24
+	AttackPlane:
+		FacingTolerance: 20
+	MobSpawnerSlave:
 
 aircraft.a10:
 	Inherits: ^Plane

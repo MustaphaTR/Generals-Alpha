@@ -45,6 +45,7 @@ vehicle.humvee:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal150
@@ -362,6 +363,7 @@ vehicle.crusader_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal125
@@ -474,6 +476,7 @@ vehicle.battlemaster_tank:
 vehicle.ambulance:
 	Inherits: ^Vehicle
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@DRONE: ^CanHaveDrones
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal100
 	Buildable:
@@ -516,6 +519,7 @@ vehicle.sentry_drone:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CRUSH: ^CrushesCrates
+	Inherits@DRONE_ARMOR: ^AffectedByDroneArmor
 	Inherits@REVEAL: ^Reveal200
 	Buildable:
 		Queue: queue.usa_vehicle
@@ -559,6 +563,8 @@ vehicle.sentry_drone:
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c640
+	AutoTarget:
+		InitialStance: HoldFire
 	Turreted:
 		TurnSpeed: 8
 	Armament:
@@ -984,6 +990,7 @@ vehicle.tomahawk_launcher:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal180
@@ -1180,6 +1187,7 @@ vehicle.paladin_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal150

@@ -437,6 +437,14 @@
 		Condition: ap_rockets
 		Prerequisites: upgrade.ap_rockets
 
+^AffectedByDroneArmor:
+	DamageMultiplier@DRONE_ARMOR:
+		RequiresCondition: drone_armor
+		Modifier: 66
+	GrantConditionOnPrerequisite@DRONE_ARMOR:
+		Condition: drone_armor
+		Prerequisites: upgrade.drone_armor
+
 ^AffectedByBombardment:
 	FirepowerMultiplier@BOMBARDMENT:
 		RequiresCondition: bombardment
@@ -814,6 +822,50 @@
 		OwnerType: InternalName
 		InternalOwner: Neutral
 		DeathType: DropCrate
+
+^CanHaveDrones:
+	MobSpawnerMaster@SCOUT_DRONE:
+		Actors: aircraft.scout_drone
+		SpawnReplaceDelay: 1500
+		ExitByBudding: false
+		AggregateHealth: false
+		SpawnIsGroundUnit: true
+		RequiresCondition: scout_drone
+	MobSpawnerMaster@BATTLE_DRONE:
+		Actors: aircraft.battle_drone
+		SpawnReplaceDelay: 1500
+		ExitByBudding: false
+		AggregateHealth: false
+		SpawnIsGroundUnit: true
+		RequiresCondition: battle_drone
+	MobSpawnerMaster@HELLFIRE_DRONE:
+		Actors: aircraft.hellfire_drone
+		SpawnReplaceDelay: 1500
+		ExitByBudding: false
+		AggregateHealth: false
+		SpawnIsGroundUnit: true
+		RequiresCondition: hellfire_drone
+	Production:
+		Produces: queue.drone
+		PauseOnCondition: emp || hacked
+		RequiresCondition: !scout_drone && !battle_drone && !hellfire_drone
+	ProductionQueue:
+		Type: queue.drone
+		Group: Tech
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
+	Exit:
+	GrantConditionOnProduction@SCOUT_DRONE:
+		Condition: scout_drone
+		Actors: upgrade.scout_drone
+	GrantConditionOnProduction@BATTLE_DRONE:
+		Condition: battle_drone
+		Actors: upgrade.battle_drone
+	GrantConditionOnProduction@HELLFIRE_DRONE:
+		Condition: hellfire_drone
+		Actors: upgrade.hellfire_drone
+	ProvidesPrerequisite@unitname:
 
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
