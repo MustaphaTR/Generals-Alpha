@@ -683,6 +683,7 @@ building.cold_fusion_reactor:
 	Production:
 		Produces: queue.cold_fusion_reactor
 		PauseOnCondition: emp || hacked
+		RequiresCondition: !control_rods
 	ProductionQueue:
 		Type: queue.cold_fusion_reactor
 		Group: Tech
@@ -690,16 +691,15 @@ building.cold_fusion_reactor:
 		LowPowerSlowdown: 3
 		ReadyAudio: ConstructionComplete
 	ProductionBar:
+	Exit:
 	Power:
 		Amount: 5
 		RequiresCondition: !emp && !hacked
-	Pluggable@CONTROL_RODS:
-		Offset: 0,0
-		Conditions:
-			control_rods: control_rods
 	Power@CONTROL_RODS:
 		RequiresCondition: control_rods && !emp && !hacked
 		Amount: 5
+	GrantConditionOnProduction:
+		Condition: control_rods
 	Voiced:
 		VoiceSet: ColdFusionReactorVoice
 
@@ -712,14 +712,7 @@ building.advanced_cold_fusion_reactor:
 		Produces: queue.advanced_cold_fusion_reactor
 	ProductionQueue:
 		Type: queue.advanced_cold_fusion_reactor
-	-Pluggable@CONTROL_RODS:
-	Pluggable@ADVANCED_CONTROL_RODS:
-		Offset: 0,0
-		Conditions:
-			advanced_control_rods: advanced_control_rods
-	-Power@CONTROL_RODS:
-	Power@ADVANCED_CONTROL_RODS:
-		RequiresCondition: advanced_control_rods && !emp && !hacked
+	Power@CONTROL_RODS:
 		Amount: 15
 
 building.nuclear_reactor:

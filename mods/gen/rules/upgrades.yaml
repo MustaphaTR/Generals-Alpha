@@ -163,27 +163,20 @@ upgrade.neutron_mine:
 		RemoveInstead: true
 
 upgrade.control_rods:
-	AlwaysVisible:
-	Interactable:
+	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Control Rods
 	Buildable:
 		Queue: queue.cold_fusion_reactor
 		BuildPaletteOrder: 1
 		BuildDuration: 375
-		BuildDurationModifier: 100
 		Prerequisites: building.cold_fusion_reactor, ~techlevel.infonly
-		Description: Doubles power output of a Cold Fusion Reactor.
-		QueuedAudio: Building
+		Description: Doubles power output of the Cold Fusion Reactor.
+		BuildLimit: 0
+		QueuedAudio: NoAudio
 		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 500
-	Plug:
-		Type: control_rods
-	Building:
-	RenderSprites:
-	KillsSelf:
-		RemoveInstead: true
 
 upgrade.advanced_control_rods:
 	Inherits: upgrade.control_rods
@@ -192,11 +185,6 @@ upgrade.advanced_control_rods:
 	Buildable:
 		Queue: queue.advanced_cold_fusion_reactor
 		Prerequisites: building.cold_fusion_reactor, ~techlevel.infonly, ~disabled
-		Description: Doubles power output of a Cold Fusion Reactor.
-		QueuedAudio: Building
-		ReadyAudio: ConstructionComplete
-	Plug:
-		Type: advanced_control_rods
 
 upgrade.capture_building:
 	Inherits: ^default.upgrade
