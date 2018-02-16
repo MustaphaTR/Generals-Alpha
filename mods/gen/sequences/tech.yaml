@@ -6,12 +6,21 @@ tech.oil_derrick:
 		Start: 1
 		Length: *
 	make: oilb
-	bib: bib3
+	bib: bib3.tem
 		Length: *
-		Offset: 0,0
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
 
 tech.hospital:
 	idle: hosp
@@ -24,10 +33,26 @@ tech.hospital:
 		Tick: 800
 	make: hospmake
 		Length: *
-	bib: mbHOSP
+	bib: mbHOSP.tem
 		Length: *
 		Offset: 0,1
-		UseTilesetExtension: true
+		AddExtension: False
+	bib-Snow: mbHOSP.sno
+		Length: *
+		Offset: 0,1
+		AddExtension: False
+	bib-SnowRoad: mbHOSP.sno
+		Length: *
+		Offset: 0,1
+		AddExtension: False
+	bib-Sand: mbHOSP.des
+		Length: *
+		Offset: 0,1
+		AddExtension: False
+	bib-SandRoad: mbHOSP.des
+		Length: *
+		Offset: 0,1
+		AddExtension: False
 	icon: hospicon
 
 tech.bio_lab:
@@ -49,11 +74,21 @@ tech.communications_center:
 	make: domemake
 		Length: *
 		Offset: 0,-4
-	bib: bib3
+	bib: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
 
 tech.soviet_barracks:
 	idle: fcom
@@ -61,11 +96,21 @@ tech.soviet_barracks:
 		Start: 1
 	make: fcommake
 		Length: *
-	bib: bib3
+	bib: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
 
 tech.flame_tower:
 	idle: ftur
@@ -76,9 +121,21 @@ tech.flame_tower:
 	make: fturmake
 		Length: *
 		Offset: 0,-2
-	bib: mbFTUR
+	bib: mbFTUR.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: False
+	bib-Snow: mbFTUR.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: mbFTUR.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: mbFTUR.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: mbFTUR.des
+		Length: *
+		AddExtension: False
 	icon: fturicon
 
 tech.power_plant:
@@ -90,11 +147,21 @@ tech.power_plant:
 	make: apwrmake
 		Length: *
 		Offset: 0,-10
-	bib: bib2
+	bib: bib2.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib2.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib2.des
+		Length: *
+		AddExtension: False
 
 tech.service_depot:
 	idle: tdfix
@@ -109,11 +176,31 @@ tech.service_depot:
 		Start: 7
 		Length: 7
 		ZOffset: -1c511
-	bib: mbFIX
+	bib: mbFIX.tem
 		Length: *
 		ZOffset: -1c511
 		Offset: 0,-4
-		UseTilesetExtension: true
+		AddExtension: False
+	bib-Snow: mbFIX.sno
+		Length: *
+		ZOffset: -1c511
+		Offset: 0,-4
+		AddExtension: False
+	bib-SnowRoad: mbFIX.sno
+		Length: *
+		ZOffset: -1c511
+		Offset: 0,-4
+		AddExtension: False
+	bib-Sand: mbFIX.des
+		Length: *
+		ZOffset: -1c511
+		Offset: 0,-4
+		AddExtension: False
+	bib-SandRoad: mbFIX.des
+		Length: *
+		ZOffset: -1c511
+		Offset: 0,-4
+		AddExtension: False
 
 tech.shipyard:
 	idle: syrd

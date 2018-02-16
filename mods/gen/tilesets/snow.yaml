@@ -7,6 +7,21 @@ General:
 	HeightDebugColors: 880000
 
 Terrain:
+	TerrainType@Clear:
+		Type: Clear
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Snow:
+		Type: Snow
+		TargetTypes: Ground
+		AcceptsSmudgeType: SnowCrater, SnowScorch
+		Color: C4C4C4
+		RestrictPlayerColor: true
+	TerrainType@SnowRoad:
+		Type: SnowRoad
+		TargetTypes: Ground
+		AcceptsSmudgeType: SnowCrater, SnowScorch
+		Color: 587474
 	TerrainType@Beach:
 		Type: Beach
 		TargetTypes: Ground
@@ -16,33 +31,22 @@ Terrain:
 		TargetTypes: Ground, Bridge
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 606060
-	TerrainType@Clear:
-		Type: Clear
-		TargetTypes: Ground
-		AcceptsSmudgeType: Crater, Scorch
-		Color: C4C4C4
-		RestrictPlayerColor: true
 	TerrainType@Gems:
 		Type: Gems
 		TargetTypes: Ground
-		AcceptsSmudgeType: Crater, Scorch
+		AcceptsSmudgeType: SnowCrater, SnowScorch
 		Color: 8470FF
 		RestrictPlayerColor: true
 	TerrainType@Ore:
 		Type: Ore
 		TargetTypes: Ground
-		AcceptsSmudgeType: Crater, Scorch
+		AcceptsSmudgeType: SnowCrater, SnowScorch
 		Color: 948060
 		RestrictPlayerColor: true
 	TerrainType@River:
 		Type: River
 		TargetTypes: Ground
 		Color: 5C8CB4
-	TerrainType@Road:
-		Type: Road
-		TargetTypes: Ground
-		AcceptsSmudgeType: Crater, Scorch
-		Color: 587474
 	TerrainType@Rock:
 		Type: Rock
 		TargetTypes: Ground
@@ -50,7 +54,7 @@ Terrain:
 	TerrainType@Rough:
 		Type: Rough
 		TargetTypes: Ground
-		AcceptsSmudgeType: Crater, Scorch
+		AcceptsSmudgeType: SnowCrater, SnowScorch
 		Color: 44443C
 	TerrainType@Tree:
 		Type: Tree
@@ -59,7 +63,7 @@ Terrain:
 	TerrainType@Wall:
 		Type: Wall
 		TargetTypes: Ground
-		AcceptsSmudgeType: Crater, Scorch
+		AcceptsSmudgeType: SnowCrater, SnowScorch
 		Color: D0C0A0
 	TerrainType@Water:
 		Type: Water
@@ -76,26 +80,26 @@ Templates:
 		PickAny: True
 		Categories: Terrain
 		Tiles:
-			0: Clear
-			1: Clear
-			2: Clear
-			3: Clear
-			4: Clear
-			5: Clear
-			6: Clear
-			7: Clear
-			8: Clear
-			9: Clear
-			10: Clear
-			11: Clear
-			12: Clear
-			13: Clear
-			14: Clear
-			15: Clear
-			16: Clear
-			17: Clear
-			18: Clear
-			19: Clear
+			0: Snow
+			1: Snow
+			2: Snow
+			3: Snow
+			4: Snow
+			5: Snow
+			6: Snow
+			7: Snow
+			8: Snow
+			9: Snow
+			10: Snow
+			11: Snow
+			12: Snow
+			13: Snow
+			14: Snow
+			15: Snow
+			16: Snow
+			17: Snow
+			18: Snow
+			19: Snow
 	Template@65535:
 		Id: 65535
 		Images: clear1.sno
@@ -103,26 +107,26 @@ Templates:
 		PickAny: True
 		Categories: Terrain
 		Tiles:
-			0: Clear
-			1: Clear
-			2: Clear
-			3: Clear
-			4: Clear
-			5: Clear
-			6: Clear
-			7: Clear
-			8: Clear
-			9: Clear
-			10: Clear
-			11: Clear
-			12: Clear
-			13: Clear
-			14: Clear
-			15: Clear
-			16: Clear
-			17: Clear
-			18: Clear
-			19: Clear
+			0: Snow
+			1: Snow
+			2: Snow
+			3: Snow
+			4: Snow
+			5: Snow
+			6: Snow
+			7: Snow
+			8: Snow
+			9: Snow
+			10: Snow
+			11: Snow
+			12: Snow
+			13: Snow
+			14: Snow
+			15: Snow
+			16: Snow
+			17: Snow
+			18: Snow
+			19: Snow
 	Template@1:
 		Id: 1
 		Images: w1.sno
@@ -147,8 +151,8 @@ Templates:
 		Categories: Beach
 		Tiles:
 			3: Rock
-			5: Clear
-			6: Clear
+			5: Snow
+			6: Snow
 			7: Beach
 			8: Beach
 			9: Water
@@ -163,11 +167,11 @@ Templates:
 		Size: 5,5
 		Categories: Beach
 		Tiles:
-			4: Clear
+			4: Snow
 			8: Beach
 			9: Beach
 			10: Beach
-			11: Clear
+			11: Snow
 			12: Beach
 			13: Beach
 			14: Beach
@@ -184,7 +188,7 @@ Templates:
 		Size: 3,5
 		Categories: Beach
 		Tiles:
-			2: Clear
+			2: Snow
 			4: Beach
 			5: Beach
 			6: Beach
@@ -267,10 +271,10 @@ Templates:
 		Size: 3,3
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Snow
 			1: River
 			2: Rock
-			3: Clear
+			3: Snow
 			4: River
 			5: Beach
 			6: Water
@@ -282,9 +286,9 @@ Templates:
 		Size: 5,6
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Snow
 			5: Beach
-			6: Clear
+			6: Snow
 			10: Water
 			11: Beach
 			12: Beach
@@ -304,7 +308,7 @@ Templates:
 		Categories: Beach
 		Tiles:
 			0: Beach
-			1: Clear
+			1: Snow
 			4: Beach
 			5: Water
 			6: Beach
@@ -323,7 +327,7 @@ Templates:
 		Categories: Beach
 		Tiles:
 			0: Beach
-			1: Clear
+			1: Snow
 			3: Beach
 			4: Beach
 			5: Beach
@@ -348,12 +352,12 @@ Templates:
 			13: Water
 			14: Beach
 			15: Beach
-			16: Clear
+			16: Snow
 			19: Water
 			20: Water
 			21: Rough
 			22: Beach
-			23: Clear
+			23: Snow
 			27: Beach
 			28: Beach
 			29: Beach
@@ -365,7 +369,7 @@ Templates:
 		Tiles:
 			0: Beach
 			1: Beach
-			2: Clear
+			2: Snow
 			4: River
 			5: Beach
 			6: Beach
@@ -384,7 +388,7 @@ Templates:
 			0: Water
 			1: Water
 			2: Beach
-			3: Clear
+			3: Snow
 			6: Water
 			7: Beach
 			8: Beach
@@ -399,13 +403,13 @@ Templates:
 		Tiles:
 			0: Water
 			1: Beach
-			2: Clear
+			2: Snow
 			3: Water
 			4: Beach
-			5: Clear
+			5: Snow
 			6: Water
 			7: Beach
-			8: Clear
+			8: Snow
 	Template@19:
 		Id: 19
 		Images: sh17.sno
@@ -413,7 +417,7 @@ Templates:
 		Categories: Beach
 		Tiles:
 			0: Beach
-			1: Clear
+			1: Snow
 	Template@20:
 		Id: 20
 		Images: sh18.sno
@@ -437,10 +441,10 @@ Templates:
 		Tiles:
 			1: Water
 			2: Beach
-			3: Clear
+			3: Snow
 			5: Beach
 			6: Beach
-			7: Clear
+			7: Snow
 			8: Water
 			9: Beach
 			10: Beach
@@ -449,7 +453,7 @@ Templates:
 			14: Beach
 			16: Water
 			17: Beach
-			18: Clear
+			18: Snow
 	Template@22:
 		Id: 22
 		Images: sh20.sno
@@ -478,11 +482,11 @@ Templates:
 			1: Water
 			2: Beach
 			3: Beach
-			4: Clear
+			4: Snow
 			5: Water
 			6: Beach
 			7: Beach
-			8: Clear
+			8: Snow
 			10: Water
 			11: Beach
 			12: Beach
@@ -501,7 +505,7 @@ Templates:
 			15: Water
 			16: Water
 			17: Water
-			19: Clear
+			19: Snow
 			20: Beach
 			21: Beach
 			22: Water
@@ -523,11 +527,11 @@ Templates:
 			7: Water
 			8: Water
 			9: Water
-			11: Clear
+			11: Snow
 			12: Beach
 			13: River
 			14: Water
-			17: Clear
+			17: Snow
 			18: Beach
 			19: Beach
 			22: Beach
@@ -544,9 +548,9 @@ Templates:
 			3: Beach
 			4: Water
 			5: Water
-			7: Clear
+			7: Snow
 			8: Beach
-			11: Clear
+			11: Snow
 	Template@27:
 		Id: 27
 		Images: sh25.sno
@@ -613,7 +617,7 @@ Templates:
 		Categories: Beach
 		Tiles:
 			0: Beach
-			1: Clear
+			1: Snow
 	Template@32:
 		Id: 32
 		Images: sh30.sno
@@ -623,7 +627,7 @@ Templates:
 			0: Beach
 			1: River
 			2: River
-			3: Clear
+			3: Snow
 			4: River
 			5: Rough
 	Template@33:
@@ -643,17 +647,17 @@ Templates:
 			13: Water
 			14: Water
 			15: Beach
-			16: Clear
+			16: Snow
 			18: Beach
 			19: Beach
 			20: Water
 			21: Beach
-			22: Clear
-			24: Clear
-			25: Clear
+			22: Snow
+			24: Snow
+			25: Snow
 			26: Beach
 			27: Beach
-			28: Clear
+			28: Snow
 	Template@34:
 		Id: 34
 		Images: sh32.sno
@@ -669,8 +673,8 @@ Templates:
 			8: Beach
 			9: Beach
 			10: Beach
-			12: Clear
-			13: Clear
+			12: Snow
+			13: Snow
 	Template@35:
 		Id: 35
 		Images: sh33.sno
@@ -681,7 +685,7 @@ Templates:
 			2: Beach
 			3: Water
 			4: Beach
-			5: Clear
+			5: Snow
 			6: Beach
 			7: Rough
 			9: Beach
@@ -692,7 +696,7 @@ Templates:
 		Size: 6,5
 		Categories: Beach
 		Tiles:
-			3: Clear
+			3: Snow
 			4: Beach
 			5: Water
 			7: Beach
@@ -716,13 +720,13 @@ Templates:
 		Tiles:
 			2: Beach
 			3: Water
-			5: Clear
+			5: Snow
 			6: Beach
 			7: Rough
 			9: Beach
 			10: Beach
 			11: Water
-			12: Clear
+			12: Snow
 			13: Beach
 			14: Water
 	Template@38:
@@ -748,7 +752,7 @@ Templates:
 		Tiles:
 			1: Beach
 			2: Water
-			3: Clear
+			3: Snow
 			4: Beach
 			5: Water
 			6: Rough
@@ -760,7 +764,7 @@ Templates:
 		Size: 2,1
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Snow
 			1: Beach
 	Template@41:
 		Id: 41
@@ -774,7 +778,7 @@ Templates:
 			3: River
 			4: River
 			5: Water
-			6: Clear
+			6: Snow
 			7: Beach
 			8: Water
 	Template@42:
@@ -783,7 +787,7 @@ Templates:
 		Size: 5,5
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Snow
 			1: Beach
 			2: Water
 			6: Beach
@@ -791,7 +795,7 @@ Templates:
 			11: Beach
 			12: Water
 			13: Water
-			16: Clear
+			16: Snow
 			17: Beach
 			18: Beach
 			19: Water
@@ -813,7 +817,7 @@ Templates:
 			9: Beach
 			10: Water
 			11: Water
-			13: Clear
+			13: Snow
 			14: Beach
 			15: Water
 	Template@44:
@@ -828,7 +832,7 @@ Templates:
 			5: Beach
 			6: Beach
 			7: River
-			9: Clear
+			9: Snow
 			10: Beach
 			11: Water
 	Template@45:
@@ -901,7 +905,7 @@ Templates:
 		Tiles:
 			0: Water
 			1: Water
-			2: Clear
+			2: Snow
 			3: Beach
 	Template@51:
 		Id: 51
@@ -934,22 +938,22 @@ Templates:
 		Size: 3,3
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Snow
 			1: Beach
 			2: Beach
 			4: Beach
 			5: Beach
 			7: Rough
-			8: Clear
+			8: Snow
 	Template@54:
 		Id: 54
 		Images: sh52.sno
 		Size: 3,3
 		Categories: Beach
 		Tiles:
-			1: Clear
-			2: Clear
-			3: Clear
+			1: Snow
+			2: Snow
+			3: Snow
 			4: Beach
 			5: Beach
 			7: Beach
@@ -961,13 +965,13 @@ Templates:
 		Categories: Beach
 		Tiles:
 			0: Beach
-			1: Clear
+			1: Snow
 			3: Beach
 			4: Beach
-			5: Clear
+			5: Snow
 			6: Water
 			7: Beach
-			8: Clear
+			8: Snow
 	Template@56:
 		Id: 56
 		Images: sh54.sno
@@ -976,10 +980,10 @@ Templates:
 		Tiles:
 			0: Water
 			1: Beach
-			2: Clear
+			2: Snow
 			3: Beach
 			4: Beach
-			6: Clear
+			6: Snow
 	Template@57:
 		Id: 57
 		Images: sh55.sno
@@ -1516,7 +1520,7 @@ Templates:
 			2: Rough
 			3: Rock
 			4: Rock
-			5: Clear
+			5: Snow
 	Template@72:
 		Id: 72
 		Images: wc14.sno
@@ -1657,7 +1661,7 @@ Templates:
 			0: Rock
 			1: Rock
 			2: Water
-			3: Clear
+			3: Snow
 			4: Rock
 			5: Rock
 	Template@86:
@@ -1774,186 +1778,186 @@ Templates:
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Clear
-			3: Clear
+			1: SnowRoad
+			2: Snow
+			3: Snow
 	Template@174:
 		Id: 174
 		Images: d02.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Clear
-			3: Clear
+			0: Snow
+			1: SnowRoad
+			2: Snow
+			3: Snow
 	Template@175:
 		Id: 175
 		Images: d03.sno
 		Size: 1,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
+			0: Snow
+			1: SnowRoad
 	Template@176:
 		Id: 176
 		Images: d04.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Road
-			3: Clear
+			1: Snow
+			2: SnowRoad
+			3: Snow
 	Template@177:
 		Id: 177
 		Images: d05.sno
 		Size: 3,4
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Clear
-			3: Road
-			4: Road
-			6: Road
-			7: Road
-			9: Road
-			10: Road
+			1: SnowRoad
+			2: Snow
+			3: SnowRoad
+			4: SnowRoad
+			6: SnowRoad
+			7: SnowRoad
+			9: SnowRoad
+			10: SnowRoad
 	Template@178:
 		Id: 178
 		Images: d06.sno
 		Size: 2,3
 		Categories: Road
 		Tiles:
-			0: Road
-			2: Road
-			3: Road
-			4: Road
-			5: Clear
+			0: SnowRoad
+			2: SnowRoad
+			3: SnowRoad
+			4: SnowRoad
+			5: Snow
 	Template@179:
 		Id: 179
 		Images: d07.sno
 		Size: 3,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Clear
-			4: Road
-			5: Clear
+			0: Snow
+			1: SnowRoad
+			2: Snow
+			4: SnowRoad
+			5: Snow
 	Template@180:
 		Id: 180
 		Images: d08.sno
 		Size: 3,2
 		Categories: Road
 		Tiles:
-			1: Road
-			3: Clear
-			4: Road
-			5: Clear
+			1: SnowRoad
+			3: Snow
+			4: SnowRoad
+			5: Snow
 	Template@181:
 		Id: 181
 		Images: d09.sno
 		Size: 4,3
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Clear
-			2: Clear
-			3: Clear
-			4: Road
-			5: Road
-			6: Road
-			7: Road
-			10: Clear
-			11: Clear
+			0: Snow
+			1: Snow
+			2: Snow
+			3: Snow
+			4: SnowRoad
+			5: SnowRoad
+			6: SnowRoad
+			7: SnowRoad
+			10: Snow
+			11: Snow
 	Template@182:
 		Id: 182
 		Images: d10.sno
 		Size: 4,2
 		Categories: Road
 		Tiles:
-			0: Clear
+			0: Snow
 			1: Rock
-			4: Road
-			5: Road
-			6: Road
-			7: Road
+			4: SnowRoad
+			5: SnowRoad
+			6: SnowRoad
+			7: SnowRoad
 	Template@183:
 		Id: 183
 		Images: d11.sno
 		Size: 2,3
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Road
-			3: Road
-			4: Clear
+			1: Snow
+			2: SnowRoad
+			3: SnowRoad
+			4: Snow
 	Template@184:
 		Id: 184
 		Images: d12.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			2: Road
-			3: Road
+			0: Snow
+			2: SnowRoad
+			3: SnowRoad
 	Template@185:
 		Id: 185
 		Images: d13.sno
 		Size: 4,3
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			2: Clear
-			4: Clear
-			5: Road
-			6: Road
+			0: SnowRoad
+			1: SnowRoad
+			2: Snow
+			4: Snow
+			5: SnowRoad
+			6: SnowRoad
 			7: Rock
 			10: Rock
-			11: Road
+			11: SnowRoad
 	Template@186:
 		Id: 186
 		Images: d14.sno
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Road
-			3: Clear
+			1: Snow
+			2: SnowRoad
+			3: Snow
 			4: Rock
-			5: Road
-			6: Road
-			7: Road
-			8: Road
+			5: SnowRoad
+			6: SnowRoad
+			7: SnowRoad
+			8: SnowRoad
 	Template@187:
 		Id: 187
 		Images: d15.sno
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			2: Road
-			3: Road
-			4: Road
-			5: Clear
-			6: Road
-			7: Clear
+			0: SnowRoad
+			1: SnowRoad
+			2: SnowRoad
+			3: SnowRoad
+			4: SnowRoad
+			5: Snow
+			6: SnowRoad
+			7: Snow
 	Template@188:
 		Id: 188
 		Images: d16.sno
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Road
-			3: Road
-			4: Road
-			5: Road
-			6: Road
-			7: Road
+			0: Snow
+			1: SnowRoad
+			2: SnowRoad
+			3: SnowRoad
+			4: SnowRoad
+			5: SnowRoad
+			6: SnowRoad
+			7: SnowRoad
 			8: Rock
 	Template@189:
 		Id: 189
@@ -1961,26 +1965,26 @@ Templates:
 		Size: 3,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			2: Road
-			3: Clear
-			4: Road
-			5: Clear
+			0: SnowRoad
+			1: SnowRoad
+			2: SnowRoad
+			3: Snow
+			4: SnowRoad
+			5: Snow
 	Template@190:
 		Id: 190
 		Images: d18.sno
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Clear
-			3: Road
-			4: Road
-			5: Clear
-			6: Clear
-			7: Road
+			0: Snow
+			1: SnowRoad
+			2: Snow
+			3: SnowRoad
+			4: SnowRoad
+			5: Snow
+			6: Snow
+			7: SnowRoad
 			8: Rock
 	Template@191:
 		Id: 191
@@ -1988,29 +1992,29 @@ Templates:
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Clear
-			3: Road
-			4: Road
-			5: Road
-			6: Clear
-			7: Road
-			8: Clear
+			0: Snow
+			1: SnowRoad
+			2: Snow
+			3: SnowRoad
+			4: SnowRoad
+			5: SnowRoad
+			6: Snow
+			7: SnowRoad
+			8: Snow
 	Template@192:
 		Id: 192
 		Images: d20.sno
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Clear
-			3: Road
-			4: Road
-			5: Clear
-			6: Clear
-			7: Road
-			8: Road
+			0: SnowRoad
+			1: Snow
+			3: SnowRoad
+			4: SnowRoad
+			5: Snow
+			6: Snow
+			7: SnowRoad
+			8: SnowRoad
 	Template@193:
 		Id: 193
 		Images: d21.sno
@@ -2018,10 +2022,10 @@ Templates:
 		Categories: Road
 		Tiles:
 			0: Rock
-			1: Road
-			2: Road
-			3: Clear
-			4: Road
+			1: SnowRoad
+			2: SnowRoad
+			3: Snow
+			4: SnowRoad
 			5: Rough
 	Template@194:
 		Id: 194
@@ -2029,76 +2033,76 @@ Templates:
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			1: Clear
-			3: Road
-			4: Road
-			5: Clear
-			6: Clear
-			7: Road
-			8: Clear
+			1: Snow
+			3: SnowRoad
+			4: SnowRoad
+			5: Snow
+			6: Snow
+			7: SnowRoad
+			8: Snow
 	Template@195:
 		Id: 195
 		Images: d23.sno
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Clear
-			3: Clear
-			4: Road
-			5: Clear
-			6: Road
-			7: Road
+			1: SnowRoad
+			2: Snow
+			3: Snow
+			4: SnowRoad
+			5: Snow
+			6: SnowRoad
+			7: SnowRoad
 	Template@196:
 		Id: 196
 		Images: d24.sno
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			3: Road
-			4: Road
-			5: Road
-			7: Road
-			8: Road
+			0: SnowRoad
+			1: SnowRoad
+			3: SnowRoad
+			4: SnowRoad
+			5: SnowRoad
+			7: SnowRoad
+			8: SnowRoad
 	Template@197:
 		Id: 197
 		Images: d25.sno
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			3: Road
-			4: Road
-			5: Road
-			7: Road
-			8: Road
+			0: SnowRoad
+			1: SnowRoad
+			3: SnowRoad
+			4: SnowRoad
+			5: SnowRoad
+			7: SnowRoad
+			8: SnowRoad
 	Template@198:
 		Id: 198
 		Images: d26.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Road
+			1: SnowRoad
+			2: SnowRoad
 	Template@199:
 		Id: 199
 		Images: d27.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Road
+			1: SnowRoad
+			2: SnowRoad
 	Template@200:
 		Id: 200
 		Images: d28.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
+			0: SnowRoad
+			1: SnowRoad
 			2: Rough
 	Template@201:
 		Id: 201
@@ -2106,114 +2110,114 @@ Templates:
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			2: Road
+			0: SnowRoad
+			1: SnowRoad
+			2: SnowRoad
 	Template@202:
 		Id: 202
 		Images: d30.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			2: Road
+			0: SnowRoad
+			1: SnowRoad
+			2: SnowRoad
 	Template@203:
 		Id: 203
 		Images: d31.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Road
-			3: Road
+			1: SnowRoad
+			2: SnowRoad
+			3: SnowRoad
 	Template@204:
 		Id: 204
 		Images: d32.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Road
-			3: Clear
+			1: Snow
+			2: SnowRoad
+			3: Snow
 	Template@205:
 		Id: 205
 		Images: d33.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Road
-			3: Road
+			1: SnowRoad
+			2: SnowRoad
+			3: SnowRoad
 	Template@206:
 		Id: 206
 		Images: d34.sno
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Road
-			3: Road
-			4: Road
-			5: Road
-			6: Road
-			7: Road
+			1: SnowRoad
+			2: SnowRoad
+			3: SnowRoad
+			4: SnowRoad
+			5: SnowRoad
+			6: SnowRoad
+			7: SnowRoad
 	Template@207:
 		Id: 207
 		Images: d35.sno
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Road
-			3: Road
-			4: Road
-			5: Road
-			6: Road
-			7: Road
+			1: SnowRoad
+			2: SnowRoad
+			3: SnowRoad
+			4: SnowRoad
+			5: SnowRoad
+			6: SnowRoad
+			7: SnowRoad
 	Template@208:
 		Id: 208
 		Images: d36.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			3: Road
+			0: SnowRoad
+			3: SnowRoad
 	Template@209:
 		Id: 209
 		Images: d37.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			3: Road
+			0: SnowRoad
+			3: SnowRoad
 	Template@210:
 		Id: 210
 		Images: d38.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			3: Road
+			0: SnowRoad
+			1: SnowRoad
+			3: SnowRoad
 	Template@211:
 		Id: 211
 		Images: d39.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			3: Road
+			0: SnowRoad
+			1: SnowRoad
+			3: SnowRoad
 	Template@212:
 		Id: 212
 		Images: d40.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			3: Road
+			0: SnowRoad
+			1: SnowRoad
+			3: SnowRoad
 	Template@213:
 		Id: 213
 		Images: d41.sno
@@ -2221,40 +2225,40 @@ Templates:
 		Categories: Road
 		Tiles:
 			0: Rock
-			2: Road
-			3: Road
+			2: SnowRoad
+			3: SnowRoad
 	Template@214:
 		Id: 214
 		Images: d42.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			2: Road
-			3: Road
+			0: SnowRoad
+			2: SnowRoad
+			3: SnowRoad
 	Template@215:
 		Id: 215
 		Images: d43.sno
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			2: Road
-			3: Road
+			0: Snow
+			2: SnowRoad
+			3: SnowRoad
 	Template@227:
 		Id: 227
 		Images: d44.sno
 		Size: 1,1
 		Categories: Road
 		Tiles:
-			0: Road
+			0: SnowRoad
 	Template@228:
 		Id: 228
 		Images: d45.sno
 		Size: 1,1
 		Categories: Road
 		Tiles:
-			0: Road
+			0: SnowRoad
 	Template@231:
 		Id: 231
 		Images: rc01.sno
@@ -2345,13 +2349,13 @@ Templates:
 			4: Rock
 			5: Rock
 			6: Rock
-			7: Clear
+			7: Snow
 			8: Rock
 			9: Rock
 			10: River
 			11: River
-			13: Clear
-			14: Clear
+			13: Snow
+			14: Snow
 			15: Rock
 	Template@115:
 		Id: 115
@@ -2377,7 +2381,7 @@ Templates:
 		Size: 3,3
 		Categories: River
 		Tiles:
-			0: Clear
+			0: Snow
 			1: River
 			2: Rock
 			3: Rock
@@ -2426,8 +2430,8 @@ Templates:
 		Size: 2,2
 		Categories: River
 		Tiles:
-			0: Clear
-			1: Clear
+			0: Snow
+			1: Snow
 			2: River
 			3: River
 	Template@121:
@@ -2456,7 +2460,7 @@ Templates:
 		Size: 3,4
 		Categories: River
 		Tiles:
-			0: Clear
+			0: Snow
 			1: River
 			2: Rock
 			3: Rock
@@ -2474,7 +2478,7 @@ Templates:
 		Size: 4,4
 		Categories: River
 		Tiles:
-			2: Clear
+			2: Snow
 			3: Rough
 			4: River
 			5: River
@@ -2484,7 +2488,7 @@ Templates:
 			9: Rock
 			10: River
 			11: Rock
-			12: Clear
+			12: Snow
 			13: Rock
 			14: River
 			15: Rough
@@ -2670,8 +2674,8 @@ Templates:
 		Categories: Bridge
 		Tiles:
 			0: Rock
-			3: Road
-			4: Clear
+			3: SnowRoad
+			4: Snow
 			9: Rock
 			14: Water
 	Template@381:
@@ -2680,7 +2684,7 @@ Templates:
 		Size: 5,1
 		Categories: Bridge
 		Tiles:
-			0: Road
+			0: SnowRoad
 			4: Beach
 	Template@131:
 		Id: 131
@@ -2736,12 +2740,12 @@ Templates:
 		Size: 5,4
 		Categories: Bridge
 		Tiles:
-			2: Clear
-			3: Road
-			4: Road
+			2: Snow
+			3: SnowRoad
+			4: SnowRoad
 			5: Rock
-			15: Road
-			16: Road
+			15: SnowRoad
+			16: SnowRoad
 			18: Rock
 			19: Rock
 	Template@133:
@@ -2795,19 +2799,19 @@ Templates:
 		Size: 5,5
 		Categories: Bridge
 		Tiles:
-			0: Road
-			1: Road
+			0: SnowRoad
+			1: SnowRoad
 			2: Rough
-			3: Clear
+			3: Snow
 			4: Rough
 			9: River
 			15: Rock
 			16: Rock
 			17: Rough
-			18: Road
-			19: Road
-			23: Road
-			24: Road
+			18: SnowRoad
+			19: SnowRoad
+			23: SnowRoad
+			24: SnowRoad
 	Template@247:
 		Id: 247
 		Images: f01.sno
@@ -2815,8 +2819,8 @@ Templates:
 		Categories: Bridge
 		Tiles:
 			0: Rough
-			1: Road
-			2: Road
+			1: SnowRoad
+			2: SnowRoad
 			3: Beach
 			4: Beach
 			5: Beach
@@ -2850,22 +2854,22 @@ Templates:
 			3: Beach
 			4: Beach
 			5: Beach
-			6: Clear
-			7: Road
-			8: Clear
+			6: Snow
+			7: SnowRoad
+			8: Snow
 	Template@250:
 		Id: 250
 		Images: f04.sno
 		Size: 3,3
 		Categories: Bridge
 		Tiles:
-			0: Clear
+			0: Snow
 			1: Beach
 			2: Beach
-			3: Road
+			3: SnowRoad
 			4: Beach
 			5: Beach
-			6: Clear
+			6: Snow
 			7: Beach
 			8: Beach
 	Template@251:
@@ -2891,13 +2895,13 @@ Templates:
 		Tiles:
 			0: Beach
 			1: Beach
-			2: Clear
+			2: Snow
 			3: Beach
 			4: Beach
-			5: Road
+			5: SnowRoad
 			6: Beach
 			7: Beach
-			8: Clear
+			8: Snow
 	Template@129:
 		Id: 129
 		Images: ford1.sno
@@ -2907,10 +2911,10 @@ Templates:
 			0: Rough
 			1: River
 			2: Rough
-			3: Road
+			3: SnowRoad
 			4: Rough
-			5: Road
-			6: Clear
+			5: SnowRoad
+			6: Snow
 			7: Rough
 			8: Rough
 	Template@130:
@@ -2925,9 +2929,9 @@ Templates:
 			3: Rock
 			4: Rough
 			5: Rough
-			6: Clear
-			7: Road
-			8: Clear
+			6: Snow
+			7: SnowRoad
+			8: Snow
 	Template@125:
 		Id: 125
 		Images: falls1.sno
@@ -3122,25 +3126,25 @@ Templates:
 		Categories: Debris
 		Tiles:
 			0: Rough
-			1: Clear
-			2: Clear
-			3: Clear
-			4: Clear
-			5: Clear
-			6: Clear
-			7: Clear
+			1: Snow
+			2: Snow
+			3: Snow
+			4: Snow
+			5: Snow
+			6: Snow
+			7: Snow
 	Template@108:
 		Id: 108
 		Images: p08.sno
 		Size: 3,2
 		Categories: Debris
 		Tiles:
-			0: Clear
-			1: Clear
-			2: Clear
-			3: Clear
-			4: Clear
-			5: Clear
+			0: Snow
+			1: Snow
+			2: Snow
+			3: Snow
+			4: Snow
+			5: Snow
 	Template@109:
 		Id: 109
 		Images: p13.sno
@@ -3403,8 +3407,8 @@ Templates:
 		Size: 5,3
 		Categories: Bridge
 		Tiles:
-			0: Clear
-			1: Road
+			0: Snow
+			1: SnowRoad
 			4: Rock
 			5: Rock
 			10: Water
@@ -3416,17 +3420,17 @@ Templates:
 		Categories: Bridge
 		Tiles:
 			0: Beach
-			4: Road
+			4: SnowRoad
 	Template@423:
 		Id: 423
 		Images: bridgev1.sno
 		Size: 4,3
 		Categories: Bridge
 		Tiles:
-			0: Clear
-			1: Road
-			2: Road
-			3: Clear
+			0: Snow
+			1: SnowRoad
+			2: SnowRoad
+			3: Snow
 			4: Rock
 			5: Bridge
 			6: Bridge
@@ -3441,10 +3445,10 @@ Templates:
 		Size: 4,3
 		Categories: Bridge
 		Tiles:
-			0: Clear
-			1: Road
-			2: Road
-			3: Clear
+			0: Snow
+			1: SnowRoad
+			2: SnowRoad
+			3: Snow
 			4: Rock
 			5: Rough
 			6: Rough
@@ -3459,10 +3463,10 @@ Templates:
 		Size: 4,3
 		Categories: Bridge
 		Tiles:
-			0: Clear
-			1: Road
-			2: Road
-			3: Clear
+			0: Snow
+			1: SnowRoad
+			2: SnowRoad
+			3: Snow
 			4: Rock
 			5: Rock
 			6: Rock
@@ -3485,10 +3489,10 @@ Templates:
 			5: Bridge
 			6: Bridge
 			7: Rock
-			8: Clear
-			9: Road
-			10: Road
-			11: Clear
+			8: Snow
+			9: SnowRoad
+			10: SnowRoad
+			11: Snow
 	Template@427:
 		Id: 427
 		Images: bridgevd2.sno
@@ -3503,10 +3507,10 @@ Templates:
 			5: Rough
 			6: Rough
 			7: Rock
-			8: Clear
-			9: Road
-			10: Road
-			11: Clear
+			8: Snow
+			9: SnowRoad
+			10: SnowRoad
+			11: Snow
 	Template@428:
 		Id: 428
 		Images: bridgevb2.sno
@@ -3521,10 +3525,10 @@ Templates:
 			5: Rock
 			6: Rock
 			7: Rock
-			8: Clear
-			9: Road
-			10: Road
-			11: Clear
+			8: Snow
+			9: SnowRoad
+			10: SnowRoad
+			11: Snow
 	Template@429:
 		Id: 429
 		Images: bridgev3.sno
@@ -3597,7 +3601,7 @@ Templates:
 			7: Rock
 	Template@434:
 		Id: 434
-		Images: br3f.tem
+		Images: br3f.sno
 		Frames: 0, 1, 0, 0, 0, 5, 6, 7
 		Size: 4,2
 		Categories: Bridge
@@ -3619,10 +3623,10 @@ Templates:
 			0: Beach
 			1: Rock
 			2: Rock
-			3: Road
+			3: SnowRoad
 			4: Bridge
 			5: Bridge
-			6: Road
+			6: SnowRoad
 			7: Bridge
 			8: Bridge
 			9: Beach
@@ -3637,10 +3641,10 @@ Templates:
 			0: Beach
 			1: Rock
 			2: Rock
-			3: Road
+			3: SnowRoad
 			4: Rough
 			5: Rough
-			6: Road
+			6: SnowRoad
 			7: Rough
 			8: Rough
 			9: Beach
@@ -3655,10 +3659,10 @@ Templates:
 			0: Beach
 			1: Rock
 			2: Rock
-			3: Road
+			3: SnowRoad
 			4: Rock
 			5: Rock
-			6: Road
+			6: SnowRoad
 			7: Rock
 			8: Rock
 			9: Beach
@@ -3675,10 +3679,10 @@ Templates:
 			2: Beach
 			3: Bridge
 			4: Bridge
-			5: Road
+			5: SnowRoad
 			6: Bridge
 			7: Bridge
-			8: Road
+			8: SnowRoad
 			9: Rock
 			10: Rock
 			11: Beach
@@ -3693,10 +3697,10 @@ Templates:
 			2: Beach
 			3: Rough
 			4: Rough
-			5: Road
+			5: SnowRoad
 			6: Rough
 			7: Rough
-			8: Road
+			8: SnowRoad
 			9: Rock
 			10: Rock
 			11: Beach
@@ -3711,10 +3715,10 @@ Templates:
 			2: Beach
 			3: Rock
 			4: Rock
-			5: Road
+			5: SnowRoad
 			6: Rock
 			7: Rock
-			8: Road
+			8: SnowRoad
 			9: Rock
 			10: Rock
 			11: Beach

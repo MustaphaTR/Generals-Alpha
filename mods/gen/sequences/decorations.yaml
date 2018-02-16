@@ -1,17 +1,26 @@
 tc04:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	idle:
+		AddExtension: false
+	idle: tc04.tem
+
+tc04.snow:
+	Defaults:
+		AddExtension: false
+	idle: tc04.sno
 
 tc04.husk:
-	Defaults: tc04
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: tc04.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+tc04.snow.husk:
+	Defaults: tc04.sno
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -21,18 +30,27 @@ tc04.husk:
 
 tc05:
 	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-	idle:
+		AddExtension: false
+	idle: tc05.tem
+
+tc05.snow:
+	Defaults:
+		AddExtension: false
+	idle: tc05.sno
 
 tc05.husk:
-	Defaults: tc05
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: tc05.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+tc05.snow.husk:
+	Defaults: tc05.sno
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -41,19 +59,28 @@ tc05.husk:
 		Tick: 80
 
 tc03:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: tc03.tem
+		AddExtension: false
+	idle:
+
+tc03.snow:
+	Defaults: tc03.sno
+		AddExtension: false
 	idle:
 
 tc03.husk:
-	Defaults: tc03
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: tc03.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+tc03.snow.husk:
+	Defaults: tc03.tem
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -62,19 +89,28 @@ tc03.husk:
 		Tick: 80
 
 tc02:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: tc02.tem
+		AddExtension: false
+	idle:
+
+tc02.snow:
+	Defaults: tc02.sno
+		AddExtension: false
 	idle:
 
 tc02.husk:
-	Defaults: tc02
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: tc02.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+tc02.snow.husk:
+	Defaults: tc02.sno
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -83,17 +119,43 @@ tc02.husk:
 		Tick: 80
 
 tc01:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+	Defaults: tc01.tem
+		AddExtension: false
+	idle:
+
+tc01.snow:
+	Defaults: tc01.sno
+		AddExtension: false
+	idle:
+
+tc01.desert:
+	Defaults: tc01.des
+		AddExtension: false
 	idle:
 
 tc01.husk:
-	Defaults: tc01
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+	Defaults: tc01.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+tc01.snow.husk:
+	Defaults: tc01.sno
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+tc01.desert.husk:
+	Defaults: tc01.des
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -102,19 +164,28 @@ tc01.husk:
 		Tick: 80
 
 t17:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t17.tem
+		AddExtension: false
+	idle:
+
+t17.snow:
+	Defaults: t17.sno
+		AddExtension: false
 	idle:
 
 t17.husk:
-	Defaults: t17
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t17.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t17.snow.husk:
+	Defaults: t17.tem
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -123,19 +194,28 @@ t17.husk:
 		Tick: 80
 
 t16:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t16.tem
+		AddExtension: false
+	idle:
+
+t16.snow:
+	Defaults: t16.sno
+		AddExtension: false
 	idle:
 
 t16.husk:
-	Defaults: t16
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t16.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t16.snow.husk:
+	Defaults: t16.sno
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -144,19 +224,28 @@ t16.husk:
 		Tick: 80
 
 t15:
-	Defaults: t15
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t15.tem
+		AddExtension: false
+	idle:
+
+t15.snow:
+	Defaults: t15.sno
+		AddExtension: false
 	idle:
 
 t15.husk:
-	Defaults: t15
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t15.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t15.snow.husk:
+	Defaults: t15.sno
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -165,19 +254,28 @@ t15.husk:
 		Tick: 80
 
 t14:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t14.tem
+		AddExtension: false
+	idle:
+
+t14.snow:
+	Defaults: t14.sno
+		AddExtension: false
 	idle:
 
 t14.husk:
-	Defaults: t14
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t14.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t14.snow.husk:
+	Defaults: t14.sno
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -186,19 +284,28 @@ t14.husk:
 		Tick: 80
 
 t13:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t13.tem
+		AddExtension: false
+	idle:
+
+t13.snow:
+	Defaults: t13.sno
+		AddExtension: false
 	idle:
 
 t13.husk:
-	Defaults: t13
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t13.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t13.snow.husk:
+	Defaults: t13.sno
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -207,19 +314,28 @@ t13.husk:
 		Tick: 80
 
 t12:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t12.tem
+		AddExtension: false
+	idle:
+
+t12.snow:
+	Defaults: t12.sno
+		AddExtension: false
 	idle:
 
 t12.husk:
-	Defaults: t12
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t12.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t12.snow.husk:
+	Defaults: t12.sno
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -228,19 +344,28 @@ t12.husk:
 		Tick: 80
 
 t11:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t11.tem
+		AddExtension: false
+	idle:
+
+t11.snow:
+	Defaults: t11.sno
+		AddExtension: false
 	idle:
 
 t11.husk:
-	Defaults: t11
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t11.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t11.snow.husk:
+	Defaults: t11.sno
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -249,19 +374,28 @@ t11.husk:
 		Tick: 80
 
 t10:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t10.tem
+		AddExtension: false
+	idle:
+
+t10.snow:
+	Defaults: t10.sno
+		AddExtension: false
 	idle:
 
 t10.husk:
-	Defaults: t10
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t10.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t10.snow.husk:
+	Defaults: t10.sno
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -270,17 +404,43 @@ t10.husk:
 		Tick: 80
 
 t08:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+	Defaults: t08.tem
+		AddExtension: false
+	idle:
+
+t08.snow:
+	Defaults: t08.sno
+		AddExtension: false
+	idle:
+
+t08.desert:
+	Defaults: t08.des
+		AddExtension: false
 	idle:
 
 t08.husk:
-	Defaults: t08
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+	Defaults: t08.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t08.snow.husk:
+	Defaults: t08.sno
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t08.desert.husk:
+	Defaults: t08.des
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -289,19 +449,28 @@ t08.husk:
 		Tick: 80
 
 t07:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t07.tem
+		AddExtension: false
+	idle:
+
+t07.snow:
+	Defaults: t07.sno
+		AddExtension: false
 	idle:
 
 t07.husk:
-	Defaults: t07
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t07.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t07.snow.husk:
+	Defaults: t07.sno
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -310,19 +479,28 @@ t07.husk:
 		Tick: 80
 
 t06:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t06.tem
+		AddExtension: false
+	idle:
+
+t06.snow:
+	Defaults: t06.sno
+		AddExtension: false
 	idle:
 
 t06.husk:
-	Defaults: t06
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t06.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t06.snow.husk:
+	Defaults: t06.sno
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -331,19 +509,28 @@ t06.husk:
 		Tick: 80
 
 t05:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t05.tem
+		AddExtension: false
+	idle:
+
+t05.snow:
+	Defaults: t05.sno
+		AddExtension: false
 	idle:
 
 t05.husk:
-	Defaults: t05
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t05.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t05.snow.husk:
+	Defaults: t05.sno
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -352,19 +539,28 @@ t05.husk:
 		Tick: 80
 
 t03:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t03.tem
+		AddExtension: false
+	idle:
+
+t03.snow:
+	Defaults: t03.sno
+		AddExtension: false
 	idle:
 
 t03.husk:
-	Defaults: t03
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t03.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t03.snow.husk:
+	Defaults: t03.sno
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -373,19 +569,28 @@ t03.husk:
 		Tick: 80
 
 t02:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t02.tem
+		AddExtension: false
+	idle:
+
+t02.snow:
+	Defaults: t02.sno
+		AddExtension: false
 	idle:
 
 t02.husk:
-	Defaults: t02
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t02.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t02.snow.husk:
+	Defaults: t02.sno
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -394,19 +599,28 @@ t02.husk:
 		Tick: 80
 
 t01:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t01.tem
+		AddExtension: false
+	idle:
+
+t01.snow:
+	Defaults: t01.sno
+		AddExtension: false
 	idle:
 
 t01.husk:
-	Defaults: t01
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: t01.tem
+		AddExtension: false
+	idle:
+		Start: 1
+	dead:
+		Start: 2
+		Length: 8
+		Tick: 80
+
+t01.snow.husk:
+	Defaults: t01.sno
+		AddExtension: false
 	idle:
 		Start: 1
 	dead:
@@ -540,375 +754,878 @@ flag.british:
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.french:
 	idle: french_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.french.2:
 	idle: french_flag_2
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.german:
 	idle: german_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.greek:
 	idle: greek_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.spanish:
 	idle: spanish_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.turkish:
 	idle: turkish_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.belgian:
 	idle: belgian_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.dutch:
 	idle: dutch_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.luxembourgish:
 	idle: luxembourgish_flag
 		Length: 9
 		Tick: 50
-		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.american:
 	idle: usa_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.italian:
 	idle: italian_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.austrian:
 	idle: austrian_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.hungarian:
 	idle: hungarian_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.bulgarian:
 	idle: bulgarian_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.irish:
 	idle: irish_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.danish:
 	idle: danish_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.finnish:
 	idle: finnish_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.swedish:
 	idle: swedish_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.polish:
 	idle: polish_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.nigerian:
 	idle: nigerian_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.chilean:
 	idle: chilean_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.peruvian:
 	idle: peruvian_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.japanese:
 	idle: japanese_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.indonesian:
 	idle: indonesian_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.chinese:
 	idle: chinese_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.ussr:
 	idle: ussr_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.russian:
 	idle: russian_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.russian_sfsr:
 	idle: russian_sfsr_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.ukrainian_ssr:
 	idle: ukrainian_ssr_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.moldovan_ssr:
 	idle: moldovan_ssr_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.azerbaijani_ssr:
 	idle: azerbaijani_ssr_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.armenian_ssr:
 	idle: armenian_ssr_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.kazakh_ssr:
 	idle: kazakh_ssr_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.uzbek_ssr:
 	idle: uzbek_ssr_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.vietnamese:
 	idle: vietnamese_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.yemeni:
 	idle: yemeni_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.syrian:
 	idle: syrian_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.bangladeshi:
 	idle: bangladeshi_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.libyan_green:
 	idle: libyan_flag_green
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.saudi:
 	idle: saudi_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 
 flag.gla:
 	idle: gla_flag
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false

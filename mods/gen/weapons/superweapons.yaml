@@ -47,6 +47,15 @@ parabomb.fuel_air_bomb:
 		InvalidTargets: Vehicle, Tank, Structure, Wall
 		Delay: 5
 		Size: 4
+	Warhead@5Smu_impactSnow: LeaveSmudge
+		SmudgeType: SnowScorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		Size: 2
+	Warhead@6Smu_impactSnow: LeaveSmudge
+		SmudgeType: SnowScorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		Delay: 5
+		Size: 4
 
 parabomb.anthrax:
 	Inherits: ^ParaBomb
@@ -128,6 +137,10 @@ Atomic:
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
 	Warhead@3Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		Size: 3
+	Warhead@3Smu_impactSnow: LeaveSmudge
+		SmudgeType: SnowScorch
 		InvalidTargets: Vehicle, Tank, Structure, Wall
 		Size: 3
 	Warhead@4Eff_impact: CreateEffect
@@ -231,14 +244,27 @@ IonCannon:
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
 	Warhead@2Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
 	Warhead@3Smu_area: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
 		Size: 1
 		Delay: 3
 	Warhead@5Smu_area2: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
+		Size: 2,1
+		Delay: 6
+	Warhead@2Smu_impactSnow: LeaveSmudge
+		SmudgeType: SnowScorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
+	Warhead@3Smu_areaSnow: LeaveSmudge
+		SmudgeType: SnowScorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
+		Size: 1
+		Delay: 3
+	Warhead@5Smu_areaSnow2: LeaveSmudge
+		SmudgeType: SnowScorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
 		Size: 2,1
 		Delay: 6

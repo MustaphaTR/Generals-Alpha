@@ -890,9 +890,14 @@
 	Mobile:
 		NonBlockerActors: aircraft.chinook
 		TerrainSpeeds:
-			Clear: 80
+			Grass: 80
+			Snow: 80
+			Sand: 80
+			Concrete: 80
 			Rough: 40
-			Road: 100
+			GrassRoad: 100
+			SnowRoad: 100
+			SandRoad: 100
 			Bridge: 100
 			Ore: 70
 			Gems: 70
@@ -970,9 +975,14 @@
 	Inherits: ^Vehicle
 	Mobile:
 		TerrainSpeeds:
-			Clear: 80
+			Grass: 80
+			Snow: 80
+			Sand: 80
+			Concrete: 80
 			Rough: 70
-			Road: 100
+			GrassRoad: 100
+			SnowRoad: 100
+			SandRoad: 100
 			Bridge: 100
 			Ore: 70
 			Gems: 70
@@ -1005,9 +1015,14 @@
 		NonBlockerActors: aircraft.chinook
 		Speed: 90
 		TerrainSpeeds:
-			Clear: 80
+			Grass: 80
+			Snow: 80
+			Sand: 80
+			Concrete: 80
 			Rough: 40
-			Road: 100
+			GrassRoad: 100
+			SnowRoad: 100
+			SandRoad: 100
 			Bridge: 100
 			Ore: 70
 			Gems: 70
@@ -1117,9 +1132,14 @@
 		Speed: 20
 		SharesCell: true
 		TerrainSpeeds:
-			Clear: 90
+			Grass: 90
+			Snow: 90
+			Sand: 80
+			Concrete: 90
 			Rough: 80
-			Road: 100
+			GrassRoad: 100
+			SnowRoad: 100
+			SandRoad: 100
 			Bridge: 100
 			Ore: 80
 			Gems: 80
@@ -1399,7 +1419,7 @@
 	Building:
 		Dimensions: 1,1
 		Footprint: x
-		TerrainTypes: Clear,Road
+		TerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
 		RequiresBaseProvider: True
 	SoundOnDamageTransition:
 		DamagedSounds: kaboom1.aud
@@ -1521,7 +1541,7 @@
 		Dimensions: 1,1
 		Footprint: x
 		BuildSounds: placbldg.aud
-		TerrainTypes: Clear,Road
+		TerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
 	SoundOnDamageTransition:
 		DamagedSounds: sandbag2.aud
 		DestroyedSounds: sandbag2.aud
@@ -1567,7 +1587,7 @@
 		Name: Gate
 	Building:
 		BuildSounds: place2.aud
-		TerrainTypes: Clear, Road
+		TerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
 	EditorTilesetFilter:
 		Categories: Wall
 	RequiresBuildableArea:
@@ -1654,7 +1674,7 @@
 		Name: Tree
 		ShowOwnerRow: false
 	RenderSprites:
-		Palette: terrain
+		Palette: player
 	WithSpriteBody:
 	Building:
 		Footprint: x
@@ -1726,7 +1746,7 @@
 ^Husk:
 	Inherits: ^BasicHusk
 	Husk:
-		AllowedTerrain: Clear, Rough, Road, Ore, Gems, Beach
+		AllowedTerrain: Grass, Snow, Sand, Concrete, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Gems, Beach
 	Targetable:
 		TargetTypes: Ground, Husk, NoAutoTarget
 		RequiresForceFire: true
@@ -1779,7 +1799,7 @@
 		Name: Rock
 		ShowOwnerRow: false
 	RenderSprites:
-		Palette: terrain
+		Palette: desert
 	WithSpriteBody:
 	Building:
 		Footprint: __ x_
@@ -1790,15 +1810,7 @@
 	HiddenUnderShroud:
 	ScriptTriggers:
 	EditorTilesetFilter:
-		RequireTilesets: DESERT
 		Categories: Decoration
-
-^DesertCivBuilding:
-	Inherits: ^CivBuilding
-	RenderSprites:
-		Palette: terrain
-	EditorTilesetFilter:
-		RequireTilesets: DESERT
 
 ^Crate:
 	Inherits@1: ^SpriteActor
@@ -1810,7 +1822,7 @@
 		ShowOwnerRow: false
 	Crate:
 		Lifetime: 180
-		TerrainTypes: Clear, Rough, Road, Ore, Beach
+		TerrainTypes: Grass, Snow, Sand, Concrete, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Beach
 	RenderSprites:
 		Palette: effect
 		Image: scrate
@@ -1850,7 +1862,7 @@
 	Armor:
 		Type: building.normal
 	Building:
-		TerrainTypes: Clear,Road
+		TerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
 		BuildSounds: placbldg.aud
 		Dimensions: 1,1
 		Footprint: x

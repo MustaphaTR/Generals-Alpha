@@ -911,6 +911,8 @@ building.gla_barracks:
 	SpawnActorOnDeath:
 		Actor: hole.barracks
 		SpawnAfterDefeat: false
+	-WithSpriteBody:
+	WithTerrainDependantSpriteBody:
 	Voiced:
 		VoiceSet: GLABarracksVoice
 
@@ -1698,6 +1700,8 @@ building.tunnel_network:
 	SpawnActorOnDeath:
 		Actor: hole.tunnel_network
 		SpawnAfterDefeat: false
+	-WithSpriteBody:
+	WithTerrainDependantSpriteBody:
 	Voiced:
 		VoiceSet: TunnelNetworkVoice
 
@@ -2651,7 +2655,22 @@ building.missile_silo:
 		ValidStances: Enemy
 	Voiced:
 		VoiceSet: MissileSiloVoice
-	WithNukeLaunchAnimation:
+	-WithSpriteBody:
+	WithTerrainDependantSpriteBody:
+	WithNukeLaunchAnimation@GREEN:
+		RequiresCondition: !on_snow && !on_sand
+	WithNukeLaunchAnimation@WHITE:
+		Sequence: active-snow
+		RequiresCondition: on_snow
+	WithNukeLaunchAnimation@YELLOW:
+		Sequence: active-sand
+		RequiresCondition: on_sand
+	GrantConditionOnTerrain@SNOW:
+		Condition: on_snow
+		TerrainTypes: Snow, SnowRoad
+	GrantConditionOnTerrain@SAND:
+		Condition: on_sand
+		TerrainTypes: Sand, SandRoad
 
 SBAG:
 	Inherits: ^Wall

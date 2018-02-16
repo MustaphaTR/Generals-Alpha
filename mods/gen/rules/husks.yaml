@@ -353,7 +353,10 @@ T01.Husk:
 		Footprint: __ x_
 		Dimensions: 2,2
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+T01.SNOW.Husk:
+	Inherits: T01.Husk
 
 T02.Husk:
 	Inherits: ^TreeHusk
@@ -361,7 +364,10 @@ T02.Husk:
 		Footprint: __ x_
 		Dimensions: 2,2
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+T02.SNOW.Husk:
+	Inherits: T02.Husk
 
 T03.Husk:
 	Inherits: ^TreeHusk
@@ -369,15 +375,22 @@ T03.Husk:
 		Footprint: __ x_
 		Dimensions: 2,2
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+T03.SNOW.Husk:
+	Inherits: T03.Husk
 
 T04.Husk:
 	Inherits: ^TreeHusk
+	Tooltip:
+		Name: Cactus (Burnt)
 	Building:
 		Footprint: __ x_
 		Dimensions: 2,2
+	RenderSprites:
+		Palette: desert
 	EditorTilesetFilter:
-		ExcludeTilesets: TEMPERAT, SNOW, INTERIOR
+		ExcludeTilesets: INTERIOR
 
 T05.Husk:
 	Inherits: ^TreeHusk
@@ -385,7 +398,10 @@ T05.Husk:
 		Footprint: __ x_
 		Dimensions: 2,2
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+T05.SNOW.Husk:
+	Inherits: T05.Husk
 
 T06.Husk:
 	Inherits: ^TreeHusk
@@ -393,7 +409,10 @@ T06.Husk:
 		Footprint: __ x_
 		Dimensions: 2,2
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+T06.SNOW.Husk:
+	Inherits: T06.Husk
 
 T07.Husk:
 	Inherits: ^TreeHusk
@@ -401,18 +420,35 @@ T07.Husk:
 		Footprint: __ x_
 		Dimensions: 2,2
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+T07.SNOW.Husk:
+	Inherits: T07.Husk
 
 T08.Husk:
 	Inherits: ^TreeHusk
 	Building:
 		Footprint: x_
 		Dimensions: 2,1
+	EditorTilesetFilter:
+		ExcludeTilesets: INTERIOR
+
+T08.SNOW.Husk:
+	Inherits: T08.Husk
+
+T08.DESERT.Husk:
+	Inherits: T08.Husk
+	RenderSprites:
+		Palette: desert
 
 T09.Husk:
 	Inherits: ^TreeHusk
+	Tooltip:
+		Name: Cactus (Burnt)
+	RenderSprites:
+		Palette: desert
 	EditorTilesetFilter:
-		ExcludeTilesets: TEMPERAT, SNOW, INTERIOR
+		ExcludeTilesets: INTERIOR
 
 T10.Husk:
 	Inherits: ^TreeHusk
@@ -420,7 +456,10 @@ T10.Husk:
 		Footprint: __ xx
 		Dimensions: 2,2
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+T10.SNOW.Husk:
+	Inherits: T10.Husk
 
 T11.Husk:
 	Inherits: ^TreeHusk
@@ -428,7 +467,10 @@ T11.Husk:
 		Footprint: __ xx
 		Dimensions: 2,2
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+T11.SNOW.Husk:
+	Inherits: T11.Husk
 
 T12.Husk:
 	Inherits: ^TreeHusk
@@ -436,7 +478,10 @@ T12.Husk:
 		Footprint: __ x_
 		Dimensions: 2,2
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+T12.SNOW.Husk:
+	Inherits: T12.Husk
 
 T13.Husk:
 	Inherits: ^TreeHusk
@@ -444,7 +489,10 @@ T13.Husk:
 		Footprint: __ x_
 		Dimensions: 2,2
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+T13.SNOW.Husk:
+	Inherits: T13.Husk
 
 T14.Husk:
 	Inherits: ^TreeHusk
@@ -452,7 +500,10 @@ T14.Husk:
 		Footprint: ___ xx_
 		Dimensions: 3,2
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+T14.SNOW.Husk:
+	Inherits: T14.Husk
 
 T15.Husk:
 	Inherits: ^TreeHusk
@@ -460,7 +511,10 @@ T15.Husk:
 		Footprint: ___ xx_
 		Dimensions: 3,2
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+T15.SNOW.Husk:
+	Inherits: T15.Husk
 
 T16.Husk:
 	Inherits: ^TreeHusk
@@ -468,7 +522,10 @@ T16.Husk:
 		Footprint: __ x_
 		Dimensions: 2,2
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+T16.SNOW.Husk:
+	Inherits: T16.Husk
 
 T17.Husk:
 	Inherits: ^TreeHusk
@@ -476,7 +533,10 @@ T17.Husk:
 		Footprint: __ x_
 		Dimensions: 2,2
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+T17.SNOW.Husk:
+	Inherits: T17.Husk
 
 TC01.Husk:
 	Inherits: ^TreeHusk
@@ -486,13 +546,24 @@ TC01.Husk:
 	EditorTilesetFilter:
 		ExcludeTilesets: INTERIOR
 
+TC01.SNOW.Husk:
+	Inherits: TC01.Husk
+
+TC01.DESERT.Husk:
+	Inherits: TC01.Husk
+	RenderSprites:
+		Palette: desert
+
 TC02.Husk:
 	Inherits: ^TreeHusk
 	Building:
 		Footprint: _x_ xx_
 		Dimensions: 3,2
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+TC02.SNOW.Husk:
+	Inherits: TC02.Husk
 
 TC03.Husk:
 	Inherits: ^TreeHusk
@@ -500,7 +571,10 @@ TC03.Husk:
 		Footprint: xx_ xx_
 		Dimensions: 3,2
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+TC03.SNOW.Husk:
+	Inherits: TC03.Husk
 
 TC04.Husk:
 	Inherits: ^TreeHusk
@@ -508,7 +582,10 @@ TC04.Husk:
 		Footprint: ____ xxx_ x___
 		Dimensions: 4,3
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+TC04.SNOW.Husk:
+	Inherits: TC04.Husk
 
 TC05.Husk:
 	Inherits: ^TreeHusk
@@ -516,4 +593,7 @@ TC05.Husk:
 		Footprint: __x_ xxx_ _xx_
 		Dimensions: 4,3
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+TC05.SNOW.Husk:
+	Inherits: TC05.Husk

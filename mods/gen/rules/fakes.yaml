@@ -460,6 +460,8 @@ fake.tunnel_network:
 		Image: building.tunnel_network
 	Valued:
 		Cost: 100
+	-WithSpriteBody:
+	WithTerrainDependantSpriteBody:
 	Voiced:
 		VoiceSet: TunnelNetworkVoice
 

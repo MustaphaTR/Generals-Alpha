@@ -7,6 +7,21 @@ General:
 	HeightDebugColors: 880000
 
 Terrain:
+	TerrainType@Clear:
+		Type: Clear
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Sand:
+		Type: Sand
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 865F45
+		RestrictPlayerColor: true
+	TerrainType@SandRoad:
+		Type: SandRoad
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: A87B53
 	TerrainType@Beach:
 		Type: Beach
 		TargetTypes: Ground
@@ -20,12 +35,6 @@ Terrain:
 		Type: Brush
 		TargetTypes: Ground
 		Color: 1C2024
-	TerrainType@Clear:
-		Type: Clear
-		TargetTypes: Ground
-		AcceptsSmudgeType: Crater, Scorch
-		Color: 865F45
-		RestrictPlayerColor: true
 	TerrainType@Gems:
 		Type: Gems
 		TargetTypes: Ground
@@ -42,11 +51,6 @@ Terrain:
 		Type: River
 		TargetTypes: Ground
 		Color: 6F848B
-	TerrainType@Road:
-		Type: Road
-		TargetTypes: Ground
-		AcceptsSmudgeType: Crater, Scorch
-		Color: A87B53
 	TerrainType@Rock:
 		Type: Rock
 		TargetTypes: Ground
@@ -80,22 +84,22 @@ Templates:
 		PickAny: True
 		Categories: Terrain
 		Tiles:
-			0: Clear
-			1: Clear
-			2: Clear
-			3: Clear
-			4: Clear
-			5: Clear
-			6: Clear
-			7: Clear
-			8: Clear
-			9: Clear
-			10: Clear
-			11: Clear
-			12: Clear
-			13: Clear
-			14: Clear
-			15: Clear
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+			9: Sand
+			10: Sand
+			11: Sand
+			12: Sand
+			13: Sand
+			14: Sand
+			15: Sand
 	Template@65535:
 		Id: 65535
 		Images: clear1.des
@@ -103,22 +107,22 @@ Templates:
 		PickAny: True
 		Categories: Terrain
 		Tiles:
-			0: Clear
-			1: Clear
-			2: Clear
-			3: Clear
-			4: Clear
-			5: Clear
-			6: Clear
-			7: Clear
-			8: Clear
-			9: Clear
-			10: Clear
-			11: Clear
-			12: Clear
-			13: Clear
-			14: Clear
-			15: Clear
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+			9: Sand
+			10: Sand
+			11: Sand
+			12: Sand
+			13: Sand
+			14: Sand
+			15: Sand
 	Template@256:
 		Id: 256
 		Images: w1.des
@@ -702,31 +706,31 @@ Templates:
 		Size: 2,2
 		Categories: Debris
 		Tiles:
-			0: Clear
-			1: Clear
-			2: Clear
-			3: Clear
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
 	Template@40:
 		Id: 40
 		Images: p06.des
 		Size: 6,4
 		Categories: Debris
 		Tiles:
-			0: Clear
-			1: Clear
-			2: Clear
-			3: Clear
-			7: Clear
-			8: Clear
-			9: Clear
-			14: Clear
-			15: Clear
-			16: Clear
-			17: Clear
-			20: Clear
-			21: Clear
-			22: Clear
-			23: Clear
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			7: Sand
+			8: Sand
+			9: Sand
+			14: Sand
+			15: Sand
+			16: Sand
+			17: Sand
+			20: Sand
+			21: Sand
+			22: Sand
+			23: Sand
 	Template@41:
 		Id: 41
 		Images: p07.des
@@ -762,12 +766,12 @@ Templates:
 		Size: 3,2
 		Categories: Debris
 		Tiles:
-			0: Clear
-			1: Clear
-			2: Clear
-			3: Clear
-			4: Clear
-			5: Clear
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
 	Template@73:
 		Id: 73
 		Images: rv26.des
@@ -851,15 +855,15 @@ Templates:
 			0: Rock
 			1: Rock
 			2: Rock
-			3: Clear
+			3: Sand
 			4: River
 			5: River
 			6: Rock
 			7: River
-			8: Clear
+			8: Sand
 			9: Rock
 			10: Rock
-			11: Clear
+			11: Sand
 	Template@62:
 		Id: 62
 		Images: rv16.des
@@ -906,7 +910,7 @@ Templates:
 			15: River
 			16: River
 			17: Rock
-			18: Clear
+			18: Sand
 			19: Rock
 			20: Rock
 			21: Rock
@@ -941,7 +945,7 @@ Templates:
 		Tiles:
 			1: Rock
 			2: River
-			3: Clear
+			3: Sand
 			5: Rock
 			6: River
 			7: Tree
@@ -949,7 +953,7 @@ Templates:
 			9: Rock
 			10: River
 			11: Rock
-			12: Clear
+			12: Sand
 			13: Rock
 			14: River
 			15: Tree
@@ -959,15 +963,15 @@ Templates:
 		Size: 6,8
 		Categories: River
 		Tiles:
-			2: Clear
+			2: Sand
 			3: Rock
 			4: River
-			5: Clear
-			7: Clear
+			5: Sand
+			7: Sand
 			8: Rock
 			9: River
 			10: Rock
-			12: Clear
+			12: Sand
 			13: Rock
 			14: Rock
 			15: River
@@ -976,7 +980,7 @@ Templates:
 			19: Rock
 			20: River
 			21: Rock
-			22: Clear
+			22: Sand
 			24: Rock
 			25: Rock
 			26: River
@@ -986,11 +990,11 @@ Templates:
 			31: Rock
 			32: River
 			33: Rock
-			36: Clear
+			36: Sand
 			37: River
 			38: River
 			39: Rock
-			42: Clear
+			42: Sand
 			43: River
 			44: Rock
 			45: Rock
@@ -1002,9 +1006,9 @@ Templates:
 		Tiles:
 			0: Rock
 			1: Rock
-			2: Clear
-			3: Clear
-			5: Clear
+			2: Sand
+			3: Sand
+			5: Sand
 			6: River
 			7: River
 			8: Rock
@@ -1025,7 +1029,7 @@ Templates:
 			32: Rock
 			33: River
 			34: River
-			38: Clear
+			38: Sand
 			39: River
 	Template@69:
 		Id: 69
@@ -1033,8 +1037,8 @@ Templates:
 		Size: 3,3
 		Categories: River
 		Tiles:
-			1: Clear
-			2: Clear
+			1: Sand
+			2: Sand
 			3: Rock
 			4: Rock
 			5: River
@@ -1069,7 +1073,7 @@ Templates:
 			4: River
 			5: River
 			7: Tree
-			8: Clear
+			8: Sand
 	Template@72:
 		Id: 72
 		Images: rv25.des
@@ -1084,7 +1088,7 @@ Templates:
 			5: Rock
 			6: Rock
 			7: Rock
-			8: Clear
+			8: Sand
 	Template@100:
 		Id: 100
 		Images: dt01.des
@@ -1232,515 +1236,515 @@ Templates:
 		Tiles:
 			0: Rock
 			1: River
-			2: Clear
-			3: Road
+			2: Sand
+			3: SandRoad
 			4: Rough
-			5: Road
+			5: SandRoad
 			6: Rock
 			7: River
-			8: Clear
+			8: Sand
 	Template@91:
 		Id: 91
 		Images: ford2.des
 		Size: 3,3
 		Categories: Bridge
 		Tiles:
-			0: Clear
-			1: Road
-			2: Clear
+			0: Sand
+			1: SandRoad
+			2: Sand
 			3: River
 			4: Rough
 			5: River
 			6: Rock
-			7: Road
-			8: Clear
+			7: SandRoad
+			8: Sand
 	Template@164:
 		Id: 164
 		Images: d44.des
 		Size: 1,1
 		Categories: Road
 		Tiles:
-			0: Road
+			0: SandRoad
 	Template@165:
 		Id: 165
 		Images: d45.des
 		Size: 1,1
 		Categories: Road
 		Tiles:
-			0: Road
+			0: SandRoad
 	Template@120:
 		Id: 120
 		Images: d01.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Clear
-			3: Road
+			1: SandRoad
+			2: Sand
+			3: SandRoad
 	Template@121:
 		Id: 121
 		Images: d02.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Clear
-			3: Clear
+			0: Sand
+			1: SandRoad
+			2: Sand
+			3: Sand
 	Template@122:
 		Id: 122
 		Images: d03.des
 		Size: 1,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
+			0: SandRoad
+			1: SandRoad
 	Template@123:
 		Id: 123
 		Images: d04.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Road
-			3: Road
+			1: Sand
+			2: SandRoad
+			3: SandRoad
 	Template@124:
 		Id: 124
 		Images: d05.des
 		Size: 3,4
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Clear
-			3: Road
-			4: Road
-			6: Road
-			7: Road
-			9: Road
-			10: Road
+			1: SandRoad
+			2: Sand
+			3: SandRoad
+			4: SandRoad
+			6: SandRoad
+			7: SandRoad
+			9: SandRoad
+			10: SandRoad
 	Template@125:
 		Id: 125
 		Images: d06.des
 		Size: 2,3
 		Categories: Road
 		Tiles:
-			0: Road
-			2: Road
-			3: Road
-			4: Road
-			5: Road
+			0: SandRoad
+			2: SandRoad
+			3: SandRoad
+			4: SandRoad
+			5: SandRoad
 	Template@126:
 		Id: 126
 		Images: d07.des
 		Size: 3,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Clear
-			4: Road
-			5: Clear
+			0: Sand
+			1: SandRoad
+			2: Sand
+			4: SandRoad
+			5: Sand
 	Template@127:
 		Id: 127
 		Images: d08.des
 		Size: 3,2
 		Categories: Road
 		Tiles:
-			1: Road
-			3: Clear
-			4: Road
-			5: Clear
+			1: SandRoad
+			3: Sand
+			4: SandRoad
+			5: Sand
 	Template@128:
 		Id: 128
 		Images: d09.des
 		Size: 4,3
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Road
-			3: Road
-			4: Road
-			5: Road
-			6: Road
-			7: Road
-			10: Clear
-			11: Clear
+			0: Sand
+			1: SandRoad
+			2: SandRoad
+			3: SandRoad
+			4: SandRoad
+			5: SandRoad
+			6: SandRoad
+			7: SandRoad
+			10: Sand
+			11: Sand
 	Template@129:
 		Id: 129
 		Images: d10.des
 		Size: 4,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Clear
-			4: Road
-			5: Road
-			6: Road
-			7: Road
+			0: Sand
+			1: Sand
+			4: SandRoad
+			5: SandRoad
+			6: SandRoad
+			7: SandRoad
 	Template@130:
 		Id: 130
 		Images: d11.des
 		Size: 2,3
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Road
-			3: Road
-			4: Clear
+			1: Sand
+			2: SandRoad
+			3: SandRoad
+			4: Sand
 	Template@500:
 		Id: 500
 		Images: d12.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			2: Road
-			3: Road
+			0: Sand
+			2: SandRoad
+			3: SandRoad
 	Template@501:
 		Id: 501
 		Images: d13.des
 		Size: 4,3
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			2: Clear
-			4: Clear
-			5: Road
-			6: Road
-			7: Clear
-			10: Road
-			11: Road
+			0: SandRoad
+			1: SandRoad
+			2: Sand
+			4: Sand
+			5: SandRoad
+			6: SandRoad
+			7: Sand
+			10: SandRoad
+			11: SandRoad
 	Template@502:
 		Id: 502
 		Images: d14.des
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Road
-			3: Clear
-			4: Clear
-			5: Road
-			6: Road
-			7: Road
-			8: Road
+			1: Sand
+			2: SandRoad
+			3: Sand
+			4: Sand
+			5: SandRoad
+			6: SandRoad
+			7: SandRoad
+			8: SandRoad
 	Template@503:
 		Id: 503
 		Images: d15.des
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			2: Road
-			3: Road
-			4: Road
-			5: Clear
-			6: Road
-			7: Clear
+			0: SandRoad
+			1: SandRoad
+			2: SandRoad
+			3: SandRoad
+			4: SandRoad
+			5: Sand
+			6: SandRoad
+			7: Sand
 	Template@135:
 		Id: 135
 		Images: d16.des
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Clear
-			3: Clear
-			4: Road
-			5: Road
-			6: Road
-			7: Clear
-			8: Clear
+			0: Sand
+			1: SandRoad
+			2: Sand
+			3: Sand
+			4: SandRoad
+			5: SandRoad
+			6: SandRoad
+			7: Sand
+			8: Sand
 	Template@136:
 		Id: 136
 		Images: d17.des
 		Size: 3,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			2: Road
-			3: Clear
-			4: Road
-			5: Clear
+			0: SandRoad
+			1: SandRoad
+			2: SandRoad
+			3: Sand
+			4: SandRoad
+			5: Sand
 	Template@137:
 		Id: 137
 		Images: d18.des
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Clear
-			3: Road
-			4: Road
-			5: Clear
-			6: Clear
-			7: Road
-			8: Clear
+			0: Sand
+			1: SandRoad
+			2: Sand
+			3: SandRoad
+			4: SandRoad
+			5: Sand
+			6: Sand
+			7: SandRoad
+			8: Sand
 	Template@138:
 		Id: 138
 		Images: d19.des
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Clear
-			3: Road
-			4: Road
-			5: Road
-			6: Clear
-			7: Road
-			8: Clear
+			0: Sand
+			1: SandRoad
+			2: Sand
+			3: SandRoad
+			4: SandRoad
+			5: SandRoad
+			6: Sand
+			7: SandRoad
+			8: Sand
 	Template@139:
 		Id: 139
 		Images: d20.des
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Clear
-			3: Road
-			4: Road
-			5: Clear
-			6: Clear
-			7: Road
-			8: Road
+			0: SandRoad
+			1: Sand
+			3: SandRoad
+			4: SandRoad
+			5: Sand
+			6: Sand
+			7: SandRoad
+			8: SandRoad
 	Template@140:
 		Id: 140
 		Images: d21.des
 		Size: 3,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Road
-			3: Clear
-			4: Road
-			5: Clear
+			0: Sand
+			1: SandRoad
+			2: SandRoad
+			3: Sand
+			4: SandRoad
+			5: Sand
 	Template@141:
 		Id: 141
 		Images: d22.des
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			1: Clear
-			3: Road
-			4: Road
-			5: Clear
-			6: Clear
-			7: Road
-			8: Clear
+			1: Sand
+			3: SandRoad
+			4: SandRoad
+			5: Sand
+			6: Sand
+			7: SandRoad
+			8: Sand
 	Template@142:
 		Id: 142
 		Images: d23.des
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Clear
-			3: Clear
-			4: Road
-			5: Clear
-			6: Road
-			7: Clear
+			1: SandRoad
+			2: Sand
+			3: Sand
+			4: SandRoad
+			5: Sand
+			6: SandRoad
+			7: Sand
 	Template@143:
 		Id: 143
 		Images: d24.des
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Clear
-			3: Clear
-			4: Road
-			5: Clear
-			7: Clear
-			8: Road
+			0: SandRoad
+			1: Sand
+			3: Sand
+			4: SandRoad
+			5: Sand
+			7: Sand
+			8: SandRoad
 	Template@144:
 		Id: 144
 		Images: d25.des
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Clear
-			3: Clear
-			4: Road
-			5: Clear
-			7: Clear
-			8: Road
+			0: SandRoad
+			1: Sand
+			3: Sand
+			4: SandRoad
+			5: Sand
+			7: Sand
+			8: SandRoad
 	Template@145:
 		Id: 145
 		Images: d26.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Clear
+			1: Sand
+			2: Sand
 	Template@146:
 		Id: 146
 		Images: d27.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Clear
+			1: Sand
+			2: Sand
 	Template@147:
 		Id: 147
 		Images: d28.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Clear
-			2: Clear
+			0: SandRoad
+			1: Sand
+			2: Sand
 	Template@148:
 		Id: 148
 		Images: d29.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Clear
-			2: Clear
+			0: SandRoad
+			1: Sand
+			2: Sand
 	Template@149:
 		Id: 149
 		Images: d30.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Clear
-			2: Road
+			0: SandRoad
+			1: Sand
+			2: SandRoad
 	Template@151:
 		Id: 151
 		Images: d31.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Clear
-			3: Road
+			1: Sand
+			2: Sand
+			3: SandRoad
 	Template@152:
 		Id: 152
 		Images: d32.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Road
-			3: Clear
+			1: Sand
+			2: SandRoad
+			3: Sand
 	Template@153:
 		Id: 153
 		Images: d33.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Road
-			3: Road
+			1: Sand
+			2: SandRoad
+			3: SandRoad
 	Template@154:
 		Id: 154
 		Images: d34.des
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Road
-			3: Clear
-			4: Road
-			5: Clear
-			6: Road
-			7: Clear
+			1: Sand
+			2: SandRoad
+			3: Sand
+			4: SandRoad
+			5: Sand
+			6: SandRoad
+			7: Sand
 	Template@155:
 		Id: 155
 		Images: d35.des
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Road
-			3: Clear
-			4: Road
-			5: Clear
-			6: Road
-			7: Clear
+			1: Sand
+			2: SandRoad
+			3: Sand
+			4: SandRoad
+			5: Sand
+			6: SandRoad
+			7: Sand
 	Template@156:
 		Id: 156
 		Images: d36.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			3: Clear
+			0: Sand
+			3: Sand
 	Template@157:
 		Id: 157
 		Images: d37.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			3: Clear
+			0: Sand
+			3: Sand
 	Template@158:
 		Id: 158
 		Images: d38.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			3: Clear
+			0: Sand
+			1: SandRoad
+			3: Sand
 	Template@159:
 		Id: 159
 		Images: d39.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			3: Clear
+			0: Sand
+			1: SandRoad
+			3: Sand
 	Template@160:
 		Id: 160
 		Images: d40.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			3: Road
+			0: Sand
+			1: SandRoad
+			3: SandRoad
 	Template@161:
 		Id: 161
 		Images: d41.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			2: Road
-			3: Clear
+			0: Sand
+			2: SandRoad
+			3: Sand
 	Template@162:
 		Id: 162
 		Images: d42.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			2: Road
-			3: Clear
+			0: Sand
+			2: SandRoad
+			3: Sand
 	Template@163:
 		Id: 163
 		Images: d43.des
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			2: Road
-			3: Road
+			0: Sand
+			2: SandRoad
+			3: SandRoad
 	Template@300:
 		Id: 300
 		Images: wc01.des
@@ -1877,7 +1881,7 @@ Templates:
 			2: Rough
 			3: Rock
 			4: Rock
-			5: Clear
+			5: Sand
 	Template@313:
 		Id: 313
 		Images: wc14.des
@@ -2015,7 +2019,7 @@ Templates:
 			0: Rock
 			1: Rock
 			2: Water
-			3: Clear
+			3: Sand
 			4: Rock
 			5: Rock
 	Template@327:
@@ -2253,7 +2257,7 @@ Templates:
 		Categories: Beach
 		Tiles:
 			1: Rock
-			2: Clear
+			2: Sand
 			3: Beach
 			4: Rock
 			5: Beach
@@ -2297,8 +2301,8 @@ Templates:
 		Size: 2,2
 		Categories: Beach
 		Tiles:
-			0: Clear
-			1: Clear
+			0: Sand
+			1: Sand
 			2: Beach
 			3: Beach
 	Template@405:
@@ -2312,7 +2316,7 @@ Templates:
 			2: Rock
 			3: River
 			4: River
-			5: Clear
+			5: Sand
 			6: River
 			7: Water
 			8: Beach
@@ -2322,7 +2326,7 @@ Templates:
 		Size: 3,2
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Sand
 			1: Tree
 			2: River
 			3: Beach
@@ -2336,7 +2340,7 @@ Templates:
 		Tiles:
 			0: Rock
 			1: Rock
-			2: Clear
+			2: Sand
 			3: Water
 			4: Rock
 			5: Rock
@@ -2371,8 +2375,8 @@ Templates:
 			0: Beach
 			1: Beach
 			2: Beach
-			3: Clear
-			4: Clear
+			3: Sand
+			4: Sand
 			5: Rock
 	Template@407:
 		Id: 407
@@ -2383,8 +2387,8 @@ Templates:
 			0: Beach
 			1: Beach
 			2: Beach
-			4: Clear
-			5: Clear
+			4: Sand
+			5: Sand
 	Template@408:
 		Id: 408
 		Images: sh27.des
@@ -2416,9 +2420,9 @@ Templates:
 			3: Beach
 			4: Beach
 			5: Beach
-			7: Clear
-			8: Clear
-			9: Clear
+			7: Sand
+			8: Sand
+			9: Sand
 	Template@411:
 		Id: 411
 		Images: sh30.des
@@ -2440,7 +2444,7 @@ Templates:
 			3: Rock
 			4: River
 			5: Rock
-			6: Clear
+			6: Sand
 			7: River
 			8: Rock
 	Template@433:
@@ -2470,35 +2474,35 @@ Templates:
 		Size: 1,1
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Sand
 	Template@414:
 		Id: 414
 		Images: sh37.des
 		Size: 1,1
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Sand
 	Template@415:
 		Id: 415
 		Images: sh38.des
 		Size: 1,1
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Sand
 	Template@416:
 		Id: 416
 		Images: sh39.des
 		Size: 1,1
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Sand
 	Template@417:
 		Id: 417
 		Images: sh40.des
 		Size: 3,3
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Sand
 			1: Beach
 			2: Rock
 			3: Beach
@@ -2518,20 +2522,20 @@ Templates:
 			2: Beach
 			3: Water
 			4: Beach
-			5: Clear
+			5: Sand
 			6: Beach
 			7: Rock
-			8: Clear
+			8: Sand
 	Template@423:
 		Id: 423
 		Images: sh46.des
 		Size: 3,3
 		Categories: Beach
 		Tiles:
-			0: Clear
-			1: Clear
+			0: Sand
+			1: Sand
 			2: Beach
-			3: Clear
+			3: Sand
 			4: Beach
 			5: Water
 			6: Beach
@@ -2546,7 +2550,7 @@ Templates:
 			0: Beach
 			1: Rock
 			3: Beach
-			4: Clear
+			4: Sand
 			6: Water
 			7: Beach
 			8: Beach
@@ -2572,7 +2576,7 @@ Templates:
 			3: Beach
 			4: Rock
 			5: Rock
-			6: Clear
+			6: Sand
 			7: Rock
 			8: Rock
 	Template@427:
@@ -2588,7 +2592,7 @@ Templates:
 			5: Rock
 			6: Rock
 			8: Beach
-			9: Clear
+			9: Sand
 	Template@428:
 		Id: 428
 		Images: sh51.des
@@ -2597,7 +2601,7 @@ Templates:
 		Tiles:
 			0: Beach
 			1: Water
-			4: Clear
+			4: Sand
 			5: Water
 			6: Water
 			8: Rock
@@ -2624,11 +2628,11 @@ Templates:
 		Size: 4,3
 		Categories: Beach
 		Tiles:
-			0: Clear
-			1: Clear
-			2: Clear
+			0: Sand
+			1: Sand
+			2: Sand
 			3: Beach
-			4: Clear
+			4: Sand
 			5: River
 			6: Water
 			7: Water
@@ -2651,7 +2655,7 @@ Templates:
 		Categories: Beach
 		Tiles:
 			0: Beach
-			1: Clear
+			1: Sand
 			2: Beach
 	Template@437:
 		Id: 437
@@ -2662,9 +2666,9 @@ Templates:
 			0: Water
 			1: Beach
 			2: Beach
-			3: Clear
+			3: Sand
 			4: Beach
-			5: Clear
+			5: Sand
 	Template@438:
 		Id: 438
 		Images: sh61.des
@@ -2672,7 +2676,7 @@ Templates:
 		Categories: Beach
 		Tiles:
 			0: Beach
-			1: Clear
+			1: Sand
 			2: Water
 			3: Beach
 			5: Beach
@@ -2695,7 +2699,7 @@ Templates:
 		Categories: Beach
 		Tiles:
 			0: Beach
-			1: Clear
+			1: Sand
 			2: Beach
 	Template@422:
 		Id: 422
@@ -2714,7 +2718,7 @@ Templates:
 			0: Beach
 			2: Beach
 			3: Water
-			4: Clear
+			4: Sand
 			5: Beach
 	Template@436:
 		Id: 436
@@ -2722,7 +2726,7 @@ Templates:
 		Size: 2,3
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Sand
 			1: Beach
 			2: Beach
 			3: River
@@ -2747,8 +2751,8 @@ Templates:
 		Categories: Bridge
 		Tiles:
 			0: Rough
-			1: Road
-			2: Road
+			1: SandRoad
+			2: SandRoad
 			3: Beach
 			4: Beach
 			5: Beach
@@ -2782,22 +2786,22 @@ Templates:
 			3: Beach
 			4: Beach
 			5: Beach
-			6: Clear
-			7: Road
-			8: Clear
+			6: Sand
+			7: SandRoad
+			8: Sand
 	Template@603:
 		Id: 603
 		Images: f04.des
 		Size: 3,3
 		Categories: Bridge
 		Tiles:
-			0: Clear
+			0: Sand
 			1: Beach
 			2: Beach
-			3: Road
+			3: SandRoad
 			4: Beach
 			5: Beach
-			6: Clear
+			6: Sand
 			7: Beach
 			8: Beach
 	Template@604:
@@ -2823,13 +2827,13 @@ Templates:
 		Tiles:
 			0: Beach
 			1: Beach
-			2: Clear
+			2: Sand
 			3: Beach
 			4: Beach
-			5: Road
+			5: SandRoad
 			6: Beach
 			7: Beach
-			8: Clear
+			8: Sand
 	Template@620:
 		Id: 620
 		Images: bridge1.des
@@ -2881,14 +2885,14 @@ Templates:
 			0: Rock
 			1: Rock
 			2: Rock
-			3: Road
-			4: Road
+			3: SandRoad
+			4: SandRoad
 			6: River
 			11: Rock
 			12: Rock
 			17: Rock
-			18: Road
-			19: Road
+			18: SandRoad
+			19: SandRoad
 			20: Rock
 			21: Rock
 			22: River
@@ -2941,8 +2945,8 @@ Templates:
 		Size: 6,4
 		Categories: Bridge
 		Tiles:
-			1: Road
-			2: Road
+			1: SandRoad
+			2: SandRoad
 			3: Rock
 			4: Rock
 			5: Rock
@@ -2954,8 +2958,8 @@ Templates:
 			19: River
 			20: Rock
 			21: Rock
-			22: Road
-			23: Road
+			22: SandRoad
+			23: SandRoad
 	Template@235:
 		Id: 235
 		Images: br1a.des
@@ -3105,8 +3109,8 @@ Templates:
 		Tiles:
 			0: Rock
 			1: Rock
-			2: Road
-			3: Road
+			2: SandRoad
+			3: SandRoad
 			9: Rock
 			14: Rock
 	Template@381:
@@ -3117,8 +3121,8 @@ Templates:
 		Tiles:
 			0: Beach
 			5: Rock
-			10: Road
-			11: Road
+			10: SandRoad
+			11: SandRoad
 			12: Rock
 			13: Rock
 			14: Rock

@@ -686,9 +686,14 @@ aircraft.chinook:
 		BlockerActors: aircraft.chinook
 		-NonBlockerActors:
 		TerrainSpeeds:
-			Clear: 100
+			Grass: 100
+			Snow: 100
+			Sand: 100
+			Concrete: 100
 			Rough: 100
-			Road: 100
+			GrassRoad: 100
+			SnowRoad: 100
+			SandRoad: 100
 			Bridge: 100
 			Ore: 100
 			Gems: 100
@@ -896,7 +901,7 @@ aircraft.helix:
 		TurnSpeed: 3
 		Speed: 75
 		Voice: Move
-		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Gems
+		LandableTerrainTypes: Grass, Snow, Sand, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Beach, Gems
 		AltitudeVelocity: 0c58
 	WithIdleOverlay@ROTORAIR:
 		Offset: 0,0,85

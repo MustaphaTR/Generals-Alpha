@@ -72,6 +72,15 @@ MONEYCRATE:
 	RenderSprites:
 		Image: wcrate
 
+UNCRATE:
+	Inherits: ^Crate
+	Tooltip:
+		Name: UN Crate
+	GiveCashCrateAction:
+		Amount: 2000
+		SelectionShares: 1
+		UseCashTick: true
+
 SUPPLYCRATE:
 	Inherits: ^Crate
 	Tooltip:
@@ -312,9 +321,14 @@ hack.mine:
 	-RequiresBuildableArea:
 	Mobile:
 		TerrainSpeeds:
-			Clear: 100
+			Grass: 100
+			Snow: 100
+			Sand: 100
+			Concrete: 100
 			Rough: 100
-			Road: 100
+			GrassRoad: 100
+			SnowRoad: 100
+			SandRoad: 100
 			Bridge: 100
 			Ore: 100
 			Gems: 100
@@ -504,7 +518,7 @@ QUEE:
 	WithSpriteBody:
 	AppearsOnRadar:
 	EditorTilesetFilter:
-		RequireTilesets: INTERIOR
+		RequireTilesets: INTERIOR, MIXED
 		Categories: Critter
 
 LAR1:
@@ -522,7 +536,7 @@ LAR1:
 	WithSpriteBody:
 	AppearsOnRadar:
 	EditorTilesetFilter:
-		RequireTilesets: INTERIOR
+		RequireTilesets: INTERIOR, MIXED
 		Categories: Critter
 
 LAR2:

@@ -13,6 +13,9 @@
 	Warhead@Smu: LeaveSmudge
 		SmudgeType: Crater
 		InvalidTargets: Structure, Wall, Trees
+	Warhead@SmuSnow: LeaveSmudge
+		SmudgeType: SnowCrater
+		InvalidTargets: Structure, Wall, Trees
 	Warhead@2Eff: CreateEffect
 		Explosions: self_destruct
 		ImpactSounds: kaboom22.aud
@@ -43,6 +46,8 @@ CrateNapalm:
 	-Warhead@3EffWater: CreateEffect
 	Warhead@Smu: LeaveSmudge
 		SmudgeType: Scorch
+	Warhead@SmuSnow: LeaveSmudge
+		SmudgeType: SnowScorch
 
 CrateExplosion:
 	Inherits: ^Explosion
@@ -71,6 +76,7 @@ UnitExplodeHeli:
 UnitExplodeShip:
 	Inherits: ^Explosion
 	-Warhead@Smu: LeaveSmudge
+	-Warhead@SmuSnow: LeaveSmudge
 	Warhead@2Eff: CreateEffect
 		Explosions: building
 		ImpactSounds: kaboom25.aud
@@ -79,6 +85,7 @@ UnitExplodeShip:
 UnitExplodeSubmarine:
 	Inherits: ^Explosion
 	-Warhead@Smu: LeaveSmudge
+	-Warhead@SmuSnow: LeaveSmudge
 	Warhead@2Eff: CreateEffect
 		Explosions: large_splash
 		ImpactSounds: splash9.aud
@@ -109,6 +116,9 @@ BuildingExplode:
 		Explosions: building, building_napalm, large_explosion, self_destruct, large_napalm
 	Warhead@Smu: LeaveSmudge
 		SmudgeType: Crater
+		InvalidTargets: Wall, Trees
+	Warhead@SmuSnow: LeaveSmudge
+		SmudgeType: SnowCrater
 		InvalidTargets: Wall, Trees
 
 SmallBuildingExplode:
@@ -144,6 +154,10 @@ BarrelExplode:
 		SmudgeType: Scorch
 		Size: 2
 		Delay: 5
+	Warhead@SmuSnow: LeaveSmudge
+		SmudgeType: SnowScorch
+		Size: 2
+		Delay: 5
 
 explosion.demo_trap:
 	Inherits: ^Explosion
@@ -176,6 +190,13 @@ explosion.demo_trap:
 		Size: 1
 	Warhead@Smu2: LeaveSmudge
 		SmudgeType: Scorch
+		Size: 2
+		Delay: 5
+	Warhead@SmuSnow: LeaveSmudge
+		SmudgeType: SnowScorch
+		Size: 1
+	Warhead@SmuSnow2: LeaveSmudge
+		SmudgeType: SnowScorch
 		Size: 2
 		Delay: 5
 
@@ -230,6 +251,9 @@ explosion.terrorist:
 	Warhead@Smu: LeaveSmudge
 		SmudgeType: Scorch
 		Size: 1
+	Warhead@SmuSnow: LeaveSmudge
+		SmudgeType: SnowScorch
+		Size: 1
 
 explosion.mine:
 	Warhead@1Dam: SpreadDamage
@@ -243,6 +267,9 @@ explosion.mine:
 		ImpactSounds: mineblo1.aud
 	Warhead@Smu: LeaveSmudge
 		SmudgeType: Crater
+		InvalidTargets: Structure, Wall, Trees
+	Warhead@SmuSnow: LeaveSmudge
+		SmudgeType: SnowCrater
 		InvalidTargets: Structure, Wall, Trees
 
 explosion.mine.neutron:
@@ -316,6 +343,11 @@ CrateNuke:
 		InvalidTargets: Vehicle, Tank, Structure, Wall, Trees
 		Size: 4
 		Delay: 5
+	Warhead@6Smu_areanukeSnow1: LeaveSmudge
+		SmudgeType: SnowScorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall, Trees
+		Size: 4
+		Delay: 5
 	Warhead@TREEKILL: SpreadDamage
 		Spread: 1c0
 		Damage: 120
@@ -376,6 +408,10 @@ BombTruckExplosion:
 		SmudgeType: Scorch
 		InvalidTargets: Vehicle, Tank, Structure, Wall, Trees
 		Size: 2
+	Warhead@13Smu_areanukeSnow3: LeaveSmudge
+		SmudgeType: SnowScorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall, Trees
+		Size: 2
 
 BombTruckExplosion.hi_exp:
 	Inherits: BombTruckExplosion
@@ -391,6 +427,8 @@ BombTruckExplosion.hi_exp:
 	Warhead@8Dam_areanuke2: SpreadDamage
 		Spread: 3c0
 	Warhead@13Smu_areanuke3: LeaveSmudge
+		Size: 3
+	Warhead@13Smu_areanukeSnow3: LeaveSmudge
 		Size: 3
 
 BombTruckExplosion.toxin:
@@ -436,6 +474,10 @@ explosion.nuclear_reactor:
 		SmudgeType: Scorch
 		InvalidTargets: Vehicle, Tank, Structure, Wall
 		Size: 2
+	Warhead@3Smu_impactSnow: LeaveSmudge
+		SmudgeType: SnowScorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		Size: 2
 	Warhead@3Eff: CreateEffect
 		Explosions: nuke
 		ImpactSounds: kaboom1.aud
@@ -449,6 +491,10 @@ explosion.nuclear_reactor:
 explosion.nuke_cannon:
 	Warhead@3Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		Size: 1
+	Warhead@3Smu_impactSnow: LeaveSmudge
+		SmudgeType: SnowScorch
 		InvalidTargets: Vehicle, Tank, Structure, Wall
 		Size: 1
 	Warhead@3Eff: CreateEffect

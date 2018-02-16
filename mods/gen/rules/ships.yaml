@@ -24,7 +24,7 @@ vessel.transport:
 		RequiresCondition: !notmobile && !hacked && !emp
 	SelectionDecorations:
 	WithLandingCraftAnimation:
-		OpenTerrainTypes: Clear, Rough, Road, Ore, Gems, Beach
+		OpenTerrainTypes: Grass, Snow, Sand, Concrete, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Gems, Beach
 	Cargo:
 		Types: Infantry, Pilot, Vehicle
 		MaxWeight: 8

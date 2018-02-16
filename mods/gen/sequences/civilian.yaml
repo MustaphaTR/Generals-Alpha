@@ -122,6 +122,7 @@ dog:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			MIXED: TEMPERAT
 	shoot: dogbullt
 		Length: 4
 		Facings: 8
@@ -164,6 +165,7 @@ einstein:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			MIXED: TEMPERAT
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -172,6 +174,7 @@ einstein:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			MIXED: TEMPERAT
 
 delphi:
 	stand:
@@ -210,6 +213,7 @@ delphi:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			MIXED: TEMPERAT
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -218,6 +222,7 @@ delphi:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			MIXED: TEMPERAT
 
 chan:
 	stand:
@@ -256,6 +261,7 @@ chan:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			MIXED: TEMPERAT
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -264,43 +270,64 @@ chan:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			MIXED: TEMPERAT
 
 v01:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v01.tem
+		AddExtension: false
+	idle:
+	damaged-idle:
+		Start: 1
+
+v01.snow:
+	Defaults: v01.sno
+		AddExtension: false
 	idle:
 	damaged-idle:
 		Start: 1
 
 v02:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v02.tem
+		AddExtension: false
+	idle:
+	damaged-idle:
+		Start: 1
+
+v02.snow:
+	Defaults: v02.sno
+		AddExtension: false
 	idle:
 	damaged-idle:
 		Start: 1
 
 v03:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v03.tem
+		AddExtension: false
+	idle:
+	damaged-idle:
+		Start: 1
+
+v03.snow:
+	Defaults: v03.sno
+		AddExtension: false
 	idle:
 	damaged-idle:
 		Start: 1
 
 v04:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v04.tem
+		AddExtension: false
+	idle:
+	damaged-idle:
+		Start: 2
+	active:
+		Start: 1
+	damaged-active:
+		Start: 3
+
+v04.snow:
+	Defaults: v04.sno
+		AddExtension: false
 	idle:
 	damaged-idle:
 		Start: 2
@@ -310,101 +337,143 @@ v04:
 		Start: 3
 
 v05:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v05.tem
+		AddExtension: false
+	idle:
+	damaged-idle:
+		Start: 2
+
+v05.snow:
+	Defaults: v05.sno
+		AddExtension: false
 	idle:
 	damaged-idle:
 		Start: 2
 
 v06:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v06.tem
+		AddExtension: false
+	idle:
+	damaged-idle:
+		Start: 1
+
+v06.snow:
+	Defaults: v06.sno
+		AddExtension: false
 	idle:
 	damaged-idle:
 		Start: 1
 
 v07:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v07.tem
+		AddExtension: false
+	idle:
+	damaged-idle:
+		Start: 2
+
+v07.snow:
+	Defaults: v07.sno
+		AddExtension: false
 	idle:
 	damaged-idle:
 		Start: 2
 
 v08:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v08.tem
+		AddExtension: false
+	idle:
+	damaged-idle:
+		Start: 1
+
+v08.snow:
+	Defaults: v08.sno
+		AddExtension: false
 	idle:
 	damaged-idle:
 		Start: 1
 
 v09:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v09.tem
+		AddExtension: false
+	idle:
+	damaged-idle:
+		Start: 1
+
+v09.snow:
+	Defaults: v09.sno
+		AddExtension: false
 	idle:
 	damaged-idle:
 		Start: 1
 
 v10:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v10.tem
+		AddExtension: false
+	idle:
+	damaged-idle:
+		Start: 1
+
+v10.snow:
+	Defaults: v10.sno
+		AddExtension: false
 	idle:
 	damaged-idle:
 		Start: 1
 
 v11:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v11.tem
+		AddExtension: false
+	idle:
+	damaged-idle:
+		Start: 1
+
+v11.snow:
+	Defaults: v11.sno
+		AddExtension: false
 	idle:
 	damaged-idle:
 		Start: 1
 
 v12:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v12.tem
+		AddExtension: false
+	idle:
+	damaged-idle:
+		Start: 1
+
+v12.snow:
+	Defaults: v12.sno
+		AddExtension: false
 	idle:
 	damaged-idle:
 		Start: 1
 
 v13:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v13.tem
+		AddExtension: false
+	idle:
+	damaged-idle:
+		Start: 1
+
+v13.snow:
+	Defaults: v13.sno
+		AddExtension: false
 	idle:
 	damaged-idle:
 		Start: 1
 
 v14:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v14.tem
+		AddExtension: false
+	idle:
+		ZOffset: -512
+	damaged-idle:
+		Start: 1
+		ZOffset: -512
+
+v14.snow:
+	Defaults: v14.sno
+		AddExtension: false
 	idle:
 		ZOffset: -512
 	damaged-idle:
@@ -412,11 +481,17 @@ v14:
 		ZOffset: -512
 
 v15:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v15.tem
+		AddExtension: false
+	idle:
+		ZOffset: -512
+	damaged-idle:
+		Start: 1
+		ZOffset: -512
+
+v15.snow:
+	Defaults: v15.sno
+		AddExtension: false
 	idle:
 		ZOffset: -512
 	damaged-idle:
@@ -424,11 +499,17 @@ v15:
 		ZOffset: -512
 
 v16:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v16.tem
+		AddExtension: false
+	idle:
+		ZOffset: -512
+	damaged-idle:
+		Start: 1
+		ZOffset: -512
+
+v16.snow:
+	Defaults: v16.sno
+		AddExtension: false
 	idle:
 		ZOffset: -512
 	damaged-idle:
@@ -436,11 +517,17 @@ v16:
 		ZOffset: -512
 
 v17:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v17.tem
+		AddExtension: false
+	idle:
+		ZOffset: -512
+	damaged-idle:
+		Start: 1
+		ZOffset: -512
+
+v17.snow:
+	Defaults: v17.sno
+		AddExtension: false
 	idle:
 		ZOffset: -512
 	damaged-idle:
@@ -448,11 +535,17 @@ v17:
 		ZOffset: -512
 
 v18:
-	Defaults:
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
+	Defaults: v18.tem
+		AddExtension: false
+	idle:
+		ZOffset: -512
+	damaged-idle:
+		Start: 1
+		ZOffset: -512
+
+v18.snow:
+	Defaults: v18.sno
+		AddExtension: false
 	idle:
 		ZOffset: -512
 	damaged-idle:

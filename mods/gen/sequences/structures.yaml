@@ -20,9 +20,21 @@ building.usa_command_center:
 	make: usfactmake
 		Length: *
 		Tick: 80
-	bib: bib2
-		UseTilesetExtension: true
+	bib: bib2.tem
 		Length: *
+		AddExtension: False
+	bib-Snow: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib2.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib2.des
+		Length: *
+		AddExtension: False
 	icon: usfacticon
 
 building.gla_command_center:
@@ -39,11 +51,21 @@ building.gla_command_center:
 		Length: 25
 	dead: factdead
 		Tick: 800
-	bib: bib2
+	bib: bib2.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib2.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib2.des
+		Length: *
+		AddExtension: False
 	icon: commicon
 	fake-icon: fakecommicon
 
@@ -61,11 +83,21 @@ building.prc_command_center:
 		Length: 25
 	dead: factdead
 		Tick: 800
-	bib: bib2
+	bib: bib2.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib2.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib2.des
+		Length: *
+		AddExtension: False
 	icon: facticon
 
 building.cold_fusion_reactor:
@@ -76,11 +108,21 @@ building.cold_fusion_reactor:
 		Length: *
 	dead: powrdead
 		Tick: 800
-	bib: bib3
+	bib: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
 	icon: powricon
 
 building.advanced_cold_fusion_reactor:
@@ -91,11 +133,21 @@ building.advanced_cold_fusion_reactor:
 		Length: *
 	dead: powrdead
 		Tick: 800
-	bib: bib3
+	bib: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
 	icon: advpowricon
 
 building.nuclear_reactor:
@@ -112,9 +164,21 @@ building.nuclear_reactor:
 	make: nukemake
 		Length: *
 		Tick: 80
-	bib: bib3
-		UseTilesetExtension: true
+	bib: bib3.tem
 		Length: *
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
 	icon: nkpwricon
 
 building.advanced_nuclear_reactor:
@@ -131,9 +195,21 @@ building.advanced_nuclear_reactor:
 	make: nuk2make
 		Length: *
 		Tick: 80
-	bib: bib3
-		UseTilesetExtension: true
+	bib: bib3.tem
 		Length: *
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
 	icon: advnukeicon
 
 building.usa_barracks:
@@ -150,29 +226,73 @@ building.usa_barracks:
 	make: pylemake
 		Length: *
 		Tick: 80
-	bib: bib3
-		UseTilesetExtension: true
+	bib: bib3.tem
 		Length: *
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
 	icon: pyleicon
 
 building.gla_barracks:
-	Defaults: tent
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-	idle: tent
+	Defaults:
+		AddExtension: False
+	idle: tent.tem
 		Length: 10
-	damaged-idle: tent
+	idle-Snow: tent.sno
+		Length: 10
+	idle-SnowRoad: tent.sno
+		Length: 10
+	idle-Sand: tent.des
+		Length: 10
+	idle-SandRoad: tent.des
+		Length: 10
+	damaged-idle: tent.tem
 		Start: 10
 		Length: 10
-	make: tentmake
+	damaged-idle-Snow: tent.sno
+		Start: 10
+		Length: 10
+	damaged-idle-SnowRoad: tent.sno
+		Start: 10
+		Length: 10
+	damaged-idle-Sand: tent.des
+		Start: 10
+		Length: 10
+	damaged-idle-SandRoad: tent.des
+		Start: 10
+		Length: 10
+	make: tentmake.tem
 		Length: *
-	bib: bib3
+	make-Snow: tentmake.sno
 		Length: *
-	icon: tenticon
-		UseTilesetExtension: false
-	fake-icon: faketenticon
-		UseTilesetExtension: false
+	make-SnowRoad: tentmake.sno
+		Length: *
+	make-Sand: tentmake.des
+		Length: *
+	make-SnowRoad: tentmake.des
+		Length: *
+	bib: bib3.tem
+		Length: *
+	bib-Snow: bib3.sno
+		Length: *
+	bib-SnowRoad: bib3.sno
+		Length: *
+	bib-Sand: bib3.des
+		Length: *
+	bib-SandRoad: bib3.des
+		Length: *
+	icon: tenticon.shp
+	fake-icon: faketenticon.shp
 
 building.prc_barracks:
 	idle: barr
@@ -185,11 +305,21 @@ building.prc_barracks:
 	make: barrmake
 		Length: *
 		Offset: 0,-6
-	bib: bib3
+	bib: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
 	icon: barricon
 
 building.mine:
@@ -222,9 +352,21 @@ building.usa_supply_center:
 		Start: 6
 		Length: 6
 		Offset: -30,-17
-	bib: bib2
-		UseTilesetExtension: true
+	bib: bib2.tem
 		Length: *
+		AddExtension: False
+	bib-Snow: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib2.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib2.des
+		Length: *
+		AddExtension: False
 	icon: usprocicon
 
 building.gla_supply_stash:
@@ -244,11 +386,21 @@ building.gla_supply_stash:
 	make2: tdsilomake
 		Length: *
 		Offset: 0,-1
-	bib: bib3
+	bib: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
 	icon: siloicon
 	fake-icon: fakesiloicon
 
@@ -266,11 +418,21 @@ building.prc_supply_center:
 		Length: *
 	dead: procdead
 		Tick: 800
-	bib: bib2
+	bib: bib2.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib2.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib2.des
+		Length: *
+		AddExtension: False
 	icon: procicon
 
 building.patriot:
@@ -290,10 +452,15 @@ building.patriot:
 		Length: 18
 		Facings: 8
 		Offset: -2,6
-	bib: mbSAM
+	bib: mbSAM.tem
 		Length: *
-		Offset: 0,1
-		UseTilesetExtension: true
+		AddExtension: False
+	bib-Snow: mbSAM.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: mbSAM.des
+		Length: *
+		AddExtension: False
 	icon: samicon
 
 building.demo_trap:
@@ -328,9 +495,15 @@ building.gatling_cannon:
 	muzzle: gunfire2
 		Start: 1
 		Length: 4
-	bib: mbAGUN
+	bib: mbAGUN.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbAGUN.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbAGUN.des
+		Length: *
+		AddExtension: false
 	icon: gatcanicon
 
 building.bunker:
@@ -342,10 +515,18 @@ building.bunker:
 	muzzle: minigun
 		Length: 6
 		Facings: 8
-	bib: mbPBOX
+	bib: mbPBOX.tem
 		Length: *
 		Offset: 0,-2
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbPBOX.sno
+		Length: *
+		Offset: 0,-2
+		AddExtension: false
+	bib-Sand: mbPBOX.des
+		Length: *
+		Offset: 0,-2
+		AddExtension: false
 	icon: bunkericon
 
 building.fotified_bunker:
@@ -384,10 +565,26 @@ building.usa_war_factory:
 	make: usweapmake
 		Length: *
 		Tick: 80
-	bib: bib2
-		UseTilesetExtension: true
+	bib: bib2.tem
 		Length: *
 		Offset: 0,0
+		AddExtension: False
+	bib-Snow: bib2.sno
+		Length: *
+		Offset: 0,0
+		AddExtension: False
+	bib-SnowRoad: bib2.sno
+		Length: *
+		Offset: 0,0
+		AddExtension: False
+	bib-Sand: bib2.des
+		Length: *
+		Offset: 0,0
+		AddExtension: False
+	bib-SandRoad: bib2.des
+		Length: *
+		Offset: 0,0
+		AddExtension: False
 	icon: usweapicon
 		Offset: 0,0
 
@@ -402,11 +599,21 @@ building.arms_dealer:
 	damaged-build-top: weap2
 		Start: 4
 		Length: 4
-	bib: bib2
+	bib: bib2.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib2.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib2.des
+		Length: *
+		AddExtension: False
 	icon: dealicon
 	fake-icon: fakedealicon
 
@@ -421,34 +628,51 @@ building.prc_war_factory:
 	damaged-build-top: weap2
 		Start: 4
 		Length: 4
-	bib: bib2
+	bib: bib2.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib2.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib2.des
+		Length: *
+		AddExtension: False
 	icon: weapicon
 
 building.tunnel_network:
-	Defaults: hbox
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-	idle: hbox
-	damaged-idle: hbox
+	Defaults:
+		AddExtension: false
+	idle: hbox.tem
+	idle-Snow: hbox.sno
+	idle-SnowRoad: hbox.sno
+	idle-Sand: hbox.des
+	idle-SandRoad: hbox.des
+	damaged-idle: hbox.tem
 		Start: 2
-	make: hboxmake
+	damaged-idle-Snow: hbox.sno
+		Start: 2
+	damaged-idle-SnowRoad: hbox.sno
+		Start: 2
+	damaged-idle-Sand: hbox.des
+		Start: 2
+	damaged-idle-SandRoad: hbox.des
+		Start: 2
+	make: hboxmake.tem
 		Length: *
-	turret: gun
+	turret: gun.shp
 		Facings: 32
 		UseClassicFacingFudge: True
-		UseTilesetExtension: false
-	muzzle: gunfire2
+	muzzle: gunfire2.shp
 		Length: 5
+	icon: tunnelicon.shp
 		UseTilesetExtension: false
-	icon: tunnelicon
-		UseTilesetExtension: false
-	fake-icon: faketunnelicon
-		UseTilesetExtension: false
+	fake-icon: faketunnelicon.shp
 
 building.stinger_site:
 	idle: stinger
@@ -460,11 +684,21 @@ building.stinger_site:
 	make: stingermake
 		Length: *
 		Tick: 80
-	bib: bib3
+	bib: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
 	icon: stngricon
 	fake-icon: fakestngricon
 
@@ -566,12 +800,21 @@ building.strategy_center:
 		Facings: 32
 		UseClassicFacingFudge: True
 		Offset: 0,-13
-	bib: bib2
+	bib: bib2.tem
 		Length: *
-		Offset: 0,0
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib2.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib2.des
+		Length: *
+		AddExtension: False
 	icon: straicon
 		Offset: 0,0
 
@@ -592,12 +835,26 @@ building.palace:
 	make: palacemake
 		Length: *
 		Tick: 60
-	bib: bib2
+	bib: bib2.tem
 		Length: *
 		Offset: 0,0
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib2.sno
+		Length: *
+		Offset: 0,0
+		AddExtension: False
+	bib-SnowRoad: bib2.sno
+		Length: *
+		Offset: 0,0
+		AddExtension: False
+	bib-Sand: bib2.des
+		Length: *
+		Offset: 0,0
+		AddExtension: False
+	bib-SandRoad: bib2.des
+		Length: *
+		Offset: 0,0
+		AddExtension: False
 	icon: palaceicon
 		Offset: 0,0
 	fake-icon: fakepalaceicon
@@ -609,11 +866,21 @@ building.propaganda_center:
 		Start: 1
 	make: stekmake
 		Length: *
-	bib: bib2
+	bib: bib2.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib2.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib2.des
+		Length: *
+		AddExtension: False
 	icon: stekicon
 
 building.detention_camp:
@@ -625,11 +892,21 @@ building.detention_camp:
 		Tick: 800
 	make: missmake
 		Length: *
-	bib: bib2
+	bib: bib2.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib2.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib2.des
+		Length: *
+		AddExtension: False
 	icon: deteicon
 
 building.supply_drop_zone:
@@ -644,11 +921,21 @@ building.supply_drop_zone:
 		Length: 6
 	make: hpadmake
 		Length: *
-	bib: bib3
+	bib: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
 	icon: sdropicon
 
 building.black_market:
@@ -665,11 +952,21 @@ building.black_market:
 	make: bmrktmake
 		Length: *
 		Tick: 80
-	bib: bib3
+	bib: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
 	icon: bmrkticon
 	fake-icon: fakebmrkticon
 
@@ -684,9 +981,21 @@ building.speaker_tower:
 	make: gapmake
 		Length: *
 		Offset: 0,-14
-	bib: mbGAP
+	bib: mbGAP.tem
 		Length: *
-		UseTilesetExtension: true
+		AddExtension: false
+	bib-Snow: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGAP.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGAP.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGAP.des
+		Length: *
+		AddExtension: false
 	icon: speakicon
 
 building.particle_cannon:
@@ -703,11 +1012,21 @@ building.particle_cannon:
 	make: pcanmake
 		Length: *
 		Tick: 80
-	bib: bib3
+	bib: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
 	icon: pcanicon
 
 building.scud_storm:
@@ -752,37 +1071,84 @@ building.scud_storm:
 		Start: 32
 		Facings: 32
 		UseClassicFacingFudge: True
-	bib: bib3
+	bib: bib3.tem
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
 	icon: scudsicon
 	fake-icon: fakescudsicon
 
 building.missile_silo:
-	Defaults: mslo
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-	idle: mslo
-	damaged-idle: mslo
+	Defaults:
+		AddExtension: False
+	idle: mslo.tem
+	idle-Snow: mslo.sno
+	idle-SnowRoad: mslo.sno
+	idle-Sand: mslo.des
+	idle-SandRoad: mslo.des
+	damaged-idle: mslo.tem
 		Start: 8
-	make: mslomake
+	damaged-idle-Snow: mslo.sno
+		Start: 8
+	damaged-idle-SnowRoad: mslo.sno
+		Start: 8
+	damaged-idle-Sand: mslo.des
+		Start: 8
+	damaged-idle-SandRoad: mslo.des
+		Start: 8
+	make: mslomake.tem
 		Length: *
-	active: mslo
+	make-Snow: mslomake.sno
+		Length: *
+	make-SnowRoad: mslomake.sno
+		Length: *
+	make-Sand: mslomake.des
+		Length: *
+	make-SandRoad: mslomake.des
+		Length: *
+	active: mslo.tem
 		Start: 1
 		Length: 7
 		Tick: 80
-	damaged-active: mslo
+	active-snow: mslo.sno
+		Start: 1
+		Length: 7
+		Tick: 80
+	active-sand: mslo.des
+		Start: 1
+		Length: 7
+		Tick: 80
+	damaged-active: mslo.tem
 		Start: 9
 		Length: 7
-	bib: bib3
+	damaged-active-snow: mslo.sno
+		Start: 9
+		Length: 7
+	damaged-active-sand: mslo.des
+		Start: 9
+		Length: 7
+	bib: bib3.tem
 		Length: *
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
-	icon: nukeicon
-		UseTilesetExtension: false
+	bib-Snow: bib3.sno
+		Length: *
+	bib-SnowRoad: bib3.sno
+		Length: *
+	bib-Sand: bib3.des
+		Length: *
+	bib-SandRoad: bib3.des
+		Length: *
+	icon: nukeicon.shp
 
 kenn:
 	idle:

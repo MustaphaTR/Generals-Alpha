@@ -36,7 +36,7 @@
 		Sequences: gold01,gold02,gold03,gold04
 		MaxDensity: 66
 		ValuePerUnit: 25
-		AllowedTerrainTypes: Clear,Road
+		AllowedTerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
 		AllowUnderActors: true
 	ResourceType@gem:
 		Type: Gems
@@ -48,7 +48,7 @@
 		Sequences: gem01,gem02,gem03,gem04
 		MaxDensity: 66
 		ValuePerUnit: 50
-		AllowedTerrainTypes: Clear,Road
+		AllowedTerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
 		AllowUnderActors: true
 
 World:
@@ -76,9 +76,16 @@ World:
 		Type: Scorch
 		Sequence: scorches
 		SmokePercentage: 50
+	SmudgeLayer@SNOWSCORCH:
+		Type: SnowScorch
+		Sequence: snow_scorches
+		SmokePercentage: 50
 	SmudgeLayer@CRATER:
 		Type: Crater
 		Sequence: craters
+	SmudgeLayer@SNOWCRATER:
+		Type: SnowCrater
+		Sequence: snow_craters
 	ResourceLayer:
 	ResourceClaimLayer:
 	WarheadDebugOverlay:

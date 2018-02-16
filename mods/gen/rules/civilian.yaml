@@ -145,8 +145,6 @@ V01:
 		Name: Church
 	RevealsShroud:
 		Range: 10c0
-	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: -490,-384,0, 0,0,0, 0,470,0
@@ -154,13 +152,19 @@ V01:
 			TopLeft: -768, -597
 			BottomRight: 896, 683
 
+V01.SNOW:
+	Inherits: V01
+
+V25:
+	Inherits: V01
+	RenderSprites:
+		Palette: desert
+
 V02:
 	Inherits: ^CivBuilding
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: -490,-512,0, 0,0,0, 0,512,0
@@ -168,13 +172,24 @@ V02:
 			TopLeft: -1024, -512
 			BottomRight: 1024, 597
 
+V02.SNOW:
+	Inherits: V02
+
+V20:
+	Inherits: V02
+	RenderSprites:
+		Palette: desert
+	HitShape:
+		TargetableOffsets: -840,-512,0, 0,0,0, -840,512,0
+		Type: Rectangle
+			TopLeft: -1024, -512
+			BottomRight: 1024, 896
+
 V03:
 	Inherits: ^CivBuilding
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: -490,-512,0, 0,0,0, 421,512,0, -210,512,0
@@ -182,13 +197,29 @@ V03:
 			TopLeft: -1024, -597
 			BottomRight: 1024, 597
 
+V03.SNOW:
+	Inherits: V03
+
+V21:
+	Inherits: V03
+	RenderSprites:
+		Palette: desert
+	HitShape:
+		TargetableOffsets: 840,-512,0, 420,0,0, 840,512,0
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 0
+	HitShape@WELL:
+		TargetableOffsets: -770,512,0
+		Type: Rectangle
+			TopLeft: 0, 0
+			BottomRight: 1024, 598
+
 V04:
 	Inherits: ^CivBuilding
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, -421,-256,0, -421,256,0
@@ -196,14 +227,33 @@ V04:
 			TopLeft: -683, -432
 			BottomRight: 683, 683
 
+V04.SNOW:
+	Inherits: V04
+
+V24:
+	Inherits: V04
+	RenderSprites:
+		Palette: desert
+	HitShape:
+		TargetableOffsets: -630,-512,0, 0,0,0, -630,256,0, 420,-512,0
+		Type: Rectangle
+			TopLeft: -1024, -683
+			BottomRight: 640, 853
+
 V05:
 	Inherits: ^CivBuilding
 	Inherits@SHAPE: ^2x1Shape
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
-	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+
+V05.SNOW:
+	Inherits: V05
+
+V26:
+	Inherits: V06
+	RenderSprites:
+		Palette: desert
 
 V06:
 	Inherits: ^CivBuilding
@@ -211,8 +261,9 @@ V06:
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
-	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+
+V06.SNOW:
+	Inherits: V06
 
 V07:
 	Inherits: ^CivBuilding
@@ -220,63 +271,167 @@ V07:
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
-	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+
+V07.SNOW:
+	Inherits: V07
+
+V22:
+	Inherits: V05
+	RenderSprites:
+		Palette: desert
+
+V30:
+	Inherits: V07
+	RenderSprites:
+		Palette: desert
 
 V08:
 	Inherits: ^CivBuilding
-	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+
+V08.SNOW:
+	Inherits: ^CivBuilding
+
+V29:
+	Inherits: ^CivBuilding
+	RenderSprites:
+		Palette: desert
 
 V09:
 	Inherits: ^CivBuilding
-	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+
+V09.SNOW:
+	Inherits: ^CivBuilding
+
+V28:
+	Inherits: ^CivBuilding
+	RenderSprites:
+		Palette: desert
 
 V10:
 	Inherits: ^CivBuilding
-	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+
+V10.SNOW:
+	Inherits: ^CivBuilding
+
+V27:
+	Inherits: ^CivBuilding
+	RenderSprites:
+		Palette: desert
 
 V11:
 	Inherits: ^CivBuilding
-	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+
+V11.SNOW:
+	Inherits: ^CivBuilding
+
+V23:
+	Inherits: ^CivBuilding
+	RenderSprites:
+		Palette: desert
 
 V12:
 	Inherits: ^CivBuilding
-	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+	Tooltip:
+		Name: Haystack
+
+V12.SNOW:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Igloo
 
 V13:
 	Inherits: ^CivBuilding
-	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+	Tooltip:
+		Name: Haystacks
+
+V13.SNOW:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Igloo
 
 V14:
 	Inherits: ^CivField
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+V14.SNOW:
+	Inherits: V14
 
 V15:
 	Inherits: ^CivField
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+V15.SNOW:
+	Inherits: V15
 
 V16:
 	Inherits: ^CivField
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+V16.SNOW:
+	Inherits: V16
 
 V17:
 	Inherits: ^CivField
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+V17.SNOW:
+	Inherits: V17
 
 V18:
 	Inherits: ^CivField
 	EditorTilesetFilter:
-		ExcludeTilesets: DESERT, INTERIOR
+		ExcludeTilesets: INTERIOR
+
+V18.SNOW:
+	Inherits: V18
+
+V31:
+	Inherits: V07
+	RenderSprites:
+		Palette: desert
+
+V32:
+	Inherits: V07
+	RenderSprites:
+		Palette: desert
+
+V33:
+	Inherits: V07
+	RenderSprites:
+		Palette: desert
+
+V34:
+	Inherits: ^CivBuilding
+	RenderSprites:
+		Palette: desert
+
+V35:
+	Inherits: ^CivBuilding
+	RenderSprites:
+		Palette: desert
+
+V36:
+	Inherits: ^CivBuilding
+	RenderSprites:
+		Palette: desert
+
+V37:
+	Inherits: ^CivBuilding
+	RenderSprites:
+		Palette: desert
+	Building:
+		Footprint: __xx_ ___xx
+		Dimensions: 5,2
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 0,1024,0
+		Type: Rectangle
+			TopLeft: -512, -597
+			BottomRight: 1536, 597
 
 V19:
 	Inherits: ^CivBuilding
@@ -369,138 +524,6 @@ AMMOBOX2:
 
 AMMOBOX3:
 	Inherits: ^AmmoBox
-
-V20:
-	Inherits: ^DesertCivBuilding
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: -840,-512,0, 0,0,0, -840,512,0
-		Type: Rectangle
-			TopLeft: -1024, -512
-			BottomRight: 1024, 896
-
-V21:
-	Inherits: ^DesertCivBuilding
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: 840,-512,0, 420,0,0, 840,512,0
-		Type: Rectangle
-			TopLeft: -1024, -1024
-			BottomRight: 1024, 0
-	HitShape@WELL:
-		TargetableOffsets: -770,512,0
-		Type: Rectangle
-			TopLeft: 0, 0
-			BottomRight: 1024, 598
-
-V22:
-	Inherits: ^DesertCivBuilding
-	Inherits@SHAPE: ^2x1Shape
-	Building:
-		Footprint: xx
-		Dimensions: 2,1
-
-V23:
-	Inherits: ^DesertCivBuilding
-
-V24:
-	Inherits: ^DesertCivBuilding
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: -630,-512,0, 0,0,0, -630,256,0, 420,-512,0
-		Type: Rectangle
-			TopLeft: -1024, -683
-			BottomRight: 640, 853
-
-V25:
-	Inherits: ^DesertCivBuilding
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	Tooltip:
-		Name: Church
-	RevealsShroud:
-		Range: 10c0
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: 0,-128,0, 420,512,0
-		Type: Rectangle
-			TopLeft: -683, -683
-			BottomRight: 1024, 512
-
-V26:
-	Inherits: ^DesertCivBuilding
-	Inherits@SHAPE: ^2x1Shape
-	Building:
-		Footprint: xx
-		Dimensions: 2,1
-
-V27:
-	Inherits: ^DesertCivBuilding
-
-V28:
-	Inherits: ^DesertCivBuilding
-
-V29:
-	Inherits: ^DesertCivBuilding
-
-V30:
-	Inherits: ^DesertCivBuilding
-	Inherits@SHAPE: ^2x1Shape
-	Building:
-		Footprint: xx
-		Dimensions: 2,1
-
-V31:
-	Inherits: ^DesertCivBuilding
-	Inherits@SHAPE: ^2x1Shape
-	Building:
-		Footprint: xx
-		Dimensions: 2,1
-
-V32:
-	Inherits: ^DesertCivBuilding
-	Inherits@SHAPE: ^2x1Shape
-	Building:
-		Footprint: xx
-		Dimensions: 2,1
-
-V33:
-	Inherits: ^DesertCivBuilding
-	Inherits@SHAPE: ^2x1Shape
-	Building:
-		Footprint: xx
-		Dimensions: 2,1
-
-V34:
-	Inherits: ^DesertCivBuilding
-
-V35:
-	Inherits: ^DesertCivBuilding
-
-V36:
-	Inherits: ^DesertCivBuilding
-
-V37:
-	Inherits: ^DesertCivBuilding
-	Building:
-		Footprint: __xx_ ___xx
-		Dimensions: 5,2
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: 0,0,0, 0,1024,0
-		Type: Rectangle
-			TopLeft: -512, -597
-			BottomRight: 1536, 597
 
 RICE:
 	Inherits: ^CivField

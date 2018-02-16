@@ -56,6 +56,7 @@ explosion:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+			MIXED: TEMPERAT
 
 burn-l:
 	idle:
@@ -299,6 +300,7 @@ moveflsh:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			DESERT: TEMPERAT
+			MIXED: TEMPERAT
 
 select:
 	repair:
@@ -634,6 +636,7 @@ overlay:
 	build-valid-snow:
 		Start: 2
 	build-valid-temperat:
+	build-valid-mixed:
 	build-invalid:
 		Start: 1
 	target-select:
@@ -641,6 +644,7 @@ overlay:
 	target-valid-desert:
 	target-valid-interior:
 	target-valid-snow:
+	target-valid-mixed:
 		Start: 2
 	target-valid-temperat:
 	target-invalid:
@@ -658,6 +662,7 @@ resources:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+			MIXED: TEMPERAT
 			DESERT: TEMPERAT
 	gold01: gold01
 	gold02: gold02
@@ -680,6 +685,7 @@ scorches:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+			MIXED: TEMPERAT
 	sc1: sc1
 	sc2: sc2
 	sc3: sc3
@@ -693,12 +699,35 @@ craters:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+			MIXED: TEMPERAT
 	cr1: cr1
 	cr2: cr2
 	cr3: cr3
 	cr4: cr4
 	cr5: cr5
 	cr6: cr6
+
+snow_scorches:
+	Defaults:
+		Length: *
+		AddExtension: false
+	sc1: sc1.sno
+	sc2: sc2.sno
+	sc3: sc3.sno
+	sc4: sc4.sno
+	sc5: sc5.sno
+	sc6: sc6.sno
+
+snow_craters:
+	Defaults:
+		Length: *
+		AddExtension: false
+	cr1: cr1.sno
+	cr2: cr2.sno
+	cr3: cr3.sno
+	cr4: cr4.sno
+	cr5: cr5.sno
+	cr6: cr6.sno
 
 mine:
 	idle:

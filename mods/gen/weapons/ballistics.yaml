@@ -13,6 +13,9 @@
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
 		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
+	Warhead@2SmuSnow: LeaveSmudge
+		SmudgeType: SnowCrater
+		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
 	Warhead@3Eff: CreateEffect
 		Explosions: small_explosion
 		ImpactSounds: kaboom12.aud
@@ -36,6 +39,7 @@ cannon.scorpion_tank:
 			infantry.normal: 10
 		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
 	-Warhead@2Smu: LeaveSmudge
+	-Warhead@2SmuSnow: LeaveSmudge
 	Warhead@3Eff: CreateEffect
 		-ImpactSounds:
 	Warhead@4EffWater: CreateEffect
@@ -212,6 +216,10 @@ cannon.nuke_cannon:
 		SmudgeType: Scorch
 		InvalidTargets: Vehicle, Tank, Structure, Wall
 		Size: 1
+	Warhead@3Smu_impactSnow: LeaveSmudge
+		SmudgeType: SnowScorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		Size: 1
 	Warhead@3Eff: CreateEffect
 		Explosions: mininuke
 		ImpactSounds: kaboom1.aud
@@ -251,6 +259,9 @@ cannon.strategy_center:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
+		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
+	Warhead@2SmuSnow: LeaveSmudge
+		SmudgeType: SnowCrater
 		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
 	Warhead@3Eff: CreateEffect
 		Explosions: artillery_explosion

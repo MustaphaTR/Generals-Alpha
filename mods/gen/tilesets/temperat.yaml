@@ -7,6 +7,21 @@ General:
 	HeightDebugColors: AA0000
 
 Terrain:
+	TerrainType@Clear:
+		Type: Clear
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Grass:
+		Type: Grass
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 284428
+		RestrictPlayerColor: true
+	TerrainType@GrassRoad:
+		Type: GrassRoad
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 5E430D
 	TerrainType@Beach:
 		Type: Beach
 		TargetTypes: Ground
@@ -16,12 +31,6 @@ Terrain:
 		TargetTypes: Ground, Bridge
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 606060
-	TerrainType@Clear:
-		Type: Clear
-		TargetTypes: Ground
-		AcceptsSmudgeType: Crater, Scorch
-		Color: 284428
-		RestrictPlayerColor: true
 	TerrainType@Gems:
 		Type: Gems
 		TargetTypes: Ground
@@ -38,11 +47,6 @@ Terrain:
 		Type: River
 		TargetTypes: Ground
 		Color: 5C8CB4
-	TerrainType@Road:
-		Type: Road
-		TargetTypes: Ground
-		AcceptsSmudgeType: Crater, Scorch
-		Color: 5E430D
 	TerrainType@Rock:
 		Type: Rock
 		TargetTypes: Ground
@@ -76,22 +80,22 @@ Templates:
 		PickAny: True
 		Categories: Terrain
 		Tiles:
-			0: Clear
-			1: Clear
-			2: Clear
-			3: Clear
-			4: Clear
-			5: Clear
-			6: Clear
-			7: Clear
-			8: Clear
-			9: Clear
-			10: Clear
-			11: Clear
-			12: Clear
-			13: Clear
-			14: Clear
-			15: Clear
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Grass
+			12: Grass
+			13: Grass
+			14: Grass
+			15: Grass
 	Template@65535:
 		Id: 65535
 		Images: clear1.tem
@@ -99,22 +103,22 @@ Templates:
 		PickAny: True
 		Categories: Terrain
 		Tiles:
-			0: Clear
-			1: Clear
-			2: Clear
-			3: Clear
-			4: Clear
-			5: Clear
-			6: Clear
-			7: Clear
-			8: Clear
-			9: Clear
-			10: Clear
-			11: Clear
-			12: Clear
-			13: Clear
-			14: Clear
-			15: Clear
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
+			8: Grass
+			9: Grass
+			10: Grass
+			11: Grass
+			12: Grass
+			13: Grass
+			14: Grass
+			15: Grass
 	Template@1:
 		Id: 1
 		Images: w1.tem
@@ -139,8 +143,8 @@ Templates:
 		Categories: Beach
 		Tiles:
 			3: Rock
-			5: Clear
-			6: Clear
+			5: Grass
+			6: Grass
 			7: Beach
 			8: Beach
 			9: Water
@@ -155,11 +159,11 @@ Templates:
 		Size: 5,5
 		Categories: Beach
 		Tiles:
-			4: Clear
+			4: Grass
 			8: Beach
 			9: Beach
 			10: Beach
-			11: Clear
+			11: Grass
 			12: Beach
 			13: Beach
 			14: Beach
@@ -176,7 +180,7 @@ Templates:
 		Size: 3,5
 		Categories: Beach
 		Tiles:
-			2: Clear
+			2: Grass
 			4: Beach
 			5: Beach
 			6: Beach
@@ -259,10 +263,10 @@ Templates:
 		Size: 3,3
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Grass
 			1: River
 			2: Rock
-			3: Clear
+			3: Grass
 			4: River
 			5: Beach
 			6: Water
@@ -274,9 +278,9 @@ Templates:
 		Size: 5,6
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Grass
 			5: Beach
-			6: Clear
+			6: Grass
 			10: Water
 			11: Beach
 			12: Beach
@@ -296,7 +300,7 @@ Templates:
 		Categories: Beach
 		Tiles:
 			0: Beach
-			1: Clear
+			1: Grass
 			4: Beach
 			5: Water
 			6: Beach
@@ -315,7 +319,7 @@ Templates:
 		Categories: Beach
 		Tiles:
 			0: Beach
-			1: Clear
+			1: Grass
 			3: Beach
 			4: Beach
 			5: Beach
@@ -340,12 +344,12 @@ Templates:
 			13: Water
 			14: Beach
 			15: Beach
-			16: Clear
+			16: Grass
 			19: Water
 			20: Water
 			21: Rough
 			22: Beach
-			23: Clear
+			23: Grass
 			27: Beach
 			28: Beach
 			29: Beach
@@ -357,7 +361,7 @@ Templates:
 		Tiles:
 			0: Beach
 			1: Beach
-			2: Clear
+			2: Grass
 			4: River
 			5: Beach
 			6: Beach
@@ -376,7 +380,7 @@ Templates:
 			0: Water
 			1: Water
 			2: Beach
-			3: Clear
+			3: Grass
 			6: Water
 			7: Beach
 			8: Beach
@@ -391,13 +395,13 @@ Templates:
 		Tiles:
 			0: Water
 			1: Beach
-			2: Clear
+			2: Grass
 			3: Water
 			4: Beach
-			5: Clear
+			5: Grass
 			6: Water
 			7: Beach
-			8: Clear
+			8: Grass
 	Template@19:
 		Id: 19
 		Images: sh17.tem
@@ -405,7 +409,7 @@ Templates:
 		Categories: Beach
 		Tiles:
 			0: Beach
-			1: Clear
+			1: Grass
 	Template@20:
 		Id: 20
 		Images: sh18.tem
@@ -429,10 +433,10 @@ Templates:
 		Tiles:
 			1: Water
 			2: Beach
-			3: Clear
+			3: Grass
 			5: Beach
 			6: Beach
-			7: Clear
+			7: Grass
 			8: Water
 			9: Beach
 			10: Beach
@@ -441,7 +445,7 @@ Templates:
 			14: Beach
 			16: Water
 			17: Beach
-			18: Clear
+			18: Grass
 	Template@22:
 		Id: 22
 		Images: sh20.tem
@@ -470,11 +474,11 @@ Templates:
 			1: Water
 			2: Beach
 			3: Beach
-			4: Clear
+			4: Grass
 			5: Water
 			6: Beach
 			7: Beach
-			8: Clear
+			8: Grass
 			10: Water
 			11: Beach
 			12: Beach
@@ -493,7 +497,7 @@ Templates:
 			15: Water
 			16: Water
 			17: Water
-			19: Clear
+			19: Grass
 			20: Beach
 			21: Beach
 			22: Water
@@ -515,11 +519,11 @@ Templates:
 			7: Water
 			8: Water
 			9: Water
-			11: Clear
+			11: Grass
 			12: Beach
 			13: River
 			14: Water
-			17: Clear
+			17: Grass
 			18: Beach
 			19: Beach
 			22: Beach
@@ -536,9 +540,9 @@ Templates:
 			3: Beach
 			4: Water
 			5: Water
-			7: Clear
+			7: Grass
 			8: Beach
-			11: Clear
+			11: Grass
 	Template@27:
 		Id: 27
 		Images: sh25.tem
@@ -605,7 +609,7 @@ Templates:
 		Categories: Beach
 		Tiles:
 			0: Beach
-			1: Clear
+			1: Grass
 	Template@32:
 		Id: 32
 		Images: sh30.tem
@@ -615,7 +619,7 @@ Templates:
 			0: Beach
 			1: River
 			2: River
-			3: Clear
+			3: Grass
 			4: River
 			5: Rough
 	Template@33:
@@ -635,17 +639,17 @@ Templates:
 			13: Water
 			14: Water
 			15: Beach
-			16: Clear
+			16: Grass
 			18: Beach
 			19: Beach
 			20: Water
 			21: Beach
-			22: Clear
-			24: Clear
-			25: Clear
+			22: Grass
+			24: Grass
+			25: Grass
 			26: Beach
 			27: Beach
-			28: Clear
+			28: Grass
 	Template@34:
 		Id: 34
 		Images: sh32.tem
@@ -661,8 +665,8 @@ Templates:
 			8: Beach
 			9: Beach
 			10: Beach
-			12: Clear
-			13: Clear
+			12: Grass
+			13: Grass
 	Template@35:
 		Id: 35
 		Images: sh33.tem
@@ -673,7 +677,7 @@ Templates:
 			2: Beach
 			3: Water
 			4: Beach
-			5: Clear
+			5: Grass
 			6: Beach
 			7: Rough
 			9: Beach
@@ -684,7 +688,7 @@ Templates:
 		Size: 6,5
 		Categories: Beach
 		Tiles:
-			3: Clear
+			3: Grass
 			4: Beach
 			5: Water
 			7: Beach
@@ -708,13 +712,13 @@ Templates:
 		Tiles:
 			2: Beach
 			3: Water
-			5: Clear
+			5: Grass
 			6: Beach
 			7: Rough
 			9: Beach
 			10: Beach
 			11: Water
-			12: Clear
+			12: Grass
 			13: Beach
 			14: Water
 	Template@38:
@@ -740,7 +744,7 @@ Templates:
 		Tiles:
 			1: Beach
 			2: Water
-			3: Clear
+			3: Grass
 			4: Beach
 			5: Water
 			6: Rough
@@ -752,7 +756,7 @@ Templates:
 		Size: 2,1
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Grass
 			1: Beach
 	Template@41:
 		Id: 41
@@ -766,7 +770,7 @@ Templates:
 			3: River
 			4: River
 			5: Water
-			6: Clear
+			6: Grass
 			7: Beach
 			8: Water
 	Template@42:
@@ -775,7 +779,7 @@ Templates:
 		Size: 5,5
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Grass
 			1: Beach
 			2: Water
 			6: Beach
@@ -783,7 +787,7 @@ Templates:
 			11: Beach
 			12: Water
 			13: Water
-			16: Clear
+			16: Grass
 			17: Beach
 			18: Beach
 			19: Water
@@ -805,7 +809,7 @@ Templates:
 			9: Beach
 			10: Water
 			11: Water
-			13: Clear
+			13: Grass
 			14: Beach
 			15: Water
 	Template@44:
@@ -820,7 +824,7 @@ Templates:
 			5: Beach
 			6: Beach
 			7: River
-			9: Clear
+			9: Grass
 			10: Beach
 			11: Water
 	Template@45:
@@ -893,7 +897,7 @@ Templates:
 		Tiles:
 			0: Water
 			1: Water
-			2: Clear
+			2: Grass
 			3: Beach
 	Template@51:
 		Id: 51
@@ -926,22 +930,22 @@ Templates:
 		Size: 3,3
 		Categories: Beach
 		Tiles:
-			0: Clear
+			0: Grass
 			1: Beach
 			2: Beach
 			4: Beach
 			5: Beach
 			7: Rough
-			8: Clear
+			8: Grass
 	Template@54:
 		Id: 54
 		Images: sh52.tem
 		Size: 3,3
 		Categories: Beach
 		Tiles:
-			1: Clear
-			2: Clear
-			3: Clear
+			1: Grass
+			2: Grass
+			3: Grass
 			4: Beach
 			5: Beach
 			7: Beach
@@ -953,13 +957,13 @@ Templates:
 		Categories: Beach
 		Tiles:
 			0: Beach
-			1: Clear
+			1: Grass
 			3: Beach
 			4: Beach
-			5: Clear
+			5: Grass
 			6: Water
 			7: Beach
-			8: Clear
+			8: Grass
 	Template@56:
 		Id: 56
 		Images: sh54.tem
@@ -968,10 +972,10 @@ Templates:
 		Tiles:
 			0: Water
 			1: Beach
-			2: Clear
+			2: Grass
 			3: Beach
 			4: Beach
-			6: Clear
+			6: Grass
 	Template@57:
 		Id: 57
 		Images: sh55.tem
@@ -1508,7 +1512,7 @@ Templates:
 			2: Rough
 			3: Rock
 			4: Rock
-			5: Clear
+			5: Grass
 	Template@72:
 		Id: 72
 		Images: wc14.tem
@@ -1649,7 +1653,7 @@ Templates:
 			0: Rock
 			1: Rock
 			2: Water
-			3: Clear
+			3: Grass
 			4: Rock
 			5: Rock
 	Template@86:
@@ -1766,186 +1770,186 @@ Templates:
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Clear
-			3: Clear
+			1: GrassRoad
+			2: Grass
+			3: Grass
 	Template@174:
 		Id: 174
 		Images: d02.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Clear
-			3: Clear
+			0: Grass
+			1: GrassRoad
+			2: Grass
+			3: Grass
 	Template@175:
 		Id: 175
 		Images: d03.tem
 		Size: 1,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
+			0: Grass
+			1: GrassRoad
 	Template@176:
 		Id: 176
 		Images: d04.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Road
-			3: Clear
+			1: Grass
+			2: GrassRoad
+			3: Grass
 	Template@177:
 		Id: 177
 		Images: d05.tem
 		Size: 3,4
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Clear
-			3: Road
-			4: Road
-			6: Road
-			7: Road
-			9: Road
-			10: Road
+			1: GrassRoad
+			2: Grass
+			3: GrassRoad
+			4: GrassRoad
+			6: GrassRoad
+			7: GrassRoad
+			9: GrassRoad
+			10: GrassRoad
 	Template@178:
 		Id: 178
 		Images: d06.tem
 		Size: 2,3
 		Categories: Road
 		Tiles:
-			0: Road
-			2: Road
-			3: Road
-			4: Road
-			5: Clear
+			0: GrassRoad
+			2: GrassRoad
+			3: GrassRoad
+			4: GrassRoad
+			5: Grass
 	Template@179:
 		Id: 179
 		Images: d07.tem
 		Size: 3,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Clear
-			4: Road
-			5: Clear
+			0: Grass
+			1: GrassRoad
+			2: Grass
+			4: GrassRoad
+			5: Grass
 	Template@180:
 		Id: 180
 		Images: d08.tem
 		Size: 3,2
 		Categories: Road
 		Tiles:
-			1: Road
-			3: Clear
-			4: Road
-			5: Clear
+			1: GrassRoad
+			3: Grass
+			4: GrassRoad
+			5: Grass
 	Template@181:
 		Id: 181
 		Images: d09.tem
 		Size: 4,3
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Clear
-			2: Clear
-			3: Clear
-			4: Road
-			5: Road
-			6: Road
-			7: Road
-			10: Clear
-			11: Clear
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: GrassRoad
+			5: GrassRoad
+			6: GrassRoad
+			7: GrassRoad
+			10: Grass
+			11: Grass
 	Template@182:
 		Id: 182
 		Images: d10.tem
 		Size: 4,2
 		Categories: Road
 		Tiles:
-			0: Clear
+			0: Grass
 			1: Rock
-			4: Road
-			5: Road
-			6: Road
-			7: Road
+			4: GrassRoad
+			5: GrassRoad
+			6: GrassRoad
+			7: GrassRoad
 	Template@183:
 		Id: 183
 		Images: d11.tem
 		Size: 2,3
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Road
-			3: Road
-			4: Clear
+			1: Grass
+			2: GrassRoad
+			3: GrassRoad
+			4: Grass
 	Template@184:
 		Id: 184
 		Images: d12.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			2: Road
-			3: Road
+			0: Grass
+			2: GrassRoad
+			3: GrassRoad
 	Template@185:
 		Id: 185
 		Images: d13.tem
 		Size: 4,3
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			2: Clear
-			4: Clear
-			5: Road
-			6: Road
+			0: GrassRoad
+			1: GrassRoad
+			2: Grass
+			4: Grass
+			5: GrassRoad
+			6: GrassRoad
 			7: Rock
 			10: Rock
-			11: Road
+			11: GrassRoad
 	Template@186:
 		Id: 186
 		Images: d14.tem
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Road
-			3: Clear
+			1: Grass
+			2: GrassRoad
+			3: Grass
 			4: Rock
-			5: Road
-			6: Road
-			7: Road
-			8: Road
+			5: GrassRoad
+			6: GrassRoad
+			7: GrassRoad
+			8: GrassRoad
 	Template@187:
 		Id: 187
 		Images: d15.tem
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			2: Road
-			3: Road
-			4: Road
-			5: Clear
-			6: Road
-			7: Clear
+			0: GrassRoad
+			1: GrassRoad
+			2: GrassRoad
+			3: GrassRoad
+			4: GrassRoad
+			5: Grass
+			6: GrassRoad
+			7: Grass
 	Template@188:
 		Id: 188
 		Images: d16.tem
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Road
-			3: Road
-			4: Road
-			5: Road
-			6: Road
-			7: Road
+			0: Grass
+			1: GrassRoad
+			2: GrassRoad
+			3: GrassRoad
+			4: GrassRoad
+			5: GrassRoad
+			6: GrassRoad
+			7: GrassRoad
 			8: Rock
 	Template@189:
 		Id: 189
@@ -1953,26 +1957,26 @@ Templates:
 		Size: 3,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			2: Road
-			3: Clear
-			4: Road
-			5: Clear
+			0: GrassRoad
+			1: GrassRoad
+			2: GrassRoad
+			3: Grass
+			4: GrassRoad
+			5: Grass
 	Template@190:
 		Id: 190
 		Images: d18.tem
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Clear
-			3: Road
-			4: Road
-			5: Clear
-			6: Clear
-			7: Road
+			0: Grass
+			1: GrassRoad
+			2: Grass
+			3: GrassRoad
+			4: GrassRoad
+			5: Grass
+			6: Grass
+			7: GrassRoad
 			8: Rock
 	Template@191:
 		Id: 191
@@ -1980,29 +1984,29 @@ Templates:
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Clear
-			1: Road
-			2: Clear
-			3: Road
-			4: Road
-			5: Road
-			6: Clear
-			7: Road
-			8: Clear
+			0: Grass
+			1: GrassRoad
+			2: Grass
+			3: GrassRoad
+			4: GrassRoad
+			5: GrassRoad
+			6: Grass
+			7: GrassRoad
+			8: Grass
 	Template@192:
 		Id: 192
 		Images: d20.tem
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Clear
-			3: Road
-			4: Road
-			5: Clear
-			6: Clear
-			7: Road
-			8: Road
+			0: GrassRoad
+			1: Grass
+			3: GrassRoad
+			4: GrassRoad
+			5: Grass
+			6: Grass
+			7: GrassRoad
+			8: GrassRoad
 	Template@193:
 		Id: 193
 		Images: d21.tem
@@ -2010,10 +2014,10 @@ Templates:
 		Categories: Road
 		Tiles:
 			0: Rock
-			1: Road
-			2: Road
-			3: Clear
-			4: Road
+			1: GrassRoad
+			2: GrassRoad
+			3: Grass
+			4: GrassRoad
 			5: Rough
 	Template@194:
 		Id: 194
@@ -2021,76 +2025,76 @@ Templates:
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			1: Clear
-			3: Road
-			4: Road
-			5: Clear
-			6: Clear
-			7: Road
-			8: Clear
+			1: Grass
+			3: GrassRoad
+			4: GrassRoad
+			5: Grass
+			6: Grass
+			7: GrassRoad
+			8: Grass
 	Template@195:
 		Id: 195
 		Images: d23.tem
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Clear
-			3: Clear
-			4: Road
-			5: Clear
-			6: Road
-			7: Road
+			1: GrassRoad
+			2: Grass
+			3: Grass
+			4: GrassRoad
+			5: Grass
+			6: GrassRoad
+			7: GrassRoad
 	Template@196:
 		Id: 196
 		Images: d24.tem
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			3: Road
-			4: Road
-			5: Road
-			7: Road
-			8: Road
+			0: GrassRoad
+			1: GrassRoad
+			3: GrassRoad
+			4: GrassRoad
+			5: GrassRoad
+			7: GrassRoad
+			8: GrassRoad
 	Template@197:
 		Id: 197
 		Images: d25.tem
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			3: Road
-			4: Road
-			5: Road
-			7: Road
-			8: Road
+			0: GrassRoad
+			1: GrassRoad
+			3: GrassRoad
+			4: GrassRoad
+			5: GrassRoad
+			7: GrassRoad
+			8: GrassRoad
 	Template@198:
 		Id: 198
 		Images: d26.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Road
+			1: GrassRoad
+			2: GrassRoad
 	Template@199:
 		Id: 199
 		Images: d27.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Road
+			1: GrassRoad
+			2: GrassRoad
 	Template@200:
 		Id: 200
 		Images: d28.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
+			0: GrassRoad
+			1: GrassRoad
 			2: Rough
 	Template@201:
 		Id: 201
@@ -2098,114 +2102,114 @@ Templates:
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			2: Road
+			0: GrassRoad
+			1: GrassRoad
+			2: GrassRoad
 	Template@202:
 		Id: 202
 		Images: d30.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			2: Road
+			0: GrassRoad
+			1: GrassRoad
+			2: GrassRoad
 	Template@203:
 		Id: 203
 		Images: d31.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Road
-			3: Road
+			1: GrassRoad
+			2: GrassRoad
+			3: GrassRoad
 	Template@204:
 		Id: 204
 		Images: d32.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Clear
-			2: Road
-			3: Clear
+			1: Grass
+			2: GrassRoad
+			3: Grass
 	Template@205:
 		Id: 205
 		Images: d33.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Road
-			3: Road
+			1: GrassRoad
+			2: GrassRoad
+			3: GrassRoad
 	Template@206:
 		Id: 206
 		Images: d34.tem
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Road
-			3: Road
-			4: Road
-			5: Road
-			6: Road
-			7: Road
+			1: GrassRoad
+			2: GrassRoad
+			3: GrassRoad
+			4: GrassRoad
+			5: GrassRoad
+			6: GrassRoad
+			7: GrassRoad
 	Template@207:
 		Id: 207
 		Images: d35.tem
 		Size: 3,3
 		Categories: Road
 		Tiles:
-			1: Road
-			2: Road
-			3: Road
-			4: Road
-			5: Road
-			6: Road
-			7: Road
+			1: GrassRoad
+			2: GrassRoad
+			3: GrassRoad
+			4: GrassRoad
+			5: GrassRoad
+			6: GrassRoad
+			7: GrassRoad
 	Template@208:
 		Id: 208
 		Images: d36.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			3: Road
+			0: GrassRoad
+			3: GrassRoad
 	Template@209:
 		Id: 209
 		Images: d37.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			3: Road
+			0: GrassRoad
+			3: GrassRoad
 	Template@210:
 		Id: 210
 		Images: d38.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			3: Road
+			0: GrassRoad
+			1: GrassRoad
+			3: GrassRoad
 	Template@211:
 		Id: 211
 		Images: d39.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			3: Road
+			0: GrassRoad
+			1: GrassRoad
+			3: GrassRoad
 	Template@212:
 		Id: 212
 		Images: d40.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			1: Road
-			3: Road
+			0: GrassRoad
+			1: GrassRoad
+			3: GrassRoad
 	Template@213:
 		Id: 213
 		Images: d41.tem
@@ -2213,40 +2217,40 @@ Templates:
 		Categories: Road
 		Tiles:
 			0: Rock
-			2: Road
-			3: Road
+			2: GrassRoad
+			3: GrassRoad
 	Template@214:
 		Id: 214
 		Images: d42.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Road
-			2: Road
-			3: Road
+			0: GrassRoad
+			2: GrassRoad
+			3: GrassRoad
 	Template@215:
 		Id: 215
 		Images: d43.tem
 		Size: 2,2
 		Categories: Road
 		Tiles:
-			0: Clear
-			2: Road
-			3: Road
+			0: Grass
+			2: GrassRoad
+			3: GrassRoad
 	Template@227:
 		Id: 227
 		Images: d44.tem
 		Size: 1,1
 		Categories: Road
 		Tiles:
-			0: Road
+			0: GrassRoad
 	Template@228:
 		Id: 228
 		Images: d45.tem
 		Size: 1,1
 		Categories: Road
 		Tiles:
-			0: Road
+			0: GrassRoad
 	Template@231:
 		Id: 231
 		Images: rc01.tem
@@ -2337,13 +2341,13 @@ Templates:
 			4: Rock
 			5: Rock
 			6: Rock
-			7: Clear
+			7: Grass
 			8: Rock
 			9: Rock
 			10: River
 			11: River
-			13: Clear
-			14: Clear
+			13: Grass
+			14: Grass
 			15: Rock
 	Template@115:
 		Id: 115
@@ -2369,7 +2373,7 @@ Templates:
 		Size: 3,3
 		Categories: River
 		Tiles:
-			0: Clear
+			0: Grass
 			1: River
 			2: Rock
 			3: Rock
@@ -2418,8 +2422,8 @@ Templates:
 		Size: 2,2
 		Categories: River
 		Tiles:
-			0: Clear
-			1: Clear
+			0: Grass
+			1: Grass
 			2: River
 			3: River
 	Template@121:
@@ -2448,7 +2452,7 @@ Templates:
 		Size: 3,4
 		Categories: River
 		Tiles:
-			0: Clear
+			0: Grass
 			1: River
 			2: Rock
 			3: Rock
@@ -2466,7 +2470,7 @@ Templates:
 		Size: 4,4
 		Categories: River
 		Tiles:
-			2: Clear
+			2: Grass
 			3: Rough
 			4: River
 			5: River
@@ -2476,7 +2480,7 @@ Templates:
 			9: Rock
 			10: River
 			11: Rock
-			12: Clear
+			12: Grass
 			13: Rock
 			14: River
 			15: Rough
@@ -2662,8 +2666,8 @@ Templates:
 		Categories: Bridge
 		Tiles:
 			0: Rock
-			3: Road
-			4: Clear
+			3: GrassRoad
+			4: Grass
 			9: Rock
 			14: Water
 	Template@381:
@@ -2672,7 +2676,7 @@ Templates:
 		Size: 5,1
 		Categories: Bridge
 		Tiles:
-			0: Road
+			0: GrassRoad
 			4: Beach
 	Template@131:
 		Id: 131
@@ -2722,15 +2726,15 @@ Templates:
 			8: Rock
 			9: Rock
 			12: Rough
-			13: Clear
-			14: Clear
+			13: Grass
+			14: Grass
 	Template@382:
 		Id: 382
 		Images: bridge1x.tem
 		Size: 5,4
 		Categories: Bridge
 		Tiles:
-			2: Clear
+			2: Grass
 			3: Bridge
 			4: Bridge
 			5: Rock
@@ -2792,7 +2796,7 @@ Templates:
 			0: Bridge
 			1: Bridge
 			2: Rough
-			3: Clear
+			3: Grass
 			4: Rough
 			9: River
 			15: Rock
@@ -2809,8 +2813,8 @@ Templates:
 		Categories: Bridge
 		Tiles:
 			0: Rough
-			1: Road
-			2: Road
+			1: GrassRoad
+			2: GrassRoad
 			3: Beach
 			4: Beach
 			5: Beach
@@ -2844,22 +2848,22 @@ Templates:
 			3: Beach
 			4: Beach
 			5: Beach
-			6: Clear
-			7: Road
-			8: Clear
+			6: Grass
+			7: GrassRoad
+			8: Grass
 	Template@250:
 		Id: 250
 		Images: f04.tem
 		Size: 3,3
 		Categories: Bridge
 		Tiles:
-			0: Clear
+			0: Grass
 			1: Beach
 			2: Beach
-			3: Road
+			3: GrassRoad
 			4: Beach
 			5: Beach
-			6: Clear
+			6: Grass
 			7: Beach
 			8: Beach
 	Template@251:
@@ -2885,13 +2889,13 @@ Templates:
 		Tiles:
 			0: Beach
 			1: Beach
-			2: Clear
+			2: Grass
 			3: Beach
 			4: Beach
-			5: Road
+			5: GrassRoad
 			6: Beach
 			7: Beach
-			8: Clear
+			8: Grass
 	Template@129:
 		Id: 129
 		Images: ford1.tem
@@ -2901,10 +2905,10 @@ Templates:
 			0: Rough
 			1: River
 			2: Rough
-			3: Road
+			3: GrassRoad
 			4: Rough
-			5: Road
-			6: Clear
+			5: GrassRoad
+			6: Grass
 			7: Rough
 			8: Rough
 	Template@130:
@@ -2919,9 +2923,9 @@ Templates:
 			3: Rock
 			4: Rough
 			5: Rough
-			6: Clear
-			7: Road
-			8: Clear
+			6: Grass
+			7: GrassRoad
+			8: Grass
 	Template@125:
 		Id: 125
 		Images: falls1.tem
@@ -3116,25 +3120,25 @@ Templates:
 		Categories: Debris
 		Tiles:
 			0: Rough
-			1: Clear
-			2: Clear
-			3: Clear
-			4: Clear
-			5: Clear
-			6: Clear
-			7: Clear
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
+			6: Grass
+			7: Grass
 	Template@108:
 		Id: 108
 		Images: p08.tem
 		Size: 3,2
 		Categories: Debris
 		Tiles:
-			0: Clear
-			1: Clear
-			2: Clear
-			3: Clear
-			4: Clear
-			5: Clear
+			0: Grass
+			1: Grass
+			2: Grass
+			3: Grass
+			4: Grass
+			5: Grass
 	Template@109:
 		Id: 109
 		Images: p13.tem
@@ -3223,11 +3227,11 @@ Templates:
 		Size: 3,4
 		Categories: Bridge
 		Tiles:
-			0: Clear
-			1: Road
-			2: Clear
-			9: Clear
-			10: Road
+			0: Grass
+			1: GrassRoad
+			2: Grass
+			9: Grass
+			10: GrassRoad
 			11: Rock
 	Template@520:
 		Id: 520
@@ -3310,12 +3314,12 @@ Templates:
 		Size: 4,4
 		Categories: Bridge
 		Tiles:
-			1: Clear
-			2: Clear
-			3: Road
+			1: Grass
+			2: Grass
+			3: GrassRoad
 			4: River
-			12: Road
-			13: Clear
+			12: GrassRoad
+			13: Grass
 			14: River
 			15: River
 	Template@527:
@@ -3363,20 +3367,20 @@ Templates:
 		Size: 5,5
 		Categories: Bridge
 		Tiles:
-			0: Road
-			1: Clear
-			2: Clear
+			0: GrassRoad
+			1: Grass
+			2: Grass
 			4: River
 			8: River
 			9: River
 			14: River
 			15: River
 			16: River
-			17: Clear
-			18: Road
-			19: Clear
-			23: Clear
-			24: Road
+			17: Grass
+			18: GrassRoad
+			19: Grass
+			23: Grass
+			24: GrassRoad
 	Template@531:
 		Id: 531
 		Images: sbridge2.tem
@@ -3419,16 +3423,16 @@ Templates:
 		Size: 4,4
 		Categories: Bridge
 		Tiles:
-			0: Clear
+			0: Grass
 			3: Rock
-			4: Road
-			7: Road
-			8: Clear
+			4: GrassRoad
+			7: GrassRoad
+			8: Grass
 			11: Rock
-			12: Clear
+			12: Grass
 			13: River
 			14: River
-			15: Clear
+			15: Grass
 	Template@550:
 		Id: 550
 		Images: sccnr.tem
@@ -3621,7 +3625,7 @@ Templates:
 			8: Rough
 			9: Rough
 			10: Rough
-			11: Clear
+			11: Grass
 	Template@401:
 		Id: 401
 		Images: cliffsl1.tem
@@ -3864,8 +3868,8 @@ Templates:
 		Size: 5,3
 		Categories: Bridge
 		Tiles:
-			0: Clear
-			1: Road
+			0: Grass
+			1: GrassRoad
 			4: Rock
 			5: Rock
 			10: Water
@@ -3877,17 +3881,17 @@ Templates:
 		Categories: Bridge
 		Tiles:
 			0: Beach
-			4: Road
+			4: GrassRoad
 	Template@423:
 		Id: 423
 		Images: bridgev1.tem
 		Size: 4,3
 		Categories: Bridge
 		Tiles:
-			0: Clear
-			1: Road
-			2: Road
-			3: Clear
+			0: Grass
+			1: GrassRoad
+			2: GrassRoad
+			3: Grass
 			4: Rock
 			5: Bridge
 			6: Bridge
@@ -3902,10 +3906,10 @@ Templates:
 		Size: 4,3
 		Categories: Bridge
 		Tiles:
-			0: Clear
-			1: Road
-			2: Road
-			3: Clear
+			0: Grass
+			1: GrassRoad
+			2: GrassRoad
+			3: Grass
 			4: Rock
 			5: Rough
 			6: Rough
@@ -3920,10 +3924,10 @@ Templates:
 		Size: 4,3
 		Categories: Bridge
 		Tiles:
-			0: Clear
-			1: Road
-			2: Road
-			3: Clear
+			0: Grass
+			1: GrassRoad
+			2: GrassRoad
+			3: Grass
 			4: Rock
 			5: Rock
 			6: Rock
@@ -3946,10 +3950,10 @@ Templates:
 			5: Bridge
 			6: Bridge
 			7: Rock
-			8: Clear
-			9: Road
-			10: Road
-			11: Clear
+			8: Grass
+			9: GrassRoad
+			10: GrassRoad
+			11: Grass
 	Template@427:
 		Id: 427
 		Images: bridgevd2.tem
@@ -3964,10 +3968,10 @@ Templates:
 			5: Rough
 			6: Rough
 			7: Rock
-			8: Clear
-			9: Road
-			10: Road
-			11: Clear
+			8: Grass
+			9: GrassRoad
+			10: GrassRoad
+			11: Grass
 	Template@428:
 		Id: 428
 		Images: bridgevb2.tem
@@ -3982,10 +3986,10 @@ Templates:
 			5: Rock
 			6: Rock
 			7: Rock
-			8: Clear
-			9: Road
-			10: Road
-			11: Clear
+			8: Grass
+			9: GrassRoad
+			10: GrassRoad
+			11: Grass
 	Template@429:
 		Id: 429
 		Images: bridgev3.tem
@@ -4080,10 +4084,10 @@ Templates:
 			0: Beach
 			1: Rock
 			2: Rock
-			3: Road
+			3: GrassRoad
 			4: Bridge
 			5: Bridge
-			6: Road
+			6: GrassRoad
 			7: Bridge
 			8: Bridge
 			9: Beach
@@ -4098,10 +4102,10 @@ Templates:
 			0: Beach
 			1: Rock
 			2: Rock
-			3: Road
+			3: GrassRoad
 			4: Rough
 			5: Rough
-			6: Road
+			6: GrassRoad
 			7: Rough
 			8: Rough
 			9: Beach
@@ -4116,10 +4120,10 @@ Templates:
 			0: Beach
 			1: Rock
 			2: Rock
-			3: Road
+			3: GrassRoad
 			4: Rock
 			5: Rock
-			6: Road
+			6: GrassRoad
 			7: Rock
 			8: Rock
 			9: Beach
@@ -4136,10 +4140,10 @@ Templates:
 			2: Beach
 			3: Bridge
 			4: Bridge
-			5: Road
+			5: GrassRoad
 			6: Bridge
 			7: Bridge
-			8: Road
+			8: GrassRoad
 			9: Rock
 			10: Rock
 			11: Beach
@@ -4154,10 +4158,10 @@ Templates:
 			2: Beach
 			3: Rough
 			4: Rough
-			5: Road
+			5: GrassRoad
 			6: Rough
 			7: Rough
-			8: Road
+			8: GrassRoad
 			9: Rock
 			10: Rock
 			11: Beach
@@ -4172,10 +4176,10 @@ Templates:
 			2: Beach
 			3: Rock
 			4: Rock
-			5: Road
+			5: GrassRoad
 			6: Rock
 			7: Rock
-			8: Road
+			8: GrassRoad
 			9: Rock
 			10: Rock
 			11: Beach
