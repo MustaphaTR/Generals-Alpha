@@ -537,6 +537,10 @@ aircraft.spy_drone:
 		Range: 6c256
 	-Selectable:
 	-SpawnActorOnDeath:
+	Explodes: 
+		Weapon: UnitExplodeDrone
+		EmptyWeapon: UnitExplodeDrone
+		-RequiresCondition:
 	SmokeTrailWhenDamaged:
 		Offset: -511,0,0
 		Interval: 2

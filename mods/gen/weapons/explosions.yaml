@@ -73,6 +73,12 @@ UnitExplodeHeli:
 	Warhead@2Eff: CreateEffect
 		Explosions: napalm
 
+UnitExplodeDrone:
+	Inherits: UnitExplode
+	-Warhead@1Dam: SpreadDamage
+	Warhead@2Eff: CreateEffect
+		Explosions: med_explosion_air
+
 UnitExplodeShip:
 	Inherits: ^Explosion
 	-Warhead@Smu: LeaveSmudge
