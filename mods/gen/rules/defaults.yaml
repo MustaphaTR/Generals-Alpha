@@ -1482,6 +1482,21 @@
 		ReferencePoint: Center
 		ZOffset: 256
 	-MustBeDestroyed:
+	Production:
+		Produces: FakeToReal
+		PauseOnCondition: emp || hacked
+	ProductionQueue:
+		Type: FakeToReal
+		RequireOwner: false
+		Group: Vehicle
+		LowPowerSlowdown: 3
+	ProductionBar:
+	Exit:
+	ProvidesPrerequisite@buildingname:
+	GrantConditionOnProduction:
+		Condition: turn_real
+	TransformOnCondition:
+		RequiresCondition: turn_real
 	EditorTilesetFilter:
 		Categories: Fake
 

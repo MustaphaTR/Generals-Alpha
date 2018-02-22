@@ -27,6 +27,10 @@ fake.command_center:
 		HP: 1250
 	Armor:
 		Type: building.tough
+	Production:
+		Produces: queue.command_center.fake
+	ProductionQueue:
+		Type: queue.command_center.fake
 	WithBuildingBib:
 	WithTextDecoration@SIDE:
 		Text: GLA
@@ -36,6 +40,8 @@ fake.command_center:
 		ValidStances: Ally, Neutral, Enemy
 	RenderSprites:
 		Image: building.gla_command_center
+	TransformOnCondition:
+		IntoActor: building.gla_command_center
 	Valued:
 		Cost: 500
 	Voiced:
@@ -69,9 +75,15 @@ fake.barracks:
 		HP: 125
 	Armor:
 		Type: building.normal
+	Production:
+		Produces: queue.barracks.fake
+	ProductionQueue:
+		Type: queue.barracks.fake
 	WithBuildingBib:
 	RenderSprites:
 		Image: building.gla_barracks
+	TransformOnCondition:
+		IntoActor: building.gla_barracks
 	Valued:
 		Cost: 125
 	Voiced:
@@ -108,6 +120,10 @@ fake.supply_stash:
 		HP: 250
 	Armor:
 		Type: building.normal
+	Production:
+		Produces: queue.supply_stash.fake
+	ProductionQueue:
+		Type: queue.supply_stash.fake
 	WithBuildingBib:
 	WithMakeAnimation@RA_SILO:
 		Sequence: make
@@ -122,6 +138,8 @@ fake.supply_stash:
 		Name: tdsilo
 	RenderSprites:
 		Image: building.gla_supply_stash
+	TransformOnCondition:
+		IntoActor: building.gla_supply_stash
 	Valued:
 		Cost: 375
 	Voiced:
@@ -134,7 +152,7 @@ fake.arms_dealer:
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		BuildPaletteOrder: 17
-		BuildDuration: 125
+		BuildDuration: 250
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
 		Prerequisites: prerequisite.supply_center, ~techlevel.low, ~prerequisite.zh_units
@@ -153,11 +171,17 @@ fake.arms_dealer:
 		HP: 500
 	Armor:
 		Type: building.normal
+	Production:
+		Produces: queue.arms_dealer.fake
+	ProductionQueue:
+		Type: queue.arms_dealer.fake
 	WithBuildingBib:
 	WithProductionDoorOverlay:
 		Sequence: build-top
 	RenderSprites:
 		Image: building.arms_dealer
+	TransformOnCondition:
+		IntoActor: building.arms_dealer
 	Valued:
 		Cost: 625
 	Voiced:
@@ -170,7 +194,7 @@ fake.palace:
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		BuildPaletteOrder: 20
-		BuildDuration: 125
+		BuildDuration: 625
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
 		Prerequisites: building.arms_dealer, ~techlevel.medium, ~prerequisite.zh_units
@@ -192,6 +216,10 @@ fake.palace:
 		HP: 300
 	Armor:
 		Type: building.normal
+	Production:
+		Produces: queue.palace.fake
+	ProductionQueue:
+		Type: queue.palace.fake
 	Cargo:
 		Types: fake
 		MaxWeight: 5
@@ -200,6 +228,8 @@ fake.palace:
 	RenderSprites:
 		Image: building.palace
 		PlayerPalette: cncplayer
+	TransformOnCondition:
+		IntoActor: building.palace
 	Valued:
 		Cost: 625
 	Voiced:
@@ -212,7 +242,7 @@ fake.black_market:
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		BuildPaletteOrder: 21
-		BuildDuration: 125
+		BuildDuration: 500
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
 		Prerequisites: building.palace, ~techlevel.medium, ~prerequisite.zh_units
@@ -234,10 +264,16 @@ fake.black_market:
 		HP: 125
 	Armor:
 		Type: building.normal
+	Production:
+		Produces: queue.black_market.fake
+	ProductionQueue:
+		Type: queue.black_market.fake
 	WithBuildingBib:
 	RenderSprites:
 		Image: building.black_market
 		PlayerPalette: cncplayer
+	TransformOnCondition:
+		IntoActor: building.black_market
 	Valued:
 		Cost: 625
 	Voiced:
@@ -250,7 +286,7 @@ hack.fake_scud_spawner:
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		BuildPaletteOrder: 22
-		BuildDuration: 250
+		BuildDuration: 1000
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
 		Prerequisites: building.palace, ~techlevel.unrestricted, ~prerequisite.zh_units
@@ -293,7 +329,7 @@ fake.scud_storm:
 	Inherits@SHAPE: ^2x2Shape
 #	Buildable:
 #		BuildPaletteOrder: 22
-#		BuildDuration: 250
+#		BuildDuration: 1000
 #		BuildDurationModifier: 100
 #		Queue: queue.gla_building
 #		Prerequisites: building.palace, ~techlevel.unrestricted, ~disabled
@@ -311,6 +347,10 @@ fake.scud_storm:
 		HP: 300
 	Armor:
 		Type: building.tough
+	Production:
+		Produces: queue.scud_storm.fake
+	ProductionQueue:
+		Type: queue.scud_storm.fake
 	Selectable:
 		Bounds: 48,48,0,0
 	AttackTurreted:
@@ -370,6 +410,8 @@ fake.scud_storm:
 	-WithMakeAnimation:
 	RenderSprites:
 		Image: building.scud_storm
+	TransformOnCondition:
+		IntoActor: building.scud_storm
 	Valued:
 		Cost: 1000
 	RevealsShroud@SW:
@@ -402,6 +444,10 @@ fake.demo_trap:
 		HP: 15
 	Armor:
 		Type: building.normal
+	Production:
+		Produces: queue.demo_trap.fake
+	ProductionQueue:
+		Type: queue.demo_trap.fake
 	Cloak:
 		InitialDelay: 125
 		CloakDelay: 60
@@ -415,6 +461,8 @@ fake.demo_trap:
 	-WithMakeAnimation:
 	RenderSprites:
 		Image: building.demo_trap
+	TransformOnCondition:
+		IntoActor: building.demo_trap
 	Valued:
 		Cost: 50
 
@@ -442,6 +490,10 @@ fake.tunnel_network:
 		HP: 125
 	Armor:
 		Type: building.stinger_site
+	Production:
+		Produces: queue.tunnel_network.fake
+	ProductionQueue:
+		Type: queue.tunnel_network.fake
 	Turreted:
 		TurnSpeed: 12
 		InitialFacing: 56
@@ -458,6 +510,8 @@ fake.tunnel_network:
 	WithSpriteTurret:
 	RenderSprites:
 		Image: building.tunnel_network
+	TransformOnCondition:
+		IntoActor: building.tunnel_network
 	Valued:
 		Cost: 100
 	-WithSpriteBody:
@@ -489,9 +543,15 @@ fake.stinger_site:
 		HP: 125
 	Armor:
 		Type: building.normal
+	Production:
+		Produces: queue.stinger_site.fake
+	ProductionQueue:
+		Type: queue.stinger_site.fake
 	WithBuildingBib:
 	RenderSprites:
 		Image: building.stinger_site
+	TransformOnCondition:
+		IntoActor: building.stinger_site
 	Valued:
 		Cost: 100
 	Voiced:

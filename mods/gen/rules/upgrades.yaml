@@ -33,6 +33,15 @@
 		HP: 1
 	HitShape:
 
+^default.fake_to_real:
+	Inherits: ^default.upgrade
+	Buildable:
+		Queue: FakeToReal
+		BuildPaletteOrder: 1
+		BuildLimit: 0
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
+
 hack.cameo_filler.14:
 	Inherits: ^default.cameo_filler
 	Buildable:
@@ -803,3 +812,134 @@ strategy.overlord_speaker:
 		ReadyAudio: Speaker
 	Doctrine:
 		Type: strategy.prc
+
+fake_to_real.command_center:
+	Inherits: ^default.fake_to_real
+	Tooltip:
+		Name: Turn To Real Command Center
+	Buildable:
+		Queue: queue.command_center.fake
+		BuildDuration: 750
+		Description: Tuns the building to a functional Command Center.
+	Valued:
+		Cost: 1500
+	RenderSprites:
+		Image: building.gla_command_center
+
+fake_to_real.barracks:
+	Inherits: ^default.fake_to_real
+	Tooltip:
+		Name: Turn To Real Barracks
+	Buildable:
+		Queue: queue.barracks.fake
+		BuildDuration: 250
+		Description: Tuns the building to a functional Barracks.
+	Valued:
+		Cost: 375
+	RenderSprites:
+		Image: building.gla_barracks
+
+fake_to_real.supply_stash:
+	Inherits: ^default.fake_to_real
+	Tooltip:
+		Name: Turn To Real Supply Stash
+	Buildable:
+		Queue: queue.supply_stash.fake
+		BuildDuration: 250
+		Description: Tuns the building to a functional Supply Stash.
+	Valued:
+		Cost: 1125
+	RenderSprites:
+		Image: building.gla_supply_stash
+
+fake_to_real.arms_dealer:
+	Inherits: ^default.fake_to_real
+	Tooltip:
+		Name: Turn To Real Arms Dealer
+	Buildable:
+		Queue: queue.arms_dealer.fake
+		BuildDuration: 250
+		Description: Tuns the building to a functional Arms Dealer.
+	Valued:
+		Cost: 1875
+	RenderSprites:
+		Image: building.arms_dealer
+
+fake_to_real.palace:
+	Inherits: ^default.fake_to_real
+	Tooltip:
+		Name: Turn To Real Palace
+	Buildable:
+		Queue: queue.palace.fake
+		BuildDuration: 625
+		Description: Tuns the building to a functional Palace.
+	Valued:
+		Cost: 1875
+	RenderSprites:
+		Image: building.palace
+
+fake_to_real.black_market:
+	Inherits: ^default.fake_to_real
+	Tooltip:
+		Name: Turn To Real Black Market
+	Buildable:
+		Queue: queue.black_market.fake
+		BuildDuration: 500
+		Description: Tuns the building to a functional Black Market.
+	Valued:
+		Cost: 1875
+	RenderSprites:
+		Image: building.black_market
+
+fake_to_real.scud_storm:
+	Inherits: ^default.fake_to_real
+	Tooltip:
+		Name: Turn To Real SCUD Storm
+	Buildable:
+		Queue: queue.scud_storm.fake
+		BuildDuration: 1000
+		Description: Tuns the building to a functional SCUD Storm.
+		Prerequisites: !prerequisite.enough_scud
+	Valued:
+		Cost: 4000
+	RenderSprites:
+		Image: building.scud_storm
+
+fake_to_real.demo_trap:
+	Inherits: ^default.fake_to_real
+	Tooltip:
+		Name: Turn To Real Demo Trap
+	Buildable:
+		Queue: queue.demo_trap.fake
+		BuildDuration: 100
+		Description: Tuns the building to a functional Demo Trap.
+	Valued:
+		Cost: 350
+	RenderSprites:
+		Image: building.demo_trap
+
+fake_to_real.tunnel_network:
+	Inherits: ^default.fake_to_real
+	Tooltip:
+		Name: Turn To Real Tunnel Network
+	Buildable:
+		Queue: queue.tunnel_network.fake
+		BuildDuration: 250
+		Description: Tuns the building to a functional Tunnel Network.
+	Valued:
+		Cost: 700
+	RenderSprites:
+		Image: building.tunnel_network
+
+fake_to_real.stinger_site:
+	Inherits: ^default.fake_to_real
+	Tooltip:
+		Name: Turn To Real Stinger Site
+	Buildable:
+		Queue: queue.stinger_site.fake
+		BuildDuration: 250
+		Description: Tuns the building to a functional Stinger Site.
+	Valued:
+		Cost: 800
+	RenderSprites:
+		Image: building.stinger_site
