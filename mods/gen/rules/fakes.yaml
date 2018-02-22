@@ -137,7 +137,7 @@ fake.arms_dealer:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Queue: queue.gla_building
-		Prerequisites: building.gla_supply_stash, ~techlevel.low, ~prerequisite.zh_units
+		Prerequisites: prerequisite.supply_center, ~techlevel.low, ~prerequisite.zh_units
 		Description: Looks like an Arms Dealer.
 		Icon: fake-icon
 	Tooltip:
