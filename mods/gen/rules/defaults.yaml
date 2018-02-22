@@ -1422,7 +1422,7 @@
 		Dimensions: 1,1
 		Footprint: x
 		TerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
-		RequiresBaseProvider: True
+		RequiresBaseProvider: true
 	SoundOnDamageTransition:
 		DamagedSounds: kaboom1.aud
 		DestroyedSounds: kaboom22.aud
@@ -1865,6 +1865,7 @@
 		Type: building.normal
 	Building:
 		TerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
+		RequiresBaseProvider: false
 		BuildSounds: placbldg.aud
 		Dimensions: 1,1
 		Footprint: x
