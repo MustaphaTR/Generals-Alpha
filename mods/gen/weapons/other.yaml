@@ -378,6 +378,7 @@ disable.hacker.anim:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Structure
+		InvalidTargets: Hole
 		ValidStances: Enemy, Neutral
 
 disable.hacker.end:
@@ -395,6 +396,7 @@ disable.hacker.end:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Structure
+		InvalidTargets: Hole
 		ValidStances: Enemy, Neutral
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c512
