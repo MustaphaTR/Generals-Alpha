@@ -165,6 +165,10 @@ tech.soviet_barracks:
 		Footprint: xx xx ==
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
+	GivesBuildableArea:
+		AreaTypes: mine, flame_tower
+	BaseProvider:
+		Range: 4c0
 	Selectable:
 		Priority: 0
 	Health:
@@ -193,8 +197,6 @@ tech.soviet_barracks:
 	ExternalCapturable:
 	ExternalCapturableBar:
 	EngineerRepairable:
-	GivesBuildableArea:
-		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 15
 		PlayerExperience: 25
@@ -216,6 +218,8 @@ tech.flame_tower:
 		BuildPaletteOrder: 5
 		Prerequisites: ~techlevel.low
 		Description: Anti-infantry base defense.
+	RequiresBuildableArea:
+		AreaTypes: flame_tower
 	Valued:
 		Cost: 600
 	Tooltip:
