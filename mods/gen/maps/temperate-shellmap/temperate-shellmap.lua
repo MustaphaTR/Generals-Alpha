@@ -23,15 +23,13 @@ ProducedUnitTypes =
 	{ factory = PRCShipyard, types = { "vessel.gunboat", "vessel.destroyer" } }
 }
 
-StrategyTypes =
-{
-	{ factory = USAStrategy, types = { "strategy.bombardment", "strategy.search_and_destroy", "strategy.hold_the_line" } },
-	{ factory = GLAPalace, types = { "strategy.bio_bombs", "strategy.hi_explosive_bombs", "strategy.disguise" } },
-	{ factory = PRCPropaganda, types = { "strategy.overlord_gatling", "strategy.overlord_bunker", "strategy.overlord_speaker" } }
-}
-
 MiG1Waypoints = { MiG11, MiG12, MiG13 }
 MiG2Waypoints = { MiG21, MiG22, MiG23 }
+
+StrategyTypes = { "strategy.bombardment", "strategy.search_and_destroy", "strategy.hold_the_line" }
+DroneUpgrades = { "upgrade.scout_drone", "upgrade.battle_drone" }
+SCUDUpgrades = { "upgrade.toxin_missiles", "upgrade.hi_explosive_missiles" }
+OverlordUpgrades = { "upgrade.overlord_gatling", "upgrade.overlord_speaker" }
 
 ParadropWaypoints = { Paradrop1, Paradrop2, Paradrop3 }
 
@@ -88,6 +86,14 @@ BindActorTriggers = function(a)
 			end
 		end)
 	end
+
+	if a.Type == "vehicle.scud_launcher" then
+		SelectUpgrade(a, SCUDUpgrades)
+	end
+
+	if a.Type == "vehicle.overlord_tank" then
+		SelectUpgrade(a, OverlordUpgrades)
+	end
 end
 
 ProduceUnits = function(t)
@@ -100,12 +106,9 @@ ProduceUnits = function(t)
 	end
 end
 
-SelectStrategy = function(t)
-	local factory = t.factory
-	if not factory.IsDead then
-		local strategyType = t.types[Utils.RandomInteger(1, #t.types + 1)]
-		factory.Produce(strategyType)
-	end
+SelectUpgrade = function(actor, upgrades)
+	local upgradeType = upgrades[Utils.RandomInteger(1, #upgrades + 1)]
+	actor.Produce(upgradeType)
 end
 
 SetupDefensiveUnits = function()
@@ -190,7 +193,10 @@ WorldLoaded = function()
 	SetupDefensiveUnits()
 	SetupFactories()
 	Utils.Do(ProducedUnitTypes, ProduceUnits)
-	Utils.Do(StrategyTypes, SelectStrategy)
+
+	SelectUpgrade(USAStrategy, StrategyTypes)
+	SelectUpgrade(PaladinTank1, DroneUpgrades)
+	SelectUpgrade(ScudLauncher1, SCUDUpgrades)
 
 	DeployMe(Hacker1)
 	DeployMe(Hacker2)

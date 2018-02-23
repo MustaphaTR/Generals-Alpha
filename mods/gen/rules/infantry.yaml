@@ -743,11 +743,6 @@ infantry.hijacker:
 		Cost: 400
 	Tooltip:
 		Name: Hijacker
-		RequiresCondition: !disguise
-	DisguiseTooltip:
-		Name: Hijacker
-		GenericName: Soldier
-		RequiresCondition: disguise
 	Health:
 		HP: 100
 	Armor:
@@ -766,30 +761,18 @@ infantry.hijacker:
 	WithInfantryBody:
 		-IdleSequences:
 		StandSequences: stand
-		RequiresCondition: !disguise
 	Crushable:
 		WarnProbability: 95
-	Disguise:
-		TargetTypes: Infantry-Disguise
-		Voice: Move
-		DisguisedCondition: disguised
-		RequiresCondition: disguise
-	WithDisguisingInfantryBody:
-		StandSequences: stand
-		RequiresCondition: disguise
 	Cloak:
 		InitialDelay: 250
 		CloakDelay: 120
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
 		CloakTypes: Cloak
 		IsPlayerPalette: true
-		RequiresCondition: !cloak-force-disabled && !disguised
+		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
-	GrantConditionOnPrerequisite@DISGUISE:
-		Condition: disguise
-		Prerequisites: strategy.disguise
 
 infantry.colonel_burton:
 	Inherits: ^Soldier

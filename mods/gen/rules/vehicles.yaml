@@ -1057,7 +1057,7 @@ vehicle.scud_launcher:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~building.arms_dealer, ~generals_power.scud_launcher, ~techlevel.high
-		Description: Long-range rocket artillery.
+		Description: Long-range rocket artillery./n/nCan be armed with either toxin or high explosive missiles.
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -1066,6 +1066,17 @@ vehicle.scud_launcher:
 		HP: 180
 	Armor:
 		Type: vehicle.truck
+	Production:
+		Produces: queue.scud_launcher
+		PauseOnCondition: emp || hacked
+		RequiresCondition: !toxin_missiles && !hi_explosive_missiles
+	ProductionQueue:
+		Type: queue.scud_launcher
+		Group: Tech
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	Exit:
+	ProvidesPrerequisite@unitname:
 	Mobile:
 		Speed: 20
 		TurnSpeed: 3
@@ -1074,19 +1085,19 @@ vehicle.scud_launcher:
 		CrushClasses: vehicle
 	Armament:
 		Weapon: missile.scud_launcher
-		RequiresCondition: !bio_bombs && !hi_explosive_bombs
+		RequiresCondition: !toxin_missiles && !hi_explosive_missiles
 		PauseOnCondition: !ammo
 	Armament@BIO:
 		Weapon: missile.scud_launcher.toxin
-		RequiresCondition: bio_bombs && !anthrax_beta
+		RequiresCondition: toxin_missiles && !anthrax_beta
 		PauseOnCondition: !ammo
 	Armament@BETA:
 		Weapon: missile.scud_launcher.toxin_beta
-		RequiresCondition: bio_bombs && anthrax_beta
+		RequiresCondition: toxin_missiles && anthrax_beta
 		PauseOnCondition: !ammo
 	Armament@EXP:
 		Weapon: missile.scud_launcher.explosive
-		RequiresCondition: hi_explosive_bombs
+		RequiresCondition: hi_explosive_missiles
 		PauseOnCondition: !ammo
 	AttackFrontal:
 		RequiresCondition: !hacked && !driver_killed && !emp
@@ -1098,12 +1109,12 @@ vehicle.scud_launcher:
 	SelectionDecorations:
 	Explodes:
 		Weapon: V2Explode
-	GrantConditionOnPrerequisite@BIO_BOMBS:
-		Condition: bio_bombs
-		Prerequisites: strategy.bio_bombs
-	GrantConditionOnPrerequisite@HI_EXPLOSIVE_BOMBS:
-		Condition: hi_explosive_bombs
-		Prerequisites: strategy.hi_explosive_bombs
+	GrantConditionOnProduction@TOXIN_MISSILES:
+		Condition: toxin_missiles
+		Actors: upgrade.toxin_missiles
+	GrantConditionOnProduction@HI_EXPLOSIVE_MISSILES:
+		Condition: hi_explosive_missiles
+		Actors: upgrade.hi_explosive_missiles
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
@@ -1337,17 +1348,18 @@ vehicle.overlord_tank:
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@NUCLEAR_TANKS: ^AffectedByNuclearTanks
 	Inherits@REVEAL: ^Reveal150
+	Inherits@UPGRADE: ^CanHavePRCVehicleUpgrades
 	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
 	AutoTargetPriority@DEFAULT:
-		RequiresCondition: !stance-attackanything && !assault-move && !overlord_gatling
+		RequiresCondition: !stance-attackanything && !assault-move && !gatling_upgrade
 	AutoTargetPriority@ATTACKANYTHING:
-		RequiresCondition: (stance-attackanything || assault-move) && !overlord_gatling
+		RequiresCondition: (stance-attackanything || assault-move) && !gatling_upgrade
 	AutoTargetPriority@DEFAULT_GATLING:
-		RequiresCondition: !stance-attackanything && !assault-move && overlord_gatling
+		RequiresCondition: !stance-attackanything && !assault-move && gatling_upgrade
 		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Defense
 		InvalidTargets: NoAutoTarget
 	AutoTargetPriority@ATTACKANYTHING_GATLING:
-		RequiresCondition: (stance-attackanything || assault-move) && overlord_gatling
+		RequiresCondition: (stance-attackanything || assault-move) && gatling_upgrade
 		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	FirepowerMultiplier@CHAIN_GUN:
@@ -1366,7 +1378,7 @@ vehicle.overlord_tank:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~techlevel.high
-		Description: Big and slow tank.
+		Description: Big and slow tank.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -1375,6 +1387,10 @@ vehicle.overlord_tank:
 		HP: 1100
 	Armor:
 		Type: vehicle.tank
+	Production:
+		Produces: queue.overlord_tank
+	ProductionQueue:
+		Type: queue.overlord_tank
 	Mobile:
 		Speed: 20
 		Voiced: Move
@@ -1405,14 +1421,14 @@ vehicle.overlord_tank:
 		Turret: gatling
 		LocalOffset: 213,0,0
 		MuzzleSequence: muzzle2
-		RequiresCondition: overlord_gatling
+		RequiresCondition: gatling_upgrade
 	Armament@GatlingAA:
 		Weapon: gatling.gatling_tank.air
 		Name: gatling
 		Turret: gatling
 		LocalOffset: 213,0,0
 		MuzzleSequence: muzzle2
-		RequiresCondition: overlord_gatling
+		RequiresCondition: gatling_upgrade
 	AttackTurreted:
 		Armaments: gatling, primary
 		Turrets: gatling, primary
@@ -1422,43 +1438,34 @@ vehicle.overlord_tank:
 		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
-		RequiresCondition: !hacked && !driver_killed && !emp && overlord_bunker
+		RequiresCondition: !hacked && !driver_killed && !emp && bunker_upgrade
 	WithMuzzleOverlay:
 	WithSpriteTurret@Cannon:
 	WithSpriteTurret@Bunker:
 		Sequence: turret_bunker
 		Turret: bunker
-		RequiresCondition: overlord_bunker
+		RequiresCondition: bunker_upgrade
 	WithSpriteTurret@Gatling:
 		Sequence: turret_gatling
 		Turret: gatling
-		RequiresCondition: overlord_gatling
+		RequiresCondition: gatling_upgrade
 	WithSpriteTurret@Speaker:
 		Sequence: turret_speaker
 		Turret: speaker
-		RequiresCondition: overlord_speaker
+		RequiresCondition: speaker_upgrade
 	SelfHealing:
 		Step: 1
 		Delay: 3
 		HealIfBelow: 50
 		DamageCooldown: 150
-	Cargo@OVERLORD_BUNKER:
+	Cargo@BUNKER_UPGRADE:
 		Types: Infantry
 		MaxWeight: 5
 		PipCount: 5
 		EjectOnDeath: true
 		PauseOnCondition: hacked || driver_killed || emp
 		LoadingCondition: notmobile
-		RequiresCondition: overlord_bunker
-	GrantConditionOnPrerequisite@OVERLORD_BUNKER:
-		Condition: overlord_bunker
-		Prerequisites: strategy.overlord_bunker
-	GrantConditionOnPrerequisite@OVERLORD_GATLING:
-		Condition: overlord_gatling
-		Prerequisites: strategy.overlord_gatling
-	GrantConditionOnPrerequisite@OVERLORD_SPEAKER:
-		Condition: overlord_speaker
-		Prerequisites: strategy.overlord_speaker
+		RequiresCondition: bunker_upgrade
 	SelectionDecorations:
 	GrantStackableConditionOnFire@gatling:
 		Condition: gatling
@@ -1470,11 +1477,11 @@ vehicle.overlord_tank:
 		IsCyclic: false
 	WithRangeCircle:
 		Range: 4c0
-		RequiresCondition: overlord_speaker
+		RequiresCondition: speaker_upgrade
 	ProximityExternalCondition@SPEAKER:
 		Condition: speaker_tower
 		Range: 4c0
-		RequiresCondition: overlord_speaker
+		RequiresCondition: speaker_upgrade
 	AcceptsDeliveredExperience:
 	ThrowsShrapnel@Turret:
 		Weapons: debris.overlord_tank
@@ -1484,7 +1491,7 @@ vehicle.overlord_tank:
 		Weapons: debris.gatling_tank
 		Pieces: 1, 1
 		Range: 1c0, 1c0
-		RequiresCondition: overlord_gatling
+		RequiresCondition: gatling_upgrade
 	Voiced:
 		VoiceSet: OverlordTankVoice
 	Selectable:
@@ -1502,20 +1509,29 @@ vehicle.bomb_truck:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~building.arms_dealer, ~techlevel.high
-		Description: Suicide vehicle.
+		Description: Suicide vehicle.\n\nCan be armed with toxin or high explosive bombs.
 	Valued:
 		Cost: 1200
-	Tooltip:
-		Name: Bomb Truck
-		RequiresCondition: !disguise
+	-Tooltip:
 	DisguiseTooltip:
 		Name: Bomb Truck
 		GenericName: Vehicle
-		RequiresCondition: disguise
 	Health:
 		HP: 220
 	Armor:
 		Type: vehicle.truck
+	Production:
+		Produces: queue.bomb_truck
+		PauseOnCondition: emp || hacked
+		RequiresCondition: !bio_bombs && !hi_explosive_bombs
+	ProductionQueue:
+		Type: queue.bomb_truck
+		Group: Tech
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
+	Exit:
+	ProvidesPrerequisite@unitname:
 	SelectionDecorations:
 	Mobile:
 		Speed: 50
@@ -1541,21 +1557,18 @@ vehicle.bomb_truck:
 		EmptyWeapon: BombTruckExplosion.hi_exp
 		RequiresCondition: hi_explosive_bombs
 	AttackSuicides:
-	GrantConditionOnPrerequisite@BIO_BOMBS:
+	GrantConditionOnProduction@BIO_BOMBS:
 		Condition: bio_bombs
-		Prerequisites: strategy.bio_bombs
-	GrantConditionOnPrerequisite@HI_EXPLOSIVE_BOMBS:
+		Actors: upgrade.bio_bombs
+	GrantConditionOnProduction@HI_EXPLOSIVE_BOMBS:
 		Condition: hi_explosive_bombs
-		Prerequisites: strategy.hi_explosive_bombs
+		Actors: upgrade.hi_explosive_bombs
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
-	WithFacingSpriteBody:
-		RequiresCondition: !disguise
+	-WithFacingSpriteBody:
 	WithDisguisingFacingSpriteBody:
-		RequiresCondition: disguise
 	WithDisguisingSpriteTurret:
-		RequiresCondition: disguise
 	GrantConditionOnAttack:
 		Condition: keep_me_disabled
 	Armament@ThisLooksRequired:
@@ -1565,8 +1578,7 @@ vehicle.bomb_truck:
 		RequiresCondition: keep_me_disabled
 	Disguise:
 		TargetTypes: Vehicle-Disguise
-		Voice: Move
-		RequiresCondition: disguise
+		Voice: Disguise
 		DisguisedAsConditions:
 			vehicle.radar_van: radar_van
 			vehicle.usa_mcc: usa_mcc
@@ -1597,9 +1609,6 @@ vehicle.bomb_truck:
 		Color: FF0000
 		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: prc_mcc
-	GrantConditionOnPrerequisite@DISGUISE:
-		Condition: disguise
-		Prerequisites: strategy.disguise
 	Voiced:
 		VoiceSet: BombTruckVoice
 	Selectable:

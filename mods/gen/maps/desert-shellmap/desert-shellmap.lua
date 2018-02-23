@@ -23,13 +23,6 @@ ProducedUnitTypes =
 	{ factory = USAAirfield3, types = { "aircraft.comanche" } }
 }
 
-StrategyTypes =
-{
-	{ factory = USAStrategy, types = { "strategy.bombardment", "strategy.search_and_destroy", "strategy.hold_the_line" } },
-	{ factory = GLAPalace, types = { "strategy.bio_bombs", "strategy.hi_explosive_bombs", "strategy.disguise" } },
-	{ factory = PRCPropaganda, types = { "strategy.overlord_gatling", "strategy.overlord_bunker", "strategy.overlord_speaker" } }
-}
-
 Raptor1Waypoints = { Raptor11, Raptor12, Raptor13, Raptor14 }
 Raptor2Waypoints = { Raptor21, Raptor22, Raptor23, Raptor24 }
 
@@ -48,6 +41,12 @@ ChinookPaths = { ChinookEntry.Location, ChinookRally.Location }
 
 BombTruckDisguises = { CrusaderTank1, Ambulance1, TomahawkLauncher1, PaladinTank1, Humvee1, USAMCC1 }
 BombTruckPaths = { BombTruckEntry.Location, BombTruckRally.Location }
+
+StrategyTypes = { "strategy.bombardment", "strategy.search_and_destroy", "strategy.hold_the_line" }
+DroneUpgrades = { "upgrade.scout_drone", "upgrade.battle_drone" }
+BombTruckUpgrades = { "upgrade.bio_bombs", "upgrade.hi_explosive_bombs" }
+SCUDUpgrades = { "upgrade.toxin_missiles", "upgrade.hi_explosive_missiles" }
+OverlordUpgrades = { "upgrade.overlord_gatling", "upgrade.overlord_speaker" }
 
 ParadropWaypoints = { Paradrop1, Paradrop2, Paradrop3, Paradrop4 }
 
@@ -98,6 +97,18 @@ BindActorTriggers = function(a)
 			end
 		end)
 	end
+
+	if a.Type == "vehicle.humvee" or a.Type == "vehicle.crusader_tank" or a.Type == "vehicle.tomahawk_launcher" or a.Type == "vehicle.paladin_tank" then
+		SelectUpgrade(a, DroneUpgrades)
+	end
+
+	if a.Type == "vehicle.scud_launcher" then
+		SelectUpgrade(a, SCUDUpgrades)
+	end
+
+	if a.Type == "vehicle.overlord_tank" then
+		SelectUpgrade(a, OverlordUpgrades)
+	end
 end
 
 ProduceUnits = function(t)
@@ -125,6 +136,7 @@ SendBombTruck = function()
 		Utils.Do(units, function(unit)
 			Trigger.AfterDelay(DateTime.Seconds(1), function()
 				unit.DisguiseAs(BombTruckDisguises[Utils.RandomInteger(1, #BombTruckDisguises + 1)])
+				SelectUpgrade(unit, BombTruckUpgrades)
 			end)
 		end)
 
@@ -132,12 +144,9 @@ SendBombTruck = function()
 	end)
 end
 
-SelectStrategy = function(t)
-	local factory = t.factory
-	if not factory.IsDead then
-		local strategyType = t.types[Utils.RandomInteger(1, #t.types + 1)]
-		factory.Produce(strategyType)
-	end
+SelectUpgrade = function(actor, upgrades)
+	local upgradeType = upgrades[Utils.RandomInteger(1, #upgrades + 1)]
+	actor.Produce(upgradeType)
 end
 
 SetupDefensiveUnits = function()
@@ -218,7 +227,11 @@ WorldLoaded = function()
 	SendChinook()
 	SendBombTruck()
 	Utils.Do(ProducedUnitTypes, ProduceUnits)
-	Utils.Do(StrategyTypes, SelectStrategy)
+
+	SelectUpgrade(USAStrategy, StrategyTypes)
+	SelectUpgrade(OverlordTank1, OverlordUpgrades)
+	SelectUpgrade(ScudLauncher1, SCUDUpgrades)
+	SelectUpgrade(ScudLauncher2, SCUDUpgrades)
 
 	DeployMe(Hacker1)
 	DeployMe(Hacker2)

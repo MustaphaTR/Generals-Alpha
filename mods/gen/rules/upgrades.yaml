@@ -24,7 +24,7 @@
 ^default.strategy:
 	Inherits: ^default.upgrade
 	Buildable:
-		BuildDurationModifier: 0
+		BuildDuration: 175
 	Valued:
 		Cost: 0
 	BodyOrientation:
@@ -153,6 +153,13 @@ hack.cameo_filler.29:
 		Queue: queue.prc_vehicle
 		BuildPaletteOrder: 11
 		Prerequisites: ~prerequisite.zh_units, !generals_power.nuke_cannon, disabled
+
+hack.cameo_filler.30:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.bomb_truck, queue.scud_launcher
+		BuildPaletteOrder: 2
+		Prerequisites: disabled
 
 upgrade.radar:
 	Inherits: ^default.upgrade
@@ -435,7 +442,7 @@ upgrade.camouflage:
 		Name: Camouflage
 	Buildable:
 		Queue: queue.palace
-		BuildPaletteOrder: 4
+		BuildPaletteOrder: 1
 		BuildDuration: 1500
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Allows Rebels to cloak while not firing.
@@ -450,7 +457,7 @@ upgrade.arm_the_mob:
 		Name: Arm The Mob
 	Buildable:
 		Queue: queue.palace
-		BuildPaletteOrder: 5
+		BuildPaletteOrder: 2
 		BuildDuration: 750
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Replaces pistols of Angry Mobs with AK-47s.
@@ -465,7 +472,7 @@ upgrade.toxin_shells:
 		Name: Toxin Shells
 	Buildable:
 		Queue: queue.palace
-		BuildPaletteOrder: 6
+		BuildPaletteOrder: 3
 		BuildDuration: 750
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Makes Scorpion and Marauder tank shells leave toxin.
@@ -480,7 +487,7 @@ upgrade.anthrax_beta:
 		Name: Anthrax Beta
 	Buildable:
 		Queue: queue.palace
-		BuildPaletteOrder: 7
+		BuildPaletteOrder: 4
 		BuildDuration: 750
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Increases all toxin weapons' damage by 25%.
@@ -495,7 +502,7 @@ upgrade.nationalism:
 		Name: Nationalism
 	Buildable:
 		Queue: queue.propaganda_center
-		BuildPaletteOrder: 4
+		BuildPaletteOrder: 1
 		BuildDuration: 1500
 		Prerequisites: building.propaganda_center, ~techlevel.medium
 		Description: Makes Horde Bonus give an additional 25% firing speed.
@@ -512,7 +519,7 @@ upgrade.subliminal_messaging:
 		Name: Subliminal Messaging
 	Buildable:
 		Queue: queue.propaganda_center
-		BuildPaletteOrder: 5
+		BuildPaletteOrder: 2
 		BuildDuration: 1000
 		Prerequisites: building.propaganda_center, ~techlevel.medium
 		Description: Doubles the efficency of Speaker Towers.
@@ -687,6 +694,141 @@ upgrade.hellfire_drone:
 	Valued:
 		Cost: 500
 
+upgrade.bio_bombs:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Bio Bombs
+	Buildable:
+		Queue: queue.bomb_truck
+		BuildPaletteOrder: 1
+		BuildDuration: 125
+		Description: Makes bomb truck leave toxins when it explodes.
+		BuildLimit: 0
+		QueuedAudio: BioBombsBuilding
+		ReadyAudio: BioBombsReady
+	Valued:
+		Cost: 500
+
+upgrade.hi_explosive_bombs:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: High Explosive Bombs
+	Buildable:
+		Queue: queue.bomb_truck
+		BuildPaletteOrder: 3
+		BuildDuration: 125
+		Description: Makes bomb truck deal more damage to a larger area.
+		BuildLimit: 0
+		QueuedAudio: HiExplosiveBombsBuilding
+		ReadyAudio: HiExplosiveBombsReady
+	Valued:
+		Cost: 500
+
+upgrade.toxin_missiles:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Toxin Missiles
+	Buildable:
+		Queue: queue.scud_launcher
+		BuildPaletteOrder: 1
+		BuildDuration: 0
+		Description: Makes scud missiles leave toxins.
+		BuildLimit: 0
+		QueuedAudio: NoAudio
+		ReadyAudio: NoAudio
+	Valued:
+		Cost: 0
+
+upgrade.hi_explosive_missiles:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: High Explosive Missiles
+	Buildable:
+		Queue: queue.scud_launcher
+		BuildPaletteOrder: 3
+		BuildDuration: 0
+		Description: Makes scud missiles deal more damage to a larger area.
+		BuildLimit: 0
+		QueuedAudio: NoAudio
+		ReadyAudio: NoAudio
+	Valued:
+		Cost: 0
+
+upgrade.overlord_bunker:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Bunker
+	Buildable:
+		Queue: queue.overlord_tank
+		BuildPaletteOrder: 1
+		BuildDuration: 375
+		Description: Gives overlord tank a bunker for 5 infantry.
+		BuildLimit: 0
+		QueuedAudio: OverlordBunkerBuilding
+		ReadyAudio: OverlordBunkerReady
+	Valued:
+		Cost: 400
+
+upgrade.overlord_gatling:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Gatling
+	Buildable:
+		Queue: queue.overlord_tank
+		BuildPaletteOrder: 2
+		BuildDuration: 500
+		Description: Gives overlord tank a gatling cannon.
+		BuildLimit: 0
+		QueuedAudio: OverlordGatlingBuilding
+		ReadyAudio: OverlordGatlingReady
+	Valued:
+		Cost: 1200
+
+upgrade.overlord_speaker:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Speaker
+	Buildable:
+		Queue: queue.overlord_tank
+		BuildPaletteOrder: 3
+		BuildDuration: 250
+		Description: Gives overlord tank a speaker tower.
+		BuildLimit: 0
+		QueuedAudio: OverlordSpeakerBuilding
+		ReadyAudio: OverlordSpeakerReady
+	Valued:
+		Cost: 500
+
+upgrade.helix_bunker:
+	Inherits: upgrade.overlord_bunker
+	Tooltip:
+		Name: Bunker
+	Buildable:
+		Queue: queue.helix
+		Description: Allows infantry in helix to fire outside.
+		QueuedAudio: HelixBunkerBuilding
+		ReadyAudio: HelixBunkerReady
+
+upgrade.helix_gatling:
+	Inherits: upgrade.overlord_gatling
+	Tooltip:
+		Name: Gatling
+	Buildable:
+		Queue: queue.helix
+		Description: Gives helix a gatling cannon.
+		QueuedAudio: HelixGatlingBuilding
+		ReadyAudio: HelixGatlingReady
+
+upgrade.helix_speaker:
+	Inherits: upgrade.overlord_speaker
+	Tooltip:
+		Name: Speaker
+	Buildable:
+		Queue: queue.helix
+		Description: Gives helix a speaker tower.
+		QueuedAudio: HelixSpeakerBuilding
+		ReadyAudio: HelixSpeakerReady
+
 strategy.bombardment:
 	Inherits: ^default.strategy
 	Tooltip:
@@ -694,7 +836,7 @@ strategy.bombardment:
 	Buildable:
 		Queue: queue.strategy_center
 		BuildPaletteOrder: 1
-		Prerequisites: !strategy.search_and_destroy, !strategy.hold_the_line, ~techlevel.infonly
+		Prerequisites: ~techlevel.infonly
 		Description: Increases all units' damage by 20%.\n\nGives Strategy Center an Artillery piece.
 		QueuedAudio: NoAudio
 		ReadyAudio: Bombardment
@@ -708,7 +850,7 @@ strategy.search_and_destroy:
 	Buildable:
 		Queue: queue.strategy_center
 		BuildPaletteOrder: 2
-		Prerequisites: !strategy.bombardment, !strategy.hold_the_line, ~techlevel.infonly
+		Prerequisites: ~techlevel.infonly
 		Description: Increases all units' vision range by 20%.\n\nGives Strategy Center ability to detect stealth units.
 		QueuedAudio: NoAudio
 		ReadyAudio: SearchAndDestroy
@@ -722,96 +864,12 @@ strategy.hold_the_line:
 	Buildable:
 		Queue: queue.strategy_center
 		BuildPaletteOrder: 3
-		Prerequisites: !strategy.bombardment, !strategy.search_and_destroy, ~techlevel.infonly
+		Prerequisites: ~techlevel.infonly
 		Description: Increases all units' armor by 10%.\n\nDoubles Strategy Center's armor.
 		QueuedAudio: NoAudio
 		ReadyAudio: HoldTheLine
 	Doctrine:
 		Type: strategy.usa
-
-strategy.bio_bombs:
-	Inherits: ^default.strategy
-	Tooltip:
-		Name: Bio Bombs
-	Buildable:
-		Queue: queue.palace
-		BuildPaletteOrder: 1
-		Prerequisites: !strategy.hi_explosive_bombs, !strategy.disguise, ~techlevel.medium
-		Description: Makes Bomb Truck and SCUD Launchers leave toxins.
-		QueuedAudio: NoAudio
-		ReadyAudio: BioBombs
-	Doctrine:
-		Type: strategy.gla
-
-strategy.hi_explosive_bombs:
-	Inherits: ^default.strategy
-	Tooltip:
-		Name: High Explosive Bomb
-	Buildable:
-		Queue: queue.palace
-		BuildPaletteOrder: 2
-		Prerequisites: !strategy.bio_bombs, !strategy.disguise, ~techlevel.medium
-		Description: Arms Bomb Trucks and SCUD Launchers with High Explosive Bombs, increasing their damage.
-		QueuedAudio: NoAudio
-		ReadyAudio: HiExplosiveBombs
-	Doctrine:
-		Type: strategy.gla
-
-strategy.disguise:
-	Inherits: ^default.strategy
-	Tooltip:
-		Name: Disguise
-	Buildable:
-		Queue: queue.palace
-		BuildPaletteOrder: 3
-		Prerequisites: !strategy.bio_bombs, !strategy.hi_explosive_bombs, ~techlevel.medium
-		Description: Allows Bomb Trucks and Hijackers to disguise as an enemy unit.
-		QueuedAudio: NoAudio
-		ReadyAudio: Disguise
-	Doctrine:
-		Type: strategy.gla
-
-strategy.overlord_bunker:
-	Inherits: ^default.strategy
-	Tooltip:
-		Name: Overlord Bunker
-	Buildable:
-		Queue: queue.propaganda_center
-		BuildPaletteOrder: 1
-		Prerequisites: !strategy.overlord_gatling, !strategy.overlord_speaker, ~techlevel.infonly
-		Description: Arms Overlord Tanks with a Bunker.\n\nIncreases Bunker armor by 10%.\n\nDecreases bunker cost and build time by 20%.
-		QueuedAudio: NoAudio
-		ReadyAudio: Bunker
-	Doctrine:
-		Type: strategy.prc
-
-strategy.overlord_gatling:
-	Inherits: ^default.strategy
-	Tooltip:
-		Name: Overlord Gatling Cannon
-	Buildable:
-		Queue: queue.propaganda_center
-		BuildPaletteOrder: 2
-		Prerequisites: !strategy.overlord_bunker, !strategy.overlord_speaker, ~techlevel.low
-		Description: Arms Overlord Tanks with a Gatling Cannon.\n\nIncreases Gatling Cannon armor and damage by 10%.
-		QueuedAudio: NoAudio
-		ReadyAudio: Gatling
-	Doctrine:
-		Type: strategy.prc
-
-strategy.overlord_speaker:
-	Inherits: ^default.strategy
-	Tooltip:
-		Name: Overlord Speaker Tower
-	Buildable:
-		Queue: queue.propaganda_center
-		BuildPaletteOrder: 3
-		Prerequisites: !strategy.overlord_bunker, !strategy.overlord_gatling, ~techlevel.medium
-		Description: Arms Overlord Tanks with a Speaker Tower.\n\nIncreases Speaker Tower armor by 25%.
-		QueuedAudio: NoAudio
-		ReadyAudio: Speaker
-	Doctrine:
-		Type: strategy.prc
 
 fake_to_real.command_center:
 	Inherits: ^default.fake_to_real

@@ -3,7 +3,7 @@ Player:
 		Name: Rush AI
 		Type: rush
 		MinimumExcessPower: 3
-		BuildingQueues: queue.usa_building, queue.gla_building, queue.prc_building, queue.cold_fusion_reactor, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.drone, General
+		BuildingQueues: queue.usa_building, queue.gla_building, queue.prc_building, queue.cold_fusion_reactor, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, General
 		DefenseQueues: queue.usa_building, queue.gla_building, queue.prc_building
 		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.prc_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel
 		BuildingCommonNames:
@@ -17,6 +17,7 @@ Player:
 			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center
 			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.gatling_cannon, building.land_mine, tech.flame_tower
 			StaticAntiAir: building.patriot, building.stinger_site, building.gatling_cannon
+			Strategy: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		UnitsCommonNames:
 			Dozer: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			FragileDeployer: infantry.hacker
@@ -100,6 +101,12 @@ Player:
 			upgrade.scout_drone: 1%
 			upgrade.battle_drone: 5%
 			upgrade.hellfire_drone: 5%
+			upgrade.toxin_missiles: 1%
+			upgrade.hi_explosive_missiles: 1%
+			upgrade.overlord_gatling: 4%
+			upgrade.overlord_speaker: 1%
+			upgrade.helix_gatling: 4%
+			upgrade.helix_speaker: 1%
 			generals_power.spy_drone: 1%
 			generals_power.tech_training: 1%
 			generals_power.red_training: 1%
@@ -128,13 +135,6 @@ Player:
 			generals_power.fuel_air_bomb: 1%
 			generals_power.anthrax_bomb: 1%
 			generals_power.emp: 1%
-			strategy.bombardment: 1%
-			strategy.search_and_destroy: 5%
-			strategy.hold_the_line: 1%
-			strategy.bio_bombs: 3%
-			strategy.hi_explosive_bombs: 3%
-			strategy.overlord_gatling: 4%
-			strategy.overlord_speaker: 2%
 		UnitsToBuild:
 			infantry.ranger: 75%
 			infantry.rebel: 75%
@@ -554,7 +554,7 @@ Player:
 		Name: Normal AI
 		Type: normal
 		MinimumExcessPower: 3
-		BuildingQueues: queue.usa_building, queue.gla_building, queue.prc_building, queue.cold_fusion_reactor, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.drone, General
+		BuildingQueues: queue.usa_building, queue.gla_building, queue.prc_building, queue.cold_fusion_reactor, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, General
 		DefenseQueues: queue.usa_building, queue.gla_building, queue.prc_building
 		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.prc_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel
 		BuildingCommonNames:
@@ -568,6 +568,7 @@ Player:
 			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, hack.scud_spawner, building.missile_silo
 			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.gatling_cannon, building.land_mine, tech.flame_tower
 			StaticAntiAir: building.patriot, building.stinger_site, building.gatling_cannon
+			Strategy: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		UnitsCommonNames:
 			Dozer: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			FragileDeployer: infantry.hacker
@@ -657,6 +658,12 @@ Player:
 			upgrade.scout_drone: 2%
 			upgrade.battle_drone: 5%
 			upgrade.hellfire_drone: 5%
+			upgrade.toxin_missiles: 1%
+			upgrade.hi_explosive_missiles: 1%
+			upgrade.overlord_gatling: 3%
+			upgrade.overlord_speaker: 1%
+			upgrade.helix_gatling: 3%
+			upgrade.helix_speaker: 1%
 			generals_power.spy_drone: 1%
 			generals_power.tech_training: 1%
 			generals_power.red_training: 1%
@@ -685,13 +692,6 @@ Player:
 			generals_power.fuel_air_bomb: 1%
 			generals_power.anthrax_bomb: 1%
 			generals_power.emp: 1%
-			strategy.bombardment: 2%
-			strategy.search_and_destroy: 3%
-			strategy.hold_the_line: 2%
-			strategy.bio_bombs: 3%
-			strategy.hi_explosive_bombs: 3%
-			strategy.overlord_gatling: 3%
-			strategy.overlord_speaker: 3%
 		UnitsToBuild:
 			infantry.ranger: 60%
 			infantry.rebel: 60%
@@ -1111,7 +1111,7 @@ Player:
 		Name: Turtle AI
 		Type: turtle
 		MinimumExcessPower: 3
-		BuildingQueues: queue.usa_building, queue.gla_building, queue.prc_building, queue.cold_fusion_reactor, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.drone, General
+		BuildingQueues: queue.usa_building, queue.gla_building, queue.prc_building, queue.cold_fusion_reactor, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, General
 		DefenseQueues: queue.usa_building, queue.gla_building, queue.prc_building
 		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.prc_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel
 		BuildingCommonNames:
@@ -1125,6 +1125,7 @@ Player:
 			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, hack.scud_spawner, building.missile_silo
 			Defense: building.patriot, building.stinger_site, building.tunnel_network, building.gatling_cannon, building.land_mine, tech.flame_tower
 			StaticAntiAir: building.patriot, building.stinger_site, building.gatling_cannon
+			Strategy: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		UnitsCommonNames:
 			Dozer: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			FragileDeployer: infantry.hacker
@@ -1214,6 +1215,12 @@ Player:
 			upgrade.scout_drone: 3%
 			upgrade.battle_drone: 5%
 			upgrade.hellfire_drone: 5%
+			upgrade.toxin_missiles: 1%
+			upgrade.hi_explosive_missiles: 1%
+			upgrade.overlord_gatling: 5%
+			upgrade.overlord_speaker: 1%
+			upgrade.helix_gatling: 5%
+			upgrade.helix_speaker: 1%
 			generals_power.spy_drone: 1%
 			generals_power.tech_training: 1%
 			generals_power.red_training: 1%
@@ -1242,13 +1249,6 @@ Player:
 			generals_power.fuel_air_bomb: 1%
 			generals_power.anthrax_bomb: 1%
 			generals_power.emp: 1%
-			strategy.bombardment: 3%
-			strategy.search_and_destroy: 1%
-			strategy.hold_the_line: 3%
-			strategy.bio_bombs: 3%
-			strategy.hi_explosive_bombs: 3%
-			strategy.overlord_gatling: 2%
-			strategy.overlord_speaker: 4%
 		UnitsToBuild:
 			infantry.ranger: 40%
 			infantry.rebel: 40%
