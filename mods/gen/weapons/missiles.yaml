@@ -259,12 +259,16 @@ missile.missile_defender.air:
 missile.missile_defender.garrison.ground:
 	Inherits: missile.missile_defender.ground
 	Range: 5c853
+	Projectile: Missile
+		RangeLimit: 7c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
 
 missile.missile_defender.garrison.air:
 	Inherits: missile.missile_defender.air
 	Range: 8c0
+	Projectile: Missile
+		RangeLimit: 9c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
 

@@ -1390,6 +1390,7 @@ vehicle.overlord_tank:
 		Type: vehicle.tank
 	Production:
 		Produces: queue.overlord_tank
+		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: queue.overlord_tank
 	Mobile:

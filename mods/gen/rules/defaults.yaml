@@ -925,7 +925,6 @@
 ^CanHavePRCVehicleUpgrades:
 	Production:
 		Produces: queue.prc_vehicle_upgrade
-		PauseOnCondition: emp || hacked
 		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !speaker_upgrade
 	ProductionQueue:
 		Type: queue.prc_vehicle_upgrade
