@@ -944,7 +944,9 @@ aircraft.helix:
 		RevokeAll: true
 		IsCyclic: false
 	WithRangeCircle:
+		Type: speaker
 		Range: 4c0
+		Color: DD000066
 		RequiresCondition: speaker_upgrade
 	ProximityExternalCondition@SPEAKER:
 		Condition: speaker_tower

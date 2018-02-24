@@ -501,7 +501,9 @@ vehicle.ambulance:
 	Crushable:
 		CrushClasses: vehicle
 	WithRangeCircle:
+		Type: heal
 		Range: 4c0
+		Color: DD000066
 	ProximityExternalCondition:
 		Condition: ambulanceheal
 		Range: 4c0
@@ -1475,7 +1477,9 @@ vehicle.overlord_tank:
 		RevokeAll: true
 		IsCyclic: false
 	WithRangeCircle:
+		Type: speaker
 		Range: 4c0
+		Color: DD000066
 		RequiresCondition: speaker_upgrade
 	ProximityExternalCondition@SPEAKER:
 		Condition: speaker_tower

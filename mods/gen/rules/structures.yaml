@@ -1220,10 +1220,12 @@ building.patriot:
 		Weapon: missile.patriot.air
 		LocalOffset: 0,0,320
 		MuzzleSequence: muzzle
-	WithRangeCircle@AG:
+	WithRangeCircle:
 		Range: 5c640
 	WithRangeCircle@AA:
+		Type: aa
 		Range: 8c768
+		Color: 00DDDD88
 	AttackTurreted:
 		PauseOnCondition: emp || hacked || lowpower
 	WithMuzzleOverlay:
@@ -1267,7 +1269,6 @@ building.demo_trap:
 	-ShakeOnDeath:
 	-SoundOnDamageTransition:
 	-WithMakeAnimation:
-	-RenderRangeCircle:
 	-Demolishable:
 	ExternalCondition@SELF_DESTRUCT:
 		Condition: self_destruct
@@ -1275,7 +1276,9 @@ building.demo_trap:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
 	WithRangeCircle:
+		Type: demo
 		Range: 1c512
+		Color: CC550066
 	KillsSelf:
 		RequiresCondition: self_destruct
 	SpawnActorOnDeath:
@@ -1363,10 +1366,12 @@ building.gatling_cannon:
 		Weapon: gatling.gatling_cannon.air
 		LocalOffset: 520,100,450, 520,-150,450
 		MuzzleSequence: muzzle
-	WithRangeCircle@AG:
+	WithRangeCircle:
 		Range: 5c640
 	WithRangeCircle@AA:
+		Type: aa
 		Range: 10c0
+		Color: 00DDDD88
 	AttackTurreted:
 		PauseOnCondition: emp || hacked || lowpower
 	WithMuzzleOverlay:
@@ -1391,6 +1396,7 @@ building.gatling_cannon:
 building.bunker:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@GARRISON: ^WithGarrisonRangeCircle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SHAPE: ^2x2Shape
 	Tooltip:
@@ -1437,12 +1443,11 @@ building.bunker:
 		EjectOnDeath: true
 		PauseOnCondition: emp || hacked
 	AttackGarrisoned:
+		Armaments: garrison
 		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
 		RequiresCondition: !emp && !hacked
-	RenderRangeCircle:
-		FallbackRange: 2c512
 	Power:
 		Amount: 0
 	Voiced:
@@ -1656,6 +1661,8 @@ building.tunnel_network:
 		LocalOffset: 512,0,112
 		MuzzleSequence: muzzle
 	RenderDetectionCircle:
+	WithRangeCircle:
+		Range: 4c384
 	DetectCloaked:
 		Range: 3c768
 	AttackTurreted:
@@ -1726,10 +1733,12 @@ building.stinger_site:
 		Weapon: missile.stinger_site.air
 		FireDelay: 10
 		RequiresCondition: !critically-damaged
-	WithRangeCircle@AG:
+	WithRangeCircle:
 		Range: 5c640
 	WithRangeCircle@AA:
+		Type: aa
 		Range: 10c0
+		Color: 00DDDD88
 	AttackTurreted:
 		RequiresCondition: !emp && !hacked
 	BodyOrientation:
@@ -1950,7 +1959,10 @@ building.strategy_center:
 		RequiresCondition: search_and_destroy
 	AttackTurreted:
 		RequiresCondition: !emp && !hacked && !lowpower
-	RenderRangeCircle:
+	WithRangeCircle:
+		Range: 10c0
+		Color: DDDD0088
+		RequiresCondition: bombardment
 	WithSpriteTurret:
 		RequiresCondition: bombardment
 	-CommandBarBlacklist:
@@ -1974,6 +1986,7 @@ building.strategy_center:
 building.palace:
 	Inherits: ^Building
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@GARRISON: ^WithGarrisonRangeCircle
 	Inherits@SHAPE: ^3x2Shape
 	Inherits@REVEAL: ^Reveal300
 	HitShape:
@@ -2017,12 +2030,11 @@ building.palace:
 		EjectOnDeath: true
 		PauseOnCondition: emp || hacked
 	AttackGarrisoned:
+		Armaments: garrison
 		PortOffsets: 0,-896,128, 0,896,128, 840,0,128, -706,0,128, -706,-768,128, -706,640,128
 		PortYaws: 256, 768, 0, 512, 384, 640
 		PortCones: 88, 88, 88, 88, 88, 88
 		RequiresCondition: !emp
-	RenderRangeCircle:
-		FallbackRange: 2c512
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.tech_center
@@ -2283,7 +2295,9 @@ building.speaker_tower:
 			TopLeft: -512, -512
 			BottomRight: 512, 512
 	WithRangeCircle:
+		Type: speaker
 		Range: 4c0
+		Color: DD000066
 	ProximityExternalCondition@SPEAKER:
 		Condition: speaker_tower
 		Range: 4c0

@@ -116,6 +116,9 @@ infantry.ranger:
 		HP: 180
 	Armament@PRIMARY:
 		Weapon: mg.ranger
+	Armament@GARRISON:
+		Name: garrison
+		Weapon: mg.ranger.garrison
 	Armament@GRENADE:
 		Weapon: grenade.ranger
 		RequiresCondition: flashbang_grenades
@@ -142,6 +145,9 @@ infantry.rebel:
 		Name: Rebel
 	Armament@PRIMARY:
 		Weapon: mg.rebel
+	Armament@GARRISON:
+		Name: garrison
+		Weapon: mg.rebel.garrison
 	Cloak:
 		InitialDelay: 200
 		CloakDelay: 100
@@ -177,6 +183,14 @@ infantry.toxin_rebel:
 	Armament@BETA:
 		Weapon: toxin.toxin_rebel.beta
 		LocalOffset: 350,0,375
+		RequiresCondition: anthrax_beta
+	Armament@GARRISON_ALPHA:
+		Name: garrison
+		Weapon: toxin.toxin_rebel.garrison
+		RequiresCondition: !anthrax_beta
+	Armament@GARRISON_BETA:
+		Name: garrison
+		Weapon: toxin.toxin_rebel.garrison.beta
 		RequiresCondition: anthrax_beta
 	ExternalCaptures:
 		CapturingCondition: capturing
@@ -215,6 +229,9 @@ infantry.red_guard:
 		Name: Red Guard
 	Armament@PRIMARY:
 		Weapon: mg.red_guard
+	Armament@PRIMARY:
+		Name: garrison
+		Weapon: mg.red_guard.garrison
 	Voiced:
 		VoiceSet: RedGuardVoice
 	ProducibleWithLevel:
@@ -245,9 +262,21 @@ infantry.minigunner:
 		Weapon: gatling.minigunner.ground
 	Armament@GatlingAA:
 		Weapon: gatling.minigunner.air
+	Armament@GarrisonAG:
+		Weapon: gatling.minigunner.garrison.ground
+	Armament@GarrisonAA:
+		Weapon: gatling.minigunner.garrison.air
 	GrantStackableConditionOnFire@gatling:
 		Condition: gatling
 		ArmamentName: primary
+		RequiredShotsPerStack: 12
+		MaximumInstances: 2
+		RevokeDelay: 40
+		RevokeAll: true
+		IsCyclic: false
+	GrantStackableConditionOnFire@garrison:
+		Condition: gatling
+		ArmamentName: garrison
 		RequiredShotsPerStack: 12
 		MaximumInstances: 2
 		RevokeDelay: 40
@@ -273,6 +302,9 @@ infantry.conscript:
 		Name: Conscript
 	Armament@PRIMARY:
 		Weapon: mg.ranger
+	Armament@PRIMARY:
+		Name: garrison
+		Weapon: mg.ranger.garrison
 	ExternalCaptures:
 		-CaptureCompleteVoice:
 	Voiced:
@@ -303,6 +335,12 @@ infantry.conscript:
 	Armament@SECONDARY:
 		Weapon: missile.missile_defender.air
 		LocalOffset: 0,0,555
+	Armament@PRIMARY_GARRISON:
+		Name: garrison
+		Weapon: missile.missile_defender.garrison.ground
+	Armament@SECONDARY_GARRISON:
+		Name: garrison
+		Weapon: missile.missile_defender.garrison.air
 	TakeCover:
 		ProneOffset: 384,0,-395
 	AttackFrontal:
@@ -333,6 +371,10 @@ infantry.rpg_trooper:
 		Weapon: missile.rpg_trooper.ground
 	Armament@SECONDARY:
 		Weapon: missile.rpg_trooper.air
+	Armament@PRIMARY_GARRISON:
+		Weapon: missile.rpg_trooper.garrison.ground
+	Armament@SECONDARY_GARRISON:
+		Weapon: missile.rpg_trooper.garrison.air
 	Tooltip:
 		Name: RPG Trooper
 	Voiced:
@@ -368,6 +410,9 @@ infantry.grenadier:
 		LocalOffset: 0,0,555
 		FireDelay: 15
 	-Armament@SECONDARY:
+	Armament@PRIMARY_GARRISON:
+		Weapon: grenade.grenadier.garrison
+	-Armament@SECONDARY_GARRISON:
 	TakeCover:
 		ProneOffset: 256,64,-331
 	WithInfantryBody:
@@ -407,6 +452,9 @@ infantry.pathfinder:
 		InvalidTargets: NoAutoTarget
 	Armament@PRIMARY:
 		Weapon: sniper.pathfinder
+	Armament@GARRISON:
+		Name: garrison
+		Weapon: sniper.pathfinder.garrison
 	AttackFrontal:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
@@ -488,6 +536,10 @@ infantry.flamethrower:
 	Armament@PRIMARY:
 		Weapon: flamer.flamethrower
 		LocalOffset: 700,0,500
+		FireDelay: 8
+	Armament@GARRISON:
+		Name: garrison
+		Weapon: flamer.flamethrower.garrison
 		FireDelay: 8
 	TakeCover:
 		ProneOffset: 160,0,-288
@@ -813,8 +865,11 @@ infantry.colonel_burton:
 	Demolition:
 		DetonationDelay: 45
 		Voice: Demolish
-	Armament:
+	Armament@PRIMARY:
 		Weapon: mg.colonel_burton
+	Armament@GARRISON:
+		Name: garrison
+		Weapon: mg.colonel_burton.garrison
 	AttackFrontal:
 		Voice: Attack
 	AttackMove:
@@ -870,6 +925,9 @@ infantry.jarmen_kell:
 		InvalidTargets: NoAutoTarget
 	Armament@PRIMARY:
 		Weapon: sniper.jarmen_kell
+	Armament@GARRISON:
+		Name: garrison
+		Weapon: sniper.jarmen_kell.garrison
 	Armament@DRIVER_SNIPE:
 		Name: driver_snipe
 		Weapon: sniper.jarmen_kell.vehicle

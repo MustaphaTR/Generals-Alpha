@@ -248,8 +248,19 @@ mg.ranger:
 			building.stinger_site: 50
 			building.wall: 6
 
+mg.ranger.garrison:
+	Inherits: mg.ranger
+	Range: 3c341
+	Warhead@1Dam: SpreadDamage
+		Damage: 6
+
 mg.rebel:
 	Inherits: mg.ranger
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, BulletDeath
+
+mg.rebel.garrison:
+	Inherits: mg.ranger.garrison
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: Prone50Percent, TriggerProne, DropCrate, BulletDeath
 
@@ -278,6 +289,12 @@ mg.red_guard:
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
 
+mg.red_guard.garrison:
+	Inherits: mg.red_guard
+	Range: 3c341
+	Warhead@1Dam: SpreadDamage
+		Damage: 19
+
 mg.colonel_burton:
 	Inherits: ^LightMG
 	ReloadDelay: 3
@@ -302,6 +319,12 @@ mg.colonel_burton:
 			building.defense: 50
 			building.stinger_site: 50
 			building.wall: 6
+
+mg.colonel_burton.garrison:
+	Inherits: mg.colonel_burton
+	Range: 4c133
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
 
 M60mg:
 	Inherits: ^LightMG
@@ -444,7 +467,7 @@ gatling.minigunner.ground:
 			building.wall: 6
 
 gatling.minigunner.air:
-	Inherits: gatling.gatling_tank.ground
+	Inherits: gatling.minigunner.ground
 	ValidTargets: Air
 	Range: 8c768
 	Projectile: Bullet
@@ -452,6 +475,18 @@ gatling.minigunner.air:
 	Warhead@1Dam: SpreadDamage
 		Damage: 10
 		ValidTargets: Air
+
+gatling.minigunner.garrison.ground:
+	Inherits: gatling.minigunner.ground
+	Range: 4c133
+	Warhead@1Dam: SpreadDamage
+		Damage: 13
+
+gatling.minigunner.garrison.air:
+	Inherits: gatling.minigunner.air
+	Range: 11c682
+	Warhead@1Dam: SpreadDamage
+		Damage: 13
 
 gatling.gatling_tank.ground:
 	Inherits: ^LightMG
@@ -533,33 +568,13 @@ gatling.gatling_cannon.air:
 		Damage: 150
 		ValidTargets: Barrel, Infantry
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
-
-SilencedPPK:
-	Inherits: ^SnipeWeapon
-	Report: silppk.aud
-	Warhead@1Dam: SpreadDamage
-		Spread: 128
-	Warhead@2Eff: CreateEffect
-		Explosions: piffs
-		ValidTargets: Ground, Ship, Air
-	Warhead@3EffWater: CreateEffect
-		Explosions: water_piffs
-		ValidTargets: Water, Underwater
-		InvalidTargets: Ship, Structure
-
-Colt45:
-	Inherits: ^SnipeWeapon
-	ReloadDelay: 5
-	Range: 7c0
-	Warhead@1Dam: SpreadDamage
-		Damage: 50
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
-		ValidTargets: Ground, Ship, Air
+		ValidTargets: Ground, Ship, Air, Trees
 	Warhead@3EffWater: CreateEffect
 		Explosions: water_piff
 		ValidTargets: Water, Underwater
-		InvalidTargets: Ship, Structure
+		InvalidTargets: Ship, Structure, Bridge
 
 sniper.jarmen_kell:
 	Inherits: ^SnipeWeapon
@@ -570,6 +585,12 @@ sniper.jarmen_kell:
 		Versus:
 			infantry.normal: 200
 		DamageTypes: Prone50Percent, TriggerProne, DropCrate, BulletDeath
+
+sniper.jarmen_kell.garrison:
+	Inherits: sniper.jarmen_kell
+	Range: 8c256
+	Warhead@1Dam: SpreadDamage
+		Damage: 240
 
 sniper.jarmen_kell.vehicle:
 	Inherits: ^SnipeWeapon
@@ -597,6 +618,12 @@ sniper.pathfinder:
 		Damage: 100
 		Versus:
 			infantry.normal: 200
+
+sniper.pathfinder.garrison:
+	Inherits: sniper.pathfinder
+	Range: 10c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 125
 
 mg.a10:
 	Inherits: ^HeavyMG

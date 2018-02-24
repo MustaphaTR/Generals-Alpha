@@ -495,6 +495,61 @@
 		DamageInterval: 16
 		DamageTypes: FireDeath
 
+^WithGarrisonRangeCircle:
+	Cargo:
+		PassengerConditions:
+			infantry.ranger: range_circle.133
+			infantry.rebel: range_circle.133
+			infantry.toxin_rebel: range_circle.133
+			infantry.red_guard: range_circle.133
+			infantry.minigunner: range_circle.minigunner
+			infantry.missile_defender: range_circle.rocket
+			infantry.rpg_trooper: range_circle.rocket
+			infantry.tank_hunter: range_circle.rocket
+			infantry.grenadier: range_circle.160
+			infantry.pathfiner: range_circle.400
+			infantry.flamethrower: range_circle.200
+			infantry.colonel_burton: range_circle.166
+			infantry.jarmen_kell: range_circle.330
+	WithRangeCircle@133:
+		Range: 3c341
+		Color: DDDD0088
+		RequiresCondition: range_circle.133
+	WithRangeCircle@160:
+		Range: 4c0
+		Color: DDDD0088
+		RequiresCondition: range_circle.160
+	WithRangeCircle@166:
+		Range: 4c133
+		Color: DDDD0088
+		RequiresCondition: range_circle.166 || range_circle.minigunner
+	WithRangeCircle@200:
+		Range: 5c0
+		Color: DDDD0088
+		RequiresCondition: range_circle.200
+	WithRangeCircle@233:
+		Range: 5c853
+		Color: DDDD0088
+		RequiresCondition: range_circle.rocket
+	WithRangeCircle@320:
+		Type: aa
+		Range: 8c0
+		Color: 00DDDD88
+		RequiresCondition: range_circle.rocket
+	WithRangeCircle@300:
+		Range: 8c256
+		Color: DDDD0088
+		RequiresCondition: range_circle.330
+	WithRangeCircle@400:
+		Range: 10c0
+		Color: DDDD0088
+		RequiresCondition: range_circle.400
+	WithRangeCircle@466:
+		Type: aa
+		Range: 11c682
+		Color: 00DDDD88
+		RequiresCondition: range_circle.minigunner
+
 ^Reveal80:
 	RevealsShroud:
 		Range: 2c0
@@ -1542,7 +1597,8 @@
 	-GivesBuildableArea:
 	-AcceptsDeliveredCash:
 	DrawLineToTarget:
-	RenderRangeCircle:
+	WithRangeCircle:
+		Color: DDDD0088
 	Explodes:
 		Weapon: SmallBuildingExplode
 		EmptyWeapon: SmallBuildingExplode

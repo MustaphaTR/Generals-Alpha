@@ -256,6 +256,18 @@ missile.missile_defender.air:
 			building.stinger_site: 25
 			building.wall: 25
 
+missile.missile_defender.garrison.ground:
+	Inherits: missile.missile_defender.ground
+	Range: 5c853
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
+
+missile.missile_defender.garrison.air:
+	Inherits: missile.missile_defender.air
+	Range: 8c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
+
 missile.rpg_trooper.ground:
 	Inherits: missile.missile_defender.ground
 	Warhead@1Dam: SpreadDamage
@@ -263,6 +275,16 @@ missile.rpg_trooper.ground:
 
 missile.rpg_trooper.air:
 	Inherits: missile.missile_defender.air
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
+
+missile.rpg_trooper.garrison.ground:
+	Inherits: missile.missile_defender.garrison.ground
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
+
+missile.rpg_trooper.garrison.air:
+	Inherits: missile.missile_defender.garrison.air
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
 

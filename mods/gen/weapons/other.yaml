@@ -105,6 +105,12 @@ flamer.flamethrower:
 	Warhead@3Eff: CreateEffect
 		Explosions: small_napalm
 
+flamer.flamethrower.garrison:
+	Inherits: flamer.flamethrower
+	Range: 5c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 13
+
 Napalm:
 	Inherits: ^FireWeapon
 	ReloadDelay: 20
@@ -278,6 +284,18 @@ toxin.toxin_rebel.beta:
 	Inherits: ToxinLauncher.beta
 	Warhead@1Dam: SpreadDamage
 		Damage: 10
+
+toxin.toxin_rebel.garrison:
+	Inherits: toxin.toxin_rebel
+	Range: 3c341
+	Warhead@1Dam: SpreadDamage
+		Damage: 11
+
+toxin.toxin_rebel.garrison.beta:
+	Inherits: toxin.toxin_rebel.beta
+	Range: 3c341
+	Warhead@1Dam: SpreadDamage
+		Damage: 13
 
 hack.angry_mob.weapon:
 	ReloadDelay: 30

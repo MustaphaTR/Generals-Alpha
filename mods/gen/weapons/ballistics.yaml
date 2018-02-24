@@ -375,6 +375,12 @@ grenade.grenadier:
 	Warhead@4EffWater: CreateEffect
 		Explosions: small_splash
 
+grenade.grenadier.garrison:
+	Inherits: grenade.grenadier
+	Range: 4c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 75
+
 ArtyBarrageWeapon:
 	Inherits: ^Artillery
 	ReloadDelay: 10
