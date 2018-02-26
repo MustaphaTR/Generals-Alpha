@@ -31,7 +31,7 @@ parabomb.fuel_air_bomb:
 	Warhead@3Eff_impact: CreateEffect
 		Explosions: nuke
 		ImpactSounds: kaboom1.aud
-		VictimScanRadius: 0
+		ImpactActors: false
 	Warhead@4Dam_areanuke2: SpreadDamage
 		Spread: 5c0
 		Damage: 1600
@@ -146,7 +146,7 @@ Atomic:
 	Warhead@4Eff_impact: CreateEffect
 		Explosions: nuke
 		ImpactSounds: kaboom1.aud
-		VictimScanRadius: 0
+		ImpactActors: false
 	Warhead@5Radio: CreateRadioactivity
 		RadioactivityLayerName: radioactivity
 		Range: 1
@@ -165,7 +165,7 @@ Atomic:
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
 	Warhead@9Eff_areanuke1: CreateEffect
 		ImpactSounds: kaboom22.aud
-		VictimScanRadius: 0
+		ImpactActors: false
 	Warhead@10Radio: CreateRadioactivity
 		RadioactivityLayerName: radioactivity
 		Range: 2
