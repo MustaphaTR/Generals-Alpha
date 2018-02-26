@@ -808,7 +808,7 @@ vehicle.dragon_tank:
 vehicle.rocket_buggy:
 	Inherits: ^Vehicle
 	Inherits@AP_ROCKETS: ^AffectedByAPRockets
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BOUNTY: ^TakesBounty
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -922,6 +922,7 @@ vehicle.troop_crawler:
 
 vehicle.listening_outpost:
 	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@REVEAL: ^Reveal250
 	Buildable:
