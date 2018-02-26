@@ -152,7 +152,7 @@ hack.cameo_filler.29:
 	Buildable:
 		Queue: queue.prc_vehicle
 		BuildPaletteOrder: 11
-		Prerequisites: ~prerequisite.zh_units, !generals_power.nuke_cannon, disabled
+		Prerequisites: ~prerequisite.zh_units, ~!generals_power.nuke_cannon, disabled
 
 hack.cameo_filler.30:
 	Inherits: ^default.cameo_filler
