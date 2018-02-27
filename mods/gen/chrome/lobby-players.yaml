@@ -22,14 +22,14 @@ Container@LOBBY_PLAYER_BIN:
 					Align: Center
 					Font: Bold
 				Label@LABEL_LOBBY_FACTION:
-					X: 270
-					Width: 130
+					X: 264
+					Width: 144
 					Height: 25
 					Text: Faction
 					Align: Center
 					Font: Bold
 				Label@LABEL_LOBBY_TEAM:
-					X: 410
+					X: 414
 					Width: 48
 					Height: 25
 					Text: Team
@@ -107,8 +107,8 @@ Container@LOBBY_PLAYER_BIN:
 									Width: PARENT_RIGHT - 35
 									Height: PARENT_BOTTOM - 12
 						DropDownButton@FACTION:
-							X: 270
-							Width: 130
+							X: 268
+							Width: 138
 							Height: 25
 							IgnoreChildMouseOver: true
 							TooltipContainer: TOOLTIP_CONTAINER
@@ -125,7 +125,7 @@ Container@LOBBY_PLAYER_BIN:
 									Height: 25
 									Text: Faction
 						DropDownButton@TEAM_DROPDOWN:
-							X: 410
+							X: 414
 							Width: 48
 							Height: 25
 							Text: Team

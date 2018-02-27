@@ -261,6 +261,19 @@ explosion.terrorist:
 		SmudgeType: SnowScorch
 		Size: 1
 
+explosion.terrorist.toxin:
+	Warhead@5Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_alpha
+		Range: 1
+		Level: 2500
+		Falloff: 100, 50, 0
+		MaxLevel: 2500
+
+explosion.terrorist.toxin_beta:
+	Inherits: explosion.terrorist.toxin
+	Warhead@5Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_beta
+
 explosion.mine:
 	Warhead@1Dam: SpreadDamage
 		Spread: 256

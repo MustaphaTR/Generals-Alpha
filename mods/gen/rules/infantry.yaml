@@ -137,7 +137,7 @@ infantry.rebel:
 	Inherits@BOUNTY: ^TakesBounty
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		Queue: queue.gla_infantry
+		Queue: queue.gla_infantry, queue.demo_gen_infantry
 		Prerequisites: ~techlevel.infonly
 	Selectable:
 		Class: infantry.rebel
@@ -171,8 +171,7 @@ infantry.toxin_rebel:
 	Inherits@BOUNTY: ^TakesBounty
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		Queue: queue.gla_infantry
-		Prerequisites: ~techlevel.infonly, ~disabled
+		Queue: queue.toxin_gen_infantry
 		Description: General-purpose infantry armed with toxins.
 	Tooltip:
 		Name: Toxin Rebel
@@ -229,7 +228,7 @@ infantry.red_guard:
 		Name: Red Guard
 	Armament@PRIMARY:
 		Weapon: mg.red_guard
-	Armament@PRIMARY:
+	Armament@GARRISON:
 		Name: garrison
 		Weapon: mg.red_guard.garrison
 	Voiced:
@@ -242,9 +241,9 @@ infantry.minigunner:
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@HORDE_BONUS: ^Horde
 	Buildable:
-		Queue: queue.prc_infantry
+		Queue: queue.inf_gen_infantry
 		BuildDuration: 250
-		Prerequisites: ~techlevel.infonly, ~disabled
+		Prerequisites: ~techlevel.infonly
 		Description: General-purpose infantry armed with a minigun.
 	Valued:
 		Cost: 350
@@ -365,7 +364,7 @@ infantry.rpg_trooper:
 	Inherits@AP_ROCKETS: ^AffectedByAPRockets
 	Inherits@BOUNTY: ^TakesBounty
 	Buildable:
-		Queue: queue.gla_infantry
+		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry
 		Prerequisites: ~techlevel.infonly
 	Armament@PRIMARY:
 		Weapon: missile.rpg_trooper.ground
@@ -384,7 +383,7 @@ infantry.tank_hunter:
 	Inherits: ^default.rocket_infantry
 	Inherits@HORDE_BONUS: ^Horde
 	Buildable:
-		Queue: queue.prc_infantry
+		Queue: queue.prc_infantry, queue.inf_gen_infantry
 		BuildDuration: 140
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.infonly
@@ -481,11 +480,11 @@ infantry.terrorist:
 	Inherits@BOUNTY: ^TakesBounty
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		Queue: queue.gla_infantry
+		Queue: queue.gla_infantry, queue.demo_gen_infantry
 		BuildPaletteOrder: 4
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Prerequisites: ~building.gla_barracks, ~techlevel.low
+		Prerequisites: ~techlevel.low
 		Description: Explodes.
 	Valued:
 		Cost: 200
@@ -495,6 +494,8 @@ infantry.terrorist:
 		HP: 120
 	Armor:
 		Type: infantry.normal
+	Selectable:
+		Class: infantry.terrorist
 	Mobile:
 		Voice: Move
 		Speed: 25
@@ -512,6 +513,27 @@ infantry.terrorist:
 		TargetTypes: Ground, Infantry, Infantry-Disguise, DetonateAttack, Terrorist
 	Voiced:
 		VoiceSet: TerroristVoice
+	RenderSprites:
+		Image: infantry.terrorist
+
+infantry.toxin_terrorist:
+	Inherits: infantry.terrorist
+	Buildable:
+		Queue: queue.toxin_gen_infantry
+		Description: Explodes and leaves toxins.
+	Tooltip:
+		Name: Toxin Terrorist
+	Explodes@Toxin:
+		Weapon: explosion.terrorist.toxin
+		EmptyWeapon: explosion.terrorist
+		RequiresCondition: !anthrax_beta
+	Explodes@Toxin_Beta:
+		Weapon: explosion.terrorist.toxin_beta
+		EmptyWeapon: explosion.terrorist
+		RequiresCondition: anthrax_beta
+	GrantConditionOnPrerequisite@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Prerequisites: upgrade.anthrax_beta
 
 infantry.flamethrower:
 	Inherits: ^Soldier
@@ -621,7 +643,7 @@ infantry.angry_mob:
 	Inherits@REVEAL: ^Reveal150
 	-AppearsOnRadar:
 	Buildable:
-		Queue: queue.gla_infantry
+		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry
 		BuildPaletteOrder: 5
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -692,7 +714,7 @@ infantry.hacker:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		Queue: queue.prc_infantry
+		Queue: queue.prc_infantry, queue.inf_gen_infantry
 		BuildPaletteOrder: 4
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -901,17 +923,18 @@ infantry.jarmen_kell:
 	Tooltip:
 		Name: Jarmen Kell
 	Buildable:
-		Queue: queue.gla_infantry
+		Queue: queue.gla_infantry, queue.toxin_gen_infantry
 		BuildPaletteOrder: 8
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: ~building.gla_barracks, building.palace, ~techlevel.high
-		BuildLimit: 1
+		Prerequisites: ~building.gla_barracks, building.palace, !prerequisite.enough_jarmen_kell, ~techlevel.high
 		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.
 	Health:
 		HP: 200
 	Armor:
 		Type: infantry.normal
+	Selectable:
+		Class: infantry.jarmen_kell
 	Mobile:
 		Voice: Move
 		Speed: 30
@@ -954,15 +977,28 @@ infantry.jarmen_kell:
 	ReloadAmmoPool:
 		AmmoPool: driver_snipe
 		Delay: 750
+	ProvidesPrerequisite@LIMIT:
+		Prerequisite: prerequisite.enough_jarmen_kell
 	Voiced:
 		VoiceSet: JarmenVoice
 	-MustBeDestroyed:
+	RenderSprites:
+		Image: infantry.jarmen_kell
+
+infantry.jarmen_kell.demo:
+	Inherits: infantry.jarmen_kell
+	Buildable:
+		Queue: queue.demo_gen_infantry
+		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCan place C4 charges on structures.
+	Demolition:
+		DetonationDelay: 45
+		Voice: Demolish
 
 infantry.black_lotus:
 	Inherits: ^Soldier
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
-		Queue: queue.prc_infantry
+		Queue: queue.prc_infantry, queue.inf_gen_infantry
 		BuildPaletteOrder: 4
 		BuildDuration: 500
 		BuildDurationModifier: 100

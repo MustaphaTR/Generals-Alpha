@@ -15,17 +15,100 @@
 	Faction@random:
 		Name: Any
 		InternalName: Random
+#		Side: Random
 		RandomFactionMembers: usa, gla, prc
-		Description: Random Country\nA random country will be chosen when the game starts.
+#		RandomFactionMembers: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
+		Description: A random faction will be chosen when the game starts.
+	Faction@randomUSA:
+		Name: Any USA
+		InternalName: RandomUSA
+#		Side: Random
+		Selectable: false
+		RandomFactionMembers: usa, air, laser, super
+		Description: A random USA General will be chosen when the game starts.
+	Faction@randomGLA:
+		Name: Any GLA
+		InternalName: RandomGLA
+#		Side: Random
+		Selectable: false
+		RandomFactionMembers: gla, toxin, demo, stealth
+		Description: A random GLA General will be chosen when the game starts.
+	Faction@randomPRC:
+		Name: Any PRC
+		InternalName: RandomPRC
+#		Side: Random
+		Selectable: false
+		RandomFactionMembers: prc, inf, nuke, tank
+		Description: A random PRC General will be chosen when the game starts.
 	Faction@USA:
 		Name: USA
 		InternalName: usa
+#		Side: USA
+		Description: United States of America
+	Faction@air:
+		Name: Airforce General
+		InternalName: air
+#		Side: USA
+		Selectable: false
+		Description: General Granger
+	Faction@laser:
+		Name: Laser General
+		InternalName: laser
+#		Side: USA
+		Selectable: false
+		Description: General Townes
+	Faction@super:
+		Name: Superweapon General
+		InternalName: super
+#		Side: USA
+		Selectable: false
+		Description: General Alexander
 	Faction@GLA:
 		Name: GLA
 		InternalName: gla
+#		Side: GLA
+		Description: Global Liberation Army
+	Faction@toxin:
+		Name: Toxin General
+		InternalName: toxin
+#		Side: GLA
+		Selectable: false
+		Description: Dr. Thrax
+	Faction@demo:
+		Name: Demolition General
+		InternalName: demo
+#		Side: GLA
+		Selectable: false
+		Description: General Juhziz
+	Faction@stealth:
+		Name: Stealth General
+		InternalName: stealth
+#		Side: GLA
+		Selectable: false
+		Description: Prince Kassad
 	Faction@PRC:
 		Name: PRC
 		InternalName: prc
+#		Side: PRC
+		Description: People's Republic of China
+	Faction@inf:
+		Name: Infantry General
+		InternalName: inf
+#		Side: PRC
+		Selectable: false
+		Description: General Fai
+	Faction@nuke:
+		Name: Nuclear Weapons General
+		InternalName: nuke
+#		Side: PRC
+		Selectable: false
+		Description: General Tao
+	Faction@tank:
+		Name: Tank General
+		InternalName: tank
+#		Side: PRC
+		Selectable: false
+		Description: General Kwai
 	ResourceType@ore:
 		Type: Ore
 		Name: Valuable Minerals
@@ -101,40 +184,40 @@ World:
 	MPStartUnits@cvonlyusa:
 		Class: cvonly
 		ClassName: Constr. Veh. Only
-		Factions: usa
+		Factions: usa, air, laser, super
 		BaseActor: vehicle.usa_mcc
 	MPStartUnits@cvonlygla:
 		Class: cvonly
 		ClassName: Constr. Veh. Only
-		Factions: gla
+		Factions: gla, toxin, demo, stealth
 		BaseActor: vehicle.gla_mcc
 	MPStartUnits@cvonlyprc:
 		Class: cvonly
 		ClassName: Constr. Veh. Only
-		Factions: prc
+		Factions: prc, inf, nuke, tank
 		BaseActor: vehicle.prc_mcc
 	MPStartUnits@commonlyusa:
 		Class: commonly
 		ClassName: Comm. Cent. Only
-		Factions: usa
+		Factions: usa, air, laser, super
 		BaseActor: building.usa_command_center
 		BaseActorOffset: -1, -1
 	MPStartUnits@commonlygla:
 		Class: commonly
 		ClassName: Comm. Cent. Only
-		Factions: gla
+		Factions: gla, toxin, demo, stealth
 		BaseActor: building.gla_command_center
 		BaseActorOffset: -1, -1
 	MPStartUnits@commonlyprc:
 		Class: commonly
 		ClassName: Comm. Cent. Only
-		Factions: prc
+		Factions: prc, inf, nuke, tank
 		BaseActor: building.prc_command_center
 		BaseActorOffset: -1, -1
 	MPStartUnits@commandcvusa:
 		Class: none
 		ClassName: CC and CV
-		Factions: usa
+		Factions: usa, air, laser, super
 		BaseActor: building.usa_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.usa_mcc
@@ -143,7 +226,7 @@ World:
 	MPStartUnits@commandcvgla:
 		Class: none
 		ClassName: CC and CV
-		Factions: gla
+		Factions: gla, toxin, demo, stealth
 		BaseActor: building.gla_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.gla_mcc
@@ -152,7 +235,7 @@ World:
 	MPStartUnits@commandcvprc:
 		Class: none
 		ClassName: CC and CV
-		Factions: prc
+		Factions: prc, inf, nuke, tank
 		BaseActor: building.prc_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.prc_mcc
@@ -161,7 +244,7 @@ World:
 	MPStartUnits@lightusa:
 		Class: light
 		ClassName: Light Support
-		Factions: usa
+		Factions: usa, air, laser, super
 		BaseActor: building.usa_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.usa_mcc, infantry.ranger, infantry.ranger, infantry.missile_defender, vehicle.humvee
@@ -170,7 +253,7 @@ World:
 	MPStartUnits@lightgla:
 		Class: light
 		ClassName: Light Support
-		Factions: gla
+		Factions: gla, toxin, demo, stealth
 		BaseActor: building.gla_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.gla_mcc, infantry.rebel, infantry.rebel, infantry.rpg_trooper, vehicle.technical
@@ -179,7 +262,7 @@ World:
 	MPStartUnits@lightprc:
 		Class: light
 		ClassName: Light Support
-		Factions: prc
+		Factions: prc, inf, nuke, tank
 		BaseActor: building.prc_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.prc_mcc, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, vehicle.gatling_tank
@@ -188,7 +271,7 @@ World:
 	MPStartUnits@mediumusa:
 		Class: medium
 		ClassName: Medium Support
-		Factions: usa
+		Factions: usa, air, laser, super
 		BaseActor: building.usa_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.usa_mcc, infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, vehicle.humvee, vehicle.crusader_tank
@@ -197,7 +280,7 @@ World:
 	MPStartUnits@mediumgla:
 		Class: medium
 		ClassName: Medium Support
-		Factions: gla
+		Factions: gla, toxin, demo, stealth
 		BaseActor: building.gla_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.gla_mcc, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rpg_trooper, vehicle.technical, vehicle.scorpion_tank
@@ -206,7 +289,7 @@ World:
 	MPStartUnits@mediumprc:
 		Class: medium
 		ClassName: Medium Support
-		Factions: prc
+		Factions: prc, inf, nuke, tank
 		BaseActor: building.prc_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.prc_mcc, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, vehicle.gatling_tank, vehicle.battlemaster_tank
@@ -215,7 +298,7 @@ World:
 	MPStartUnits@heavyusa:
 		Class: heavy
 		ClassName: Heavy Support
-		Factions: usa
+		Factions: usa, air, laser, super
 		BaseActor: building.usa_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.usa_mcc, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, infantry.missile_defender, vehicle.humvee, vehicle.crusader_tank, vehicle.ambulance
@@ -224,7 +307,7 @@ World:
 	MPStartUnits@heavygla:
 		Class: heavy
 		ClassName: Heavy Support
-		Factions: gla
+		Factions: gla, toxin, demo, stealth
 		BaseActor: building.gla_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.gla_mcc, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rpg_trooper, infantry.rpg_trooper, vehicle.technical, vehicle.scorpion_tank, vehicle.toxin_tractor
@@ -233,7 +316,7 @@ World:
 	MPStartUnits@heavyprc:
 		Class: heavy
 		ClassName: Heavy Support
-		Factions: prc
+		Factions: prc, inf, nuke, tank
 		BaseActor: building.prc_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.prc_mcc, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, infantry.tank_hunter, vehicle.gatling_tank, vehicle.battlemaster_tank, vehicle.dragon_tank
@@ -242,7 +325,7 @@ World:
 	MPStartUnits@allusa:
 		Class: all
 		ClassName: All Tech
-		Factions: usa
+		Factions: usa, air, laser, super
 		BaseActor: building.usa_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
@@ -251,7 +334,7 @@ World:
 	MPStartUnits@allgla:
 		Class: all
 		ClassName: All Tech
-		Factions: gla
+		Factions: gla, toxin, demo, stealth
 		BaseActor: building.gla_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
@@ -260,7 +343,7 @@ World:
 	MPStartUnits@allprc:
 		Class: all
 		ClassName: All Tech
-		Factions: prc
+		Factions: prc, inf, nuke, tank
 		BaseActor: building.prc_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc

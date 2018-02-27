@@ -75,6 +75,11 @@ cannon.battlemaster_tank:
 		Versus:
 			infantry.normal: 10
 
+cannon.battlemaster_tank.autoloader:
+	Inherits: cannon.battlemaster_tank
+	Burst: 3
+	BurstDelay: 12
+
 cannon.paladin_tank:
 	Inherits: ^Cannon
 	ReloadDelay: 50

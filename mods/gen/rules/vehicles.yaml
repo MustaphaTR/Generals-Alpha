@@ -455,12 +455,23 @@ vehicle.battlemaster_tank:
 		RecoilRecovery: 38
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
+		RequiresCondition: !autoloader
+	Armament@AUTOLOADER:
+		Weapon: cannon.battlemaster_tank.autoloader
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+		RequiresCondition: autoloader
 	AttackTurreted:
 		RequiresCondition: !hacked && !driver_killed && !emp
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	SelectionDecorations:
 	AcceptsDeliveredExperience:
+	GrantConditionOnPrerequisite@AUTOLOADER:
+		Condition: autoloader
+		Prerequisites: upgrade.autoloader
 	ThrowsShrapnel:
 		Weapons: debris.battlemaster_tank
 		Pieces: 1, 1
@@ -1724,16 +1735,25 @@ vehicle.usa_mcc:
 	Tooltip:
 		Name: USA Construction Vehicle
 	Production:
-		Produces: queue.usa_building
+		Produces: queue.usa_building, queue.super_gen_building
 		PauseOnCondition: emp
 		RequiresCondition: !driver_killed
 	ProductionBar@USA_BUILDING:
 		ProductionType: queue.usa_building
+	ProductionBar@SUPER_BUILDING:
+		ProductionType: queue.super_gen_building
 	ProductionQueue@USA_BUILDING:
 		Type: queue.usa_building
+		Factions: usa, air, laser, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Building
 		LowPowerSlowdown: 3
-		RequireOwner: false
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+	ProductionQueue@SUPER_BUILDING:
+		Type: queue.super_gen_building
+		Factions: super
+		Group: Building
+		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
 	Voiced:
@@ -1780,16 +1800,34 @@ vehicle.prc_mcc:
 	Tooltip:
 		Name: PRC Construction Vehicle
 	Production:
-		Produces: queue.prc_building
+		Produces: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		PauseOnCondition: emp
 		RequiresCondition: !driver_killed
 	ProductionBar@PRC_BUILDING:
 		ProductionType: queue.prc_building
+	ProductionBar@INF_BUILDING:
+		ProductionType: queue.inf_gen_building
+	ProductionBar@NUKE_BUILDING:
+		ProductionType: queue.nuke_gen_building
 	ProductionQueue@PRC_BUILDING:
 		Type: queue.prc_building
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, tank
 		Group: Building
 		LowPowerSlowdown: 3
-		RequireOwner: false
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+	ProductionQueue@INF_BUILDING:
+		Type: queue.inf_gen_building
+		Factions: inf
+		Group: Building
+		LowPowerSlowdown: 3
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+	ProductionQueue@NUKE_BUILDING:
+		Type: queue.nuke_gen_building
+		Factions: nuke
+		Group: Building
+		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
 	Voiced:

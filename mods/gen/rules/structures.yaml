@@ -9,7 +9,7 @@
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.infonly
-		Queue: queue.usa_building, queue.gla_building, queue.prc_building
+		Queue: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 	Health:
 		HP: 5000
 	Armor:
@@ -54,7 +54,7 @@ building.usa_command_center:
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: queue.usa_building
+		Queue: queue.usa_building, queue.super_gen_building
 		BuildPaletteOrder: 11
 		Description: Produces construction vehicles.\n\nResearches and Provides General's Powers\n\nProvides Radar.\n\nProvides Spy Satellite support power.
 	Tooltip:
@@ -357,6 +357,24 @@ building.gla_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 		OrderName: AnthraxBombPowerInfoOrder
+	ProvidesPrerequisite@Vanilla:
+		Prerequisite: prerequisite.gla_command_center.vanilla
+		Factions: gla
+	ProvidesPrerequisite@Vanilla_Stealth:
+		Prerequisite: prerequisite.gla_command_center.vanilla_stealth
+		Factions: gla, stealth
+	ProvidesPrerequisite@Vanilla_Toxin_Demo:
+		Prerequisite: prerequisite.gla_command_center.vanilla_toxin_demo
+		Factions: gla, toxin, demo
+	ProvidesPrerequisite@Toxin:
+		Prerequisite: prerequisite.gla_command_center.toxin
+		Factions: toxin
+	ProvidesPrerequisite@Demo:
+		Prerequisite: prerequisite.gla_command_center.demo
+		Factions: demo
+	ProvidesPrerequisite@Stealth:
+		Prerequisite: prerequisite.gla_command_center.stealth
+		Factions: stealth
 	WithTextDecoration@SIDE:
 		Text: GLA
 		Color: 00FF00
@@ -372,7 +390,7 @@ building.prc_command_center:
 	Inherits: ^default.command_center
 	Inherits@GPCHECK: ^ChecksForGeneralsPowerCount.PRC
 	Buildable:
-		Queue: queue.prc_building
+		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 13
 		Description: Produces construction vehicles.\n\nResearches and Provides General's Powers
 	Tooltip:
@@ -669,6 +687,24 @@ building.prc_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 		OrderName: EMPPowerInfoOrder
+	ProvidesPrerequisite@Vanilla:
+		Prerequisite: prerequisite.prc_command_center.vanilla
+		Factions: prc
+	ProvidesPrerequisite@Vanilla_Inf_Nuke:
+		Prerequisite: prerequisite.prc_command_center.vanilla_inf_nuke
+		Factions: prc, inf, nuke
+	ProvidesPrerequisite@Vanilla_Nuke_Tank:
+		Prerequisite: prerequisite.prc_command_center.vanilla_nuke_tank
+		Factions: prc, nuke, tank
+	ProvidesPrerequisite@Infantry:
+		Prerequisite: prerequisite.prc_command_center.inf
+		Factions: inf
+	ProvidesPrerequisite@Nuke:
+		Prerequisite: prerequisite.prc_command_center.nuke
+		Factions: nuke
+	ProvidesPrerequisite@Tank:
+		Prerequisite: prerequisite.prc_command_center.tank
+		Factions: tank
 	WithTextDecoration@SIDE:
 		Text: PRC
 		Color: FF0000
@@ -742,7 +778,7 @@ building.cold_fusion_reactor:
 building.advanced_cold_fusion_reactor:
 	Inherits: building.cold_fusion_reactor
 	Buildable:
-		Prerequisites: ~techlevel.infonly, ~disabled
+		Queue: queue.super_gen_building
 		IconPalette: cameo
 	Production:
 		Produces: queue.advanced_cold_fusion_reactor
@@ -756,7 +792,7 @@ building.nuclear_reactor:
 	HitShape:
 		TargetableOffsets: 630,299,0
 	Buildable:
-		Queue: queue.prc_building
+		Queue: queue.prc_building, queue.inf_gen_building
 		BuildPaletteOrder: 1
 		Prerequisites: ~techlevel.infonly
 		Description: Provides power for other structures.\n\nCan be Overcharged to incrase power output, but damages the building by doing so.\n\nExplodes when destroyed.
@@ -806,7 +842,7 @@ building.nuclear_reactor:
 building.advanced_nuclear_reactor:
 	Inherits: building.nuclear_reactor
 	Buildable:
-		Prerequisites: ~disabled
+		Queue: queue.nuke_gen_building
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -856,7 +892,7 @@ building.usa_barracks:
 			TopLeft: -1024, -1024
 			BottomRight: 1024, 640
 	Buildable:
-		Queue: queue.usa_building
+		Queue: queue.usa_building, queue.super_gen_building
 		BuildPaletteOrder: 2
 		Prerequisites: ~techlevel.infonly
 	Valued:
@@ -894,14 +930,29 @@ building.gla_barracks:
 	Tooltip:
 		Name: GLA Barracks
 	Production:
-		Produces: queue.gla_infantry
+		Produces: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry
 		PauseOnCondition: emp || hacked
-	ProductionQueue:
+	ProductionQueue@Vanilla:
 		Type: queue.gla_infantry
+		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank
 		Group: Infantry
-		RequireOwner: false
 		LowPowerSlowdown: 3
-	ProductionBar:
+	ProductionQueue@Toxin:
+		Type: queue.toxin_gen_infantry
+		Factions: toxin
+		Group: Infantry
+		LowPowerSlowdown: 3
+	ProductionQueue@Demo:
+		Type: queue.demo_gen_infantry
+		Factions: demo
+		Group: Infantry
+		LowPowerSlowdown: 3
+	ProductionBar@Vanilla:
+		ProductionType: queue.gla_infantry
+	ProductionBar@Toxin:
+		ProductionType: queue.toxin_gen_infantry
+	ProductionBar@Demo:
+		ProductionType: queue.demo_gen_infantry
 	Exit@1:
 		SpawnOffset: -42,810,0
 		ExitCell: 1,2
@@ -922,20 +973,28 @@ building.prc_barracks:
 	HitShape:
 		TargetableOffsets: 0,0,0, 490,-470,0, 355,512,0, -355,-512,0, -630,512,0
 	Buildable:
-		Queue: queue.prc_building
+		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 2
 		Prerequisites: ~techlevel.infonly
 	Tooltip:
 		Name: PRC Barracks
 	Production:
-		Produces: queue.prc_infantry
+		Produces: queue.prc_infantry, queue.inf_gen_infantry
 		PauseOnCondition: emp || hacked
-	ProductionQueue:
+	ProductionQueue@Vanilla:
 		Type: queue.prc_infantry
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, nuke, tank
 		Group: Infantry
-		RequireOwner: false
 		LowPowerSlowdown: 3
-	ProductionBar:
+	ProductionQueue@Infantry:
+		Type: queue.inf_gen_infantry
+		Factions: inf
+		Group: Infantry
+		LowPowerSlowdown: 3
+	ProductionBar@Vanilla:
+		ProductionType: queue.prc_infantry
+	ProductionBar@Infantry:
+		ProductionType: queue.inf_gen_infantry
 	Exit@1:
 		SpawnOffset: -170,810,0
 		ExitCell: 1,2
@@ -948,7 +1007,7 @@ building.prc_barracks:
 building.mine:
 	Inherits: ^Mine
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.prc_vehicle, queue.prc_aircraft, queue.propaganda_center, queue.missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.prc_vehicle, queue.prc_aircraft, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.just_mine
 		BuildPaletteOrder: 9
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -1022,7 +1081,7 @@ building.usa_supply_center:
 	Inherits: ^default.supply_center
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
-		Queue: queue.usa_building
+		Queue: queue.usa_building, queue.super_gen_building
 		BuildPaletteOrder: 3
 		Prerequisites: prerequisite.reactor, ~techlevel.infonly
 		Description: Deposit for the collected supplies.\n\nProduces chinooks.
@@ -1135,7 +1194,7 @@ building.gla_supply_stash.no_free_actor:
 building.prc_supply_center:
 	Inherits: ^default.supply_center
 	Buildable:
-		Queue: queue.prc_building
+		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 4
 		Prerequisites: prerequisite.reactor, ~techlevel.infonly
 		Description: Deposit for the collected supplies.\n\nProduces supply trucks.
@@ -1188,7 +1247,7 @@ building.patriot:
 	Inherits@REVEAL: ^Reveal360
 	Inherits@SHAPE: ^2x1Shape
 	Buildable:
-		Queue: queue.usa_building
+		Queue: queue.usa_building, queue.super_gen_building
 		BuildPaletteOrder: 4
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -1315,7 +1374,7 @@ building.gatling_cannon:
 	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@REVEAL: ^Reveal360
 	Buildable:
-		Queue: queue.prc_building
+		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 5
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -1405,7 +1464,7 @@ building.bunker:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Buildable:
-		Queue: queue.prc_building
+		Queue: queue.prc_building, queue.nuke_gen_building
 		BuildPaletteOrder: 7
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -1456,8 +1515,8 @@ building.bunker:
 building.fotified_bunker:
 	Inherits: building.bunker
 	Buildable:
+		Queue: queue.inf_gen_building
 		BuildDuration: 200
-		Prerequisites: building.prc_barracks, ~techlevel.infonly, ~disabled
 		Description: Static defense with fireports for 10\ngarrisoned soldiers.\n\nComes with some mines around.
 	Tooltip:
 		Name: Fortified Bunker
@@ -1513,7 +1572,7 @@ building.usa_war_factory:
 	Inherits: ^default.war_factory
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
-		Queue: queue.usa_building
+		Queue: queue.usa_building, queue.super_gen_building
 		BuildPaletteOrder: 5
 		Prerequisites: prerequisite.supply_center, ~techlevel.low
 	Tooltip:
@@ -1585,7 +1644,7 @@ building.arms_dealer:
 building.prc_war_factory:
 	Inherits: ^default.war_factory
 	Buildable:
-		Queue: queue.prc_building
+		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 8
 		Prerequisites: prerequisite.supply_center, ~techlevel.low
 	Tooltip:
@@ -1800,7 +1859,7 @@ building.usa_airfield:
 			TopLeft: -2048, -1280
 			BottomRight: 2048, 1536
 	Buildable:
-		Queue: queue.usa_building
+		Queue: queue.usa_building, queue.super_gen_building
 		BuildPaletteOrder: 6
 		Prerequisites: prerequisite.supply_center, ~techlevel.medium
 	Tooltip:
@@ -1809,14 +1868,22 @@ building.usa_airfield:
 		Footprint: XXXX xxxx xxxx
 		Dimensions: 4,3
 	Production:
-		Produces: queue.usa_aircraft, queue.usa_plane, queue.usa_helicopter, queue.usa_air_upgrade
+		Produces: queue.usa_aircraft, queue.air_gen_aircraft, queue.usa_plane, queue.usa_helicopter, queue.usa_air_upgrade
 		PauseOnCondition: emp || hacked
-	ProductionQueue:
+	ProductionQueue@Vanilla:
 		Type: queue.usa_aircraft
+		Factions: usa, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Aircraft
-		RequireOwner: false
 		LowPowerSlowdown: 3
-	ProductionBar:
+	ProductionQueue@Airforce:
+		Type: queue.air_gen_aircraft
+		Factions: air
+		Group: Aircraft
+		LowPowerSlowdown: 3
+	ProductionBar@Vanilla:
+		ProductionType: queue.usa_aircraft
+	ProductionBar@Airforce:
+		ProductionType: queue.air_gen_aircraft
 	Dock@0:
 		DockOffset: 2,2
 	Dock@1:
@@ -1857,7 +1924,7 @@ building.prc_airfield:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 420,512,0, 420,-512,0, 420,1536,0, 420,-1536,0, -777,512,0, -777,-512,0, -777,1536,0, -777,-1536,0
 	Buildable:
-		Queue: queue.prc_building
+		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 9
 		Prerequisites: prerequisite.supply_center, ~techlevel.medium
 	Tooltip:
@@ -1901,7 +1968,7 @@ building.strategy_center:
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: queue.usa_building
+		Queue: queue.usa_building, queue.super_gen_building
 		BuildPaletteOrder: 7
 		BuildDuration: 1500
 		BuildDurationModifier: 100
@@ -2067,7 +2134,7 @@ building.propaganda_center:
 	HitShape:
 		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	Buildable:
-		Queue: queue.prc_building
+		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 10
 		BuildDuration: 1125
 		BuildDurationModifier: 100
@@ -2086,14 +2153,22 @@ building.propaganda_center:
 		Type: building.normal
 	WithBuildingBib:
 	Production:
-		Produces: queue.propaganda_center
+		Produces: queue.propaganda_center, queue.tank_gen_propaganda_center
 		PauseOnCondition: emp || hacked
-	ProductionQueue:
+	ProductionQueue@Vanilla:
 		Type: queue.propaganda_center
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke
 		Group: Tech
-		RequireOwner: false
 		LowPowerSlowdown: 3
-	ProductionBar:
+	ProductionQueue@Tank:
+		Type: queue.tank_gen_propaganda_center
+		Factions: tank
+		Group: Tech
+		LowPowerSlowdown: 3
+	ProductionBar@Vanilla:
+		ProductionType: queue.propaganda_center
+	ProductionBar@Tank:
+		ProductionType: queue.tank_gen_propaganda_center
 	Exit:
 	Power:
 		Amount: -2
@@ -2111,7 +2186,7 @@ building.detention_camp:
 	HitShape:
 		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	Buildable:
-		Queue: queue.usa_building
+		Queue: queue.usa_building, queue.super_gen_building
 		BuildPaletteOrder: 8
 		BuildDuration: 750
 		BuildDurationModifier: 100
@@ -2157,7 +2232,7 @@ building.supply_drop_zone:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
 	Buildable:
-		Queue: queue.usa_building
+		Queue: queue.usa_building, queue.super_gen_building
 		BuildPaletteOrder: 9
 		BuildDuration: 1125
 		BuildDurationModifier: 100
@@ -2265,7 +2340,7 @@ building.speaker_tower:
 	Tooltip:
 		Name: Speaker Tower
 	Buildable:
-		Queue: queue.prc_building
+		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 11
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -2332,6 +2407,7 @@ building.particle_cannon:
 	Selectable:
 		Bounds: 48,40,0,9
 		DecorationBounds: 48,53,0,-4
+		Class: building.particle_cannon
 	SelectionDecorations:
 	WithSpriteBody:
 		PauseOnCondition: emp || hacked || lowpower
@@ -2370,7 +2446,15 @@ building.particle_cannon:
 	Voiced:
 		VoiceSet: ParticleCannonVoice
 	RenderSprites:
+		Image: building.particle_cannon
 		PlayerPalette: cncplayer
+
+building.particle_cannon.super:
+	Inherits: building.particle_cannon
+	Buildable:
+		Queue: queue.super_gen_building
+	Valued:
+		Cost: 2500
 
 hack.scud_spawner:
 	Inherits: ^Building
@@ -2562,7 +2646,7 @@ building.missile_silo:
 	Tooltip:
 		Name: Nuclear Missile Silo
 	Buildable:
-		Queue: queue.prc_building
+		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 12
 		BuildDuration: 1500
 		BuildDurationModifier: 100
@@ -2648,7 +2732,7 @@ building.missile_silo:
 SBAG:
 	Inherits: ^Wall
 	Buildable:
-		Queue: queue.usa_building, queue.gla_building, queue.prc_building
+		Queue: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 40
 		Prerequisites: ~disabled
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
@@ -2673,7 +2757,7 @@ SBAG:
 FENC:
 	Inherits: ^Wall
 	Buildable:
-		Queue: queue.usa_building, queue.gla_building, queue.prc_building
+		Queue: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 45
 		Prerequisites: ~disabled
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
@@ -2698,7 +2782,7 @@ FENC:
 BRIK:
 	Inherits: ^Wall
 	Buildable:
-		Queue: queue.usa_building, queue.gla_building, queue.prc_building
+		Queue: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 50
 		Prerequisites: ~disabled
 		Description: Stop units and blocks enemy fire.

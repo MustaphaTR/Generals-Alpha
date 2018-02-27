@@ -42,119 +42,119 @@
 		QueuedAudio: NoAudio
 		ReadyAudio: ConstructionComplete
 
-hack.cameo_filler.14:
+hack.cameo_filler.18:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.usa_infantry
 		BuildPaletteOrder: 4
 		Prerequisites: disabled, ~!techlevel.high, ~techlevel.low
 
-hack.cameo_filler.15:
+hack.cameo_filler.19:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.usa_infantry
 		BuildPaletteOrder: 5
 		Prerequisites: disabled, ~!generals_power.pathfinder, ~techlevel.low
 
-hack.cameo_filler.16:
+hack.cameo_filler.20:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.gla_infantry
+		Queue: queue.gla_infantry, queue.toxin_gen_infantry
 		BuildPaletteOrder: 6
 		Prerequisites: disabled, ~generals_power.hijacker
 
-hack.cameo_filler.17:
+hack.cameo_filler.21:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.prc_infantry
+		Queue: queue.prc_infantry, queue.inf_gen_infantry
 		BuildPaletteOrder: 4
 		Prerequisites: disabled, ~!techlevel.medium
 
-hack.cameo_filler.18:
+hack.cameo_filler.22:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.prc_infantry
+		Queue: queue.prc_infantry, queue.inf_gen_infantry
 		BuildPaletteOrder: 5
 		Prerequisites: disabled, ~!techlevel.high
 
-hack.cameo_filler.19:
+hack.cameo_filler.23:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.soviet_infantry
 		BuildPaletteOrder: 4
 		Prerequisites: disabled, ~techlevel.low
 
-hack.cameo_filler.20:
+hack.cameo_filler.24:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.prc_collector
 		BuildPaletteOrder: 2
 		Prerequisites: disabled
 
-hack.cameo_filler.21:
+hack.cameo_filler.25:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.prc_vehicle
 		BuildPaletteOrder: 5
 		Prerequisites: disabled, ~!techlevel.medium, ~techlevel.low
 
-hack.cameo_filler.22:
+hack.cameo_filler.26:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.prc_vehicle
 		BuildPaletteOrder: 8
 		Prerequisites: disabled, ~!techlevel.high, ~techlevel.medium
 
-hack.cameo_filler.23:
+hack.cameo_filler.27:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.usa_aircraft
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft
 		BuildPaletteOrder: 5
 		Prerequisites: disabled, ~!generals_power.stealth_fighter, ~techlevel.high
 
-hack.cameo_filler.24:
+hack.cameo_filler.28:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.prc_aircraft
 		BuildPaletteOrder: 2
 		Prerequisites: disabled, ~!techlevel.high
 
-hack.cameo_filler.25:
+hack.cameo_filler.29:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.gla_building
 		BuildPaletteOrder: 11
 		Prerequisites: ~prerequisite.zh_units, disabled
 
-hack.cameo_filler.26:
+hack.cameo_filler.30:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.gla_building
 		BuildPaletteOrder: 12
 		Prerequisites: ~prerequisite.zh_units, disabled
 
-hack.cameo_filler.27:
+hack.cameo_filler.31:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.propaganda_center, queue.missile_silo
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo
 		BuildPaletteOrder: 10
 		Prerequisites: ~prerequisite.zh_units, disabled
 
-hack.cameo_filler.28:
+hack.cameo_filler.32:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.just_mine, queue.prc_aircraft, queue.propaganda_center, queue.missile_silo
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.just_mine, queue.prc_aircraft, queue.propaganda_center, queue.missile_silo
 		BuildPaletteOrder: 11
 		Prerequisites: ~prerequisite.zh_units, disabled
 
-hack.cameo_filler.29:
+hack.cameo_filler.33:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.prc_vehicle
 		BuildPaletteOrder: 11
 		Prerequisites: ~prerequisite.zh_units, ~!generals_power.nuke_cannon, disabled
 
-hack.cameo_filler.30:
+hack.cameo_filler.34:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.bomb_truck, queue.scud_launcher
@@ -182,7 +182,7 @@ upgrade.neutron_mine:
 	Tooltip:
 		Name: Neutron Mine
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.prc_vehicle, queue.prc_aircraft, queue.propaganda_center, queue.missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.prc_vehicle, queue.prc_aircraft, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.just_mine
 		BuildPaletteOrder: 12
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -207,7 +207,7 @@ upgrade.control_rods:
 		Queue: queue.cold_fusion_reactor
 		BuildPaletteOrder: 1
 		BuildDuration: 375
-		Prerequisites: building.cold_fusion_reactor, ~techlevel.infonly
+		Prerequisites: ~techlevel.infonly
 		Description: Doubles power output of the Cold Fusion Reactor.
 		BuildLimit: 0
 		QueuedAudio: NoAudio
@@ -221,14 +221,29 @@ upgrade.advanced_control_rods:
 		Name: Advanced Control Rods
 	Buildable:
 		Queue: queue.advanced_cold_fusion_reactor
-		Prerequisites: building.cold_fusion_reactor, ~techlevel.infonly, ~disabled
+
+upgrade.camo_netting:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Camo Netting
+	Buildable:
+		Queue: queue.camo_netting
+		BuildPaletteOrder: 1
+		BuildDuration: 125
+		Prerequisites: ~techlevel.infonly
+		Description: Allows structure to cloak.
+		BuildLimit: 0
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
+	Valued:
+		Cost: 500
 
 upgrade.capture_building:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Capture Building
 	Buildable:
-		Queue: queue.usa_infantry, queue.gla_infantry, queue.prc_infantry
+		Queue: queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry
 		BuildPaletteOrder: 3
 		BuildDuration: 750
 		Prerequisites: prerequisite.barracks, ~techlevel.infonly
@@ -333,11 +348,11 @@ upgrade.rocket_pods:
 	Tooltip:
 		Name: Rocket Pods
 	Buildable:
-		Queue: queue.usa_aircraft
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft
 		BuildAtProductionType: queue.usa_air_upgrade
 		BuildPaletteOrder: 3
 		BuildDuration: 1500
-		Prerequisites: building.usa_airfield, ~techlevel.high
+		Prerequisites: ~techlevel.high
 		Description: Allows Comanches to fire Missiles.
 		QueuedAudio: NoAudio
 		ReadyAudio: RocketPods
@@ -349,11 +364,11 @@ upgrade.laser_guided_missiles:
 	Tooltip:
 		Name: Laser-Guided Missiles
 	Buildable:
-		Queue: queue.usa_aircraft
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft
 		BuildAtProductionType: queue.usa_air_upgrade
 		BuildPaletteOrder: 6
 		BuildDuration: 1000
-		Prerequisites: building.usa_airfield, ~techlevel.high
+		Prerequisites: ~techlevel.high
 		Description: Increases the damage output of Raptor and Stealth Bomber by 25%.
 		QueuedAudio: NoAudio
 		ReadyAudio: LaserGuide
@@ -365,11 +380,11 @@ upgrade.stealth_comanche:
 	Tooltip:
 		Name: Stealth Comanche
 	Buildable:
-		Queue: queue.usa_aircraft
+		Queue: queue.air_gen_aircraft
 		BuildAtProductionType: queue.usa_air_upgrade
 		BuildPaletteOrder: 9
 		BuildDuration: 750
-		Prerequisites: building.usa_airfield, ~techlevel.high, ~disabled
+		Prerequisites: ~techlevel.high
 		Description: Allows Comanches to stealth when not firing.
 		QueuedAudio: NoAudio
 		ReadyAudio: ConstructionComplete
@@ -501,7 +516,7 @@ upgrade.nationalism:
 	Tooltip:
 		Name: Nationalism
 	Buildable:
-		Queue: queue.propaganda_center
+		Queue: queue.propaganda_center, queue.tank_gen_propaganda_center
 		BuildPaletteOrder: 1
 		BuildDuration: 1500
 		Prerequisites: building.propaganda_center, ~techlevel.medium
@@ -518,7 +533,7 @@ upgrade.subliminal_messaging:
 	Tooltip:
 		Name: Subliminal Messaging
 	Buildable:
-		Queue: queue.propaganda_center
+		Queue: queue.propaganda_center, queue.tank_gen_propaganda_center
 		BuildPaletteOrder: 2
 		BuildDuration: 1000
 		Prerequisites: building.propaganda_center, ~techlevel.medium
@@ -527,6 +542,21 @@ upgrade.subliminal_messaging:
 		ReadyAudio: Subliminal
 	Valued:
 		Cost: 500
+
+upgrade.autoloader:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Autoloader
+	Buildable:
+		Queue: queue.tank_gen_propaganda_center
+		BuildPaletteOrder: 3
+		BuildDuration: 1500
+		Prerequisites: building.propaganda_center, ~techlevel.medium
+		Description: Makes Battlemaster Tanks to fire 3 cannon at once.
+		QueuedAudio: NoAudio
+		ReadyAudio: Autoloader
+	Valued:
+		Cost: 2500
 
 upgrade.ap_bullets:
 	Inherits: ^default.upgrade

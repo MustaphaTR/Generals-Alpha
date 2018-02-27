@@ -59,7 +59,7 @@ hack.cameo_filler.4:
 	Buildable:
 		Queue: General
 		BuildPaletteOrder: 6
-		Prerequisites: ~building.gla_command_center, disabled, ~techlevel.medium
+		Prerequisites: ~!prerequisite.gla_command_center.stealth, ~building.gla_command_center, disabled, ~techlevel.medium
 
 generals_power.red_training:
 	Inherits: ^default.generals_power
@@ -68,7 +68,7 @@ generals_power.red_training:
 	Buildable:
 		BuildPaletteOrder: 7
 		BuildDuration: 1000
-		Prerequisites: ~building.prc_command_center, ~techlevel.infonly, !enough_powers.prc
+		Prerequisites: ~prerequisite.prc_command_center.vanilla_nuke_tank, ~techlevel.infonly, !enough_powers.prc
 		Description: Makes Red Guards trained as veteran.
 	Valued:
 		Cost: 1000
@@ -80,20 +80,8 @@ generals_power.minigunner_training:
 	Buildable:
 		BuildPaletteOrder: 7
 		BuildDuration: 1000
-		Prerequisites: ~building.prc_command_center, ~techlevel.infonly, !enough_powers.prc, ~disabled
+		Prerequisites: ~prerequisite.prc_command_center.inf, ~techlevel.infonly, !enough_powers.prc
 		Description: Makes Minigunners trained at Rank 2.
-	Valued:
-		Cost: 1000
-
-generals_power.battlemaster_training:
-	Inherits: ^default.generals_power
-	Tooltip:
-		Name: Battlemaster Elite Training
-	Buildable:
-		BuildPaletteOrder: 8
-		BuildDuration: 1000
-		Prerequisites: ~building.prc_command_center, ~techlevel.infonly, !enough_powers.prc, ~disabled
-		Description: Makes Battlemaster Tanks trained at Rank 2.
 	Valued:
 		Cost: 1000
 
@@ -104,10 +92,22 @@ generals_power.arty_training:
 	Buildable:
 		BuildPaletteOrder: 8
 		BuildDuration: 1000
-		Prerequisites: ~building.prc_command_center, ~techlevel.medium, !enough_powers.prc
+		Prerequisites: ~prerequisite.prc_command_center.vanilla_inf_nuke, ~techlevel.medium, !enough_powers.prc
 		Description: Makes Inferno and Nuke Cannons trained as veteran.
 	Valued:
 		Cost: 1500
+
+generals_power.battlemaster_training:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Battlemaster Elite Training
+	Buildable:
+		BuildPaletteOrder: 8
+		BuildDuration: 1000
+		Prerequisites: ~prerequisite.prc_command_center.tank, ~techlevel.infonly, !enough_powers.prc
+		Description: Makes Battlemaster Tanks trained at Rank 2.
+	Valued:
+		Cost: 1000
 
 hack.cameo_filler.5:
 	Inherits: ^default.cameo_filler
@@ -123,10 +123,17 @@ generals_power.nuke_cannon:
 	Buildable:
 		BuildPaletteOrder: 9
 		BuildDuration: 1500
-		Prerequisites: ~building.prc_command_center, ~techlevel.high, !enough_powers.prc
+		Prerequisites: ~prerequisite.prc_command_center.vanilla_inf_nuke, ~techlevel.high, !enough_powers.prc
 		Description: Enables Nuke Cannon.
 	Valued:
 		Cost: 1600
+
+hack.cameo_filler.6:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 9
+		Prerequisites: ~!prerequisite.prc_command_center.vanilla_inf_nuke, ~building.prc_command_center, disabled
 
 generals_power.paladin_tank:
 	Inherits: ^default.generals_power
@@ -171,7 +178,7 @@ generals_power.marauder_tank:
 	Buildable:
 		BuildPaletteOrder: 13
 		BuildDuration: 750
-		Prerequisites: ~building.gla_command_center, ~techlevel.high, !enough_powers.gla
+		Prerequisites: ~prerequisite.gla_command_center.vanilla_toxin_demo, ~techlevel.high, !enough_powers.gla
 		Description: Enables Marauder Tank.
 	Valued:
 		Cost: 800
@@ -183,7 +190,7 @@ generals_power.scud_launcher:
 	Buildable:
 		BuildPaletteOrder: 14
 		BuildDuration: 750
-		Prerequisites: ~building.gla_command_center, ~techlevel.high, !enough_powers.gla
+		Prerequisites: ~prerequisite.gla_command_center.vanilla_toxin_demo, ~techlevel.high, !enough_powers.gla
 		Description: Enables Marauder Tank.
 	Valued:
 		Cost: 1200
@@ -195,10 +202,17 @@ generals_power.hijacker:
 	Buildable:
 		BuildPaletteOrder: 15
 		BuildDuration: 750
-		Prerequisites: ~building.gla_command_center, building.gla_barracks, ~techlevel.high, !enough_powers.gla
+		Prerequisites: ~prerequisite.gla_command_center.vanilla_stealth, building.gla_barracks, ~techlevel.high, !enough_powers.gla
 		Description: Enables Hijacker.
 	Valued:
 		Cost: 400
+
+hack.cameo_filler.7:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 15
+		Prerequisites: ~!prerequisite.gla_command_center.vanilla_stealth, ~building.gla_command_center, disabled
 
 generals_power.emergency_repair1:
 	Inherits: ^default.generals_power
@@ -272,7 +286,7 @@ generals_power.paradrop3:
 	Valued:
 		Cost: 2000
 
-hack.cameo_filler.6:
+hack.cameo_filler.10:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
@@ -315,7 +329,7 @@ generals_power.ambush3:
 	Valued:
 		Cost: 2000
 
-hack.cameo_filler.7:
+hack.cameo_filler.11:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
@@ -394,7 +408,7 @@ generals_power.cash_hack3:
 	Valued:
 		Cost: 1000
 
-hack.cameo_filler.8:
+hack.cameo_filler.12:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
@@ -437,7 +451,7 @@ generals_power.a103:
 	Valued:
 		Cost: 1750
 
-hack.cameo_filler.9:
+hack.cameo_filler.13:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
@@ -480,7 +494,7 @@ generals_power.cash_bounty3:
 	Valued:
 		Cost: 1000
 
-hack.cameo_filler.10:
+hack.cameo_filler.14:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
@@ -559,7 +573,7 @@ generals_power.arty_barrage3:
 	Valued:
 		Cost: 1750
 
-hack.cameo_filler.11:
+hack.cameo_filler.15:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
@@ -573,7 +587,7 @@ generals_power.tank_drop1:
 	Buildable:
 		BuildPaletteOrder: 44
 		BuildDuration: 750
-		Prerequisites: ~building.prc_command_center, building.prc_war_factory, ~techlevel.medium, !enough_powers.prc, ~disabled
+		Prerequisites: ~prerequisite.prc_command_center.tank, building.prc_war_factory, ~techlevel.medium, !enough_powers.prc
 		Description: Enables Tank Drop support power from Command Center.
 	Valued:
 		Cost: 1750
@@ -585,7 +599,7 @@ generals_power.tank_drop2:
 	Buildable:
 		BuildPaletteOrder: 45
 		BuildDuration: 750
-		Prerequisites: ~building.prc_command_center, building.prc_war_factory, generals_power.tank_drop1, ~techlevel.medium, !enough_powers.prc, ~disabled
+		Prerequisites: ~prerequisite.prc_command_center.tank, building.prc_war_factory, generals_power.tank_drop1, ~techlevel.medium, !enough_powers.prc
 		Description: Upgrades Tank Drop support power to Level 2.
 	Valued:
 		Cost: 1750
@@ -597,7 +611,7 @@ generals_power.tank_drop3:
 	Buildable:
 		BuildPaletteOrder: 46
 		BuildDuration: 1500
-		Prerequisites: ~building.prc_command_center, building.prc_war_factory, generals_power.tank_drop2, ~techlevel.high, !enough_powers.prc, ~disabled
+		Prerequisites: ~prerequisite.prc_command_center.tank, building.prc_war_factory, generals_power.tank_drop2, ~techlevel.high, !enough_powers.prc
 		Description: Upgrades Tank Drop support power to Level 3.
 	Valued:
 		Cost: 3500
@@ -614,14 +628,14 @@ generals_power.cluster_mines:
 	Valued:
 		Cost: 1500
 
-hack.cameo_filler.12:
+hack.cameo_filler.16:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
 		BuildPaletteOrder: 48
 		Prerequisites: ~building.prc_command_center, disabled, ~techlevel.high
 
-hack.cameo_filler.13:
+hack.cameo_filler.17:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General

@@ -304,7 +304,7 @@ aircraft.king_raptor:
 	Inherits: aircraft.raptor
 	Inherits@REVEAL: ^Reveal200
 	Buildable:
-		Prerequisites: ~building.usa_airfield, ~techlevel.medium, ~disabled
+		Queue: queue.air_gen_aircraft
 	Valued:
 		Cost: 1100
 	Tooltip:
@@ -339,7 +339,7 @@ aircraft.stealth_fighter:
 	Inherits@REVEAL: ^Reveal180
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_aircraft
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft
 		BuildAtProductionType: queue.usa_plane
 		BuildPaletteOrder: 4
 		BuildDuration: 625
@@ -420,7 +420,7 @@ aircraft.aurora:
 	Inherits@REVEAL: ^Reveal180
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_aircraft
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft
 		BuildAtProductionType: queue.usa_plane
 		BuildPaletteOrder: 5
 		BuildDuration: 625
@@ -764,7 +764,7 @@ aircraft.comanche:
 	Inherits@REVEAL: ^Reveal180
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_aircraft
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft
 		BuildAtProductionType: queue.usa_helicopter
 		BuildPaletteOrder: 2
 		BuildDuration: 500
