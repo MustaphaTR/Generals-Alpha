@@ -3,6 +3,9 @@ Player:
 		Name: Rush AI
 		Type: rush
 		MinimumExcessPower: 3
+		ExcessPowerIncrement: 3
+		ExcessPowerIncreaseThreshold: 5
+		MaximumExcessPower: 20
 		BuildingQueues: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, General
 		DefenseQueues: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.advanced_cold_fusion_reactor
@@ -66,10 +69,6 @@ Player:
 			building.usa_supply_center: 30%
 			building.gla_supply_stash: 30%
 			building.prc_supply_center: 30%
-			building.cold_fusion_reactor: 15%
-			building.advanced_cold_fusion_reactor: 15%
-			building.nuclear_reactor: 15%
-			building.advanced_nuclear_reactor: 15%
 			building.usa_barracks: 1%
 			building.gla_barracks: 1%
 			building.prc_barracks: 1%
@@ -622,6 +621,9 @@ Player:
 		Name: Normal AI
 		Type: normal
 		MinimumExcessPower: 3
+		ExcessPowerIncrement: 3
+		ExcessPowerIncreaseThreshold: 5
+		MaximumExcessPower: 20
 		BuildingQueues: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, General
 		DefenseQueues: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.advanced_cold_fusion_reactor
@@ -689,10 +691,6 @@ Player:
 			building.usa_supply_center: 30%
 			building.gla_supply_stash: 30%
 			building.prc_supply_center: 30%
-			building.cold_fusion_reactor: 15%
-			building.advanced_cold_fusion_reactor: 15%
-			building.nuclear_reactor: 15%
-			building.advanced_nuclear_reactor: 15%
 			building.usa_barracks: 1%
 			building.gla_barracks: 1%
 			building.prc_barracks: 1%
@@ -1249,6 +1247,9 @@ Player:
 		Name: Turtle AI
 		Type: turtle
 		MinimumExcessPower: 3
+		ExcessPowerIncrement: 3
+		ExcessPowerIncreaseThreshold: 5
+		MaximumExcessPower: 20
 		BuildingQueues: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, General
 		DefenseQueues: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.advanced_cold_fusion_reactor
@@ -1316,10 +1317,6 @@ Player:
 			building.usa_supply_center: 30%
 			building.gla_supply_stash: 30%
 			building.prc_supply_center: 30%
-			building.cold_fusion_reactor: 15%
-			building.advanced_cold_fusion_reactor: 15%
-			building.nuclear_reactor: 15%
-			building.advanced_nuclear_reactor: 15%
 			building.usa_barracks: 1%
 			building.gla_barracks: 1%
 			building.prc_barracks: 1%
