@@ -1735,16 +1735,25 @@ vehicle.usa_mcc:
 	Tooltip:
 		Name: USA Construction Vehicle
 	Production:
-		Produces: queue.usa_building, queue.super_gen_building
+		Produces: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
 		PauseOnCondition: emp
 		RequiresCondition: !driver_killed
 	ProductionBar@USA_BUILDING:
 		ProductionType: queue.usa_building
+	ProductionBar@LASER_BUILDING:
+		ProductionType: queue.laser_gen_building
 	ProductionBar@SUPER_BUILDING:
 		ProductionType: queue.super_gen_building
 	ProductionQueue@USA_BUILDING:
 		Type: queue.usa_building
-		Factions: usa, air, laser, gla, toxin, demo, stealth, prc, inf, nuke, tank
+		Factions: usa, air, gla, toxin, demo, stealth, prc, inf, nuke, tank
+		Group: Building
+		LowPowerSlowdown: 3
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+	ProductionQueue@LASER_BUILDING:
+		Type: queue.laser_gen_building
+		Factions: laser
 		Group: Building
 		LowPowerSlowdown: 3
 		QueuedAudio: Building

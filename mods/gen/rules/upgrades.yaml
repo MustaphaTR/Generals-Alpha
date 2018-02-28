@@ -41,6 +41,8 @@
 		BuildLimit: 0
 		QueuedAudio: NoAudio
 		ReadyAudio: ConstructionComplete
+	KillsSelf:
+		RemoveInstead: true
 
 hack.cameo_filler.18:
 	Inherits: ^default.cameo_filler
@@ -233,8 +235,21 @@ upgrade.control_rods:
 		BuildLimit: 0
 		QueuedAudio: NoAudio
 		ReadyAudio: ConstructionComplete
+	Power:
+		Amount: 5
 	Valued:
 		Cost: 500
+	KillsSelf:
+		RemoveInstead: true
+
+upgrade.control_rods.laser:
+	Inherits: upgrade.control_rods
+	Buildable:
+		Queue: queue.laser_gen_cold_fusion_reactor
+	Power:
+		Amount: 8
+	RenderSprites:
+		Image: upgrade.control_rods
 
 upgrade.advanced_control_rods:
 	Inherits: upgrade.control_rods
@@ -242,6 +257,11 @@ upgrade.advanced_control_rods:
 		Name: Advanced Control Rods
 	Buildable:
 		Queue: queue.advanced_cold_fusion_reactor
+		Description: Quadruples power output of the Cold Fusion Reactor.
+	Power:
+		Amount: 15
+	KillsSelf:
+		RemoveInstead: true
 
 upgrade.camo_netting:
 	Inherits: ^default.upgrade
@@ -713,6 +733,8 @@ upgrade.scout_drone:
 		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 100
+	KillsSelf:
+		RemoveInstead: true
 
 upgrade.battle_drone:
 	Inherits: ^default.upgrade
@@ -728,6 +750,8 @@ upgrade.battle_drone:
 		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 300
+	KillsSelf:
+		RemoveInstead: true
 
 upgrade.hellfire_drone:
 	Inherits: ^default.upgrade
@@ -744,6 +768,8 @@ upgrade.hellfire_drone:
 		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 500
+	KillsSelf:
+		RemoveInstead: true
 
 upgrade.bio_bombs:
 	Inherits: ^default.upgrade
@@ -759,6 +785,8 @@ upgrade.bio_bombs:
 		ReadyAudio: BioBombsReady
 	Valued:
 		Cost: 500
+	KillsSelf:
+		RemoveInstead: true
 
 upgrade.hi_explosive_bombs:
 	Inherits: ^default.upgrade
@@ -774,6 +802,8 @@ upgrade.hi_explosive_bombs:
 		ReadyAudio: HiExplosiveBombsReady
 	Valued:
 		Cost: 500
+	KillsSelf:
+		RemoveInstead: true
 
 upgrade.toxin_missiles:
 	Inherits: ^default.upgrade
@@ -789,6 +819,8 @@ upgrade.toxin_missiles:
 		ReadyAudio: NoAudio
 	Valued:
 		Cost: 0
+	KillsSelf:
+		RemoveInstead: true
 
 upgrade.hi_explosive_missiles:
 	Inherits: ^default.upgrade
@@ -804,6 +836,8 @@ upgrade.hi_explosive_missiles:
 		ReadyAudio: NoAudio
 	Valued:
 		Cost: 0
+	KillsSelf:
+		RemoveInstead: true
 
 upgrade.overlord_bunker:
 	Inherits: ^default.upgrade
@@ -819,6 +853,8 @@ upgrade.overlord_bunker:
 		ReadyAudio: OverlordBunkerReady
 	Valued:
 		Cost: 400
+	KillsSelf:
+		RemoveInstead: true
 
 upgrade.overlord_gatling:
 	Inherits: ^default.upgrade
@@ -834,6 +870,8 @@ upgrade.overlord_gatling:
 		ReadyAudio: OverlordGatlingReady
 	Valued:
 		Cost: 1200
+	KillsSelf:
+		RemoveInstead: true
 
 upgrade.overlord_speaker:
 	Inherits: ^default.upgrade
@@ -849,6 +887,8 @@ upgrade.overlord_speaker:
 		ReadyAudio: OverlordSpeakerReady
 	Valued:
 		Cost: 500
+	KillsSelf:
+		RemoveInstead: true
 
 upgrade.helix_bunker:
 	Inherits: upgrade.overlord_bunker

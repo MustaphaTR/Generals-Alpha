@@ -9,7 +9,7 @@
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.infonly
-		Queue: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
+		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 	Health:
 		HP: 5000
 	Armor:
@@ -54,7 +54,7 @@ building.usa_command_center:
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: queue.usa_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 11
 		Description: Produces construction vehicles.\n\nResearches and Provides General's Powers\n\nProvides Radar.\n\nProvides Spy Satellite support power.
 	Tooltip:
@@ -810,12 +810,27 @@ building.cold_fusion_reactor:
 		Amount: 5
 		RequiresCondition: !emp && !hacked
 	Power@CONTROL_RODS:
-		RequiresCondition: control_rods && !emp && !hacked
 		Amount: 5
+		RequiresCondition: control_rods && !emp && !hacked
 	GrantConditionOnProduction:
 		Condition: control_rods
 	Voiced:
 		VoiceSet: ColdFusionReactorVoice
+
+building.cold_fusion_reactor.laser:
+	Inherits: building.cold_fusion_reactor
+	Buildable:
+		Queue: queue.laser_gen_building
+	Production:
+		Produces: queue.laser_gen_cold_fusion_reactor
+	ProductionQueue:
+		Type: queue.laser_gen_cold_fusion_reactor
+	Power:
+		Amount: 8
+	Power@CONTROL_RODS:
+		Amount: 8
+	RenderSprites:
+		Image: building.cold_fusion_reactor
 
 building.advanced_cold_fusion_reactor:
 	Inherits: building.cold_fusion_reactor
@@ -934,7 +949,7 @@ building.usa_barracks:
 			TopLeft: -1024, -1024
 			BottomRight: 1024, 640
 	Buildable:
-		Queue: queue.usa_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 2
 		Prerequisites: ~techlevel.infonly
 	Valued:
@@ -1123,7 +1138,7 @@ building.usa_supply_center:
 	Inherits: ^default.supply_center
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
-		Queue: queue.usa_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 3
 		Prerequisites: prerequisite.reactor, ~techlevel.infonly
 		Description: Deposit for the collected supplies.\n\nProduces chinooks.
@@ -1298,7 +1313,7 @@ building.patriot:
 	Inherits@REVEAL: ^Reveal360
 	Inherits@SHAPE: ^2x1Shape
 	Buildable:
-		Queue: queue.usa_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 4
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -1623,7 +1638,7 @@ building.usa_war_factory:
 	Inherits: ^default.war_factory
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
-		Queue: queue.usa_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 5
 		Prerequisites: prerequisite.supply_center, ~techlevel.low
 	Tooltip:
@@ -1932,7 +1947,7 @@ building.usa_airfield:
 			TopLeft: -2048, -1280
 			BottomRight: 2048, 1536
 	Buildable:
-		Queue: queue.usa_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 6
 		Prerequisites: prerequisite.supply_center, ~techlevel.medium
 	Tooltip:
@@ -2041,7 +2056,7 @@ building.strategy_center:
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: queue.usa_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 7
 		BuildDuration: 1500
 		BuildDurationModifier: 100
@@ -2259,7 +2274,7 @@ building.detention_camp:
 	HitShape:
 		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	Buildable:
-		Queue: queue.usa_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 8
 		BuildDuration: 750
 		BuildDurationModifier: 100
@@ -2305,7 +2320,7 @@ building.supply_drop_zone:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
 	Buildable:
-		Queue: queue.usa_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 9
 		BuildDuration: 1125
 		BuildDurationModifier: 100
@@ -2468,7 +2483,7 @@ building.particle_cannon:
 	Tooltip:
 		Name: Particle Uplink Cannon
 	Buildable:
-		Queue: queue.usa_building
+		Queue: queue.usa_building, queue.laser_gen_building
 		BuildPaletteOrder: 10
 		BuildDuration: 1500
 		BuildDurationModifier: 100
@@ -2806,7 +2821,7 @@ building.missile_silo:
 SBAG:
 	Inherits: ^Wall
 	Buildable:
-		Queue: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
+		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 40
 		Prerequisites: ~disabled
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
@@ -2831,7 +2846,7 @@ SBAG:
 FENC:
 	Inherits: ^Wall
 	Buildable:
-		Queue: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
+		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 45
 		Prerequisites: ~disabled
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
@@ -2856,7 +2871,7 @@ FENC:
 BRIK:
 	Inherits: ^Wall
 	Buildable:
-		Queue: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
+		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 50
 		Prerequisites: ~disabled
 		Description: Stop units and blocks enemy fire.
