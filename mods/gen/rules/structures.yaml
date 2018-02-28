@@ -2434,6 +2434,7 @@ building.particle_cannon:
 	Power:
 		Amount: -10
 	ProvidesPrerequisite@buildingname:
+		Prerequisite: building.particle_cannon
 	ProvidesPrerequisite@LIMIT:
 		Prerequisite: prerequisite.enough_particle
 		RequiresCondition: limited_sw
