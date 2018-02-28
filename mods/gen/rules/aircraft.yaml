@@ -775,6 +775,7 @@ aircraft.combat_chinook:
 		Queue: queue.air_gen_collector
 		BuildPaletteOrder: 2
 		BuildDuration: 625
+		Prerequisites: building.usa_war_factory, ~techlevel.medium
 		Description: Collects supplies.\n\nCan carry infantry and vehicles.\n\nInfantry can fire outside.\n\nCan deflect enemy missiles with laser.
 	Tooltip:
 		Name: Combat Chinook
