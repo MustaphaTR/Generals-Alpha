@@ -303,6 +303,45 @@ building.gla_command_center:
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: Ambush3PowerInfoOrder
+	SpawnActorPower@TOXIN_AMBUSH1:
+		PauseOnCondition: emp || hacked || lowpower
+		Actor: hack.toxin_rebel_spawner.4
+		Prerequisites: ~generals_power.ambush1.toxin, ~!generals_power.ambush2.toxin, ~!generals_power.ambush3.toxin
+		LifeTime: 2
+		ChargeInterval: 6000
+		Icon: tambush1
+		Description: Toxin Rebel Ambush
+		LongDesc: Spawns 4 Toxin Rebels anywhere on the map.
+		StartFullyCharged: false
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		OrderName: ToxinAmbush1PowerInfoOrder
+	SpawnActorPower@TOXIN_AMBUSH2:
+		PauseOnCondition: emp || hacked || lowpower
+		Actor: hack.toxin_rebel_spawner.8
+		Prerequisites: ~generals_power.ambush2.toxin, ~!generals_power.ambush3.toxin
+		LifeTime: 2
+		ChargeInterval: 6000
+		Icon: tambush2
+		Description: Toxin Rebel Ambush
+		LongDesc: Spawns 8 Toxin Rebels anywhere on the map.
+		StartFullyCharged: false
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		OrderName: ToxinAmbush2PowerInfoOrder
+	SpawnActorPower@TOXIN_AMBUSH3:
+		PauseOnCondition: emp || hacked || lowpower
+		Actor: hack.toxin_rebel_spawner.16
+		Prerequisites: ~generals_power.ambush3.toxin
+		LifeTime: 2
+		ChargeInterval: 6000
+		Icon: tambush3
+		Description: Toxin Rebel Ambush
+		LongDesc: Spawns 16 Toxin Rebels anywhere on the map.
+		StartFullyCharged: false
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		OrderName: ToxinAmbush3PowerInfoOrder
 	GrantExternalConditionPower@GPS_SCRAMBLER1:
 		PauseOnCondition: emp || hacked || lowpower
 		Prerequisites: ~generals_power.gps_scrambler1, ~!generals_power.gps_scrambler2, ~!generals_power.gps_scrambler3
@@ -366,6 +405,9 @@ building.gla_command_center:
 	ProvidesPrerequisite@Vanilla_Toxin_Demo:
 		Prerequisite: prerequisite.gla_command_center.vanilla_toxin_demo
 		Factions: gla, toxin, demo
+	ProvidesPrerequisite@Vanilla_Demo_Stealth:
+		Prerequisite: prerequisite.gla_command_center.vanilla_demo_stealth
+		Factions: gla, demo, stealth
 	ProvidesPrerequisite@Toxin:
 		Prerequisite: prerequisite.gla_command_center.toxin
 		Factions: toxin
@@ -493,7 +535,7 @@ building.prc_command_center:
 	ParatroopersPower@PRC_PARADROP1:
 		PauseOnCondition: emp || hacked || lowpower
 		OrderName: PRCParadrop1PowerInfoOrder
-		Prerequisites: ~generals_power.paradrop1, ~!generals_power.paradrop2, ~!generals_power.paradrop3, ~disabled
+		Prerequisites: ~generals_power.paradrop1.inf_gen, ~!generals_power.paradrop2.inf_gen, ~!generals_power.paradrop3.inf_gen
 		Icon: paradrop1
 		ChargeInterval: 6000
 		Description: ParaDrop
@@ -513,7 +555,7 @@ building.prc_command_center:
 	ParatroopersPower@PRC_PARADROP2:
 		PauseOnCondition: emp || hacked || lowpower
 		OrderName: PRCParadrop2PowerInfoOrder
-		Prerequisites: ~generals_power.paradrop2, ~!generals_power.paradrop3, ~disabled
+		Prerequisites: ~generals_power.paradrop2.inf_gen, ~!generals_power.paradrop3.inf_gen
 		Icon: paradrop2
 		ChargeInterval: 6000
 		Description: ParaDrop
@@ -534,7 +576,7 @@ building.prc_command_center:
 	ParatroopersPower@PRC_PARADROP3:
 		PauseOnCondition: emp || hacked || lowpower
 		OrderName: PRCParadrop3PowerInfoOrder
-		Prerequisites: ~generals_power.paradrop3, ~disabled
+		Prerequisites: ~generals_power.paradrop3.inf_gen
 		Icon: paradrop3
 		ChargeInterval: 6000
 		Description: ParaDrop
@@ -1007,7 +1049,7 @@ building.prc_barracks:
 building.mine:
 	Inherits: ^Mine
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.prc_vehicle, queue.prc_aircraft, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_aircraft, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.just_mine
 		BuildPaletteOrder: 9
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -1096,14 +1138,23 @@ building.usa_supply_center:
 		DecorationBounds: 72,70,0,-2
 	SelectionDecorations:
 	Production:
-		Produces: queue.usa_collector
+		Produces: queue.usa_collector, queue.air_gen_collector
 		PauseOnCondition: emp || hacked
-	ProductionQueue:
+	ProductionQueue@Vanilla:
 		Type: queue.usa_collector
+		Factions: usa, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
+		Group: Collector
+		LowPowerSlowdown: 3
+	ProductionQueue@Airforce:
+		Type: queue.air_gen_collector
+		Factions: air
 		Group: Collector
 		RequireOwner: false
 		LowPowerSlowdown: 3
-	ProductionBar:
+	ProductionBar@Vanilla:
+		ProductionType: queue.usa_collector
+	ProductionBar@Airforce:
+		ProductionType: queue.air_gen_collector
 	Exit@1:
 		SpawnOffset: 0,1024,0
 		ExitCell: 1,2
@@ -1650,14 +1701,36 @@ building.prc_war_factory:
 	Tooltip:
 		Name: PRC War Factory
 	Production:
-		Produces: queue.prc_vehicle
+		Produces: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		PauseOnCondition: emp || hacked
-	ProductionQueue:
+	ProductionQueue@Vanilla:
 		Type: queue.prc_vehicle
-		RequireOwner: false
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
 		Group: Vehicle
 		LowPowerSlowdown: 3
-	ProductionBar:
+	ProductionQueue@Infantry:
+		Type: queue.inf_gen_vehicle
+		Factions: inf
+		Group: Vehicle
+		LowPowerSlowdown: 3
+	ProductionQueue@Nuclear:
+		Type: queue.nuke_gen_vehicle
+		Factions: nuke
+		Group: Vehicle
+		LowPowerSlowdown: 3
+	ProductionQueue@Tank:
+		Type: queue.tank_gen_vehicle
+		Factions: tank
+		Group: Vehicle
+		LowPowerSlowdown: 3
+	ProductionBar@Vanilla:
+		ProductionType: queue.prc_vehicle
+	ProductionBar@Infantry:
+		ProductionType: queue.inf_gen_vehicle
+	ProductionBar@Nuclear:
+		ProductionType: queue.nuke_gen_vehicle
+	ProductionBar@Tank:
+		ProductionType: queue.tank_gen_vehicle
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.prc_airfield_or_war_factory
 	Voiced:

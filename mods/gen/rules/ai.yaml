@@ -6,9 +6,9 @@ Player:
 		ExcessPowerIncrement: 3
 		ExcessPowerIncreaseThreshold: 5
 		MaximumExcessPower: 20
-		BuildingQueues: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, General
+		BuildingQueues: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.palace, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.soviet_barracks, General
 		DefenseQueues: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
-		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.advanced_cold_fusion_reactor
+		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.advanced_cold_fusion_reactor
 		BuildingCommonNames:
 			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -26,7 +26,7 @@ Player:
 			FragileDeployer: infantry.hacker
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
-			Collector: aircraft.chinook, infantry.worker, vehicle.supply_truck
+			Collector: aircraft.chinook, aircraft.chinook.air, infantry.worker, vehicle.supply_truck
 			ExcludeFromSquads: upgrade.control_rods, upgrade.advanced_control_rods, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone, upgrade.toxin_missiles, upgrade.hi_explosive_missiles, upgrade.overlord_gatling, upgrade.overlord_speaker, upgrade.helix_gatling, upgrade.helix.speaker, upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sentry_gun, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.stealth_comanche, upgrade.mig_armor
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner, infantry.conscript
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
@@ -34,6 +34,7 @@ Player:
 			queue.cold_fusion_reactor: 1
 			queue.advanced_cold_fusion_reactor: 1
 			queue.usa_collector: 2
+			queue.air_gen_collector: 2
 			queue.gla_collector: 2
 			queue.prc_collector: 2
 			queue.drone: 4
@@ -120,9 +121,15 @@ Player:
 			generals_power.paradrop1: 1%
 			generals_power.paradrop2: 1%
 			generals_power.paradrop3: 1%
+			generals_power.paradrop1.inf_gen: 1%
+			generals_power.paradrop2.inf_gen: 1%
+			generals_power.paradrop3.inf_gen: 1%
 			generals_power.ambush1: 1%
 			generals_power.ambush2: 1%
 			generals_power.ambush3: 1%
+			generals_power.ambush1.toxin: 1%
+			generals_power.ambush2.toxin: 1%
+			generals_power.ambush3.toxin: 1%
 			generals_power.a101: 1%
 			generals_power.a102: 1%
 			generals_power.a103: 1%
@@ -152,7 +159,7 @@ Player:
 			infantry.grenadier: 15%
 			infantry.pathfinder: 3%
 			infantry.angry_mob: 3%
-			infantry.hacker: 6%
+			infantry.hacker: 8%
 			infantry.flamethrower: 3%
 			infantry.colonel_burton: 0.5%
 			infantry.jarmen_kell: 0.5%
@@ -186,6 +193,7 @@ Player:
 			vehicle.gla_mcc: 2%
 			vehicle.prc_mcc: 2%
 			aircraft.chinook: 10%
+			aircraft.chinook.air: 10%
 			aircraft.mig: 2%
 			aircraft.raptor: 2%
 			aircraft.king_raptor: 2%
@@ -233,6 +241,7 @@ Player:
 			aircraft.comanche: 2
 			aircraft.helix: 2
 			aircraft.chinook: 8
+			aircraft.chinook.air: 8
 			vehicle.supply_truck: 8
 			vehicle.radar_van: 2
 			vehicle.sentry_drone: 2
@@ -463,6 +472,51 @@ Player:
 				Attractiveness: -5
 				TargetMetric: None
 				CheckRadius: 8c0
+		SupportPowerDecision@paradrop1.inf_gen:
+			OrderName: PRCParadrop1PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@paradrop2.inf_gen:
+			OrderName: PRCParadrop2PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@paradrop3.inf_gen:
+			OrderName: PRCParadrop3PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
 		SupportPowerDecision@ambush1:
 			OrderName: Ambush1PowerInfoOrder
 			MinimumAttractiveness: 5
@@ -499,6 +553,51 @@ Player:
 			Consideration@1:
 				Against: Enemy
 				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@toxin_ambush1:
+			OrderName: ToxinAmbush1PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Infantry
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@toxin_ambush2:
+			OrderName: ToxinAmbush2PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Infantry
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@toxin_ambush3:
+			OrderName: ToxinAmbush3PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Infantry
 				Attractiveness: 1
 				TargetMetric: None
 				CheckRadius: 8c0
@@ -624,9 +723,9 @@ Player:
 		ExcessPowerIncrement: 3
 		ExcessPowerIncreaseThreshold: 5
 		MaximumExcessPower: 20
-		BuildingQueues: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, General
+		BuildingQueues: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.palace, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.soviet_barracks, General
 		DefenseQueues: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
-		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.advanced_cold_fusion_reactor
+		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.advanced_cold_fusion_reactor
 		BuildingCommonNames:
 			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -644,7 +743,7 @@ Player:
 			FragileDeployer: infantry.hacker
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
-			Collector: aircraft.chinook, infantry.worker, vehicle.supply_truck
+			Collector: aircraft.chinook, aircraft.chinook.air, infantry.worker, vehicle.supply_truck
 			ExcludeFromSquads: upgrade.control_rods, upgrade.advanced_control_rods, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone, upgrade.toxin_missiles, upgrade.hi_explosive_missiles, upgrade.overlord_gatling, upgrade.overlord_speaker, upgrade.helix_gatling, upgrade.helix.speaker, upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sentry_gun, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.stealth_comanche, upgrade.mig_armor
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner, infantry.conscript
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
@@ -652,6 +751,7 @@ Player:
 			queue.cold_fusion_reactor: 1
 			queue.advanced_cold_fusion_reactor: 1
 			queue.usa_collector: 2
+			queue.air_gen_collector: 2
 			queue.gla_collector: 2
 			queue.prc_collector: 2
 			queue.drone: 4
@@ -746,9 +846,15 @@ Player:
 			generals_power.paradrop1: 1%
 			generals_power.paradrop2: 1%
 			generals_power.paradrop3: 1%
+			generals_power.paradrop1.inf_gen: 1%
+			generals_power.paradrop2.inf_gen: 1%
+			generals_power.paradrop3.inf_gen: 1%
 			generals_power.ambush1: 1%
 			generals_power.ambush2: 1%
 			generals_power.ambush3: 1%
+			generals_power.ambush1.toxin: 1%
+			generals_power.ambush2.toxin: 1%
+			generals_power.ambush3.toxin: 1%
 			generals_power.a101: 1%
 			generals_power.a102: 1%
 			generals_power.a103: 1%
@@ -778,7 +884,7 @@ Player:
 			infantry.grenadier: 20%
 			infantry.pathfinder: 4%
 			infantry.angry_mob: 4%
-			infantry.hacker: 8%
+			infantry.hacker: 12%
 			infantry.flamethrower: 4%
 			infantry.colonel_burton: 0.5%
 			infantry.jarmen_kell: 0.5%
@@ -812,6 +918,7 @@ Player:
 			vehicle.gla_mcc: 2%
 			vehicle.prc_mcc: 2%
 			aircraft.chinook: 10%
+			aircraft.chinook.air: 10%
 			aircraft.mig: 2%
 			aircraft.raptor: 2%
 			aircraft.king_raptor: 2%
@@ -859,6 +966,7 @@ Player:
 			aircraft.comanche: 2
 			aircraft.helix: 2
 			aircraft.chinook: 8
+			aircraft.chinook.air: 8
 			vehicle.supply_truck: 8
 			vehicle.radar_van: 2
 			vehicle.sentry_drone: 2
@@ -1089,6 +1197,51 @@ Player:
 				Attractiveness: -5
 				TargetMetric: None
 				CheckRadius: 8c0
+		SupportPowerDecision@paradrop1.inf_gen:
+			OrderName: PRCParadrop1PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@paradrop2.inf_gen:
+			OrderName: PRCParadrop2PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@paradrop3.inf_gen:
+			OrderName: PRCParadrop3PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
 		SupportPowerDecision@ambush1:
 			OrderName: Ambush1PowerInfoOrder
 			MinimumAttractiveness: 5
@@ -1125,6 +1278,51 @@ Player:
 			Consideration@1:
 				Against: Enemy
 				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@toxin_ambush1:
+			OrderName: ToxinAmbush1PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Infantry
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@toxin_ambush2:
+			OrderName: ToxinAmbush2PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Infantry
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@toxin_ambush3:
+			OrderName: ToxinAmbush3PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Infantry
 				Attractiveness: 1
 				TargetMetric: None
 				CheckRadius: 8c0
@@ -1250,9 +1448,9 @@ Player:
 		ExcessPowerIncrement: 3
 		ExcessPowerIncreaseThreshold: 5
 		MaximumExcessPower: 20
-		BuildingQueues: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.palace, queue.propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, General
+		BuildingQueues: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.palace, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.soviet_barracks, General
 		DefenseQueues: queue.usa_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
-		UnitQueues: queue.usa_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.advanced_cold_fusion_reactor
+		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.gla_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.advanced_cold_fusion_reactor
 		BuildingCommonNames:
 			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -1270,7 +1468,7 @@ Player:
 			FragileDeployer: infantry.hacker
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
-			Collector: aircraft.chinook, infantry.worker, vehicle.supply_truck
+			Collector: aircraft.chinook, aircraft.chinook.air, infantry.worker, vehicle.supply_truck
 			ExcludeFromSquads: upgrade.control_rods, upgrade.advanced_control_rods, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone, upgrade.toxin_missiles, upgrade.hi_explosive_missiles, upgrade.overlord_gatling, upgrade.overlord_speaker, upgrade.helix_gatling, upgrade.helix.speaker, upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sentry_gun, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.stealth_comanche, upgrade.mig_armor
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner, infantry.conscript
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
@@ -1278,6 +1476,7 @@ Player:
 			queue.cold_fusion_reactor: 1
 			queue.advanced_cold_fusion_reactor: 1
 			queue.usa_collector: 2
+			queue.air_gen_collector: 2
 			queue.gla_collector: 2
 			queue.prc_collector: 2
 			queue.drone: 4
@@ -1372,9 +1571,15 @@ Player:
 			generals_power.paradrop1: 1%
 			generals_power.paradrop2: 1%
 			generals_power.paradrop3: 1%
+			generals_power.paradrop1.inf_gen: 1%
+			generals_power.paradrop2.inf_gen: 1%
+			generals_power.paradrop3.inf_gen: 1%
 			generals_power.ambush1: 1%
 			generals_power.ambush2: 1%
 			generals_power.ambush3: 1%
+			generals_power.ambush1.toxin: 1%
+			generals_power.ambush2.toxin: 1%
+			generals_power.ambush3.toxin: 1%
 			generals_power.a101: 1%
 			generals_power.a102: 1%
 			generals_power.a103: 1%
@@ -1404,7 +1609,7 @@ Player:
 			infantry.grenadier: 15%
 			infantry.pathfinder: 5%
 			infantry.angry_mob: 5%
-			infantry.hacker: 10%
+			infantry.hacker: 15%
 			infantry.flamethrower: 5%
 			infantry.colonel_burton: 0.5%
 			infantry.jarmen_kell: 0.5%
@@ -1438,6 +1643,7 @@ Player:
 			vehicle.gla_mcc: 2%
 			vehicle.prc_mcc: 2%
 			aircraft.chinook: 10%
+			aircraft.chinook.air: 10%
 			aircraft.mig: 2%
 			aircraft.raptor: 1%
 			aircraft.king_raptor: 1%
@@ -1485,6 +1691,7 @@ Player:
 			aircraft.comanche: 2
 			aircraft.helix: 2
 			aircraft.chinook: 8
+			aircraft.chinook.air: 8
 			vehicle.supply_truck: 8
 			vehicle.radar_van: 2
 			vehicle.sentry_drone: 2
@@ -1715,6 +1922,51 @@ Player:
 				Attractiveness: -5
 				TargetMetric: None
 				CheckRadius: 8c0
+		SupportPowerDecision@paradrop1.inf_gen:
+			OrderName: PRCParadrop1PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@paradrop2.inf_gen:
+			OrderName: PRCParadrop2PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@paradrop3.inf_gen:
+			OrderName: PRCParadrop3PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
 		SupportPowerDecision@ambush1:
 			OrderName: Ambush1PowerInfoOrder
 			MinimumAttractiveness: 5
@@ -1751,6 +2003,51 @@ Player:
 			Consideration@1:
 				Against: Enemy
 				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@toxin_ambush1:
+			OrderName: ToxinAmbush1PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Infantry
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@toxin_ambush2:
+			OrderName: ToxinAmbush2PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Infantry
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@toxin_ambush3:
+			OrderName: ToxinAmbush3PowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Infantry
 				Attractiveness: 1
 				TargetMetric: None
 				CheckRadius: 8c0

@@ -565,6 +565,7 @@ aircraft.scout_drone:
 	FlyCircleOnIdle:
 	-Cloak:
 	-GrantConditionOnDamageState@UNCLOAK:
+	-ActorLostNotification:
 	MobSpawnerSlave:
 
 aircraft.battle_drone:
@@ -666,7 +667,7 @@ aircraft.chinook:
 		BuildPaletteOrder: 1
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_supply_center, ~techlevel.infonly
+		Prerequisites: ~techlevel.infonly
 		Description: Collects supplies.\n\nCan carry infantry and vehicles.
 	HitShape:
 		TargetableOffsets: 0,0,2048
@@ -687,7 +688,7 @@ aircraft.chinook:
 		Speed: 60
 		TurnSpeed: 5
 		Voice: Move
-		BlockerActors: aircraft.chinook
+		BlockerActors: aircraft.chinook, aircraft.chinook.air, aircraft.combat_chinook
 		-NonBlockerActors:
 		TerrainSpeeds:
 			Grass: 100
@@ -755,6 +756,46 @@ aircraft.chinook:
 	SelectionDecorations:
 	Voiced:
 		VoiceSet: ChinookVoice
+
+aircraft.chinook.air:
+	Inherits: aircraft.chinook
+	Buildable:
+		Queue: queue.air_gen_collector
+	Selectable:
+		Class: aircraft.chinook
+	Valued:
+		Cost: 950
+	RenderSprites:
+		Image: aircraft.chinook
+
+aircraft.combat_chinook:
+	Inherits: aircraft.chinook
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Buildable:
+		Queue: queue.air_gen_collector
+		BuildPaletteOrder: 2
+		BuildDuration: 625
+		Description: Collects supplies.\n\nCan carry infantry and vehicles.\n\nInfantry can fire outside.\n\nCan deflect enemy missiles with laser.
+	Tooltip:
+		Name: Combat Chinook
+	Health:
+		HP: 350
+	AttackFrontal:
+		Voice: Attack
+	AttackGarrisoned:
+		PortOffsets: 256,128,2060, 256,-128,2060, -256,128,2060, -256,-128,2060
+		PortYaws: 0, 0, 512, 512
+		PortCones: 512, 512, 512, 512
+		Voice: Attack
+	Armament@PDLASER:
+		Weapon: laser.paladin_tank
+		LocalOffset: 0,213,2048
+		Name: pdlaser
+	ShootsMissiles:
+		ShootStances: Neutral, Enemy
+		Armament: pdlaser
+	Voiced:
+		VoiceSet: CombatChinookVoice
 
 aircraft.comanche:
 	Inherits: ^Helicopter

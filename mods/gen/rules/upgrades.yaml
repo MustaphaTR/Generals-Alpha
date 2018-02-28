@@ -136,21 +136,21 @@ hack.cameo_filler.30:
 hack.cameo_filler.31:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.tank_gen_vehicle, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo
 		BuildPaletteOrder: 10
 		Prerequisites: ~prerequisite.zh_units, disabled
 
 hack.cameo_filler.32:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.just_mine, queue.prc_aircraft, queue.propaganda_center, queue.missile_silo
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.tank_gen_vehicle, queue.just_mine, queue.prc_aircraft, queue.propaganda_center, queue.missile_silo
 		BuildPaletteOrder: 11
 		Prerequisites: ~prerequisite.zh_units, disabled
 
 hack.cameo_filler.33:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.prc_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle
 		BuildPaletteOrder: 11
 		Prerequisites: ~prerequisite.zh_units, ~!generals_power.nuke_cannon, disabled
 
@@ -160,6 +160,27 @@ hack.cameo_filler.34:
 		Queue: queue.bomb_truck, queue.scud_launcher
 		BuildPaletteOrder: 2
 		Prerequisites: disabled
+
+hack.cameo_filler.35:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.inf_gen_vehicle
+		BuildPaletteOrder: 1
+		Prerequisites: disabled
+
+hack.cameo_filler.36:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.inf_gen_vehicle
+		BuildPaletteOrder: 2
+		Prerequisites: disabled
+
+hack.cameo_filler.37:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.tank_gen_vehicle
+		BuildPaletteOrder: 8
+		Prerequisites: ~!prerequisite.zh_units, disabled
 
 upgrade.radar:
 	Inherits: ^default.upgrade
@@ -182,7 +203,7 @@ upgrade.neutron_mine:
 	Tooltip:
 		Name: Neutron Mine
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.prc_vehicle, queue.prc_aircraft, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_aircraft, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.just_mine
 		BuildPaletteOrder: 12
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -318,7 +339,7 @@ upgrade.chain_gun:
 	Tooltip:
 		Name: Chain Gun
 	Buildable:
-		Queue: queue.prc_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 3
 		BuildDuration: 1125
 		Prerequisites: building.prc_war_factory, ~techlevel.low
@@ -333,7 +354,7 @@ upgrade.black_napalm:
 	Tooltip:
 		Name: Black Napalm
 	Buildable:
-		Queue: queue.prc_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 6
 		BuildDuration: 1125
 		Prerequisites: building.prc_war_factory, ~techlevel.medium

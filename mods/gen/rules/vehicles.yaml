@@ -427,7 +427,7 @@ vehicle.battlemaster_tank:
 	Inherits@REVEAL: ^Reveal150
 	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
 	Buildable:
-		Queue: queue.prc_vehicle
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildAtProductionType: WarFactory
 		BuildPaletteOrder: 1
 		BuildDuration: 250
@@ -665,7 +665,7 @@ vehicle.gatling_tank:
 	Tooltip:
 		Name: Gatling Tank
 	Buildable:
-		Queue: queue.prc_vehicle
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 2
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -783,7 +783,7 @@ vehicle.dragon_tank:
 	Tooltip:
 		Name: Dragon Tank
 	Buildable:
-		Queue: queue.prc_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 5
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -894,7 +894,7 @@ vehicle.troop_crawler:
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@REVEAL: ^Reveal175
 	Buildable:
-		Queue: queue.prc_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 4
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -937,7 +937,7 @@ vehicle.listening_outpost:
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@REVEAL: ^Reveal250
 	Buildable:
-		Queue: queue.prc_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 7
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -1156,7 +1156,7 @@ vehicle.inferno_cannon:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal180
 	Buildable:
-		Queue: queue.prc_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle
 		BuildAtProductionType: WarFactory
 		BuildPaletteOrder: 9
 		BuildDuration: 375
@@ -1386,7 +1386,7 @@ vehicle.overlord_tank:
 		Type: gatling
 		Modifier: 50
 	Buildable:
-		Queue: queue.prc_vehicle
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 8
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1637,7 +1637,7 @@ vehicle.nuke_cannon:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal180
 	Buildable:
-		Queue: queue.prc_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle
 		BuildPaletteOrder: 10
 		BuildDuration: 500
 		BuildDurationModifier: 100

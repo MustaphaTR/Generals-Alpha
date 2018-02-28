@@ -425,51 +425,53 @@ disable.hacker.end:
 		Duration: 50
 		Condition: hacked
 
-hack.spawn_4_rebels:
+^default.spawner:
 	ReloadDelay: 5
 	Range: 1c0
-	Report: sambusha.wav
 	Projectile: Bullet
 		Speed: 10c0
 	Warhead@1Dam: TargetDamage
 	Warhead@2Spawner: SpawnActor
-		Actors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel
 		InvalidTargets: Water
 
-hack.spawn_8_rebels:
-	ReloadDelay: 5
-	Range: 1c0
+hack.spawn_4_rebels:
+	Inherits: ^default.spawner
 	Report: sambusha.wav
-	Projectile: Bullet
-		Speed: 10c0
-	Warhead@1Dam: TargetDamage
+	Warhead@2Spawner: SpawnActor
+		Actors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel
+
+hack.spawn_8_rebels:
+	Inherits: hack.spawn_4_rebels
 	Warhead@2Spawner: SpawnActor
 		Actors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel
 
 hack.spawn_16_rebels:
-	ReloadDelay: 5
-	Range: 1c0
-	Report: sambusha.wav
-	Projectile: Bullet
-		Speed: 10c0
-	Warhead@1Dam: TargetDamage
+	Inherits: hack.spawn_4_rebels
 	Warhead@2Spawner: SpawnActor
 		Actors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel
 
+hack.spawn_4_toxin_rebels:
+	Inherits: ^default.spawner
+	Report: sambusha.wav
+	Warhead@2Spawner: SpawnActor
+		Actors: infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel
+
+hack.spawn_8_toxin_rebels:
+	Inherits: hack.spawn_4_toxin_rebels
+	Warhead@2Spawner: SpawnActor
+		Actors: infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel
+
+hack.spawn_16_toxin_rebels:
+	Inherits: hack.spawn_4_toxin_rebels
+	Warhead@2Spawner: SpawnActor
+		Actors: infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel
+
 hack.spawn_1_rpg_trooper:
-	ReloadDelay: 5
-	Range: 1c0
-	Projectile: Bullet
-		Speed: 10c0
-	Warhead@1Dam: TargetDamage
+	Inherits: ^default.spawner
 	Warhead@2Spawner: SpawnActor
 		Actors: infantry.rpg_trooper
 
 hack.spawn_2_mines:
-	ReloadDelay: 5
-	Range: 1c0
-	Projectile: Bullet
-		Speed: 10c0
-	Warhead@1Dam: TargetDamage
+	Inherits: ^default.spawner
 	Warhead@2Spawner: SpawnActor
 		Actors: hack.mine, hack.mine
