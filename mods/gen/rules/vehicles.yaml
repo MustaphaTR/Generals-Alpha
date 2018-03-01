@@ -1637,11 +1637,11 @@ vehicle.nuke_cannon:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal180
 	Buildable:
-		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle
 		BuildPaletteOrder: 10
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~generals_power.nuke_cannon, ~techlevel.high
+		Prerequisites: building.propaganda_center, ~generals_power.nuke_cannon, ~techlevel.high
 		Description: Heavy artillery unit armed with nuclear warheads.
 	Valued:
 		Cost: 1600
@@ -1661,6 +1661,7 @@ vehicle.nuke_cannon:
 		Offset: 0,0,160
 	Selectable:
 		DecorationBounds: 44,38,0,-4
+		Class: vehicle.nuke_cannon
 	Armament:
 		Weapon: cannon.nuke_cannon
 		LocalOffset: 624,0,208
@@ -1683,8 +1684,16 @@ vehicle.nuke_cannon:
 		Weapons: debris.nuke_cannon
 		Pieces: 1, 1
 		Range: 1c0, 1c0
+	RenderSprites:
+		Image: vehicle.nuke_cannon
 	Voiced:
 		VoiceSet: NukeCannonVoice
+
+vehicle.nuke_cannon.nuke:
+	Inherits: vehicle.nuke_cannon
+	Buildable:
+		Queue: queue.nuke_gen_vehicle
+		Prerequisites: building.propaganda_center, ~techlevel.high
 
 ^default.mcc:
 	Inherits: ^Vehicle

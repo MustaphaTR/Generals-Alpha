@@ -59,7 +59,7 @@ hack.cameo_filler.4:
 	Buildable:
 		Queue: General
 		BuildPaletteOrder: 6
-		Prerequisites: ~prerequisite.gla_command_center.vanilla_toxin_demo, ~building.gla_command_center, disabled, ~techlevel.medium
+		Prerequisites: ~building.gla_command_center, disabled, ~techlevel.medium
 
 generals_power.red_training:
 	Inherits: ^default.generals_power
@@ -123,7 +123,7 @@ generals_power.nuke_cannon:
 	Buildable:
 		BuildPaletteOrder: 9
 		BuildDuration: 1500
-		Prerequisites: ~prerequisite.prc_command_center.vanilla_inf_nuke, ~techlevel.high, !enough_powers.prc
+		Prerequisites: ~prerequisite.prc_command_center.vanilla_inf, ~techlevel.high, !enough_powers.prc
 		Description: Enables Nuke Cannon.
 	Valued:
 		Cost: 1600
@@ -133,7 +133,7 @@ hack.cameo_filler.6:
 	Buildable:
 		Queue: General
 		BuildPaletteOrder: 9
-		Prerequisites: ~!prerequisite.prc_command_center.vanilla_inf_nuke, ~building.prc_command_center, disabled
+		Prerequisites: ~!prerequisite.prc_command_center.vanilla_inf, ~building.prc_command_center, disabled
 
 generals_power.paladin_tank:
 	Inherits: ^default.generals_power
@@ -209,7 +209,7 @@ generals_power.hijacker:
 	Buildable:
 		BuildPaletteOrder: 15
 		BuildDuration: 750
-		Prerequisites: ~prerequisite.gla_command_center.vanilla_stealth, building.gla_barracks, ~techlevel.high, !enough_powers.gla
+		Prerequisites: ~prerequisite.gla_command_center.vanilla, building.gla_barracks, ~techlevel.high, !enough_powers.gla
 		Description: Enables Hijacker.
 	Valued:
 		Cost: 400

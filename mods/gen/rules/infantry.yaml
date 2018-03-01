@@ -137,7 +137,7 @@ infantry.rebel:
 	Inherits@BOUNTY: ^TakesBounty
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		Queue: queue.gla_infantry, queue.demo_gen_infantry
+		Queue: queue.gla_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
 		Prerequisites: ~techlevel.infonly
 	Selectable:
 		Class: infantry.rebel
@@ -366,7 +366,7 @@ infantry.rpg_trooper:
 	Inherits@AP_ROCKETS: ^AffectedByAPRockets
 	Inherits@BOUNTY: ^TakesBounty
 	Buildable:
-		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry
+		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
 		Prerequisites: ~techlevel.infonly
 	Armament@PRIMARY:
 		Weapon: missile.rpg_trooper.ground
@@ -482,7 +482,7 @@ infantry.terrorist:
 	Inherits@BOUNTY: ^TakesBounty
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		Queue: queue.gla_infantry, queue.demo_gen_infantry
+		Queue: queue.gla_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
 		BuildPaletteOrder: 4
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -645,7 +645,7 @@ infantry.angry_mob:
 	Inherits@REVEAL: ^Reveal150
 	-AppearsOnRadar:
 	Buildable:
-		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry
+		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
 		BuildPaletteOrder: 5
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -813,7 +813,7 @@ infantry.hijacker:
 		BuildPaletteOrder: 7
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.gla_barracks, building.palace, ~generals_power.hijacker, ~techlevel.high
+		Prerequisites: building.palace, ~generals_power.hijacker, ~techlevel.high
 		Description: Hijacks enemy vehicles.
 	Valued:
 		Cost: 400
@@ -823,6 +823,8 @@ infantry.hijacker:
 		HP: 100
 	Armor:
 		Type: infantry.normal
+	Selectable:
+		Class: infantry.hijacker
 	Mobile:
 		Voice: Move
 		Speed: 30
@@ -849,6 +851,17 @@ infantry.hijacker:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	RenderSprites:
+		Image: infantry.hijacker
+
+infantry.hijacker.stealth:
+	Inherits: infantry.hijacker
+	Buildable:
+		Queue: queue.stealth_gen_infantry
+		Prerequisites: ~techlevel.high
+	Cloak:
+		InitialDelay: 0
+		CloakDelay: 60
 
 infantry.colonel_burton:
 	Inherits: ^Soldier
@@ -925,7 +938,7 @@ infantry.jarmen_kell:
 	Tooltip:
 		Name: Jarmen Kell
 	Buildable:
-		Queue: queue.gla_infantry, queue.toxin_gen_infantry
+		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.stealth_gen_infantry
 		BuildPaletteOrder: 8
 		BuildDuration: 500
 		BuildDurationModifier: 100

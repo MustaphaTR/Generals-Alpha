@@ -745,6 +745,9 @@ building.prc_command_center:
 	ProvidesPrerequisite@Vanilla:
 		Prerequisite: prerequisite.prc_command_center.vanilla
 		Factions: prc
+	ProvidesPrerequisite@Vanilla_Inf:
+		Prerequisite: prerequisite.prc_command_center.vanilla_inf
+		Factions: prc, inf
 	ProvidesPrerequisite@Vanilla_Inf_Nuke:
 		Prerequisite: prerequisite.prc_command_center.vanilla_inf_nuke
 		Factions: prc, inf, nuke
@@ -1001,11 +1004,11 @@ building.gla_barracks:
 	Tooltip:
 		Name: GLA Barracks
 	Production:
-		Produces: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry
+		Produces: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
 		PauseOnCondition: emp || hacked
 	ProductionQueue@Vanilla:
 		Type: queue.gla_infantry
-		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank
+		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
 		Group: Infantry
 		LowPowerSlowdown: 3
 	ProductionQueue@Toxin:
@@ -1018,12 +1021,19 @@ building.gla_barracks:
 		Factions: demo
 		Group: Infantry
 		LowPowerSlowdown: 3
+	ProductionQueue@Stealth:
+		Type: queue.stealth_gen_infantry
+		Factions: stealth
+		Group: Infantry
+		LowPowerSlowdown: 3
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_infantry
 	ProductionBar@Toxin:
 		ProductionType: queue.toxin_gen_infantry
 	ProductionBar@Demo:
 		ProductionType: queue.demo_gen_infantry
+	ProductionBar@Stealth:
+		ProductionType: queue.stealth_gen_infantry
 	Exit@1:
 		SpawnOffset: -42,810,0
 		ExitCell: 1,2

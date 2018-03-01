@@ -8,6 +8,8 @@
 		ShowTooltip: false
 	Valued:
 		Cost: 0
+	KillsSelf:
+		RemoveInstead: true
 	RenderSprites:
 		Image: hack.cameo_filler
 
@@ -15,10 +17,11 @@
 	Interactable:
 	AlwaysVisible:
 	Buildable:
-		BuildDurationModifier: 100
 		Queue: Upgrade
+		BuildDurationModifier: 100
 		BuildLimit: 1
 	RenderSprites:
+	Doctrine:
 	ProvidesPrerequisite@upgradename:
 
 ^default.strategy:
@@ -27,11 +30,8 @@
 		BuildDuration: 175
 	Valued:
 		Cost: 0
-	BodyOrientation:
-		QuantizedFacings: 1
-	Health:
-		HP: 1
-	HitShape:
+	Doctrine:
+		Type: strategy
 
 ^default.fake_to_real:
 	Inherits: ^default.upgrade
@@ -152,7 +152,7 @@ hack.cameo_filler.32:
 hack.cameo_filler.33:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle
 		BuildPaletteOrder: 11
 		Prerequisites: ~prerequisite.zh_units, ~!generals_power.nuke_cannon, disabled
 
@@ -181,6 +181,20 @@ hack.cameo_filler.37:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.tank_gen_vehicle
+		BuildPaletteOrder: 8
+		Prerequisites: ~!prerequisite.zh_units, disabled
+
+hack.cameo_filler.37:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.stealth_gen_infantry
+		BuildPaletteOrder: 6
+		Prerequisites: disabled
+
+hack.cameo_filler.38:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle
 		BuildPaletteOrder: 8
 		Prerequisites: ~!prerequisite.zh_units, disabled
 
@@ -284,7 +298,7 @@ upgrade.capture_building:
 	Tooltip:
 		Name: Capture Building
 	Buildable:
-		Queue: queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry
+		Queue: queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry
 		BuildPaletteOrder: 3
 		BuildDuration: 750
 		Prerequisites: prerequisite.barracks, ~techlevel.infonly
@@ -946,8 +960,6 @@ strategy.bombardment:
 		Description: Increases all units' damage by 20%.\n\nGives Strategy Center an Artillery piece.
 		QueuedAudio: NoAudio
 		ReadyAudio: Bombardment
-	Doctrine:
-		Type: strategy.usa
 
 strategy.search_and_destroy:
 	Inherits: ^default.strategy
@@ -960,8 +972,6 @@ strategy.search_and_destroy:
 		Description: Increases all units' vision range by 20%.\n\nGives Strategy Center ability to detect stealth units.
 		QueuedAudio: NoAudio
 		ReadyAudio: SearchAndDestroy
-	Doctrine:
-		Type: strategy.usa
 
 strategy.hold_the_line:
 	Inherits: ^default.strategy
@@ -974,8 +984,6 @@ strategy.hold_the_line:
 		Description: Increases all units' armor by 10%.\n\nDoubles Strategy Center's armor.
 		QueuedAudio: NoAudio
 		ReadyAudio: HoldTheLine
-	Doctrine:
-		Type: strategy.usa
 
 fake_to_real.command_center:
 	Inherits: ^default.fake_to_real
