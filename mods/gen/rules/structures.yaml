@@ -246,6 +246,7 @@ building.usa_command_center:
 building.gla_command_center:
 	Inherits: ^default.command_center
 	Inherits@GPCHECK: ^ChecksForGeneralsPowerCount.GLA
+	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Buildable:
 		Queue: queue.gla_building
 		BuildPaletteOrder: 10
@@ -978,6 +979,7 @@ building.usa_barracks:
 
 building.gla_barracks:
 	Inherits: ^default.barracks
+	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	HitShape:
 		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
 	Buildable:
@@ -1192,6 +1194,7 @@ building.usa_supply_center:
 
 building.gla_supply_stash:
 	Inherits: ^default.supply_center
+	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	HitShape:
 		UseTargetableCellsOffsets: true
 		Type: Rectangle
@@ -1682,6 +1685,7 @@ building.usa_war_factory:
 
 building.arms_dealer:
 	Inherits: ^default.war_factory
+	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Buildable:
 		Queue: queue.gla_building
 		BuildPaletteOrder: 4
@@ -2142,6 +2146,7 @@ building.palace:
 	Inherits: ^Building
 	Inherits@BOUNTY: ^TakesBounty
 	Inherits@GARRISON: ^WithGarrisonRangeCircle
+	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@SHAPE: ^3x2Shape
 	Inherits@REVEAL: ^Reveal300
 	HitShape:
@@ -2365,6 +2370,7 @@ building.supply_drop_zone:
 
 building.black_market:
 	Inherits: ^Building
+	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@REVEAL: ^Reveal200
 	HitShape:
 		TargetableOffsets: 0,0,0, 0,512,0, 420,-598,256
@@ -2580,6 +2586,7 @@ hack.scud_spawner:
 building.scud_storm:
 	Inherits: ^Building
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Valued:

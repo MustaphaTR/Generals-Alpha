@@ -552,6 +552,21 @@ upgrade.anthrax_beta:
 	Valued:
 		Cost: 2500
 
+upgrade.fortified_structures:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Fortified Structures
+	Buildable:
+		Queue: queue.palace
+		BuildPaletteOrder: 5
+		BuildDuration: 750
+		Prerequisites: building.palace, ~techlevel.medium, ~prerequisite.zh_units
+		Description: Increases structure armor by 33%.
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
+	Valued:
+		Cost: 1000
+
 upgrade.nationalism:
 	Inherits: ^default.upgrade
 	Tooltip:
