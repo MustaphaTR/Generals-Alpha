@@ -231,6 +231,18 @@ building.usa_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 		OrderName: FuelAirBombPowerInfoOrder
+	ProvidesPrerequisite@Vanilla:
+		Prerequisite: prerequisite.usa_command_center.vanilla
+		Factions: usa
+	ProvidesPrerequisite@Airforce:
+		Prerequisite: prerequisite.usa_command_center.air
+		Factions: air
+	ProvidesPrerequisite@Laser:
+		Prerequisite: prerequisite.gla_command_center.laser
+		Factions: laser
+	ProvidesPrerequisite@Super:
+		Prerequisite: prerequisite.gla_command_center.super
+		Factions: super
 	WithDeathAnimation:
 		DeathSequencePalette: cncplayer
 	WithTextDecoration@SIDE:
@@ -1316,7 +1328,7 @@ building.patriot:
 	Inherits@REVEAL: ^Reveal360
 	Inherits@SHAPE: ^2x1Shape
 	Buildable:
-		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.laser_gen_building
 		BuildPaletteOrder: 4
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -1366,6 +1378,19 @@ building.patriot:
 		UseClassicFacingFudge: True
 	Voiced:
 		VoiceSet: PatriotVoice
+
+building.emp_patriot:
+	Inherits: building.patriot
+	Buildable:
+		Queue: queue.super_gen_building
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: EMP Patriot Missile System
+	Armament@AG:
+		Weapon: missile.emp_patriot.ground
+	Armament@AA:
+		Weapon: missile.emp_patriot.air
 
 building.demo_trap:
 	Inherits: ^Defense
@@ -1651,14 +1676,36 @@ building.usa_war_factory:
 	RallyPoint:
 		Offset: 0,2
 	Production:
-		Produces: queue.usa_vehicle
+		Produces: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		PauseOnCondition: emp || hacked
-	ProductionQueue:
+	ProductionQueue@Vanilla:
 		Type: queue.usa_vehicle
-		RequireOwner: false
+		Factions: usa, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Vehicle
 		LowPowerSlowdown: 3
-	ProductionBar:
+	ProductionQueue@Airforce:
+		Type: queue.air_gen_vehicle
+		Factions: air
+		Group: Vehicle
+		LowPowerSlowdown: 3
+	ProductionQueue@Laser:
+		Type: queue.laser_gen_vehicle
+		Factions: laser
+		Group: Vehicle
+		LowPowerSlowdown: 3
+	ProductionQueue@Super:
+		Type: queue.super_gen_vehicle
+		Factions: super
+		Group: Vehicle
+		LowPowerSlowdown: 3
+	ProductionBar@Vanilla:
+		ProductionType: queue.usa_vehicle
+	ProductionBar@Airforce:
+		ProductionType: queue.air_gen_vehicle
+	ProductionBar@Laser:
+		ProductionType: queue.laser_gen_vehicle
+	ProductionBar@Super:
+		ProductionType: queue.super_gen_vehicle
 	Exit@1:
 		SpawnOffset: -512,-512,0
 		ExitCell: 0,1
@@ -1695,14 +1742,22 @@ building.arms_dealer:
 	Tooltip:
 		Name: GLA Arms Dealer
 	Production:
-		Produces: queue.gla_vehicle
+		Produces: queue.gla_vehicle, queue.stealth_gen_vehicle
 		PauseOnCondition: emp || hacked
-	ProductionQueue:
+	ProductionQueue@Vanilla:
 		Type: queue.gla_vehicle
-		RequireOwner: false
+		Factions: usa, air, laser, super, gla, toxin, demo, prc, inf, nuke, tank
 		Group: Vehicle
 		LowPowerSlowdown: 3
-	ProductionBar:
+	ProductionQueue@Stealth:
+		Type: queue.stealth_gen_vehicle
+		Factions: stealth
+		Group: Vehicle
+		LowPowerSlowdown: 3
+	ProductionBar@Vanilla:
+		ProductionType: queue.gla_vehicle
+	ProductionBar@Stealth:
+		ProductionType: queue.stealth_gen_vehicle
 	SpawnActorOnDeath:
 		Actor: hole.arms_dealer
 		SpawnAfterDefeat: false

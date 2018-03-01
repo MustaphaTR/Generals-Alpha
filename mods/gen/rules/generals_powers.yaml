@@ -142,10 +142,17 @@ generals_power.paladin_tank:
 	Buildable:
 		BuildPaletteOrder: 10
 		BuildDuration: 900
-		Prerequisites: ~building.usa_command_center, ~techlevel.high, !enough_powers.usa
+		Prerequisites: ~prerequisite.usa_command_center.vanilla, ~building.usa_command_center, ~techlevel.high, !enough_powers.usa
 		Description: Enables Paladin Tank.
 	Valued:
 		Cost: 1100
+
+hack.cameo_filler.7:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 13
+		Prerequisites: ~!prerequisite.usa_command_center.vanilla, ~building.usa_command_center, disabled
 
 generals_power.stealth_fighter:
 	Inherits: ^default.generals_power
@@ -207,7 +214,7 @@ generals_power.hijacker:
 	Valued:
 		Cost: 400
 
-hack.cameo_filler.7:
+hack.cameo_filler.8:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General

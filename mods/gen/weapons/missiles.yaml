@@ -397,6 +397,24 @@ missile.patriot.air:
 		Explosions: med_explosion_air
 		ImpactSounds: kaboom25.aud
 
+missile.emp_patriot.ground:
+	Inherits: missile.patriot.ground
+	Warhead@1Dam: SpreadDamage
+		Damage: 15
+	Warhead@3Eff: CreateEffect
+		Explosions: emp_small
+	Warhead@4Dis: GrantExternalCondition
+		Range: 2c0
+		Duration: 250
+		Condition: emp
+
+missile.emp_patriot.air:
+	Inherits: missile.patriot.air
+	Warhead@1Dam: SpreadDamage
+		Damage: 10000
+	Warhead@3Eff: CreateEffect
+		Explosions: emp_small
+
 NikeAA:
 	Inherits: ^AntiAirMissile
 	ReloadDelay: 15

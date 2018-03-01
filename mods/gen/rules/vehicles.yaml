@@ -63,7 +63,7 @@ vehicle.humvee:
 		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	Buildable:
-		Queue: queue.usa_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 1
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -146,7 +146,7 @@ vehicle.technical:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		Queue: queue.gla_vehicle
+		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 1
 		BuildDuration: 75
 		BuildDurationModifier: 100
@@ -219,7 +219,7 @@ vehicle.radar_van:
 	Tooltip:
 		Name: Radar Van
 	Buildable:
-		Queue: queue.gla_vehicle
+		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 4
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -369,7 +369,7 @@ vehicle.crusader_tank:
 	Inherits@REVEAL: ^Reveal125
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_vehicle
+		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
 		BuildPaletteOrder: 2
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -491,7 +491,7 @@ vehicle.ambulance:
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal100
 	Buildable:
-		Queue: queue.usa_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 4
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -535,7 +535,7 @@ vehicle.sentry_drone:
 	Inherits@DRONE_ARMOR: ^AffectedByDroneArmor
 	Inherits@REVEAL: ^Reveal200
 	Buildable:
-		Queue: queue.usa_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 4
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -614,7 +614,7 @@ vehicle.quad_cannon:
 	Tooltip:
 		Name: Quad Cannon
 	Buildable:
-		Queue: queue.gla_vehicle
+		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
 		BuildAtProductionType: WarFactory
 		BuildPaletteOrder: 5
 		BuildDuration: 150
@@ -729,7 +729,7 @@ vehicle.toxin_tractor:
 	Tooltip:
 		Name: Toxin Tractor
 	Buildable:
-		Queue: queue.gla_vehicle
+		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 6
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -830,7 +830,7 @@ vehicle.rocket_buggy:
 	Tooltip:
 		Name: Rocket Buggy
 	Buildable:
-		Queue: queue.gla_vehicle
+		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 7
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1013,7 +1013,7 @@ vehicle.tomahawk_launcher:
 	Tooltip:
 		Name: Tomahawk Launcher
 	Buildable:
-		Queue: queue.usa_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 6
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1520,7 +1520,7 @@ vehicle.bomb_truck:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		Queue: queue.gla_vehicle
+		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 8
 		BuildDuration: 375
 		BuildDurationModifier: 100
