@@ -198,6 +198,13 @@ hack.cameo_filler.38:
 		BuildPaletteOrder: 8
 		Prerequisites: ~!prerequisite.zh_units, disabled
 
+hack.cameo_filler.39:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.inf_gen_vehicle
+		BuildPaletteOrder: 8
+		Prerequisites: disabled
+
 upgrade.radar:
 	Inherits: ^default.upgrade
 	Tooltip:
