@@ -469,6 +469,24 @@
 		Condition: hold_the_line
 		Prerequisites: strategy.hold_the_line
 
+^AffectedByAmbulance:
+	SelfHealing@AMBULANCE:
+		Step: 4
+		Delay: 20
+		HealIfBelow: 100
+		DamageCooldown: 0
+		RequiresCondition: ambulanceheal
+	ExternalCondition@AMBULANCE:
+		Condition: ambulanceheal
+
+^AffectedByAmbulanceZHOnly:
+	Inherits: ^AffectedByAmbulance
+	SelfHealing@AMBULANCE:
+		RequiresCondition: ambulanceheal && zh_units
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
+
 ^AffectedByScrapCratePowerups:
 	DamageMultiplier@CRATE_ARMOR:
 		RequiresCondition: crate.armor
@@ -969,6 +987,7 @@
 	Inherits@14: ^AffectedByFrenzy
 	Inherits@15: ^AffectedByRadiationAndToxins
 	Inherits@16: ^AffectedByGPSScambler
+	Inherits@17: ^AffectedByAmbulanceZHOnly
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -1206,6 +1225,7 @@
 	Inherits@9: ^CrushesCrates
 	Inherits@10: ^AffectedByRadiationAndToxins
 	Inherits@11: ^AffectedByGPSScambler
+	Inherits@12: ^AffectedByAmbulance
 	Huntable:
 	DrawLineToTarget:
 	Health:
@@ -1264,14 +1284,6 @@
 	Guardable:
 	Tooltip:
 		GenericName: Soldier
-	ExternalCondition@AMBULANCE:
-		Condition: ambulanceheal
-	SelfHealing@AMBULANCE:
-		Step: 4
-		Delay: 20
-		HealIfBelow: 100
-		DamageCooldown: 0
-		RequiresCondition: ambulanceheal
 	SelfHealing@HOSPITAL:
 		Step: 5
 		Delay: 100
