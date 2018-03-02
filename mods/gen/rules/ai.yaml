@@ -737,7 +737,7 @@ Player:
 			VehiclesFactory: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
 			NavalProduction: tech.shipyard
 			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, usa_airfield, prc_airfield
-			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, building.particle_cannon.super, hack.scud_spawner, building.missile_silo
+			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, building.particle_cannon.super, hack.scud_spawner, building.missile_silo, building.missile_silo.nuke
 			Defense: building.patriot, building.emp_patriot, building.stinger_site, building.tunnel_network, building.gatling_cannon, building.land_mine, tech.flame_tower
 			StaticAntiAir: building.patriot, building.emp_patriot, building.stinger_site, building.gatling_cannon
 			Strategy: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
@@ -787,6 +787,7 @@ Player:
 			building.particle_cannon.super: 1
 			hack.scud_spawner: 1
 			building.missile_silo: 1
+			building.missile_silo.nuke: 1
 			tech.flame_tower: 1
 		BuildingFractions:
 			building.usa_command_center: 150%
@@ -820,6 +821,7 @@ Player:
 			building.particle_cannon.super: 1%
 			hack.scud_spawner: 1%
 			building.missile_silo: 1%
+			building.missile_silo.nuke: 1%
 			tech.flame_tower: 3%
 			upgrade.radar: 1%
 			upgrade.adv_training: 1%
@@ -1465,7 +1467,7 @@ Player:
 			VehiclesFactory: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
 			NavalProduction: tech.shipyard
 			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, usa_airfield, prc_airfield
-			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, building.particle_cannon.super, hack.scud_spawner, building.missile_silo
+			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, building.particle_cannon.super, hack.scud_spawner, building.missile_silo, building.missile_silo.nuke
 			Defense: building.patriot, building.emp_patriot, building.stinger_site, building.tunnel_network, building.gatling_cannon, building.land_mine, tech.flame_tower
 			StaticAntiAir: building.patriot, building.emp_patriot, building.stinger_site, building.gatling_cannon
 			Strategy: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
@@ -1515,6 +1517,7 @@ Player:
 			building.particle_cannon.super: 1
 			hack.scud_spawner: 1
 			building.missile_silo: 1
+			building.missile_silo.nuke: 1
 			tech.flame_tower: 1
 		BuildingFractions:
 			building.usa_command_center: 200%
@@ -1548,6 +1551,7 @@ Player:
 			building.particle_cannon.super: 1%
 			hack.scud_spawner: 1%
 			building.missile_silo: 1%
+			building.missile_silo.nuke: 1%
 			tech.flame_tower: 4%
 			upgrade.radar: 1%
 			upgrade.adv_training: 1%

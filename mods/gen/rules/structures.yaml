@@ -2807,7 +2807,7 @@ building.missile_silo:
 	Tooltip:
 		Name: Nuclear Missile Silo
 	Buildable:
-		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
+		Queue: queue.prc_building, queue.inf_gen_building
 		BuildPaletteOrder: 12
 		BuildDuration: 1500
 		BuildDurationModifier: 100
@@ -2822,6 +2822,8 @@ building.missile_silo:
 		HP: 3000
 	Armor:
 		Type: building.tough
+	Selectable:
+		Class: building.missile_silo
 	Production:
 		Produces: queue.missile_silo
 		PauseOnCondition: emp || hacked
@@ -2889,6 +2891,15 @@ building.missile_silo:
 	GrantConditionOnTerrain@SAND:
 		Condition: on_sand
 		TerrainTypes: Sand, SandRoad
+	RenderSprites:
+		Image: building.missile_silo
+
+building.missile_silo.nuke:
+	Inherits: building.missile_silo
+	Buildable:
+		Queue: queue.nuke_gen_building
+	Valued:
+		Cost: 4500
 
 SBAG:
 	Inherits: ^Wall
