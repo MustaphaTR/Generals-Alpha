@@ -970,6 +970,36 @@
 		Actors: upgrade.overlord_speaker, upgrade.helix_speaker
 	ProvidesPrerequisite@unitname:
 
+^CanHaveCamoNetting:
+	Production:
+		Produces: queue.camo_netting
+		RequiresCondition: !camo_netted && zh_units
+	ProductionQueue:
+		Type: queue.camo_netting
+		Group: Tech
+		RequireOwner: false
+		LowPowerSlowdown: 3
+	ProductionBar:
+	Exit:
+	GrantConditionOnProduction@CAMO_NETTING:
+		Condition: camo_netted
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
+	Cloak:
+		InitialDelay: 60
+		CloakDelay: 60
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: camo_netted && !emp && !hacked
+	ProvidesPrerequisite@buildingname:
+
+^CanHaveCamoNettingStealthGenOnly:
+	Inherits@CAMO: ^CanHaveCamoNetting
+	ProductionQueue:
+		Factions: stealth
+
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^IronCurtainable

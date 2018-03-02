@@ -1824,6 +1824,7 @@ building.tunnel_network:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@CAMO: ^CanHaveCamoNetting
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Tooltip:
@@ -1885,6 +1886,9 @@ building.tunnel_network:
 		RequiresCondition: !emp && !hacked
 	WithSpriteTurret:
 	WithMuzzleOverlay:
+	GrantConditionOnFaction@CAMO_NETTING:
+		Condition: camo_netted
+		Factions: stealth
 	SpawnActorOnDeath:
 		Actor: hole.tunnel_network
 		SpawnAfterDefeat: false
@@ -1906,6 +1910,7 @@ building.stinger_site:
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@CAMO: ^CanHaveCamoNetting
 	Inherits@REVEAL: ^Reveal400
 	Buildable:
 		Queue: queue.gla_building
@@ -1967,6 +1972,9 @@ building.stinger_site:
 	GrantConditionOnDamageState@CRITICAL:
 		Condition: critically-damaged
 		ValidDamageStates: Critical
+	GrantConditionOnFaction@CAMO_NETTING:
+		Condition: camo_netted
+		Factions: stealth
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
@@ -2651,6 +2659,7 @@ hack.scud_spawner:
 building.scud_storm:
 	Inherits: ^Building
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@CAMO: ^CanHaveCamoNettingStealthGenOnly
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
@@ -2788,6 +2797,7 @@ building.scud_storm:
 	RevealsShroud@SW:
 		Range: 2c0
 		ValidStances: Enemy
+		RequiresCondition: !camo_netted
 	SpawnActorOnDeath:
 		Actor: hole.scud_storm
 		SpawnAfterDefeat: false
