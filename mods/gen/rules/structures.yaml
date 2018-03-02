@@ -234,6 +234,9 @@ building.usa_command_center:
 	ProvidesPrerequisite@Vanilla:
 		Prerequisite: prerequisite.usa_command_center.vanilla
 		Factions: usa
+	ProvidesPrerequisite@Vanilla_Laser_Super:
+		Prerequisite: prerequisite.usa_command_center.vanilla_laser_super
+		Factions: usa, laser, super
 	ProvidesPrerequisite@Airforce:
 		Prerequisite: prerequisite.usa_command_center.air
 		Factions: air
@@ -1089,7 +1092,8 @@ building.mine:
 	Inherits: ^Mine
 	Buildable:
 		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_aircraft, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.just_mine
-		BuildPaletteOrder: 9
+		BuildPaletteOrder: 14
+		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.infonly

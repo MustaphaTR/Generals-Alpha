@@ -37,173 +37,12 @@
 	Inherits: ^default.upgrade
 	Buildable:
 		Queue: FakeToReal
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 0
 		BuildLimit: 0
 		QueuedAudio: NoAudio
 		ReadyAudio: ConstructionComplete
 	KillsSelf:
 		RemoveInstead: true
-
-hack.cameo_filler.18:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.usa_infantry
-		BuildPaletteOrder: 4
-		Prerequisites: disabled, ~!techlevel.high, ~techlevel.low
-
-hack.cameo_filler.19:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.usa_infantry
-		BuildPaletteOrder: 5
-		Prerequisites: disabled, ~!generals_power.pathfinder, ~techlevel.low
-
-hack.cameo_filler.20:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.gla_infantry, queue.toxin_gen_infantry
-		BuildPaletteOrder: 6
-		Prerequisites: disabled, ~generals_power.hijacker
-
-hack.cameo_filler.21:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.prc_infantry, queue.inf_gen_infantry
-		BuildPaletteOrder: 4
-		Prerequisites: disabled, ~!techlevel.medium
-
-hack.cameo_filler.22:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.prc_infantry, queue.inf_gen_infantry
-		BuildPaletteOrder: 5
-		Prerequisites: disabled, ~!techlevel.high
-
-hack.cameo_filler.23:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.soviet_infantry
-		BuildPaletteOrder: 4
-		Prerequisites: disabled, ~techlevel.low
-
-hack.cameo_filler.24:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.prc_collector
-		BuildPaletteOrder: 2
-		Prerequisites: disabled
-
-hack.cameo_filler.25:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.prc_vehicle
-		BuildPaletteOrder: 5
-		Prerequisites: disabled, ~!techlevel.medium, ~techlevel.low
-
-hack.cameo_filler.26:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.prc_vehicle
-		BuildPaletteOrder: 8
-		Prerequisites: disabled, ~!techlevel.high, ~techlevel.medium
-
-hack.cameo_filler.27:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.usa_aircraft, queue.air_gen_aircraft
-		BuildPaletteOrder: 5
-		Prerequisites: disabled, ~!generals_power.stealth_fighter, ~techlevel.high
-
-hack.cameo_filler.28:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.prc_aircraft
-		BuildPaletteOrder: 2
-		Prerequisites: disabled, ~!techlevel.high
-
-hack.cameo_filler.29:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.gla_building
-		BuildPaletteOrder: 11
-		Prerequisites: ~prerequisite.zh_units, disabled
-
-hack.cameo_filler.30:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.gla_building
-		BuildPaletteOrder: 12
-		Prerequisites: ~prerequisite.zh_units, disabled
-
-hack.cameo_filler.31:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.tank_gen_vehicle, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo
-		BuildPaletteOrder: 10
-		Prerequisites: ~prerequisite.zh_units, disabled
-
-hack.cameo_filler.32:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.tank_gen_vehicle, queue.just_mine, queue.prc_aircraft, queue.propaganda_center, queue.missile_silo
-		BuildPaletteOrder: 11
-		Prerequisites: ~prerequisite.zh_units, disabled
-
-hack.cameo_filler.33:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.prc_vehicle, queue.inf_gen_vehicle
-		BuildPaletteOrder: 11
-		Prerequisites: ~prerequisite.zh_units, ~!generals_power.nuke_cannon, disabled
-
-hack.cameo_filler.34:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.bomb_truck, queue.scud_launcher
-		BuildPaletteOrder: 2
-		Prerequisites: disabled
-
-hack.cameo_filler.35:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.inf_gen_vehicle
-		BuildPaletteOrder: 1
-		Prerequisites: disabled
-
-hack.cameo_filler.36:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.inf_gen_vehicle
-		BuildPaletteOrder: 2
-		Prerequisites: disabled
-
-hack.cameo_filler.37:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.tank_gen_vehicle
-		BuildPaletteOrder: 8
-		Prerequisites: ~!prerequisite.zh_units, disabled
-
-hack.cameo_filler.37:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.stealth_gen_infantry
-		BuildPaletteOrder: 6
-		Prerequisites: disabled
-
-hack.cameo_filler.38:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle
-		BuildPaletteOrder: 8
-		Prerequisites: ~!prerequisite.zh_units, disabled
-
-hack.cameo_filler.39:
-	Inherits: ^default.cameo_filler
-	Buildable:
-		Queue: queue.inf_gen_vehicle
-		BuildPaletteOrder: 8
-		Prerequisites: disabled
 
 upgrade.radar:
 	Inherits: ^default.upgrade
@@ -211,7 +50,8 @@ upgrade.radar:
 		Name: Radar
 	Buildable:
 		Queue: queue.prc_command_center
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 2
+		ForceIconLocation: true
 		BuildDuration: 500
 		Prerequisites: ~building.prc_command_center, ~techlevel.infonly
 		Description: Allows Commandand Center to provide Radar.
@@ -228,6 +68,7 @@ upgrade.neutron_mine:
 	Buildable:
 		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_aircraft, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.just_mine
 		BuildPaletteOrder: 12
+		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.infonly, ~prerequisite.zh_units
@@ -249,7 +90,8 @@ upgrade.control_rods:
 		Name: Control Rods
 	Buildable:
 		Queue: queue.cold_fusion_reactor
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 0
+		ForceIconLocation: true
 		BuildDuration: 375
 		Prerequisites: ~techlevel.infonly
 		Description: Doubles power output of the Cold Fusion Reactor.
@@ -291,6 +133,7 @@ upgrade.camo_netting:
 	Buildable:
 		Queue: queue.camo_netting
 		BuildPaletteOrder: 1
+		ForceIconLocation: true
 		BuildDuration: 125
 		Prerequisites: ~techlevel.infonly
 		Description: Allows structure to cloak.
@@ -306,7 +149,8 @@ upgrade.capture_building:
 		Name: Capture Building
 	Buildable:
 		Queue: queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 2
+		ForceIconLocation: true
 		BuildDuration: 750
 		Prerequisites: prerequisite.barracks, ~techlevel.infonly
 		Description: Allows AP Infantry to capture enemy and neutral structures.
@@ -321,7 +165,8 @@ upgrade.flashbang_grenades:
 		Name: Flashbang Grenades
 	Buildable:
 		Queue: queue.usa_infantry
-		BuildPaletteOrder: 6
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
 		BuildDuration: 750
 		Prerequisites: building.usa_barracks, ~techlevel.low
 		Description: Gives Rangers ability to use to flashbang grenades.
@@ -336,7 +181,8 @@ upgrade.tow_missile:
 		Name: TOW Missile
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 2
+		ForceIconLocation: true
 		BuildDuration: 750
 		Prerequisites: building.usa_war_factory, ~techlevel.low
 		Description: Allows Humvees to fire Missiles.
@@ -352,6 +198,7 @@ upgrade.sentry_gun:
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 5
+		ForceIconLocation: true
 		BuildDuration: 250
 		Prerequisites: building.usa_war_factory, ~techlevel.low, ~prerequisite.zh_units
 		Description: Allows Senrty Drones to fire.
@@ -366,7 +213,8 @@ upgrade.sc_rocket:
 		Name: Scorpion Rocket
 	Buildable:
 		Queue: queue.gla_vehicle
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 2
+		ForceIconLocation: true
 		BuildDuration: 750
 		Prerequisites: building.arms_dealer, ~techlevel.low
 		Description: Gives Scorpion Tanks a rocket.
@@ -381,7 +229,8 @@ upgrade.chain_gun:
 		Name: Chain Gun
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 2
+		ForceIconLocation: true
 		BuildDuration: 1125
 		Prerequisites: building.prc_war_factory, ~techlevel.low
 		Description: Increases damage of gatling weapons by 25%.
@@ -396,7 +245,8 @@ upgrade.black_napalm:
 		Name: Black Napalm
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
-		BuildPaletteOrder: 6
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
 		BuildDuration: 1125
 		Prerequisites: building.prc_war_factory, ~techlevel.medium
 		Description: Increases damage of fire based weapons.
@@ -412,7 +262,8 @@ upgrade.rocket_pods:
 	Buildable:
 		Queue: queue.usa_aircraft, queue.air_gen_aircraft
 		BuildAtProductionType: queue.usa_air_upgrade
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 2
+		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: ~techlevel.high
 		Description: Allows Comanches to fire Missiles.
@@ -428,7 +279,8 @@ upgrade.laser_guided_missiles:
 	Buildable:
 		Queue: queue.usa_aircraft, queue.air_gen_aircraft
 		BuildAtProductionType: queue.usa_air_upgrade
-		BuildPaletteOrder: 6
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
 		BuildDuration: 1000
 		Prerequisites: ~techlevel.high
 		Description: Increases the damage output of Raptor and Stealth Bomber by 25%.
@@ -444,7 +296,8 @@ upgrade.stealth_comanche:
 	Buildable:
 		Queue: queue.air_gen_aircraft
 		BuildAtProductionType: queue.usa_air_upgrade
-		BuildPaletteOrder: 9
+		BuildPaletteOrder: 8
+		ForceIconLocation: true
 		BuildDuration: 750
 		Prerequisites: ~techlevel.high
 		Description: Allows Comanches to stealth when not firing.
@@ -459,7 +312,8 @@ upgrade.mig_armor:
 		Name: MiG Armor
 	Buildable:
 		Queue: queue.prc_aircraft
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 2
+		ForceIconLocation: true
 		BuildDuration: 1000
 		Prerequisites: building.prc_airfield, ~techlevel.high
 		Description: Increases MiGs' armor.
@@ -474,7 +328,8 @@ upgrade.adv_training:
 		Name: Advanced Training
 	Buildable:
 		Queue: queue.strategy_center
-		BuildPaletteOrder: 4
+		BuildPaletteOrder: 3
+		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: building.strategy_center, ~techlevel.medium
 		Description: Doubles the rate units gain veterancy.
@@ -489,7 +344,8 @@ upgrade.drone_armor:
 		Name: Drone Armor
 	Buildable:
 		Queue: queue.strategy_center
-		BuildPaletteOrder: 5
+		BuildPaletteOrder: 4
+		ForceIconLocation: true
 		BuildDuration: 1000
 		Prerequisites: building.strategy_center, ~techlevel.medium
 		Description: Increases Drones' armor by 50%.
@@ -504,7 +360,8 @@ upgrade.composite_armor:
 		Name: Composite Armor
 	Buildable:
 		Queue: queue.strategy_center
-		BuildPaletteOrder: 6
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: building.strategy_center, ~techlevel.medium
 		Description: Increases Crusader Tank armor by 40%.\n\nIncreases Paladin Tank armor by 20%.
@@ -519,7 +376,8 @@ upgrade.camouflage:
 		Name: Camouflage
 	Buildable:
 		Queue: queue.palace
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 0
+		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Allows Rebels to cloak while not firing.
@@ -534,7 +392,8 @@ upgrade.arm_the_mob:
 		Name: Arm The Mob
 	Buildable:
 		Queue: queue.palace
-		BuildPaletteOrder: 2
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
 		BuildDuration: 750
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Replaces pistols of Angry Mobs with AK-47s.
@@ -549,7 +408,8 @@ upgrade.toxin_shells:
 		Name: Toxin Shells
 	Buildable:
 		Queue: queue.palace
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 2
+		ForceIconLocation: true
 		BuildDuration: 750
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Makes Scorpion and Marauder tank shells leave toxin.
@@ -564,7 +424,8 @@ upgrade.anthrax_beta:
 		Name: Anthrax Beta
 	Buildable:
 		Queue: queue.palace
-		BuildPaletteOrder: 4
+		BuildPaletteOrder: 3
+		ForceIconLocation: true
 		BuildDuration: 750
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Increases all toxin weapons' damage by 25%.
@@ -579,7 +440,8 @@ upgrade.fortified_structures:
 		Name: Fortified Structures
 	Buildable:
 		Queue: queue.palace
-		BuildPaletteOrder: 5
+		BuildPaletteOrder: 4
+		ForceIconLocation: true
 		BuildDuration: 750
 		Prerequisites: building.palace, ~techlevel.medium, ~prerequisite.zh_units
 		Description: Increases structure armor by 33%.
@@ -594,7 +456,8 @@ upgrade.nationalism:
 		Name: Nationalism
 	Buildable:
 		Queue: queue.propaganda_center, queue.tank_gen_propaganda_center
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 0
+		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: building.propaganda_center, ~techlevel.medium
 		Description: Makes Horde Bonus give an additional 25% firing speed.
@@ -605,28 +468,14 @@ upgrade.nationalism:
 	RenderSprites:
 	ProvidesPrerequisite@upgradename:
 
-upgrade.subliminal_messaging:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Subliminal Messaging
-	Buildable:
-		Queue: queue.propaganda_center, queue.tank_gen_propaganda_center
-		BuildPaletteOrder: 2
-		BuildDuration: 1000
-		Prerequisites: building.propaganda_center, ~techlevel.medium
-		Description: Doubles the efficency of Speaker Towers.
-		QueuedAudio: NoAudio
-		ReadyAudio: Subliminal
-	Valued:
-		Cost: 500
-
 upgrade.autoloader:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Autoloader
 	Buildable:
 		Queue: queue.tank_gen_propaganda_center
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: building.propaganda_center, ~techlevel.medium
 		Description: Makes Battlemaster Tanks to fire 3 cannon at once.
@@ -635,13 +484,30 @@ upgrade.autoloader:
 	Valued:
 		Cost: 2500
 
+upgrade.subliminal_messaging:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Subliminal Messaging
+	Buildable:
+		Queue: queue.propaganda_center, queue.tank_gen_propaganda_center
+		BuildPaletteOrder: 2
+		ForceIconLocation: true
+		BuildDuration: 1000
+		Prerequisites: building.propaganda_center, ~techlevel.medium
+		Description: Doubles the efficency of Speaker Towers.
+		QueuedAudio: NoAudio
+		ReadyAudio: Subliminal
+	Valued:
+		Cost: 500
+
 upgrade.ap_bullets:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Armor-Piercing Bullets
 	Buildable:
 		Queue: queue.black_market
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 0
+		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: building.black_market, ~techlevel.high
 		Description: Increases bullet weapons' damage by 25%.
@@ -656,7 +522,8 @@ upgrade.ap_rockets:
 		Name: Armor-Piercing Rockets
 	Buildable:
 		Queue: queue.black_market
-		BuildPaletteOrder: 2
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: building.black_market, ~techlevel.high
 		Description: Increases rocket weapons' damage by 25%.
@@ -671,7 +538,8 @@ upgrade.radar_van_scan:
 		Name: Radar Van Scan
 	Buildable:
 		Queue: queue.black_market
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 2
+		ForceIconLocation: true
 		BuildDuration: 500
 		Prerequisites: building.black_market, ~techlevel.high
 		Description: Gives you a Radar Van Scan support power for each Radar Van you have.
@@ -686,7 +554,8 @@ upgrade.junk_repair:
 		Name: Junk Repair
 	Buildable:
 		Queue: queue.black_market
-		BuildPaletteOrder: 4
+		BuildPaletteOrder: 3
+		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: building.black_market, ~techlevel.high
 		Description: Allows vehicles to repair themselves on field.
@@ -701,7 +570,8 @@ upgrade.buggy_ammo:
 		Name: Buggy Ammo
 	Buildable:
 		Queue: queue.black_market
-		BuildPaletteOrder: 5
+		BuildPaletteOrder: 4
+		ForceIconLocation: true
 		BuildDuration: 750
 		Prerequisites: building.black_market, ~techlevel.high
 		Description: Doubles the rockets fired from Rocket Buggies.
@@ -716,7 +586,8 @@ upgrade.worker_shoes:
 		Name: Worker Shoes
 	Buildable:
 		Queue: queue.black_market
-		BuildPaletteOrder: 6
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
 		BuildDuration: 250
 		Prerequisites: building.black_market, ~techlevel.high, ~prerequisite.zh_units
 		Description: Increases worker speed by 10%.
@@ -731,7 +602,8 @@ upgrade.nuclear_tanks:
 		Name: Nuclear Tanks
 	Buildable:
 		Queue: queue.missile_silo
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 0
+		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: building.missile_silo, ~techlevel.unrestricted
 		Description: Increases Overlord and Battlemaster speed by 25%.
@@ -747,6 +619,7 @@ upgrade.uranium_shells:
 	Buildable:
 		Queue: queue.missile_silo
 		BuildPaletteOrder: 2
+		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: building.missile_silo, ~techlevel.unrestricted
 		Description: Increases Overlord and Battlemaster damage by 25%.
@@ -813,7 +686,8 @@ upgrade.bio_bombs:
 		Name: Bio Bombs
 	Buildable:
 		Queue: queue.bomb_truck
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 0
+		ForceIconLocation: true
 		BuildDuration: 125
 		Description: Makes bomb truck leave toxins when it explodes.
 		BuildLimit: 0
@@ -830,7 +704,8 @@ upgrade.hi_explosive_bombs:
 		Name: High Explosive Bombs
 	Buildable:
 		Queue: queue.bomb_truck
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 2
+		ForceIconLocation: true
 		BuildDuration: 125
 		Description: Makes bomb truck deal more damage to a larger area.
 		BuildLimit: 0
@@ -847,7 +722,8 @@ upgrade.toxin_missiles:
 		Name: Toxin Missiles
 	Buildable:
 		Queue: queue.scud_launcher
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 0
+		ForceIconLocation: true
 		BuildDuration: 0
 		Description: Makes scud missiles leave toxins.
 		BuildLimit: 0
@@ -864,7 +740,8 @@ upgrade.hi_explosive_missiles:
 		Name: High Explosive Missiles
 	Buildable:
 		Queue: queue.scud_launcher
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 2
+		ForceIconLocation: true
 		BuildDuration: 0
 		Description: Makes scud missiles deal more damage to a larger area.
 		BuildLimit: 0
@@ -962,7 +839,8 @@ strategy.bombardment:
 		Name: Bombardment
 	Buildable:
 		Queue: queue.strategy_center
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 0
+		ForceIconLocation: true
 		Prerequisites: ~techlevel.infonly
 		Description: Increases all units' damage by 20%.\n\nGives Strategy Center an Artillery piece.
 		QueuedAudio: NoAudio
@@ -974,7 +852,8 @@ strategy.search_and_destroy:
 		Name: Search and Destroy
 	Buildable:
 		Queue: queue.strategy_center
-		BuildPaletteOrder: 2
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
 		Prerequisites: ~techlevel.infonly
 		Description: Increases all units' vision range by 20%.\n\nGives Strategy Center ability to detect stealth units.
 		QueuedAudio: NoAudio
@@ -986,7 +865,8 @@ strategy.hold_the_line:
 		Name: Hold the Line
 	Buildable:
 		Queue: queue.strategy_center
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 2
+		ForceIconLocation: true
 		Prerequisites: ~techlevel.infonly
 		Description: Increases all units' armor by 10%.\n\nDoubles Strategy Center's armor.
 		QueuedAudio: NoAudio

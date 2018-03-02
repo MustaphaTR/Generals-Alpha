@@ -161,10 +161,17 @@ generals_power.stealth_fighter:
 	Buildable:
 		BuildPaletteOrder: 11
 		BuildDuration: 1875
-		Prerequisites: ~building.usa_command_center, ~techlevel.high, !enough_powers.usa
+		Prerequisites: ~prerequisite.usa_command_center.vanilla_laser_super, ~building.usa_command_center, ~techlevel.high, !enough_powers.usa
 		Description: Enables Stealth Fighter.
 	Valued:
 		Cost: 1600
+
+hack.cameo_filler.8:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: General
+		BuildPaletteOrder: 13
+		Prerequisites: ~!prerequisite.usa_command_center.vanilla_laser_super, ~building.usa_command_center, disabled
 
 generals_power.pathfinder:
 	Inherits: ^default.generals_power
@@ -178,29 +185,29 @@ generals_power.pathfinder:
 	Valued:
 		Cost: 600
 
-generals_power.marauder_tank:
+generals_power.scud_launcher:
 	Inherits: ^default.generals_power
 	Tooltip:
-		Name: Marauder Tank
+		Name: SCUD Launcher
 	Buildable:
 		BuildPaletteOrder: 13
 		BuildDuration: 750
 		Prerequisites: ~prerequisite.gla_command_center.vanilla_toxin_demo, ~techlevel.high, !enough_powers.gla
 		Description: Enables Marauder Tank.
 	Valued:
-		Cost: 800
+		Cost: 1200
 
-generals_power.scud_launcher:
+generals_power.marauder_tank:
 	Inherits: ^default.generals_power
 	Tooltip:
-		Name: SCUD Launcher
+		Name: Marauder Tank
 	Buildable:
 		BuildPaletteOrder: 14
 		BuildDuration: 750
 		Prerequisites: ~prerequisite.gla_command_center.vanilla_toxin_demo, ~techlevel.high, !enough_powers.gla
 		Description: Enables Marauder Tank.
 	Valued:
-		Cost: 1200
+		Cost: 800
 
 generals_power.hijacker:
 	Inherits: ^default.generals_power
@@ -214,7 +221,7 @@ generals_power.hijacker:
 	Valued:
 		Cost: 400
 
-hack.cameo_filler.8:
+hack.cameo_filler.9:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
@@ -293,7 +300,7 @@ generals_power.paradrop3:
 	Valued:
 		Cost: 2000
 
-hack.cameo_filler.9:
+hack.cameo_filler.10:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
@@ -342,7 +349,7 @@ generals_power.paradrop3.inf_gen:
 	RenderSprites:
 		Image: generals_power.paradrop3
 
-hack.cameo_filler.10:
+hack.cameo_filler.11:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
@@ -421,7 +428,7 @@ generals_power.ambush3.toxin:
 	Valued:
 		Cost: 2000
 
-hack.cameo_filler.11:
+hack.cameo_filler.12:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General
@@ -500,7 +507,7 @@ generals_power.cash_hack3:
 	Valued:
 		Cost: 1000
 
-hack.cameo_filler.12:
+hack.cameo_filler.13:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: General

@@ -215,7 +215,8 @@ tech.flame_tower:
 	Inherits@SHAPE: ^1x1Shape
 	Buildable:
 		Queue: queue.soviet_infantry
-		BuildPaletteOrder: 5
+		BuildPaletteOrder: 4
+		ForceIconLocation: true
 		Prerequisites: ~techlevel.low
 		Description: Anti-infantry base defense.
 	RequiresBuildableArea:

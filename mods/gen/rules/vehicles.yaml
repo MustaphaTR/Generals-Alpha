@@ -64,7 +64,8 @@ vehicle.humvee:
 		InvalidTargets: NoAutoTarget
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 0
+		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, ~techlevel.low
@@ -147,7 +148,8 @@ vehicle.technical:
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 0
+		ForceIconLocation: true
 		BuildDuration: 75
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.low
@@ -220,7 +222,8 @@ vehicle.radar_van:
 		Name: Radar Van
 	Buildable:
 		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
-		BuildPaletteOrder: 4
+		BuildPaletteOrder: 3
+		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.low
@@ -270,7 +273,8 @@ vehicle.scorpion_tank:
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.gla_vehicle
-		BuildPaletteOrder: 2
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
 		BuildDuration: 175
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.low
@@ -370,7 +374,8 @@ vehicle.crusader_tank:
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
-		BuildPaletteOrder: 2
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, ~techlevel.low
@@ -429,7 +434,8 @@ vehicle.battlemaster_tank:
 	Buildable:
 		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildAtProductionType: WarFactory
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 0
+		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.low
@@ -492,7 +498,8 @@ vehicle.ambulance:
 	Inherits@REVEAL: ^Reveal100
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
-		BuildPaletteOrder: 4
+		BuildPaletteOrder: 3
+		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, ~techlevel.medium
@@ -537,6 +544,7 @@ vehicle.sentry_drone:
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 4
+		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, ~techlevel.low, ~prerequisite.zh_units
@@ -616,7 +624,8 @@ vehicle.quad_cannon:
 	Buildable:
 		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
 		BuildAtProductionType: WarFactory
-		BuildPaletteOrder: 5
+		BuildPaletteOrder: 4
+		ForceIconLocation: true
 		BuildDuration: 150
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.low
@@ -666,7 +675,8 @@ vehicle.gatling_tank:
 		Name: Gatling Tank
 	Buildable:
 		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
-		BuildPaletteOrder: 2
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.low
@@ -730,7 +740,8 @@ vehicle.toxin_tractor:
 		Name: Toxin Tractor
 	Buildable:
 		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
-		BuildPaletteOrder: 6
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.medium
@@ -784,7 +795,8 @@ vehicle.dragon_tank:
 		Name: Dragon Tank
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
-		BuildPaletteOrder: 5
+		BuildPaletteOrder: 3
+		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.medium
@@ -831,7 +843,8 @@ vehicle.rocket_buggy:
 		Name: Rocket Buggy
 	Buildable:
 		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
-		BuildPaletteOrder: 7
+		BuildPaletteOrder: 6
+		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~building.arms_dealer, ~techlevel.medium
@@ -896,6 +909,7 @@ vehicle.troop_crawler:
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 4
+		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.low
@@ -939,6 +953,7 @@ vehicle.listening_outpost:
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 7
+		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.low, ~prerequisite.zh_units
@@ -1015,6 +1030,7 @@ vehicle.tomahawk_launcher:
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 6
+		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~techlevel.medium
@@ -1066,7 +1082,8 @@ vehicle.scud_launcher:
 	Inherits@REVEAL: ^Reveal180
 	Buildable:
 		Queue: queue.gla_vehicle
-		BuildPaletteOrder: 11
+		BuildPaletteOrder: 9
+		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~building.arms_dealer, ~generals_power.scud_launcher, ~techlevel.high
@@ -1159,6 +1176,7 @@ vehicle.inferno_cannon:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle
 		BuildAtProductionType: WarFactory
 		BuildPaletteOrder: 9
+		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~techlevel.medium
@@ -1219,6 +1237,7 @@ vehicle.paladin_tank:
 	Buildable:
 		Queue: queue.usa_vehicle
 		BuildPaletteOrder: 7
+		ForceIconLocation: true
 		BuildDuration: 300
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~generals_power.paladin_tank, ~techlevel.high
@@ -1294,6 +1313,7 @@ vehicle.marauder_tank:
 	Buildable:
 		Queue: queue.gla_vehicle
 		BuildPaletteOrder: 10
+		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, building.palace, ~generals_power.marauder_tank, ~techlevel.high
@@ -1387,7 +1407,8 @@ vehicle.overlord_tank:
 		Modifier: 50
 	Buildable:
 		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
-		BuildPaletteOrder: 8
+		BuildPaletteOrder: 6
+		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~techlevel.high
@@ -1521,7 +1542,8 @@ vehicle.bomb_truck:
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
-		BuildPaletteOrder: 8
+		BuildPaletteOrder: 7
+		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~building.arms_dealer, ~techlevel.high
@@ -1639,6 +1661,7 @@ vehicle.nuke_cannon:
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle
 		BuildPaletteOrder: 10
+		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, ~generals_power.nuke_cannon, ~techlevel.high
@@ -1700,6 +1723,8 @@ vehicle.nuke_cannon.nuke:
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@REVEAL: ^Reveal200
 	Buildable:
+		BuildPaletteOrder: 0
+		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Description: Allows construction around themselves.
@@ -1739,7 +1764,6 @@ vehicle.usa_mcc:
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Buildable:
 		Queue: queue.usa_command_center
-		BuildPaletteOrder: 1
 		Prerequisites: building.usa_command_center, ~techlevel.infonly
 	Tooltip:
 		Name: USA Construction Vehicle
@@ -1785,7 +1809,6 @@ vehicle.gla_mcc:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Buildable:
 		Queue: queue.gla_command_center
-		BuildPaletteOrder: 1
 		Prerequisites: building.gla_command_center, ~techlevel.infonly
 	Tooltip:
 		Name: GLA Construction Vehicle
@@ -1813,7 +1836,6 @@ vehicle.prc_mcc:
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.prc_command_center
-		BuildPaletteOrder: 1
 		Prerequisites: building.prc_command_center, ~techlevel.infonly
 	Tooltip:
 		Name: PRC Construction Vehicle

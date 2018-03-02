@@ -73,7 +73,8 @@ infantry.worker:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal100
 	Buildable:
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 0
+		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Description: General-purpose infantry armed with a automatic rifle.
@@ -317,7 +318,8 @@ infantry.conscript:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		BuildPaletteOrder: 2
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Description: Anti-tank & anti-air infantry.
@@ -436,7 +438,8 @@ infantry.pathfinder:
 		Name: Pathfinder
 	Buildable:
 		Queue: queue.usa_infantry
-		BuildPaletteOrder: 4
+		BuildPaletteOrder: 3
+		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_barracks, building.strategy_center, ~generals_power.pathfinder, ~techlevel.medium
@@ -483,7 +486,8 @@ infantry.terrorist:
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.gla_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
-		BuildPaletteOrder: 4
+		BuildPaletteOrder: 3
+		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.low
@@ -544,7 +548,8 @@ infantry.flamethrower:
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.soviet_infantry
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 2
+		ForceIconLocation: true
 		Prerequisites: tech.flame_tower, ~techlevel.low
 		Description: Advanced anti-structure infantry.
 	Valued:
@@ -646,7 +651,8 @@ infantry.angry_mob:
 	-AppearsOnRadar:
 	Buildable:
 		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
-		BuildPaletteOrder: 5
+		BuildPaletteOrder: 4
+		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_barracks, building.palace, ~techlevel.medium
@@ -717,7 +723,8 @@ infantry.hacker:
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.prc_infantry, queue.inf_gen_infantry
-		BuildPaletteOrder: 4
+		BuildPaletteOrder: 3
+		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_barracks, building.propaganda_center, ~techlevel.medium
@@ -811,6 +818,7 @@ infantry.hijacker:
 	Buildable:
 		Queue: queue.gla_infantry
 		BuildPaletteOrder: 7
+		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~generals_power.hijacker, ~techlevel.high
@@ -875,7 +883,7 @@ infantry.colonel_burton:
 		Name: Colonel Burton
 	Buildable:
 		Queue: queue.usa_infantry
-		BuildPaletteOrder: 5
+		BuildPaletteOrder: 4
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_barracks, building.strategy_center, ~techlevel.high
@@ -939,7 +947,8 @@ infantry.jarmen_kell:
 		Name: Jarmen Kell
 	Buildable:
 		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.stealth_gen_infantry
-		BuildPaletteOrder: 8
+		BuildPaletteOrder: 6
+		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_barracks, building.palace, !prerequisite.enough_jarmen_kell, ~techlevel.high
@@ -1015,6 +1024,7 @@ infantry.black_lotus:
 	Buildable:
 		Queue: queue.prc_infantry, queue.inf_gen_infantry
 		BuildPaletteOrder: 4
+		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_barracks, building.propaganda_center, ~techlevel.high
@@ -1107,7 +1117,8 @@ infantry.zombie:
 		Name: Zombie
 	Buildable:
 		Queue: queue.bio_lab
-		BuildPaletteOrder: 199
+		BuildPaletteOrder: 0
+		ForceIconLocation: true
 		Prerequisites: ~tech.bio_lab
 		Description: Slow undead. Attacks in close combat.
 	Health:
@@ -1138,7 +1149,8 @@ infantry.giant_ant:
 		GenericName: Ant
 	Buildable:
 		Queue: queue.bio_lab
-		BuildPaletteOrder: 200
+		BuildPaletteOrder: 2
+		ForceIconLocation: true
 		Prerequisites: ~tech.bio_lab
 		Description: Irradiated insect that grew oversize.
 	Selectable:
