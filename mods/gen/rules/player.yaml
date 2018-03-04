@@ -1,6 +1,7 @@
 Player:
 	AlwaysVisible:
 	TechTree:
+	ConditionManager:
 	ClassicProductionQueue@General:
 		Type: General
 		LowPowerSlowdown: 1
@@ -75,6 +76,20 @@ Player:
 	ResourceStorageWarning:
 	PlayerExperience:
 	NydusCounter:
+	ResourcePurifier@WORKER_SHOES:
+		Modifier: 10
+		HarvestersToPurify: infantry.worker
+		RequiresCondition: worker_shoes
+	ResourcePurifier@SUPPLY_LINES:
+		Modifier: 10
+		HarvestersToPurify: aircraft.chinook, aircraft.chinook.air, aircraft.combat.chinook
+		RequiresCondition: supply_lines
+	GrantConditionOnPrerequisite@WORKER_SHOES:
+		Condition: worker_shoes
+		Prerequisites: upgrade.worker_shoes
+	GrantConditionOnPrerequisite@SUPPLY_LINES:
+		Condition: supply_lines
+		Prerequisites: upgrade.supply_lines
 	Production:
 		Produces: General
 	SpawnActorPower@EMERGENCY_REPAIR1:

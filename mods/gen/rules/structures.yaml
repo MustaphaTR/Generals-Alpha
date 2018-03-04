@@ -2396,6 +2396,7 @@ building.detention_camp:
 building.supply_drop_zone:
 	Inherits: ^Building
 	Inherits@SHAPE: ^2x2Shape
+	Inherits@SUPPLY_LINES: ^AffectedBySupplyLines
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Inherits@REVEAL: ^Reveal100
 	HitShape:

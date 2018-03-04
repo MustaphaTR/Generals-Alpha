@@ -331,7 +331,7 @@ upgrade.adv_training:
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: building.strategy_center, ~techlevel.medium
+		Prerequisites: ~techlevel.medium
 		Description: Doubles the rate units gain veterancy.
 		QueuedAudio: NoAudio
 		ReadyAudio: ConstructionComplete
@@ -347,7 +347,7 @@ upgrade.drone_armor:
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 1000
-		Prerequisites: building.strategy_center, ~techlevel.medium
+		Prerequisites: ~techlevel.medium
 		Description: Increases Drones' armor by 50%.
 		QueuedAudio: NoAudio
 		ReadyAudio: ConstructionComplete
@@ -363,12 +363,28 @@ upgrade.composite_armor:
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: building.strategy_center, ~techlevel.medium
+		Prerequisites: ~techlevel.medium
 		Description: Increases Crusader Tank armor by 40%.\n\nIncreases Paladin Tank armor by 20%.
 		QueuedAudio: NoAudio
 		ReadyAudio: CompositeArmor
 	Valued:
 		Cost: 2000
+
+upgrade.supply_lines:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Supply Lines
+	Buildable:
+		Queue: queue.strategy_center
+		BuildPaletteOrder: 6
+		ForceIconLocation: true
+		BuildDuration: 1500
+		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
+		Description: Increases output from Supply Centers, Supply Drop Zones and Oil Derricks by 10%.
+		QueuedAudio: NoAudio
+		ReadyAudio: SupplyLines
+	Valued:
+		Cost: 800
 
 upgrade.camouflage:
 	Inherits: ^default.upgrade
@@ -590,7 +606,7 @@ upgrade.worker_shoes:
 		ForceIconLocation: true
 		BuildDuration: 250
 		Prerequisites: building.black_market, ~techlevel.high, ~prerequisite.zh_units
-		Description: Increases worker speed by 10%.
+		Description: Increases worker speed and output by 10%.
 		QueuedAudio: NoAudio
 		ReadyAudio: WorkerShoes
 	Valued:
