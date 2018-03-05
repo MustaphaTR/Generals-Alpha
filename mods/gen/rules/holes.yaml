@@ -1,77 +1,60 @@
 hole.command_center:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^3x3Shape
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: 0,0,0, 768,0,0, -768,0,0, 0,768,0, 0,-768,0
 	Building:
-		Footprint: XxX xxx XxX
+		Footprint: xxx xxx xxx
 		Dimensions: 3,3
 	Tooltip:
 		Name: GLA Hole (Command Center)
 	TransformOnCapture:
 		IntoActor: building.gla_command_center
 	RenderSprites:
-		Scale: 3
-		Image: minv
+		Image: hole.3x3
 
 hole.barracks:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^2x2Shape
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: 0,0,0, 512,0,0, -512,0,0, 0,512,0, 0,-512,0
 	Building:
-		Footprint: XX XX
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: GLA Hole (Barracks)
 	TransformOnCapture:
 		IntoActor: building.gla_barracks
 	RenderSprites:
-		Scale: 2
-		Image: minv
+		Image: hole.2x2
 
 hole.supply_stash:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^2x2Shape
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: 0,0,0, 512,0,0, -512,0,0, 0,512,0, 0,-512,0
 	Building:
-		Footprint: XX XX
+		Footprint: xx x=
 		Dimensions: 2,2
 	Tooltip:
 		Name: GLA Hole (Supply Stash)
 	TransformOnCapture:
 		IntoActor: building.gla_supply_stash.no_free_actor
 	RenderSprites:
-		Scale: 2
-		Image: minv
+		Image: hole.supply_stash
 
 hole.arms_dealer:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^3x3Shape
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: 0,0,0, 768,0,0, -768,0,0, 0,768,0, 0,-768,0
 	Building:
-		Footprint: XxX xxx XxX
+		Footprint: xxx xxx ===
 		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: GLA Hole (Arms Dealer)
 	TransformOnCapture:
 		IntoActor: building.arms_dealer
 	RenderSprites:
-		Scale: 3
-		Image: minv
+		Image: hole.3x2
 
 hole.palace:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^3x2Shape
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: 0,0,0, 640,0,0, -640,0,0, 0,640,0, 0,-640,0
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
@@ -80,8 +63,7 @@ hole.palace:
 	TransformOnCapture:
 		IntoActor: building.palace
 	RenderSprites:
-		Scale: 2.5
-		Image: minv
+		Image: hole.3x2
 
 hole.black_market:
 	Inherits: ^Hole
@@ -90,24 +72,20 @@ hole.black_market:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 512,0,0, -512,0,0, 0,512,0, 0,-512,0
 	Building:
-		Footprint: XX XX
+		Footprint: xx xx
 		Dimensions: 2,2
 	Tooltip:
 		Name: GLA Hole (Black Market)
 	TransformOnCapture:
 		IntoActor: building.black_market
 	RenderSprites:
-		Scale: 2
-		Image: minv
+		Image: hole.2x2
 
 hole.scud_storm:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^2x2Shape
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: 0,0,0, 512,0,0, -512,0,0, 0,512,0, 0,-512,0
 	Building:
-		Footprint: XX XX
+		Footprint: xx xx
 		Dimensions: 2,2
 	Tooltip:
 		Name: GLA Hole (Scud Storm)
@@ -120,39 +98,31 @@ hole.scud_storm:
 		Condition: limited_sw
 		Prerequisites: prerequisite.limited_sw
 	RenderSprites:
-		Scale: 2
-		Image: minv
+		Image: hole.2x2
 
 hole.tunnel_network:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^2x2Shape
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: 0,0,0, 512,0,0, -512,0,0, 0,512,0, 0,-512,0
 	Building:
-		Footprint: XX XX
+		Footprint: xx xx
 		Dimensions: 2,2
 	Tooltip:
 		Name: GLA Hole (Tunnel Network)
 	TransformOnCapture:
 		IntoActor: building.tunnel_network.no_free_actor
+	-WithBuildingBib:
 	RenderSprites:
-		Scale: 2
-		Image: minv
+		Image: hole.2x2
 
 hole.stinger_site:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^2x2Shape
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: 0,0,0, 512,0,0, -512,0,0, 0,512,0, 0,-512,0
 	Building:
-		Footprint: XX XX
+		Footprint: xx xx
 		Dimensions: 2,2
 	Tooltip:
 		Name: GLA Hole (Stinger Site)
 	TransformOnCapture:
 		IntoActor: building.stinger_site
 	RenderSprites:
-		Scale: 2
-		Image: minv
+		Image: hole.2x2
