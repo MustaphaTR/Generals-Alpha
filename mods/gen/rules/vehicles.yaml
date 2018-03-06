@@ -1785,6 +1785,7 @@ vehicle.usa_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
+		SpectatorUIOrder: 1
 	ProductionQueue@LASER_BUILDING:
 		Type: queue.laser_gen_building
 		Factions: laser
@@ -1792,6 +1793,7 @@ vehicle.usa_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
+		SpectatorUIOrder: 2
 	ProductionQueue@SUPER_BUILDING:
 		Type: queue.super_gen_building
 		Factions: super
@@ -1799,6 +1801,7 @@ vehicle.usa_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
+		SpectatorUIOrder: 3
 	Voiced:
 		VoiceSet: USAMCCVoice
 	WithTextDecoration@SIDE:
@@ -1826,6 +1829,7 @@ vehicle.gla_mcc:
 		RequireOwner: false
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
+		SpectatorUIOrder: 4
 	Voiced:
 		VoiceSet: GLAMCCVoice
 	WithTextDecoration@SIDE:
@@ -1857,6 +1861,7 @@ vehicle.prc_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
+		SpectatorUIOrder: 5
 	ProductionQueue@INF_BUILDING:
 		Type: queue.inf_gen_building
 		Factions: inf
@@ -1864,6 +1869,7 @@ vehicle.prc_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
+		SpectatorUIOrder: 6
 	ProductionQueue@NUKE_BUILDING:
 		Type: queue.nuke_gen_building
 		Factions: nuke
@@ -1871,6 +1877,7 @@ vehicle.prc_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
+		SpectatorUIOrder: 7
 	Voiced:
 		VoiceSet: PRCMCCVoice
 	WithTextDecoration@SIDE:
