@@ -27,6 +27,7 @@
 ^default.strategy:
 	Inherits: ^default.upgrade
 	Buildable:
+		Queue: queue.strategy_center, queue.air_gen_strategy_center
 		BuildDuration: 175
 	Valued:
 		Cost: 0
@@ -327,9 +328,8 @@ upgrade.adv_training:
 	Tooltip:
 		Name: Advanced Training
 	Buildable:
-		Queue: queue.strategy_center
+		Queue: queue.strategy_center, queue.air_gen_strategy_center
 		BuildPaletteOrder: 3
-		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: ~techlevel.medium
 		Description: Doubles the rate units gain veterancy.
@@ -343,9 +343,8 @@ upgrade.drone_armor:
 	Tooltip:
 		Name: Drone Armor
 	Buildable:
-		Queue: queue.strategy_center
+		Queue: queue.strategy_center, queue.air_gen_strategy_center
 		BuildPaletteOrder: 4
-		ForceIconLocation: true
 		BuildDuration: 1000
 		Prerequisites: ~techlevel.medium
 		Description: Increases Drones' armor by 50%.
@@ -361,7 +360,6 @@ upgrade.composite_armor:
 	Buildable:
 		Queue: queue.strategy_center
 		BuildPaletteOrder: 5
-		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: ~techlevel.medium
 		Description: Increases Crusader Tank armor by 40%.\n\nIncreases Paladin Tank armor by 20%.
@@ -375,9 +373,8 @@ upgrade.supply_lines:
 	Tooltip:
 		Name: Supply Lines
 	Buildable:
-		Queue: queue.strategy_center
+		Queue: queue.strategy_center, queue.air_gen_strategy_center
 		BuildPaletteOrder: 6
-		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
 		Description: Increases output from Supply Centers, Supply Drop Zones and Oil Derricks by 10%.
@@ -854,7 +851,6 @@ strategy.bombardment:
 	Tooltip:
 		Name: Bombardment
 	Buildable:
-		Queue: queue.strategy_center
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		Prerequisites: ~techlevel.infonly
@@ -867,7 +863,6 @@ strategy.search_and_destroy:
 	Tooltip:
 		Name: Search and Destroy
 	Buildable:
-		Queue: queue.strategy_center
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		Prerequisites: ~techlevel.infonly
@@ -880,7 +875,6 @@ strategy.hold_the_line:
 	Tooltip:
 		Name: Hold the Line
 	Buildable:
-		Queue: queue.strategy_center
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		Prerequisites: ~techlevel.infonly
