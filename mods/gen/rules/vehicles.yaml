@@ -433,7 +433,7 @@ vehicle.battlemaster_tank:
 	Inherits@REVEAL: ^Reveal150
 	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
 	Buildable:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
 		BuildAtProductionType: WarFactory
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
@@ -449,6 +449,9 @@ vehicle.battlemaster_tank:
 		HP: 400
 	Armor:
 		Type: vehicle.tank
+	Selectable:
+		Class: vehicle.gatling_tank
+		DecorationBounds: 28,28
 	Mobile:
 		Speed: 25
 		Voice: Move
@@ -488,8 +491,16 @@ vehicle.battlemaster_tank:
 	ProducibleWithLevel:
 		InitialLevels: 2
 		Prerequisites: generals_power.battlemaster_training
-	Selectable:
-		DecorationBounds: 28,28
+	RenderSprites:
+		Image: vehicle.battlemaster_tank
+
+vehicle.battlemaster_tank.tank:
+	Inherits: vehicle.battlemaster_tank
+	Buildable:
+		Queue: queue.tank_gen_vehicle
+		BuildDuration: 300
+	Valued:
+		Cost: 700
 
 vehicle.ambulance:
 	Inherits: ^Vehicle
@@ -675,7 +686,7 @@ vehicle.gatling_tank:
 	Tooltip:
 		Name: Gatling Tank
 	Buildable:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -691,6 +702,8 @@ vehicle.gatling_tank:
 		HP: 300
 	Armor:
 		Type: vehicle.anti-air
+	Selectable:
+		Class: vehicle.gatling_tank
 	Turreted:
 		TurnSpeed: 8
 		Offset: 0,0,160
@@ -725,8 +738,17 @@ vehicle.gatling_tank:
 		Weapons: debris.gatling_tank
 		Pieces: 1, 1
 		Range: 1c0, 1c0
+	RenderSprites:
+		Image: vehicle.gatling_tank
 	Voiced:
 		VoiceSet: GatlingTankVoice
+
+vehicle.gatling_tank.tank:
+	Inherits: vehicle.gatling_tank
+	Buildable:
+		Queue: queue.tank_gen_vehicle
+	Valued:
+		Cost: 700
 
 vehicle.toxin_tractor:
 	Inherits: ^Tank
