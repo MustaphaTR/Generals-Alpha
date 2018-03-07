@@ -661,7 +661,7 @@ building.prc_command_center:
 		Description: Tank Drop
 		LongDesc: A Badger drops 1 Battlemaster Tank\nanywhere on the map.
 		UnitType: aircraft.badger.tank_drop
-		DropItems: vehicle.battlemaster_tank
+		DropItems: vehicle.battlemaster_tank.tank
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
 		AllowImpassableCells: false
@@ -681,7 +681,7 @@ building.prc_command_center:
 		Description: Tank Drop
 		LongDesc: A Badger drops 2 Battlemaster Tanks\nanywhere on the map.
 		UnitType: aircraft.badger.tank_drop
-		DropItems: vehicle.battlemaster_tank, vehicle.battlemaster_tank
+		DropItems: vehicle.battlemaster_tank.tank, vehicle.battlemaster_tank.tank
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
 		AllowImpassableCells: false
@@ -701,7 +701,7 @@ building.prc_command_center:
 		Description: Tank Drop
 		LongDesc: A Badger drops 4 Battlemaster Tanks\nanywhere on the map.
 		UnitType: aircraft.badger.tank_drop
-		DropItems: vehicle.battlemaster_tank, vehicle.battlemaster_tank, vehicle.battlemaster_tank, vehicle.battlemaster_tank
+		DropItems: vehicle.battlemaster_tank.tank, vehicle.battlemaster_tank.tank, vehicle.battlemaster_tank.tank, vehicle.battlemaster_tank.tank
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
 		AllowImpassableCells: false
