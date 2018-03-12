@@ -837,6 +837,34 @@ aircraft.comanche:
 	Inherits@PILOT: ^EjectsPilotOnAir
 	Inherits@REVEAL: ^Reveal180
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	RevealsShroud:
+		Type: CenterPosition
+		RequiresCondition: !zh_units
+	RevealsShroud@SEARCH_AND_DESTROY:
+		Type: CenterPosition
+		RequiresCondition: search_and_destroy && !zh_units
+	RevealsShroud@INTELLIGENCE:
+		Type: CenterPosition
+		RequiresCondition: intelligence && !zh_units
+	RevealOnDeath:
+		RequiresCondition: !zh_units
+	RevealsShroud@ZH:
+		Range: 5c0
+		Type: CenterPosition
+		RequiresCondition: zh_units
+	RevealsShroud@SEARCH_AND_DESTROY_ZH:
+		Range: 6c0
+		Type: CenterPosition
+		RequiresCondition: search_and_destroy && zh_units
+	RevealsShroud@INTELLIGENCE_ZH:
+		Range: 5c0
+		ValidStances: Enemy
+		Type: CenterPosition
+		RequiresCondition: intelligence && zh_units
+	RevealOnDeath@ZH:
+		Duration: 100
+		Radius: 2c512
+		RequiresCondition: zh_units
 	Buildable:
 		Queue: queue.usa_aircraft, queue.air_gen_aircraft
 		BuildAtProductionType: queue.usa_helicopter
@@ -876,12 +904,6 @@ aircraft.comanche:
 		AmmoCondition: ammo
 	AttackHeli:
 		FacingTolerance: 20
-	RevealsShroud:
-		Type: CenterPosition
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Type: CenterPosition
-	RevealsShroud@INTELLIGENCE:
-		Type: CenterPosition
 	Aircraft:
 		LandWhenIdle: false
 		InitialFacing: 224
@@ -929,7 +951,7 @@ aircraft.helix:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@REVEAL: ^Reveal200
+	Inherits@REVEAL: ^Reveal300
 	Inherits@UPGRADE: ^CanHavePRCVehicleUpgrades
 	Buildable:
 		Queue: queue.prc_aircraft
