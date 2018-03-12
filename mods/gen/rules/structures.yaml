@@ -2313,22 +2313,30 @@ building.palace:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.tech_center
 	Production:
-		Produces: queue.palace, queue.stealth_gen_palace
+		Produces: queue.palace, queue.toxin_gen_palace, queue.stealth_gen_palace
 		PauseOnCondition: emp || hacked
 	ProductionQueue@Vanilla:
 		Type: queue.palace
-		Factions: usa, air, laser, super, gla, toxin, demo, prc, inf, nuke, tank
+		Factions: usa, air, laser, super, gla, demo, prc, inf, nuke, tank
 		Group: Tech
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 41
+	ProductionQueue@Toxin:
+		Type: queue.toxin_gen_palace
+		Factions: toxin
+		Group: Tech
+		LowPowerSlowdown: 3
+		SpectatorUIOrder: 42
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_palace
 		Factions: stealth
 		Group: Tech
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 42
+		SpectatorUIOrder: 43
 	ProductionBar@Vanilla:
 		ProductionType: queue.palace
+	ProductionBar@Toxin:
+		ProductionType: queue.toxin_gen_palace
 	ProductionBar@Stealth:
 		ProductionType: queue.stealth_gen_palace
 	Exit:
@@ -2377,13 +2385,13 @@ building.propaganda_center:
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke
 		Group: Tech
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 43
+		SpectatorUIOrder: 44
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_propaganda_center
 		Factions: tank
 		Group: Tech
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 44
+		SpectatorUIOrder: 45
 	ProductionBar@Vanilla:
 		ProductionType: queue.propaganda_center
 	ProductionBar@Tank:
@@ -2530,7 +2538,7 @@ building.black_market:
 		Group: Tech
 		RequireOwner: false
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 45
+		SpectatorUIOrder: 46
 	ProductionBar:
 	Exit:
 	CashTrickler:
@@ -2897,7 +2905,7 @@ building.missile_silo:
 		Group: Tech
 		RequireOwner: false
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 46
+		SpectatorUIOrder: 47
 	ProductionBar:
 	Exit:
 	NukePower:

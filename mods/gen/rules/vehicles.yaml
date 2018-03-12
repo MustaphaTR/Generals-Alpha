@@ -352,6 +352,12 @@ vehicle.scorpion_tank:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
+	GrantConditionOnFaction@TOXIN_SHELLS:
+		Condition: toxin_shells
+		Factions: toxin
+	GrantConditionOnFaction@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Factions: toxin
 	AcceptsDeliveredExperience:
 	ThrowsShrapnel:
 		Weapons: debris.scorpion_tank
@@ -796,6 +802,9 @@ vehicle.toxin_tractor:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
+	GrantConditionOnFaction@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Factions: toxin
 	-DamagedByRadioactivity@ANTHRAX_ALPHA:
 	-DamagedByRadioactivity@ANTHRAX_BETA:
 	AcceptsDeliveredExperience:
@@ -1171,6 +1180,9 @@ vehicle.scud_launcher:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
+	GrantConditionOnFaction@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Factions: toxin
 	AmmoPool:
 		Ammo: 1
 		PipCount: 0
@@ -1388,6 +1400,12 @@ vehicle.marauder_tank:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
+	GrantConditionOnFaction@TOXIN_SHELLS:
+		Condition: toxin_shells
+		Factions: toxin
+	GrantConditionOnFaction@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Factions: toxin
 	AcceptsDeliveredExperience:
 	ThrowsShrapnel:
 		Weapons: debris.scorpion_tank
@@ -1627,6 +1645,9 @@ vehicle.bomb_truck:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
+	GrantConditionOnFaction@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Factions: toxin
 	-WithFacingSpriteBody:
 	WithDisguisingFacingSpriteBody:
 	WithDisguisingSpriteTurret:
