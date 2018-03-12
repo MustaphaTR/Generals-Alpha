@@ -167,13 +167,25 @@ aircraft.mig:
 	Armor:
 		Type: aircraft.normal
 	Armament@Red:
-		Weapon: missile.mig
+		Weapon: missile.mig.ground
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
 		RequiresCondition: !black_napalm
 		PauseOnCondition: !ammo
 	Armament@Blue:
-		Weapon: missile.mig.blue
+		Weapon: missile.mig.ground.blue
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+		RequiresCondition: black_napalm
+		PauseOnCondition: !ammo
+	Armament@Red_AA:
+		Weapon: missile.mig.air
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+		RequiresCondition: !black_napalm
+		PauseOnCondition: !ammo
+	Armament@Blue_AA:
+		Weapon: missile.mig.air.blue
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
 		RequiresCondition: black_napalm
@@ -253,8 +265,13 @@ aircraft.raptor:
 		HP: 160
 	Armor:
 		Type: aircraft.normal
-	Armament:
-		Weapon: missile.raptor
+	Armament@AG:
+		Weapon: missile.raptor.ground
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+		PauseOnCondition: !ammo
+	Armament@AA:
+		Weapon: missile.raptor.air
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
 		PauseOnCondition: !ammo
@@ -313,9 +330,10 @@ aircraft.king_raptor:
 		Name: King Raptor
 	Health:
 		HP: 240
-	Armament:
-		Weapon: missile.king_raptor
-		PauseOnCondition: !ammo
+	Armament@AG:
+		Weapon: missile.king_raptor.ground
+	Armament@AA:
+		Weapon: missile.king_raptor.air
 	Armament@PDLASER:
 		Weapon: laser.king_raptor
 		LocalOffset: 0,213,-85
