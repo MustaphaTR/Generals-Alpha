@@ -380,7 +380,7 @@ vehicle.crusader_tank:
 	Inherits@REVEAL: ^Reveal125
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
+		Queue: queue.usa_vehicle
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -428,6 +428,32 @@ vehicle.crusader_tank:
 		VoiceSet: CrusaderTankVoice
 	Selectable:
 		DecorationBounds: 28,28
+
+vehicle.laser_tank:
+	Inherits: vehicle.crusader_tank
+	Inherits@LOWPOWER: ^DisableOnLowPower
+	Inherits@REVEAL: ^Reveal150
+	Buildable:
+		Queue: queue.laser_gen_vehicle
+		Description: Medium armored tank armed with lasers.\n\nRequires power to operate.
+	Tooltip:
+		Name: Laser Tank
+	Armament:
+		Weapon: laser.laser_tank
+	Power:
+		Amount: -1
+	Mobile:
+		RequiresCondition: !hacked && !driver_killed && !emp && !lowpower
+	AttackTurreted:
+		RequiresCondition: !hacked && !driver_killed && !emp && !lowpower
+	MobSpawnerMaster@SCOUT_DRONE:
+		RequiresCondition: scout_drone && !hacked && !emp && !driver_killed && !lowpower
+	MobSpawnerMaster@BATTLE_DRONE:
+		RequiresCondition: battle_drone && !hacked && !emp && !driver_killed && !lowpower
+	MobSpawnerMaster@HELLFIRE_DRONE:
+		RequiresCondition: hellfire_drone && !hacked && !emp && !driver_killed && !lowpower
+	Voiced:
+		VoiceSet: LaserTankVoice
 
 vehicle.battlemaster_tank:
 	Inherits: ^Tank

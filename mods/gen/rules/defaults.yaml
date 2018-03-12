@@ -926,21 +926,21 @@
 		ExitByBudding: false
 		AggregateHealth: false
 		SpawnIsGroundUnit: true
-		RequiresCondition: scout_drone && !emp && !driver_killed
+		RequiresCondition: scout_drone && !hacked && !emp && !driver_killed
 	MobSpawnerMaster@BATTLE_DRONE:
 		Actors: aircraft.battle_drone
 		SpawnReplaceDelay: 1500
 		ExitByBudding: false
 		AggregateHealth: false
 		SpawnIsGroundUnit: true
-		RequiresCondition: battle_drone && !emp && !driver_killed
+		RequiresCondition: battle_drone && !hacked && !emp && !driver_killed
 	MobSpawnerMaster@HELLFIRE_DRONE:
 		Actors: aircraft.hellfire_drone
 		SpawnReplaceDelay: 1500
 		ExitByBudding: false
 		AggregateHealth: false
 		SpawnIsGroundUnit: true
-		RequiresCondition: hellfire_drone && !emp && !driver_killed
+		RequiresCondition: hellfire_drone && !hacked && !emp && !driver_killed
 	Production:
 		Produces: queue.drone
 		PauseOnCondition: emp || hacked
@@ -1052,7 +1052,7 @@
 			Gems: 70
 			Beach: 40
 		TurnSpeed: 5
-		RequiresCondition: !driver_killed && !disabled && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:

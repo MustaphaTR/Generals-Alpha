@@ -218,6 +218,17 @@ hack.firestorm.blue:
 	Warhead@1Dam: SpreadDamage
 		Damage: 45
 
+laser.laser_tank:
+	Inherits: cannon.crusader_tank
+	Report: vpalwe2d.aud
+	-Projectile:
+	Projectile: LaserZap
+		Width: 100
+		ZOffset: 2047
+		Color: FF0000
+	Warhead@1Dam: SpreadDamage
+		Damage: 80
+
 laser.paladin_tank:
 	ReloadDelay: 25
 	Range: 3c0
