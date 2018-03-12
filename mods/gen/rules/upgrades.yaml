@@ -390,7 +390,6 @@ upgrade.camouflage:
 	Buildable:
 		Queue: queue.palace
 		BuildPaletteOrder: 0
-		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Allows Rebels to cloak while not firing.
@@ -404,9 +403,8 @@ upgrade.arm_the_mob:
 	Tooltip:
 		Name: Arm The Mob
 	Buildable:
-		Queue: queue.palace
+		Queue: queue.palace, queue.stealth_gen_palace
 		BuildPaletteOrder: 1
-		ForceIconLocation: true
 		BuildDuration: 750
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Replaces pistols of Angry Mobs with AK-47s.
@@ -422,7 +420,6 @@ upgrade.toxin_shells:
 	Buildable:
 		Queue: queue.palace
 		BuildPaletteOrder: 2
-		ForceIconLocation: true
 		BuildDuration: 750
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Makes Scorpion and Marauder tank shells leave toxin.
@@ -436,9 +433,8 @@ upgrade.anthrax_beta:
 	Tooltip:
 		Name: Anthrax Beta
 	Buildable:
-		Queue: queue.palace
+		Queue: queue.palace, queue.stealth_gen_palace
 		BuildPaletteOrder: 3
-		ForceIconLocation: true
 		BuildDuration: 750
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Increases all toxin weapons' damage by 25%.
@@ -452,9 +448,8 @@ upgrade.fortified_structures:
 	Tooltip:
 		Name: Fortified Structures
 	Buildable:
-		Queue: queue.palace
+		Queue: queue.palace, queue.stealth_gen_palace
 		BuildPaletteOrder: 4
-		ForceIconLocation: true
 		BuildDuration: 750
 		Prerequisites: building.palace, ~techlevel.medium, ~prerequisite.zh_units
 		Description: Increases structure armor by 33%.
