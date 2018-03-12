@@ -876,8 +876,7 @@ infantry.hijacker.stealth:
 		Queue: queue.stealth_gen_infantry
 		Prerequisites: ~techlevel.high
 	Cloak:
-		InitialDelay: 0
-		CloakDelay: 60
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
 
 infantry.colonel_burton:
 	Inherits: ^Soldier
