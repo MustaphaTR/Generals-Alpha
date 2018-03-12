@@ -825,7 +825,7 @@ infantry.hijacker:
 	Inherits@REVEAL: ^Reveal100
 	Buildable:
 		Queue: queue.gla_infantry
-		BuildPaletteOrder: 7
+		BuildPaletteOrder: 6
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -955,8 +955,7 @@ infantry.jarmen_kell:
 		Name: Jarmen Kell
 	Buildable:
 		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.stealth_gen_infantry
-		BuildPaletteOrder: 6
-		ForceIconLocation: true
+		BuildPaletteOrder: 7
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.gla_barracks, building.palace, !prerequisite.enough_jarmen_kell, ~techlevel.high
