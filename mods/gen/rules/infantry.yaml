@@ -160,6 +160,9 @@ infantry.rebel:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	GrantConditionOnFaction@CAMOUFLAGE:
+		Condition: camouflage
+		Factions: stealth
 	GrantConditionOnPrerequisite@CAMOUFLAGE:
 		Condition: camouflage
 		Prerequisites: upgrade.camouflage
