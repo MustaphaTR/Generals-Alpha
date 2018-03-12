@@ -2599,6 +2599,8 @@ building.speaker_tower:
 		Type: Rectangle
 			TopLeft: -512, -512
 			BottomRight: 512, 512
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense
 	WithRangeCircle:
 		Type: speaker
 		Range: 4c0

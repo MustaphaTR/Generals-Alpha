@@ -311,6 +311,7 @@ capture.black_lotus.anim:
 	ReloadDelay: 15
 	Range: 8c128
 	ValidTargets: Structure
+	InvalidTargets: Hole, Defense
 	TargetActorCenter: true
 	Report: ucapture.wav
 	Projectile: LaserZap
@@ -322,7 +323,7 @@ capture.black_lotus.anim:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Structure
-		InvalidTargets: Hole
+		InvalidTargets: Hole, Defense
 		ValidStances: Enemy, Neutral
 
 capture.black_lotus.end:
@@ -340,7 +341,7 @@ capture.black_lotus.end:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Structure
-		InvalidTargets: Hole
+		InvalidTargets: Hole, Defense
 		ValidStances: Enemy, Neutral
 	Warhead@2Cap: CaptureActor
 		IgnoreCaptureThreshold: true
@@ -388,6 +389,7 @@ disable.hacker.anim:
 	ReloadDelay: 15
 	Range: 3c768
 	ValidTargets: Structure
+	InvalidTargets: Hole
 	TargetActorCenter: true
 	Report: ucapture.wav
 	Projectile: LaserZap
@@ -406,6 +408,7 @@ disable.hacker.end:
 	ReloadDelay: 25
 	Range: 3c768
 	ValidTargets: Structure
+	InvalidTargets: Hole
 	TargetActorCenter: true
 	Report: ucapture.wav
 	Projectile: LaserZap
