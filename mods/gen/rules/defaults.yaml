@@ -420,6 +420,9 @@
 	GrantConditionOnPrerequisite@NUCLEAR_TANKS:
 		Condition: nuclear_tanks
 		Prerequisites: upgrade.nuclear_tanks
+	GrantConditionOnFaction@NUCLEAR_TANKS:
+		Condition: nuclear_tanks
+		Factions: nuke
 
 ^AffectedByUraniumShells:
 	FirepowerMultiplier@URANIUM_SHELLS:
@@ -428,6 +431,9 @@
 	GrantConditionOnPrerequisite@URANIUM_SHELLS:
 		Condition: uranium_shells
 		Prerequisites: upgrade.uranium_shells
+	GrantConditionOnFaction@URANIUM_SHELLS:
+		Condition: uranium_shells
+		Factions: nuke
 
 ^AffectedByLaserGuidedMissiles:
 	FirepowerMultiplier@LASER_GUIDED_MISSILES:

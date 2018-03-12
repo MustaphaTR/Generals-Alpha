@@ -2898,15 +2898,23 @@ building.missile_silo:
 	Selectable:
 		Class: building.missile_silo
 	Production:
-		Produces: queue.missile_silo
+		Produces: queue.missile_silo, queue.just_mine
 		PauseOnCondition: emp || hacked
-	ProductionQueue:
+	ProductionQueue@Vanilla:
 		Type: queue.missile_silo
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, tank
 		Group: Tech
-		RequireOwner: false
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 47
-	ProductionBar:
+	ProductionQueue@Nuke:
+		Type: queue.just_mine
+		Factions: nuke
+		Group: Building
+		LowPowerSlowdown: 3
+	ProductionBar@Vanilla:
+		ProductionType: queue.missile_silo
+	ProductionBar@Nuke:
+		ProductionType: queue.just_mine
 	Exit:
 	NukePower:
 		PauseOnCondition: emp || hacked || lowpower
