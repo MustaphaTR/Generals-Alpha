@@ -247,13 +247,17 @@ vehicle.radar_van:
 	ProvidesRadar:
 		RequiresCondition: !hacked && !emp
 	SpawnActorPower@RADAR_VAN_SCAN:
-		Actor: camera.radar_van_scan
-		Prerequisites: ~upgrade.radar_van_scan
+		Actors:
+			1: camera.radar_van_scan
+		Prerequisites:
+			1: upgrade.radar_van_scan
 		LifeTime: 200
 		ChargeInterval: 750
-		Icon: radarscan
+		Icons:
+			1: radarscan
 		Description: Radar Van Scan
-		LongDesc: Reveals are small area of map for a while.\n\nAlso detects cloaked units in that area.
+		LongDescs:
+			1: Reveals are small area of map for a while.\n\nAlso detects cloaked units in that area.
 		AllowMultiple: true
 		StartFullyCharged: false
 		OrderName: RadarScanPowerInfoOrder

@@ -93,30 +93,24 @@ Player:
 		Prerequisites: upgrade.supply_lines
 	Production:
 		Produces: General
-	SpawnActorPower@EMERGENCY_REPAIR1:
-		Actor: camera.emergency_repair.1
-		Prerequisites: ~prerequisite.command_center, ~generals_power.emergency_repair1, ~!generals_power.emergency_repair2, ~!generals_power.emergency_repair3
+	SpawnActorPower@EMERGENCY_REPAIR:
+		Actors:
+			1: camera.emergency_repair.1
+			2: camera.emergency_repair.2
+			3: camera.emergency_repair.3
+		Prerequisites:
+			1: prerequisite.command_center, generals_power.emergency_repair1
+			2: prerequisite.command_center, generals_power.emergency_repair2
+			3: prerequisite.command_center, generals_power.emergency_repair3
 		ChargeInterval: 6000
-		Icon: repair1
+		Icons:
+			1: repair1
+			2: repair2
+			3: repair3
 		Description: Emergency Repair
-		LongDesc: Repairs vehicles in 3 cell range by 30%.
+		LongDescs:
+			1: Repairs vehicles in 3 cell range by 30%.
+			2: Repairs vehicles in 4 cell range by 60%.
+			3: Repairs vehicles in 5 cell range by 90%.
 		StartFullyCharged: false
-		OrderName: EmergencyRepair1PowerInfoOrder
-	SpawnActorPower@EMERGENCY_REPAIR2:
-		Actor: camera.emergency_repair.2
-		Prerequisites: ~prerequisite.command_center, ~generals_power.emergency_repair2, ~!generals_power.emergency_repair3
-		ChargeInterval: 6000
-		Icon: repair2
-		Description: Emergency Repair
-		LongDesc: Repairs vehicles in 4 cell range by 60%.
-		StartFullyCharged: false
-		OrderName: EmergencyRepair2PowerInfoOrder
-	SpawnActorPower@EMERGENCY_REPAIR3:
-		Actor: camera.emergency_repair.3
-		Prerequisites: ~prerequisite.command_center, ~generals_power.emergency_repair3
-		ChargeInterval: 6000
-		Icon: repair3
-		Description: Emergency Repair
-		LongDesc: Repairs vehicles in 5 cell range by 90%.
-		StartFullyCharged: false
-		OrderName: EmergencyRepair3PowerInfoOrder
+		OrderName: EmergencyRepairPowerInfoOrder

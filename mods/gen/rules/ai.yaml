@@ -290,8 +290,8 @@ Player:
 				Attractiveness: 1
 				TargetMetric: None
 				CheckRadius: 5c0
-		SupportPowerDecision@a101:
-			OrderName: A101PowerInfoOrder
+		SupportPowerDecision@a10:
+			OrderName: A10PowerInfoOrder
 			MinimumAttractiveness: 2000
 			Consideration@1:
 				Against: Enemy
@@ -305,68 +305,8 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 2c0
-		SupportPowerDecision@a102:
-			OrderName: A102PowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@a103:
-			OrderName: A1032PowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@arty_barrage1:
-			OrderName: ArtilleryBarrage1PowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@arty_barrage2:
-			OrderName: ArtilleryBarrage2PowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@arty_barrage3:
-			OrderName: ArtilleryBarrage3PowerInfoOrder
+		SupportPowerDecision@arty_barrage:
+			OrderName: ArtilleryBarragePowerInfoOrder
 			MinimumAttractiveness: 2000
 			Consideration@1:
 				Against: Enemy
@@ -395,8 +335,8 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 2c0
-		SupportPowerDecision@tankdrop1:
-			OrderName: TankDrop1PowerInfoOrder
+		SupportPowerDecision@tankdrop:
+			OrderName: TankDropPowerInfoOrder
 			MinimumAttractiveness: 5
 			Consideration@1:
 				Against: Enemy
@@ -410,8 +350,8 @@ Player:
 				Attractiveness: -5
 				TargetMetric: None
 				CheckRadius: 8c0
-		SupportPowerDecision@tankdrop2:
-			OrderName: TankDrop2PowerInfoOrder
+		SupportPowerDecision@paradrop:
+			OrderName: ParadropPowerInfoOrder
 			MinimumAttractiveness: 5
 			Consideration@1:
 				Against: Enemy
@@ -425,8 +365,8 @@ Player:
 				Attractiveness: -5
 				TargetMetric: None
 				CheckRadius: 8c0
-		SupportPowerDecision@tankdrop3:
-			OrderName: TankDrop3PowerInfoOrder
+		SupportPowerDecision@paradrop.inf_gen:
+			OrderName: PRCParadropPowerInfoOrder
 			MinimumAttractiveness: 5
 			Consideration@1:
 				Against: Enemy
@@ -440,8 +380,8 @@ Player:
 				Attractiveness: -5
 				TargetMetric: None
 				CheckRadius: 8c0
-		SupportPowerDecision@paradrop1:
-			OrderName: Paradrop1PowerInfoOrder
+		SupportPowerDecision@ambush:
+			OrderName: AmbushPowerInfoOrder
 			MinimumAttractiveness: 5
 			Consideration@1:
 				Against: Enemy
@@ -455,158 +395,8 @@ Player:
 				Attractiveness: -5
 				TargetMetric: None
 				CheckRadius: 8c0
-		SupportPowerDecision@paradrop2:
-			OrderName: Paradrop2PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop3:
-			OrderName: Paradrop3PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop1.inf_gen:
-			OrderName: PRCParadrop1PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop2.inf_gen:
-			OrderName: PRCParadrop2PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop3.inf_gen:
-			OrderName: PRCParadrop3PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@ambush1:
-			OrderName: Ambush1PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@ambush2:
-			OrderName: Ambush2PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@ambush3:
-			OrderName: Ambush3PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@toxin_ambush1:
-			OrderName: ToxinAmbush1PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Infantry
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@toxin_ambush2:
-			OrderName: ToxinAmbush2PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Infantry
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@toxin_ambush3:
-			OrderName: ToxinAmbush3PowerInfoOrder
+		SupportPowerDecision@toxin_ambush:
+			OrderName: ToxinAmbushPowerInfoOrder
 			MinimumAttractiveness: 5
 			Consideration@1:
 				Against: Enemy
@@ -665,7 +455,7 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 7c0
-		SupportPowerDecision@ParticleCannonPower:
+		SupportPowerDecision@particle_cannon:
 			OrderName: IonCannonPowerInfoOrder
 			MinimumAttractiveness: 1000
 			FineScanRadius: 2
@@ -1030,8 +820,8 @@ Player:
 				Attractiveness: 1
 				TargetMetric: None
 				CheckRadius: 5c0
-		SupportPowerDecision@a101:
-			OrderName: A101PowerInfoOrder
+		SupportPowerDecision@a10:
+			OrderName: A10PowerInfoOrder
 			MinimumAttractiveness: 2000
 			Consideration@1:
 				Against: Enemy
@@ -1045,68 +835,8 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 2c0
-		SupportPowerDecision@a102:
-			OrderName: A102PowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@a103:
-			OrderName: A1032PowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@arty_barrage1:
-			OrderName: ArtilleryBarrage1PowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@arty_barrage2:
-			OrderName: ArtilleryBarrage2PowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@arty_barrage3:
-			OrderName: ArtilleryBarrage3PowerInfoOrder
+		SupportPowerDecision@arty_barrage:
+			OrderName: ArtilleryBarragePowerInfoOrder
 			MinimumAttractiveness: 2000
 			Consideration@1:
 				Against: Enemy
@@ -1135,8 +865,8 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 2c0
-		SupportPowerDecision@tankdrop1:
-			OrderName: TankDrop1PowerInfoOrder
+		SupportPowerDecision@tankdrop:
+			OrderName: TankDropPowerInfoOrder
 			MinimumAttractiveness: 5
 			Consideration@1:
 				Against: Enemy
@@ -1150,8 +880,8 @@ Player:
 				Attractiveness: -5
 				TargetMetric: None
 				CheckRadius: 8c0
-		SupportPowerDecision@tankdrop2:
-			OrderName: TankDrop2PowerInfoOrder
+		SupportPowerDecision@paradrop:
+			OrderName: ParadropPowerInfoOrder
 			MinimumAttractiveness: 5
 			Consideration@1:
 				Against: Enemy
@@ -1165,8 +895,8 @@ Player:
 				Attractiveness: -5
 				TargetMetric: None
 				CheckRadius: 8c0
-		SupportPowerDecision@tankdrop3:
-			OrderName: TankDrop3PowerInfoOrder
+		SupportPowerDecision@paradrop.inf_gen:
+			OrderName: PRCParadropPowerInfoOrder
 			MinimumAttractiveness: 5
 			Consideration@1:
 				Against: Enemy
@@ -1180,8 +910,8 @@ Player:
 				Attractiveness: -5
 				TargetMetric: None
 				CheckRadius: 8c0
-		SupportPowerDecision@paradrop1:
-			OrderName: Paradrop1PowerInfoOrder
+		SupportPowerDecision@ambush:
+			OrderName: AmbushPowerInfoOrder
 			MinimumAttractiveness: 5
 			Consideration@1:
 				Against: Enemy
@@ -1195,158 +925,8 @@ Player:
 				Attractiveness: -5
 				TargetMetric: None
 				CheckRadius: 8c0
-		SupportPowerDecision@paradrop2:
-			OrderName: Paradrop2PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop3:
-			OrderName: Paradrop3PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop1.inf_gen:
-			OrderName: PRCParadrop1PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop2.inf_gen:
-			OrderName: PRCParadrop2PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop3.inf_gen:
-			OrderName: PRCParadrop3PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@ambush1:
-			OrderName: Ambush1PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@ambush2:
-			OrderName: Ambush2PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@ambush3:
-			OrderName: Ambush3PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@toxin_ambush1:
-			OrderName: ToxinAmbush1PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Infantry
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@toxin_ambush2:
-			OrderName: ToxinAmbush2PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Infantry
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@toxin_ambush3:
-			OrderName: ToxinAmbush3PowerInfoOrder
+		SupportPowerDecision@toxin_ambush:
+			OrderName: ToxinAmbushPowerInfoOrder
 			MinimumAttractiveness: 5
 			Consideration@1:
 				Against: Enemy
@@ -1405,7 +985,7 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 7c0
-		SupportPowerDecision@ParticleCannonPower:
+		SupportPowerDecision@particle_cannon:
 			OrderName: IonCannonPowerInfoOrder
 			MinimumAttractiveness: 1000
 			FineScanRadius: 2
@@ -1770,8 +1350,8 @@ Player:
 				Attractiveness: 1
 				TargetMetric: None
 				CheckRadius: 5c0
-		SupportPowerDecision@a101:
-			OrderName: A101PowerInfoOrder
+		SupportPowerDecision@a10:
+			OrderName: A10PowerInfoOrder
 			MinimumAttractiveness: 2000
 			Consideration@1:
 				Against: Enemy
@@ -1785,68 +1365,8 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 2c0
-		SupportPowerDecision@a102:
-			OrderName: A102PowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@a103:
-			OrderName: A1032PowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@arty_barrage1:
-			OrderName: ArtilleryBarrage1PowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@arty_barrage2:
-			OrderName: ArtilleryBarrage2PowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@arty_barrage3:
-			OrderName: ArtilleryBarrage3PowerInfoOrder
+		SupportPowerDecision@arty_barrage:
+			OrderName: ArtilleryBarragePowerInfoOrder
 			MinimumAttractiveness: 2000
 			Consideration@1:
 				Against: Enemy
@@ -1875,8 +1395,8 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 2c0
-		SupportPowerDecision@tankdrop1:
-			OrderName: TankDrop1PowerInfoOrder
+		SupportPowerDecision@tankdrop:
+			OrderName: TankDropPowerInfoOrder
 			MinimumAttractiveness: 5
 			Consideration@1:
 				Against: Enemy
@@ -1890,8 +1410,8 @@ Player:
 				Attractiveness: -5
 				TargetMetric: None
 				CheckRadius: 8c0
-		SupportPowerDecision@tankdrop2:
-			OrderName: TankDrop2PowerInfoOrder
+		SupportPowerDecision@paradrop:
+			OrderName: ParadropPowerInfoOrder
 			MinimumAttractiveness: 5
 			Consideration@1:
 				Against: Enemy
@@ -1905,8 +1425,8 @@ Player:
 				Attractiveness: -5
 				TargetMetric: None
 				CheckRadius: 8c0
-		SupportPowerDecision@tankdrop3:
-			OrderName: TankDrop3PowerInfoOrder
+		SupportPowerDecision@paradrop.inf_gen:
+			OrderName: PRCParadropPowerInfoOrder
 			MinimumAttractiveness: 5
 			Consideration@1:
 				Against: Enemy
@@ -1920,8 +1440,8 @@ Player:
 				Attractiveness: -5
 				TargetMetric: None
 				CheckRadius: 8c0
-		SupportPowerDecision@paradrop1:
-			OrderName: Paradrop1PowerInfoOrder
+		SupportPowerDecision@ambush:
+			OrderName: AmbushPowerInfoOrder
 			MinimumAttractiveness: 5
 			Consideration@1:
 				Against: Enemy
@@ -1935,158 +1455,8 @@ Player:
 				Attractiveness: -5
 				TargetMetric: None
 				CheckRadius: 8c0
-		SupportPowerDecision@paradrop2:
-			OrderName: Paradrop2PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop3:
-			OrderName: Paradrop3PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop1.inf_gen:
-			OrderName: PRCParadrop1PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop2.inf_gen:
-			OrderName: PRCParadrop2PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop3.inf_gen:
-			OrderName: PRCParadrop3PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@ambush1:
-			OrderName: Ambush1PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@ambush2:
-			OrderName: Ambush2PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@ambush3:
-			OrderName: Ambush3PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@toxin_ambush1:
-			OrderName: ToxinAmbush1PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Infantry
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@toxin_ambush2:
-			OrderName: ToxinAmbush2PowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Infantry
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@toxin_ambush3:
-			OrderName: ToxinAmbush3PowerInfoOrder
+		SupportPowerDecision@toxin_ambush:
+			OrderName: ToxinAmbushPowerInfoOrder
 			MinimumAttractiveness: 5
 			Consideration@1:
 				Against: Enemy
@@ -2145,7 +1515,7 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 7c0
-		SupportPowerDecision@ParticleCannonPower:
+		SupportPowerDecision@particle_cannon:
 			OrderName: IonCannonPowerInfoOrder
 			MinimumAttractiveness: 1000
 			FineScanRadius: 2

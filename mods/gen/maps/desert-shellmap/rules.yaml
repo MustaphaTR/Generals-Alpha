@@ -210,18 +210,26 @@ vehicle.bomb_truck:
 powerproxy.paradrop:
 	AlwaysVisible:
 	ParatroopersPower:
-		Icon: paradrop2
+		Icons:
+			1: paradrop2
+		Prerequisites:
+			1: building.usa_command_center
 		Description: ParaDrop
-		LongDesc: 2 B-52 drop total of 10 Rangers\nanywhere on the map.
-		UnitType: aircraft.badger.paradrop
-		DropItems: infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger
-		SquadSize: 2
+		LongDescs:
+			1: 2 B-52 drop total of 10 Rangers\nanywhere on the map.
+		UnitTypes:
+			1: aircraft.badger.paradrop
+		DropItems:
+			1: infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger
+		SquadSizes:
+			1: 2
 		SelectTargetSpeechNotification: SelectTarget
 		AllowImpassableCells: false
 		QuantizedFacings: 8
 		CameraActor: camera.paradrop
 		DisplayBeacon: false
-		BeaconPoster: pinficon
+		BeaconPoster:
+			1: paradrop2bcon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles

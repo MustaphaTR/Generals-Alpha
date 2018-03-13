@@ -229,18 +229,26 @@ aircraft.chinook:
 powerproxy.paradrop:
 	AlwaysVisible:
 	ParatroopersPower:
-		Icon: paradrop2
+		Icons:
+			1: paradrop2
+		Prerequisites:
+			1: building.usa_command_center
 		Description: ParaDrop
-		LongDesc: 2 B-52 drop total of 10 Rangers\nanywhere on the map.
-		UnitType: aircraft.badger.paradrop
-		DropItems: infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger
-		SquadSize: 2
+		LongDescs:
+			1: 2 B-52 drop total of 10 Rangers\nanywhere on the map.
+		UnitTypes:
+			1: aircraft.badger.paradrop
+		DropItems:
+			1: infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger
+		SquadSizes:
+			1: 2
 		SelectTargetSpeechNotification: SelectTarget
 		AllowImpassableCells: false
 		QuantizedFacings: 8
 		CameraActor: camera.paradrop
 		DisplayBeacon: false
-		BeaconPoster: pinficon
+		BeaconPosters:
+			1: paradrop2bcon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -248,15 +256,22 @@ powerproxy.paradrop:
 powerproxy.a10:
 	AlwaysVisible:
 	AirstrikePower:
-		Icon: a102
+		Icons:
+			1: a102
+		Prerequisites:
+			1: building.usa_command_center
 		Description: A-10 Strike
-		LongDesc: 2 A-10 Thunderbolt strikes anywhere on the map.
-		SquadSize: 2
+		LongDescs:
+			1: 2 A-10 Thunderbolts strikes anywhere on the map.
+		SquadSizes:
+			1: 2
 		QuantizedFacings: 8
 		SelectTargetSpeechNotification: SelectTarget
-		UnitType: aircraft.a10
+		UnitTypes:
+			1: aircraft.a10
 		DisplayBeacon: false
-		BeaconPoster: a102bcon
+		BeaconPosters:
+			1: a102bcon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
