@@ -964,6 +964,72 @@ vehicle.rocket_buggy:
 	Voiced:
 		VoiceSet: RocketBuggyVoice
 
+vehicle.avenger:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@DRONE: ^CanHaveDrones
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^EjectsPilotOnGround
+	Inherits@REVEAL: ^Reveal150
+	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	Buildable:
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle
+		BuildPaletteOrder: 6
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~building.usa_war_factory, ~techlevel.medium, ~prerequisite.zh_units
+		Description: Advanced anti-air unit.\n\nCan deflect enemy missiles with laser.
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Avenger
+	Health:
+		HP: 300
+	Armor:
+		Type: vehicle.avenger
+	Mobile:
+		Speed: 30
+		Voice: Move
+	Selectable:
+		Class: vehicle.avenger
+	Crushable:
+		CrushClasses: vehicle
+	Turreted:
+		TurnSpeed: 5
+		Offset: -128,0,192
+	Armament@MG:
+		Weapon: laser.avenger.air
+		LocalOffset: 512,0,192
+		MuzzleSequence: muzzle
+	Armament@PDLASER:
+		Weapon: laser.avenger.point_defense
+		LocalOffset: 0,213,0
+		Name: pdlaser
+	ShootsMissiles:
+		ShootStances: Neutral, Enemy
+		Armament: pdlaser
+	AttackTurreted:
+		RequiresCondition: !hacked && !driver_killed && !emp
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	AcceptsDeliveredExperience:
+	ThrowsShrapnel:
+		Weapons: debris.avenger
+		Pieces: 1, 1
+		Range: 1c0, 1c0
+	RenderSprites:
+		Image: vehicle.avenger
+	Voiced:
+		VoiceSet: AvengerVoice
+
+vehicle.avenger.lazer:
+	Inherits: vehicle.avenger
+	Buildable:
+		Queue: queue.laser_gen_vehicle
+	Valued:
+		Cost: 1500
+
 vehicle.troop_crawler:
 	Inherits: ^Tank
 	Inherits@CRUSH: ^CrushesInfantry
@@ -1091,8 +1157,7 @@ vehicle.tomahawk_launcher:
 		Name: Tomahawk Launcher
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle
-		BuildPaletteOrder: 6
-		ForceIconLocation: true
+		BuildPaletteOrder: 7
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~techlevel.medium
@@ -1301,8 +1366,7 @@ vehicle.paladin_tank:
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_vehicle
-		BuildPaletteOrder: 7
-		ForceIconLocation: true
+		BuildPaletteOrder: 8
 		BuildDuration: 300
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~generals_power.paladin_tank, ~techlevel.high

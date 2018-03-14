@@ -229,6 +229,35 @@ laser.laser_tank:
 	Warhead@1Dam: SpreadDamage
 		Damage: 80
 
+laser.avenger.air:
+	Inherits: ^AntiAirMissile
+	ReloadDelay: 4
+	Range: 7c512
+	MinRange: 0c0
+	Report: vpalwe2d.aud
+	-Projectile:
+	Projectile: LaserZap
+		Width: 60
+		ZOffset: 2047
+		Color: FF0000
+	Warhead@1Dam: SpreadDamage
+		Damage: 10
+		Versus:
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.tank: 25
+			vehicle.dragon_tank: 25
+			aircraft.normal: 120
+			aircraft.comanche: 120
+			aircraft.chinook: 50
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
+			building.wall: 6
+
 laser.paladin_tank:
 	ReloadDelay: 25
 	Range: 3c0
@@ -246,6 +275,9 @@ laser.paladin_tank:
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath
 
 laser.king_raptor:
+	Inherits: laser.paladin_tank
+
+laser.avenger.point_defense:
 	Inherits: laser.paladin_tank
 
 ToxinLauncher:

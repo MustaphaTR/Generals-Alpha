@@ -295,6 +295,18 @@ vehicle.ecm_tank:
 		Facings: 32
 	icon: ecmicon
 
+vehicle.avenger:
+	idle: msam
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: ftrk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 2
+	icon: avengericon
+
 vehicle.tomahawk_launcher:
 	idle: mlrs
 		Facings: 32
@@ -514,18 +526,6 @@ ttnk:
 		Start: 32
 		Length: 32
 	icon: ttnkicon
-
-ftrk:
-	idle:
-		Facings: 32
-		UseClassicFacingFudge: True
-	turret:
-		Start: 32
-		Facings: 32
-		UseClassicFacingFudge: True
-	muzzle: gunfire2
-		Length: 2
-	icon: ftrkicon
 
 ctnk:
 	idle:

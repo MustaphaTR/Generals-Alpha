@@ -60,6 +60,12 @@ debris.nuke_cannon:
 		Image: vehicle.nuke_cannon
 		Sequences: turret
 
+debris.avenger:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vehicle.avenger
+		Sequences: turret
+
 debris.radar_van:
 	Inherits: ^default.small_debris
 	Projectile: Bullet
