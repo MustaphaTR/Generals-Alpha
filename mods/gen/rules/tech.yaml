@@ -2,7 +2,7 @@ tech.oil_derrick:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
-	Inherits@REVEAL: ^Reveal180
+	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Inherits@SUPPLY_LINES: ^AffectedBySupplyLines
 	HitShape:
@@ -39,7 +39,7 @@ tech.hospital:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
-	Inherits@REVEAL: ^Reveal180
+	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Selectable:
 		Priority: 0
@@ -71,7 +71,7 @@ tech.bio_lab:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
-	Inherits@REVEAL: ^Reveal180
+	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Selectable:
 		Priority: 0
@@ -115,7 +115,7 @@ tech.communications_center:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
-	Inherits@REVEAL: ^Reveal600
+	Inherits@REVEAL: ^Reveal500
 	Inherits@SHAPE: ^2x2Shape
 	HitShape:
 		UseTargetableCellsOffsets: false
@@ -161,7 +161,7 @@ tech.soviet_barracks:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
-	Inherits@REVEAL: ^Reveal180
+	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Building:
 		Footprint: xx xx ==
@@ -255,7 +255,7 @@ tech.power_plant:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
-	Inherits@REVEAL: ^Reveal180
+	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^3x2Shape
 	HitShape:
 		TargetableOffsets: -355,-1024,0
@@ -292,7 +292,7 @@ tech.service_depot:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
-	Inherits@REVEAL: ^Reveal180
+	Inherits@REVEAL: ^Reveal200
 	HitShape:
 		Type: Rectangle
 			TopLeft: -1536, -683
@@ -346,7 +346,7 @@ tech.shipyard:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
-	Inherits@REVEAL: ^Reveal180
+	Inherits@REVEAL: ^Reveal200
 	Valued:
 		Cost: 1000
 	Tooltip:

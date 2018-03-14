@@ -762,6 +762,25 @@
 	ExternalCondition@INTELLIGENCE:
 		Condition: intelligence
 
+^Reveal320:
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroud@SEARCH_AND_DESTROY:
+		Range: 8c819
+		RequiresCondition: search_and_destroy
+	RevealsShroud@INTELLIGENCE:
+		Range: 8c0
+		ValidStances: Enemy
+		RequiresCondition: intelligence
+	RevealOnDeath:
+		Duration: 100
+		Radius: 4c0
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+	ExternalCondition@INTELLIGENCE:
+		Condition: intelligence
+
 ^Reveal350:
 	RevealsShroud:
 		Range: 8c768
@@ -813,6 +832,25 @@
 	RevealOnDeath:
 		Duration: 100
 		Radius: 5c0
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+	ExternalCondition@INTELLIGENCE:
+		Condition: intelligence
+
+^Reveal500:
+	RevealsShroud:
+		Range: 12c512
+	RevealsShroud@SEARCH_AND_DESTROY:
+		Range: 15c0
+		RequiresCondition: search_and_destroy
+	RevealsShroud@INTELLIGENCE:
+		Range: 12c512
+		ValidStances: Enemy
+		RequiresCondition: intelligence
+	RevealOnDeath:
+		Duration: 100
+		Radius: 6c258
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
 		Condition: search_and_destroy
 		Prerequisites: strategy.search_and_destroy
@@ -1156,7 +1194,7 @@
 	Inherits@6: ^AffectedByEmergencyRepair
 	Inherits@7: ^AffectedByGPSScambler
 	Inherits@CRUSH: ^CrushesCrates
-	Inherits@REVEAL: ^Reveal80
+	Inherits@REVEAL: ^Reveal200
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -1388,7 +1426,7 @@
 
 ^CivInfantry:
 	Inherits: ^Infantry
-	Inherits@REVEAL: ^Reveal100
+	Inherits@REVEAL: ^Reveal150
 	Selectable:
 		Class: CivInfantry
 	Valued:

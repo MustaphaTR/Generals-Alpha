@@ -149,7 +149,7 @@ aircraft.mig:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@REVEAL: ^Reveal200
+	Inherits@REVEAL: ^Reveal300
 	Buildable:
 		Queue: queue.prc_aircraft
 		BuildPaletteOrder: 0
@@ -246,7 +246,7 @@ aircraft.raptor:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@LASER_MISSILES: ^AffectedByLaserGuidedMissiles
-	Inherits@REVEAL: ^Reveal180
+	Inherits@REVEAL: ^Reveal400
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft
@@ -321,7 +321,6 @@ aircraft.raptor:
 
 aircraft.king_raptor:
 	Inherits: aircraft.raptor
-	Inherits@REVEAL: ^Reveal200
 	Buildable:
 		Queue: queue.air_gen_aircraft
 		Description: Multi-role fighter plane.\n\nCan deflect enemy missiles with laser.
@@ -357,7 +356,7 @@ aircraft.stealth_fighter:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@LASER_MISSILES: ^AffectedByLaserGuidedMissiles
-	Inherits@REVEAL: ^Reveal180
+	Inherits@REVEAL: ^Reveal300
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft
@@ -447,7 +446,7 @@ aircraft.aurora:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@REVEAL: ^Reveal180
+	Inherits@REVEAL: ^Reveal600
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft, queue.air_gen_aircraft
@@ -691,7 +690,7 @@ aircraft.a10:
 
 aircraft.chinook:
 	Inherits: ^Vehicle
-	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL: ^Reveal600
 	Buildable:
 		Queue: queue.usa_collector
 		BuildPaletteOrder: 0
@@ -836,36 +835,14 @@ aircraft.comanche:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnAir
-	Inherits@REVEAL: ^Reveal180
+	Inherits@REVEAL: ^Reveal600
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	RevealsShroud:
 		Type: CenterPosition
-		RequiresCondition: !zh_units
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Type: CenterPosition
-		RequiresCondition: search_and_destroy && !zh_units
 	RevealsShroud@INTELLIGENCE:
 		Type: CenterPosition
-		RequiresCondition: intelligence && !zh_units
-	RevealOnDeath:
-		RequiresCondition: !zh_units
-	RevealsShroud@ZH:
-		Range: 5c0
-		Type: CenterPosition
-		RequiresCondition: zh_units
-	RevealsShroud@SEARCH_AND_DESTROY_ZH:
-		Range: 6c0
-		Type: CenterPosition
-		RequiresCondition: search_and_destroy && zh_units
-	RevealsShroud@INTELLIGENCE_ZH:
-		Range: 5c0
-		ValidStances: Enemy
-		Type: CenterPosition
-		RequiresCondition: intelligence && zh_units
-	RevealOnDeath@ZH:
-		Duration: 100
-		Radius: 2c512
-		RequiresCondition: zh_units
 	Buildable:
 		Queue: queue.usa_aircraft, queue.air_gen_aircraft
 		BuildAtProductionType: queue.usa_helicopter
@@ -955,7 +932,7 @@ aircraft.helix:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL: ^Reveal600
 	Inherits@UPGRADE: ^CanHavePRCVehicleUpgrades
 	Buildable:
 		Queue: queue.prc_aircraft
