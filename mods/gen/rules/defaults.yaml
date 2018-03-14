@@ -987,6 +987,7 @@
 		Type: queue.drone
 		Group: Tech
 		RequireOwner: false
+		InstantCashDrain: true
 		LowPowerSlowdown: 3
 	ProductionBar:
 	Exit:
@@ -1009,6 +1010,7 @@
 		Type: queue.prc_vehicle_upgrade
 		Group: Tech
 		RequireOwner: false
+		InstantCashDrain: true
 		LowPowerSlowdown: 3
 	ProductionBar:
 	Exit:
@@ -1031,6 +1033,7 @@
 		Type: queue.camo_netting
 		Group: Tech
 		RequireOwner: false
+		InstantCashDrain: true
 		LowPowerSlowdown: 3
 	ProductionBar:
 	Exit:
@@ -1667,8 +1670,9 @@
 		PauseOnCondition: emp || hacked
 	ProductionQueue:
 		Type: FakeToReal
-		RequireOwner: false
 		Group: Vehicle
+		RequireOwner: false
+		InstantCashDrain: true
 		LowPowerSlowdown: 3
 	ProductionBar:
 	Exit:

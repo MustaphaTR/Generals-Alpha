@@ -1230,6 +1230,7 @@ vehicle.scud_launcher:
 	ProductionQueue:
 		Type: queue.scud_launcher
 		Group: Tech
+		InstantCashDrain: true
 		RequireOwner: false
 		LowPowerSlowdown: 3
 	Exit:
@@ -1700,6 +1701,7 @@ vehicle.bomb_truck:
 	ProductionQueue:
 		Type: queue.bomb_truck
 		Group: Tech
+		InstantCashDrain: true
 		RequireOwner: false
 		LowPowerSlowdown: 3
 	ProductionBar:
@@ -1919,6 +1921,7 @@ vehicle.usa_mcc:
 		Type: queue.usa_building
 		Factions: usa, air, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Building
+		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
@@ -1927,6 +1930,7 @@ vehicle.usa_mcc:
 		Type: queue.laser_gen_building
 		Factions: laser
 		Group: Building
+		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
@@ -1935,6 +1939,7 @@ vehicle.usa_mcc:
 		Type: queue.super_gen_building
 		Factions: super
 		Group: Building
+		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
@@ -1962,8 +1967,9 @@ vehicle.gla_mcc:
 	ProductionQueue@GLA_BUILDING:
 		Type: queue.gla_building
 		Group: Building
-		LowPowerSlowdown: 3
 		RequireOwner: false
+		InstantCashDrain: true
+		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
 		SpectatorUIOrder: 4
@@ -1995,6 +2001,7 @@ vehicle.prc_mcc:
 		Type: queue.prc_building
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, tank
 		Group: Building
+		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
@@ -2003,6 +2010,7 @@ vehicle.prc_mcc:
 		Type: queue.inf_gen_building
 		Factions: inf
 		Group: Building
+		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
@@ -2011,6 +2019,7 @@ vehicle.prc_mcc:
 		Type: queue.nuke_gen_building
 		Factions: nuke
 		Group: Building
+		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
