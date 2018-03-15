@@ -986,6 +986,7 @@
 	ProductionQueue:
 		Type: queue.drone
 		Group: Tech
+		QueueLimit: 1
 		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
@@ -1009,6 +1010,7 @@
 	ProductionQueue:
 		Type: queue.prc_vehicle_upgrade
 		Group: Tech
+		QueueLimit: 1
 		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
@@ -1032,6 +1034,7 @@
 	ProductionQueue:
 		Type: queue.camo_netting
 		Group: Tech
+		QueueLimit: 1
 		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 3

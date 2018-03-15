@@ -1230,6 +1230,7 @@ vehicle.scud_launcher:
 	ProductionQueue:
 		Type: queue.scud_launcher
 		Group: Tech
+		QueueLimit: 1
 		InstantCashDrain: true
 		RequireOwner: false
 		LowPowerSlowdown: 3
@@ -1701,6 +1702,7 @@ vehicle.bomb_truck:
 	ProductionQueue:
 		Type: queue.bomb_truck
 		Group: Tech
+		QueueLimit: 1
 		InstantCashDrain: true
 		RequireOwner: false
 		LowPowerSlowdown: 3
