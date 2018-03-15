@@ -1585,6 +1585,9 @@
 		CruisingCondition: cruising
 		WaitDistanceFromResupplyBase: 4c0
 		VTOL: true
+	RepairableNear:
+		Buildings: building.usa_airfield, building.prc_airfield
+		CloseEnough: 1c0
 	Hovers@CRUISING:
 		RequiresCondition: cruising
 	BodyOrientation:

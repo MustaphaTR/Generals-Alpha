@@ -767,12 +767,14 @@ aircraft.chinook:
 		Types: Infantry, Vehicle
 		MaxWeight: 8
 		PipCount: 8
+	RepairableNear:
+		Buildings: building.usa_airfield, building.prc_airfield
+		CloseEnough: 1c0
 	Targetable:
 		TargetTypes: Air
 	-Targetable@DRIVER_KILLED:
 	-Capturable:
 	-Passenger:
-	-RepairableNear:
 	-ProximityExternalCondition@SELF_DESTRUCT:
 	-SpawnActorOnDeath@CRATE:
 	-SelfHealing@EMERGENCY_REPAIR:
