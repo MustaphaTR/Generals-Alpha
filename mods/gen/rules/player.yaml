@@ -28,21 +28,21 @@ Player:
 	LobbyPrerequisiteCheckbox@GLOBALLIMITSW:
 		ID: limitsw
 		Label: Limit Superweapons
-		Description: Allow only 1 Superweapon to be built.
+		Description: Allow only 1 Superweapon to be built
 		Enabled: True
 		DisplayOrder: 5
 		Prerequisites: prerequisite.limited_sw
 	LobbyPrerequisiteCheckbox@GLOBALLIMITGP:
 		ID: limitgp
 		Label: Limit General's Powers
-		Description: Allow only 7 General's Powers to be researched.
+		Description: Allow only 7 General's Powers to be researched
 		Enabled: True
 		DisplayOrder: 6
 		Prerequisites: prerequisite.limited_gp
 	LobbyPrerequisiteCheckbox@GLOBALZHUNITS:
 		ID: zhunits
 		Label: Zero Hour
-		Description: Enables the available Zero Hour stuff. (Not evertyhing is added, probably even more unbalanced than normal mode.)
+		Description: Enables the available Zero Hour stuff (Not evertyhing is added, probably even more unbalanced than normal mode)
 		Enabled: False
 		DisplayOrder: 7
 		Prerequisites: prerequisite.zh_units
