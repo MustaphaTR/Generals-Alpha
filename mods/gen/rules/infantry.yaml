@@ -552,6 +552,9 @@ infantry.toxin_terrorist:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
+	GrantConditionOnFaction@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Factions: toxin
 
 infantry.flamethrower:
 	Inherits: ^Soldier
