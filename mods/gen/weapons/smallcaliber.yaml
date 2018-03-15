@@ -561,8 +561,7 @@ gatling.gatling_cannon.air:
 	Report: gun5.aud
 	ValidTargets: Ground, Infantry
 	InvalidTargets: Vehicle, Tank, Water, Structure, Wall, Husk
-	Projectile: Bullet
-		Speed: 1c682
+	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
 		Spread: 42
 		Damage: 150
