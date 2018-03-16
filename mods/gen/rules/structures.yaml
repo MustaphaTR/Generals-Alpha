@@ -257,7 +257,7 @@ building.gla_command_center:
 		Type: queue.gla_command_center
 		Group: Command
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 1
 		RequireOwner: false
 		SpectatorUIOrder: 9
 	SpawnActorPower@AMBUSH:
@@ -912,28 +912,28 @@ building.gla_barracks:
 		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
 		Group: Infantry
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 1
 		SpectatorUIOrder: 17
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_infantry
 		Factions: toxin
 		Group: Infantry
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 1
 		SpectatorUIOrder: 18
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_infantry
 		Factions: demo
 		Group: Infantry
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 1
 		SpectatorUIOrder: 19
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_infantry
 		Factions: stealth
 		Group: Infantry
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 1
 		SpectatorUIOrder: 20
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_infantry
@@ -1179,7 +1179,7 @@ building.gla_supply_stash:
 		Group: Collector
 		RequireOwner: false
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 1
 		SpectatorUIOrder: 14
 	ProductionBar:
 	Exit@1:
@@ -1709,14 +1709,14 @@ building.arms_dealer:
 		Factions: usa, air, laser, super, gla, toxin, demo, prc, inf, nuke, tank
 		Group: Vehicle
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 1
 		SpectatorUIOrder: 31
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_vehicle
 		Factions: stealth
 		Group: Vehicle
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 1
 		SpectatorUIOrder: 32
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_vehicle
