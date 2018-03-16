@@ -399,8 +399,6 @@ infantry.tank_hunter:
 	Inherits@HORDE_BONUS: ^Horde
 	Buildable:
 		Queue: queue.prc_infantry, queue.inf_gen_infantry
-		BuildDuration: 140
-		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.infonly
 	Tooltip:
 		Name: Tank Hunter
@@ -412,8 +410,6 @@ infantry.grenadier:
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
 		Queue: queue.soviet_infantry
-		BuildDuration: 140
-		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.infonly
 		Description: Anti-tank infantry.
 	Tooltip:
