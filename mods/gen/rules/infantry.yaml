@@ -227,7 +227,7 @@ infantry.red_guard:
 	Inherits@HORDE_BONUS: ^Horde
 	Inherits@REVEAL: ^Reveal200
 	Buildable:
-		Queue: queue.prc_infantry, queue.tank_gen_infantry
+		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
 		BuildDurationModifier: 50
 		Prerequisites: ~techlevel.infonly
 		Description: General-purpose infantry armed with a rifle.
@@ -409,11 +409,18 @@ infantry.tank_hunter:
 	Voiced:
 		VoiceSet: TankHunterVoice
 
-infantry.tank_hunter.tank:
+infantry.tank_hunter.nuke:
 	Inherits: infantry.tank_hunter
 	Buildable:
-		Queue: queue.tank_gen_infantry
+		Queue: queue.nuke_gen_infantry
 		BuildDuration: 175
+	Valued:
+		Cost: 350
+
+infantry.tank_hunter.tank:
+	Inherits: infantry.tank_hunter.nuke
+	Buildable:
+		Queue: queue.tank_gen_infantry
 	Valued:
 		Cost: 375
 
@@ -745,7 +752,7 @@ infantry.hacker:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
-		Queue: queue.prc_infantry, queue.inf_gen_infantry
+		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 500
@@ -1143,6 +1150,13 @@ infantry.black_lotus:
 		Image: infantry.black_lotus
 	Voiced:
 		VoiceSet: LotusVoice
+
+infantry.black_lotus.nuke:
+	Inherits: infantry.black_lotus
+	Buildable:
+		Queue: queue.nuke_gen_infantry
+	Valued:
+		Cost: 1600
 
 infantry.black_lotus.tank:
 	Inherits: infantry.black_lotus
