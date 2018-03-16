@@ -353,8 +353,7 @@ hack.angry_mob.weapon:
 capture.black_lotus.anim:
 	ReloadDelay: 15
 	Range: 8c128
-	ValidTargets: Structure
-	InvalidTargets: Hole, Defense
+	ValidTargets: Capture
 	TargetActorCenter: true
 	Report: ucapture.wav
 	Projectile: LaserZap
@@ -365,14 +364,13 @@ capture.black_lotus.anim:
 		SecondaryBeamWidth: 90
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
-		ValidTargets: Structure
-		InvalidTargets: Hole, Defense
+		ValidTargets: Capture
 		ValidStances: Enemy, Neutral
 
 capture.black_lotus.end:
 	ReloadDelay: 25
 	Range: 8c128
-	ValidTargets: Structure
+	ValidTargets: Capture
 	TargetActorCenter: true
 	Report: ucapture.wav
 	Projectile: LaserZap
@@ -383,8 +381,7 @@ capture.black_lotus.end:
 		SecondaryBeamWidth: 90
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
-		ValidTargets: Structure
-		InvalidTargets: Hole, Defense
+		ValidTargets: Capture
 		ValidStances: Enemy, Neutral
 	Warhead@2Cap: CaptureActor
 		IgnoreCaptureThreshold: true
@@ -431,8 +428,7 @@ disable.black_lotus.end:
 disable.hacker.anim:
 	ReloadDelay: 15
 	Range: 3c768
-	ValidTargets: Structure
-	InvalidTargets: Hole
+	ValidTargets: Disable
 	TargetActorCenter: true
 	Report: ucapture.wav
 	Projectile: LaserZap
@@ -443,15 +439,13 @@ disable.hacker.anim:
 		SecondaryBeamWidth: 90
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
-		ValidTargets: Structure
-		InvalidTargets: Hole
+		ValidTargets: Disable
 		ValidStances: Enemy, Neutral
 
 disable.hacker.end:
 	ReloadDelay: 25
 	Range: 3c768
-	ValidTargets: Structure
-	InvalidTargets: Hole
+	ValidTargets: Disable
 	TargetActorCenter: true
 	Report: ucapture.wav
 	Projectile: LaserZap
@@ -462,8 +456,7 @@ disable.hacker.end:
 		SecondaryBeamWidth: 90
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
-		ValidTargets: Structure
-		InvalidTargets: Hole
+		ValidTargets: Disable
 		ValidStances: Enemy, Neutral
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c512

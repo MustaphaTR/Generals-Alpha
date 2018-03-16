@@ -1648,6 +1648,8 @@
 	RepairableBuilding:
 		RepairStep: 15
 		PlayerExperience: 25
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
 	AcceptsDeliveredCash:
 	WithMakeAnimation:
@@ -1692,7 +1694,7 @@
 
 ^InfiltratableFake:
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, Infiltrate
+		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable, Infiltrate
 	InfiltrateForDecoration:
 		RequiresSelection: true
 		Image: pips
@@ -1703,7 +1705,7 @@
 ^Defense:
 	Inherits: ^Building
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense
+		TargetTypes: Ground, C4, DetonateAttack, Structure, Disable
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	-GivesBuildableArea:

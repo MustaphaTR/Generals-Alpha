@@ -18,6 +18,8 @@ tech.oil_derrick:
 	Capturable:
 	ExternalCapturable:
 	ExternalCapturableBar:
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
 	GivesBuildableArea:
 		AreaTypes: mine
@@ -51,6 +53,8 @@ tech.hospital:
 	Capturable:
 	ExternalCapturable:
 	ExternalCapturableBar:
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
 	GivesBuildableArea:
 		AreaTypes: mine
@@ -83,6 +87,8 @@ tech.bio_lab:
 	Capturable:
 	ExternalCapturable:
 	ExternalCapturableBar:
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
 	GivesBuildableArea:
 		AreaTypes: mine
@@ -150,6 +156,8 @@ tech.communications_center:
 	Capturable:
 	ExternalCapturable:
 	ExternalCapturableBar:
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
 	GivesBuildableArea:
 		AreaTypes: mine
@@ -201,6 +209,8 @@ tech.soviet_barracks:
 	Capturable:
 	ExternalCapturable:
 	ExternalCapturableBar:
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
 	RepairableBuilding:
 		RepairStep: 15
@@ -277,6 +287,8 @@ tech.power_plant:
 	Capturable:
 	ExternalCapturable:
 	ExternalCapturableBar:
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
 	GivesBuildableArea:
 		AreaTypes: mine
@@ -312,6 +324,8 @@ tech.service_depot:
 	Capturable:
 	ExternalCapturable:
 	ExternalCapturableBar:
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
 	GivesBuildableArea:
 		AreaTypes: mine
@@ -353,8 +367,6 @@ tech.shipyard:
 		Cost: 1000
 	Tooltip:
 		Name: Shipyard
-	Targetable:
-		TargetTypes: Ground, Water, Structure, WaterStructure, C4, DetonateAttack
 	Building:
 		Footprint: XXX xxx XXX
 		Dimensions: 3,3
@@ -366,6 +378,8 @@ tech.shipyard:
 	RepairableBuilding:
 		RepairStep: 15
 		PlayerExperience: 25
+	Targetable:
+		TargetTypes: Ground, Water, Structure, WaterStructure, C4, DetonateAttack, Capture, Disable
 	Health:
 		HP: 1000
 	Exit@1:

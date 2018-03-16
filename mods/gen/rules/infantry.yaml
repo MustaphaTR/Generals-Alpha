@@ -1077,11 +1077,13 @@ infantry.black_lotus:
 	Armament@CaptureAnim:
 		Name: capture
 		Weapon: capture.black_lotus.anim
+		TargetStances: Enemy, Neutral
 		LocalOffset: 0,0,196
 		RequiresCondition: end_capture == 0
 	Armament@CaptureEnd:
 		Name: capture
 		Weapon: capture.black_lotus.end
+		TargetStances: Enemy, Neutral
 		LocalOffset: 0,0,196
 		RequiresCondition: end_capture == 1
 	Armament@DisableAnim:
