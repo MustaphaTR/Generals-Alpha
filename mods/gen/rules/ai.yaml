@@ -9,7 +9,7 @@ Player:
 		ProductionMinimumCash: 2000
 		BuildingQueues: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.stealth_gen_palace, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.soviet_barracks, General
 		DefenseQueues: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
-		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
+		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.tank_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
 		BuildingCommonNames:
 			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -24,7 +24,7 @@ Player:
 			Strategy: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		UnitsCommonNames:
 			Dozer: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
-			FragileDeployer: infantry.hacker
+			FragileDeployer: infantry.hacker, infantry.hacker.tank
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
 			Collector: aircraft.chinook, aircraft.chinook.air, infantry.worker, vehicle.supply_truck
@@ -168,15 +168,18 @@ Player:
 			infantry.missile_defender: 30%
 			infantry.rpg_trooper: 30%
 			infantry.tank_hunter: 30%
+			infantry.tank_hunter.tank: 20%
 			infantry.grenadier: 15%
 			infantry.pathfinder: 3%
 			infantry.angry_mob: 3%
 			infantry.hacker: 8%
+			infantry.hacker.tank: 8%
 			infantry.flamethrower: 3%
 			infantry.colonel_burton: 0.5%
 			infantry.jarmen_kell: 0.5%
 			infantry.jarmen_kell.demo: 0.5%
 			infantry.black_lotus: 0.5%
+			infantry.black_lotus.tank: 0.5%
 			infantry.zombie: 0.5%
 			infantry.giant_ant: 2%
 			infantry.worker: 150%
@@ -251,8 +254,10 @@ Player:
 			infantry.jarmen_kell: 1
 			infantry.jarmen_kell.demo: 1
 			infantry.black_lotus: 1
+			infantry.black_lotus.tank: 1
 			infantry.worker: 32
 			infantry.hacker: 12
+			infantry.hacker.tank: 12
 			aircraft.mig: 4
 			aircraft.raptor: 2
 			aircraft.king_raptor: 2
@@ -537,7 +542,7 @@ Player:
 		ProductionMinimumCash: 2000
 		BuildingQueues: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.stealth_gen_palace, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.soviet_barracks, General
 		DefenseQueues: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
-		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
+		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.tank_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
 		BuildingCommonNames:
 			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -552,7 +557,7 @@ Player:
 			Strategy: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		UnitsCommonNames:
 			Dozer: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
-			FragileDeployer: infantry.hacker
+			FragileDeployer: infantry.hacker, infantry.hacker.tank
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
 			Collector: aircraft.chinook, aircraft.chinook.air, infantry.worker, vehicle.supply_truck
@@ -706,15 +711,18 @@ Player:
 			infantry.missile_defender: 35%
 			infantry.rpg_trooper: 35%
 			infantry.tank_hunter: 35%
+			infantry.tank_hunter.tank: 25%
 			infantry.grenadier: 20%
 			infantry.pathfinder: 4%
 			infantry.angry_mob: 4%
 			infantry.hacker: 12%
+			infantry.hacker.tank: 12%
 			infantry.flamethrower: 4%
 			infantry.colonel_burton: 0.5%
 			infantry.jarmen_kell: 0.5%
 			infantry.jarmen_kell.demo: 0.5%
 			infantry.black_lotus: 0.5%
+			infantry.black_lotus.tank: 0.5%
 			infantry.zombie: 0.5%
 			infantry.giant_ant: 2%
 			infantry.worker: 150%
@@ -789,8 +797,10 @@ Player:
 			infantry.jarmen_kell: 1
 			infantry.jarmen_kell.demo: 1
 			infantry.black_lotus: 1
+			infantry.black_lotus.tank: 1
 			infantry.worker: 32
 			infantry.hacker: 12
+			infantry.hacker.tank: 12
 			aircraft.mig: 4
 			aircraft.raptor: 2
 			aircraft.king_raptor: 2
@@ -1075,7 +1085,7 @@ Player:
 		ProductionMinimumCash: 2000
 		BuildingQueues: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.stealth_gen_palace, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.soviet_barracks, General
 		DefenseQueues: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
-		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
+		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.tank_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
 		BuildingCommonNames:
 			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -1090,7 +1100,7 @@ Player:
 			Strategy: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		UnitsCommonNames:
 			Dozer: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
-			FragileDeployer: infantry.hacker
+			FragileDeployer: infantry.hacker, infantry.hacker.tank
 			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
 			Collector: aircraft.chinook, aircraft.chinook.air, infantry.worker, vehicle.supply_truck
@@ -1244,15 +1254,18 @@ Player:
 			infantry.missile_defender: 30%
 			infantry.rpg_trooper: 30%
 			infantry.tank_hunter: 30%
+			infantry.tank_hunter.tank: 20%
 			infantry.grenadier: 15%
 			infantry.pathfinder: 5%
 			infantry.angry_mob: 5%
 			infantry.hacker: 15%
+			infantry.hacker.tank: 15%
 			infantry.flamethrower: 5%
 			infantry.colonel_burton: 0.5%
 			infantry.jarmen_kell: 0.5%
 			infantry.jarmen_kell.demo: 0.5%
 			infantry.black_lotus: 0.5%
+			infantry.black_lotus.tank: 0.5%
 			infantry.zombie: 0.5%
 			infantry.giant_ant: 2%
 			infantry.worker: 150%
@@ -1327,8 +1340,10 @@ Player:
 			infantry.jarmen_kell: 1
 			infantry.jarmen_kell.demo: 1
 			infantry.black_lotus: 1
+			infantry.black_lotus.tank: 1
 			infantry.worker: 32
 			infantry.hacker: 12
+			infantry.hacker.tank: 12
 			aircraft.mig: 4
 			aircraft.raptor: 2
 			aircraft.king_raptor: 2

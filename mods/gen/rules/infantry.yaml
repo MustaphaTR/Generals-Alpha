@@ -227,7 +227,7 @@ infantry.red_guard:
 	Inherits@HORDE_BONUS: ^Horde
 	Inherits@REVEAL: ^Reveal200
 	Buildable:
-		Queue: queue.prc_infantry
+		Queue: queue.prc_infantry, queue.tank_gen_infantry
 		BuildDurationModifier: 50
 		Prerequisites: ~techlevel.infonly
 		Description: General-purpose infantry armed with a rifle.
@@ -402,8 +402,20 @@ infantry.tank_hunter:
 		Prerequisites: ~techlevel.infonly
 	Tooltip:
 		Name: Tank Hunter
+	Selectable:
+		Class: infantry.tank_hunter
+	RenderSprites:
+		Image: infantry.tank_hunter
 	Voiced:
 		VoiceSet: TankHunterVoice
+
+infantry.tank_hunter.tank:
+	Inherits: infantry.tank_hunter
+	Buildable:
+		Queue: queue.tank_gen_infantry
+		BuildDuration: 175
+	Valued:
+		Cost: 375
 
 infantry.grenadier:
 	Inherits: ^default.rocket_infantry
@@ -748,6 +760,8 @@ infantry.hacker:
 		HP: 100
 	Armor:
 		Type: infantry.normal
+	Selectable:
+		Class: infantry.hacker
 	Mobile:
 		Speed: 20
 		Voice: Move
@@ -818,9 +832,18 @@ infantry.hacker:
 		Interval: 20
 		Amount: 10
 		RequiresCondition: deployed && rank-elite
+	RenderSprites:
+		Image: infantry.hacker
 	Voiced:
 		VoiceSet: HackerVoice
 	-MustBeDestroyed:
+
+infantry.hacker.tank:
+	Inherits: infantry.hacker
+	Buildable:
+		Queue: queue.tank_gen_infantry
+	Valued:
+		Cost: 780
 
 infantry.hijacker:
 	Inherits: ^Soldier
@@ -896,7 +919,7 @@ infantry.colonel_burton:
 		BuildPaletteOrder: 4
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_barracks, building.strategy_center, ~techlevel.high
+		Prerequisites: building.strategy_center, ~techlevel.high
 		BuildLimit: 1
 		Description: Elite commando infantry.\n\nCan place C4 charges on structures.
 	Mobile:
@@ -960,7 +983,7 @@ infantry.jarmen_kell:
 		BuildPaletteOrder: 7
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: ~building.gla_barracks, building.palace, !prerequisite.enough_jarmen_kell, ~techlevel.high
+		Prerequisites: building.palace, !prerequisite.enough_jarmen_kell, ~techlevel.high
 		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.
 	Health:
 		HP: 200
@@ -1036,8 +1059,7 @@ infantry.black_lotus:
 		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: ~building.prc_barracks, building.propaganda_center, ~techlevel.high
-		BuildLimit: 1
+		Prerequisites: building.propaganda_center, !prerequisite.enough_black_lotus, ~techlevel.high
 		Description: Can capture enemy structures from a distance.\n\nCan disable enemy vehicles.
 	Valued:
 		Cost: 1500
@@ -1050,6 +1072,8 @@ infantry.black_lotus:
 	Mobile:
 		Speed: 30
 		Voice: Move
+	Selectable:
+		Class: infantry.black_lotus
 	Crushable:
 		CrushClasses: hero
 	Passenger:
@@ -1057,6 +1081,8 @@ infantry.black_lotus:
 		Voice: Move
 	WithInfantryBody:
 		DefaultAttackSequence: stand2
+	ProvidesPrerequisite@LIMIT:
+		Prerequisite: prerequisite.enough_black_lotus
 	Cloak:
 		InitialDelay: 250
 		CloakDelay: 120
@@ -1114,8 +1140,17 @@ infantry.black_lotus:
 	AttackFrontal@Disable:
 		Armaments: disable
 		Voice: Disable
+	RenderSprites:
+		Image: infantry.black_lotus
 	Voiced:
 		VoiceSet: LotusVoice
+
+infantry.black_lotus.tank:
+	Inherits: infantry.black_lotus
+	Buildable:
+		Queue: queue.tank_gen_infantry
+	Valued:
+		Cost: 1875
 
 infantry.zombie:
 	Inherits: ^Soldier
