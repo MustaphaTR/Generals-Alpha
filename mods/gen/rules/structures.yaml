@@ -2535,6 +2535,8 @@ building.speaker_tower:
 			BottomRight: 512, 512
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, Disable
+	-ExternalCapturable:
+	-ExternalCapturableBar:
 	WithRangeCircle:
 		Type: speaker
 		Range: 4c0
