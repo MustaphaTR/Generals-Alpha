@@ -238,11 +238,15 @@ infantry.red_guard:
 		Speed: 25
 	Tooltip:
 		Name: Red Guard
+	Selectable:
+		Class: infantry.red_guard
 	Armament@PRIMARY:
 		Weapon: mg.red_guard
 	Armament@GARRISON:
 		Name: garrison
 		Weapon: mg.red_guard.garrison
+	RenderSprites:
+		Image: infantry.red_guard
 	Voiced:
 		VoiceSet: RedGuardVoice
 	ProducibleWithLevel:
