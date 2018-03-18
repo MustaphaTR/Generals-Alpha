@@ -29,7 +29,7 @@ Player:
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
 			Collector: aircraft.chinook, aircraft.chinook.air, infantry.worker, vehicle.supply_truck
 			ExcludeFromSquads: upgrade.control_rods, upgrade.control_rods.laser, upgrade.advanced_control_rods, upgrade.camo_netting, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone, upgrade.toxin_missiles, upgrade.hi_explosive_missiles, upgrade.overlord_gatling, upgrade.overlord_speaker, upgrade.helix_gatling, upgrade.helix.speaker, upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sentry_gun, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.stealth_comanche, upgrade.mig_armor
-		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner, infantry.conscript
+		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.red_guard.nuke, infantry.red_guard.tank, infantry.minigunner, infantry.conscript
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
 		QueueLimits:
 			queue.cold_fusion_reactor: 1
@@ -163,6 +163,8 @@ Player:
 			infantry.rebel: 75%
 			infantry.toxin_rebel: 50%
 			infantry.red_guard: 75%
+			infantry.red_guard.nuke: 70%
+			infantry.red_guard.tank: 65%
 			infantry.minigunner: 75%
 			infantry.conscript: 75%
 			infantry.missile_defender: 30%
@@ -565,7 +567,7 @@ Player:
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
 			Collector: aircraft.chinook, aircraft.chinook.air, infantry.worker, vehicle.supply_truck
 			ExcludeFromSquads: upgrade.control_rods, upgrade.control_rods.laser, upgrade.advanced_control_rods, upgrade.camo_netting, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone, upgrade.toxin_missiles, upgrade.hi_explosive_missiles, upgrade.overlord_gatling, upgrade.overlord_speaker, upgrade.helix_gatling, upgrade.helix.speaker, upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sentry_gun, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.stealth_comanche, upgrade.mig_armor
-		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner, infantry.conscript
+		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.red_guard.nuke, infantry.red_guard.tank, infantry.minigunner, infantry.conscript
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
 		QueueLimits:
 			queue.cold_fusion_reactor: 1
@@ -709,6 +711,8 @@ Player:
 			infantry.rebel: 60%
 			infantry.toxin_rebel: 40%
 			infantry.red_guard: 60%
+			infantry.red_guard.nuke: 55%
+			infantry.red_guard.tank: 50%
 			infantry.minigunner: 60%
 			infantry.conscript: 60%
 			infantry.missile_defender: 35%
@@ -1111,7 +1115,7 @@ Player:
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
 			Collector: aircraft.chinook, aircraft.chinook.air, infantry.worker, vehicle.supply_truck
 			ExcludeFromSquads: upgrade.control_rods, upgrade.control_rods.laser, upgrade.advanced_control_rods, upgrade.camo_netting, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone, upgrade.toxin_missiles, upgrade.hi_explosive_missiles, upgrade.overlord_gatling, upgrade.overlord_speaker, upgrade.helix_gatling, upgrade.helix.speaker, upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sentry_gun, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.stealth_comanche, upgrade.mig_armor
-		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner, infantry.conscript
+		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.red_guard.nuke, infantry.red_guard.tank, infantry.minigunner, infantry.conscript
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
 		QueueLimits:
 			queue.cold_fusion_reactor: 1
@@ -1255,6 +1259,8 @@ Player:
 			infantry.rebel: 40%
 			infantry.toxin_rebel: 25%
 			infantry.red_guard: 40%
+			infantry.red_guard.nuke: 35%
+			infantry.red_guard.tank: 30%
 			infantry.minigunner: 40%
 			infantry.conscript: 40%
 			infantry.missile_defender: 30%

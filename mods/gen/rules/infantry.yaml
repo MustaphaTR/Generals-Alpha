@@ -227,10 +227,13 @@ infantry.red_guard:
 	Inherits@HORDE_BONUS: ^Horde
 	Inherits@REVEAL: ^Reveal200
 	Buildable:
-		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
-		BuildDurationModifier: 50
+		Queue: queue.prc_infantry
+		BuildAmount: 2
+		BuildDuration: 250
 		Prerequisites: ~techlevel.infonly
-		Description: General-purpose infantry armed with a rifle.
+		Description: General-purpose infantry armed with a rifle.\n\nTrained in groups of 2.
+	Valued:
+		Cost: 300
 	Mobile:
 		Speed: 25
 	Tooltip:
@@ -244,6 +247,20 @@ infantry.red_guard:
 		VoiceSet: RedGuardVoice
 	ProducibleWithLevel:
 		Prerequisites: generals_power.red_training
+
+infantry.red_guard.nuke:
+	Inherits: infantry.red_guard
+	Buildable:
+		Queue: queue.nuke_gen_infantry
+	Valued:
+		Cost: 350
+
+infantry.red_guard.tank:
+	Inherits: infantry.red_guard
+	Buildable:
+		Queue: queue.tank_gen_infantry
+	Valued:
+		Cost: 375
 
 infantry.minigunner:
 	Inherits: ^default.mg_infantry
