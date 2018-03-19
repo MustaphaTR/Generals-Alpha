@@ -1125,12 +1125,16 @@ infantry.black_lotus:
 		Range: 7c512
 	Armament@CaptureAnim:
 		Name: capture
+		Cursor: ability
+		OutsideRangeCursor: ability
 		Weapon: capture.black_lotus.anim
 		TargetStances: Enemy, Neutral
 		LocalOffset: 0,0,196
 		RequiresCondition: end_capture == 0
 	Armament@CaptureEnd:
 		Name: capture
+		Cursor: ability
+		OutsideRangeCursor: ability
 		Weapon: capture.black_lotus.end
 		TargetStances: Enemy, Neutral
 		LocalOffset: 0,0,196
