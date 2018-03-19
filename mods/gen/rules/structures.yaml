@@ -211,10 +211,10 @@ building.usa_command_center:
 		OrderName: FuelAirBombPowerInfoOrder
 	ProvidesPrerequisite@Vanilla:
 		Prerequisite: prerequisite.usa_command_center.vanilla
-		Factions: usa
+		Factions: usa, gla, toxin, demo, stealth, prc, inf, nuke, tank
 	ProvidesPrerequisite@Vanilla_Laser_Super:
 		Prerequisite: prerequisite.usa_command_center.vanilla_laser_super
-		Factions: usa, laser, super
+		Factions: usa, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
 	ProvidesPrerequisite@Airforce:
 		Prerequisite: prerequisite.usa_command_center.air
 		Factions: air
@@ -367,16 +367,16 @@ building.gla_command_center:
 		OrderName: AnthraxBombPowerInfoOrder
 	ProvidesPrerequisite@Vanilla:
 		Prerequisite: prerequisite.gla_command_center.vanilla
-		Factions: gla
+		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
 	ProvidesPrerequisite@Vanilla_Stealth:
 		Prerequisite: prerequisite.gla_command_center.vanilla_stealth
-		Factions: gla, stealth
+		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank
 	ProvidesPrerequisite@Vanilla_Toxin_Demo:
 		Prerequisite: prerequisite.gla_command_center.vanilla_toxin_demo
-		Factions: gla, toxin, demo
+		Factions: usa, air, laser, super, gla, toxin, demo, prc, inf, nuke, tank
 	ProvidesPrerequisite@Vanilla_Demo_Stealth:
 		Prerequisite: prerequisite.gla_command_center.vanilla_demo_stealth
-		Factions: gla, demo, stealth
+		Factions: usa, air, laser, super, gla, demo, stealth, prc, inf, nuke, tank
 	ProvidesPrerequisite@Toxin:
 		Prerequisite: prerequisite.gla_command_center.toxin
 		Factions: toxin
@@ -640,16 +640,16 @@ building.prc_command_center:
 		OrderName: EMPPowerInfoOrder
 	ProvidesPrerequisite@Vanilla:
 		Prerequisite: prerequisite.prc_command_center.vanilla
-		Factions: prc
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
 	ProvidesPrerequisite@Vanilla_Inf:
 		Prerequisite: prerequisite.prc_command_center.vanilla_inf
-		Factions: prc, inf
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf
 	ProvidesPrerequisite@Vanilla_Inf_Nuke:
 		Prerequisite: prerequisite.prc_command_center.vanilla_inf_nuke
-		Factions: prc, inf, nuke
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke
 	ProvidesPrerequisite@Vanilla_Nuke_Tank:
 		Prerequisite: prerequisite.prc_command_center.vanilla_nuke_tank
-		Factions: prc, nuke, tank
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, nuke, tank
 	ProvidesPrerequisite@Infantry:
 		Prerequisite: prerequisite.prc_command_center.inf
 		Factions: inf
