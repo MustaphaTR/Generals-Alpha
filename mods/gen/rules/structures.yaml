@@ -787,7 +787,7 @@ building.nuclear_reactor:
 	ProductionBar:
 	Armament:
 		Weapon: hack.nuclear_reactor
-		RequiresCondition: overcharge
+		RequiresCondition: overcharge && !emp && !hacked
 	Explodes:
 		Type: CenterPosition
 		Weapon: explosion.nuclear_reactor
