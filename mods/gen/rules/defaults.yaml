@@ -1606,7 +1606,7 @@
 	Selectable:
 		Priority: 3
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure
+		TargetTypes: Ground, Structure, C4, DetonateAttack
 	Building:
 		Dimensions: 1,1
 		Footprint: x
@@ -1649,7 +1649,7 @@
 		RepairStep: 15
 		PlayerExperience: 25
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Capture, Disable
+		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
 	AcceptsDeliveredCash:
 	WithMakeAnimation:
@@ -1705,7 +1705,7 @@
 ^Defense:
 	Inherits: ^Building
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, Disable
+		TargetTypes: Ground, Structure, C4, DetonateAttack, Disable
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	-GivesBuildableArea:
@@ -1737,7 +1737,7 @@
 	Armor:
 		Type: building.normal
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, Hole
+		TargetTypes: Ground, Structure, C4, DetonateAttack, Hole
 	TransformOnCapture:
 		Type: hole
 		ForceHealthPercentage: 20
@@ -1772,7 +1772,7 @@
 	LineBuildNode:
 		Types: wall
 	Targetable:
-		TargetTypes: Ground, DetonateAttack, Wall, NoAutoTarget
+		TargetTypes: Ground, Wall, DetonateAttack, NoAutoTarget
 	-GivesExperience:
 	RenderSprites:
 		Palette: effect
@@ -1843,7 +1843,7 @@
 	Tooltip:
 		Name: Ammo Box
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, NoAutoTarget
+		TargetTypes: Ground, Structure, C4, DetonateAttack, NoAutoTarget
 	Armor:
 		Type: building.normal
 	EditorTilesetFilter:
