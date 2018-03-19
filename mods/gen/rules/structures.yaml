@@ -821,10 +821,8 @@ building.advanced_nuclear_reactor:
 		Name: Advanced Nuclear Reactor
 	Power@notovercharged:
 		Amount: 18
-		RequiresCondition: !overcharge && !emp && !hacked
 	Power@overcharged:
 		Amount: 27
-		RequiresCondition: overcharge && !emp && !hacked
 
 ^default.barracks:
 	Inherits: ^Building
