@@ -1156,7 +1156,7 @@ vehicle.tomahawk_launcher:
 	Tooltip:
 		Name: Tomahawk Launcher
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle
+		Queue: queue.usa_vehicle
 		BuildPaletteOrder: 7
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1171,6 +1171,8 @@ vehicle.tomahawk_launcher:
 		HP: 180
 	Armor:
 		Type: vehicle.truck
+	Selectable:
+		Class: vehicle.tomahawk_launcher
 	Turreted:
 		TurnSpeed: 8
 		Offset: -128,0,128
@@ -1183,6 +1185,9 @@ vehicle.tomahawk_launcher:
 		Ammo: 1
 		PipCount: 0
 		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 90
+		Count: 1
 	AttackTurreted:
 		RequiresCondition: !hacked && !driver_killed && !emp
 	WithReloadingSpriteTurret:
@@ -1193,11 +1198,24 @@ vehicle.tomahawk_launcher:
 		Pieces: 1, 1
 		Range: 1c0, 1c0
 		RequiresCondition: ammo
+	RenderSprites:
+		Image: vehicle.tomahawk_launcher
 	Voiced:
 		VoiceSet: TomahawkLauncherVoice
-	ReloadAmmoPool:
-		Delay: 90
-		Count: 1
+
+vehicle.tomahawk_launcher.air:
+	Inherits: vehicle.tomahawk_launcher
+	Buildable:
+		Queue: queue.air_gen_vehicle
+	Valued:
+		Cost: 1300
+
+vehicle.tomahawk_launcher.super:
+	Inherits: vehicle.tomahawk_launcher
+	Buildable:
+		Queue: queue.super_gen_vehicle
+	Valued:
+		Cost: 1400
 
 vehicle.scud_launcher:
 	Inherits: ^Vehicle
