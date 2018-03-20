@@ -64,7 +64,7 @@ vehicle.humvee:
 		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
+		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -79,6 +79,8 @@ vehicle.humvee:
 		HP: 240
 	Armor:
 		Type: vehicle.humvee
+	Selectable:
+		Class: vehicle.humvee
 	Mobile:
 		TurnSpeed: 10
 		Speed: 60
@@ -135,8 +137,24 @@ vehicle.humvee:
 		Pieces: 1, 1
 		Range: 1c0, 1c0
 		RequiresCondition: tow_missile
+	RenderSprites:
+		Image: vehicle.humvee
 	Voiced:
 		VoiceSet: HumveeVoice
+
+vehicle.humvee.air:
+	Inherits: vehicle.humvee
+	Buildable:
+		Queue: queue.air_gen_vehicle
+	Valued:
+		Cost: 800
+
+vehicle.humvee.super:
+	Inherits: vehicle.humvee
+	Buildable:
+		Queue: queue.super_gen_vehicle
+	Valued:
+		Cost: 850
 
 vehicle.technical:
 	Inherits: ^Vehicle
