@@ -1993,11 +1993,11 @@ building.usa_airfield:
 		Footprint: XXXX xxxx xxxx
 		Dimensions: 4,3
 	Production:
-		Produces: queue.usa_aircraft, queue.air_gen_aircraft, queue.usa_plane, queue.usa_helicopter, queue.usa_air_upgrade
+		Produces: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_plane, queue.usa_helicopter, queue.usa_air_upgrade
 		PauseOnCondition: emp || hacked
 	ProductionQueue@Vanilla:
 		Type: queue.usa_aircraft
-		Factions: usa, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
+		Factions: usa, laser, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Aircraft
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
@@ -2009,10 +2009,19 @@ building.usa_airfield:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 38
+	ProductionQueue@Super:
+		Type: queue.super_gen_aircraft
+		Factions: super
+		Group: Aircraft
+		InstantCashDrain: true
+		LowPowerSlowdown: 3
+		SpectatorUIOrder: 39
 	ProductionBar@Vanilla:
 		ProductionType: queue.usa_aircraft
 	ProductionBar@Airforce:
 		ProductionType: queue.air_gen_aircraft
+	ProductionBar@Super:
+		ProductionType: queue.super_gen_aircraft
 	Dock@0:
 		DockOffset: 2,2
 	Dock@1:
@@ -2070,7 +2079,7 @@ building.prc_airfield:
 		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 39
+		SpectatorUIOrder: 40
 	ProductionBar:
 	Dock@0:
 		DockOffset: 0,1
@@ -2132,14 +2141,14 @@ building.strategy_center:
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 41
+		SpectatorUIOrder: 42
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_strategy_center
 		Factions: air, super
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 42
+		SpectatorUIOrder: 43
 	ProductionBar@Vanilla:
 		ProductionType: queue.strategy_center
 	ProductionBar@Airforce:
@@ -2261,21 +2270,21 @@ building.palace:
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 43
+		SpectatorUIOrder: 44
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_palace
 		Factions: toxin
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 44
+		SpectatorUIOrder: 45
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_palace
 		Factions: stealth
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 45
+		SpectatorUIOrder: 46
 	ProductionBar@Vanilla:
 		ProductionType: queue.palace
 	ProductionBar@Toxin:
@@ -2329,14 +2338,14 @@ building.propaganda_center:
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 46
+		SpectatorUIOrder: 47
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_propaganda_center
 		Factions: tank
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 47
+		SpectatorUIOrder: 48
 	ProductionBar@Vanilla:
 		ProductionType: queue.propaganda_center
 	ProductionBar@Tank:

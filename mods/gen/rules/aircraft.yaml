@@ -249,7 +249,7 @@ aircraft.raptor:
 	Inherits@REVEAL: ^Reveal400
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_aircraft
+		Queue: queue.usa_aircraft, queue.super_gen_aircraft
 		BuildAtProductionType: queue.usa_plane
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
@@ -359,7 +359,7 @@ aircraft.stealth_fighter:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_aircraft
+		Queue: queue.usa_aircraft, queue.super_gen_aircraft
 		BuildAtProductionType: queue.usa_plane
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
@@ -449,7 +449,7 @@ aircraft.aurora:
 	Inherits@REVEAL: ^Reveal600
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_aircraft, queue.air_gen_aircraft
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft
 		BuildAtProductionType: queue.usa_plane
 		BuildPaletteOrder: 4
 		BuildDuration: 625
@@ -847,7 +847,7 @@ aircraft.comanche:
 	RevealsShroud@INTELLIGENCE:
 		Type: CenterPosition
 	Buildable:
-		Queue: queue.usa_aircraft, queue.air_gen_aircraft
+		Queue: queue.usa_aircraft
 		BuildAtProductionType: queue.usa_helicopter
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
@@ -883,6 +883,10 @@ aircraft.comanche:
 		Ammo: 12
 		PipCount: 0
 		AmmoCondition: ammo
+	ReloadAmmoPool:
+		AmmoPool: secondary
+		Delay: 375
+		Count: 12
 	AttackHeli:
 		FacingTolerance: 20
 	Aircraft:
@@ -918,14 +922,27 @@ aircraft.comanche:
 		Condition: stealth_comanche
 		Prerequisites: upgrade.stealth_comanche
 	-RevealOnDeath:
+	RenderSprites:
+		Image: aircraft.comanche
 	Voiced:
 		VoiceSet: ComancheVoice
-	ReloadAmmoPool:
-		AmmoPool: secondary
-		Delay: 375
-		Count: 12
 	Selectable:
 		DecorationBounds: 36,28
+		Class: aircraft.comanche
+
+aircraft.comanche.air:
+	Inherits: aircraft.comanche
+	Buildable:
+		Queue: queue.air_gen_aircraft
+	Valued:
+		Cost: 1200
+
+aircraft.comanche.super:
+	Inherits: aircraft.comanche
+	Buildable:
+		Queue: queue.super_gen_aircraft
+	Valued:
+		Cost: 1800
 
 aircraft.helix:
 	Inherits: ^Helicopter

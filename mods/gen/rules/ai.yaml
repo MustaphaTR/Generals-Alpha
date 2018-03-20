@@ -9,7 +9,7 @@ Player:
 		ProductionMinimumCash: 2000
 		BuildingQueues: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.stealth_gen_palace, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.soviet_barracks, General
 		DefenseQueues: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
-		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
+		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
 		BuildingCommonNames:
 			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -229,6 +229,8 @@ Player:
 			aircraft.stealth_fighter.air: 1%
 			aircraft.aurora: 0.5%
 			aircraft.comanche: 2%
+			aircraft.comanche.air: 2%
+			aircraft.comanche.super: 2%
 			aircraft.helix: 2%
 			vessel.gunboat: 1%
 			vessel.destroyer: 1%
@@ -274,6 +276,8 @@ Player:
 			aircraft.stealth_fighter.air: 1
 			aircraft.aurora: 1
 			aircraft.comanche: 2
+			aircraft.comanche.air: 2
+			aircraft.comanche.super: 2
 			aircraft.helix: 2
 			aircraft.chinook: 8
 			aircraft.chinook.air: 8
@@ -553,7 +557,7 @@ Player:
 		ProductionMinimumCash: 2000
 		BuildingQueues: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.stealth_gen_palace, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.soviet_barracks, General
 		DefenseQueues: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
-		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
+		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
 		BuildingCommonNames:
 			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -783,6 +787,8 @@ Player:
 			aircraft.stealth_fighter.air: 2%
 			aircraft.aurora: 1%
 			aircraft.comanche: 2%
+			aircraft.comanche.air: 2%
+			aircraft.comanche.super: 2%
 			aircraft.helix: 2%
 			vessel.gunboat: 0.75%
 			vessel.destroyer: 1%
@@ -828,6 +834,8 @@ Player:
 			aircraft.stealth_fighter.air: 1
 			aircraft.aurora: 1
 			aircraft.comanche: 2
+			aircraft.comanche.air: 2
+			aircraft.comanche.super: 2
 			aircraft.helix: 2
 			aircraft.chinook: 8
 			aircraft.chinook.air: 8
@@ -1107,7 +1115,7 @@ Player:
 		ProductionMinimumCash: 2000
 		BuildingQueues: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.stealth_gen_palace, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.missile_silo, queue.just_mine, queue.soviet_barracks, General
 		DefenseQueues: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
-		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
+		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.soviet_infantry, queue.bio_lab, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.prc_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
 		BuildingCommonNames:
 			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -1337,6 +1345,8 @@ Player:
 			aircraft.stealth_fighter.air: 2%
 			aircraft.aurora: 1%
 			aircraft.comanche: 2%
+			aircraft.comanche.air: 2%
+			aircraft.comanche.super: 2%
 			aircraft.helix: 2%
 			vessel.gunboat: 0.5%
 			vessel.destroyer: 1%
@@ -1382,6 +1392,8 @@ Player:
 			aircraft.stealth_fighter.air: 1
 			aircraft.aurora: 1
 			aircraft.comanche: 2
+			aircraft.comanche.air: 2
+			aircraft.comanche.super: 2
 			aircraft.helix: 2
 			aircraft.chinook: 8
 			aircraft.chinook.air: 8
