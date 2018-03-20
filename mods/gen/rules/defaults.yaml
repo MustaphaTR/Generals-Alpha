@@ -943,6 +943,7 @@
 ^EjectsPilotOnAir:
 	EjectOnDeath:
 		PilotActor: infantry.pilot
+		ChuteSound: chute1.aud
 		EjectOnGround: false
 		EjectInAir: true
 		AllowUnsuitableCell: true
@@ -1615,6 +1616,7 @@
 		Dimensions: 1,1
 		Footprint: x
 		TerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
+		BuildSounds: placbldg.aud, build5.aud
 		RequiresBaseProvider: true
 	SoundOnDamageTransition:
 		DamagedSounds: kaboom1.aud
