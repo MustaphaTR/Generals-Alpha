@@ -661,32 +661,12 @@ missile.scud_launcher.explosive:
 	Warhead@2Dam: SpreadDamage
 		Damage: 50
 
-hack.scud_missile_spawner:
-	ReloadDelay: 15
-	Range: 1000c0
-	Report: missile1.aud
-	Projectile: Bullet
-		Speed: 300
-		Blockable: false
-		TrailImage: smokey
-		TrailDelay: 5
-		Inaccuracy: 5000c0
-		Image: V2
-		Shadow: True
-		LaunchAngle: 62
-	Warhead@1Hack: SpawnActor
-		Actors: hack.scud_missile_damager
-
-hack.scud_missile_spawner.beta:
-	Inherits: hack.scud_missile_spawner
-	Warhead@1Hack: SpawnActor
-		Actors: hack.scud_missile_damager.beta
-
 missile.scud_storm:
 	Inherits: missile.scud_launcher.toxin
-	ReloadDelay: 10
+	ReloadDelay: 15
 	MinRange: 0c0
 	Range: 1000c0
+	Report: missile1.aud
 	Projectile: Bullet
 		Speed: 384
 		Inaccuracy: 5000c0

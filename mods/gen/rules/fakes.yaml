@@ -371,19 +371,19 @@ fake.scud_storm:
 	Armament@NORMAL_A:
 		Name: A
 		Turret: A
-		Weapon: hack.scud_missile_spawner
+		Weapon: missile.scud_storm
 	Armament@NORMAL_B:
 		Name: B
 		Turret: B
-		Weapon: hack.scud_missile_spawner
+		Weapon: missile.scud_storm
 	Armament@NORMAL_C:
 		Name: C
 		Turret: C
-		Weapon: hack.scud_missile_spawner
+		Weapon: missile.scud_storm
 	Armament@NORMAL_D:
 		Name: D
 		Turret: D
-		Weapon: hack.scud_missile_spawner
+		Weapon: missile.scud_storm
 	Turreted@A:
 		Turret: A
 		TurnSpeed: 3
@@ -403,22 +403,22 @@ fake.scud_storm:
 	AmmoPool:
 		Ammo: 4
 		PipCount: 0
-	WithReloadingSpriteTurret@A:
+	WithSpriteTurret@A:
 		AmmoPoolName: primary
 		Turret: A
-		Sequence: turret.a
-	WithReloadingSpriteTurret@B:
+		Sequence: turret-full
+	WithSpriteTurret@B:
 		AmmoPoolName: primary
 		Turret: B
-		Sequence: turret.b
-	WithReloadingSpriteTurret@C:
+		Sequence: turret-full
+	WithSpriteTurret@C:
 		AmmoPoolName: primary
 		Turret: C
-		Sequence: turret.c
-	WithReloadingSpriteTurret@D:
+		Sequence: turret-full
+	WithSpriteTurret@D:
 		AmmoPoolName: primary
 		Turret: D
-		Sequence: turret.d
+		Sequence: turret-full
 	WithBuildingBib:
 	-WithMakeAnimation:
 	RenderSprites:

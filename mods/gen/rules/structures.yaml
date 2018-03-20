@@ -2715,45 +2715,46 @@ building.scud_storm:
 		Bounds: 48,48,0,0
 	AttackTurreted:
 		Turrets: A, B, C, D
+		Armaments: disabled
 	Armament@NORMAL_A:
 		Turret: A
-		Weapon: hack.scud_missile_spawner
+		Weapon: missile.scud_storm
 		RequiresCondition: !anthrax_beta
 		PauseOnCondition: !ammo
 	Armament@BETA_A:
 		Turret: A
-		Weapon: hack.scud_missile_spawner.beta
+		Weapon: missile.scud_storm.beta
 		RequiresCondition: anthrax_beta
 		PauseOnCondition: !ammo
 	Armament@NORMAL_B:
 		Turret: B
-		Weapon: hack.scud_missile_spawner
+		Weapon: missile.scud_storm
 		RequiresCondition: !anthrax_beta
 		PauseOnCondition: !ammo
 	Armament@BETA_B:
 		Turret: B
-		Weapon: hack.scud_missile_spawner.beta
+		Weapon: missile.scud_storm.beta
 		RequiresCondition: anthrax_beta
 		PauseOnCondition: !ammo
 	Armament@NORMAL_C:
 		Turret: C
-		Weapon: hack.scud_missile_spawner
+		Weapon: missile.scud_storm
 		RequiresCondition: !anthrax_beta
 		PauseOnCondition: !ammo
 	Armament@BETA_C:
 		Name: C
 		Turret: C
-		Weapon: hack.scud_missile_spawner.beta
+		Weapon: missile.scud_storm.beta
 		RequiresCondition: anthrax_beta
 		PauseOnCondition: !ammo
 	Armament@NORMAL_D:
 		Turret: D
-		Weapon: hack.scud_missile_spawner
+		Weapon: missile.scud_storm
 		RequiresCondition: !anthrax_beta
 		PauseOnCondition: !ammo
 	Armament@BETA_D:
 		Turret: D
-		Weapon: hack.scud_missile_spawner.beta
+		Weapon: missile.scud_storm.beta
 		RequiresCondition: anthrax_beta
 		PauseOnCondition: !ammo
 	Turreted@A:
@@ -2776,22 +2777,46 @@ building.scud_storm:
 		Ammo: 4
 		PipCount: 0
 		AmmoCondition: ammo
-	WithReloadingSpriteTurret@A:
+	WithSpriteTurret@A_Full:
 		AmmoPoolName: primary
 		Turret: A
-		Sequence: turret.a
-	WithReloadingSpriteTurret@B:
+		Sequence: turret-full
+		RequiresCondition: ammo
+	WithSpriteTurret@A_Empty:
+		AmmoPoolName: primary
+		Turret: A
+		Sequence: turret-empty
+		RequiresCondition: !ammo
+	WithSpriteTurret@B_Full:
 		AmmoPoolName: primary
 		Turret: B
-		Sequence: turret.b
-	WithReloadingSpriteTurret@C:
+		Sequence: turret-full
+		RequiresCondition: ammo
+	WithSpriteTurret@B_Empty:
+		AmmoPoolName: primary
+		Turret: B
+		Sequence: turret-empty
+		RequiresCondition: !ammo
+	WithSpriteTurret@C_Full:
 		AmmoPoolName: primary
 		Turret: C
-		Sequence: turret.c
-	WithReloadingSpriteTurret@D:
+		Sequence: turret-full
+		RequiresCondition: ammo
+	WithSpriteTurret@C_Empty:
+		AmmoPoolName: primary
+		Turret: C
+		Sequence: turret-empty
+		RequiresCondition: !ammo
+	WithSpriteTurret@D_Full:
 		AmmoPoolName: primary
 		Turret: D
-		Sequence: turret.d
+		Sequence: turret-full
+		RequiresCondition: ammo
+	WithSpriteTurret@D_Empty:
+		AmmoPoolName: primary
+		Turret: D
+		Sequence: turret-empty
+		RequiresCondition: !ammo
 	SupportPowerChargeBar:
 	WithBuildingBib:
 	-WithMakeAnimation:
@@ -2800,7 +2825,7 @@ building.scud_storm:
 		Prerequisites: upgrade.anthrax_beta
 	MustBeDestroyed:
 		RequiredForShortGame: false
-	AttackOrderPower:
+	FireArmamentPower:
 		PauseOnCondition: emp || hacked
 		Prerequisites:
 			1: building.scud_storm
@@ -2808,6 +2833,7 @@ building.scud_storm:
 			1: scud_storm
 		Cursor: nuke
 		ChargeInterval: 7500
+		ArmamentName: primary
 		Description: SCUD Storm
 		DisplayTimerStances: Enemy, Neutral, Ally
 		LongDescs:
@@ -2815,7 +2841,7 @@ building.scud_storm:
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
 		AllowMultiple: True
-		DisplayBeacon: True
+		DisplayBeacon: False
 		BeaconPosters:
 			1: scudswbcon
 		ArrowSequence: arrow

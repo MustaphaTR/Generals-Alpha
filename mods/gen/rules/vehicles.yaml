@@ -360,11 +360,15 @@ vehicle.scorpion_tank:
 		Ammo: 1
 		PipCount: 0
 		AmmoCondition: ammo
-	WithReloadingSpriteTurret@SC_ROCKET:
+	ReloadAmmoPool:
+		AmmoPool: secondary
+		Delay: 300
+		Count: 1
+	WithSpriteTurret@SC_ROCKET:
 		AmmoPoolName: secondary
 		Sequence: rocket
 		Turret: sc_rocket
-		RequiresCondition: sc_rocket
+		RequiresCondition: sc_rocket && ammo
 	GrantConditionOnPrerequisite@SC_ROCKET:
 		Condition: sc_rocket
 		Prerequisites: upgrade.sc_rocket
@@ -387,10 +391,6 @@ vehicle.scorpion_tank:
 		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: ScorpionTankVoice
-	ReloadAmmoPool:
-		AmmoPool: secondary
-		Delay: 300
-		Count: 1
 
 vehicle.crusader_tank:
 	Inherits: ^Tank
@@ -1237,8 +1237,14 @@ vehicle.tomahawk_launcher:
 		Count: 1
 	AttackTurreted:
 		RequiresCondition: !hacked && !driver_killed && !emp
-	WithReloadingSpriteTurret:
+	WithSpriteTurret@Full:
 		AmmoPoolName: primary
+		Sequence: turret-full
+		RequiresCondition: ammo
+	WithSpriteTurret@Empty:
+		AmmoPoolName: primary
+		Sequence: turret-empty
+		RequiresCondition: !ammo
 	AcceptsDeliveredExperience:
 	ThrowsShrapnel:
 		Weapons: debris.tomahawk_launcher

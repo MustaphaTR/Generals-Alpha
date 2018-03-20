@@ -300,20 +300,6 @@ firestorm.blue.50:
 	FirepowerMultiplier:
 		Modifier: 50
 
-hack.scud_missile_damager:
-	Inherits: firestorm.normal
-	Armament:
-		Weapon: missile.scud_storm
-	RenderSprites:
-		Image: invis
-	KillsSelf:
-		Delay: 1
-
-hack.scud_missile_damager.beta:
-	Inherits: hack.scud_missile_damager
-	Armament:
-		Weapon: missile.scud_storm.beta
-
 hack.mine:
 	Inherits: ^Mine
 	-Building:
