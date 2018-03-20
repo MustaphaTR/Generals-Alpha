@@ -283,6 +283,11 @@ fake.black_market:
 		IntoActor: building.black_market
 	Valued:
 		Cost: 625
+	CashTrickler:
+		Interval: 25
+		Amount: 20
+		Fake: true
+		PauseOnCondition: emp || hacked
 	Voiced:
 		VoiceSet: BlackMarketVoice
 
