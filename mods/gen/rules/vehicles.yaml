@@ -590,7 +590,7 @@ vehicle.sentry_drone:
 	Inherits@DRONE_ARMOR: ^AffectedByDroneArmor
 	Inherits@REVEAL: ^Reveal350
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
+		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -605,6 +605,8 @@ vehicle.sentry_drone:
 		HP: 300
 	Armor:
 		Type: vehicle.humvee
+	Selectable:
+		Class: vehicle.sentry_drone 
 	Mobile:
 		TurnSpeed: 8
 		Speed: 60
@@ -653,8 +655,24 @@ vehicle.sentry_drone:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
 	-MustBeDestroyed:
+	RenderSprites:
+		Image: vehicle.sentry_drone
 	Voiced:
 		VoiceSet: SentryDroneVoice
+
+vehicle.sentry_drone.air:
+	Inherits: vehicle.sentry_drone
+	Buildable:
+		Queue: queue.air_gen_vehicle
+	Valued:
+		Cost: 850
+
+vehicle.sentry_drone.super:
+	Inherits: vehicle.sentry_drone
+	Buildable:
+		Queue: queue.super_gen_vehicle
+	Valued:
+		Cost: 1000
 
 vehicle.quad_cannon:
 	Inherits: ^Tank
