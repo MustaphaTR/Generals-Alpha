@@ -545,7 +545,7 @@ vehicle.ambulance:
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal400
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
+		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -560,6 +560,8 @@ vehicle.ambulance:
 		HP: 240
 	Armor:
 		Type: vehicle.toxin_tractor
+	Selectable:
+		Class: vehicle.ambulance 
 	Mobile:
 		Speed: 60
 		Voice: Move
@@ -580,8 +582,17 @@ vehicle.ambulance:
 		EjectOnDeath: true
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp
+	RenderSprites:
+		Image: vehicle.ambulance
 	Voiced:
 		VoiceSet: AmbulanceVoice
+
+vehicle.ambulance.air:
+	Inherits: vehicle.ambulance
+	Buildable:
+		Queue: queue.air_gen_vehicle, queue.super_gen_vehicle
+	Valued:
+		Cost: 700
 
 vehicle.sentry_drone:
 	Inherits: ^Vehicle
