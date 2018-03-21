@@ -506,7 +506,6 @@ vehicle.battlemaster_tank:
 	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
 	Buildable:
 		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
-		BuildAtProductionType: WarFactory
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -743,7 +742,6 @@ vehicle.quad_cannon:
 		Name: Quad Cannon
 	Buildable:
 		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
-		BuildAtProductionType: WarFactory
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 150
@@ -1428,8 +1426,7 @@ vehicle.inferno_cannon:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle
-		BuildAtProductionType: WarFactory
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
 		BuildPaletteOrder: 9
 		ForceIconLocation: true
 		BuildDuration: 375
@@ -1444,6 +1441,8 @@ vehicle.inferno_cannon:
 		HP: 120
 	Armor:
 		Type: vehicle.tank
+	Selectable:
+		Class: vehicle.inferno_cannon
 	Mobile:
 		TurnSpeed: 3
 		Speed: 30
@@ -1479,8 +1478,17 @@ vehicle.inferno_cannon:
 		Weapons: debris.nuke_cannon
 		Pieces: 1, 1
 		Range: 1c0, 1c0
+	RenderSprites:
+		Image: vehicle.inferno_cannon
 	Voiced:
 		VoiceSet: InfernoCannonVoice
+
+vehicle.inferno_cannon.inf:
+	Inherits: vehicle.inferno_cannon
+	Buildable:
+		Queue: queue.inf_gen_vehicle
+	Valued:
+		Cost: 1100
 
 vehicle.paladin_tank:
 	Inherits: ^Tank
