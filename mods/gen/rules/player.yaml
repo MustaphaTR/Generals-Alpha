@@ -2,13 +2,116 @@ Player:
 	AlwaysVisible:
 	TechTree:
 	ConditionManager:
-	ClassicProductionQueue@General:
-		Type: General
+	ClassicProductionQueue@USA_Vanilla:
+		Type: queue.usa_generals_power
+		Group: General
+		Factions: usa
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		QueuedAudio:
 		ReadyAudio:
 		SpectatorUIOrder: 0
+	ClassicProductionQueue@Airforce:
+		Type: queue.air_gen_generals_power
+		Group: General
+		Factions: air
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		QueuedAudio:
+		ReadyAudio:
+		SpectatorUIOrder: 0
+	ClassicProductionQueue@Laser:
+		Type: queue.laser_gen_generals_power
+		Group: General
+		Factions: laser
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		QueuedAudio:
+		ReadyAudio:
+		SpectatorUIOrder: 0
+	ClassicProductionQueue@Super:
+		Type: queue.super_gen_generals_power
+		Group: General
+		Factions: super
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		QueuedAudio:
+		ReadyAudio:
+		SpectatorUIOrder: 0
+	ClassicProductionQueue@GLA_Vanilla:
+		Type: queue.gla_generals_power
+		Group: General
+		Factions: gla
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		QueuedAudio:
+		ReadyAudio:
+		SpectatorUIOrder: 0
+	ClassicProductionQueue@Toxin:
+		Type: queue.toxin_gen_generals_power
+		Group: General
+		Factions: toxin
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		QueuedAudio:
+		ReadyAudio:
+		SpectatorUIOrder: 0
+	ClassicProductionQueue@Demo:
+		Type: queue.demo_gen_generals_power
+		Group: General
+		Factions: demo
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		QueuedAudio:
+		ReadyAudio:
+		SpectatorUIOrder: 0
+	ClassicProductionQueue@Stealth:
+		Type: queue.stealth_gen_generals_power
+		Group: General
+		Factions: stealth
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		QueuedAudio:
+		ReadyAudio:
+		SpectatorUIOrder: 0
+	ClassicProductionQueue@PRC_Vanilla:
+		Type: queue.prc_generals_power
+		Group: General
+		Factions: prc
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		QueuedAudio:
+		ReadyAudio:
+		SpectatorUIOrder: 0
+	ClassicProductionQueue@Infantry:
+		Type: queue.inf_gen_generals_power
+		Group: General
+		Factions: inf
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		QueuedAudio:
+		ReadyAudio:
+		SpectatorUIOrder: 0
+	ClassicProductionQueue@Nuke:
+		Type: queue.nuke_gen_generals_power
+		Group: General
+		Factions: nuke
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		QueuedAudio:
+		ReadyAudio:
+		SpectatorUIOrder: 0
+	ClassicProductionQueue@Tank:
+		Type: queue.tank_gen_generals_power
+		Group: General
+		Factions: tank
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		QueuedAudio:
+		ReadyAudio:
+		SpectatorUIOrder: 0
+	Production:
+		Produces: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 	PlaceBuilding:
 	SupportPowerManager:
 	ScriptTriggers:
@@ -92,8 +195,6 @@ Player:
 	GrantConditionOnPrerequisite@SUPPLY_LINES:
 		Condition: supply_lines
 		Prerequisites: upgrade.supply_lines
-	Production:
-		Produces: General
 	SpawnActorPower@EMERGENCY_REPAIR:
 		Actors:
 			1: camera.emergency_repair.1
