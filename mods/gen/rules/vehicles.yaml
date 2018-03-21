@@ -1892,6 +1892,7 @@ vehicle.bomb_truck:
 		Voice: Disguise
 		DisguisedAsConditions:
 			vehicle.radar_van: radar_van
+			vehicle.listening_outpost: listening_outpost
 			vehicle.usa_mcc: usa_mcc
 			vehicle.gla_mcc: gla_mcc
 			vehicle.prc_mcc: prc_mcc
@@ -1899,6 +1900,14 @@ vehicle.bomb_truck:
 		Sequence: radar_van_spinner
 		Offset: -256,0,256
 		RequiresCondition: radar_van
+	WithIdleOverlay@LISTENING_OUTPOST_SPINNER:
+		Sequence: radar_van_spinner
+		Offset: -256,0,256
+		PauseOnCondition: moving
+		RequiresCondition: listening_outpost
+	GrantConditionOnMovement:
+		Condition: moving
+		ConsiderTurning: true
 	WithTextDecoration@SIDE_USA:
 		Text: USA
 		ZOffset: 2048
