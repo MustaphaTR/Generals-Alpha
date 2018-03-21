@@ -932,7 +932,7 @@ vehicle.dragon_tank:
 	Tooltip:
 		Name: Dragon Tank
 	Buildable:
-		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -951,6 +951,8 @@ vehicle.dragon_tank:
 		HP: 280
 	Armor:
 		Type: vehicle.dragon_tank
+	Selectable:
+		Class: vehicle.dragon_tank
 	Armament@Red:
 		Weapon: flamer.dragon_tank
 		LocalOffset: 512,128,42, 512,-128,42
@@ -965,8 +967,24 @@ vehicle.dragon_tank:
 	AttackFrontal:
 		RequiresCondition: !hacked && !driver_killed && !emp
 	AcceptsDeliveredExperience:
+	RenderSprites:
+		Image: vehicle.dragon_tank
 	Voiced:
 		VoiceSet: DragonTankVoice
+
+vehicle.dragon_tank.inf:
+	Inherits: vehicle.dragon_tank
+	Buildable:
+		Queue: queue.inf_gen_vehicle
+	Valued:
+		Cost: 900
+
+vehicle.dragon_tank.tank:
+	Inherits: vehicle.dragon_tank
+	Buildable:
+		Queue: queue.tank_gen_vehicle
+	Valued:
+		Cost: 700
 
 vehicle.rocket_buggy:
 	Inherits: ^Vehicle
