@@ -9,7 +9,7 @@
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
 		Damage: 40
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
 		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
@@ -37,7 +37,7 @@ cannon.scorpion_tank:
 		Damage: 40
 		Versus:
 			infantry.normal: 10
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
+		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 	-Warhead@2Smu: LeaveSmudge
 	-Warhead@2SmuSnow: LeaveSmudge
 	Warhead@3Eff: CreateEffect
@@ -97,7 +97,7 @@ cannon.marauder_tank:
 		Damage: 60
 		Versus:
 			infantry.normal: 10
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
+		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 cannon.marauder_tank.toxin:
 	Inherits: cannon.marauder_tank
@@ -152,7 +152,7 @@ TurretGun:
 			Light: 60
 			Heavy: 25
 			Concrete: 50
-		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+		DamageTypes: TriggerProne, SmallExplosionDeath
 	Warhead@3Eff: CreateEffect
 		Explosions: artillery_explosion
 		ImpactSounds: kaboom15.aud
@@ -210,7 +210,7 @@ cannon.nuke_cannon:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@5Dam_impact: SpreadDamage
 		Spread: 2c0
 		Damage: 20
@@ -218,7 +218,7 @@ cannon.nuke_cannon:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@3Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
 		InvalidTargets: Vehicle, Tank, Structure, Wall
@@ -263,7 +263,7 @@ cannon.strategy_center:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
 		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
@@ -332,7 +332,7 @@ molotov.angry_mob:
 		Versus:
 			vehicle.dragon_tank: 20
 			vehicle.toxin_tractor: 20
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
+		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion
 		ImpactSounds: kaboom25.aud

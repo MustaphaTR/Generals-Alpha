@@ -9,7 +9,7 @@
 			Light: 60
 			Heavy: 25
 			Concrete: 100
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@Smu: LeaveSmudge
 		SmudgeType: Crater
 		InvalidTargets: Structure, Wall, Trees
@@ -38,7 +38,7 @@ CrateNapalm:
 			Wood: 100
 			Concrete: 50
 		AffectsParent: true
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@2Eff: CreateEffect
 		Explosions: napalm
 		ImpactSounds: firebl3.aud
@@ -150,7 +150,7 @@ BarrelExplode:
 			Wood: 200
 			Light: 50
 			Concrete: 10
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, Incendiary
+		DamageTypes: TriggerProne, ExplosionDeath, Incendiary
 	Warhead@2Eff: CreateEffect
 		Explosions: napalm
 		ImpactSounds: firebl3.aud
@@ -175,7 +175,7 @@ explosion.demo_trap:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, DropCrate, Incendiary
+		DamageTypes: TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@2Dam: SpreadDamage
 		Spread: 2c0
 		Damage: 400
@@ -185,7 +185,7 @@ explosion.demo_trap:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, DropCrate, Incendiary
+		DamageTypes: TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@2Eff: CreateEffect
 		Explosions: napalm
 		ImpactSounds: firebl3.aud
@@ -217,7 +217,7 @@ explosion.terrorist:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, DropCrate, Incendiary
+		DamageTypes: TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@1DamAlly: SpreadDamage
 		Spread: 0c768
 		Damage: 500
@@ -228,7 +228,7 @@ explosion.terrorist:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, DropCrate, Incendiary
+		DamageTypes: TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c512
 		Damage: 300
@@ -238,7 +238,7 @@ explosion.terrorist:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, DropCrate, Incendiary
+		DamageTypes: TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@2DamAlly: SpreadDamage
 		Spread: 1c512
 		Damage: 300
@@ -249,7 +249,7 @@ explosion.terrorist:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, DropCrate, Incendiary
+		DamageTypes: TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@2Eff: CreateEffect
 		Explosions: napalm
 		ImpactSounds: firebl3.aud
@@ -280,7 +280,7 @@ explosion.mine:
 		Damage: 400
 		AffectsParent: true
 		InvalidTargets: Mine
-		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+		DamageTypes: TriggerProne, DefaultDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: large_explosion
 		ImpactSounds: mineblo1.aud
@@ -297,7 +297,7 @@ explosion.mine.neutron:
 		Damage: 400
 		AffectsParent: true
 		InvalidTargets: Vehicle, Tank
-		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+		DamageTypes: TriggerProne, DefaultDeath
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c768
 		AffectsParent: true
@@ -316,7 +316,7 @@ OreExplosion:
 			Wood: 75
 			Light: 60
 			Heavy: 25
-		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+		DamageTypes: TriggerProne, SmallExplosionDeath
 	Warhead@3Res: CreateResource
 		AddsResourceType: Ore
 		Size: 1,1
@@ -334,7 +334,7 @@ CrateNuke:
 		Versus:
 			Concrete: 25
 		AffectsParent: true
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@2Res_impact: DestroyResource
 	Warhead@3Eff_impact: CreateEffect
 		Explosions: nuke
@@ -349,7 +349,7 @@ CrateNuke:
 		Versus:
 			Concrete: 25
 		AffectsParent: true
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@5Res_areanuke1: DestroyResource
 		Size: 4
 		Delay: 5
@@ -387,7 +387,7 @@ BombTruckExplosion:
 			aircraft.chinook: 50
 			building.tough: 80
 		AffectsParent: true
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@3Eff_impact: CreateEffect
 		Explosions: mininuke
 		ImpactSounds: kaboom1.aud
@@ -402,7 +402,7 @@ BombTruckExplosion:
 			aircraft.chinook: 50
 			building.tough: 80
 		AffectsParent: true
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@6Eff_areanuke1: CreateEffect
 		ImpactSounds: kaboom22.aud
 		ImpactActors: false
@@ -416,7 +416,7 @@ BombTruckExplosion:
 			aircraft.chinook: 50
 			building.tough: 80
 		AffectsParent: true
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@8Dam_areanuke2: SpreadDamage
 		Spread: 2c256
 		Damage: 120
@@ -480,7 +480,7 @@ explosion.nuclear_reactor:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@5Dam_impact: SpreadDamage
 		Spread: 2c512
 		Damage: 50
@@ -488,7 +488,7 @@ explosion.nuclear_reactor:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@3Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
 		InvalidTargets: Vehicle, Tank, Structure, Wall

@@ -24,7 +24,7 @@
 			Light: 35
 			Heavy: 100
 			Concrete: 50
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
 		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
@@ -261,7 +261,7 @@ missile.scorpion_tank:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
+		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.missile_defender.ground:
 	Inherits: ^AntiGroundMissile
@@ -333,22 +333,22 @@ missile.missile_defender.garrison.air:
 missile.rpg_trooper.ground:
 	Inherits: missile.missile_defender.ground
 	Warhead@1Dam: SpreadDamage
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
+		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.rpg_trooper.air:
 	Inherits: missile.missile_defender.air
 	Warhead@1Dam: SpreadDamage
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
+		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.rpg_trooper.garrison.ground:
 	Inherits: missile.missile_defender.garrison.ground
 	Warhead@1Dam: SpreadDamage
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
+		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.rpg_trooper.garrison.air:
 	Inherits: missile.missile_defender.garrison.air
 	Warhead@1Dam: SpreadDamage
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
+		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.hellfire_drone:
 	Inherits: ^AntiGroundMissile
@@ -375,7 +375,7 @@ missile.stinger_site.ground:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
+		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.stinger_site.air:
 	Inherits: NikeAA
@@ -390,7 +390,7 @@ missile.stinger_site.air:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
+		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.comanche:
 	Inherits: ^AntiGroundMissile
@@ -563,7 +563,7 @@ missile.rocket_buggy:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, ExplosionDeath
+		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.rocket_buggy.upgraded:
 	Inherits: missile.rocket_buggy
@@ -624,7 +624,7 @@ missile.scud_launcher:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, SmallExplosionDeath, Incendiary
+		DamageTypes: TriggerProne, DropCrate, SmallExplosionDeath, Incendiary
 	Warhead@2Dam: SpreadDamage
 		Spread: 682
 		Damage: 25
@@ -633,7 +633,7 @@ missile.scud_launcher:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, DropCrate, SmallExplosionDeath, Incendiary
+		DamageTypes: TriggerProne, DropCrate, SmallExplosionDeath, Incendiary
 	Warhead@3Eff: CreateEffect
 		Explosions: artillery_explosion
 		ImpactSounds: kaboom15.aud
@@ -720,4 +720,4 @@ missile.tomahawk_launcher:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+		DamageTypes: TriggerProne, ExplosionDeath

@@ -12,7 +12,7 @@
 			Light: 60
 			Heavy: 25
 			Concrete: 20
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Scorch
 		InvalidTargets: Structure, Wall
@@ -154,7 +154,7 @@ Repair:
 Crush:
 	Warhead@1Dam: SpreadDamage
 		Damage: 100
-		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+		DamageTypes: TriggerProne, DefaultDeath
 	Warhead@2Eff: CreateEffect
 		ImpactSounds: squishy2.aud
 
@@ -179,7 +179,7 @@ Claw:
 			Light: 30
 			Heavy: 10
 			Concrete: 10
-		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+		DamageTypes: TriggerProne, DefaultDeath
 
 Mandible:
 	Inherits: Claw
@@ -215,7 +215,7 @@ hack.firestorm.normal:
 			building.tough: 50
 			building.defense: 50
 			building.stinger_site: 50
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 
 hack.firestorm.blue:
 	Inherits: hack.firestorm.normal
@@ -277,7 +277,7 @@ laser.paladin_tank:
 		Versus:
 			infantry.normal: 50
 		InvalidTargets: Vehicle, Tank, Structure, Wall
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+		DamageTypes: TriggerProne, FireDeath
 
 laser.king_raptor:
 	Inherits: laser.paladin_tank
