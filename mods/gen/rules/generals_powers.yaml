@@ -33,7 +33,7 @@ generals_power.spy_drone:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 250
-		Prerequisites: ~techlevel.low, !enough_powers.usa
+		Prerequisites: ~techlevel.low, !prerequisite.enough_powers
 		Description: Enables Spy Drone support power from Command Center.
 	Valued:
 		Cost: 600
@@ -47,7 +47,7 @@ generals_power.tech_training:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1000
-		Prerequisites: ~techlevel.medium, !enough_powers.gla
+		Prerequisites: ~techlevel.medium, !prerequisite.enough_powers
 		Description: Makes Technicals trained as veteran.
 	Valued:
 		Cost: 1250
@@ -61,7 +61,7 @@ generals_power.red_training:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1000
-		Prerequisites: ~techlevel.infonly, !enough_powers.prc
+		Prerequisites: ~techlevel.infonly, !prerequisite.enough_powers
 		Description: Makes Red Guards trained as veteran.
 	Valued:
 		Cost: 1000
@@ -75,7 +75,7 @@ generals_power.minigunner_training:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1000
-		Prerequisites: ~techlevel.infonly, !enough_powers.prc
+		Prerequisites: ~techlevel.infonly, !prerequisite.enough_powers
 		Description: Makes Minigunners trained at Rank 2.
 	Valued:
 		Cost: 1000
@@ -89,7 +89,7 @@ generals_power.arty_training:
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 1000
-		Prerequisites: ~techlevel.medium, !enough_powers.prc
+		Prerequisites: ~techlevel.medium, !prerequisite.enough_powers
 		Description: Makes Inferno and Nuke Cannons trained as veteran.
 	Valued:
 		Cost: 1500
@@ -103,7 +103,7 @@ generals_power.battlemaster_training:
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 1000
-		Prerequisites: ~techlevel.infonly, !enough_powers.prc
+		Prerequisites: ~techlevel.infonly, !prerequisite.enough_powers
 		Description: Makes Battlemaster Tanks trained at Rank 2.
 	Valued:
 		Cost: 1000
@@ -117,7 +117,7 @@ generals_power.nuke_cannon:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: ~techlevel.high, !enough_powers.prc
+		Prerequisites: ~techlevel.high, !prerequisite.enough_powers
 		Description: Enables Nuke Cannon.
 	Valued:
 		Cost: 1600
@@ -138,7 +138,7 @@ generals_power.paladin_tank:
 		Queue: queue.usa_generals_power
 		BuildPaletteOrder: 3
 		BuildDuration: 900
-		Prerequisites: ~techlevel.high, !enough_powers.usa
+		Prerequisites: ~techlevel.high, !prerequisite.enough_powers
 		Description: Enables Paladin Tank.
 	Valued:
 		Cost: 1100
@@ -151,7 +151,7 @@ generals_power.stealth_fighter:
 		Queue: queue.usa_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
 		BuildPaletteOrder: 4
 		BuildDuration: 1875
-		Prerequisites: ~techlevel.high, !enough_powers.usa
+		Prerequisites: ~techlevel.high, !prerequisite.enough_powers
 		Description: Enables Stealth Fighter.
 	Valued:
 		Cost: 1600
@@ -164,7 +164,7 @@ generals_power.pathfinder:
 		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
 		BuildPaletteOrder: 4
 		BuildDuration: 750
-		Prerequisites: building.usa_barracks, ~techlevel.high, !enough_powers.usa
+		Prerequisites: building.usa_barracks, ~techlevel.high, !prerequisite.enough_powers
 		Description: Enables Pathfinder.
 	Valued:
 		Cost: 600
@@ -177,7 +177,7 @@ generals_power.scud_launcher:
 		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power
 		BuildPaletteOrder: 3
 		BuildDuration: 750
-		Prerequisites: ~techlevel.high, !enough_powers.gla
+		Prerequisites: ~techlevel.high, !prerequisite.enough_powers
 		Description: Enables SCUD Launcher.
 	Valued:
 		Cost: 1200
@@ -190,7 +190,7 @@ generals_power.marauder_tank:
 		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power
 		BuildPaletteOrder: 4
 		BuildDuration: 750
-		Prerequisites: ~techlevel.high, !enough_powers.gla
+		Prerequisites: ~techlevel.high, !prerequisite.enough_powers
 		Description: Enables Marauder Tank.
 	Valued:
 		Cost: 800
@@ -203,7 +203,7 @@ generals_power.hijacker:
 		Queue: queue.gla_generals_power
 		BuildPaletteOrder: 5
 		BuildDuration: 750
-		Prerequisites: building.gla_barracks, ~techlevel.high, !enough_powers.gla
+		Prerequisites: building.gla_barracks, ~techlevel.high, !prerequisite.enough_powers
 		Description: Enables Hijacker.
 	Valued:
 		Cost: 400
@@ -223,7 +223,7 @@ generals_power.emergency_repair1:
 	Buildable:
 		BuildPaletteOrder: 6
 		BuildDuration: 250
-		Prerequisites: ~techlevel.low, !enough_powers.usa, !enough_powers.gla, !enough_powers.prc
+		Prerequisites: ~techlevel.low, !prerequisite.enough_powers
 		Description: Enables Emergency Repair support power from Command Center.
 	Valued:
 		Cost: 750
@@ -235,7 +235,7 @@ generals_power.emergency_repair2:
 	Buildable:
 		BuildPaletteOrder: 7
 		BuildDuration: 375
-		Prerequisites: generals_power.emergency_repair1, ~techlevel.low, !enough_powers.usa, !enough_powers.gla, !enough_powers.prc
+		Prerequisites: generals_power.emergency_repair1, ~techlevel.low, !prerequisite.enough_powers
 		Description: Upgrades Emergency Repair support power to Level 2.
 	Valued:
 		Cost: 1000
@@ -247,7 +247,7 @@ generals_power.emergency_repair3:
 	Buildable:
 		BuildPaletteOrder: 8
 		BuildDuration: 500
-		Prerequisites: generals_power.emergency_repair2, ~techlevel.medium, !enough_powers.usa, !enough_powers.gla, !enough_powers.prc
+		Prerequisites: generals_power.emergency_repair2, ~techlevel.medium, !prerequisite.enough_powers
 		Description: Upgrades Emergency Repair support power to Level 3.
 	Valued:
 		Cost: 1250
@@ -260,7 +260,7 @@ generals_power.paradrop1:
 		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
 		BuildPaletteOrder: 9
 		BuildDuration: 500
-		Prerequisites: building.usa_barracks, ~techlevel.infonly, !enough_powers.usa
+		Prerequisites: building.usa_barracks, ~techlevel.infonly, !prerequisite.enough_powers
 		Description: Enables Paradrop support power from Command Center.
 	Valued:
 		Cost: 1000
@@ -273,7 +273,7 @@ generals_power.paradrop2:
 		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
 		BuildPaletteOrder: 10
 		BuildDuration: 500
-		Prerequisites: building.usa_barracks, generals_power.paradrop1, ~techlevel.medium, !enough_powers.usa
+		Prerequisites: building.usa_barracks, generals_power.paradrop1, ~techlevel.medium, !prerequisite.enough_powers
 		Description: Upgrades Paradrop support power to Level 2.
 	Valued:
 		Cost: 1000
@@ -286,7 +286,7 @@ generals_power.paradrop3:
 		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
 		BuildPaletteOrder: 11
 		BuildDuration: 1000
-		Prerequisites: building.usa_barracks, generals_power.paradrop2, ~techlevel.high, !enough_powers.usa
+		Prerequisites: building.usa_barracks, generals_power.paradrop2, ~techlevel.high, !prerequisite.enough_powers
 		Description: Upgrades Paradrop support power to Level 3.
 	Valued:
 		Cost: 2000
@@ -299,7 +299,7 @@ generals_power.paradrop1.inf_gen:
 		Queue: queue.inf_gen_generals_power
 		BuildPaletteOrder: 12
 		BuildDuration: 500
-		Prerequisites: building.prc_barracks, ~techlevel.infonly, !enough_powers.prc
+		Prerequisites: building.prc_barracks, ~techlevel.infonly, !prerequisite.enough_powers
 		Description: Enables Paradrop support power from Command Center.
 	Valued:
 		Cost: 1000
@@ -314,7 +314,7 @@ generals_power.paradrop2.inf_gen:
 		Queue: queue.inf_gen_generals_power
 		BuildPaletteOrder: 13
 		BuildDuration: 500
-		Prerequisites: building.prc_barracks, generals_power.paradrop1.inf_gen, ~techlevel.medium, !enough_powers.prc
+		Prerequisites: building.prc_barracks, generals_power.paradrop1.inf_gen, ~techlevel.medium, !prerequisite.enough_powers
 		Description: Upgrades Paradrop support power to Level 2.
 	Valued:
 		Cost: 1000
@@ -329,7 +329,7 @@ generals_power.paradrop3.inf_gen:
 		Queue: queue.inf_gen_generals_power
 		BuildPaletteOrder: 14
 		BuildDuration: 500
-		Prerequisites: building.prc_barracks, generals_power.paradrop2.inf_gen, ~techlevel.high, !enough_powers.prc
+		Prerequisites: building.prc_barracks, generals_power.paradrop2.inf_gen, ~techlevel.high, !prerequisite.enough_powers
 		Description: Upgrades Paradrop support power to Level 3.
 	Valued:
 		Cost: 1000
@@ -344,7 +344,7 @@ generals_power.ambush1:
 		Queue: queue.gla_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power
 		BuildPaletteOrder: 9
 		BuildDuration: 500
-		Prerequisites: building.gla_barracks, ~techlevel.infonly, !enough_powers.gla
+		Prerequisites: building.gla_barracks, ~techlevel.infonly, !prerequisite.enough_powers
 		Description: Enables Rebel Ambush support power from Command Center.
 	Valued:
 		Cost: 1000
@@ -357,7 +357,7 @@ generals_power.ambush2:
 		Queue: queue.gla_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power
 		BuildPaletteOrder: 10
 		BuildDuration: 500
-		Prerequisites: building.gla_barracks, generals_power.ambush1, ~techlevel.medium, !enough_powers.gla
+		Prerequisites: building.gla_barracks, generals_power.ambush1, ~techlevel.medium, !prerequisite.enough_powers
 		Description: Upgrades Rebel Ambush support power to Level 2.
 	Valued:
 		Cost: 1000
@@ -370,7 +370,7 @@ generals_power.ambush3:
 		Queue: queue.gla_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power
 		BuildPaletteOrder: 11
 		BuildDuration: 1000
-		Prerequisites: building.gla_barracks, generals_power.ambush2, ~techlevel.high, !enough_powers.gla
+		Prerequisites: building.gla_barracks, generals_power.ambush2, ~techlevel.high, !prerequisite.enough_powers
 		Description: Upgrades Rebel Ambush support power to Level 3.
 	Valued:
 		Cost: 2000
@@ -383,7 +383,7 @@ generals_power.ambush1.toxin:
 		Queue: queue.toxin_gen_generals_power
 		BuildPaletteOrder: 9
 		BuildDuration: 500
-		Prerequisites: building.gla_barracks, ~techlevel.infonly, !enough_powers.gla
+		Prerequisites: building.gla_barracks, ~techlevel.infonly, !prerequisite.enough_powers
 		Description: Enables Toxin Rebel Ambush support power from Command Center.
 	Valued:
 		Cost: 1000
@@ -396,7 +396,7 @@ generals_power.ambush2.toxin:
 		Queue: queue.toxin_gen_generals_power
 		BuildPaletteOrder: 10
 		BuildDuration: 500
-		Prerequisites: building.gla_barracks, generals_power.ambush1.toxin, ~techlevel.medium, !enough_powers.gla
+		Prerequisites: building.gla_barracks, generals_power.ambush1.toxin, ~techlevel.medium, !prerequisite.enough_powers
 		Description: Upgrades Toxin Rebel Ambush support power to Level 2.
 	Valued:
 		Cost: 1000
@@ -409,7 +409,7 @@ generals_power.ambush3.toxin:
 		Queue: queue.toxin_gen_generals_power
 		BuildPaletteOrder: 11
 		BuildDuration: 1000
-		Prerequisites: building.gla_barracks, generals_power.ambush2.toxin, ~techlevel.high, !enough_powers.gla
+		Prerequisites: building.gla_barracks, generals_power.ambush2.toxin, ~techlevel.high, !prerequisite.enough_powers
 		Description: Upgrades Toxin Rebel Ambush support power to Level 3.
 	Valued:
 		Cost: 2000
@@ -422,7 +422,7 @@ generals_power.frenzy1:
 		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 9
 		BuildDuration: 500
-		Prerequisites: building.prc_barracks, ~techlevel.medium, !enough_powers.prc, ~prerequisite.zh_units
+		Prerequisites: building.prc_barracks, ~techlevel.medium, !prerequisite.enough_powers, ~prerequisite.zh_units
 		Description: Enables Frenzy support power from Command Center.
 	Valued:
 		Cost: 1000
@@ -435,7 +435,7 @@ generals_power.frenzy2:
 		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 10
 		BuildDuration: 500
-		Prerequisites: building.prc_barracks, generals_power.frenzy1, ~techlevel.medium, !enough_powers.prc, ~prerequisite.zh_units
+		Prerequisites: building.prc_barracks, generals_power.frenzy1, ~techlevel.medium, !prerequisite.enough_powers, ~prerequisite.zh_units
 		Description: Upgrades Frenzy support power to Level 2.
 	Valued:
 		Cost: 1000
@@ -448,7 +448,7 @@ generals_power.frenzy3:
 		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 11
 		BuildDuration: 500
-		Prerequisites: building.prc_barracks, generals_power.frenzy2, ~techlevel.high, !enough_powers.prc, ~prerequisite.zh_units
+		Prerequisites: building.prc_barracks, generals_power.frenzy2, ~techlevel.high, !prerequisite.enough_powers, ~prerequisite.zh_units
 		Description: Upgrades Frenzy support power to Level 3.
 	Valued:
 		Cost: 1000
@@ -461,7 +461,7 @@ generals_power.cash_hack1:
 		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 15
 		BuildDuration: 1000
-		Prerequisites: building.prc_supply_center, ~techlevel.medium, !enough_powers.prc
+		Prerequisites: building.prc_supply_center, ~techlevel.medium, !prerequisite.enough_powers
 		Description: Enables Cash Hack support power from Command Center.
 	Valued:
 		Cost: 500
@@ -474,7 +474,7 @@ generals_power.cash_hack2:
 		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 16
 		BuildDuration: 1000
-		Prerequisites: building.prc_supply_center, generals_power.cash_hack1, ~techlevel.medium, !enough_powers.prc
+		Prerequisites: building.prc_supply_center, generals_power.cash_hack1, ~techlevel.medium, !prerequisite.enough_powers
 		Description: Upgrades Cash Hack support power to Level 2.
 	Valued:
 		Cost: 500
@@ -487,7 +487,7 @@ generals_power.cash_hack3:
 		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 17
 		BuildDuration: 2000
-		Prerequisites: building.prc_supply_center, generals_power.cash_hack2, ~techlevel.high, !enough_powers.prc
+		Prerequisites: building.prc_supply_center, generals_power.cash_hack2, ~techlevel.high, !prerequisite.enough_powers
 		Description: Upgrades Cash Hack support power to Level 3.
 	Valued:
 		Cost: 1000
@@ -500,7 +500,7 @@ generals_power.a101:
 		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
 		BuildPaletteOrder: 12
 		BuildDuration: 750
-		Prerequisites: building.usa_airfield, ~techlevel.medium, !enough_powers.usa
+		Prerequisites: building.usa_airfield, ~techlevel.medium, !prerequisite.enough_powers
 		Description: Enables A-10 Strike support power from Command Center.
 	Valued:
 		Cost: 1750
@@ -513,7 +513,7 @@ generals_power.a102:
 		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
 		BuildPaletteOrder: 13
 		BuildDuration: 750
-		Prerequisites: building.usa_airfield, generals_power.a101, ~techlevel.medium, !enough_powers.usa
+		Prerequisites: building.usa_airfield, generals_power.a101, ~techlevel.medium, !prerequisite.enough_powers
 		Description: Upgrades A-10 Strike support power to Level 2.
 	Valued:
 		Cost: 1750
@@ -526,7 +526,7 @@ generals_power.a103:
 		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
 		BuildPaletteOrder: 14
 		BuildDuration: 750
-		Prerequisites: building.usa_airfield, generals_power.a102, ~techlevel.high, !enough_powers.usa
+		Prerequisites: building.usa_airfield, generals_power.a102, ~techlevel.high, !prerequisite.enough_powers
 		Description: Upgrades A-10 Strike support power to Level 3.
 	Valued:
 		Cost: 1750
@@ -539,7 +539,7 @@ generals_power.cash_bounty1:
 		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power
 		BuildPaletteOrder: 12
 		BuildDuration: 1000
-		Prerequisites: building.gla_supply_stash, ~techlevel.medium, !enough_powers.gla
+		Prerequisites: building.gla_supply_stash, ~techlevel.medium, !prerequisite.enough_powers
 		Description: Enemy units give 5% of their worth on death.
 	Valued:
 		Cost: 500
@@ -552,7 +552,7 @@ generals_power.cash_bounty2:
 		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power
 		BuildPaletteOrder: 13
 		BuildDuration: 1000
-		Prerequisites: building.gla_supply_stash, generals_power.cash_bounty1, ~techlevel.medium, !enough_powers.gla
+		Prerequisites: building.gla_supply_stash, generals_power.cash_bounty1, ~techlevel.medium, !prerequisite.enough_powers
 		Description: Enemy units give 10% of their worth on death.
 	Valued:
 		Cost: 500
@@ -565,7 +565,7 @@ generals_power.cash_bounty3:
 		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power
 		BuildPaletteOrder: 14
 		BuildDuration: 2000
-		Prerequisites: building.gla_supply_stash, generals_power.cash_bounty2, ~techlevel.high, !enough_powers.gla
+		Prerequisites: building.gla_supply_stash, generals_power.cash_bounty2, ~techlevel.high, !prerequisite.enough_powers
 		Description: Enemy units give 20% of their worth on death.
 	Valued:
 		Cost: 1000
@@ -578,7 +578,7 @@ generals_power.gps_scrambler1:
 		Queue: queue.gla_generals_power, queue.stealth_gen_generals_power
 		BuildPaletteOrder: 15
 		BuildDuration: 750
-		Prerequisites: building.arms_dealer, ~techlevel.medium, !enough_powers.gla, ~prerequisite.zh_units
+		Prerequisites: building.arms_dealer, ~techlevel.medium, !prerequisite.enough_powers, ~prerequisite.zh_units
 		Description: Enables GPS Scrambler support power from Command Center.
 	Valued:
 		Cost: 500
@@ -591,7 +591,7 @@ generals_power.gps_scrambler2:
 		Queue: queue.stealth_gen_generals_power
 		BuildPaletteOrder: 16
 		BuildDuration: 750
-		Prerequisites: building.arms_dealer, generals_power.gps_scrambler1, ~techlevel.medium, !enough_powers.gla, ~prerequisite.zh_units
+		Prerequisites: building.arms_dealer, generals_power.gps_scrambler1, ~techlevel.medium, !prerequisite.enough_powers, ~prerequisite.zh_units
 		Description: Upgrades GPS Scrambler support power to Level 2.
 	Valued:
 		Cost: 2000
@@ -604,7 +604,7 @@ generals_power.gps_scrambler3:
 		Queue: queue.stealth_gen_generals_power
 		BuildPaletteOrder: 17
 		BuildDuration: 750
-		Prerequisites: building.arms_dealer, generals_power.gps_scrambler2, ~techlevel.high, !enough_powers.gla, ~prerequisite.zh_units
+		Prerequisites: building.arms_dealer, generals_power.gps_scrambler2, ~techlevel.high, !prerequisite.enough_powers, ~prerequisite.zh_units
 		Description: Upgrades GPS Scrambler support power to Level 3.
 	Valued:
 		Cost: 3500
@@ -617,7 +617,7 @@ generals_power.arty_barrage1:
 		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 18
 		BuildDuration: 750
-		Prerequisites: building.prc_war_factory, ~techlevel.medium, !enough_powers.prc
+		Prerequisites: building.prc_war_factory, ~techlevel.medium, !prerequisite.enough_powers
 		Description: Enables Artillery Barrage support power from Command Center.
 	Valued:
 		Cost: 1750
@@ -630,7 +630,7 @@ generals_power.arty_barrage2:
 		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 19
 		BuildDuration: 750
-		Prerequisites: building.prc_war_factory, generals_power.arty_barrage1, ~techlevel.medium, !enough_powers.prc
+		Prerequisites: building.prc_war_factory, generals_power.arty_barrage1, ~techlevel.medium, !prerequisite.enough_powers
 		Description: Upgrades Artillery Barrage support power to Level 2.
 	Valued:
 		Cost: 1750
@@ -643,7 +643,7 @@ generals_power.arty_barrage3:
 		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 20
 		BuildDuration: 750
-		Prerequisites: building.prc_war_factory, generals_power.arty_barrage2, ~techlevel.high, !enough_powers.prc
+		Prerequisites: building.prc_war_factory, generals_power.arty_barrage2, ~techlevel.high, !prerequisite.enough_powers
 		Description: Upgrades Artillery Barrage support power to Level 3.
 	Valued:
 		Cost: 1750
@@ -656,7 +656,7 @@ generals_power.tank_drop1:
 		Queue: queue.tank_gen_generals_power
 		BuildPaletteOrder: 21
 		BuildDuration: 750
-		Prerequisites: building.prc_war_factory, ~techlevel.medium, !enough_powers.prc
+		Prerequisites: building.prc_war_factory, ~techlevel.medium, !prerequisite.enough_powers
 		Description: Enables Tank Drop support power from Command Center.
 	Valued:
 		Cost: 1750
@@ -669,7 +669,7 @@ generals_power.tank_drop2:
 		Queue: queue.tank_gen_generals_power
 		BuildPaletteOrder: 22
 		BuildDuration: 750
-		Prerequisites: building.prc_war_factory, generals_power.tank_drop1, ~techlevel.medium, !enough_powers.prc
+		Prerequisites: building.prc_war_factory, generals_power.tank_drop1, ~techlevel.medium, !prerequisite.enough_powers
 		Description: Upgrades Tank Drop support power to Level 2.
 	Valued:
 		Cost: 1750
@@ -682,7 +682,7 @@ generals_power.tank_drop3:
 		Queue: queue.tank_gen_generals_power
 		BuildPaletteOrder: 23
 		BuildDuration: 1500
-		Prerequisites: building.prc_war_factory, generals_power.tank_drop2, ~techlevel.high, !enough_powers.prc
+		Prerequisites: building.prc_war_factory, generals_power.tank_drop2, ~techlevel.high, !prerequisite.enough_powers
 		Description: Upgrades Tank Drop support power to Level 3.
 	Valued:
 		Cost: 3500
@@ -695,7 +695,7 @@ generals_power.cluster_mines:
 		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 24
 		BuildDuration: 1000
-		Prerequisites: building.prc_airfield, ~techlevel.high, !enough_powers.prc
+		Prerequisites: building.prc_airfield, ~techlevel.high, !prerequisite.enough_powers
 		Description: Enables Cluster Mines support power from Command Center.
 	Valued:
 		Cost: 1500
@@ -715,7 +715,7 @@ generals_power.fuel_air_bomb:
 		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
 		BuildPaletteOrder: 15
 		BuildDuration: 2250
-		Prerequisites: building.particle_cannon, ~techlevel.unrestricted, !enough_powers.usa
+		Prerequisites: building.particle_cannon, ~techlevel.unrestricted, !prerequisite.enough_powers
 		Description: Enables Fuel Air Bomb support power from Command Center.
 	Valued:
 		Cost: 4000
@@ -735,7 +735,7 @@ generals_power.anthrax_bomb:
 		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power
 		BuildPaletteOrder: 18
 		BuildDuration: 2250
-		Prerequisites: building.scud_storm, ~techlevel.unrestricted, !enough_powers.gla
+		Prerequisites: building.scud_storm, ~techlevel.unrestricted, !prerequisite.enough_powers
 		Description: Enables Anthrax Bomb support power from Command Center.
 	Valued:
 		Cost: 4000
@@ -748,7 +748,7 @@ generals_power.emp:
 		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 26
 		BuildDuration: 2250
-		Prerequisites: building.missile_silo, ~techlevel.unrestricted, !enough_powers.prc
+		Prerequisites: building.missile_silo, ~techlevel.unrestricted, !prerequisite.enough_powers
 		Description: Enables E. M. Pulse support power from Command Center.
 	Valued:
 		Cost: 4000

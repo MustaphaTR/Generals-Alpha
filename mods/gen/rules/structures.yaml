@@ -49,7 +49,6 @@
 
 building.usa_command_center:
 	Inherits: ^default.command_center
-	Inherits@GPCHECK: ^ChecksForGeneralsPowerCount.USA
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
@@ -222,7 +221,6 @@ building.usa_command_center:
 
 building.gla_command_center:
 	Inherits: ^default.command_center
-	Inherits@GPCHECK: ^ChecksForGeneralsPowerCount.GLA
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Buildable:
 		Queue: queue.gla_building
@@ -362,7 +360,6 @@ building.gla_command_center:
 
 building.prc_command_center:
 	Inherits: ^default.command_center
-	Inherits@GPCHECK: ^ChecksForGeneralsPowerCount.PRC
 	Buildable:
 		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 13
