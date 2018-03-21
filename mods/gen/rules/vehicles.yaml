@@ -2,6 +2,7 @@ vehicle.supply_truck:
 	Inherits: ^Vehicle
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@REVEAL: ^Reveal300
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.prc_collector
 		BuildPaletteOrder: 1
@@ -34,6 +35,8 @@ vehicle.supply_truck:
 	Mobile:
 		Speed: 40
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 50
 	Crushable:
 		CrushClasses: vehicle
 	WithHarvestAnimation:
@@ -50,6 +53,7 @@ vehicle.humvee:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal320
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !tow_missile
@@ -86,6 +90,8 @@ vehicle.humvee:
 		Speed: 60
 		Voice: Move
 		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
+	SpeedMultiplier@DAMAGED:
+		Modifier: 50
 	Crushable:
 		CrushClasses: vehicle
 	Turreted@MG:
@@ -165,6 +171,7 @@ vehicle.technical:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 0
@@ -186,6 +193,8 @@ vehicle.technical:
 		Speed: 90
 		Voice: Move
 		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
+	SpeedMultiplier@DAMAGED:
+		Modifier: 89
 	Crushable:
 		CrushClasses: vehicle
 	Turreted:
@@ -235,6 +244,7 @@ vehicle.radar_van:
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal500
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -254,6 +264,8 @@ vehicle.radar_van:
 	Mobile:
 		Speed: 40
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 75
 	Crushable:
 		CrushClasses: vehicle
 	WithIdleOverlay@SPINNER:
@@ -294,6 +306,7 @@ vehicle.scorpion_tank:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.gla_vehicle
 		BuildPaletteOrder: 1
@@ -313,6 +326,8 @@ vehicle.scorpion_tank:
 	Mobile:
 		Speed: 40
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 75
 	Crushable:
 		CrushClasses: vehicle
 	Turreted@Cannon:
@@ -400,6 +415,7 @@ vehicle.crusader_tank:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal300
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_vehicle
@@ -420,6 +436,8 @@ vehicle.crusader_tank:
 	Mobile:
 		Speed: 30
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 83
 	Crushable:
 		CrushClasses: vehicle
 	Turreted:
@@ -562,6 +580,7 @@ vehicle.ambulance:
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal400
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
 		BuildPaletteOrder: 3
@@ -584,6 +603,8 @@ vehicle.ambulance:
 		Speed: 60
 		Voice: Move
 		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
+	SpeedMultiplier@DAMAGED:
+		Modifier: 50
 	Crushable:
 		CrushClasses: vehicle
 	WithRangeCircle:
@@ -618,6 +639,7 @@ vehicle.sentry_drone:
 	Inherits@CRUSH: ^CrushesCrates
 	Inherits@DRONE_ARMOR: ^AffectedByDroneArmor
 	Inherits@REVEAL: ^Reveal350
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
 		BuildPaletteOrder: 4
@@ -641,6 +663,8 @@ vehicle.sentry_drone:
 		Speed: 60
 		Voice: Move
 		RequiresCondition: !hacked && !emp
+	SpeedMultiplier@DAMAGED:
+		Modifier: 83
 	Crushable:
 		CrushClasses: vehicle
 	Targetable:
@@ -712,6 +736,7 @@ vehicle.quad_cannon:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Valued:
 		Cost: 700
 	Tooltip:
@@ -728,6 +753,8 @@ vehicle.quad_cannon:
 	Mobile:
 		Speed: 40
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 63
 	Crushable:
 		CrushClasses: vehicle
 	Health:
@@ -840,6 +867,7 @@ vehicle.toxin_tractor:
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -856,6 +884,8 @@ vehicle.toxin_tractor:
 		TurnSpeed: 5
 		Speed: 30
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 67
 	Crushable:
 		CrushClasses: vehicle
 	Health:
@@ -898,6 +928,7 @@ vehicle.dragon_tank:
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -914,6 +945,8 @@ vehicle.dragon_tank:
 		TurnSpeed: 6
 		Speed: 30
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 63
 	Crushable:
 		CrushClasses: vehicle
 	Health:
@@ -946,6 +979,7 @@ vehicle.rocket_buggy:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal360
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -962,6 +996,8 @@ vehicle.rocket_buggy:
 		TurnSpeed: 10
 		Speed: 90
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 89
 	Crushable:
 		CrushClasses: vehicle
 	Health:
@@ -1019,6 +1055,7 @@ vehicle.avenger:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal300
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle
@@ -1038,6 +1075,8 @@ vehicle.avenger:
 	Mobile:
 		Speed: 30
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 67
 	Selectable:
 		Class: vehicle.avenger
 	Crushable:
@@ -1081,6 +1120,7 @@ vehicle.troop_crawler:
 	Inherits: ^Tank
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@REVEAL: ^Reveal400
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 4
@@ -1101,6 +1141,8 @@ vehicle.troop_crawler:
 		Speed: 40
 		Voice: Move
 		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
+	SpeedMultiplier@DAMAGED:
+		Modifier: 75
 	Crushable:
 		CrushClasses: vehicle
 	Cargo:
@@ -1125,6 +1167,7 @@ vehicle.listening_outpost:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@REVEAL: ^Reveal500
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 7
@@ -1145,6 +1188,8 @@ vehicle.listening_outpost:
 		Speed: 40
 		Voice: Move
 		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
+	SpeedMultiplier@DAMAGED:
+		Modifier: 75
 	Crushable:
 		CrushClasses: vehicle
 	Cargo:
@@ -1197,6 +1242,7 @@ vehicle.tomahawk_launcher:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Valued:
 		Cost: 1200
@@ -1212,6 +1258,8 @@ vehicle.tomahawk_launcher:
 	Mobile:
 		Speed: 30
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 83
 	Crushable:
 		CrushClasses: vehicle
 	Health:
@@ -1278,6 +1326,7 @@ vehicle.scud_launcher:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.gla_vehicle
 		BuildPaletteOrder: 9
@@ -1311,6 +1360,8 @@ vehicle.scud_launcher:
 		Speed: 20
 		TurnSpeed: 3
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 75
 	Crushable:
 		CrushClasses: vehicle
 	Armament:
@@ -1375,6 +1426,7 @@ vehicle.inferno_cannon:
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle
 		BuildAtProductionType: WarFactory
@@ -1394,8 +1446,10 @@ vehicle.inferno_cannon:
 		Type: vehicle.tank
 	Mobile:
 		TurnSpeed: 3
-		Speed: 20
+		Speed: 30
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 67
 	Crushable:
 		CrushClasses: vehicle
 	Armament@Red:
@@ -1436,6 +1490,7 @@ vehicle.paladin_tank:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal300
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_vehicle
@@ -1455,6 +1510,8 @@ vehicle.paladin_tank:
 	Mobile:
 		Speed: 30
 		Voiced: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 83
 	Crushable:
 		CrushClasses: vehicle
 	Turreted:
@@ -1512,6 +1569,7 @@ vehicle.marauder_tank:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.gla_vehicle
 		BuildPaletteOrder: 10
@@ -1531,6 +1589,8 @@ vehicle.marauder_tank:
 	Mobile:
 		Speed: 40
 		Voiced: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 75
 	Crushable:
 		CrushClasses: vehicle
 	Turreted:
@@ -1871,6 +1931,7 @@ vehicle.nuke_cannon:
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle
 		BuildPaletteOrder: 10
@@ -1890,6 +1951,8 @@ vehicle.nuke_cannon:
 	Mobile:
 		Speed: 20
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 90
 	Crushable:
 		CrushClasses: vehicle
 	Turreted:
@@ -1935,6 +1998,7 @@ vehicle.nuke_cannon.nuke:
 	Inherits: ^Vehicle
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
@@ -1954,6 +2018,8 @@ vehicle.nuke_cannon.nuke:
 	Mobile:
 		Speed: 25
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 83
 	Crushable:
 		CrushClasses: vehicle
 	Passenger:

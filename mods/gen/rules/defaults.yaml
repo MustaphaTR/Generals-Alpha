@@ -255,6 +255,14 @@
 		Condition: cash_bounty3
 		Prerequisites: generals_power.cash_bounty3
 
+^SlowsWhenDamaged:
+	SpeedMultiplier@DAMAGED:
+		RequiresCondition: damaged
+		Modifier: 100
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Critical
+
 ^AffectsDemoTrap:
 	ProximityExternalCondition@SELF_DESTRUCT:
 		Condition: self_destruct

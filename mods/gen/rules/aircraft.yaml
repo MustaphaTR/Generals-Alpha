@@ -250,6 +250,7 @@ aircraft.raptor:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@LASER_MISSILES: ^AffectedByLaserGuidedMissiles
 	Inherits@REVEAL: ^Reveal400
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft, queue.super_gen_aircraft
@@ -295,6 +296,8 @@ aircraft.raptor:
 		RepulsionSpeed: 40
 		MaximumPitch: 56
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 69
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
@@ -360,6 +363,7 @@ aircraft.stealth_fighter:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@LASER_MISSILES: ^AffectedByLaserGuidedMissiles
 	Inherits@REVEAL: ^Reveal300
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft, queue.super_gen_aircraft
@@ -400,6 +404,8 @@ aircraft.stealth_fighter:
 		RepulsionSpeed: 40
 		MaximumPitch: 56
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 69
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
@@ -450,6 +456,7 @@ aircraft.aurora:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal600
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft
@@ -493,6 +500,8 @@ aircraft.aurora:
 	SpeedMultiplier:
 		Modifier: 266
 		RequiresCondition: supersonic
+	SpeedMultiplier@DAMAGED:
+		Modifier: 67
 	DamageMultiplier@SUPERSONIC:
 		RequiresCondition: supersonic
 		Modifier: 0
@@ -694,6 +703,7 @@ aircraft.a10:
 aircraft.chinook:
 	Inherits: ^Vehicle
 	Inherits@REVEAL: ^Reveal600
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.usa_collector
 		BuildPaletteOrder: 0
@@ -738,6 +748,8 @@ aircraft.chinook:
 			Beach: 100
 			Water: 100
 			Rock: 100
+	SpeedMultiplier@DAMAGED:
+		Modifier: 40
 	DockClient:
 	Harvester:
 		Capacity: 24
@@ -953,6 +965,7 @@ aircraft.helix:
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal600
+	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@UPGRADE: ^CanHavePRCVehicleUpgrades
 	Buildable:
 		Queue: queue.prc_aircraft
@@ -1011,6 +1024,8 @@ aircraft.helix:
 		Voice: Move
 		LandableTerrainTypes: Grass, Snow, Sand, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Beach, Gems
 		AltitudeVelocity: 0c58
+	SpeedMultiplier@DAMAGED:
+		Modifier: 80
 	WithIdleOverlay@ROTORAIR:
 		Offset: 0,0,85
 		Sequence: rotor
