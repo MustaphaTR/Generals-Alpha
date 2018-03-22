@@ -752,7 +752,7 @@ vehicle.quad_cannon:
 	Tooltip:
 		Name: Quad Cannon
 	Buildable:
-		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
+		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 150
@@ -770,6 +770,8 @@ vehicle.quad_cannon:
 		HP: 300
 	Armor:
 		Type: vehicle.anti-air
+	Selectable:
+		Class: vehicle.quad_cannon
 	Turreted:
 		TurnSpeed: 8
 		Offset: -256,0,160
@@ -790,8 +792,17 @@ vehicle.quad_cannon:
 		Weapons: debris.quad_cannon
 		Pieces: 1, 1
 		Range: 1c0, 1c0
+	RenderSprites:
+		Image: vehicle.quad_cannon
 	Voiced:
 		VoiceSet: QuadCannonVoice
+
+vehicle.quad_cannon.toxin:
+	Inherits: vehicle.quad_cannon
+	Buildable:
+		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
+	Valued:
+		Cost: 750
 
 vehicle.gatling_tank:
 	Inherits: ^Tank
