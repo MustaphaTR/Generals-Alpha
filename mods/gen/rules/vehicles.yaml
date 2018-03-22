@@ -173,7 +173,7 @@ vehicle.technical:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 75
@@ -250,7 +250,7 @@ vehicle.radar_van:
 	Tooltip:
 		Name: Radar Van
 	Buildable:
-		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -308,7 +308,7 @@ vehicle.scorpion_tank:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.gla_vehicle
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 175
@@ -741,7 +741,7 @@ vehicle.quad_cannon:
 	Tooltip:
 		Name: Quad Cannon
 	Buildable:
-		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 150
@@ -871,7 +871,7 @@ vehicle.toxin_tractor:
 	Tooltip:
 		Name: Toxin Tractor
 	Buildable:
-		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		BuildDuration: 125
@@ -1001,7 +1001,7 @@ vehicle.rocket_buggy:
 	Tooltip:
 		Name: Rocket Buggy
 	Buildable:
-		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 6
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -1344,7 +1344,7 @@ vehicle.scud_launcher:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.gla_vehicle
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		BuildPaletteOrder: 9
 		ForceIconLocation: true
 		BuildDuration: 500
@@ -1597,7 +1597,7 @@ vehicle.marauder_tank:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.gla_vehicle
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		BuildPaletteOrder: 10
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -1835,7 +1835,7 @@ vehicle.bomb_truck:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal200
 	Buildable:
-		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 7
 		ForceIconLocation: true
 		BuildDuration: 375
@@ -1955,10 +1955,20 @@ vehicle.bomb_truck:
 		Color: FF0000
 		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: prc_mcc
+	RenderSprites:
+		Image: vehicle.bomb_truck
 	Voiced:
 		VoiceSet: BombTruckVoice
 	Selectable:
+		Class: vehicle.bomb_truck
 		DecorationBounds: 42,42
+
+vehicle.bomb_truck.demo:
+	Inherits: vehicle.bomb_truck
+	Buildable:
+		Queue: queue.demo_gen_vehicle
+	Valued:
+		Cost: 1000
 
 vehicle.nuke_cannon:
 	Inherits: ^Tank
