@@ -250,7 +250,7 @@ vehicle.radar_van:
 	Tooltip:
 		Name: Radar Van
 	Buildable:
-		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
+		Queue: queue.gla_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -261,6 +261,8 @@ vehicle.radar_van:
 		HP: 200
 	Armor:
 		Type: vehicle.truck
+	Selectable:
+		Class: vehicle.radar_van
 	Mobile:
 		Speed: 40
 		Voice: Move
@@ -295,8 +297,17 @@ vehicle.radar_van:
 		Weapons: debris.radar_van
 		Pieces: 1, 1
 		Range: 1c0, 1c0
+	RenderSprites:
+		Image: vehicle.radar_van
 	Voiced:
 		VoiceSet: RadarVanVoice
+
+vehicle.radar_van.toxin:
+	Inherits: vehicle.radar_van
+	Buildable:
+		Queue: queue.toxin_gen_vehicle
+	Valued:
+		Cost: 550
 
 vehicle.scorpion_tank:
 	Inherits: ^Tank
@@ -1918,6 +1929,7 @@ vehicle.bomb_truck:
 		Voice: Disguise
 		DisguisedAsConditions:
 			vehicle.radar_van: radar_van
+			vehicle.radar_van.toxin: radar_van
 			vehicle.listening_outpost: listening_outpost
 			vehicle.usa_mcc: usa_mcc
 			vehicle.gla_mcc: gla_mcc
