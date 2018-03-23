@@ -267,6 +267,10 @@ vehicle.troop_crawler:
 		Start: 32
 	icon: apcicon
 
+vehicle.assault_troop_crawler:
+	Inherits: vehicle.troop_crawler
+	icon: acrawlericon
+
 vehicle.listening_outpost:
 	idle: mnly
 		Facings: 32
@@ -276,6 +280,10 @@ vehicle.listening_outpost:
 		Start: 32
 		Length: 32
 	icon: louticon
+
+vehicle.attack_outpost:
+	Inherits: vehicle.listening_outpost
+	icon: aouticon
 
 vehicle.microwave_tank:
 	idle: humv

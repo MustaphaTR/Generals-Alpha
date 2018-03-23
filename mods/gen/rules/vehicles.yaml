@@ -1132,13 +1132,13 @@ vehicle.troop_crawler:
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.low
-		Description: Tough infantry transport.\n\nComes with 8 red guards.\n\nPassengers can survive when it dies.
+		Description: Tough infantry transport.\n\nCan carry 8 infantry.\n\nComes with 8 red guards.\n\nPassengers can survive when it dies.
 	Valued:
 		Cost: 1400
 	Tooltip:
@@ -1172,6 +1172,26 @@ vehicle.troop_crawler:
 	Voiced:
 		VoiceSet: TroopCrawlerVoice
 
+vehicle.assault_troop_crawler:
+	Inherits: vehicle.troop_crawler
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Buildable:
+		Queue: queue.inf_gen_vehicle
+		BuildDuration: 625
+		Description: Tough infantry transport.\n\nCan carry 8 infantry that can fire outside.\n\nComes with 8 minigunners.\n\nPassengers can survive when it dies.
+	Valued:
+		Cost: 2400
+	Tooltip:
+		Name: Assault Troop Crawler
+	Cargo:
+		InitialUnits: infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner
+	AttackGarrisoned:
+		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
+		PortYaws: 0, 0, 512, 512
+		PortCones: 512, 512, 512, 512
+	Voiced:
+		VoiceSet: AssaultTroopCrawlerVoice
+
 vehicle.listening_outpost:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
@@ -1179,7 +1199,7 @@ vehicle.listening_outpost:
 	Inherits@REVEAL: ^Reveal500
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 7
 		ForceIconLocation: true
 		BuildDuration: 375
@@ -1243,6 +1263,22 @@ vehicle.listening_outpost:
 		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: ListeningOutpostVoice
+
+vehicle.attack_outpost:
+	Inherits: vehicle.listening_outpost
+	Buildable:
+		Queue: queue.inf_gen_vehicle
+		Description: Stealth detector unit.\n\nCan carry 8 infantry that can fire outside.\n\nComes with 3 tank hunters.\n\nPassengers can survive when it dies.
+	Tooltip:
+		Name: Attack Outpost
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 300
+	Cargo:
+		MaxWeight: 8
+		PipCount: 8
+		InitialUnits: infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter
 
 vehicle.tomahawk_launcher:
 	Inherits: ^Tank
@@ -1909,8 +1945,8 @@ vehicle.bomb_truck:
 		Voice: Disguise
 		DisguisedAsConditions:
 			vehicle.radar_van: radar_van
-			vehicle.radar_van.toxin: radar_van
 			vehicle.listening_outpost: listening_outpost
+			vehicle.attack_outpost: listening_outpost
 			vehicle.usa_mcc: usa_mcc
 			vehicle.gla_mcc: gla_mcc
 			vehicle.prc_mcc: prc_mcc
