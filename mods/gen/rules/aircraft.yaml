@@ -154,7 +154,7 @@ aircraft.mig:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
-		Queue: queue.prc_aircraft
+		Queue: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -163,6 +163,15 @@ aircraft.mig:
 		Description: Multi-role fighter plane.
 	Valued:
 		Cost: 1200
+	CustomProductionCost@Nuke:
+		Queue: queue.nuke_gen_aircraft
+		Cost: 1400
+	CustomProductionCost@Tank:
+		Queue: queue.tank_gen_aircraft
+		Cost: 1600
+	CustomProductionTime@Tank:
+		Queue: queue.tank_gen_aircraft
+		BuildTime: 300
 	Tooltip:
 		Name: MiG
 	Health:
@@ -957,7 +966,7 @@ aircraft.helix:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@UPGRADE: ^CanHavePRCVehicleUpgrades
 	Buildable:
-		Queue: queue.prc_aircraft
+		Queue: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 500
