@@ -956,7 +956,10 @@ infantry.hijacker.stealth:
 	Inherits: infantry.hijacker
 	Buildable:
 		Queue: queue.stealth_gen_infantry
+		BuildDuration: 375
 		Prerequisites: ~techlevel.high
+	Valued:
+		Cost: 600
 	Cloak:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
 
