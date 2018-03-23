@@ -2884,14 +2884,14 @@ building.missile_silo:
 		PauseOnCondition: emp || hacked
 	ProductionQueue@Vanilla:
 		Type: queue.missile_silo
-		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, tank
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, tank
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 54
 	ProductionQueue@Nuke:
 		Type: queue.just_mine
-		Factions: nuke
+		Factions: inf, nuke
 		Group: Building
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
