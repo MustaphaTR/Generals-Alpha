@@ -973,6 +973,17 @@ aircraft.helix:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_airfield, ~techlevel.medium, ~prerequisite.zh_units
 		Description: Helicopter gunship armed with machine gun.\n\nCan carry 5 infantry.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
+	Valued:
+		Cost: 1500
+	CustomProductionCost@Nuke:
+		Queue: queue.nuke_gen_aircraft
+		Cost: 1750
+	CustomProductionCost@Tank:
+		Queue: queue.tank_gen_aircraft
+		Cost: 2000
+	CustomProductionTime@Tank:
+		Queue: queue.tank_gen_aircraft
+		BuildTime: 625
 	FirepowerMultiplier@CHAIN_GUN:
 		Type: gatling
 	ReloadDelayMultiplier@Gatling1:
@@ -983,8 +994,6 @@ aircraft.helix:
 		RequiresCondition: gatling >= 2
 		Type: gatling
 		Modifier: 50
-	Valued:
-		Cost: 1500
 	Tooltip:
 		Name: Helix
 	Health:
