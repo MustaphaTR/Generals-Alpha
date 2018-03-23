@@ -470,6 +470,9 @@ aircraft.aurora:
 		Description: Fast fighter plane.\n\nCan not be damaged while attacking.\n\nSlows down and becomes vulnerable after attacking.
 	Valued:
 		Cost: 2500
+	CustomProductionCost@Airforce:
+		Queue: queue.air_gen_aircraft, queue.super_gen_aircraft
+		Cost: 2000
 	Tooltip:
 		Name: Aurora
 	Health:
