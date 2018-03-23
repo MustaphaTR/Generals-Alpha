@@ -860,8 +860,6 @@ vehicle.toxin_tractor:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Valued:
-		Cost: 600
 	Tooltip:
 		Name: Toxin Tractor
 	Buildable:
@@ -872,6 +870,14 @@ vehicle.toxin_tractor:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.medium
 		Description: Toxin-throwing vehicle.
+	Valued:
+		Cost: 600
+	CustomProductionCost@Toxin:
+		Queue: queue.toxin_gen_vehicle
+		Cost: 650
+	CustomProductionCost@Demo:
+		Queue: queue.demo_gen_vehicle
+		Cost: 750
 	Mobile:
 		TurnSpeed: 5
 		Speed: 30
