@@ -1673,6 +1673,9 @@ vehicle.overlord_tank:
 		Description: Big and slow tank.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
 	Valued:
 		Cost: 2000
+	CustomProductionCost@Tank:
+		Queue: queue.tank_gen_vehicle
+		Cost: 1900
 	Tooltip:
 		Name: Overlord Tank
 	Health:
