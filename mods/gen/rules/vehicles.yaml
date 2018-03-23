@@ -319,6 +319,9 @@ vehicle.scorpion_tank:
 		Description: Lightly armored main battle tank.
 	Valued:
 		Cost: 600
+	CustomProductionCost@Toxin:
+		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
+		Cost: 650
 	Tooltip:
 		Name: Scorpion Tank
 	Health:
