@@ -150,6 +150,9 @@ infantry.rebel:
 	Buildable:
 		Queue: queue.gla_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
 		Prerequisites: ~techlevel.infonly
+	CustomProductionCost@Stealth:
+		Queue: queue.stealth_gen_infantry
+		Cost: 200
 	Selectable:
 		Class: infantry.rebel
 	Tooltip:
@@ -187,6 +190,8 @@ infantry.toxin_rebel:
 	Buildable:
 		Queue: queue.toxin_gen_infantry
 		Description: General-purpose infantry armed with toxins.
+	Valued:
+		Cost: 200
 	Tooltip:
 		Name: Toxin Rebel
 	Armament@ALPHA:
