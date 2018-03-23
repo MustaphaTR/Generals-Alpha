@@ -450,6 +450,8 @@ aircraft.stealth_fighter.air:
 	Buildable:
 		Queue: queue.air_gen_aircraft
 		Prerequisites: ~building.usa_airfield, ~techlevel.high
+	Valued:
+		Cost: 1250
 
 aircraft.aurora:
 	Inherits: ^Plane
