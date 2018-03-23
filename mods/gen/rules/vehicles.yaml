@@ -1721,7 +1721,7 @@ vehicle.overlord_tank:
 		Type: gatling
 		Modifier: 50
 	Buildable:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
 		BuildPaletteOrder: 6
 		ForceIconLocation: true
 		BuildDuration: 500
@@ -1851,6 +1851,30 @@ vehicle.overlord_tank:
 		VoiceSet: OverlordTankVoice
 	Selectable:
 		DecorationBounds: 44,38,0,-4
+
+vehicle.emparor_overlord:
+	Inherits: vehicle.overlord_tank
+	Buildable:
+		Queue: queue.tank_gen_vehicle
+		Description: Big and slow tank.\n\nComes with a speaker tower.\n\nCan be upgraded to have a gatling cannon.
+	Tooltip:
+		Name: Emparor Overlord
+	Production:
+		Produces: queue.emparor_overlord
+	ProductionQueue:
+		Type: queue.emparor_overlord
+	-Cargo@BUNKER_UPGRADE:
+	-Turreted@Bunker:
+	-AttackGarrisoned:
+	-WithSpriteTurret@Bunker:
+	WithSpriteTurret@Speaker:
+		-RequiresCondition:
+	WithRangeCircle:
+		-RequiresCondition:
+	ProximityExternalCondition@SPEAKER:
+		-RequiresCondition:
+	Voiced:
+		VoiceSet: EmparorOverlordVoice
 
 vehicle.bomb_truck:
 	Inherits: ^Vehicle
