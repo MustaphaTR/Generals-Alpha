@@ -988,8 +988,6 @@ vehicle.rocket_buggy:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal360
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Valued:
-		Cost: 900
 	Tooltip:
 		Name: Rocket Buggy
 	Buildable:
@@ -1000,6 +998,14 @@ vehicle.rocket_buggy:
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~building.arms_dealer, ~techlevel.medium
 		Description: Rocket artillery.
+	Valued:
+		Cost: 900
+	CustomProductionCost@Toxin:
+		Queue: queue.toxin_gen_vehicle
+		Cost: 1100
+	CustomProductionCost@Demo:
+		Queue: queue.demo_gen_vehicle
+		Cost: 1000
 	Mobile:
 		TurnSpeed: 10
 		Speed: 90
