@@ -1588,6 +1588,9 @@ vehicle.marauder_tank:
 		Description: Medium tank.
 	Valued:
 		Cost: 800
+	CustomProductionCost@Toxin:
+		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
+		Cost: 900
 	Tooltip:
 		Name: Marauder Tank
 	Health:

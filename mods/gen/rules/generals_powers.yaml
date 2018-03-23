@@ -194,6 +194,9 @@ generals_power.marauder_tank:
 		Description: Enables Marauder Tank.
 	Valued:
 		Cost: 800
+	CustomProductionCost@Toxin:
+		Queue: queue.toxin_gen_generals_power, queue.demo_gen_generals_power
+		Cost: 900
 
 generals_power.hijacker:
 	Inherits: ^default.generals_power
