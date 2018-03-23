@@ -705,21 +705,24 @@ aircraft.chinook:
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.usa_collector
+		Queue: queue.usa_collector, queue.air_gen_collector
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.infonly
 		Description: Collects supplies.\n\nCan carry infantry and vehicles.
+	Valued:
+		Cost: 1200
+	CustomProductionCost@Airforce:
+		Queue: queue.air_gen_collector
+		Cost: 950
 	HitShape:
 		TargetableOffsets: 0,0,2048
 		Type: Circle
 			Radius: 512
 			VerticalTopOffset: 2048
 			VerticalBottomOffset: 2048
-	Valued:
-		Cost: 1200
 	Tooltip:
 		Name: Chinook
 		GenericName: Collector
@@ -806,17 +809,6 @@ aircraft.chinook:
 	Voiced:
 		VoiceSet: ChinookVoice
 
-aircraft.chinook.air:
-	Inherits: aircraft.chinook
-	Buildable:
-		Queue: queue.air_gen_collector
-	Selectable:
-		Class: aircraft.chinook
-	Valued:
-		Cost: 950
-	RenderSprites:
-		Image: aircraft.chinook
-
 aircraft.combat_chinook:
 	Inherits: aircraft.chinook
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
@@ -862,7 +854,7 @@ aircraft.comanche:
 	RevealsShroud@INTELLIGENCE:
 		Type: CenterPosition
 	Buildable:
-		Queue: queue.usa_aircraft
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft
 		BuildAtProductionType: queue.usa_helicopter
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
@@ -872,6 +864,12 @@ aircraft.comanche:
 		Description: Helicopter gunship armed with machine gun.
 	Valued:
 		Cost: 1500
+	CustomProductionCost@Airforce:
+		Queue: queue.air_gen_aircraft
+		Cost: 1200
+	CustomProductionCost@Super:
+		Queue: queue.super_gen_aircraft
+		Cost: 1800
 	Tooltip:
 		Name: Comanche
 	Health:
@@ -944,20 +942,6 @@ aircraft.comanche:
 	Selectable:
 		DecorationBounds: 36,28
 		Class: aircraft.comanche
-
-aircraft.comanche.air:
-	Inherits: aircraft.comanche
-	Buildable:
-		Queue: queue.air_gen_aircraft
-	Valued:
-		Cost: 1200
-
-aircraft.comanche.super:
-	Inherits: aircraft.comanche
-	Buildable:
-		Queue: queue.super_gen_aircraft
-	Valued:
-		Cost: 1800
 
 aircraft.helix:
 	Inherits: ^Helicopter

@@ -236,13 +236,22 @@ infantry.red_guard:
 	Inherits@HORDE_BONUS: ^Horde
 	Inherits@REVEAL: ^Reveal200
 	Buildable:
-		Queue: queue.prc_infantry
+		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
 		BuildAmount: 2
 		BuildDuration: 250
 		Prerequisites: ~techlevel.infonly
 		Description: General-purpose infantry armed with a rifle.\n\nTrained in groups of 2.
 	Valued:
+		Cost: 150
+	CustomProductionCost@Vanilla:
+		Queue: queue.prc_infantry
 		Cost: 300
+	CustomProductionCost@Nuke:
+		Queue: queue.nuke_gen_infantry
+		Cost: 350
+	CustomProductionCost@Tank:
+		Queue: queue.tank_gen_infantry
+		Cost: 375
 	Mobile:
 		Speed: 25
 	SpeedMultiplier@DAMAGED:
@@ -262,20 +271,6 @@ infantry.red_guard:
 		VoiceSet: RedGuardVoice
 	ProducibleWithLevel:
 		Prerequisites: generals_power.red_training
-
-infantry.red_guard.nuke:
-	Inherits: infantry.red_guard
-	Buildable:
-		Queue: queue.nuke_gen_infantry
-	Valued:
-		Cost: 350
-
-infantry.red_guard.tank:
-	Inherits: infantry.red_guard
-	Buildable:
-		Queue: queue.tank_gen_infantry
-	Valued:
-		Cost: 375
 
 infantry.minigunner:
 	Inherits: ^default.mg_infantry
@@ -437,8 +432,17 @@ infantry.tank_hunter:
 	Inherits: ^default.rocket_infantry
 	Inherits@HORDE_BONUS: ^Horde
 	Buildable:
-		Queue: queue.prc_infantry, queue.inf_gen_infantry
+		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
 		Prerequisites: ~techlevel.infonly
+	CustomProductionCost@Nuke:
+		Queue: queue.nuke_gen_infantry
+		Cost: 350
+	CustomProductionCost@Tank:
+		Queue: queue.tank_gen_infantry
+		Cost: 375
+	CustomProductionTime@Nuke:
+		Queue: queue.nuke_gen_infantry, queue.tank_gen_infantry
+		BuildTime: 175
 	Tooltip:
 		Name: Tank Hunter
 	Selectable:
@@ -447,21 +451,6 @@ infantry.tank_hunter:
 		Image: infantry.tank_hunter
 	Voiced:
 		VoiceSet: TankHunterVoice
-
-infantry.tank_hunter.nuke:
-	Inherits: infantry.tank_hunter
-	Buildable:
-		Queue: queue.nuke_gen_infantry
-		BuildDuration: 175
-	Valued:
-		Cost: 350
-
-infantry.tank_hunter.tank:
-	Inherits: infantry.tank_hunter.nuke
-	Buildable:
-		Queue: queue.tank_gen_infantry
-	Valued:
-		Cost: 375
 
 infantry.grenadier:
 	Inherits: ^default.rocket_infantry
@@ -806,7 +795,7 @@ infantry.hacker:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry
+		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 500
@@ -815,6 +804,9 @@ infantry.hacker:
 		Description: Hacks internet to gain money while deployed.\n\nCan disable enemy structures.
 	Valued:
 		Cost: 625
+	CustomProductionCost@Tank:
+		Queue: queue.tank_gen_infantry
+		Cost: 780
 	Tooltip:
 		Name: Hacker
 	Health:
@@ -900,13 +892,6 @@ infantry.hacker:
 	Voiced:
 		VoiceSet: HackerVoice
 	-MustBeDestroyed:
-
-infantry.hacker.tank:
-	Inherits: infantry.hacker
-	Buildable:
-		Queue: queue.tank_gen_infantry
-	Valued:
-		Cost: 780
 
 infantry.hijacker:
 	Inherits: ^Soldier
@@ -1127,7 +1112,7 @@ infantry.black_lotus:
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.prc_infantry, queue.inf_gen_infantry
+		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 500
@@ -1136,6 +1121,12 @@ infantry.black_lotus:
 		Description: Can capture enemy structures from a distance.\n\nCan disable enemy vehicles.
 	Valued:
 		Cost: 1500
+	CustomProductionCost@Nuke:
+		Queue: queue.nuke_gen_infantry
+		Cost: 1600
+	CustomProductionCost@Tank:
+		Queue: queue.tank_gen_infantry
+		Cost: 1875
 	Tooltip:
 		Name: Black Lotus
 	Health:
@@ -1222,20 +1213,6 @@ infantry.black_lotus:
 		Image: infantry.black_lotus
 	Voiced:
 		VoiceSet: LotusVoice
-
-infantry.black_lotus.nuke:
-	Inherits: infantry.black_lotus
-	Buildable:
-		Queue: queue.nuke_gen_infantry
-	Valued:
-		Cost: 1600
-
-infantry.black_lotus.tank:
-	Inherits: infantry.black_lotus
-	Buildable:
-		Queue: queue.tank_gen_infantry
-	Valued:
-		Cost: 1875
 
 infantry.zombie:
 	Inherits: ^Soldier

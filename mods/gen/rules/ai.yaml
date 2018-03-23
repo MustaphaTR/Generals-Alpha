@@ -24,12 +24,12 @@ Player:
 			Strategy: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		UnitsCommonNames:
 			Dozer: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
-			FragileDeployer: infantry.hacker, infantry.hacker.tank
-			Seige: vehicle.tomahawk_launcher, vehicle.tomahawk_launcher.air, vehicle.tomahawk_launcher.super, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.inferno_cannon.inf, vehicle.scud_launcher #,vehicle.nuke_cannon
+			FragileDeployer: infantry.hacker
+			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
 			Collector: aircraft.chinook, aircraft.chinook.air, infantry.worker, vehicle.supply_truck
 			ExcludeFromSquads: upgrade.control_rods, upgrade.control_rods.laser, upgrade.advanced_control_rods, upgrade.camo_netting, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone, upgrade.toxin_missiles, upgrade.hi_explosive_missiles, upgrade.overlord_gatling, upgrade.overlord_speaker, upgrade.helix_gatling, upgrade.helix.speaker, upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sentry_gun, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.stealth_comanche, upgrade.mig_armor
-		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.red_guard.nuke, infantry.red_guard.tank, infantry.minigunner, infantry.conscript
+		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner, infantry.conscript
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
 		QueueLimits:
 			queue.cold_fusion_reactor: 1
@@ -174,66 +174,45 @@ Player:
 			infantry.rebel: 75%
 			infantry.toxin_rebel: 50%
 			infantry.red_guard: 75%
-			infantry.red_guard.nuke: 70%
-			infantry.red_guard.tank: 65%
 			infantry.minigunner: 75%
 			infantry.conscript: 75%
 			infantry.missile_defender: 30%
 			infantry.rpg_trooper: 30%
 			infantry.tank_hunter: 30%
-			infantry.tank_hunter.nuke: 25%
-			infantry.tank_hunter.tank: 20%
 			infantry.grenadier: 15%
 			infantry.pathfinder: 3%
 			infantry.angry_mob: 3%
 			infantry.hacker: 8%
-			infantry.hacker.tank: 8%
 			infantry.flamethrower: 3%
 			infantry.colonel_burton: 0.5%
 			infantry.jarmen_kell: 0.5%
 			infantry.jarmen_kell.demo: 0.5%
 			infantry.black_lotus: 0.5%
-			infantry.black_lotus.nuke: 0.5%
-			infantry.black_lotus.tank: 0.5%
 			infantry.zombie: 0.5%
 			infantry.giant_ant: 2%
 			infantry.worker: 150%
 			vehicle.supply_truck: 10%
 			vehicle.humvee: 50%
-			vehicle.humvee.air: 50%
-			vehicle.humvee.super: 50%
 			vehicle.technical: 50%
 			vehicle.gatling_tank: 50%
-			vehicle.gatling_tank.tank: 50%
 			vehicle.troop_crawler: 50%
 			vehicle.quad_cannon: 30%
-			vehicle.quad_cannon.toxin: 30%
 			vehicle.tomahawk_launcher: 10%
-			vehicle.tomahawk_launcher.air: 10%
-			vehicle.tomahawk_launcher.super: 10%
 			vehicle.inferno_cannon: 10%
-			vehicle.inferno_cannon.inf: 10%
 			vehicle.scud_launcher: 10%
 			vehicle.dragon_tank: 20%
-			vehicle.dragon_tank.inf: 20%
-			vehicle.dragon_tank.tank: 20%
 			vehicle.rocket_buggy: 20%
 			vehicle.toxin_tractor: 10%
 			vehicle.scorpion_tank: 15%
 			vehicle.crusader_tank: 15%
 			vehicle.laser_tank: 15%
 			vehicle.battlemaster_tank: 15%
-			vehicle.battlemaster_tank.tank: 15%
 			vehicle.overlord_tank: 8%
 			vehicle.paladin_tank: 8%
 			vehicle.marauder_tank: 8%
 			vehicle.avenger: 2%
-			vehicle.avenger.laser: 2%
 			vehicle.radar_van: 1%
-			vehicle.radar_van.toxin: 1%
 			vehicle.sentry_drone: 1%
-			vehicle.sentry_drone.air: 1%
-			vehicle.sentry_drone.super: 1%
 			vehicle.listening_outpost: 1%
 			vehicle.usa_mcc: 2%
 			vehicle.gla_mcc: 2%
@@ -247,8 +226,6 @@ Player:
 			aircraft.stealth_fighter.air: 1%
 			aircraft.aurora: 0.5%
 			aircraft.comanche: 2%
-			aircraft.comanche.air: 2%
-			aircraft.comanche.super: 2%
 			aircraft.helix: 2%
 			vessel.gunboat: 1%
 			vessel.destroyer: 1%
@@ -282,11 +259,8 @@ Player:
 			infantry.jarmen_kell: 1
 			infantry.jarmen_kell.demo: 1
 			infantry.black_lotus: 1
-			infantry.black_lotus.nuke: 1
-			infantry.black_lotus.tank: 1
 			infantry.worker: 32
 			infantry.hacker: 12
-			infantry.hacker.tank: 12
 			aircraft.mig: 4
 			aircraft.raptor: 2
 			aircraft.king_raptor: 2
@@ -294,17 +268,12 @@ Player:
 			aircraft.stealth_fighter.air: 1
 			aircraft.aurora: 1
 			aircraft.comanche: 2
-			aircraft.comanche.air: 2
-			aircraft.comanche.super: 2
 			aircraft.helix: 2
 			aircraft.chinook: 8
 			aircraft.chinook.air: 8
 			vehicle.supply_truck: 8
 			vehicle.radar_van: 2
-			vehicle.radar_van.toxin: 2
 			vehicle.sentry_drone: 2
-			vehicle.sentry_drone.air: 2
-			vehicle.sentry_drone.super: 2
 			vehicle.listening_outpost: 2
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
@@ -585,18 +554,18 @@ Player:
 			VehiclesFactory: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
 			NavalProduction: tech.shipyard
 			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, usa_airfield, prc_airfield
-			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, building.particle_cannon.super, hack.scud_spawner, building.missile_silo, building.missile_silo.nuke
+			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, hack.scud_spawner, building.missile_silo
 			Defense: building.patriot, building.emp_patriot, building.stinger_site, building.tunnel_network, building.gatling_cannon, building.land_mine, tech.flame_tower
 			StaticAntiAir: building.patriot, building.emp_patriot, building.stinger_site, building.gatling_cannon
 			Strategy: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		UnitsCommonNames:
 			Dozer: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
-			FragileDeployer: infantry.hacker, infantry.hacker.tank
-			Seige: vehicle.tomahawk_launcher, vehicle.tomahawk_launcher.air, vehicle.tomahawk_launcher.super, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.inferno_cannon.inf, vehicle.scud_launcher #,vehicle.nuke_cannon
+			FragileDeployer: infantry.hacker
+			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
 			Collector: aircraft.chinook, aircraft.chinook.air, infantry.worker, vehicle.supply_truck
 			ExcludeFromSquads: upgrade.control_rods, upgrade.control_rods.laser, upgrade.advanced_control_rods, upgrade.camo_netting, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone, upgrade.toxin_missiles, upgrade.hi_explosive_missiles, upgrade.overlord_gatling, upgrade.overlord_speaker, upgrade.helix_gatling, upgrade.helix.speaker, upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sentry_gun, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.stealth_comanche, upgrade.mig_armor
-		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.red_guard.nuke, infantry.red_guard.tank, infantry.minigunner, infantry.conscript
+		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner, infantry.conscript
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
 		QueueLimits:
 			queue.cold_fusion_reactor: 1
@@ -649,7 +618,6 @@ Player:
 			building.usa_airfield: 1
 			building.prc_airfield: 1
 			building.particle_cannon: 1
-			building.particle_cannon.super: 1
 			hack.scud_spawner: 1
 			building.missile_silo: 1
 			building.missile_silo.nuke: 1
@@ -683,7 +651,6 @@ Player:
 			building.usa_airfield: 1%
 			building.prc_airfield: 1%
 			building.particle_cannon: 1%
-			building.particle_cannon.super: 1%
 			hack.scud_spawner: 1%
 			building.missile_silo: 1%
 			building.missile_silo.nuke: 1%
@@ -751,66 +718,45 @@ Player:
 			infantry.rebel: 60%
 			infantry.toxin_rebel: 40%
 			infantry.red_guard: 60%
-			infantry.red_guard.nuke: 55%
-			infantry.red_guard.tank: 50%
 			infantry.minigunner: 60%
 			infantry.conscript: 60%
 			infantry.missile_defender: 35%
 			infantry.rpg_trooper: 35%
 			infantry.tank_hunter: 35%
-			infantry.tank_hunter.nuke: 30%
-			infantry.tank_hunter.tank: 25%
 			infantry.grenadier: 20%
 			infantry.pathfinder: 4%
 			infantry.angry_mob: 4%
 			infantry.hacker: 12%
-			infantry.hacker.tank: 12%
 			infantry.flamethrower: 4%
 			infantry.colonel_burton: 0.5%
 			infantry.jarmen_kell: 0.5%
 			infantry.jarmen_kell.demo: 0.5%
 			infantry.black_lotus: 0.5%
-			infantry.black_lotus.nuke: 0.5%
-			infantry.black_lotus.tank: 0.5%
 			infantry.zombie: 0.5%
 			infantry.giant_ant: 2%
 			infantry.worker: 150%
 			vehicle.supply_truck: 10%
 			vehicle.humvee: 35%
-			vehicle.humvee.air: 35%
-			vehicle.humvee.super: 35%
 			vehicle.technical: 35%
 			vehicle.gatling_tank: 35%
-			vehicle.gatling_tank.tank: 35%
 			vehicle.troop_crawler: 35%
 			vehicle.quad_cannon: 40%
-			vehicle.quad_cannon.toxin: 40%
 			vehicle.tomahawk_launcher: 20%
-			vehicle.tomahawk_launcher.air: 20%
-			vehicle.tomahawk_launcher.super: 20%
 			vehicle.inferno_cannon: 20%
-			vehicle.inferno_cannon.inf: 20%
 			vehicle.scud_launcher: 20%
 			vehicle.dragon_tank: 25%
-			vehicle.dragon_tank.inf: 25%
-			vehicle.dragon_tank.tank: 25%
 			vehicle.rocket_buggy: 25%
 			vehicle.toxin_tractor: 15%
 			vehicle.scorpion_tank: 35%
 			vehicle.crusader_tank: 35%
 			vehicle.laser_tank: 35%
 			vehicle.battlemaster_tank: 35%
-			vehicle.battlemaster_tank.tank: 35%
 			vehicle.overlord_tank: 12%
 			vehicle.paladin_tank: 12%
 			vehicle.marauder_tank: 12%
 			vehicle.avenger: 3%
-			vehicle.avenger.laser: 3%
 			vehicle.radar_van: 1%
-			vehicle.radar_van.toxin: 1%
 			vehicle.sentry_drone: 1%
-			vehicle.sentry_drone.air: 1%
-			vehicle.sentry_drone.super: 1%
 			vehicle.listening_outpost: 1%
 			vehicle.usa_mcc: 2%
 			vehicle.gla_mcc: 2%
@@ -824,8 +770,6 @@ Player:
 			aircraft.stealth_fighter.air: 2%
 			aircraft.aurora: 1%
 			aircraft.comanche: 2%
-			aircraft.comanche.air: 2%
-			aircraft.comanche.super: 2%
 			aircraft.helix: 2%
 			vessel.gunboat: 0.75%
 			vessel.destroyer: 1%
@@ -859,11 +803,8 @@ Player:
 			infantry.jarmen_kell: 1
 			infantry.jarmen_kell.demo: 1
 			infantry.black_lotus: 1
-			infantry.black_lotus.nuke: 1
-			infantry.black_lotus.tank: 1
 			infantry.worker: 32
 			infantry.hacker: 12
-			infantry.hacker.tank: 12
 			aircraft.mig: 4
 			aircraft.raptor: 2
 			aircraft.king_raptor: 2
@@ -871,17 +812,12 @@ Player:
 			aircraft.stealth_fighter.air: 1
 			aircraft.aurora: 1
 			aircraft.comanche: 2
-			aircraft.comanche.air: 2
-			aircraft.comanche.super: 2
 			aircraft.helix: 2
 			aircraft.chinook: 8
 			aircraft.chinook.air: 8
 			vehicle.supply_truck: 8
 			vehicle.radar_van: 2
-			vehicle.radar_van.toxin: 2
 			vehicle.sentry_drone: 2
-			vehicle.sentry_drone.air: 2
-			vehicle.sentry_drone.super: 2
 			vehicle.listening_outpost: 2
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
@@ -1162,18 +1098,18 @@ Player:
 			VehiclesFactory: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
 			NavalProduction: tech.shipyard
 			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, usa_airfield, prc_airfield
-			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, building.particle_cannon.super, hack.scud_spawner, building.missile_silo, building.missile_silo.nuke
+			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, hack.scud_spawner, building.missile_silo
 			Defense: building.patriot, building.emp_patriot, building.stinger_site, building.tunnel_network, building.gatling_cannon, building.land_mine, tech.flame_tower
 			StaticAntiAir: building.patriot, building.emp_patriot, building.stinger_site, building.gatling_cannon
 			Strategy: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		UnitsCommonNames:
 			Dozer: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
-			FragileDeployer: infantry.hacker, infantry.hacker.tank
-			Seige: vehicle.tomahawk_launcher, vehicle.tomahawk_launcher.air, vehicle.tomahawk_launcher.super, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.inferno_cannon.inf, vehicle.scud_launcher #,vehicle.nuke_cannon
+			FragileDeployer: infantry.hacker
+			Seige: vehicle.tomahawk_launcher, vehicle.rocket_buggy, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 			NavalUnits: vessel.gunboat, vessel.destroyer, vessel.cruiser
 			Collector: aircraft.chinook, aircraft.chinook.air, infantry.worker, vehicle.supply_truck
 			ExcludeFromSquads: upgrade.control_rods, upgrade.control_rods.laser, upgrade.advanced_control_rods, upgrade.camo_netting, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone, upgrade.toxin_missiles, upgrade.hi_explosive_missiles, upgrade.overlord_gatling, upgrade.overlord_speaker, upgrade.helix_gatling, upgrade.helix.speaker, upgrade.capture_building, upgrade.flashbang_grenades, upgrade.tow_missile, upgrade.sentry_gun, upgrade.sc_rocket, upgrade.chain_gun, upgrade.black_napalm, upgrade.rocket_pods, upgrade.laser_guided_missiles, upgrade.stealth_comanche, upgrade.mig_armor
-		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.red_guard.nuke, infantry.red_guard.tank, infantry.minigunner, infantry.conscript
+		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner, infantry.conscript
 		CapturableActorTypes: tech.oil_derrick, tech.hospital, tech.bio_lab, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.service_depot
 		QueueLimits:
 			queue.cold_fusion_reactor: 1
@@ -1226,10 +1162,8 @@ Player:
 			building.usa_airfield: 1
 			building.prc_airfield: 1
 			building.particle_cannon: 1
-			building.particle_cannon.super: 1
 			hack.scud_spawner: 1
 			building.missile_silo: 1
-			building.missile_silo.nuke: 1
 			tech.flame_tower: 1
 		BuildingFractions:
 			building.usa_command_center: 200%
@@ -1260,10 +1194,8 @@ Player:
 			building.usa_airfield: 1%
 			building.prc_airfield: 1%
 			building.particle_cannon: 1%
-			building.particle_cannon.super: 1%
 			hack.scud_spawner: 1%
 			building.missile_silo: 1%
-			building.missile_silo.nuke: 1%
 			tech.flame_tower: 4%
 			upgrade.radar: 1%
 			upgrade.adv_training: 1%
@@ -1328,66 +1260,45 @@ Player:
 			infantry.rebel: 40%
 			infantry.toxin_rebel: 25%
 			infantry.red_guard: 40%
-			infantry.red_guard.nuke: 35%
-			infantry.red_guard.tank: 30%
 			infantry.minigunner: 40%
 			infantry.conscript: 40%
 			infantry.missile_defender: 30%
 			infantry.rpg_trooper: 30%
 			infantry.tank_hunter: 30%
-			infantry.tank_hunter.nuke: 25%
-			infantry.tank_hunter.tank: 20%
 			infantry.grenadier: 15%
 			infantry.pathfinder: 5%
 			infantry.angry_mob: 5%
 			infantry.hacker: 15%
-			infantry.hacker.tank: 15%
 			infantry.flamethrower: 5%
 			infantry.colonel_burton: 0.5%
 			infantry.jarmen_kell: 0.5%
 			infantry.jarmen_kell.demo: 0.5%
 			infantry.black_lotus: 0.5%
-			infantry.black_lotus.nuke: 0.5%
-			infantry.black_lotus.tank: 0.5%
 			infantry.zombie: 0.5%
 			infantry.giant_ant: 2%
 			infantry.worker: 150%
 			vehicle.supply_truck: 10%
 			vehicle.humvee: 25%
-			vehicle.humvee.air: 25%
-			vehicle.humvee.super: 25%
 			vehicle.technical: 25%
 			vehicle.gatling_tank: 25%
-			vehicle.gatling_tank.tank: 25%
 			vehicle.troop_crawler: 25%
 			vehicle.quad_cannon: 50%
-			vehicle.quad_cannon.toxin: 50%
 			vehicle.tomahawk_launcher: 30%
-			vehicle.tomahawk_launcher.air: 30%
-			vehicle.tomahawk_launcher.super: 30%
 			vehicle.inferno_cannon: 30%
-			vehicle.inferno_cannon.inf: 30%
 			vehicle.scud_launcher: 30%
 			vehicle.dragon_tank: 30%
-			vehicle.dragon_tank.inf: 30%
-			vehicle.dragon_tank.tank: 30%
 			vehicle.rocket_buggy: 30%
 			vehicle.toxin_tractor: 20%
 			vehicle.scorpion_tank: 45%
 			vehicle.crusader_tank: 45%
 			vehicle.laser_tank: 45%
 			vehicle.battlemaster_tank: 45%
-			vehicle.battlemaster_tank.tank: 45%
 			vehicle.overlord_tank: 16%
 			vehicle.paladin_tank: 16%
 			vehicle.marauder_tank: 16%
 			vehicle.avenger: 4%
-			vehicle.avenger.laser: 4%
 			vehicle.radar_van: 1%
-			vehicle.radar_van.toxin: 1%
 			vehicle.sentry_drone: 1%
-			vehicle.sentry_drone.air: 1%
-			vehicle.sentry_drone.super: 1%
 			vehicle.listening_outpost: 1%
 			vehicle.usa_mcc: 2%
 			vehicle.gla_mcc: 2%
@@ -1401,8 +1312,6 @@ Player:
 			aircraft.stealth_fighter.air: 2%
 			aircraft.aurora: 1%
 			aircraft.comanche: 2%
-			aircraft.comanche.air: 2%
-			aircraft.comanche.super: 2%
 			aircraft.helix: 2%
 			vessel.gunboat: 0.5%
 			vessel.destroyer: 1%
@@ -1436,11 +1345,8 @@ Player:
 			infantry.jarmen_kell: 1
 			infantry.jarmen_kell.demo: 1
 			infantry.black_lotus: 1
-			infantry.black_lotus.nuke: 1
-			infantry.black_lotus.tank: 1
 			infantry.worker: 32
 			infantry.hacker: 12
-			infantry.hacker.tank: 12
 			aircraft.mig: 4
 			aircraft.raptor: 2
 			aircraft.king_raptor: 2
@@ -1448,17 +1354,12 @@ Player:
 			aircraft.stealth_fighter.air: 1
 			aircraft.aurora: 1
 			aircraft.comanche: 2
-			aircraft.comanche.air: 2
-			aircraft.comanche.super: 2
 			aircraft.helix: 2
 			aircraft.chinook: 8
 			aircraft.chinook.air: 8
 			vehicle.supply_truck: 8
 			vehicle.radar_van: 2
-			vehicle.radar_van.toxin: 2
 			vehicle.sentry_drone: 2
-			vehicle.sentry_drone.air: 2
-			vehicle.sentry_drone.super: 2
 			vehicle.listening_outpost: 2
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2

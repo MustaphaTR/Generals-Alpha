@@ -68,7 +68,7 @@ vehicle.humvee:
 		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	Buildable:
-		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -77,6 +77,12 @@ vehicle.humvee:
 		Description: Fast scout & anti-infantry vehicle.\n\nCan carry 5 infantry that can fire outside.
 	Valued:
 		Cost: 700
+	CustomProductionCost@Airforce:
+		Queue: queue.air_gen_vehicle
+		Cost: 800
+	CustomProductionCost@Super:
+		Queue: queue.super_gen_vehicle
+		Cost: 850
 	Tooltip:
 		Name: Humvee
 	Health:
@@ -147,20 +153,6 @@ vehicle.humvee:
 		Image: vehicle.humvee
 	Voiced:
 		VoiceSet: HumveeVoice
-
-vehicle.humvee.air:
-	Inherits: vehicle.humvee
-	Buildable:
-		Queue: queue.air_gen_vehicle
-	Valued:
-		Cost: 800
-
-vehicle.humvee.super:
-	Inherits: vehicle.humvee
-	Buildable:
-		Queue: queue.super_gen_vehicle
-	Valued:
-		Cost: 850
 
 vehicle.technical:
 	Inherits: ^Vehicle
@@ -245,18 +237,21 @@ vehicle.radar_van:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal500
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Valued:
-		Cost: 500
 	Tooltip:
 		Name: Radar Van
 	Buildable:
-		Queue: queue.gla_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.low
 		Description: Provides radar.
+	Valued:
+		Cost: 500
+	CustomProductionCost@Toxin:
+		Queue: queue.toxin_gen_vehicle
+		Cost: 550
 	Health:
 		HP: 200
 	Armor:
@@ -301,13 +296,6 @@ vehicle.radar_van:
 		Image: vehicle.radar_van
 	Voiced:
 		VoiceSet: RadarVanVoice
-
-vehicle.radar_van.toxin:
-	Inherits: vehicle.radar_van
-	Buildable:
-		Queue: queue.toxin_gen_vehicle
-	Valued:
-		Cost: 550
 
 vehicle.scorpion_tank:
 	Inherits: ^Tank
@@ -516,7 +504,7 @@ vehicle.battlemaster_tank:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
 	Buildable:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -525,6 +513,12 @@ vehicle.battlemaster_tank:
 		Description: Medium armored main battle tank.
 	Valued:
 		Cost: 800
+	CustomProductionCost@Tank:
+		Queue: queue.tank_gen_vehicle
+		Cost: 700
+	CustomProductionTime@Tank:
+		Queue: queue.tank_gen_vehicle
+		BuildTime: 300
 	Tooltip:
 		Name: Battlemaster Tank
 	Health:
@@ -576,14 +570,6 @@ vehicle.battlemaster_tank:
 	RenderSprites:
 		Image: vehicle.battlemaster_tank
 
-vehicle.battlemaster_tank.tank:
-	Inherits: vehicle.battlemaster_tank
-	Buildable:
-		Queue: queue.tank_gen_vehicle
-		BuildDuration: 300
-	Valued:
-		Cost: 700
-
 vehicle.ambulance:
 	Inherits: ^Vehicle
 	Inherits@CRUSH: ^CrushesInfantry
@@ -592,7 +578,7 @@ vehicle.ambulance:
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -601,6 +587,9 @@ vehicle.ambulance:
 		Description: Heals nearby infantry.\n\nCan carry 3 infantry.\n\nPassengers can survive when it dies.
 	Valued:
 		Cost: 600
+	CustomProductionCost@Airforce:
+		Queue: queue.air_gen_vehicle, queue.super_gen_vehicle
+		Cost: 700
 	Tooltip:
 		Name: Ambulance
 	Health:
@@ -636,13 +625,6 @@ vehicle.ambulance:
 	Voiced:
 		VoiceSet: AmbulanceVoice
 
-vehicle.ambulance.air:
-	Inherits: vehicle.ambulance
-	Buildable:
-		Queue: queue.air_gen_vehicle, queue.super_gen_vehicle
-	Valued:
-		Cost: 700
-
 vehicle.sentry_drone:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -651,7 +633,7 @@ vehicle.sentry_drone:
 	Inherits@REVEAL: ^Reveal350
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -660,6 +642,12 @@ vehicle.sentry_drone:
 		Description: Detection vehicle that is cloaked while not moving.
 	Valued:
 		Cost: 800
+	CustomProductionCost@Airforce:
+		Queue: queue.air_gen_vehicle
+		Cost: 850
+	CustomProductionCost@Super:
+		Queue: queue.super_gen_vehicle
+		Cost: 1000
 	Tooltip:
 		Name: Sentry Drone
 	Health:
@@ -723,20 +711,6 @@ vehicle.sentry_drone:
 	Voiced:
 		VoiceSet: SentryDroneVoice
 
-vehicle.sentry_drone.air:
-	Inherits: vehicle.sentry_drone
-	Buildable:
-		Queue: queue.air_gen_vehicle
-	Valued:
-		Cost: 850
-
-vehicle.sentry_drone.super:
-	Inherits: vehicle.sentry_drone
-	Buildable:
-		Queue: queue.super_gen_vehicle
-	Valued:
-		Cost: 1000
-
 vehicle.quad_cannon:
 	Inherits: ^Tank
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
@@ -747,18 +721,21 @@ vehicle.quad_cannon:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Valued:
-		Cost: 700
 	Tooltip:
 		Name: Quad Cannon
 	Buildable:
-		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 150
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.low
 		Description: Anti-infantry & anti-air vehicle.
+	Valued:
+		Cost: 700
+	CustomProductionCost@Toxin:
+		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
+		Cost: 750
 	Mobile:
 		Speed: 40
 		Voice: Move
@@ -797,13 +774,6 @@ vehicle.quad_cannon:
 	Voiced:
 		VoiceSet: QuadCannonVoice
 
-vehicle.quad_cannon.toxin:
-	Inherits: vehicle.quad_cannon
-	Buildable:
-		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
-	Valued:
-		Cost: 750
-
 vehicle.gatling_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
@@ -811,18 +781,21 @@ vehicle.gatling_tank:
 	Inherits@CRUSH: ^CrushesInfantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal360
-	Valued:
-		Cost: 800
 	Tooltip:
 		Name: Gatling Tank
 	Buildable:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.low
 		Description: Anti-infantry & anti-air vehicle.
+	Valued:
+		Cost: 800
+	CustomProductionCost@Tank:
+		Queue: queue.tank_gen_vehicle
+		Cost: 700
 	Mobile:
 		Speed: 40
 		Voice: Move
@@ -872,13 +845,6 @@ vehicle.gatling_tank:
 		Image: vehicle.gatling_tank
 	Voiced:
 		VoiceSet: GatlingTankVoice
-
-vehicle.gatling_tank.tank:
-	Inherits: vehicle.gatling_tank
-	Buildable:
-		Queue: queue.tank_gen_vehicle
-	Valued:
-		Cost: 700
 
 vehicle.toxin_tractor:
 	Inherits: ^Tank
@@ -954,13 +920,19 @@ vehicle.dragon_tank:
 	Tooltip:
 		Name: Dragon Tank
 	Buildable:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.medium
 		Description: Flame-throwing vehicle.
+	CustomProductionCost@Infantry:
+		Queue: queue.inf_gen_vehicle
+		Cost: 900
+	CustomProductionCost@Tank:
+		Queue: queue.tank_gen_vehicle
+		Cost: 700
 	Mobile:
 		TurnSpeed: 6
 		Speed: 30
@@ -993,20 +965,6 @@ vehicle.dragon_tank:
 		Image: vehicle.dragon_tank
 	Voiced:
 		VoiceSet: DragonTankVoice
-
-vehicle.dragon_tank.inf:
-	Inherits: vehicle.dragon_tank
-	Buildable:
-		Queue: queue.inf_gen_vehicle
-	Valued:
-		Cost: 900
-
-vehicle.dragon_tank.tank:
-	Inherits: vehicle.dragon_tank
-	Buildable:
-		Queue: queue.tank_gen_vehicle
-	Valued:
-		Cost: 700
 
 vehicle.rocket_buggy:
 	Inherits: ^Vehicle
@@ -1096,7 +1054,7 @@ vehicle.avenger:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 6
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1104,6 +1062,9 @@ vehicle.avenger:
 		Description: Advanced anti-air unit.\n\nCan deflect enemy missiles with laser.
 	Valued:
 		Cost: 2000
+	CustomProductionCost@Laser:
+		Queue: queue.laser_gen_vehicle
+		Cost: 1500
 	Tooltip:
 		Name: Avenger
 	Health:
@@ -1146,13 +1107,6 @@ vehicle.avenger:
 		Image: vehicle.avenger
 	Voiced:
 		VoiceSet: AvengerVoice
-
-vehicle.avenger.lazer:
-	Inherits: vehicle.avenger
-	Buildable:
-		Queue: queue.laser_gen_vehicle
-	Valued:
-		Cost: 1500
 
 vehicle.troop_crawler:
 	Inherits: ^Tank
@@ -1282,17 +1236,23 @@ vehicle.tomahawk_launcher:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
-	Valued:
-		Cost: 1200
 	Tooltip:
 		Name: Tomahawk Launcher
 	Buildable:
-		Queue: queue.usa_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 7
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~techlevel.medium
 		Description: Long-range rocket artillery.
+	Valued:
+		Cost: 1200
+	CustomProductionCost@Airforce:
+		Queue: queue.air_gen_vehicle
+		Cost: 1300
+	CustomProductionCost@Super:
+		Queue: queue.super_gen_vehicle
+		Cost: 1400
 	Mobile:
 		Speed: 30
 		Voice: Move
@@ -1341,20 +1301,6 @@ vehicle.tomahawk_launcher:
 		Image: vehicle.tomahawk_launcher
 	Voiced:
 		VoiceSet: TomahawkLauncherVoice
-
-vehicle.tomahawk_launcher.air:
-	Inherits: vehicle.tomahawk_launcher
-	Buildable:
-		Queue: queue.air_gen_vehicle
-	Valued:
-		Cost: 1300
-
-vehicle.tomahawk_launcher.super:
-	Inherits: vehicle.tomahawk_launcher
-	Buildable:
-		Queue: queue.super_gen_vehicle
-	Valued:
-		Cost: 1400
 
 vehicle.scud_launcher:
 	Inherits: ^Vehicle
@@ -1466,7 +1412,7 @@ vehicle.inferno_cannon:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle
 		BuildPaletteOrder: 9
 		ForceIconLocation: true
 		BuildDuration: 375
@@ -1475,6 +1421,9 @@ vehicle.inferno_cannon:
 		Description: Long-range artillery.
 	Valued:
 		Cost: 900
+	CustomProductionCost@Infantry:
+		Queue: queue.inf_gen_vehicle
+		Cost: 1100
 	Tooltip:
 		Name: Inferno Cannon
 	Health:
@@ -1522,13 +1471,6 @@ vehicle.inferno_cannon:
 		Image: vehicle.inferno_cannon
 	Voiced:
 		VoiceSet: InfernoCannonVoice
-
-vehicle.inferno_cannon.inf:
-	Inherits: vehicle.inferno_cannon
-	Buildable:
-		Queue: queue.inf_gen_vehicle
-	Valued:
-		Cost: 1100
 
 vehicle.paladin_tank:
 	Inherits: ^Tank
@@ -1857,7 +1799,7 @@ vehicle.bomb_truck:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal200
 	Buildable:
-		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.stealth_gen_vehicle
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 7
 		ForceIconLocation: true
 		BuildDuration: 375
@@ -1866,6 +1808,9 @@ vehicle.bomb_truck:
 		Description: Suicide vehicle.\n\nCan be armed with toxin or high explosive bombs.
 	Valued:
 		Cost: 1200
+	CustomProductionCost@Demo:
+		Queue: queue.demo_gen_vehicle
+		Cost: 1000
 	-Tooltip:
 	DisguiseTooltip:
 		Name: Bomb Truck
@@ -1985,13 +1930,6 @@ vehicle.bomb_truck:
 	Selectable:
 		Class: vehicle.bomb_truck
 		DecorationBounds: 42,42
-
-vehicle.bomb_truck.demo:
-	Inherits: vehicle.bomb_truck
-	Buildable:
-		Queue: queue.demo_gen_vehicle
-	Valued:
-		Cost: 1000
 
 vehicle.nuke_cannon:
 	Inherits: ^Tank
