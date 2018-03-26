@@ -206,6 +206,13 @@ explosion.demo_trap:
 		Size: 2
 		Delay: 5
 
+explosion.advanced_demo_trap:
+	Inherits: explosion.demo_trap
+	Warhead@1Dam: SpreadDamage
+		Damage: 700
+	Warhead@2Dam: SpreadDamage
+		Damage: 500
+
 explosion.terrorist:
 	Inherits: ^Explosion
 	Warhead@1Dam: SpreadDamage

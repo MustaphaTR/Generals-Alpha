@@ -869,7 +869,7 @@ fake_to_real.command_center:
 	Buildable:
 		Queue: queue.command_center.fake
 		BuildDuration: 750
-		Description: Tuns the building to a functional Command Center.
+		Description: Turns the building to a functional Command Center.
 	Valued:
 		Cost: 1500
 	RenderSprites:
@@ -882,7 +882,7 @@ fake_to_real.barracks:
 	Buildable:
 		Queue: queue.barracks.fake
 		BuildDuration: 250
-		Description: Tuns the building to a functional Barracks.
+		Description: Turns the building to a functional Barracks.
 	Valued:
 		Cost: 375
 	RenderSprites:
@@ -895,7 +895,7 @@ fake_to_real.supply_stash:
 	Buildable:
 		Queue: queue.supply_stash.fake
 		BuildDuration: 250
-		Description: Tuns the building to a functional Supply Stash.
+		Description: Turns the building to a functional Supply Stash.
 	Valued:
 		Cost: 1125
 	RenderSprites:
@@ -908,7 +908,7 @@ fake_to_real.arms_dealer:
 	Buildable:
 		Queue: queue.arms_dealer.fake
 		BuildDuration: 250
-		Description: Tuns the building to a functional Arms Dealer.
+		Description: Turns the building to a functional Arms Dealer.
 	Valued:
 		Cost: 1875
 	RenderSprites:
@@ -921,7 +921,7 @@ fake_to_real.palace:
 	Buildable:
 		Queue: queue.palace.fake
 		BuildDuration: 625
-		Description: Tuns the building to a functional Palace.
+		Description: Turns the building to a functional Palace.
 	Valued:
 		Cost: 1875
 	RenderSprites:
@@ -934,7 +934,7 @@ fake_to_real.black_market:
 	Buildable:
 		Queue: queue.black_market.fake
 		BuildDuration: 500
-		Description: Tuns the building to a functional Black Market.
+		Description: Turns the building to a functional Black Market.
 	Valued:
 		Cost: 1875
 	RenderSprites:
@@ -947,7 +947,7 @@ fake_to_real.scud_storm:
 	Buildable:
 		Queue: queue.scud_storm.fake
 		BuildDuration: 1000
-		Description: Tuns the building to a functional SCUD Storm.
+		Description: Turns the building to a functional SCUD Storm.
 		Prerequisites: !prerequisite.enough_scud
 	Valued:
 		Cost: 4000
@@ -961,11 +961,24 @@ fake_to_real.demo_trap:
 	Buildable:
 		Queue: queue.demo_trap.fake
 		BuildDuration: 100
-		Description: Tuns the building to a functional Demo Trap.
+		Description: Turns the building to a functional Demo Trap.
 	Valued:
 		Cost: 350
 	RenderSprites:
 		Image: building.demo_trap
+
+fake_to_real.advanced_demo_trap:
+	Inherits: ^default.fake_to_real
+	Tooltip:
+		Name: Turn To Real Advanced Demo Trap
+	Buildable:
+		Queue: queue.advanced_demo_trap.fake
+		BuildDuration: 50
+		Description: Turns the building to a functional Advanced Demo Trap.
+	Valued:
+		Cost: 175
+	RenderSprites:
+		Image: building.advanced_demo_trap
 
 fake_to_real.tunnel_network:
 	Inherits: ^default.fake_to_real
@@ -974,7 +987,7 @@ fake_to_real.tunnel_network:
 	Buildable:
 		Queue: queue.tunnel_network.fake
 		BuildDuration: 250
-		Description: Tuns the building to a functional Tunnel Network.
+		Description: Turns the building to a functional Tunnel Network.
 	Valued:
 		Cost: 700
 	RenderSprites:
@@ -987,7 +1000,7 @@ fake_to_real.stinger_site:
 	Buildable:
 		Queue: queue.stinger_site.fake
 		BuildDuration: 250
-		Description: Tuns the building to a functional Stinger Site.
+		Description: Turns the building to a functional Stinger Site.
 	Valued:
 		Cost: 800
 	RenderSprites:

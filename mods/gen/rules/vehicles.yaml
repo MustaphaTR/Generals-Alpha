@@ -2188,20 +2188,31 @@ vehicle.gla_mcc:
 	Tooltip:
 		Name: GLA Construction Vehicle
 	Production:
-		Produces: queue.gla_building
+		Produces: queue.gla_building, queue.demo_gen_building
 		PauseOnCondition: emp
 		RequiresCondition: !driver_killed
 	ProductionBar@GLA_BUILDING:
 		ProductionType: queue.gla_building
+	ProductionBar@DEMO_BUILDING:
+		ProductionType: queue.demo_gen_building
 	ProductionQueue@GLA_BUILDING:
 		Type: queue.gla_building
+		Factions: usa, air, laser, super, gla, toxin, stealth, prc, inf, nuke, tank
 		Group: Building
-		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
 		SpectatorUIOrder: 4
+	ProductionQueue@DEMO_BUILDING:
+		Type: queue.demo_gen_building
+		Factions: demo
+		Group: Building
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+		SpectatorUIOrder: 5
 	Voiced:
 		VoiceSet: GLAMCCVoice
 	WithTextDecoration@SIDE:
@@ -2234,7 +2245,7 @@ vehicle.prc_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
-		SpectatorUIOrder: 5
+		SpectatorUIOrder: 6
 	ProductionQueue@INF_BUILDING:
 		Type: queue.inf_gen_building
 		Factions: inf
@@ -2243,7 +2254,7 @@ vehicle.prc_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
-		SpectatorUIOrder: 6
+		SpectatorUIOrder: 7
 	ProductionQueue@NUKE_BUILDING:
 		Type: queue.nuke_gen_building
 		Factions: nuke
@@ -2252,7 +2263,7 @@ vehicle.prc_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
-		SpectatorUIOrder: 7
+		SpectatorUIOrder: 8
 	Voiced:
 		VoiceSet: PRCMCCVoice
 	WithTextDecoration@SIDE:
