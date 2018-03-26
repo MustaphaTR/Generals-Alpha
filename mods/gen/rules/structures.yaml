@@ -1944,6 +1944,7 @@ building.stinger_site:
 ^default.airfield:
 	Inherits: ^Building
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SABOTAGE: ^CanBeSabotaged
 	Buildable:
 		BuildDuration: 750
 		BuildDurationModifier: 100
@@ -1971,6 +1972,8 @@ building.stinger_site:
 	Power:
 		Amount: -1
 	ProvidesPrerequisite@buildingname:
+	InfiltrateForCondition:
+		Duration: 750
 
 building.usa_airfield:
 	Inherits: ^default.airfield
@@ -1991,7 +1994,7 @@ building.usa_airfield:
 		Dimensions: 4,3
 	Production:
 		Produces: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_plane, queue.usa_helicopter, queue.usa_air_upgrade
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 	ProductionQueue@Vanilla:
 		Type: queue.usa_aircraft
 		Factions: usa, laser, gla, toxin, demo, stealth, prc, inf, nuke, tank
@@ -2069,7 +2072,7 @@ building.prc_airfield:
 		Dimensions: 4,3
 	Production:
 		Produces: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 	ProductionQueue@Vanilla:
 		Type: queue.prc_aircraft
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
