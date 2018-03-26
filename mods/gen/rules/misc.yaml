@@ -576,18 +576,8 @@ waypoint:
 		Categories: System
 
 
-^colorpicker.overlord_tank:
+colorpicker.overlord_tank:
 	Inherits: vehicle.overlord_tank
-	-Turreted@Gatling:
-	-Turreted@Bunker:
-	-Turreted@Speaker:
-	-WithSpriteTurret@Gatling:
-	-WithSpriteTurret@Bunker:
-	-WithSpriteTurret@Speaker:
-	-Armament@GatlingAG:
-	-Armament@GatlingAA:
-	AttackGarrisoned:
-		Turret: primary
 	RenderSprites:
 		Image: colorpicker.overlord_tank
 		Scale: 1.5
