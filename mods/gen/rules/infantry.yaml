@@ -691,6 +691,9 @@ infantry.saboteur:
 		CloakTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
 	Voiced:
 		VoiceSet: SaboteurVoice
 

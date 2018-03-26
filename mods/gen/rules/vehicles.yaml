@@ -1863,6 +1863,8 @@ vehicle.emparor_overlord:
 		Produces: queue.emparor_overlord
 	ProductionQueue:
 		Type: queue.emparor_overlord
+	Mobile:
+		RequiresCondition: !hacked && !driver_killed && !emp
 	-Cargo@BUNKER_UPGRADE:
 	-Turreted@Bunker:
 	-AttackGarrisoned:
