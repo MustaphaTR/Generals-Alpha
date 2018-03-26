@@ -2,6 +2,7 @@
 	Inherits: ^Building
 	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@REVEAL: ^Reveal300
+	Inherits@SABOTAGE: ^CanBeSabotaged
 	Building:
 		Footprint: xxX xxx XxX
 		Dimensions: 3,3
@@ -37,6 +38,8 @@
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.command_center
+	InfiltrateForCondition:
+		Duration: 250
 	RallyPoint:
 		Offset: 3,3
 	WithTextDecoration@SIDE:
@@ -63,7 +66,7 @@ building.usa_command_center:
 		Footprint: XXX xxx XXX
 	Production:
 		Produces: queue.usa_command_center
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 	ProductionBar@USA_COMMAND_CENTER:
 		ProductionType: queue.usa_command_center
 	ProductionQueue@USA_COMMAND_CENTER:
@@ -74,7 +77,7 @@ building.usa_command_center:
 		RequireOwner: false
 		SpectatorUIOrder: 9
 	SpawnActorPower@SPY_DRONE:
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 		Actors:
 			1: aircraft.spy_drone
 		Prerequisites:
@@ -90,7 +93,7 @@ building.usa_command_center:
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: SpyDronePowerInfoOrder
 	SpawnActorPower@SPY_SATELLITE:
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 		Actors:
 			1: camera.spy_satellite
 		Prerequisites: 
@@ -106,7 +109,7 @@ building.usa_command_center:
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: SpySatellitePowerInfoOrder
 	ParatroopersPower@PARADROP:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		OrderName: ParadropPowerInfoOrder
 		Prerequisites:
 			1: generals_power.paradrop1
@@ -148,7 +151,7 @@ building.usa_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 	AirstrikePower@A10:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
 			1: generals_power.a101
 			2: generals_power.a102
@@ -184,7 +187,7 @@ building.usa_command_center:
 		CircleSequence: circles
 		OrderName: A10PowerInfoOrder
 	AirstrikePower@FUEL_AIR_BOMB:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
 			1: generals_power.fuel_air_bomb
 		Icons:
@@ -213,7 +216,7 @@ building.usa_command_center:
 		Text: USA
 		Color: 0000FF
 	ProvidesRadar:
-		RequiresCondition: !emp && !hacked && !lowpower
+		RequiresCondition: !emp && !hacked && !lowpower && !sabotaged
 	RenderSprites:
 		PlayerPalette: cncplayer
 	HitShape:
@@ -232,7 +235,7 @@ building.gla_command_center:
 		VoiceSet: GLACommandCenterVoice
 	Production:
 		Produces: queue.gla_command_center
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 	ProductionBar@GLA_COMMAND_CENTER:
 		ProductionType: queue.gla_command_center
 	ProductionQueue@GLA_COMMAND_CENTER:
@@ -243,7 +246,7 @@ building.gla_command_center:
 		RequireOwner: false
 		SpectatorUIOrder: 10
 	SpawnActorPower@AMBUSH:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Actors:
 			1: hack.rebel_spawner.4
 			2: hack.rebel_spawner.8
@@ -268,7 +271,7 @@ building.gla_command_center:
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: AmbushPowerInfoOrder
 	SpawnActorPower@TOXIN_AMBUSH:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Actors:
 			1: hack.toxin_rebel_spawner.4
 			2: hack.toxin_rebel_spawner.8
@@ -293,7 +296,7 @@ building.gla_command_center:
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: ToxinAmbushPowerInfoOrder
 	GrantExternalConditionPower@GPS_SCRAMBLER:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
 			1: generals_power.gps_scrambler1
 			2: generals_power.gps_scrambler2
@@ -324,7 +327,7 @@ building.gla_command_center:
 			3: gps_scrambler
 		OrderName: GPSScramblerPowerInfoOrder
 	AirstrikePower@ANTHRAX_BOMB:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
 			1: generals_power.anthrax_bomb
 		Icons:
@@ -367,7 +370,7 @@ building.prc_command_center:
 	Tooltip:
 		Name: PRC Command Center
 	ProvidesRadar:
-		RequiresCondition: prcradar && !emp && !hacked && !lowpower
+		RequiresCondition: prcradar && !emp && !hacked && !lowpower && !sabotaged
 	GrantConditionOnPrerequisite@PRC_RADAR:
 		Condition: prcradar
 		Prerequisites: upgrade.radar
@@ -375,7 +378,7 @@ building.prc_command_center:
 		VoiceSet: PRCCommandCenterVoice
 	Production:
 		Produces: queue.prc_command_center
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 	ProductionBar@PRC_COMMAND_CENTER:
 		ProductionType: queue.prc_command_center
 	ProductionQueue@PRC_COMMAND_CENTER:
@@ -386,7 +389,7 @@ building.prc_command_center:
 		RequireOwner: false
 		SpectatorUIOrder: 11
 	GrantExternalConditionPower@FRENZY:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites: 
 			1: generals_power.frenzy1
 			2: generals_power.frenzy2
@@ -417,7 +420,7 @@ building.prc_command_center:
 			3: frenzy3
 		OrderName: FrenzyPowerInfoOrder
 	CashHackPower@CASH_HACK1:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
 			1: generals_power.cash_hack1
 			2: generals_power.cash_hack2
@@ -442,7 +445,7 @@ building.prc_command_center:
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: CashHackPowerInfoOrder
 	ParatroopersPower@PRC_PARADROP:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		OrderName: PRCParadropPowerInfoOrder
 		Prerequisites:
 			1: generals_power.paradrop1.inf_gen
@@ -484,7 +487,7 @@ building.prc_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 	SpawnActorPower@ARTY_BARRAGE:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Actors:
 			1: hack.artillery_barrager.1
 			2: hack.artillery_barrager.2
@@ -509,7 +512,7 @@ building.prc_command_center:
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: ArtilleryBarragePowerInfoOrder
 	ParatroopersPower@TANK_DROP:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		OrderName: TankDropPowerInfoOrder
 		Prerequisites:
 			1: generals_power.tank_drop1
@@ -551,7 +554,7 @@ building.prc_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 	AirstrikePower@CLUSTER_MINES:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
 			1: generals_power.cluster_mines
 		Icons:
@@ -575,7 +578,7 @@ building.prc_command_center:
 		CircleSequence: circles
 		OrderName: ClusterMinesPowerInfoOrder
 	AirstrikePower@EMP:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
 			1: generals_power.emp
 		Icons:
@@ -610,6 +613,7 @@ building.prc_command_center:
 	Inherits: ^Building
 	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SABOTAGE: ^CanBeSabotaged
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		BuildDuration: 250
@@ -623,6 +627,8 @@ building.prc_command_center:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.reactor
+	InfiltrateForCondition:
+		Duration: 750
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
@@ -647,7 +653,7 @@ building.cold_fusion_reactor:
 		HP: 800
 	Production:
 		Produces: queue.cold_fusion_reactor
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 		RequiresCondition: !control_rods
 	ProductionQueue:
 		Type: queue.cold_fusion_reactor
@@ -661,10 +667,10 @@ building.cold_fusion_reactor:
 	Exit:
 	Power:
 		Amount: 5
-		RequiresCondition: !emp && !hacked
+		RequiresCondition: !emp && !hacked && !sabotaged
 	Power@CONTROL_RODS:
 		Amount: 5
-		RequiresCondition: control_rods && !emp && !hacked
+		RequiresCondition: control_rods && !emp && !hacked && !sabotaged
 	GrantConditionOnProduction:
 		Condition: control_rods
 	Voiced:
@@ -716,7 +722,7 @@ building.nuclear_reactor:
 		TurnSpeed: 255
 	Production:
 		Produces: queue.just_mine
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 	ProductionQueue:
 		Type: queue.just_mine
 		Group: Building
@@ -726,7 +732,7 @@ building.nuclear_reactor:
 	ProductionBar:
 	Armament:
 		Weapon: hack.nuclear_reactor
-		RequiresCondition: overcharge && !emp && !hacked
+		RequiresCondition: overcharge && !emp && !hacked && !sabotaged
 	Explodes:
 		Type: CenterPosition
 		Weapon: explosion.nuclear_reactor
@@ -734,10 +740,10 @@ building.nuclear_reactor:
 	AttackTurreted:
 	Power@notovercharged:
 		Amount: 10
-		RequiresCondition: !overcharge && !emp && !hacked
+		RequiresCondition: !overcharge && !emp && !hacked && !sabotaged
 	Power@overcharged:
 		Amount: 15
-		RequiresCondition: overcharge && !emp && !hacked
+		RequiresCondition: overcharge && !emp && !hacked && !sabotaged
 	FireWeaponAtSelf:
 		Name: primary
 	WithDeathAnimation:
@@ -766,6 +772,7 @@ building.advanced_nuclear_reactor:
 ^default.barracks:
 	Inherits: ^Building
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SABOTAGE: ^CanBeSabotaged
 	Inherits@SHAPE: ^2x2Shape
 	HitShape:
 		UseTargetableCellsOffsets: false
@@ -788,6 +795,8 @@ building.advanced_nuclear_reactor:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.barracks
+	InfiltrateForCondition:
+		Duration: 750
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 10
@@ -810,7 +819,7 @@ building.usa_barracks:
 		Name: USA Barracks
 	Production:
 		Produces: queue.usa_infantry
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 	ProductionQueue:
 		Type: queue.usa_infantry
 		Group: Infantry
@@ -843,7 +852,7 @@ building.gla_barracks:
 		Name: GLA Barracks
 	Production:
 		Produces: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 	ProductionQueue@Vanilla:
 		Type: queue.gla_infantry
 		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
@@ -907,7 +916,7 @@ building.prc_barracks:
 		Name: PRC Barracks
 	Production:
 		Produces: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 	ProductionQueue@Vanilla:
 		Type: queue.prc_infantry
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
@@ -1014,6 +1023,13 @@ building.mine:
 	Power:
 		Amount: -1
 	CashHackable:
+	InfiltrateForCash:
+		Types: Sabotage
+		Minimum: 0
+		Maximum: 1000
+		Notification: CreditsStolen
+	Targetable@SABOTAGE:
+		TargetTypes: Sabotage
 	FreeActor:
 		Actor: aircraft.chinook
 		SpawnOffset: 1,2
@@ -1543,6 +1559,7 @@ building.fotified_bunker:
 ^default.war_factory:
 	Inherits: ^Building
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SABOTAGE: ^CanBeSabotaged
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		BuildDuration: 375
@@ -1568,6 +1585,8 @@ building.fotified_bunker:
 	Power:
 		Amount: -1
 	ProvidesPrerequisite@buildingname:
+	InfiltrateForCondition:
+		Duration: 750
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
@@ -1587,7 +1606,7 @@ building.usa_war_factory:
 		Offset: 0,2
 	Production:
 		Produces: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 	ProductionQueue@Vanilla:
 		Type: queue.usa_vehicle
 		Factions: usa, gla, toxin, demo, stealth, prc, inf, nuke, tank
@@ -1661,7 +1680,7 @@ building.arms_dealer:
 		Name: GLA Arms Dealer
 	Production:
 		Produces: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 	ProductionQueue@Vanilla:
 		Type: queue.gla_vehicle
 		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
@@ -1716,7 +1735,7 @@ building.prc_war_factory:
 		Name: PRC War Factory
 	Production:
 		Produces: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 	ProductionQueue@Vanilla:
 		Type: queue.prc_vehicle
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
@@ -2584,6 +2603,7 @@ building.particle_cannon:
 	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SABOTAGE: ^CanBeSabotaged
 	HitShape:
 		TargetableOffsets: 0,0,0, 0,512,128, 420,-598,213
 		Type: Rectangle
@@ -2612,14 +2632,14 @@ building.particle_cannon:
 		Class: building.particle_cannon
 	SelectionDecorations:
 	WithSpriteBody:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 	Health:
 		HP: 4000
 	Armor:
 		Type: building.tough
 	WithBuildingBib:
 	IonCannonPower:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
 			1: building.particle_cannon
 		Icons:
@@ -2647,6 +2667,8 @@ building.particle_cannon:
 	GrantConditionOnPrerequisite@LIMIT:
 		Condition: limited_sw
 		Prerequisites: prerequisite.limited_sw
+	InfiltrateForCondition:
+		Duration: 250
 	RevealsShroud@SW:
 		Range: 2c0
 		ValidStances: Enemy
@@ -2694,6 +2716,7 @@ building.scud_storm:
 	Inherits@CAMO: ^CanHaveCamoNettingStealthGenOnly
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SABOTAGE: ^CanBeSabotaged
 	Inherits@SHAPE: ^2x2Shape
 	Valued:
 		Cost: 5000
@@ -2828,7 +2851,7 @@ building.scud_storm:
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	FireArmamentPower:
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 		Prerequisites:
 			1: building.scud_storm
 		Icons:
@@ -2874,6 +2897,7 @@ building.missile_silo:
 	Inherits: ^Building
 	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SABOTAGE: ^CanBeSabotaged
 	Inherits@SHAPE: ^2x1Shape
 	Valued:
 		Cost: 5000
@@ -2902,7 +2926,7 @@ building.missile_silo:
 		Class: building.missile_silo
 	Production:
 		Produces: queue.missile_silo, queue.just_mine
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 	ProductionQueue@Vanilla:
 		Type: queue.missile_silo
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, tank
@@ -2922,7 +2946,7 @@ building.missile_silo:
 		ProductionType: queue.just_mine
 	Exit:
 	NukePower:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Cursor: nuke
 		Prerequisites:
 			1: building.missile_silo
@@ -2963,6 +2987,8 @@ building.missile_silo:
 	GrantConditionOnPrerequisite@LIMIT:
 		Condition: limited_sw
 		Prerequisites: prerequisite.limited_sw
+	InfiltrateForCondition:
+		Duration: 250
 	RevealsShroud@SW:
 		Range: 2c0
 		ValidStances: Enemy

@@ -1,7 +1,7 @@
 fake.command_center:
 	Inherits: ^FakeBuilding
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
-#	Inherits@INFILTRATE: ^InfiltratableFake
+	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SHAPE: ^3x3Shape
 	HitShape:
@@ -51,7 +51,7 @@ fake.command_center:
 fake.barracks:
 	Inherits: ^FakeBuilding
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
-#	Inherits@INFILTRATE: ^InfiltratableFake
+	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	HitShape:
@@ -95,7 +95,7 @@ fake.barracks:
 fake.supply_stash:
 	Inherits: ^FakeBuilding
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
-	Inherits@INFILTRATE: ^InfiltratableFake
+	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	HitShape:
@@ -152,7 +152,7 @@ fake.supply_stash:
 fake.arms_dealer:
 	Inherits: ^FakeBuilding
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
-#	Inherits@INFILTRATE: ^InfiltratableFake
+	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
@@ -195,7 +195,7 @@ fake.arms_dealer:
 fake.palace:
 	Inherits: ^FakeBuilding
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
-#	Inherits@INFILTRATE: ^InfiltratableFake
+	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
@@ -244,7 +244,7 @@ fake.palace:
 fake.black_market:
 	Inherits: ^FakeBuilding
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
-#	Inherits@INFILTRATE: ^InfiltratableFake
+	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
@@ -294,7 +294,7 @@ fake.black_market:
 hack.fake_scud_spawner:
 	Inherits: ^FakeBuilding
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
-#	Inherits@INFILTRATE: ^InfiltratableFake
+	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
@@ -337,7 +337,7 @@ hack.fake_scud_spawner:
 
 fake.scud_storm:
 	Inherits: ^FakeBuilding
-#	Inherits@INFILTRATE: ^InfiltratableFake
+	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 #	Buildable:

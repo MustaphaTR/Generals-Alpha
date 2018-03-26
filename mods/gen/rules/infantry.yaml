@@ -652,6 +652,48 @@ infantry.flamethrower:
 	Voiced:
 		VoiceSet: GenericVoice
 
+infantry.saboteur:
+	Inherits: ^Soldier
+	Inherits@REVEAL: ^Reveal300
+	Inherits@SLOW: ^SlowsWhenDamaged
+	Buildable:
+		Queue: queue.gla_infantry, queue.stealth_gen_infantry
+		BuildPaletteOrder: 9
+		BuildDuration: 375
+		BuildDurationModifier: 100
+		Prerequisites: building.arms_dealer, ~prerequisite.zh_units, ~techlevel.medium
+		Description: Infiltrates enemy structures to disable them for a while.\n\nCan climb cliffs.
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Saboteur
+	Health:
+		HP: 120
+	Armor:
+		Type: infantry.normal
+	Mobile:
+		Speed: 30
+		Voice: Move
+		TerrainSpeeds:
+			Rock: 67
+	SpeedMultiplier@DAMAGED:
+		Modifier: 67
+	Passenger:
+		PipType: Yellow
+		Voice: Move
+	Infiltrates:
+		Types: Sabotage
+		PlayerExperience: 50
+	Cloak:
+		InitialDelay: 250
+		CloakDelay: 120
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled
+	Voiced:
+		VoiceSet: SaboteurVoice
+
 ^default.angry_mob:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -981,7 +1023,7 @@ infantry.colonel_burton:
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~techlevel.high
 		BuildLimit: 1
-		Description: Elite commando infantry.\n\nCan place C4 charges on structures.
+		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures.
 	Mobile:
 		Speed: 30
 		Voice: Move

@@ -1704,15 +1704,21 @@
 	EditorTilesetFilter:
 		Categories: Fake
 
-^InfiltratableFake:
-	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable, Infiltrate
-	InfiltrateForDecoration:
-		RequiresSelection: true
-		Image: pips
-		Sequence: tag-fake
-		ReferencePoint: Center
-		ZOffset: 256
+^CanBeSabotaged:
+	Inherits@IDISABLE: ^WithDisabledOverlay
+	GrantCondition@DISABLED-SABOTAGE:
+		RequiresCondition: sabotaged
+		Condition: disabled
+	InfiltrateForCondition:
+		Types: Sabotage
+		Condition: sabotaged
+	Targetable@SABOTAGE:
+		TargetTypes: Sabotage
+
+^SabotagableFake:
+	Inherits@SABOTAGE: ^CanBeSabotaged
+	KillsSelf:
+		RequiresCondition: sabotaged
 
 ^Defense:
 	Inherits: ^Building

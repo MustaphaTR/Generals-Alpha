@@ -171,6 +171,7 @@ tech.soviet_barracks:
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SABOTAGE: ^CanBeSabotaged
 	Inherits@SHAPE: ^2x2Shape
 	Building:
 		Footprint: xx xx ==
@@ -188,7 +189,7 @@ tech.soviet_barracks:
 		Name: Soviet Barracks
 	Production:
 		Produces: queue.soviet_infantry
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 	ProductionQueue:
 		Type: queue.soviet_infantry
 		Group: Infantry
@@ -221,6 +222,8 @@ tech.soviet_barracks:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.barracks
+	InfiltrateForCondition:
+		Duration: 750
 
 tech.flame_tower:
 	Inherits: ^Defense
@@ -363,6 +366,7 @@ tech.shipyard:
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SABOTAGE: ^CanBeSabotaged
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -400,7 +404,7 @@ tech.shipyard:
 		ExitCell: 2,0
 	Production:
 		Produces: queue.vessel
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || sabotaged
 	ProductionQueue:
 		Type: queue.vessel
 		Group: Vehicle
@@ -409,6 +413,8 @@ tech.shipyard:
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 46
 	ProductionBar:
+	InfiltrateForCondition:
+		Duration: 750
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
