@@ -291,9 +291,8 @@ fake.black_market:
 	Voiced:
 		VoiceSet: BlackMarketVoice
 
-hack.fake_scud_spawner:
+fake.scud_storm:
 	Inherits: ^FakeBuilding
-	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
@@ -302,52 +301,9 @@ hack.fake_scud_spawner:
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 		Queue: queue.gla_building, queue.demo_gen_building
-		Prerequisites: building.palace, ~techlevel.unrestricted, ~prerequisite.zh_units
+		Prerequisites: building.palace, ~techlevel.unrestricted, ~disabled
 		Description: Looks like a SCUD Storm.
 		Icon: fake-icon
-	Tooltip:
-		Name: Fake SCUD Storm
-		GenericName: SCUD Storm
-		GenericVisibility: Enemy
-		GenericStancePrefix: False
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	Health:
-		HP: 300
-	Armor:
-		Type: building.tough
-	WithBuildingBib:
-	RenderSprites:
-		Image: building.scud_storm
-	Valued:
-		Cost: 1000
-	RevealsShroud@SW:
-		Range: 2c0
-		ValidStances: Enemy
-	SpawnActorOnDeath:
-		Actor: fake.scud_storm
-	KillsSelf:
-	-WithMakeAnimation:
-	-Explodes:
-	-ShakeOnDeath:
-	-SoundOnDamageTransition:
-	Voiced:
-		VoiceSet: SCUDStormVoice
-
-fake.scud_storm:
-	Inherits: ^FakeBuilding
-	Inherits@INFILTRATE: ^SabotagableFake
-	Inherits@REVEAL: ^Reveal200
-	Inherits@SHAPE: ^2x2Shape
-#	Buildable:
-#		BuildPaletteOrder: 22
-#		BuildDuration: 1000
-#		BuildDurationModifier: 100
-#		Queue: queue.gla_building, queue.demo_gen_building
-#		Prerequisites: building.palace, ~techlevel.unrestricted, ~disabled
-#		Description: Looks like a SCUD Storm.
-#		Icon: fake-icon
 	Tooltip:
 		Name: Fake SCUD Storm
 		GenericName: SCUD Storm
@@ -387,18 +343,22 @@ fake.scud_storm:
 	Turreted@A:
 		Turret: A
 		TurnSpeed: 3
+		PreviewFacing: 0
 		Offset: -512, -512, 0
 	Turreted@B:
 		Turret: B
 		TurnSpeed: 3
+		PreviewFacing: 0
 		Offset: 512, -512, 0
 	Turreted@C:
 		Turret: C
 		TurnSpeed: 3
+		PreviewFacing: 0
 		Offset: -512, 512, 0
 	Turreted@D:
 		Turret: D
 		TurnSpeed: 3
+		PreviewFacing: 0
 		Offset: 512, 512, 0
 	AmmoPool:
 		Ammo: 4

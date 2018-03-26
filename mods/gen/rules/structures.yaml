@@ -2678,38 +2678,6 @@ building.particle_cannon:
 		Image: building.particle_cannon
 		PlayerPalette: cncplayer
 
-hack.scud_spawner:
-	Inherits: ^Building
-	Inherits@SHAPE: ^2x2Shape
-	SpawnActorOnDeath:
-		Actor: building.scud_storm
-		SpawnAfterDefeat: false
-	KillsSelf:
-	Valued:
-		Cost: 5000
-	Tooltip:
-		Name: SCUD Storm
-	Buildable:
-		Queue: queue.gla_building, queue.demo_gen_building
-		BuildPaletteOrder: 9
-		BuildDuration: 1500
-		BuildDurationModifier: 100
-		Prerequisites: building.palace, !prerequisite.enough_scud, ~techlevel.unrestricted
-		Description: Provides SCUD Storm support power.
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	Health:
-		HP: 3000
-	Armor:
-		Type: building.tough
-	-WithMakeAnimation:
-	-Explodes:
-	-ShakeOnDeath:
-	-SoundOnDamageTransition:
-	RenderSprites:
-		Image: building.scud_storm
-
 building.scud_storm:
 	Inherits: ^Building
 	Inherits@BOUNTY: ^TakesBounty
@@ -2722,13 +2690,13 @@ building.scud_storm:
 		Cost: 5000
 	Tooltip:
 		Name: SCUD Storm
-#	Buildable:
-#		Queue: queue.gla_building, queue.demo_gen_building
-#		BuildPaletteOrder: 9
-#		BuildDuration: 1500
-#		BuildDurationModifier: 100
-#		Prerequisites: building.palace, !prerequisite.enough_scud, ~techlevel.unrestricted
-#		Description: Provides SCUD Storm support power.
+	Buildable:
+		Queue: queue.gla_building, queue.demo_gen_building
+		BuildPaletteOrder: 9
+		BuildDuration: 1500
+		BuildDurationModifier: 100
+		Prerequisites: building.palace, !prerequisite.enough_scud, ~techlevel.unrestricted
+		Description: Provides SCUD Storm support power.
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -2785,18 +2753,22 @@ building.scud_storm:
 	Turreted@A:
 		Turret: A
 		TurnSpeed: 3
+		PreviewFacing: 0
 		Offset: -512, -512, 0
 	Turreted@B:
 		Turret: B
 		TurnSpeed: 3
+		PreviewFacing: 0
 		Offset: 512, -512, 0
 	Turreted@C:
 		Turret: C
 		TurnSpeed: 3
+		PreviewFacing: 0
 		Offset: -512, 512, 0
 	Turreted@D:
 		Turret: D
 		TurnSpeed: 3
+		PreviewFacing: 0
 		Offset: 512, 512, 0
 	AmmoPool:
 		Ammo: 4
