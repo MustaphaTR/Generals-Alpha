@@ -967,7 +967,7 @@ aircraft.helix:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@UPGRADE: ^CanHavePRCVehicleUpgrades
 	Buildable:
-		Queue: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft
+		Queue: queue.prc_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 500
@@ -1081,3 +1081,28 @@ aircraft.helix:
 		DecorationBounds: 40,35
 	RenderSprites:
 		Scale: 1.3
+
+aircraft.assault_helix:
+	Inherits: aircraft.helix
+	Buildable:
+		Queue: queue.prc_aircraft, queue.inf_gen_aircraft
+		Description: Helicopter gunship armed with machine gun.\n\nCan carry 8 infantry.\n\nCan be upgraded to have a bunker.
+	-FirepowerMultiplier@CHAIN_GUN:
+	-ReloadDelayMultiplier@Gatling1:
+	-ReloadDelayMultiplier@Gatling2:
+	Tooltip:
+		Name: Assault Helix
+	Production:
+		Produces: queue.assault_helix
+	ProductionQueue:
+		Type: queue.assault_helix
+	Cargo:
+		Types: Infantry
+		MaxWeight: 8
+		PipCount: 8
+	AttackHeli:
+		Armaments: primary
+	-Armament@Gatling:
+	-GrantStackableConditionOnFire@gatling:
+	-WithRangeCircle:
+	-ProximityExternalCondition@SPEAKER:
