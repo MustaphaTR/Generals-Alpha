@@ -15,99 +15,86 @@
 	Faction@random:
 		Name: Any
 		InternalName: Random
-#		Side: Random
-		RandomFactionMembers: usa, gla, prc
-#		RandomFactionMembers: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
+		Side: Random
+		RandomFactionMembers: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Description: A random faction will be chosen when the game starts.
 	Faction@randomUSA:
 		Name: Any USA
 		InternalName: RandomUSA
-#		Side: Random
-		Selectable: false
+		Side: Random
 		RandomFactionMembers: usa, air, laser, super
 		Description: A random USA General will be chosen when the game starts.
 	Faction@randomGLA:
 		Name: Any GLA
 		InternalName: RandomGLA
-#		Side: Random
-		Selectable: false
+		Side: Random
 		RandomFactionMembers: gla, toxin, demo, stealth
 		Description: A random GLA General will be chosen when the game starts.
 	Faction@randomPRC:
 		Name: Any PRC
 		InternalName: RandomPRC
-#		Side: Random
-		Selectable: false
+		Side: Random
 		RandomFactionMembers: prc, inf, nuke, tank
 		Description: A random PRC General will be chosen when the game starts.
 	Faction@USA:
 		Name: USA
 		InternalName: usa
-#		Side: USA
+		Side: USA
 		Description: United States of America
 	Faction@air:
 		Name: Airforce General
 		InternalName: air
-#		Side: USA
-		Selectable: false
+		Side: USA
 		Description: General Granger:\n+ Combat Chinook\n+ King Raptor\n+ Stealth Comanche\n+ Starts with Stealth Fighter\n+ Cheaper Airfield\n+ Cheaper Aircraft\n\n- No Crusader Tank\n- No Paladin Tank\n- More Expensive Vehicles
 	Faction@laser:
 		Name: Laser General
 		InternalName: laser
-#		Side: USA
-		Selectable: false
+		Side: USA
 		Description: General Townes:\n+ Laser Tank\n+ Better Cold Fusion Reactor\n+ Cheaper Avenger\n\n- No Paladin Tank\n- No Tomahawk Launcher
 	Faction@super:
 		Name: Superweapon General
 		InternalName: super
-#		Side: USA
-		Selectable: false
+		Side: USA
 		Description: General Alexander:\n+ EMP Patriot Missile System\n+ Advanced Control Rods\n+ Cheaper Particle Cannon\n+ Cheaper Aurora\n\n- No Crusader Tank\n- No Paladin Tank\n- More Expensive Vehicles\n- More Expensive Comanche
 	Faction@GLA:
 		Name: GLA
 		InternalName: gla
-#		Side: GLA
+		Side: GLA
 		Description: Global Liberation Army
 	Faction@toxin:
 		Name: Toxin General
 		InternalName: toxin
-#		Side: GLA
-		Selectable: false
+		Side: GLA
 		Description: Dr. Thrax:\n+ Toxin Rebel\n+ Toxin Terrorist\n+ Starts with Anthrax Beta\n+ Starts with Toxin Shells\n\n- No GPS Scrambler\n- No Saboteur\n- No Hijacker\n- More Expensive Vehicles
 	Faction@demo:
 		Name: Demolition General
 		InternalName: demo
-#		Side: GLA
-		Selectable: false
+		Side: GLA
 		Description: General Juhziz:\n+ Advanced Demo Trap\n+ Demo Jarmen Kell\n+ Cheaper Bomb Truck\n\n- No GPS Scrambler\n- No Saboteur\n- No Hijacker
 	Faction@stealth:
 		Name: Stealth General
 		InternalName: stealth
-#		Side: GLA
-		Selectable: false
+		Side: GLA
 		Description: Prince Kassad\n+ Better Hijacker\n+ Defenses start with Camo Netting\n+ Can camo net Scud Storm\n+ Starts with Hijacker\n+ Starts with Camouflage\n+ 2nd and 3rd levels of GPS Scrambler\n\n- No Scorpion Tank\n- No Marauder Tank\n- No Scud Launcher
 	Faction@PRC:
 		Name: PRC
 		InternalName: prc
-#		Side: PRC
+		Side: PRC
 		Description: People's Republic of China
 	Faction@inf:
 		Name: Infantry General
 		InternalName: inf
-#		Side: PRC
-		Selectable: false
+		Side: PRC
 		Description: General Fai:\n+ Paradrop\n+ Fortified Bunker\n+ Minigunner\n+ Super Hacker\n+ Assault Troop Crawler\n+ Attack Outpost\n+ Assault Helix\n\n- No Battlemaster Tank\n- No Gatling Tank\n- No Overlord Tank\n- More Expensive Dragon Tank and Inferno Cannon
 	Faction@nuke:
 		Name: Nuke General
 		InternalName: nuke
-#		Side: PRC
-		Selectable: false
+		Side: PRC
 		Description: General Tao:\n+ Advanced Nuclear Reactor\n+ Starts with Nuke Cannon\n+ Starts with Nuclear Tanks\n+ Starts with Uranium Shells\n\n- More Expensive Infantry\n- More Expensive Aircraft
 	Faction@tank:
 		Name: Tank General
 		InternalName: tank
-#		Side: PRC
-		Selectable: false
+		Side: PRC
 		Description: General Kwai:\n+ Battlemaster Elite Training\n+ Tank Drop\n+ Emparor Overlord\n+ Autoloader\n+ Cheaper Tanks\n\n- No Inferno Cannon\n- No Nuke Cannon\n- More Expensive Infantry\n- More Expensive and Longer To Build Aircraft
 	ResourceType@ore:
 		Type: Ore
