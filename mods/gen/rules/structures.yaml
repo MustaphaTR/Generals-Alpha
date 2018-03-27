@@ -10,7 +10,7 @@
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.infonly
-		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 	Health:
 		HP: 5000
 	Armor:
@@ -55,7 +55,7 @@ building.usa_command_center:
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 11
 		Description: Produces construction vehicles.\n\nResearches and Provides General's Powers\n\nProvides Radar.\n\nProvides Spy Satellite support power.
 	Tooltip:
@@ -75,7 +75,7 @@ building.usa_command_center:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		RequireOwner: false
-		SpectatorUIOrder: 9
+		SpectatorUIOrder: 10
 	SpawnActorPower@SPY_DRONE:
 		PauseOnCondition: emp || hacked || sabotaged
 		Actors:
@@ -244,7 +244,7 @@ building.gla_command_center:
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		RequireOwner: false
-		SpectatorUIOrder: 10
+		SpectatorUIOrder: 11
 	SpawnActorPower@AMBUSH:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Actors:
@@ -387,7 +387,7 @@ building.prc_command_center:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		RequireOwner: false
-		SpectatorUIOrder: 11
+		SpectatorUIOrder: 12
 	GrantExternalConditionPower@FRENZY:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites: 
@@ -640,7 +640,7 @@ building.cold_fusion_reactor:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
 	Buildable:
-		Queue: queue.usa_building
+		Queue: queue.usa_building, queue.air_gen_building
 		BuildPaletteOrder: 1
 		Prerequisites: ~techlevel.infonly
 		Description: Provides power for other structures.
@@ -810,7 +810,7 @@ building.usa_barracks:
 			TopLeft: -1024, -1024
 			BottomRight: 1024, 640
 	Buildable:
-		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 2
 		Prerequisites: ~techlevel.infonly
 	Valued:
@@ -826,7 +826,7 @@ building.usa_barracks:
 		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 16
+		SpectatorUIOrder: 17
 	ProductionBar:
 	Exit@1:
 		SpawnOffset: -426,85,0
@@ -859,28 +859,28 @@ building.gla_barracks:
 		Group: Infantry
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		SpectatorUIOrder: 17
+		SpectatorUIOrder: 18
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_infantry
 		Factions: toxin
 		Group: Infantry
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		SpectatorUIOrder: 18
+		SpectatorUIOrder: 19
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_infantry
 		Factions: demo
 		Group: Infantry
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		SpectatorUIOrder: 19
+		SpectatorUIOrder: 20
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_infantry
 		Factions: stealth
 		Group: Infantry
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		SpectatorUIOrder: 20
+		SpectatorUIOrder: 21
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_infantry
 	ProductionBar@Toxin:
@@ -923,28 +923,28 @@ building.prc_barracks:
 		Group: Infantry
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 21
+		SpectatorUIOrder: 22
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_infantry
 		Factions: inf
 		Group: Infantry
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 22
+		SpectatorUIOrder: 23
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_infantry
 		Factions: nuke
 		Group: Infantry
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 23
+		SpectatorUIOrder: 24
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_infantry
 		Factions: tank
 		Group: Infantry
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 24
+		SpectatorUIOrder: 25
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_infantry
 	ProductionBar@Infantry:
@@ -1047,7 +1047,7 @@ building.usa_supply_center:
 	Inherits: ^default.supply_center
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
-		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 3
 		Prerequisites: prerequisite.reactor, ~techlevel.infonly
 		Description: Deposit for the collected supplies.\n\nProduces chinooks.
@@ -1070,7 +1070,7 @@ building.usa_supply_center:
 		Group: Collector
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 12
+		SpectatorUIOrder: 13
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_collector
 		Factions: air
@@ -1078,7 +1078,7 @@ building.usa_supply_center:
 		InstantCashDrain: true
 		RequireOwner: false
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 13
+		SpectatorUIOrder: 14
 	ProductionBar@Vanilla:
 		ProductionType: queue.usa_collector
 	ProductionBar@Airforce:
@@ -1133,7 +1133,7 @@ building.gla_supply_stash:
 		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		SpectatorUIOrder: 14
+		SpectatorUIOrder: 15
 	ProductionBar:
 	Exit@1:
 		SpawnOffset: -96,768,0
@@ -1197,7 +1197,7 @@ building.prc_supply_center:
 		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 15
+		SpectatorUIOrder: 16
 	ProductionBar:
 	Exit@1:
 		SpawnOffset: -42,810,0
@@ -1231,7 +1231,7 @@ building.patriot:
 	Inherits@REVEAL: ^Reveal360
 	Inherits@SHAPE: ^2x1Shape
 	Buildable:
-		Queue: queue.usa_building, queue.laser_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building
 		BuildPaletteOrder: 4
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -1595,7 +1595,7 @@ building.usa_war_factory:
 	Inherits: ^default.war_factory
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Buildable:
-		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 5
 		Prerequisites: prerequisite.supply_center, ~techlevel.low
 	Tooltip:
@@ -1613,28 +1613,28 @@ building.usa_war_factory:
 		Group: Vehicle
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 27
+		SpectatorUIOrder: 28
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_vehicle
 		Factions: air
 		Group: Vehicle
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 28
+		SpectatorUIOrder: 29
 	ProductionQueue@Laser:
 		Type: queue.laser_gen_vehicle
 		Factions: laser
 		Group: Vehicle
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 29
+		SpectatorUIOrder: 30
 	ProductionQueue@Super:
 		Type: queue.super_gen_vehicle
 		Factions: super
 		Group: Vehicle
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 30
+		SpectatorUIOrder: 31
 	ProductionBar@Vanilla:
 		ProductionType: queue.usa_vehicle
 	ProductionBar@Airforce:
@@ -1687,28 +1687,28 @@ building.arms_dealer:
 		Group: Vehicle
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		SpectatorUIOrder: 31
+		SpectatorUIOrder: 32
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_vehicle
 		Factions: toxin
 		Group: Vehicle
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		SpectatorUIOrder: 32
+		SpectatorUIOrder: 33
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_vehicle
 		Factions: demo
 		Group: Vehicle
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		SpectatorUIOrder: 33
+		SpectatorUIOrder: 34
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_vehicle
 		Factions: stealth
 		Group: Vehicle
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		SpectatorUIOrder: 34
+		SpectatorUIOrder: 35
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_vehicle
 	ProductionBar@Toxin:
@@ -1742,28 +1742,28 @@ building.prc_war_factory:
 		Group: Vehicle
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 35
+		SpectatorUIOrder: 36
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_vehicle
 		Factions: inf
 		Group: Vehicle
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 36
+		SpectatorUIOrder: 37
 	ProductionQueue@Nuclear:
 		Type: queue.nuke_gen_vehicle
 		Factions: nuke
 		Group: Vehicle
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 37
+		SpectatorUIOrder: 38
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_vehicle
 		Factions: tank
 		Group: Vehicle
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 38
+		SpectatorUIOrder: 39
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_vehicle
 	ProductionBar@Infantry:
@@ -1984,9 +1984,12 @@ building.usa_airfield:
 			TopLeft: -2048, -1280
 			BottomRight: 2048, 1536
 	Buildable:
-		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 6
 		Prerequisites: prerequisite.supply_center, ~techlevel.medium
+	CustomProductionCost@Airforce:
+		Queue: queue.air_gen_building
+		Cost: 800
 	Tooltip:
 		Name: USA Airfield
 	Building:
@@ -2001,21 +2004,21 @@ building.usa_airfield:
 		Group: Aircraft
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 39
+		SpectatorUIOrder: 40
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_aircraft
 		Factions: air
 		Group: Aircraft
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 40
+		SpectatorUIOrder: 41
 	ProductionQueue@Super:
 		Type: queue.super_gen_aircraft
 		Factions: super
 		Group: Aircraft
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 41
+		SpectatorUIOrder: 42
 	ProductionBar@Vanilla:
 		ProductionType: queue.usa_aircraft
 	ProductionBar@Airforce:
@@ -2079,28 +2082,28 @@ building.prc_airfield:
 		Group: Aircraft
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 42
+		SpectatorUIOrder: 43
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_aircraft
 		Factions: inf
 		Group: Aircraft
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 43
+		SpectatorUIOrder: 44
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_aircraft
 		Factions: nuke
 		Group: Aircraft
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 44
+		SpectatorUIOrder: 45
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_aircraft
 		Factions: tank
 		Group: Aircraft
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 45
+		SpectatorUIOrder: 46
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_aircraft
 	ProductionBar@Infantry:
@@ -2136,7 +2139,7 @@ building.strategy_center:
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 7
 		BuildDuration: 1500
 		BuildDurationModifier: 100
@@ -2169,14 +2172,14 @@ building.strategy_center:
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 47
+		SpectatorUIOrder: 48
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_strategy_center
 		Factions: air, super
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 48
+		SpectatorUIOrder: 49
 	ProductionBar@Vanilla:
 		ProductionType: queue.strategy_center
 	ProductionBar@Airforce:
@@ -2298,21 +2301,21 @@ building.palace:
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 49
+		SpectatorUIOrder: 50
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_palace
 		Factions: toxin
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 50
+		SpectatorUIOrder: 51
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_palace
 		Factions: stealth
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 51
+		SpectatorUIOrder: 52
 	ProductionBar@Vanilla:
 		ProductionType: queue.palace
 	ProductionBar@Toxin:
@@ -2366,14 +2369,14 @@ building.propaganda_center:
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 52
+		SpectatorUIOrder: 53
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_propaganda_center
 		Factions: tank
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 53
+		SpectatorUIOrder: 54
 	ProductionBar@Vanilla:
 		ProductionType: queue.propaganda_center
 	ProductionBar@Tank:
@@ -2395,7 +2398,7 @@ building.detention_camp:
 	HitShape:
 		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	Buildable:
-		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 8
 		BuildDuration: 750
 		BuildDurationModifier: 100
@@ -2446,7 +2449,7 @@ building.supply_drop_zone:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
 	Buildable:
-		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 9
 		BuildDuration: 1125
 		BuildDurationModifier: 100
@@ -2617,7 +2620,7 @@ building.particle_cannon:
 	Tooltip:
 		Name: Particle Uplink Cannon
 	Buildable:
-		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 10
 		BuildDuration: 1500
 		BuildDurationModifier: 100
@@ -2908,7 +2911,7 @@ building.missile_silo:
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 54
+		SpectatorUIOrder: 55
 	ProductionQueue@Nuke:
 		Type: queue.just_mine
 		Factions: inf, nuke
@@ -2991,7 +2994,7 @@ building.missile_silo:
 SBAG:
 	Inherits: ^Wall
 	Buildable:
-		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 40
 		Prerequisites: ~disabled
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
@@ -3016,7 +3019,7 @@ SBAG:
 FENC:
 	Inherits: ^Wall
 	Buildable:
-		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 45
 		Prerequisites: ~disabled
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
@@ -3041,7 +3044,7 @@ FENC:
 BRIK:
 	Inherits: ^Wall
 	Buildable:
-		Queue: queue.usa_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 50
 		Prerequisites: ~disabled
 		Description: Stop units and blocks enemy fire.

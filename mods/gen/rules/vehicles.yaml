@@ -2139,24 +2139,35 @@ vehicle.usa_mcc:
 	Tooltip:
 		Name: USA Construction Vehicle
 	Production:
-		Produces: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
+		Produces: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		PauseOnCondition: emp || hacked
 		RequiresCondition: !driver_killed
 	ProductionBar@USA_BUILDING:
 		ProductionType: queue.usa_building
+	ProductionBar@LASER_BUILDING:
+		ProductionType: queue.air_gen_building
 	ProductionBar@LASER_BUILDING:
 		ProductionType: queue.laser_gen_building
 	ProductionBar@SUPER_BUILDING:
 		ProductionType: queue.super_gen_building
 	ProductionQueue@USA_BUILDING:
 		Type: queue.usa_building
-		Factions: usa, air, gla, toxin, demo, stealth, prc, inf, nuke, tank
+		Factions: usa, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Building
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
 		SpectatorUIOrder: 1
+	ProductionQueue@AIR_BUILDING:
+		Type: queue.air_gen_building
+		Factions: air
+		Group: Building
+		InstantCashDrain: true
+		LowPowerSlowdown: 3
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+		SpectatorUIOrder: 2
 	ProductionQueue@LASER_BUILDING:
 		Type: queue.laser_gen_building
 		Factions: laser
@@ -2165,7 +2176,7 @@ vehicle.usa_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
-		SpectatorUIOrder: 2
+		SpectatorUIOrder: 3
 	ProductionQueue@SUPER_BUILDING:
 		Type: queue.super_gen_building
 		Factions: super
@@ -2174,7 +2185,7 @@ vehicle.usa_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
-		SpectatorUIOrder: 3
+		SpectatorUIOrder: 4
 	Voiced:
 		VoiceSet: USAMCCVoice
 	WithTextDecoration@SIDE:
@@ -2205,7 +2216,7 @@ vehicle.gla_mcc:
 		LowPowerSlowdown: 1
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
-		SpectatorUIOrder: 4
+		SpectatorUIOrder: 5
 	ProductionQueue@DEMO_BUILDING:
 		Type: queue.demo_gen_building
 		Factions: demo
@@ -2214,7 +2225,7 @@ vehicle.gla_mcc:
 		LowPowerSlowdown: 1
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
-		SpectatorUIOrder: 5
+		SpectatorUIOrder: 6
 	Voiced:
 		VoiceSet: GLAMCCVoice
 	WithTextDecoration@SIDE:
@@ -2247,7 +2258,7 @@ vehicle.prc_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
-		SpectatorUIOrder: 6
+		SpectatorUIOrder: 7
 	ProductionQueue@INF_BUILDING:
 		Type: queue.inf_gen_building
 		Factions: inf
@@ -2256,7 +2267,7 @@ vehicle.prc_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
-		SpectatorUIOrder: 7
+		SpectatorUIOrder: 8
 	ProductionQueue@NUKE_BUILDING:
 		Type: queue.nuke_gen_building
 		Factions: nuke
@@ -2265,7 +2276,7 @@ vehicle.prc_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
-		SpectatorUIOrder: 8
+		SpectatorUIOrder: 9
 	Voiced:
 		VoiceSet: PRCMCCVoice
 	WithTextDecoration@SIDE:
