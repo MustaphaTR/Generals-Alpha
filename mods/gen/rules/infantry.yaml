@@ -845,7 +845,7 @@ infantry.hacker:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
+		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 500
@@ -863,8 +863,6 @@ infantry.hacker:
 		HP: 100
 	Armor:
 		Type: infantry.normal
-	Selectable:
-		Class: infantry.hacker
 	Mobile:
 		Speed: 20
 		Voice: Move
@@ -937,11 +935,39 @@ infantry.hacker:
 		Interval: 20
 		Amount: 10
 		RequiresCondition: deployed && rank-elite
-	RenderSprites:
-		Image: infantry.hacker
 	Voiced:
 		VoiceSet: HackerVoice
 	-MustBeDestroyed:
+
+infantry.super_hacker:
+	Inherits: infantry.hacker
+	Buildable:
+		Queue: queue.inf_gen_infantry
+		Description: Hacks internet to gain money while deployed.\n\nCan disable enemy structures and vehicles.
+	Tooltip:
+		Name: Super Hacker
+	Armament@DisableAnim:
+		Name: disable
+		Weapon: disable.black_lotus.anim
+		LocalOffset: 0,0,196
+		RequiresCondition: end_vehicle == 0
+	Armament@DisableEnd:
+		Name: disable
+		Weapon: disable.black_lotus.end
+		LocalOffset: 0,0,196
+		RequiresCondition: end_vehicle == 1
+	GrantStackableConditionOnFire@EndVehicle:
+		Condition: end_vehicle
+		ArmamentName: disable
+		RequiredShotsPerStack: 10
+		MaximumInstances: 2
+		RevokeDelay: 20
+		RevokeAll: true
+		IsCyclic: false
+	AttackFrontal:
+		Armaments: primary, disable
+	Voiced:
+		VoiceSet: SuperHackerVoice
 
 infantry.hijacker:
 	Inherits: ^Soldier

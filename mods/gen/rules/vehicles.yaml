@@ -2140,7 +2140,7 @@ vehicle.usa_mcc:
 		Name: USA Construction Vehicle
 	Production:
 		Produces: queue.usa_building, queue.laser_gen_building, queue.super_gen_building
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 		RequiresCondition: !driver_killed
 	ProductionBar@USA_BUILDING:
 		ProductionType: queue.usa_building
@@ -2191,7 +2191,7 @@ vehicle.gla_mcc:
 		Name: GLA Construction Vehicle
 	Production:
 		Produces: queue.gla_building, queue.demo_gen_building
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 		RequiresCondition: !driver_killed
 	ProductionBar@GLA_BUILDING:
 		ProductionType: queue.gla_building
@@ -2231,7 +2231,7 @@ vehicle.prc_mcc:
 		Name: PRC Construction Vehicle
 	Production:
 		Produces: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
-		PauseOnCondition: emp
+		PauseOnCondition: emp || hacked
 		RequiresCondition: !driver_killed
 	ProductionBar@PRC_BUILDING:
 		ProductionType: queue.prc_building
