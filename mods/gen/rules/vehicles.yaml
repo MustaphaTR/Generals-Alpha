@@ -354,14 +354,21 @@ vehicle.scorpion_tank:
 		RecoilRecovery: 25
 		LocalOffset: 768,0,90
 		MuzzleSequence: muzzle
-		RequiresCondition: toxin_shells && !anthrax_beta
+		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma
 	Armament@ANTHRAX_BETA:
 		Weapon: cannon.scorpion_tank.toxin_beta
 		Recoil: 85
 		RecoilRecovery: 25
 		LocalOffset: 768,0,90
 		MuzzleSequence: muzzle
-		RequiresCondition: toxin_shells && anthrax_beta
+		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma
+	Armament@ANTHRAX_GAMMA:
+		Weapon: cannon.scorpion_tank.toxin_gamma
+		Recoil: 85
+		RecoilRecovery: 25
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && anthrax_gamma
 	Armament@SC_ROCKET:
 		Weapon: missile.scorpion_tank
 		Name: sc_rocket
@@ -398,6 +405,9 @@ vehicle.scorpion_tank:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
+	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
+		Condition: anthrax_gamma
+		Prerequisites: upgrade.anthrax_gamma
 	GrantConditionOnFaction@TOXIN_SHELLS:
 		Condition: toxin_shells
 		Factions: toxin
@@ -893,11 +903,15 @@ vehicle.toxin_tractor:
 	Armament@ALPHA:
 		Weapon: ToxinLauncher
 		LocalOffset: 600,0,90
-		RequiresCondition: !anthrax_beta
+		RequiresCondition: !anthrax_beta && !anthrax_gamma
 	Armament@BETA:
 		Weapon: ToxinLauncher.beta
 		LocalOffset: 600,0,90
-		RequiresCondition: anthrax_beta
+		RequiresCondition: anthrax_beta && !anthrax_gamma
+	Armament@GAMMA:
+		Weapon: ToxinLauncher.gamma
+		LocalOffset: 600,0,90
+		RequiresCondition: anthrax_gamma
 	AttackTurreted:
 		RequiresCondition: !hacked && !driver_killed && !emp
 	WithSpriteTurret:
@@ -907,11 +921,15 @@ vehicle.toxin_tractor:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
+	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
+		Condition: anthrax_gamma
+		Prerequisites: upgrade.anthrax_gamma
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
 	-DamagedByRadioactivity@ANTHRAX_ALPHA:
 	-DamagedByRadioactivity@ANTHRAX_BETA:
+	-DamagedByRadioactivity@ANTHRAX_GAMMA:
 	AcceptsDeliveredExperience:
 	ThrowsShrapnel:
 		Weapons: debris.scorpion_tank
@@ -1408,11 +1426,15 @@ vehicle.scud_launcher:
 		PauseOnCondition: !ammo
 	Armament@BIO:
 		Weapon: missile.scud_launcher.toxin
-		RequiresCondition: toxin_missiles && !anthrax_beta
+		RequiresCondition: toxin_missiles && !anthrax_beta && !anthrax_gamma
 		PauseOnCondition: !ammo
 	Armament@BETA:
 		Weapon: missile.scud_launcher.toxin_beta
-		RequiresCondition: toxin_missiles && anthrax_beta
+		RequiresCondition: toxin_missiles && anthrax_beta && !anthrax_gamma
+		PauseOnCondition: !ammo
+	Armament@GAMMA:
+		Weapon: missile.scud_launcher.toxin_gamma
+		RequiresCondition: toxin_missiles && anthrax_gamma
 		PauseOnCondition: !ammo
 	Armament@EXP:
 		Weapon: missile.scud_launcher.explosive
@@ -1437,6 +1459,9 @@ vehicle.scud_launcher:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
+	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
+		Condition: anthrax_gamma
+		Prerequisites: upgrade.anthrax_gamma
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
@@ -1662,14 +1687,21 @@ vehicle.marauder_tank:
 		RecoilRecovery: 38
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
-		RequiresCondition: toxin_shells && !anthrax_beta
+		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma
 	Armament@ANTHRAX_BETA:
 		Weapon: cannon.marauder_tank.toxin_beta
 		Recoil: 128
 		RecoilRecovery: 38
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
-		RequiresCondition: toxin_shells && anthrax_beta
+		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma
+	Armament@ANTHRAX_GAMMA:
+		Weapon: cannon.marauder_tank.toxin_gamma
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && anthrax_gamma
 	AttackTurreted:
 		RequiresCondition: !hacked && !driver_killed && !emp
 	WithMuzzleOverlay:
@@ -1680,6 +1712,9 @@ vehicle.marauder_tank:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
+	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
+		Condition: anthrax_gamma
+		Prerequisites: upgrade.anthrax_gamma
 	GrantConditionOnFaction@TOXIN_SHELLS:
 		Condition: toxin_shells
 		Factions: toxin
@@ -1959,11 +1994,15 @@ vehicle.bomb_truck:
 	Explodes@BIO_BOMBS:
 		Weapon: BombTruckExplosion.toxin
 		EmptyWeapon: BombTruckExplosion.toxin
-		RequiresCondition: bio_bombs && !anthrax_beta
+		RequiresCondition: bio_bombs && !anthrax_beta && !anthrax_gamma
 	Explodes@ANTHRAX_BETA:
 		Weapon: BombTruckExplosion.toxin_beta
 		EmptyWeapon: BombTruckExplosion.toxin_beta
-		RequiresCondition: bio_bombs && anthrax_beta
+		RequiresCondition: bio_bombs && anthrax_beta && !anthrax_gamma
+	Explodes@ANTHRAX_GAMMA:
+		Weapon: BombTruckExplosion.toxin_gamma
+		EmptyWeapon: BombTruckExplosion.toxin_gamma
+		RequiresCondition: bio_bombs && anthrax_gamma
 	Explodes@HI_EXPLOSIVE_BOMBS:
 		Weapon: BombTruckExplosion.hi_exp
 		EmptyWeapon: BombTruckExplosion.hi_exp
@@ -1978,6 +2017,9 @@ vehicle.bomb_truck:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
+	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
+		Condition: anthrax_gamma
+		Prerequisites: upgrade.anthrax_gamma
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin

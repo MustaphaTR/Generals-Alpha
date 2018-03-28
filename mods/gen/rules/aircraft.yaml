@@ -84,15 +84,25 @@ aircraft.badger.anthrax_bomb:
 	AttackBomber:
 	Armament@Normal:
 		Weapon: parabomb.anthrax
-		RequiresCondition: !anthrax_beta
+		RequiresCondition: !anthrax_beta && !anthrax_gamma
 		PauseOnCondition: !ammo
 	Armament@ANTHRAX_BETA:
 		Weapon: parabomb.anthrax.beta
-		RequiresCondition: anthrax_beta
+		RequiresCondition: anthrax_beta && !anthrax_gamma
+		PauseOnCondition: !ammo
+	Armament@ANTHRAX_GAMMA:
+		Weapon: parabomb.anthrax.gamma
+		RequiresCondition: anthrax_gamma
 		PauseOnCondition: !ammo
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
+	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
+		Condition: anthrax_gamma
+		Prerequisites: upgrade.anthrax_gamma
+	GrantConditionOnFaction@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Factions: toxin
 	AmmoPool:
 		Ammo: 1
 		AmmoCondition: ammo

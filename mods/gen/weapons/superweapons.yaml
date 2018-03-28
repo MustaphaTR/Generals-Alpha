@@ -87,6 +87,15 @@ parabomb.anthrax.beta:
 	Warhead@4Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_beta
 
+parabomb.anthrax.gamma:
+	Inherits: parabomb.anthrax
+	Warhead@2Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_gamma
+	Warhead@3Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_gamma
+	Warhead@4Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_gamma
+
 parabomb.emp:
 	Inherits: ^ParaBomb
 	Warhead@1Dam: SpreadDamage

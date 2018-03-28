@@ -654,6 +654,11 @@ missile.scud_launcher.toxin_beta:
 	Warhead@5Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_beta
 
+missile.scud_launcher.toxin_gamma:
+	Inherits: missile.scud_launcher.toxin
+	Warhead@5Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_gamma
+
 missile.scud_launcher.explosive:
 	Inherits: missile.scud_launcher
 	Warhead@1Dam: SpreadDamage
@@ -690,6 +695,13 @@ missile.scud_storm.beta:
 		RadioactivityLayerName: anthrax_beta
 	Warhead@6Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_beta
+
+missile.scud_storm.gamma:
+	Inherits: missile.scud_storm
+	Warhead@5Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_gamma
+	Warhead@6Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_gamma
 
 missile.tomahawk_launcher:
 	Inherits: ^AntiGroundMissile

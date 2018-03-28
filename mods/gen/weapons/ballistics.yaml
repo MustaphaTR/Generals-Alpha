@@ -59,6 +59,11 @@ cannon.scorpion_tank.toxin_beta:
 	Warhead@1Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_beta
 
+cannon.scorpion_tank.toxin_gamma:
+	Inherits: cannon.scorpion_tank.toxin
+	Warhead@1Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_gamma
+
 cannon.crusader_tank:
 	Inherits: ^Cannon
 	ReloadDelay: 50
@@ -112,6 +117,11 @@ cannon.marauder_tank.toxin_beta:
 	Inherits: cannon.marauder_tank.toxin
 	Warhead@1Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_beta
+
+cannon.marauder_tank.toxin_gamma:
+	Inherits: cannon.marauder_tank.toxin
+	Warhead@1Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_gamma
 
 cannon.overlord_tank:
 	Inherits: ^Cannon

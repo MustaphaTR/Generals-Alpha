@@ -428,6 +428,21 @@ upgrade.anthrax_beta:
 	Valued:
 		Cost: 2500
 
+upgrade.anthrax_gamma:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Anthrax Gamma
+	Buildable:
+		Queue: queue.toxin_gen_palace
+		BuildPaletteOrder: 3
+		BuildDuration: 1500
+		Prerequisites: building.palace, ~techlevel.medium
+		Description: Increases all toxin weapons' damage by 25%.
+		QueuedAudio: NoAudio
+		ReadyAudio: AnthraxGamma
+	Valued:
+		Cost: 1500
+
 upgrade.fortified_structures:
 	Inherits: ^default.upgrade
 	Tooltip:

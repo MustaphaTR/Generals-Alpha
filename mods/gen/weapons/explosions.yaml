@@ -281,6 +281,11 @@ explosion.terrorist.toxin_beta:
 	Warhead@5Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_beta
 
+explosion.terrorist.toxin_gamma:
+	Inherits: explosion.terrorist.toxin
+	Warhead@5Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_gamma
+
 explosion.mine:
 	Warhead@1Dam: SpreadDamage
 		Spread: 256
@@ -478,6 +483,13 @@ BombTruckExplosion.toxin_beta:
 		RadioactivityLayerName: anthrax_beta
 	Warhead@11Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_beta
+
+BombTruckExplosion.toxin_gamma:
+	Inherits: BombTruckExplosion.toxin
+	Warhead@10Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_gamma
+	Warhead@11Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_gamma
 
 explosion.nuclear_reactor:
 	Warhead@1Dam_impact: SpreadDamage
