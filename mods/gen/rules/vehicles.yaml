@@ -1440,6 +1440,12 @@ vehicle.scud_launcher:
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
+	GrantConditionOnFaction@TOXIN_MISSILES:
+		Condition: toxin_missiles
+		Factions: toxin
+	GrantConditionOnFaction@HI_EXPLOSIVE_MISSILES:
+		Condition: hi_explosive_missiles
+		Factions: demo
 	AmmoPool:
 		Ammo: 1
 		PipCount: 0
@@ -1906,17 +1912,36 @@ vehicle.bomb_truck:
 	Armor:
 		Type: vehicle.truck
 	Production:
-		Produces: queue.bomb_truck
+		Produces: queue.bomb_truck, queue.toxin_gen_bomb_truck, queue.demo_gen_bomb_truck
 		PauseOnCondition: emp || hacked
 		RequiresCondition: !bio_bombs && !hi_explosive_bombs
-	ProductionQueue:
+	ProductionQueue@Vanilla:
 		Type: queue.bomb_truck
+		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
-		RequireOwner: false
 		LowPowerSlowdown: 3
-	ProductionBar:
+	ProductionQueue@Toxin:
+		Type: queue.toxin_gen_bomb_truck
+		Factions: toxin
+		Group: Tech
+		QueueLimit: 1
+		InstantCashDrain: true
+		LowPowerSlowdown: 3
+	ProductionQueue@Demo:
+		Type: queue.demo_gen_bomb_truck
+		Factions: demo
+		Group: Tech
+		QueueLimit: 1
+		InstantCashDrain: true
+		LowPowerSlowdown: 3
+	ProductionBar@Vanilla:
+		ProductionType: queue.bomb_truck
+	ProductionBar@Toxin:
+		ProductionType: queue.toxin_gen_bomb_truck
+	ProductionBar@Demo:
+		ProductionType: queue.demo_gen_bomb_truck
 	Exit:
 	ProvidesPrerequisite@unitname:
 	SelectionDecorations:

@@ -678,7 +678,7 @@ upgrade.bio_bombs:
 	Tooltip:
 		Name: Bio Bombs
 	Buildable:
-		Queue: queue.bomb_truck
+		Queue: queue.bomb_truck, queue.toxin_gen_bomb_truck
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 125
@@ -696,7 +696,7 @@ upgrade.hi_explosive_bombs:
 	Tooltip:
 		Name: High Explosive Bombs
 	Buildable:
-		Queue: queue.bomb_truck
+		Queue: queue.bomb_truck, queue.demo_gen_bomb_truck
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 125
