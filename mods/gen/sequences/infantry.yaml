@@ -1431,10 +1431,30 @@ e7:
 infantry.toxin_rebel:
 	stand: e5
 		Facings: 8
+	stand-beta: e5_beta
+		Facings: 8
+	stand-gamma: e5_gamma
+		Facings: 8
 	stand2: e5
 		Start: 8
 		Facings: 8
+	stand2-beta: e5_beta
+		Start: 8
+		Facings: 8
+	stand2-gamma: e5_gamma
+		Start: 8
+		Facings: 8
 	run: e5
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	run-beta: e5_beta
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	run-gamma: e5_gamma
 		Start: 16
 		Length: 6
 		Facings: 8
@@ -1443,7 +1463,23 @@ infantry.toxin_rebel:
 		Start: 64
 		Length: 16
 		Facings: 8
+	shoot-beta: e5_beta
+		Start: 64
+		Length: 16
+		Facings: 8
+	shoot-gamma: e5_gamma
+		Start: 64
+		Length: 16
+		Facings: 8
 	liedown: e5
+		Start: 192
+		Length: 2
+		Facings: 8
+	liedown-beta: e5_beta
+		Start: 192
+		Length: 2
+		Facings: 8
+	liedown-gamma: e5_gamma
 		Start: 192
 		Length: 2
 		Facings: 8
@@ -1451,11 +1487,35 @@ infantry.toxin_rebel:
 		Start: 240
 		Length: 2
 		Facings: 8
+	standup-beta: e5_beta
+		Start: 240
+		Length: 2
+		Facings: 8
+	standup-gamma: e5_gamma
+		Start: 240
+		Length: 2
+		Facings: 8
 	prone-stand: e5
 		Start: 208
 		Stride: 4
 		Facings: 8
+	prone-stand-beta: e5_beta
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-stand-gamma: e5_gamma
+		Start: 208
+		Stride: 4
+		Facings: 8
 	prone-stand2: e5
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-stand2-beta: e5_beta
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-stand2-gamma: e5_gamma
 		Start: 208
 		Stride: 4
 		Facings: 8
@@ -1464,7 +1524,25 @@ infantry.toxin_rebel:
 		Length: 4
 		Facings: 8
 		Tick: 100
+	prone-run-beta: e5_beta
+		Start: 208
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-run-gamma: e5_gamma
+		Start: 208
+		Length: 4
+		Facings: 8
+		Tick: 100
 	prone-shoot: e5
+		Start: 256
+		Length: 16
+		Facings: 8
+	prone-shoot-beta: e5_beta
+		Start: 256
+		Length: 16
+		Facings: 8
+	prone-shoot-gamma: e5_gamma
 		Start: 256
 		Length: 16
 		Facings: 8
@@ -1472,7 +1550,23 @@ infantry.toxin_rebel:
 		Start: 384
 		Length: 16
 		Tick: 120
+	idle1-beta: e5_beta
+		Start: 384
+		Length: 16
+		Tick: 120
+	idle1-gamma: e5_gamma
+		Start: 384
+		Length: 16
+		Tick: 120
 	idle2: e5
+		Start: 400
+		Length: 16
+		Tick: 120
+	idle2-beta: e5_beta
+		Start: 400
+		Length: 16
+		Tick: 120
+	idle2-gamma: e5_gamma
 		Start: 400
 		Length: 16
 		Tick: 120
@@ -1481,7 +1575,25 @@ infantry.toxin_rebel:
 		Length: 3
 		Facings: 8
 		Tick: 120
+	cheer-beta: e5_beta
+		Start: 588
+		Length: 3
+		Facings: 8
+		Tick: 120
+	cheer-gamma: e5_gamma
+		Start: 588
+		Length: 3
+		Facings: 8
+		Tick: 120
 	die1: e5
+		Start: 509
+		Length: 9
+		Tick: 80
+	die-beta1: e5_beta
+		Start: 509
+		Length: 9
+		Tick: 80
+	die-gamma1: e5_gamma
 		Start: 509
 		Length: 9
 		Tick: 80
@@ -1489,7 +1601,23 @@ infantry.toxin_rebel:
 		Start: 518
 		Length: 8
 		Tick: 80
+	die-beta2: e5_beta
+		Start: 518
+		Length: 8
+		Tick: 80
+	die-gamma2: e5_gamma
+		Start: 518
+		Length: 8
+		Tick: 80
 	die3: e5
+		Start: 526
+		Length: 8
+		Tick: 80
+	die-beta3: e5_beta
+		Start: 526
+		Length: 8
+		Tick: 80
+	die-gamma3: e5_gamma
 		Start: 526
 		Length: 8
 		Tick: 80
@@ -1497,7 +1625,23 @@ infantry.toxin_rebel:
 		Start: 534
 		Length: 12
 		Tick: 80
+	die-beta4: e5_beta
+		Start: 534
+		Length: 12
+		Tick: 80
+	die-gamma4: e5_gamma
+		Start: 534
+		Length: 12
+		Tick: 80
 	die5: e5
+		Start: 546
+		Length: 18
+		Tick: 80
+	die-beta5: e5_beta
+		Start: 546
+		Length: 18
+		Tick: 80
+	die-gamma5: e5_gamma
 		Start: 546
 		Length: 18
 		Tick: 80
