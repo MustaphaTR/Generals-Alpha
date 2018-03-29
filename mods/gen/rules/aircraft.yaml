@@ -208,6 +208,18 @@ aircraft.mig:
 		Description: Multi-role fighter plane.
 	Valued:
 		Cost: 1200
+	CustomProductionCost@Refinery:
+		Queue: queue.prc_aircraft, queue.inf_gen_aircraft
+		Prerequisites: tech.oil_refinery
+		Cost: 1080
+	CustomProductionCost@Refinery_Nuke:
+		Queue: queue.nuke_gen_aircraft
+		Prerequisites: tech.oil_refinery
+		Cost: 1260
+	CustomProductionCost@Refinery_Tank:
+		Queue: queue.tank_gen_aircraft
+		Prerequisites: tech.oil_refinery
+		Cost: 1440
 	CustomProductionCost@Nuke:
 		Queue: queue.nuke_gen_aircraft
 		Cost: 1400
@@ -317,6 +329,9 @@ aircraft.raptor:
 		Description: Multi-role fighter plane.
 	Valued:
 		Cost: 1400
+	CustomProductionCost@Refinery:
+		Prerequisites: tech.oil_refinery
+		Cost: 1260
 	Tooltip:
 		Name: Raptor
 	Health:
@@ -386,6 +401,9 @@ aircraft.king_raptor:
 		Description: Multi-role fighter plane.\n\nCan deflect enemy missiles with laser.
 	Valued:
 		Cost: 1100
+	CustomProductionCost@Refinery:
+		Prerequisites: tech.oil_refinery
+		Cost: 990
 	Tooltip:
 		Name: King Raptor
 	Health:
@@ -430,6 +448,9 @@ aircraft.stealth_fighter:
 		Description: Stealth fighter plane.
 	Valued:
 		Cost: 1600
+	CustomProductionCost@Refinery:
+		Prerequisites: tech.oil_refinery
+		Cost: 1440
 	Tooltip:
 		Name: Stealth Fighter
 	Health:
@@ -506,6 +527,9 @@ aircraft.stealth_fighter.air:
 		Prerequisites: ~building.usa_airfield, ~techlevel.high
 	Valued:
 		Cost: 1250
+	CustomProductionCost@Refinery:
+		Prerequisites: tech.oil_refinery
+		Cost: 1125
 
 aircraft.aurora:
 	Inherits: ^Plane
@@ -524,6 +548,14 @@ aircraft.aurora:
 		Description: Fast fighter plane.\n\nCan not be damaged while attacking.\n\nSlows down and becomes vulnerable after attacking.
 	Valued:
 		Cost: 2500
+	CustomProductionCost@Refinery:
+		Queue: queue.usa_aircraft
+		Prerequisites: tech.oil_refinery
+		Cost: 2250
+	CustomProductionCost@Refinery_Airforce:
+		Queue: queue.air_gen_aircraft, queue.super_gen_aircraft
+		Prerequisites: tech.oil_refinery
+		Cost: 1800
 	CustomProductionCost@Airforce:
 		Queue: queue.air_gen_aircraft, queue.super_gen_aircraft
 		Cost: 2000
@@ -773,6 +805,14 @@ aircraft.chinook:
 		Description: Collects supplies.\n\nCan carry infantry and vehicles.
 	Valued:
 		Cost: 1200
+	CustomProductionCost@Refinery:
+		Queue: queue.usa_collector
+		Prerequisites: tech.oil_refinery
+		Cost: 1080
+	CustomProductionCost@Refinery_Airforce:
+		Queue: queue.air_gen_collector
+		Prerequisites: tech.oil_refinery
+		Cost: 855
 	CustomProductionCost@Airforce:
 		Queue: queue.air_gen_collector
 		Cost: 950
@@ -881,6 +921,12 @@ aircraft.combat_chinook:
 		Description: Collects supplies.\n\nCan carry infantry and vehicles.\n\nInfantry can fire outside.\n\nCan deflect enemy missiles with laser.
 	Tooltip:
 		Name: Combat Chinook
+	CustomProductionCost@Refinery:
+		-Queue:
+		Prerequisites: tech.oil_refinery
+		Cost: 1080
+	-CustomProductionCost@Refinery_Airforce:
+	-CustomProductionCost@Airforce:
 	Health:
 		HP: 350
 	AttackFrontal:
@@ -924,6 +970,18 @@ aircraft.comanche:
 		Description: Helicopter gunship armed with machine gun.
 	Valued:
 		Cost: 1500
+	CustomProductionCost@Refinery:
+		Queue: queue.usa_aircraft
+		Prerequisites: tech.oil_refinery
+		Cost: 1350
+	CustomProductionCost@Refinery_Airforce:
+		Queue: queue.air_gen_aircraft
+		Prerequisites: tech.oil_refinery
+		Cost: 1080
+	CustomProductionCost@Refinery_Super:
+		Queue: queue.super_gen_aircraft
+		Prerequisites: tech.oil_refinery
+		Cost: 1620
 	CustomProductionCost@Airforce:
 		Queue: queue.air_gen_aircraft
 		Cost: 1200
@@ -1021,6 +1079,18 @@ aircraft.helix:
 		Description: Helicopter gunship armed with machine gun.\n\nCan carry 5 infantry.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
 	Valued:
 		Cost: 1500
+	CustomProductionCost@Refinery:
+		Queue: queue.prc_aircraft, queue.inf_gen_aircraft
+		Prerequisites: tech.oil_refinery
+		Cost: 1350
+	CustomProductionCost@Refinery_Nuke:
+		Queue: queue.nuke_gen_aircraft
+		Prerequisites: tech.oil_refinery
+		Cost: 1575
+	CustomProductionCost@Refinery_Tank:
+		Queue: queue.tank_gen_aircraft
+		Prerequisites: tech.oil_refinery
+		Cost: 1800
 	CustomProductionCost@Nuke:
 		Queue: queue.nuke_gen_aircraft
 		Cost: 1750

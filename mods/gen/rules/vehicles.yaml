@@ -12,6 +12,9 @@ vehicle.supply_truck:
 		Description: Collects supplies.
 	Valued:
 		Cost: 600
+	CustomProductionCost@Refinery:
+		Prerequisites: tech.oil_refinery
+		Cost: 540
 	Tooltip:
 		Name: Supply Truck
 		GenericName: Collector
@@ -77,6 +80,18 @@ vehicle.humvee:
 		Description: Fast scout & anti-infantry vehicle.\n\nCan carry 5 infantry that can fire outside.
 	Valued:
 		Cost: 700
+	CustomProductionCost@Refinery:
+		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 630
+	CustomProductionCost@Refinery_Airforce:
+		Queue: queue.air_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 720
+	CustomProductionCost@Refinery_Super:
+		Queue: queue.super_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 765
 	CustomProductionCost@Airforce:
 		Queue: queue.air_gen_vehicle
 		Cost: 800
@@ -174,6 +189,14 @@ vehicle.technical:
 		Description: Fast scout & anti-infantry vehicle.\n\nCan carry 5 infantry.\n\nPassengers can survive when it dies.
 	Valued:
 		Cost: 500
+	CustomProductionCost@Refinery:
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.stealth_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 450
+	CustomProductionCost@Refinery_Demo:
+		Queue: queue.demo_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 540
 	CustomProductionCost@Demo:
 		Queue: queue.demo_gen_vehicle
 		Cost: 600
@@ -252,6 +275,14 @@ vehicle.radar_van:
 		Description: Provides radar.
 	Valued:
 		Cost: 500
+	CustomProductionCost@Refinery:
+		Queue: queue.gla_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 450
+	CustomProductionCost@Refinery_Toxin:
+		Queue: queue.toxin_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 495
 	CustomProductionCost@Toxin:
 		Queue: queue.toxin_gen_vehicle
 		Cost: 550
@@ -320,6 +351,14 @@ vehicle.scorpion_tank:
 		Description: Lightly armored main battle tank.
 	Valued:
 		Cost: 600
+	CustomProductionCost@Refinery:
+		Queue: queue.gla_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 540
+	CustomProductionCost@Refinery_Toxin:
+		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 585
 	CustomProductionCost@Toxin:
 		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		Cost: 650
@@ -443,6 +482,9 @@ vehicle.crusader_tank:
 		Description: Medium armored main battle tank.
 	Valued:
 		Cost: 900
+	CustomProductionCost@Refinery:
+		Prerequisites: tech.oil_refinery
+		Cost: 810
 	Tooltip:
 		Name: Crusader Tank
 	Health:
@@ -530,6 +572,14 @@ vehicle.battlemaster_tank:
 		Description: Medium armored main battle tank.
 	Valued:
 		Cost: 800
+	CustomProductionCost@Refinery:
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 720
+	CustomProductionCost@Refinery_Tank:
+		Queue: queue.tank_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 630
 	CustomProductionCost@Tank:
 		Queue: queue.tank_gen_vehicle
 		Cost: 700
@@ -604,6 +654,14 @@ vehicle.ambulance:
 		Description: Heals nearby infantry.\n\nCan carry 3 infantry.\n\nPassengers can survive when it dies.
 	Valued:
 		Cost: 600
+	CustomProductionCost@Refinery:
+		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 540
+	CustomProductionCost@Refinery_Airforce:
+		Queue: queue.air_gen_vehicle, queue.super_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 630
 	CustomProductionCost@Airforce:
 		Queue: queue.air_gen_vehicle, queue.super_gen_vehicle
 		Cost: 700
@@ -659,6 +717,18 @@ vehicle.sentry_drone:
 		Description: Detection vehicle that is cloaked while not moving.
 	Valued:
 		Cost: 800
+	CustomProductionCost@Refinery:
+		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 720
+	CustomProductionCost@Refinery_Airforce:
+		Queue: queue.air_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 765
+	CustomProductionCost@Refinery_Super:
+		Queue: queue.super_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 900
 	CustomProductionCost@Airforce:
 		Queue: queue.air_gen_vehicle
 		Cost: 850
@@ -750,6 +820,14 @@ vehicle.quad_cannon:
 		Description: Anti-infantry & anti-air vehicle.
 	Valued:
 		Cost: 700
+	CustomProductionCost@Refinery:
+		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 630
+	CustomProductionCost@Refinery_Toxin:
+		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 675
 	CustomProductionCost@Toxin:
 		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		Cost: 750
@@ -813,6 +891,14 @@ vehicle.gatling_tank:
 		Description: Anti-infantry & anti-air vehicle.
 	Valued:
 		Cost: 800
+	CustomProductionCost@Refinery:
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 720
+	CustomProductionCost@Refinery_Tank:
+		Queue: queue.tank_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 630
 	CustomProductionCost@Tank:
 		Queue: queue.tank_gen_vehicle
 		Cost: 700
@@ -886,6 +972,18 @@ vehicle.toxin_tractor:
 		Description: Toxin-throwing vehicle.
 	Valued:
 		Cost: 600
+	CustomProductionCost@Refinery:
+		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 540
+	CustomProductionCost@Refinery_Toxin:
+		Queue: queue.toxin_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 585
+	CustomProductionCost@Refinery_Demo:
+		Queue: queue.demo_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 675
 	CustomProductionCost@Toxin:
 		Queue: queue.toxin_gen_vehicle
 		Cost: 650
@@ -949,8 +1047,6 @@ vehicle.dragon_tank:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Valued:
-		Cost: 800
 	Tooltip:
 		Name: Dragon Tank
 	Buildable:
@@ -961,6 +1057,20 @@ vehicle.dragon_tank:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.medium
 		Description: Flame-throwing vehicle.
+	Valued:
+		Cost: 800
+	CustomProductionCost@Refinery:
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 720
+	CustomProductionCost@Refinery_Infantry:
+		Queue: queue.inf_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 810
+	CustomProductionCost@Refinery_Tank:
+		Queue: queue.tank_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 630
 	CustomProductionCost@Infantry:
 		Queue: queue.inf_gen_vehicle
 		Cost: 900
@@ -1021,6 +1131,18 @@ vehicle.rocket_buggy:
 		Prerequisites: building.palace, ~building.arms_dealer, ~techlevel.medium
 		Description: Rocket artillery.
 	Valued:
+		Cost: 900
+	CustomProductionCost@Refinery:
+		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 810
+	CustomProductionCost@Refinery_Toxin:
+		Queue: queue.toxin_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 990
+	CustomProductionCost@Refinery_Demo:
+		Queue: queue.toxin_gen_vehicle
+		Prerequisites: tech.oil_refinery
 		Cost: 900
 	CustomProductionCost@Toxin:
 		Queue: queue.toxin_gen_vehicle
@@ -1102,6 +1224,14 @@ vehicle.avenger:
 		Description: Advanced anti-air unit.\n\nCan deflect enemy missiles with laser.
 	Valued:
 		Cost: 2000
+	CustomProductionCost@Refinery:
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 1800
+	CustomProductionCost@Laser_Refinery:
+		Queue: queue.laser_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 1350
 	CustomProductionCost@Laser:
 		Queue: queue.laser_gen_vehicle
 		Cost: 1500
@@ -1163,6 +1293,9 @@ vehicle.troop_crawler:
 		Description: Tough infantry transport.\n\nCan carry 8 infantry.\n\nComes with 8 red guards.\n\nPassengers can survive when it dies.
 	Valued:
 		Cost: 1400
+	CustomProductionCost@Refinery:
+		Prerequisites: tech.oil_refinery
+		Cost: 1260
 	Tooltip:
 		Name: Troop Crawler
 	Health:
@@ -1203,6 +1336,9 @@ vehicle.assault_troop_crawler:
 		Description: Tough infantry transport.\n\nCan carry 8 infantry that can fire outside.\n\nComes with 8 minigunners.\n\nPassengers can survive when it dies.
 	Valued:
 		Cost: 2400
+	CustomProductionCost@Refinery:
+		Prerequisites: tech.oil_refinery
+		Cost: 2160
 	Tooltip:
 		Name: Assault Troop Crawler
 	Cargo:
@@ -1230,6 +1366,9 @@ vehicle.listening_outpost:
 		Description: Stealth detector unit.\n\nCan carry 2 infantry that can fire outside.\n\nComes with 2 tank hunters.\n\nPassengers can survive when it dies.
 	Valued:
 		Cost: 800
+	CustomProductionCost@Refinery:
+		Prerequisites: tech.oil_refinery
+		Cost: 780
 	Tooltip:
 		Name: Listening Outpost
 	Health:
@@ -1295,6 +1434,9 @@ vehicle.attack_outpost:
 		Name: Attack Outpost
 	Valued:
 		Cost: 1000
+	CustomProductionCost@Refinery:
+		Prerequisites: tech.oil_refinery
+		Cost: 900
 	Health:
 		HP: 300
 	Cargo:
@@ -1323,6 +1465,18 @@ vehicle.tomahawk_launcher:
 		Description: Long-range rocket artillery.
 	Valued:
 		Cost: 1200
+	CustomProductionCost@Refinery:
+		Queue: queue.usa_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 1080
+	CustomProductionCost@Refinery_Airforce:
+		Queue: queue.air_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 1170
+	CustomProductionCost@Refinery_Super:
+		Queue: queue.super_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 1260
 	CustomProductionCost@Airforce:
 		Queue: queue.air_gen_vehicle
 		Cost: 1300
@@ -1397,6 +1551,9 @@ vehicle.scud_launcher:
 		Description: Long-range rocket artillery.\n\nCan be armed with either toxin or high explosive missiles.
 	Valued:
 		Cost: 1200
+	CustomProductionCost@Refinery:
+		Prerequisites: tech.oil_refinery
+		Cost: 1080
 	CustomProductionTime@ZH:
 		Prerequisites: prerequisite.zh_units
 		BuildTime: 375
@@ -1513,6 +1670,14 @@ vehicle.inferno_cannon:
 		Description: Long-range artillery.
 	Valued:
 		Cost: 900
+	CustomProductionCost@Refinery:
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 810
+	CustomProductionCost@Refinery_Infantry:
+		Queue: queue.inf_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 990
 	CustomProductionCost@Infantry:
 		Queue: queue.inf_gen_vehicle
 		Cost: 1100
@@ -1583,6 +1748,9 @@ vehicle.paladin_tank:
 		Description: Heavy tank.\n\nCan deflect enemy missiles with laser.
 	Valued:
 		Cost: 1100
+	CustomProductionCost@Refinery:
+		Prerequisites: tech.oil_refinery
+		Cost: 990
 	Tooltip:
 		Name: Paladin Tank
 	Health:
@@ -1662,6 +1830,14 @@ vehicle.marauder_tank:
 		Description: Medium tank.
 	Valued:
 		Cost: 800
+	CustomProductionCost@Refinery:
+		Queue: queue.gla_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 720
+	CustomProductionCost@Refinery_Toxin:
+		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 810
 	CustomProductionCost@Toxin:
 		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		Cost: 900
@@ -1778,6 +1954,14 @@ vehicle.overlord_tank:
 		Description: Big and slow tank.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
 	Valued:
 		Cost: 2000
+	CustomProductionCost@Refinery:
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 1800
+	CustomProductionCost@Refinery_Tank:
+		Queue: queue.tank_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 1710
 	CustomProductionCost@Tank:
 		Queue: queue.tank_gen_vehicle
 		Cost: 1900
@@ -1942,6 +2126,14 @@ vehicle.bomb_truck:
 		Description: Suicide vehicle.\n\nCan be armed with toxin or high explosive bombs.
 	Valued:
 		Cost: 1200
+	CustomProductionCost@Refinery:
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.stealth_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 1080
+	CustomProductionCost@Refinery_Demo:
+		Queue: queue.demo_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 900
 	CustomProductionCost@Demo:
 		Queue: queue.demo_gen_vehicle
 		Cost: 1000
@@ -2108,6 +2300,9 @@ vehicle.nuke_cannon:
 		Description: Heavy artillery unit armed with nuclear warheads.
 	Valued:
 		Cost: 1600
+	CustomProductionCost@Refinery:
+		Prerequisites: tech.oil_refinery
+		Cost: 1440
 	Tooltip:
 		Name: Nuke Cannon
 	Health:
@@ -2173,6 +2368,9 @@ vehicle.nuke_cannon.nuke:
 		Description: Allows construction around themselves.
 	Valued:
 		Cost: 1000
+	CustomProductionCost@Refinery:
+		Prerequisites: tech.oil_refinery
+		Cost: 900
 	Selectable:
 		Priority: 4
 		DecorationBounds: 42,42

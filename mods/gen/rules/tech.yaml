@@ -37,6 +37,38 @@ tech.oil_derrick:
 	GivesCashOnCapture:
 		Amount: 1000
 
+tech.oil_refinery:
+	Inherits: ^TechBuilding
+	Inherits@EMP: ^AffectedByEMP
+	Inherits@HACK: ^AffectedByHacking
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^2x2Shape
+	Selectable:
+		Priority: 0
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 1000
+	Capturable:
+	ExternalCapturable:
+	ExternalCapturableBar:
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Capture, Disable
+	EngineerRepairable:
+	GivesBuildableArea:
+		AreaTypes: mine
+	RepairableBuilding:
+		RepairStep: 15
+		PlayerExperience: 25
+	Tooltip:
+		Name: Oil Refinery
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+	ProvidesPrerequisite@buildingname:
+		RequiresCondition: !emp && !hacked
+
 tech.hospital:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
@@ -70,53 +102,6 @@ tech.hospital:
 		UseDeathTypeSuffix: false
 	ProvidesPrerequisite@buildingname:
 		RequiresCondition: !emp && !hacked
-
-tech.bio_lab:
-	Inherits: ^TechBuilding
-	Inherits@EMP: ^AffectedByEMP
-	Inherits@HACK: ^AffectedByHacking
-	Inherits@REVEAL: ^Reveal200
-	Inherits@SHAPE: ^2x2Shape
-	Selectable:
-		Priority: 0
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	Health:
-		HP: 1000
-	Capturable:
-	ExternalCapturable:
-	ExternalCapturableBar:
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Capture, Disable
-	EngineerRepairable:
-	GivesBuildableArea:
-		AreaTypes: mine
-	RepairableBuilding:
-		RepairStep: 15
-		PlayerExperience: 25
-	Tooltip:
-		Name: Biological Lab
-	Exit@1:
-		SpawnOffset: 0,-426,0
-		ExitCell: 0,-1
-	Production:
-		Produces: queue.bio_lab
-		PauseOnCondition: emp || hacked
-	ProductionQueue:
-		Type: queue.bio_lab
-		Group: Infantry
-		RequireOwner: false
-		InstantCashDrain: true
-		LowPowerSlowdown: 3
-		SpectatorUIOrder: 27
-	ProductionBar:
-	RallyPoint:
-		Offset: -1,-1
-	WithDeathAnimation:
-		DeathSequence: dead
-		UseDeathTypeSuffix: false
-	ProvidesPrerequisite@buildingname:
 
 tech.communications_center:
 	Inherits: ^TechBuilding
