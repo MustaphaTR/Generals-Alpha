@@ -721,7 +721,33 @@ hack.cameo_filler.3:
 	Buildable:
 		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 25
-		Prerequisites: disabled
+		Prerequisites: disabled, ~!prerequisite.zh_units
+
+generals_power.carpet_bombing:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Carpet Bombing
+	Buildable:
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.tank_gen_generals_power
+		BuildPaletteOrder: 25
+		BuildDuration: 1000
+		Prerequisites: building.prc_airfield, ~techlevel.high, !prerequisite.enough_powers, ~prerequisite.zh_units
+		Description: Enables Carpet Bombing support power from Command Center.
+	Valued:
+		Cost: 1500
+
+generals_power.carpet_bombing.nuke:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Nuclear Carpet Bombing
+	Buildable:
+		Queue: queue.nuke_gen_generals_power
+		BuildPaletteOrder: 25
+		BuildDuration: 1000
+		Prerequisites: building.prc_airfield, ~techlevel.high, !prerequisite.enough_powers, ~prerequisite.zh_units
+		Description: Enables Nuclear Carpet Bombing support power from Command Center.
+	Valued:
+		Cost: 1500
 
 generals_power.fuel_air_bomb:
 	Inherits: ^default.generals_power

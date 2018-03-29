@@ -151,6 +151,23 @@ aircraft.badger.cluster_mines:
 	Tooltip:
 		Name: Badger
 
+aircraft.badger.carpet:
+	Inherits: ^default.badger
+	AttackBomber:
+	Armament:
+		Weapon: bomb.carpet.prc
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Ammo: 9
+		AmmoCondition: ammo
+	Tooltip:
+		Name: Badger
+
+aircraft.badger.carpet.nuke:
+	Inherits: aircraft.badger.carpet
+	Armament:
+		Weapon: bomb.carpet.nuke
+
 aircraft.cargo_plane:
 	Inherits: ^default.badger
 	Tooltip:

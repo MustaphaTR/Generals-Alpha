@@ -616,6 +616,56 @@ building.prc_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 		OrderName: ClusterMinesPowerInfoOrder
+	AirstrikePower@CARPET_BOMB:
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
+		Prerequisites:
+			1: generals_power.carpet_bombing
+		Icons:
+			1: prccarpet
+		ChargeInterval: 3750
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		Descriptions:
+			1: Carpet Bombing
+		LongDescs:
+			1: A Badger does carpet bombing at the target.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		UnitTypes:
+			1: aircraft.badger.carpet
+		DisplayBeacon: True
+		BeaconPosters:
+			1: chcpbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		OrderName: CarpetBombingPRCPowerInfoOrder
+	AirstrikePower@NUKE_BOMB:
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
+		Prerequisites:
+			1: generals_power.carpet_bombing.nuke
+		Icons:
+			1: nkcarpet
+		ChargeInterval: 3750
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		Descriptions:
+			1: Nuclear Carpet Bombing
+		LongDescs:
+			1: A Badger does carpet bombing at the target with nuclear warheads.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		UnitTypes:
+			1: aircraft.badger.carpet.nuke
+		DisplayBeacon: True
+		BeaconPosters:
+			1: leafbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		OrderName: CarpetBombingNukePowerInfoOrder
 	AirstrikePower@EMP:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:

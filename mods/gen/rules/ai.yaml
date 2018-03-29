@@ -133,7 +133,6 @@ Player:
 			upgrade.nuclear_tanks: 1%
 			upgrade.uranium_shells: 1%
 			generals_power.spy_drone: 1%
-			generals_power.carpet_bombing.airforce: 1%
 			generals_power.tech_training: 1%
 			generals_power.red_training: 1%
 			generals_power.minigunner_training: 1%
@@ -142,6 +141,7 @@ Player:
 			generals_power.paladin_tank: 1%
 			generals_power.stealth_fighter: 1%
 			generals_power.pathfinder: 1%
+			generals_power.carpet_bombing.airforce: 1%
 			generals_power.marauder_tank: 1%
 			generals_power.scud_launcher: 1%
 			generals_power.paradrop1: 1%
@@ -169,6 +169,8 @@ Player:
 			generals_power.tank_drop2: 1%
 			generals_power.tank_drop3: 1%
 			generals_power.cluster_mines: 1%
+			generals_power.carpet_bombing: 1%
+			generals_power.carpet_bombing.nuke: 1%
 			generals_power.fuel_air_bomb: 1%
 			generals_power.anthrax_bomb: 1%
 			generals_power.emp: 1%
@@ -467,6 +469,36 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 7c0
+		SupportPowerDecision@prc_carpet_bombing:
+			OrderName: CarpetBombingPRCPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@nuke_carpet_bombing:
+			OrderName: CarpetBombingNukePowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
 		SupportPowerDecision@anthrax_bomb:
 			OrderName: AnthraxBombPowerInfoOrder
 			MinimumAttractiveness: 3000
@@ -703,7 +735,6 @@ Player:
 			upgrade.nuclear_tanks: 1%
 			upgrade.uranium_shells: 1%
 			generals_power.spy_drone: 1%
-			generals_power.carpet_bombing.airforce: 1%
 			generals_power.tech_training: 1%
 			generals_power.red_training: 1%
 			generals_power.minigunner_training: 1%
@@ -712,6 +743,7 @@ Player:
 			generals_power.paladin_tank: 1%
 			generals_power.stealth_fighter: 1%
 			generals_power.pathfinder: 1%
+			generals_power.carpet_bombing.airforce: 1%
 			generals_power.marauder_tank: 1%
 			generals_power.scud_launcher: 1%
 			generals_power.paradrop1: 1%
@@ -739,6 +771,8 @@ Player:
 			generals_power.tank_drop2: 1%
 			generals_power.tank_drop3: 1%
 			generals_power.cluster_mines: 1%
+			generals_power.carpet_bombing: 1%
+			generals_power.carpet_bombing.nuke: 1%
 			generals_power.fuel_air_bomb: 1%
 			generals_power.anthrax_bomb: 1%
 			generals_power.emp: 1%
@@ -1037,6 +1071,36 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 7c0
+		SupportPowerDecision@prc_carpet_bombing:
+			OrderName: CarpetBombingPRCPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@nuke_carpet_bombing:
+			OrderName: CarpetBombingNukePowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
 		SupportPowerDecision@anthrax_bomb:
 			OrderName: AnthraxBombPowerInfoOrder
 			MinimumAttractiveness: 3000
@@ -1271,7 +1335,6 @@ Player:
 			upgrade.nuclear_tanks: 1%
 			upgrade.uranium_shells: 1%
 			generals_power.spy_drone: 1%
-			generals_power.carpet_bombing.airforce: 1%
 			generals_power.tech_training: 1%
 			generals_power.red_training: 1%
 			generals_power.minigunner_training: 1%
@@ -1280,6 +1343,7 @@ Player:
 			generals_power.paladin_tank: 1%
 			generals_power.stealth_fighter: 1%
 			generals_power.pathfinder: 1%
+			generals_power.carpet_bombing.airforce: 1%
 			generals_power.marauder_tank: 1%
 			generals_power.scud_launcher: 1%
 			generals_power.paradrop1: 1%
@@ -1307,6 +1371,8 @@ Player:
 			generals_power.tank_drop2: 1%
 			generals_power.tank_drop3: 1%
 			generals_power.cluster_mines: 1%
+			generals_power.carpet_bombing: 1%
+			generals_power.carpet_bombing.nuke: 1%
 			generals_power.fuel_air_bomb: 1%
 			generals_power.anthrax_bomb: 1%
 			generals_power.emp: 1%
@@ -1592,6 +1658,36 @@ Player:
 				CheckRadius: 7c0
 		SupportPowerDecision@usa_carpet_bombing:
 			OrderName: CarpetBombingUSAPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@prc_carpet_bombing:
+			OrderName: CarpetBombingPRCPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@nuke_carpet_bombing:
+			OrderName: CarpetBombingNukePowerInfoOrder
 			MinimumAttractiveness: 3000
 			Consideration@1:
 				Against: Enemy
