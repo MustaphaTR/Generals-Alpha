@@ -744,7 +744,7 @@ vehicle.quad_cannon:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
-		BuildDuration: 150
+		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.low
 		Description: Anti-infantry & anti-air vehicle.
@@ -753,6 +753,9 @@ vehicle.quad_cannon:
 	CustomProductionCost@Toxin:
 		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		Cost: 750
+	CustomProductionTime@ZH:
+		Prerequisites: prerequisite.zh_units
+		BuildTime: 150
 	Mobile:
 		Speed: 40
 		Voice: Move
@@ -1391,9 +1394,12 @@ vehicle.scud_launcher:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~building.arms_dealer, ~generals_power.scud_launcher, ~techlevel.high
-		Description: Long-range rocket artillery./n/nCan be armed with either toxin or high explosive missiles.
+		Description: Long-range rocket artillery.\n\nCan be armed with either toxin or high explosive missiles.
 	Valued:
 		Cost: 1200
+	CustomProductionTime@ZH:
+		Prerequisites: prerequisite.zh_units
+		BuildTime: 375
 	Tooltip:
 		Name: SCUD Launcher
 	Health:
