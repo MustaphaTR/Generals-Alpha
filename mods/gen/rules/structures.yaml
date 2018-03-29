@@ -2225,6 +2225,31 @@ building.strategy_center:
 	ProductionBar@Airforce:
 		ProductionType: queue.air_gen_strategy_center
 	Exit:
+	AirstrikePower@CARPET_BOMB:
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
+		Prerequisites:
+			1: generals_power.carpet_bombing.airforce
+		Icons:
+			1: uscarpet
+		ChargeInterval: 3750
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		Descriptions:
+			1: Carpet Bombing
+		LongDescs:
+			1: A B-2 does carpet bombing at the target.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		UnitTypes:
+			1: aircraft.b2.carpet
+		DisplayBeacon: True
+		BeaconPosters:
+			1: uscpbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		OrderName: CarpetBombingUSAPowerInfoOrder
 	Turreted:
 		TurnSpeed: 5
 		InitialFacing: 96

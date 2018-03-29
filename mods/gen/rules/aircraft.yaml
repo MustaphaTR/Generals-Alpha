@@ -85,8 +85,17 @@ aircraft.b2:
 		Weapon: parabomb.moab
 	Tooltip:
 		Name: B-2
+	Aircraft:
+		Speed: 200
 	RenderSprites:
 		Image: aircraft.b2
+
+aircraft.b2.carpet:
+	Inherits: aircraft.b2
+	Armament:
+		Weapon: bomb.carpet
+	AmmoPool:
+		Ammo: 9
 
 aircraft.badger.anthrax_bomb:
 	Inherits: ^default.badger

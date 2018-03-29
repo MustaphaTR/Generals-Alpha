@@ -125,7 +125,7 @@ generals_power.nuke_cannon:
 hack.cameo_filler.1:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Queue: queue.usa_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		Prerequisites: disabled
@@ -168,6 +168,19 @@ generals_power.pathfinder:
 		Description: Enables Pathfinder.
 	Valued:
 		Cost: 600
+
+generals_power.carpet_bombing.airforce:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Carpet Bombing
+	Buildable:
+		Queue: queue.air_gen_generals_power
+		BuildPaletteOrder: 5
+		BuildDuration: 625
+		Prerequisites: ~techlevel.medium, !prerequisite.enough_powers
+		Description: Enables Carpet Bombing support power from Strategy Center.
+	Valued:
+		Cost: 1000
 
 generals_power.scud_launcher:
 	Inherits: ^default.generals_power
@@ -214,7 +227,7 @@ generals_power.hijacker:
 hack.cameo_filler.2:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power
+		Queue: queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		Prerequisites: disabled

@@ -133,6 +133,7 @@ Player:
 			upgrade.nuclear_tanks: 1%
 			upgrade.uranium_shells: 1%
 			generals_power.spy_drone: 1%
+			generals_power.carpet_bombing.airforce: 1%
 			generals_power.tech_training: 1%
 			generals_power.red_training: 1%
 			generals_power.minigunner_training: 1%
@@ -451,6 +452,21 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 7c0
+		SupportPowerDecision@usa_carpet_bombing:
+			OrderName: CarpetBombingUSAPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
 		SupportPowerDecision@anthrax_bomb:
 			OrderName: AnthraxBombPowerInfoOrder
 			MinimumAttractiveness: 3000
@@ -687,6 +703,7 @@ Player:
 			upgrade.nuclear_tanks: 1%
 			upgrade.uranium_shells: 1%
 			generals_power.spy_drone: 1%
+			generals_power.carpet_bombing.airforce: 1%
 			generals_power.tech_training: 1%
 			generals_power.red_training: 1%
 			generals_power.minigunner_training: 1%
@@ -1005,6 +1022,21 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 7c0
+		SupportPowerDecision@usa_carpet_bombing:
+			OrderName: CarpetBombingUSAPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
 		SupportPowerDecision@anthrax_bomb:
 			OrderName: AnthraxBombPowerInfoOrder
 			MinimumAttractiveness: 3000
@@ -1239,6 +1271,7 @@ Player:
 			upgrade.nuclear_tanks: 1%
 			upgrade.uranium_shells: 1%
 			generals_power.spy_drone: 1%
+			generals_power.carpet_bombing.airforce: 1%
 			generals_power.tech_training: 1%
 			generals_power.red_training: 1%
 			generals_power.minigunner_training: 1%
@@ -1544,6 +1577,21 @@ Player:
 				CheckRadius: 8c0
 		SupportPowerDecision@fuel_air_bomb:
 			OrderName: FuelAirBombPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@usa_carpet_bombing:
+			OrderName: CarpetBombingUSAPowerInfoOrder
 			MinimumAttractiveness: 3000
 			Consideration@1:
 				Against: Enemy
