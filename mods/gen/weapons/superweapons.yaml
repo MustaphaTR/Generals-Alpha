@@ -44,6 +44,21 @@ parabomb.fuel_air_bomb:
 		Delay: 15
 		Size: 4
 
+parabomb.moab:
+	Inherits: parabomb.fuel_air_bomb
+	Warhead@1Dam: SpreadDamage
+		Delay: 0
+		Damage: 200
+	Warhead@2Dam_areanuke2: SpreadDamage
+		Delay: 0
+		Damage: 200
+	Warhead@3Eff_impact: CreateEffect
+		Delay: 0
+	Warhead@4Smu_impact: LeaveSmudge
+		Delay: 0
+	Warhead@4Smu_impactSnow: LeaveSmudge
+		Delay: 0
+
 parabomb.anthrax:
 	Inherits: ^ParaBomb
 	Warhead@1Dam: SpreadDamage

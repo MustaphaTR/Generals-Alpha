@@ -86,7 +86,8 @@ building.usa_command_center:
 		ChargeInterval: 1500
 		Icons:
 			1: spy_drone
-		Description: Spy Drone
+		Descriptions:
+			1: Spy Drone
 		LongDescs:
 			1: Spawns a Spy Drone anywhere on the map.
 		StartFullyCharged: false
@@ -102,7 +103,8 @@ building.usa_command_center:
 		ChargeInterval: 1500
 		Icons:
 			1: satellite
-		Description: Spy Satellite
+		Descriptions:
+			1: Spy Satellite
 		LongDescs:
 			1: Reveals are large area of map for a while.\n\nAlso detects cloaked units in that area.
 		StartFullyCharged: false
@@ -120,7 +122,10 @@ building.usa_command_center:
 			2: paradrop2
 			3: paradrop3
 		ChargeInterval: 6000
-		Description: ParaDrop
+		Descriptions:
+			1: ParaDrop
+			2: ParaDrop
+			3: ParaDrop
 		LongDescs:
 			1: A B-52 drops 5 Rangers\nanywhere on the map.
 			2: 2 B-52s drop total of 10 Rangers\nanywhere on the map.
@@ -166,7 +171,10 @@ building.usa_command_center:
 			2: 2
 			3: 3
 		QuantizedFacings: 8
-		Description: A-10 Strike
+		Descriptions:
+			1: A-10 Strike
+			2: A-10 Strike
+			3: A-10 Strike
 		LongDescs:
 			1: 1 A-10 Thunderbolt strikes anywhere on the map.
 			2: 2 A-10 Thunderbolts strikes anywhere on the map.
@@ -190,22 +198,30 @@ building.usa_command_center:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
 			1: generals_power.fuel_air_bomb
+			2: upgrade.moab
 		Icons:
 			1: fuel_air
+			2: moab
 		ChargeInterval: 9000
 		SquadSizes:
 			1: 1
+			2: 1
 		QuantizedFacings: 8
-		Description: Fuel Air Bomb
+		Descriptions:
+			1: Fuel Air Bomb
+			2: Mother of All Bombs
 		LongDescs:
 			1: A B-52 drops a Fuel Air Bomb at the target.
+			2: A B-2 drops a Mother of All Bombs at the target.
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
 		UnitTypes:
 			1: aircraft.badger.fuel_air_bomb
+			2: aircraft.b2
 		DisplayBeacon: True
 		BeaconPosters:
 			1: fuelbcon
+			2: moabbcon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -261,7 +277,10 @@ building.gla_command_center:
 			1: ambush1
 			2: ambush2
 			3: ambush3
-		Description: Rebel Ambush
+		Descriptions:
+			1: Rebel Ambush
+			2: Rebel Ambush
+			3: Rebel Ambush
 		LongDescs:
 			1: Spawns 4 Rebels anywhere on the map.
 			2: Spawns 8 Rebels anywhere on the map.
@@ -286,7 +305,10 @@ building.gla_command_center:
 			1: tambush1
 			2: tambush2
 			3: tambush3
-		Description: Toxin Rebel Ambush
+		Descriptions:
+			1: Toxin Rebel Ambush
+			2: Toxin Rebel Ambush
+			3: Toxin Rebel Ambush
 		LongDescs:
 			1: Spawns 4 Toxin Rebels anywhere on the map.
 			2: Spawns 8 Toxin Rebels anywhere on the map.
@@ -314,7 +336,10 @@ building.gla_command_center:
 			1: 0
 			2: 0
 			3: 0
-		Description: GPS Scrambler
+		Descriptions:
+			1: GPS Scrambler
+			2: GPS Scrambler
+			3: GPS Scrambler
 		LongDescs:
 			1: Makes 1 unit invisible while not firing.
 			2: Makes 5 units invisible while not firing.
@@ -336,7 +361,8 @@ building.gla_command_center:
 		SquadSizes:
 			1: 1
 		QuantizedFacings: 8
-		Description: Anthrax Bomb
+		Descriptions:
+			1: Anthrax Bomb
 		LongDescs:
 			1: A B-52 drops an Anthrax Bomb at the target.
 		SelectTargetSpeechNotification: SelectTarget
@@ -403,7 +429,10 @@ building.prc_command_center:
 			1: 2
 			2: 2
 			3: 2
-		Description: Frenzy
+		Descriptions:
+			1: Frenzy
+			2: Frenzy
+			3: Frenzy
 		LongDescs:
 			1: Makes a group of units deal 10% more damage\nfor 10 seconds.
 			2: Makes a group of units deal 20% more damage\nfor 20 seconds.
@@ -456,7 +485,10 @@ building.prc_command_center:
 			2: paradrop2
 			3: paradrop3
 		ChargeInterval: 6000
-		Description: ParaDrop
+		Descriptions:
+			1: ParaDrop
+			2: ParaDrop
+			3: ParaDrop
 		LongDescs:
 			1: A Badger drops 5 Minigunners\nanywhere on the map.
 			2: 2 Badgers drop total of 10 Minigunners\nanywhere on the map.
@@ -502,7 +534,10 @@ building.prc_command_center:
 			1: arty_barrage1
 			2: arty_barrage2
 			3: arty_barrage3
-		Description: Artillery Barrage
+		Descriptions:
+			1: Artillery Barrage
+			2: Artillery Barrage
+			3: Artillery Barrage
 		LongDescs:
 			1: Fires 12 Artillery Shells anywhere on the map.
 			2: Fires 24 Artillery Shells anywhere on the map.
@@ -523,7 +558,10 @@ building.prc_command_center:
 			2: tank_drop2
 			3: tank_drop2
 		ChargeInterval: 6000
-		Description: Tank Drop
+		Descriptions:
+			1: Tank Drop
+			2: Tank Drop
+			3: Tank Drop
 		LongDescs:
 			1: A Badger drops 1 Battlemaster Tank\nanywhere on the map.
 			2: A Badger drops 2 Battlemaster Tanks\nanywhere on the map.
@@ -563,7 +601,8 @@ building.prc_command_center:
 		SquadSizes:
 			1: 1
 		QuantizedFacings: 8
-		Description: Cluster Mines
+		Descriptions:
+			1: Cluster Mines
 		LongDescs:
 			1: A Badger drops 13 Land Mines at the target.
 		SelectTargetSpeechNotification: SelectTarget
@@ -587,7 +626,8 @@ building.prc_command_center:
 		SquadSizes:
 			1: 1
 		QuantizedFacings: 8
-		Description: E. M. Pulse
+		Descriptions:
+			1: E. M. Pulse
 		LongDescs:
 			1: A Badger drops an EMP at the target.
 		SelectTargetSpeechNotification: SelectTarget
@@ -2223,7 +2263,8 @@ building.strategy_center:
 		PauseOnCondition: emp || hacked
 		Prerequisites:
 			1: prerequisite.zh_units
-		Description: Intelligence
+		Descriptions:
+			1: Intelligence
 		LongDescs:
 			1: Makes all enemy units visible for 30 seconds.
 		Icons:
@@ -2426,7 +2467,8 @@ building.detention_camp:
 		PauseOnCondition: emp || hacked
 		Prerequisites:
 			1: !prerequisite.zh_units
-		Description: Intelligence
+		Descriptions:
+			1: Intelligence
 		LongDescs:
 			1: Makes all enemy units visible for 30 seconds.
 		Icons:
@@ -2651,7 +2693,8 @@ building.particle_cannon:
 		Icons:
 			1: particle
 		ChargeInterval: 7500
-		Description: Particle Cannon
+		Descriptions:
+			1: Particle Cannon
 		LongDescs:
 			1: Initiates an Particle Cannon strike.
 		DisplayTimerStances: Enemy, Neutral, Ally
@@ -2860,7 +2903,8 @@ building.scud_storm:
 		Cursor: nuke
 		ChargeInterval: 7500
 		ArmamentName: primary
-		Description: SCUD Storm
+		Descriptions:
+			1: SCUD Storm
 		DisplayTimerStances: Enemy, Neutral, Ally
 		LongDescs:
 			1: Fires 4 SCUD Missiles anywhere on the map.
@@ -2954,7 +2998,8 @@ building.missile_silo:
 		Icons:
 			1: abomb
 		ChargeInterval: 7500
-		Description: Atom Bomb
+		Descriptions:
+			1: Atom Bomb
 		LongDescs:
 			1: Launches a devastating atomic bomb\nat a target location.
 		BeginChargeSpeechNotification: AbombPrepping

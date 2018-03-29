@@ -368,6 +368,22 @@ upgrade.supply_lines:
 	Valued:
 		Cost: 800
 
+upgrade.moab:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Mother of All Bombs
+	Buildable:
+		Queue: queue.strategy_center
+		BuildPaletteOrder: 8
+		ForceIconLocation: true
+		BuildDuration: 1500
+		Prerequisites: ~generals_power.fuel_air_bomb, ~techlevel.high, ~prerequisite.zh_units
+		Description: Upgrades Fuel Air Bomb to Mother of All Bombs.
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
+	Valued:
+		Cost: 4000
+
 upgrade.camouflage:
 	Inherits: ^default.upgrade
 	Tooltip:

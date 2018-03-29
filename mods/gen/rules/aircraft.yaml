@@ -79,6 +79,15 @@ aircraft.badger.fuel_air_bomb:
 	Tooltip:
 		Name: B-52
 
+aircraft.b2:
+	Inherits: aircraft.badger.fuel_air_bomb
+	Armament:
+		Weapon: parabomb.moab
+	Tooltip:
+		Name: B-2
+	RenderSprites:
+		Image: aircraft.b2
+
 aircraft.badger.anthrax_bomb:
 	Inherits: ^default.badger
 	AttackBomber:
