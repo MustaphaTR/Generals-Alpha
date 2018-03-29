@@ -297,11 +297,11 @@ fake.scud_storm:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
+		Queue: queue.gla_building, queue.demo_gen_building
 		BuildPaletteOrder: 22
 		BuildDuration: 1000
 		BuildDurationModifier: 100
-		Queue: queue.gla_building, queue.demo_gen_building
-		Prerequisites: building.palace, ~techlevel.unrestricted, ~disabled
+		Prerequisites: building.palace, ~techlevel.unrestricted, ~prerequisite.zh_units
 		Description: Looks like a SCUD Storm.
 		Icon: fake-icon
 	Tooltip:
