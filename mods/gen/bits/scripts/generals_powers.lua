@@ -90,7 +90,7 @@ Levels =
 }
 
 Ranks = { "1 Star General", "2 Star General", "3 Star General", "4 Star General", "5 Star General" }
-RankXPs = { 0, 1000, 2000, 3000, 4000 }
+RankXPs = { 0, 750, 1750, 3000, 4500 }
 
 ReducePoints = function(player)
 	Trigger.OnProduction(player.GetActorsByType("player")[1], function()
@@ -123,12 +123,12 @@ Tick = function()
 			PointConditionGiven[player.InternalName] = false
 		end
 
-		if player.Experience >= 1000 and not (Levels[player.InternalName] > 0) then
+		if player.Experience >= 750 and not (Levels[player.InternalName] > 0) then
 			Levels[player.InternalName] = Levels[player.InternalName] + 1
 			Points[player.InternalName] = Points[player.InternalName] + PointsPerRank[2]
 		end
 
-		if player.Experience >= 2000 and not (Levels[player.InternalName] > 1) then
+		if player.Experience >= 1750 and not (Levels[player.InternalName] > 1) then
 			Levels[player.InternalName] = Levels[player.InternalName] + 1
 			Points[player.InternalName] = Points[player.InternalName] + PointsPerRank[3]
 
@@ -140,7 +140,7 @@ Tick = function()
 			Points[player.InternalName] = Points[player.InternalName] + PointsPerRank[4]
 		end
 
-		if player.Experience >= 4000 and not (Levels[player.InternalName] > 3) then
+		if player.Experience >= 4500 and not (Levels[player.InternalName] > 3) then
 			Levels[player.InternalName] = Levels[player.InternalName] + 1
 			Points[player.InternalName] = Points[player.InternalName] + PointsPerRank[5]
 
