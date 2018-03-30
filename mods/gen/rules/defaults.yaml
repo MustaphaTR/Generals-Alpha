@@ -2,7 +2,7 @@
 	AppearsOnRadar:
 	CombatDebugOverlay:
 	GivesExperience:
-		PlayerExperienceModifier: 1
+		PlayerExperienceModifier: 5
 	ScriptTriggers:
 	ConditionManager:
 	RenderDebugState:
@@ -320,7 +320,6 @@
 ^CanCaptureDriverlessVehicles:
 	Captures:
 		CaptureTypes: driverless_vehcile
-		PlayerExperience: 25
 
 ^AffectedBySpeakerTower:
 	ReloadDelayMultiplier@SPEAKER_NORMAL:
@@ -1664,7 +1663,6 @@
 		AreaTypes: building, mine, flame_tower
 	RepairableBuilding:
 		RepairStep: 15
-		PlayerExperience: 25
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:

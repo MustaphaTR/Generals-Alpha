@@ -101,7 +101,6 @@ infantry.worker:
 		DefaultAttackSequence: shoot
 	ExternalCaptures:
 		CaptureTypes: building
-		PlayerExperience: 25
 		Voice: Capture
 		CaptureCompleteVoice: CaptureComplete
 		RequiresCondition: capture_building
@@ -631,7 +630,6 @@ infantry.terrorist:
 		DamageTypes: Suicide
 	Captures:
 		CaptureTypes: car, driverless_vehcile
-		PlayerExperience: 25
 		Voice: Capture
 	Targetable:
 		TargetTypes: Ground, Infantry, Infantry-Disguise, DetonateAttack, Terrorist
@@ -740,7 +738,6 @@ infantry.saboteur:
 		Voice: Move
 	Infiltrates:
 		Types: Sabotage
-		PlayerExperience: 50
 	Cloak:
 		InitialDelay: 250
 		CloakDelay: 120
@@ -1058,7 +1055,6 @@ infantry.hijacker:
 		PipType: Yellow
 	Captures:
 		CaptureTypes: vehicle, driverless_vehcile
-		PlayerExperience: 50
 	Voiced:
 		VoiceSet: HijackerVoice
 	-TakeCover:

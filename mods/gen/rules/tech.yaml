@@ -25,7 +25,6 @@ tech.oil_derrick:
 		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 15
-		PlayerExperience: 25
 	CashTrickler:
 		Interval: 300
 		Amount: 200
@@ -60,7 +59,6 @@ tech.oil_refinery:
 		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 15
-		PlayerExperience: 25
 	Tooltip:
 		Name: Oil Refinery
 	WithDeathAnimation:
@@ -92,7 +90,6 @@ tech.hospital:
 		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 15
-		PlayerExperience: 25
 	Tooltip:
 		Name: Hospital
 	WithBuildingBib:
@@ -148,7 +145,6 @@ tech.communications_center:
 		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 15
-		PlayerExperience: 25
 	ProvidesPrerequisite@buildingname:
 
 tech.soviet_barracks:
@@ -200,10 +196,8 @@ tech.soviet_barracks:
 	EngineerRepairable:
 	RepairableBuilding:
 		RepairStep: 15
-		PlayerExperience: 25
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
-		PlayerExperience: 10
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.barracks
@@ -282,7 +276,6 @@ tech.power_plant:
 		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 15
-		PlayerExperience: 25
 	Power:
 		Amount: 10
 		RequiresCondition: !emp && !hacked
@@ -319,7 +312,6 @@ tech.service_depot:
 		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 15
-		PlayerExperience: 25
 	Selectable:
 		Priority: 0
 		Bounds: 64,34,0,3
@@ -338,7 +330,6 @@ tech.service_depot:
 	Reservable:
 	RepairsUnits:
 		Interval: 15
-		PlayerExperience: 25
 		PauseOnCondition: emp || hacked
 	RallyPoint:
 	WithRepairAnimation:
@@ -366,7 +357,6 @@ tech.shipyard:
 	EngineerRepairable:
 	RepairableBuilding:
 		RepairStep: 15
-		PlayerExperience: 25
 	Targetable:
 		TargetTypes: Ground, Water, Structure, WaterStructure, C4, DetonateAttack, Capture, Disable
 	Health:
@@ -402,7 +392,6 @@ tech.shipyard:
 		Duration: 750
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
-		PlayerExperience: 15
 	RallyPoint:
 	ProvidesPrerequisite@buildingname:
 	EditorTilesetFilter:
