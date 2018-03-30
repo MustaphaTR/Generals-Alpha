@@ -218,6 +218,8 @@ camera.spy_satellite:
 camera.intelligence:
 	Inherits: CAMERA
 	-RevealsShroud:
+	Buildable:
+		Queue: Intelligence
 	ProximityExternalCondition@INTELLIGENCE:
 		Condition: intelligence
 		ValidStances: Enemy

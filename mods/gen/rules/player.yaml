@@ -1,5 +1,4 @@
 Player:
-	Inherits@GP_CHECK: ^ChecksForGeneralsPowerCount
 	AlwaysVisible:
 	TechTree:
 	ConditionManager:
@@ -129,27 +128,20 @@ Player:
 	GpsWatcher:
 	Shroud:
 		FogCheckboxDisplayOrder: 3
-	LobbyPrerequisiteCheckbox@GLOBALLIMITSW:
-		ID: limitsw
-		Label: Limit Superweapons
-		Description: Allow only 1 Superweapon to be built
-		Enabled: True
-		DisplayOrder: 5
-		Prerequisites: prerequisite.limited_sw
-	LobbyPrerequisiteCheckbox@GLOBALLIMITGP:
-		ID: limitgp
-		Label: Limit General's Powers
-		Description: Allow only 7 General's Powers to be researched
-		Enabled: True
-		DisplayOrder: 6
-		Prerequisites: prerequisite.limited_gp
 	LobbyPrerequisiteCheckbox@GLOBALZHUNITS:
 		ID: zhunits
 		Label: Zero Hour
 		Description: Enables the available Zero Hour stuff (Not evertyhing is added, probably even more unbalanced than normal mode)
 		Enabled: False
-		DisplayOrder: 7
+		DisplayOrder: 5
 		Prerequisites: prerequisite.zh_units
+	LobbyPrerequisiteCheckbox@GLOBALLIMITSW:
+		ID: limitsw
+		Label: Limit Super Weapons
+		Description: Allow only 1 Super Weapon to be built
+		Enabled: True
+		DisplayOrder: 6
+		Prerequisites: prerequisite.limited_sw
 	FrozenActorLayer:
 	BaseAttackNotifier:
 	PlayerStatistics:
@@ -217,3 +209,12 @@ Player:
 			3: Repairs vehicles in 5 cell range by 90%.
 		StartFullyCharged: false
 		OrderName: EmergencyRepairPowerInfoOrder
+	ExternalCondition@points:
+		Condition: points
+	ExternalCondition@level3:
+		Condition: level3
+	ExternalCondition@level5:
+		Condition: level5
+	ProvidesPrerequisite@points:
+		Prerequisite: prerequisite.has_points
+		RequiresCondition: points
