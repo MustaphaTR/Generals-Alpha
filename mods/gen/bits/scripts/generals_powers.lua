@@ -89,7 +89,7 @@ Levels =
 	Multi11 = 0
 }
 
-Ranks = { "1 Star General", "2 Star General", "3 Star General", "4 Star General", "5 Star General" }
+Ranks = { "1 Star General", "2 Stars General", "3 Stars General", "4 Stars General", "5 Stars General" }
 RankXPs = { 0, 750, 1750, 3000, 4500 }
 
 ReducePoints = function(player)
@@ -104,9 +104,9 @@ Tick = function()
 	for _,player in pairs(players) do
 		if player.IsLocalPlayer then
 			if Levels[player.InternalName] < 4 then
-				UserInterface.SetMissionText("Current Rank: " .. Ranks[Levels[player.InternalName] + 1] .. "\nGenerals Points: " .. Points[player.InternalName] .. "\nProgress to Next Rank: " .. player.Experience - RankXPs[Levels[player.InternalName] + 1] .. "/" .. RankXPs[Levels[player.InternalName] + 2] - RankXPs[Levels[player.InternalName] + 1] .. "", player.Color)
+				UserInterface.SetMissionText("Current Rank: " .. Ranks[Levels[player.InternalName] + 1] .. "\nGeneral's Points: " .. Points[player.InternalName] .. "\nProgress to Next Rank: " .. player.Experience - RankXPs[Levels[player.InternalName] + 1] .. "/" .. RankXPs[Levels[player.InternalName] + 2] - RankXPs[Levels[player.InternalName] + 1] .. "", player.Color)
 			else 
-				UserInterface.SetMissionText("Current Rank: " .. Ranks[Levels[player.InternalName] + 1] .. "\nGenerals Points: " .. Points[player.InternalName] .. "", player.Color)
+				UserInterface.SetMissionText("Current Rank: " .. Ranks[Levels[player.InternalName] + 1] .. "\nGeneral's Points: " .. Points[player.InternalName] .. "", player.Color)
 			end
 		end
 

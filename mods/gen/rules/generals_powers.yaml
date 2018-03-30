@@ -192,9 +192,20 @@ generals_power.emergency_repair1:
 	Tooltip:
 		Name: Emergency Repair - Level 1
 	Buildable:
+		Queue: queue.usa_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power
 		BuildPaletteOrder: 6
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.low
 		Description: Enables Emergency Repair support power from Command Center.
+	ProvidesPrerequisite@powername:
+		Prerequisite: generals_power.emergency_repair1
+	RenderSprites:
+		Image: generals_power.emergency_repair1
+
+generals_power.emergency_repair1.rank1:
+	Inherits: generals_power.emergency_repair1
+	Buildable:
+		Queue: queue.air_gen_generals_power, queue.stealth_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Prerequisites: prerequisite.has_points, ~techlevel.low
 
 generals_power.emergency_repair2:
 	Inherits: ^default.generals_power
@@ -345,10 +356,20 @@ generals_power.frenzy1:
 	Tooltip:
 		Name: Frenzy - Level 1
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Queue: queue.prc_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 9
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.medium, ~prerequisite.zh_units
 		Description: Enables Frenzy support power from Command Center.
+	ProvidesPrerequisite@powername:
+		Prerequisite: generals_power.frenzy1
+	RenderSprites:
+		Image: generals_power.frenzy1
+
+generals_power.frenzy1.rank1:
+	Inherits: generals_power.frenzy1
+	Buildable:
+		Queue: queue.inf_gen_generals_power
+		Prerequisites: prerequisite.has_points, ~techlevel.medium, ~prerequisite.zh_units
 
 generals_power.frenzy2:
 	Inherits: ^default.generals_power
@@ -375,7 +396,7 @@ generals_power.cash_hack1:
 	Tooltip:
 		Name: Cash Hack - Level 1
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power
 		BuildPaletteOrder: 15
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.medium
 		Description: Enables Cash Hack support power from Command Center.
@@ -385,7 +406,7 @@ generals_power.cash_hack2:
 	Tooltip:
 		Name: Cash Hack - Level 2
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power
 		BuildPaletteOrder: 16
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_hack1, ~techlevel.medium
 		Description: Upgrades Cash Hack support power to Level 2.
@@ -395,7 +416,7 @@ generals_power.cash_hack3:
 	Tooltip:
 		Name: Cash Hack - Level 3
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power
 		BuildPaletteOrder: 17
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_hack2, ~techlevel.high
 		Description: Upgrades Cash Hack support power to Level 3.
@@ -465,30 +486,40 @@ generals_power.gps_scrambler1:
 	Tooltip:
 		Name: GPS Scrambler - Level 1
 	Buildable:
-		Queue: queue.gla_generals_power, queue.stealth_gen_generals_power
+		Queue: queue.gla_generals_power
 		BuildPaletteOrder: 15
-		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.medium, ~prerequisite.zh_units
+		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~techlevel.medium, ~prerequisite.zh_units
 		Description: Enables GPS Scrambler support power from Command Center.
+	ProvidesPrerequisite@powername:
+		Prerequisite: generals_power.gps_scrambler1
+	RenderSprites:
+		Image: generals_power.gps_scrambler1
+
+generals_power.gps_scrambler1.rank3:
+	Inherits: generals_power.gps_scrambler1
+	Buildable:
+		Queue: queue.stealth_gen_generals_power
+		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.medium, ~prerequisite.zh_units
 
 generals_power.gps_scrambler2:
 	Inherits: ^default.generals_power
 	Tooltip:
 		Name: GPS Scrambler - Level 2
-	Buildable:
-		Queue: queue.stealth_gen_generals_power
-		BuildPaletteOrder: 16
-		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.gps_scrambler1, ~techlevel.medium, ~prerequisite.zh_units
-		Description: Upgrades GPS Scrambler support power to Level 2.
+	-Buildable:
+#		Queue: queue.stealth_gen_generals_power
+#		BuildPaletteOrder: 16
+#		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.gps_scrambler1, ~techlevel.medium, ~prerequisite.zh_units
+#		Description: Upgrades GPS Scrambler support power to Level 2.
 
 generals_power.gps_scrambler3:
 	Inherits: ^default.generals_power
 	Tooltip:
 		Name: GPS Scrambler - Level 3
-	Buildable:
-		Queue: queue.stealth_gen_generals_power
-		BuildPaletteOrder: 17
-		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.gps_scrambler2, ~techlevel.high, ~prerequisite.zh_units
-		Description: Upgrades GPS Scrambler support power to Level 3.
+	-Buildable:
+#		Queue: queue.stealth_gen_generals_power
+#		BuildPaletteOrder: 17
+#		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.gps_scrambler2, ~techlevel.high, ~prerequisite.zh_units
+#		Description: Upgrades GPS Scrambler support power to Level 3.
 
 generals_power.arty_barrage1:
 	Inherits: ^default.generals_power
@@ -557,7 +588,7 @@ generals_power.cluster_mines:
 	Buildable:
 		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 24
-		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.high, prerequisite.has_points
+		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.high
 		Description: Enables Cluster Mines support power from Command Center.
 
 hack.cameo_filler.3:
@@ -572,10 +603,20 @@ generals_power.carpet_bombing:
 	Tooltip:
 		Name: Carpet Bombing
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.tank_gen_generals_power
+		Queue: queue.prc_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 25
-		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.high, ~prerequisite.zh_units
+		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~techlevel.high, ~prerequisite.zh_units
 		Description: Enables Carpet Bombing support power from Command Center.
+	ProvidesPrerequisite@powername:
+		Prerequisite: generals_power.carpet_bombing
+	RenderSprites:
+		Image: generals_power.carpet_bombing
+
+generals_power.carpet_bombing.rank3:
+	Inherits: generals_power.carpet_bombing
+	Buildable:
+		Queue: queue.inf_gen_generals_power
+		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.high, ~prerequisite.zh_units
 
 generals_power.carpet_bombing.nuke:
 	Inherits: ^default.generals_power
@@ -600,7 +641,7 @@ generals_power.fuel_air_bomb:
 hack.cameo_filler.4:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.gla_generals_power
+		Queue: queue.gla_generals_power, queue.stealth_gen_generals_power
 		BuildPaletteOrder: 17
 		Prerequisites: disabled, ~prerequisite.zh_units
 
