@@ -378,8 +378,9 @@ infantry.minigunner:
 		IsCyclic: false
 	Voiced:
 		VoiceSet: MinigunnerVoice
-	ProducibleWithLevel:
-		InitialLevels: 2
+	ProducibleWithLevel@Infantry:
+		Factions: inf
+	ProducibleWithLevel@Training:
 		Prerequisites: generals_power.minigunner_training
 
 infantry.conscript:
@@ -503,6 +504,8 @@ infantry.tank_hunter:
 		Class: infantry.tank_hunter
 	RenderSprites:
 		Image: infantry.tank_hunter
+	ProducibleWithLevel@Infantry:
+		Factions: inf
 	Voiced:
 		VoiceSet: TankHunterVoice
 
@@ -989,6 +992,8 @@ infantry.hacker:
 		Interval: 20
 		Amount: 10
 		RequiresCondition: deployed && rank-elite
+	ProducibleWithLevel@Infantry:
+		Factions: inf
 	Voiced:
 		VoiceSet: HackerVoice
 	-MustBeDestroyed:
@@ -1241,6 +1246,7 @@ infantry.jarmen_kell.demo:
 
 infantry.black_lotus:
 	Inherits: ^Soldier
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
@@ -1341,6 +1347,8 @@ infantry.black_lotus:
 	AttackFrontal@Disable:
 		Armaments: disable
 		Voice: Disable
+	ProducibleWithLevel@Infantry:
+		Factions: inf
 	RenderSprites:
 		Image: infantry.black_lotus
 	Voiced:

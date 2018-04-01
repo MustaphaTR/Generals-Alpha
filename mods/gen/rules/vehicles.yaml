@@ -631,8 +631,9 @@ vehicle.battlemaster_tank:
 		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: BattlemasterTankVoice
-	ProducibleWithLevel:
-		InitialLevels: 2
+	ProducibleWithLevel@Tank:
+		Factions: tank
+	ProducibleWithLevel@Training:
 		Prerequisites: generals_power.battlemaster_training
 	RenderSprites:
 		Image: vehicle.battlemaster_tank
@@ -947,6 +948,8 @@ vehicle.gatling_tank:
 		Weapons: debris.gatling_tank
 		Pieces: 1, 1
 		Range: 1c0, 1c0
+	ProducibleWithLevel@Tank:
+		Factions: tank
 	RenderSprites:
 		Image: vehicle.gatling_tank
 	Voiced:
@@ -1107,6 +1110,8 @@ vehicle.dragon_tank:
 	AcceptsDeliveredExperience:
 	RenderSprites:
 		Image: vehicle.dragon_tank
+	ProducibleWithLevel:
+		Factions: tank
 	Voiced:
 		VoiceSet: DragonTankVoice
 
@@ -2079,6 +2084,8 @@ vehicle.overlord_tank:
 		Pieces: 1, 1
 		Range: 1c0, 1c0
 		RequiresCondition: gatling_upgrade
+	ProducibleWithLevel@Tank:
+		Factions: tank
 	Voiced:
 		VoiceSet: OverlordTankVoice
 	Selectable:
