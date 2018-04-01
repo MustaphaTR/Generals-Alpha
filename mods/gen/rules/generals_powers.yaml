@@ -665,6 +665,12 @@ generals_power.emp:
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~techlevel.unrestricted
 		Description: Enables E. M. Pulse support power from Command Center.
 
+hack.has_points:
+	AlwaysVisible:
+	Interactable:
+	ProvidesPrerequisite@has_points:
+		Prerequisite: prerequisite.has_points
+
 hack.rank_3:
 	AlwaysVisible:
 	Interactable:

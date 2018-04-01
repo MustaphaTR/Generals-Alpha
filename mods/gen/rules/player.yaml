@@ -212,8 +212,3 @@ Player:
 			3: Repairs vehicles in 5 cell range by 90%.
 		StartFullyCharged: false
 		OrderName: EmergencyRepairPowerInfoOrder
-	ExternalCondition@points:
-		Condition: points
-	ProvidesPrerequisite@points:
-		Prerequisite: prerequisite.has_points
-		RequiresCondition: points

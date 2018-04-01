@@ -25,7 +25,7 @@ else
 	PointsPerRank = { 5, 0, 15, 0, 5 }
 end
 
-PointConditionGiven = 
+PointActorExists = 
 {
 	Multi0 = false,
 	Multi1 = false,
@@ -57,20 +57,20 @@ Points =
 	Multi11 = PointsPerRank[1]
 }
 
-PointConditionToken = 
+HasPointsActors = 
 {
-	Multi0 = 1,
-	Multi1 = 1,
-	Multi2 = 1,
-	Multi3 = 1,
-	Multi4 = 1,
-	Multi5 = 1,
-	Multi6 = 1,
-	Multi7 = 1,
-	Multi8 = 1,
-	Multi9 = 1,
-	Multi10 = 1,
-	Multi11 = 1
+	Multi0 = nil,
+	Multi1 = nil,
+	Multi2 = nil,
+	Multi3 = nil,
+	Multi4 = nil,
+	Multi5 = nil,
+	Multi6 = nil,
+	Multi7 = nil,
+	Multi8 = nil,
+	Multi9 = nil,
+	Multi10 = nil,
+	Multi11 = nil
 }
 
 Levels =
@@ -110,17 +110,16 @@ Tick = function()
 			end
 		end
 
-		if Points[player.InternalName] > 0 and not PointConditionGiven[player.InternalName] then
-			player.GetActorsByType("player")[1].GrantCondition("points")
+		if Points[player.InternalName] > 0 and not PointActorExists[player.InternalName] then
+			HasPointsActors[player.InternalName] = Actor.Create("hack.has_points", true, { Owner = player })
 
-			PointConditionGiven[player.InternalName] = true
+			PointActorExists[player.InternalName] = true
 		end
 
-		if not (Points[player.InternalName] > 0) and PointConditionGiven[player.InternalName] then
-			player.GetActorsByType("player")[1].RevokeCondition(PointConditionToken[player.InternalName])
-			PointConditionToken[player.InternalName] = PointConditionToken[player.InternalName] + 1
+		if not (Points[player.InternalName] > 0) and PointActorExists[player.InternalName] and HasPointsActors[player.InternalName] ~= nil then
+			HasPointsActors[player.InternalName].Destroy()
 
-			PointConditionGiven[player.InternalName] = false
+			PointActorExists[player.InternalName] = false
 		end
 
 		if player.Experience >= 750 and not (Levels[player.InternalName] > 0) then
