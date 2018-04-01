@@ -1050,9 +1050,9 @@
 		RequiresCondition: !camo_netted && zh_units
 	ProductionQueue:
 		Type: queue.camo_netting
+		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank
 		Group: Tech
 		QueueLimit: 1
-		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 	ProductionBar:
