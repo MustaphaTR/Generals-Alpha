@@ -563,7 +563,7 @@ vehicle.battlemaster_tank:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
 	Buildable:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
+		Queue: queue.prc_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -635,8 +635,19 @@ vehicle.battlemaster_tank:
 		Factions: tank
 	ProducibleWithLevel@Training:
 		Prerequisites: generals_power.battlemaster_training
-	RenderSprites:
-		Image: vehicle.battlemaster_tank
+
+vehicle.nuclear_battlemaster_tank:
+	Inherits: vehicle.battlemaster_tank
+	Buildable:
+		Queue: queue.nuke_gen_vehicle
+	Tooltip:
+		Name: Nuclear Battlemaster Tank
+	Armament:
+		Weapon: cannon.battlemaster_tank.nuke
+	Armament@AUTOLOADER:
+		Weapon: cannon.battlemaster_tank.nuke.autoloader
+	Voiced:
+		VoiceSet: NuclearBattlemasterTankVoice
 
 vehicle.ambulance:
 	Inherits: ^Vehicle
@@ -2005,6 +2016,14 @@ vehicle.overlord_tank:
 		Recoil: 171
 		RecoilRecovery: 30
 		MuzzleSequence: muzzle
+		RequiresCondition: !nuke
+	Armament@NukeCannon:
+		Weapon: cannon.overlord_tank.nuke
+		LocalOffset: 900,180,340, 900,-180,340
+		Recoil: 171
+		RecoilRecovery: 30
+		MuzzleSequence: muzzle
+		RequiresCondition: nuke
 	Armament@GatlingAG:
 		Weapon: gatling.gatling_tank.ground
 		Name: gatling
@@ -2084,6 +2103,9 @@ vehicle.overlord_tank:
 		Pieces: 1, 1
 		Range: 1c0, 1c0
 		RequiresCondition: gatling_upgrade
+	GrantConditionOnFaction@Nuke:
+		Condition: nuke
+		Factions: nuke
 	ProducibleWithLevel@Tank:
 		Factions: tank
 	Voiced:

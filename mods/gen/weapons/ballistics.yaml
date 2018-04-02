@@ -80,12 +80,30 @@ cannon.battlemaster_tank:
 		Versus:
 			infantry.normal: 10
 
+cannon.battlemaster_tank.nuke:
+	Inherits: cannon.battlemaster_tank
+	Warhead@1Radio: CreateRadioactivity
+		RadioactivityLayerName: radioactivity
+		Range: 0
+		Level: 1250
+		Falloff: 100, 90, 50, 0
+		MaxLevel: 2500
+
 cannon.battlemaster_tank.autoloader:
 	Inherits: cannon.battlemaster_tank
 	Burst: 3
 	BurstDelay: 12
 	Warhead@1Dam: SpreadDamage
 		Damage: 40
+
+cannon.battlemaster_tank.nuke.autoloader:
+	Inherits: cannon.battlemaster_tank.autoloader
+	Warhead@1Radio: CreateRadioactivity
+		RadioactivityLayerName: radioactivity
+		Range: 0
+		Level: 1250
+		Falloff: 100, 90, 50, 0
+		MaxLevel: 2500
 
 cannon.paladin_tank:
 	Inherits: ^Cannon
@@ -133,6 +151,15 @@ cannon.overlord_tank:
 		Damage: 80
 		Versus:
 			infantry.normal: 10
+
+cannon.overlord_tank.nuke:
+	Inherits: cannon.overlord_tank
+	Warhead@1Radio: CreateRadioactivity
+		RadioactivityLayerName: radioactivity
+		Range: 0
+		Level: 1250
+		Falloff: 100, 90, 50, 0
+		MaxLevel: 2500
 
 TurretGun:
 	Inherits: ^Cannon
