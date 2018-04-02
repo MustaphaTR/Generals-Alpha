@@ -1860,7 +1860,7 @@ vehicle.marauder_tank:
 	Crushable:
 		CrushClasses: vehicle
 	Turreted:
-		TurnSpeed: 3
+		TurnSpeed: 5
 		Offset: 128,0,-64
 	Armament@Cannon:
 		Weapon: cannon.marauder_tank
@@ -1890,7 +1890,7 @@ vehicle.marauder_tank:
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && anthrax_gamma
-	AttackTurreted:
+	AttackFrontal:
 		RequiresCondition: !hacked && !driver_killed && !emp
 	WithMuzzleOverlay:
 	WithSpriteTurret:
