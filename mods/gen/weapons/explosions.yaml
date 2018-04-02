@@ -165,6 +165,47 @@ BarrelExplode:
 		Size: 2
 		Delay: 5
 
+explosion.nuclear_tanks:
+	Inherits: ^Explosion
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+		Damage: 25
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: TriggerProne, ExplosionDeath
+	Warhead@2Dam: SpreadDamage
+		Spread: 1c0
+		Damage: 10
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: miniernuke
+		ImpactSounds: kaboom1.aud
+	Warhead@4Radio: CreateRadioactivity
+		RadioactivityLayerName: radioactivity
+		Range: 1
+		Level: 2500
+		Falloff: 100, 90, 80
+		MaxLevel: 5000
+
+explosion.nuclear_tanks.nuke:
+	Inherits: explosion.nuclear_tanks
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c768
+		Damage: 110
+	Warhead@2Dam: SpreadDamage
+		Spread: 1c512
+		Damage: 70
+	Warhead@2Eff: CreateEffect
+		Explosions: mininuke
+	Warhead@4Radio: CreateRadioactivity
+		Level: 3500
+
 explosion.demo_trap:
 	Inherits: ^Explosion
 	Warhead@1Dam: SpreadDamage

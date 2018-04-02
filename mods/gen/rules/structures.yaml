@@ -1057,7 +1057,7 @@ building.prc_barracks:
 building.mine:
 	Inherits: ^Mine
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.just_mine
 		BuildPaletteOrder: 14
 		ForceIconLocation: true
 		BuildDuration: 125
@@ -2556,24 +2556,33 @@ building.propaganda_center:
 		Type: building.normal
 	WithBuildingBib:
 	Production:
-		Produces: queue.propaganda_center, queue.tank_gen_propaganda_center
+		Produces: queue.propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center
 		PauseOnCondition: emp || hacked
 	ProductionQueue@Vanilla:
 		Type: queue.propaganda_center
-		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 53
+	ProductionQueue@Nuke:
+		Type: queue.nuke_gen_propaganda_center
+		Factions: nuke
+		Group: Tech
+		InstantCashDrain: true
+		LowPowerSlowdown: 3
+		SpectatorUIOrder: 54
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_propaganda_center
 		Factions: tank
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 54
+		SpectatorUIOrder: 55
 	ProductionBar@Vanilla:
 		ProductionType: queue.propaganda_center
+	ProductionBar@Nuke:
+		ProductionType: queue.nuke_gen_propaganda_center
 	ProductionBar@Tank:
 		ProductionType: queue.tank_gen_propaganda_center
 	Exit:
@@ -2724,7 +2733,7 @@ building.black_market:
 		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 51
+		SpectatorUIOrder: 56
 	ProductionBar:
 	Exit:
 	CashTrickler:
@@ -3132,7 +3141,7 @@ building.missile_silo:
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 55
+		SpectatorUIOrder: 57
 	ProductionQueue@Nuke:
 		Type: queue.just_mine
 		Factions: inf, nuke

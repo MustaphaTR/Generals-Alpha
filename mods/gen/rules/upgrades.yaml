@@ -52,7 +52,7 @@ upgrade.neutron_mine:
 	Tooltip:
 		Name: Neutron Mine
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.inf_gen_infantry, queue.tank_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.inf_gen_infantry, queue.tank_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.just_mine
 		BuildPaletteOrder: 12
 		ForceIconLocation: true
 		BuildDuration: 375
@@ -392,7 +392,7 @@ upgrade.camouflage:
 		Queue: queue.palace
 		BuildPaletteOrder: 0
 		BuildDuration: 1500
-		Prerequisites: building.palace, ~techlevel.medium
+		Prerequisites: ~techlevel.medium
 		Description: Allows Rebels to cloak while not firing.
 		QueuedAudio: NoAudio
 		ReadyAudio: Camouflage
@@ -407,7 +407,7 @@ upgrade.arm_the_mob:
 		Queue: queue.palace, queue.toxin_gen_palace, queue.stealth_gen_palace
 		BuildPaletteOrder: 1
 		BuildDuration: 750
-		Prerequisites: building.palace, ~techlevel.medium
+		Prerequisites: ~techlevel.medium
 		Description: Replaces pistols of Angry Mobs with AK-47s.
 		QueuedAudio: NoAudio
 		ReadyAudio: ArmTheMob
@@ -422,7 +422,7 @@ upgrade.toxin_shells:
 		Queue: queue.palace
 		BuildPaletteOrder: 2
 		BuildDuration: 750
-		Prerequisites: building.palace, ~techlevel.medium
+		Prerequisites: ~techlevel.medium
 		Description: Makes Scorpion and Marauder tank shells leave toxin.
 		QueuedAudio: NoAudio
 		ReadyAudio: ToxinShells
@@ -437,7 +437,7 @@ upgrade.anthrax_beta:
 		Queue: queue.palace, queue.stealth_gen_palace
 		BuildPaletteOrder: 3
 		BuildDuration: 750
-		Prerequisites: building.palace, ~techlevel.medium
+		Prerequisites: ~techlevel.medium
 		Description: Increases all toxin weapons' damage by 25%.
 		QueuedAudio: NoAudio
 		ReadyAudio: AnthraxBeta
@@ -452,7 +452,7 @@ upgrade.anthrax_gamma:
 		Queue: queue.toxin_gen_palace
 		BuildPaletteOrder: 3
 		BuildDuration: 1500
-		Prerequisites: building.palace, ~techlevel.medium
+		Prerequisites: ~techlevel.medium
 		Description: Increases all toxin weapons' damage by 25%.
 		QueuedAudio: NoAudio
 		ReadyAudio: AnthraxGamma
@@ -467,7 +467,7 @@ upgrade.fortified_structures:
 		Queue: queue.palace, queue.toxin_gen_palace, queue.stealth_gen_palace
 		BuildPaletteOrder: 4
 		BuildDuration: 750
-		Prerequisites: building.palace, ~techlevel.medium, ~prerequisite.zh_units
+		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
 		Description: Increases structure armor by 33%.
 		QueuedAudio: NoAudio
 		ReadyAudio: ConstructionComplete
@@ -479,11 +479,11 @@ upgrade.nationalism:
 	Tooltip:
 		Name: Nationalism
 	Buildable:
-		Queue: queue.propaganda_center, queue.tank_gen_propaganda_center
+		Queue: queue.propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: building.propaganda_center, ~techlevel.medium
+		Prerequisites: ~techlevel.medium
 		Description: Makes Horde Bonus give an additional 25% firing speed.
 		QueuedAudio: NoAudio
 		ReadyAudio: Nationalism
@@ -501,19 +501,35 @@ upgrade.autoloader:
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: building.propaganda_center, ~techlevel.medium
+		Prerequisites: ~techlevel.medium
 		Description: Makes Battlemaster Tanks to fire 3 cannon at once.
 		QueuedAudio: NoAudio
 		ReadyAudio: Autoloader
 	Valued:
 		Cost: 2500
 
+upgrade.isotope_stability:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Isotope Stability
+	Buildable:
+		Queue: queue.nuke_gen_propaganda_center
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
+		BuildDuration: 1500
+		Prerequisites: ~techlevel.medium
+		Description: Makes Battlemaster and Overlord Tank not explode on death.
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
+	Valued:
+		Cost: 2000
+
 upgrade.subliminal_messaging:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Subliminal Messaging
 	Buildable:
-		Queue: queue.propaganda_center, queue.tank_gen_propaganda_center
+		Queue: queue.propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1000
