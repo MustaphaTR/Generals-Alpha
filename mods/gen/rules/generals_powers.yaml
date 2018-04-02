@@ -603,20 +603,20 @@ generals_power.carpet_bombing:
 	Tooltip:
 		Name: Carpet Bombing
 	Buildable:
-		Queue: queue.prc_generals_power, queue.tank_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power
 		BuildPaletteOrder: 25
-		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~techlevel.high, ~prerequisite.zh_units
+		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.high, ~prerequisite.zh_units
 		Description: Enables Carpet Bombing support power from Command Center.
 	ProvidesPrerequisite@powername:
 		Prerequisite: generals_power.carpet_bombing
 	RenderSprites:
 		Image: generals_power.carpet_bombing
 
-generals_power.carpet_bombing.rank3:
+generals_power.carpet_bombing.rank5:
 	Inherits: generals_power.carpet_bombing
 	Buildable:
-		Queue: queue.inf_gen_generals_power
-		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.high, ~prerequisite.zh_units
+		Queue: queue.tank_gen_generals_power
+		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~techlevel.high, ~prerequisite.zh_units
 
 generals_power.carpet_bombing.nuke:
 	Inherits: ^default.generals_power
