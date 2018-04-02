@@ -210,6 +210,9 @@
 	ReloadDelayMultiplier@HORDE_BONUS_NATIONALISM:
 		RequiresCondition: horde_bonus && nationalism
 		Modifier: 75
+	ReloadDelayMultiplier@HORDE_BONUS_PATRIOTISM:
+		RequiresCondition: horde_bonus && patriotism
+		Modifier: 75
 	WithDecoration@HORDE_BONUS:
 		Image: rank
 		Sequence: rank-elite
@@ -221,6 +224,12 @@
 	GrantConditionOnPrerequisite@NATIONALISM:
 		Condition: nationalism
 		Prerequisites: upgrade.nationalism
+	GrantConditionOnPrerequisite@PATRIOTISM:
+		Condition: patriotism
+		Prerequisites: upgrade.patriotism
+	GrantConditionOnFaction@NATIONALISM:
+		Condition: nationalism
+		Factions: inf
 
 ^EmitRangersOnDeath:
 	EmitInfantryOnDeath:

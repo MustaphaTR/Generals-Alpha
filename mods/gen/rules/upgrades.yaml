@@ -52,7 +52,7 @@ upgrade.neutron_mine:
 	Tooltip:
 		Name: Neutron Mine
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.inf_gen_infantry, queue.tank_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.inf_gen_infantry, queue.tank_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.just_mine
 		BuildPaletteOrder: 12
 		ForceIconLocation: true
 		BuildDuration: 375
@@ -492,6 +492,24 @@ upgrade.nationalism:
 	RenderSprites:
 	ProvidesPrerequisite@upgradename:
 
+upgrade.patriotism:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Patriotism
+	Buildable:
+		Queue: queue.inf_gen_propaganda_center
+		BuildPaletteOrder: 0
+		ForceIconLocation: true
+		BuildDuration: 1500
+		Prerequisites: ~techlevel.medium
+		Description: Makes Horde Bonus give an additional 25% firing speed.
+		QueuedAudio: NoAudio
+		ReadyAudio: Patriotism
+	Valued:
+		Cost: 2000
+	RenderSprites:
+	ProvidesPrerequisite@upgradename:
+
 upgrade.autoloader:
 	Inherits: ^default.upgrade
 	Tooltip:
@@ -529,7 +547,7 @@ upgrade.subliminal_messaging:
 	Tooltip:
 		Name: Subliminal Messaging
 	Buildable:
-		Queue: queue.propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center
+		Queue: queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1000
