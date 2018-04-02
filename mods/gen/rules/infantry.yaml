@@ -328,6 +328,7 @@ infantry.red_guard:
 
 infantry.minigunner:
 	Inherits: ^default.mg_infantry
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@REVEAL: ^Reveal200
 	Inherits@HORDE_BONUS: ^Horde
