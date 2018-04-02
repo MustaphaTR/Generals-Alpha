@@ -524,6 +524,19 @@ fake.tunnel_network:
 	Voiced:
 		VoiceSet: TunnelNetworkVoice
 
+fake.toxin_tunnel_network:
+	Inherits: fake.tunnel_network
+	Buildable:
+		Queue: queue.toxin_gen_building
+	Production:
+		Produces: queue.toxin_tunnel_network.fake
+	ProductionQueue:
+		Type: queue.toxin_tunnel_network.fake
+	TransformOnCondition:
+		IntoActor: building.toxin_tunnel_network
+	RenderSprites:
+		Image: building.toxin_tunnel_network
+
 fake.stinger_site:
 	Inherits: ^FakeBuilding
 	Inherits@REVEAL: ^Reveal150
@@ -532,7 +545,7 @@ fake.stinger_site:
 		BuildPaletteOrder: 19
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		Prerequisites: building.gla_barracks, ~techlevel.low, ~prerequisite.zh_units
 		Description: Looks like a Stinger Site.
 		Icon: fake-icon

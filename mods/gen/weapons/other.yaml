@@ -328,7 +328,7 @@ ToxinLauncher.gamma:
 	Projectile: RadBeam
 		Color: FF00FF
 	Warhead@1Dam: SpreadDamage
-		Damage: 15
+		Damage: 21
 	Warhead@2Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_gamma
 
@@ -345,7 +345,7 @@ toxin.toxin_rebel.beta:
 toxin.toxin_rebel.gamma:
 	Inherits: ToxinLauncher.gamma
 	Warhead@1Dam: SpreadDamage
-		Damage: 12
+		Damage: 13
 
 toxin.toxin_rebel.garrison:
 	Inherits: toxin.toxin_rebel
@@ -364,6 +364,18 @@ toxin.toxin_rebel.garrison.gamma:
 	Range: 3c341
 	Warhead@1Dam: SpreadDamage
 		Damage: 15
+
+toxin.toxin_tunnel_network:
+	Inherits: toxin.toxin_rebel
+	Range: 4c0
+
+toxin.toxin_tunnel_network.beta:
+	Inherits: toxin.toxin_rebel.beta
+	Range: 4c0
+
+toxin.toxin_tunnel_network.gamma:
+	Inherits: toxin.toxin_rebel.gamma
+	Range: 4c0
 
 hack.angry_mob.weapon:
 	ReloadDelay: 30

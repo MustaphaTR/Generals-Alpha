@@ -690,6 +690,11 @@ building.tunnel_network:
 		UseTilesetExtension: false
 	fake-icon: faketunnelicon.shp
 
+building.toxin_tunnel_network:
+	Inherits: building.tunnel_network
+	icon: txtunnelicon.shp
+	fake-icon: faketxtunnelicon.shp
+
 building.stinger_site:
 	idle: stinger
 	damaged-idle: stinger

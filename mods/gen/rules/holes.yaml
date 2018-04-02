@@ -114,6 +114,13 @@ hole.tunnel_network:
 	RenderSprites:
 		Image: hole.2x2
 
+hole.toxin_tunnel_network:
+	Inherits: hole.tunnel_network
+	Tooltip:
+		Name: GLA Hole (Toxin Tunnel Network)
+	TransformOnCapture:
+		IntoActor: building.toxin_tunnel_network.no_free_actor
+
 hole.stinger_site:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^2x2Shape

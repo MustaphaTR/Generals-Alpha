@@ -1037,6 +1037,19 @@ fake_to_real.tunnel_network:
 	RenderSprites:
 		Image: building.tunnel_network
 
+fake_to_real.toxin_tunnel_network:
+	Inherits: ^default.fake_to_real
+	Tooltip:
+		Name: Turn To Real Toxin Tunnel Network
+	Buildable:
+		Queue: queue.toxin_tunnel_network.fake
+		BuildDuration: 250
+		Description: Turns the building to a functional Toxin Tunnel Network.
+	Valued:
+		Cost: 700
+	RenderSprites:
+		Image: building.toxin_tunnel_network
+
 fake_to_real.stinger_site:
 	Inherits: ^default.fake_to_real
 	Tooltip:
