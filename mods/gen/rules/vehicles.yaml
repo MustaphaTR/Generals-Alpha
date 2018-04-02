@@ -2480,22 +2480,33 @@ vehicle.gla_mcc:
 	Tooltip:
 		Name: GLA Construction Vehicle
 	Production:
-		Produces: queue.gla_building, queue.demo_gen_building
+		Produces: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		PauseOnCondition: emp || hacked
 		RequiresCondition: !driver_killed
 	ProductionBar@GLA_BUILDING:
 		ProductionType: queue.gla_building
+	ProductionBar@TOXIN_BUILDING:
+		ProductionType: queue.toxin_gen_building
 	ProductionBar@DEMO_BUILDING:
 		ProductionType: queue.demo_gen_building
 	ProductionQueue@GLA_BUILDING:
 		Type: queue.gla_building
-		Factions: usa, air, laser, super, gla, toxin, stealth, prc, inf, nuke, tank
+		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank
 		Group: Building
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
 		SpectatorUIOrder: 5
+	ProductionQueue@TOXIN_BUILDING:
+		Type: queue.toxin_gen_building
+		Factions: toxin
+		Group: Building
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+		SpectatorUIOrder: 6
 	ProductionQueue@DEMO_BUILDING:
 		Type: queue.demo_gen_building
 		Factions: demo
@@ -2504,7 +2515,7 @@ vehicle.gla_mcc:
 		LowPowerSlowdown: 1
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
-		SpectatorUIOrder: 6
+		SpectatorUIOrder: 7
 	Voiced:
 		VoiceSet: GLAMCCVoice
 	WithTextDecoration@SIDE:
@@ -2537,7 +2548,7 @@ vehicle.prc_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
-		SpectatorUIOrder: 7
+		SpectatorUIOrder: 8
 	ProductionQueue@INF_BUILDING:
 		Type: queue.inf_gen_building
 		Factions: inf
@@ -2546,7 +2557,7 @@ vehicle.prc_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
-		SpectatorUIOrder: 8
+		SpectatorUIOrder: 9
 	ProductionQueue@NUKE_BUILDING:
 		Type: queue.nuke_gen_building
 		Factions: nuke
@@ -2555,7 +2566,7 @@ vehicle.prc_mcc:
 		LowPowerSlowdown: 3
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
-		SpectatorUIOrder: 9
+		SpectatorUIOrder: 10
 	Voiced:
 		VoiceSet: PRCMCCVoice
 	WithTextDecoration@SIDE:

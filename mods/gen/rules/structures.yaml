@@ -10,7 +10,7 @@
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.infonly
-		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 	Health:
 		HP: 5000
 	Armor:
@@ -75,7 +75,7 @@ building.usa_command_center:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		RequireOwner: false
-		SpectatorUIOrder: 10
+		SpectatorUIOrder: 11
 	SpawnActorPower@SPY_DRONE:
 		PauseOnCondition: emp || hacked || sabotaged
 		Actors:
@@ -242,7 +242,7 @@ building.gla_command_center:
 	Inherits: ^default.command_center
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Buildable:
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		BuildPaletteOrder: 10
 		Description: Produces construction vehicles.\n\nResearches and Provides General's Powers
 	Tooltip:
@@ -260,7 +260,7 @@ building.gla_command_center:
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		RequireOwner: false
-		SpectatorUIOrder: 11
+		SpectatorUIOrder: 12
 	SpawnActorPower@AMBUSH:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Actors:
@@ -918,7 +918,7 @@ building.usa_barracks:
 		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 17
+		SpectatorUIOrder: 18
 	ProductionBar:
 	Exit@1:
 		SpawnOffset: -426,85,0
@@ -937,7 +937,7 @@ building.gla_barracks:
 	HitShape:
 		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
 	Buildable:
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		BuildPaletteOrder: 1
 		Prerequisites: ~techlevel.infonly
 	Tooltip:
@@ -951,28 +951,28 @@ building.gla_barracks:
 		Group: Infantry
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		SpectatorUIOrder: 18
+		SpectatorUIOrder: 19
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_infantry
 		Factions: toxin
 		Group: Infantry
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		SpectatorUIOrder: 19
+		SpectatorUIOrder: 20
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_infantry
 		Factions: demo
 		Group: Infantry
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		SpectatorUIOrder: 20
+		SpectatorUIOrder: 21
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_infantry
 		Factions: stealth
 		Group: Infantry
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		SpectatorUIOrder: 21
+		SpectatorUIOrder: 22
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_infantry
 	ProductionBar@Toxin:
@@ -1015,28 +1015,28 @@ building.prc_barracks:
 		Group: Infantry
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 22
+		SpectatorUIOrder: 23
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_infantry
 		Factions: inf
 		Group: Infantry
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 23
+		SpectatorUIOrder: 24
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_infantry
 		Factions: nuke
 		Group: Infantry
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 24
+		SpectatorUIOrder: 25
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_infantry
 		Factions: tank
 		Group: Infantry
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 25
+		SpectatorUIOrder: 26
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_infantry
 	ProductionBar@Infantry:
@@ -1162,7 +1162,7 @@ building.usa_supply_center:
 		Group: Collector
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 13
+		SpectatorUIOrder: 14
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_collector
 		Factions: air
@@ -1170,7 +1170,7 @@ building.usa_supply_center:
 		InstantCashDrain: true
 		RequireOwner: false
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 14
+		SpectatorUIOrder: 15
 	ProductionBar@Vanilla:
 		ProductionType: queue.usa_collector
 	ProductionBar@Airforce:
@@ -1204,7 +1204,7 @@ building.gla_supply_stash:
 			TopLeft: -1024, -512
 			BottomRight: 1024, 1536
 	Buildable:
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		BuildPaletteOrder: 2
 		Prerequisites: ~techlevel.infonly
 		Description: Deposit for the collected supplies.\n\nTrains workers.
@@ -1225,7 +1225,7 @@ building.gla_supply_stash:
 		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		SpectatorUIOrder: 15
+		SpectatorUIOrder: 16
 	ProductionBar:
 	Exit@1:
 		SpawnOffset: -96,768,0
@@ -1289,7 +1289,7 @@ building.prc_supply_center:
 		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 16
+		SpectatorUIOrder: 17
 	ProductionBar:
 	Exit@1:
 		SpawnOffset: -42,810,0
@@ -1445,6 +1445,8 @@ building.demo_trap.explode:
 	-GrantConditionOnDeploy:
 	Explodes:
 		Weapon: explosion.demo_trap
+	Explodes@Toxin:
+		Weapon: explosion.demo_trap
 	KillsSelf:
 		-RequiresCondition:
 		Delay: 20
@@ -1455,6 +1457,43 @@ building.demo_trap.explode:
 		Palette: detected
 	RenderSprites:
 		Image: building.demo_trap
+
+building.demo_trap.toxin:
+	Inherits: building.demo_trap
+	Buildable:
+		Queue: queue.toxin_gen_building
+		BuildDuration: 200
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Demo Trap
+	SpawnActorOnDeath:
+		Actor: building.demo_trap.toxin.explode
+	RenderSprites:
+		Image: building.demo_trap
+
+building.demo_trap.toxin.explode:
+	Inherits: building.demo_trap.explode
+	Tooltip:
+		Name: Demo Trap
+	Explodes:
+		Weapon: explosion.demo_trap.toxin
+		RequiresCondition: !anthrax_beta && !anthrax_gamma
+	Explodes@Beta:
+		Weapon: explosion.demo_trap.toxin_beta
+		RequiresCondition: anthrax_beta && !anthrax_gamma
+	Explodes@Gamma:
+		Weapon: explosion.demo_trap.toxin_gamma
+		RequiresCondition: anthrax_gamma
+	GrantConditionOnPrerequisite@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Prerequisites: upgrade.anthrax_beta
+	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
+		Condition: anthrax_gamma
+		Prerequisites: upgrade.anthrax_gamma
+	GrantConditionOnFaction@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Factions: toxin
 
 building.advanced_demo_trap:
 	Inherits: building.demo_trap
@@ -1762,7 +1801,7 @@ building.arms_dealer:
 	Inherits: ^default.war_factory
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Buildable:
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		BuildPaletteOrder: 4
 		Prerequisites: prerequisite.supply_center, ~techlevel.low
 	Valued:
@@ -1881,7 +1920,7 @@ building.tunnel_network:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Buildable:
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		BuildPaletteOrder: 5
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -1961,7 +2000,7 @@ building.stinger_site:
 	Inherits@CAMO: ^CanHaveCamoNetting
 	Inherits@REVEAL: ^Reveal400
 	Buildable:
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		BuildPaletteOrder: 6
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -2363,7 +2402,7 @@ building.palace:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 0,-896,0, 0,896,0, 840,0,0, -706,0,0, -706,-768,0, -706,640,0
 	Buildable:
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		BuildPaletteOrder: 7
 		BuildDuration: 1125
 		BuildDurationModifier: 100
@@ -2623,7 +2662,7 @@ building.black_market:
 	Tooltip:
 		Name: Black Market
 	Buildable:
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		BuildPaletteOrder: 8
 		BuildDuration: 750
 		BuildDurationModifier: 100
@@ -2815,7 +2854,7 @@ building.scud_storm:
 	Tooltip:
 		Name: SCUD Storm
 	Buildable:
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		BuildPaletteOrder: 9
 		BuildDuration: 1500
 		BuildDurationModifier: 100
@@ -3137,7 +3176,7 @@ building.missile_silo:
 SBAG:
 	Inherits: ^Wall
 	Buildable:
-		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 40
 		Prerequisites: ~disabled
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
@@ -3162,7 +3201,7 @@ SBAG:
 FENC:
 	Inherits: ^Wall
 	Buildable:
-		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 45
 		Prerequisites: ~disabled
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
@@ -3187,7 +3226,7 @@ FENC:
 BRIK:
 	Inherits: ^Wall
 	Buildable:
-		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 50
 		Prerequisites: ~disabled
 		Description: Stop units and blocks enemy fire.

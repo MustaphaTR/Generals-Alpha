@@ -12,7 +12,7 @@ fake.command_center:
 		BuildPaletteOrder: 23
 		BuildDuration: 750
 		BuildDurationModifier: 100
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		Prerequisites: ~techlevel.infonly, ~prerequisite.zh_units
 		Description: Looks like a Command Center.
 		Icon: fake-icon
@@ -61,7 +61,7 @@ fake.barracks:
 		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		Prerequisites: ~techlevel.infonly, ~prerequisite.zh_units
 		Description: Looks like a Barracks.
 		Icon: fake-icon
@@ -104,7 +104,7 @@ fake.supply_stash:
 		BuildPaletteOrder: 15
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		Prerequisites: ~techlevel.infonly, ~prerequisite.zh_units
 		Description: Looks like a Supply Stash.
 		Icon: fake-icon
@@ -159,7 +159,7 @@ fake.arms_dealer:
 		BuildPaletteOrder: 17
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		Prerequisites: prerequisite.supply_center, ~techlevel.low, ~prerequisite.zh_units
 		Description: Looks like an Arms Dealer.
 		Icon: fake-icon
@@ -202,7 +202,7 @@ fake.palace:
 		BuildPaletteOrder: 20
 		BuildDuration: 625
 		BuildDurationModifier: 100
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		Prerequisites: building.arms_dealer, ~techlevel.medium, ~prerequisite.zh_units
 		Description: Looks like a Palace.
 		Icon: fake-icon
@@ -251,7 +251,7 @@ fake.black_market:
 		BuildPaletteOrder: 21
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		Prerequisites: building.palace, ~techlevel.medium, ~prerequisite.zh_units
 		Description: Looks like a Black Market.
 		Icon: fake-icon
@@ -297,7 +297,7 @@ fake.scud_storm:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		BuildPaletteOrder: 22
 		BuildDuration: 1000
 		BuildDurationModifier: 100
@@ -438,10 +438,23 @@ fake.demo_trap:
 	Valued:
 		Cost: 50
 
+fake.demo_trap.toxin:
+	Inherits: fake.demo_trap
+	Buildable:
+		BuildDuration: 50
+		Queue: queue.toxin_gen_building
+	Production:
+		Produces: queue.demo_trap.toxin.fake
+	ProductionQueue:
+		Type: queue.demo_trap.toxin.fake
+	TransformOnCondition:
+		IntoActor: building.demo_trap.toxin
+	Valued:
+		Cost: 75
+
 fake.advanced_demo_trap:
 	Inherits: fake.demo_trap
 	Buildable:
-		BuildDuration: 25
 		Queue: queue.demo_gen_building
 		Description: Looks like an Advanced Demo Trap.
 	Tooltip:

@@ -998,6 +998,19 @@ fake_to_real.demo_trap:
 	RenderSprites:
 		Image: building.demo_trap
 
+fake_to_real.demo_trap:
+	Inherits: ^default.fake_to_real
+	Tooltip:
+		Name: Turn To Real Demo Trap
+	Buildable:
+		Queue: queue.demo_trap.toxin.fake
+		BuildDuration: 150
+		Description: Turns the building to a functional Demo Trap.
+	Valued:
+		Cost: 725
+	RenderSprites:
+		Image: building.demo_trap
+
 fake_to_real.advanced_demo_trap:
 	Inherits: ^default.fake_to_real
 	Tooltip:

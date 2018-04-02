@@ -206,6 +206,39 @@ explosion.demo_trap:
 		Size: 2
 		Delay: 5
 
+explosion.demo_trap.toxin:
+	Inherits: explosion.demo_trap
+	Warhead@1Dam: SpreadDamage
+		Damage: 250
+	Warhead@2Dam: SpreadDamage
+		Damage: 100
+	Warhead@4Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_alpha
+		Range: 1
+		Level: 1000
+		Falloff: 100, 90, 80
+		MaxLevel: 7500
+	Warhead@5Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_alpha
+		Range: 2
+		Level: 2000
+		Falloff: 100, 90, 80
+		MaxLevel: 7500
+
+explosion.demo_trap.toxin_beta:
+	Inherits: explosion.demo_trap.toxin
+	Warhead@4Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_beta
+	Warhead@5Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_beta
+
+explosion.demo_trap.toxin_gamma:
+	Inherits: explosion.demo_trap.toxin
+	Warhead@4Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_gamma
+	Warhead@5Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_gamma
+
 explosion.advanced_demo_trap:
 	Inherits: explosion.demo_trap
 	Warhead@1Dam: SpreadDamage
