@@ -2488,11 +2488,11 @@ building.palace:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.tech_center
 	Production:
-		Produces: queue.palace, queue.toxin_gen_palace, queue.stealth_gen_palace
+		Produces: queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace
 		PauseOnCondition: emp || hacked
 	ProductionQueue@Vanilla:
 		Type: queue.palace
-		Factions: usa, air, laser, super, gla, demo, prc, inf, nuke, tank
+		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
@@ -2504,17 +2504,26 @@ building.palace:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 51
+	ProductionQueue@Demo:
+		Type: queue.demo_gen_palace
+		Factions: demo
+		Group: Tech
+		InstantCashDrain: true
+		LowPowerSlowdown: 3
+		SpectatorUIOrder: 52
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_palace
 		Factions: stealth
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 52
+		SpectatorUIOrder: 53
 	ProductionBar@Vanilla:
 		ProductionType: queue.palace
 	ProductionBar@Toxin:
 		ProductionType: queue.toxin_gen_palace
+	ProductionBar@Demo:
+		ProductionType: queue.demo_gen_palace
 	ProductionBar@Stealth:
 		ProductionType: queue.stealth_gen_palace
 	Exit:
@@ -2564,28 +2573,28 @@ building.propaganda_center:
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 53
+		SpectatorUIOrder: 54
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_propaganda_center
 		Factions: inf
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 54
+		SpectatorUIOrder: 55
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_propaganda_center
 		Factions: nuke
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 55
+		SpectatorUIOrder: 56
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_propaganda_center
 		Factions: tank
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 56
+		SpectatorUIOrder: 57
 	ProductionBar@Vanilla:
 		ProductionType: queue.propaganda_center
 	ProductionBar@Nuke:
@@ -2742,7 +2751,7 @@ building.black_market:
 		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 57
+		SpectatorUIOrder: 58
 	ProductionBar:
 	Exit:
 	CashTrickler:
@@ -3150,7 +3159,7 @@ building.missile_silo:
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 58
+		SpectatorUIOrder: 59
 	ProductionQueue@Nuke:
 		Type: queue.just_mine
 		Factions: inf, nuke
