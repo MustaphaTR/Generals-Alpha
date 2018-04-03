@@ -449,7 +449,7 @@ capture.black_lotus.end:
 disable.black_lotus.anim:
 	ReloadDelay: 15
 	Range: 3c768
-	ValidTargets: Vehicle, Tank
+	ValidTargets: Vehicle, Tank, Ship
 	TargetActorCenter: true
 	Report: ucapture.wav
 	Projectile: LaserZap
@@ -460,13 +460,13 @@ disable.black_lotus.anim:
 		SecondaryBeamWidth: 90
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
-		ValidTargets: Vehicle, Tank
+		ValidTargets: Vehicle, Tank, Ship
 		ValidStances: Enemy, Neutral
 
 disable.black_lotus.end:
 	ReloadDelay: 25
 	Range: 3c768
-	ValidTargets: Vehicle, Tank
+	ValidTargets: Vehicle, Tank, Ship
 	TargetActorCenter: true
 	Report: ucapture.wav
 	Projectile: LaserZap
@@ -477,7 +477,7 @@ disable.black_lotus.end:
 		SecondaryBeamWidth: 90
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
-		ValidTargets: Vehicle, Tank
+		ValidTargets: Vehicle, Tank, Ship
 		ValidStances: Enemy, Neutral
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c512
@@ -520,6 +520,44 @@ disable.hacker.end:
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c512
 		Duration: 50
+		Condition: hacked
+
+disable.ecm_tank.anim:
+	ReloadDelay: 2
+	Range: 5c0
+	ValidTargets: Vehicle, Tank, Ship
+	TargetActorCenter: true
+	Report: vfrelo2a.wav
+	Projectile: LaserZap
+		Width: 80
+		BeamDuration: 2
+		Color: 00FF0070
+		SecondaryBeam: true
+		SecondaryBeamWidth: 100
+		SecondaryBeamColor: FF000035
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Vehicle, Tank, Ship
+		ValidStances: Enemy, Neutral
+
+disable.ecm_tank.end:
+	ReloadDelay: 3
+	Range: 5c0
+	ValidTargets: Vehicle, Tank, Ship
+	TargetActorCenter: true
+	Report: vfrelo2a.wav
+	Projectile: LaserZap
+		Width: 80
+		BeamDuration: 2
+		Color: 00FF0070
+		SecondaryBeam: true
+		SecondaryBeamWidth: 100
+		SecondaryBeamColor: FF000035
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Vehicle, Tank, Ship
+		ValidStances: Enemy, Neutral
+	Warhead@2Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 55
 		Condition: hacked
 
 ^default.spawner:
