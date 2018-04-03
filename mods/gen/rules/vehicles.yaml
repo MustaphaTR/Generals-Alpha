@@ -1008,6 +1008,7 @@ vehicle.toxin_tractor:
 		TurnSpeed: 5
 		Speed: 30
 		Voice: Move
+		RequiresCondition: !hacked && !driver_killed && !emp && !spray
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
 	Crushable:
@@ -1028,12 +1029,35 @@ vehicle.toxin_tractor:
 		Weapon: toxin.toxin_tractor.gamma
 		LocalOffset: 600,0,90
 		RequiresCondition: anthrax_gamma
+	Armament@SPRAY_ALPHA:
+		Name: deploy_alpha
+		Weapon: toxin.toxin_tractor.deploy
+		RequiresCondition: !anthrax_beta && !anthrax_gamma && spray
+	Armament@SPRAY_BETA:
+		Name: deploy_beta
+		Weapon: toxin.toxin_tractor.deploy.beta
+		RequiresCondition: anthrax_beta && !anthrax_gamma && spray
+	Armament@SPRAY_GAMMA:
+		Name: deploy_gamma
+		Weapon: toxin.toxin_tractor.deploy.gamma
+		RequiresCondition: anthrax_gamma && spray
+	AttackFrontal:
+		Armaments: deploy_alpha, deploy_beta, deploy_gamma
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !spray
 	WithSpriteTurret:
 	Turreted:
 		TurnSpeed: 6
 		Offset: -192,0,160
+	FireWeaponAtSelf@ALPHA:
+		Name: deploy_alpha
+		RequiresCondition: !hacked && !driver_killed && !emp && !anthrax_beta && !anthrax_gamma && spray
+	FireWeaponAtSelf@BETA:
+		Name: deploy_beta
+		RequiresCondition: !hacked && !driver_killed && !emp && anthrax_beta && !anthrax_gamma && spray
+	FireWeaponAtSelf@GAMMA:
+		Name: deploy_gamma
+		RequiresCondition: !hacked && !driver_killed && !emp && anthrax_gamma && spray
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
@@ -1043,6 +1067,8 @@ vehicle.toxin_tractor:
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
+	GrantConditionOnDeploy@SPRAY:
+		DeployedCondition: spray
 	-DamagedByRadioactivity@ANTHRAX_ALPHA:
 	-DamagedByRadioactivity@ANTHRAX_BETA:
 	-DamagedByRadioactivity@ANTHRAX_GAMMA:
