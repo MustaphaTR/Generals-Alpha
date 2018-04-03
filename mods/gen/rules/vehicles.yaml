@@ -2552,8 +2552,9 @@ vehicle.usa_mcc:
 		Group: Building
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		QueuedAudio: Building
-		ReadyAudio: ConstructionComplete
+		QueuedAudio: USABuilding
+		CannotBuildAudio: USABuildingCannotPlaceAudio
+		ReadyAudio: USAConstructionComplete
 		SpectatorUIOrder: 1
 	ProductionQueue@AIR_BUILDING:
 		Type: queue.air_gen_building
@@ -2561,8 +2562,9 @@ vehicle.usa_mcc:
 		Group: Building
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		QueuedAudio: Building
-		ReadyAudio: ConstructionComplete
+		QueuedAudio: USABuilding
+		CannotBuildAudio: USABuildingCannotPlaceAudio
+		ReadyAudio: USAConstructionComplete
 		SpectatorUIOrder: 2
 	ProductionQueue@LASER_BUILDING:
 		Type: queue.laser_gen_building
@@ -2570,8 +2572,9 @@ vehicle.usa_mcc:
 		Group: Building
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		QueuedAudio: Building
-		ReadyAudio: ConstructionComplete
+		QueuedAudio: USABuilding
+		CannotBuildAudio: USABuildingCannotPlaceAudio
+		ReadyAudio: USAConstructionComplete
 		SpectatorUIOrder: 3
 	ProductionQueue@SUPER_BUILDING:
 		Type: queue.super_gen_building
@@ -2579,8 +2582,9 @@ vehicle.usa_mcc:
 		Group: Building
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		QueuedAudio: Building
-		ReadyAudio: ConstructionComplete
+		QueuedAudio: USABuilding
+		CannotBuildAudio: USABuildingCannotPlaceAudio
+		ReadyAudio: USAConstructionComplete
 		SpectatorUIOrder: 4
 	Voiced:
 		VoiceSet: USAMCCVoice
@@ -2612,8 +2616,9 @@ vehicle.gla_mcc:
 		Group: Building
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		QueuedAudio: Building
-		ReadyAudio: ConstructionComplete
+		QueuedAudio: GLABuilding
+		CannotBuildAudio: GLABuildingCannotPlaceAudio
+		ReadyAudio: GLAConstructionComplete
 		SpectatorUIOrder: 5
 	ProductionQueue@TOXIN_BUILDING:
 		Type: queue.toxin_gen_building
@@ -2621,8 +2626,9 @@ vehicle.gla_mcc:
 		Group: Building
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		QueuedAudio: Building
-		ReadyAudio: ConstructionComplete
+		QueuedAudio: GLABuilding
+		CannotBuildAudio: GLABuildingCannotPlaceAudio
+		ReadyAudio: GLAConstructionComplete
 		SpectatorUIOrder: 6
 	ProductionQueue@DEMO_BUILDING:
 		Type: queue.demo_gen_building
@@ -2630,11 +2636,12 @@ vehicle.gla_mcc:
 		Group: Building
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		QueuedAudio: Building
-		ReadyAudio: ConstructionComplete
+		QueuedAudio: GLABuilding
+		CannotBuildAudio: GLABuildingCannotPlaceAudio
+		ReadyAudio: GLAConstructionComplete
 		SpectatorUIOrder: 7
 	Voiced:
-		VoiceSet: GLAMCCVoice
+		VoiceSet: WorkerVoice
 	WithTextDecoration@SIDE:
 		Text: GLA
 		Color: 00FF00
@@ -2663,8 +2670,9 @@ vehicle.prc_mcc:
 		Group: Building
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		QueuedAudio: Building
-		ReadyAudio: ConstructionComplete
+		QueuedAudio: PRCBuilding
+		CannotBuildAudio: PRCBuildingCannotPlaceAudio
+		ReadyAudio: PRCConstructionComplete
 		SpectatorUIOrder: 8
 	ProductionQueue@INF_BUILDING:
 		Type: queue.inf_gen_building
@@ -2672,8 +2680,9 @@ vehicle.prc_mcc:
 		Group: Building
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		QueuedAudio: Building
-		ReadyAudio: ConstructionComplete
+		QueuedAudio: PRCBuilding
+		CannotBuildAudio: PRCBuildingCannotPlaceAudio
+		ReadyAudio: PRCConstructionComplete
 		SpectatorUIOrder: 9
 	ProductionQueue@NUKE_BUILDING:
 		Type: queue.nuke_gen_building
@@ -2681,8 +2690,9 @@ vehicle.prc_mcc:
 		Group: Building
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		QueuedAudio: Building
-		ReadyAudio: ConstructionComplete
+		QueuedAudio: PRCBuilding
+		CannotBuildAudio: PRCBuildingCannotPlaceAudio
+		ReadyAudio: PRCConstructionComplete
 		SpectatorUIOrder: 10
 	Voiced:
 		VoiceSet: PRCMCCVoice
