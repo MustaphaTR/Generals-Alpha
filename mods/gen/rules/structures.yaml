@@ -2433,6 +2433,7 @@ building.strategy_center:
 
 building.palace:
 	Inherits: ^Building
+	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@BOUNTY: ^TakesBounty
 	Inherits@GARRISON: ^WithGarrisonRangeCircle
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
