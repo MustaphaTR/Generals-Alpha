@@ -137,6 +137,7 @@
 		ReferencePoint: Bottom, Right
 		RequiresCondition: rank-veteran == 1
 		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
 	WithDecoration@RANK-2:
 		Image: rank
 		Sequence: rank-veteran-2
@@ -144,6 +145,7 @@
 		ReferencePoint: Bottom, Right
 		RequiresCondition: rank-veteran == 2
 		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
 	WithDecoration@RANK-3:
 		Image: rank
 		Sequence: rank-veteran-3
@@ -151,6 +153,7 @@
 		ReferencePoint: Bottom, Right
 		RequiresCondition: rank-veteran == 3
 		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
 	WithDecoration@RANK-ELITE:
 		Image: rank
 		Sequence: rank-elite
@@ -158,6 +161,7 @@
 		ReferencePoint: Bottom, Right
 		RequiresCondition: rank-elite
 		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
 
 ^IronCurtainable:
 	WithColoredOverlay@IRONCURTAIN:
