@@ -1017,15 +1017,15 @@ vehicle.toxin_tractor:
 	Armor:
 		Type: vehicle.toxin_tractor
 	Armament@ALPHA:
-		Weapon: ToxinLauncher
+		Weapon: toxin.toxin_tractor
 		LocalOffset: 600,0,90
 		RequiresCondition: !anthrax_beta && !anthrax_gamma
 	Armament@BETA:
-		Weapon: ToxinLauncher.beta
+		Weapon: toxin.toxin_tractor.beta
 		LocalOffset: 600,0,90
 		RequiresCondition: anthrax_beta && !anthrax_gamma
 	Armament@GAMMA:
-		Weapon: ToxinLauncher.gamma
+		Weapon: toxin.toxin_tractor.gamma
 		LocalOffset: 600,0,90
 		RequiresCondition: anthrax_gamma
 	AttackTurreted:

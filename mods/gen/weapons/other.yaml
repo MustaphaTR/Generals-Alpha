@@ -285,7 +285,7 @@ laser.king_raptor:
 laser.avenger.point_defense:
 	Inherits: laser.paladin_tank
 
-ToxinLauncher:
+toxin.toxin_tractor:
 	InvalidTargets: Structure, Wall
 	Range: 2c512
 	ReloadDelay: 6
@@ -314,8 +314,8 @@ ToxinLauncher:
 		Falloff: 100, 90, 50, 0
 		MaxLevel: 5000
 
-ToxinLauncher.beta:
-	Inherits: ToxinLauncher
+toxin.toxin_tractor.beta:
+	Inherits: toxin.toxin_tractor
 	Projectile: RadBeam
 		Color: 0000FF
 	Warhead@1Dam: SpreadDamage
@@ -323,8 +323,8 @@ ToxinLauncher.beta:
 	Warhead@2Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_beta
 
-ToxinLauncher.gamma:
-	Inherits: ToxinLauncher
+toxin.toxin_tractor.gamma:
+	Inherits: toxin.toxin_tractor
 	Projectile: RadBeam
 		Color: FF00FF
 	Warhead@1Dam: SpreadDamage
@@ -333,17 +333,17 @@ ToxinLauncher.gamma:
 		RadioactivityLayerName: anthrax_gamma
 
 toxin.toxin_rebel:
-	Inherits: ToxinLauncher
+	Inherits: toxin.toxin_tractor
 	Warhead@1Dam: SpreadDamage
 		Damage: 8
 
 toxin.toxin_rebel.beta:
-	Inherits: ToxinLauncher.beta
+	Inherits: toxin.toxin_tractor.beta
 	Warhead@1Dam: SpreadDamage
 		Damage: 10
 
 toxin.toxin_rebel.gamma:
-	Inherits: ToxinLauncher.gamma
+	Inherits: toxin.toxin_tractor.gamma
 	Warhead@1Dam: SpreadDamage
 		Damage: 13
 
