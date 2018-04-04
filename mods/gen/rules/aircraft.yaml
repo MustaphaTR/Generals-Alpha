@@ -25,6 +25,19 @@
 	SmokeTrailWhenDamaged@1:
 		Offset: -432,-560,0
 		Interval: 2
+	AttackFrontal:
+	Armament@PDLASER:
+		Weapon: laser.king_raptor
+		LocalOffset: 0,213,-85
+		Name: pdlaser
+		AmmoPoolName: pdlaser
+	ShootsMissiles:
+		ShootStances: Neutral, Enemy
+		Armament: pdlaser
+		RequiresCondition: airforce
+	GrantConditionOnFaction@Airforce:
+		Condition: airforce
+		Factions: air
 	RejectsOrders:
 	RenderSprites:
 		Image: aircraft.badger
@@ -69,6 +82,7 @@ aircraft.badger.tank_drop:
 
 aircraft.badger.fuel_air_bomb:
 	Inherits: ^default.badger
+	-AttackFrontal:
 	AttackBomber:
 	Armament:
 		Weapon: parabomb.fuel_air_bomb
@@ -99,6 +113,7 @@ aircraft.b2.carpet:
 
 aircraft.badger.anthrax_bomb:
 	Inherits: ^default.badger
+	-AttackFrontal:
 	AttackBomber:
 	Armament@Normal:
 		Weapon: parabomb.anthrax
@@ -129,6 +144,7 @@ aircraft.badger.anthrax_bomb:
 
 aircraft.badger.emp:
 	Inherits: ^default.badger
+	-AttackFrontal:
 	AttackBomber:
 	Armament:
 		Weapon: parabomb.emp
@@ -141,6 +157,7 @@ aircraft.badger.emp:
 
 aircraft.badger.cluster_mines:
 	Inherits: ^default.badger
+	-AttackFrontal:
 	AttackBomber:
 	Armament:
 		Weapon: parabomb.cluster_mines
@@ -153,6 +170,7 @@ aircraft.badger.cluster_mines:
 
 aircraft.badger.carpet:
 	Inherits: ^default.badger
+	-AttackFrontal:
 	AttackBomber:
 	Armament:
 		Weapon: bomb.carpet.prc
@@ -527,6 +545,14 @@ aircraft.stealth_fighter.air:
 		Prerequisites: ~building.usa_airfield, ~techlevel.high
 	Valued:
 		Cost: 1250
+	Armament@PDLASER:
+		Weapon: laser.king_raptor
+		LocalOffset: 0,213,-85
+		Name: pdlaser
+		AmmoPoolName: pdlaser
+	ShootsMissiles:
+		ShootStances: Neutral, Enemy
+		Armament: pdlaser
 	CustomProductionCost@Refinery:
 		Prerequisites: tech.oil_refinery
 		Cost: 1125
@@ -569,6 +595,18 @@ aircraft.aurora:
 		Weapon: missile.aurora
 		LocalYaw: -40, 24
 		PauseOnCondition: !ammo
+	Armament@PDLASER:
+		Weapon: laser.king_raptor
+		LocalOffset: 0,213,-85
+		Name: pdlaser
+		AmmoPoolName: pdlaser
+	ShootsMissiles:
+		ShootStances: Neutral, Enemy
+		Armament: pdlaser
+		RequiresCondition: airforce
+	GrantConditionOnFaction@Airforce:
+		Condition: airforce
+		Factions: air
 	AttackPlane:
 		FacingTolerance: 20
 	DockClient:
@@ -872,13 +910,18 @@ aircraft.chinook:
 	WithSpriteTurret@SHADOW:
 		Sequence: shadow
 	Turreted:
-	GrantConditionOnAttack:
-		Condition: keep_me_disabled
-	Armament@ThisLooksRequired:
-		Weapon: mg.comanche
-		RequiresCondition: keep_me_disabled
 	AttackFrontal:
-		RequiresCondition: keep_me_disabled
+	Armament@PDLASER:
+		Weapon: laser.paladin_tank
+		LocalOffset: 0,213,2048
+		Name: pdlaser
+	ShootsMissiles:
+		ShootStances: Neutral, Enemy
+		Armament: pdlaser
+		RequiresCondition: airforce
+	GrantConditionOnFaction@Airforce:
+		Condition: airforce
+		Factions: air
 	WithDockingAnimation:
 	Hovers:
 	Cargo:
@@ -936,13 +979,6 @@ aircraft.combat_chinook:
 		PortYaws: 0, 0, 512, 512
 		PortCones: 512, 512, 512, 512
 		Voice: Attack
-	Armament@PDLASER:
-		Weapon: laser.paladin_tank
-		LocalOffset: 0,213,2048
-		Name: pdlaser
-	ShootsMissiles:
-		ShootStances: Neutral, Enemy
-		Armament: pdlaser
 	Voiced:
 		VoiceSet: CombatChinookVoice
 
