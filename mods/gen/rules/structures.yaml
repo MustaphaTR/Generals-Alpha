@@ -2943,62 +2943,82 @@ building.scud_storm:
 	Armament@NORMAL_A:
 		Turret: A
 		Weapon: missile.scud_storm
-		RequiresCondition: !anthrax_beta && !anthrax_gamma
+		RequiresCondition: !anthrax_beta && !anthrax_gamma && !demo
 		PauseOnCondition: !ammo
 	Armament@BETA_A:
 		Turret: A
 		Weapon: missile.scud_storm.beta
-		RequiresCondition: anthrax_beta && !anthrax_gamma
+		RequiresCondition: anthrax_beta && !anthrax_gamma && !demo
 		PauseOnCondition: !ammo
 	Armament@GAMMA_A:
 		Turret: A
 		Weapon: missile.scud_storm.gamma
-		RequiresCondition: anthrax_gamma
+		RequiresCondition: anthrax_gamma && !demo
+		PauseOnCondition: !ammo
+	Armament@DEMO_A:
+		Turret: A
+		Weapon: missile.scud_storm.demo
+		RequiresCondition: demo
 		PauseOnCondition: !ammo
 	Armament@NORMAL_B:
 		Turret: B
 		Weapon: missile.scud_storm
-		RequiresCondition: !anthrax_beta && !anthrax_gamma
+		RequiresCondition: !anthrax_beta && !anthrax_gamma && !demo
 		PauseOnCondition: !ammo
 	Armament@BETA_B:
 		Turret: B
 		Weapon: missile.scud_storm.beta
-		RequiresCondition: anthrax_beta && !anthrax_gamma
+		RequiresCondition: anthrax_beta && !anthrax_gamma && !demo
 		PauseOnCondition: !ammo
 	Armament@GAMMA_B:
 		Turret: B
 		Weapon: missile.scud_storm.gamma
-		RequiresCondition: anthrax_gamma
+		RequiresCondition: anthrax_gamma && !demo
+		PauseOnCondition: !ammo
+	Armament@DEMO_B:
+		Turret: B
+		Weapon: missile.scud_storm.demo
+		RequiresCondition: demo
 		PauseOnCondition: !ammo
 	Armament@NORMAL_C:
 		Turret: C
 		Weapon: missile.scud_storm
-		RequiresCondition: !anthrax_beta && !anthrax_gamma
+		RequiresCondition: !anthrax_beta && !anthrax_gamma && !demo
 		PauseOnCondition: !ammo
 	Armament@BETA_C:
 		Turret: C
 		Weapon: missile.scud_storm.beta
-		RequiresCondition: anthrax_beta && !anthrax_gamma
+		RequiresCondition: anthrax_beta && !anthrax_gamma && !demo
 		PauseOnCondition: !ammo
 	Armament@GAMMA_C:
 		Turret: C
 		Weapon: missile.scud_storm.gamma
-		RequiresCondition: anthrax_gamma
+		RequiresCondition: anthrax_gamma && !demo
+		PauseOnCondition: !ammo
+	Armament@DEMO_C:
+		Turret: C
+		Weapon: missile.scud_storm.demo
+		RequiresCondition: demo
 		PauseOnCondition: !ammo
 	Armament@NORMAL_D:
 		Turret: D
 		Weapon: missile.scud_storm
-		RequiresCondition: !anthrax_beta && !anthrax_gamma
+		RequiresCondition: !anthrax_beta && !anthrax_gamma && !demo
 		PauseOnCondition: !ammo
 	Armament@BETA_D:
 		Turret: D
 		Weapon: missile.scud_storm.beta
-		RequiresCondition: anthrax_beta && !anthrax_gamma
+		RequiresCondition: anthrax_beta && !anthrax_gamma && !demo
 		PauseOnCondition: !ammo
 	Armament@GAMMA_D:
 		Turret: D
 		Weapon: missile.scud_storm.gamma
-		RequiresCondition: anthrax_gamma
+		RequiresCondition: anthrax_gamma && !demo
+		PauseOnCondition: !ammo
+	Armament@DEMO_D:
+		Turret: D
+		Weapon: missile.scud_storm.demo
+		RequiresCondition: demo
 		PauseOnCondition: !ammo
 	Turreted@A:
 		Turret: A
@@ -3076,6 +3096,9 @@ building.scud_storm:
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
+	GrantConditionOnFaction@Demo:
+		Condition: demo
+		Factions: demo
 	FireArmamentPower:
 		PauseOnCondition: emp || hacked || sabotaged
 		Prerequisites:
