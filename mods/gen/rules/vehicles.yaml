@@ -1486,6 +1486,76 @@ vehicle.attack_outpost:
 		PipCount: 8
 		InitialUnits: infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter
 
+vehicle.microwave_tank:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CRUSH: ^CrushesInfantry
+	Inherits@DRONE: ^CanHaveDrones
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^EjectsPilotOnGround
+	Inherits@REVEAL: ^Reveal300
+	Inherits@SLOW: ^SlowsWhenDamaged
+	Buildable:
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
+		BuildPaletteOrder: 7
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~building.prc_war_factory, ~techlevel.medium, ~prerequisite.zh_units
+		Description: Disables enemy structures.\n\nBurns enemy infantry around.
+	Valued:
+		Cost: 800
+	CustomProductionCost@Refinery:
+		Prerequisites: tech.oil_refinery
+		Cost: 780
+	Tooltip:
+		Name: Microwave Tank
+	Health:
+		HP: 480
+	Armor:
+		Type: vehicle.tank
+	Mobile:
+		Speed: 30
+		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 83
+	Crushable:
+		CrushClasses: vehicle
+	Turreted:
+		TurnRate: 4
+		Offset: -256,0,256
+	Armament@Anim:
+		Weapon: disable.microwave_tank.anim
+		LocalOffset: 24,0,0
+		RequiresCondition: end_disable == 0
+	Armament@End:
+		Weapon: disable.microwave_tank.end
+		LocalOffset: 24,0,0
+		RequiresCondition: end_disable == 1
+	ExplodeWeapon@AoE:
+		Weapon: aoe.microwave_tank
+	GrantStackableConditionOnFire@End:
+		Condition: end_disable
+		ArmamentName: primary
+		RequiredShotsPerStack: 65
+		MaximumInstances: 2
+		RevokeDelay: 2
+		RevokeAll: true
+		IsCyclic: false
+	AttackTurreted:
+	WithSpriteTurret:
+	JamsMissiles:
+		Range: 3c0
+		DeflectionStances: Neutral, Enemy
+	WithRangeCircle:
+		Range: 3c0
+		Color: DDDD0088
+	ThrowsShrapnel:
+		Weapons: debris.radar_van
+		Pieces: 1, 1
+		Range: 1c0, 1c0
+	Voiced:
+		VoiceSet: MicrowaveTankVoice
+
 vehicle.ecm_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -1528,11 +1598,11 @@ vehicle.ecm_tank:
 		Offset: -256,0,256
 	Armament@Anim:
 		Weapon: disable.ecm_tank.anim
-		LocalOffset: 24,-64,0
+		LocalOffset: 24,0,0
 		RequiresCondition: end_disable == 0
 	Armament@End:
 		Weapon: disable.ecm_tank.end
-		LocalOffset: 24,-64,0
+		LocalOffset: 24,0,0
 		RequiresCondition: end_disable == 1
 	GrantStackableConditionOnFire@End:
 		Condition: end_disable
@@ -1569,7 +1639,7 @@ vehicle.tomahawk_launcher:
 		Name: Tomahawk Launcher
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle
-		BuildPaletteOrder: 7
+		BuildPaletteOrder: 8
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~techlevel.medium
@@ -1852,7 +1922,7 @@ vehicle.paladin_tank:
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_vehicle
-		BuildPaletteOrder: 8
+		BuildPaletteOrder: 9
 		BuildDuration: 300
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~generals_power.paladin_tank, ~techlevel.high

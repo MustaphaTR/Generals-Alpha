@@ -560,6 +560,57 @@ disable.ecm_tank.end:
 		Duration: 55
 		Condition: hacked
 
+disable.microwave_tank.anim:
+	ReloadDelay: 2
+	Range: 5c0
+	ValidTargets: Disable
+	TargetActorCenter: true
+	Report: vmiclo2a.wav
+	Projectile: LaserZap
+		Width: 80
+		BeamDuration: 2
+		Color: 00FF0070
+		SecondaryBeam: true
+		SecondaryBeamWidth: 100
+		SecondaryBeamColor: FF000035
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Disable
+		ValidStances: Enemy, Neutral
+
+disable.microwave_tank.end:
+	ReloadDelay: 3
+	Range: 5c0
+	ValidTargets: Disable
+	TargetActorCenter: true
+	Report: vmiclo2a.wav
+	Projectile: LaserZap
+		Width: 80
+		BeamDuration: 2
+		Color: 00FF0070
+		SecondaryBeam: true
+		SecondaryBeamWidth: 100
+		SecondaryBeamColor: FF000035
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Disable
+		ValidStances: Enemy, Neutral
+	Warhead@2Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 135
+		Condition: hacked
+
+aoe.microwave_tank:
+	ValidTargets: Ground, Water
+	Range: 1c0
+	ReloadDelay: 6
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Falloff: 100, 100
+		Spread: 3c0
+		Damage: 8
+		ValidStances: Enemy, Neutral
+		ValidTargets: Infantry
+		DamageTypes: FireDeath
+
 ^default.spawner:
 	ReloadDelay: 5
 	Range: 1c0
