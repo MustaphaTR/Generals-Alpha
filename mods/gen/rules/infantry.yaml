@@ -630,8 +630,17 @@ infantry.terrorist:
 		Weapon: explosion.terrorist
 		EmptyWeapon: explosion.terrorist
 		DeathTypes: Suicide
+		RequiresCondition: !demo
+	Explodes@Demo:
+		Weapon: explosion.suicide
+		EmptyWeapon: explosion.suicide
+		DeathTypes: Suicide
+		RequiresCondition: demo
 	AttackSuicides:
 		DamageTypes: Suicide
+	GrantConditionOnFaction@Demo:
+		Condition: demo
+		Factions: demo
 	Captures:
 		CaptureTypes: car, driverless_vehcile
 		Voice: Capture

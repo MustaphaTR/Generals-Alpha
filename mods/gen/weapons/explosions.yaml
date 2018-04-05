@@ -360,6 +360,18 @@ explosion.terrorist.toxin_gamma:
 	Warhead@5Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_gamma
 
+explosion.suicide:
+	Inherits: explosion.terrorist
+	Warhead@1Dam: SpreadDamage
+		Damage: 700
+	Warhead@2Eff: CreateEffect
+		Explosions: building
+		ImpactSounds: kaboom22.aud
+	-Warhead@1DamAlly:
+	-Warhead@2DamAlly:
+	-Warhead@Smu:
+	-Warhead@SmuSnow:
+
 explosion.mine:
 	Warhead@1Dam: SpreadDamage
 		Spread: 256
