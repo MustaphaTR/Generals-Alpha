@@ -409,6 +409,18 @@
 		Condition: fortified_structures
 		Prerequisites: upgrade.fortified_structures
 
+^AffectedByDemolitions:
+	Explodes@Demo:
+		Weapon: explosion.suicide
+		EmptyWeapon: explosion.suicide
+		RequiresCondition: demo && demolitions
+	GrantConditionOnFaction@Demo:
+		Condition: demo
+		Factions: demo
+	GrantConditionOnPrerequisite@DEMOLITIONS:
+		Condition: demolitions
+		Prerequisites: upgrade.demolitions
+
 ^AffectedByChainGun:
 	FirepowerMultiplier@CHAIN_GUN:
 		RequiresCondition: chain_gun

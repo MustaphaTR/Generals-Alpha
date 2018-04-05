@@ -25,6 +25,7 @@ infantry.pilot:
 infantry.worker:
 	Inherits@1: ^Soldier
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHOES: ^AffectedByWorkerShoes
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -145,6 +146,7 @@ infantry.rebel:
 	Inherits: ^default.mg_infantry
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
 		Queue: queue.gla_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
@@ -185,6 +187,7 @@ infantry.rebel:
 infantry.toxin_rebel:
 	Inherits: ^default.mg_infantry
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
 		Queue: queue.toxin_gen_infantry
@@ -468,6 +471,7 @@ infantry.rpg_trooper:
 	Inherits: ^default.rocket_infantry
 	Inherits@AP_ROCKETS: ^AffectedByAPRockets
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Buildable:
 		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
 		Prerequisites: ~techlevel.infonly
@@ -722,6 +726,7 @@ infantry.flamethrower:
 
 infantry.saboteur:
 	Inherits: ^Soldier
+	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
@@ -1041,6 +1046,7 @@ infantry.super_hacker:
 infantry.hijacker:
 	Inherits: ^Soldier
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
@@ -1173,6 +1179,7 @@ infantry.jarmen_kell:
 	Inherits: ^Soldier
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged

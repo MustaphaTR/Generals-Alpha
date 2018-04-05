@@ -474,6 +474,21 @@ upgrade.fortified_structures:
 	Valued:
 		Cost: 1000
 
+upgrade.demolitions:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Demolitions
+	Buildable:
+		Queue: queue.demo_gen_palace
+		BuildPaletteOrder: 5
+		BuildDuration: 750
+		Prerequisites: ~techlevel.medium
+		Description: Makes units end defenses explode on dealth.
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
+	Valued:
+		Cost: 2000
+
 upgrade.nationalism:
 	Inherits: ^default.upgrade
 	Tooltip:

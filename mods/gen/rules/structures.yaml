@@ -1912,6 +1912,7 @@ building.tunnel_network:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@BOUNTY: ^TakesBounty
 	Inherits@CAMO: ^CanHaveCamoNetting
+	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Tooltip:
@@ -2038,6 +2039,7 @@ building.stinger_site:
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@BOUNTY: ^TakesBounty
 	Inherits@CAMO: ^CanHaveCamoNetting
+	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal400
 	Buildable:
 		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
