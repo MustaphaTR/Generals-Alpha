@@ -729,7 +729,7 @@ vehicle.sentry_drone:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, ~techlevel.low, ~prerequisite.zh_units
-		Description: Detection vehicle that is cloaked while not moving.
+		Description: Detection vehicle.\n\nCamouflaged while not moving.
 	Valued:
 		Cost: 800
 	CustomProductionCost@Refinery:
@@ -1411,7 +1411,7 @@ vehicle.listening_outpost:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.low, ~prerequisite.zh_units
-		Description: Stealth detector unit.\n\nCan carry 2 infantry that can fire outside.\n\nComes with 2 tank hunters.\n\nPassengers can survive when it dies.
+		Description: Stealth detector unit.\n\nCan carry 2 infantry that can fire outside.\n\nComes with 2 tank hunters.\n\nPassengers can survive when it dies.\n\nCamouflaged while not moving.
 	Valued:
 		Cost: 800
 	CustomProductionCost@Refinery:
@@ -1477,7 +1477,7 @@ vehicle.attack_outpost:
 	Inherits: vehicle.listening_outpost
 	Buildable:
 		Queue: queue.inf_gen_vehicle
-		Description: Stealth detector unit.\n\nCan carry 8 infantry that can fire outside.\n\nComes with 3 tank hunters.\n\nPassengers can survive when it dies.
+		Description: Stealth detector unit.\n\nCan carry 8 infantry that can fire outside.\n\nComes with 3 tank hunters.\n\nPassengers can survive when it dies.\n\nCamouflaged while not moving.
 	Tooltip:
 		Name: Attack Outpost
 	Valued:

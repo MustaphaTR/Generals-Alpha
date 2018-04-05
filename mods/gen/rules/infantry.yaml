@@ -1017,7 +1017,7 @@ infantry.super_hacker:
 	Inherits: infantry.hacker
 	Buildable:
 		Queue: queue.inf_gen_infantry
-		Description: Hacks internet to gain money while deployed.\n\nCan disable enemy structures and vehicles.
+		Description: Hacks internet to gain money while deployed.\n\nCan disable enemy structures and vehicles.\n\nCamouflaged.
 	Tooltip:
 		Name: Super Hacker
 	Armament@DisableAnim:
@@ -1040,6 +1040,16 @@ infantry.super_hacker:
 		IsCyclic: false
 	AttackFrontal:
 		Armaments: primary, disable
+	Cloak:
+		InitialDelay: 0
+		CloakDelay: 125
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
 	Voiced:
 		VoiceSet: SuperHackerVoice
 
@@ -1056,7 +1066,7 @@ infantry.hijacker:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~generals_power.hijacker, ~techlevel.high
-		Description: Hijacks enemy vehicles.
+		Description: Hijacks enemy vehicles.\n\nCamouflaged while not moving.
 	Valued:
 		Cost: 400
 	Tooltip:
@@ -1103,6 +1113,7 @@ infantry.hijacker.stealth:
 		Queue: queue.stealth_gen_infantry
 		BuildDuration: 375
 		Prerequisites: ~techlevel.high
+		Description: Hijacks enemy vehicles.\n\nCamouflaged.
 	Valued:
 		Cost: 600
 	Cloak:
@@ -1126,7 +1137,7 @@ infantry.colonel_burton:
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~techlevel.high
 		BuildLimit: 1
-		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures.
+		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures.\n\nCamouflaged.
 	Mobile:
 		Speed: 30
 		Voice: Move
@@ -1193,7 +1204,7 @@ infantry.jarmen_kell:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, !prerequisite.enough_jarmen_kell, ~techlevel.high
-		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.
+		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCamouflaged.
 	Health:
 		HP: 200
 	Armor:
@@ -1256,7 +1267,7 @@ infantry.jarmen_kell.demo:
 	Inherits: infantry.jarmen_kell
 	Buildable:
 		Queue: queue.demo_gen_infantry
-		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCan place C4 charges on structures.
+		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCamouflaged.\n\nCan place C4 charges on structures.
 	Demolition:
 		DetonationDelay: 45
 		Voice: Demolish
@@ -1273,7 +1284,7 @@ infantry.black_lotus:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, !prerequisite.enough_black_lotus, ~techlevel.high
-		Description: Can capture enemy structures from a distance.\n\nCan disable enemy vehicles.
+		Description: Can capture enemy structures from a distance.\n\nCan disable enemy vehicles.\n\nCamouflaged.
 	Valued:
 		Cost: 1500
 	CustomProductionCost@Nuke:
