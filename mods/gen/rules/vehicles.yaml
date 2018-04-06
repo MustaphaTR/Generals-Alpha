@@ -2597,7 +2597,8 @@ vehicle.nuke_cannon.nuke:
 		Range: 8c0
 		OnlyAllowPlacementFromSelf: true
 	GivesBuildableArea:
-		AreaTypes: building, flame_tower
+		AreaTypes: building
+		OnlyAllowPlacementFromSelf: true
 	ProvidesPrerequisite@vehiclename:
 	WithTextDecoration@SIDE:
 		Text:

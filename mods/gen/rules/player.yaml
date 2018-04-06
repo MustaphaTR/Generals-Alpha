@@ -142,6 +142,13 @@ Player:
 		Enabled: True
 		DisplayOrder: 6
 		Prerequisites: prerequisite.limited_sw
+	LobbyPrerequisiteCheckbox@GLOBALCCRADIUS:
+		ID: ccradius
+		Label: Build off Comm. Cent.
+		Description: Allow placing structures around Command Centers (Keep this enabled while playing against AI, it sucks without that)
+		Enabled: True
+		DisplayOrder: 7
+		Prerequisites: prerequisite.ccradius
 	FrozenActorLayer:
 	BaseAttackNotifier:
 	PlayerStatistics:

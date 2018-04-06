@@ -1701,6 +1701,10 @@
 	UpdatesPlayerStatistics:
 	GivesBuildableArea:
 		AreaTypes: building, mine, flame_tower
+		RequiresCondition: ccradius
+	GrantConditionOnPrerequisite@GLOBALCCRADIUS:
+		Prerequisites: prerequisite.ccradius
+		Condition: ccradius
 	RepairableBuilding:
 		RepairStep: 15
 	Targetable:
