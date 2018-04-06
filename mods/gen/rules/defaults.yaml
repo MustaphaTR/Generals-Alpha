@@ -1115,6 +1115,11 @@
 	ProductionQueue:
 		Factions: stealth
 
+^CanHaveMines:
+	GivesBuildableArea@MINE:
+		AreaTypes: mine
+		OnlyAllowPlacementFromSelf: true
+
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^IronCurtainable
@@ -1700,7 +1705,7 @@
 	Huntable:
 	UpdatesPlayerStatistics:
 	GivesBuildableArea:
-		AreaTypes: building, mine, flame_tower
+		AreaTypes: building, flame_tower
 		RequiresCondition: ccradius
 	GrantConditionOnPrerequisite@GLOBALCCRADIUS:
 		Prerequisites: prerequisite.ccradius
