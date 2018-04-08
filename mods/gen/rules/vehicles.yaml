@@ -865,14 +865,14 @@ vehicle.quad_cannon:
 		Class: vehicle.quad_cannon
 	Turreted:
 		TurnSpeed: 8
-		Offset: -256,0,160
+		Offset: -304,0,96
 	Armament@PRIMARY:
 		Weapon: mg.quad_cannon.ground
-		LocalOffset: 213,128,0, 213,-128,0
+		LocalOffset: 512,160,160, 512,-160,160
 		MuzzleSequence: muzzle
 	Armament@SECONDARY:
 		Weapon: mg.quad_cannon.air
-		LocalOffset: 213,128,0, 213,-128,0
+		LocalOffset: 512,160,160, 512,-160,160
 		MuzzleSequence: muzzle
 	AttackTurreted:
 		RequiresCondition: !hacked && !driver_killed && !emp
