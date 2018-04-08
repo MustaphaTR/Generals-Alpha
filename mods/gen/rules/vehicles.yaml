@@ -1555,9 +1555,12 @@ vehicle.microwave_tank:
 		IsCyclic: false
 	AttackTurreted:
 	WithSpriteTurret:
-	JamsMissiles:
-		Range: 3c0
-		DeflectionStances: Neutral, Enemy
+	DamageMultiplier@COMPOSITE_ARMOR:
+		RequiresCondition: composite_armor
+		Modifier: 83
+	GrantConditionOnPrerequisite@COMPOSITE_ARMOR:
+		Condition: composite_armor
+		Prerequisites: upgrade.composite_armor
 	WithRangeCircle:
 		Range: 3c0
 		Color: DDDD0088
