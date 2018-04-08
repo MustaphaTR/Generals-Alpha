@@ -141,6 +141,22 @@ cannon.marauder_tank.toxin_gamma:
 	Warhead@1Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_gamma
 
+cannon.marauder_tank.zh:
+	Inherits: cannon.marauder_tank
+	Range: 4c256
+
+cannon.marauder_tank.toxin.zh:
+	Inherits: cannon.marauder_tank.toxin
+	Range: 4c256
+
+cannon.marauder_tank.toxin_beta.zh:
+	Inherits: cannon.marauder_tank.toxin_beta
+	Range: 4c256
+
+cannon.marauder_tank.toxin_gamma.zh:
+	Inherits: cannon.marauder_tank.toxin_gamma
+	Range: 4c256
+
 cannon.overlord_tank:
 	Inherits: ^Cannon
 	ReloadDelay: 50

@@ -2052,32 +2052,63 @@ vehicle.marauder_tank:
 		RecoilRecovery: 38
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
-		RequiresCondition: !toxin_shells
+		RequiresCondition: !toxin_shells && !zh_units
+	Armament@Cannon_ZH:
+		Weapon: cannon.marauder_tank.zh
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+		RequiresCondition: !toxin_shells && zh_units
 	Armament@TOXIN_SHELLS:
 		Weapon: cannon.marauder_tank.toxin
 		Recoil: 128
 		RecoilRecovery: 38
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
-		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma
+		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma && !zh_units
+	Armament@TOXIN_SHELLS_ZH:
+		Weapon: cannon.marauder_tank.toxin.zh
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma && zh_units
 	Armament@ANTHRAX_BETA:
 		Weapon: cannon.marauder_tank.toxin_beta
 		Recoil: 128
 		RecoilRecovery: 38
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
-		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma
+		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma && !zh_units
+	Armament@ANTHRAX_BETA_ZH:
+		Weapon: cannon.marauder_tank.toxin_beta.zh
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma && zh_units
 	Armament@ANTHRAX_GAMMA:
 		Weapon: cannon.marauder_tank.toxin_gamma
 		Recoil: 128
 		RecoilRecovery: 38
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
-		RequiresCondition: toxin_shells && anthrax_gamma
+		RequiresCondition: toxin_shells && anthrax_gamma && !zh_units
+	Armament@ANTHRAX_GAMMA_ZH:
+		Weapon: cannon.marauder_tank.toxin_gamma.zh
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && anthrax_gamma && zh_units
 	AttackFrontal:
 		RequiresCondition: !hacked && !driver_killed && !emp
 	WithMuzzleOverlay:
 	WithSpriteTurret:
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	GrantConditionOnPrerequisite@TOXIN_SHELLS:
 		Condition: toxin_shells
 		Prerequisites: upgrade.toxin_shells
