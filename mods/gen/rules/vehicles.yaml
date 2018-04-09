@@ -1550,15 +1550,23 @@ vehicle.microwave_tank:
 	Armament@End:
 		Weapon: disable.microwave_tank.end
 		LocalOffset: 24,0,0
-		RequiresCondition: end_disable == 1
+		RequiresCondition: end_disable >= 1
 	ExplodeWeapon@AoE:
 		Weapon: aoe.microwave_tank
+		RequiresCondition: !firing
 	GrantStackableConditionOnFire@End:
 		Condition: end_disable
 		ArmamentName: primary
 		RequiredShotsPerStack: 65
-		MaximumInstances: 2
-		RevokeDelay: 2
+		MaximumInstances: 1
+		RevokeDelay: 4
+		RevokeAll: true
+	GrantStackableConditionOnFire@Fire:
+		Condition: firing
+		ArmamentName: primary
+		RequiredShotsPerStack: 1
+		MaximumInstances: 1
+		RevokeDelay: 4
 		RevokeAll: true
 		IsCyclic: false
 	AttackTurreted:
@@ -1572,6 +1580,7 @@ vehicle.microwave_tank:
 	WithRangeCircle:
 		Range: 3c0
 		Color: DDDD0088
+		RequiresCondition: !firing
 	ThrowsShrapnel:
 		Weapons: debris.radar_van
 		Pieces: 1, 1
@@ -1626,13 +1635,21 @@ vehicle.ecm_tank:
 	Armament@End:
 		Weapon: disable.ecm_tank.end
 		LocalOffset: 24,0,0
-		RequiresCondition: end_disable == 1
+		RequiresCondition: end_disable >= 1
 	GrantStackableConditionOnFire@End:
 		Condition: end_disable
 		ArmamentName: primary
 		RequiredShotsPerStack: 25
-		MaximumInstances: 2
-		RevokeDelay: 2
+		MaximumInstances: 1
+		RevokeDelay: 4
+		RevokeAll: true
+		IsCyclic: false
+	GrantStackableConditionOnFire@Fire:
+		Condition: firing
+		ArmamentName: primary
+		RequiredShotsPerStack: 1
+		MaximumInstances: 1
+		RevokeDelay: 4
 		RevokeAll: true
 		IsCyclic: false
 	AttackTurreted:
@@ -1640,7 +1657,11 @@ vehicle.ecm_tank:
 	JamsMissiles:
 		Range: 3c0
 		DeflectionStances: Neutral, Enemy
-	RenderJammerCircle:
+		RequiresCondition: !firing
+	WithRangeCircle:
+		Range: 3c0
+		Color: DDDD0088
+		RequiresCondition: !firing
 	ThrowsShrapnel:
 		Weapons: debris.radar_van
 		Pieces: 1, 1
