@@ -114,6 +114,7 @@ infantry.worker:
 
 infantry.ranger:
 	Inherits: ^default.mg_infantry
+	Inherits@CHEM: ^AffectedByChemicalSuits
 	Inherits@REVEAL: ^Reveal400
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
@@ -457,6 +458,7 @@ infantry.conscript:
 
 infantry.missile_defender:
 	Inherits: ^default.rocket_infantry
+	Inherits@CHEM: ^AffectedByChemicalSuits
 	Inherits@REVEAL: ^Reveal300
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
@@ -548,6 +550,7 @@ infantry.grenadier:
 infantry.pathfinder:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHEM: ^AffectedByChemicalSuits
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -1122,6 +1125,7 @@ infantry.hijacker.stealth:
 infantry.colonel_burton:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHEM: ^AffectedByChemicalSuits
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal500
 	Inherits@SLOW: ^SlowsWhenDamaged

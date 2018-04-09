@@ -513,6 +513,46 @@
 		Condition: drone_armor
 		Prerequisites: upgrade.drone_armor
 
+^AffectedByChemicalSuits:
+	Armor@CHEMICAL_SUITS:
+		Type: infantry.chem_suit
+		RequiresCondition: chemical_suits
+	DamagedByRadioactivity@ANTHRAX_ALPHA:
+		RequiresCondition: !chemical_suits
+	DamagedByRadioactivity@ANTHRAX_BETA:
+		RequiresCondition: !chemical_suits
+	DamagedByRadioactivity@ANTHRAX_GAMMA:
+		RequiresCondition: !chemical_suits
+	DamagedByRadioactivity@RADIOACTIVITY:
+		RequiresCondition: !chemical_suits
+	DamagedByRadioactivity@ANTHRAX_ALPHA_CHEM:
+		RadioactivityLayerName: anthrax_alpha
+		DamageCoeff: 4
+		DamageInterval: 10
+		DamageTypes: FireDeath
+		RequiresCondition: chemical_suits
+	DamagedByRadioactivity@ANTHRAX_BETA_CHEM:
+		RadioactivityLayerName: anthrax_beta
+		DamageCoeff: 5
+		DamageInterval: 10
+		DamageTypes: FireDeath
+		RequiresCondition: chemical_suits
+	DamagedByRadioactivity@ANTHRAX_GAMMA_CHEM:
+		RadioactivityLayerName: anthrax_gamma
+		DamageCoeff: 6
+		DamageInterval: 10
+		DamageTypes: FireDeath
+		RequiresCondition: chemical_suits
+	DamagedByRadioactivity@RADIOACTIVITY_CHEM:
+		RadioactivityLayerName: radioactivity
+		DamageCoeff: 4
+		DamageInterval: 10
+		DamageTypes: FireDeath
+		RequiresCondition: chemical_suits
+	GrantConditionOnPrerequisite@CHEMICAL_SUITS:
+		Condition: chemical_suits
+		Prerequisites: upgrade.chemical_suits
+
 ^AffectedByBombardment:
 	FirepowerMultiplier@BOMBARDMENT:
 		RequiresCondition: bombardment

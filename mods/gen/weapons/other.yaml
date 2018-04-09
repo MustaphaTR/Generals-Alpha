@@ -295,6 +295,7 @@ toxin.toxin_tractor:
 		Spread: 341
 		Damage: 10
 		Versus:
+			infantry.chem_suit: 20
 			vehicle.truck: 50
 			vehicle.humvee: 50
 			vehicle.avenger: 50
@@ -610,6 +611,8 @@ aoe.microwave_tank:
 		ValidStances: Enemy, Neutral
 		ValidTargets: Infantry
 		DamageTypes: FireDeath
+		Versus:
+			infantry.chem_suit: 20
 
 ^default.spawner:
 	ReloadDelay: 5

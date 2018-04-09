@@ -319,7 +319,7 @@ upgrade.adv_training:
 		Prerequisites: ~techlevel.medium
 		Description: Doubles the rate units gain veterancy.
 		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
+		ReadyAudio: AdvancedTraining
 	Valued:
 		Cost: 1500
 
@@ -353,13 +353,28 @@ upgrade.composite_armor:
 	Valued:
 		Cost: 2000
 
+upgrade.chemical_suits:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Chemical Suits
+	Buildable:
+		Queue: queue.strategy_center, queue.air_gen_strategy_center
+		BuildPaletteOrder: 6
+		BuildDuration: 1500
+		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
+		Description: Decreases the damage dealt to infantry from Microwaves, Toxins and Radiation.
+		QueuedAudio: NoAudio
+		ReadyAudio: ChemicalSuits
+	Valued:
+		Cost: 1000
+
 upgrade.supply_lines:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Supply Lines
 	Buildable:
 		Queue: queue.strategy_center, queue.air_gen_strategy_center
-		BuildPaletteOrder: 6
+		BuildPaletteOrder: 7
 		BuildDuration: 1500
 		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
 		Description: Increases output from Supply Centers, Supply Drop Zones and Oil Derricks by 10%.
