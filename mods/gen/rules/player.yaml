@@ -117,8 +117,17 @@ Player:
 		QueuedAudio:
 		ReadyAudio:
 		SpectatorUIOrder: 0
+	ClassicProductionQueue@Boss:
+		Type: queue.boss_gen_generals_power
+		Group: General
+		Factions: boss
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		QueuedAudio:
+		ReadyAudio:
+		SpectatorUIOrder: 0
 	Production:
-		Produces: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Produces: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
 	PlaceBuilding:
 	SupportPowerManager:
 	ScriptTriggers:

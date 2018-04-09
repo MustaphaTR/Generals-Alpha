@@ -217,7 +217,7 @@ aircraft.mig:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
-		Queue: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft
+		Queue: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -340,10 +340,9 @@ aircraft.raptor:
 		Queue: queue.usa_aircraft, queue.super_gen_aircraft
 		BuildAtProductionType: queue.usa_plane
 		BuildPaletteOrder: 0
-		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_airfield, ~techlevel.medium
+		Prerequisites: ~techlevel.medium
 		Description: Multi-role fighter plane.
 	Valued:
 		Cost: 1400
@@ -415,7 +414,7 @@ aircraft.raptor:
 aircraft.king_raptor:
 	Inherits: aircraft.raptor
 	Buildable:
-		Queue: queue.air_gen_aircraft
+		Queue: queue.air_gen_aircraft #, queue.boss_gen_aircraft
 		Description: Multi-role fighter plane.\n\nCan deflect enemy missiles with laser.
 	Valued:
 		Cost: 1100
@@ -565,12 +564,12 @@ aircraft.aurora:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.boss_gen_aircraft
 		BuildAtProductionType: queue.usa_plane
 		BuildPaletteOrder: 4
 		BuildDuration: 625
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_airfield, building.strategy_center, ~techlevel.high
+		Prerequisites: building.strategy_center, ~techlevel.high
 		Description: Fast fighter plane.\n\nCan not be damaged while attacking.\n\nSlows down and becomes vulnerable after attacking.
 	Valued:
 		Cost: 2500
@@ -1106,7 +1105,7 @@ aircraft.helix:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@UPGRADE: ^CanHavePRCVehicleUpgrades
 	Buildable:
-		Queue: queue.prc_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft
+		Queue: queue.prc_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 500

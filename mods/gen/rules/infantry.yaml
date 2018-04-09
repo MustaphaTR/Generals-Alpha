@@ -118,7 +118,7 @@ infantry.ranger:
 	Inherits@REVEAL: ^Reveal400
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_infantry
+		Queue: queue.usa_infantry, queue.boss_gen_infantry
 		Prerequisites: ~techlevel.infonly
 	Valued:
 		Cost: 225
@@ -494,7 +494,7 @@ infantry.tank_hunter:
 	Inherits: ^default.rocket_infantry
 	Inherits@HORDE_BONUS: ^Horde
 	Buildable:
-		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
+		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
 		Prerequisites: ~techlevel.infonly
 	CustomProductionCost@Nuke:
 		Queue: queue.nuke_gen_infantry
@@ -560,7 +560,7 @@ infantry.pathfinder:
 	Tooltip:
 		Name: Pathfinder
 	Buildable:
-		Queue: queue.usa_infantry
+		Queue: queue.usa_infantry #, queue.boss_gen_infantry
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -846,12 +846,12 @@ infantry.angry_mob:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	-AppearsOnRadar:
 	Buildable:
-		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
+		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry #, queue.boss_gen_infantry
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: ~building.gla_barracks, building.palace, ~techlevel.medium
+		Prerequisites: building.palace, ~techlevel.medium
 		Description: Group of civilians armed with pistols and molotov coctails.
 		IconPalette: cameo
 	Tooltip:
@@ -920,7 +920,7 @@ infantry.hacker:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
+		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 500
@@ -1135,7 +1135,7 @@ infantry.colonel_burton:
 	Tooltip:
 		Name: Colonel Burton
 	Buildable:
-		Queue: queue.usa_infantry
+		Queue: queue.usa_infantry, queue.boss_gen_infantry
 		BuildPaletteOrder: 4
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1203,7 +1203,7 @@ infantry.jarmen_kell:
 	Tooltip:
 		Name: Jarmen Kell
 	Buildable:
-		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.stealth_gen_infantry
+		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.stealth_gen_infantry, queue.boss_gen_infantry
 		BuildPaletteOrder: 7
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1282,9 +1282,8 @@ infantry.black_lotus:
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
+		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry #, queue.boss_gen_infantry
 		BuildPaletteOrder: 4
-		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, !prerequisite.enough_black_lotus, ~techlevel.high

@@ -2808,7 +2808,7 @@ vehicle.prc_mcc:
 	Tooltip:
 		Name: PRC Construction Vehicle
 	Production:
-		Produces: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
+		Produces: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
 		PauseOnCondition: emp || hacked
 		RequiresCondition: !driver_killed
 	ProductionBar@PRC_BUILDING:
@@ -2817,6 +2817,8 @@ vehicle.prc_mcc:
 		ProductionType: queue.inf_gen_building
 	ProductionBar@NUKE_BUILDING:
 		ProductionType: queue.nuke_gen_building
+	ProductionBar@BOSS_BUILDING:
+		ProductionType: queue.boss_gen_building
 	ProductionQueue@PRC_BUILDING:
 		Type: queue.prc_building
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, tank
@@ -2847,6 +2849,16 @@ vehicle.prc_mcc:
 		CannotBuildAudio: PRCBuildingCannotPlaceAudio
 		ReadyAudio: PRCConstructionComplete
 		SpectatorUIOrder: 10
+	ProductionQueue@BOSS_BUILDING:
+		Type: queue.boss_gen_building
+		Factions: boss
+		Group: Building
+		InstantCashDrain: true
+		LowPowerSlowdown: 3
+		QueuedAudio: PRCBuilding
+		CannotBuildAudio: PRCBuildingCannotPlaceAudio
+		ReadyAudio: PRCConstructionComplete
+		SpectatorUIOrder: 11
 	Voiced:
 		VoiceSet: PRCMCCVoice
 	WithTextDecoration@SIDE:

@@ -96,6 +96,12 @@
 		InternalName: tank
 		Side: PRC
 		Description: General Kwai:\n+ Emergency Repair - Level 1 at 1 Star\n+ Battlemaster Elite Training\n+ Tank Drop\n+ Tanks start as Veteran\n+ Emparor Overlord\n+ Autoloader\n+ Cheaper Tanks\n\n- Carpet Bombing at 5 Stars\n- No Cash Hack\n- No Inferno Cannon\n- No Nuke Cannon\n- More Expensive Infantry\n- More Expensive and Longer To Build Aircraft
+	Faction@boss:
+		Name: Boss General
+		InternalName: boss
+		Selectable: false
+		Side: PRC
+		Description: General Leang:
 	ResourceType@ore:
 		Type: Ore
 		Name: Valuable Minerals
@@ -197,7 +203,7 @@ World:
 	MPStartUnits@cvonlyprc:
 		Class: cvonly
 		ClassName: Constr. Veh. Only
-		Factions: prc, inf, nuke, tank
+		Factions: prc, inf, nuke, tank, boss
 		BaseActor: vehicle.prc_mcc
 	MPStartUnits@commonlyusa:
 		Class: commonly
@@ -214,7 +220,7 @@ World:
 	MPStartUnits@commonlyprc:
 		Class: commonly
 		ClassName: Comm. Cent. Only
-		Factions: prc, inf, nuke, tank
+		Factions: prc, inf, nuke, tank, boss
 		BaseActor: building.prc_command_center
 		BaseActorOffset: -1, -1
 	MPStartUnits@commandcvusa:
@@ -238,7 +244,7 @@ World:
 	MPStartUnits@commandcvprc:
 		Class: none
 		ClassName: CC and CV
-		Factions: prc, inf, nuke, tank
+		Factions: prc, inf, nuke, tank, boss
 		BaseActor: building.prc_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.prc_mcc
@@ -287,6 +293,15 @@ World:
 		BaseActor: building.prc_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.prc_mcc, infantry.minigunner, infantry.minigunner, infantry.tank_hunter, vehicle.gatling_tank
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@lightboss:
+		Class: light
+		ClassName: Light Support
+		Factions: boss
+		BaseActor: building.prc_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.prc_mcc, infantry.ranger, infantry.ranger, infantry.tank_hunter, vehicle.gatling_tank
 		InnerSupportRadius: 3
 		OuterSupportRadius: 6
 	MPStartUnits@mediumusa:
@@ -361,6 +376,15 @@ World:
 		SupportActors: vehicle.prc_mcc, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.tank_hunter, vehicle.assault_troop_crawler
 		InnerSupportRadius: 3
 		OuterSupportRadius: 6
+	MPStartUnits@mediumboss:
+		Class: medium
+		ClassName: Medium Support
+		Factions: boss
+		BaseActor: building.prc_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.prc_mcc, infantry.ranger, infantry.ranger, infantry.ranger, infantry.tank_hunter, vehicle.gatling_tank, vehicle.paladin_tank
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
 	MPStartUnits@heavyusa:
 		Class: heavy
 		ClassName: Heavy Support
@@ -431,6 +455,15 @@ World:
 		BaseActor: building.prc_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.prc_mcc, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.tank_hunter, infantry.tank_hunter, vehicle.assault_troop_crawler, vehicle.dragon_tank
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@heavyboss:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: boss
+		BaseActor: building.prc_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.prc_mcc, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.tank_hunter, infantry.tank_hunter, vehicle.gatling_tank, vehicle.paladin_tank, vehicle.dragon_tank
 		InnerSupportRadius: 3
 		OuterSupportRadius: 6
 	MPStartUnits@prebuiltusa:
@@ -537,6 +570,19 @@ World:
 		OuterSupportRadius: 6
 		InnerBuildingRadius: 4
 		OuterBuildingRadius: 10
+	MPStartUnits@prebuiltboss:
+		Class: prebuilt
+		ClassName: Prebuilt
+		Factions: boss
+		BaseActor: building.prc_command_center
+		BaseActorOffset: -1, -1
+		SupportBuildings: building.cold_fusion_reactor, building.cold_fusion_reactor, building.prc_barracks, building.prc_supply_center, building.prc_war_factory, building.patriot, building.tunnel_network
+		SupportActors: vehicle.prc_mcc, vehicle.prc_mcc, vehicle.supply_truck, vehicle.supply_truck, vehicle.supply_truck
+		SupportProxyActors: upgrade.radar, upgrade.capture_building
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+		InnerBuildingRadius: 4
+		OuterBuildingRadius: 10
 	MPStartUnits@allusa:
 		Class: all
 		ClassName: All Tech
@@ -558,7 +604,7 @@ World:
 	MPStartUnits@allprc:
 		Class: all
 		ClassName: All Tech
-		Factions: prc, inf, nuke, tank
+		Factions: prc, inf, nuke, tank, boss
 		BaseActor: building.prc_command_center
 		BaseActorOffset: -1, -1
 		SupportActors: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc

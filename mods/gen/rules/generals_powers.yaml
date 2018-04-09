@@ -114,7 +114,7 @@ generals_power.paladin_tank:
 	Tooltip:
 		Name: Paladin Tank
 	Buildable:
-		Queue: queue.usa_generals_power
+		Queue: queue.usa_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 3
 		Prerequisites: ~techlevel.high, prerequisite.has_points
 		Description: Enables Paladin Tank.
@@ -134,7 +134,7 @@ generals_power.pathfinder:
 	Tooltip:
 		Name: Pathfinder
 	Buildable:
-		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
+		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 4
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.high
 		Description: Enables Pathfinder.
@@ -182,7 +182,7 @@ generals_power.hijacker:
 hack.cameo_filler.2:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power
+		Queue: queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		Prerequisites: disabled
@@ -396,7 +396,7 @@ generals_power.cash_hack1:
 	Tooltip:
 		Name: Cash Hack - Level 1
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 15
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.medium
 		Description: Enables Cash Hack support power from Command Center.
@@ -406,7 +406,7 @@ generals_power.cash_hack2:
 	Tooltip:
 		Name: Cash Hack - Level 2
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 16
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_hack1, ~techlevel.medium
 		Description: Upgrades Cash Hack support power to Level 2.
@@ -416,7 +416,7 @@ generals_power.cash_hack3:
 	Tooltip:
 		Name: Cash Hack - Level 3
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 17
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_hack2, ~techlevel.high
 		Description: Upgrades Cash Hack support power to Level 3.
@@ -526,7 +526,7 @@ generals_power.arty_barrage1:
 	Tooltip:
 		Name: Artillery Barrage - Level 1
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 18
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.medium
 		Description: Enables Artillery Barrage support power from Command Center.
@@ -536,7 +536,7 @@ generals_power.arty_barrage2:
 	Tooltip:
 		Name: Artillery Barrage - Level 2
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 19
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.arty_barrage1, ~techlevel.medium
 		Description: Upgrades Artillery Barrage support power to Level 2.
@@ -546,7 +546,7 @@ generals_power.arty_barrage3:
 	Tooltip:
 		Name: Artillery Barrage - Level 3
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 20
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.arty_barrage2, ~techlevel.high
 		Description: Upgrades Artillery Barrage support power to Level 3.
@@ -586,7 +586,7 @@ generals_power.cluster_mines:
 	Tooltip:
 		Name: Cluster Mines
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 24
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.high
 		Description: Enables Cluster Mines support power from Command Center.
@@ -603,7 +603,7 @@ generals_power.carpet_bombing:
 	Tooltip:
 		Name: Carpet Bombing
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 25
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.high, ~prerequisite.zh_units
 		Description: Enables Carpet Bombing support power from Command Center.
@@ -660,7 +660,7 @@ generals_power.emp:
 	Tooltip:
 		Name: E. M. Pulse
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 26
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~techlevel.unrestricted
 		Description: Enables E. M. Pulse support power from Command Center.
