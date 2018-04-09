@@ -344,7 +344,7 @@ mg.humvee:
 	Range: 3c768
 	Report: pillbox1.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 8
+		Damage: 10
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -361,6 +361,11 @@ mg.humvee:
 			building.defense: 50
 			building.stinger_site: 50
 			building.wall: 6
+
+mg.sentry_drone:
+	Inherits: mg.humvee
+	Warhead@1Dam: SpreadDamage
+		Damage: 8
 
 mg.battle_drone:
 	Inherits: mg.humvee

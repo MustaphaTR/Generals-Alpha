@@ -123,8 +123,13 @@ vehicle.humvee:
 		TurnSpeed: 6
 		Offset: -160,0,85
 	Armament@MG:
+		Weapon: mg.sentry_drone
+		MuzzleSequence: muzzle
+		RequiresCondition: !zh_units
+	Armament@MG_ZH:
 		Weapon: mg.humvee
 		MuzzleSequence: muzzle
+		RequiresCondition: zh_units
 	Armament@TOWAG:
 		Turret: tow
 		Weapon: missile.humvee.ground
@@ -141,6 +146,9 @@ vehicle.humvee:
 		Turret: tow
 		Sequence: turret2
 		RequiresCondition: tow_missile
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	GrantConditionOnPrerequisite@TOW_MISSILE:
 		Condition: tow_missile
 		Prerequisites: upgrade.tow_missile
@@ -792,7 +800,7 @@ vehicle.sentry_drone:
 	Turreted:
 		TurnSpeed: 8
 	Armament:
-		Weapon: mg.humvee
+		Weapon: mg.sentry_drone
 		MuzzleSequence: muzzle
 		RequiresCondition: sentry_gun
 	AttackTurreted:
