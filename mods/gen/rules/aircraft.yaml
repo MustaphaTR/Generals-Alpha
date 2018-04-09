@@ -1216,6 +1216,10 @@ aircraft.helix:
 		RevokeDelay: 40
 		RevokeAll: true
 		IsCyclic: false
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 5c0
+		RequiresCondition: gatling_upgrade
 	WithRangeCircle:
 		Type: speaker
 		Range: 4c0

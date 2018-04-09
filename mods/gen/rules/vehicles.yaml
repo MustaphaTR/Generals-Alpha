@@ -2275,6 +2275,10 @@ vehicle.overlord_tank:
 		Sequence: turret_speaker
 		Turret: speaker
 		RequiresCondition: speaker_upgrade
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 5c0
+		RequiresCondition: gatling_upgrade
 	SelfHealing:
 		Step: 1
 		Delay: 3
