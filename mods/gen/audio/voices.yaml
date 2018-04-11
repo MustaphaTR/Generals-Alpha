@@ -15,6 +15,7 @@ GenericVoice:
 	Voices:
 		Attack: ackno,affirm1,noprob,overout,ritaway,roger,ugotit
 		Select: await1,ready,report1,yessir1
+		Build: ready
 		Move: ackno,affirm1,noprob,overout,ritaway,roger,ugotit
 		Action: ackno,affirm1,noprob,overout,ritaway,roger,ugotit
 		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
@@ -38,11 +39,13 @@ VehicleVoice:
 		tank: .r01,.r03
 	Voices:
 		Select: vehic1,yessir1,report1,await1
+		Build: await1
 		Action: ackno,affirm1
 
 EngineerVoice:
 	Voices:
 		Select: eengin1,eyessir1
+		Build: eengin1
 		Action: eaffirm1,emovout1
 		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
 		Burned: dedman10
@@ -51,6 +54,7 @@ EngineerVoice:
 MedicVoice:
 	Voices:
 		Select: mrespon1,myessir1
+		Build: myessir1
 		Action: maffirm1,mmovout1
 		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
 		Burned: dedman10
@@ -59,6 +63,7 @@ MedicVoice:
 DogVoice:
 	Voices:
 		Select: dogw3px
+		Build: dogw3px
 		Move: dogy1
 		Action: dogy1
 		Attack: dogg5p
@@ -288,7 +293,8 @@ PilotVoice:
 WorkerVoice:
 	DefaultVariant: .wav
 	Voices:
-		Select: iworsea, iworseb, iworsec, iworsed, iworsee, iworsef, iworseg, iworseh, iworsei
+		Select: iworsea, iworseb, iworsec, iworsed, iworsee, iworsef, iworseg, iworsei
+		Build: iworseh
 		Move: iwormoa, iwormob, iwormoc, iwormod, iwormoe, iwormof
 		Action: iworspa, iworspb, iworspc, iworspd
 		Repair: iworrea, iworreb, iworrec, iworred, iworree, iworref
@@ -300,7 +306,8 @@ RangerVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: iranata, iranatb, iranatc, iranatd, iranate, iranatf, iranatg
-		Select: iransea, iranseb, iransec, iransed, iransee, iransef, iranseg
+		Select: iransea, iranseb, iransec, iransee, iransef #, iransed
+		Build: iranseg
 		Move: iranmoa, iranmob, iranmoc, iranmod, iranmoe
 		Action: iranata, iranatb, iranatc, iranatd, iranate, iranatf, iranatg
 		Capture: irancaa, irancab, irancac, irancad, irancae
@@ -313,9 +320,24 @@ RebelVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: irebata, irebatb, irebatc, irebatd, irebate, irebatf, irebatg
-		Select: irebsea, irebseb, irebsec, irebsed, irebsee, irebsef, irebseg, irebseh
+		Select: irebsea, irebseb, irebsec, irebsed, irebsee, irebsef, irebseg
+		Build: irebseh
 		Move: irebmoa, irebmob, irebmoc, irebmod, irebmoe, irebmof
 		Action: irebata, irebatb, irebatc, irebatd, irebate, irebatf, irebatg
+		Capture: irebcaa, irebcab, irebcac, irebcad, irebcae, irebcaf
+		CaptureComplete: irebcoa, irebcob, irebcoc, irebcod, irebcoe
+		Die: irebdia, irebdib, irebdic, irebdid, irebdie, irebdif, irebdig, irebdih, irebdii, irebdij
+		Burned: irebdia, irebdib, irebdic, irebdid, irebdie, irebdif, irebdig, irebdih, irebdii, irebdij
+		Zapped: irebdia, irebdib, irebdic, irebdid, irebdie, irebdif, irebdig, irebdih, irebdii, irebdij
+
+ToxinRebelVoice:
+	DefaultVariant: .wav
+	Voices:
+		Attack: irebata, irebatb, irebatc, irebatd, irebate, irebatf, irebatg, irbtata, irbtatb, irbtatc, irbtatd
+		Select: irebsea, irebseb, irebsec, irebsed, irebsee, irebsef, irebseg, irbtsea, irbtsec
+		Build: irbtseb
+		Move: irebmoa, irebmob, irebmoc, irebmod, irebmoe, irebmof
+		Action: irebata, irebatb, irebatc, irebatd, irebate, irebatf, irebatg, irbtata, irbtatb, irbtatc, irbtatd
 		Capture: irebcaa, irebcab, irebcac, irebcad, irebcae, irebcaf
 		CaptureComplete: irebcoa, irebcob, irebcoc, irebcod, irebcoe
 		Die: irebdia, irebdib, irebdic, irebdid, irebdie, irebdif, irebdig, irebdih, irebdii, irebdij
@@ -326,9 +348,24 @@ RedGuardVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: iredata, iredatb, iredatc, iredatd, iredate, iredatf, iredatg
-		Select: iredsea, iredseb, iredsec, iredsed, iredsee, iredsef, iredseg
+		Select: iredsea, iredseb, iredsec, iredsed, iredsee, iredsef
+		Build: iredseg
 		Move: iredmoa, iredmob, iredmoc, iredmod, iredmoe
 		Action: iredata, iredatb, iredatc, iredatd, iredate, iredatf, iredatg
+		Capture: iredcaa, iredcab, iredcac, iredcad, iredcae
+		CaptureComplete: iredcoa, iredcob, iredcoc, iredcod, iredcoe
+		Die: ireddia, ireddib, ireddic, ireddid, ireddie, ireddif, ireddig, ireddih, ireddii, ireddij, ireddik, ireddil
+		Burned: ireddia, ireddib, ireddic, ireddid, ireddie, ireddif, ireddig, ireddih, ireddii, ireddij, ireddik, ireddil
+		Zapped: ireddia, ireddib, ireddic, ireddid, ireddie, ireddif, ireddig, ireddih, ireddii, ireddij, ireddik, ireddil
+
+MinigunnerVoice:
+	DefaultVariant: .wav
+	Voices:
+		Attack: iredata, iredatb, iredatc, iredatd, iredate, iredatf, iredatg, iremata, irematb, irematc
+		Select: iredsea, iredseb, iredsec, iredsed, iredsee, iredsef, iremsea, iremsec
+		Build: iremseb
+		Move: iredmoa, iredmob, iredmoc, iredmod, iredmoe
+		Action: iredata, iredatb, iredatc, iredatd, iredate, iredatf, iredatg, iremata, irematb, irematc
 		Capture: iredcaa, iredcab, iredcac, iredcad, iredcae
 		CaptureComplete: iredcoa, iredcob, iredcoc, iredcod, iredcoe
 		Die: ireddia, ireddib, ireddic, ireddid, ireddie, ireddif, ireddig, ireddih, ireddii, ireddij, ireddik, ireddil
@@ -340,6 +377,7 @@ ConscriptVoice:
 	Voices:
 		Attack: iconata, iconatb, iconatc, iconatd
 		Select: iconsea, iconseb, iconsec, iconsed
+		Build: iconsea
 		Move: iconmoa, iconmob, iconmoc
 		Action: iconata, iconatb, iconatc, iconatd
 		Capture: iconmoa, iconmob, iconmoc
@@ -347,24 +385,12 @@ ConscriptVoice:
 		Burned: icondia, icondib, icondic, icondid, icondie
 		Zapped: icondia, icondib, icondic, icondid, icondie
 
-MinigunnerVoice:
-	DefaultVariant: .wav
-	Voices:
-		Attack: iredata, iredatb, iredatc, iredatd, iredate, iredatf, iredatg, iremata, irematb, irematc
-		Select: iredsea, iredseb, iredsec, iredsed, iredsee, iredsef, iredseg, iremsea, iremseb, iremsec
-		Move: iredmoa, iredmob, iredmoc, iredmod, iredmoe
-		Action: iredata, iredatb, iredatc, iredatd, iredate, iredatf, iredatg, iremata, irematb, irematc
-		Capture: iredcaa, iredcab, iredcac, iredcad, iredcae
-		CaptureComplete: iredcoa, iredcob, iredcoc, iredcod, iredcoe
-		Die: ireddia, ireddib, ireddic, ireddid, ireddie, ireddif, ireddig, ireddih, ireddii, ireddij, ireddik, ireddil
-		Burned: ireddia, ireddib, ireddic, ireddid, ireddie, ireddif, ireddig, ireddih, ireddii, ireddij, ireddik, ireddil
-		Zapped: ireddia, ireddib, ireddic, ireddid, ireddie, ireddif, ireddig, ireddih, ireddii, ireddij, ireddik, ireddil
-
 MissileDefenderVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: imisata, imisatb, imisatc, imisatd, imisate, imisatf, imisatg, imisath
-		Select: imissea, imisseb, imissec, imissed, imissee, imissef
+		Select: imisseb, imissec, imissed, imissee, imissef
+		Build: imissea
 		Move: imismoa, imismob, imismoc, imismod, imismoe, imismof
 		Action: imisata, imisatb, imisatc, imisatd, imisate, imisatf, imisatg, imisath
 		Die: imisdia, imisdib, imisdic, imisdid, imisdie, imisdif, imisdig, imisdih, imisdii, imisdij
@@ -375,7 +401,8 @@ RPGTrooperVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: irpgata, irpgatb, irpgatc, irpgatd, irpgate, irpgatf
-		Select: irpgsea, irpgseb, irpgsec, irpgsed, irpgsee, irpgsef, irpgseg
+		Select: irpgsea, irpgseb, irpgsec, irpgsee, irpgseg #, irpgsed
+		Build: irpgsef
 		Move: irpgmoa, irpgmob, irpgmoc, irpgmod, irpgmoe, irpgmof
 		Action: irpgata, irpgatb, irpgatc, irpgatd, irpgate, irpgatf
 		Die: irpgdia, irpgdib, irpgdic, irpgdid, irpgdie, irpgdif, irpgdig, irpgdih, irpgdii, irpgdij
@@ -386,7 +413,8 @@ TankHunterVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: itanata, itanatb, itanatc, itanatd, itanate
-		Select: itansea, itanseb, itansec, itansed, itansee, itansef
+		Select: itansea, itanseb, itansec, itansed, itansee
+		Build: itansef
 		Move: itanmoa, itanmob, itanmoc, itanmod, itanmoe
 		Action: itanata, itanatb, itanatc, itanatd, itanate
 		Die: itandia, itandib, itandic, itandid, itandie
@@ -397,7 +425,8 @@ PathfinderVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: ipatata, ipatatb, ipatatc, ipatatd, ipatate
-		Select: ipatsea, ipatseb, ipatsec, ipatsed, ipatsee, ipatsef
+		Select: ipatsea, ipatseb, ipatsec, ipatsed, ipatsee
+		Build: ipatsef
 		Move: ipatmoa, ipatmob, ipatmoc, ipatmod, ipatmoe
 		Action: ipatata, ipatatb, ipatatc, ipatatd, ipatate
 		Die: ipatdia, ipatdib, ipatdic, ipatdid, ipatdie
@@ -408,8 +437,9 @@ TerroristVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: iterata, iteratb, iteratc, iteratd, iterate
-		Select: itersea, iterseb, itersec, itersed, itersee, itersef, iterseg
-		Move: itermoa, itermob, itermoc, itermod, itermoe, itermof, itermog
+		Select: itersea, iterseb, itersec, itersee, itersef ;, itersed
+		Build: iterseg
+		Move: itermoa, itermob, itermoc, itermoe, itermof, itermog ;, itermod
 		Action: iterata, iteratb, iteratc, iteratd, iterate
 		Capture: itera2a, itera2b, itera2c, itera2d, itera2e
 		Die: iterdia, iterdib, iterdic, iterdid, iterdie
@@ -420,7 +450,8 @@ SaboteurVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: isabata, isabatb, isabatc, isabatd, isabate
-		Select: isabsea, isabseb, isabsec, isabsed, isabsee
+		Select: isabseb, isabsec, isabsed, isabsee
+		Build: isabsea
 		Move: isabmoa, isabmob, isabmoc, isabmod, isabmoe
 		Action: isabata, isabatb, isabatc, isabatd, isabate
 		Die: isabdia, isabdib, isabdic, isabdid, isabdie
@@ -432,6 +463,7 @@ AngryMobVoice:
 	Voices:
 		Attack: iangatta, iangattb, iangattc, iangattd
 		Select: iangsela, iangselb, iangselc, iangseld
+		Build: iangsela, iangselb, iangselc, iangseld
 		Move: iangmova, iangmovb, iangmovc, iangmovd, iangmove, iangmovf
 		Action: iangatta, iangattb, iangattc, iangattd
 		Die: icimadia, icimadib, icimadic, icimadid, icimadie, icimadif, icimadig, icimadih, icimadii, icimadij
@@ -442,7 +474,8 @@ HackerVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: ihacata, ihacatb, ihacatc, ihacatd, ihacate, ihacatf
-		Select: ihacsea, ihacseb, ihacsec, ihacsed, ihacsee, ihacsef
+		Select: ihacsea, ihacseb, ihacsec, ihacsed, ihacsee
+		Build: ihacsef
 		Move: ihacmoa, ihacmob, ihacmoc, ihacmod, ihacmoe
 		Action: ihacata, ihacatb, ihacatc, ihacatd, ihacate, ihacatf
 		Die: ihacdia, ihacdib, ihacdic, ihacdid, ihacdie
@@ -453,7 +486,8 @@ SuperHackerVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: ihacata, ihacatb, ihacatc, ihacatd, ihacate, ihacatf
-		Select: ihacsea, ihacseb, ihacsec, ihacsed, ihacsee, ihacsef, ihassea, ihasseb, ihassec, ihassed
+		Select: ihacsea, ihacseb, ihacsec, ihacsed, ihacsee, ihasseb, ihassec, ihassed
+		Build: ihassea
 		Move: ihacmoa, ihacmob, ihacmoc, ihacmod, ihacmoe
 		Action: ihacata, ihacatb, ihacatc, ihacatd, ihacate, ihacatf
 		Die: ihacdia, ihacdib, ihacdic, ihacdid, ihacdie
@@ -464,7 +498,8 @@ HijackerVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: ihijata, ihijatb, ihijatc, ihijatd, ihijate
-		Select: ihijsea, ihijseb, ihijsec, ihijsed, ihijsee, ihijsef
+		Select: ihijsea, ihijseb, ihijsec, ihijsed, ihijsee
+		Build: ihijsef
 		Move: ihijmoa, ihijmob, ihijmoc, ihijmod, ihijmoe
 		Action: ihijata, ihijatb, ihijatc, ihijatd, ihijate
 		Die: ihijdia, ihijdib, ihijdic, ihijdid, ihijdie
@@ -475,8 +510,9 @@ BurtonVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: icolata, icolatb, icolatc, icolatd, icolate
-		Select: icolsea, icolseb, icolsec, icolsed, icolsee, icolsef, icolseg, icolsei
-		Move: icolmoa, icolmob, icolmoc, icolmod, icolmoe
+		Select: icolsea, icolseb, icolsec, icolsed, icolsee, icolsef, icolseg
+		Build: icolsei
+		Move: icolmoa, icolmob, icolmoc, icolmod, icolmoe, icolclb
 		Action: icolata, icolatb, icolatc, icolatd, icolate
 		Die: icoldia, icoldib, icoldic, icoldid, icoldie
 		Burned: icoldia, icoldib, icoldic, icoldid, icoldie
@@ -487,7 +523,20 @@ JarmenVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: ijarata, ijaratb, ijaratc, ijaratd, ijarate
-		Select: ijarsea, ijarseb, ijarsec, ijarsed, ijarsee, ijarsef
+		Select: ijarsea, ijarseb, ijarsed, ijarsee
+		Build: ijarsec
+		Move: ijarmoa, ijarmob, ijarmoc, ijarmod, ijarmoe
+		Action: ijarata, ijaratb, ijaratc, ijaratd, ijarate
+		Die: ijardia, ijardib, ijardic, ijardid, ijardie
+		Burned: ijardia, ijardib, ijardic, ijardid, ijardie
+		Zapped: ijardia, ijardib, ijardic, ijardid, ijardie
+
+DemoJarmenVoice:
+	DefaultVariant: .wav
+	Voices:
+		Attack: ijarata, ijaratb, ijaratc, ijaratd, ijarate
+		Select: ijarsea, ijarseb, ijarsed, ijarsee, ijadsea, ijadsec
+		Build: ijadseb
 		Move: ijarmoa, ijarmob, ijarmoc, ijarmod, ijarmoe
 		Action: ijarata, ijaratb, ijaratc, ijaratd, ijarate
 		Die: ijardia, ijardib, ijardic, ijardid, ijardie
@@ -499,7 +548,8 @@ LotusVoice:
 	DefaultVariant: .wav
 	Voices:
 		Capture: iblamba, iblambb, iblambc
-		Select: iblasea, iblaseb, iblasec, iblased, iblasee, iblasef, iblaseg
+		Select: iblasea, iblaseb, iblasec, iblased, iblasee ;, iblaseg
+		Build: iblasef
 		Move: iblamoa, iblamob, iblamoc, iblamod, iblamoe, iblamof, iblamog
 		Action: iblamoa, iblamob, iblamoc, iblamod, iblamoe, iblamof, iblamog
 		Disable: iblamva, iblamvb, iblamvc
@@ -518,7 +568,8 @@ CarVoice:
 SupplyTruckVoice:
 	DefaultVariant: .wav
 	Voices:
-		Select: vsupsea, vsupseb, vsupsec, vsupsed, vsupsee, vsupsef
+		Select: vsupsea, vsupseb, vsupsec, vsupsed, vsupsee
+		Build: vsupsef
 		Move: vsupmoa, vsupmob, vsupmoc, vsupmod, vsupmoe
 		Action: vsupspa, vsupspb, vsupspc, vsupspd
 
@@ -526,30 +577,34 @@ HumveeVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vhumata, vhumatb, vhumatc, vhumatd, vhumate, vhumatf
-		Select: vhumsea, vhumseb, vhumsec, vhumsed, vhumsee, vhumsef, vhumseg
-		Move: vhummoa, vhummob, vhummoc, vhummod, vhummoe, vhummof
+		Select: vhumsea, vhumseb, vhumsef, vhulsec ;, vhumsec, vhumsed, vhumsee
+		Build: vhumseg
+		Move: vhummoa, vhummob, vhummod, vhummoe, vhummof, vhulmob, vhulmoa ;, vhummoc 
 		Action: vhumata, vhumatb, vhumatc, vhumatd, vhumate, vhumatf
 
 TechnicalVoice:
 	DefaultVariant: .wav
 	Voices:
-		Attack: vtecata, vtecatb, vtecatc, vtecatd, vtecate, vtecatf, vtecatg, vtecath
+		Attack: vtecata, vtecatc, vtecatd, vtecate, vtecatf, vtecatg ;, vtecatb
 		Select: vtecsea, vtecseb, vtecsec, vtecsed, vtecsee, vtecsef
-		Move: vtecmoa, vtecmob, vtecmoc, vtecmod, vtecmoe
-		Action: vtecata, vtecatb, vtecatc, vtecatd, vtecate, vtecatf, vtecatg, vtecath
+		Build: vtecath
+		Move: vtecmoa, vtecmob, vtecmoc, vtecmod, vtecmoe, vteccrb
+		Action: vtecata, vtecatc, vtecatd, vtecate, vtecatf, vtecatg ;, vtecatb
 
 RadarVanVoice:
 	DefaultVariant: .wav
 	Voices:
 		Select: vradsea, vradseb, vradsec, vradsed, vradsee, vradsef
-		Move: vradmoa, vradmob, vradmoc, vradmod, vradmoe
-		Action: vradmoa, vradmob, vradmoc, vradmod, vradmoe
+		Build: vradsef
+		Move: vradmoa, vradmob, vradmoc, vradmod
+		Action: vradmoa, vradmob, vradmoc, vradmod
 
 CrusaderTankVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vcruata, vcruatb, vcruatc, vcruatd, vcruate, vcruatf
-		Select: vcrusea, vcruseb, vcrusec, vcrused, vcrusee, vcrusef
+		Select: vcrusea, vcruseb, vcrusec, vcrused, vcrusee
+		Build: vcrusef
 		Move: vcrumoa, vcrumob, vcrumoc, vcrumod, vcrumoe
 		Action: vcruata, vcruatb, vcruatc, vcruatd, vcruate, vcruatf
 
@@ -557,7 +612,8 @@ LaserTankVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vcruata, vcruatb, vcruatc, vcruatd, vcruate, vcruatf, vcrlata, vcrlatb, vcrlatc
-		Select: vcrusea, vcruseb, vcrusec, vcrused, vcrusee, vcrusef, vcrlsea, vcrlseb, vcrlsec
+		Select: vcrusea, vcruseb, vcrusec, vcrused, vcrusee, vcrlseb, vcrlsec
+		Build: vcrlsea
 		Move: vcrumoa, vcrumob, vcrumoc, vcrumod, vcrumoe
 		Action: vcruata, vcruatb, vcruatc, vcruatd, vcruate, vcruatf, vcrlata, vcrlatb, vcrlatc
 
@@ -566,16 +622,18 @@ ScorpionTankVoice:
 	Voices:
 		Attack: vscoata, vscoatb, vscoatc, vscoatd, vscoate
 		Select: vscosea, vscoseb, vscosec, vscosed, vscosee
-		Move: vscomoa, vscomob, vscomoc, vscomod, vscomoe, vscomof, vscomog
+		Build: vscosef
+		Move: vscomoa, vscomob, vscomoc, vscomod, vscomoe, vscomof ;, vscomog
 		Action: vscoata, vscoatb, vscoatc, vscoatd, vscoate
 
 BattlemasterTankVoice:
 	DefaultVariant: .wav
 	Voices:
-		Attack: vbatata, vbatatb, vbatatc, vbatatd, vbatate, vbatatf
-		Select: vbatsea, vbatseb, vbatsec, vbatsed, vbatsee, vbatsef
+		Attack: vbatata, vbatatb, vbatatc, vbatatd, vbatate, vbatatf, vbatcrb, vbatcrc
+		Select: vbatsea, vbatseb, vbatsec, vbatsed, vbatsee
+		Build: vbatsef
 		Move: vbatmoa, vbatmob, vbatmoc, vbatmod, vbatmoe, vbatmof
-		Action: vbatata, vbatatb, vbatatc, vbatatd, vbatate, vbatatf
+		Action: vbatata, vbatatb, vbatatc, vbatatd, vbatate, vbatatf, vbatcrb, vbatcrc
 
 NuclearBattlemasterTankVoice:
 	DefaultVariant: .wav
@@ -588,23 +646,26 @@ NuclearBattlemasterTankVoice:
 QuadCannonVoice:
 	DefaultVariant: .wav
 	Voices:
-		Attack: vquaata, vquaatb, vquaatc, vquaatd, vquaate
-		Select: vquasea, vquaseb, vquasec, vquased, vquasee, vquasef
+		Attack: vquaata, vquaatb, vquaatc, vquaatd, vquaate, vquacrb
+		Select: vquasea, vquaseb, vquasec, vquased, vquasef
+		Build: vquasee
 		Move: vquamoa, vquamob, vquamoc, vquamod, vquamoe
-		Action: vquaata, vquaatb, vquaatc, vquaatd, vquaate
+		Action: vquaata, vquaatb, vquaatc, vquaatd, vquaate, vquacrb
 
 GatlingTankVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vgatata, vgatatb, vgatatc, vgatatd, vgatate
-		Select: vgatsea, vgatseb, vgatsec, vgatsed, vgatsee, vgatsef
-		Move: vgatmoa, vgatmob, vgatmoc, vgatmod, vgatmoe
+		Select: vgatsea, vgatseb, vgatsed, vgatsee ;, vgatsec
+		Build: vgatsef
+		Move: vgatmoa, vgatmob, vgatmoc, vgatmoe ;, vgatmod
 		Action: vgatata, vgatatb, vgatatc, vgatatd, vgatate
 
 AmbulanceVoice:
 	DefaultVariant: .wav
 	Voices:
-		Select: vambsea, vambseb, vambsec, vambsed, vambsee, vambsef, vambseg
+		Select: vambsea, vambseb, vambsec, vambsed, vambsee, vambsef
+		Build: vambseg
 		Move: vambmoa, vambmob, vambmoc, vambmod, vambmoe, vambmof
 		Action: vambhea, vambheb, vambhec, vambhed, vambhee, vambhef
 
@@ -619,24 +680,27 @@ SentryDroneVoice:
 ToxinTractorVoice:
 	DefaultVariant: .wav
 	Voices:
-		Attack: vtoxata, vtoxatb, vtoxatc, vtoxatd, vtoxate, vtoxatf, vtoxatg, vtoxath
-		Select: vtoxsea, vtoxseb, vtoxsec, vtoxsed, vtoxsee, vtoxsef, vtoxseg
+		Attack: vtoxata, vtoxatb, vtoxatc, vtoxatd, vtoxate, vtoxatf, vtoxatg ;, vtoxath
+		Select: vtoxsea, vtoxseb, vtoxsec, vtoxsed, vtoxsee, vtoxsef
+		Build: vtoxseg
 		Move: vtoxmoa, vtoxmob, vtoxmoc, vtoxmod, vtoxmoe, vtoxmof, vtoxmog, vtoxmoh
-		Action: vtoxata, vtoxatb, vtoxatc, vtoxatd, vtoxate, vtoxatf, vtoxatg, vtoxath
+		Action: vtoxata, vtoxatb, vtoxatc, vtoxatd, vtoxate, vtoxatf, vtoxatg ;, vtoxath
 
 RocketBuggyVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vrocata, vrocatb, vrocatc, vrocatd, vrocate
 		Select: vrocsea, vrocseb, vrocsec, vrocsed, vrocsee, vrocsef
-		Move: vrocmoa, vrocmob, vrocmoc, vrocmod, vrocmoe, vrocmof
+		Build: vrocseg
+		Move: vrocmoa, vrocmob, vrocmoc, vrocmod, vrocmoe, vrocmof, vroccrb
 		Action: vrocata, vrocatb, vrocatc, vrocatd, vrocate
 
 AvengerVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vaveata, vaveatb, vaveatc, vaveatd, vaveate
-		Select: vavesea, vaveseb, vavesec, vavesed, vavesee
+		Select: vavesea, vaveseb, vavesec, vavesee
+		Build: vavesed
 		Move: vavemoa, vavemob, vavemoc, vavemod, vavemoe
 		Action: vaveata, vaveatb, vaveatc, vaveatd, vaveate
 
@@ -644,7 +708,8 @@ TroopCrawlerVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vtroata, vtroatb, vtroatc, vtroatd, vtroate
-		Select: vtrosea, vtroseb, vtrosec, vtrosed, vtrosee, vtrosef
+		Select: vtrosea, vtroseb, vtrosec, vtrosed, vtrosee
+		Build: vtrosef
 		Move: vtromoa, vtromob, vtromoc, vtromod, vtromoe
 		Action: vtroata, vtroatb, vtroatc, vtroatd, vtroate
 
@@ -652,7 +717,8 @@ AssaultTroopCrawlerVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vtroata, vtroatb, vtroatc, vtroatd, vtroate, vtraata, vtraatb, vtraatc
-		Select: vtrosea, vtroseb, vtrosec, vtrosed, vtrosee, vtrosef, vtrosea, vtroseb, vtrosec
+		Select: vtrosea, vtroseb, vtrosec, vtrosed, vtrosee, vtrasea, vtrasec
+		Build: vtraseb
 		Move: vtromoa, vtromob, vtromoc, vtromod, vtromoe
 		Action: vtroata, vtroatb, vtroatc, vtroatd, vtroate, vtraata, vtraatb, vtraatc
 
@@ -660,7 +726,8 @@ ListeningOutpostVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vlismoa, vlismob, vlismoc, vlismod, vlismoe
-		Select: vlissea, vlisseb, vlissec, vlissed, vlissee
+		Select: vlissea, vlisseb, vlissec, vlissed
+		Build: vlissee
 		Move: vlismoa, vlismob, vlismoc, vlismod, vlismoe
 		Action: vlismoa, vlismob, vlismoc, vlismod, vlismoe
 
@@ -668,7 +735,8 @@ MicrowaveTankVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vmicata, vmicatb, vmicatc, vmicatd, vmicate, vmicatf
-		Select: vmicsea, vmicseb, vmicsec, vmicsed, vmicsee
+		Select: vmicseb, vmicsec, vmicsed, vmicsee
+		Build: vmicsea
 		Move: vmicmoa, vmicmob, vmicmoc, vmicmod, vmicmoe
 		Action: vmicata, vmicatb, vmicatc, vmicatd, vmicate, vmicatf
 
@@ -676,7 +744,8 @@ ECMTankVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vfreata, vfreatb, vfreatc, vfreatd, vfreate
-		Select: vfresea, vfreseb, vfresec, vfresed, vfresee
+		Select: vfreseb, vfresec, vfresed, vfresee
+		Build: vfresea
 		Move: vfremoa, vfremob, vfremoc, vfremod, vfremoe
 		Action: vfreata, vfreatb, vfreatc, vfreatd, vfreate
 
@@ -684,7 +753,8 @@ DragonTankVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vdraata, vdraatb, vdraatc, vdraatd, vdraate, vdraatf
-		Select: vdrasea, vdraseb, vdrasec, vdrased, vdrasee, vdrasef, vdraseg
+		Select: vdrasea, vdraseb, vdrasec, vdrased, vdrasee, vdrasef
+		Build: vdraseg
 		Move: vdramoa, vdramob, vdramoc, vdramod, vdramoe
 		Action: vdraata, vdraatb, vdraatc, vdraatd, vdraate, vdraatf
 
@@ -692,7 +762,8 @@ TomahawkLauncherVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vtomata, vtomatb, vtomatc, vtomatd, vtomate, vtomatf
-		Select: vtomsea, vtomseb, vtomsec, vtomsed, vtomsee, vtomsef
+		Select: vtomseb, vtomsec, vtomsed, vtomsee, vtomsef
+		Build: vtomsea
 		Move: vtommoa, vtommob, vtommoc, vtommod, vtommoe
 		Action: vtomata, vtomatb, vtomatc, vtomatd, vtomate, vtomatf
 
@@ -700,7 +771,8 @@ SCUDLauncherVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vscuata, vscuatb, vscuatc, vscuatd, vscuate, vscuatf, vscuatg, vscuath
-		Select: vscusea, vscuseb, vscusec, vscused, vscusee, vscusef, vscuseg
+		Select: vscusea, vscuseb, vscusec, vscused, vscusee, vscusef
+		Build: vscuseg
 		Move: vscumoa, vscumob, vscumoc, vscumod, vscumoe
 		Action: vscuata, vscuatb, vscuatc, vscuatd, vscuate, vscuatf, vscuatg, vscuath
 
@@ -708,71 +780,80 @@ InfernoCannonVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vinfata, vinfatb, vinfatc, vinfatd, vinfate
-		Select: vinfsea, vinfseb, vinfsec, vinfsed, vinfsee, vinfsef
+		Select: vinfsea, vinfseb, vinfsec, vinfsed, vinfsee
+		Build: vinfsef
 		Move: vinfmoa, vinfmob, vinfmoc, vinfmod, vinfmoe, vinfmof
 		Action: vinfata, vinfatb, vinfatc, vinfatd, vinfate
 
 PaladinTankVoice:
 	DefaultVariant: .wav
 	Voices:
-		Attack: vpalata, vpalatb, vpalatc, vpalatd, vpalate, vpalatf
-		Select: vpalsea, vpalseb, vpalsec, vpalsed, vpalsee, vpalsef
+		Attack: vpalata, vpalatb, vpalatc, vpalatd, vpalate ;, vpalatf
+		Select: vpalsea, vpalseb, vpalsec, vpalsed, vpalsee ;, vpalatf
+		Build: vpalseg
 		Move: vpalmoa, vpalmob, vpalmoc, vpalmod, vpalmoe
-		Action: vpalata, vpalatb, vpalatc, vpalatd, vpalate, vpalatf
+		Action: vpalata, vpalatb, vpalatc, vpalatd, vpalate ;, vpalatf
 
 MarauderTankVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vmarata, vmaratb, vmaratc, vmaratd, vmarate
-		Select: vmarsea, vmarseb, vmarsec, vmarsed, vmarsee, vmarsef
+		Select: vmarsea, vmarseb, vmarsec, vmarsed, vmarsee
+		Build: vmarsef
 		Move: vmarmoa, vmarmob, vmarmoc, vmarmod, vmarmoe
 		Action: vmarata, vmaratb, vmaratc, vmaratd, vmarate
 
 OverlordTankVoice:
 	DefaultVariant: .wav
 	Voices:
-		Attack: voveata, voveatb, voveatc, voveatd, voveate, voveatf, voveatg
-		Select: vovesea, voveseb, vovesec, vovesed, vovesee, vovesef, voveseg
+		Attack: voveata, voveatb, voveatc, voveate, voveatf, voveatg, vovecrb ;, voveatd
+		Select: vovesea, voveseb, vovesec, vovesee, vovesef, voveseg, vovecra
+		Build: vovesed
 		Move: vovemoa, vovemob, vovemoc, vovemod, vovemoe, vovemof, vovemog
-		Action: voveata, voveatb, voveatc, voveatd, voveate, voveatf, voveatg
+		Action: voveata, voveatb, voveatc, voveate, voveatf, voveatg, vovecrb ;, voveatd
 
 EmparorOverlordVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: voveata, voveatb, voveatc, voveatd, voveate, voveatf, voveatg
 		Select: voveseb, vovesec, vovesed, vovesee, voveseg, vovecra
+		Build: vovesed
 		Move: vovemob, vovemoc, vovemod, vovemoe, vovemof, vovemog
 		Action: voveata, voveatb, voveatc, voveatd, voveate, voveatf, voveatg
 
 BombTruckVoice:
 	DefaultVariant: .wav
 	Voices:
-		Attack: vbommoa, vbommob, vbommoc, vbommod, vbommoe
-		Select: vbomsea, vbomseb, vbomsec, vbomsed, vbomsee, vbomsef, vbomseg
+		Attack: vbomata, vbomatb, vbomatc, vbomatd, vbomate
+		Select: vbomsea, vbomseb, vbomsec, vbomsed, vbomsee, vbomsef
+		Build: vbomseg
 		Move: vbommoa, vbommob, vbommoc, vbommod, vbommoe
-		Action: vbommoa, vbommob, vbommoc, vbommod, vbommoe
+		Action: vbomata, vbomatb, vbomatc, vbomatd, vbomate
 		Disguise: vbomdsa, vbomdsb, vbomdsc
 
 NukeCannonVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vnukata, vnukatb, vnukatc, vnukatd, vnukate
-		Select: vnuksea, vnukseb, vnuksec, vnuksed, vnuksee, vnuksef
-		Move: vnukmoa, vnukmob, vnukmoc, vnukmod, vnukmoe
+		Select: vnuksea, vnukseb, vnuksed, vnuksee ;, vnuksec
+		Build: vnuksef
+		Move: vnukmob, vnukmoc, vnukmod, vnukmoe ;, vnukmoa
 		Action: vnukata, vnukatb, vnukatc, vnukatd, vnukate
 
 USAMCCVoice:
 	DefaultVariant: .wav
 	Voices:
-		Select: vdousea, vdouseb, vdousec, vdoused, vdousee, vdousef, vdouseg, vdouseh, vdousei, vdousej
-		Move: vdoumoa, vdoumob, vdoumoc, vdoumod, vdoumoe, vdoumof, vdoumog
-		Action: vdoumoa, vdoumob, vdoumoc, vdoumod, vdoumoe, vdoumof, vdoumog
+		Select: vdousea, vdouseb, vdousec, vdoused, vdousee, vdousef, vdouseg, vdouseh, vdousei
+		Build: vdousej
+		Move: vdoumoa, vdoumob, vdoumoc, vdoumoe, vdoumof, vdoumog ;, vdoumod
+		Action: vdoumoa, vdoumob, vdoumoc, vdoumoe, vdoumof, vdoumog ;, vdoumod
 		Deploy: vdoubua, vdoubub, vdoubuc, vdoubud, vdoubue
 
 PRCMCCVoice:
 	DefaultVariant: .wav
 	Voices:
-		Select: vdocsea, vdocseb, vdocsec, vdocsed, vdocsee, vdocsef
+		Select: vdocsea, vdocseb, vdocsec, vdocsed, vdocsee
+		Build: vdocsef
 		Move: vdocmoa, vdocmob, vdocmoc, vdocmod, vdocmoe
 		Action: vdocmoa, vdocmob, vdocmoc, vdocmod, vdocmoe
 		Deploy: vdocbua, vdocbub, vdocbuc, vdocbud, vdocbue, vdocbuf
@@ -780,7 +861,8 @@ PRCMCCVoice:
 ChinookVoice:
 	DefaultVariant: .wav
 	Voices:
-		Select: vchisea, vchiseb, vchisec, vchised, vchisee, vchisef, vchiseg
+		Select: vchisea, vchiseb, vchisec, vchised, vchisee, vchisef
+		Build: vchiseg
 		Move: vchimoa, vchimob, vchimoc, vchimod, vchimoe, vchimof
 		Action: vchispa, vchispb, vchispc
 
@@ -788,7 +870,8 @@ CombatChinookVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vchcata, vchcatb, vchcatc, vchcatd, vchcate
-		Select: vchisea, vchiseb, vchisec, vchised, vchisee, vchisef, vchiseg, vchcsea, vchcseb, vchcsec
+		Select: vchise, vchiseb, vchisec, vchised, vchisee, vchisef, vchcseb, vchcsec
+		Build: vchcsea
 		Move: vchimoa, vchimob, vchimoc, vchimod, vchimoe, vchimof
 		Action: vchispa, vchispb, vchispc
 
@@ -796,23 +879,26 @@ ComancheVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vcomata, vcomatb, vcomatc, vcomatd, vcomate, vcomatf, vcomatg, vcomath
-		Select: vcomsea, vcomseb, vcomsec, vcomsed, vcomsee, vcomsef
+		Select: vcomsea, vcomseb, vcomsed, vcomsee #, vcomsec
+		Build: vcomsef
 		Move: vcommoa, vcommob, vcommoc, vcommod, vcommoe
 		Action: vcomata, vcomatb, vcomatc, vcomatd, vcomate, vcomatf, vcomatg, vcomath
 
 HelixVoice:
 	DefaultVariant: .wav
 	Voices:
-		Attack: vhelata, vhelatb, vhelatc, vhelatd, vhelate, vhelatf, vhelatg, vhelath
+		Attack: vhelata, vhelatb, vhelatc, vhelatd, vhelate, vhelatf, vhelatg 
 		Select: vhelsea, vhelseb, vhelsec, vhelsed, vhelsee
+		Build: vhelath
 		Move: vhelmoa, vhelmob, vhelmoc, vhelmod, vhelmoe
-		Action: vhelata, vhelatb, vhelatc, vhelatd, vhelate, vhelatf, vhelatg, vhelath
+		Action: vhelata, vhelatb, vhelatc, vhelatd, vhelate, vhelatf, vhelatg
 
 MiGVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vmigata, vmigatb, vmigatc, vmigatd, vmigate
-		Select: vmigsea, vmigseb, vmigsec, vmigsed, vmigsee, vmigsef
+		Select: vmigsea, vmigseb, vmigsec, vmigsed, vmigsee
+		Build: vmigsef
 		Move: vmigmoa, vmigmob, vmigmoc, vmigmod, vmigmoe
 		Action: vmigata, vmigatb, vmigatc, vmigatd, vmigate
 
@@ -820,7 +906,8 @@ RaptorVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vrapata, vrapatb, vrapatc, vrapatd, vrapate
-		Select: vrapsea, vrapseb, vrapsec, vrapsed, vrapsee, vrapsef, vrapseg
+		Select: vrapsea, vrapseb, vrapsec, vrapsed, vrapsee, vrapsef
+		Build: vrapseg
 		Move: vrapmoa, vrapmob, vrapmoc, vrapmod, vrapmoe
 		Action: vrapata, vrapatb, vrapatc, vrapatd, vrapate
 
@@ -828,7 +915,8 @@ KingRaptorVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vrapata, vrapatb, vrapatc, vrapatd, vrapate
-		Select: vrapsea, vrapseb, vrapsec, vrapsed, vrapsee, vrapsef, vrapseg, vraksea, vrakseb, vraksec, vraksed
+		Select: vrapsea, vrapseb, vrapsec, vrapsed, vrapsee, vrapsef, vrakseb, vraksec, vraksed
+		Build: vraksea
 		Move: vrapmoa, vrapmob, vrapmoc, vrapmod, vrapmoe
 		Action: vrapata, vrapatb, vrapatc, vrapatd, vrapate
 
@@ -836,7 +924,8 @@ AuroraVoice:
 	DefaultVariant: .wav
 	Voices:
 		Attack: vaurata, vauratb, vauratc, vauratd, vaurate
-		Select: vaursea, vaurseb, vaursec, vaursed, vaursee, vaursef, vaurseg
+		Select: vaursea, vaurseb, vaursec, vaursed, vaursee, vaursef
+		Build: vaurseg
 		Move: vaurmoa, vaurmob, vaurmoc, vaurmod, vaurmoe, vaurmof
 		Action: vaurata, vauratb, vauratc, vauratd, vaurate
 
@@ -845,6 +934,7 @@ StealthFighterVoice:
 	Voices:
 		Attack: vsteata, vsteatb, vsteatc, vsteatd, vsteate
 		Select: vstesea, vsteseb, vstesec, vstesed, vstesee, vstesef
+		Build: vstesea
 		Move: vstemoa, vstemob, vstemoc, vstemod, vstemoe
 		Action: vsteata, vsteatb, vsteatc, vsteatd, vsteate
 
