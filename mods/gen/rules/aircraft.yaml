@@ -224,6 +224,7 @@ aircraft.mig:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_airfield, ~techlevel.medium
 		Description: Multi-role fighter plane.
+		ReadyAudio: MiGCreated
 	Valued:
 		Cost: 1200
 	CustomProductionCost@Refinery:
@@ -344,6 +345,7 @@ aircraft.raptor:
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.medium
 		Description: Multi-role fighter plane.
+		ReadyAudio: RaptorCreated
 	Valued:
 		Cost: 1400
 	CustomProductionCost@Refinery:
@@ -416,6 +418,7 @@ aircraft.king_raptor:
 	Buildable:
 		Queue: queue.air_gen_aircraft #, queue.boss_gen_aircraft
 		Description: Multi-role fighter plane.\n\nCan deflect enemy missiles with laser.
+		ReadyAudio: KingRaptorCreated
 	Valued:
 		Cost: 1100
 	CustomProductionCost@Refinery:
@@ -463,6 +466,7 @@ aircraft.stealth_fighter:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_airfield, ~generals_power.stealth_fighter, ~techlevel.high
 		Description: Stealth fighter plane.
+		ReadyAudio: StealthFighterCreated
 	Valued:
 		Cost: 1600
 	CustomProductionCost@Refinery:
@@ -571,6 +575,7 @@ aircraft.aurora:
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~techlevel.high
 		Description: Fast fighter plane.\n\nCan not be damaged while attacking.\n\nSlows down and becomes vulnerable after attacking.
+		ReadyAudio: AuroraCreated
 	Valued:
 		Cost: 2500
 	CustomProductionCost@Refinery:
@@ -840,6 +845,7 @@ aircraft.chinook:
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.infonly
 		Description: Collects supplies.\n\nCan carry infantry and vehicles.
+		ReadyAudio: ChinookCreated
 	Valued:
 		Cost: 1200
 	CustomProductionCost@Refinery:
@@ -961,6 +967,7 @@ aircraft.combat_chinook:
 		BuildDuration: 625
 		Prerequisites: building.usa_war_factory, ~techlevel.medium
 		Description: Collects supplies.\n\nCan carry infantry and vehicles.\n\nInfantry can fire outside.\n\nCan deflect enemy missiles with laser.
+		ReadyAudio: CombatChinookCreated
 	Tooltip:
 		Name: Combat Chinook
 	CustomProductionCost@Refinery:
@@ -1003,6 +1010,7 @@ aircraft.comanche:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_airfield, ~techlevel.medium
 		Description: Helicopter gunship armed with machine gun.
+		ReadyAudio: ComancheCreated
 	Valued:
 		Cost: 1500
 	CustomProductionCost@Refinery:
@@ -1112,6 +1120,7 @@ aircraft.helix:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_airfield, ~techlevel.medium, ~prerequisite.zh_units
 		Description: Helicopter gunship armed with machine gun.\n\nCan carry 5 infantry.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
+		ReadyAudio: HelixCreated
 	Valued:
 		Cost: 1500
 	CustomProductionCost@Refinery:

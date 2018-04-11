@@ -10,6 +10,7 @@ vehicle.supply_truck:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_supply_center, ~techlevel.infonly
 		Description: Collects supplies.
+		ReadyAudio: SupplyTruckCreated
 	Valued:
 		Cost: 600
 	CustomProductionCost@Refinery:
@@ -78,6 +79,7 @@ vehicle.humvee:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, ~techlevel.low
 		Description: Fast scout & anti-infantry vehicle.\n\nCan carry 5 infantry that can fire outside.
+		ReadyAudio: HumveeCreated
 	Valued:
 		Cost: 700
 	CustomProductionCost@Refinery:
@@ -196,6 +198,7 @@ vehicle.technical:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.low
 		Description: Fast scout & anti-infantry vehicle.\n\nCan carry 5 infantry.\n\nPassengers can survive when it dies.
+		ReadyAudio: TechnicalCreated
 	Valued:
 		Cost: 500
 	CustomProductionCost@Refinery:
@@ -283,6 +286,7 @@ vehicle.radar_van:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.low
 		Description: Provides radar.
+		ReadyAudio: RadarVanCreated
 	Valued:
 		Cost: 500
 	CustomProductionCost@Refinery:
@@ -360,6 +364,7 @@ vehicle.scorpion_tank:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.low
 		Description: Lightly armored main battle tank.
+		ReadyAudio: ScorpionTankCreated
 	Valued:
 		Cost: 600
 	CustomProductionCost@Refinery:
@@ -491,6 +496,7 @@ vehicle.crusader_tank:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, ~techlevel.low
 		Description: Medium armored main battle tank.
+		ReadyAudio: CrusaderTankCreated
 	Valued:
 		Cost: 900
 	CustomProductionCost@Refinery:
@@ -545,6 +551,7 @@ vehicle.laser_tank:
 	Buildable:
 		Queue: queue.laser_gen_vehicle
 		Description: Medium armored tank armed with lasers.\n\nRequires power to operate.
+		ReadyAudio: LaserTankCreated
 	Tooltip:
 		Name: Laser Tank
 	Armament:
@@ -581,6 +588,7 @@ vehicle.battlemaster_tank:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.low
 		Description: Medium armored main battle tank.
+		ReadyAudio: BattlemasterTankCreated
 	Valued:
 		Cost: 800
 	CustomProductionCost@Refinery:
@@ -657,8 +665,6 @@ vehicle.nuclear_battlemaster_tank:
 		Weapon: cannon.battlemaster_tank.nuke
 	Armament@AUTOLOADER:
 		Weapon: cannon.battlemaster_tank.nuke.autoloader
-	Voiced:
-		VoiceSet: NuclearBattlemasterTankVoice
 
 vehicle.ambulance:
 	Inherits: ^Vehicle
@@ -675,6 +681,7 @@ vehicle.ambulance:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, ~techlevel.medium
 		Description: Heals nearby infantry.\n\nCan carry 3 infantry.\n\nPassengers can survive when it dies.
+		ReadyAudio: AmbulanceCreated
 	Valued:
 		Cost: 600
 	CustomProductionCost@Refinery:
@@ -785,7 +792,6 @@ vehicle.sentry_drone:
 	-WithColoredOverlay@DRIVER_KILLED:
 	-ExternalConditionThatRevokedOnCapture@DRIVER_KILLED:
 	-TimedConditionBar@DRIVER_KILLED:
-	-AnnounceOnBuild:
 	Cloak:
 		InitialDelay: 100
 		CloakDelay: 50
@@ -843,6 +849,7 @@ vehicle.quad_cannon:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.low
 		Description: Anti-infantry & anti-air vehicle.
+		ReadyAudio: QuadCannonCreated
 	Valued:
 		Cost: 700
 	CustomProductionCost@Refinery:
@@ -914,6 +921,7 @@ vehicle.gatling_tank:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.low
 		Description: Anti-infantry & anti-air vehicle.
+		ReadyAudio: GatlingTankCreated
 	Valued:
 		Cost: 800
 	CustomProductionCost@Refinery:
@@ -998,6 +1006,7 @@ vehicle.toxin_tractor:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, ~techlevel.medium
 		Description: Toxin-throwing vehicle.
+		ReadyAudio: ToxinTractorCreated
 	Valued:
 		Cost: 600
 	CustomProductionCost@Refinery:
@@ -1111,6 +1120,7 @@ vehicle.dragon_tank:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.medium
 		Description: Flame-throwing vehicle.
+		ReadyAudio: DragonTankCreated
 	Valued:
 		Cost: 800
 	CustomProductionCost@Refinery:
@@ -1187,6 +1197,7 @@ vehicle.rocket_buggy:
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~building.arms_dealer, ~techlevel.medium
 		Description: Rocket artillery.
+		ReadyAudio: RocketBuggyCreated
 	Valued:
 		Cost: 900
 	CustomProductionCost@Refinery:
@@ -1279,6 +1290,7 @@ vehicle.avenger:
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~techlevel.medium, ~prerequisite.zh_units
 		Description: Advanced anti-air unit.\n\nCan deflect enemy missiles with laser.
+		ReadyAudio: AvengerCreated
 	Valued:
 		Cost: 2000
 	CustomProductionCost@Refinery:
@@ -1354,6 +1366,7 @@ vehicle.troop_crawler:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.low
 		Description: Tough infantry transport.\n\nCan carry 8 infantry.\n\nComes with 8 red guards.\n\nPassengers can survive when it dies.
+		ReadyAudio: TroopCrawlerCreated
 	Valued:
 		Cost: 1400
 	CustomProductionCost@Refinery:
@@ -1397,6 +1410,7 @@ vehicle.assault_troop_crawler:
 		Queue: queue.inf_gen_vehicle
 		BuildDuration: 625
 		Description: Tough infantry transport.\n\nCan carry 8 infantry that can fire outside.\n\nComes with 8 minigunners.\n\nPassengers can survive when it dies.
+		ReadyAudio: AssaultTroopCrawlerCreated
 	Valued:
 		Cost: 2400
 	CustomProductionCost@Refinery:
@@ -1427,6 +1441,7 @@ vehicle.listening_outpost:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.low, ~prerequisite.zh_units
 		Description: Stealth detector unit.\n\nCan carry 2 infantry that can fire outside.\n\nComes with 2 tank hunters.\n\nPassengers can survive when it dies.\n\nCamouflaged while not moving.
+		ReadyAudio: ListeningOutpostCreated
 	Valued:
 		Cost: 800
 	CustomProductionCost@Refinery:
@@ -1523,6 +1538,7 @@ vehicle.microwave_tank:
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~techlevel.medium, ~prerequisite.zh_units
 		Description: Disables enemy structures.\n\nBurns enemy infantry around.
+		ReadyAudio: MicrowaveTankCreated
 	Valued:
 		Cost: 800
 	CustomProductionCost@Refinery:
@@ -1602,6 +1618,7 @@ vehicle.ecm_tank:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_war_factory, ~techlevel.medium, ~prerequisite.zh_units
 		Description: Disables enemy vehicles.\n\nJams enemy missiles.
+		ReadyAudio: ECMTankCreated
 	Valued:
 		Cost: 800
 	CustomProductionCost@Refinery:
@@ -1689,6 +1706,7 @@ vehicle.tomahawk_launcher:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~techlevel.medium
 		Description: Long-range rocket artillery.
+		ReadyAudio: TomahawkCreated
 	Valued:
 		Cost: 1200
 	CustomProductionCost@Refinery:
@@ -1776,6 +1794,7 @@ vehicle.scud_launcher:
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~building.arms_dealer, ~generals_power.scud_launcher, ~techlevel.high
 		Description: Long-range rocket artillery.\n\nCan be armed with either toxin or high explosive missiles.
+		ReadyAudio: ScudLauncherCreated
 	Valued:
 		Cost: 1200
 	CustomProductionCost@Refinery:
@@ -1895,6 +1914,7 @@ vehicle.inferno_cannon:
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~techlevel.medium
 		Description: Long-range artillery.
+		ReadyAudio: InfernoCannonCreated
 	Valued:
 		Cost: 900
 	CustomProductionCost@Refinery:
@@ -1973,6 +1993,7 @@ vehicle.paladin_tank:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~generals_power.paladin_tank, ~techlevel.high
 		Description: Heavy tank.\n\nCan deflect enemy missiles with laser.
+		ReadyAudio: PaladinTankCreated
 	Valued:
 		Cost: 1100
 	CustomProductionCost@Refinery:
@@ -2056,6 +2077,7 @@ vehicle.marauder_tank:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, building.palace, ~generals_power.marauder_tank, ~techlevel.high
 		Description: Medium tank.
+		ReadyAudio: MarauderTankCreated
 	Valued:
 		Cost: 800
 	CustomProductionCost@Refinery:
@@ -2211,6 +2233,7 @@ vehicle.overlord_tank:
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~techlevel.high
 		Description: Big and slow tank.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
+		ReadyAudio: OverlordTankCreated
 	Valued:
 		Cost: 2000
 	CustomProductionCost@Refinery:
@@ -2400,6 +2423,7 @@ vehicle.bomb_truck:
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~building.arms_dealer, ~techlevel.high
 		Description: Suicide vehicle.\n\nCan be armed with toxin or high explosive bombs.
+		ReadyAudio: BombTruckCreated
 	Valued:
 		Cost: 1200
 	CustomProductionCost@Refinery:
@@ -2574,6 +2598,7 @@ vehicle.nuke_cannon:
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, ~generals_power.nuke_cannon, ~techlevel.high
 		Description: Heavy artillery unit armed with nuclear warheads.
+		ReadyAudio: NukeCannonCreated
 	Valued:
 		Cost: 1600
 	CustomProductionCost@Refinery:
@@ -2686,6 +2711,7 @@ vehicle.usa_mcc:
 	Buildable:
 		Queue: queue.usa_command_center
 		Prerequisites: building.usa_command_center, ~techlevel.infonly
+		ReadyAudio: USAMCCCreated
 	Tooltip:
 		Name: USA Construction Vehicle
 	Production:
@@ -2752,6 +2778,7 @@ vehicle.gla_mcc:
 	Buildable:
 		Queue: queue.gla_command_center
 		Prerequisites: building.gla_command_center, ~techlevel.infonly
+		ReadyAudio: WorkerCreated
 	Tooltip:
 		Name: GLA Construction Vehicle
 	Production:
@@ -2806,6 +2833,7 @@ vehicle.prc_mcc:
 	Buildable:
 		Queue: queue.prc_command_center
 		Prerequisites: building.prc_command_center, ~techlevel.infonly
+		ReadyAudio: PRCMCCCreated
 	Tooltip:
 		Name: PRC Construction Vehicle
 	Production:

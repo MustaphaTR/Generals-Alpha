@@ -416,7 +416,7 @@ capture.black_lotus.anim:
 	Range: 8c128
 	ValidTargets: Capture
 	TargetActorCenter: true
-	Report: ucapture.wav
+	Report: ucapture.aud
 	Projectile: LaserZap
 		Width: 60
 		BeamDuration: 2
@@ -433,7 +433,7 @@ capture.black_lotus.end:
 	Range: 8c128
 	ValidTargets: Capture
 	TargetActorCenter: true
-	Report: ucapture.wav
+	Report: ucapture.aud
 	Projectile: LaserZap
 		Width: 60
 		BeamDuration: 2
@@ -452,7 +452,7 @@ disable.black_lotus.anim:
 	Range: 3c768
 	ValidTargets: Vehicle, Tank, Ship
 	TargetActorCenter: true
-	Report: ucapture.wav
+	Report: ucapture.aud
 	Projectile: LaserZap
 		Width: 60
 		BeamDuration: 2
@@ -469,7 +469,7 @@ disable.black_lotus.end:
 	Range: 3c768
 	ValidTargets: Vehicle, Tank, Ship
 	TargetActorCenter: true
-	Report: ucapture.wav
+	Report: ucapture.aud
 	Projectile: LaserZap
 		Width: 60
 		BeamDuration: 2
@@ -490,7 +490,7 @@ disable.hacker.anim:
 	Range: 3c768
 	ValidTargets: Disable
 	TargetActorCenter: true
-	Report: ucapture.wav
+	Report: ucapture.aud
 	Projectile: LaserZap
 		Width: 60
 		BeamDuration: 2
@@ -507,7 +507,7 @@ disable.hacker.end:
 	Range: 3c768
 	ValidTargets: Disable
 	TargetActorCenter: true
-	Report: ucapture.wav
+	Report: ucapture.aud
 	Projectile: LaserZap
 		Width: 60
 		BeamDuration: 2
@@ -528,7 +528,7 @@ disable.ecm_tank.anim:
 	Range: 5c0
 	ValidTargets: Vehicle, Tank, Ship
 	TargetActorCenter: true
-	Report: vfrelo2a.wav
+	Report: vfrelo2a.aud
 	Projectile: LaserZap
 		Width: 80
 		BeamDuration: 2
@@ -545,7 +545,7 @@ disable.ecm_tank.end:
 	Range: 5c0
 	ValidTargets: Vehicle, Tank, Ship
 	TargetActorCenter: true
-	Report: vfrelo2a.wav
+	Report: vfrelo2a.aud
 	Projectile: LaserZap
 		Width: 80
 		BeamDuration: 2
@@ -566,7 +566,7 @@ disable.microwave_tank.anim:
 	Range: 5c0
 	ValidTargets: Disable
 	TargetActorCenter: true
-	Report: vmiclo2a.wav
+	Report: vmiclo2a.aud
 	Projectile: LaserZap
 		Width: 80
 		BeamDuration: 2
@@ -583,7 +583,7 @@ disable.microwave_tank.end:
 	Range: 5c0
 	ValidTargets: Disable
 	TargetActorCenter: true
-	Report: vmiclo2a.wav
+	Report: vmiclo2a.aud
 	Projectile: LaserZap
 		Width: 80
 		BeamDuration: 2
@@ -625,7 +625,7 @@ aoe.microwave_tank:
 
 hack.spawn_4_rebels:
 	Inherits: ^default.spawner
-	Report: sambusha.wav
+	Report: sambusha.aud
 	Warhead@2Spawner: SpawnActor
 		Actors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel
 
@@ -641,7 +641,7 @@ hack.spawn_16_rebels:
 
 hack.spawn_4_toxin_rebels:
 	Inherits: ^default.spawner
-	Report: sambusha.wav
+	Report: sambusha.aud
 	Warhead@2Spawner: SpawnActor
 		Actors: infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel
 

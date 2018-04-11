@@ -77,7 +77,6 @@ building.usa_command_center:
 		LowPowerSlowdown: 3
 		RequireOwner: false
 		SpectatorUIOrder: 12
-		ReadyAudio: NoAudio
 	SpawnActorPower@SPY_DRONE:
 		PauseOnCondition: emp || hacked || sabotaged
 		Actors:
@@ -263,7 +262,6 @@ building.gla_command_center:
 		LowPowerSlowdown: 1
 		RequireOwner: false
 		SpectatorUIOrder: 13
-		ReadyAudio: NoAudio
 	SpawnActorPower@AMBUSH:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Actors:
@@ -436,7 +434,6 @@ building.prc_command_center:
 		LowPowerSlowdown: 3
 		RequireOwner: false
 		SpectatorUIOrder: 14
-		ReadyAudio: NoAudio
 	GrantExternalConditionPower@FRENZY:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites: 
@@ -495,7 +492,7 @@ building.prc_command_center:
 			2: Steals $2000 credits from enemy.\n\nTarget their Supply Center or Stash to do so.
 			3: Steals $4000 credits from enemy.\n\nTarget their Supply Center or Stash to do so.
 		StartFullyCharged: false
-		OnFireSound: scashhac.wav
+		OnFireSound: scashhac.aud
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: CashHackPowerInfoOrder
@@ -943,7 +940,6 @@ building.usa_barracks:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 19
-		ReadyAudio: NoAudio
 	ProductionBar:
 	Exit@1:
 		SpawnOffset: -426,85,0
@@ -977,7 +973,6 @@ building.gla_barracks:
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		SpectatorUIOrder: 20
-		ReadyAudio: NoAudio
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_infantry
 		Factions: toxin
@@ -985,7 +980,6 @@ building.gla_barracks:
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		SpectatorUIOrder: 21
-		ReadyAudio: NoAudio
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_infantry
 		Factions: demo
@@ -993,7 +987,6 @@ building.gla_barracks:
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		SpectatorUIOrder: 22
-		ReadyAudio: NoAudio
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_infantry
 		Factions: stealth
@@ -1001,7 +994,6 @@ building.gla_barracks:
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		SpectatorUIOrder: 23
-		ReadyAudio: NoAudio
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_infantry
 	ProductionBar@Toxin:
@@ -1046,7 +1038,6 @@ building.prc_barracks:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 24
-		ReadyAudio: NoAudio
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_infantry
 		Factions: inf
@@ -1054,7 +1045,6 @@ building.prc_barracks:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 25
-		ReadyAudio: NoAudio
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_infantry
 		Factions: nuke
@@ -1062,7 +1052,6 @@ building.prc_barracks:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 26
-		ReadyAudio: NoAudio
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_infantry
 		Factions: tank
@@ -1070,7 +1059,6 @@ building.prc_barracks:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 27
-		ReadyAudio: NoAudio
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_infantry
 		Factions: boss
@@ -1078,7 +1066,6 @@ building.prc_barracks:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 28
-		ReadyAudio: NoAudio
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_infantry
 	ProductionBar@Infantry:
@@ -1207,7 +1194,6 @@ building.usa_supply_center:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 15
-		ReadyAudio: NoAudio
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_collector
 		Factions: air
@@ -1216,7 +1202,6 @@ building.usa_supply_center:
 		RequireOwner: false
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 16
-		ReadyAudio: NoAudio
 	ProductionBar@Vanilla:
 		ProductionType: queue.usa_collector
 	ProductionBar@Airforce:
@@ -1272,7 +1257,6 @@ building.gla_supply_stash:
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		SpectatorUIOrder: 17
-		ReadyAudio: NoAudio
 	ProductionBar:
 	Exit@1:
 		SpawnOffset: -96,768,0
@@ -1338,7 +1322,6 @@ building.prc_supply_center:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 18
-		ReadyAudio: NoAudio
 	ProductionBar:
 	Exit@1:
 		SpawnOffset: -42,810,0
@@ -1500,7 +1483,7 @@ building.demo_trap.explode:
 		-RequiresCondition:
 		Delay: 20
 	AmbientSound:
-		SoundFiles: gdembeep.wav
+		SoundFiles: gdembeep.aud
 		Interval: 5
 	WithColoredOverlay@DETECTED:
 		Palette: detected
@@ -1795,7 +1778,6 @@ building.usa_war_factory:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 30
-		ReadyAudio: NoAudio
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_vehicle
 		Factions: air
@@ -1803,7 +1785,6 @@ building.usa_war_factory:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 31
-		ReadyAudio: NoAudio
 	ProductionQueue@Laser:
 		Type: queue.laser_gen_vehicle
 		Factions: laser
@@ -1811,7 +1792,6 @@ building.usa_war_factory:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 32
-		ReadyAudio: NoAudio
 	ProductionQueue@Super:
 		Type: queue.super_gen_vehicle
 		Factions: super
@@ -1819,7 +1799,6 @@ building.usa_war_factory:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 33
-		ReadyAudio: NoAudio
 	ProductionBar@Vanilla:
 		ProductionType: queue.usa_vehicle
 	ProductionBar@Airforce:
@@ -1873,7 +1852,6 @@ building.arms_dealer:
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		SpectatorUIOrder: 34
-		ReadyAudio: NoAudio
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_vehicle
 		Factions: toxin
@@ -1881,7 +1859,6 @@ building.arms_dealer:
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		SpectatorUIOrder: 35
-		ReadyAudio: NoAudio
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_vehicle
 		Factions: demo
@@ -1889,7 +1866,6 @@ building.arms_dealer:
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		SpectatorUIOrder: 36
-		ReadyAudio: NoAudio
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_vehicle
 		Factions: stealth
@@ -1897,7 +1873,6 @@ building.arms_dealer:
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		SpectatorUIOrder: 37
-		ReadyAudio: NoAudio
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_vehicle
 	ProductionBar@Toxin:
@@ -1933,7 +1908,6 @@ building.prc_war_factory:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 38
-		ReadyAudio: NoAudio
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_vehicle
 		Factions: inf
@@ -1941,7 +1915,6 @@ building.prc_war_factory:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 39
-		ReadyAudio: NoAudio
 	ProductionQueue@Nuclear:
 		Type: queue.nuke_gen_vehicle
 		Factions: nuke
@@ -1949,7 +1922,6 @@ building.prc_war_factory:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 40
-		ReadyAudio: NoAudio
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_vehicle
 		Factions: tank
@@ -1957,7 +1929,6 @@ building.prc_war_factory:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 41
-		ReadyAudio: NoAudio
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_vehicle
 	ProductionBar@Infantry:
@@ -2251,7 +2222,6 @@ building.usa_airfield:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 42
-		ReadyAudio: NoAudio
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_aircraft
 		Factions: air
@@ -2259,7 +2229,6 @@ building.usa_airfield:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 43
-		ReadyAudio: NoAudio
 	ProductionQueue@Super:
 		Type: queue.super_gen_aircraft
 		Factions: super
@@ -2267,7 +2236,6 @@ building.usa_airfield:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 44
-		ReadyAudio: NoAudio
 	ProductionBar@Vanilla:
 		ProductionType: queue.usa_aircraft
 	ProductionBar@Airforce:
@@ -2333,7 +2301,6 @@ building.prc_airfield:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 45
-		ReadyAudio: NoAudio
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_aircraft
 		Factions: inf
@@ -2341,7 +2308,6 @@ building.prc_airfield:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 46
-		ReadyAudio: NoAudio
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_aircraft
 		Factions: nuke
@@ -2349,7 +2315,6 @@ building.prc_airfield:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 47
-		ReadyAudio: NoAudio
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_aircraft
 		Factions: tank
@@ -2357,7 +2322,6 @@ building.prc_airfield:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 48
-		ReadyAudio: NoAudio
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_aircraft
 		Factions: boss
@@ -2365,7 +2329,6 @@ building.prc_airfield:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 49
-		ReadyAudio: NoAudio
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_aircraft
 	ProductionBar@Infantry:

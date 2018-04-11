@@ -36,6 +36,7 @@ infantry.worker:
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.infonly
 		Description: Collects supplies.\n\nCan repair GLA Holes.
+		ReadyAudio: WorkerCreated
 	Valued:
 		Cost: 200
 	Tooltip:
@@ -120,6 +121,7 @@ infantry.ranger:
 	Buildable:
 		Queue: queue.usa_infantry, queue.boss_gen_infantry
 		Prerequisites: ~techlevel.infonly
+		ReadyAudio: RangerCreated
 	Valued:
 		Cost: 225
 	Tooltip:
@@ -152,6 +154,7 @@ infantry.rebel:
 	Buildable:
 		Queue: queue.gla_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
 		Prerequisites: ~techlevel.infonly
+		ReadyAudio: RebelCreated
 	CustomProductionCost@Stealth:
 		Queue: queue.stealth_gen_infantry
 		Cost: 200
@@ -193,6 +196,7 @@ infantry.toxin_rebel:
 	Buildable:
 		Queue: queue.toxin_gen_infantry
 		Description: General-purpose infantry armed with toxins.
+		ReadyAudio: ToxinRebelCreated
 	Valued:
 		Cost: 200
 	Tooltip:
@@ -299,6 +303,7 @@ infantry.red_guard:
 		BuildDuration: 250
 		Prerequisites: ~techlevel.infonly
 		Description: General-purpose infantry armed with a rifle.\n\nTrained in groups of 2.
+		ReadyAudio: RedGuardCreated
 	Valued:
 		Cost: 150
 	CustomProductionCost@Vanilla:
@@ -341,6 +346,7 @@ infantry.minigunner:
 		BuildDuration: 250
 		Prerequisites: ~techlevel.infonly
 		Description: General-purpose infantry armed with a minigun.
+		ReadyAudio: MinigunnerCreated
 	Valued:
 		Cost: 350
 	Mobile:
@@ -395,6 +401,7 @@ infantry.conscript:
 		Queue: queue.soviet_infantry
 		BuildDuration: 100
 		Prerequisites: ~techlevel.infonly
+		ReadyAudio: ConscriptCreated
 	Valued:
 		Cost: 100
 	Mobile:
@@ -464,6 +471,7 @@ infantry.missile_defender:
 	Buildable:
 		Queue: queue.usa_infantry
 		Prerequisites: ~techlevel.infonly
+		ReadyAudio: MissileDefenderCreated
 	Tooltip:
 		Name: Missile Defender
 	Voiced:
@@ -477,6 +485,7 @@ infantry.rpg_trooper:
 	Buildable:
 		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
 		Prerequisites: ~techlevel.infonly
+		ReadyAudio: RPGTrooperCreated
 	Armament@PRIMARY:
 		Weapon: missile.rpg_trooper.ground
 	Armament@SECONDARY:
@@ -496,6 +505,7 @@ infantry.tank_hunter:
 	Buildable:
 		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
 		Prerequisites: ~techlevel.infonly
+		ReadyAudio: TankHunterCreated
 	CustomProductionCost@Nuke:
 		Queue: queue.nuke_gen_infantry
 		Cost: 350
@@ -567,6 +577,7 @@ infantry.pathfinder:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_barracks, building.strategy_center, ~generals_power.pathfinder, ~techlevel.medium
 		Description: Elite sniper infantry.
+		ReadyAudio: PathfinderCreated
 	Health:
 		HP: 120
 	Armor:
@@ -618,6 +629,7 @@ infantry.terrorist:
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.low
 		Description: Explodes.
+		ReadyAudio: TerroristCreated
 	Valued:
 		Cost: 200
 	Tooltip:
@@ -739,6 +751,7 @@ infantry.saboteur:
 		BuildDurationModifier: 100
 		Prerequisites: building.arms_dealer, ~prerequisite.zh_units, ~techlevel.medium
 		Description: Infiltrates enemy structures to disable them for a while.\n\nCan climb cliffs.
+		ReadyAudio: SaboteurCreated
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -854,6 +867,7 @@ infantry.angry_mob:
 		Prerequisites: building.palace, ~techlevel.medium
 		Description: Group of civilians armed with pistols and molotov coctails.
 		IconPalette: cameo
+		ReadyAudio: AngryMobCreated
 	Tooltip:
 		Name: Angry Mob
 		GenericName: Soldier
@@ -927,6 +941,7 @@ infantry.hacker:
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_barracks, building.propaganda_center, ~techlevel.medium
 		Description: Hacks internet to gain money while deployed.\n\nCan disable enemy structures.
+		ReadyAudio: HackerCreated
 	Valued:
 		Cost: 625
 	CustomProductionCost@Tank:
@@ -1021,6 +1036,7 @@ infantry.super_hacker:
 	Buildable:
 		Queue: queue.inf_gen_infantry
 		Description: Hacks internet to gain money while deployed.\n\nCan disable enemy structures and vehicles.\n\nCamouflaged.
+		ReadyAudio: SuperHackerCreated
 	Tooltip:
 		Name: Super Hacker
 	Armament@DisableAnim:
@@ -1070,6 +1086,7 @@ infantry.hijacker:
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~generals_power.hijacker, ~techlevel.high
 		Description: Hijacks enemy vehicles.\n\nCamouflaged while not moving.
+		ReadyAudio: HijackerCreated
 	Valued:
 		Cost: 400
 	Tooltip:
@@ -1142,6 +1159,7 @@ infantry.colonel_burton:
 		Prerequisites: building.strategy_center, ~techlevel.high
 		BuildLimit: 1
 		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures.\n\nCamouflaged.
+		ReadyAudio: BurtonCreated
 	Mobile:
 		Speed: 30
 		Voice: Move
@@ -1209,6 +1227,7 @@ infantry.jarmen_kell:
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, !prerequisite.enough_jarmen_kell, ~techlevel.high
 		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCamouflaged.
+		ReadyAudio: JarmenCreated
 	Health:
 		HP: 200
 	Armor:
@@ -1272,6 +1291,7 @@ infantry.jarmen_kell.demo:
 	Buildable:
 		Queue: queue.demo_gen_infantry
 		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCamouflaged.\n\nCan place C4 charges on structures.
+		ReadyAudio: DemoJarmenCreated
 	Demolition:
 		DetonationDelay: 45
 		Voice: Demolish
@@ -1288,6 +1308,7 @@ infantry.black_lotus:
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, !prerequisite.enough_black_lotus, ~techlevel.high
 		Description: Can capture enemy structures from a distance.\n\nCan disable enemy vehicles.\n\nCamouflaged.
+		ReadyAudio: LotusCreated
 	Valued:
 		Cost: 1500
 	CustomProductionCost@Nuke:
