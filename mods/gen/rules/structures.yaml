@@ -318,6 +318,31 @@ building.gla_command_center:
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: ToxinAmbushPowerInfoOrder
+	AirstrikePower@ANTHRAX_BOMB:
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
+		Prerequisites:
+			1: generals_power.anthrax_bomb
+		Icons:
+			1: thrax
+		ChargeInterval: 9000
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		Descriptions:
+			1: Anthrax Bomb
+		LongDescs:
+			1: A B-52 drops an Anthrax Bomb at the target.
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		UnitTypes:
+			1: aircraft.badger.anthrax_bomb
+		DisplayBeacon: True
+		BeaconPosters:
+			1: thraxbcon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		OrderName: AnthraxBombPowerInfoOrder
 	GrantExternalConditionPower@GPS_SCRAMBLER:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
@@ -352,31 +377,24 @@ building.gla_command_center:
 			2: gps_scrambler
 			3: gps_scrambler
 		OrderName: GPSScramblerPowerInfoOrder
-	AirstrikePower@ANTHRAX_BOMB:
+	SpawnActorPower@SNEAK_ATTACK:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
+		Actors:
+			1: building.tunnel_network.sneak_attack
 		Prerequisites:
-			1: generals_power.anthrax_bomb
+			1: generals_power.sneak_attack
+		LifeTime: -1
+		ChargeInterval: 3750
 		Icons:
-			1: thrax
-		ChargeInterval: 9000
-		SquadSizes:
-			1: 1
-		QuantizedFacings: 8
+			1: sneak
 		Descriptions:
-			1: Anthrax Bomb
+			1: Sneak Attack
 		LongDescs:
-			1: A B-52 drops an Anthrax Bomb at the target.
+			1: Spawns a Tunnel Network anywhere on the map.
+		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
-		UnitTypes:
-			1: aircraft.badger.anthrax_bomb
-		DisplayBeacon: True
-		BeaconPosters:
-			1: thraxbcon
-		ArrowSequence: arrow
-		ClockSequence: clock
-		CircleSequence: circles
-		OrderName: AnthraxBombPowerInfoOrder
+		OrderName: SneakAttackPowerInfoOrder
 	WithTextDecoration@SIDE:
 		Text: GLA
 		Color: 00FF00
@@ -2049,6 +2067,17 @@ building.toxin_tunnel_network.no_free_actor:
 	-FreeActor@2:
 	RenderSprites:
 		Image: building.toxin_tunnel_network
+
+building.tunnel_network.sneak_attack:
+	Inherits: building.tunnel_network.no_free_actor
+	-Armament:
+	-AttackTurreted:
+	-AutoTarget:
+	-AutoTargetPriority@DEFAULT:
+	-AutoTargetPriority@ATTACKANYTHING:
+	-Turreted:
+	-WithSpriteTurret:
+	-WithMuzzleOverlay:
 
 building.stinger_site:
 	Inherits: ^Defense
