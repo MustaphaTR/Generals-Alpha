@@ -1172,7 +1172,7 @@ infantry.colonel_burton:
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~techlevel.high
 		BuildLimit: 1
-		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures.\n\nCamouflaged.
+		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures.\n\nCan backstab infantry without getting detected by force firing.\n\nCamouflaged.
 		ReadyAudio: BurtonCreated
 	Mobile:
 		Speed: 30
@@ -1197,22 +1197,38 @@ infantry.colonel_burton:
 	Demolition:
 		DetonationDelay: 45
 		Voice: Demolish
-	Armament@PRIMARY:
-		Weapon: mg.colonel_burton
+	Armament@PRIMARY_INF:
+		Weapon: mg.colonel_burton.ap
+	Armament@PRIMARY_TANK:
+		Weapon: mg.colonel_burton.at
 	Armament@GARRISON:
 		Name: garrison
 		Weapon: mg.colonel_burton.garrison
+	Armament@KNIFE:
+		Name: knife
+		Weapon: melee.colonel_burton
+		Cursor: ability
+		OutsideRangeCursor: ability
 	AttackFrontal:
+		Armaments: primary, knife
 		Voice: Attack
 	AttackMove:
 		Voice: Attack
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		IdleSequences: idle1,idle2,idle3
+	GrantStackableConditionOnFire@UNCLOAK:
+		Condition: cloak-force-disabled
+		ArmamentName: primary
+		RequiredShotsPerStack: 1
+		MaximumInstances: 1
+		RevokeDelay: 120
+		RevokeAll: true
+		IsCyclic: false
 	Cloak:
 		InitialDelay: 250
 		CloakDelay: 120
-		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		UncloakOn: Unload, Infiltrate, Demolish
 		CloakTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled

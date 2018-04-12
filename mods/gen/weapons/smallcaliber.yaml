@@ -331,6 +331,15 @@ mg.colonel_burton.garrison:
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
 
+mg.colonel_burton.ap:
+	Inherits: mg.colonel_burton
+	RequiresNormalFire: true
+	ValidTargets: Infantry
+
+mg.colonel_burton.at:
+	Inherits: mg.colonel_burton
+	InvalidTargets: Infantry, Structure
+
 M60mg:
 	Inherits: ^LightMG
 	ReloadDelay: 30

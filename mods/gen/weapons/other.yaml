@@ -614,6 +614,17 @@ aoe.microwave_tank:
 		Versus:
 			infantry.chem_suit: 20
 
+melee.colonel_burton:
+	ValidTargets: Infantry
+	ReloadDelay: 25
+	RequiresForceFire: true
+	Range: 1c0
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 10000
+		ValidTargets: Infantry
+		DamageTypes: DefaultDeath
+
 ^default.spawner:
 	ReloadDelay: 5
 	Range: 1c0
