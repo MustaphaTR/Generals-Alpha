@@ -52,7 +52,7 @@ upgrade.neutron_mine:
 	Tooltip:
 		Name: Neutron Mine
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.inf_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.inf_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.just_mine
 		BuildPaletteOrder: 12
 		ForceIconLocation: true
 		BuildDuration: 375
@@ -693,7 +693,7 @@ upgrade.nuclear_tanks:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: building.missile_silo, ~techlevel.unrestricted
+		Prerequisites: ~techlevel.unrestricted
 		Description: Increases Overlord and Battlemaster speed by 25%.
 		QueuedAudio: NoAudio
 		ReadyAudio: NuclearTanks
@@ -709,12 +709,38 @@ upgrade.uranium_shells:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: building.missile_silo, ~techlevel.unrestricted
+		Prerequisites: ~techlevel.unrestricted
 		Description: Increases Overlord and Battlemaster damage by 25%.
 		QueuedAudio: NoAudio
 		ReadyAudio: UraniumShells
 	Valued:
 		Cost: 2500
+
+upgrade.neutron_shells:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Neutron Shells
+	Buildable:
+		Queue: queue.missile_silo, queue.inf_gen_missile_silo
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
+		BuildDuration: 1500
+		Prerequisites: ~generals_power.nuke_cannon, !upgrade.neutron_shells, ~techlevel.unrestricted
+		Description: Allows Nuke Cannons to be switched to fire Neutron Shells.
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
+	ProvidesPrerequisite@upgradename:
+		Prerequisite: upgrade.neutron_shells
+	Valued:
+		Cost: 2500
+	RenderSprites:
+		Image: upgrade.neutron_shells
+
+upgrade.neutron_shells.nuke:
+	Inherits: upgrade.neutron_shells
+	Buildable:
+		Queue: queue.nuke_gen_missile_silo
+		Prerequisites: !upgrade.neutron_shells, ~techlevel.unrestricted
 
 upgrade.scout_drone:
 	Inherits: ^default.upgrade

@@ -296,6 +296,33 @@ cannon.nuke_cannon:
 		Falloff: 100, 90, 80
 		MaxLevel: 7500
 
+cannon.nuke_cannon.neutron:
+	Inherits: ^Artillery
+	ReloadDelay: 250
+	Range: 8c768
+	MinRange: 5c0
+	Report: tank5.aud
+	TargetActorCenter: true
+	Projectile: Bullet
+		ContrailLength: 30
+	Warhead@1Dis: GrantExternalCondition
+		Range: 2c0
+		ValidTargets: Vehicle, Tank
+		Condition: driver_killed
+	Warhead@1Dam: SpreadDamage
+		Spread: 2c0
+		Falloff: 100, 100
+		Damage: 1000
+		ValidTargets: Infantry
+		DamageTypes: FireDeath
+	-Warhead@2Smu: LeaveSmudge
+	-Warhead@2SmuSnow: LeaveSmudge
+	Warhead@3Eff: CreateEffect
+		Explosions: mininuke
+		ImpactSounds: gexpneua.aud, gexpneub.aud, gexpneuc.aud, gexpneud.aud
+	Warhead@4EffWater: CreateEffect
+		Explosions: med_splash
+
 cannon.strategy_center:
 	ReloadDelay: 175
 	Range: 10c0

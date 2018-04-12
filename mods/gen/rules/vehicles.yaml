@@ -1755,6 +1755,8 @@ vehicle.tomahawk_launcher:
 	ReloadAmmoPool:
 		Delay: 90
 		Count: 1
+	AutoTarget:
+		ScanRadius: 8
 	AttackTurreted:
 		RequiresCondition: !hacked && !driver_killed && !emp
 	WithSpriteTurret@Full:
@@ -1888,6 +1890,8 @@ vehicle.scud_launcher:
 	ReloadAmmoPool:
 		Delay: 200
 		Count: 1
+	AutoTarget:
+		ScanRadius: 8
 	AcceptsDeliveredExperience:
 	ThrowsShrapnel:
 		Weapons: debris.scud_launcher
@@ -2623,15 +2627,37 @@ vehicle.nuke_cannon:
 	Selectable:
 		DecorationBounds: 44,38,0,-4
 		Class: vehicle.nuke_cannon
-	Armament:
+	Armament@Nuke:
 		Weapon: cannon.nuke_cannon
 		LocalOffset: 624,0,208
 		Recoil: 200
 		RecoilRecovery: 30
 		MuzzleSequence: muzzle
+		RequiresCondition: !neutron
+		PauseOnCondition: !ammo
+	Armament@Neutron:
+		Weapon: cannon.nuke_cannon.neutron
+		LocalOffset: 624,0,208
+		Recoil: 200
+		RecoilRecovery: 30
+		MuzzleSequence: muzzle
+		RequiresCondition: neutron
+		PauseOnCondition: !ammo
 	Explodes:
 		Weapon: explosion.nuke_cannon
 		EmptyWeapon: explosion.nuke_cannon
+	AmmoPool:
+		Name: primary
+		Armaments: primary
+		Ammo: 1
+		PipCount: 0
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		AmmoPool: primary
+		Delay: 250
+		Count: 1
+	AutoTarget:
+		ScanRadius: 8
 	-Passenger:
 	AttackTurreted:
 		RequiresCondition: !hacked && !driver_killed && !emp
@@ -2641,6 +2667,12 @@ vehicle.nuke_cannon:
 	ProducibleWithLevel:
 		Prerequisites: generals_power.arty_training
 	AcceptsDeliveredExperience:
+	GrantConditionOnPrerequisite@NEUTRON_SHELLS:
+		Condition: neutron_shells
+		Prerequisites: upgrade.neutron_shells
+	GrantConditionOnDeploy@NEUTRON_SHELLS:
+		DeployedCondition: neutron
+		RequiresCondition: neutron_shells
 	ThrowsShrapnel:
 		Weapons: debris.nuke_cannon
 		Pieces: 1, 1
