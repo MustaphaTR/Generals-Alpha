@@ -471,9 +471,23 @@ infantry.missile_defender:
 	Buildable:
 		Queue: queue.usa_infantry
 		Prerequisites: ~techlevel.infonly
+		Description: Anti-tank & anti-air infantry.\n\nCan laser lock to fire with double speed against\nvehicles and aircraft by force firing.
 		ReadyAudio: MissileDefenderCreated
 	Tooltip:
 		Name: Missile Defender
+	Armament@LaserLock_Normal:
+		Weapon: missile.missile_defender.locked.normal
+		LocalOffset: 0,0,555
+	Armament@LaserLock_Ground:
+		Weapon: missile.missile_defender.locked.ground
+		LocalOffset: 0,0,555
+		Cursor: ability
+		OutsideRangeCursor: ability
+	Armament@LaserLock_Air:
+		Weapon: missile.missile_defender.locked.air
+		LocalOffset: 0,0,555
+		Cursor: ability
+		OutsideRangeCursor: ability
 	Voiced:
 		VoiceSet: MissileDefenderVoice
 

@@ -265,6 +265,7 @@ missile.scorpion_tank:
 
 missile.missile_defender.ground:
 	Inherits: ^AntiGroundMissile
+	RequiresNormalFire: true
 	ReloadDelay: 25
 	Range: 4c384
 	Projectile: Missile
@@ -290,6 +291,7 @@ missile.missile_defender.ground:
 
 missile.missile_defender.air:
 	Inherits: ^AntiAirMissile
+	RequiresNormalFire: true
 	ReloadDelay: 25
 	Range: 6c0
 	Projectile: Missile
@@ -316,6 +318,7 @@ missile.missile_defender.air:
 
 missile.missile_defender.garrison.ground:
 	Inherits: missile.missile_defender.ground
+	RequiresNormalFire: false
 	Range: 5c853
 	Projectile: Missile
 		RangeLimit: 7c0
@@ -324,11 +327,31 @@ missile.missile_defender.garrison.ground:
 
 missile.missile_defender.garrison.air:
 	Inherits: missile.missile_defender.air
+	RequiresNormalFire: false
 	Range: 8c0
 	Projectile: Missile
 		RangeLimit: 9c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
+
+missile.missile_defender.locked.normal:
+	Inherits: missile.missile_defender.ground
+	InvalidTargets: Vehicle, Tank, Ship
+	RequiresNormalFire: false
+	RequiresForceFire: true
+
+missile.missile_defender.locked.ground:
+	Inherits: missile.missile_defender.ground
+	ValidTargets: Vehicle, Tank, Ship
+	RequiresForceFire: true
+	RequiresNormalFire: false
+	ReloadDelay: 12
+
+missile.missile_defender.locked.air:
+	Inherits: missile.missile_defender.air
+	RequiresForceFire: true
+	RequiresNormalFire: false
+	ReloadDelay: 12
 
 missile.rpg_trooper.ground:
 	Inherits: missile.missile_defender.ground
