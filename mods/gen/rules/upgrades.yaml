@@ -725,7 +725,7 @@ upgrade.neutron_shells:
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: ~generals_power.nuke_cannon, !upgrade.neutron_shells, ~techlevel.unrestricted
+		Prerequisites: ~generals_power.nuke_cannon, !upgrade.neutron_shells, ~prerequisite.zh_units, ~techlevel.unrestricted
 		Description: Allows Nuke Cannons to be switched to fire Neutron Shells.
 		QueuedAudio: NoAudio
 		ReadyAudio: ConstructionComplete
@@ -740,7 +740,7 @@ upgrade.neutron_shells.nuke:
 	Inherits: upgrade.neutron_shells
 	Buildable:
 		Queue: queue.nuke_gen_missile_silo
-		Prerequisites: !upgrade.neutron_shells, ~techlevel.unrestricted
+		Prerequisites: !upgrade.neutron_shells, ~prerequisite.zh_units, ~techlevel.unrestricted
 
 upgrade.scout_drone:
 	Inherits: ^default.upgrade
