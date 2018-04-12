@@ -2616,6 +2616,7 @@ vehicle.nuke_cannon:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 20
+		TurnSpeed: 4
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 90
@@ -2634,7 +2635,7 @@ vehicle.nuke_cannon:
 		RecoilRecovery: 30
 		MuzzleSequence: muzzle
 		RequiresCondition: !neutron
-		PauseOnCondition: !ammo
+		PauseOnCondition: !ammo || moving
 	Armament@Neutron:
 		Weapon: cannon.nuke_cannon.neutron
 		LocalOffset: 624,0,208
@@ -2642,7 +2643,7 @@ vehicle.nuke_cannon:
 		RecoilRecovery: 30
 		MuzzleSequence: muzzle
 		RequiresCondition: neutron
-		PauseOnCondition: !ammo
+		PauseOnCondition: !ammo || moving
 	Explodes:
 		Weapon: explosion.nuke_cannon
 		EmptyWeapon: explosion.nuke_cannon
@@ -2673,6 +2674,9 @@ vehicle.nuke_cannon:
 	GrantConditionOnDeploy@NEUTRON_SHELLS:
 		DeployedCondition: neutron
 		RequiresCondition: neutron_shells
+	GrantConditionOnMovement:
+		Condition: moving
+		ConsiderTurning: true
 	ThrowsShrapnel:
 		Weapons: debris.nuke_cannon
 		Pieces: 1, 1
