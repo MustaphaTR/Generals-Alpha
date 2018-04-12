@@ -517,7 +517,13 @@ building.gatling_cannon:
 	bib-Snow: mbAGUN.sno
 		Length: *
 		AddExtension: false
+	bib-SnowRoad: mbAGUN.sno
+		Length: *
+		AddExtension: false
 	bib-Sand: mbAGUN.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbAGUN.des
 		Length: *
 		AddExtension: false
 	icon: gatcanicon
@@ -539,25 +545,22 @@ building.bunker:
 		Length: *
 		Offset: 0,-2
 		AddExtension: false
+	bib-SnowRoad: mbPBOX.sno
+		Length: *
+		Offset: 0,-2
+		AddExtension: false
 	bib-Sand: mbPBOX.des
+		Length: *
+		Offset: 0,-2
+		AddExtension: false
+	bib-SandRoad: mbPBOX.des
 		Length: *
 		Offset: 0,-2
 		AddExtension: false
 	icon: bunkericon
 
 building.fotified_bunker:
-	idle: pbox
-	damaged-idle: pbox
-		Start: 1
-	make: pboxmake
-		Length: *
-	muzzle: minigun
-		Length: 6
-		Facings: 8
-	bib: mbPBOX
-		Length: *
-		Offset: 0,-2
-		UseTilesetExtension: true
+	Inherits: building.bunker
 	icon: fortbicon
 
 building.usa_war_factory:
