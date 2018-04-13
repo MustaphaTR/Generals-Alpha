@@ -294,6 +294,7 @@ explosion.terrorist:
 		Damage: 500
 		ValidTargets: Ground, Trees
 		ValidStances: Enemy, Neutral
+		AffectsParent: true
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -304,6 +305,7 @@ explosion.terrorist:
 		Damage: 500
 		ValidTargets: Ground, Trees
 		ValidStances: Ally
+		AffectsParent: true
 		InvalidTargets: Terrorist
 		Versus:
 			aircraft.comanche: 130
@@ -315,6 +317,7 @@ explosion.terrorist:
 		Damage: 300
 		ValidTargets: Ground, Trees
 		ValidStances: Enemy, Neutral
+		AffectsParent: true
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -325,6 +328,7 @@ explosion.terrorist:
 		Damage: 300
 		ValidTargets: Ground, Trees
 		ValidStances: Ally
+		AffectsParent: true
 		InvalidTargets: Terrorist
 		Versus:
 			aircraft.comanche: 130
@@ -475,10 +479,21 @@ CrateNuke:
 
 BombTruckExplosion:
 	ValidTargets: Ground, Trees, Water, Underwater
-	Warhead@1Dam_impact: SpreadDamage
-		Spread: 0c768
-		Damage: 120
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c0
+		Damage: 900
+		Falloff: 100, 100
+		ValidTargets: Ground, Trees, Water
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		AffectsParent: true
+		DamageTypes: TriggerProne, FireDeath, Incendiary
+	Warhead@4Dam: SpreadDamage
+		Spread: 1c640
+		Damage: 100
+		Falloff: 100, 100
 		ValidTargets: Ground, Trees, Water
 		Versus:
 			aircraft.comanche: 130
@@ -490,37 +505,6 @@ BombTruckExplosion:
 		Explosions: mininuke
 		ImpactSounds: kaboom1.aud
 		ImpactActors: false
-	Warhead@4Dam_areanuke1: SpreadDamage
-		Spread: 1c512
-		Damage: 50
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: Ground, Trees, Water, Underwater
-		Versus:
-			aircraft.comanche: 130
-			aircraft.chinook: 50
-			building.tough: 80
-		AffectsParent: true
-		DamageTypes: TriggerProne, FireDeath, Incendiary
-	Warhead@6Eff_areanuke1: CreateEffect
-		ImpactSounds: kaboom22.aud
-		ImpactActors: false
-	Warhead@7Dam_areanuke2: SpreadDamage
-		Spread: 2c256
-		Damage: 50
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: Ground, Water, Underwater
-		Versus:
-			aircraft.comanche: 130
-			aircraft.chinook: 50
-			building.tough: 80
-		AffectsParent: true
-		DamageTypes: TriggerProne, FireDeath, Incendiary
-	Warhead@8Dam_areanuke2: SpreadDamage
-		Spread: 2c256
-		Damage: 120
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: Trees
-		DamageTypes: Incendiary
 	Warhead@13Smu_areanuke3: LeaveSmudge
 		SmudgeType: Scorch
 		InvalidTargets: Vehicle, Tank, Structure, Wall, Trees
@@ -533,16 +517,11 @@ BombTruckExplosion:
 BombTruckExplosion.hi_exp:
 	Inherits: BombTruckExplosion
 	Warhead@1Dam_impact: SpreadDamage
-		Spread: 1c0
-		Damage: 150
-	Warhead@4Dam_areanuke1: SpreadDamage
-		Spread: 2c0
-		Damage: 60
-	Warhead@7Dam_areanuke2: SpreadDamage
-		Spread: 3c0
-		Damage: 60
-	Warhead@8Dam_areanuke2: SpreadDamage
-		Spread: 3c0
+		Spread: 1c256
+		Damage: 1800
+	Warhead@4Dam: SpreadDamage
+		Spread: 2c128
+		Damage: 200
 	Warhead@13Smu_areanuke3: LeaveSmudge
 		Size: 3
 	Warhead@13Smu_areanukeSnow3: LeaveSmudge
