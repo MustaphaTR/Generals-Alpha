@@ -294,13 +294,13 @@ aircraft.mig:
 		Weapon: missile.mig.air.nuke
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
-		RequiresCondition: !tactical_nuke && nuke
+		RequiresCondition: !tactical_nuke_mig && nuke
 		PauseOnCondition: !ammo
 	Armament@TacticalNuke_AA:
 		Weapon: missile.mig.air.tactical_nuke
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
-		RequiresCondition: tactical_nuke && nuke
+		RequiresCondition: tactical_nuke_mig && nuke
 		PauseOnCondition: !ammo
 	AttackPlane:
 		FacingTolerance: 20
