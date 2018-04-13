@@ -333,15 +333,18 @@ missile.scorpion_tank:
 	Projectile: Missile
 		TrailImage: smokey
 	Warhead@1Dam: SpreadDamage
-		Damage: 100
+		Spread: 0c128
+		Falloff: 100, 100
+		Damage: 20
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
 	Warhead@5Dam: SpreadDamage
-		Spread: 256
+		Spread: 0c640
+		Falloff: 100, 100
 		Damage: 80
-		ValidTargets: Ground, Water, Air
+		ValidTargets: Ground, Water
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
