@@ -1175,14 +1175,14 @@ aircraft.helix:
 		Queue: queue.tank_gen_aircraft
 		BuildTime: 625
 	FirepowerMultiplier@CHAIN_GUN:
-		Type: gatling
+		Types: gatling
 	ReloadDelayMultiplier@Gatling1:
 		RequiresCondition: gatling >= 1
-		Type: gatling
+		Types: gatling
 		Modifier: 50
 	ReloadDelayMultiplier@Gatling2:
 		RequiresCondition: gatling >= 2
-		Type: gatling
+		Types: gatling
 		Modifier: 50
 	Tooltip:
 		Name: Helix

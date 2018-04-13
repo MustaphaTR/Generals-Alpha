@@ -348,6 +348,7 @@ vehicle.radar_van:
 
 vehicle.scorpion_tank:
 	Inherits: ^Tank
+	Inherits@AP_ROCKETS: ^AffectedByAPRockets
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BOUNTY: ^TakesBounty
 	Inherits@CRUSH: ^CrushesInfantry
@@ -378,6 +379,8 @@ vehicle.scorpion_tank:
 	CustomProductionCost@Toxin:
 		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		Cost: 650
+	FirepowerMultiplier@AP_ROCKETS:
+		Types: sc_rocket
 	Tooltip:
 		Name: Scorpion Tank
 	Health:
@@ -2029,10 +2032,6 @@ vehicle.paladin_tank:
 		Weapon: laser.paladin_tank
 		LocalOffset: 0,213,-85
 		Name: pdlaser
-	FirepowerMultiplier@CRATE_FIREPOWER2:
-		RequiresCondition: crate.firepower
-		Type: pdlaser
-		Modifier: 110
 	ShootsMissiles:
 		ShootStances: Neutral, Enemy
 		Armament: pdlaser
@@ -2220,14 +2219,14 @@ vehicle.overlord_tank:
 		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	FirepowerMultiplier@CHAIN_GUN:
-		Type: gatling
+		Types: gatling
 	ReloadDelayMultiplier@Gatling1:
 		RequiresCondition: gatling >= 1
-		Type: gatling
+		Types: gatling
 		Modifier: 50
 	ReloadDelayMultiplier@Gatling2:
 		RequiresCondition: gatling >= 2
-		Type: gatling
+		Types: gatling
 		Modifier: 50
 	Buildable:
 		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
