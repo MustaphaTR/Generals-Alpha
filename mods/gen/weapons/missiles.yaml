@@ -513,11 +513,24 @@ missile.comanche:
 		RangeLimit: 8c512
 		Inaccuracy: 1c256
 	Warhead@1Dam: SpreadDamage
-		Damage: 40
+		Spread: 0c128
+		Falloff: 100, 100
+		Damage: 20
+		ValidTargets: Ground, Water
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+	Warhead@2Dam: SpreadDamage
+		Spread: 1c0
+		Falloff: 100, 100
+		Damage: 10
+		ValidTargets: Ground, Water
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: TriggerProne, ExplosionDeath
 
 missile.patriot.ground:
 	Inherits: ^AntiGroundMissile
