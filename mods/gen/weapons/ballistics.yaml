@@ -257,15 +257,17 @@ cannon.nuke_cannon:
 	Projectile: Bullet
 		ContrailLength: 30
 	Warhead@1Dam_impact: SpreadDamage
-		Spread: 1c512
-		Damage: 400
+		Spread: 1c256
+		Falloff: 100, 100
+		Damage: 380
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@5Dam_impact: SpreadDamage
-		Spread: 2c0
+		Spread: 1c512
+		Falloff: 100, 100
 		Damage: 20
 		Versus:
 			aircraft.comanche: 130
@@ -306,11 +308,11 @@ cannon.nuke_cannon.neutron:
 	Projectile: Bullet
 		ContrailLength: 30
 	Warhead@1Dis: GrantExternalCondition
-		Range: 2c0
+		Range: 1c512
 		ValidTargets: Vehicle, Tank
 		Condition: driver_killed
 	Warhead@1Dam: SpreadDamage
-		Spread: 2c0
+		Range: 1c512
 		Falloff: 100, 100
 		Damage: 1000
 		ValidTargets: Infantry
