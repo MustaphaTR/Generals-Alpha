@@ -209,8 +209,9 @@ explosion.nuclear_tanks.nuke:
 explosion.demo_trap:
 	Inherits: ^Explosion
 	Warhead@1Dam: SpreadDamage
-		Spread: 1c0
-		Damage: 600
+		Spread: 0c768 # 0c640
+		Falloff: 100, 100
+		Damage: 200
 		ValidTargets: Ground, Trees
 		Versus:
 			aircraft.comanche: 130
@@ -218,9 +219,9 @@ explosion.demo_trap:
 			building.tough: 80
 		DamageTypes: TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@2Dam: SpreadDamage
-		Spread: 2c0
+		Spread: 1c128
+		Falloff: 100, 100
 		Damage: 400
-		Delay: 5
 		ValidTargets: Ground, Trees
 		Versus:
 			aircraft.comanche: 130
@@ -230,27 +231,18 @@ explosion.demo_trap:
 	Warhead@2Eff: CreateEffect
 		Explosions: napalm
 		ImpactSounds: firebl3.aud
-		Delay: 5
 	-Warhead@3EffWater: CreateEffect
 	Warhead@Smu: LeaveSmudge
 		SmudgeType: Scorch
-		Size: 1
-	Warhead@Smu2: LeaveSmudge
-		SmudgeType: Scorch
 		Size: 2
-		Delay: 5
 	Warhead@SmuSnow: LeaveSmudge
 		SmudgeType: SnowScorch
-		Size: 1
-	Warhead@SmuSnow2: LeaveSmudge
-		SmudgeType: SnowScorch
 		Size: 2
-		Delay: 5
 
 explosion.demo_trap.toxin:
 	Inherits: explosion.demo_trap
 	Warhead@1Dam: SpreadDamage
-		Damage: 250
+		Damage: 150
 	Warhead@2Dam: SpreadDamage
 		Damage: 100
 	Warhead@4Radio: CreateRadioactivity
@@ -282,8 +274,6 @@ explosion.demo_trap.toxin_gamma:
 
 explosion.advanced_demo_trap:
 	Inherits: explosion.demo_trap
-	Warhead@1Dam: SpreadDamage
-		Damage: 700
 	Warhead@2Dam: SpreadDamage
 		Damage: 500
 
