@@ -290,8 +290,9 @@ explosion.advanced_demo_trap:
 explosion.terrorist:
 	Inherits: ^Explosion
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c768
-		Damage: 500
+		Spread: 0c640 # 0c461
+		Falloff: 100, 100
+		Damage: 200
 		ValidTargets: Ground, Trees
 		ValidStances: Enemy, Neutral
 		AffectsParent: true
@@ -301,8 +302,9 @@ explosion.terrorist:
 			building.tough: 80
 		DamageTypes: TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@1DamAlly: SpreadDamage
-		Spread: 0c768
-		Damage: 500
+		Spread: 0c640 # 0c461
+		Falloff: 100, 100
+		Damage: 200
 		ValidTargets: Ground, Trees
 		ValidStances: Ally
 		AffectsParent: true
@@ -313,7 +315,8 @@ explosion.terrorist:
 			building.tough: 80
 		DamageTypes: TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@2Dam: SpreadDamage
-		Spread: 1c512
+		Spread: 1c256
+		Falloff: 100, 100
 		Damage: 300
 		ValidTargets: Ground, Trees
 		ValidStances: Enemy, Neutral
@@ -324,7 +327,8 @@ explosion.terrorist:
 			building.tough: 80
 		DamageTypes: TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@2DamAlly: SpreadDamage
-		Spread: 1c512
+		Spread: 1c256
+		Falloff: 100, 100
 		Damage: 300
 		ValidTargets: Ground, Trees
 		ValidStances: Ally
@@ -367,7 +371,7 @@ explosion.terrorist.toxin_gamma:
 explosion.suicide:
 	Inherits: explosion.terrorist
 	Warhead@1Dam: SpreadDamage
-		Damage: 700
+		Damage: 400
 	Warhead@2Eff: CreateEffect
 		Explosions: building
 		ImpactSounds: kaboom22.aud
