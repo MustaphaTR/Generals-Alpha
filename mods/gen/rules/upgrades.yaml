@@ -742,6 +742,22 @@ upgrade.neutron_shells.nuke:
 		Queue: queue.nuke_gen_missile_silo
 		Prerequisites: !upgrade.neutron_shells, ~prerequisite.zh_units, ~techlevel.unrestricted
 
+upgrade.tactical_nuke_mig:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Tactical Nuke MiG
+	Buildable:
+		Queue: queue.nuke_gen_missile_silo
+		BuildPaletteOrder: 4
+		ForceIconLocation: true
+		BuildDuration: 1000
+		Prerequisites: ~techlevel.unrestricted
+		Description: Arms MiGs with a Tactical Nukes.
+		QueuedAudio: NoAudio
+		ReadyAudio: ConstructionComplete
+	Valued:
+		Cost: 2000
+
 upgrade.scout_drone:
 	Inherits: ^default.upgrade
 	Tooltip:

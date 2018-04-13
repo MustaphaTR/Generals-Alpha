@@ -60,9 +60,23 @@ missile.mig.ground:
 		Speed: 256
 		Inaccuracy: 512
 		CruiseAltitude: 2c0
-		RangeLimit: 12c410
+		RangeLimit: 12c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 120
+		Spread: 0c128
+		Falloff: 100, 100
+		Damage: 75
+		ValidTargets: Ground, Water, Trees
+		Versus:
+			vehicle.anti-air: 30
+			vehicle.humvee: 30
+			vehicle.avenger: 30
+			building.defense: 25
+			building.stinger_site: 40
+			aircraft.normal: 25
+	Warhead@2Dam: SpreadDamage
+		Spread: 0c768
+		Falloff: 100, 100
+		Damage: 40
 		ValidTargets: Ground, Water, Trees
 		Versus:
 			vehicle.anti-air: 30
@@ -80,12 +94,49 @@ missile.mig.ground:
 
 missile.mig.ground.blue:
 	Inherits: missile.mig.ground
-	Warhead@1Dam: SpreadDamage
-		Damage: 180
+	Warhead@2Dam: SpreadDamage
+		Damage: 50
 	Warhead@1Fire: SpawnActor
 		Actors: firestorm.blue.50
 	Warhead@3Eff: CreateEffect
 		Explosions: blue_napalm
+
+missile.mig.ground.nuke:
+	Inherits: missile.mig.ground
+	ValidTargets: Ground, Water
+	Warhead@1Dam: SpreadDamage
+		Damage: 100
+		ValidTargets: Ground, Water
+	Warhead@2Dam: SpreadDamage
+		ValidTargets: Ground, Water
+	-Warhead@1Fire: SpawnActor
+	Warhead@3Eff: CreateEffect
+		Explosions: med_explosion
+		ImpactSounds: kaboom25.aud
+	Warhead@5Radio: CreateRadioactivity
+		RadioactivityLayerName: radioactivity
+		Range: 2
+		Level: 2500
+		Falloff: 100, 50, 0
+		MaxLevel: 2500
+
+missile.mig.ground.tactical_nuke:
+	Inherits: missile.mig.ground.nuke
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c256
+		Damage: 150
+	Warhead@2Dam: SpreadDamage
+		Spread: 1c512
+		Damage: 50
+	Warhead@3Eff: CreateEffect
+		Explosions: mininuke
+		ImpactSounds: kaboom1.aud
+	Warhead@5Radio: CreateRadioactivity
+		RadioactivityLayerName: radioactivity
+		Range: 2
+		Level: 2500
+		Falloff: 100, 50, 0
+		MaxLevel: 2500
 
 missile.mig.air:
 	Inherits: ^AntiAirMissile
@@ -96,9 +147,23 @@ missile.mig.air:
 	Projectile: Missile
 		Speed: 384
 		CruiseAltitude: 2c0
-		RangeLimit: 12c410
+		RangeLimit: 12c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 120
+		Spread: 0c128
+		Falloff: 100, 100
+		Damage: 75
+		ValidTargets: Air
+		Versus:
+			vehicle.anti-air: 30
+			vehicle.humvee: 30
+			vehicle.avenger: 30
+			building.defense: 25
+			building.stinger_site: 40
+			aircraft.normal: 25
+	Warhead@2Dam: SpreadDamage
+		Spread: 0c768
+		Falloff: 100, 100
+		Damage: 40
 		ValidTargets: Air
 		Versus:
 			vehicle.anti-air: 30
@@ -113,10 +178,30 @@ missile.mig.air:
 
 missile.mig.air.blue:
 	Inherits: missile.mig.air
-	Warhead@1Dam: SpreadDamage
-		Damage: 180
+	Warhead@2Dam: SpreadDamage
+		Damage: 50
 	Warhead@2Eff: CreateEffect
 		Explosions: blue_napalm
+
+missile.mig.air.nuke:
+	Inherits: missile.mig.air
+	Warhead@1Dam: SpreadDamage
+		Damage: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: med_explosion
+		ImpactSounds: kaboom25.aud
+
+missile.mig.air.tactical_nuke:
+	Inherits: missile.mig.air.nuke
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c256
+		Damage: 150
+	Warhead@2Dam: SpreadDamage
+		Spread: 1c512
+		Damage: 50
+	Warhead@2Eff: CreateEffect
+		Explosions: building
+		ImpactSounds: kaboom1.aud
 
 missile.raptor.ground:
 	Inherits: ^AntiGroundMissile
@@ -568,7 +653,7 @@ missile.rocket_buggy:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 150
 	Range: 7c512
-	MinRange: 1c258
+	MinRange: 1c256
 	Burst: 6
 	BurstDelay: 10
 	Report: vrocweaa.aud, vrocweab.aud, vrocweac.aud, vrocwead.aud, vrocweae.aud, vrocweaf.aud

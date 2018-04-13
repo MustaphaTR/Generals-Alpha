@@ -223,7 +223,7 @@ aircraft.mig:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.prc_airfield, ~techlevel.medium
-		Description: Multi-role fighter plane.
+		Description: Multi-role fighter plane.\n\nCan attack both ground and air targets.
 		ReadyAudio: MiGCreated
 	Valued:
 		Cost: 1200
@@ -258,29 +258,50 @@ aircraft.mig:
 		Weapon: missile.mig.ground
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
-		RequiresCondition: !black_napalm
+		RequiresCondition: !black_napalm && !nuke
 		PauseOnCondition: !ammo
 	Armament@Blue:
 		Weapon: missile.mig.ground.blue
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
-		RequiresCondition: black_napalm
+		RequiresCondition: black_napalm && !nuke
+		PauseOnCondition: !ammo
+	Armament@Nuke:
+		Weapon: missile.mig.ground.nuke
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+		RequiresCondition: !tactical_nuke_mig && nuke
+		PauseOnCondition: !ammo
+	Armament@TacticalNuke:
+		Weapon: missile.mig.ground.tactical_nuke
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+		RequiresCondition: tactical_nuke_mig && nuke
 		PauseOnCondition: !ammo
 	Armament@Red_AA:
 		Weapon: missile.mig.air
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
-		RequiresCondition: !black_napalm
+		RequiresCondition: !black_napalm && !nuke
 		PauseOnCondition: !ammo
 	Armament@Blue_AA:
 		Weapon: missile.mig.air.blue
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
-		RequiresCondition: black_napalm
+		RequiresCondition: black_napalm && !nuke
 		PauseOnCondition: !ammo
-	GrantConditionOnPrerequisite@BLACK_NAPALM:
-		Condition: black_napalm
-		Prerequisites: upgrade.black_napalm
+	Armament@Nuke_AA:
+		Weapon: missile.mig.air.nuke
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+		RequiresCondition: !tactical_nuke && nuke
+		PauseOnCondition: !ammo
+	Armament@TacticalNuke_AA:
+		Weapon: missile.mig.air.tactical_nuke
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+		RequiresCondition: tactical_nuke && nuke
+		PauseOnCondition: !ammo
 	AttackPlane:
 		FacingTolerance: 20
 	DockClient:
@@ -323,6 +344,15 @@ aircraft.mig:
 	GrantConditionOnPrerequisite@MiGArmor:
 		Condition: mig_armor
 		Prerequisites: upgrade.mig_armor
+	GrantConditionOnPrerequisite@BLACK_NAPALM:
+		Condition: black_napalm
+		Prerequisites: upgrade.black_napalm
+	GrantConditionOnPrerequisite@TacticalNukeMiG:
+		Condition: tactical_nuke_mig
+		Prerequisites: upgrade.tactical_nuke_mig
+	GrantConditionOnFaction@Nuke:
+		Condition: nuke
+		Factions: nuke
 	DamageMultiplier:
 		Modifier: 80
 		RequiresCondition: mig_armor
@@ -344,7 +374,7 @@ aircraft.raptor:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.medium
-		Description: Multi-role fighter plane.
+		Description: Multi-role fighter plane.\n\nCan attack both ground and air targets.
 		ReadyAudio: RaptorCreated
 	Valued:
 		Cost: 1400
