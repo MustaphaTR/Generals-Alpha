@@ -1769,6 +1769,7 @@
 ^FakeBuilding:
 	Inherits: ^Building
 	-GivesBuildableArea:
+	-GrantConditionOnPrerequisite@GLOBALCCRADIUS:
 	Health:
 		HP: 125
 	WithDecoration@fake:
@@ -1820,6 +1821,7 @@
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	-GivesBuildableArea:
+	-GrantConditionOnPrerequisite@GLOBALCCRADIUS:
 	-AcceptsDeliveredCash:
 	-ExternalCapturable:
 	-ExternalCapturableBar:
