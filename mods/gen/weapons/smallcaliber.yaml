@@ -2,10 +2,10 @@
 	ReloadDelay: 30
 	Range: 6c0
 	Report: gun13.aud
-	Projectile: Bullet
-		Speed: 1c682
+	Projectile: InstantHit
+		Blockable: true
 	Warhead@1Dam: SpreadDamage
-		Spread: 128
+		Spread: 1
 		Damage: 30
 		Versus:
 			None: 100
@@ -32,114 +32,12 @@
 			Heavy: 10
 			Concrete: 10
 
-Vulcan:
-	Inherits: ^HeavyMG
-	Warhead@1Dam: SpreadDamage
-		Damage: 10
-		Versus:
-			None: 200
-	Warhead@4Dam_2: SpreadDamage
-		Spread: 128
-		Damage: 10
-		Delay: 2
-		Versus:
-			None: 200
-			Wood: 50
-			Light: 60
-			Heavy: 25
-			Concrete: 25
-		DamageTypes: TriggerProne, BulletDeath
-	Warhead@4Eff_2: CreateEffect
-		Explosions: piffs
-		ValidTargets: Ground
-		Delay: 2
-	Warhead@4Eff_2Water: CreateEffect
-		Explosions: water_piffs
-		ValidTargets: Water
-		Delay: 2
-	Warhead@5Dam_3: SpreadDamage
-		Spread: 128
-		Damage: 10
-		Delay: 4
-		Versus:
-			None: 200
-			Wood: 50
-			Light: 60
-			Heavy: 25
-			Concrete: 25
-		DamageTypes: TriggerProne, BulletDeath
-	Warhead@6Eff_3: CreateEffect
-		Explosions: piffs
-		ValidTargets: Ground
-		Delay: 4
-	Warhead@6Eff_3Water: CreateEffect
-		Explosions: water_piffs
-		ValidTargets: Water
-		Delay: 4
-	Warhead@7Dam_4: SpreadDamage
-		Spread: 128
-		Damage: 10
-		Delay: 6
-		Versus:
-			None: 200
-			Wood: 50
-			Light: 60
-			Heavy: 25
-			Concrete: 25
-		DamageTypes: TriggerProne, BulletDeath
-	Warhead@8Eff_4: CreateEffect
-		Explosions: piffs
-		ValidTargets: Ground
-		Delay: 6
-	Warhead@8Eff_4Water: CreateEffect
-		Explosions: water_piffs
-		ValidTargets: Water
-		Delay: 6
-	Warhead@9Dam_5: SpreadDamage
-		Spread: 128
-		Damage: 10
-		Delay: 8
-		Versus:
-			None: 200
-			Wood: 50
-			Light: 60
-			Heavy: 25
-			Concrete: 25
-		DamageTypes: TriggerProne, BulletDeath
-	Warhead@10Eff_5: CreateEffect
-		Explosions: piffs
-		ValidTargets: Ground
-		Delay: 8
-	Warhead@10Eff_5Water: CreateEffect
-		Explosions: water_piffs
-		ValidTargets: Water
-		Delay: 8
-	Warhead@11Dam_6: SpreadDamage
-		Spread: 128
-		Damage: 10
-		Delay: 10
-		Versus:
-			None: 200
-			Wood: 50
-			Light: 60
-			Heavy: 25
-			Concrete: 25
-		DamageTypes: TriggerProne, BulletDeath
-	Warhead@12Eff_6: CreateEffect
-		Explosions: piffs
-		ValidTargets: Ground
-		Delay: 10
-	Warhead@12Eff_6Water: CreateEffect
-		Explosions: water_piffs
-		ValidTargets: Water
-		Delay: 10
-
 mg.comanche:
 	Inherits: ^HeavyMG
 	ReloadDelay: 3
 	Range: 5c0
 	MinRange: 0c768
-	Projectile: Bullet
+	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 6
@@ -165,7 +63,7 @@ mg.helix:
 	ReloadDelay: 3
 	Range: 2c896
 	MinRange: 0c768
-	Projectile: Bullet
+	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 6
@@ -460,7 +358,7 @@ mg.quad_cannon.air:
 	Inherits: mg.quad_cannon.ground
 	Range: 8c768
 	ValidTargets: Air
-	Projectile: Bullet
+	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 5
@@ -494,7 +392,7 @@ gatling.minigunner.air:
 	Inherits: gatling.minigunner.ground
 	ValidTargets: Air
 	Range: 8c768
-	Projectile: Bullet
+	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 10
@@ -540,7 +438,7 @@ gatling.gatling_tank.air:
 	Inherits: gatling.gatling_tank.ground
 	ValidTargets: Air
 	Range: 8c768
-	Projectile: Bullet
+	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 12
@@ -575,7 +473,7 @@ gatling.gatling_cannon.air:
 	Inherits: gatling.gatling_cannon.ground
 	ValidTargets: Air
 	Range: 10c0
-	Projectile: Bullet
+	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 5
@@ -588,8 +486,9 @@ gatling.gatling_cannon.air:
 	ValidTargets: Ground, Infantry
 	InvalidTargets: Vehicle, Tank, Water, Structure, Wall, Husk
 	Projectile: InstantHit
+		Blockable: true
 	Warhead@1Dam: SpreadDamage
-		Spread: 42
+		Spread: 1
 		Damage: 150
 		ValidTargets: Barrel, Infantry
 		DamageTypes: TriggerProne, BulletDeath
@@ -659,7 +558,7 @@ mg.a10:
 	FollowingBurstTargetOffset: 746,0,0
 	ReloadDelay: 125
 	Report: gun5.aud
-	Projectile: Bullet
+	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Spread: 512
