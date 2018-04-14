@@ -288,8 +288,10 @@ missile.aurora:
 		Speed: 256
 		Inaccuracy: 512
 		CruiseAltitude: 2c0
-		RangeLimit: 10c410
+		RangeLimit: 10c0
 	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+		Falloff: 100, 100
 		Damage: 400
 		Versus:
 			building.normal: 250
@@ -298,7 +300,7 @@ missile.aurora:
 			building.stinger_site: 200
 			building.wall: 300
 	Warhead@3Eff: CreateEffect
-		Explosions: large_explosion
+		Explosions: mininuke
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
 
