@@ -741,8 +741,9 @@ missile.scud_launcher:
 		Shadow: True
 		LaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
-		Spread: 341
-		Damage: 200
+		Spread: 0c768
+		Falloff: 100, 100
+		Damage: 175
 		ValidTargets: Ground, Water
 		Versus:
 			aircraft.comanche: 130
@@ -750,7 +751,8 @@ missile.scud_launcher:
 			building.tough: 80
 		DamageTypes: TriggerProne, DropCrate, SmallExplosionDeath, Incendiary
 	Warhead@2Dam: SpreadDamage
-		Spread: 682
+		Spread: 1c512
+		Falloff: 100, 100
 		Damage: 25
 		ValidTargets: Ground, Water
 		Versus:
@@ -786,8 +788,10 @@ missile.scud_launcher.toxin_gamma:
 missile.scud_launcher.explosive:
 	Inherits: missile.scud_launcher
 	Warhead@1Dam: SpreadDamage
-		Damage: 300
+		Spread: 1c256
+		Damage: 250
 	Warhead@2Dam: SpreadDamage
+		Spread: 2c512
 		Damage: 50
 
 missile.scud_storm:
@@ -800,13 +804,14 @@ missile.scud_storm:
 		Speed: 384
 		Inaccuracy: 5000c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 500
+		Damage: 350
 	Warhead@2Dam: SpreadDamage
+		Spread: 5c0
 		Damage: 150
 	Warhead@6Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_alpha
-		Range: 2
-		Level: 1000
+		Range: 3
+		Level: 750
 		Falloff: 100, 50, 0
 		MaxLevel: 2500
 	Warhead@7Rev: RevealShroud
@@ -830,9 +835,8 @@ missile.scud_storm.gamma:
 missile.scud_storm.demo:
 	Inherits: missile.scud_storm
 	Warhead@1Dam: SpreadDamage
-		Damage: 600
-	Warhead@2Dam: SpreadDamage
-		Damage: 200
+		Spread: 1c896
+		Damage: 450
 	-Warhead@5Radio: CreateRadioactivity
 	-Warhead@6Radio: CreateRadioactivity
 	Warhead@7Rev: RevealShroud
