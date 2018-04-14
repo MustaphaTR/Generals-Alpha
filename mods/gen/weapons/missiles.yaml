@@ -872,14 +872,16 @@ missile.tomahawk_launcher:
 		Shadow: True
 		LaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
-		Spread: 512
-		Damage: 150
+		Spread: 0c256
+		Falloff: 100, 100
+		Damage: 100
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
 	Warhead@5Dam: SpreadDamage
-		Spread: 1024
+		Spread: 0c640
+		Falloff: 100, 100
 		Damage: 50
 		ValidTargets: Ground, Water
 		Versus:
