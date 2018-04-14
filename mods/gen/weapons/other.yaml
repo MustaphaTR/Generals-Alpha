@@ -618,9 +618,10 @@ melee.colonel_burton:
 	ValidTargets: Infantry
 	ReloadDelay: 25
 	RequiresForceFire: true
+	TargetActorCenter: true
 	Range: 1c0
 	Projectile: InstantHit
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 10000
 		ValidTargets: Infantry
 		DamageTypes: DefaultDeath
