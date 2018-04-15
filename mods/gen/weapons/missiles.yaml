@@ -58,7 +58,7 @@ missile.mig.ground:
 	Report: missile7.aud
 	Projectile: Missile
 		Speed: 256
-		Inaccuracy: 512
+		Inaccuracy: 128
 		CruiseAltitude: 2c0
 		RangeLimit: 12c0
 	Warhead@1Dam: SpreadDamage
@@ -211,7 +211,7 @@ missile.raptor.ground:
 	Report: missile7.aud
 	Projectile: Missile
 		Speed: 256
-		Inaccuracy: 512
+		Inaccuracy: 128
 		CruiseAltitude: 2c0
 		RangeLimit: 12c410
 	Warhead@1Dam: SpreadDamage
@@ -235,6 +235,8 @@ missile.raptor.air:
 		CruiseAltitude: 2c0
 		RangeLimit: 12c410
 	Warhead@1Dam: SpreadDamage
+		Spread: 0c128
+		Falloff: 100, 100
 		Damage: 100
 		ValidTargets: Air
 		Versus:
@@ -267,10 +269,12 @@ missile.stealth_fighter:
 	Report: missile7.aud
 	Projectile: Missile
 		Speed: 256
-		Inaccuracy: 512
+		Inaccuracy: 128
 		CruiseAltitude: 2c0
 		RangeLimit: 12c410
 	Warhead@1Dam: SpreadDamage
+		Spread: 0c128
+		Falloff: 100, 100
 		Damage: 100
 		Versus:
 			vehicle.anti-air: 30
