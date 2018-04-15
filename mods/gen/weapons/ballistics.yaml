@@ -7,7 +7,8 @@
 		Image: 120MM
 		Shadow: True
 	Warhead@1Dam: SpreadDamage
-		Spread: 128
+		Spread: 0c128
+		Falloff: 100, 100
 		Damage: 40
 		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
@@ -224,7 +225,6 @@ cannon.inferno_cannon:
 		Image: FB1
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c341
-		Falloff: 100, 100
 		Damage: 30
 		Versus:
 			aircraft.comanche: 130
@@ -260,7 +260,6 @@ cannon.nuke_cannon:
 		ContrailLength: 30
 	Warhead@1Dam_impact: SpreadDamage
 		Spread: 1c256
-		Falloff: 100, 100
 		Damage: 380
 		Versus:
 			aircraft.comanche: 130
@@ -315,7 +314,6 @@ cannon.nuke_cannon.neutron:
 		Condition: driver_killed
 	Warhead@1Dam: SpreadDamage
 		Range: 1c512
-		Falloff: 100, 100
 		Damage: 1000
 		ValidTargets: Infantry
 		DamageTypes: FireDeath
@@ -340,9 +338,8 @@ cannon.strategy_center:
 		Inaccuracy: 1c0
 		ContrailLength: 30
 	Warhead@1Dam: SpreadDamage
-		Spread: 512
+		Spread: 0c640
 		Damage: 200
-		Falloff: 100, 50, 25, 12, 5, 0
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -375,9 +372,8 @@ cannon.cruiser:
 		Inaccuracy: 2c938
 		ContrailLength: 30
 	Warhead@1Dam: SpreadDamage
-		Spread: 213
-		Damage: 25
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Spread: 0c341
+		Damage: 250
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -448,7 +444,7 @@ molotov.angry_mob:
 		Inaccuracy: 554
 		Image: BOMB
 	Warhead@1Dam: SpreadDamage
-		Spread: 256
+		Spread: 0c154
 		Damage: 40
 		Versus:
 			vehicle.dragon_tank: 20
@@ -472,9 +468,19 @@ grenade.ranger:
 		Inaccuracy: 512
 		Image: BOMB
 	Warhead@1Dam: SpreadDamage
-		Spread: 256
-		Damage: 35
+		Spread: 0c256
+		Damage: 25
 		InvalidTargets: Vehicle, Tank, Structure, Wall
+	Warhead@2Dam: SpreadDamage
+		Spread: 1c0
+		Falloff: 100, 100
+		Damage: 10
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@3Eff: CreateEffect
 		Explosions: flashbang
 		ImpactSounds: kaboom25.aud
@@ -491,7 +497,7 @@ grenade.grenadier:
 		Inaccuracy: 554
 		Image: GRENADE
 	Warhead@1Dam: SpreadDamage
-		Spread: 256
+		Spread: 0c256
 		Damage: 60
 		Versus:
 			aircraft.comanche: 130
@@ -518,6 +524,7 @@ ArtyBarrageWeapon:
 		Speed: 1024
 		Inaccuracy: 3c0
 	Warhead@1Dam: SpreadDamage
+		Spread: 1c256
 		Damage: 105
 		Versus:
 			aircraft.comanche: 130
