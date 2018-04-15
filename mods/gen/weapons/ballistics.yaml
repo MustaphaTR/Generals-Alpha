@@ -406,7 +406,7 @@ bomb.carpet:
 		Image: BOMBLET
 		Shadow: true
 	Warhead@1Dam: SpreadDamage
-		Spread: 640
+		Spread: 1c0
 		Damage: 300
 		Versus:
 			aircraft.comanche: 130
@@ -420,6 +420,8 @@ bomb.carpet:
 bomb.carpet.prc:
 	Inherits: bomb.carpet
 	ReloadDelay: 5
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c896
 
 bomb.carpet.nuke:
 	Inherits: bomb.carpet.prc
