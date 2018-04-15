@@ -15,7 +15,8 @@
 		HorizontalRateOfTurn: 5
 		RangeLimit: 6c0
 	Warhead@1Dam: SpreadDamage
-		Spread: 128
+		Spread: 0c128
+		Falloff: 100, 100
 		Damage: 50
 		ValidTargets: Ground, Water, Air
 		Versus:
@@ -62,8 +63,6 @@ missile.mig.ground:
 		CruiseAltitude: 2c0
 		RangeLimit: 12c0
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c128
-		Falloff: 100, 100
 		Damage: 75
 		ValidTargets: Ground, Water, Trees
 		Versus:
@@ -149,8 +148,6 @@ missile.mig.air:
 		CruiseAltitude: 2c0
 		RangeLimit: 12c0
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c128
-		Falloff: 100, 100
 		Damage: 75
 		ValidTargets: Air
 		Versus:
@@ -235,8 +232,6 @@ missile.raptor.air:
 		CruiseAltitude: 2c0
 		RangeLimit: 12c410
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c128
-		Falloff: 100, 100
 		Damage: 100
 		ValidTargets: Air
 		Versus:
@@ -273,8 +268,6 @@ missile.stealth_fighter:
 		CruiseAltitude: 2c0
 		RangeLimit: 12c410
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c128
-		Falloff: 100, 100
 		Damage: 100
 		Versus:
 			vehicle.anti-air: 30
@@ -295,7 +288,6 @@ missile.aurora:
 		RangeLimit: 10c0
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
-		Falloff: 100, 100
 		Damage: 400
 		Versus:
 			building.normal: 250
@@ -319,9 +311,8 @@ missile.a10:
 		CruiseAltitude: 2c0
 		RangeLimit: 11c410
 	Warhead@1Dam: SpreadDamage
-		Damage: 200
-		Falloff: 100, 100
 		Spread: 1c256
+		Damage: 200
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -349,7 +340,6 @@ missile.scorpion_tank:
 			building.tough: 80
 	Warhead@5Dam: SpreadDamage
 		Spread: 0c640
-		Falloff: 100, 100
 		Damage: 80
 		ValidTargets: Ground, Water
 		Versus:
@@ -503,6 +493,7 @@ missile.stinger_site.air:
 		TrailImage: smokey
 		RangeLimit: 10c512
 	Warhead@1Dam: SpreadDamage
+		Spread: 0c256
 		Damage: 30
 		Versus:
 			aircraft.comanche: 130
@@ -520,8 +511,6 @@ missile.comanche:
 		RangeLimit: 8c512
 		Inaccuracy: 1c256
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c128
-		Falloff: 100, 100
 		Damage: 20
 		ValidTargets: Ground, Water
 		Versus:
@@ -683,12 +672,21 @@ missile.rocket_buggy:
 	ValidTargets: Ground
 	TargetActorCenter: true
 	Projectile: Bullet
-		Inaccuracy: 853
+		Inaccuracy: 128
 		LaunchAngle: 62
 		Speed: 341
 	Warhead@1Dam: SpreadDamage
-		Spread: 683
-		Damage: 20
+		Spread: 0c128
+		Damage: 15
+		ValidTargets: Ground
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
+	Warhead@2Dam: SpreadDamage
+		Spread: 0c256
+		Damage: 5
 		ValidTargets: Ground
 		Versus:
 			aircraft.comanche: 130
@@ -749,7 +747,6 @@ missile.scud_launcher:
 		LaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c768
-		Falloff: 100, 100
 		Damage: 175
 		ValidTargets: Ground, Water
 		Versus:
@@ -880,7 +877,6 @@ missile.tomahawk_launcher:
 		LaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c256
-		Falloff: 100, 100
 		Damage: 100
 		Versus:
 			aircraft.comanche: 130
