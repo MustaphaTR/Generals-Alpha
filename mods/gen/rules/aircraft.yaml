@@ -578,6 +578,8 @@ aircraft.stealth_fighter.air:
 		Prerequisites: ~building.usa_airfield, ~techlevel.high
 	Valued:
 		Cost: 1250
+	Health:
+		HP: 180
 	Armament@PDLASER:
 		Weapon: laser.king_raptor
 		LocalOffset: 0,213,-85
@@ -623,6 +625,9 @@ aircraft.aurora:
 		Name: Aurora
 	Health:
 		HP: 80
+	DamageMultiplier@Airforce:
+		RequiresCondition: airforce
+		Modifier: 66
 	Armor:
 		Type: aircraft.normal
 	Armament:
