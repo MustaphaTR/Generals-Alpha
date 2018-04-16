@@ -2879,7 +2879,7 @@ building.speaker_tower:
 	Tooltip:
 		Name: Speaker Tower
 	Buildable:
-		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
+		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 11
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -2888,6 +2888,7 @@ building.speaker_tower:
 	Selectable:
 		Bounds: 24,24
 		DecorationBounds: 24,48,0,-12
+		Class: building.speaker_tower
 	SelectionDecorations:
 	WithSpriteBody:
 		PauseOnCondition: emp || hacked || lowpower
@@ -2920,8 +2921,17 @@ building.speaker_tower:
 		Condition: speaker_tower
 		Range: 4c0
 		RequiresCondition: !emp && !hacked
+	RenderSprites:
+		Image: building.speaker_tower
 	Voiced:
 		VoiceSet: SpeakerTowerVoice
+
+building.speaker_tower.boss:
+	Inherits: building.speaker_tower
+	Buildable:
+		Queue: queue.boss_gen_building
+		BuildPaletteOrder: 9
+		Prerequisites: building.prc_airfield, ~techlevel.medium
 
 building.particle_cannon:
 	Inherits: ^Building
