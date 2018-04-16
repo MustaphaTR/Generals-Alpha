@@ -52,7 +52,7 @@ upgrade.neutron_mine:
 	Tooltip:
 		Name: Neutron Mine
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.inf_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.inf_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
 		BuildPaletteOrder: 12
 		ForceIconLocation: true
 		BuildDuration: 375
@@ -509,7 +509,7 @@ upgrade.nationalism:
 	Tooltip:
 		Name: Nationalism
 	Buildable:
-		Queue: queue.propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center
+		Queue: queue.propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.boss_gen_missile_silo
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1500
@@ -577,7 +577,7 @@ upgrade.subliminal_messaging:
 	Tooltip:
 		Name: Subliminal Messaging
 	Buildable:
-		Queue: queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center
+		Queue: queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.boss_gen_missile_silo
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1000
@@ -693,12 +693,23 @@ upgrade.nuclear_tanks:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: ~techlevel.unrestricted
+		Prerequisites: !upgrade.nuclear_tanks, ~techlevel.unrestricted
 		Description: Increases Overlord and Battlemaster speed by 25%.
 		QueuedAudio: NoAudio
 		ReadyAudio: NuclearTanks
+	ProvidesPrerequisite@upgradename:
+		Prerequisite: upgrade.nuclear_tanks
 	Valued:
 		Cost: 2000
+	RenderSprites:
+		Image: upgrade.nuclear_tanks
+
+upgrade.nuclear_tanks.boss:
+	Inherits: upgrade.nuclear_tanks
+	Buildable:
+		Queue: queue.boss_gen_missile_silo
+		BuildPaletteOrder: 3
+		Description: Increases Overlord speed by 25%.
 
 upgrade.uranium_shells:
 	Inherits: ^default.upgrade
@@ -709,12 +720,23 @@ upgrade.uranium_shells:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: ~techlevel.unrestricted
+		Prerequisites: !upgrade.uranium_shells, ~techlevel.unrestricted
 		Description: Increases Overlord and Battlemaster damage by 25%.
 		QueuedAudio: NoAudio
 		ReadyAudio: UraniumShells
+	ProvidesPrerequisite@upgradename:
+		Prerequisite: upgrade.uranium_shells
 	Valued:
 		Cost: 2500
+	RenderSprites:
+		Image: upgrade.uranium_shells
+
+upgrade.uranium_shells.boss:
+	Inherits: upgrade.uranium_shells
+	Buildable:
+		Queue: queue.boss_gen_missile_silo
+		BuildPaletteOrder: 5
+		Description: Increases Overlord damage by 25%.
 
 upgrade.neutron_shells:
 	Inherits: ^default.upgrade

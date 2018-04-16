@@ -1088,7 +1088,7 @@ building.prc_barracks:
 building.mine:
 	Inherits: ^Mine
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
 		BuildPaletteOrder: 14
 		ForceIconLocation: true
 		BuildDuration: 125
@@ -3260,7 +3260,7 @@ building.missile_silo:
 	Tooltip:
 		Name: Nuclear Missile Silo
 	Buildable:
-		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
+		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
 		BuildPaletteOrder: 12
 		BuildDuration: 1500
 		BuildDurationModifier: 100
@@ -3281,7 +3281,7 @@ building.missile_silo:
 	Selectable:
 		Class: building.missile_silo
 	Production:
-		Produces: queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo
+		Produces: queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo
 		PauseOnCondition: emp || hacked || sabotaged
 	ProductionQueue@Vanilla:
 		Type: queue.missile_silo
@@ -3304,6 +3304,13 @@ building.missile_silo:
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 		SpectatorUIOrder: 65
+	ProductionQueue@Boss:
+		Type: queue.boss_gen_missile_silo
+		Factions: boss
+		Group: Tech
+		InstantCashDrain: true
+		LowPowerSlowdown: 3
+		SpectatorUIOrder: 66
 	ProductionBar@Vanilla:
 		ProductionType: queue.missile_silo
 	ProductionBar@Infantry:
@@ -3379,6 +3386,12 @@ building.missile_silo:
 		TerrainTypes: Sand, SandRoad
 	RenderSprites:
 		Image: building.missile_silo
+
+building.missile_silo.boss:
+	Inherits: building.missile_silo
+	Buildable:
+		Queue: queue.boss_gen_building
+		Prerequisites: building.prc_war_factory, building.prc_airfield, !prerequisite.enough_nuke, ~techlevel.unrestricted
 
 SBAG:
 	Inherits: ^Wall
