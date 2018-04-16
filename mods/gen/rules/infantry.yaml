@@ -86,6 +86,7 @@ infantry.worker:
 		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
+		Prerequisites: ~techlevel.infonly
 		Description: General-purpose infantry armed with a automatic rifle.
 	Valued:
 		Cost: 150
@@ -120,7 +121,6 @@ infantry.ranger:
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_infantry, queue.boss_gen_infantry
-		Prerequisites: ~techlevel.infonly
 		ReadyAudio: RangerCreated
 	Valued:
 		Cost: 225
@@ -153,7 +153,6 @@ infantry.rebel:
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
 		Queue: queue.gla_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
-		Prerequisites: ~techlevel.infonly
 		ReadyAudio: RebelCreated
 	CustomProductionCost@Stealth:
 		Queue: queue.stealth_gen_infantry
@@ -301,7 +300,6 @@ infantry.red_guard:
 		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
 		BuildAmount: 2
 		BuildDuration: 250
-		Prerequisites: ~techlevel.infonly
 		Description: General-purpose infantry armed with a rifle.\n\nTrained in groups of 2.
 		ReadyAudio: RedGuardCreated
 	Valued:
@@ -344,7 +342,6 @@ infantry.minigunner:
 	Buildable:
 		Queue: queue.inf_gen_infantry
 		BuildDuration: 250
-		Prerequisites: ~techlevel.infonly
 		Description: General-purpose infantry armed with a minigun.
 		ReadyAudio: MinigunnerCreated
 	Valued:
@@ -400,7 +397,6 @@ infantry.conscript:
 	Buildable:
 		Queue: queue.soviet_infantry
 		BuildDuration: 100
-		Prerequisites: ~techlevel.infonly
 		ReadyAudio: ConscriptCreated
 	Valued:
 		Cost: 100
@@ -431,6 +427,7 @@ infantry.conscript:
 		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
+		Prerequisites: ~techlevel.infonly
 		Description: Anti-tank & anti-air infantry.
 	Valued:
 		Cost: 300
@@ -470,7 +467,6 @@ infantry.missile_defender:
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_infantry
-		Prerequisites: ~techlevel.infonly
 		Description: Anti-tank & anti-air infantry.\n\nCan laser lock to fire with double speed against\nvehicles and aircraft by force firing.
 		ReadyAudio: MissileDefenderCreated
 	Tooltip:
@@ -498,7 +494,6 @@ infantry.rpg_trooper:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Buildable:
 		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
-		Prerequisites: ~techlevel.infonly
 		ReadyAudio: RPGTrooperCreated
 	Armament@PRIMARY:
 		Weapon: missile.rpg_trooper.ground
@@ -518,7 +513,6 @@ infantry.tank_hunter:
 	Inherits@HORDE_BONUS: ^Horde
 	Buildable:
 		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
-		Prerequisites: ~techlevel.infonly
 		ReadyAudio: TankHunterCreated
 	CustomProductionCost@Nuke:
 		Queue: queue.nuke_gen_infantry
@@ -545,7 +539,6 @@ infantry.grenadier:
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
 		Queue: queue.soviet_infantry
-		Prerequisites: ~techlevel.infonly
 		Description: Anti-tank infantry.
 	Tooltip:
 		Name: Grendier
@@ -589,7 +582,7 @@ infantry.pathfinder:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_barracks, building.strategy_center, ~generals_power.pathfinder, ~techlevel.medium
+		Prerequisites: building.strategy_center, ~generals_power.pathfinder, ~techlevel.medium
 		Description: Elite sniper infantry.
 		ReadyAudio: PathfinderCreated
 	Health:
@@ -873,7 +866,7 @@ infantry.angry_mob:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	-AppearsOnRadar:
 	Buildable:
-		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry #, queue.boss_gen_infantry
+		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.boss_gen_infantry
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 375
@@ -953,7 +946,7 @@ infantry.hacker:
 		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: ~building.prc_barracks, building.propaganda_center, ~techlevel.medium
+		Prerequisites: building.propaganda_center, ~techlevel.medium
 		Description: Hacks internet to gain money while deployed.\n\nCan disable enemy structures.
 		ReadyAudio: HackerCreated
 	Valued:
@@ -1166,12 +1159,11 @@ infantry.colonel_burton:
 	Tooltip:
 		Name: Colonel Burton
 	Buildable:
-		Queue: queue.usa_infantry, queue.boss_gen_infantry
+		Queue: queue.usa_infantry
 		BuildPaletteOrder: 4
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: building.strategy_center, ~techlevel.high
-		BuildLimit: 1
+		Prerequisites: building.strategy_center, !prerequisite.enough_colonel_burton, ~techlevel.high
 		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures.\n\nCan backstab infantry without getting detected by force firing.\n\nCamouflaged.
 		ReadyAudio: BurtonCreated
 	Mobile:
@@ -1189,6 +1181,8 @@ infantry.colonel_burton:
 		HP: 200
 	Armor:
 		Type: infantry.normal
+	Selectable:
+		Class: infantry.colonel_burton
 	Passenger:
 		PipType: Red
 		Voice: Move
@@ -1235,8 +1229,20 @@ infantry.colonel_burton:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	ProvidesPrerequisite@LIMIT:
+		Prerequisite: prerequisite.enough_colonel_burton
+	RenderSprites:
+		Image: infantry.colonel_burton
 	Voiced:
 		VoiceSet: BurtonVoice
+
+infantry.colonel_burton.boss:
+	Inherits: infantry.colonel_burton
+	Buildable:
+		Queue: queue.boss_gen_infantry
+		BuildPaletteOrder: 6
+		Prerequisites: building.particle_cannon, !prerequisite.enough_colonel_burton, ~techlevel.high
+		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures.\n\nCan backstab infantry without getting detected by force firing.\n\nCamouflaged.
 
 infantry.jarmen_kell:
 	Inherits: ^Soldier

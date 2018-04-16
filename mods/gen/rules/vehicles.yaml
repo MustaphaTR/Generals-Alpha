@@ -8,7 +8,7 @@ vehicle.supply_truck:
 		BuildPaletteOrder: 1
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.prc_supply_center, ~techlevel.infonly
+		Prerequisites: ~techlevel.infonly
 		Description: Collects supplies.
 		ReadyAudio: SupplyTruckCreated
 	Valued:
@@ -196,7 +196,7 @@ vehicle.technical:
 		ForceIconLocation: true
 		BuildDuration: 75
 		BuildDurationModifier: 100
-		Prerequisites: ~building.arms_dealer, ~techlevel.low
+		Prerequisites: ~techlevel.low
 		Description: Fast scout & anti-infantry vehicle.\n\nCan carry 5 infantry.\n\nPassengers can survive when it dies.
 		ReadyAudio: TechnicalCreated
 	Valued:
@@ -284,7 +284,7 @@ vehicle.radar_van:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.arms_dealer, ~techlevel.low
+		Prerequisites: ~techlevel.low
 		Description: Provides radar.
 		ReadyAudio: RadarVanCreated
 	Valued:
@@ -363,7 +363,7 @@ vehicle.scorpion_tank:
 		ForceIconLocation: true
 		BuildDuration: 175
 		BuildDurationModifier: 100
-		Prerequisites: ~building.arms_dealer, ~techlevel.low
+		Prerequisites: ~techlevel.low
 		Description: Lightly armored main battle tank.
 		ReadyAudio: ScorpionTankCreated
 	Valued:
@@ -497,7 +497,7 @@ vehicle.crusader_tank:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_war_factory, ~techlevel.low
+		Prerequisites: ~techlevel.low
 		Description: Medium armored main battle tank.
 		ReadyAudio: CrusaderTankCreated
 	Valued:
@@ -589,7 +589,7 @@ vehicle.battlemaster_tank:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.prc_war_factory, ~techlevel.low
+		Prerequisites: ~techlevel.low
 		Description: Medium armored main battle tank.
 		ReadyAudio: BattlemasterTankCreated
 	Valued:
@@ -682,7 +682,7 @@ vehicle.ambulance:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_war_factory, ~techlevel.medium
+		Prerequisites: ~techlevel.medium
 		Description: Heals nearby infantry.\n\nCan carry 3 infantry.\n\nPassengers can survive when it dies.
 		ReadyAudio: AmbulanceCreated
 	Valued:
@@ -746,7 +746,7 @@ vehicle.sentry_drone:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_war_factory, ~techlevel.low, ~prerequisite.zh_units
+		Prerequisites: ~techlevel.low, ~prerequisite.zh_units
 		Description: Detection vehicle.\n\nCamouflaged while not moving.
 	Valued:
 		Cost: 800
@@ -850,7 +850,7 @@ vehicle.quad_cannon:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.arms_dealer, ~techlevel.low
+		Prerequisites: ~techlevel.low
 		Description: Anti-infantry & anti-air vehicle.
 		ReadyAudio: QuadCannonCreated
 	Valued:
@@ -922,7 +922,7 @@ vehicle.gatling_tank:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.prc_war_factory, ~techlevel.low
+		Prerequisites: ~techlevel.low
 		Description: Anti-infantry & anti-air vehicle.
 		ReadyAudio: GatlingTankCreated
 	Valued:
@@ -1007,7 +1007,7 @@ vehicle.toxin_tractor:
 		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Prerequisites: ~building.arms_dealer, ~techlevel.medium
+		Prerequisites: ~techlevel.medium
 		Description: Toxin-throwing vehicle.
 		ReadyAudio: ToxinTractorCreated
 	Valued:
@@ -1121,7 +1121,7 @@ vehicle.dragon_tank:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.prc_war_factory, ~techlevel.medium
+		Prerequisites: ~techlevel.medium
 		Description: Flame-throwing vehicle.
 		ReadyAudio: DragonTankCreated
 	Valued:
@@ -1198,7 +1198,7 @@ vehicle.rocket_buggy:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: building.palace, ~building.arms_dealer, ~techlevel.medium
+		Prerequisites: building.palace, ~techlevel.medium
 		Description: Rocket artillery.
 		ReadyAudio: RocketBuggyCreated
 	Valued:
@@ -1367,7 +1367,7 @@ vehicle.troop_crawler:
 		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: ~building.prc_war_factory, ~techlevel.low
+		Prerequisites: ~techlevel.low
 		Description: Tough infantry transport.\n\nCan carry 8 infantry.\n\nComes with 8 red guards.\n\nPassengers can survive when it dies.
 		ReadyAudio: TroopCrawlerCreated
 	Valued:
@@ -1442,7 +1442,7 @@ vehicle.listening_outpost:
 		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: ~building.prc_war_factory, ~techlevel.low, ~prerequisite.zh_units
+		Prerequisites: ~techlevel.low, ~prerequisite.zh_units
 		Description: Stealth detector unit.\n\nCan carry 2 infantry that can fire outside.\n\nComes with 2 tank hunters.\n\nPassengers can survive when it dies.\n\nCamouflaged while not moving.
 		ReadyAudio: ListeningOutpostCreated
 	Valued:
@@ -1620,7 +1620,7 @@ vehicle.ecm_tank:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.prc_war_factory, ~techlevel.medium, ~prerequisite.zh_units
+		Prerequisites: ~building.propaganda_center, ~techlevel.medium, ~prerequisite.zh_units
 		Description: Disables enemy vehicles.\n\nJams enemy missiles.
 		ReadyAudio: ECMTankCreated
 	Valued:
@@ -1708,7 +1708,7 @@ vehicle.tomahawk_launcher:
 		BuildPaletteOrder: 8
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~techlevel.medium
+		Prerequisites: building.strategy_center, ~techlevel.medium
 		Description: Long-range rocket artillery.
 		ReadyAudio: TomahawkCreated
 	Valued:
@@ -1798,7 +1798,7 @@ vehicle.scud_launcher:
 		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: building.palace, ~building.arms_dealer, ~generals_power.scud_launcher, ~techlevel.high
+		Prerequisites: building.palace, ~generals_power.scud_launcher, ~techlevel.high
 		Description: Long-range rocket artillery.\n\nCan be armed with either toxin or high explosive missiles.
 		ReadyAudio: ScudLauncherCreated
 	Valued:
@@ -1920,7 +1920,7 @@ vehicle.inferno_cannon:
 		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~techlevel.medium
+		Prerequisites: building.propaganda_center, ~techlevel.medium
 		Description: Long-range artillery.
 		ReadyAudio: InfernoCannonCreated
 	Valued:
@@ -1995,11 +1995,11 @@ vehicle.paladin_tank:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_vehicle, queue.boss_gen_vehicle
+		Queue: queue.usa_vehicle
 		BuildPaletteOrder: 9
 		BuildDuration: 300
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_war_factory, building.strategy_center, ~generals_power.paladin_tank, ~techlevel.high
+		Prerequisites: building.strategy_center, ~generals_power.paladin_tank, ~techlevel.high
 		Description: Heavy tank.\n\nCan deflect enemy missiles with laser.
 		ReadyAudio: PaladinTankCreated
 	Valued:
@@ -2061,7 +2061,18 @@ vehicle.paladin_tank:
 	Voiced:
 		VoiceSet: PaladinTankVoice
 	Selectable:
+		Class: vehicle.paladin_tank
 		DecorationBounds: 28,28,0,-4
+	RenderSprites:
+		Image: vehicle.paladin_tank
+
+vehicle.paladin_tank.boss:
+	Inherits: vehicle.paladin_tank
+	Buildable:
+		Queue: queue.boss_gen_vehicle
+		BuildPaletteOrder: 0
+		ForceIconLocation: true
+		Prerequisites: ~generals_power.paladin_tank, ~techlevel.low
 
 vehicle.marauder_tank:
 	Inherits: ^Tank
@@ -2235,7 +2246,7 @@ vehicle.overlord_tank:
 		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: building.propaganda_center, ~building.prc_war_factory, ~techlevel.high
+		Prerequisites: building.propaganda_center, ~techlevel.high
 		Description: Big and slow tank.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
 		ReadyAudio: OverlordTankCreated
 	Valued:
@@ -2425,7 +2436,7 @@ vehicle.bomb_truck:
 		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: building.palace, ~building.arms_dealer, ~techlevel.high
+		Prerequisites: building.palace, ~techlevel.high
 		Description: Suicide vehicle.\n\nCan be armed with toxin or high explosive bombs.
 		ReadyAudio: BombTruckCreated
 	Valued:

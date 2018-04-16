@@ -104,7 +104,7 @@ generals_power.nuke_cannon:
 hack.cameo_filler.1:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.usa_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Queue: queue.usa_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		Prerequisites: disabled
@@ -114,10 +114,20 @@ generals_power.paladin_tank:
 	Tooltip:
 		Name: Paladin Tank
 	Buildable:
-		Queue: queue.usa_generals_power, queue.boss_gen_generals_power
+		Queue: queue.usa_generals_power
 		BuildPaletteOrder: 3
 		Prerequisites: ~techlevel.high, prerequisite.has_points
 		Description: Enables Paladin Tank.
+	ProvidesPrerequisite@powername:
+		Prerequisite: generals_power.paladin_tank
+	RenderSprites:
+		Image: generals_power.paladin_tank
+
+generals_power.paladin_tank.boss:
+	Inherits: generals_power.paladin_tank
+	Buildable:
+		Queue: queue.boss_gen_generals_power
+		BuildPaletteOrder: 0
 
 generals_power.stealth_fighter:
 	Inherits: ^default.generals_power
@@ -134,10 +144,21 @@ generals_power.pathfinder:
 	Tooltip:
 		Name: Pathfinder
 	Buildable:
-		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.boss_gen_generals_power
+		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
 		BuildPaletteOrder: 4
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.high
 		Description: Enables Pathfinder.
+	ProvidesPrerequisite@powername:
+		Prerequisite: generals_power.pathfinder
+	RenderSprites:
+		Image: generals_power.pathfinder
+
+generals_power.pathfinder.level1:
+	Inherits: generals_power.pathfinder
+	Buildable:
+		Queue: queue.boss_gen_generals_power
+		BuildPaletteOrder: 1
+		Prerequisites: prerequisite.has_points, ~techlevel.high
 
 generals_power.carpet_bombing.airforce:
 	Inherits: ^default.generals_power
@@ -182,7 +203,7 @@ generals_power.hijacker:
 hack.cameo_filler.2:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.boss_gen_generals_power
+		Queue: queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		Prerequisites: disabled
