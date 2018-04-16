@@ -300,6 +300,30 @@ missile.aurora:
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
 
+missile.aurora_alpha:
+	Inherits: missile.aurora
+	Warhead@2Dam: SpreadDamage
+		Spread: 1c768
+		Falloff: 100, 100
+		Delay: 10
+		Damage: 900
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+		DamageTypes: TriggerProne, ExplosionDeath
+	Warhead@5Eff: CreateEffect
+		Delay: 10
+		Explosions: nuke
+		ImpactSounds: kaboom1.aud
+		ValidTargets: Ground, Air, Ship
+	Warhead@6EffWater: CreateEffect
+		Delay: 10
+		Explosions: large_splash
+		ImpactSounds: splash9.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure
+
 missile.a10:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 12

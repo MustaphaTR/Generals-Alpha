@@ -276,7 +276,7 @@ husk.stealth_fighter:
 
 husk.aurora:
 	Inherits: ^PlaneHusk
-	Inherits@REVEAL: ^Reveal180
+	Inherits@REVEAL: ^Reveal600
 	Tooltip:
 		Name: Aurora
 	Contrail@1:
@@ -298,6 +298,32 @@ husk.aurora:
 		MinDamage: Undamaged
 	RenderSprites:
 		Image: aircraft.aurora
+		Scale: 0.9
+
+husk.aurora_alpha:
+	Inherits: ^PlaneHusk
+	Inherits@REVEAL: ^Reveal600
+	Tooltip:
+		Name: Aurora Alpha
+	Contrail@1:
+		Offset: -598,-683,0
+	Contrail@2:
+		Offset: -598,683,0
+	RevealsShroud:
+		Type: CenterPosition
+	RevealsShroud@SEARCH_AND_DESTROY:
+		Type: CenterPosition
+	RevealsShroud@INTELLIGENCE:
+		Type: CenterPosition
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 180
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+		MinDamage: Undamaged
+	RenderSprites:
+		Image: aircraft.aurora_alpha
 		Scale: 0.9
 
 husk.comanche:

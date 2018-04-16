@@ -600,7 +600,7 @@ aircraft.aurora:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.boss_gen_aircraft
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.boss_gen_aircraft
 		BuildAtProductionType: queue.usa_plane
 		BuildPaletteOrder: 4
 		BuildDuration: 625
@@ -699,6 +699,17 @@ aircraft.aurora:
 		VoiceSet: AuroraVoice
 	RenderSprites:
 		Scale: 0.9
+
+aircraft.aurora_alpha:
+	Inherits: aircraft.aurora
+	Buildable:
+		Queue: queue.super_gen_aircraft
+	Tooltip:
+		Name: Aurora Alpha
+	Armament:
+		Weapon: missile.aurora_alpha
+	SpawnActorOnDeath:
+		Actor: husk.aurora_alpha
 
 aircraft.spy_drone:
 	Inherits: ^Plane
