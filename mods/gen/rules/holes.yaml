@@ -121,6 +121,11 @@ hole.toxin_tunnel_network:
 	TransformOnCapture:
 		IntoActor: building.toxin_tunnel_network.no_free_actor
 
+hole.tunnel_network.boss:
+	Inherits: hole.tunnel_network
+	TransformOnCapture:
+		IntoActor: building.tunnel_network.boss.no_free_actor
+
 hole.stinger_site:
 	Inherits: ^Hole
 	Inherits@SHAPE: ^2x2Shape

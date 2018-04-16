@@ -1963,7 +1963,7 @@ building.tunnel_network:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Buildable:
-		Queue: queue.gla_building, queue.demo_gen_building, queue.boss_gen_building
+		Queue: queue.gla_building, queue.demo_gen_building
 		BuildPaletteOrder: 5
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -2074,6 +2074,36 @@ building.toxin_tunnel_network.no_free_actor:
 	-FreeActor@2:
 	RenderSprites:
 		Image: building.toxin_tunnel_network
+
+building.tunnel_network.boss:
+	Inherits: building.tunnel_network
+	Inherits@MINE: ^CanHaveMines
+	Buildable:
+		Queue: queue.boss_gen_building
+		Prerequisites: building.prc_barracks, ~techlevel.infonly
+	Production:
+		Produces: queue.just_mine
+		PauseOnCondition: emp || hacked || sabotaged
+		-RequiresCondition:
+	-ProductionQueue:
+	ProductionQueue@Mine:
+		Type: queue.just_mine
+		Group: Building
+		RequireOwner: false
+		InstantCashDrain: true
+		LowPowerSlowdown: 3
+	SpawnActorOnDeath:
+		Actor: hole.tunnel_network.boss
+	RenderSprites:
+		Image: building.tunnel_network
+
+building.tunnel_network.boss.no_free_actor:
+	Inherits: building.tunnel_network.boss
+	-Buildable:
+	-FreeActor@1:
+	-FreeActor@2:
+	RenderSprites:
+		Image: building.tunnel_network
 
 building.tunnel_network.sneak_attack:
 	Inherits: building.tunnel_network.no_free_actor
