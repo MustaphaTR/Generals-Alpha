@@ -2083,7 +2083,7 @@ building.tunnel_network.boss:
 		Prerequisites: building.prc_barracks, ~techlevel.infonly
 	Production:
 		Produces: queue.just_mine
-		PauseOnCondition: emp || hacked || sabotaged
+		PauseOnCondition: emp || hacked
 		-RequiresCondition:
 	-ProductionQueue:
 	ProductionQueue@Mine:
@@ -2094,6 +2094,8 @@ building.tunnel_network.boss:
 		LowPowerSlowdown: 3
 	SpawnActorOnDeath:
 		Actor: hole.tunnel_network.boss
+	-GrantConditionOnProduction@CAMO_NETTING:
+	-GrantConditionOnPrerequisite@ZH_UNITS:
 	RenderSprites:
 		Image: building.tunnel_network
 
