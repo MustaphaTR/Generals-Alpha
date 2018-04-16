@@ -741,7 +741,7 @@ vehicle.sentry_drone:
 	Inherits@REVEAL: ^Reveal350
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.boss_gen_vehicle
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -917,7 +917,7 @@ vehicle.gatling_tank:
 	Tooltip:
 		Name: Gatling Tank
 	Buildable:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -1116,7 +1116,7 @@ vehicle.dragon_tank:
 	Tooltip:
 		Name: Dragon Tank
 	Buildable:
-		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -1193,7 +1193,7 @@ vehicle.rocket_buggy:
 	Tooltip:
 		Name: Rocket Buggy
 	Buildable:
-		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle #, queue.boss_gen_vehicle
 		BuildPaletteOrder: 6
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -1287,7 +1287,7 @@ vehicle.avenger:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle #, queue.boss_gen_vehicle
 		BuildPaletteOrder: 6
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1704,7 +1704,7 @@ vehicle.tomahawk_launcher:
 	Tooltip:
 		Name: Tomahawk Launcher
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle, queue.boss_gen_vehicle
 		BuildPaletteOrder: 8
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1995,7 +1995,7 @@ vehicle.paladin_tank:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_vehicle
+		Queue: queue.usa_vehicle, queue.boss_gen_vehicle
 		BuildPaletteOrder: 9
 		BuildDuration: 300
 		BuildDurationModifier: 100
@@ -2230,7 +2230,7 @@ vehicle.overlord_tank:
 		Types: gatling
 		Modifier: 50
 	Buildable:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.boss_gen_vehicle
 		BuildPaletteOrder: 6
 		ForceIconLocation: true
 		BuildDuration: 500
