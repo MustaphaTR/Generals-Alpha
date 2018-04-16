@@ -32,6 +32,8 @@ tech.oil_derrick:
 		PauseOnCondition: emp || hacked
 	Tooltip:
 		Name: Oil Derrick
+	TooltipDescription:
+		Description: Gives cash periodically.
 	Explodes:
 		Weapon: BarrelExplode
 	GivesCashOnCapture:
@@ -63,6 +65,8 @@ tech.oil_refinery:
 		RepairStep: 15
 	Tooltip:
 		Name: Oil Refinery
+	TooltipDescription:
+		Description: Reduces vehicle and aircraft cost by 10%.
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
@@ -95,6 +99,8 @@ tech.hospital:
 		RepairStep: 15
 	Tooltip:
 		Name: Hospital
+	TooltipDescription:
+		Description: Makes infantry self-heal.
 	WithBuildingBib:
 		HasMinibib: Yes
 	WithDeathAnimation:
@@ -121,6 +127,8 @@ tech.communications_center:
 		HP: 750
 	Tooltip:
 		Name: Communications Center
+	TooltipDescription:
+		Description: Reveals a big area around it.
 	RevealsShroud:
 		RequiresCondition: !emp && !hacked && !search_and_destroy
 	RevealsShroud@SEARCH_AND_DESTROY:
@@ -172,6 +180,8 @@ tech.soviet_barracks:
 		HP: 1000
 	Tooltip:
 		Name: Soviet Barracks
+	TooltipDescription:
+		Description: Produces old Soviet era units.
 	Production:
 		Produces: queue.soviet_infantry
 		PauseOnCondition: emp || hacked || sabotaged
@@ -260,6 +270,8 @@ tech.power_plant:
 		TargetableOffsets: -355,-1024,0
 	Tooltip:
 		Name: Power Plant
+	TooltipDescription:
+		Description: Provides power.
 	Building:
 		Footprint: xxx Xxx ===
 		Dimensions: 3,3
@@ -305,6 +317,8 @@ tech.service_depot:
 			BottomRight: 640, 1110
 	Tooltip:
 		Name: Service Depot
+	TooltipDescription:
+		Description: Repairs vehicles.
 	Building:
 		Footprint: _X_ xxx _X_
 		Dimensions: 3,3
@@ -354,6 +368,8 @@ tech.shipyard:
 		Cost: 1000
 	Tooltip:
 		Name: Shipyard
+	TooltipDescription:
+		Description: Produces ships.
 	Building:
 		Footprint: XXX xxx XXX
 		Dimensions: 3,3
