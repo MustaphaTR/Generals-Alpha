@@ -393,9 +393,9 @@
 ^AffectedByJunkRepair:
 	SelfHealing@JUNK_REPAIR:
 		Step: 2
-		Delay: 20
+		Delay: 25
 		HealIfBelow: 100
-		DamageCooldown: 20
+		DamageCooldown: 25
 		RequiresCondition: junk_repair
 	GrantConditionOnPrerequisite@JUNK_REPAIR:
 		Condition: junk_repair
