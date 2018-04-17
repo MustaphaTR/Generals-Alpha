@@ -514,6 +514,10 @@ infantry.tank_hunter:
 	Buildable:
 		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
 		ReadyAudio: TankHunterCreated
+	Armament@PRIMARY:
+		Weapon: missile.tank_hunter.ground
+	Armament@SECONDARY:
+		Weapon: missile.tank_hunter.air
 	CustomProductionCost@Nuke:
 		Queue: queue.nuke_gen_infantry
 		Cost: 350

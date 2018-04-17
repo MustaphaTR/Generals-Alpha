@@ -464,23 +464,35 @@ missile.missile_defender.locked.air:
 
 missile.rpg_trooper.ground:
 	Inherits: missile.missile_defender.ground
+	RequiresNormalFire: false
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.rpg_trooper.air:
 	Inherits: missile.missile_defender.air
+	RequiresNormalFire: false
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.rpg_trooper.garrison.ground:
 	Inherits: missile.missile_defender.garrison.ground
+	RequiresNormalFire: false
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.rpg_trooper.garrison.air:
 	Inherits: missile.missile_defender.garrison.air
+	RequiresNormalFire: false
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
+
+missile.tank_hunter.ground:
+	Inherits: missile.missile_defender.ground
+	RequiresNormalFire: false
+
+missile.tank_hunter.air:
+	Inherits: missile.missile_defender.air
+	RequiresNormalFire: false
 
 missile.hellfire_drone:
 	Inherits: ^AntiGroundMissile
