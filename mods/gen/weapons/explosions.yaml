@@ -58,6 +58,34 @@ CrateExplosion:
 		ValidTargets: Ground, Water, Air
 	-Warhead@3EffWater: CreateEffect
 
+CrateToxin:
+	Warhead@1Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_alpha
+		Range: 1
+		Level: 1000
+		Falloff: 100, 90, 80
+		MaxLevel: 7500
+	Warhead@2Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_alpha
+		Range: 2
+		Level: 2000
+		Falloff: 100, 90, 80
+		MaxLevel: 7500
+
+CrateToxin.beta:
+	Inherits: CrateToxin
+	Warhead@1Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_beta
+	Warhead@2Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_beta
+
+CrateToxin.gamma:
+	Inherits: CrateToxin
+	Warhead@1Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_gamma
+	Warhead@2Radio: CreateRadioactivity
+		RadioactivityLayerName: anthrax_gamma
+
 UnitExplode:
 	Inherits: ^Explosion
 	Warhead@1Dam: SpreadDamage

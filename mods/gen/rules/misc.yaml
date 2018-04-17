@@ -1,17 +1,40 @@
 CRATE:
 	Inherits: ^Crate
-	GiveCashCrateAction:
+	GiveCashCrateAction@500:
+		Amount: 500
+		SelectionShares: 10
+		UseCashTick: true
+	GiveCashCrateAction@1000:
 		Amount: 1000
-		SelectionShares: 50
+		SelectionShares: 30
+		UseCashTick: true
+	GiveCashCrateAction@1500:
+		Amount: 1500
+		SelectionShares: 10
 		UseCashTick: true
 	LevelUpCrateAction:
 		SelectionShares: 40
-	ExplodeCrateAction@fire:
+	ExplodeCrateAction@NAPLAM:
 		Weapon: CrateNapalm
 		SelectionShares: 5
-	ExplodeCrateAction@boom:
+	ExplodeCrateAction@EXPLOSION:
 		Weapon: CrateExplosion
 		SelectionShares: 5
+	ExplodeCrateAction@TOXIN_ALPHA:
+		Weapon: CrateToxin
+		SelectionShares: 1
+	ExplodeCrateAction@TOXIN_BETA:
+		Weapon: CrateToxin.beta
+		SelectionShares: 3
+	ExplodeCrateAction@TOXIN_GAMMA:
+		Weapon: CrateToxin.gamma
+		SelectionShares: 1
+	ExplodeCrateAction@NUKE:
+		Weapon: Atomic
+		SelectionShares: 1
+	RevealMapCrateAction:
+		SelectionShares: 1
+		Effect: reveal-map
 	HideMapCrateAction:
 		SelectionShares: 5
 		Effect: hide-map
@@ -19,29 +42,36 @@ CRATE:
 		Notification: heal2.aud
 		SelectionShares: 2
 		Effect: heal
-	RevealMapCrateAction:
-		SelectionShares: 1
-		Effect: reveal-map
 	DuplicateUnitCrateAction:
-		SelectionShares: 10
-		MaxAmount: 5
+		SelectionShares: 5
+		MaxAmount: 3
 		MinAmount: 1
-		MaxDuplicateValue: 1500
-	GiveUnitCrateAction@minigunner:
+		MaxDuplicateValue: 2000
+	GiveUnitCrateAction@MG_INFANTRY:
+		SelectionShares: 10
+		Units: infantry.ranger, infantry.rebel, infantry.red_guard, infantry.conscript
+	GiveUnitCrateAction@ROCKET_INFANTRY:
+		SelectionShares: 5
+		Units: infantry.missile_defender, infantry.rpg_trooper, infantry.tank_hunter, infantry.grenadier
+	GiveUnitCrateAction@TERRORIST:
 		SelectionShares: 2
-		Units: infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner
-	GiveUnitCrateAction@toxin_rebel:
-		SelectionShares: 2
-		Units: infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel
-	GiveUnitCrateAction@listening_outpost:
-		SelectionShares: 2
-		Units: vehicle.listening_outpost
-	GiveUnitCrateAction@sentry_drone:
-		SelectionShares: 2
-		Units: vehicle.sentry_drone
-	GiveUnitCrateAction@avenger:
-		SelectionShares: 2
-		Units: vehicle.avenger
+		Units: infantry.terrorist, infantry.terrorist
+	GiveUnitCrateAction@PATHFINDER:
+		SelectionShares: 1
+		Units: infantry.pathfinder
+	GiveUnitCrateAction@ANGRY_MOB:
+		SelectionShares: 1
+		Units: infantry.angry_mob
+	GiveUnitCrateAction@HACKER:
+		SelectionShares: 1
+		Units: infantry.hacker
+	GiveUnitCrateAction@HIJACKER:
+		SelectionShares: 1
+		Units: infantry.hijacker
+	GiveUnitCrateAction@SABOTEUR:
+		SelectionShares: 1
+		Units: infantry.saboteur
+		Prerequsites: prerequisite.zh_units
 	GiveMcvCrateAction@usa:
 		SelectionShares: 0
 		NoBaseSelectionShares: 100
