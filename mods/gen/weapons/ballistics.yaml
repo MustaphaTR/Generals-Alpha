@@ -38,6 +38,8 @@ cannon.scorpion_tank:
 		Damage: 20
 		Versus:
 			infantry.normal: 10
+			vehicle.battle_bus: 90
+			husk.battle_bus: 90
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 	-Warhead@2Smu: LeaveSmudge
 	-Warhead@2SmuSnow: LeaveSmudge
@@ -72,6 +74,8 @@ cannon.crusader_tank:
 		Damage: 60
 		Versus:
 			infantry.normal: 10
+			vehicle.battle_bus: 90
+			husk.battle_bus: 90
 
 cannon.battlemaster_tank:
 	Inherits: ^Cannon
@@ -80,6 +84,8 @@ cannon.battlemaster_tank:
 		Damage: 60
 		Versus:
 			infantry.normal: 10
+			vehicle.battle_bus: 90
+			husk.battle_bus: 90
 
 cannon.battlemaster_tank.nuke:
 	Inherits: cannon.battlemaster_tank
@@ -113,6 +119,8 @@ cannon.paladin_tank:
 		Damage: 60
 		Versus:
 			infantry.normal: 10
+			vehicle.battle_bus: 90
+			husk.battle_bus: 90
 
 cannon.marauder_tank:
 	Inherits: ^Cannon
@@ -121,6 +129,8 @@ cannon.marauder_tank:
 		Damage: 60
 		Versus:
 			infantry.normal: 10
+			vehicle.battle_bus: 90
+			husk.battle_bus: 90
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 cannon.marauder_tank.toxin:
@@ -168,6 +178,8 @@ cannon.overlord_tank:
 		Damage: 80
 		Versus:
 			infantry.normal: 10
+			vehicle.battle_bus: 90
+			husk.battle_bus: 90
 
 cannon.overlord_tank.nuke:
 	Inherits: cannon.overlord_tank

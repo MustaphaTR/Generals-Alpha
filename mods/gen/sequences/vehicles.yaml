@@ -258,6 +258,21 @@ vehicle.dragon_tank:
 	turret: invis
 	icon: dragonicon
 
+vehicle.battle_bus:
+	idle: bbus
+		Facings: 32
+		ShadowStart: 64
+		UseClassicFacingFudge: True
+		Offset: 0, 3
+	turret: invis
+	husk: bbus
+		Start: 32
+		Facings: 32
+		ShadowStart: 96
+		UseClassicFacingFudge: True
+		Offset: 0, 3
+	icon: bbusicon
+
 vehicle.troop_crawler:
 	idle: apc
 		Facings: 32

@@ -1194,7 +1194,7 @@ vehicle.rocket_buggy:
 		Name: Rocket Buggy
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle #, queue.boss_gen_vehicle
-		BuildPaletteOrder: 6
+		BuildPaletteOrder: 7
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1355,6 +1355,113 @@ vehicle.avenger.super:
 	Buildable:
 		Queue: queue.super_gen_vehicle
 		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
+
+vehicle.battle_Bus:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BOUNTY: ^TakesBounty
+	Inherits@CRUSH: ^CrushesCrates
+	Inherits@DEMOLITION: ^AffectedByDemolitions
+	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SLOW: ^SlowsWhenDamaged
+	Buildable:
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
+		BuildPaletteOrder: 9
+		ForceIconLocation: true
+		BuildDuration: 375
+		BuildDurationModifier: 100
+		Prerequisites: building.palace, ~techlevel.medium, ~prerequisite.zh_units
+		Description: Tough infantry transport.\n\nCan carry 8 infantry that can fire outside.\n\nTurns into a static bunker when damaged.
+		ReadyAudio: BattleBusCreated
+	Valued:
+		Cost: 1000
+	CustomProductionCost@Refinery:
+		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 900
+	CustomProductionCost@Refinery_Toxin:
+		Queue: queue.toxin_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 990
+	CustomProductionCost@Refinery_Demo:
+		Queue: queue.demo_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 1080
+	CustomProductionCost@Toxin:
+		Queue: queue.toxin_gen_vehicle
+		Cost: 1100
+	CustomProductionCost@Demo:
+		Queue: queue.demo_gen_vehicle
+		Cost: 1200
+	Tooltip:
+		Name: Battle Bus
+	Health:
+		HP: 1050 # 400 + 650
+	Armor:
+		Type: vehicle.battle_bus
+		RequiresCondition: !husk
+	Armor@HUSK:
+		Type: husk.battle_bus
+		RequiresCondition: !husk
+	Selectable:
+		DecorationBounds: 28, 28
+	Mobile:
+		Speed: 70
+		Voice: Move
+		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !husk
+	SpeedMultiplier@DAMAGED:
+		Modifier: 71
+	Crushable:
+		CrushClasses: vehicle
+	Cargo:
+		Types: Infantry, Pilot
+		MaxWeight: 8
+		PipCount: 8
+		EjectOnDeath: true
+		LoadedCondition: loaded
+		LoadingCondition: notmobile
+		PauseOnCondition: hacked || driver_killed || emp
+	WithFacingSpriteBody:
+		RequiresCondition: !husk
+	WithFacingSpriteBody@HUSK:
+		Sequence: husk
+		RequiresCondition: husk
+	AttackGarrisoned:
+		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
+		PortYaws: 0, 0, 512, 512
+		PortCones: 512, 512, 512, 512
+	GrantConditionOnHealth@HUSK:
+		HP: 650
+		Condition: husk
+		GrantPermanently: true
+	-GrantConditionOnDamageState@DAMAGED:
+	GrantConditionOnHealth@DAMAGED:
+		HP: 750
+		Condition: damaged
+	SelfHealing@JUNK_REPAIR:
+		RequiresCondition: junk_repair && !husk
+	SelfHealing@JUNK_REPAIR_HUSK:
+		Step: 2
+		Delay: 25
+		HealIfBelow: 65
+		DamageCooldown: 25
+		RequiresCondition: junk_repair && husk
+	SelfHealing@AMBULANCE:
+		RequiresCondition: ambulanceheal && zh_units && !husk
+	KillsSelf:
+		RequiresCondition: !loaded && husk
+	Targetable:
+		RequiresCondition: !parachute && !driver_killed && !husk
+	Targetable@DRIVER_KILLED:
+		RequiresCondition: !parachute && driver_killed && !husk
+	Targetable@HUSK:
+		TargetTypes: Ground, Repair, Vehicle, DetonateAttack, NoDriverKill
+		RequiresCondition: !parachute && husk
+	Passenger:
+		Weight: 8
+	Voiced:
+		VoiceSet: BattleBusVoice
 
 vehicle.troop_crawler:
 	Inherits: ^Tank
@@ -1794,7 +1901,7 @@ vehicle.scud_launcher:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle
-		BuildPaletteOrder: 9
+		BuildPaletteOrder: 8
 		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -2432,7 +2539,7 @@ vehicle.bomb_truck:
 	Inherits@REVEAL: ^Reveal200
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
-		BuildPaletteOrder: 7
+		BuildPaletteOrder: 6
 		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -2775,7 +2882,7 @@ vehicle.usa_mcc:
 		ProductionType: queue.super_gen_building
 	ProductionQueue@USA_BUILDING:
 		Type: queue.usa_building
-		Factions: usa, gla, toxin, demo, stealth, prc, inf, nuke, tank
+		Factions: usa, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		Group: Building
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
@@ -2840,7 +2947,7 @@ vehicle.gla_mcc:
 		ProductionType: queue.demo_gen_building
 	ProductionQueue@GLA_BUILDING:
 		Type: queue.gla_building
-		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank
+		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank, boss
 		Group: Building
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
