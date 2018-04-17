@@ -1206,7 +1206,7 @@
 		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack
 		RequiresCondition: !parachute && !driver_killed
 	Targetable@DRIVER_KILLED:
-		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, NoAutoTarget
+		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, NoDriverKill, NoAutoTarget
 		RequiresCondition: driver_killed
 	RepairableNear:
 		Buildings: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
