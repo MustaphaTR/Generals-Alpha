@@ -1949,12 +1949,8 @@ building.prc_war_factory:
 	Voiced:
 		VoiceSet: PRCWarFactoryVoice
 
-building.tunnel_network:
+^default.tunnel_network:
 	Inherits: ^Defense
-	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@BOUNTY: ^TakesBounty
-	Inherits@CAMO: ^CanHaveCamoNetting
-	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Tooltip:
@@ -1962,13 +1958,6 @@ building.tunnel_network:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Buildable:
-		Queue: queue.gla_building, queue.demo_gen_building
-		BuildPaletteOrder: 5
-		BuildDuration: 375
-		BuildDurationModifier: 100
-		Prerequisites: building.gla_barracks, ~techlevel.infonly
-		Description: Allows unit movement from one to another quickly.\n\nArmed with a machine gun.\n\nComes with 2 RPG Troopers.
 	Valued:
 		Cost: 800
 	CustomSellValue:
@@ -1992,12 +1981,6 @@ building.tunnel_network:
 	Nydus:
 	Power:
 		Amount: 0
-	FreeActor@1:
-		Actor: hack.rpg_trooper_spawner.1
-		SpawnOffset: 0, 2
-	FreeActor@2:
-		Actor: hack.rpg_trooper_spawner.1
-		SpawnOffset: 1, 2
 	WithDecoration@primary:
 		RequiresSelection: true
 		Image: pips
@@ -2005,6 +1988,32 @@ building.tunnel_network:
 		ReferencePoint: Top
 		ZOffset: 256
 		RequiresCondition: primary
+	-WithSpriteBody:
+	WithTerrainDependantSpriteBody:
+	Voiced:
+		VoiceSet: TunnelNetworkVoice
+	RenderSprites:
+		Image: building.tunnel_network
+
+building.tunnel_network:
+	Inherits: ^default.tunnel_network
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@BOUNTY: ^TakesBounty
+	Inherits@CAMO: ^CanHaveCamoNetting
+	Inherits@DEMOLITION: ^AffectedByDemolitions
+	Buildable:
+		Queue: queue.gla_building, queue.demo_gen_building
+		BuildPaletteOrder: 5
+		BuildDuration: 375
+		BuildDurationModifier: 100
+		Prerequisites: building.gla_barracks, ~techlevel.infonly
+		Description: Allows unit movement from one to another quickly.\n\nArmed with a machine gun.\n\nComes with 2 RPG Troopers.
+	FreeActor@1:
+		Actor: hack.rpg_trooper_spawner.1
+		SpawnOffset: 0, 2
+	FreeActor@2:
+		Actor: hack.rpg_trooper_spawner.1
+		SpawnOffset: 1, 2
 	Armament:
 		Weapon: mg.tunnel_network
 		LocalOffset: 512,0,112
@@ -2024,18 +2033,12 @@ building.tunnel_network:
 	SpawnActorOnDeath:
 		Actor: hole.tunnel_network
 		SpawnAfterDefeat: false
-	-WithSpriteBody:
-	WithTerrainDependantSpriteBody:
-	Voiced:
-		VoiceSet: TunnelNetworkVoice
 
 building.tunnel_network.no_free_actor:
 	Inherits: building.tunnel_network
 	-Buildable:
 	-FreeActor@1:
 	-FreeActor@2:
-	RenderSprites:
-		Image: building.tunnel_network
 
 building.toxin_tunnel_network:
 	Inherits: building.tunnel_network
@@ -2072,8 +2075,6 @@ building.toxin_tunnel_network.no_free_actor:
 	-Buildable:
 	-FreeActor@1:
 	-FreeActor@2:
-	RenderSprites:
-		Image: building.toxin_tunnel_network
 
 building.tunnel_network.boss:
 	Inherits: building.tunnel_network
@@ -2108,23 +2109,7 @@ building.tunnel_network.boss.no_free_actor:
 		Image: building.tunnel_network
 
 building.tunnel_network.sneak_attack:
-	Inherits: building.tunnel_network.no_free_actor
-	-Armament:
-	-AttackTurreted:
-	-AutoTarget:
-	-AutoTargetPriority@DEFAULT:
-	-AutoTargetPriority@ATTACKANYTHING:
-	-Turreted:
-	-WithSpriteTurret:
-	-WithMuzzleOverlay:
-	-Production:
-	-ProductionQueue:
-	-ProductionBar:
-	-Cloak:
-	-GrantConditionOnPrerequisite@ZH_UNITS:
-	-GrantConditionOnProduction@CAMO_NETTING:
-	-GrantConditionOnFaction@CAMO_NETTING:
-	-SpawnActorOnDeath:
+	Inherits: ^default.tunnel_network
 
 building.stinger_site:
 	Inherits: ^Defense
