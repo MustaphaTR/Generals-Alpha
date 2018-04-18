@@ -2436,7 +2436,7 @@ building.internet_center:
 		MaxWeight: 8
 		PipCount: 8
 		EjectOnDeath: true
-		PauseOnCondition: hacked || driver_killed || emp
+		PauseOnCondition: emp || hacked
 	Power:
 		Amount: 0
 	ProvidesPrerequisite@buildingname:
