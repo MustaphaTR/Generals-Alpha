@@ -1679,7 +1679,7 @@ building.bunker:
 	BodyOrientation:
 		QuantizedFacings: 8
 	Cargo:
-		Types: Infantry
+		Types: Infantry, Hacker, Pilot
 		MaxWeight: 5
 		PipCount: 5
 		EjectOnDeath: true
@@ -2388,6 +2388,63 @@ building.prc_airfield:
 	Voiced:
 		VoiceSet: PRCAirfieldVoice
 
+building.internet_center:
+	Inherits: ^Building
+	Inherits@MINE: ^CanHaveMines
+	Inherits@REVEAL: ^Reveal200
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,512,0, 420,-598,256
+		Type: Rectangle
+			TopLeft: -1024, -384
+			BottomRight: 1024, 1024
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Internet Center
+	Buildable:
+		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.tank_gen_building
+		BuildPaletteOrder: 10
+		BuildDuration: 750
+		BuildDurationModifier: 100
+		Prerequisites: building.prc_war_factory, ~prerequisite.zh_units, ~techlevel.medium
+		Description: Can be garrissoned by hackers to allow them give cash safely.
+	Building:
+		Footprint: XX xx
+		Dimensions: 2,2
+	Selectable:
+		Bounds: 48,40,0,9
+		DecorationBounds: 48,53,0,-4
+	SelectionDecorations:
+	Production:
+		Produces: queue.just_mine
+		PauseOnCondition: emp || hacked
+	ProductionQueue:
+		Type: queue.just_mine
+		Group: Tech
+		RequireOwner: false
+		InstantCashDrain: true
+		LowPowerSlowdown: 3
+	ProductionBar:
+	Exit:
+	Health:
+		HP: 2500
+	Armor:
+		Type: building.internet_center
+	WithBuildingBib:
+	Cargo:
+		Types: Hacker
+		MaxWeight: 8
+		PipCount: 8
+		EjectOnDeath: true
+		PauseOnCondition: hacked || driver_killed || emp
+	Power:
+		Amount: 0
+	ProvidesPrerequisite@buildingname:
+	Voiced:
+		VoiceSet: InternetCenterVoice
+	RenderSprites:
+		PlayerPalette: cncplayer
+
 building.strategy_center:
 	Inherits: ^Building
 	Inherits@AUTOTARGET: ^AutoTargetGround
@@ -2562,7 +2619,7 @@ building.palace:
 	BodyOrientation:
 		QuantizedFacings: 8
 	Cargo:
-		Types: Infantry
+		Types: Infantry, Hacker, Pilot
 		MaxWeight: 5
 		PipCount: 5
 		EjectOnDeath: true
@@ -2637,7 +2694,7 @@ building.propaganda_center:
 		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	Buildable:
 		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
-		BuildPaletteOrder: 10
+		BuildPaletteOrder: 11
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.prc_airfield_or_war_factory, ~techlevel.medium
@@ -2829,8 +2886,7 @@ building.black_market:
 		Footprint: XX xx
 		Dimensions: 2,2
 	Selectable:
-		Bounds: 48,40,0,9
-		DecorationBounds: 48,53,0,-4
+		Bounds: 48,60,0,-10
 	SelectionDecorations:
 	Production:
 		Produces: queue.black_market
@@ -2861,8 +2917,6 @@ building.black_market:
 		SpawnAfterDefeat: false
 	Voiced:
 		VoiceSet: BlackMarketVoice
-	RenderSprites:
-		PlayerPalette: cncplayer
 
 building.speaker_tower:
 	Inherits: ^Building
@@ -2874,7 +2928,7 @@ building.speaker_tower:
 		Name: Speaker Tower
 	Buildable:
 		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
-		BuildPaletteOrder: 11
+		BuildPaletteOrder: 12
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, ~techlevel.medium
@@ -3255,7 +3309,7 @@ building.missile_silo:
 		Name: Nuclear Missile Silo
 	Buildable:
 		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
-		BuildPaletteOrder: 12
+		BuildPaletteOrder: 13
 		BuildDuration: 1500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, !prerequisite.enough_nuke, ~techlevel.unrestricted

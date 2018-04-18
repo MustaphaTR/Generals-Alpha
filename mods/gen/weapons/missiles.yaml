@@ -325,6 +325,7 @@ missile.aurora_alpha:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@5Eff: CreateEffect
 		Delay: 10
@@ -355,6 +356,7 @@ missile.a10:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 
 Dragon:
 	Inherits: ^AntiGroundMissile
@@ -376,6 +378,7 @@ missile.scorpion_tank:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 	Warhead@5Dam: SpreadDamage
 		Spread: 0c640
 		Damage: 80
@@ -384,6 +387,7 @@ missile.scorpion_tank:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.missile_defender.ground:
@@ -524,6 +528,7 @@ missile.hellfire_drone:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 
 missile.stinger_site.ground:
 	Inherits: ^AntiGroundMissile
@@ -537,6 +542,7 @@ missile.stinger_site.ground:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.stinger_site.air:
@@ -553,6 +559,7 @@ missile.stinger_site.air:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.comanche:
@@ -571,6 +578,7 @@ missile.comanche:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c0
 		Falloff: 100, 100
@@ -580,6 +588,7 @@ missile.comanche:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, ExplosionDeath
 
 missile.patriot.ground:
@@ -603,6 +612,7 @@ missile.patriot.ground:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 
 missile.patriot.air:
 	Inherits: ^AntiAirMissile
@@ -625,6 +635,7 @@ missile.patriot.air:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion_air
 		ImpactSounds: kaboom25.aud
@@ -737,6 +748,7 @@ missile.rocket_buggy:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 	Warhead@2Dam: SpreadDamage
 		Spread: 0c256
@@ -746,6 +758,7 @@ missile.rocket_buggy:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.rocket_buggy.upgraded:
@@ -767,6 +780,7 @@ missile.humvee.ground:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 
 missile.humvee.air:
 	Inherits: ^AntiAirMissile
@@ -782,6 +796,7 @@ missile.humvee.air:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 
 missile.scud_launcher:
 	Inherits: ^AntiGroundMissile
@@ -807,6 +822,7 @@ missile.scud_launcher:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, DropCrate, SmallExplosionDeath, Incendiary
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c512
@@ -817,6 +833,7 @@ missile.scud_launcher:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, DropCrate, SmallExplosionDeath, Incendiary
 	Warhead@3Eff: CreateEffect
 		Explosions: artillery_explosion
@@ -936,6 +953,7 @@ missile.tomahawk_launcher:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 	Warhead@5Dam: SpreadDamage
 		Spread: 0c640
 		Falloff: 100, 100
@@ -945,4 +963,5 @@ missile.tomahawk_launcher:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, ExplosionDeath

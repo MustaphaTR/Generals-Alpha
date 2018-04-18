@@ -155,7 +155,7 @@ vehicle.humvee:
 		Condition: tow_missile
 		Prerequisites: upgrade.tow_missile
 	Cargo:
-		Types: Infantry
+		Types: Infantry, Hacker
 		MaxWeight: 5
 		PipCount: 5
 		LoadingCondition: notmobile
@@ -239,7 +239,7 @@ vehicle.technical:
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	Cargo:
-		Types: Infantry
+		Types: Infantry, Hacker
 		MaxWeight: 5
 		PipCount: 5
 		EjectOnDeath: true
@@ -722,7 +722,7 @@ vehicle.ambulance:
 		Condition: ambulanceheal
 		Range: 4c0
 	Cargo:
-		Types: Infantry
+		Types: Infantry, Hacker
 		MaxWeight: 3
 		PipCount: 3
 		EjectOnDeath: true
@@ -1415,7 +1415,7 @@ vehicle.battle_Bus:
 	Crushable:
 		CrushClasses: vehicle
 	Cargo:
-		Types: Infantry, Pilot
+		Types: Infantry, Hacker, Pilot
 		MaxWeight: 8
 		PipCount: 8
 		EjectOnDeath: true
@@ -1497,7 +1497,7 @@ vehicle.troop_crawler:
 	Crushable:
 		CrushClasses: vehicle
 	Cargo:
-		Types: Infantry, Pilot
+		Types: Infantry, Hacker, Pilot
 		MaxWeight: 8
 		PipCount: 8
 		InitialUnits: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard
@@ -1572,7 +1572,7 @@ vehicle.listening_outpost:
 	Crushable:
 		CrushClasses: vehicle
 	Cargo:
-		Types: Infantry, Pilot
+		Types: Infantry, Hacker, Pilot
 		MaxWeight: 2
 		PipCount: 2
 		InitialUnits: infantry.tank_hunter, infantry.tank_hunter

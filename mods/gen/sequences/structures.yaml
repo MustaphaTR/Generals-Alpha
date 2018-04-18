@@ -968,6 +968,34 @@ building.supply_drop_zone:
 	icon: sdropicon
 
 building.black_market:
+	idle: market
+		Start: 30
+		Offset: 0, -8
+	damaged-idle: market
+		Start: 31
+		Offset: 0, -8
+	make: market
+		Length: 31
+		Offset: 0, -8
+	bib: bib3.tem
+		Length: *
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
+	icon: bmrkticon
+	fake-icon: fakebmrkticon
+
+building.internet_center:
 	idle: bmrkt
 		Length: 16
 		Tick: 100
@@ -996,8 +1024,7 @@ building.black_market:
 	bib-SandRoad: bib3.des
 		Length: *
 		AddExtension: False
-	icon: bmrkticon
-	fake-icon: fakebmrkticon
+	icon: intericon
 
 building.speaker_tower:
 	idle: gap

@@ -264,8 +264,7 @@ fake.black_market:
 		Footprint: XX xx
 		Dimensions: 2,2
 	Selectable:
-		Bounds: 48,40,0,9
-		DecorationBounds: 48,53,0,-4
+		Bounds: 48,60,0,-10
 	SelectionDecorations:
 	Health:
 		HP: 125
@@ -278,7 +277,6 @@ fake.black_market:
 	WithBuildingBib:
 	RenderSprites:
 		Image: building.black_market
-		PlayerPalette: cncplayer
 	TransformOnCondition:
 		IntoActor: building.black_market
 	Valued:

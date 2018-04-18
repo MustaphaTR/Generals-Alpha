@@ -972,8 +972,11 @@ infantry.hacker:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Passenger:
+		CargoType: Hacker
 		PipType: Yellow
 		Voice: Move
+		CargoConditions:
+			building.internet_center: in_internet_center
 	Armament@Anim:
 		Weapon: disable.hacker.anim
 		LocalOffset: 0,0,196
@@ -1002,41 +1005,49 @@ infantry.hacker:
 		Sequence: hack
 		RequiresCondition: deployed
 	CashTrickler@RANK-0:
-		Interval: 40
+		Interval: 50
 		Amount: 5
 		RequiresCondition: deployed && rank-veteran == 0
+	CashTrickler@RANK-0-INTERNET:
+		Interval: 45
+		Amount: 5
+		RequiresCondition: in_internet_center && rank-veteran == 0
 	ExperienceTrickler@RANK-0:
-		Interval: 40
+		Interval: 50
 		Amount: 1950
-		RequiresCondition: deployed && rank-veteran == 0
+		RequiresCondition: (deployed || in_internet_center) && rank-veteran == 0
 	CashTrickler@RANK-1:
-		Interval: 35
+		Interval: 45
 		Amount: 6
 		RequiresCondition: deployed && rank-veteran == 1
+	CashTrickler@RANK-1-INTERNET:
+		Interval: 40
+		Amount: 6
+		RequiresCondition: in_internet_center && rank-veteran == 1
 	ExperienceTrickler@RANK-1:
+		Interval: 45
+		Amount: 1950
+		RequiresCondition: (deployed || in_internet_center) && rank-veteran == 1
+	CashTrickler@RANK-2:
+		Interval: 35
+		Amount: 8
+		RequiresCondition: deployed && rank-veteran == 2
+	CashTrickler@RANK-2-INTERNET:
+		Interval: 30
+		Amount: 8
+		RequiresCondition: in_internet_center && rank-veteran == 2
+	ExperienceTrickler@RANK-2:
 		Interval: 35
 		Amount: 1950
-		RequiresCondition: deployed && rank-veteran == 1
-	CashTrickler@RANK-2:
-		Interval: 30
-		Amount: 7
-		RequiresCondition: deployed && rank-veteran == 2
-	ExperienceTrickler@RANK-2:
-		Interval: 30
-		Amount: 1950
-		RequiresCondition: deployed && rank-veteran == 2
-	CashTrickler@RANK-3:
-		Interval: 25
-		Amount: 8
-		RequiresCondition: deployed && rank-veteran == 3
-	ExperienceTrickler@RANK-3:
-		Interval: 25
-		Amount: 1950
-		RequiresCondition: deployed && rank-veteran == 3
+		RequiresCondition: (deployed || in_internet_center) && rank-veteran == 2
 	CashTrickler@RANK-ELITE:
-		Interval: 20
+		Interval: 25
 		Amount: 10
 		RequiresCondition: deployed && rank-elite
+	CashTrickler@RANK-ELITE-INTERNET:
+		Interval: 20
+		Amount: 10
+		RequiresCondition: in_internet_center && rank-elite
 	ProducibleWithLevel@Infantry:
 		Factions: inf
 	Voiced:

@@ -20,6 +20,7 @@ parabomb.fuel_air_bomb:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@2Dam_areanuke2: SpreadDamage
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
@@ -68,6 +69,7 @@ parabomb.anthrax:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, DropCrate, FireDeath
 	Warhead@2Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_alpha
@@ -120,6 +122,7 @@ parabomb.emp:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@2Dis: GrantExternalCondition
 		Range: 6c0
@@ -145,6 +148,7 @@ Atomic:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@3Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
@@ -173,6 +177,7 @@ Atomic:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@9Eff_areanuke1: CreateEffect
 		ImpactSounds: kaboom22.aud
@@ -192,6 +197,7 @@ Atomic:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@12Dam_areanuke2: SpreadDamage
 		Spread: 3c0
@@ -214,6 +220,7 @@ Atomic:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@17Dam_areanuke3: SpreadDamage
 		Spread: 4c0
@@ -236,6 +243,7 @@ Atomic:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
 			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@22Dam_areanuke4: SpreadDamage
 		Spread: 3c768
