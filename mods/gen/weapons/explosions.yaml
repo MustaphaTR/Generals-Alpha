@@ -35,8 +35,15 @@ CrateNapalm:
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		ValidTargets: Ground, Trees
 		Versus:
-			Wood: 100
-			Concrete: 50
+			infantry.normal: 150
+			vehicle.humvee: 50
+			vehicle.avenger: 50
+			vehicle.tank: 25
+			vehicle.dragon_tank: 0
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
 		AffectsParent: true
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@2Eff: CreateEffect
@@ -54,6 +61,11 @@ CrateExplosion:
 	Warhead@1Dam: SpreadDamage
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		AffectsParent: true
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+			building.internet_center: 70
 	Warhead@2Eff: CreateEffect
 		ValidTargets: Ground, Water, Air
 	-Warhead@3EffWater: CreateEffect
