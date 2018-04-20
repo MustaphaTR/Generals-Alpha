@@ -650,18 +650,15 @@
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Range: 2c409
 		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Types: Intelligence
 		Range: 2c0
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	RevealOnDeath:
 		Duration: 100
 		Radius: 1c128
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
 		Condition: search_and_destroy
 		Prerequisites: strategy.search_and_destroy
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
 
 ^Reveal100:
 	RevealsShroud:
@@ -669,10 +666,9 @@
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Range: 3c0
 		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Types: Intelligence
 		Range: 2c512
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	RevealOnDeath:
 		Duration: 100
 		Radius: 1c128
@@ -688,18 +684,15 @@
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Range: 3c768
 		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Types: Intelligence
 		Range: 3c128
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	RevealOnDeath:
 		Duration: 100
 		Radius: 1c576
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
 		Condition: search_and_destroy
 		Prerequisites: strategy.search_and_destroy
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
 
 ^Reveal150:
 	RevealsShroud:
@@ -707,18 +700,15 @@
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Range: 4c512
 		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Types: Intelligence
 		Range: 3c768
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	RevealOnDeath:
 		Duration: 100
 		Radius: 1c896
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
 		Condition: search_and_destroy
 		Prerequisites: strategy.search_and_destroy
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
 
 ^Reveal175:
 	RevealsShroud:
@@ -726,18 +716,15 @@
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Range: 5c256
 		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Types: Intelligence
 		Range: 4c384
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	RevealOnDeath:
 		Duration: 100
 		Radius: 2c192
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
 		Condition: search_and_destroy
 		Prerequisites: strategy.search_and_destroy
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
 
 ^Reveal180:
 	RevealsShroud:
@@ -745,18 +732,15 @@
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Range: 5c409
 		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Types: Intelligence
 		Range: 4c512
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	RevealOnDeath:
 		Duration: 100
 		Radius: 2c256
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
 		Condition: search_and_destroy
 		Prerequisites: strategy.search_and_destroy
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
 
 ^Reveal200:
 	RevealsShroud:
@@ -764,18 +748,15 @@
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Range: 6c0
 		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Types: Intelligence
 		Range: 5c0
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	RevealOnDeath:
 		Duration: 100
 		Radius: 2c512
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
 		Condition: search_and_destroy
 		Prerequisites: strategy.search_and_destroy
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
 
 ^Reveal250:
 	RevealsShroud:
@@ -783,18 +764,15 @@
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Range: 7c512
 		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Types: Intelligence
 		Range: 6c256
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	RevealOnDeath:
 		Duration: 100
 		Radius: 3c128
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
 		Condition: search_and_destroy
 		Prerequisites: strategy.search_and_destroy
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
 
 ^Reveal300:
 	RevealsShroud:
@@ -802,18 +780,15 @@
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Range: 9c0
 		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Types: Intelligence
 		Range: 7c512
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	RevealOnDeath:
 		Duration: 100
 		Radius: 3c768
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
 		Condition: search_and_destroy
 		Prerequisites: strategy.search_and_destroy
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
 
 ^Reveal320:
 	RevealsShroud:
@@ -821,10 +796,9 @@
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Range: 8c819
 		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Types: Intelligence
 		Range: 8c0
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	RevealOnDeath:
 		Duration: 100
 		Radius: 4c0
@@ -840,18 +814,15 @@
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Range: 10c512
 		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Types: Intelligence
 		Range: 8c768
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	RevealOnDeath:
 		Duration: 100
 		Radius: 4c384
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
 		Condition: search_and_destroy
 		Prerequisites: strategy.search_and_destroy
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
 
 ^Reveal360:
 	RevealsShroud:
@@ -859,18 +830,15 @@
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Range: 10c819
 		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Types: Intelligence
 		Range: 9c0
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	RevealOnDeath:
 		Duration: 100
 		Radius: 4c512
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
 		Condition: search_and_destroy
 		Prerequisites: strategy.search_and_destroy
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
 
 ^Reveal400:
 	RevealsShroud:
@@ -878,18 +846,15 @@
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Range: 12c0
 		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Types: Intelligence
 		Range: 10c0
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	RevealOnDeath:
 		Duration: 100
 		Radius: 5c0
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
 		Condition: search_and_destroy
 		Prerequisites: strategy.search_and_destroy
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
 
 ^Reveal500:
 	RevealsShroud:
@@ -897,18 +862,15 @@
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Range: 15c0
 		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Types: Intelligence
 		Range: 12c512
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	RevealOnDeath:
 		Duration: 100
 		Radius: 6c258
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
 		Condition: search_and_destroy
 		Prerequisites: strategy.search_and_destroy
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
 
 ^Reveal600:
 	RevealsShroud:
@@ -916,18 +878,15 @@
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Range: 18c0
 		RequiresCondition: search_and_destroy
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Types: Intelligence
 		Range: 15c0
-		ValidStances: Enemy
-		RequiresCondition: intelligence
 	RevealOnDeath:
 		Duration: 100
 		Radius: 7c512
 	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
 		Condition: search_and_destroy
 		Prerequisites: strategy.search_and_destroy
-	ExternalCondition@INTELLIGENCE:
-		Condition: intelligence
 
 ^CrushesCrates:
 	Mobile:

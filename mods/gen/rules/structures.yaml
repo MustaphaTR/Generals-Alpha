@@ -3,6 +3,9 @@
 	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SABOTAGE: ^CanBeSabotaged
+	RevealsShroudToIntelligenceOwner@SATELLITE_HACK1:
+		Types: SatelliteHack1
+		Range: 6c256
 	Building:
 		Footprint: xxX xxx XxX
 		Dimensions: 3,3
@@ -1088,7 +1091,7 @@ building.prc_barracks:
 building.mine:
 	Inherits: ^Mine
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
 		BuildPaletteOrder: 14
 		ForceIconLocation: true
 		BuildDuration: 125
@@ -2407,7 +2410,8 @@ building.internet_center:
 		BuildDuration: 750
 		BuildDurationModifier: 100
 		Prerequisites: building.prc_war_factory, ~prerequisite.zh_units, ~techlevel.medium
-		Description: Can be garrissoned by hackers to allow them give cash safely.
+		Description: Can be garrissoned by hackers to allow them give cash safely.\n\nCan be upgraded with Satellite Hack to get intel from enemy.\n\nMaximum 1 can be built.
+		BuildLimit: 1
 	Building:
 		Footprint: XX xx
 		Dimensions: 2,2
@@ -2416,15 +2420,22 @@ building.internet_center:
 		DecorationBounds: 48,53,0,-4
 	SelectionDecorations:
 	Production:
-		Produces: queue.just_mine
+		Produces: queue.internet_center, SatelliteHack2
 		PauseOnCondition: emp || hacked
 	ProductionQueue:
-		Type: queue.just_mine
+		Type: queue.internet_center
 		Group: Tech
 		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
+		SpectatorUIOrder: 52
 	ProductionBar:
+	PeriodicProducer:
+		Actors: camera.satellite_hack2
+		Type: SatelliteHack2
+		ChargeDuration: 6000
+		PauseOnCondition: emp || hacked
+		RequiresCondition: satellite_hack2
 	Exit:
 	Health:
 		HP: 2500
@@ -2440,6 +2451,9 @@ building.internet_center:
 	Power:
 		Amount: 0
 	ProvidesPrerequisite@buildingname:
+	GrantConditionOnPrerequisite@SATELLITE_HACK2:
+		Condition: satellite_hack2
+		Prerequisites: upgrade.satellite_hack2
 	Voiced:
 		VoiceSet: InternetCenterVoice
 	RenderSprites:
@@ -2486,14 +2500,14 @@ building.strategy_center:
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 52
+		SpectatorUIOrder: 53
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_strategy_center
 		Factions: air, super
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 53
+		SpectatorUIOrder: 54
 	ProductionBar@Vanilla:
 		ProductionType: queue.strategy_center
 	ProductionBar@Airforce:
@@ -2570,7 +2584,7 @@ building.strategy_center:
 			1: intelligence
 		Actors: camera.intelligence
 		Type: Intelligence
-		ChargeInterval: 4500
+		ChargeInterval: 7500
 		OrderName: IntelligenceZHPowerInfoOrder
 	SupportPowerChargeBar:
 	Voiced:
@@ -2642,28 +2656,28 @@ building.palace:
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 54
+		SpectatorUIOrder: 55
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_palace
 		Factions: toxin
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 55
+		SpectatorUIOrder: 56
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_palace
 		Factions: demo
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 56
+		SpectatorUIOrder: 57
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_palace
 		Factions: stealth
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 57
+		SpectatorUIOrder: 58
 	ProductionBar@Vanilla:
 		ProductionType: queue.palace
 	ProductionBar@Toxin:
@@ -2720,28 +2734,28 @@ building.propaganda_center:
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 58
+		SpectatorUIOrder: 59
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_propaganda_center
 		Factions: inf
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 59
+		SpectatorUIOrder: 60
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_propaganda_center
 		Factions: nuke
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 60
+		SpectatorUIOrder: 61
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_propaganda_center
 		Factions: tank
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 61
+		SpectatorUIOrder: 62
 	ProductionBar@Vanilla:
 		ProductionType: queue.propaganda_center
 	ProductionBar@Nuke:
@@ -2897,7 +2911,7 @@ building.black_market:
 		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 62
+		SpectatorUIOrder: 63
 	ProductionBar:
 	Exit:
 	CashTrickler:
@@ -3337,28 +3351,28 @@ building.missile_silo:
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 63
+		SpectatorUIOrder: 64
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_missile_silo
 		Factions: inf
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 64
+		SpectatorUIOrder: 65
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_missile_silo
 		Factions: nuke
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 65
+		SpectatorUIOrder: 66
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_missile_silo
 		Factions: boss
 		Group: Tech
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
-		SpectatorUIOrder: 66
+		SpectatorUIOrder: 67
 	ProductionBar@Vanilla:
 		ProductionType: queue.missile_silo
 	ProductionBar@Infantry:

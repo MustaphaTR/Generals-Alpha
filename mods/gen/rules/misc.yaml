@@ -252,13 +252,26 @@ camera.intelligence:
 		Queue: Intelligence
 	Tooltip:
 		Name: Intelligence
-	ProximityExternalCondition@INTELLIGENCE:
-		Condition: intelligence
-		ValidStances: Enemy
-		Range: 10000c0
+	GivesIntelligence:
+		Types: Intelligence
 	KillsSelf:
 		RemoveInstead: true
-		Delay: 600
+		Delay: 750
+
+camera.satellite_hack2:
+	Inherits: camera.intelligence
+	ConditionManager:
+	Buildable:
+		Queue: SatelliteHack2
+	Tooltip:
+		Name: Satellite Hack 2
+#	GivesIntelligence:
+#		RequiresCondition: internet_center
+	KillsSelf:
+		Delay: 500
+#	GrantConditionOnPrerequisite@INTERNET_CENTER:
+#		Condition: internet_center
+#		Prerequisites: building.internet_center
 
 camera.emergency_repair.1:
 	Inherits: CAMERA
