@@ -309,7 +309,7 @@ aircraft.mig:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Type: CenterPosition
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
 	Aircraft:
 		CruiseAltitude: 2560
@@ -404,7 +404,7 @@ aircraft.raptor:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Type: CenterPosition
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
 	Aircraft:
 		CruiseAltitude: 2560
@@ -520,7 +520,7 @@ aircraft.stealth_fighter:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Type: CenterPosition
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
 	Aircraft:
 		CruiseAltitude: 2560
@@ -653,7 +653,7 @@ aircraft.aurora:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Type: CenterPosition
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
 	Aircraft:
 		CruiseAltitude: 2560
@@ -727,7 +727,7 @@ aircraft.spy_drone:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Type: CenterPosition
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
 	Aircraft:
 		-RearmBuildings:
@@ -1045,7 +1045,7 @@ aircraft.comanche:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Type: CenterPosition
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
 	Buildable:
 		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft
@@ -1228,7 +1228,7 @@ aircraft.helix:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Type: CenterPosition
-	RevealsShroud@INTELLIGENCE:
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
 	Aircraft:
 		InitialFacing: 192
