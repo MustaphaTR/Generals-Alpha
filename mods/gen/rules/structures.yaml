@@ -916,7 +916,7 @@ building.advanced_nuclear_reactor:
 		Duration: 750
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
-		HP: 1000
+		HpPerStep: 1000
 
 building.usa_barracks:
 	Inherits: ^default.barracks
@@ -1756,7 +1756,7 @@ building.fotified_bunker:
 		Duration: 750
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
-		HP: 1000
+		HpPerStep: 1000
 
 building.usa_war_factory:
 	Inherits: ^default.war_factory
@@ -2220,8 +2220,7 @@ building.stinger_site:
 	Reservable:
 	RepairsUnits:
 		Interval: 14
-		HpPerStep: 5
-		HP: 1000
+		HpPerStep: 500
 	WithRepairAnimation:
 	WithRearmAnimation:
 	Power:

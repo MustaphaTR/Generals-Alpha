@@ -213,7 +213,7 @@ tech.soviet_barracks:
 		RepairStep: 1500
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
-		HP: 1000
+		HpPerStep: 1000
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.barracks
@@ -353,7 +353,7 @@ tech.service_depot:
 	RepairsUnits:
 		Interval: 15
 		PauseOnCondition: emp || hacked
-		HP: 1000
+		HpPerStep: 1000
 	RallyPoint:
 	WithRepairAnimation:
 	ProvidesPrerequisite@buildingname:
