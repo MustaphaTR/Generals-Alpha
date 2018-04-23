@@ -1,7 +1,7 @@
 ^default.badger:
 	Inherits: ^Plane
 	Health:
-		HP: 1000
+		HP: 100000
 	Armor:
 		Type: aircraft.normal
 	Aircraft:
@@ -251,7 +251,7 @@ aircraft.mig:
 	Tooltip:
 		Name: MiG
 	Health:
-		HP: 160
+		HP: 16000
 	Armor:
 		Type: aircraft.normal
 	Armament@Red:
@@ -384,7 +384,7 @@ aircraft.raptor:
 	Tooltip:
 		Name: Raptor
 	Health:
-		HP: 160
+		HP: 16000
 	Armor:
 		Type: aircraft.normal
 	Armament@AG:
@@ -457,7 +457,7 @@ aircraft.king_raptor:
 	Tooltip:
 		Name: King Raptor
 	Health:
-		HP: 240
+		HP: 24000
 	Armament@AG:
 		Weapon: missile.king_raptor.ground
 	Armament@AA:
@@ -505,7 +505,7 @@ aircraft.stealth_fighter:
 	Tooltip:
 		Name: Stealth Fighter
 	Health:
-		HP: 120
+		HP: 12000
 	Armor:
 		Type: aircraft.normal
 	Armament:
@@ -579,7 +579,7 @@ aircraft.stealth_fighter.air:
 	Valued:
 		Cost: 1250
 	Health:
-		HP: 180
+		HP: 18000
 	Armament@PDLASER:
 		Weapon: laser.king_raptor
 		LocalOffset: 0,213,-85
@@ -624,7 +624,7 @@ aircraft.aurora:
 	Tooltip:
 		Name: Aurora
 	Health:
-		HP: 80
+		HP: 8000
 	DamageMultiplier@Airforce:
 		RequiresCondition: airforce
 		Modifier: 66
@@ -720,7 +720,7 @@ aircraft.spy_drone:
 	Tooltip:
 		Name: Spy Drone
 	Health:
-		HP: 200
+		HP: 20000
 	Armor:
 		Type: aircraft.normal
 	RevealsShroud:
@@ -757,7 +757,7 @@ aircraft.spy_drone:
 		Range: 6c256
 	-Selectable:
 	-SpawnActorOnDeath:
-	Explodes: 
+	Explodes:
 		Weapon: UnitExplodeDrone
 		EmptyWeapon: UnitExplodeDrone
 		-RequiresCondition:
@@ -775,7 +775,7 @@ aircraft.scout_drone:
 	Tooltip:
 		Name: Scout Drone
 	Health:
-		HP: 20
+		HP: 2000
 	Armor:
 		Type: vehicle.tank
 	DetectCloaked:
@@ -794,7 +794,7 @@ aircraft.battle_drone:
 	Tooltip:
 		Name: Battle Drone
 	Health:
-		HP: 100
+		HP: 10000
 	-Contrail:
 	-DetectCloaked:
 	-RenderDetectionCircle:
@@ -831,7 +831,7 @@ aircraft.a10:
 	Tooltip:
 		Name: A-10 Thunderbolt
 	Health:
-		HP: 600
+		HP: 60000
 	Armor:
 		Type: aircraft.normal
 	Valued:
@@ -915,7 +915,7 @@ aircraft.chinook:
 		Name: Chinook
 		GenericName: Collector
 	Health:
-		HP: 300
+		HP: 30000
 	Armor:
 		Type: aircraft.chinook
 	Mobile:
@@ -1023,7 +1023,7 @@ aircraft.combat_chinook:
 	-CustomProductionCost@Refinery_Airforce:
 	-CustomProductionCost@Airforce:
 	Health:
-		HP: 350
+		HP: 35000
 	AttackFrontal:
 		Voice: Attack
 	AttackGarrisoned:
@@ -1080,7 +1080,7 @@ aircraft.comanche:
 	Tooltip:
 		Name: Comanche
 	Health:
-		HP: 220
+		HP: 22000
 	Armor:
 		Type: aircraft.comanche
 	Armament@MG:
@@ -1203,7 +1203,7 @@ aircraft.helix:
 	Tooltip:
 		Name: Helix
 	Health:
-		HP: 300
+		HP: 30000
 	Armor:
 		Type: aircraft.chinook
 	Production:

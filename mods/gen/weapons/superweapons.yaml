@@ -14,7 +14,7 @@ parabomb.fuel_air_bomb:
 	Warhead@1Dam: SpreadDamage
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		Spread: 4c0
-		Damage: 150
+		Damage: 15000
 		Delay: 15
 		Versus:
 			aircraft.comanche: 130
@@ -25,7 +25,7 @@ parabomb.fuel_air_bomb:
 	Warhead@2Dam_areanuke2: SpreadDamage
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		Spread: 4c0
-		Damage: 150
+		Damage: 15000
 		Delay: 15
 		ValidTargets: Trees
 		DamageTypes: Incendiary
@@ -49,10 +49,10 @@ parabomb.moab:
 	Inherits: parabomb.fuel_air_bomb
 	Warhead@1Dam: SpreadDamage
 		Delay: 0
-		Damage: 200
+		Damage: 20000
 	Warhead@2Dam_areanuke2: SpreadDamage
 		Delay: 0
-		Damage: 200
+		Damage: 20000
 	Warhead@3Eff_impact: CreateEffect
 		Delay: 0
 	Warhead@4Smu_impact: LeaveSmudge
@@ -64,7 +64,7 @@ parabomb.anthrax:
 	Inherits: ^ParaBomb
 	Warhead@1Dam: SpreadDamage
 		Spread: 2c512
-		Damage: 100
+		Damage: 10000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -117,7 +117,7 @@ parabomb.emp:
 	Inherits: ^ParaBomb
 	Warhead@1Dam: SpreadDamage
 		Spread: 2c512
-		Damage: 100
+		Damage: 10000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -141,7 +141,7 @@ Atomic:
 	ValidTargets: Ground, Trees, Water, Underwater, Air
 	Warhead@1Dam_impact: SpreadDamage
 		Spread: 0c768
-		Damage: 150
+		Damage: 15000
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		ValidTargets: Ground, Trees, Water, Underwater, Air
 		Versus:
@@ -170,7 +170,7 @@ Atomic:
 		MaxLevel: 6000
 	Warhead@6Dam_areanuke1: SpreadDamage
 		Spread: 1c512
-		Damage: 60
+		Damage: 6000
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		ValidTargets: Ground, Trees, Water, Underwater, Air
 		Versus:
@@ -190,7 +190,7 @@ Atomic:
 		MaxLevel: 6000
 	Warhead@11Dam_areanuke2: SpreadDamage
 		Spread: 2c256
-		Damage: 60
+		Damage: 6000
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		ValidTargets: Ground, Water, Underwater, Air
 		Versus:
@@ -201,7 +201,7 @@ Atomic:
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@12Dam_areanuke2: SpreadDamage
 		Spread: 3c0
-		Damage: 120
+		Damage: 12000
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		ValidTargets: Trees
 		DamageTypes: Incendiary
@@ -213,7 +213,7 @@ Atomic:
 		MaxLevel: 6000
 	Warhead@16Dam_areanuke3: SpreadDamage
 		Spread: 3c0
-		Damage: 60
+		Damage: 6000
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		ValidTargets: Ground, Water, Underwater, Air
 		Versus:
@@ -224,7 +224,7 @@ Atomic:
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@17Dam_areanuke3: SpreadDamage
 		Spread: 4c0
-		Damage: 120
+		Damage: 12000
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		ValidTargets: Trees
 		DamageTypes: Incendiary
@@ -236,7 +236,7 @@ Atomic:
 		MaxLevel: 6000
 	Warhead@21Dam_areanuke4: SpreadDamage
 		Spread: 3c768
-		Damage: 60
+		Damage: 6000
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		ValidTargets: Ground, Water, Underwater, Air
 		Versus:
@@ -247,7 +247,7 @@ Atomic:
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@22Dam_areanuke4: SpreadDamage
 		Spread: 3c768
-		Damage: 120
+		Damage: 12000
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		ValidTargets: Trees
 		DamageTypes: Incendiary
@@ -256,7 +256,7 @@ IonCannon:
 	ValidTargets: Ground, Air, Trees
 	Warhead@1Dam_impact: SpreadDamage
 		Range: 0, 1c1, 2c1, 2c512
-		Damage: 100
+		Damage: 10000
 		Falloff: 1000, 1000, 250, 100
 		ValidTargets: Ground, Air, Trees
 		AffectsParent: True

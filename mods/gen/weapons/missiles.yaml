@@ -17,7 +17,7 @@
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 100
-		Damage: 50
+		Damage: 5000
 		ValidTargets: Ground, Water, Air
 		Versus:
 			None: 10
@@ -63,7 +63,7 @@ missile.mig.ground:
 		CruiseAltitude: 2c0
 		RangeLimit: 12c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 75
+		Damage: 7500
 		ValidTargets: Ground, Water, Trees
 		Versus:
 			vehicle.anti-air: 30
@@ -77,7 +77,7 @@ missile.mig.ground:
 	Warhead@2Dam: SpreadDamage
 		Spread: 0c768
 		Falloff: 100, 100
-		Damage: 40
+		Damage: 4000
 		ValidTargets: Ground, Water, Trees
 		Versus:
 			vehicle.anti-air: 30
@@ -98,7 +98,7 @@ missile.mig.ground:
 missile.mig.ground.blue:
 	Inherits: missile.mig.ground
 	Warhead@2Dam: SpreadDamage
-		Damage: 50
+		Damage: 5000
 	Warhead@1Fire: SpawnActor
 		Actors: firestorm.blue.50
 	Warhead@3Eff: CreateEffect
@@ -108,7 +108,7 @@ missile.mig.ground.nuke:
 	Inherits: missile.mig.ground
 	ValidTargets: Ground, Water
 	Warhead@1Dam: SpreadDamage
-		Damage: 100
+		Damage: 10000
 		ValidTargets: Ground, Water
 	Warhead@2Dam: SpreadDamage
 		ValidTargets: Ground, Water
@@ -127,10 +127,10 @@ missile.mig.ground.tactical_nuke:
 	Inherits: missile.mig.ground.nuke
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c256
-		Damage: 150
+		Damage: 15000
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c512
-		Damage: 50
+		Damage: 5000
 	Warhead@3Eff: CreateEffect
 		Explosions: mininuke
 		ImpactSounds: kaboom1.aud
@@ -152,7 +152,7 @@ missile.mig.air:
 		CruiseAltitude: 2c0
 		RangeLimit: 12c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 75
+		Damage: 7500
 		ValidTargets: Air
 		Versus:
 			vehicle.anti-air: 30
@@ -166,7 +166,7 @@ missile.mig.air:
 	Warhead@2Dam: SpreadDamage
 		Spread: 0c768
 		Falloff: 100, 100
-		Damage: 40
+		Damage: 4000
 		ValidTargets: Air
 		Versus:
 			vehicle.anti-air: 30
@@ -184,14 +184,14 @@ missile.mig.air:
 missile.mig.air.blue:
 	Inherits: missile.mig.air
 	Warhead@2Dam: SpreadDamage
-		Damage: 50
+		Damage: 5000
 	Warhead@2Eff: CreateEffect
 		Explosions: blue_napalm
 
 missile.mig.air.nuke:
 	Inherits: missile.mig.air
 	Warhead@1Dam: SpreadDamage
-		Damage: 100
+		Damage: 10000
 	Warhead@2Eff: CreateEffect
 		Explosions: med_explosion
 		ImpactSounds: kaboom25.aud
@@ -200,10 +200,10 @@ missile.mig.air.tactical_nuke:
 	Inherits: missile.mig.air.nuke
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c256
-		Damage: 150
+		Damage: 15000
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c512
-		Damage: 50
+		Damage: 5000
 	Warhead@2Eff: CreateEffect
 		Explosions: building
 		ImpactSounds: kaboom1.aud
@@ -220,7 +220,7 @@ missile.raptor.ground:
 		CruiseAltitude: 2c0
 		RangeLimit: 12c410
 	Warhead@1Dam: SpreadDamage
-		Damage: 100
+		Damage: 10000
 		Versus:
 			vehicle.anti-air: 30
 			vehicle.humvee: 30
@@ -242,7 +242,7 @@ missile.raptor.air:
 		CruiseAltitude: 2c0
 		RangeLimit: 12c410
 	Warhead@1Dam: SpreadDamage
-		Damage: 100
+		Damage: 10000
 		ValidTargets: Air
 		Versus:
 			vehicle.anti-air: 30
@@ -259,14 +259,14 @@ missile.king_raptor.ground:
 	ReloadDelay: 2
 	Range: 8c768
 	Warhead@1Dam: SpreadDamage
-		Damage: 125
+		Damage: 12500
 
 missile.king_raptor.air:
 	Inherits: missile.raptor.air
 	ReloadDelay: 2
 	Range: 8c768
 	Warhead@1Dam: SpreadDamage
-		Damage: 125
+		Damage: 12500
 
 missile.stealth_fighter:
 	Inherits: ^AntiGroundMissile
@@ -280,7 +280,7 @@ missile.stealth_fighter:
 		CruiseAltitude: 2c0
 		RangeLimit: 12c410
 	Warhead@1Dam: SpreadDamage
-		Damage: 100
+		Damage: 10000
 		Versus:
 			vehicle.anti-air: 30
 			vehicle.humvee: 30
@@ -302,7 +302,7 @@ missile.aurora:
 		RangeLimit: 10c0
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
-		Damage: 400
+		Damage: 40000
 		Versus:
 			building.normal: 250
 			building.tough: 250
@@ -320,7 +320,7 @@ missile.aurora_alpha:
 		Spread: 1c768
 		Falloff: 100, 100
 		Delay: 10
-		Damage: 900
+		Damage: 90000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -351,7 +351,7 @@ missile.a10:
 		RangeLimit: 11c410
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c256
-		Damage: 200
+		Damage: 20000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -373,7 +373,7 @@ missile.scorpion_tank:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 100
-		Damage: 20
+		Damage: 2000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -381,7 +381,7 @@ missile.scorpion_tank:
 			building.internet_center: 70
 	Warhead@5Dam: SpreadDamage
 		Spread: 0c640
-		Damage: 80
+		Damage: 8000
 		ValidTargets: Ground, Water
 		Versus:
 			aircraft.comanche: 130
@@ -398,7 +398,7 @@ missile.missile_defender.ground:
 	Projectile: Missile
 		TrailImage: smokey
 	Warhead@1Dam: SpreadDamage
-		Damage: 40
+		Damage: 4000
 		Versus:
 			infantry.normal: 10
 			vehicle.truck: 50
@@ -427,7 +427,7 @@ missile.missile_defender.air:
 		TrailImage: smokey
 		RangeLimit: 7c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 40
+		Damage: 4000
 		Versus:
 			infantry.normal: 10
 			vehicle.truck: 50
@@ -454,7 +454,7 @@ missile.missile_defender.garrison.ground:
 	Projectile: Missile
 		RangeLimit: 7c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 50
+		Damage: 5000
 
 missile.missile_defender.garrison.air:
 	Inherits: missile.missile_defender.air
@@ -463,7 +463,7 @@ missile.missile_defender.garrison.air:
 	Projectile: Missile
 		RangeLimit: 9c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 50
+		Damage: 5000
 
 missile.missile_defender.locked.normal:
 	Inherits: missile.missile_defender.ground
@@ -523,7 +523,7 @@ missile.hellfire_drone:
 	Projectile: Missile
 		TrailImage: smokey
 	Warhead@1Dam: SpreadDamage
-		Damage: 40
+		Damage: 4000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -537,7 +537,7 @@ missile.stinger_site.ground:
 	Projectile: Missile
 		TrailImage: smokey
 	Warhead@1Dam: SpreadDamage
-		Damage: 20
+		Damage: 2000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -554,7 +554,7 @@ missile.stinger_site.air:
 		RangeLimit: 10c512
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c256
-		Damage: 30
+		Damage: 3000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -572,7 +572,7 @@ missile.comanche:
 		RangeLimit: 8c512
 		Inaccuracy: 1c256
 	Warhead@1Dam: SpreadDamage
-		Damage: 20
+		Damage: 2000
 		ValidTargets: Ground, Water
 		Versus:
 			aircraft.comanche: 130
@@ -582,7 +582,7 @@ missile.comanche:
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c0
 		Falloff: 100, 100
-		Damage: 10
+		Damage: 1000
 		ValidTargets: Ground, Water
 		Versus:
 			aircraft.comanche: 130
@@ -607,7 +607,7 @@ missile.patriot.ground:
 		Speed: 341
 		LaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
-		Damage: 30
+		Damage: 3000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -629,7 +629,7 @@ missile.patriot.air:
 		RangeLimit: 9c0
 		LaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
-		Damage: 25
+		Damage: 2500
 		ValidTargets: Air
 		Versus:
 			aircraft.comanche: 130
@@ -643,7 +643,7 @@ missile.patriot.air:
 missile.emp_patriot.ground:
 	Inherits: missile.patriot.ground
 	Warhead@1Dam: SpreadDamage
-		Damage: 15
+		Damage: 1500
 	Warhead@3Eff: CreateEffect
 		Explosions: emp_small
 	Warhead@4Dis: GrantExternalCondition
@@ -654,7 +654,7 @@ missile.emp_patriot.ground:
 missile.emp_patriot.air:
 	Inherits: missile.patriot.air
 	Warhead@1Dam: SpreadDamage
-		Damage: 10000
+		Damage: 1000000
 	Warhead@3Eff: CreateEffect
 		Explosions: emp_small
 
@@ -670,7 +670,7 @@ NikeAA:
 		HorizontalRateOfTurn: 25
 		RangeLimit: 9c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 50
+		Damage: 5000
 		ValidTargets: Air
 		Versus:
 			None: 90
@@ -688,7 +688,7 @@ RedEye:
 		HorizontalRateOfTurn: 20
 		Speed: 384
 	Warhead@1Dam: SpreadDamage
-		Damage: 40
+		Damage: 4000
 		ValidTargets: Air
 		Versus:
 			Wood: 75
@@ -710,7 +710,7 @@ missile.destroyer.ground:
 		Speed: 170
 		CloseEnough: 149
 	Warhead@1Dam: SpreadDamage
-		Damage: 30
+		Damage: 3000
 		Versus:
 			None: 30
 			Light: 75
@@ -742,7 +742,7 @@ missile.rocket_buggy:
 		Speed: 341
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
-		Damage: 15
+		Damage: 1500
 		ValidTargets: Ground
 		Versus:
 			aircraft.comanche: 130
@@ -752,7 +752,7 @@ missile.rocket_buggy:
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 	Warhead@2Dam: SpreadDamage
 		Spread: 0c256
-		Damage: 5
+		Damage: 500
 		ValidTargets: Ground
 		Versus:
 			aircraft.comanche: 130
@@ -775,7 +775,7 @@ missile.humvee.ground:
 		HorizontalRateOfTurn: 10
 		RangeLimit: 5c204
 	Warhead@1Dam: SpreadDamage
-		Damage: 30
+		Damage: 3000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -791,7 +791,7 @@ missile.humvee.air:
 		HorizontalRateOfTurn: 10
 		RangeLimit: 8c512
 	Warhead@1Dam: SpreadDamage
-		Damage: 50
+		Damage: 5000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -816,7 +816,7 @@ missile.scud_launcher:
 		LaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c768
-		Damage: 175
+		Damage: 17500
 		ValidTargets: Ground, Water
 		Versus:
 			aircraft.comanche: 130
@@ -827,7 +827,7 @@ missile.scud_launcher:
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c512
 		Falloff: 100, 100
-		Damage: 25
+		Damage: 2500
 		ValidTargets: Ground, Water
 		Versus:
 			aircraft.comanche: 130
@@ -864,10 +864,10 @@ missile.scud_launcher.explosive:
 	Inherits: missile.scud_launcher
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c256
-		Damage: 250
+		Damage: 25000
 	Warhead@2Dam: SpreadDamage
 		Spread: 2c512
-		Damage: 50
+		Damage: 5000
 
 missile.scud_storm:
 	Inherits: missile.scud_launcher.toxin
@@ -879,10 +879,10 @@ missile.scud_storm:
 		Speed: 384
 		Inaccuracy: 5000c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 350
+		Damage: 35000
 	Warhead@2Dam: SpreadDamage
 		Spread: 5c0
-		Damage: 150
+		Damage: 15000
 	Warhead@6Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_alpha
 		Range: 3
@@ -911,7 +911,7 @@ missile.scud_storm.demo:
 	Inherits: missile.scud_storm
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c896
-		Damage: 450
+		Damage: 45000
 	-Warhead@5Radio: CreateRadioactivity
 	-Warhead@6Radio: CreateRadioactivity
 	Warhead@7Rev: RevealShroud
@@ -948,7 +948,7 @@ missile.tomahawk_launcher:
 		LaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c256
-		Damage: 100
+		Damage: 10000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -957,7 +957,7 @@ missile.tomahawk_launcher:
 	Warhead@5Dam: SpreadDamage
 		Spread: 0c640
 		Falloff: 100, 100
-		Damage: 50
+		Damage: 5000
 		ValidTargets: Ground, Water
 		Versus:
 			aircraft.comanche: 130

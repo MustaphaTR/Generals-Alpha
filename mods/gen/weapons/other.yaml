@@ -4,7 +4,7 @@
 	Range: 3c768
 	Warhead@1Dam: SpreadDamage
 		Spread: 213
-		Damage: 150
+		Damage: 15000
 		ValidTargets: Ground, Water, Trees
 		Versus:
 			None: 90
@@ -35,7 +35,7 @@ flamer.dragon_tank:
 		TrailImage: fb2
 		Image: FB1
 	Warhead@1Dam: SpreadDamage
-		Damage: 150
+		Damage: 15000
 		Versus:
 			infantry.normal: 150
 			vehicle.humvee: 50
@@ -56,7 +56,7 @@ flamer.dragon_tank.blue:
 		TrailImage: blue_fb2
 		Image: blue_FB1
 	Warhead@1Dam: SpreadDamage
-		Damage: 200
+		Damage: 20000
 	Warhead@1Fire: SpawnActor
 		Actors: firestorm.blue.50
 	Warhead@3Eff: CreateEffect
@@ -95,7 +95,7 @@ flamer.flamethrower:
 		Inaccuracy: 853
 	Warhead@1Dam: SpreadDamage
 		Spread: 341
-		Damage: 10
+		Damage: 1000
 		Versus:
 			infantry.normal: 150
 			vehicle.humvee: 50
@@ -112,7 +112,7 @@ flamer.flamethrower.garrison:
 	Inherits: flamer.flamethrower
 	Range: 5c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 13
+		Damage: 1300
 
 Napalm:
 	Inherits: ^FireWeapon
@@ -124,7 +124,7 @@ Napalm:
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Spread: 170
-		Damage: 100
+		Damage: 10000
 		Versus:
 			Wood: 100
 			Concrete: 50
@@ -138,7 +138,7 @@ Heal:
 		Speed: 1c682
 	Warhead@1Dam: SpreadDamage
 		Spread: 213
-		Damage: -50
+		Damage: -5000
 		ValidStances: Ally
 		ValidTargets: Infantry
 		DebugOverlayColor: 00FF00
@@ -148,12 +148,12 @@ Repair:
 	Report: fixit1.aud
 	ValidTargets: Repair
 	Warhead@1Dam: SpreadDamage
-		Damage: -20
+		Damage: -2000
 		ValidTargets: Repair
 
 Crush:
 	Warhead@1Dam: SpreadDamage
-		Damage: 100
+		Damage: 10000
 		DamageTypes: TriggerProne, DefaultDeath
 	Warhead@2Eff: CreateEffect
 		ImpactSounds: squishy2.aud
@@ -172,7 +172,7 @@ Claw:
 		Speed: 1c682
 	Warhead@1Dam: SpreadDamage
 		Spread: 213
-		Damage: 33
+		Damage: 3300
 		Versus:
 			None: 90
 			Wood: 10
@@ -185,7 +185,7 @@ Mandible:
 	Inherits: Claw
 	ReloadDelay: 10
 	Warhead@1Dam: SpreadDamage
-		Damage: 60
+		Damage: 6000
 
 hack.nuclear_reactor:
 	ReloadDelay: 25
@@ -203,7 +203,7 @@ hack.firestorm.normal:
 	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c96
-		Damage: 30
+		Damage: 3000
 		ValidTargets: Ground, Water, Trees
 		Versus:
 			infantry.normal: 150
@@ -220,7 +220,7 @@ hack.firestorm.normal:
 hack.firestorm.blue:
 	Inherits: hack.firestorm.normal
 	Warhead@1Dam: SpreadDamage
-		Damage: 45
+		Damage: 4500
 
 laser.laser_tank:
 	Inherits: cannon.crusader_tank
@@ -231,7 +231,7 @@ laser.laser_tank:
 		ZOffset: 2047
 		Color: FF0000
 	Warhead@1Dam: SpreadDamage
-		Damage: 80
+		Damage: 8000
 
 laser.avenger.air:
 	Inherits: ^AntiAirMissile
@@ -245,7 +245,7 @@ laser.avenger.air:
 		ZOffset: 2047
 		Color: FF0000
 	Warhead@1Dam: SpreadDamage
-		Damage: 10
+		Damage: 1000
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -273,7 +273,7 @@ laser.paladin_tank:
 		ZOffset: 2047
 		Color: FF0000
 	Warhead@1Dam: TargetDamage
-		Damage: 100
+		Damage: 10000
 		Versus:
 			infantry.normal: 50
 		InvalidTargets: Vehicle, Tank, Structure, Wall
@@ -293,7 +293,7 @@ toxin.toxin_tractor:
 		ZOffset: 1024
 	Warhead@1Dam: SpreadDamage
 		Spread: 341
-		Damage: 10
+		Damage: 1000
 		Versus:
 			infantry.chem_suit: 20
 			vehicle.truck: 50
@@ -320,7 +320,7 @@ toxin.toxin_tractor.beta:
 	Projectile: RadBeam
 		Color: 0000FF
 	Warhead@1Dam: SpreadDamage
-		Damage: 13
+		Damage: 1300
 	Warhead@2Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_beta
 
@@ -329,42 +329,42 @@ toxin.toxin_tractor.gamma:
 	Projectile: RadBeam
 		Color: FF00FF
 	Warhead@1Dam: SpreadDamage
-		Damage: 21
+		Damage: 2100
 	Warhead@2Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_gamma
 
 toxin.toxin_rebel:
 	Inherits: toxin.toxin_tractor
 	Warhead@1Dam: SpreadDamage
-		Damage: 8
+		Damage: 800
 
 toxin.toxin_rebel.beta:
 	Inherits: toxin.toxin_tractor.beta
 	Warhead@1Dam: SpreadDamage
-		Damage: 10
+		Damage: 1000
 
 toxin.toxin_rebel.gamma:
 	Inherits: toxin.toxin_tractor.gamma
 	Warhead@1Dam: SpreadDamage
-		Damage: 13
+		Damage: 1300
 
 toxin.toxin_rebel.garrison:
 	Inherits: toxin.toxin_rebel
 	Range: 3c341
 	Warhead@1Dam: SpreadDamage
-		Damage: 11
+		Damage: 1100
 
 toxin.toxin_rebel.garrison.beta:
 	Inherits: toxin.toxin_rebel.beta
 	Range: 3c341
 	Warhead@1Dam: SpreadDamage
-		Damage: 13
+		Damage: 1300
 
 toxin.toxin_rebel.garrison.gamma:
 	Inherits: toxin.toxin_rebel.gamma
 	Range: 3c341
 	Warhead@1Dam: SpreadDamage
-		Damage: 15
+		Damage: 1500
 
 toxin.toxin_tunnel_network:
 	Inherits: toxin.toxin_rebel
@@ -607,7 +607,7 @@ aoe.microwave_tank:
 	Warhead@1Dam: SpreadDamage
 		Falloff: 100, 100
 		Spread: 3c0
-		Damage: 8
+		Damage: 800
 		ValidStances: Enemy, Neutral
 		ValidTargets: Infantry
 		DamageTypes: FireDeath
@@ -622,7 +622,7 @@ melee.colonel_burton:
 	Range: 1c0
 	Projectile: InstantHit
 	Warhead@1Dam: TargetDamage
-		Damage: 10000
+		Damage: 1000000
 		ValidTargets: Infantry
 		DamageTypes: DefaultDeath
 

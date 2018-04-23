@@ -6,7 +6,7 @@
 		Blockable: true
 	Warhead@1Dam: SpreadDamage
 		Spread: 1
-		Damage: 30
+		Damage: 3000
 		Versus:
 			None: 100
 			Wood: 50
@@ -25,7 +25,7 @@
 ^LightMG:
 	Inherits: ^HeavyMG
 	Warhead@1Dam: SpreadDamage
-		Damage: 15
+		Damage: 1500
 		Versus:
 			Wood: 10
 			Light: 30
@@ -40,7 +40,7 @@ mg.comanche:
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
-		Damage: 6
+		Damage: 600
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -68,7 +68,7 @@ mg.helix:
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
-		Damage: 6
+		Damage: 600
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -94,7 +94,7 @@ Pistol:
 	Range: 3c0
 	Report: gun27.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 1
+		Damage: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
 	Warhead@3EffWater: CreateEffect
@@ -108,7 +108,7 @@ pistol.angry_mob:
 	Range: 2c512
 	Report: gun27.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 10
+		Damage: 1000
 		Versus:
 			vehicle.dragon_tank: 20
 			vehicle.toxin_tractor: 20
@@ -124,7 +124,7 @@ mg.angry_mob:
 	Range: 3c0
 	Report: gun11.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 20
+		Damage: 2000
 		Versus:
 			vehicle.dragon_tank: 20
 			vehicle.toxin_tractor: 20
@@ -138,7 +138,7 @@ mg.ranger:
 	BurstDelay: 3
 	Report: gun11.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 5
+		Damage: 500
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -162,7 +162,7 @@ mg.ranger.garrison:
 	Inherits: mg.ranger
 	Range: 3c341
 	Warhead@1Dam: SpreadDamage
-		Damage: 6
+		Damage: 600
 
 mg.rebel:
 	Inherits: mg.ranger
@@ -180,7 +180,7 @@ mg.red_guard:
 	Range: 2c512
 	Report: gun5.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 15
+		Damage: 1500
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -206,7 +206,7 @@ mg.red_guard.garrison:
 	Inherits: mg.red_guard
 	Range: 3c341
 	Warhead@1Dam: SpreadDamage
-		Damage: 19
+		Damage: 1900
 
 mg.colonel_burton:
 	Inherits: ^LightMG
@@ -215,7 +215,7 @@ mg.colonel_burton:
 	Report: gun11.aud
 	InvalidTargets: Structure
 	Warhead@1Dam: SpreadDamage
-		Damage: 40
+		Damage: 4000
 		InvalidTargets: Structure
 		Versus:
 			vehicle.truck: 50
@@ -240,7 +240,7 @@ mg.colonel_burton.garrison:
 	Inherits: mg.colonel_burton
 	Range: 4c133
 	Warhead@1Dam: SpreadDamage
-		Damage: 50
+		Damage: 5000
 
 mg.colonel_burton.ap:
 	Inherits: mg.colonel_burton
@@ -264,7 +264,7 @@ mg.humvee:
 	Range: 3c768
 	Report: pillbox1.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 10
+		Damage: 1000
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -287,7 +287,7 @@ mg.humvee:
 mg.sentry_drone:
 	Inherits: mg.humvee
 	Warhead@1Dam: SpreadDamage
-		Damage: 8
+		Damage: 800
 
 mg.battle_drone:
 	Inherits: mg.humvee
@@ -300,7 +300,7 @@ mg.technical:
 	Range: 3c0
 	Report: pillbox1.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 8
+		Damage: 800
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -327,7 +327,7 @@ mg.tunnel_network:
 	Range: 4c384
 	Report: pillbox1.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 10
+		Damage: 1000
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -354,7 +354,7 @@ mg.quad_cannon.ground:
 	Range: 3c768
 	Report: pillbox1.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 10
+		Damage: 1000
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -382,7 +382,7 @@ mg.quad_cannon.air:
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
-		Damage: 5
+		Damage: 500
 		ValidTargets: Air
 
 gatling.minigunner.ground:
@@ -391,7 +391,7 @@ gatling.minigunner.ground:
 	Range: 3c128
 	Report: gun11.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 10
+		Damage: 1000
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -418,20 +418,20 @@ gatling.minigunner.air:
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
-		Damage: 10
+		Damage: 1000
 		ValidTargets: Air
 
 gatling.minigunner.garrison.ground:
 	Inherits: gatling.minigunner.ground
 	Range: 4c133
 	Warhead@1Dam: SpreadDamage
-		Damage: 13
+		Damage: 1300
 
 gatling.minigunner.garrison.air:
 	Inherits: gatling.minigunner.air
 	Range: 11c682
 	Warhead@1Dam: SpreadDamage
-		Damage: 13
+		Damage: 1300
 
 gatling.gatling_tank.ground:
 	Inherits: ^LightMG
@@ -439,7 +439,7 @@ gatling.gatling_tank.ground:
 	Range: 4c384
 	Report: pillbox1.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 20
+		Damage: 2000
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -466,7 +466,7 @@ gatling.gatling_tank.air:
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
-		Damage: 12
+		Damage: 1200
 		ValidTargets: Air
 
 gatling.gatling_cannon.ground:
@@ -476,7 +476,7 @@ gatling.gatling_cannon.ground:
 	Report: pillbox1.aud
 	Burst: 2
 	Warhead@1Dam: SpreadDamage
-		Damage: 10
+		Damage: 1000
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -503,7 +503,7 @@ gatling.gatling_cannon.air:
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
-		Damage: 5
+		Damage: 500
 		ValidTargets: Air
 
 ^SnipeWeapon:
@@ -516,7 +516,7 @@ gatling.gatling_cannon.air:
 		Blockable: true
 	Warhead@1Dam: SpreadDamage
 		Spread: 1
-		Damage: 150
+		Damage: 15000
 		ValidTargets: Barrel, Infantry
 		DamageTypes: TriggerProne, BulletDeath
 	Warhead@2Eff: CreateEffect
@@ -532,7 +532,7 @@ sniper.jarmen_kell:
 	ReloadDelay: 25
 	Range: 5c640
 	Warhead@1Dam: SpreadDamage
-		Damage: 180
+		Damage: 18000
 		Versus:
 			infantry.normal: 200
 		DamageTypes: TriggerProne, DropCrate, BulletDeath
@@ -541,7 +541,7 @@ sniper.jarmen_kell.garrison:
 	Inherits: sniper.jarmen_kell
 	Range: 8c256
 	Warhead@1Dam: SpreadDamage
-		Damage: 240
+		Damage: 24000
 
 sniper.jarmen_kell.vehicle:
 	Inherits: ^SnipeWeapon
@@ -566,7 +566,7 @@ sniper.pathfinder:
 	ReloadDelay: 50
 	Range: 7c512
 	Warhead@1Dam: SpreadDamage
-		Damage: 100
+		Damage: 10000
 		Versus:
 			infantry.normal: 200
 
@@ -574,7 +574,7 @@ sniper.pathfinder.garrison:
 	Inherits: sniper.pathfinder
 	Range: 10c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 125
+		Damage: 12500
 
 mg.a10:
 	Inherits: ^HeavyMG
@@ -589,7 +589,7 @@ mg.a10:
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Spread: 512
-		Damage: 10
+		Damage: 1000
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50

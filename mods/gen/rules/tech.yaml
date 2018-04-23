@@ -14,7 +14,7 @@ tech.oil_derrick:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 1000
+		HP: 100000
 	Capturable:
 	ExternalCapturable:
 		ShowChatMessage: true
@@ -25,7 +25,7 @@ tech.oil_derrick:
 	GivesBuildableArea:
 		AreaTypes: mine
 	RepairableBuilding:
-		RepairStep: 15
+		RepairStep: 1500
 	CashTrickler:
 		Interval: 300
 		Amount: 200
@@ -51,7 +51,7 @@ tech.oil_refinery:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 1000
+		HP: 100000
 	Capturable:
 	ExternalCapturable:
 		ShowChatMessage: true
@@ -62,7 +62,7 @@ tech.oil_refinery:
 	GivesBuildableArea:
 		AreaTypes: mine
 	RepairableBuilding:
-		RepairStep: 15
+		RepairStep: 1500
 	Tooltip:
 		Name: Oil Refinery
 	TooltipDescription:
@@ -85,7 +85,7 @@ tech.hospital:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 1000
+		HP: 100000
 	Capturable:
 	ExternalCapturable:
 		ShowChatMessage: true
@@ -96,7 +96,7 @@ tech.hospital:
 	GivesBuildableArea:
 		AreaTypes: mine
 	RepairableBuilding:
-		RepairStep: 15
+		RepairStep: 1500
 	Tooltip:
 		Name: Hospital
 	TooltipDescription:
@@ -124,7 +124,7 @@ tech.communications_center:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 750
+		HP: 75000
 	Tooltip:
 		Name: Communications Center
 	TooltipDescription:
@@ -156,7 +156,7 @@ tech.communications_center:
 	GivesBuildableArea:
 		AreaTypes: mine
 	RepairableBuilding:
-		RepairStep: 15
+		RepairStep: 1500
 	ProvidesPrerequisite@buildingname:
 
 tech.soviet_barracks:
@@ -177,7 +177,7 @@ tech.soviet_barracks:
 	Selectable:
 		Priority: 0
 	Health:
-		HP: 1000
+		HP: 100000
 	Tooltip:
 		Name: Soviet Barracks
 	TooltipDescription:
@@ -210,9 +210,10 @@ tech.soviet_barracks:
 		TargetTypes: Ground, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
 	RepairableBuilding:
-		RepairStep: 15
+		RepairStep: 1500
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
+		HP: 1000
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.barracks
@@ -238,7 +239,7 @@ tech.flame_tower:
 	Tooltip:
 		Name: Flame Tower
 	Health:
-		HP: 750
+		HP: 75000
 	Armor:
 		Type: building.defense
 	WithBuildingBib:
@@ -281,7 +282,7 @@ tech.power_plant:
 		Bounds: 72,48
 		DecorationBounds: 72,68,0,-10
 	Health:
-		HP: 750
+		HP: 75000
 	WithBuildingBib:
 	Capturable:
 	ExternalCapturable:
@@ -293,7 +294,7 @@ tech.power_plant:
 	GivesBuildableArea:
 		AreaTypes: mine
 	RepairableBuilding:
-		RepairStep: 15
+		RepairStep: 1500
 	Power:
 		Amount: 10
 		RequiresCondition: !emp && !hacked
@@ -332,14 +333,14 @@ tech.service_depot:
 	GivesBuildableArea:
 		AreaTypes: mine
 	RepairableBuilding:
-		RepairStep: 90
+		RepairStep: 9000
 	Selectable:
 		Priority: 0
 		Bounds: 64,34,0,3
 		DecorationBounds: 72,48
 	SelectionDecorations:
 	Health:
-		HP: 1000
+		HP: 100000
 	WithBuildingBib:
 		HasMinibib: Yes
 	DockManager:
@@ -352,6 +353,7 @@ tech.service_depot:
 	RepairsUnits:
 		Interval: 15
 		PauseOnCondition: emp || hacked
+		HP: 1000
 	RallyPoint:
 	WithRepairAnimation:
 	ProvidesPrerequisite@buildingname:
@@ -380,11 +382,11 @@ tech.shipyard:
 	ExternalCapturableBar:
 	EngineerRepairable:
 	RepairableBuilding:
-		RepairStep: 15
+		RepairStep: 1500
 	Targetable:
 		TargetTypes: Ground, Water, Structure, WaterStructure, C4, DetonateAttack, Capture, Disable
 	Health:
-		HP: 1000
+		HP: 100000
 	Exit@1:
 		SpawnOffset: -1024,1024,0
 		Facing: 160
@@ -416,6 +418,7 @@ tech.shipyard:
 		Duration: 750
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
+		HP: 1000
 	RallyPoint:
 	ProvidesPrerequisite@buildingname:
 	EditorTilesetFilter:

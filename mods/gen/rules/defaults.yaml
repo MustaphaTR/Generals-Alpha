@@ -91,7 +91,7 @@
 		RequiresCondition: rank-elite
 		Modifier: 62
 	SelfHealing@ELITE:
-		Step: 2
+		Step: 200
 		Delay: 125
 		HealIfBelow: 100
 		DamageCooldown: 125
@@ -305,12 +305,14 @@
 		HealIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: speaker_tower && !subliminal_messaging
+		Step: 500
 	SelfHealing@SUBLIMINAL_MESSAGING:
 		PercentageStep: 4
 		Delay: 40
 		HealIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: speaker_tower && subliminal_messaging
+		Step: 500
 	ExternalCondition@SPEAKER_NORMAL:
 		Condition: speaker_tower
 	GrantConditionOnPrerequisite@SUBLIMINAL_MESSAGING:
@@ -324,6 +326,7 @@
 		HealIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: emergency_repair
+		Step: 500
 	WithDecoration@EMERGENCY_REPAIR:
 		RequiresSelection: false
 		Image: allyrepair
@@ -350,7 +353,7 @@
 
 ^AffectedByJunkRepair:
 	SelfHealing@JUNK_REPAIR:
-		Step: 2
+		Step: 200
 		Delay: 25
 		HealIfBelow: 100
 		DamageCooldown: 25
@@ -485,25 +488,25 @@
 		RequiresCondition: !chemical_suits
 	DamagedByRadioactivity@ANTHRAX_ALPHA_CHEM:
 		RadioactivityLayerName: anthrax_alpha
-		DamageCoeff: 4
+		DamageCoeff: 400
 		DamageInterval: 10
 		DamageTypes: FireDeath
 		RequiresCondition: chemical_suits
 	DamagedByRadioactivity@ANTHRAX_BETA_CHEM:
 		RadioactivityLayerName: anthrax_beta
-		DamageCoeff: 5
+		DamageCoeff: 500
 		DamageInterval: 10
 		DamageTypes: FireDeath
 		RequiresCondition: chemical_suits
 	DamagedByRadioactivity@ANTHRAX_GAMMA_CHEM:
 		RadioactivityLayerName: anthrax_gamma
-		DamageCoeff: 6
+		DamageCoeff: 600
 		DamageInterval: 10
 		DamageTypes: FireDeath
 		RequiresCondition: chemical_suits
 	DamagedByRadioactivity@RADIOACTIVITY_CHEM:
 		RadioactivityLayerName: radioactivity
-		DamageCoeff: 4
+		DamageCoeff: 400
 		DamageInterval: 10
 		DamageTypes: FireDeath
 		RequiresCondition: chemical_suits
@@ -529,7 +532,7 @@
 
 ^AffectedByAmbulance:
 	SelfHealing@AMBULANCE:
-		Step: 4
+		Step: 400
 		Delay: 20
 		HealIfBelow: 100
 		DamageCooldown: 0
@@ -541,6 +544,7 @@
 	Inherits: ^AffectedByAmbulance
 	SelfHealing@AMBULANCE:
 		RequiresCondition: ambulanceheal && zh_units
+		Step: 500
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
@@ -565,22 +569,22 @@
 ^AffectedByRadiationAndToxins:
 	DamagedByRadioactivity@ANTHRAX_ALPHA:
 		RadioactivityLayerName: anthrax_alpha
-		DamageCoeff: 20
+		DamageCoeff: 2000
 		DamageInterval: 10
 		DamageTypes: FireDeath
 	DamagedByRadioactivity@ANTHRAX_BETA:
 		RadioactivityLayerName: anthrax_beta
-		DamageCoeff: 25
+		DamageCoeff: 2500
 		DamageInterval: 10
 		DamageTypes: FireDeath
 	DamagedByRadioactivity@ANTHRAX_GAMMA:
 		RadioactivityLayerName: anthrax_gamma
-		DamageCoeff: 30
+		DamageCoeff: 3000
 		DamageInterval: 10
 		DamageTypes: FireDeath
 	DamagedByRadioactivity@RADIOACTIVITY:
 		RadioactivityLayerName: radioactivity
-		DamageCoeff: 20
+		DamageCoeff: 2000
 		DamageInterval: 10
 		DamageTypes: FireDeath
 
@@ -1268,7 +1272,7 @@
 		Name: Automobile
 		GenericName: Automobile
 	Health:
-		HP: 100
+		HP: 10000
 	Armor:
 		Type: vehicle.truck
 	Parachutable:
@@ -1336,7 +1340,7 @@
 	Huntable:
 	DrawLineToTarget:
 	Health:
-		HP: 25
+		HP: 2500
 	Armor:
 		Type: infantry.normal
 	Mobile:
@@ -1392,7 +1396,7 @@
 	Tooltip:
 		GenericName: Soldier
 	SelfHealing@HOSPITAL:
-		Step: 5
+		Step: 500
 		Delay: 100
 		HealIfBelow: 100
 		DamageCooldown: 125
@@ -1668,7 +1672,7 @@
 		Prerequisites: prerequisite.ccradius
 		Condition: ccradius
 	RepairableBuilding:
-		RepairStep: 15
+		RepairStep: 1500
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
@@ -1688,7 +1692,7 @@
 	-GivesBuildableArea:
 	-GrantConditionOnPrerequisite@GLOBALCCRADIUS:
 	Health:
-		HP: 125
+		HP: 12500
 	WithDecoration@fake:
 		RequiresSelection: true
 		Image: pips
@@ -1763,7 +1767,7 @@
 		Name: GLA Hole
 		GenericName: Hole
 	Health:
-		HP: 500
+		HP: 50000
 	Armor:
 		Type: building.normal
 	Targetable:
@@ -1813,7 +1817,7 @@
 	FrozenUnderFog:
 	FrozenUnderFogUpdatedByGps:
 	Health:
-		HP: 100
+		HP: 10000
 	EditorTilesetFilter:
 		Categories: Wall
 	RequiresBuildableArea:
@@ -1825,7 +1829,7 @@
 	Valued:
 		Cost: 250
 	Health:
-		HP: 350
+		HP: 35000
 	Armor:
 		Type: building.wall
 	LineBuildNode:
@@ -1851,7 +1855,7 @@
 	Inherits: ^BasicBuilding
 	Huntable:
 	Health:
-		HP: 400
+		HP: 40000
 	Armor:
 		Type: building.normal
 	Tooltip:
@@ -1867,7 +1871,7 @@
 	SelectionDecorations:
 		RenderSelectionBars: False
 	Health:
-		HP: 10
+		HP: 1000
 	Explodes:
 		Weapon: UnitExplode
 	Tooltip:
@@ -1932,7 +1936,7 @@
 	RadarColorFromTerrain:
 		Terrain: Tree
 	Health:
-		HP: 500
+		HP: 50000
 	Armor:
 		Type: tree.normal
 	Targetable:
@@ -1981,7 +1985,7 @@
 	Interactable:
 	ConditionManager:
 	Health:
-		HP: 280
+		HP: 28000
 	Armor:
 		Type: vehicle.tank
 	HiddenUnderFog:
@@ -2107,7 +2111,7 @@
 		CrushClasses: mine
 		DetonateClasses: mine
 	Health:
-		HP: 100
+		HP: 10000
 		NotifyAppliedDamage: false
 	Armor:
 		Type: building.normal

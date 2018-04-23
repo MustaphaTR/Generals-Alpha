@@ -33,7 +33,7 @@ vehicle.supply_truck:
 		SearchFromProcRadius: 30
 		SearchFromOrderRadius: 11
 	Health:
-		HP: 300
+		HP: 30000
 	Armor:
 		Type: vehicle.truck
 	Mobile:
@@ -103,7 +103,7 @@ vehicle.humvee:
 	Tooltip:
 		Name: Humvee
 	Health:
-		HP: 240
+		HP: 24000
 	Armor:
 		Type: vehicle.humvee
 	Selectable:
@@ -215,7 +215,7 @@ vehicle.technical:
 	Tooltip:
 		Name: Technical
 	Health:
-		HP: 180
+		HP: 18000
 	Armor:
 		Type: vehicle.truck
 	Mobile:
@@ -301,7 +301,7 @@ vehicle.radar_van:
 		Queue: queue.toxin_gen_vehicle
 		Cost: 550
 	Health:
-		HP: 200
+		HP: 20000
 	Armor:
 		Type: vehicle.truck
 	Selectable:
@@ -384,7 +384,7 @@ vehicle.scorpion_tank:
 	Tooltip:
 		Name: Scorpion Tank
 	Health:
-		HP: 370
+		HP: 37000
 	Armor:
 		Type: vehicle.tank
 	Mobile:
@@ -508,7 +508,7 @@ vehicle.crusader_tank:
 	Tooltip:
 		Name: Crusader Tank
 	Health:
-		HP: 480
+		HP: 48000
 	Armor:
 		Type: vehicle.tank
 	Mobile:
@@ -611,7 +611,7 @@ vehicle.battlemaster_tank:
 	Tooltip:
 		Name: Battlemaster Tank
 	Health:
-		HP: 400
+		HP: 40000
 	Armor:
 		Type: vehicle.tank
 	Selectable:
@@ -701,11 +701,11 @@ vehicle.ambulance:
 	Tooltip:
 		Name: Ambulance
 	Health:
-		HP: 240
+		HP: 24000
 	Armor:
 		Type: vehicle.toxin_tractor
 	Selectable:
-		Class: vehicle.ambulance 
+		Class: vehicle.ambulance
 	Mobile:
 		Speed: 60
 		Voice: Move
@@ -771,11 +771,11 @@ vehicle.sentry_drone:
 	Tooltip:
 		Name: Sentry Drone
 	Health:
-		HP: 300
+		HP: 30000
 	Armor:
 		Type: vehicle.humvee
 	Selectable:
-		Class: vehicle.sentry_drone 
+		Class: vehicle.sentry_drone
 	Mobile:
 		TurnSpeed: 8
 		Speed: 60
@@ -877,7 +877,7 @@ vehicle.quad_cannon:
 	Crushable:
 		CrushClasses: vehicle
 	Health:
-		HP: 300
+		HP: 30000
 	Armor:
 		Type: vehicle.anti-air
 	Selectable:
@@ -944,7 +944,7 @@ vehicle.gatling_tank:
 	Crushable:
 		CrushClasses: vehicle
 	Health:
-		HP: 300
+		HP: 30000
 	Armor:
 		Type: vehicle.anti-air
 	Selectable:
@@ -1040,7 +1040,7 @@ vehicle.toxin_tractor:
 	Crushable:
 		CrushClasses: vehicle
 	Health:
-		HP: 240
+		HP: 24000
 	Armor:
 		Type: vehicle.toxin_tractor
 	Armament@ALPHA:
@@ -1153,7 +1153,7 @@ vehicle.dragon_tank:
 	Crushable:
 		CrushClasses: vehicle
 	Health:
-		HP: 280
+		HP: 28000
 	Armor:
 		Type: vehicle.dragon_tank
 	Selectable:
@@ -1230,7 +1230,7 @@ vehicle.rocket_buggy:
 	Crushable:
 		CrushClasses: vehicle
 	Health:
-		HP: 120
+		HP: 12000
 	Armor:
 		Type: vehicle.truck
 	Armament@3:
@@ -1310,7 +1310,7 @@ vehicle.avenger:
 	Tooltip:
 		Name: Avenger
 	Health:
-		HP: 300
+		HP: 30000
 	Armor:
 		Type: vehicle.avenger
 	Mobile:
@@ -1397,7 +1397,7 @@ vehicle.battle_Bus:
 	Tooltip:
 		Name: Battle Bus
 	Health:
-		HP: 1050 # 400 + 650
+		HP: 105000
 	Armor:
 		Type: vehicle.battle_bus
 		RequiresCondition: !husk
@@ -1442,7 +1442,7 @@ vehicle.battle_Bus:
 	SelfHealing@JUNK_REPAIR:
 		RequiresCondition: junk_repair && !husk
 	SelfHealing@JUNK_REPAIR_HUSK:
-		Step: 2
+		Step: 200
 		Delay: 25
 		HealIfBelow: 65
 		DamageCooldown: 25
@@ -1485,7 +1485,7 @@ vehicle.troop_crawler:
 	Tooltip:
 		Name: Troop Crawler
 	Health:
-		HP: 240
+		HP: 24000
 	Armor:
 		Type: vehicle.tank
 	Mobile:
@@ -1560,7 +1560,7 @@ vehicle.listening_outpost:
 	Tooltip:
 		Name: Listening Outpost
 	Health:
-		HP: 240
+		HP: 24000
 	Armor:
 		Type: vehicle.tank
 	Mobile:
@@ -1626,7 +1626,7 @@ vehicle.attack_outpost:
 		Prerequisites: tech.oil_refinery
 		Cost: 900
 	Health:
-		HP: 300
+		HP: 30000
 	Cargo:
 		MaxWeight: 8
 		PipCount: 8
@@ -1657,7 +1657,7 @@ vehicle.microwave_tank:
 	Tooltip:
 		Name: Microwave Tank
 	Health:
-		HP: 480
+		HP: 48000
 	Armor:
 		Type: vehicle.tank
 	Mobile:
@@ -1746,7 +1746,7 @@ vehicle.ecm_tank:
 	Tooltip:
 		Name: ECM Tank
 	Health:
-		HP: 300
+		HP: 30000
 	Armor:
 		Type: vehicle.tank
 	Mobile:
@@ -1846,7 +1846,7 @@ vehicle.tomahawk_launcher:
 	Crushable:
 		CrushClasses: vehicle
 	Health:
-		HP: 180
+		HP: 18000
 	Armor:
 		Type: vehicle.truck
 	Selectable:
@@ -1919,7 +1919,7 @@ vehicle.scud_launcher:
 	Tooltip:
 		Name: SCUD Launcher
 	Health:
-		HP: 180
+		HP: 18000
 	Armor:
 		Type: vehicle.truck
 	Production:
@@ -2046,7 +2046,7 @@ vehicle.inferno_cannon:
 	Tooltip:
 		Name: Inferno Cannon
 	Health:
-		HP: 120
+		HP: 12000
 	Armor:
 		Type: vehicle.tank
 	Selectable:
@@ -2117,7 +2117,7 @@ vehicle.paladin_tank:
 	Tooltip:
 		Name: Paladin Tank
 	Health:
-		HP: 500
+		HP: 50000
 	Armor:
 		Type: vehicle.tank
 	Mobile:
@@ -2155,7 +2155,7 @@ vehicle.paladin_tank:
 		Condition: composite_armor
 		Prerequisites: upgrade.composite_armor
 	SelfHealing:
-		Step: 1
+		Step: 100
 		Delay: 3
 		HealIfBelow: 50
 		DamageCooldown: 150
@@ -2216,7 +2216,7 @@ vehicle.marauder_tank:
 	Tooltip:
 		Name: Marauder Tank
 	Health:
-		HP: 500
+		HP: 50000
 	Armor:
 		Type: vehicle.tank
 	Mobile:
@@ -2372,7 +2372,7 @@ vehicle.overlord_tank:
 	Tooltip:
 		Name: Overlord Tank
 	Health:
-		HP: 1100
+		HP: 110000
 	Armor:
 		Type: vehicle.tank
 	Production:
@@ -2455,7 +2455,7 @@ vehicle.overlord_tank:
 		Range: 5c0
 		RequiresCondition: gatling_upgrade
 	SelfHealing:
-		Step: 1
+		Step: 100
 		Delay: 3
 		HealIfBelow: 50
 		DamageCooldown: 150
@@ -2564,7 +2564,7 @@ vehicle.bomb_truck:
 		Name: Bomb Truck
 		GenericName: Vehicle
 	Health:
-		HP: 220
+		HP: 22000
 	Armor:
 		Type: vehicle.truck
 	Production:
@@ -2729,7 +2729,7 @@ vehicle.nuke_cannon:
 	Tooltip:
 		Name: Nuke Cannon
 	Health:
-		HP: 240
+		HP: 24000
 	Armor:
 		Type: vehicle.tank
 	Mobile:
@@ -2845,7 +2845,7 @@ vehicle.nuke_cannon.nuke:
 		DecorationBounds: 42,42
 	SelectionDecorations:
 	Health:
-		HP: 250
+		HP: 25000
 	Armor:
 		Type: vehicle.tank
 	Mobile:

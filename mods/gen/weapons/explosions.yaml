@@ -2,7 +2,7 @@
 	ValidTargets: Ground, Water, Air
 	Warhead@1Dam: SpreadDamage
 		Spread: 426
-		Damage: 50
+		Damage: 5000
 		Versus:
 			None: 90
 			Wood: 75
@@ -31,7 +31,7 @@ CrateNapalm:
 	ValidTargets: Ground, Trees
 	Warhead@1Dam: SpreadDamage
 		Spread: 170
-		Damage: 60
+		Damage: 6000
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		ValidTargets: Ground, Trees
 		Versus:
@@ -140,7 +140,7 @@ UnitExplodeSubmarine:
 UnitExplodeSmall:
 	Inherits: ^Explosion
 	Warhead@1Dam: SpreadDamage
-		Damage: 40
+		Damage: 4000
 	Warhead@2Eff: CreateEffect
 		Explosions: large_explosion
 		ImpactSounds: kaboom15.aud
@@ -148,7 +148,7 @@ UnitExplodeSmall:
 ArtilleryExplode:
 	Inherits: ^Explosion
 	Warhead@1Dam: SpreadDamage
-		Damage: 150
+		Damage: 15000
 	Warhead@2Eff: CreateEffect
 		Explosions: self_destruct
 		ImpactSounds: kaboom22.aud
@@ -174,9 +174,9 @@ SmallBuildingExplode:
 
 CivBuildingExplosion:
 	Inherits: SmallBuildingExplode
-	Warhead@1Dam: SpreadDamage # Used to panic civilians which are emitted from a killed CivBuilding
+	Warhead@1Dam: SpreadDamage
 		Spread: 64
-		Damage: 1
+		Damage: 100
 		Delay: 1
 
 BarrelExplode:
@@ -209,7 +209,7 @@ explosion.nuclear_tanks:
 	Inherits: ^Explosion
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
-		Damage: 25
+		Damage: 2500
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -218,7 +218,7 @@ explosion.nuclear_tanks:
 		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c0
-		Damage: 10
+		Damage: 1000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -239,10 +239,10 @@ explosion.nuclear_tanks.nuke:
 	Inherits: explosion.nuclear_tanks
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c768
-		Damage: 110
+		Damage: 11000
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c512
-		Damage: 70
+		Damage: 7000
 	Warhead@2Eff: CreateEffect
 		Explosions: mininuke
 	Warhead@4Radio: CreateRadioactivity
@@ -251,9 +251,9 @@ explosion.nuclear_tanks.nuke:
 explosion.demo_trap:
 	Inherits: ^Explosion
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c768 # 0c640
+		Spread: 0c768
 		Falloff: 100, 100
-		Damage: 200
+		Damage: 20000
 		ValidTargets: Ground, Trees
 		Versus:
 			aircraft.comanche: 130
@@ -264,7 +264,7 @@ explosion.demo_trap:
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c128
 		Falloff: 100, 100
-		Damage: 400
+		Damage: 40000
 		ValidTargets: Ground, Trees
 		Versus:
 			aircraft.comanche: 130
@@ -286,9 +286,9 @@ explosion.demo_trap:
 explosion.demo_trap.toxin:
 	Inherits: explosion.demo_trap
 	Warhead@1Dam: SpreadDamage
-		Damage: 150
+		Damage: 15000
 	Warhead@2Dam: SpreadDamage
-		Damage: 100
+		Damage: 10000
 	Warhead@4Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_alpha
 		Range: 1
@@ -319,14 +319,14 @@ explosion.demo_trap.toxin_gamma:
 explosion.advanced_demo_trap:
 	Inherits: explosion.demo_trap
 	Warhead@2Dam: SpreadDamage
-		Damage: 500
+		Damage: 50000
 
 explosion.terrorist:
 	Inherits: ^Explosion
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c640 # 0c461
 		Falloff: 100, 100
-		Damage: 200
+		Damage: 20000
 		ValidTargets: Ground, Trees
 		ValidStances: Enemy, Neutral
 		AffectsParent: true
@@ -339,7 +339,7 @@ explosion.terrorist:
 	Warhead@1DamAlly: SpreadDamage
 		Spread: 0c640 # 0c461
 		Falloff: 100, 100
-		Damage: 200
+		Damage: 20000
 		ValidTargets: Ground, Trees
 		ValidStances: Ally
 		AffectsParent: true
@@ -353,7 +353,7 @@ explosion.terrorist:
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c256
 		Falloff: 100, 100
-		Damage: 300
+		Damage: 30000
 		ValidTargets: Ground, Trees
 		ValidStances: Enemy, Neutral
 		AffectsParent: true
@@ -366,7 +366,7 @@ explosion.terrorist:
 	Warhead@2DamAlly: SpreadDamage
 		Spread: 1c256
 		Falloff: 100, 100
-		Damage: 300
+		Damage: 30000
 		ValidTargets: Ground, Trees
 		ValidStances: Ally
 		AffectsParent: true
@@ -409,7 +409,7 @@ explosion.terrorist.toxin_gamma:
 explosion.suicide:
 	Inherits: explosion.terrorist
 	Warhead@1Dam: SpreadDamage
-		Damage: 400
+		Damage: 40000
 	Warhead@2Eff: CreateEffect
 		Explosions: building
 		ImpactSounds: kaboom22.aud
@@ -421,7 +421,7 @@ explosion.suicide:
 explosion.mine:
 	Warhead@1Dam: SpreadDamage
 		Spread: 256
-		Damage: 400
+		Damage: 40000
 		AffectsParent: true
 		InvalidTargets: Mine
 		DamageTypes: TriggerProne, DefaultDeath
@@ -438,7 +438,7 @@ explosion.mine:
 explosion.mine.neutron:
 	Warhead@1Dam: SpreadDamage
 		Spread: 256
-		Damage: 400
+		Damage: 40000
 		AffectsParent: true
 		InvalidTargets: Vehicle, Tank
 		DamageTypes: TriggerProne, DefaultDeath
@@ -454,7 +454,7 @@ explosion.mine.neutron:
 OreExplosion:
 	Warhead@1Dam: SpreadDamage
 		Spread: 9
-		Damage: 10
+		Damage: 1000
 		Versus:
 			None: 90
 			Wood: 75
@@ -472,7 +472,7 @@ CrateNuke:
 	ValidTargets: Ground, Trees, Water, Air
 	Warhead@1Dam_impact: SpreadDamage
 		Spread: 1c0
-		Damage: 100
+		Damage: 10000
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		ValidTargets: Ground, Trees, Water, Air
 		Versus:
@@ -486,7 +486,7 @@ CrateNuke:
 		ImpactActors: false
 	Warhead@4Dam_areanuke1: SpreadDamage
 		Spread: 1c0
-		Damage: 60
+		Damage: 6000
 		Falloff: 1000, 600, 400, 250, 150, 100, 0
 		Delay: 5
 		ValidTargets: Ground, Water, Air
@@ -513,7 +513,7 @@ CrateNuke:
 		Delay: 5
 	Warhead@TREEKILL: SpreadDamage
 		Spread: 1c0
-		Damage: 120
+		Damage: 12000
 		Falloff: 1000, 600, 400, 250, 150, 100, 0
 		Delay: 5
 		ValidTargets: Trees
@@ -523,7 +523,7 @@ BombTruckExplosion:
 	ValidTargets: Ground, Trees, Water, Underwater
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
-		Damage: 900
+		Damage: 90000
 		Falloff: 100, 100
 		ValidTargets: Ground, Trees, Water
 		Versus:
@@ -535,7 +535,7 @@ BombTruckExplosion:
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@4Dam: SpreadDamage
 		Spread: 1c640
-		Damage: 100
+		Damage: 10000
 		Falloff: 100, 100
 		ValidTargets: Ground, Trees, Water
 		Versus:
@@ -562,10 +562,10 @@ BombTruckExplosion.hi_exp:
 	Inherits: BombTruckExplosion
 	Warhead@1Dam_impact: SpreadDamage
 		Spread: 1c256
-		Damage: 1800
+		Damage: 180000
 	Warhead@4Dam: SpreadDamage
 		Spread: 2c128
-		Damage: 200
+		Damage: 20000
 	Warhead@13Smu_areanuke3: LeaveSmudge
 		Size: 3
 	Warhead@13Smu_areanukeSnow3: LeaveSmudge
@@ -603,7 +603,7 @@ BombTruckExplosion.toxin_gamma:
 explosion.nuclear_reactor:
 	Warhead@1Dam_impact: SpreadDamage
 		Spread: 2c0
-		Damage: 400
+		Damage: 40000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -612,7 +612,7 @@ explosion.nuclear_reactor:
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@5Dam_impact: SpreadDamage
 		Spread: 2c512
-		Damage: 50
+		Damage: 5000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50

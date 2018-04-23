@@ -9,7 +9,7 @@
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 100
-		Damage: 40
+		Damage: 4000
 		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
@@ -35,7 +35,7 @@ cannon.scorpion_tank:
 		Speed: 853
 		Image: 50CAL
 	Warhead@1Dam: SpreadDamage
-		Damage: 20
+		Damage: 2000
 		Versus:
 			infantry.normal: 10
 			vehicle.battle_bus: 90
@@ -71,7 +71,7 @@ cannon.crusader_tank:
 	Inherits: ^Cannon
 	ReloadDelay: 50
 	Warhead@1Dam: SpreadDamage
-		Damage: 60
+		Damage: 6000
 		Versus:
 			infantry.normal: 10
 			vehicle.battle_bus: 90
@@ -81,7 +81,7 @@ cannon.battlemaster_tank:
 	Inherits: ^Cannon
 	ReloadDelay: 50
 	Warhead@1Dam: SpreadDamage
-		Damage: 60
+		Damage: 6000
 		Versus:
 			infantry.normal: 10
 			vehicle.battle_bus: 90
@@ -101,7 +101,7 @@ cannon.battlemaster_tank.autoloader:
 	Burst: 3
 	BurstDelay: 12
 	Warhead@1Dam: SpreadDamage
-		Damage: 40
+		Damage: 4000
 
 cannon.battlemaster_tank.nuke.autoloader:
 	Inherits: cannon.battlemaster_tank.autoloader
@@ -116,7 +116,7 @@ cannon.paladin_tank:
 	Inherits: ^Cannon
 	ReloadDelay: 50
 	Warhead@1Dam: SpreadDamage
-		Damage: 60
+		Damage: 6000
 		Versus:
 			infantry.normal: 10
 			vehicle.battle_bus: 90
@@ -126,7 +126,7 @@ cannon.marauder_tank:
 	Inherits: ^Cannon
 	ReloadDelay: 50
 	Warhead@1Dam: SpreadDamage
-		Damage: 60
+		Damage: 6000
 		Versus:
 			infantry.normal: 10
 			vehicle.battle_bus: 90
@@ -175,7 +175,7 @@ cannon.overlord_tank:
 	BurstDelay: 6
 	Range: 4c384
 	Warhead@1Dam: SpreadDamage
-		Damage: 80
+		Damage: 8000
 		Versus:
 			infantry.normal: 10
 			vehicle.battle_bus: 90
@@ -196,7 +196,7 @@ TurretGun:
 	Range: 7c0
 	Report: turret1.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: 60
+		Damage: 6000
 		Versus:
 			Wood: 50
 
@@ -211,7 +211,7 @@ TurretGun:
 		Inaccuracy: 1c512
 	Warhead@1Dam: SpreadDamage
 		Spread: 426
-		Damage: 240
+		Damage: 24000
 		Versus:
 			None: 90
 			Wood: 40
@@ -237,7 +237,7 @@ cannon.inferno_cannon:
 		Image: FB1
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c341
-		Damage: 30
+		Damage: 3000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -256,7 +256,7 @@ cannon.inferno_cannon.blue:
 		TrailImage: blue_fb2
 		Image: blue_FB1
 	Warhead@1Dam: SpreadDamage
-		Damage: 45
+		Damage: 4500
 	Warhead@1Fire: SpawnActor
 		Actors: firestorm.blue
 	Warhead@3Eff: CreateEffect
@@ -273,7 +273,7 @@ cannon.nuke_cannon:
 		ContrailLength: 30
 	Warhead@1Dam_impact: SpreadDamage
 		Spread: 1c256
-		Damage: 380
+		Damage: 38000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -283,7 +283,7 @@ cannon.nuke_cannon:
 	Warhead@5Dam_impact: SpreadDamage
 		Spread: 1c512
 		Falloff: 100, 100
-		Damage: 20
+		Damage: 2000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -329,7 +329,7 @@ cannon.nuke_cannon.neutron:
 		Condition: driver_killed
 	Warhead@1Dam: SpreadDamage
 		Range: 1c512
-		Damage: 1000
+		Damage: 100000
 		ValidTargets: Infantry
 		DamageTypes: FireDeath
 	-Warhead@2Smu: LeaveSmudge
@@ -354,7 +354,7 @@ cannon.strategy_center:
 		ContrailLength: 30
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c640
-		Damage: 200
+		Damage: 20000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -389,7 +389,7 @@ cannon.cruiser:
 		ContrailLength: 30
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c341
-		Damage: 250
+		Damage: 25000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -407,7 +407,7 @@ cannon.gunboat:
 	Projectile: Bullet
 		Speed: 426
 	Warhead@1Dam: SpreadDamage
-		Damage: 25
+		Damage: 2500
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -425,7 +425,7 @@ bomb.carpet:
 		Shadow: true
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
-		Damage: 300
+		Damage: 30000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -466,7 +466,7 @@ molotov.angry_mob:
 		Image: BOMB
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c154
-		Damage: 40
+		Damage: 4000
 		Versus:
 			vehicle.dragon_tank: 20
 			vehicle.toxin_tractor: 20
@@ -490,12 +490,12 @@ grenade.ranger:
 		Image: BOMB
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c256
-		Damage: 25
+		Damage: 2500
 		InvalidTargets: Vehicle, Tank, Structure, Wall
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c0
 		Falloff: 100, 100
-		Damage: 10
+		Damage: 1000
 		InvalidTargets: Vehicle, Tank, Structure, Wall
 		Versus:
 			aircraft.comanche: 130
@@ -520,7 +520,7 @@ grenade.grenadier:
 		Image: GRENADE
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c256
-		Damage: 60
+		Damage: 6000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -536,7 +536,7 @@ grenade.grenadier.garrison:
 	Inherits: grenade.grenadier
 	Range: 4c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 75
+		Damage: 7500
 
 ArtyBarrageWeapon:
 	Inherits: ^Artillery
@@ -548,7 +548,7 @@ ArtyBarrageWeapon:
 		Inaccuracy: 3c0
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c256
-		Damage: 105
+		Damage: 10500
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
