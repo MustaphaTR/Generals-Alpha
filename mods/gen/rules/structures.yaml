@@ -2453,6 +2453,12 @@ building.internet_center:
 	Power:
 		Amount: 0
 	ProvidesPrerequisite@buildingname:
+	GivesIntelligence:
+		Types: SatelliteHack1
+		RequiresCondition: satellite_hack1
+	GrantConditionOnPrerequisite@SATELLITE_HACK1:
+		Condition: satellite_hack1
+		Prerequisites: upgrade.satellite_hack1
 	GrantConditionOnPrerequisite@SATELLITE_HACK2:
 		Condition: satellite_hack2
 		Prerequisites: upgrade.satellite_hack2

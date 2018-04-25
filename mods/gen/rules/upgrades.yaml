@@ -310,7 +310,6 @@ upgrade.mig_armor:
 
 upgrade.satellite_hack1:
 	Inherits: ^default.upgrade
-	ConditionManager:
 	Tooltip:
 		Name: Satellite Hack 1
 	Buildable:
@@ -321,12 +320,6 @@ upgrade.satellite_hack1:
 		Description: Allows seeing around the enemy Command Centers.
 		QueuedAudio: NoAudio
 		ReadyAudio: ConstructionComplete
-	GivesIntelligence:
-		Types: SatelliteHack1
-#		RequiresCondition: internet_center
-#	GrantConditionOnPrerequisite@INTERNET_CENTER:
-#		Condition: internet_center
-#		Prerequisites: building.internet_center
 	Valued:
 		Cost: 1000
 

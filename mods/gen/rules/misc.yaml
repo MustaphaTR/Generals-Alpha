@@ -247,6 +247,7 @@ camera.spy_satellite:
 
 camera.intelligence:
 	Inherits: CAMERA
+	ConditionManager:
 	-RevealsShroud:
 	Buildable:
 		Queue: Intelligence
@@ -254,9 +255,19 @@ camera.intelligence:
 		Name: Intelligence
 	GivesIntelligence:
 		Types: Intelligence
+		RequiresCondition: (strategy_center && zh_units) || (detention_camp && !zh_units)
 	KillsSelf:
 		RemoveInstead: true
 		Delay: 750
+	GrantConditionOnPrerequisite@DETENTION_CAMP:
+		Condition: detention_camp
+		Prerequisites: building.detention_camp
+	GrantConditionOnPrerequisite@STRATEGY_CENTER:
+		Condition: strategy_center
+		Prerequisites: building.strategy_center
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 
 camera.satellite_hack2:
 	Inherits: camera.intelligence
@@ -265,13 +276,13 @@ camera.satellite_hack2:
 		Queue: SatelliteHack2
 	Tooltip:
 		Name: Satellite Hack 2
-#	GivesIntelligence:
-#		RequiresCondition: internet_center
+	GivesIntelligence:
+		RequiresCondition: internet_center
 	KillsSelf:
 		Delay: 500
-#	GrantConditionOnPrerequisite@INTERNET_CENTER:
-#		Condition: internet_center
-#		Prerequisites: building.internet_center
+	GrantConditionOnPrerequisite@INTERNET_CENTER:
+		Condition: internet_center
+		Prerequisites: building.internet_center
 
 camera.emergency_repair.1:
 	Inherits: CAMERA
