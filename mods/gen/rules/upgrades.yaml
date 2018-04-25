@@ -11,6 +11,7 @@
 
 ^default.strategy:
 	Inherits: ^default.upgrade
+	ConditionManager:
 	Buildable:
 		Queue: queue.strategy_center, queue.air_gen_strategy_center
 		BuildDuration: 175
@@ -18,6 +19,14 @@
 		Cost: 0
 	Doctrine:
 		Type: strategy
+	Aircraft:
+	KillsSelf:
+		RemoveInstead: true
+		Delay: 1
+		RequiresCondition: !strategy_center
+	GrantConditionOnPrerequisite@STRATEGY_CENTER:
+		Condition: strategy_center
+		Prerequisites: building.strategy_center
 
 ^default.fake_to_real:
 	Inherits: ^default.upgrade
