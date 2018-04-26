@@ -464,6 +464,7 @@ building.prc_command_center:
 			1: 250
 			2: 500
 			3: 750
+		OnFireSound: sfrenzya.wav
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
 		Conditions:
@@ -471,7 +472,7 @@ building.prc_command_center:
 			2: frenzy2
 			3: frenzy3
 		OrderName: FrenzyPowerInfoOrder
-	CashHackPower@CASH_HACK1:
+	CashHackPower@CASH_HACK:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
 			1: generals_power.cash_hack1
