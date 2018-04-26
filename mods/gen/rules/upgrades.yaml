@@ -5,6 +5,8 @@
 		Queue: Upgrade
 		BuildDurationModifier: 100
 		BuildLimit: 1
+		QueuedAudio: NoAudio
+		ReadyAudio: UpgradeComplete
 	RenderSprites:
 	Doctrine:
 	ProvidesPrerequisite@upgradename:
@@ -34,8 +36,6 @@
 		Queue: FakeToReal
 		BuildPaletteOrder: 0
 		BuildLimit: 0
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	KillsSelf:
 		RemoveInstead: true
 
@@ -50,8 +50,6 @@ upgrade.radar:
 		BuildDuration: 500
 		Prerequisites: ~building.prc_command_center, ~techlevel.infonly
 		Description: Allows Commandand Center to provide Radar.
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 500
 
@@ -91,8 +89,6 @@ upgrade.control_rods:
 		Prerequisites: ~techlevel.infonly
 		Description: Doubles power output of the Cold Fusion Reactor.
 		BuildLimit: 0
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	Power:
 		Amount: 5
 	Valued:
@@ -133,7 +129,6 @@ upgrade.camo_netting:
 		Prerequisites: ~techlevel.infonly
 		Description: Allows structure to cloak.
 		BuildLimit: 0
-		QueuedAudio: NoAudio
 		ReadyAudio: CamoNetting
 	Valued:
 		Cost: 500
@@ -149,8 +144,6 @@ upgrade.capture_building:
 		BuildDuration: 750
 		Prerequisites: prerequisite.barracks, ~techlevel.infonly
 		Description: Allows AP Infantry to capture enemy and neutral structures.
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 1000
 
@@ -165,7 +158,6 @@ upgrade.flashbang_grenades:
 		BuildDuration: 750
 		Prerequisites: building.usa_barracks, ~techlevel.low
 		Description: Gives Rangers ability to use to flashbang grenades.
-		QueuedAudio: NoAudio
 		ReadyAudio: Flashbang
 	Valued:
 		Cost: 800
@@ -181,7 +173,6 @@ upgrade.tow_missile:
 		BuildDuration: 750
 		Prerequisites: building.usa_war_factory, ~techlevel.low
 		Description: Allows Humvees to fire Missiles.
-		QueuedAudio: NoAudio
 		ReadyAudio: TOW
 	Valued:
 		Cost: 1200
@@ -197,8 +188,6 @@ upgrade.sentry_gun:
 		BuildDuration: 250
 		Prerequisites: building.usa_war_factory, ~techlevel.low, ~prerequisite.zh_units
 		Description: Allows Senrty Drones to fire.
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 1000
 
@@ -213,7 +202,6 @@ upgrade.sc_rocket:
 		BuildDuration: 750
 		Prerequisites: building.arms_dealer, ~techlevel.low
 		Description: Gives Scorpion Tanks a rocket.
-		QueuedAudio: NoAudio
 		ReadyAudio: ScorpionRocket
 	Valued:
 		Cost: 1000
@@ -229,7 +217,6 @@ upgrade.chain_gun:
 		BuildDuration: 1125
 		Prerequisites: building.prc_war_factory, ~techlevel.low
 		Description: Increases damage of gatling weapons by 25%.
-		QueuedAudio: NoAudio
 		ReadyAudio: ChainGun
 	Valued:
 		Cost: 1500
@@ -245,7 +232,6 @@ upgrade.black_napalm:
 		BuildDuration: 1125
 		Prerequisites: building.prc_war_factory, ~techlevel.medium
 		Description: Increases damage of fire based weapons.
-		QueuedAudio: NoAudio
 		ReadyAudio: BlackNapalm
 	Valued:
 		Cost: 2000
@@ -262,7 +248,6 @@ upgrade.rocket_pods:
 		BuildDuration: 1500
 		Prerequisites: ~techlevel.high
 		Description: Allows Comanches to fire Missiles.
-		QueuedAudio: NoAudio
 		ReadyAudio: RocketPods
 	Valued:
 		Cost: 800
@@ -279,7 +264,6 @@ upgrade.laser_guided_missiles:
 		BuildDuration: 1000
 		Prerequisites: ~techlevel.high
 		Description: Increases the damage output of Raptor and Stealth Bomber by 25%.
-		QueuedAudio: NoAudio
 		ReadyAudio: LaserGuide
 	Valued:
 		Cost: 1500
@@ -296,8 +280,6 @@ upgrade.stealth_comanche:
 		BuildDuration: 750
 		Prerequisites: ~techlevel.high
 		Description: Allows Comanches to stealth when not firing.
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 1500
 
@@ -312,7 +294,6 @@ upgrade.mig_armor:
 		BuildDuration: 1000
 		Prerequisites: building.prc_airfield, ~techlevel.high
 		Description: Increases MiGs' armor.
-		QueuedAudio: NoAudio
 		ReadyAudio: MiGArmor
 	Valued:
 		Cost: 1200
@@ -327,8 +308,6 @@ upgrade.satellite_hack1:
 		BuildDuration: 500
 		Prerequisites: ~!upgrade.satellite_hack1, ~techlevel.medium
 		Description: Allows seeing around the enemy Command Centers.
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 1000
 
@@ -342,8 +321,6 @@ upgrade.satellite_hack2:
 		BuildDuration: 500
 		Prerequisites: ~upgrade.satellite_hack1, ~techlevel.high
 		Description: Reveals all enemy units and buildings every 4 minutes for 20 seconds.
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 2500
 
@@ -372,7 +349,6 @@ upgrade.drone_armor:
 		BuildDuration: 1000
 		Prerequisites: ~techlevel.medium
 		Description: Increases Drones' armor by 50%.
-		QueuedAudio: NoAudio
 		ReadyAudio: DroneArmor
 	Valued:
 		Cost: 500
@@ -387,7 +363,6 @@ upgrade.composite_armor:
 		BuildDuration: 1500
 		Prerequisites: ~techlevel.medium
 		Description: Increases Crusader Tank armor by 40%.\n\nIncreases Paladin and Microwave Tank armor by 20%.
-		QueuedAudio: NoAudio
 		ReadyAudio: CompositeArmor
 	Valued:
 		Cost: 2000
@@ -402,7 +377,6 @@ upgrade.chemical_suits:
 		BuildDuration: 1500
 		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
 		Description: Decreases the damage dealt to infantry from Microwaves, Toxins and Radiation.
-		QueuedAudio: NoAudio
 		ReadyAudio: ChemicalSuits
 	Valued:
 		Cost: 1000
@@ -417,7 +391,6 @@ upgrade.supply_lines:
 		BuildDuration: 1500
 		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
 		Description: Increases output from Supply Centers, Supply Drop Zones and Oil Derricks by 10%.
-		QueuedAudio: NoAudio
 		ReadyAudio: SupplyLines
 	Valued:
 		Cost: 800
@@ -433,8 +406,6 @@ upgrade.moab:
 		BuildDuration: 1500
 		Prerequisites: ~generals_power.fuel_air_bomb, ~techlevel.high, ~prerequisite.zh_units
 		Description: Upgrades Fuel Air Bomb to Mother of All Bombs.
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 4000
 
@@ -448,7 +419,6 @@ upgrade.camouflage:
 		BuildDuration: 1500
 		Prerequisites: ~techlevel.medium
 		Description: Allows Rebels to cloak while not firing.
-		QueuedAudio: NoAudio
 		ReadyAudio: Camouflage
 	Valued:
 		Cost: 2000
@@ -463,7 +433,6 @@ upgrade.arm_the_mob:
 		BuildDuration: 750
 		Prerequisites: ~techlevel.medium
 		Description: Replaces pistols of Angry Mobs with AK-47s.
-		QueuedAudio: NoAudio
 		ReadyAudio: ArmTheMob
 	Valued:
 		Cost: 1000
@@ -478,7 +447,6 @@ upgrade.toxin_shells:
 		BuildDuration: 750
 		Prerequisites: ~techlevel.medium
 		Description: Makes Scorpion and Marauder tank shells leave toxin.
-		QueuedAudio: NoAudio
 		ReadyAudio: ToxinShells
 	Valued:
 		Cost: 1000
@@ -493,7 +461,6 @@ upgrade.anthrax_beta:
 		BuildDuration: 750
 		Prerequisites: ~techlevel.medium
 		Description: Increases all toxin weapons' damage by 25%.
-		QueuedAudio: NoAudio
 		ReadyAudio: AnthraxBeta
 	Valued:
 		Cost: 2500
@@ -508,7 +475,6 @@ upgrade.anthrax_gamma:
 		BuildDuration: 1500
 		Prerequisites: ~techlevel.medium
 		Description: Increases all toxin weapons' damage by 25%.
-		QueuedAudio: NoAudio
 		ReadyAudio: AnthraxGamma
 	Valued:
 		Cost: 1500
@@ -523,8 +489,6 @@ upgrade.fortified_structures:
 		BuildDuration: 750
 		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
 		Description: Increases structure armor by 33%.
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 1000
 
@@ -538,8 +502,6 @@ upgrade.demolitions:
 		BuildDuration: 750
 		Prerequisites: ~techlevel.medium
 		Description: Makes units end defenses explode on dealth.
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 2000
 
@@ -554,7 +516,6 @@ upgrade.nationalism:
 		BuildDuration: 1500
 		Prerequisites: ~techlevel.medium
 		Description: Makes Horde Bonus give an additional 25% firing speed.
-		QueuedAudio: NoAudio
 		ReadyAudio: Nationalism
 	Valued:
 		Cost: 2000
@@ -572,7 +533,6 @@ upgrade.patriotism:
 		BuildDuration: 1500
 		Prerequisites: ~techlevel.medium
 		Description: Makes Horde Bonus give an additional 25% firing speed.
-		QueuedAudio: NoAudio
 		ReadyAudio: Patriotism
 	Valued:
 		Cost: 2000
@@ -590,7 +550,6 @@ upgrade.autoloader:
 		BuildDuration: 1500
 		Prerequisites: ~techlevel.medium
 		Description: Makes Battlemaster Tanks to fire 3 cannon at once.
-		QueuedAudio: NoAudio
 		ReadyAudio: Autoloader
 	Valued:
 		Cost: 2500
@@ -606,8 +565,6 @@ upgrade.isotope_stability:
 		BuildDuration: 1500
 		Prerequisites: ~techlevel.medium
 		Description: Makes Battlemaster and Overlord Tank not explode on death.
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 2000
 
@@ -622,7 +579,6 @@ upgrade.subliminal_messaging:
 		BuildDuration: 1000
 		Prerequisites: building.propaganda_center, ~techlevel.medium
 		Description: Doubles the efficency of Speaker Towers.
-		QueuedAudio: NoAudio
 		ReadyAudio: Subliminal
 	Valued:
 		Cost: 500
@@ -638,7 +594,6 @@ upgrade.ap_bullets:
 		BuildDuration: 1500
 		Prerequisites: building.black_market, ~techlevel.high
 		Description: Increases bullet weapons' damage by 25%.
-		QueuedAudio: NoAudio
 		ReadyAudio: APBullets
 	Valued:
 		Cost: 2000
@@ -654,7 +609,6 @@ upgrade.ap_rockets:
 		BuildDuration: 1500
 		Prerequisites: building.black_market, ~techlevel.high
 		Description: Increases rocket weapons' damage by 25%.
-		QueuedAudio: NoAudio
 		ReadyAudio: APRockets
 	Valued:
 		Cost: 2000
@@ -670,7 +624,6 @@ upgrade.radar_van_scan:
 		BuildDuration: 500
 		Prerequisites: building.black_market, ~techlevel.high
 		Description: Gives you a Radar Van Scan support power for each Radar Van you have.
-		QueuedAudio: NoAudio
 		ReadyAudio: RadarVanScan
 	Valued:
 		Cost: 500
@@ -686,7 +639,6 @@ upgrade.junk_repair:
 		BuildDuration: 1500
 		Prerequisites: building.black_market, ~techlevel.high
 		Description: Allows vehicles to repair themselves on field.
-		QueuedAudio: NoAudio
 		ReadyAudio: JunkRepair
 	Valued:
 		Cost: 2000
@@ -702,7 +654,6 @@ upgrade.buggy_ammo:
 		BuildDuration: 750
 		Prerequisites: building.black_market, ~techlevel.high
 		Description: Doubles the rockets fired from Rocket Buggies.
-		QueuedAudio: NoAudio
 		ReadyAudio: BuggyAmmo
 	Valued:
 		Cost: 1200
@@ -718,7 +669,6 @@ upgrade.worker_shoes:
 		BuildDuration: 250
 		Prerequisites: building.black_market, ~techlevel.high, ~prerequisite.zh_units
 		Description: Increases worker speed and output by 10%.
-		QueuedAudio: NoAudio
 		ReadyAudio: WorkerShoes
 	Valued:
 		Cost: 1000
@@ -734,7 +684,6 @@ upgrade.nuclear_tanks:
 		BuildDuration: 1500
 		Prerequisites: !upgrade.nuclear_tanks, ~techlevel.unrestricted
 		Description: Increases Overlord and Battlemaster speed by 25%.
-		QueuedAudio: NoAudio
 		ReadyAudio: NuclearTanks
 	ProvidesPrerequisite@upgradename:
 		Prerequisite: upgrade.nuclear_tanks
@@ -761,7 +710,6 @@ upgrade.uranium_shells:
 		BuildDuration: 1500
 		Prerequisites: !upgrade.uranium_shells, ~techlevel.unrestricted
 		Description: Increases Overlord and Battlemaster damage by 25%.
-		QueuedAudio: NoAudio
 		ReadyAudio: UraniumShells
 	ProvidesPrerequisite@upgradename:
 		Prerequisite: upgrade.uranium_shells
@@ -788,8 +736,6 @@ upgrade.neutron_shells:
 		BuildDuration: 1500
 		Prerequisites: ~generals_power.nuke_cannon, !upgrade.neutron_shells, ~prerequisite.zh_units, ~techlevel.unrestricted
 		Description: Allows Nuke Cannons to be switched to fire Neutron Shells.
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	ProvidesPrerequisite@upgradename:
 		Prerequisite: upgrade.neutron_shells
 	Valued:
@@ -814,8 +760,6 @@ upgrade.tactical_nuke_mig:
 		BuildDuration: 1000
 		Prerequisites: ~techlevel.unrestricted
 		Description: Arms MiGs with a Tactical Nukes.
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 2000
 
@@ -829,8 +773,6 @@ upgrade.scout_drone:
 		BuildDuration: 125
 		Description: Gives vehicle a scout drone that can detect steath.
 		BuildLimit: 0
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 100
 	KillsSelf:
@@ -846,8 +788,6 @@ upgrade.battle_drone:
 		BuildDuration: 125
 		Description: Gives vehicle a battle drone that armed with a machine gun.
 		BuildLimit: 0
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 300
 	KillsSelf:
@@ -864,8 +804,6 @@ upgrade.hellfire_drone:
 		Prerequisites: ~prerequisite.zh_units
 		Description: Gives vehicle a hellfire drone that armed with a rocket launcher.
 		BuildLimit: 0
-		QueuedAudio: NoAudio
-		ReadyAudio: ConstructionComplete
 	Valued:
 		Cost: 500
 	KillsSelf:
@@ -918,7 +856,6 @@ upgrade.toxin_missiles:
 		BuildDuration: 0
 		Description: Makes scud missiles leave toxins.
 		BuildLimit: 0
-		QueuedAudio: NoAudio
 		ReadyAudio: NoAudio
 	Valued:
 		Cost: 0
@@ -936,7 +873,6 @@ upgrade.hi_explosive_missiles:
 		BuildDuration: 0
 		Description: Makes scud missiles deal more damage to a larger area.
 		BuildLimit: 0
-		QueuedAudio: NoAudio
 		ReadyAudio: NoAudio
 	Valued:
 		Cost: 0
@@ -1033,7 +969,6 @@ strategy.bombardment:
 		ForceIconLocation: true
 		Prerequisites: ~techlevel.infonly
 		Description: Increases all units' damage by 20%.\n\nGives Strategy Center an Artillery piece.
-		QueuedAudio: NoAudio
 		ReadyAudio: Bombardment
 
 strategy.search_and_destroy:
@@ -1045,7 +980,6 @@ strategy.search_and_destroy:
 		ForceIconLocation: true
 		Prerequisites: ~techlevel.infonly
 		Description: Increases all units' vision range by 20%.\n\nGives Strategy Center ability to detect stealth units.
-		QueuedAudio: NoAudio
 		ReadyAudio: SearchAndDestroy
 
 strategy.hold_the_line:
@@ -1057,7 +991,6 @@ strategy.hold_the_line:
 		ForceIconLocation: true
 		Prerequisites: ~techlevel.infonly
 		Description: Increases all units' armor by 10%.\n\nDoubles Strategy Center's armor.
-		QueuedAudio: NoAudio
 		ReadyAudio: HoldTheLine
 
 fake_to_real.command_center:

@@ -3057,6 +3057,7 @@ building.particle_cannon:
 		DisplayTimerStances: Enemy, Neutral, Ally
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
+		IncomingSpeechNotification: ParticleCannonLaunchDetected
 		AllowMultiple: True
 		OnFireSound: ion1.aud
 		EffectPalette: cnc
@@ -3290,6 +3291,7 @@ building.scud_storm:
 			1: Fires 4 SCUD Missiles anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
+		IncomingSpeechNotification: ScudLaunchDetected
 		AllowMultiple: True
 		DisplayBeacon: False
 		BeaconPosters:
@@ -3400,11 +3402,9 @@ building.missile_silo:
 			1: Atom Bomb
 		LongDescs:
 			1: Launches a devastating atomic bomb\nat a target location.
-		BeginChargeSpeechNotification: AbombPrepping
-		EndChargeSpeechNotification: AbombReady
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
-		IncomingSpeechNotification: AbombLaunchDetected
+		IncomingSpeechNotification: NukeLaunchDetected
 		AllowMultiple: True
 		MissileWeapon: atomic
 		SpawnOffset: 0,427,0

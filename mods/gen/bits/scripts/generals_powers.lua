@@ -125,24 +125,30 @@ Tick = function()
 		if player.Experience >= 750 and not (Levels[player.InternalName] > 0) then
 			Levels[player.InternalName] = Levels[player.InternalName] + 1
 			Points[player.InternalName] = Points[player.InternalName] + PointsPerRank[2]
+
+			Media.PlaySpeechNotification(player, "RankUp")
 		end
 
 		if player.Experience >= 1750 and not (Levels[player.InternalName] > 1) then
 			Levels[player.InternalName] = Levels[player.InternalName] + 1
 			Points[player.InternalName] = Points[player.InternalName] + PointsPerRank[3]
 
+			Media.PlaySpeechNotification(player, "RankUp")
 			Actor.Create("hack.rank_3", true, { Owner = player })
 		end
 
 		if player.Experience >= 3000 and not (Levels[player.InternalName] > 2) then
 			Levels[player.InternalName] = Levels[player.InternalName] + 1
 			Points[player.InternalName] = Points[player.InternalName] + PointsPerRank[4]
+
+			Media.PlaySpeechNotification(player, "RankUp")
 		end
 
 		if player.Experience >= 4500 and not (Levels[player.InternalName] > 3) then
 			Levels[player.InternalName] = Levels[player.InternalName] + 1
 			Points[player.InternalName] = Points[player.InternalName] + PointsPerRank[5]
 
+			Media.PlaySpeechNotification(player, "RankUp")
 			Actor.Create("hack.rank_5", true, { Owner = player })
 		end
 	end
