@@ -522,6 +522,14 @@
 		Condition: bombardment
 		Prerequisites: strategy.bombardment
 
+^AffectedBySearchAndDestroy:
+	RangeMultiplier@SEARCH_AND_DESTROY:
+		RequiresCondition: search_and_destroy
+		Modifier: 120
+	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
+		Condition: search_and_destroy
+		Prerequisites: strategy.search_and_destroy
+
 ^AffectedByHoldTheLine:
 	DamageMultiplier@HOLD_THE_LINE:
 		RequiresCondition: hold_the_line
@@ -651,242 +659,152 @@
 ^Reveal80:
 	RevealsShroud:
 		Range: 2c0
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 2c409
-		RequiresCondition: search_and_destroy
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Types: Intelligence
 		Range: 2c0
 	RevealOnDeath:
 		Duration: 100
 		Radius: 1c128
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 
 ^Reveal100:
 	RevealsShroud:
 		Range: 2c512
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 3c0
-		RequiresCondition: search_and_destroy
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Types: Intelligence
 		Range: 2c512
 	RevealOnDeath:
 		Duration: 100
 		Radius: 1c128
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 
 ^Reveal125:
 	RevealsShroud:
 		Range: 3c128
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 3c768
-		RequiresCondition: search_and_destroy
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Types: Intelligence
 		Range: 3c128
 	RevealOnDeath:
 		Duration: 100
 		Radius: 1c576
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 
 ^Reveal150:
 	RevealsShroud:
 		Range: 3c768
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 4c512
-		RequiresCondition: search_and_destroy
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Types: Intelligence
 		Range: 3c768
 	RevealOnDeath:
 		Duration: 100
 		Radius: 1c896
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 
 ^Reveal175:
 	RevealsShroud:
 		Range: 4c384
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 5c256
-		RequiresCondition: search_and_destroy
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Types: Intelligence
 		Range: 4c384
 	RevealOnDeath:
 		Duration: 100
 		Radius: 2c192
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 
 ^Reveal180:
 	RevealsShroud:
 		Range: 4c512
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 5c409
-		RequiresCondition: search_and_destroy
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Types: Intelligence
 		Range: 4c512
 	RevealOnDeath:
 		Duration: 100
 		Radius: 2c256
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 
 ^Reveal200:
 	RevealsShroud:
 		Range: 5c0
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 6c0
-		RequiresCondition: search_and_destroy
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Types: Intelligence
 		Range: 5c0
 	RevealOnDeath:
 		Duration: 100
 		Radius: 2c512
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 
 ^Reveal250:
 	RevealsShroud:
 		Range: 6c256
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 7c512
-		RequiresCondition: search_and_destroy
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Types: Intelligence
 		Range: 6c256
 	RevealOnDeath:
 		Duration: 100
 		Radius: 3c128
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 
 ^Reveal300:
 	RevealsShroud:
 		Range: 7c512
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 9c0
-		RequiresCondition: search_and_destroy
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Types: Intelligence
 		Range: 7c512
 	RevealOnDeath:
 		Duration: 100
 		Radius: 3c768
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 
 ^Reveal320:
 	RevealsShroud:
 		Range: 8c0
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 8c819
-		RequiresCondition: search_and_destroy
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Types: Intelligence
 		Range: 8c0
 	RevealOnDeath:
 		Duration: 100
 		Radius: 4c0
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 
 ^Reveal350:
 	RevealsShroud:
 		Range: 8c768
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 10c512
-		RequiresCondition: search_and_destroy
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Types: Intelligence
 		Range: 8c768
 	RevealOnDeath:
 		Duration: 100
 		Radius: 4c384
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 
 ^Reveal360:
 	RevealsShroud:
 		Range: 9c0
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 10c819
-		RequiresCondition: search_and_destroy
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Types: Intelligence
 		Range: 9c0
 	RevealOnDeath:
 		Duration: 100
 		Radius: 4c512
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 
 ^Reveal400:
 	RevealsShroud:
 		Range: 10c0
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 12c0
-		RequiresCondition: search_and_destroy
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Types: Intelligence
 		Range: 10c0
 	RevealOnDeath:
 		Duration: 100
 		Radius: 5c0
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 
 ^Reveal500:
 	RevealsShroud:
 		Range: 12c512
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 15c0
-		RequiresCondition: search_and_destroy
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Types: Intelligence
 		Range: 12c512
 	RevealOnDeath:
 		Duration: 100
 		Radius: 6c258
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 
 ^Reveal600:
 	RevealsShroud:
 		Range: 15c0
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Range: 18c0
-		RequiresCondition: search_and_destroy
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Types: Intelligence
 		Range: 15c0
 	RevealOnDeath:
 		Duration: 100
 		Radius: 7c512
-	GrantConditionOnPrerequisite@SEARCH_AND_DESTROY:
-		Condition: search_and_destroy
-		Prerequisites: strategy.search_and_destroy
 
 ^CrushesCrates:
 	Mobile:
@@ -1083,18 +1001,19 @@
 	Inherits@3: ^SpriteActor
 	Inherits@4: ^AffectedBySpeakerTower
 	Inherits@5: ^AffectedByBombardment
-	Inherits@6: ^AffectedByHoldTheLine
-	Inherits@7: ^AffectsDemoTrap
-	Inherits@8: ^DropsScrapCrate
-	Inherits@9: ^AffectedByHacking
-	Inherits@10: ^AffectedByDriverKill
-	Inherits@11: ^AffectedByEMP
-	Inherits@12: ^AffectedByEmergencyRepair
-	Inherits@13: ^AffectedByScrapCratePowerups
-	Inherits@14: ^AffectedByFrenzy
-	Inherits@15: ^AffectedByRadiationAndToxins
-	Inherits@16: ^AffectedByGPSScambler
-	Inherits@17: ^AffectedByAmbulanceZHOnly
+	Inherits@6: ^AffectedBySearchAndDestroy
+	Inherits@7: ^AffectedByHoldTheLine
+	Inherits@8: ^AffectsDemoTrap
+	Inherits@9: ^DropsScrapCrate
+	Inherits@10: ^AffectedByHacking
+	Inherits@11: ^AffectedByDriverKill
+	Inherits@12: ^AffectedByEMP
+	Inherits@13: ^AffectedByEmergencyRepair
+	Inherits@14: ^AffectedByScrapCratePowerups
+	Inherits@15: ^AffectedByFrenzy
+	Inherits@16: ^AffectedByRadiationAndToxins
+	Inherits@17: ^AffectedByGPSScambler
+	Inherits@18: ^AffectedByAmbulanceZHOnly
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -1325,14 +1244,15 @@
 	Inherits@2: ^SpriteActor
 	Inherits@3: ^AffectedBySpeakerTower
 	Inherits@4: ^AffectedByBombardment
-	Inherits@5: ^AffectedByHoldTheLine
-	Inherits@6: ^AffectsDemoTrap
-	Inherits@7: ^AffectedByScrapCratePowerups
-	Inherits@8: ^AffectedByFrenzy
-	Inherits@9: ^CrushesCrates
-	Inherits@10: ^AffectedByRadiationAndToxins
-	Inherits@11: ^AffectedByGPSScambler
-	Inherits@12: ^AffectedByAmbulance
+	Inherits@5: ^AffectedBySearchAndDestroy
+	Inherits@6: ^AffectedByHoldTheLine
+	Inherits@7: ^AffectsDemoTrap
+	Inherits@8: ^AffectedByScrapCratePowerups
+	Inherits@9: ^AffectedByFrenzy
+	Inherits@10: ^CrushesCrates
+	Inherits@11: ^AffectedByRadiationAndToxins
+	Inherits@12: ^AffectedByGPSScambler
+	Inherits@13: ^AffectedByAmbulance
 	Huntable:
 	DrawLineToTarget:
 	Health:
@@ -1482,15 +1402,16 @@
 	Inherits@3: ^SpriteActor
 	Inherits@4: ^AffectedBySpeakerTower
 	Inherits@5: ^AffectedByBombardment
-	Inherits@6: ^AffectedByHoldTheLine
-	Inherits@7: ^AffectsDemoTrap
-	Inherits@8: ^AffectedByHacking
-	Inherits@9: ^AffectedByEMP
-	Inherits@10: ^AffectedByScrapCratePowerups
-	Inherits@11: ^AffectedByEmergencyRepair
-	Inherits@12: ^AffectedByFrenzy
-	Inherits@13: ^AffectedByRadiationAndToxins
-	Inherits@14: ^AffectedByGPSScambler
+	Inherits@6: ^AffectedBySearchAndDestroy
+	Inherits@7: ^AffectedByHoldTheLine
+	Inherits@8: ^AffectsDemoTrap
+	Inherits@9: ^AffectedByHacking
+	Inherits@10: ^AffectedByEMP
+	Inherits@11: ^AffectedByScrapCratePowerups
+	Inherits@12: ^AffectedByEmergencyRepair
+	Inherits@13: ^AffectedByFrenzy
+	Inherits@14: ^AffectedByRadiationAndToxins
+	Inherits@15: ^AffectedByGPSScambler
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -1540,7 +1461,8 @@
 	Inherits@4: ^SpriteActor
 	Inherits@5: ^AffectedBySpeakerTower
 	Inherits@6: ^AffectedByBombardment
-	Inherits@7: ^AffectedByHoldTheLine
+	Inherits@7: ^AffectedBySearchAndDestroy
+	Inherits@8: ^AffectedByHoldTheLine
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -1613,8 +1535,9 @@
 	Inherits@2: ^IronCurtainable
 	Inherits@3: ^SpriteActor
 	Inherits@4: ^AffectedByBombardment
-	Inherits@5: ^AffectedByHoldTheLine
-	Inherits@6: ^AffectsDemoTrap
+	Inherits@5: ^AffectedBySearchAndDestroy
+	Inherits@6: ^AffectedByHoldTheLine
+	Inherits@7: ^AffectsDemoTrap
 	Inherits@SHAPE: ^1x1Shape
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
