@@ -1229,7 +1229,7 @@ infantry.colonel_burton:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		IdleSequences: idle1,idle2,idle3
-	GrantStackableConditionOnFire@UNCLOAK:
+	GrantStackableConditionOnFire@UNCLOAK_RIFLE:
 		Condition: cloak-force-disabled
 		ArmamentName: primary
 		RequiredShotsPerStack: 1
@@ -1237,7 +1237,7 @@ infantry.colonel_burton:
 		RevokeDelay: 120
 		RevokeAll: true
 		IsCyclic: false
-	GrantStackableConditionOnFire@UNCLOAK:
+	GrantStackableConditionOnFire@UNCLOAK_DEMO_BOMB:
 		Condition: cloak-force-disabled
 		ArmamentName: timed_demo_bomb
 		RequiredShotsPerStack: 1
