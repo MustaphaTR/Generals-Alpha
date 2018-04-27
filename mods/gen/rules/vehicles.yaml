@@ -2942,6 +2942,7 @@ vehicle.usa_mcc:
 
 vehicle.gla_mcc:
 	Inherits: ^default.mcc
+	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Buildable:
 		Queue: queue.gla_command_center
