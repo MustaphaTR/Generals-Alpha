@@ -147,15 +147,15 @@ Player:
 	LobbyPrerequisiteCheckbox@GLOBALZHUNITS:
 		ID: zhunits
 		Label: Zero Hour
-		Description: Enables the available Zero Hour stuff (Not evertyhing is added, probably even more unbalanced than normal mode)
-		Enabled: False
+		Description: Enables the Zero Hour stuff
+		Enabled: True
 		DisplayOrder: 5
 		Prerequisites: prerequisite.zh_units
 	LobbyPrerequisiteCheckbox@GLOBALLIMITSW:
 		ID: limitsw
 		Label: Limit Super Weapons
-		Description: Allow only 1 Super Weapon to be built
-		Enabled: True
+		Description: Allow only 1 of each Super Weapon to be built
+		Enabled: False
 		DisplayOrder: 6
 		Prerequisites: prerequisite.limited_sw
 	LobbyPrerequisiteCheckbox@GLOBALCCRADIUS:
