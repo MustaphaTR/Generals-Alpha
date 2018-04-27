@@ -1180,7 +1180,7 @@ infantry.colonel_burton:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, !prerequisite.enough_colonel_burton, ~techlevel.high
-		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures.\n\nCan backstab infantry without getting detected by force firing.\n\nCamouflaged.
+		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures by force firing.\n\nCan backstab infantry without getting detected by force firing.\n\nCamouflaged.
 		ReadyAudio: BurtonCreated
 	Mobile:
 		Speed: 30
@@ -1204,9 +1204,6 @@ infantry.colonel_burton:
 		Voice: Move
 	AutoTarget:
 		ScanRadius: 8
-	Demolition:
-		DetonationDelay: 45
-		Voice: Demolish
 	Armament@PRIMARY_INF:
 		Weapon: mg.colonel_burton.ap
 	Armament@PRIMARY_TANK:
@@ -1219,8 +1216,13 @@ infantry.colonel_burton:
 		Weapon: melee.colonel_burton
 		Cursor: ability
 		OutsideRangeCursor: ability
+	Armament@TIMED_DEMO_BOMB:
+		Name: timed_demo_bomb
+		Weapon: attach.colonel_burton.timed
+		Cursor: c4
+		OutsideRangeCursor: c4
 	AttackFrontal:
-		Armaments: primary, knife
+		Armaments: primary, knife, timed_demo_bomb
 		Voice: Attack
 	AttackMove:
 		Voice: Attack
@@ -1230,6 +1232,14 @@ infantry.colonel_burton:
 	GrantStackableConditionOnFire@UNCLOAK:
 		Condition: cloak-force-disabled
 		ArmamentName: primary
+		RequiredShotsPerStack: 1
+		MaximumInstances: 1
+		RevokeDelay: 120
+		RevokeAll: true
+		IsCyclic: false
+	GrantStackableConditionOnFire@UNCLOAK:
+		Condition: cloak-force-disabled
+		ArmamentName: timed_demo_bomb
 		RequiredShotsPerStack: 1
 		MaximumInstances: 1
 		RevokeDelay: 120
@@ -1344,9 +1354,13 @@ infantry.jarmen_kell.demo:
 		Queue: queue.demo_gen_infantry
 		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCamouflaged.\n\nCan place C4 charges on structures.
 		ReadyAudio: DemoJarmenCreated
-	Demolition:
-		DetonationDelay: 45
-		Voice: Demolish
+	Armament@TIMED_DEMO_BOMB:
+		Name: timed_demo_bomb
+		Weapon: attach.demo_jarmen_kell.timed
+		Cursor: c4
+		OutsideRangeCursor: c4
+	AttackFrontal:
+		Armaments: primary, driver_snipe, timed_demo_bomb
 	Voiced:
 		VoiceSet: DemoJarmenVoice
 

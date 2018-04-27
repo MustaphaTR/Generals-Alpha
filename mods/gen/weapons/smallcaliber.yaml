@@ -213,10 +213,8 @@ mg.colonel_burton:
 	ReloadDelay: 3
 	Range: 3c128
 	Report: gun11.aud
-	InvalidTargets: Structure
 	Warhead@1Dam: SpreadDamage
 		Damage: 4000
-		InvalidTargets: Structure
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -245,7 +243,7 @@ mg.colonel_burton.garrison:
 mg.colonel_burton.ap:
 	Inherits: mg.colonel_burton
 	RequiresNormalFire: true
-	ValidTargets: Infantry
+	ValidTargets: Infantry, Structure
 
 mg.colonel_burton.at:
 	Inherits: mg.colonel_burton

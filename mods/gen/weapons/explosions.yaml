@@ -418,6 +418,30 @@ explosion.suicide:
 	-Warhead@Smu:
 	-Warhead@SmuSnow:
 
+explosion.demo_charge:
+	Inherits: explosion.terrorist
+	Warhead@1Dam: SpreadDamage
+		Damage: 200000
+		ValidStances: Enemy, Neutral, Ally
+		DamageTypes: TriggerProne, ExplosionDeath, Incendiary
+	Warhead@2Dam: SpreadDamage
+		Damage: 15000
+		Spread: 1c896
+		ValidStances: Enemy, Neutral, Ally
+		DamageTypes: TriggerProne, ExplosionDeath, Incendiary
+	Warhead@2Eff: CreateEffect
+		Explosions: building
+		ImpactSounds: kaboom22.aud
+	-Warhead@Smu:
+	-Warhead@SmuSnow:
+
+explosion.demo_charge.demo_gen:
+	Inherits: explosion.demo_charge
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: TriggerProne, ExplosionDeath, DropCrate, Incendiary
+	Warhead@2Dam: SpreadDamage
+		DamageTypes: TriggerProne, ExplosionDeath, DropCrate, Incendiary
+
 explosion.mine:
 	Warhead@1Dam: SpreadDamage
 		Spread: 256

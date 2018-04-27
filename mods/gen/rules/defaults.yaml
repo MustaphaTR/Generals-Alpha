@@ -596,6 +596,19 @@
 		DamageInterval: 10
 		DamageTypes: FireDeath
 
+^AcceptsTimedDemoBomb:
+	DelayedWeaponAttachable:
+		Type: timed_demo_bomb
+		ShowProgressBar: false
+		Condition: timed_demo_bomb
+	WithDecoration@TIMED_DEMO_BOMB:
+		RequiresSelection: false
+		Image: car_bomb
+		Sequence: c4
+		ReferencePoint: Center
+		ZOffset: 256
+		RequiresCondition: timed_demo_bomb
+
 ^WithGarrisonRangeCircle:
 	Cargo:
 		PassengerConditions:
@@ -1538,6 +1551,7 @@
 	Inherits@5: ^AffectedBySearchAndDestroy
 	Inherits@6: ^AffectedByHoldTheLine
 	Inherits@7: ^AffectsDemoTrap
+	Inherits@8: ^AcceptsTimedDemoBomb
 	Inherits@SHAPE: ^1x1Shape
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
