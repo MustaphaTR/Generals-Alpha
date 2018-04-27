@@ -1534,6 +1534,7 @@ vehicle.assault_troop_crawler:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
 		PortCones: 512, 512, 512, 512
+		RequiresCondition: !hacked && !driver_killed && !emp
 	Voiced:
 		VoiceSet: AssaultTroopCrawlerVoice
 
@@ -1585,6 +1586,7 @@ vehicle.listening_outpost:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
 		PortCones: 512, 512, 512, 512
+		RequiresCondition: !hacked && !driver_killed && !emp
 	Cloak:
 		InitialDelay: 100
 		CloakDelay: 50
@@ -1680,7 +1682,7 @@ vehicle.microwave_tank:
 		RequiresCondition: end_disable >= 1
 	ExplodeWeapon@AoE:
 		Weapon: aoe.microwave_tank
-		RequiresCondition: !firing
+		RequiresCondition: !firing && !hacked && !driver_killed && !emp
 	GrantStackableConditionOnFire@End:
 		Condition: end_disable
 		ArmamentName: primary
@@ -1697,6 +1699,7 @@ vehicle.microwave_tank:
 		RevokeAll: true
 		IsCyclic: false
 	AttackTurreted:
+		RequiresCondition: !hacked && !driver_killed && !emp
 	WithSpriteTurret:
 	DamageMultiplier@COMPOSITE_ARMOR:
 		RequiresCondition: composite_armor
@@ -1782,11 +1785,12 @@ vehicle.ecm_tank:
 		RevokeAll: true
 		IsCyclic: false
 	AttackTurreted:
+		RequiresCondition: !hacked && !driver_killed && !emp
 	WithSpriteTurret:
 	JamsMissiles:
 		Range: 3c0
 		DeflectionStances: Neutral, Enemy
-		RequiresCondition: !firing
+		RequiresCondition: !firing && !hacked && !driver_killed && !emp
 	WithRangeCircle:
 		Range: 3c0
 		Color: DDDD0088
