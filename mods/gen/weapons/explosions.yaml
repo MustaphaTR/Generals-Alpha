@@ -626,8 +626,9 @@ BombTruckExplosion.toxin_gamma:
 
 explosion.nuclear_reactor:
 	Warhead@1Dam_impact: SpreadDamage
-		Spread: 2c0
-		Damage: 40000
+		Spread: 1c512 # 1c128
+		Falloff: 100, 100
+		Damage: 35000
 		Versus:
 			aircraft.comanche: 130
 			aircraft.chinook: 50
@@ -636,6 +637,7 @@ explosion.nuclear_reactor:
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@5Dam_impact: SpreadDamage
 		Spread: 2c512
+		Falloff: 100, 100
 		Damage: 5000
 		Versus:
 			aircraft.comanche: 130
