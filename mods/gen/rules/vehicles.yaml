@@ -165,6 +165,7 @@ vehicle.humvee:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
 		PortCones: 512, 512, 512, 512
+		RequiresCondition: !hacked && !driver_killed && !emp
 	ThrowsShrapnel@Turret1:
 		Weapons: debris.humvee.turret
 		Pieces: 1, 1
@@ -1431,13 +1432,14 @@ vehicle.battle_Bus:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
 		PortCones: 512, 512, 512, 512
+		RequiresCondition: !hacked && !driver_killed && !emp
 	GrantConditionOnHealth@HUSK:
-		HP: 650
+		HP: 65000
 		Condition: husk
 		GrantPermanently: true
 	-GrantConditionOnDamageState@DAMAGED:
 	GrantConditionOnHealth@DAMAGED:
-		HP: 750
+		HP: 75000
 		Condition: damaged
 	SelfHealing@JUNK_REPAIR:
 		RequiresCondition: junk_repair && !husk
