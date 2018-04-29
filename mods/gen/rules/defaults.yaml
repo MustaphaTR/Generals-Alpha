@@ -601,6 +601,9 @@
 		Type: timed_demo_bomb
 		ShowProgressBar: false
 		Condition: timed_demo_bomb
+	Targetable@TIMED_DEMO_BOMB:
+		TargetTypes: TimedDemoBomb
+		RequiresCondition: !timed_demo_bomb
 	WithDecoration@TIMED_DEMO_BOMB:
 		RequiresSelection: false
 		Image: car_bomb
