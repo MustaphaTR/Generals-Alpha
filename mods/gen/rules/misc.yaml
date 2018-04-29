@@ -280,6 +280,9 @@ camera.satellite_hack2:
 		RequiresCondition: internet_center
 	KillsSelf:
 		Delay: 500
+	-GrantConditionOnPrerequisite@DETENTION_CAMP:
+	-GrantConditionOnPrerequisite@STRATEGY_CENTER:
+	-GrantConditionOnPrerequisite@ZH_UNITS:
 	GrantConditionOnPrerequisite@INTERNET_CENTER:
 		Condition: internet_center
 		Prerequisites: building.internet_center
