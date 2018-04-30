@@ -1455,6 +1455,8 @@ building.demo_trap:
 	-SoundOnDamageTransition:
 	-WithMakeAnimation:
 	-Demolishable:
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, DemoTrap
 	ExternalCondition@SELF_DESTRUCT:
 		Condition: self_destruct
 	GrantConditionOnDamageState@UNCLOAK:

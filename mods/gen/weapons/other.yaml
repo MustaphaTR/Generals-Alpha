@@ -644,6 +644,19 @@ attach.demo_jarmen_kell.timed:
 	Warhead@1Att: AttachDelayedWeapon
 		Weapon: explosion.demo_charge.demo_gen
 
+detach.mcc:
+	ReloadDelay: 25
+	Warhead@1Det: DetachDelayedWeapon
+		Types: timed_demo_bomb
+		DetachLimit: 1024
+		Range: 4c0
+	Warhead@2Dam: SpreadDamage
+		Spread: 4c0
+		Falloff: 100, 100
+		Damage: 100000
+		ValidTargets: DemoTrap, Mine
+		ValidStances: Enemy, Neutral
+
 ^default.spawner:
 	ReloadDelay: 5
 	Range: 1c0

@@ -2840,7 +2840,7 @@ vehicle.nuke_cannon.nuke:
 		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Description: Allows construction around themselves.
+		Description: Builds structures.\n\nCan be deployed to disarm enemy bombs, demo traps or mines.
 	Valued:
 		Cost: 1000
 	CustomProductionCost@Refinery:
@@ -2857,6 +2857,7 @@ vehicle.nuke_cannon.nuke:
 	Mobile:
 		Speed: 25
 		Voice: Move
+		RequiresCondition: !hacked && !driver_killed && !emp && !deployed
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
 	Crushable:
@@ -2878,6 +2879,17 @@ vehicle.nuke_cannon.nuke:
 		ZOffset: 2048
 		ReferencePoint: Top
 		ValidStances: Ally, Neutral, Enemy
+	GrantTimedConditionOnDeploy@DISARM:
+		DeployedCondition: deployed
+		ShowSelectionBar: false
+		DeployedTicks: 50
+		CooldownTicks: 25
+	ExplodeWeapon@DISARM:
+		Weapon: detach.mcc
+		RequiresCondition: deployed
+	WithRangeCircle@DISARM:
+		Range: 4c0
+		Color: CC550066
 
 vehicle.usa_mcc:
 	Inherits: ^default.mcc
