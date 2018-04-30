@@ -1125,6 +1125,10 @@ building.particle_cannon:
 		AddExtension: False
 	icon: pcanicon
 
+building.particle_cannon.super:
+	Inherits: building.particle_cannon
+	icon: pcansupericon
+
 building.scud_storm:
 	idle: invis
 	turret-full: v2rl

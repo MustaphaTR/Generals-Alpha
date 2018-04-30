@@ -3085,15 +3085,12 @@ building.particle_cannon:
 	Tooltip:
 		Name: Particle Uplink Cannon
 	Buildable:
-		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.boss_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.boss_gen_building
 		BuildPaletteOrder: 10
 		BuildDuration: 1500
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, !prerequisite.enough_particle, ~techlevel.unrestricted
 		Description: Provides Particle Cannon support power.
-	CustomProductionCost@Super:
-		Queue: queue.super_gen_building
-		Cost: 2500
 	Building:
 		Footprint: XX xx
 		Dimensions: 2,2
@@ -3148,8 +3145,14 @@ building.particle_cannon:
 	Voiced:
 		VoiceSet: ParticleCannonVoice
 	RenderSprites:
-		Image: building.particle_cannon
 		PlayerPalette: cncplayer
+
+building.particle_cannon.super:
+	Inherits: building.particle_cannon
+	Buildable:
+		Queue: queue.super_gen_building
+	Valued:
+		Cost: 2500
 
 building.scud_storm:
 	Inherits: ^Building
