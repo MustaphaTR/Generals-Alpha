@@ -473,6 +473,43 @@ building.emp_patriot:
 	Inherits: building.patriot
 	icon: empsamicon
 
+building.laser_turret:
+	idle: gun
+		Facings: 32
+		UseClassicFacingFudge: True
+	recoil: gun
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	make: gunmake
+		Length: *
+	damaged-idle: gun
+		Start: 64
+		Facings: 32
+		UseClassicFacingFudge: True
+	damaged-recoil: gun
+		Start: 96
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 5
+	bib: mbGUN.tem
+		Length: *
+		AddExtension: false
+	bib-Snow: mbGUN.sno
+		Length: *
+		AddExtension: false
+	bib-SnowRoad: mbGUN.sno
+		Length: *
+		AddExtension: false
+	bib-Sand: mbGUN.des
+		Length: *
+		AddExtension: false
+	bib-SandRoad: mbGUN.des
+		Length: *
+		AddExtension: false
+	icon: lturicon
+
 building.demo_trap:
 	idle: dmtrp
 		Offset: 2, 0
@@ -1294,32 +1331,6 @@ fix:
 		Offset: 0,-4
 		UseTilesetExtension: true
 	icon: fixicon
-
-gun:
-	idle:
-		Facings: 32
-		UseClassicFacingFudge: True
-	recoil:
-		Start: 32
-		Facings: 32
-		UseClassicFacingFudge: True
-	make: gunmake
-		Length: *
-	damaged-idle:
-		Start: 64
-		Facings: 32
-		UseClassicFacingFudge: True
-	damaged-recoil:
-		Start: 96
-		Facings: 32
-		UseClassicFacingFudge: True
-	muzzle: gunfire2
-		Length: 5
-	bib: mbGUN
-		Length: *
-		Offset: -1,-1
-		UseTilesetExtension: true
-	icon: gunicon
 
 tsla:
 	idle:

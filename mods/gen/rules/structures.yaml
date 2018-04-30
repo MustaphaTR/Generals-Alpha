@@ -1360,7 +1360,7 @@ building.patriot:
 	Inherits@REVEAL: ^Reveal360
 	Inherits@SHAPE: ^2x1Shape
 	Buildable:
-		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.boss_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.boss_gen_building
 		BuildPaletteOrder: 4
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -1423,6 +1423,65 @@ building.emp_patriot:
 		Weapon: missile.emp_patriot.ground
 	Armament@AA:
 		Weapon: missile.emp_patriot.air
+
+building.laser_turret:
+	Inherits: ^Defense
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@LOWPOWER: ^DisableOnLowPower
+	Inherits@RANGER: ^EmitRangersOnDeath
+	Inherits@REVEAL: ^Reveal360
+	Inherits@SHAPE: ^1x1Shape
+	Buildable:
+		Queue: queue.laser_gen_building
+		BuildPaletteOrder: 4
+		BuildDuration: 625
+		BuildDurationModifier: 100
+		Prerequisites: prerequisite.reactor, ~techlevel.low
+		Description: Anti-tank & anti-air base defense.
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Laser Turret
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	Health:
+		HP: 100000
+	Armor:
+		Type: building.defense
+	WithBuildingBib:
+		HasMinibib: Yes
+	Turreted:
+		TurnSpeed: 30
+		InitialFacing: 56
+	-WithSpriteBody:
+	WithEmbeddedTurretSpriteBody:
+	Armament@AG:
+		Weapon: laser.laser_turret.ground
+		LocalOffset: 512,0,112
+		MuzzleSequence: muzzle
+	Armament@AA:
+		Weapon: laser.laser_turret.air
+		LocalOffset: 512,0,112
+		MuzzleSequence: muzzle
+	WithRangeCircle:
+		Range: 5c640
+	WithRangeCircle@AA:
+		Type: aa
+		Range: 8c768
+		Color: 00DDDD88
+	AttackTurreted:
+		PauseOnCondition: emp || hacked || lowpower
+	WithMuzzleOverlay:
+	Power:
+		Amount: -5
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 5c0
+	BodyOrientation:
+		UseClassicFacingFudge: True
+	Voiced:
+		VoiceSet: PatriotVoice
 
 building.demo_trap:
 	Inherits: ^Defense

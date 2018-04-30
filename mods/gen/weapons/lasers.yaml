@@ -1,0 +1,108 @@
+laser.laser_tank:
+	Inherits: cannon.crusader_tank
+	Report: vpalwe2d.aud
+	-Projectile:
+	Projectile: LaserZap
+		Width: 100
+		ZOffset: 2047
+		Color: FF0000
+	Warhead@1Dam: SpreadDamage
+		Damage: 8000
+
+laser.laser_turret.ground:
+	Inherits: ^AntiGroundMissile
+	Burst: 3
+	BurstDelay: 32
+	ReloadDelay: 60
+	Range: 5c640
+	MinRange: 0c0
+	Report: vpalwe2d.aud
+	-Projectile:
+	Projectile: LaserZap
+		Width: 60
+		ZOffset: 2047
+		Color: FF0000
+	Warhead@1Dam: SpreadDamage
+		Damage: 4000
+		Spread: 0c77
+		Falloff: 100, 100
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+			building.internet_center: 70
+
+laser.laser_turret.air:
+	Inherits: ^AntiAirMissile
+	Burst: 4
+	BurstDelay: 32
+	ReloadDelay: 60
+	Range: 8c768
+	MinRange: 0c0
+	Report: vpalwe2d.aud
+	-Projectile:
+	Projectile: LaserZap
+		Width: 60
+		ZOffset: 2047
+		Color: FF0000
+	Warhead@1Dam: SpreadDamage
+		Damage: 3500
+		Spread: 0c77
+		Falloff: 100, 100
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+			building.internet_center: 70
+
+laser.avenger.air:
+	Inherits: ^AntiAirMissile
+	ReloadDelay: 4
+	Range: 7c512
+	MinRange: 0c0
+	Report: vpalwe2d.aud
+	-Projectile:
+	Projectile: LaserZap
+		Width: 60
+		ZOffset: 2047
+		Color: FF0000
+	Warhead@1Dam: SpreadDamage
+		Damage: 1000
+		Versus:
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.avenger: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.tank: 25
+			vehicle.dragon_tank: 25
+			aircraft.normal: 120
+			aircraft.comanche: 120
+			aircraft.chinook: 50
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
+			building.wall: 6
+
+laser.paladin_tank:
+	ReloadDelay: 25
+	Range: 3c0
+	Report: vpalwe2d.aud
+	InvalidTargets: Vehicle, Tank, Structure, Wall
+	Projectile: LaserZap
+		Width: 60
+		ZOffset: 2047
+		Color: FF0000
+	Warhead@1Dam: TargetDamage
+		Damage: 10000
+		Versus:
+			infantry.normal: 50
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		DamageTypes: TriggerProne, FireDeath
+
+laser.king_raptor:
+	Inherits: laser.paladin_tank
+
+laser.avenger.point_defense:
+	Inherits: laser.paladin_tank
