@@ -2140,6 +2140,8 @@ building.toxin_tunnel_network:
 	-WithMuzzleOverlay:
 	SpawnActorOnDeath:
 		Actor: hole.toxin_tunnel_network
+	RenderSprites:
+		Image: building.toxin_tunnel_network
 
 building.toxin_tunnel_network.no_free_actor:
 	Inherits: building.toxin_tunnel_network
