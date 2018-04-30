@@ -1727,6 +1727,7 @@ building.bunker:
 	Armor:
 		Type: building.normal
 	Selectable:
+		Bounds: 48,48
 		Class: building.bunker
 	Production:
 		Produces: queue.just_mine
@@ -1749,6 +1750,7 @@ building.bunker:
 		MaxWeight: 5
 		PipCount: 5
 		EjectOnDeath: true
+		LoadedCondition: loaded
 		PauseOnCondition: emp || hacked
 	AttackGarrisoned:
 		Armaments: garrison
@@ -1756,6 +1758,9 @@ building.bunker:
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
 		RequiresCondition: !emp && !hacked
+	WithIdleOverlay@flag:
+		Sequence: idle-flag
+		RequiresCondition: loaded
 	Power:
 		Amount: 0
 	Voiced:
