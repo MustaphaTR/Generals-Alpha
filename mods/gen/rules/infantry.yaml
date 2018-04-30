@@ -1182,6 +1182,7 @@ infantry.colonel_burton:
 		Prerequisites: building.strategy_center, !prerequisite.enough_colonel_burton, ~techlevel.high
 		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures by force firing.\n\nCan backstab infantry without getting detected by force firing.\n\nCamouflaged.
 		ReadyAudio: BurtonCreated
+		BuildLimit: 1
 	Mobile:
 		Speed: 30
 		Voice: Move
@@ -1290,6 +1291,7 @@ infantry.jarmen_kell:
 		Prerequisites: building.palace, !prerequisite.enough_jarmen_kell, ~techlevel.high
 		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCamouflaged.
 		ReadyAudio: JarmenCreated
+		BuildLimit: 1
 	Health:
 		HP: 20000
 	Armor:
@@ -1377,6 +1379,7 @@ infantry.black_lotus:
 		Prerequisites: building.propaganda_center, !prerequisite.enough_black_lotus, ~techlevel.high
 		Description: Can capture enemy structures from a distance.\n\nCan disable enemy vehicles.\n\nCamouflaged.
 		ReadyAudio: LotusCreated
+		BuildLimit: 1
 	Valued:
 		Cost: 1500
 	CustomProductionCost@Nuke:
