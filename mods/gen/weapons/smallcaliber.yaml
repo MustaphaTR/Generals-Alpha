@@ -260,7 +260,7 @@ mg.humvee:
 	Inherits: ^LightMG
 	ReloadDelay: 5
 	Range: 3c768
-	Report: pillbox1.aud
+	Report: vhumweaa.wav, vhumweab.wav, vhumweac.wav, vhumwead.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 1000
 		Versus:
@@ -296,7 +296,7 @@ mg.technical:
 	Inherits: ^LightMG
 	ReloadDelay: 5
 	Range: 3c0
-	Report: pillbox1.aud
+	Report: vtecweaa.wav, vtecweab.wav, vtecweac.wav, vtecwead.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 800
 		Versus:
@@ -350,7 +350,7 @@ mg.quad_cannon.ground:
 	Inherits: ^LightMG
 	ReloadDelay: 3
 	Range: 3c768
-	Report: pillbox1.aud
+	Report: vquaweaa.wav, vquaweab.wav, vquaweac.wav, vquawead.wav, vquaweae.wav, vquaweaf.wav, vquaweag.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 1000
 		Versus:
@@ -547,6 +547,7 @@ sniper.jarmen_kell:
 	Inherits: ^SnipeWeapon
 	ReloadDelay: 25
 	Range: 5c640
+	Report: ijarwe1a.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 18000
 		Versus:
@@ -563,6 +564,7 @@ sniper.jarmen_kell.vehicle:
 	Inherits: ^SnipeWeapon
 	ReloadDelay: 750
 	Range: 5c640
+	Report: ijarwe2a.wav
 	ValidTargets: Vehicle, Tank, Ship
 	InvalidTargets: Infantry, Structure, Wall, Husk, NoDriverKill
 	Warhead@1Dam: TargetDamage

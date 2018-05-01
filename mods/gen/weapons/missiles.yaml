@@ -733,7 +733,7 @@ missile.rocket_buggy:
 	MinRange: 1c256
 	Burst: 6
 	BurstDelay: 10
-	Report: vrocweaa.aud, vrocweab.aud, vrocweac.aud, vrocwead.aud, vrocweae.aud, vrocweaf.aud
+	Report: vrocweaa.wav, vrocweab.wav, vrocweac.wav, vrocwead.wav, vrocweae.wav, vrocweaf.wav
 	ValidTargets: Ground
 	TargetActorCenter: true
 	Projectile: Bullet
@@ -803,7 +803,7 @@ missile.scud_launcher:
 	ReloadDelay: 250
 	Range: 8c768
 	MinRange: 5c0
-	Report: missile1.aud
+	Report: vscuweaa.wav
 	-Projectile:
 	Projectile: Bullet
 		Speed: 170
@@ -874,7 +874,6 @@ missile.scud_storm:
 	ReloadDelay: 15
 	MinRange: 0c0
 	Range: 1000c0
-	Report: missile1.aud
 	Projectile: Bullet
 		Speed: 384
 		Inaccuracy: 5000c0
@@ -937,7 +936,7 @@ missile.tomahawk_launcher:
 	ReloadDelay: 175
 	Range: 8c768
 	MinRange: 2c512
-	Report: rocket2.aud
+	Report: vtomweaa.wav
 	Projectile: Missile
 		Speed: 170
 		Blockable: false

@@ -30,7 +30,7 @@
 cannon.scorpion_tank:
 	Inherits: ^Cannon
 	ReloadDelay: 25
-	Report: cannon2.aud
+	Report: vscoweaa.wav, vscoweab.wav, vscoweac.wav, vscowead.wav
 	Projectile: Bullet
 		Speed: 853
 		Image: 50CAL
@@ -70,6 +70,7 @@ cannon.scorpion_tank.toxin_gamma:
 cannon.crusader_tank:
 	Inherits: ^Cannon
 	ReloadDelay: 50
+	Report: vcruweaa.wav, vcruweab.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 6000
 		Versus:
@@ -80,6 +81,7 @@ cannon.crusader_tank:
 cannon.battlemaster_tank:
 	Inherits: ^Cannon
 	ReloadDelay: 50
+	Report: vbatweaa.wav, vbatweab.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 6000
 		Versus:
@@ -115,6 +117,7 @@ cannon.battlemaster_tank.nuke.autoloader:
 cannon.paladin_tank:
 	Inherits: ^Cannon
 	ReloadDelay: 50
+	Report: vpalweaa.wav, vpalweab.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 6000
 		Versus:
@@ -125,6 +128,7 @@ cannon.paladin_tank:
 cannon.marauder_tank:
 	Inherits: ^Cannon
 	ReloadDelay: 50
+	Report: vmarweaa.wav, vmarweab.wav, vmarweac.wav, vmarwead.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 6000
 		Versus:
@@ -174,6 +178,7 @@ cannon.overlord_tank:
 	Burst: 2
 	BurstDelay: 6
 	Range: 4c384
+	Report: voveweaa.wav, voveweab.wav, voveweac.wav, vovewead.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 8000
 		Versus:
@@ -230,7 +235,7 @@ cannon.inferno_cannon:
 	ReloadDelay: 100
 	MinRange: 1c256
 	Range: 7c512
-	Report: tank5.aud
+	Report: vinfweaa.wav, vinfweab.wav, vinfweac.wav
 	TargetActorCenter: true
 	Projectile: Bullet
 		TrailImage: fb2
@@ -267,7 +272,7 @@ cannon.nuke_cannon:
 	ReloadDelay: 250
 	Range: 8c768
 	MinRange: 5c0
-	Report: tank5.aud
+	Report: vnukweaa.wav
 	TargetActorCenter: true
 	Projectile: Bullet
 		ContrailLength: 30
@@ -319,7 +324,7 @@ cannon.nuke_cannon.neutron:
 	ReloadDelay: 250
 	Range: 8c768
 	MinRange: 5c0
-	Report: tank5.aud
+	Report: vnukweaa.wav
 	TargetActorCenter: true
 	Projectile: Bullet
 		ContrailLength: 30
