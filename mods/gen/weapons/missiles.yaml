@@ -395,6 +395,7 @@ missile.missile_defender.ground:
 	RequiresNormalFire: true
 	ReloadDelay: 25
 	Range: 4c384
+	Report: imisweaa.wav, imisweab.wav, imisweac.wav
 	Projectile: Missile
 		TrailImage: smokey
 	Warhead@1Dam: SpreadDamage
@@ -423,6 +424,7 @@ missile.missile_defender.air:
 	RequiresNormalFire: true
 	ReloadDelay: 25
 	Range: 6c0
+	Report: imisweaa.wav, imisweab.wav, imisweac.wav
 	Projectile: Missile
 		TrailImage: smokey
 		RangeLimit: 7c0
@@ -487,34 +489,40 @@ missile.missile_defender.locked.air:
 missile.rpg_trooper.ground:
 	Inherits: missile.missile_defender.ground
 	RequiresNormalFire: false
+	Report: irpgweaa.wav, irpgweab.wav, irpgweac.wav, irpgwead.wav, irpgweae.wav
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.rpg_trooper.air:
 	Inherits: missile.missile_defender.air
 	RequiresNormalFire: false
+	Report: irpgweaa.wav, irpgweab.wav, irpgweac.wav, irpgwead.wav, irpgweae.wav
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.rpg_trooper.garrison.ground:
 	Inherits: missile.missile_defender.garrison.ground
 	RequiresNormalFire: false
+	Report: irpgweaa.wav, irpgweab.wav, irpgweac.wav, irpgwead.wav, irpgweae.wav
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.rpg_trooper.garrison.air:
 	Inherits: missile.missile_defender.garrison.air
 	RequiresNormalFire: false
+	Report: irpgweaa.wav, irpgweab.wav, irpgweac.wav, irpgwead.wav, irpgweae.wav
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
 missile.tank_hunter.ground:
 	Inherits: missile.missile_defender.ground
 	RequiresNormalFire: false
+	Report: itanweaa.wav, itanweab.wav, itanweac.wav, itanwead.wav
 
 missile.tank_hunter.air:
 	Inherits: missile.missile_defender.air
 	RequiresNormalFire: false
+	Report: itanweaa.wav, itanweab.wav, itanweac.wav, itanwead.wav
 
 missile.hellfire_drone:
 	Inherits: ^AntiGroundMissile
@@ -597,7 +605,7 @@ missile.patriot.ground:
 	Burst: 4
 	BurstDelay: 6
 	Range: 5c640
-	Report: missile1.aud
+	Report: bpatweaa.wav, bpatweab.wav, bpatweac.wav
 	Projectile: Missile
 		Arm: 3
 		Inaccuracy: 0
@@ -620,7 +628,7 @@ missile.patriot.air:
 	Burst: 4
 	BurstDelay: 6
 	Range: 8c768
-	Report: missile1.aud
+	Report: bpatweaa.wav, bpatweab.wav, bpatweac.wav
 	Projectile: Missile
 		Arm: 3
 		Inaccuracy: 0

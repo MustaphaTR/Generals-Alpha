@@ -136,7 +136,7 @@ mg.ranger:
 	Range: 2c512
 	Burst: 3
 	BurstDelay: 3
-	Report: gun11.aud
+	Report: iranweaa.wav, iranweab.wav, iranweac.wav, iranwead.wav, iranweae.wav, iranweaf.wav, iranweag.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 500
 		Versus:
@@ -166,11 +166,13 @@ mg.ranger.garrison:
 
 mg.rebel:
 	Inherits: mg.ranger
+	Report: irebweaa.wav, irebweab.wav, irebweac.wav, irebwead.wav, irebweae.wav, irebweaf.wav, irebweag.wav
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: TriggerProne, DropCrate, BulletDeath
 
 mg.rebel.garrison:
 	Inherits: mg.ranger.garrison
+	Report: irebweaa.wav, irebweab.wav, irebweac.wav, irebwead.wav, irebweae.wav, irebweaf.wav, irebweag.wav
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: TriggerProne, DropCrate, BulletDeath
 
@@ -178,7 +180,7 @@ mg.red_guard:
 	Inherits: ^LightMG
 	ReloadDelay: 25
 	Range: 2c512
-	Report: gun5.aud
+	Report: iredweaa.wav, iredweab.wav, iredweac.wav, iredwead.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 1500
 		Versus:
@@ -212,7 +214,7 @@ mg.colonel_burton:
 	Inherits: ^LightMG
 	ReloadDelay: 3
 	Range: 3c128
-	Report: gun11.aud
+	Report: icolweaa.wav, icolweab.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 4000
 		Versus:
@@ -483,7 +485,7 @@ gatling.gatling_cannon.ground:
 	Inherits: ^LightMG
 	ReloadDelay: 6
 	Range: 5c640
-	Report: pillbox1.aud
+	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav
 	Burst: 2
 	Warhead@1Dam: SpreadDamage
 		Damage: 1000

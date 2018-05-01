@@ -130,6 +130,7 @@ parabomb.emp:
 		Condition: emp
 	Warhead@5EffWater: CreateEffect
 		Explosions: emp
+		ImpactSounds: sempexpl.wav
 
 parabomb.cluster_mines:
 	Inherits: ^ParaBomb
@@ -160,7 +161,7 @@ Atomic:
 		Size: 3
 	Warhead@4Eff_impact: CreateEffect
 		Explosions: nuke
-		ImpactSounds: kaboom1.aud
+		ImpactSounds: sneutexp.wav
 		ImpactActors: false
 	Warhead@5Radio: CreateRadioactivity
 		RadioactivityLayerName: radioactivity
