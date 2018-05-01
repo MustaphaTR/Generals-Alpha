@@ -418,18 +418,24 @@ gatling.minigunner.air:
 	Warhead@1Dam: SpreadDamage
 		Damage: 1000
 		ValidTargets: Air
+		Versus:
+			vehicle.tank: 25
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
 
 gatling.minigunner.garrison.ground:
 	Inherits: gatling.minigunner.ground
 	Range: 4c133
 	Warhead@1Dam: SpreadDamage
-		Damage: 1300
+		Damage: 1250
 
 gatling.minigunner.garrison.air:
 	Inherits: gatling.minigunner.air
 	Range: 11c682
 	Warhead@1Dam: SpreadDamage
-		Damage: 1300
+		Damage: 1250
 
 gatling.gatling_tank.ground:
 	Inherits: ^LightMG
@@ -466,6 +472,12 @@ gatling.gatling_tank.air:
 	Warhead@1Dam: SpreadDamage
 		Damage: 1200
 		ValidTargets: Air
+		Versus:
+			vehicle.tank: 25
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
 
 gatling.gatling_cannon.ground:
 	Inherits: ^LightMG
@@ -503,6 +515,12 @@ gatling.gatling_cannon.air:
 	Warhead@1Dam: SpreadDamage
 		Damage: 500
 		ValidTargets: Air
+		Versus:
+			vehicle.tank: 25
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
 
 ^SnipeWeapon:
 	ReloadDelay: 80
