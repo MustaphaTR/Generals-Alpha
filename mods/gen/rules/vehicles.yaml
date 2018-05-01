@@ -2864,6 +2864,7 @@ vehicle.nuke_cannon.nuke:
 		CrushClasses: vehicle
 	Passenger:
 		Weight: 5
+		CargoCondition: in_transport
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	BaseBuilding:
@@ -2884,6 +2885,9 @@ vehicle.nuke_cannon.nuke:
 		ShowSelectionBar: false
 		DeployedTicks: 50
 		CooldownTicks: 25
+	GrantConditionOnMovement:
+		Condition: moving
+		ConsiderTurning: true
 	ExplodeWeapon@DISARM:
 		Weapon: detach.mcc
 		RequiresCondition: deployed
@@ -2902,7 +2906,7 @@ vehicle.usa_mcc:
 		Name: USA Construction Vehicle
 	Production:
 		Produces: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || moving || in_transport || deployed
 		RequiresCondition: !driver_killed
 	ProductionBar@USA_BUILDING:
 		ProductionType: queue.usa_building
@@ -2970,7 +2974,7 @@ vehicle.gla_mcc:
 		Name: GLA Construction Vehicle
 	Production:
 		Produces: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || moving || in_transport || deployed
 		RequiresCondition: !driver_killed
 	ProductionBar@GLA_BUILDING:
 		ProductionType: queue.gla_building
@@ -3025,7 +3029,7 @@ vehicle.prc_mcc:
 		Name: PRC Construction Vehicle
 	Production:
 		Produces: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || moving || in_transport || deployed
 		RequiresCondition: !driver_killed
 	ProductionBar@PRC_BUILDING:
 		ProductionType: queue.prc_building
