@@ -736,9 +736,9 @@ missile.rocket_buggy:
 	Report: vrocweaa.wav, vrocweab.wav, vrocweac.wav, vrocwead.wav, vrocweae.wav, vrocweaf.wav
 	ValidTargets: Ground
 	TargetActorCenter: true
-	Projectile: Bullet
-		Inaccuracy: 128
+	Projectile: Missile
 		LaunchAngle: 62
+		RangeLimit: 8c512
 		Speed: 341
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
