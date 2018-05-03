@@ -320,8 +320,9 @@ vehicle.radar_van:
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
+		RequiresCondition: !hacked && !driver_killed && !emp
 	ProvidesRadar:
-		RequiresCondition: !hacked && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp
 	SpawnActorPower@RADAR_VAN_SCAN:
 		Actors:
 			1: camera.radar_van_scan
