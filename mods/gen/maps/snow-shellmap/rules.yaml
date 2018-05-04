@@ -1,0 +1,232 @@
+Player:
+	-ConquestVictoryConditions:
+
+World:
+	-CrateSpawner:
+	-SpawnMPUnits:
+	-MPStartLocations:
+	MusicPlaylist:
+		StartingMusic: usa_01
+		DisableWorldSounds: true
+	ResourceType@ore:
+		ValuePerUnit: 0
+	ResourceType@gem:
+		ValuePerUnit: 0
+	LuaScript:
+		Scripts: snow-shellmap.lua
+	-StartGameNotification:
+
+^Vehicle:
+	GivesBounty:
+		Percentage: 0
+	GainsExperience:
+		Conditions:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	Crushable:
+		RequiresCondition: !unkillable
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Tank:
+	GivesBounty:
+		Percentage: 0
+	GainsExperience:
+		Conditions:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	Crushable:
+		RequiresCondition: !unkillable
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Infantry:
+	GivesBounty:
+		Percentage: 0
+	GainsExperience:
+		Conditions:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	Crushable:
+		RequiresCondition: !unkillable
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Ship:
+	GivesBounty:
+		Percentage: 0
+	GainsExperience:
+		Conditions:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Plane:
+	GivesBounty:
+		Percentage: 0
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Building:
+	GivesBounty:
+		Percentage: 0
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+tech.communications_center:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Wall:
+	GivesBounty:
+		Percentage: 0
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	Crushable:
+		RequiresCondition: !unkillable
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Gate:
+	GivesBounty:
+		Percentage: 0
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Mine:
+	GivesBounty:
+		Percentage: 0
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+^Flag:
+	GivesBounty:
+		Percentage: 0
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+tech.oil_derrick:
+	CashTrickler:
+		ShowTicks: false
+
+tech.shipyard:
+	GivesBounty:
+		Percentage: 0
+	GainsExperience:
+		Conditions:
+	DamageMultiplier@UNKILLABLE:
+		RequiresCondition: unkillable
+		Modifier: 0
+	ExternalCondition@UNKILLABLE:
+		Condition: unkillable
+
+building.demo_trap:
+	-ExternalCondition@UNKILLABLE:
+	-DamageMultiplier@UNKILLABLE:
+
+building.usa_airfield:
+	Exit@4:
+		ExitCell: 1,1
+		Facing: 192
+		SpawnOffset: -1024,0,0
+	Exit@5:
+		ExitCell: 1,2
+		Facing: 192
+		SpawnOffset: -1024,544,0
+
+aircraft.comanche:
+	Buildable:
+		BuildAtProductionType: queue.aircraft
+
+building.cold_fusion_reactor:
+	Power:
+		Amount: 6
+
+building.black_market:
+	CashTrickler:
+		ShowTicks: false
+
+building.supply_drop_zone:
+	CashTrickler:
+		ShowTicks: false
+
+building.bunker:
+	Cargo:
+		InitialUnits: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, infantry.tank_hunter
+
+infantry.hacker:
+	ExternalCondition@deployed:
+		Condition: deployed
+	CashTrickler@RANK-0:
+		ShowTicks: false
+	CashTrickler@RANK-1:
+		ShowTicks: false
+	CashTrickler@RANK-2:
+		ShowTicks: false
+	CashTrickler@RANK-ELITE:
+		ShowTicks: false
+
+infantry.jarmen_kell:
+	Cloak:
+		InitialDelay: 0
+
+infantry.black_lotus:
+	Cloak:
+		InitialDelay: 0
+
+building.usa_supply_center:
+	-FreeActor:
+
+building.prc_supply_center:
+	-FreeActor:
+
+crate.scrap:
+	GiveCashCrateAction@1:
+		UseCashTick: false
+	GiveCashCrateAction@2:
+		UseCashTick: false
+	GiveCashCrateAction@3:
+		UseCashTick: false
+
+aircraft.chinook:
+	Targetable:
+		TargetTypes: Air, Chinook
+
+vehicle.tomahawk_launcher:
+	-Targetable:
+
+vehicle.inferno_cannon:
+	-Targetable:
+
+vehicle.scud_launcher:
+	-Targetable:
+
+vehicle.nuke_cannon:
+	-Targetable:
+
+building.speaker_tower:
+	-Targetable:
