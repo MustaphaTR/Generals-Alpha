@@ -964,6 +964,12 @@ vehicle.gatling_tank:
 		Weapon: gatling.gatling_tank.ground
 		LocalOffset: 213,0,0
 		MuzzleSequence: muzzle
+		RequiresCondition: !zh_units
+	Armament@GatlingAG_ZH:
+		Weapon: gatling.gatling_tank.ground.zh
+		LocalOffset: 213,0,0
+		MuzzleSequence: muzzle
+		RequiresCondition: zh_units
 	Armament@GatlingAA:
 		Weapon: gatling.gatling_tank.air
 		LocalOffset: 213,0,0
@@ -976,6 +982,9 @@ vehicle.gatling_tank:
 		RevokeDelay: 40
 		RevokeAll: true
 		IsCyclic: false
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	AttackTurreted:
 		RequiresCondition: !hacked && !driver_killed && !emp
 	WithSpriteTurret:

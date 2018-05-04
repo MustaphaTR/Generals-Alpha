@@ -465,6 +465,12 @@ gatling.gatling_tank.ground:
 			building.stinger_site: 10
 			building.wall: 6
 
+gatling.gatling_tank.ground.zh:
+	Inherits: gatling.gatling_tank.ground
+	Range: 3c768
+	Warhead@1Dam: SpreadDamage
+		Damage: 1500
+
 gatling.gatling_tank.air:
 	Inherits: gatling.gatling_tank.ground
 	ValidTargets: Air
