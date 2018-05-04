@@ -45,7 +45,7 @@ BindActorTriggers = function(a)
 			if a.Type == "vehicle.quad_cannon" or a.Type == "vehicle.scorpion_tank" or a.Type == "vehicle.marauder_tank" then
 				Trigger.OnIdle(a, function(a)
 					if a.IsInWorld then
-						a.AttackMove(USASupplyCenter.Location + CVec.New(2, 3))
+						a.AttackMove(USAPatriot3.Location)
 					end
 				end)
 			elseif a.Type == "vehicle.humvee" or a.Type == "vehicle.battlemaster_tank" or a.Type == "vehicle.crusader_tank" or a.Type == "vehicle.gatling_tank" or a.Type == "vehicle.dragon_tank" then
@@ -160,7 +160,7 @@ WorldLoaded = function()
 	SendAttack(usa, BottomLeftTeam, BottomLeftTeamWP, USAStrategy, DateTime.Seconds(50))
 	SendAttack(gla, TopRightTeam, TopRightTeamWP, USAStrategy, DateTime.Seconds(60))
 	SendAttack(gla, TunnelTeam, TunnelTeamWP, USAStrategy, DateTime.Seconds(30))
-	SendAttack(gla, WarFactoryTeam, WarFactoryTeamWP, USASupplyCenter, DateTime.Seconds(80))
+	SendAttack(gla, WarFactoryTeam, WarFactoryTeamWP, USAPatriot3, DateTime.Seconds(80))
 
 	DeployMe(Hacker1)
 	DeployMe(Hacker2)
