@@ -819,18 +819,6 @@
 		Duration: 100
 		Radius: 7c512
 
-^CrushesCrates:
-	Mobile:
-		Crushes: crate, mine
-
-^CrushesInfantry:
-	Mobile:
-		Crushes: crate, mine, infantry, fence
-
-^CrushesVehicles:
-	Mobile:
-		Crushes: crate, mine, infantry, fence, wall, vehicle, hero
-
 ^AutoTargetGround:
 	AutoTarget:
 		AttackAnythingCondition: stance-attackanything
@@ -1031,21 +1019,8 @@
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
 	Mobile:
-		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook
-		TerrainSpeeds:
-			Grass: 80
-			Snow: 80
-			Sand: 80
-			Concrete: 80
-			Rough: 40
-			GrassRoad: 100
-			SnowRoad: 100
-			SandRoad: 100
-			Bridge: 100
-			Ore: 70
-			Gems: 70
-			Beach: 40
 		TurnSpeed: 5
+		Locomotor: locomotor.wheeled
 		RequiresCondition: !hacked && !driver_killed && !emp
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
@@ -1117,19 +1092,7 @@
 ^Tank:
 	Inherits: ^Vehicle
 	Mobile:
-		TerrainSpeeds:
-			Grass: 80
-			Snow: 80
-			Sand: 80
-			Concrete: 80
-			Rough: 70
-			GrassRoad: 100
-			SnowRoad: 100
-			SandRoad: 100
-			Bridge: 100
-			Ore: 70
-			Gems: 70
-			Beach: 70
+		Locomotor: locomotor.tracked
 	Targetable:
 		TargetTypes: Ground, C4, Repair, Tank, Vehicle-Disguise, DetonateAttack
 		RequiresCondition: !parachute && !driver_killed
@@ -1149,28 +1112,14 @@
 	Inherits@5: ^AffectedByEMP
 	Inherits@6: ^AffectedByEmergencyRepair
 	Inherits@7: ^AffectedByGPSScambler
-	Inherits@CRUSH: ^CrushesCrates
 	Inherits@REVEAL: ^Reveal200
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
 	Mobile:
-		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook
 		Speed: 90
-		TerrainSpeeds:
-			Grass: 80
-			Snow: 80
-			Sand: 80
-			Concrete: 80
-			Rough: 40
-			GrassRoad: 100
-			SnowRoad: 100
-			SandRoad: 100
-			Bridge: 100
-			Ore: 70
-			Gems: 70
-			Beach: 40
 		TurnSpeed: 5
+		Locomotor: locomotor.sentry_drone
 		RequiresCondition: !disabled && !emp
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
@@ -1262,10 +1211,9 @@
 	Inherits@7: ^AffectsDemoTrap
 	Inherits@8: ^AffectedByScrapCratePowerups
 	Inherits@9: ^AffectedByFrenzy
-	Inherits@10: ^CrushesCrates
-	Inherits@11: ^AffectedByRadiationAndToxins
-	Inherits@12: ^AffectedByGPSScambler
-	Inherits@13: ^AffectedByAmbulance
+	Inherits@10: ^AffectedByRadiationAndToxins
+	Inherits@11: ^AffectedByGPSScambler
+	Inherits@12: ^AffectedByAmbulance
 	Huntable:
 	DrawLineToTarget:
 	Health:
@@ -1273,22 +1221,8 @@
 	Armor:
 		Type: infantry.normal
 	Mobile:
-		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook
 		Speed: 20
-		SharesCell: true
-		TerrainSpeeds:
-			Grass: 90
-			Snow: 90
-			Sand: 80
-			Concrete: 90
-			Rough: 80
-			GrassRoad: 100
-			SnowRoad: 100
-			SandRoad: 100
-			Bridge: 100
-			Ore: 80
-			Gems: 80
-			Beach: 80
+		Locomotor: locomotor.infantry
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
@@ -1429,10 +1363,7 @@
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
 	Mobile:
-		Crushes: crate
-		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook
-		TerrainSpeeds:
-			Water: 100
+		Locomotor: locomotor.vessel
 		RequiresCondition: !disabled && !emp
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:

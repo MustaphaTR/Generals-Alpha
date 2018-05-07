@@ -923,23 +923,7 @@ aircraft.chinook:
 		Speed: 60
 		TurnSpeed: 5
 		Voice: Move
-		BlockerActors: aircraft.chinook, aircraft.combat_chinook
-		-NonBlockerActors:
-		TerrainSpeeds:
-			Grass: 100
-			Snow: 100
-			Sand: 100
-			Concrete: 100
-			Rough: 100
-			GrassRoad: 100
-			SnowRoad: 100
-			SandRoad: 100
-			Bridge: 100
-			Ore: 100
-			Gems: 100
-			Beach: 100
-			Water: 100
-			Rock: 100
+		Locomotor: locomotor.chinook
 	SpeedMultiplier@DAMAGED:
 		Modifier: 40
 	DockClient:

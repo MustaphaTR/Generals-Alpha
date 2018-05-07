@@ -774,8 +774,7 @@ infantry.saboteur:
 	Mobile:
 		Speed: 30
 		Voice: Move
-		TerrainSpeeds:
-			Rock: 67
+		Locomotor: locomotor.climber
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
 	Passenger:
@@ -896,24 +895,9 @@ infantry.angry_mob:
 		Weapon: hack.angry_mob.weapon
 	Mobile:
 		Speed: 18
-		Crushes: mine, crate
-		SharesCell: true
-		OccupySpace: false
 		Voice: Move
-		TerrainSpeeds:
-			Grass: 90
-			Snow: 90
-			Sand: 90
-			Concrete: 90
-			Rough: 80
-			GrassRoad: 100
-			SnowRoad: 100
-			SandRoad: 100
-			Bridge: 100
-			Ore: 80
-			Gems: 80
-			Tiberium: 80
-			Beach: 80
+		OccupySpace: false
+		Locomotor: locomotor.infantry
 	Voiced:
 		VoiceSet: AngryMobVoice
 	SelectionDecorations:
@@ -1186,8 +1170,7 @@ infantry.colonel_burton:
 	Mobile:
 		Speed: 30
 		Voice: Move
-		TerrainSpeeds:
-			Rock: 67
+		Locomotor: locomotor.climber
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
 	Crushable:
