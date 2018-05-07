@@ -771,11 +771,11 @@ aircraft.spy_drone:
 
 aircraft.scout_drone:
 	Inherits: aircraft.spy_drone
-	Inherits@REVEAL: ^Reveal150
+	Inherits@REVEAL: ^Reveal500
 	Tooltip:
 		Name: Scout Drone
 	Health:
-		HP: 2000
+		HP: 10000
 	Armor:
 		Type: vehicle.tank
 	DetectCloaked:
@@ -790,6 +790,7 @@ aircraft.scout_drone:
 
 aircraft.battle_drone:
 	Inherits: aircraft.scout_drone
+	Inherits@REVEAL: ^Reveal150
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Tooltip:
 		Name: Battle Drone
