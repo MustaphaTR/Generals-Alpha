@@ -789,12 +789,6 @@ Actors:
 		Location: 78,39
 		Facing: 192
 		TurretFacing: 192
-	Actor217: infantry.jarmen_kell
-		Owner: GLA
-		Location: 40,82
-		SubCell: 3
-		Facing: 96
-		TurretFacing: 96
 	Actor218: infantry.colonel_burton
 		Owner: USA
 		Location: 80,44
@@ -812,5 +806,19 @@ Actors:
 	Actor214: t15.snow
 		Owner: Neutral
 		Location: 39,85
+	Actor215: infantry.jarmen_kell
+		Owner: GLA
+		Location: 45,89
+		SubCell: 3
+		Facing: 96
+		TurretFacing: 96
+	Actor217: vehicle.technical
+		Owner: GLA
+		Location: 35,83
+		Facing: 192
+		TurretFacing: 192
+	Actor220: t11.snow
+		Owner: Neutral
+		Location: 35,83
 
 Rules: rules.yaml

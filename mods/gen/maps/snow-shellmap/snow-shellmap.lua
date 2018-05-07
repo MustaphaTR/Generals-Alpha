@@ -14,18 +14,42 @@ ProducedUnitTypes =
 	{ factory = USAWarFactory, types = { "vehicle.humvee", "vehicle.crusader_tank" } },
 	{ factory = GLAWarFactory, types = { "vehicle.scorpion_tank", "vehicle.quad_cannon", "vehicle.marauder_tank" } },
 	{ factory = PRCWarFactory, types = { "vehicle.battlemaster_tank", "vehicle.gatling_tank", "vehicle.dragon_tank" } },
-	{ factory = USAAirfield, types = { "aircraft.raptor" } }
+	{ factory = USAAirfield, types = { "aircraft.raptor", "aircraft.stealth_fighter" } }
 }
 
 StrategyTypes = { "strategy.bombardment", "strategy.search_and_destroy", "strategy.hold_the_line" }
 DroneUpgrades = { "upgrade.scout_drone", "upgrade.battle_drone" }
 SCUDUpgrades = { "upgrade.toxin_missiles", "upgrade.hi_explosive_missiles" }
+BombTruckUpgrades = { "upgrade.bio_bombs", "upgrade.hi_explosive_bombs" }
 OverlordUpgrades = { "upgrade.overlord_gatling", "upgrade.overlord_speaker" }
 
-TunnelTeam = { "vehicle.technical", "vehicle.technical", "vehicle.toxin_tractor", "vehicle.scorpion_tank", "infantry.rebel", "infantry.rebel" }
-TopRightTeam = { "vehicle.scorpion_tank", "vehicle.scorpion_tank", "vehicle.marauder_tank", "vehicle.marauder_tank", "infantry.rpg_trooper", "infantry.rpg_trooper" }
-WarFactoryTeam = { "vehicle.rocket_buggy", "vehicle.rocket_buggy", "vehicle.rocket_buggy" }
-BottomLeftTeam = { "vehicle.usa_mcc", "vehicle.humvee", "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.missile_defender" }
+TunnelTeams =
+{ 
+	{ "vehicle.technical", "vehicle.technical", "vehicle.toxin_tractor", "vehicle.scorpion_tank", "infantry.rebel", "infantry.rebel" },
+	{ "vehicle.scorpion_tank", "vehicle.scorpion_tank", "vehicle.toxin_tractor", "vehicle.toxin_tractor", "infantry.rebel", "infantry.rebel" },
+	{ "vehicle.scorpion_tank", "vehicle.scorpion_tank", "vehicle.scorpion_tank", "vehicle.scorpion_tank" },
+	{ "vehicle.bomb_truck", "infantry.terrorist", "infantry.terrorist", "infantry.terrorist" },
+	{ "infantry.rpg_trooper", "infantry.rpg_trooper", "infantry.rpg_trooper", "infantry.rpg_trooper" }
+}
+
+TopRightTeams =
+{
+	{ "vehicle.scorpion_tank", "vehicle.scorpion_tank", "vehicle.marauder_tank", "vehicle.marauder_tank", "infantry.rpg_trooper", "infantry.rpg_trooper" },
+	{ "vehicle.scorpion_tank", "vehicle.scorpion_tank", "vehicle.marauder_tank", "vehicle.marauder_tank", "infantry.rebel", "infantry.rebel", "infantry.rebel" },
+}
+
+WarFactoryTeams =
+{
+	{ "vehicle.rocket_buggy", "vehicle.rocket_buggy", "vehicle.rocket_buggy" },
+	{ "vehicle.scud_launcher", "vehicle.scud_launcher" }
+}
+
+BottomLeftTeams =
+{
+	{ "vehicle.usa_mcc", "vehicle.humvee", "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.missile_defender" },
+	{ "vehicle.usa_mcc", "vehicle.crusader_tank", "infantry.ranger", "infantry.ranger", "infantry.missile_defender", "infantry.missile_defender" },
+	{ "vehicle.usa_mcc", "vehicle.humvee", "vehicle.humvee" }
+}
 
 BindActorTriggers = function(a)
 	if a.HasProperty("DetonateAttack") then
@@ -54,7 +78,7 @@ BindActorTriggers = function(a)
 						a.AttackMove(GLABlackMarket.Location)
 					end
 				end)
-			elseif a.Type == "aircraft.raptor" then
+			elseif a.Type == "aircraft.raptor" or a.Type == "aircraft.stealth_fighter" then
 				if a.IsInWorld then
 					a.Attack(GLATunnelNetwork)
 				end
@@ -72,6 +96,18 @@ BindActorTriggers = function(a)
 				end)
 			end
 		end
+	end
+
+	if a.Type == "vehicle.humvee" or a.Type == "vehicle.crusader_tank" then
+		SelectUpgrade(a, DroneUpgrades)
+	end
+
+	if a.Type == "vehicle.scud_launcher" then
+		SelectUpgrade(a, SCUDUpgrades)
+	end
+
+	if a.Type == "vehicle.bomb_truck" then
+		SelectUpgrade(a, BombTruckUpgrades)
 	end
 end
 
@@ -105,9 +141,9 @@ SetupFactories = function()
 	end)
 end
 
-SendAttack = function(owner, team, waypoint, target, interval)
+SendAttack = function(owner, teams, waypoint, target, interval)
 	Trigger.AfterDelay(interval, function()
-		local actors = Reinforcements.Reinforce(owner, team, {waypoint.Location, waypoint.Location} )
+		local actors = Reinforcements.Reinforce(owner, Utils.Random(teams), {waypoint.Location, waypoint.Location} )
 		Utils.Do(actors, function(a)
 			if a.HasProperty("Hunt") then
 				Trigger.OnIdle(a, function(a)
@@ -124,7 +160,7 @@ SendAttack = function(owner, team, waypoint, target, interval)
 			end
 		end)
 
-		SendAttack(owner, team, waypoint, target, interval)
+		SendAttack(owner, teams, waypoint, target, interval)
 	end)
 end
 
@@ -157,10 +193,10 @@ WorldLoaded = function()
 	SelectUpgrade(SCUDLauncher1, SCUDUpgrades)
 	SelectUpgrade(OverlordTank1, OverlordUpgrades)
 
-	SendAttack(usa, BottomLeftTeam, BottomLeftTeamWP, USAStrategy, DateTime.Seconds(50))
-	SendAttack(gla, TopRightTeam, TopRightTeamWP, USAStrategy, DateTime.Seconds(60))
-	SendAttack(gla, TunnelTeam, TunnelTeamWP, USAStrategy, DateTime.Seconds(30))
-	SendAttack(gla, WarFactoryTeam, WarFactoryTeamWP, USAPatriot3, DateTime.Seconds(80))
+	SendAttack(usa, BottomLeftTeams, BottomLeftTeamWP, USAStrategy, DateTime.Seconds(50))
+	SendAttack(gla, TopRightTeams, TopRightTeamWP, USAStrategy, DateTime.Seconds(60))
+	SendAttack(gla, TunnelTeams, TunnelTeamWP, USAStrategy, DateTime.Seconds(30))
+	SendAttack(gla, WarFactoryTeams, WarFactoryTeamWP, USAPatriot3, DateTime.Seconds(80))
 
 	DeployMe(Hacker1)
 	DeployMe(Hacker2)
