@@ -7,9 +7,9 @@ Player:
 		ExcessPowerIncreaseThreshold: 5
 		MaximumExcessPower: 20
 		ProductionMinimumCash: 2000
-		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.missile_silo, queue.nuke_gen_missile_silo, queue.just_mine, queue.soviet_barracks, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.stealth_gen_black_market, queue.missile_silo, queue.nuke_gen_missile_silo, queue.just_mine, queue.soviet_barracks, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		DefenseQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
-		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.soviet_infantry, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.emparor_overlord, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
+		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.stealth_gen_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.soviet_infantry, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.usa_command_center, queue.gla_command_center, queue.stealth_gen_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.emparor_overlord, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
 		BuildingCommonNames:
 			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -38,6 +38,7 @@ Player:
 			queue.usa_collector: 2
 			queue.air_gen_collector: 2
 			queue.gla_collector: 2
+			queue.stealth_gen_collector: 2
 			queue.prc_collector: 2
 			queue.camo_netting: 2
 			queue.drone: 4
@@ -47,6 +48,7 @@ Player:
 		QueueTimeLimits:
 			queue.usa_command_center: 250
 			queue.gla_command_center: 250
+			queue.stealth_gen_command_center: 250
 			queue.prc_command_center: 250
 		BuildingLimits:
 			building.usa_command_center: 1
@@ -113,6 +115,7 @@ Player:
 			upgrade.anthrax_beta: 1%
 			upgrade.anthrax_gamma: 1%
 			upgrade.camouflage: 1%
+			upgrade.camo_netting: 1%
 			upgrade.fortified_structures: 1%
 			upgrade.demolitions: 1%
 			upgrade.nationalism: 1%
@@ -601,9 +604,9 @@ Player:
 		ExcessPowerIncreaseThreshold: 5
 		MaximumExcessPower: 20
 		ProductionMinimumCash: 2000
-		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.missile_silo, queue.nuke_gen_missile_silo, queue.just_mine, queue.soviet_barracks, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.stealth_gen_black_market, queue.missile_silo, queue.nuke_gen_missile_silo, queue.just_mine, queue.soviet_barracks, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		DefenseQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
-		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.soviet_infantry, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.emparor_overlord, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
+		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.stealth_gen_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.soviet_infantry, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.usa_command_center, queue.gla_command_center, queue.stealth_gen_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.emparor_overlord, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
 		BuildingCommonNames:
 			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -632,6 +635,7 @@ Player:
 			queue.usa_collector: 2
 			queue.air_gen_collector: 2
 			queue.gla_collector: 2
+			queue.stealth_gen_collector: 2
 			queue.prc_collector: 2
 			queue.camo_netting: 2
 			queue.drone: 4
@@ -641,6 +645,7 @@ Player:
 		QueueTimeLimits:
 			queue.usa_command_center: 250
 			queue.gla_command_center: 250
+			queue.stealth_gen_command_center: 250
 			queue.prc_command_center: 250
 		BuildingLimits:
 			building.usa_command_center: 1
@@ -715,6 +720,7 @@ Player:
 			upgrade.anthrax_beta: 1%
 			upgrade.anthrax_gamma: 1%
 			upgrade.camouflage: 1%
+			upgrade.camo_netting: 1%
 			upgrade.fortified_structures: 1%
 			upgrade.demolitions: 1%
 			upgrade.nationalism: 1%
@@ -1203,9 +1209,9 @@ Player:
 		ExcessPowerIncreaseThreshold: 5
 		MaximumExcessPower: 20
 		ProductionMinimumCash: 2000
-		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.missile_silo, queue.nuke_gen_missile_silo, queue.just_mine, queue.soviet_barracks, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.stealth_gen_black_market, queue.missile_silo, queue.nuke_gen_missile_silo, queue.just_mine, queue.soviet_barracks, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		DefenseQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building
-		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.soviet_infantry, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.usa_command_center, queue.gla_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.emparor_overlord, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
+		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.stealth_gen_collector, queue.prc_collector, queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.soviet_infantry, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.usa_command_center, queue.gla_command_center, queue.stealth_gen_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.emparor_overlord, queue.helix, queue.cold_fusion_reactor, queue.laser_gen_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.camo_netting
 		BuildingCommonNames:
 			ConstructionYard: building.usa_command_center, building.gla_command_center, building.prc_command_center, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 			Refinery: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -1234,6 +1240,7 @@ Player:
 			queue.usa_collector: 2
 			queue.air_gen_collector: 2
 			queue.gla_collector: 2
+			queue.stealth_gen_collector: 2
 			queue.prc_collector: 2
 			queue.camo_netting: 2
 			queue.drone: 4
@@ -1243,6 +1250,7 @@ Player:
 		QueueTimeLimits:
 			queue.usa_command_center: 250
 			queue.gla_command_center: 250
+			queue.stealth_gen_command_center: 250
 			queue.prc_command_center: 250
 		BuildingLimits:
 			building.usa_command_center: 1
@@ -1315,6 +1323,7 @@ Player:
 			upgrade.anthrax_beta: 1%
 			upgrade.anthrax_gamma: 1%
 			upgrade.camouflage: 1%
+			upgrade.camo_netting: 1%
 			upgrade.fortified_structures: 1%
 			upgrade.demolitions: 1%
 			upgrade.nationalism: 1%

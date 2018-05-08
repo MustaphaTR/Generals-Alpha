@@ -2885,7 +2885,7 @@ vehicle.usa_mcc:
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Buildable:
 		Queue: queue.usa_command_center
-		Prerequisites: building.usa_command_center, ~techlevel.infonly
+		Prerequisites: ~techlevel.infonly
 		ReadyAudio: USAMCCCreated
 	Tooltip:
 		Name: USA Construction Vehicle
@@ -2952,8 +2952,8 @@ vehicle.gla_mcc:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Buildable:
-		Queue: queue.gla_command_center
-		Prerequisites: building.gla_command_center, ~techlevel.infonly
+		Queue: queue.gla_command_center, queue.stealth_gen_command_center
+		Prerequisites: ~techlevel.infonly
 		ReadyAudio: WorkerCreated
 	Tooltip:
 		Name: GLA Construction Vehicle
@@ -3008,7 +3008,7 @@ vehicle.prc_mcc:
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
 		Queue: queue.prc_command_center
-		Prerequisites: building.prc_command_center, ~techlevel.infonly
+		Prerequisites: ~techlevel.infonly
 		ReadyAudio: PRCMCCCreated
 	Tooltip:
 		Name: PRC Construction Vehicle

@@ -122,11 +122,11 @@ upgrade.camo_netting:
 	Tooltip:
 		Name: Camo Netting
 	Buildable:
-		Queue: queue.camo_netting
-		BuildPaletteOrder: 0
+		Queue: queue.camo_netting, queue.stealth_gen_command_center, queue.stealth_gen_collector, queue.stealth_gen_infantry, queue.stealth_gen_vehicle, queue.stealth_gen_palace, queue.stealth_gen_black_market
+		BuildPaletteOrder: 14
 		ForceIconLocation: true
 		BuildDuration: 125
-		Prerequisites: ~techlevel.infonly
+		Prerequisites: ~prerequisite.zh_units, ~techlevel.infonly
 		Description: Allows structure to cloak.
 		BuildLimit: 0
 		ReadyAudio: CamoNetting
@@ -588,7 +588,7 @@ upgrade.ap_bullets:
 	Tooltip:
 		Name: Armor-Piercing Bullets
 	Buildable:
-		Queue: queue.black_market
+		Queue: queue.black_market, queue.stealth_gen_black_market
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1500
@@ -603,7 +603,7 @@ upgrade.ap_rockets:
 	Tooltip:
 		Name: Armor-Piercing Rockets
 	Buildable:
-		Queue: queue.black_market
+		Queue: queue.black_market, queue.stealth_gen_black_market
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 1500
@@ -618,7 +618,7 @@ upgrade.radar_van_scan:
 	Tooltip:
 		Name: Radar Van Scan
 	Buildable:
-		Queue: queue.black_market
+		Queue: queue.black_market, queue.stealth_gen_black_market
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 500
@@ -633,7 +633,7 @@ upgrade.junk_repair:
 	Tooltip:
 		Name: Junk Repair
 	Buildable:
-		Queue: queue.black_market
+		Queue: queue.black_market, queue.stealth_gen_black_market
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 1500
@@ -648,7 +648,7 @@ upgrade.buggy_ammo:
 	Tooltip:
 		Name: Buggy Ammo
 	Buildable:
-		Queue: queue.black_market
+		Queue: queue.black_market, queue.stealth_gen_black_market
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 750
@@ -663,7 +663,7 @@ upgrade.worker_shoes:
 	Tooltip:
 		Name: Worker Shoes
 	Buildable:
-		Queue: queue.black_market
+		Queue: queue.black_market, queue.stealth_gen_black_market
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		BuildDuration: 250

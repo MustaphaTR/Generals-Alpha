@@ -244,6 +244,7 @@ building.usa_command_center:
 
 building.gla_command_center:
 	Inherits: ^default.command_center
+	Inherits@CAMO: ^CanHaveCamoNettingStealthGenOnly
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Buildable:
 		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
@@ -254,17 +255,33 @@ building.gla_command_center:
 	Voiced:
 		VoiceSet: GLACommandCenterVoice
 	Production:
-		Produces: queue.gla_command_center
+		Produces: queue.gla_command_center, queue.stealth_gen_command_center
 		PauseOnCondition: emp || hacked || sabotaged
-	ProductionBar@GLA_COMMAND_CENTER:
-		ProductionType: queue.gla_command_center
-	ProductionQueue@GLA_COMMAND_CENTER:
+		-RequiresCondition:
+	ProductionQueue@Vanilla:
 		Type: queue.gla_command_center
+		Factions: usa, air, laser, super, gla, toxin, demo, prc, inf, nuke, tank, boss
 		Group: Command
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
-		RequireOwner: false
 		SpectatorUIOrder: 13
+	ProductionQueue@Stealth:
+		Type: queue.stealth_gen_command_center
+		Factions: stealth
+		Group: Command
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		SpectatorUIOrder: 13
+	ConditionPrerequisite@CAMO_NETTING:
+		Queue: queue.stealth_gen_command_center
+		Actor: upgrade.camo_netting
+		PauseOnCondition: camo_netted
+	-ProductionBar:
+	-Exit:
+	ProductionBar@Vanilla:
+		ProductionType: queue.gla_command_center
+	ProductionBar@Stealth:
+		ProductionType: queue.stealth_gen_command_center
 	SpawnActorPower@AMBUSH:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Actors:
@@ -959,6 +976,7 @@ building.usa_barracks:
 
 building.gla_barracks:
 	Inherits: ^default.barracks
+	Inherits@CAMO: ^CanHaveCamoNettingStealthGenOnly
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	HitShape:
 		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
@@ -971,6 +989,8 @@ building.gla_barracks:
 	Production:
 		Produces: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
 		PauseOnCondition: emp || hacked || sabotaged
+		-RequiresCondition:
+	-ProductionQueue@CAMO_NETTING:
 	ProductionQueue@Vanilla:
 		Type: queue.gla_infantry
 		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
@@ -999,6 +1019,11 @@ building.gla_barracks:
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		SpectatorUIOrder: 23
+	ConditionPrerequisite@CAMO_NETTING:
+		Queue: queue.stealth_gen_infantry
+		Actor: upgrade.camo_netting
+		PauseOnCondition: camo_netted
+	-ProductionBar:
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_infantry
 	ProductionBar@Toxin:
@@ -1007,6 +1032,7 @@ building.gla_barracks:
 		ProductionType: queue.demo_gen_infantry
 	ProductionBar@Stealth:
 		ProductionType: queue.stealth_gen_infantry
+	-Exit:
 	Exit@1:
 		SpawnOffset: -42,810,0
 		ExitCell: 1,2
@@ -1233,6 +1259,7 @@ building.usa_supply_center:
 
 building.gla_supply_stash:
 	Inherits: ^default.supply_center
+	Inherits@CAMO: ^CanHaveCamoNettingStealthGenOnly
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	HitShape:
 		UseTargetableCellsOffsets: true
@@ -1251,19 +1278,36 @@ building.gla_supply_stash:
 		Dimensions: 2,2
 	Selectable:
 		Bounds: 48,48,0,12
-		Class: building.gla_supply_stash
+		Class: building.gla_supply_stash, queue.stealth_gen_collector
 	Production:
-		Produces: queue.gla_collector
+		Produces: queue.gla_collector, queue.stealth_gen_collector
 		PauseOnCondition: emp || hacked
-	ProductionQueue:
+		-RequiresCondition:
+	-ProductionQueue@CAMO_NETTING:
+	ProductionQueue@Vanilla:
 		Type: queue.gla_collector
+		Factions: usa, air, laser, super, gla, toxin, demo, prc, inf, nuke, tank
 		Group: Collector
-		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		SpectatorUIOrder: 17
-	ProductionBar:
-	Exit@1:
+	ProductionQueue@Stealth:
+		Type: queue.stealth_gen_collector
+		Factions: stealth
+		Group: Collector
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		SpectatorUIOrder: 17
+	ConditionPrerequisite@CAMO_NETTING:
+		Queue: queue.stealth_gen_collector
+		Actor: upgrade.camo_netting
+		PauseOnCondition: camo_netted
+	-ProductionBar:
+	ProductionBar@Vanilla:
+		ProductionType: queue.gla_collector
+	ProductionBar@Stealth:
+		ProductionType: queue.stealth_gen_collector
+	Exit:
 		SpawnOffset: -96,768,0
 		ExitCell: 1,1
 	Dock@0:
@@ -1902,6 +1946,7 @@ building.usa_war_factory:
 
 building.arms_dealer:
 	Inherits: ^default.war_factory
+	Inherits@CAMO: ^CanHaveCamoNettingStealthGenOnly
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Buildable:
 		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
@@ -1914,6 +1959,8 @@ building.arms_dealer:
 	Production:
 		Produces: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		PauseOnCondition: emp || hacked || sabotaged
+		-RequiresCondition:
+	-ProductionQueue@CAMO_NETTING:
 	ProductionQueue@Vanilla:
 		Type: queue.gla_vehicle
 		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
@@ -1942,6 +1989,12 @@ building.arms_dealer:
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 		SpectatorUIOrder: 37
+	ConditionPrerequisite@CAMO_NETTING:
+		Queue: queue.stealth_gen_vehicle
+		Actor: upgrade.camo_netting
+		PauseOnCondition: camo_netted
+	-Exit:
+	-ProductionBar:
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_vehicle
 	ProductionBar@Toxin:
@@ -2159,7 +2212,7 @@ building.tunnel_network.boss:
 		Produces: queue.just_mine
 		PauseOnCondition: emp || hacked
 		-RequiresCondition:
-	-ProductionQueue:
+	-ProductionQueue@CAMO_NETTING:
 	ProductionQueue@Mine:
 		Type: queue.just_mine
 		Group: Building
@@ -2670,6 +2723,7 @@ building.palace:
 	Inherits: ^Building
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@BOUNTY: ^TakesBounty
+	Inherits@CAMO: ^CanHaveCamoNettingStealthGenOnly
 	Inherits@GARRISON: ^WithGarrisonRangeCircle
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@SHAPE: ^3x2Shape
@@ -2723,37 +2777,44 @@ building.palace:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.tech_center
-	Production:
+	Production@:
 		Produces: queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace
 		PauseOnCondition: emp || hacked
+		-RequiresCondition:
+	-ProductionQueue@CAMO_NETTING:
 	ProductionQueue@Vanilla:
 		Type: queue.palace
 		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
 		Group: Tech
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 1
 		SpectatorUIOrder: 55
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_palace
 		Factions: toxin
 		Group: Tech
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 1
 		SpectatorUIOrder: 56
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_palace
 		Factions: demo
 		Group: Tech
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 1
 		SpectatorUIOrder: 57
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_palace
 		Factions: stealth
 		Group: Tech
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 1
 		SpectatorUIOrder: 58
+	ConditionPrerequisite@CAMO_NETTING:
+		Queue: queue.stealth_gen_palace
+		Actor: upgrade.camo_netting
+		PauseOnCondition: camo_netted
+	-ProductionBar:
 	ProductionBar@Vanilla:
 		ProductionType: queue.palace
 	ProductionBar@Toxin:
@@ -2762,7 +2823,8 @@ building.palace:
 		ProductionType: queue.demo_gen_palace
 	ProductionBar@Stealth:
 		ProductionType: queue.stealth_gen_palace
-	Exit:
+	Cloak:
+		Palette: cnccloak
 	WithDeathAnimation:
 		DeathSequence: dead
 		DeathSequencePalette: cncplayer
@@ -2954,6 +3016,7 @@ building.supply_drop_zone:
 
 building.black_market:
 	Inherits: ^Building
+	Inherits@CAMO: ^CanHaveCamoNettingStealthGenOnly
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@REVEAL: ^Reveal200
 	HitShape:
@@ -2979,17 +3042,33 @@ building.black_market:
 		Bounds: 48,60,0,-10
 	SelectionDecorations:
 	Production:
-		Produces: queue.black_market
+		Produces: queue.black_market, queue.stealth_gen_black_market
 		PauseOnCondition: emp || hacked
-	ProductionQueue:
+		-RequiresCondition:
+	-ProductionQueue@CAMO_NETTING:
+	ProductionQueue@Vanilla:
 		Type: queue.black_market
+		Factions: usa, air, laser, super, gla, toxin, demo, prc, inf, nuke, tank, boss
 		Group: Tech
-		RequireOwner: false
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
-		SpectatorUIOrder: 63
-	ProductionBar:
-	Exit:
+		LowPowerSlowdown: 1
+		SpectatorUIOrder: 61
+	ProductionQueue@Stealth:
+		Type: queue.stealth_gen_black_market
+		Factions: stealth
+		Group: Tech
+		InstantCashDrain: true
+		LowPowerSlowdown: 1
+		SpectatorUIOrder: 62
+	ConditionPrerequisite@CAMO_NETTING:
+		Queue: queue.stealth_gen_black_market
+		Actor: upgrade.camo_netting
+		PauseOnCondition: camo_netted
+	-ProductionBar:
+	ProductionBar@Vanilla:
+		ProductionType: queue.black_market
+	ProductionBar@Stealth:
+		ProductionType: queue.stealth_gen_black_market
 	CashTrickler:
 		Interval: 25
 		Amount: 20
@@ -3334,6 +3413,7 @@ building.scud_storm:
 	SupportPowerChargeBar:
 	WithBuildingBib:
 	-WithMakeAnimation:
+	-GrantConditionOnFaction@Stealth:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta

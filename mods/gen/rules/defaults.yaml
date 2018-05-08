@@ -963,7 +963,7 @@
 	Production:
 		Produces: queue.camo_netting
 		RequiresCondition: !camo_netted && zh_units
-	ProductionQueue:
+	ProductionQueue@CAMO_NETTING:
 		Type: queue.camo_netting
 		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank
 		Group: Tech
@@ -974,6 +974,7 @@
 	Exit:
 	GrantConditionOnProduction@CAMO_NETTING:
 		Condition: camo_netted
+		Actors: upgrade.camo_netting
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
@@ -988,7 +989,10 @@
 
 ^CanHaveCamoNettingStealthGenOnly:
 	Inherits@CAMO: ^CanHaveCamoNetting
-	ProductionQueue:
+	ProductionQueue@CAMO_NETTING:
+		Factions: stealth
+	GrantConditionOnFaction@Stealth:
+		Condition: stealth
 		Factions: stealth
 
 ^CanHaveMines:

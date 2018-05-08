@@ -30,7 +30,7 @@ infantry.worker:
 	Inherits@SHOES: ^AffectedByWorkerShoes
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.gla_collector
+		Queue: queue.gla_collector, queue.stealth_gen_collector
 		BuildPaletteOrder: 1
 		BuildDuration: 75
 		BuildDurationModifier: 100
