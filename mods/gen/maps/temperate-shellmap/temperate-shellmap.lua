@@ -174,6 +174,10 @@ DeployMe = function(unit)
 	unit.GrantCondition("deployed")
 end
 
+GiveMeMines = function(unit)
+	unit.GrantCondition("land_mines")
+end
+
 ticks = 0
 speed = 5
 
@@ -204,6 +208,13 @@ WorldLoaded = function()
 	DeployMe(Hacker4)
 	DeployMe(Hacker5)
 	DeployMe(Hacker6)
+
+	GiveMeMines(PRCPower1)
+	GiveMeMines(PRCPower2)
+	GiveMeMines(PRCPower3)
+	GiveMeMines(PRCPower4)
+	GiveMeMines(PRCPropaganda)
+	GiveMeMines(PRCBunker)
 
 	USAShipyard.RallyPoint = USAShipyardRally.Location
 	GLAShipyard.RallyPoint = GLAShipyardRally.Location

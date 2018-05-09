@@ -448,7 +448,7 @@ explosion.mine:
 		Spread: 256
 		Damage: 40000
 		AffectsParent: true
-		InvalidTargets: Mine
+		ValidTargets: Infantry, Vehicle, Tank
 		DamageTypes: TriggerProne, DefaultDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: large_explosion
@@ -465,7 +465,7 @@ explosion.mine.neutron:
 		Spread: 256
 		Damage: 40000
 		AffectsParent: true
-		InvalidTargets: Vehicle, Tank
+		ValidTargets: Infantry
 		DamageTypes: TriggerProne, DefaultDeath
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c768

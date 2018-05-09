@@ -5,6 +5,7 @@
 		Queue: Upgrade
 		BuildDurationModifier: 100
 		BuildLimit: 1
+		QueueLimit: 1
 		QueuedAudio: NoAudio
 		ReadyAudio: UpgradeComplete
 	RenderSprites:
@@ -48,32 +49,39 @@ upgrade.radar:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 500
-		Prerequisites: ~building.prc_command_center, ~techlevel.infonly
 		Description: Allows Commandand Center to provide Radar.
 	Valued:
 		Cost: 500
+	KillsSelf:
+		RemoveInstead: true
 
-upgrade.neutron_mine:
-	AlwaysVisible:
-	Interactable:
+upgrade.land_mines:
+	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Neutron Mine
+		Name: Land Mines
 	Buildable:
-		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.inf_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
-		BuildPaletteOrder: 12
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
+		BuildPaletteOrder: 14
+		ForceIconLocation: true
+		BuildDuration: 125
+		Description: Creates minefields around the structure.
+	Valued:
+		Cost: 250
+	KillsSelf:
+		RemoveInstead: true
+
+upgrade.neutron_mines:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Neutron Mines
+	Buildable:
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
+		BuildPaletteOrder: 14
 		ForceIconLocation: true
 		BuildDuration: 375
-		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.infonly, ~prerequisite.zh_units
-		Description: Upgrades a mine to a neutron mine, which kills vehicle drivers.
-		QueuedAudio: Building
-		ReadyAudio: ConstructionComplete
+		Description: Upgrades mines to neutron mines, which kills vehicle drivers.
 	Valued:
 		Cost: 500
-	Plug:
-		Type: neutron_mine
-	Building:
-	RenderSprites:
 	KillsSelf:
 		RemoveInstead: true
 
@@ -88,7 +96,6 @@ upgrade.control_rods:
 		BuildDuration: 375
 		Prerequisites: ~techlevel.infonly
 		Description: Doubles power output of the Cold Fusion Reactor.
-		BuildLimit: 0
 	Power:
 		Amount: 5
 	Valued:
@@ -114,8 +121,6 @@ upgrade.advanced_control_rods:
 		Description: Quadruples power output of the Cold Fusion Reactor.
 	Power:
 		Amount: 15
-	KillsSelf:
-		RemoveInstead: true
 
 upgrade.camo_netting:
 	Inherits: ^default.upgrade
@@ -126,12 +131,12 @@ upgrade.camo_netting:
 		BuildPaletteOrder: 14
 		ForceIconLocation: true
 		BuildDuration: 125
-		Prerequisites: ~prerequisite.zh_units, ~techlevel.infonly
 		Description: Allows structure to cloak.
-		BuildLimit: 0
 		ReadyAudio: CamoNetting
 	Valued:
 		Cost: 500
+	KillsSelf:
+		RemoveInstead: true
 
 upgrade.capture_building:
 	Inherits: ^default.upgrade

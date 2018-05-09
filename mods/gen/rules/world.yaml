@@ -265,6 +265,22 @@
 	Locomotor@IMMOBILE:
 		Name: locomotor.immobile
 		TerrainSpeeds:
+	Locomotor@MINE:
+		Name: locomotor.mine
+		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook
+		TerrainSpeeds:
+			Grass: 1
+			Snow: 1
+			Sand: 1
+			Concrete: 1
+			Rough: 1
+			GrassRoad: 1
+			SnowRoad: 1
+			SandRoad: 1
+			Bridge: 1
+			Ore: 1
+			Gems: 1
+			Beach: 1
 
 World:
 	Inherits: ^BaseWorld

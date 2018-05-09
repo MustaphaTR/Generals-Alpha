@@ -168,6 +168,10 @@ DeployMe = function(unit)
 	unit.GrantCondition("deployed")
 end
 
+GiveMeMines = function(unit)
+	unit.GrantCondition("land_mines")
+end
+
 ticks = 768
 speed = 5
 
@@ -206,4 +210,7 @@ WorldLoaded = function()
 	DeployMe(Hacker6)
 	DeployMe(Hacker7)
 	DeployMe(Hacker8)
+
+	GiveMeMines(GatlingCannon1)
+	GiveMeMines(GatlingCannon2)
 end

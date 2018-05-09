@@ -206,6 +206,10 @@ DeployMe = function(unit)
 	unit.GrantCondition("deployed")
 end
 
+GiveMeMines = function(unit)
+	unit.GrantCondition("land_mines")
+end
+
 ticks = 0
 speed = 5
 
@@ -239,6 +243,14 @@ WorldLoaded = function()
 	DeployMe(Hacker4)
 	DeployMe(Hacker5)
 	DeployMe(Hacker6)
+
+	GiveMeMines(PRCWarFactory)
+	GiveMeMines(PRCPower5)
+	GiveMeMines(PRCPower6)
+	GiveMeMines(PRCPower7)
+	GiveMeMines(PRCGatling2)
+	GiveMeMines(PRCGatling3)
+	GiveMeMines(PRCBunker1)
 
 	powerproxy = Actor.Create("powerproxy.paradrop", false, { Owner = usa })
 

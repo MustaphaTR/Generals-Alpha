@@ -129,6 +129,10 @@ tech.communications_center:
 	ExternalCondition@UNKILLABLE:
 		Condition: unkillable
 
+^CanHaveMines:
+	ExternalCondition@Mines:
+		Condition: land_mines
+
 tech.oil_derrick:
 	CashTrickler:
 		ShowTicks: false
@@ -186,8 +190,6 @@ infantry.hacker:
 	CashTrickler@RANK-1:
 		ShowTicks: false
 	CashTrickler@RANK-2:
-		ShowTicks: false
-	CashTrickler@RANK-3:
 		ShowTicks: false
 	CashTrickler@RANK-ELITE:
 		ShowTicks: false

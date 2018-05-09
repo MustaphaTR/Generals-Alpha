@@ -965,13 +965,11 @@
 		RequiresCondition: !camo_netted && zh_units
 	ProductionQueue@CAMO_NETTING:
 		Type: queue.camo_netting
-		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank
+		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank, boss
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
-	ProductionBar:
-	Exit:
+		LowPowerSlowdown: 1
 	GrantConditionOnProduction@CAMO_NETTING:
 		Condition: camo_netted
 		Actors: upgrade.camo_netting
@@ -996,9 +994,43 @@
 		Factions: stealth
 
 ^CanHaveMines:
-	GivesBuildableArea@MINE:
-		AreaTypes: mine
-		OnlyAllowPlacementFromSelf: true
+	Production:
+		Produces: queue.just_mine
+		RequiresCondition: (!land_mines && !zh_units) || (!neutron_mines && zh_units)
+	ProductionQueue@JUST_MINE:
+		Type: queue.just_mine
+		Group: Tech
+		QueueLimit: 1
+		InstantCashDrain: true
+		LowPowerSlowdown: 3
+	GrantConditionOnProduction@LAND_MINES:
+		Condition: land_mines
+		Actors: upgrade.land_mines
+	GrantConditionOnProduction@NEUTRON_MINES:
+		Condition: neutron_mines
+		Actors: upgrade.neutron_mines
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
+	LaysMinefield@LAND_MINES:
+		Locations: 0,-1, 1,-1, -1,0, -1,1, 0,2, 1,2, 2,0, 2,1
+		Mines: hack.mine
+		RequiresCondition: land_mines && !neutron_mines
+	LaysMinefield@NEUTRON_MINES:
+		Locations: 0,-1, 1,-1, -1,0, -1,1, 0,2, 1,2, 2,0, 2,1
+		Mines: hack.mine.neutron
+		RequiresCondition: neutron_mines
+	ConditionPrerequisite@LAND_MINES:
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
+		Actor: upgrade.land_mines
+		PauseOnCondition: land_mines
+		RequiresCondition: (!land_mines && zh_units) || !zh_units
+	ConditionPrerequisite@NEUTRON_MINES:
+		Queue: queue.prc_command_center, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
+		Actor: upgrade.neutron_mines
+		PauseOnCondition: neutron_mines
+		RequiresCondition: land_mines && zh_units
+	ProvidesPrerequisite@buildingname:
 
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld

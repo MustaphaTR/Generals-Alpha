@@ -369,10 +369,9 @@ hack.mine:
 	-Building:
 	-RequiresBuildableArea:
 	Mobile:
-		Locomotor: locomotor.immobile
+		Locomotor: locomotor.mine
+		RequiresCondition: keep_me_disabled
 	-Sellable:
-	Valued:
-		Cost: 250
 	Tooltip:
 		Name: Land Mine
 	RejectsOrders:
@@ -381,6 +380,16 @@ hack.mine:
 		EmptyWeapon: explosion.mine
 	RenderSprites:
 		Image: building.mine
+
+hack.mine.neutron:
+	Inherits: hack.mine
+	Tooltip:
+		Name: Neutron Mine
+	WithSpriteBody:
+		Sequence: idle-neutron
+	Explodes:
+		Weapon: explosion.mine.neutron
+		EmptyWeapon: explosion.mine.neutron
 
 FLARE:
 	Immobile:

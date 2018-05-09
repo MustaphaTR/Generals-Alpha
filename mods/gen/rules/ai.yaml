@@ -19,7 +19,7 @@ Player:
 			NavalProduction: tech.shipyard
 			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, usa_airfield, prc_airfield
 			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center
-			Defense: building.patriot, building.emp_patriot, building.laser_turret, building.stinger_site, building.tunnel_network, building.toxin_tunnel_network, building.gatling_cannon, building.land_mine, tech.flame_tower
+			Defense: building.patriot, building.emp_patriot, building.laser_turret, building.stinger_site, building.tunnel_network, building.toxin_tunnel_network, building.gatling_cannon, tech.flame_tower
 			StaticAntiAir: building.patriot, building.emp_patriot, building.laser_turret, building.stinger_site, building.gatling_cannon
 			Strategy: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		UnitsCommonNames:
@@ -41,6 +41,7 @@ Player:
 			queue.stealth_gen_collector: 2
 			queue.prc_collector: 2
 			queue.camo_netting: 2
+			queue.just_mine: 2
 			queue.drone: 4
 			queue.overlord_tank: 4
 			queue.emparor_overlord: 4
@@ -50,6 +51,7 @@ Player:
 			queue.gla_command_center: 250
 			queue.stealth_gen_command_center: 250
 			queue.prc_command_center: 250
+			queue.just_mine: 1500
 		BuildingLimits:
 			building.usa_command_center: 1
 			building.gla_command_center: 1
@@ -63,7 +65,6 @@ Player:
 			building.usa_war_factory: 1
 			building.arms_dealer: 1
 			building.prc_war_factory: 1
-			building.land_mine: 4
 			building.strategy_center: 1
 			building.palace: 1
 			building.propaganda_center: 1
@@ -89,7 +90,6 @@ Player:
 			building.patriot: 4%
 			building.emp_patriot: 4%
 			building.laser_turret: 4%
-			building.land_mine: 2%
 			building.stinger_site: 3%
 			building.gatling_cannon: 4%
 			building.tunnel_network: 2%
@@ -105,6 +105,8 @@ Player:
 			building.prc_airfield: 1%
 			tech.flame_tower: 2%
 			upgrade.radar: 1%
+			upgrade.land_mines: 1%
+			upgrade.neutron_mines: 1%
 			upgrade.adv_training: 1%
 			upgrade.composite_armor: 1%
 			upgrade.drone_armor: 1%
@@ -246,6 +248,8 @@ Player:
 			upgrade.control_rods.laser: 1%
 			upgrade.advanced_control_rods: 1%
 			upgrade.camo_netting: 1%
+			upgrade.land_mines: 1%
+			upgrade.neutron_mines: 1%
 			upgrade.scout_drone: 1%
 			upgrade.battle_drone: 5%
 			upgrade.hellfire_drone: 5%
@@ -616,7 +620,7 @@ Player:
 			NavalProduction: tech.shipyard
 			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, usa_airfield, prc_airfield
 			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, building.scud_storm, building.missile_silo
-			Defense: building.patriot, building.emp_patriot, building.laser_turret, building.stinger_site, building.tunnel_network, building.toxin_tunnel_network, building.gatling_cannon, building.land_mine, tech.flame_tower
+			Defense: building.patriot, building.emp_patriot, building.laser_turret, building.stinger_site, building.tunnel_network, building.toxin_tunnel_network, building.gatling_cannon, tech.flame_tower
 			StaticAntiAir: building.patriot, building.emp_patriot, building.laser_turret, building.stinger_site, building.gatling_cannon
 			Strategy: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		UnitsCommonNames:
@@ -638,6 +642,7 @@ Player:
 			queue.stealth_gen_collector: 2
 			queue.prc_collector: 2
 			queue.camo_netting: 2
+			queue.just_mine: 2
 			queue.drone: 4
 			queue.overlord_tank: 4
 			queue.emparor_overlord: 4
@@ -647,6 +652,7 @@ Player:
 			queue.gla_command_center: 250
 			queue.stealth_gen_command_center: 250
 			queue.prc_command_center: 250
+			queue.just_mine: 1500
 		BuildingLimits:
 			building.usa_command_center: 1
 			building.gla_command_center: 1
@@ -660,7 +666,6 @@ Player:
 			building.usa_war_factory: 1
 			building.arms_dealer: 1
 			building.prc_war_factory: 1
-			building.land_mine: 8
 			building.strategy_center: 1
 			building.palace: 1
 			building.propaganda_center: 1
@@ -690,7 +695,6 @@ Player:
 			building.patriot: 6%
 			building.emp_patriot: 6%
 			building.laser_turret: 6%
-			building.land_mine: 2%
 			building.stinger_site: 4%
 			building.gatling_cannon: 6%
 			building.tunnel_network: 3%
@@ -710,6 +714,8 @@ Player:
 			building.missile_silo.nuke: 1%
 			tech.flame_tower: 3%
 			upgrade.radar: 1%
+			upgrade.land_mines: 1%
+			upgrade.neutron_mines: 1%
 			upgrade.adv_training: 1%
 			upgrade.composite_armor: 1%
 			upgrade.drone_armor: 1%
@@ -851,6 +857,8 @@ Player:
 			upgrade.control_rods.laser: 1%
 			upgrade.advanced_control_rods: 1%
 			upgrade.camo_netting: 1%
+			upgrade.land_mines: 1%
+			upgrade.neutron_mines: 1%
 			upgrade.scout_drone: 2%
 			upgrade.battle_drone: 5%
 			upgrade.hellfire_drone: 5%
@@ -1221,7 +1229,7 @@ Player:
 			NavalProduction: tech.shipyard
 			Production: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, usa_airfield, prc_airfield
 			Fragile: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, building.scud_storm, building.missile_silo
-			Defense: building.patriot, building.emp_patriot, building.laser_turret, building.stinger_site, building.tunnel_network, building.toxin_tunnel_network, building.gatling_cannon, building.land_mine, tech.flame_tower
+			Defense: building.patriot, building.emp_patriot, building.laser_turret, building.stinger_site, building.tunnel_network, building.toxin_tunnel_network, building.gatling_cannon, tech.flame_tower
 			StaticAntiAir: building.patriot, building.emp_patriot, building.laser_turret, building.stinger_site, building.gatling_cannon
 			Strategy: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		UnitsCommonNames:
@@ -1243,6 +1251,7 @@ Player:
 			queue.stealth_gen_collector: 2
 			queue.prc_collector: 2
 			queue.camo_netting: 2
+			queue.just_mine: 2
 			queue.drone: 4
 			queue.overlord_tank: 4
 			queue.emparor_overlord: 4
@@ -1252,6 +1261,7 @@ Player:
 			queue.gla_command_center: 250
 			queue.stealth_gen_command_center: 250
 			queue.prc_command_center: 250
+			queue.just_mine: 1500
 		BuildingLimits:
 			building.usa_command_center: 1
 			building.gla_command_center: 1
@@ -1265,7 +1275,6 @@ Player:
 			building.usa_war_factory: 1
 			building.arms_dealer: 1
 			building.prc_war_factory: 1
-			building.land_mine: 12
 			building.strategy_center: 1
 			building.palace: 1
 			building.propaganda_center: 1
@@ -1294,7 +1303,6 @@ Player:
 			building.patriot: 8%
 			building.emp_patriot: 8%
 			building.laser_turret: 8%
-			building.land_mine: 2%
 			building.stinger_site: 5%
 			building.gatling_cannon: 8%
 			building.tunnel_network: 4%
@@ -1313,6 +1321,8 @@ Player:
 			building.missile_silo: 1%
 			tech.flame_tower: 4%
 			upgrade.radar: 1%
+			upgrade.land_mines: 1%
+			upgrade.neutron_mines: 1%
 			upgrade.adv_training: 1%
 			upgrade.composite_armor: 1%
 			upgrade.drone_armor: 1%
