@@ -2873,6 +2873,9 @@ vehicle.nuke_cannon.nuke:
 	GrantConditionOnMovement:
 		Condition: moving
 		ConsiderTurning: true
+	DetectCloaked:
+		CloakTypes: Mine
+		Range: 4c0
 	ExplodeWeapon@DISARM:
 		Weapon: detach.mcc
 		RequiresCondition: deployed
