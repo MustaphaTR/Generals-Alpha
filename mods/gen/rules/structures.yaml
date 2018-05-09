@@ -783,7 +783,7 @@ building.cold_fusion_reactor:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
 	Buildable:
-		Queue: queue.usa_building, queue.air_gen_building, queue.boss_gen_building
+		Queue: queue.usa_building, queue.air_gen_building
 		BuildPaletteOrder: 1
 		Prerequisites: ~techlevel.infonly
 		Description: Provides power for other structures.
@@ -845,6 +845,26 @@ building.advanced_cold_fusion_reactor:
 		Type: queue.advanced_cold_fusion_reactor
 	Power@CONTROL_RODS:
 		Amount: 15
+
+building.cold_fusion_reactor.boss:
+	Inherits: building.cold_fusion_reactor
+	Inherits@MINE: ^CanHaveMines
+	Buildable:
+		Queue: queue.boss_gen_building
+	Production:
+		Produces: queue.boss_gen_cold_fusion_reactor
+		RequiresCondition: ((!control_rods || !land_mines) && !zh_units) || ((!control_rods || !neutron_mines) && zh_units)
+	-ProductionQueue@JUST_MINE:
+	ProductionQueue:
+		Type: queue.boss_gen_cold_fusion_reactor
+	GrantConditionOnProduction:
+		Actors: upgrade.control_rods
+	ConditionPrerequisite@CONTROL_RODS:
+		Queue: queue.boss_gen_cold_fusion_reactor
+		Actor: upgrade.control_rods
+		PauseOnCondition: control_rods
+	RenderSprites:
+		Image: building.cold_fusion_reactor
 
 building.nuclear_reactor:
 	Inherits: ^default.reactor
@@ -1387,7 +1407,7 @@ building.patriot:
 	Inherits@REVEAL: ^Reveal360
 	Inherits@SHAPE: ^2x1Shape
 	Buildable:
-		Queue: queue.usa_building, queue.air_gen_building, queue.boss_gen_building
+		Queue: queue.usa_building, queue.air_gen_building
 		BuildPaletteOrder: 4
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -1404,6 +1424,8 @@ building.patriot:
 		HP: 100000
 	Armor:
 		Type: building.defense
+	Selectable:
+		Class: building.patriot
 	WithBuildingBib:
 		HasMinibib: Yes
 	Turreted:
@@ -1450,6 +1472,21 @@ building.emp_patriot:
 		Weapon: missile.emp_patriot.ground
 	Armament@AA:
 		Weapon: missile.emp_patriot.air
+
+building.patriot.boss:
+	Inherits: building.patriot
+	Inherits@MINE: ^CanHaveMines
+	Buildable:
+		Queue: queue.boss_gen_building
+		Prerequisites: building.prc_barracks, ~techlevel.low
+	Exit:
+	ProductionBar:
+	LaysMinefield@LAND_MINES:
+		Locations: 0,-1, 1,-1, -1,0, 0,1, 1,1, 2,0
+	LaysMinefield@NEUTRON_MINES:
+		Locations: 0,-1, 1,-1, -1,0, 0,1, 1,1, 2,0
+	RenderSprites:
+		Image: building.patriot
 
 building.laser_turret:
 	Inherits: ^Defense
@@ -2184,7 +2221,6 @@ building.tunnel_network.boss:
 	SpawnActorOnDeath:
 		Actor: hole.tunnel_network.boss
 	-GrantConditionOnProduction@CAMO_NETTING:
-	-GrantConditionOnPrerequisite@ZH_UNITS:
 	RenderSprites:
 		Image: building.tunnel_network
 

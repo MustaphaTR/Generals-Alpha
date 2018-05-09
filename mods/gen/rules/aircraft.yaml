@@ -476,8 +476,18 @@ aircraft.king_raptor:
 		AmmoCondition: ammo
 	SpawnActorOnDeath:
 		Actor: husk.king_raptor
+	Selectable:
+		Class: aircraft.king_raptor
+	RenderSprites:
+		Image: aircraft.king_raptor
 	Voiced:
 		VoiceSet: KingRaptorVoice
+
+aircraft.king_raptor.boss:
+	Inherits: aircraft.king_raptor
+	Buildable:
+		Queue: queue.boss_gen_aircraft
+		BuildPaletteOrder: 3
 
 aircraft.stealth_fighter:
 	Inherits: ^Plane
@@ -600,7 +610,7 @@ aircraft.aurora:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.boss_gen_aircraft
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft
 		BuildAtProductionType: queue.usa_plane
 		BuildPaletteOrder: 4
 		BuildDuration: 625
@@ -682,6 +692,7 @@ aircraft.aurora:
 		AmmoCondition: ammo
 	ReturnOnIdle:
 	Selectable:
+		Class: aircraft.aurora
 		Bounds: 36,28,0,2
 		DecorationBounds: 40,29,0,1
 	SelectionDecorations:
@@ -700,6 +711,14 @@ aircraft.aurora:
 	RenderSprites:
 		Scale: 0.9
 
+aircraft.aurora.boss:
+	Inherits: aircraft.aurora
+	Buildable:
+		Queue: queue.boss_gen_aircraft
+		Prerequisites: ~techlevel.high
+	RenderSprites:
+		Image: aircraft.aurora
+
 aircraft.aurora_alpha:
 	Inherits: aircraft.aurora
 	Buildable:
@@ -708,6 +727,8 @@ aircraft.aurora_alpha:
 		Name: Aurora Alpha
 	Armament:
 		Weapon: missile.aurora_alpha
+	Selectable:
+		Class: aircraft.aurora_alpha
 	SpawnActorOnDeath:
 		Actor: husk.aurora_alpha
 
