@@ -1213,19 +1213,38 @@ aircraft.helix:
 	Armor:
 		Type: aircraft.chinook
 	Production:
-		Produces: queue.helix
+		Produces: queue.helix, queue.nuke_gen_helix
+		RequiresCondition: (!bunker_upgrade && !gatling_upgrade && !speaker_upgrade) || (!napalm_upgrade && !nuke_upgrade)
 	ProductionQueue:
 		Type: queue.helix
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, tank, boss
+		RequireOwner: true
+	ProductionQueue@Nuke:
+		Type: queue.nuke_gen_helix
+		Factions: nuke
+		Group: Tech
+		QueueLimit: 1
+		InstantCashDrain: true
+		LowPowerSlowdown: 3
 	Armament@MG:
 		Weapon: mg.helix
 		LocalOffset: 1024,0,-125
 		MuzzleSequence: muzzle
-	Armament@Gatling:
+	Armament@GATLING:
 		Weapon: gatling.gatling_tank.ground
 		Name: gatling
 		LocalOffset: 95,-256,-85, 95,256,-85
 		MuzzleSequence: muzzle
 		RequiresCondition: gatling_upgrade
+	Armament@NAPALM:
+		Weapon: parabomb.helix
+		RequiresCondition: napalm_upgrade && !black_napalm
+	Armament@NAPALM_BLUE:
+		Weapon: parabomb.helix.blue
+		RequiresCondition: napalm_upgrade && black_napalm
+	Armament@NUKE:
+		Weapon: parabomb.helix.nuke
+		RequiresCondition: nuke_upgrade
 	WithMuzzleOverlay:
 	AttackHeli:
 		Armaments: primary, gatling
@@ -1268,7 +1287,7 @@ aircraft.helix:
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
 		RequiresCondition: bunker_upgrade && loaded
-	GrantStackableConditionOnFire@gatling:
+	GrantStackableConditionOnFire@GATLING:
 		Condition: gatling
 		ArmamentName: gatling
 		RequiredShotsPerStack: 10
@@ -1276,6 +1295,35 @@ aircraft.helix:
 		RevokeDelay: 40
 		RevokeAll: true
 		IsCyclic: false
+	ConditionPrerequisite@BUNKER:
+		Queue: queue.helix, queue.assault_helix, queue.nuke_gen_helix
+		Actor: upgrade.helix_bunker
+		PauseOnCondition: bunker_upgrade || gatling_upgrade || speaker_upgrade
+	ConditionPrerequisite@GATLING:
+		Queue: queue.helix, queue.nuke_gen_helix
+		Actor: upgrade.helix_gatling
+		PauseOnCondition: bunker_upgrade || gatling_upgrade || speaker_upgrade
+	ConditionPrerequisite@SPEAKER:
+		Queue: queue.helix, queue.nuke_gen_helix
+		Actor: upgrade.helix_speaker
+		PauseOnCondition: bunker_upgrade || gatling_upgrade || speaker_upgrade
+	ConditionPrerequisite@NAPALM:
+		Queue: queue.helix, queue.assault_helix
+		Actor: upgrade.helix_napalm
+		PauseOnCondition: napalm_upgrade
+	ConditionPrerequisite@NUKE:
+		Queue: queue.nuke_gen_helix
+		Actor: upgrade.helix_nuke
+		PauseOnCondition: nuke_upgrade
+	GrantConditionOnProduction@NAPALM:
+		Condition: napalm_upgrade
+		Actors: upgrade.helix_napalm
+	GrantConditionOnProduction@NUKE:
+		Condition: nuke_upgrade
+		Actors: upgrade.helix_nuke
+	GrantConditionOnPrerequisite@BLACK_NAPALM:
+		Condition: black_napalm
+		Prerequisites: upgrade.black_napalm
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
@@ -1312,13 +1360,15 @@ aircraft.assault_helix:
 		Produces: queue.assault_helix
 	ProductionQueue:
 		Type: queue.assault_helix
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
+	-ProductionQueue@Nuke:
 	Cargo:
 		Types: Infantry
 		MaxWeight: 8
 		PipCount: 8
 	AttackHeli:
 		Armaments: primary
-	-Armament@Gatling:
-	-GrantStackableConditionOnFire@gatling:
+	-Armament@GATLING:
+	-GrantStackableConditionOnFire@GATLING:
 	-WithRangeCircle:
 	-ProximityExternalCondition@SPEAKER:

@@ -205,7 +205,7 @@ hack.firestorm.normal:
 	Range: 2c0
 	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c96
+		Spread: 0c128
 		Damage: 3000
 		ValidTargets: Ground, Water, Trees
 		Versus:
@@ -649,3 +649,15 @@ hack.spawn_2_mines:
 	Inherits: ^default.spawner
 	Warhead@2Spawner: SpawnActor
 		Actors: hack.mine, hack.mine
+
+hack.spawn_1_firestrorm:
+	Inherits: ^default.spawner
+	ReloadDelay: 10000
+	Warhead@2Spawner: SpawnActor
+		Actors: firestorm.normal
+
+hack.spawn_1_firestrorm.blue:
+	Inherits: ^default.spawner
+	ReloadDelay: 10000
+	Warhead@2Spawner: SpawnActor
+		Actors: firestorm.blue

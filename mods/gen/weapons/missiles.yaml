@@ -136,12 +136,6 @@ missile.mig.ground.tactical_nuke:
 	Warhead@3Eff: CreateEffect
 		Explosions: mininuke
 		ImpactSounds: kaboom1.aud
-	Warhead@5Radio: CreateRadioactivity
-		RadioactivityLayerName: radioactivity
-		Range: 2
-		Level: 2500
-		Falloff: 100, 50, 0
-		MaxLevel: 2500
 
 missile.mig.air:
 	Inherits: ^AntiAirMissile

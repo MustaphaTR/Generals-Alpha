@@ -893,7 +893,6 @@ upgrade.overlord_bunker:
 		BuildPaletteOrder: 1
 		BuildDuration: 375
 		Description: Gives overlord tank a bunker for 5 infantry.
-		BuildLimit: 0
 		QueuedAudio: OverlordBunkerBuilding
 		ReadyAudio: OverlordBunkerReady
 	Valued:
@@ -910,7 +909,6 @@ upgrade.overlord_gatling:
 		BuildPaletteOrder: 2
 		BuildDuration: 500
 		Description: Gives overlord tank a gatling cannon.\n\nAllows overlord tank to detect stealth.
-		BuildLimit: 0
 		QueuedAudio: OverlordGatlingBuilding
 		ReadyAudio: OverlordGatlingReady
 	Valued:
@@ -927,7 +925,6 @@ upgrade.overlord_speaker:
 		BuildPaletteOrder: 3
 		BuildDuration: 250
 		Description: Gives overlord tank a speaker tower.
-		BuildLimit: 0
 		QueuedAudio: OverlordSpeakerBuilding
 		ReadyAudio: OverlordSpeakerReady
 	Valued:
@@ -940,7 +937,7 @@ upgrade.helix_bunker:
 	Tooltip:
 		Name: Bunker
 	Buildable:
-		Queue: queue.helix, queue.assault_helix
+		Queue: queue.helix, queue.assault_helix, queue.nuke_gen_helix
 		Description: Allows infantry in helix to fire outside.
 		QueuedAudio: HelixBunkerBuilding
 		ReadyAudio: HelixBunkerReady
@@ -950,7 +947,7 @@ upgrade.helix_gatling:
 	Tooltip:
 		Name: Gatling
 	Buildable:
-		Queue: queue.helix
+		Queue: queue.helix, queue.nuke_gen_helix
 		Description: Gives helix a gatling cannon.\n\nAllows helix to detect stealth.
 		QueuedAudio: HelixGatlingBuilding
 		ReadyAudio: HelixGatlingReady
@@ -960,10 +957,44 @@ upgrade.helix_speaker:
 	Tooltip:
 		Name: Speaker
 	Buildable:
-		Queue: queue.helix
+		Queue: queue.helix, queue.nuke_gen_helix
 		Description: Gives helix a speaker tower.
 		QueuedAudio: HelixSpeakerBuilding
 		ReadyAudio: HelixSpeakerReady
+
+upgrade.helix_napalm:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Napalm
+	Buildable:
+		Queue: queue.helix, queue.assault_helix
+		BuildPaletteOrder: 4
+		ForceIconLocation: true
+		BuildDuration: 500
+		Description: Allows helix to drop napalm bombs by force firing.
+		QueuedAudio: HelixNapalmBuilding
+		ReadyAudio: HelixNapalmReady
+	Valued:
+		Cost: 800
+	KillsSelf:
+		RemoveInstead: true
+
+upgrade.helix_nuke:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Nuke
+	Buildable:
+		Queue: queue.nuke_gen_helix
+		BuildPaletteOrder: 4
+		ForceIconLocation: true
+		BuildDuration: 500
+		Description: Allows helix to drop nuclear bombs by force firing.
+		QueuedAudio: HelixNukeBuilding
+		ReadyAudio: HelixNukeReady
+	Valued:
+		Cost: 800
+	KillsSelf:
+		RemoveInstead: true
 
 strategy.bombardment:
 	Inherits: ^default.strategy

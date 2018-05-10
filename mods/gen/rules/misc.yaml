@@ -352,6 +352,21 @@ firestorm.normal.50:
 	FirepowerMultiplier:
 		Modifier: 50
 
+firestorm.normal.plus:
+	Inherits: firestorm.normal
+	ExplodeWeapon@1:
+		Weapon: hack.spawn_1_firestrorm
+		LocalOffset: 0,-1024,0
+	ExplodeWeapon@2:
+		Weapon: hack.spawn_1_firestrorm
+		LocalOffset: 0,1024,0
+	ExplodeWeapon@3:
+		Weapon: hack.spawn_1_firestrorm
+		LocalOffset: -1024,0,0
+	ExplodeWeapon@4:
+		Weapon: hack.spawn_1_firestrorm
+		LocalOffset: 1024,0,0
+
 firestorm.blue:
 	Inherits: firestorm.normal
 	Armament:
@@ -363,6 +378,21 @@ firestorm.blue.50:
 	Inherits: firestorm.blue
 	FirepowerMultiplier:
 		Modifier: 50
+
+firestorm.blue.plus:
+	Inherits: firestorm.blue
+	ExplodeWeapon@1:
+		Weapon: hack.spawn_1_firestrorm.blue
+		LocalOffset: 0,-1024,0
+	ExplodeWeapon@2:
+		Weapon: hack.spawn_1_firestrorm.blue
+		LocalOffset: 0,1024,0
+	ExplodeWeapon@3:
+		Weapon: hack.spawn_1_firestrorm.blue
+		LocalOffset: -1024,0,0
+	ExplodeWeapon@4:
+		Weapon: hack.spawn_1_firestrorm.blue
+		LocalOffset: 1024,0,0
 
 hack.mine:
 	Inherits: ^Mine

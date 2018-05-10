@@ -138,6 +138,65 @@ parabomb.cluster_mines:
 	Warhead@2Spawner: SpawnActor
 		Actors: hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine
 
+parabomb.helix:
+	Inherits: ^ParaBomb
+	ReloadDelay: 250
+	RequiresForceFire: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c128
+		Damage: 3500
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+			building.internet_center: 70
+		DamageTypes: FireDeath, TriggerProne, Incendiary
+	Warhead@2Dam: SpreadDamage
+		Spread: 0c640
+		Damage: 4000
+		Versus:
+			aircraft.comanche: 130
+			aircraft.chinook: 50
+			building.tough: 80
+			building.internet_center: 70
+		DamageTypes: FireDeath, TriggerProne, Incendiary
+	Warhead@3Fire: SpawnActor
+		Actors: firestorm.normal.plus
+		InvalidTargets: Water
+
+parabomb.helix.blue:
+	Inherits: parabomb.helix
+	Warhead@3Fire: SpawnActor
+		Actors: firestorm.blue.plus
+
+parabomb.helix.nuke:
+	Inherits: parabomb.helix
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c256
+		Damage: 25000
+	Warhead@2Dam: SpreadDamage
+		Spread: 1c512
+		Damage: 5000
+	-Warhead@3Fire:
+	Warhead@4Eff_impact: CreateEffect
+		Explosions: mininuke
+		ImpactSounds: kaboom1.aud
+		ImpactActors: false
+	Warhead@5Smu_impact: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		Size: 2
+	Warhead@5Smu_impactSnow: LeaveSmudge
+		SmudgeType: SnowScorch
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		Size: 2
+	Warhead@5Radio: CreateRadioactivity
+		RadioactivityLayerName: radioactivity
+		Range: 2
+		Level: 2500
+		Falloff: 100, 50, 0
+		MaxLevel: 2500
+
 Atomic:
 	ValidTargets: Ground, Trees, Water, Underwater, Air
 	Warhead@1Dam_impact: SpreadDamage
