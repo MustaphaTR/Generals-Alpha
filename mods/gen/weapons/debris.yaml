@@ -13,7 +13,7 @@
 		Explosions: building
 		ValidTargets: Ground, Air
 	Warhead@2Eff: CreateEffect
-		Explosions: big_splash
+		Explosions: large_splash
 		ImpactSounds: splash9.aud
 		ValidTargets: Water, Underwater
 
@@ -98,7 +98,7 @@ debris.overlord_tank:
 	Warhead@1Eff: CreateEffect
 		Explosions: building
 	Warhead@2Eff: CreateEffect
-		Explosions: big_splash
+		Explosions: large_splash
 
 debris.gatling_tank:
 	Inherits: ^default.small_debris
@@ -128,7 +128,7 @@ debris.scud_launcher:
 	Warhead@1Eff: CreateEffect
 		Explosions: artillery_explosion
 	Warhead@2Eff: CreateEffect
-		Explosions: big_splash
+		Explosions: large_splash
 
 debris.gunboat:
 	Inherits: ^default.small_debris
