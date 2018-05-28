@@ -364,7 +364,7 @@ tech.repair_bay:
 	ProvidesPrerequisite@buildingname:
 		RequiresCondition: !emp && !hacked
 
-tech.service_depot:
+tech.reinforcements_pad:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
@@ -379,9 +379,9 @@ tech.service_depot:
 			TopLeft: -640, -980
 			BottomRight: 640, 1110
 	Tooltip:
-		Name: Service Depot
+		Name: Reinforcements Pad
 	TooltipDescription:
-		Description: Repairs vehicles.
+		Description: Delivers vehicles every 2 minutes.
 	Building:
 		Footprint: _X_ xxx _X_
 		Dimensions: 3,3
@@ -407,19 +407,158 @@ tech.service_depot:
 		HP: 100000
 	WithBuildingBib:
 		HasMinibib: Yes
-	DockManager:
-		DeadlockDetectionEnabled: false
-		DockOnActor: true
-	Dock@1:
-		DockOffset: 1,1
-		ExitOffset: 2,0
-	Reservable:
-	RepairsUnits:
-		Interval: 15
-		PauseOnCondition: emp || hacked
-		HpPerStep: 1000
 	RallyPoint:
-	WithRepairAnimation:
+	Exit:
+		ExitCell: 1,1
+	GrantConditionOnCapture:
+		Condition: enabled
+	ProductionParadrop:
+		Produces: queue.reinforcements_pad
+		ActorType: aircraft.cargo_plane
+		ChuteSound: chute1.aud
+	PeriodicProducer@VanillaUSA:
+		Actors: vehicle.crusader_tank
+		ChargeDuration: 3000
+		Type: queue.reinforcements_pad
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && usa
+	PeriodicProducer@Airforce:
+		Actors: vehicle.humvee
+		ChargeDuration: 3000
+		Type: queue.reinforcements_pad
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && air
+	PeriodicProducer@Laser:
+		Actors: vehicle.laser_tank
+		ChargeDuration: 3000
+		Type: queue.reinforcements_pad
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && laser
+	PeriodicProducer@Super:
+		Actors: vehicle.tomahawk_launcher
+		ChargeDuration: 3000
+		Type: queue.reinforcements_pad
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && super
+	PeriodicProducer@VanillaGLA:
+		Actors: vehicle.scorpion_tank
+		ChargeDuration: 3000
+		Type: queue.reinforcements_pad
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && gla
+	PeriodicProducer@Toxin:
+		Actors: vehicle.toxin_tractor
+		ChargeDuration: 3000
+		Type: queue.reinforcements_pad
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && toxin
+	PeriodicProducer@Demo:
+		Actors: vehicle.technical.demo_reinforce # Should be 2 Combat Bikes. 
+		ChargeDuration: 3000
+		Type: queue.reinforcements_pad
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && demo
+	PeriodicProducer@Stealth:
+		Actors: vehicle.quad_cannon
+		ChargeDuration: 3000
+		Type: queue.reinforcements_pad
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && stealth
+	PeriodicProducer@VanillaPRC:
+		Actors: vehicle.battlemaster_tank
+		ChargeDuration: 3000
+		Type: queue.reinforcements_pad
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && prc
+	PeriodicProducer@Infantry:
+		Actors: vehicle.assault_troop_crawler
+		ChargeDuration: 3000
+		Type: queue.reinforcements_pad
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && inf
+	PeriodicProducer@Nuke:
+		Actors: vehicle.nuclear_battlemaster_tank
+		ChargeDuration: 3000
+		Type: queue.reinforcements_pad
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && nuke
+	PeriodicProducer@Tank:
+		Actors: vehicle.battlemaster_tank
+		ChargeDuration: 3000
+		Type: queue.reinforcements_pad
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && tank
+	PeriodicProducer@Boss:
+		Actors: vehicle.paladin_tank
+		ChargeDuration: 3000
+		Type: queue.reinforcements_pad
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && boss
+	GrantConditionOnFaction@VanillaUSA:
+		Condition: usa
+		Factions: usa
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@Airforce:
+		Condition: air
+		Factions: air
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@Laser:
+		Condition: laser
+		Factions: laser
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@Super:
+		Condition: super
+		Factions: super
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@VanillaGLA:
+		Condition: gla
+		Factions: gla
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@Demo:
+		Condition: demo
+		Factions: demo
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@Stealth:
+		Condition: stealth
+		Factions: stealth
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@VanillaPRC:
+		Condition: prc
+		Factions: prc
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@Infantry:
+		Condition: inf
+		Factions: inf
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@Nuke:
+		Condition: nuke
+		Factions: nuke
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@Tank:
+		Condition: tank
+		Factions: tank
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@Boss:
+		Condition: boss
+		Factions: boss
+		ResetOnOwnerChange: true
 	ProvidesPrerequisite@buildingname:
 	RenderSprites:
 		PlayerPalette: cncplayer

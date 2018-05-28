@@ -223,6 +223,8 @@ vehicle.technical:
 		HP: 18000
 	Armor:
 		Type: vehicle.truck
+	Selectable:
+		Class: vehicle.technical
 	Mobile:
 		TurnSpeed: 10
 		Speed: 90
@@ -270,8 +272,17 @@ vehicle.technical:
 		Condition: moving
 	ProducibleWithLevel:
 		Prerequisites: generals_power.tech_training
+	RenderSprites:
+		Image: vehicle.technical
 	Voiced:
 		VoiceSet: TechnicalVoice
+
+vehicle.technical.demo_reinforce:
+	Inherits: vehicle.technical
+	Buildable:
+		Queue: queue.reinforcements_pad
+	Cargo:
+		InitialUnits: infantry.terrorist, infantry.terrorist
 
 vehicle.radar_van:
 	Inherits: ^Vehicle
