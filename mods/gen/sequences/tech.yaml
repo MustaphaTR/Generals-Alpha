@@ -173,6 +173,33 @@ tech.power_plant:
 		Length: *
 		AddExtension: False
 
+tech.repair_bay:
+	idle: rbay
+		Offset: 0, -6
+	idle-roof: rbay2
+		Offset: 0, -6
+	damaged-idle: rbay
+		Start: 1
+		Offset: 0, -6
+	damaged-roof: rbay2
+		Start: 1
+		Offset: 0, -6
+	bib: bib2.tem
+		Length: *
+		AddExtension: False
+	bib-Snow: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib2.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib2.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib2.des
+		Length: *
+		AddExtension: False
+
 tech.service_depot:
 	idle: tdfix
 		ZOffset: -1c511

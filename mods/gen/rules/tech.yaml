@@ -337,6 +337,33 @@ tech.power_plant:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.reactor
 
+tech.repair_bay:
+	Inherits: ^TechBuilding
+	Inherits@EMP: ^AffectedByEMP
+	Inherits@HACK: ^AffectedByHacking
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^3x2Shape
+	Tooltip:
+		Name: Repair Bay
+	TooltipDescription:
+		Description: Makes vehicles auto-repair.
+	Building:
+		Footprint: __x xxx x__
+		Dimensions: 3,3
+	Capturable:
+	ExternalCapturable:
+		ShowChatMessage: true
+		Notification: BuildingBeingCaptured
+		FlashBeep: ucapture.aud
+	ExternalCapturableBar:
+	WithIdleOverlay@ROOF:
+		Sequence: idle-roof
+	WithBuildingBib:
+	RenderSprites:
+		PlayerPalette: cncplayer
+	ProvidesPrerequisite@buildingname:
+		RequiresCondition: !emp && !hacked
+
 tech.service_depot:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP

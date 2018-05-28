@@ -362,6 +362,17 @@
 		Condition: junk_repair
 		Prerequisites: upgrade.junk_repair
 
+^AffectedByRepairBay:
+	SelfHealing@REPAIR_BAY:
+		Step: 200
+		Delay: 25
+		HealIfBelow: 100
+		DamageCooldown: 25
+		RequiresCondition: repair_bay
+	GrantConditionOnPrerequisite@REPAIR_BAY:
+		Condition: repair_bay
+		Prerequisites: tech.repair_bay
+
 ^AffectedByFortifiedStructures:
 	DamageMultiplier@FORTIFY:
 		RequiresCondition: fortified_structures
@@ -1048,6 +1059,7 @@
 	Inherits@16: ^AffectedByRadiationAndToxins
 	Inherits@17: ^AffectedByGPSScambler
 	Inherits@18: ^AffectedByAmbulanceZHOnly
+	Inherits@19: ^AffectedByRepairBay
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -1392,6 +1404,7 @@
 	Inherits@13: ^AffectedByFrenzy
 	Inherits@14: ^AffectedByRadiationAndToxins
 	Inherits@15: ^AffectedByGPSScambler
+	Inherits@16: ^AffectedByRepairBay
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
