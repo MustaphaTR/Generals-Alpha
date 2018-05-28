@@ -77,6 +77,28 @@ tech.oil_refinery:
 	ProvidesPrerequisite@buildingname:
 		RequiresCondition: !emp && !hacked
 
+# This is a campaign building, not an actual tech structure.
+tech.nuclear_bunker:
+	Inherits: ^TechBuilding
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^2x2Shape
+	Selectable:
+		Priority: 0
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 100000
+	Tooltip:
+		Name: Bunker
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+	Explodes:
+		Type: CenterPosition
+		Weapon: explosion.nuclear_reactor
+		EmptyWeapon: explosion.nuclear_reactor
+
 tech.hospital:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP

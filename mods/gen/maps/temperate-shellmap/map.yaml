@@ -99,12 +99,6 @@ Actors:
 	Actor106: t10
 		Location: 100,83
 		Owner: Neutral
-	Actor107: t08
-		Location: 110,78
-		Owner: Neutral
-	Actor110: t05
-		Location: 111,84
-		Owner: Neutral
 	Actor111: t02
 		Location: 110,87
 		Owner: Neutral
@@ -138,9 +132,6 @@ Actors:
 	Actor124: tc01
 		Location: 112,73
 		Owner: Neutral
-	Actor125: t17
-		Location: 105,82
-		Owner: Neutral
 	Actor126: t15
 		Location: 96,85
 		Owner: Neutral
@@ -156,17 +147,11 @@ Actors:
 	Actor133: t13
 		Location: 53,85
 		Owner: Neutral
-	Actor137: t07
-		Location: 51,82
-		Owner: Neutral
 	Actor138: t01
 		Location: 65,38
 		Owner: Neutral
 	Actor139: tc04
 		Location: 62,39
-		Owner: Neutral
-	Actor140: tc03
-		Location: 63,41
 		Owner: Neutral
 	Actor141: tc01
 		Location: 55,77
@@ -182,9 +167,6 @@ Actors:
 		Owner: Neutral
 	Actor148: tc02
 		Location: 53,67
-		Owner: Neutral
-	Actor149: t02
-		Location: 101,88
 		Owner: Neutral
 	Actor150: tc03
 		Location: 41,69
@@ -293,9 +275,6 @@ Actors:
 		Owner: Neutral
 	Actor193: t01
 		Location: 31,43
-		Owner: Neutral
-	Actor194: t07
-		Location: 43,49
 		Owner: Neutral
 	Actor195: tc04
 		Location: 30,57
@@ -482,9 +461,6 @@ Actors:
 	Actor263: tc05
 		Owner: Neutral
 		Location: 28,75
-	Actor264: tc05
-		Owner: Neutral
-		Location: 29,82
 	Actor265: tc04
 		Owner: Neutral
 		Location: 28,81
@@ -497,9 +473,6 @@ Actors:
 	Actor268: tc05
 		Owner: Neutral
 		Location: 65,67
-	Actor269: t07
-		Owner: Neutral
-		Location: 50,36
 	Actor270: tc05
 		Owner: Neutral
 		Location: 60,51
@@ -518,9 +491,6 @@ Actors:
 	Actor276: t12
 		Owner: Neutral
 		Location: 38,91
-	Actor277: t01
-		Owner: Neutral
-		Location: 41,87
 	Actor278: tc02
 		Owner: Neutral
 		Location: 47,85
@@ -704,9 +674,6 @@ Actors:
 	PRCPropaganda: building.propaganda_center
 		Owner: PRC
 		Location: 33,39
-	Actor320: building.prc_supply_center
-		Owner: PRC
-		Location: 45,50
 	PRCPower3: building.nuclear_reactor
 		Owner: PRC
 		Location: 34,62
@@ -725,18 +692,6 @@ Actors:
 	PRCShipyard: tech.shipyard
 		Owner: PRC
 		Location: 67,36
-	Actor325: vehicle.supply_truck
-		Owner: PRC
-		Location: 57,45
-		Facing: 0
-	Actor326: vehicle.supply_truck
-		Owner: PRC
-		Location: 54,56
-		Facing: 0
-	Actor327: vehicle.supply_truck
-		Owner: PRC
-		Location: 51,41
-		Facing: 0
 	Actor330: infantry.pilot
 		Owner: USA
 		Location: 31,87
@@ -1583,6 +1538,195 @@ Actors:
 	Actor557: v09
 		Owner: Neutral
 		Location: 48,77
+	Actor558: t01
+		Owner: Neutral
+		Location: 41,87
+	Actor559: supply.pile.a
+		Owner: Neutral
+		Location: 41,87
+	Actor560: supply.pile.e
+		Owner: Neutral
+		Location: 39,89
+	Actor561: supply.pile.f
+		Owner: Neutral
+		Location: 41,89
+	Actor562: supply.pile.g
+		Owner: Neutral
+		Location: 39,87
+	Actor563: t07
+		Owner: Neutral
+		Location: 51,82
+	Actor564: supply.pile.e
+		Owner: Neutral
+		Location: 63,91
+	Actor565: supply.pile.e
+		Owner: Neutral
+		Location: 55,83
+	Actor566: supply.pile.d
+		Owner: Neutral
+		Location: 57,83
+	Actor567: supply.pile.c
+		Owner: Neutral
+		Location: 59,83
+	Actor568: tc05
+		Owner: Neutral
+		Location: 29,82
+	Actor569: supply.pile.a
+		Owner: Neutral
+		Location: 31,77
+	Actor570: supply.pile.g
+		Owner: Neutral
+		Location: 31,81
+	Actor571: supply.pile.e
+		Owner: Neutral
+		Location: 29,79
+	Actor572: supply.pile.b
+		Owner: Neutral
+		Location: 31,79
+	Actor573: supply.pile.f
+		Owner: Neutral
+		Location: 33,83
+	Actor574: supply.pile.g
+		Owner: Neutral
+		Location: 33,81
+	Actor575: supply.pile.d
+		Owner: Neutral
+		Location: 33,79
+	Actor576: supply.pile.b
+		Owner: Neutral
+		Location: 33,77
+	Actor577: t07
+		Owner: Neutral
+		Location: 43,49
+	Actor578: building.prc_supply_center
+		Owner: PRC
+		Location: 45,50
+	Actor579: supply.pile.c
+		Owner: Neutral
+		Location: 45,50
+	Actor580: supply.pile.b
+		Owner: Neutral
+		Location: 46,49
+	Actor581: supply.pile.f
+		Owner: Neutral
+		Location: 47,50
+	Actor582: supply.pile.f
+		Owner: Neutral
+		Location: 51,46
+	Actor583: supply.pile.c
+		Owner: Neutral
+		Location: 51,45
+	Actor584: supply.pile.g
+		Owner: Neutral
+		Location: 51,42
+	Actor585: supply.pile.c
+		Owner: Neutral
+		Location: 51,41
+	Actor586: supply.pile.c
+		Owner: Neutral
+		Location: 56,37
+	Actor587: supply.pile.d
+		Owner: Neutral
+		Location: 51,38
+	Actor588: t07
+		Owner: Neutral
+		Location: 50,36
+	Actor589: supply.pile.a
+		Owner: Neutral
+		Location: 51,37
+	Actor590: supply.pile.a
+		Owner: Neutral
+		Location: 59,38
+	Actor593: supply.pile.c
+		Owner: Neutral
+		Location: 64,48
+	Actor591: supply.pile.e
+		Owner: Neutral
+		Location: 67,46
+	Actor592: supply.pile.b
+		Owner: Neutral
+		Location: 67,43
+	Actor594: tc03
+		Owner: Neutral
+		Location: 63,41
+	Actor595: supply.pile.a
+		Owner: Neutral
+		Location: 56,62
+	Actor596: supply.pile.f
+		Owner: Neutral
+		Location: 54,64
+	Actor597: supply.dock.30000.6x4
+		Owner: Neutral
+		Location: 59,61
+	Actor598: t08
+		Owner: Neutral
+		Location: 110,78
+	Actor599: supply.dock.30000.6x4
+		Owner: Neutral
+		Location: 111,78
+	Actor600: t02
+		Owner: Neutral
+		Location: 101,88
+	Actor601: t05
+		Owner: Neutral
+		Location: 111,84
+	Actor602: t17
+		Owner: Neutral
+		Location: 105,82
+	Actor603: supply.pile.a
+		Owner: Neutral
+		Location: 112,84
+	Actor604: supply.pile.f
+		Owner: Neutral
+		Location: 115,84
+	Actor605: supply.pile.g
+		Owner: Neutral
+		Location: 115,87
+	Actor606: supply.pile.d
+		Owner: Neutral
+		Location: 107,79
+	Actor607: supply.pile.e
+		Owner: Neutral
+		Location: 107,80
+	Actor608: supply.pile.a
+		Owner: Neutral
+		Location: 101,87
+	Actor609: supply.pile.a
+		Owner: Neutral
+		Location: 104,87
+	Actor610: supply.pile.f
+		Owner: Neutral
+		Location: 105,87
+	Actor611: supply.pile.g
+		Owner: Neutral
+		Location: 108,87
+	Actor612: supply.pile.e
+		Owner: Neutral
+		Location: 101,91
+	Actor613: supply.pile.f
+		Owner: Neutral
+		Location: 104,91
+	Actor614: supply.pile.b
+		Owner: Neutral
+		Location: 105,91
+	Actor615: supply.dock.30000.4x6
+		Owner: Neutral
+		Location: 53,54
+	Actor617: supply.dock.30000.4x6
+		Owner: Neutral
+		Location: 56,42
+	Actor616: vehicle.supply_truck
+		Owner: PRC
+		Location: 49,42
+		Facing: 92
+	Actor618: vehicle.supply_truck
+		Owner: PRC
+		Location: 57,48
+		Facing: 92
+	Actor619: vehicle.supply_truck
+		Owner: PRC
+		Location: 52,57
+		Facing: 92
 
 Rules: rules.yaml
 

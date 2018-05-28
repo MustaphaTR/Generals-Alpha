@@ -28,12 +28,10 @@ vehicle.supply_truck:
 		Start: 32
 		Length: 8
 		Facings: 8
-	dock: harv
-		Start: 96
-		Length: 12
-	dock-loop: harv
-		Start: 104
-		Length: 7
+	deliver: harv
+		Frames: 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 104, 103, 102, 101, 100, 99, 98, 97, 96
+		Length: 21
+		Tick: 20
 	icon: harvicon
 		Start: 0
 

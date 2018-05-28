@@ -169,7 +169,7 @@ WorldLoaded = function()
 	mp10 = Player.GetPlayer("Multi10")
 	mp11 = Player.GetPlayer("Multi11")
 
-	players = {mp0, mp1, mp2, mp3, mp4, mp5, mp6, mp7, mp8, mp9, mp10, mp11 }
+	players = { mp0, mp1, mp2, mp3, mp4, mp5, mp6, mp7, mp8, mp9, mp10, mp11 }
 
 	for _,player in pairs(players) do
 		ReducePoints(player)

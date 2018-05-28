@@ -1162,15 +1162,13 @@ building.prc_barracks:
 	Armor:
 		Type: building.normal
 	WithBuildingBib:
-	Refinery:
-		UseStorage: false
 	DockManager:
-		ExternalDocks: true
-	Dock@0:
-		DockAngle: 64
-		DockOffset: 1,2
-		ExitOffset: 0,1
-		Order: 0
+	Dock:
+	Refinery:
+	SupplyCenter:
+		UseStorage: false
+		Facing: 64
+		DeliveryOffsets: 1,2
 	Power:
 		Amount: -1
 	CashHackable:
@@ -1307,8 +1305,8 @@ building.gla_supply_stash:
 	Exit:
 		SpawnOffset: -96,768,0
 		ExitCell: 1,1
-	Dock@0:
-		DockOffset: 1,1
+	SupplyCenter:
+		DeliveryOffsets: 1,1
 	RallyPoint:
 		Offset: 2,1
 	-WithMakeAnimation:
@@ -2907,9 +2905,9 @@ building.propaganda_center:
 		SpectatorUIOrder: 62
 	ProductionBar@Vanilla:
 		ProductionType: queue.propaganda_center
-	ProductionBar@Nuke:
-		ProductionType: queue.inf_gen_propaganda_center
 	ProductionBar@Inf:
+		ProductionType: queue.inf_gen_propaganda_center
+	ProductionBar@Nuke:
 		ProductionType: queue.nuke_gen_propaganda_center
 	ProductionBar@Tank:
 		ProductionType: queue.tank_gen_propaganda_center

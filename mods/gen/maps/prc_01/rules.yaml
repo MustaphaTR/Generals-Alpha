@@ -1,0 +1,148 @@
+Player:
+	LobbyPrerequisiteCheckbox@GLOBALZHUNITS:
+		Enabled: False
+		Locked: True
+	EnemyWatcher:
+	ProvidesRadar:
+
+World:
+	LuaScript:
+		Scripts: generals_powers_local.lua, prc_01.lua
+	MissionData:
+		Briefing: The GLA has detonated a nuclear warhead during the military parade in Bejing. We have located their storage for the nuclear warheads. Destroy it comrade to ensure that such thing cannot happen again.
+	ScriptLobbyDropdown@difficulty:
+		ID: difficulty
+		Label: Difficulty
+		Values:
+			easy: Easy
+			normal: Normal
+			hard: Hard
+		Default: normal
+
+generals_power.arty_training:
+	Buildable:
+		Prerequisites: ~disabled
+
+generals_power.nuke_cannon:
+	Buildable:
+		Prerequisites: ~disabled
+
+generals_power.emergency_repair1:
+	Buildable:
+		Prerequisites: prerequisite.has_points, ~techlevel.low
+
+generals_power.emergency_repair2:
+	Buildable:
+		Prerequisites: ~disabled
+
+generals_power.emergency_repair3:
+	Buildable:
+		Prerequisites: ~disabled
+
+generals_power.cash_hack1:
+	Buildable:
+		Prerequisites: ~disabled
+
+generals_power.cash_hack2:
+	Buildable:
+		Prerequisites: ~disabled
+
+generals_power.cash_hack3:
+	Buildable:
+		Prerequisites: ~disabled
+
+generals_power.arty_barrage1:
+	Buildable:
+		Prerequisites: ~disabled
+
+generals_power.arty_barrage2:
+	Buildable:
+		Prerequisites: ~disabled
+
+generals_power.arty_barrage3:
+	Buildable:
+		Prerequisites: ~disabled
+
+generals_power.cluster_mines:
+	Buildable:
+		Prerequisites: ~disabled
+
+generals_power.emp:
+	Buildable:
+		Prerequisites: ~disabled
+
+infantry.hacker:
+	Buildable:
+		Prerequisites: ~disabled
+
+infantry.black_lotus:
+	Buildable:
+		Prerequisites: ~disabled
+
+vehicle.gatling_tank:
+	Buildable:
+		Prerequisites: ~disabled
+
+vehicle.inferno_cannon:
+	Buildable:
+		Prerequisites: ~disabled
+
+vehicle.overlord_tank:
+	Buildable:
+		Prerequisites: ~disabled
+
+upgrade.radar:
+	Buildable:
+		Prerequisites: ~disabled
+
+upgrade.chain_gun:
+	Buildable:
+		Prerequisites: ~disabled
+
+upgrade.black_napalm:
+	Buildable:
+		Prerequisites: ~disabled
+
+building.gatling_cannon:
+	Buildable:
+		Prerequisites: ~disabled
+
+building.prc_airfield:
+	Buildable:
+		Prerequisites: ~disabled
+
+building.propaganda_center:
+	Buildable:
+		Prerequisites: ~disabled
+
+building.speaker_tower:
+	Buildable:
+		Prerequisites: ~disabled
+
+building.missile_silo:
+	Buildable:
+		Prerequisites: ~disabled
+
+building.bunker.filled:
+	Inherits: building.bunker
+	Buildable:
+		Prerequisites: ~disabled
+	Cargo:
+		InitialUnits: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard
+	RenderSprites:
+		Image: building.bunker
+
+building.bunker.filled.gla:
+	Inherits: building.bunker.filled
+	Cargo:
+		InitialUnits: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel
+
+aircraft.mig:
+	-Selectable:
+	Interactable:
+	Aircraft:
+		Speed: 180
+
+^Car:
+	ExternalCondition@lua:
+		Condition: car_bomb

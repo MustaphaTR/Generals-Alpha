@@ -767,17 +767,176 @@ snow_craters:
 	cr5: cr5.sno
 	cr6: cr6.sno
 
-mine:
-	idle:
-		UseTilesetExtension: true
-		ZOffset: -512
+supply.pile.a:
+	idle: pilea
+	idle-100: pilea
+	idle-66: pilea
+		Start: 1
+	idle-33: pilea
+		Start: 2
 
-gmine:
-	idle:
-		ZOffset: -512
-		UseTilesetExtension: true
-		TilesetOverrides:
-			INTERIOR: TEMPERAT
+supply.pile.b:
+	idle: pileb
+	idle-100: pileb
+	idle-66: pileb
+		Start: 1
+	idle-33: pileb
+		Start: 2
+
+supply.pile.c:
+	idle: pilec
+	idle-100: pilec
+	idle-75: pilec
+		Start: 1
+	idle-50: pilec
+		Start: 2
+	idle-25: pilec
+		Start: 3
+
+supply.pile.d:
+	idle: piled
+	idle-100: piled
+	idle-66: piled
+		Start: 1
+	idle-33: piled
+		Start: 2
+
+supply.pile.e:
+	idle: pilee
+	idle-100: pilee
+	idle-66: pilee
+		Start: 1
+	idle-33: pilee
+		Start: 2
+
+supply.pile.f:
+	idle: pilef
+	idle-100: pilef
+	idle-66: pilef
+		Start: 1
+	idle-33: pilef
+		Start: 2
+
+supply.pile.g:
+	idle: pileg
+	idle-100: pileg
+	idle-80: pileg
+		Start: 1
+	idle-60: pileg
+		Start: 2
+	idle-40: pileg
+		Start: 3
+	idle-20: pileg
+		Start: 4
+
+supply.dock.6x4:
+	Defaults:
+		ZOffset: -1c511
+	idle: dock_6x4
+	idle-100: dock_6x4
+	idle-75: dock_6x4
+		Start: 1
+	idle-50: dock_6x4
+		Start: 2
+	idle-25: dock_6x4
+		Start: 3
+	bib-tem: dock_6x4_bib.tem
+		ZOffset: -2c511
+		AddExtension: false
+	bib-sno: dock_6x4_bib.sno
+		ZOffset: -2c511
+		AddExtension: false
+	bib-des: dock_6x4_bib.des
+		ZOffset: -2c511
+		AddExtension: false
+
+supply.dock.4x6:
+	Defaults:
+		ZOffset: -1c511
+	idle: dock_4x6
+	idle-100: dock_4x6
+	idle-75: dock_4x6
+		Start: 1
+	idle-50: dock_4x6
+		Start: 2
+	idle-25: dock_4x6
+		Start: 3
+	bib-tem: dock_4x6_bib.tem
+		ZOffset: -2c511
+		AddExtension: false
+	bib-sno: dock_4x6_bib.sno
+		ZOffset: -2c511
+		AddExtension: false
+	bib-des: dock_4x6_bib.des
+		ZOffset: -2c511
+		AddExtension: false
+
+supply.dock.skewed_a:
+	Defaults:
+		ZOffset: -1c511
+	idle: dock_skewed_a
+	idle-100: dock_skewed_a
+	idle-75: dock_skewed_a
+		Start: 1
+	idle-50: dock_skewed_a
+		Start: 2
+	idle-25: dock_skewed_a
+		Start: 3
+	bib-tem: dock_skewed_a_bib.tem
+		ZOffset: -2c511
+		AddExtension: false
+	bib-sno: dock_skewed_a_bib.sno
+		ZOffset: -2c511
+		AddExtension: false
+	bib-des: dock_skewed_a_bib.des
+		ZOffset: -2c511
+		AddExtension: false
+
+supply.dock.skewed_b:
+	Defaults:
+		ZOffset: -1c511
+	idle: dock_skewed_b
+	idle-100: dock_skewed_b
+	idle-75: dock_skewed_b
+		Start: 1
+	idle-50: dock_skewed_b
+		Start: 2
+	idle-25: dock_skewed_b
+		Start: 3
+	bib-tem: dock_skewed_b_bib.tem
+		ZOffset: -2c511
+		AddExtension: false
+	bib-sno: dock_skewed_b_bib.sno
+		ZOffset: -2c511
+		AddExtension: false
+	bib-des: dock_skewed_b_bib.des
+		ZOffset: -2c511
+		AddExtension: false
+
+supply.dock.2x2:
+	idle: dock_2x2
+	idle-100: dock_2x2
+	idle-75: dock_2x2
+		Start: 1
+	idle-50: dock_2x2
+		Start: 2
+	idle-25: dock_2x2
+		Start: 3
+	bib: bib3.tem
+		Length: *
+		AddExtension: False
+	bib-Snow: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-SnowRoad: bib3.sno
+		Length: *
+		AddExtension: False
+	bib-Sand: bib3.des
+		Length: *
+		AddExtension: False
+	bib-SandRoad: bib3.des
+		Length: *
+		AddExtension: False
 
 railmine:
 	idle:

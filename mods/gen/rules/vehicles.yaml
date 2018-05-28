@@ -23,14 +23,24 @@ vehicle.supply_truck:
 		DecorationBounds: 42,42
 	SelectionDecorations:
 	DockClient:
-	Harvester:
-		Capacity: 12
-		Resources: Ore,Gems
-		BaleLoadDelay: 10
-		BaleUnloadDelay: 2
-		BaleUnloadAmount: 12
-		SearchFromProcRadius: 30
-		SearchFromOrderRadius: 11
+	SupplyCollector:
+		CollectionDelay: 100
+		DeliveryDelay: 0
+		MaxDeliveryQueue: 4
+		CollectVoice: Action
+		FullnessConditions:
+			150: half
+			300: full
+	WithSupplyDeliveryAnimation:
+		WaitDelay: 10
+	WithFacingSpriteBody:
+		RequiresCondition: !half
+	WithFacingSpriteBody@Half:
+		Sequence: half-idle
+		RequiresCondition: half && !full
+	WithFacingSpriteBody@Full:
+		Sequence: full-idle
+		RequiresCondition: full
 	Health:
 		HP: 30000
 	Armor:
@@ -42,9 +52,6 @@ vehicle.supply_truck:
 		Modifier: 50
 	Crushable:
 		CrushClasses: vehicle
-	WithHarvestAnimation:
-		PrefixByFullness: empty-, half-, full-
-	WithDockingAnimation:
 	Voiced:
 		VoiceSet: SupplyTruckVoice
 

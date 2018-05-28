@@ -53,21 +53,19 @@ infantry.worker:
 		Modifier: 60
 	Selectable:
 		Priority: 7
-	DockClient:
-	Harvester:
-		Capacity: 3
-		Resources: Ore,Gems
-		BaleUnloadDelay: 1
-		BaleUnloadAmount: 3
-		PipCount: 6
-		SearchFromProcRadius: 30
-		SearchFromOrderRadius: 11
-		MaxUnloadQueue: 15
+	SupplyCollector:
+		CollectionDelay: 4
+		DeliveryDelay: 4
+		PipCount: 2
+		Capacity: 75
+		MaxDeliveryQueue: 20
+		CollectionQueueMultiplier: 5
+		CollectionQueueCostModifier: 2
+		CollectVoice: Action
 	DetectCloaked:
 		CloakTypes: Mine
 		Range: 2c512
 	WithSpriteBody:
-	WithDockingAnimation:
 	Captures:
 		CaptureTypes: hole, driverless_vehcile
 		Voice: Repair

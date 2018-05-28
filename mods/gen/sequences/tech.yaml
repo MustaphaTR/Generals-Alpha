@@ -32,6 +32,16 @@ tech.oil_refinery:
 	make: biomake
 		Length: *
 
+tech.nuclear_bunker:
+	idle: bio
+	damaged-idle: bio
+		Start: 1
+	dead: bio
+		Start: 2
+		Tick: 800
+	make: biomake
+		Length: *
+
 tech.hospital:
 	idle: hosp
 		Length: 4

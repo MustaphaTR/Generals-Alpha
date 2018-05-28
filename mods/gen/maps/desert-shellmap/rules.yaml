@@ -133,6 +133,10 @@ tech.communications_center:
 	ExternalCondition@Mines:
 		Condition: land_mines
 
+^default.supply_center:
+	SupplyCenter:
+		ShowTicks: false
+
 tech.oil_derrick:
 	CashTrickler:
 		ShowTicks: false
@@ -200,10 +204,6 @@ hack.artillery_barrager.3:
 hack.rebel_spawner.8:
 	KillsSelf:
 		Delay: 2
-
-aircraft.chinook:
-	Health:
-		HP: 8000
 
 vehicle.bomb_truck:
 	Health:

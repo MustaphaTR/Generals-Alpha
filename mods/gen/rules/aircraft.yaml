@@ -948,24 +948,25 @@ aircraft.chinook:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 40
 	DockClient:
-	Harvester:
-		Capacity: 24
-		Resources: Ore,Gems
+	SupplyCollector:
+		IsAircraft: true
+		CollectionDelay: 200 # 240, -40 goes to WSCO WaitDelay
+		DeliveryDelay: 58 # 73, -25 goes to WSDO WaitDelay
 		PipCount: 8
-		BaleLoadDelay: 10
-		BaleUnloadDelay: 4
-		BaleUnloadAmount: 24
-		SearchFromProcRadius: 30
-		SearchFromOrderRadius: 11
+		Capacity: 600
+		MaxDeliveryQueue: 8
+		CollectVoice: Action
 	WithIdleOverlay@ROTOR1AIR:
 		Offset: 597,0,213
 		Sequence: rotor
 	WithIdleOverlay@ROTOR2AIR:
 		Offset: -597,0,341
 		Sequence: rotor2
-	WithHarvestOverlay:
 	WithSpriteTurret@SHADOW:
 		Sequence: shadow
+	WithSupplyCollectionOverlay:
+		WaitDelay: 40
+	WithSupplyDeliveryOverlay:
 	Turreted:
 	AttackFrontal:
 	Armament@PDLASER:
@@ -979,7 +980,6 @@ aircraft.chinook:
 	GrantConditionOnFaction@Airforce:
 		Condition: airforce
 		Factions: air
-	WithDockingAnimation:
 	Hovers:
 	Cargo:
 		Types: Infantry, Vehicle
@@ -1008,6 +1008,99 @@ aircraft.chinook:
 	SelectionDecorations:
 	Voiced:
 		VoiceSet: ChinookVoice
+
+# aircraft.chinook:
+	# Inherits: ^Helicopter
+	# Inherits@REVEAL: ^Reveal600
+	# Inherits@SLOW: ^SlowsWhenDamaged
+	# RevealsShroud:
+		# Type: CenterPosition
+	# RevealsShroud@SEARCH_AND_DESTROY:
+		# Type: CenterPosition
+	# RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		# Type: CenterPosition
+	# Buildable:
+		# Queue: queue.usa_collector, queue.air_gen_collector
+		# BuildPaletteOrder: 0
+		# ForceIconLocation: true
+		# BuildDuration: 250
+		# BuildDurationModifier: 100
+		# Prerequisites: ~techlevel.infonly
+		# Description: Collects supplies.\n\nCan carry infantry and vehicles.
+		# ReadyAudio: ChinookCreated
+	# Valued:
+		# Cost: 1200
+	# CustomProductionCost@Refinery:
+		# Queue: queue.usa_collector
+		# Prerequisites: tech.oil_refinery
+		# Cost: 1080
+	# CustomProductionCost@Refinery_Airforce:
+		# Queue: queue.air_gen_collector
+		# Prerequisites: tech.oil_refinery
+		# Cost: 855
+	# CustomProductionCost@Airforce:
+		# Queue: queue.air_gen_collector
+		# Cost: 950
+	# Tooltip:
+		# Name: Chinook
+		# GenericName: Collector
+	# Health:
+		# HP: 30000
+	# Armor:
+		# Type: aircraft.chinook
+	# SpeedMultiplier@DAMAGED:
+		# Modifier: 40
+	# SupplyCollector:
+		# CollectionDelay: 240
+		# DeliveryDelay: 73
+		# PipCount: 8
+		# Capacity: 600
+		# CollectVoice: Action
+	# WithIdleOverlay@ROTOR1AIR:
+		# Offset: 597,0,213
+		# Sequence: rotor
+	# WithIdleOverlay@ROTOR2AIR:
+		# Offset: -597,0,341
+		# Sequence: rotor2
+	# AttackHeli:
+	# Armament@PDLASER:
+		# Weapon: laser.paladin_tank
+		# LocalOffset: 0,213,2048
+		# Name: pdlaser
+	# ShootsMissiles:
+		# ShootStances: Neutral, Enemy
+		# Armament: pdlaser
+		# RequiresCondition: airforce
+	# Aircraft:
+		# CruiseAltitude: 1928
+		# IdealSeparation: 1280
+		# InitialFacing: 64
+		# TurnSpeed: 5
+		# Speed: 60
+		# LandableTerrainTypes: Grass, Snow, Sand, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Beach, Gems
+		# AltitudeVelocity: 0c58
+		# Voice: Move
+	# GrantConditionOnFaction@Airforce:
+		# Condition: airforce
+		# Factions: air
+	# Hovers:
+		# RequiresCondition: airborne
+	# Cargo:
+		# Types: Infantry, Vehicle
+		# MaxWeight: 8
+		# PipCount: 8
+	# RepairableNear:
+		# Buildings: building.usa_airfield, building.prc_airfield
+		# CloseEnough: 1c0
+	# Selectable:
+		# Priority: 7
+		# Bounds: 40,36
+		# DecorationBounds: 40,36
+	# SelectionDecorations:
+	# SpawnActorOnDeath:
+		# Actor: husk.chinook
+	# Voiced:
+		# VoiceSet: ChinookVoice
 
 aircraft.combat_chinook:
 	Inherits: aircraft.chinook
@@ -1116,6 +1209,7 @@ aircraft.comanche:
 	AttackHeli:
 		FacingTolerance: 20
 	Aircraft:
+		CruiseAltitude: 1928
 		LandWhenIdle: false
 		InitialFacing: 224
 		TurnSpeed: 4
@@ -1256,6 +1350,7 @@ aircraft.helix:
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
 	Aircraft:
+		CruiseAltitude: 1928
 		InitialFacing: 192
 		TurnSpeed: 3
 		Speed: 75
