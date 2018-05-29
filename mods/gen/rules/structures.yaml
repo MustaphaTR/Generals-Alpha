@@ -18,6 +18,8 @@
 		HP: 500000
 	Armor:
 		Type: building.tough
+	Selectable:
+		Bounds: 72,72
 	WithBuildingBib:
 	Exit@1:
 		SpawnOffset: 768,768,0
@@ -68,6 +70,8 @@ building.usa_command_center:
 		VoiceSet: USACommandCenterVoice
 	Building:
 		Footprint: XXX xxx XXX
+	Selectable:
+		Bounds: 72,64
 	Production:
 		Produces: queue.usa_command_center
 		PauseOnCondition: emp || hacked || sabotaged
@@ -794,6 +798,8 @@ building.cold_fusion_reactor:
 		Name: Cold Fusion Reactor
 	Health:
 		HP: 80000
+	Selectable:
+		Bounds: 48,48
 	Production:
 		Produces: queue.cold_fusion_reactor
 		PauseOnCondition: emp || hacked || sabotaged
@@ -1423,6 +1429,7 @@ building.patriot:
 	Armor:
 		Type: building.defense
 	Selectable:
+		Bounds: 48,24
 		Class: building.patriot
 	WithBuildingBib:
 		HasMinibib: Yes
@@ -1510,6 +1517,8 @@ building.laser_turret:
 		HP: 100000
 	Armor:
 		Type: building.defense
+	Selectable:
+		Bounds: 24,24
 	WithBuildingBib:
 		HasMinibib: Yes
 	Turreted:
@@ -1563,6 +1572,8 @@ building.demo_trap:
 		Name: Demo Trap
 	Armor:
 		Type: building.normal
+	Selectable:
+		Bounds: 12,12
 	Cloak:
 		InitialDelay: 125
 		CloakDelay: 60
@@ -2097,6 +2108,7 @@ building.prc_war_factory:
 	Armor:
 		Type: building.normal
 	Selectable:
+		Bounds: 48,48
 		Class: building.tunnel_network
 	RallyPoint:
 		Offset: 0,2
@@ -2260,6 +2272,8 @@ building.stinger_site:
 		HP: 100000
 	Armor:
 		Type: building.stinger_site
+	Selectable:
+		Bounds: 48,48
 	WithBuildingBib:
 	Turreted:
 		TurnSpeed: 225
@@ -2369,6 +2383,8 @@ building.usa_airfield:
 	Building:
 		Footprint: XXXX xxxx xxxx
 		Dimensions: 4,3
+	Selectable:
+		Bounds: 96,64,0,6
 	Production:
 		Produces: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_plane, queue.usa_helicopter, queue.usa_air_upgrade
 		PauseOnCondition: emp || hacked || sabotaged
@@ -2448,6 +2464,8 @@ building.prc_airfield:
 	Building:
 		Footprint: xxxx xxxx xxxx
 		Dimensions: 4,3
+	Selectable:
+		Bounds: 96,72
 	Production:
 		Produces: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft
 		PauseOnCondition: emp || hacked || sabotaged
@@ -2870,6 +2888,8 @@ building.propaganda_center:
 		HP: 100000
 	Armor:
 		Type: building.normal
+	Selectable:
+		Bounds: 72,48
 	WithBuildingBib:
 	Production:
 		Produces: queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center
@@ -3006,6 +3026,8 @@ building.supply_drop_zone:
 		HP: 100000
 	Armor:
 		Type: Wood
+	Selectable:
+		Bounds: 48,48
 	WithBuildingBib:
 	Power:
 		Amount: -4
@@ -3518,6 +3540,7 @@ building.missile_silo:
 	Armor:
 		Type: building.tough
 	Selectable:
+		Bounds: 48,24
 		Class: building.missile_silo
 	Production:
 		Produces: queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo
