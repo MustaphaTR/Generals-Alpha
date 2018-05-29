@@ -2916,6 +2916,7 @@ vehicle.nuke_cannon.nuke:
 		ShowSelectionBar: false
 		DeployedTicks: 50
 		CooldownTicks: 25
+		RequiresCondition: !hacked && !driver_killed && !emp
 	GrantConditionOnMovement:
 		Condition: moving
 		ConsiderTurning: true
