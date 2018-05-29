@@ -508,7 +508,7 @@ generals_power.gps_scrambler1:
 		Name: GPS Scrambler - Level 1
 	Buildable:
 		Queue: queue.gla_generals_power
-		BuildPaletteOrder: 16
+		BuildPaletteOrder: 28
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~techlevel.medium, ~prerequisite.zh_units
 		Description: Enables GPS Scrambler support power from Command Center.
 	ProvidesPrerequisite@powername:
@@ -608,7 +608,7 @@ generals_power.anthrax_bomb:
 		Name: Anthrax Bomb
 	Buildable:
 		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power
-		BuildPaletteOrder: 15
+		BuildPaletteOrder: 27
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~techlevel.unrestricted
 		Description: Enables Anthrax Bomb support power from Command Center.
 
@@ -616,7 +616,7 @@ hack.cameo_filler.3:
 	Inherits: ^default.cameo_filler
 	Buildable:
 		Queue: queue.toxin_gen_generals_power, queue.demo_gen_generals_power
-		BuildPaletteOrder: 16
+		BuildPaletteOrder: 28
 		Prerequisites: disabled, ~prerequisite.zh_units
 
 generals_power.cluster_mines:
@@ -682,9 +682,16 @@ generals_power.sneak_attack:
 		Name: Sneak Attack
 	Buildable:
 		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.boss_gen_generals_power
-		BuildPaletteOrder: 17
+		BuildPaletteOrder: 29
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~prerequisite.zh_units, ~techlevel.unrestricted
 		Description: Enables Sneak Attack support power from Command Center.
+
+hack.cameo_filler.5:
+	Inherits: ^default.cameo_filler
+	Buildable:
+		Queue: queue.boss_gen_generals_power
+		BuildPaletteOrder: 26
+		Prerequisites: disabled
 
 generals_power.emp:
 	Inherits: ^default.generals_power
@@ -692,7 +699,7 @@ generals_power.emp:
 		Name: E. M. Pulse
 	Buildable:
 		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
-		BuildPaletteOrder: 26
+		BuildPaletteOrder: 27
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~techlevel.unrestricted
 		Description: Enables E. M. Pulse support power from Command Center.
 
