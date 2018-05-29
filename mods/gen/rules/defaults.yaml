@@ -1063,6 +1063,10 @@
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
+		RequiresCondition: !driver_killed
+	OwnerLostAction@DRIVER_KILLED:
+		Action: ChangeOwner
+		RequiresCondition: driver_killed
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
 	Mobile:
