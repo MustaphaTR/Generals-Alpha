@@ -2997,10 +2997,10 @@ building.supply_drop_zone:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-#	ProductionParadrop:
-#		Produces: Crate
-#		ActorType: aircraft.cargo_plane
-#	Exit:
+	# ProductionParadrop:
+	#	Produces: Crate
+	#	ActorType: aircraft.cargo_plane
+	# Exit:
 	Health:
 		HP: 100000
 	Armor:
@@ -3015,15 +3015,15 @@ building.supply_drop_zone:
 		Amount: 1500
 		PauseOnCondition: emp || hacked
 	CashTricklerBar:
-#	ProduceActorPower@SUPPLY_DROP:
-#		Description: Supply Drop
-#		LongDesc: A Cargo Plane drops a money crate on the Supply Drop Zone.
-#		Icon: supply
-#		Actors: SUPPLYCRATE
-#		Type: Crate
-#		ChargeInterval: 120
-#		OrderName: SupplyDropPowerInfoOrder
-#	SupportPowerChargeBar:
+	# ProduceActorPower@SUPPLY_DROP:
+	#	Description: Supply Drop
+	#	LongDesc: A Cargo Plane drops a money crate on the Supply Drop Zone.
+	#	Icon: supply
+	#	Actors: SUPPLYCRATE
+	#	Type: Crate
+	#	ChargeInterval: 120
+	#	OrderName: SupplyDropPowerInfoOrder
+	# SupportPowerChargeBar:
 	Voiced:
 		VoiceSet: SupplyDropVoice
 

@@ -1061,6 +1061,8 @@
 	Inherits@18: ^AffectedByAmbulanceZHOnly
 	Inherits@19: ^AffectedByRepairBay
 	Huntable:
+	OwnerLostAction:
+		Action: Kill
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
 	Mobile:
@@ -1159,6 +1161,8 @@
 	Inherits@7: ^AffectedByGPSScambler
 	Inherits@REVEAL: ^Reveal200
 	Huntable:
+	OwnerLostAction:
+		Action: Kill
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
 	Mobile:
@@ -1260,6 +1264,8 @@
 	Inherits@11: ^AffectedByGPSScambler
 	Inherits@12: ^AffectedByAmbulance
 	Huntable:
+	OwnerLostAction:
+		Action: Kill
 	DrawLineToTarget:
 	Health:
 		HP: 2500
@@ -1406,6 +1412,8 @@
 	Inherits@15: ^AffectedByGPSScambler
 	Inherits@16: ^AffectedByRepairBay
 	Huntable:
+	OwnerLostAction:
+		Action: Kill
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
 	Mobile:
@@ -1454,6 +1462,8 @@
 	Inherits@7: ^AffectedBySearchAndDestroy
 	Inherits@8: ^AffectedByHoldTheLine
 	Huntable:
+	OwnerLostAction:
+		Action: Kill
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
 	AppearsOnRadar:
@@ -1571,6 +1581,8 @@
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
 	Huntable:
+	OwnerLostAction:
+		Action: Kill
 	UpdatesPlayerStatistics:
 	GivesBuildableArea:
 		AreaTypes: building, flame_tower
@@ -1668,6 +1680,8 @@
 ^Hole:
 	Inherits: ^BasicBuilding
 	Inherits@REVEAL: ^Reveal100
+	OwnerLostAction:
+		Action: Kill
 	Capturable:
 		Types: hole
 		CaptureThreshold: 100
@@ -1699,6 +1713,8 @@
 	Inherits@2: ^SpriteActor
 	Inherits@SHAPE: ^1x1Shape
 	Interactable:
+	OwnerLostAction:
+		Action: ChangeOwner
 	Building:
 		Dimensions: 1,1
 		Footprint: x
@@ -1734,6 +1750,8 @@
 
 ^Gate:
 	Inherits: ^BasicBuilding
+	OwnerLostAction:
+		Action: ChangeOwner
 	Valued:
 		Cost: 250
 	Health:
@@ -2011,6 +2029,8 @@
 	Inherits: ^SpriteActor
 	Inherits@REVEAL: ^Reveal100
 	Interactable:
+	OwnerLostAction:
+		Action: Kill
 	WithSpriteBody:
 	ConditionManager:
 	HiddenUnderFog:

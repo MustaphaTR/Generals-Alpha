@@ -134,9 +134,9 @@ infantry.ranger:
 	Armament@GRENADE:
 		Weapon: grenade.ranger
 		RequiresCondition: flashbang_grenades
-#	GrantConditionOnDeploy:
-#		DeployedCondition: deployed
-#		RequiresCondition: flashbang_grenades
+	# GrantConditionOnDeploy:
+	#	DeployedCondition: deployed
+	#	RequiresCondition: flashbang_grenades
 	GrantConditionOnPrerequisite@FLASHBANG:
 		Condition: flashbang_grenades
 		Prerequisites: upgrade.flashbang_grenades
