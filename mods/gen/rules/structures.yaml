@@ -1856,6 +1856,8 @@ building.fotified_bunker:
 	WithProductionDoorOverlay:
 		Sequence: build-top
 	RallyPoint:
+	Selectable:
+		Bounds: 72,48
 	Exit@1:
 		SpawnOffset: 213,-128,0
 		ExitCell: 1,2
@@ -1925,7 +1927,6 @@ building.usa_war_factory:
 		ExitCell: 0,1
 		ExitDelay: 3
 	Selectable:
-		Bounds: 72,48
 		DecorationBounds: 72,64,0,-16
 	SelectionDecorations:
 	WithDeathAnimation:
