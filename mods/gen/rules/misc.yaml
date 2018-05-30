@@ -686,7 +686,7 @@ supply.dock.30000.6x4:
 		Image: supply.dock.6x4
 	WithIdleOverlay@Bib-Tem:
 		Sequence: bib-tem
-		RequiresCondition: temperate
+		RequiresCondition: !snow && !desert
 	WithIdleOverlay@Bib-Sno:
 		Sequence: bib-sno
 		RequiresCondition: snow
@@ -694,9 +694,6 @@ supply.dock.30000.6x4:
 		Sequence: bib-des
 		Palette: desert
 		RequiresCondition: desert
-	GrantConditionOnTerrain@Tem:
-		TerrainTypes: Grass, GrassRoad
-		Condition: temperate
 	GrantConditionOnTerrain@Sno:
 		TerrainTypes: Snow, SnowRoad
 		Condition: snow
@@ -734,7 +731,7 @@ supply.dock.30000.4x6:
 		Image: supply.dock.4x6
 	WithIdleOverlay@Bib-Tem:
 		Sequence: bib-tem
-		RequiresCondition: temperate
+		RequiresCondition: !snow && !desert
 	WithIdleOverlay@Bib-Sno:
 		Sequence: bib-sno
 		RequiresCondition: snow
@@ -742,9 +739,6 @@ supply.dock.30000.4x6:
 		Sequence: bib-des
 		Palette: desert
 		RequiresCondition: desert
-	GrantConditionOnTerrain@Tem:
-		TerrainTypes: Grass, GrassRoad
-		Condition: temperate
 	GrantConditionOnTerrain@Sno:
 		TerrainTypes: Snow, SnowRoad
 		Condition: snow
@@ -782,7 +776,7 @@ supply.dock.30000.skewed_a:
 		Image: supply.dock.skewed_a
 	WithIdleOverlay@Bib-Tem:
 		Sequence: bib-tem
-		RequiresCondition: temperate
+		RequiresCondition: !snow && !desert
 	WithIdleOverlay@Bib-Sno:
 		Sequence: bib-sno
 		RequiresCondition: snow
@@ -790,9 +784,6 @@ supply.dock.30000.skewed_a:
 		Sequence: bib-des
 		Palette: desert
 		RequiresCondition: desert
-	GrantConditionOnTerrain@Tem:
-		TerrainTypes: Grass, GrassRoad
-		Condition: temperate
 	GrantConditionOnTerrain@Sno:
 		TerrainTypes: Snow, SnowRoad
 		Condition: snow
@@ -830,7 +821,7 @@ supply.dock.30000.skewed_b:
 		Image: supply.dock.skewed_b
 	WithIdleOverlay@Bib-Tem:
 		Sequence: bib-tem
-		RequiresCondition: temperate
+		RequiresCondition: !snow && !desert
 	WithIdleOverlay@Bib-Sno:
 		Sequence: bib-sno
 		RequiresCondition: snow
@@ -838,9 +829,6 @@ supply.dock.30000.skewed_b:
 		Sequence: bib-des
 		Palette: desert
 		RequiresCondition: desert
-	GrantConditionOnTerrain@Tem:
-		TerrainTypes: Grass, GrassRoad
-		Condition: temperate
 	GrantConditionOnTerrain@Sno:
 		TerrainTypes: Snow, SnowRoad
 		Condition: snow
