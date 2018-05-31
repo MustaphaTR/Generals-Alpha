@@ -16,7 +16,7 @@ tech.oil_derrick:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 100000
+		HP: 200000
 	Capturable:
 	ExternalCapturable:
 		ShowChatMessage: true
@@ -57,7 +57,7 @@ tech.oil_refinery:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 100000
+		HP: 200000
 	Capturable:
 	ExternalCapturable:
 		ShowChatMessage: true
@@ -94,7 +94,7 @@ tech.nuclear_bunker:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 100000
+		HP: 200000
 	Tooltip:
 		Name: Bunker
 	WithDeathAnimation:
@@ -119,7 +119,7 @@ tech.hospital:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 100000
+		HP: 200000
 	Capturable:
 	ExternalCapturable:
 		ShowChatMessage: true
@@ -162,7 +162,7 @@ tech.communications_center:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 75000
+		HP: 100000
 	Tooltip:
 		Name: Communications Center
 	TooltipDescription:
@@ -329,7 +329,7 @@ tech.power_plant:
 		Bounds: 72,48
 		DecorationBounds: 72,68,0,-10
 	Health:
-		HP: 75000
+		HP: 100000
 	WithBuildingBib:
 	Capturable:
 	ExternalCapturable:
@@ -366,6 +366,8 @@ tech.repair_bay:
 	Building:
 		Footprint: __x xxx x__
 		Dimensions: 3,3
+	Health:
+		HP: 100000
 	Capturable:
 	ExternalCapturable:
 		ShowChatMessage: true
@@ -611,7 +613,7 @@ tech.shipyard:
 	Targetable:
 		TargetTypes: Ground, Water, Structure, WaterStructure, C4, DetonateAttack, Capture, Disable
 	Health:
-		HP: 100000
+		HP: 200000
 	Exit@1:
 		SpawnOffset: -1024,1024,0
 		Facing: 160
