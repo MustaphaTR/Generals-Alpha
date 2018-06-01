@@ -508,6 +508,7 @@ infantry.rpg_trooper:
 
 infantry.tank_hunter:
 	Inherits: ^default.rocket_infantry
+	Inherits@CHEM: ^AffectedByChemicalSuitsBossOnly
 	Inherits@HORDE_BONUS: ^Horde
 	Buildable:
 		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
@@ -579,7 +580,7 @@ infantry.pathfinder:
 	Tooltip:
 		Name: Pathfinder
 	Buildable:
-		Queue: queue.usa_infantry #, queue.boss_gen_infantry
+		Queue: queue.usa_infantry
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -624,6 +625,15 @@ infantry.pathfinder:
 	-MustBeDestroyed:
 	Voiced:
 		VoiceSet: PathfinderVoice
+	RenderSprites:
+		Image: infantry.pathfinder
+
+infantry.pathfinder.boss:
+	Inherits: infantry.pathfinder
+	Buildable:
+		Queue: queue.boss_gen_infantry
+		BuildPaletteOrder: 6
+		Prerequisites: ~generals_power.pathfinder, ~techlevel.medium
 
 infantry.terrorist:
 	Inherits: ^Soldier
@@ -868,7 +878,7 @@ infantry.angry_mob:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	-AppearsOnRadar:
 	Buildable:
-		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.boss_gen_infantry
+		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 375
@@ -902,6 +912,7 @@ infantry.angry_mob:
 	WithSpriteControlGroupDecoration:
 	Selectable:
 		Bounds: 32, 32
+		Class: infantry.angry_mob
 	AttackMove:
 	WithSpriteBody:
 	HiddenUnderFog:
@@ -921,6 +932,14 @@ infantry.angry_mob:
 		Modifier: 200
 	DamageMultiplier@INVINCIBLE:
 		Modifier: 0
+	RenderSprites:
+		Image: infantry.angry_mob
+
+infantry.angry_mob.boss:
+	Inherits: infantry.angry_mob
+	Buildable:
+		Queue: queue.boss_gen_infantry
+		Prerequisites: ~techlevel.medium
 
 infantry.hacker:
 	Inherits: ^Soldier
@@ -928,7 +947,7 @@ infantry.hacker:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
+		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 500
@@ -947,6 +966,8 @@ infantry.hacker:
 		HP: 10000
 	Armor:
 		Type: infantry.normal
+	Selectable:
+		Class: infantry.hacker
 	Mobile:
 		Speed: 20
 		Voice: Move
@@ -1035,6 +1056,15 @@ infantry.hacker:
 	Voiced:
 		VoiceSet: HackerVoice
 	-MustBeDestroyed:
+
+infantry.hacker.boss:
+	Inherits: infantry.hacker
+	Inherits@CHEM: ^AffectedByChemicalSuits
+	Buildable:
+		Queue: queue.boss_gen_infantry
+		Prerequisites: ~techlevel.medium
+	RenderSprites:
+		Image: infantry.hacker
 
 infantry.super_hacker:
 	Inherits: infantry.hacker
@@ -1248,9 +1278,9 @@ infantry.colonel_burton.boss:
 	Inherits: infantry.colonel_burton
 	Buildable:
 		Queue: queue.boss_gen_infantry
-		BuildPaletteOrder: 6
+		BuildPaletteOrder: 7
+		ForceIconLocation: true
 		Prerequisites: building.particle_cannon, !prerequisite.enough_colonel_burton, ~techlevel.high
-		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures.\n\nCan backstab infantry without getting detected by force firing.\n\nCamouflaged.
 
 infantry.jarmen_kell:
 	Inherits: ^Soldier
@@ -1265,7 +1295,7 @@ infantry.jarmen_kell:
 	Tooltip:
 		Name: Jarmen Kell
 	Buildable:
-		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.stealth_gen_infantry, queue.boss_gen_infantry
+		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.stealth_gen_infantry
 		BuildPaletteOrder: 7
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1347,13 +1377,21 @@ infantry.jarmen_kell.demo:
 	Voiced:
 		VoiceSet: DemoJarmenVoice
 
+infantry.jarmen_kell.boss:
+	Inherits: infantry.jarmen_kell
+	Inherits@CHEM: ^AffectedByChemicalSuits
+	Buildable:
+		Queue: queue.boss_gen_infantry
+		BuildPaletteOrder: 9
+		Prerequisites: building.scud_storm, !prerequisite.enough_jarmen_kell, ~techlevel.high
+
 infantry.black_lotus:
 	Inherits: ^Soldier
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry #, queue.boss_gen_infantry
+		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
 		BuildPaletteOrder: 4
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1457,3 +1495,11 @@ infantry.black_lotus:
 		Image: infantry.black_lotus
 	Voiced:
 		VoiceSet: LotusVoice
+
+infantry.black_lotus.boss:
+	Inherits: infantry.black_lotus
+	Inherits@CHEM: ^AffectedByChemicalSuits
+	Buildable:
+		Queue: queue.boss_gen_infantry
+		BuildPaletteOrder: 10
+		Prerequisites: building.missile_silo, !prerequisite.enough_black_lotus, ~techlevel.high

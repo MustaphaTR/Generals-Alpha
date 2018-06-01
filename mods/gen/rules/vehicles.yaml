@@ -971,6 +971,9 @@ vehicle.gatling_tank:
 		Type: vehicle.anti-air
 	Selectable:
 		Class: vehicle.gatling_tank
+	DamageMultiplier@COMPOSITE_ARMOR:
+		RequiresCondition: composite_armor && boss
+		Modifier: 74
 	Turreted:
 		TurnSpeed: 8
 		Offset: 0,0,160
@@ -1005,6 +1008,12 @@ vehicle.gatling_tank:
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
+	GrantConditionOnPrerequisite@COMPOSITE_ARMOR:
+		Condition: composite_armor
+		Prerequisites: upgrade.composite_armor
+	GrantConditionOnFaction@Boss:
+		Condition: boss
+		Factions: boss
 	AttackTurreted:
 		RequiresCondition: !hacked && !driver_killed && !emp
 	WithSpriteTurret:
@@ -1187,6 +1196,9 @@ vehicle.dragon_tank:
 		Type: vehicle.dragon_tank
 	Selectable:
 		Class: vehicle.dragon_tank
+	DamageMultiplier@COMPOSITE_ARMOR:
+		RequiresCondition: composite_armor && boss
+		Modifier: 74
 	Armament@Red:
 		Weapon: flamer.dragon_tank
 		LocalOffset: 512,128,42, 512,-128,42
@@ -1198,6 +1210,12 @@ vehicle.dragon_tank:
 	GrantConditionOnPrerequisite@BLACK_NAPALM:
 		Condition: black_napalm
 		Prerequisites: upgrade.black_napalm
+	GrantConditionOnPrerequisite@COMPOSITE_ARMOR:
+		Condition: composite_armor
+		Prerequisites: upgrade.composite_armor
+	GrantConditionOnFaction@Boss:
+		Condition: boss
+		Factions: boss
 	AttackFrontal:
 		RequiresCondition: !hacked && !driver_killed && !emp
 	AcceptsDeliveredExperience:
@@ -1221,7 +1239,7 @@ vehicle.rocket_buggy:
 	Tooltip:
 		Name: Rocket Buggy
 	Buildable:
-		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle #, queue.boss_gen_vehicle
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 7
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -1261,6 +1279,8 @@ vehicle.rocket_buggy:
 		HP: 12000
 	Armor:
 		Type: vehicle.truck
+	Selectable:
+		Class: vehicle.rocket_buggy
 	Armament@3:
 		Weapon: missile.rocket_buggy
 		LocalOffset: -128, -170, 170, -128, 170, 170
@@ -1303,6 +1323,15 @@ vehicle.rocket_buggy:
 		Condition: moving
 	Voiced:
 		VoiceSet: RocketBuggyVoice
+	RenderSprites:
+		Image: vehicle.rocket_buggy
+
+vehicle.rocket_buggy.boss:
+	Inherits: vehicle.rocket_buggy
+	Buildable:
+		Queue: queue.boss_gen_vehicle
+		BuildPaletteOrder: 6
+		Prerequisites: ~techlevel.medium
 
 vehicle.avenger:
 	Inherits: ^Vehicle
@@ -1314,7 +1343,7 @@ vehicle.avenger:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle #, queue.boss_gen_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle
 		BuildPaletteOrder: 6
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1381,6 +1410,13 @@ vehicle.avenger.super:
 	Inherits: vehicle.avenger
 	Buildable:
 		Queue: queue.super_gen_vehicle
+		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
+
+vehicle.avenger.boss:
+	Inherits: vehicle.avenger
+	Buildable:
+		Queue: queue.boss_gen_vehicle
+		BuildPaletteOrder: 10
 		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
 
 vehicle.battle_Bus:
@@ -1851,7 +1887,7 @@ vehicle.tomahawk_launcher:
 	Tooltip:
 		Name: Tomahawk Launcher
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle, queue.boss_gen_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 8
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1928,6 +1964,13 @@ vehicle.tomahawk_launcher:
 		Image: vehicle.tomahawk_launcher
 	Voiced:
 		VoiceSet: TomahawkLauncherVoice
+
+vehicle.tomahawk_launcher.boss:
+	Inherits: vehicle.tomahawk_launcher
+	Buildable:
+		Queue: queue.boss_gen_vehicle
+		BuildPaletteOrder: 7
+		Prerequisites: ~techlevel.medium
 
 vehicle.scud_launcher:
 	Inherits: ^Vehicle
@@ -2387,7 +2430,7 @@ vehicle.overlord_tank:
 		Types: gatling
 		Modifier: 50
 	Buildable:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.boss_gen_vehicle
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
 		BuildPaletteOrder: 6
 		ForceIconLocation: true
 		BuildDuration: 500
@@ -2543,7 +2586,17 @@ vehicle.overlord_tank:
 	Voiced:
 		VoiceSet: OverlordTankVoice
 	Selectable:
+		Class: vehicle.overlord_tank
 		DecorationBounds: 44,38,0,-4
+
+vehicle.overlord_tank.boss:
+	Inherits: vehicle.overlord_tank
+	Buildable:
+		Queue: queue.boss_gen_vehicle
+		BuildPaletteOrder: 9
+		Prerequisites: ~techlevel.high
+	RenderSprites:
+		Image: vehicle.overlord_tank
 
 vehicle.emparor_overlord:
 	Inherits: vehicle.overlord_tank
@@ -2568,6 +2621,8 @@ vehicle.emparor_overlord:
 		-RequiresCondition:
 	ProximityExternalCondition@SPEAKER:
 		-RequiresCondition:
+	Selectable:
+		Class: vehicle.emparor_overlord
 	Voiced:
 		VoiceSet: EmparorOverlordVoice
 

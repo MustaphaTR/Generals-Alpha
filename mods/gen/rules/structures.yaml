@@ -3203,7 +3203,7 @@ building.particle_cannon:
 	Tooltip:
 		Name: Particle Uplink Cannon
 	Buildable:
-		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.boss_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building
 		BuildPaletteOrder: 10
 		BuildDuration: 1500
 		BuildDurationModifier: 100
@@ -3272,6 +3272,29 @@ building.particle_cannon.super:
 	Valued:
 		Cost: 2500
 
+building.particle_cannon.boss:
+	Inherits: building.particle_cannon
+	Inherits@MINE: ^CanHaveMines
+	Buildable:
+		Queue: queue.boss_gen_building
+		Prerequisites: building.prc_war_factory, building.prc_airfield, !prerequisite.enough_particle, ~techlevel.unrestricted
+	Exit:
+	Production:
+		Produces: queue.boss_gen_particle_cannon
+		PauseOnCondition: emp || hacked || sabotaged
+		-RequiresCondition:
+	-ProductionQueue@JUST_MINE:
+	ProductionQueue@Boss:
+		Type: queue.boss_gen_particle_cannon
+		Factions: boss
+		Group: Tech
+		InstantCashDrain: true
+		LowPowerSlowdown: 3
+		SpectatorUIOrder: 65
+	ProductionBar:
+	RenderSprites:
+		Image: building.particle_cannon
+
 building.scud_storm:
 	Inherits: ^Building
 	Inherits@BOUNTY: ^TakesBounty
@@ -3285,7 +3308,7 @@ building.scud_storm:
 	Tooltip:
 		Name: SCUD Storm
 	Buildable:
-		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.boss_gen_building
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		BuildPaletteOrder: 9
 		BuildDuration: 1500
 		BuildDurationModifier: 100
@@ -3299,7 +3322,8 @@ building.scud_storm:
 	Armor:
 		Type: building.tough
 	Selectable:
-		Bounds: 48,48,0,0
+		Bounds: 48,48
+		Class: building.scud_storm
 	AttackTurreted:
 		Turrets: A, B, C, D
 		Armaments: disabled
@@ -3488,6 +3512,7 @@ building.scud_storm:
 		CircleSequence: circles
 		OrderName: SCUDStormPowerInfoOrder
 	ProvidesPrerequisite@buildingname:
+		Prerequisite: building.scud_storm
 	ProvidesPrerequisite@LIMIT:
 		Prerequisite: prerequisite.enough_scud
 		RequiresCondition: limited_sw
@@ -3505,9 +3530,32 @@ building.scud_storm:
 		SpawnAfterDefeat: false
 	Voiced:
 		VoiceSet: SCUDStormVoice
+	RenderSprites:
+		Image: building.scud_storm
 	ReloadAmmoPool:
 		Delay: 100
 		Count: 4
+
+building.scud_storm.boss:
+	Inherits: building.scud_storm
+	Inherits@MINE: ^CanHaveMines
+	Buildable:
+		Queue: queue.boss_gen_building
+		BuildPaletteOrder: 11
+		Prerequisites: building.prc_war_factory, building.prc_airfield, !prerequisite.enough_scud, ~techlevel.unrestricted
+	Production:
+		Produces: queue.boss_gen_scud_storm
+		PauseOnCondition: emp || hacked || sabotaged
+		-RequiresCondition:
+	-ProductionQueue@JUST_MINE:
+	-ProductionQueue@CAMO_NETTING:
+	ProductionQueue@Boss:
+		Type: queue.boss_gen_scud_storm
+		Factions: boss
+		Group: Tech
+		InstantCashDrain: true
+		LowPowerSlowdown: 3
+		SpectatorUIOrder: 65
 
 building.missile_silo:
 	Inherits: ^Building
