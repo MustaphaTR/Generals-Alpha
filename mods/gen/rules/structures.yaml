@@ -2378,6 +2378,9 @@ building.usa_airfield:
 	CustomProductionCost@Airforce:
 		Queue: queue.air_gen_building
 		Cost: 800
+	DamageMultiplier@Airforce:
+		RequiresCondition: air
+		Modifier: 60
 	Tooltip:
 		Name: USA Airfield
 	Building:
@@ -2443,6 +2446,9 @@ building.usa_airfield:
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
+	GrantConditionOnFaction@Airforce:
+		Condition: air
+		Factions: air
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.usa_airfield_or_war_factory
 	Voiced:
