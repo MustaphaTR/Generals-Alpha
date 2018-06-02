@@ -1343,11 +1343,11 @@ vehicle.avenger:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle
+		Queue: queue.usa_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 6
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: building.strategy_center, ~techlevel.medium, ~prerequisite.zh_units
+		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
 		Description: Advanced anti-air unit.\n\nCan deflect enemy missiles with laser.
 		ReadyAudio: AvengerCreated
 	Valued:
@@ -1406,11 +1406,11 @@ vehicle.avenger:
 	Voiced:
 		VoiceSet: AvengerVoice
 
-vehicle.avenger.super:
+vehicle.avenger.air:
 	Inherits: vehicle.avenger
 	Buildable:
-		Queue: queue.super_gen_vehicle
-		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
+		Queue: queue.air_gen_vehicle
+		Prerequisites: building.strategy_center, ~techlevel.medium, ~prerequisite.zh_units
 
 vehicle.avenger.boss:
 	Inherits: vehicle.avenger
