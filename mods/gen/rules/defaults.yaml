@@ -854,6 +854,14 @@
 		Duration: 100
 		Radius: 7c512
 
+^DisableRevealOnDriverKill:
+	RevealsShroud:
+		RequiresCondition: !driver_killed
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		RequiresCondition: !driver_killed
+	RevealOnDeath:
+		RequiresCondition: !driver_killed
+
 ^AutoTargetGround:
 	AutoTarget:
 		AttackAnythingCondition: stance-attackanything

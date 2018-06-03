@@ -1,6 +1,7 @@
 vehicle.supply_truck:
 	Inherits: ^Vehicle
 	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.prc_collector
@@ -63,6 +64,7 @@ vehicle.humvee:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal320
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	AutoTargetPriority@DEFAULT:
@@ -200,6 +202,7 @@ vehicle.technical:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	OwnerLostAction:
 		Action: Kill
@@ -301,6 +304,7 @@ vehicle.radar_van:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal500
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Tooltip:
 		Name: Radar Van
@@ -383,6 +387,7 @@ vehicle.scorpion_tank:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle
@@ -516,6 +521,7 @@ vehicle.crusader_tank:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
@@ -579,6 +585,7 @@ vehicle.laser_tank:
 	Inherits: vehicle.crusader_tank
 	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@REVEAL: ^Reveal150
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Buildable:
 		Queue: queue.laser_gen_vehicle
 		Description: Medium armored tank armed with lasers.\n\nRequires power to operate.
@@ -609,6 +616,7 @@ vehicle.battlemaster_tank:
 	Inherits@HORDE_BONUS: ^Horde
 	Inherits@NUCLEAR_TANKS: ^AffectedByNuclearTanks
 	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
 	Buildable:
 		Queue: queue.prc_vehicle, queue.tank_gen_vehicle
@@ -702,6 +710,7 @@ vehicle.ambulance:
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal400
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	OwnerLostAction:
 		Action: Kill
@@ -877,6 +886,7 @@ vehicle.quad_cannon:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Tooltip:
 		Name: Quad Cannon
@@ -950,6 +960,7 @@ vehicle.gatling_tank:
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal360
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Tooltip:
 		Name: Gatling Tank
 	Buildable:
@@ -1052,6 +1063,7 @@ vehicle.toxin_tractor:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal200
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Tooltip:
 		Name: Toxin Tractor
@@ -1166,6 +1178,7 @@ vehicle.dragon_tank:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal200
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Tooltip:
 		Name: Dragon Tank
@@ -1252,6 +1265,7 @@ vehicle.rocket_buggy:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal360
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Tooltip:
 		Name: Rocket Buggy
@@ -1358,6 +1372,7 @@ vehicle.avenger:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
@@ -1445,6 +1460,7 @@ vehicle.battle_Bus:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal200
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	OwnerLostAction:
 		Action: Kill
@@ -1553,6 +1569,7 @@ vehicle.battle_Bus:
 vehicle.troop_crawler:
 	Inherits: ^Tank
 	Inherits@REVEAL: ^Reveal400
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	OwnerLostAction:
 		Action: Kill
@@ -1635,6 +1652,7 @@ vehicle.listening_outpost:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@REVEAL: ^Reveal500
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	OwnerLostAction:
 		Action: Kill
@@ -1738,6 +1756,7 @@ vehicle.microwave_tank:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
@@ -1820,6 +1839,7 @@ vehicle.ecm_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@REVEAL: ^Reveal360
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 8
@@ -1906,6 +1926,7 @@ vehicle.tomahawk_launcher:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal200
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Tooltip:
@@ -2005,6 +2026,7 @@ vehicle.scud_launcher:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle
@@ -2127,6 +2149,7 @@ vehicle.inferno_cannon:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle
@@ -2206,6 +2229,7 @@ vehicle.paladin_tank:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
@@ -2297,6 +2321,7 @@ vehicle.marauder_tank:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle
@@ -2430,6 +2455,7 @@ vehicle.overlord_tank:
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@NUCLEAR_TANKS: ^AffectedByNuclearTanks
 	Inherits@REVEAL: ^Reveal200
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@UPGRADE: ^CanHavePRCVehicleUpgrades
 	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
 	OwnerLostAction:
@@ -2661,6 +2687,7 @@ vehicle.bomb_truck:
 	Inherits@BOUNTY: ^TakesBounty
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal200
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 6
@@ -2835,6 +2862,7 @@ vehicle.nuke_cannon:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle
@@ -2952,6 +2980,7 @@ vehicle.nuke_cannon.nuke:
 ^default.mcc:
 	Inherits: ^Vehicle
 	Inherits@REVEAL: ^Reveal200
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		BuildPaletteOrder: 0
@@ -3144,6 +3173,7 @@ vehicle.gla_mcc:
 vehicle.prc_mcc:
 	Inherits: ^default.mcc
 	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Buildable:
 		Queue: queue.prc_command_center
 		Prerequisites: ~techlevel.infonly
