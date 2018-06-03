@@ -51,6 +51,7 @@ vehicle.supply_truck:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Voiced:
 		VoiceSet: SupplyTruckVoice
@@ -125,6 +126,7 @@ vehicle.humvee:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted@MG:
 		TurnSpeed: 10
@@ -241,6 +243,7 @@ vehicle.technical:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 89
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
 		TurnSpeed: 10
@@ -335,6 +338,7 @@ vehicle.radar_van:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	WithIdleOverlay@SPINNER:
 		Sequence: spinner
@@ -416,6 +420,7 @@ vehicle.scorpion_tank:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted@Cannon:
 		TurnSpeed: 7
@@ -539,6 +544,7 @@ vehicle.crusader_tank:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
 		TurnSpeed: 5
@@ -642,6 +648,7 @@ vehicle.battlemaster_tank:
 		Speed: 25
 		Voice: Move
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
 		TurnSpeed: 5
@@ -737,6 +744,7 @@ vehicle.ambulance:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	WithRangeCircle:
 		Type: heal
@@ -808,6 +816,7 @@ vehicle.sentry_drone:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Targetable:
 		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, NoDriverKill
@@ -898,6 +907,7 @@ vehicle.quad_cannon:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 63
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Health:
 		HP: 30000
@@ -964,6 +974,7 @@ vehicle.gatling_tank:
 		Speed: 40
 		Voice: Move
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Health:
 		HP: 30000
@@ -1077,6 +1088,7 @@ vehicle.toxin_tractor:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Health:
 		HP: 24000
@@ -1189,6 +1201,7 @@ vehicle.dragon_tank:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 63
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Health:
 		HP: 28000
@@ -1274,6 +1287,7 @@ vehicle.rocket_buggy:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 89
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Health:
 		HP: 12000
@@ -1377,6 +1391,7 @@ vehicle.avenger:
 	Selectable:
 		Class: vehicle.avenger
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
 		TurnSpeed: 5
@@ -1479,6 +1494,7 @@ vehicle.battle_Bus:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 71
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Cargo:
 		Types: Infantry, Hacker, Pilot
@@ -1565,6 +1581,7 @@ vehicle.troop_crawler:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Cargo:
 		Types: Infantry, Hacker, Pilot
@@ -1646,6 +1663,7 @@ vehicle.listening_outpost:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Cargo:
 		Types: Infantry, Hacker, Pilot
@@ -1742,6 +1760,7 @@ vehicle.microwave_tank:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
 		TurnRate: 4
@@ -1829,6 +1848,7 @@ vehicle.ecm_tank:
 		Speed: 40
 		Voice: Move
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
 		TurnRate: 4
@@ -1920,6 +1940,7 @@ vehicle.tomahawk_launcher:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Health:
 		HP: 18000
@@ -2024,6 +2045,7 @@ vehicle.scud_launcher:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Armament:
 		Weapon: missile.scud_launcher
@@ -2139,6 +2161,7 @@ vehicle.inferno_cannon:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Armament@Red:
 		Weapon: cannon.inferno_cannon
@@ -2206,6 +2229,7 @@ vehicle.paladin_tank:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
 		TurnSpeed: 3
@@ -2304,6 +2328,7 @@ vehicle.marauder_tank:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
 		TurnSpeed: 5
@@ -2699,6 +2724,7 @@ vehicle.bomb_truck:
 		Speed: 50
 		Voice: Move
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	DisguisingTurreted:
 		TurnSpeed: 255
@@ -2832,6 +2858,7 @@ vehicle.nuke_cannon:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 90
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
 		TurnSpeed: 3
@@ -2947,6 +2974,7 @@ vehicle.nuke_cannon.nuke:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
 	Crushable:
+		WarnProbability: 0
 		CrushClasses: vehicle
 	Passenger:
 		Weight: 5
