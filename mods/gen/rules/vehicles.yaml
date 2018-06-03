@@ -2028,14 +2028,14 @@ vehicle.scud_launcher:
 	Production:
 		Produces: queue.scud_launcher
 		PauseOnCondition: emp || hacked
-		RequiresCondition: !toxin_missiles && !hi_explosive_missiles
+		RequiresCondition: !toxin_missiles && !hi_explosive_missiles && !driver_killed
 	ProductionQueue:
 		Type: queue.scud_launcher
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
 		RequireOwner: false
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 1
 	Exit:
 	ProvidesPrerequisite@unitname:
 	Mobile:
@@ -2690,7 +2690,7 @@ vehicle.bomb_truck:
 	Production:
 		Produces: queue.bomb_truck, queue.toxin_gen_bomb_truck, queue.demo_gen_bomb_truck
 		PauseOnCondition: emp || hacked
-		RequiresCondition: !bio_bombs && !hi_explosive_bombs
+		RequiresCondition: !bio_bombs && !hi_explosive_bombs && !driver_killed
 	ProductionQueue@Vanilla:
 		Type: queue.bomb_truck
 		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank
