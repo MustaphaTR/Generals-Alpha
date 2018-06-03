@@ -833,6 +833,8 @@ building.cold_fusion_reactor.laser:
 		Produces: queue.laser_gen_cold_fusion_reactor
 	ProductionQueue:
 		Type: queue.laser_gen_cold_fusion_reactor
+	Valued:
+		Cost: 700
 	Power:
 		Amount: 8
 	Power@CONTROL_RODS:
@@ -849,6 +851,8 @@ building.advanced_cold_fusion_reactor:
 		Produces: queue.advanced_cold_fusion_reactor
 	ProductionQueue:
 		Type: queue.advanced_cold_fusion_reactor
+	Valued:
+		Cost: 900
 	Power@CONTROL_RODS:
 		Amount: 15
 
