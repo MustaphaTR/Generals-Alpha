@@ -949,7 +949,7 @@
 	Production:
 		Produces: queue.drone
 		PauseOnCondition: emp || hacked
-		RequiresCondition: !scout_drone && !battle_drone && !hellfire_drone
+		RequiresCondition: !scout_drone && !battle_drone && !hellfire_drone && !driver_killed
 	ProductionQueue:
 		Type: queue.drone
 		Group: Tech

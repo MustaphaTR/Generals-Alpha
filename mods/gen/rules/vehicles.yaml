@@ -2484,7 +2484,8 @@ vehicle.overlord_tank:
 		Type: vehicle.tank
 	Production:
 		Produces: queue.overlord_tank
-		PauseOnCondition: emp || hacked
+		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !speaker_upgrade && !driver_killed
+		PauseOnCondition: !emp || !hacked
 	ProductionQueue:
 		Type: queue.overlord_tank
 	Mobile:
