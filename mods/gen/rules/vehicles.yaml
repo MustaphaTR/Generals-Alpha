@@ -771,6 +771,10 @@ vehicle.sentry_drone:
 	Inherits@DRONE_ARMOR: ^AffectedByDroneArmor
 	Inherits@REVEAL: ^Reveal350
 	Inherits@SLOW: ^SlowsWhenDamaged
+	OwnerLostAction:
+		Action: Kill
+		-RequiresCondition:
+	-OwnerLostAction@DRIVER_KILLED:
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.boss_gen_vehicle
 		BuildPaletteOrder: 4
