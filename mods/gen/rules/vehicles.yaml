@@ -154,6 +154,7 @@ vehicle.humvee:
 		Weapon: missile.humvee.air
 		RequiresCondition: tow_missile
 	AttackTurreted:
+		Turrets: primary, tow
 		RequiresCondition: !hacked && !driver_killed && !emp
 	WithMuzzleOverlay:
 	WithSpriteTurret@MG:
