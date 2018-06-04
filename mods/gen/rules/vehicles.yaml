@@ -642,7 +642,7 @@ vehicle.battlemaster_tank:
 		Queue: queue.tank_gen_vehicle
 		Cost: 700
 	CustomProductionTime@Tank:
-		Queue: queue.tank_gen_vehicle
+		Queue: queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildTime: 300
 	Tooltip:
 		Name: Battlemaster Tank
