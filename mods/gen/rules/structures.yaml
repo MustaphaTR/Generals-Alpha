@@ -81,7 +81,7 @@ building.usa_command_center:
 		Type: queue.usa_command_center
 		Group: Command
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		RequireOwner: false
 		SpectatorUIOrder: 12
 	SpawnActorPower@SPY_DRONE:
@@ -464,7 +464,7 @@ building.prc_command_center:
 		Type: queue.prc_command_center
 		Group: Command
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		RequireOwner: false
 		SpectatorUIOrder: 14
 	ProductionBar@PRC_COMMAND_CENTER:
@@ -836,7 +836,7 @@ building.cold_fusion_reactor:
 		RequireOwner: false
 		InstantCashDrain: true
 		QueueLimit: 1
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		ReadyAudio: ConstructionComplete
 	ProductionBar:
 	Exit:
@@ -1017,7 +1017,7 @@ building.usa_barracks:
 		Group: Infantry
 		RequireOwner: false
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 19
 	ProductionBar:
 	Exit@1:
@@ -1125,35 +1125,35 @@ building.prc_barracks:
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
 		Group: Infantry
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 24
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_infantry
 		Factions: inf
 		Group: Infantry
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 25
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_infantry
 		Factions: nuke
 		Group: Infantry
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 26
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_infantry
 		Factions: tank
 		Group: Infantry
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 27
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_infantry
 		Factions: boss
 		Group: Infantry
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 28
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_infantry
@@ -1254,7 +1254,7 @@ building.usa_supply_center:
 		Factions: usa, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Collector
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 15
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_collector
@@ -1262,7 +1262,7 @@ building.usa_supply_center:
 		Group: Collector
 		InstantCashDrain: true
 		RequireOwner: false
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 16
 	ProductionBar@Vanilla:
 		ProductionType: queue.usa_collector
@@ -1406,7 +1406,7 @@ building.prc_supply_center:
 		Group: Collector
 		RequireOwner: false
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 18
 	ProductionBar:
 	Exit@1:
@@ -1932,28 +1932,28 @@ building.usa_war_factory:
 		Factions: usa, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Vehicle
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 30
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_vehicle
 		Factions: air
 		Group: Vehicle
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 31
 	ProductionQueue@Laser:
 		Type: queue.laser_gen_vehicle
 		Factions: laser
 		Group: Vehicle
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 32
 	ProductionQueue@Super:
 		Type: queue.super_gen_vehicle
 		Factions: super
 		Group: Vehicle
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 33
 	ProductionBar@Vanilla:
 		ProductionType: queue.usa_vehicle
@@ -2071,35 +2071,35 @@ building.prc_war_factory:
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
 		Group: Vehicle
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 38
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_vehicle
 		Factions: inf
 		Group: Vehicle
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 39
 	ProductionQueue@Nuclear:
 		Type: queue.nuke_gen_vehicle
 		Factions: nuke
 		Group: Vehicle
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 40
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_vehicle
 		Factions: tank
 		Group: Vehicle
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 41
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_vehicle
 		Factions: boss
 		Group: Vehicle
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 42
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_vehicle
@@ -2426,21 +2426,21 @@ building.usa_airfield:
 		Factions: usa, laser, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Aircraft
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 43
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_aircraft
 		Factions: air
 		Group: Aircraft
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 44
 	ProductionQueue@Super:
 		Type: queue.super_gen_aircraft
 		Factions: super
 		Group: Aircraft
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 45
 	ProductionBar@Vanilla:
 		ProductionType: queue.usa_aircraft
@@ -2512,35 +2512,35 @@ building.prc_airfield:
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
 		Group: Aircraft
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 46
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_aircraft
 		Factions: inf
 		Group: Aircraft
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 47
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_aircraft
 		Factions: nuke
 		Group: Aircraft
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 48
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_aircraft
 		Factions: tank
 		Group: Aircraft
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 49
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_aircraft
 		Factions: boss
 		Group: Aircraft
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 50
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_aircraft
@@ -2611,7 +2611,7 @@ building.internet_center:
 		Group: Tech
 		RequireOwner: false
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 52
 	ProductionBar:
 	PeriodicProducer:
@@ -2689,14 +2689,14 @@ building.strategy_center:
 		Factions: usa, laser, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Tech
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 53
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_strategy_center
 		Factions: air, super
 		Group: Tech
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 54
 	ProductionBar@Vanilla:
 		ProductionType: queue.strategy_center
@@ -2938,28 +2938,28 @@ building.propaganda_center:
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
 		Group: Tech
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 59
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_propaganda_center
 		Factions: inf
 		Group: Tech
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 60
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_propaganda_center
 		Factions: nuke
 		Group: Tech
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 61
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_propaganda_center
 		Factions: tank
 		Group: Tech
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 62
 	ProductionBar@Vanilla:
 		ProductionType: queue.propaganda_center
@@ -3326,7 +3326,7 @@ building.particle_cannon.boss:
 		Factions: boss
 		Group: Tech
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 65
 	ProductionBar:
 	RenderSprites:
@@ -3591,7 +3591,7 @@ building.scud_storm.boss:
 		Factions: boss
 		Group: Tech
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 1
 		SpectatorUIOrder: 65
 
 building.missile_silo:
@@ -3637,28 +3637,28 @@ building.missile_silo:
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, tank
 		Group: Tech
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 64
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_missile_silo
 		Factions: inf
 		Group: Tech
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 65
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_missile_silo
 		Factions: nuke
 		Group: Tech
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 66
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_missile_silo
 		Factions: boss
 		Group: Tech
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 		SpectatorUIOrder: 67
 	ProductionBar@Vanilla:
 		ProductionType: queue.missile_silo

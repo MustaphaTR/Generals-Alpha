@@ -964,7 +964,7 @@
 		QueueLimit: 1
 		RequireOwner: false
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 1
 	ProductionBar:
 	Exit:
 	GrantConditionOnProduction@SCOUT_DRONE:
@@ -988,7 +988,7 @@
 		QueueLimit: 1
 		RequireOwner: false
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 1
 	ProductionBar:
 	Exit:
 	GrantConditionOnProduction@BUNKER_UPGRADE:
@@ -1042,7 +1042,7 @@
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
-		LowPowerSlowdown: 3
+		LowPowerSlowdown: 2
 	GrantConditionOnProduction@LAND_MINES:
 		Condition: land_mines
 		Actors: upgrade.land_mines
