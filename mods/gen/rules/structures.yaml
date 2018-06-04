@@ -732,6 +732,25 @@ building.prc_command_center:
 		ClockSequence: clock
 		CircleSequence: circles
 		OrderName: CarpetBombingNukePowerInfoOrder
+	SpawnActorPower@SNEAK_ATTACK:
+		PauseOnCondition: emp || hacked || lowpower || sabotaged
+		Actors:
+			1: building.tunnel_network.sneak_attack
+		Prerequisites:
+			1: generals_power.sneak_attack
+		LifeTime: -1
+		ChargeInterval: 3750
+		Icons:
+			1: sneak
+		Descriptions:
+			1: Sneak Attack
+		LongDescs:
+			1: Spawns a Tunnel Network anywhere on the map.
+		StartFullyCharged: false
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		OrderName: SneakAttackPowerInfoOrder
+		RequiresCondition: boss
 	AirstrikePower@EMP:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
@@ -765,6 +784,9 @@ building.prc_command_center:
 		Type: Rectangle
 			TopLeft: -1536, -1536
 			BottomRight: 1536, 1536
+	GrantConditionOnFaction@Boss:
+		Condition: boss
+		Factions: boss
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: building.prc_command_center
 	RenderSprites:
