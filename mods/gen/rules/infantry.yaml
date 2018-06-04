@@ -1390,7 +1390,7 @@ infantry.black_lotus:
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
+		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
 		BuildPaletteOrder: 4
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1469,7 +1469,7 @@ infantry.black_lotus:
 	GrantStackableConditionOnFire@EndCapture:
 		Condition: end_capture
 		ArmamentName: capture
-		RequiredShotsPerStack: 25
+		RequiredShotsPerStack: 15
 		MaximumInstances: 2
 		RevokeDelay: 20
 		RevokeAll: true
@@ -1477,7 +1477,7 @@ infantry.black_lotus:
 	GrantStackableConditionOnFire@EndDisable:
 		Condition: end_disable
 		ArmamentName: disable
-		RequiredShotsPerStack: 10
+		RequiredShotsPerStack: 5
 		MaximumInstances: 2
 		RevokeDelay: 20
 		RevokeAll: true
@@ -1490,10 +1490,19 @@ infantry.black_lotus:
 		Voice: Disable
 	ProducibleWithLevel@Infantry:
 		Factions: inf
-	RenderSprites:
-		Image: infantry.black_lotus
 	Voiced:
 		VoiceSet: LotusVoice
+
+infantry.super_lotus:
+	Inherits: infantry.black_lotus
+	Buildable:
+		Queue: queue.inf_gen_infantry
+	Tooltip:
+		Name: Super Lotus
+	Armament@DisableEnd:
+		Weapon: disable.super_lotus.end
+	GrantStackableConditionOnFire@EndCapture:
+		RequiredShotsPerStack: 12
 
 infantry.black_lotus.boss:
 	Inherits: infantry.black_lotus
@@ -1502,3 +1511,5 @@ infantry.black_lotus.boss:
 		Queue: queue.boss_gen_infantry
 		BuildPaletteOrder: 10
 		Prerequisites: building.missile_silo, !prerequisite.enough_black_lotus, ~techlevel.high
+	RenderSprites:
+		Image: infantry.black_lotus

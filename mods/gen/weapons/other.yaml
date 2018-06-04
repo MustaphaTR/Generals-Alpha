@@ -427,6 +427,11 @@ disable.black_lotus.end:
 		Duration: 375
 		Condition: hacked
 
+disable.super_lotus.end:
+	Inherits: disable.black_lotus.end
+	Warhead@2Dis: GrantExternalCondition
+		Duration: 500
+
 disable.hacker.anim:
 	ReloadDelay: 15
 	Range: 3c768
