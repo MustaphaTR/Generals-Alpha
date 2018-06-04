@@ -56,7 +56,7 @@ missile.mig.ground:
 	ReloadDelay: 8
 	Range: 8c0
 	MinRange: 2c0
-	Report: missile7.aud
+	Report: vmigweaa.wav, vmigweab.wav
 	Projectile: Missile
 		Speed: 256
 		Inaccuracy: 128
@@ -142,7 +142,7 @@ missile.mig.air:
 	ReloadDelay: 8
 	Range: 8c0
 	MinRange: 2c0
-	Report: missile7.aud
+	Report: vmigweaa.wav, vmigweab.wav
 	Projectile: Missile
 		Speed: 384
 		CruiseAltitude: 2c0
@@ -211,7 +211,7 @@ missile.raptor.ground:
 	ReloadDelay: 4
 	Range: 8c0
 	MinRange: 2c512
-	Report: missile7.aud
+	Report: vmigweaa.wav, vmigweab.wav
 	Projectile: Missile
 		Speed: 256
 		Inaccuracy: 128
@@ -235,7 +235,7 @@ missile.raptor.air:
 	ReloadDelay: 4
 	Range: 8c0
 	MinRange: 2c512
-	Report: missile7.aud
+	Report: vmigweaa.wav, vmigweab.wav
 	Projectile: Missile
 		Speed: 384
 		CruiseAltitude: 2c0
@@ -273,7 +273,7 @@ missile.stealth_fighter:
 	ReloadDelay: 5
 	Range: 5c512
 	MinRange: 1c512
-	Report: missile7.aud
+	Report: vmigweaa.wav, vmigweab.wav
 	Projectile: Missile
 		Speed: 256
 		Inaccuracy: 128
@@ -295,7 +295,7 @@ missile.aurora:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 5
 	Range: 7c512
-	Report: missile7.aud
+	Report: vmigweaa.wav, vmigweab.wav
 	Projectile: Missile
 		Speed: 256
 		Inaccuracy: 512
@@ -345,7 +345,7 @@ missile.a10:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 12
 	Range: 8c768
-	Report: missile7.aud
+	Report: vmigweaa.wav, vmigweab.wav
 	Projectile: Missile
 		Speed: 256
 		Inaccuracy: 128
@@ -578,6 +578,7 @@ missile.comanche:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 5
 	Range: 5c0
+	Report: vcomweaa.wav, vcomweab.wav, vcomweac.wav
 	Projectile: Missile
 		Speed: 256
 		HorizontalRateOfTurn: 10
@@ -781,6 +782,7 @@ missile.humvee.ground:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 50
 	Range: 3c768
+	Report: vhumwe2a.wav, vhumwe2b.wav, vhumwe2c.wav, vhumwe2d.wav
 	Projectile: Missile
 		Speed: 298
 		TrailImage: smokey
@@ -798,6 +800,7 @@ missile.humvee.air:
 	Inherits: ^AntiAirMissile
 	ReloadDelay: 50
 	Range: 8c0
+	Report: vhumwe2a.wav, vhumwe2b.wav, vhumwe2c.wav, vhumwe2d.wav
 	Projectile: Missile
 		TrailImage: smokey
 		HorizontalRateOfTurn: 10

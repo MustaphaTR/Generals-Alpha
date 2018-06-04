@@ -37,6 +37,7 @@ mg.comanche:
 	ReloadDelay: 3
 	Range: 5c0
 	MinRange: 0c768
+	Report: vcomwe2a.wav, vcomwe2b.wav, vcomwe2c.wav, vcomwe2d.wav
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
@@ -292,6 +293,7 @@ mg.humvee:
 
 mg.sentry_drone:
 	Inherits: mg.humvee
+	Report: vsenweaa.wav, vsenweab.wav, vsenweac.wav, vsenwead.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 800
 
@@ -299,6 +301,7 @@ mg.battle_drone:
 	Inherits: mg.humvee
 	ReloadDelay: 3
 	Range: 2c768
+	Report: vcomwe2a.wav, vcomwe2b.wav, vcomwe2c.wav, vcomwe2d.wav
 
 mg.technical:
 	Inherits: ^LightMG
@@ -398,7 +401,7 @@ gatling.minigunner.ground:
 	Inherits: ^LightMG
 	ReloadDelay: 12
 	Range: 3c128
-	Report: gun11.aud
+	Report: iremweaa.wav, iremweab.wav, iremweac.wav, iremwead.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 1000
 		Versus:
@@ -453,7 +456,7 @@ gatling.gatling_tank.ground:
 	Inherits: ^LightMG
 	ReloadDelay: 10
 	Range: 4c384
-	Report: pillbox1.aud
+	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 2000
 		Versus:

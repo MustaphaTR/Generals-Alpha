@@ -275,7 +275,7 @@ explosion.demo_trap:
 		DamageTypes: TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@2Eff: CreateEffect
 		Explosions: napalm
-		ImpactSounds: firebl3.aud
+		ImpactSounds: gexpdema.wav, gexpdemb.wav, gexpdemc.wav
 	-Warhead@3EffWater: CreateEffect
 	Warhead@Smu: LeaveSmudge
 		SmudgeType: Scorch
@@ -380,7 +380,7 @@ explosion.terrorist:
 		DamageTypes: TriggerProne, ExplosionDeath, DropCrate, Incendiary
 	Warhead@2Eff: CreateEffect
 		Explosions: napalm
-		ImpactSounds: firebl3.aud
+		ImpactSounds: gexpmina.wav, gexpminb.wav
 	-Warhead@3EffWater: CreateEffect
 	Warhead@Smu: LeaveSmudge
 		SmudgeType: Scorch
@@ -413,7 +413,6 @@ explosion.suicide:
 		Damage: 40000
 	Warhead@2Eff: CreateEffect
 		Explosions: building
-		ImpactSounds: kaboom22.aud
 	-Warhead@1DamAlly:
 	-Warhead@2DamAlly:
 	-Warhead@Smu:
@@ -432,7 +431,6 @@ explosion.demo_charge:
 		DamageTypes: TriggerProne, ExplosionDeath, Incendiary
 	Warhead@2Eff: CreateEffect
 		Explosions: building
-		ImpactSounds: kaboom22.aud
 	-Warhead@Smu:
 	-Warhead@SmuSnow:
 
@@ -452,7 +450,7 @@ explosion.mine:
 		DamageTypes: TriggerProne, DefaultDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: large_explosion
-		ImpactSounds: mineblo1.aud
+		ImpactSounds: gexpmina.wav, gexpminb.wav
 	Warhead@Smu: LeaveSmudge
 		SmudgeType: Crater
 		InvalidTargets: Structure, Wall, Trees
