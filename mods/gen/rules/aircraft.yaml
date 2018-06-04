@@ -822,16 +822,14 @@ aircraft.battle_drone:
 	-RenderDetectionCircle:
 	Armament@MG:
 		Weapon: mg.battle_drone
-		LocalOffset: 393,0,-42
+		LocalOffset: 300,0,-16
 		MuzzleSequence: muzzle
 	WithMuzzleOverlay:
 	AttackHeli:
 		Armaments: primary
 		FacingTolerance: 20
-	WithIdleOverlay@ROTOR:
-		Offset: 0,0,85
-		Sequence: rotor
-	MobSpawnerSlave:
+	RenderSprites:
+		Scale: 0.75
 
 aircraft.hellfire_drone:
 	Inherits: aircraft.scout_drone
@@ -846,7 +844,6 @@ aircraft.hellfire_drone:
 		LocalYaw: -40, 24
 	AttackPlane:
 		FacingTolerance: 20
-	MobSpawnerSlave:
 
 aircraft.a10:
 	Inherits: ^Plane
