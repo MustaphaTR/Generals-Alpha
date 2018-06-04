@@ -1645,6 +1645,13 @@ vehicle.assault_troop_crawler:
 		PortYaws: 0, 0, 512, 512
 		PortCones: 512, 512, 512, 512
 		RequiresCondition: !hacked && !driver_killed && !emp
+	ProximityExternalCondition@SPEAKER:
+		Condition: speaker_tower
+		Range: 4c0
+	WithRangeCircle:
+		Type: speaker
+		Range: 4c0
+		Color: DD000066
 	Voiced:
 		VoiceSet: AssaultTroopCrawlerVoice
 
@@ -1748,6 +1755,13 @@ vehicle.attack_outpost:
 		MaxWeight: 8
 		PipCount: 8
 		InitialUnits: infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter
+	ProximityExternalCondition@SPEAKER:
+		Condition: speaker_tower
+		Range: 4c0
+	WithRangeCircle:
+		Type: speaker
+		Range: 4c0
+		Color: DD000066
 
 vehicle.microwave_tank:
 	Inherits: ^Tank
