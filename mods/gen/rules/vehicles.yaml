@@ -394,7 +394,7 @@ vehicle.scorpion_tank:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
-		BuildDuration: 175
+		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.low
 		Description: Lightly armored main battle tank.
@@ -412,6 +412,9 @@ vehicle.scorpion_tank:
 	CustomProductionCost@Toxin:
 		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		Cost: 650
+	CustomProductionTime@ZH:
+		Prerequisites: prerequisite.zh_units
+		BuildTime: 175
 	FirepowerMultiplier@AP_ROCKETS:
 		Types: sc_rocket
 	Tooltip:
@@ -2503,7 +2506,7 @@ vehicle.overlord_tank:
 		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
 		BuildPaletteOrder: 6
 		ForceIconLocation: true
-		BuildDuration: 500
+		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, ~techlevel.high
 		Description: Big and slow tank.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
@@ -2521,9 +2524,16 @@ vehicle.overlord_tank:
 	CustomProductionCost@Tank:
 		Queue: queue.tank_gen_vehicle
 		Cost: 1900
-	CustomProductionTime@Nuke:
+	CustomProductionTime@Nuke_ZH:
+		Prerequisites: prerequisite.zh_units
 		Queue: queue.nuke_gen_vehicle
 		BuildTime: 550
+	CustomProductionTime@Nuke:
+		Queue: queue.nuke_gen_vehicle
+		BuildTime: 675
+	CustomProductionTime@ZH:
+		Prerequisites: prerequisite.zh_units
+		BuildTime: 500
 	Tooltip:
 		Name: Overlord Tank
 	Health:
