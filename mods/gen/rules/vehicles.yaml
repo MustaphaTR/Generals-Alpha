@@ -2736,12 +2736,13 @@ vehicle.bomb_truck:
 	Production:
 		Produces: queue.bomb_truck, queue.toxin_gen_bomb_truck, queue.demo_gen_bomb_truck
 		PauseOnCondition: emp || hacked
-		RequiresCondition: !bio_bombs && !hi_explosive_bombs && !driver_killed
+		RequiresCondition: !(bio_bombs && hi_explosive_bombs) && !(bio_bombs && toxin) && !(hi_explosive_bombs && demo) && !driver_killed
 	ProductionQueue@Vanilla:
 		Type: queue.bomb_truck
 		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank
 		Group: Tech
-		QueueLimit: 1
+		ItemLimit: 1
+		QueueLimit: 2
 		InstantCashDrain: true
 		LowPowerSlowdown: 3
 	ProductionQueue@Toxin:
@@ -2778,7 +2779,7 @@ vehicle.bomb_truck:
 	Explodes@Normal:
 		Weapon: BombTruckExplosion
 		EmptyWeapon: BombTruckExplosion
-		RequiresCondition: !bio_bombs && !hi_explosive_bombs
+		RequiresCondition: !hi_explosive_bombs
 	Explodes@BIO_BOMBS:
 		Weapon: BombTruckExplosion.toxin
 		EmptyWeapon: BombTruckExplosion.toxin
@@ -2796,6 +2797,15 @@ vehicle.bomb_truck:
 		EmptyWeapon: BombTruckExplosion.hi_exp
 		RequiresCondition: hi_explosive_bombs
 	AttackSuicides:
+		RequiresCondition: !driver_killed
+	ConditionPrerequisite@BIO_BOMBS:
+		Queue: queue.bomb_truck, queue.toxin_gen_bomb_truck
+		Actor: upgrade.bio_bombs
+		PauseOnCondition: bio_bombs
+	ConditionPrerequisite@HI_EXPLOSIVE_BOMBS:
+		Queue: queue.bomb_truck, queue.demo_gen_bomb_truck
+		Actor: upgrade.hi_explosive_bombs
+		PauseOnCondition: hi_explosive_bombs
 	GrantConditionOnProduction@BIO_BOMBS:
 		Condition: bio_bombs
 		Actors: upgrade.bio_bombs
@@ -2811,6 +2821,14 @@ vehicle.bomb_truck:
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@Demo:
+		Condition: demo
+		Factions: demo
+		ResetOnOwnerChange: true
 	-WithFacingSpriteBody:
 	WithDisguisingFacingSpriteBody:
 	WithDisguisingSpriteTurret:
