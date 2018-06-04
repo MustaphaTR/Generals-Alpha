@@ -2521,6 +2521,9 @@ vehicle.overlord_tank:
 	CustomProductionCost@Tank:
 		Queue: queue.tank_gen_vehicle
 		Cost: 1900
+	CustomProductionTime@Nuke:
+		Queue: queue.nuke_gen_vehicle
+		BuildTime: 550
 	Tooltip:
 		Name: Overlord Tank
 	Health:
