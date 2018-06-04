@@ -460,7 +460,7 @@ infantry.conscript:
 infantry.missile_defender:
 	Inherits: ^default.rocket_infantry
 	Inherits@CHEM: ^AffectedByChemicalSuits
-	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL: ^Reveal300Gen400ZH
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_infantry
@@ -1409,7 +1409,7 @@ infantry.black_lotus:
 	Tooltip:
 		Name: Black Lotus
 	Health:
-		HP: 20000
+		HP: 15000
 	Armor:
 		Type: infantry.normal
 	Mobile:
@@ -1439,7 +1439,7 @@ infantry.black_lotus:
 		ValidDamageStates: Critical
 	RenderDetectionCircle:
 	DetectCloaked:
-		Range: 7c512
+		Range: 10c0
 	Armament@CaptureAnim:
 		Name: capture
 		Cursor: ability
@@ -1488,6 +1488,12 @@ infantry.black_lotus:
 	AttackFrontal@Disable:
 		Armaments: disable
 		Voice: Disable
+	DamageMultiplier@ZH_UNITS:
+		Modifier: 75
+		RequiresCondition: zh_units
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	ProducibleWithLevel@Infantry:
 		Factions: inf
 	Voiced:

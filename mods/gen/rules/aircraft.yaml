@@ -542,6 +542,9 @@ aircraft.stealth_fighter:
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 69
+	DamageMultiplier@ZH_UNITS:
+		Modifier: 86
+		RequiresCondition: !zh_units
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
@@ -575,6 +578,9 @@ aircraft.stealth_fighter:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	Voiced:
 		VoiceSet: StealthFighterVoice
 	RenderSprites:

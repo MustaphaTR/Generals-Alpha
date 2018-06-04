@@ -794,6 +794,33 @@
 		Duration: 100
 		Radius: 3c768
 
+^Reveal300Gen400ZH:
+	RevealsShroud@Gen:
+		Range: 7c512
+		RequiresCondition: !zh_units
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE_Gen:
+		Types: Intelligence
+		Range: 7c512
+		RequiresCondition: !zh_units
+	RevealOnDeath@Gen:
+		Duration: 100
+		Radius: 3c768
+		RequiresCondition: !zh_units
+	RevealsShroud@ZH:
+		Range: 10c0
+		RequiresCondition: zh_units
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE_ZH:
+		Types: Intelligence
+		Range: 10c0
+		RequiresCondition: zh_units
+	RevealOnDeath@ZH:
+		Duration: 100
+		Radius: 5c0
+		RequiresCondition: zh_units
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
+
 ^Reveal320:
 	RevealsShroud:
 		Range: 8c0
