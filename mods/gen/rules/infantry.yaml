@@ -24,7 +24,6 @@ infantry.pilot:
 
 infantry.worker:
 	Inherits@1: ^Soldier
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHOES: ^AffectedByWorkerShoes
@@ -146,7 +145,6 @@ infantry.ranger:
 infantry.rebel:
 	Inherits: ^default.mg_infantry
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
@@ -187,7 +185,6 @@ infantry.rebel:
 
 infantry.toxin_rebel:
 	Inherits: ^default.mg_infantry
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
@@ -487,7 +484,6 @@ infantry.missile_defender:
 infantry.rpg_trooper:
 	Inherits: ^default.rocket_infantry
 	Inherits@AP_ROCKETS: ^AffectedByAPRockets
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Buildable:
 		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
@@ -636,7 +632,6 @@ infantry.pathfinder.boss:
 
 infantry.terrorist:
 	Inherits: ^Soldier
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
@@ -805,7 +800,6 @@ infantry.saboteur:
 ^default.angry_mob:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal150
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -1108,7 +1102,6 @@ infantry.super_hacker:
 
 infantry.hijacker:
 	Inherits: ^Soldier
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -1284,7 +1277,6 @@ infantry.colonel_burton.boss:
 infantry.jarmen_kell:
 	Inherits: ^Soldier
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300

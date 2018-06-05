@@ -198,7 +198,6 @@ vehicle.technical:
 	Inherits: ^Vehicle
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
@@ -301,7 +300,6 @@ vehicle.technical.demo_reinforce:
 
 vehicle.radar_van:
 	Inherits: ^Vehicle
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal500
@@ -383,7 +381,6 @@ vehicle.scorpion_tank:
 	Inherits: ^Tank
 	Inherits@AP_ROCKETS: ^AffectedByAPRockets
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
@@ -885,7 +882,6 @@ vehicle.quad_cannon:
 	Inherits: ^Tank
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
@@ -1063,7 +1059,6 @@ vehicle.gatling_tank:
 vehicle.toxin_tractor:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal200
@@ -1264,7 +1259,6 @@ vehicle.rocket_buggy:
 	Inherits: ^Vehicle
 	Inherits@AP_ROCKETS: ^AffectedByAPRockets
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
@@ -1460,7 +1454,6 @@ vehicle.avenger.boss:
 vehicle.battle_Bus:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal200
@@ -2039,7 +2032,6 @@ vehicle.tomahawk_launcher.boss:
 vehicle.scud_launcher:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
@@ -2334,7 +2326,6 @@ vehicle.paladin_tank.boss:
 vehicle.marauder_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
@@ -2712,7 +2703,6 @@ vehicle.emparor_overlord:
 
 vehicle.bomb_truck:
 	Inherits: ^Vehicle
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal200
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill

@@ -1607,7 +1607,6 @@ building.laser_turret:
 
 building.demo_trap:
 	Inherits: ^Defense
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.gla_building
@@ -2192,7 +2191,6 @@ building.prc_war_factory:
 building.tunnel_network:
 	Inherits: ^default.tunnel_network
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@CAMO: ^CanHaveCamoNetting
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Buildable:
@@ -2302,7 +2300,6 @@ building.stinger_site:
 	Inherits: ^Defense
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetAll
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@CAMO: ^CanHaveCamoNetting
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal400
@@ -2806,7 +2803,6 @@ building.strategy_center:
 building.palace:
 	Inherits: ^Building
 	Inherits@AUTOTARGET: ^AutoTargetAll
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@CAMO: ^CanHaveCamoNettingStealthGenOnly
 	Inherits@GARRISON: ^WithGarrisonRangeCircle
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
@@ -3356,7 +3352,6 @@ building.particle_cannon.boss:
 
 building.scud_storm:
 	Inherits: ^Building
-	Inherits@BOUNTY: ^TakesBounty
 	Inherits@CAMO: ^CanHaveCamoNettingStealthGenOnly
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@REVEAL: ^Reveal200

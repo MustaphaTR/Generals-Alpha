@@ -417,7 +417,7 @@ generals_power.cash_hack1:
 	Tooltip:
 		Name: Cash Hack - Level 1
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.boss_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power
 		BuildPaletteOrder: 15
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.medium
 		Description: Enables Cash Hack support power from Command Center.
@@ -427,7 +427,7 @@ generals_power.cash_hack2:
 	Tooltip:
 		Name: Cash Hack - Level 2
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.boss_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power
 		BuildPaletteOrder: 16
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_hack1, ~techlevel.medium
 		Description: Upgrades Cash Hack support power to Level 2.
@@ -437,7 +437,7 @@ generals_power.cash_hack3:
 	Tooltip:
 		Name: Cash Hack - Level 3
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.boss_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power
 		BuildPaletteOrder: 17
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_hack2, ~techlevel.high
 		Description: Upgrades Cash Hack support power to Level 3.
@@ -477,7 +477,7 @@ generals_power.cash_bounty1:
 	Tooltip:
 		Name: Cash Bounty - Level 1
 	Buildable:
-		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power
+		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 12
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~techlevel.medium
 		Description: Enemy units give 5% of their worth on death.
@@ -487,7 +487,7 @@ generals_power.cash_bounty2:
 	Tooltip:
 		Name: Cash Bounty - Level 2
 	Buildable:
-		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power
+		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 13
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_bounty1, ~techlevel.medium
 		Description: Enemy units give 10% of their worth on death.
@@ -497,7 +497,7 @@ generals_power.cash_bounty3:
 	Tooltip:
 		Name: Cash Bounty - Level 3
 	Buildable:
-		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power
+		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 14
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_bounty2, ~techlevel.high
 		Description: Enemy units give 20% of their worth on death.
