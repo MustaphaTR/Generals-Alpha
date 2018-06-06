@@ -770,6 +770,14 @@ vehicle.ambulance:
 		EjectOnDeath: true
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp
+	Targetable:
+		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, ImmueToToxin
+	Targetable@DRIVER_KILLED:
+		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, ImmueToToxin, NoDriverKill, NoAutoTarget
+	-DamagedByRadioactivity@RADIOACTIVITY:
+	-DamagedByRadioactivity@ANTHRAX_ALPHA:
+	-DamagedByRadioactivity@ANTHRAX_BETA:
+	-DamagedByRadioactivity@ANTHRAX_GAMMA:
 	RenderSprites:
 		Image: vehicle.ambulance
 	Voiced:
@@ -1161,6 +1169,7 @@ vehicle.toxin_tractor:
 		Factions: toxin
 	GrantConditionOnDeploy@SPRAY:
 		DeployedCondition: spray
+	-DamagedByRadioactivity@RADIOACTIVITY:
 	-DamagedByRadioactivity@ANTHRAX_ALPHA:
 	-DamagedByRadioactivity@ANTHRAX_BETA:
 	-DamagedByRadioactivity@ANTHRAX_GAMMA:
@@ -1169,6 +1178,10 @@ vehicle.toxin_tractor:
 		Weapons: debris.scorpion_tank
 		Pieces: 1, 1
 		Range: 1c0, 1c0
+	Targetable:
+		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, ImmueToToxin
+	Targetable@DRIVER_KILLED:
+		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, ImmueToToxin, NoDriverKill, NoAutoTarget
 	Voiced:
 		VoiceSet: ToxinTractorVoice
 
