@@ -2519,8 +2519,6 @@ building.prc_airfield:
 	Building:
 		Footprint: xxxx xxxx xxxx
 		Dimensions: 4,3
-	Selectable:
-		Bounds: 96,72
 	Production:
 		Produces: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft
 		PauseOnCondition: emp || hacked || sabotaged
@@ -2579,8 +2577,6 @@ building.prc_airfield:
 		DockOffset: 3,1
 	Selectable:
 		Bounds: 96,64,0,-4
-	SelectionDecorations:
-		DecorationBounds: 96,64,0,-4
 	WithIdleOverlay@FLAG:
 		Sequence: idle-flag
 	ProvidesPrerequisite:
