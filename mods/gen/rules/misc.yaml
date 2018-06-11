@@ -871,6 +871,29 @@ supply.dock.2x2:
 			7501: three_quarters
 	WithBuildingBib:
 
+hack.particle_beam:
+	Inherits: ^Vehicle
+	Health:
+		HP: 1000
+	DamageMultiplier@UNKILLABLE:
+		Modifier: 0
+	Mobile:
+		Locomotor: locomotor.particle_beam
+		Speed: 30
+		TurnSpeed: 255
+	-Targetable:
+	ExplodeWeapon:
+		Weapon: aoe.particle_beam
+	Selectable:
+		Priority: 5
+		Bounds: 24,120,0,-60
+	AmbientSound:
+		SoundFiles: sparlo2a.aud, sparlo2b.aud, sparlo2c.aud, sparlo3a.aud, sparlo3b.aud, sparlo3c.aud, sparlo4a.aud, sparlo4b.aud, sparlo4c.aud
+		Interval: 2
+	KillsSelf:
+		RemoveInstead: true
+		Delay: 250
+
 RAILMINE:
 	Inherits@1: ^SpriteActor
 	Interactable:

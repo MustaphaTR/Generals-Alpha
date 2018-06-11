@@ -230,6 +230,7 @@ toxin.toxin_tractor:
 	InvalidTargets: Structure, Wall
 	Range: 2c512
 	ReloadDelay: 6
+	InvalidTargets: ImmueToToxin
 	Projectile: RadBeam
 		ZOffset: 1024
 	Warhead@1Dam: SpreadDamage
@@ -248,7 +249,7 @@ toxin.toxin_tractor:
 			aircraft.normal: 25
 			aircraft.comanche: 25
 			aircraft.chinook: 25
-		InvalidTargets: Structure, Wall
+		InvalidTargets: Structure, ImmueToToxin, Wall
 		DamageTypes: FireDeath, DropCrate
 	Warhead@2Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_alpha
@@ -321,9 +322,9 @@ toxin.toxin_tunnel_network.gamma:
 	Range: 4c0
 
 toxin.toxin_tractor.deploy:
-	InvalidTargets: Structure, Wall
 	Range: 1c0
 	ReloadDelay: 6
+	InvalidTargets: Structure, ImmueToToxin, Wall
 	Projectile: InstantHit
 	Warhead@1Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_alpha

@@ -312,38 +312,32 @@ Atomic:
 		ValidTargets: Trees
 		DamageTypes: Incendiary
 
-IonCannon:
-	ValidTargets: Ground, Air, Trees
-	Warhead@1Dam_impact: SpreadDamage
-		Range: 0, 1c1, 2c1, 2c512
-		Damage: 10000
-		Falloff: 1000, 1000, 250, 100
-		ValidTargets: Ground, Air, Trees
-		AffectsParent: True
-		DamageTypes: TriggerProne, FireDeath, Incendiary
-	Warhead@2Smu_impact: LeaveSmudge
+aoe.particle_beam:
+	ValidTargets: Ground, Water, Air, Trees
+	Range: 1c0
+	ReloadDelay: 2
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Falloff: 100, 100
+		Spread: 1c512
+		Damage: 3200
+		ValidTargets: Ground, Water, Air, Trees
+		DamageTypes: FireDeath
+		Versus:
+			infantry.normal: 150
+			husk.battle_bus: 200
+			building.normal: 200
+			building.internet_center: 20
+			building.tough: 25
+			building.defense: 200
+	Warhead@2Eff: CreateEffect
+		Explosions: particle_ring
+		ValidTargets: Ground, Water, Air, Trees
+	Warhead@3Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
-	Warhead@3Smu_area: LeaveSmudge
-		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
-		Size: 1
-		Delay: 3
-	Warhead@5Smu_area2: LeaveSmudge
-		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
-		Size: 2,1
-		Delay: 6
-	Warhead@2Smu_impactSnow: LeaveSmudge
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		Size: 0
+	Warhead@3Smu_impactSnow: LeaveSmudge
 		SmudgeType: SnowScorch
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
-	Warhead@3Smu_areaSnow: LeaveSmudge
-		SmudgeType: SnowScorch
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
-		Size: 1
-		Delay: 3
-	Warhead@5Smu_areaSnow2: LeaveSmudge
-		SmudgeType: SnowScorch
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees
-		Size: 2,1
-		Delay: 6
+		InvalidTargets: Vehicle, Tank, Structure, Wall
+		Size: 0

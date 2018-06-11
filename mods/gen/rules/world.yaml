@@ -129,7 +129,7 @@
 		Name: locomotor.infantry
 		Crushes: crate, mine
 		SharesCell: true
-		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook
+		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook, hack.particle_beam
 		TerrainSpeeds:
 			Grass: 90
 			Snow: 90
@@ -147,7 +147,7 @@
 		Name: locomotor.climber
 		Crushes: crate, mine
 		SharesCell: true
-		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook
+		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook, hack.particle_beam
 		TerrainSpeeds:
 			Grass: 90
 			Snow: 90
@@ -165,7 +165,7 @@
 	Locomotor@WHEELED:
 		Name: locomotor.wheeled
 		Crushes: crate, mine, infantry, fence
-		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook
+		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook, hack.particle_beam
 		TerrainSpeeds:
 			Grass: 80
 			Snow: 80
@@ -182,7 +182,7 @@
 	Locomotor@SENTRY:
 		Name: locomotor.sentry_drone
 		Crushes: crate, mine
-		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook
+		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook, hack.particle_beam
 		TerrainSpeeds:
 			Grass: 80
 			Snow: 80
@@ -199,7 +199,7 @@
 	Locomotor@TRACKED:
 		Name: locomotor.tracked
 		Crushes: crate, mine, infantry, fence
-		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook
+		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook, hack.particle_beam
 		TerrainSpeeds:
 			Grass: 80
 			Snow: 80
@@ -216,7 +216,7 @@
 	Locomotor@OVERLORD:
 		Name: locomotor.overlord
 		Crushes: crate, mine, infantry, fence, wall, vehicle, hero
-		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook
+		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook, hack.particle_beam
 		TerrainSpeeds:
 			Grass: 80
 			Snow: 80
@@ -232,7 +232,25 @@
 			Beach: 70
 	Locomotor@CHINOOK:
 		Name: locomotor.chinook
-		BlockerActors: aircraft.chinook, aircraft.combat_chinook
+		BlockerActors: aircraft.chinook, aircraft.combat_chinook, hack.particle_beam
+		TerrainSpeeds:
+			Grass: 100
+			Snow: 100
+			Sand: 100
+			Concrete: 100
+			Rough: 100
+			GrassRoad: 100
+			SnowRoad: 100
+			SandRoad: 100
+			Bridge: 100
+			Ore: 100
+			Gems: 100
+			Beach: 100
+			Water: 100
+			Rock: 100
+	Locomotor@PARTICLE_BEAM:
+		Name: locomotor.particle_beam
+		BlockerActors: colorpicker.overlord_tank
 		TerrainSpeeds:
 			Grass: 100
 			Snow: 100
@@ -251,13 +269,13 @@
 	Locomotor@VESSEL:
 		Name: locomotor.vessel
 		Crushes: crate
-		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook
+		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook, hack.particle_beam
 		TerrainSpeeds:
 			Water: 100
 	Locomotor@TRANSPORT:
 		Name: locomotor.transport
 		Crushes: crate
-		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook
+		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook, hack.particle_beam
 		TerrainSpeeds:
 			Water: 100
 			Beach: 70
@@ -266,7 +284,7 @@
 		TerrainSpeeds:
 	Locomotor@MINE:
 		Name: locomotor.mine
-		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook
+		NonBlockerActors: aircraft.chinook, aircraft.combat_chinook, hack.particle_beam
 		TerrainSpeeds:
 			Grass: 1
 			Snow: 1

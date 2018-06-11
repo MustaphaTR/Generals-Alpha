@@ -3275,13 +3275,16 @@ building.particle_cannon:
 	Armor:
 		Type: building.tough
 	WithBuildingBib:
-	IonCannonPower:
+	SpawnActorPower@PARTICLE_CANNON:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
+		Actors:
+			1: hack.particle_beam
 		Prerequisites:
 			1: building.particle_cannon
+		LifeTime: -1
+		ChargeInterval: 1500
 		Icons:
 			1: particle
-		ChargeInterval: 6000
 		Descriptions:
 			1: Particle Cannon
 		LongDescs:
@@ -3291,10 +3294,6 @@ building.particle_cannon:
 		InsufficientPowerSpeechNotification: InsufficientPower
 		IncomingSpeechNotification: ParticleCannonLaunchDetected
 		AllowMultiple: True
-		OnFireSound: ion1.aud
-		EffectPalette: cnc
-		CameraActor: camera.particle_cannon
-		CameraRemoveDelay: 50
 	SupportPowerChargeBar:
 	Power:
 		Amount: -10

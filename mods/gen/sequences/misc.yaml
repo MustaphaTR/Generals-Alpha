@@ -52,6 +52,7 @@ explosion:
 	emp: empfx1
 	emp_small: empfx2
 		Length: 8
+	particle_ring: particlering
 	corpse: corpse1
 		ZOffset: -512
 		Tick: 1600
@@ -953,6 +954,11 @@ ctflag:
 	bib: mbGAP
 		Length: *
 		UseTilesetExtension: true
+
+hack.particle_beam:
+	idle: particlebeam
+		Length: *
+		Offset: 0, -60
 
 hack.cameo_filler:
 	icon: invis
