@@ -877,6 +877,7 @@ infantry.angry_mob:
 	Inherits@1: ^ExistsInWorld
 	Inherits@4: ^SpriteActor
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@LEAFLET: ^AffectedByLeaflet
 	-AppearsOnRadar:
 	Buildable:
 		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
