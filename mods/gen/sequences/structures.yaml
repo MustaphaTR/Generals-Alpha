@@ -567,11 +567,55 @@ building.gatling_cannon:
 		AddExtension: false
 	icon: gatcanicon
 
-building.bunker:
-	idle: pbox
-	damaged-idle: pbox
+building.firebase:
+	idle-a: pbox
+		Offset: -12,-12
+	damaged-idle-a: pbox
 		Start: 1
-	make: pboxmake
+		Offset: -12,-12
+	make-a: pboxmake
+		Length: *
+		Offset: -12,-12
+	idle-b: pbox
+		Offset: -12,12
+	damaged-idle-b: pbox
+		Start: 1
+		Offset: -12,12
+	make-b: pboxmake
+		Length: *
+		Offset: -12,12
+	idle-c: pbox
+		Offset: 12,-12
+	damaged-idle-c: pbox
+		Start: 1
+		Offset: 12,-12
+	make-c: pboxmake
+		Length: *
+		Offset: 12,-12
+	idle-d: pbox
+		Offset: 12,12
+	damaged-idle-d: pbox
+		Start: 1
+		Offset: 12,12
+	make-d: pboxmake
+		Length: *
+		Offset: 12,12
+	idle-turret: agun
+		Facings: 32
+		UseClassicFacingFudge: True
+		Offset: 0,-18
+	make-turret: agunmake
+		Length: *
+		Offset: 0,-18
+	muzzle: gunfire2
+		Length: *
+	icon: fbaseicon
+
+building.bunker:
+	idle: bunker
+	damaged-idle: bunker
+		Start: 1
+	make: bunkermake
 		Length: *
 	idle-flag: flagfly
 		Length: *

@@ -1842,6 +1842,97 @@ building.gatling_cannon:
 	Voiced:
 		VoiceSet: GatlingCannonVoice
 
+building.firebase:
+	Inherits: ^Defense
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@GARRISON: ^WithGarrisonRangeCircle
+	Inherits@LEAFLET: ^AffectedByLeaflet
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^2x2Shape
+	Tooltip:
+		Name: Firebase
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Buildable:
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
+		BuildPaletteOrder: 5
+		BuildDuration: 125
+		BuildDurationModifier: 100
+		Prerequisites: building.usa_barracks, ~techlevel.infonly
+		Description: Static long range defense with fireports\nfor 4 garrisoned soldiers.
+	Valued:
+		Cost: 500
+	Health:
+		HP: 100000
+	Armor:
+		Type: building.normal
+	Selectable:
+		Bounds: 48,48
+	ProvidesPrerequisite@buildingname:
+	Turreted:
+		TurnSpeed: 5
+		InitialFacing: 224
+	-WithMakeAnimation:
+	WithMakeAnimation@A:
+		Sequence: make-a
+		BodyNames: A
+	WithMakeAnimation@B:
+		Sequence: make-b
+		BodyNames: B
+	WithMakeAnimation@C:
+		Sequence: make-c
+		BodyNames: C
+	WithMakeAnimation@D:
+		Sequence: make-d
+		BodyNames: D
+	WithMakeAnimation@Turret:
+		Sequence: make-turret
+		BodyNames: turret
+	WithSpriteBody:
+		Sequence: idle-a
+		Name: A
+	WithSpriteBody@B:
+		Sequence: idle-b
+		Name: B
+	WithSpriteBody@C:
+		Sequence: idle-c
+		Name: C
+	WithSpriteBody@D:
+		Sequence: idle-d
+		Name: D
+	WithEmbeddedTurretSpriteBody:
+		Sequence: idle-turret
+		Name: turret
+	-QuantizeFacingsFromSequence:
+	BodyOrientation:
+		QuantizedFacings: 8
+	Cargo:
+		Types: Infantry, Hacker, Pilot
+		MaxWeight: 4
+		PipCount: 4
+		EjectOnDeath: true
+		LoadedCondition: loaded
+		PauseOnCondition: emp || hacked
+	AttackGarrisoned:
+		Armaments: garrison
+		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 88, 88, 88, 88, 88, 88
+		RequiresCondition: !emp && !hacked && !leaflet
+	Armament:
+		Weapon: cannon.firebase
+		LocalOffset: 520,0,450
+	AttackTurreted:
+		RequiresCondition: !emp && !hacked
+	WithRangeCircle@ARTY:
+		Range: 6c896
+		Color: DDDD0088
+	Power:
+		Amount: 0
+	Voiced:
+		VoiceSet: FirebaseVoice
+
 building.bunker:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetAll
