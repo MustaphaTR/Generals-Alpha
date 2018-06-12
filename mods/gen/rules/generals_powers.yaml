@@ -681,10 +681,20 @@ generals_power.leaflet_drop:
 	Tooltip:
 		Name: Leaflet Drop
 	Buildable:
-		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
+		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power
 		BuildPaletteOrder: 16
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~prerequisite.zh_units, ~techlevel.unrestricted
 		Description: Enables Leaflet Drop support power from Command Center.
+	ProvidesPrerequisite@powername:
+		Prerequisite: generals_power.leaflet_drop
+	RenderSprites:
+		Image: generals_power.leaflet_drop
+
+generals_power.leaflet_drop.rank3:
+	Inherits: generals_power.leaflet_drop
+	Buildable:
+		Queue: queue.super_gen_generals_power
+		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~prerequisite.zh_units, ~techlevel.unrestricted
 
 generals_power.sneak_attack:
 	Inherits: ^default.generals_power
