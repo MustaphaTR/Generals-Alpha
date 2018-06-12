@@ -184,6 +184,7 @@ Player:
 			generals_power.carpet_bombing.level5: 1%
 			generals_power.carpet_bombing.nuke: 1%
 			generals_power.fuel_air_bomb: 1%
+			generals_power.leaflet_drop: 1%
 			generals_power.anthrax_bomb: 1%
 			generals_power.emp: 1%
 		UnitsToBuild:
@@ -546,7 +547,22 @@ Player:
 				CheckRadius: 5c0
 			Consideration@2:
 				Against: Ally
-				Types: Air, Ground, Water
+				Types: Infantry, Vehicle
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@leaflet_drop:
+			OrderName: LeafletDropPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Infantry, Vehicle
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Infantry, Vehicle
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 7c0
@@ -826,6 +842,7 @@ Player:
 			generals_power.carpet_bombing.level5: 1%
 			generals_power.carpet_bombing.nuke: 1%
 			generals_power.fuel_air_bomb: 1%
+			generals_power.leaflet_drop: 1%
 			generals_power.anthrax_bomb: 1%
 			generals_power.emp: 1%
 		UnitsToBuild:
@@ -1188,7 +1205,22 @@ Player:
 				CheckRadius: 5c0
 			Consideration@2:
 				Against: Ally
-				Types: Air, Ground, Water
+				Types: Infantry, Vehicle
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@leaflet_drop:
+			OrderName: LeafletDropPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Infantry, Vehicle
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Infantry, Vehicle
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 7c0
@@ -1468,6 +1500,7 @@ Player:
 			generals_power.carpet_bombing.level5: 1%
 			generals_power.carpet_bombing.nuke: 1%
 			generals_power.fuel_air_bomb: 1%
+			generals_power.leaflet_drop: 1%
 			generals_power.anthrax_bomb: 1%
 			generals_power.emp: 1%
 		UnitsToBuild:
@@ -1828,7 +1861,22 @@ Player:
 				CheckRadius: 5c0
 			Consideration@2:
 				Against: Ally
-				Types: Air, Ground, Water
+				Types: Infantry, Vehicle
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@leaflet_drop:
+			OrderName: LeafletDropPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Infantry, Vehicle
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Infantry, Vehicle
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 7c0

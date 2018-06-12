@@ -124,7 +124,7 @@ vehicle.humvee:
 		TurnSpeed: 10
 		Speed: 60
 		Voice: Move
-		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
+		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Crushable:
@@ -155,7 +155,7 @@ vehicle.humvee:
 		RequiresCondition: tow_missile
 	AttackTurreted:
 		Turrets: primary, tow
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithMuzzleOverlay:
 	WithSpriteTurret@MG:
 	WithSpriteTurret@TOW:
@@ -173,13 +173,13 @@ vehicle.humvee:
 		MaxWeight: 5
 		PipCount: 5
 		LoadingCondition: notmobile
-		PauseOnCondition: hacked || driver_killed || emp
+		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	AcceptsDeliveredExperience:
 	AttackGarrisoned:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
 		PortCones: 512, 512, 512, 512
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	ThrowsShrapnel@Turret1:
 		Weapons: debris.humvee.turret
 		Pieces: 1, 1
@@ -242,7 +242,7 @@ vehicle.technical:
 		TurnSpeed: 10
 		Speed: 90
 		Voice: Move
-		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
+		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 89
 	Crushable:
@@ -256,7 +256,7 @@ vehicle.technical:
 		MuzzleSequence: muzzle
 		LocalOffset: 128,0,43
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	Cargo:
@@ -265,7 +265,7 @@ vehicle.technical:
 		PipCount: 5
 		EjectOnDeath: true
 		LoadingCondition: notmobile
-		PauseOnCondition: hacked || driver_killed || emp
+		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	AcceptsDeliveredExperience:
 	ThrowsShrapnel@Mobile:
 		Weapons: debris.technical.body
@@ -349,9 +349,9 @@ vehicle.radar_van:
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	ProvidesRadar:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	SpawnActorPower@RADAR_VAN_SCAN:
 		Actors:
 			1: camera.radar_van_scan
@@ -471,7 +471,7 @@ vehicle.scorpion_tank:
 	AttackTurreted:
 		Armaments: primary, sc_rocket
 		Turrets: primary, sc_rocket
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithMuzzleOverlay:
 	WithSpriteTurret@NORMAL:
 	AmmoPool@SC_ROCKET:
@@ -562,7 +562,7 @@ vehicle.crusader_tank:
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	DamageMultiplier@COMPOSITE_ARMOR:
@@ -598,15 +598,15 @@ vehicle.laser_tank:
 	Power:
 		Amount: -1
 	Mobile:
-		RequiresCondition: !hacked && !driver_killed && !emp && !lowpower
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !lowpower
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp && !lowpower
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !lowpower
 	MobSpawnerMaster@SCOUT_DRONE:
-		RequiresCondition: scout_drone && !hacked && !emp && !driver_killed && !lowpower
+		RequiresCondition: scout_drone && !hacked && !emp && !driver_killed && !leaflet && !lowpower
 	MobSpawnerMaster@BATTLE_DRONE:
-		RequiresCondition: battle_drone && !hacked && !emp && !driver_killed && !lowpower
+		RequiresCondition: battle_drone && !hacked && !emp && !driver_killed && !leaflet && !lowpower
 	MobSpawnerMaster@HELLFIRE_DRONE:
-		RequiresCondition: hellfire_drone && !hacked && !emp && !driver_killed && !lowpower
+		RequiresCondition: hellfire_drone && !hacked && !emp && !driver_killed && !leaflet && !lowpower
 	Voiced:
 		VoiceSet: LaserTankVoice
 
@@ -676,7 +676,7 @@ vehicle.battlemaster_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: autoloader
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	SelectionDecorations:
@@ -750,7 +750,7 @@ vehicle.ambulance:
 	Mobile:
 		Speed: 60
 		Voice: Move
-		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
+		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Crushable:
@@ -769,7 +769,7 @@ vehicle.ambulance:
 		PipCount: 3
 		EjectOnDeath: true
 		LoadingCondition: notmobile
-		PauseOnCondition: hacked || driver_killed || emp
+		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	Targetable:
 		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, ImmueToToxin
 	Targetable@DRIVER_KILLED:
@@ -834,7 +834,7 @@ vehicle.sentry_drone:
 		Speed: 60
 		Voice: Move
 		Locomotor: locomotor.sentry_drone
-		RequiresCondition: !hacked && !emp
+		RequiresCondition: !hacked && !emp && !leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
 	Crushable:
@@ -869,7 +869,7 @@ vehicle.sentry_drone:
 		MuzzleSequence: muzzle
 		RequiresCondition: sentry_gun
 	AttackTurreted:
-		RequiresCondition: sentry_gun && !hacked && !emp
+		RequiresCondition: sentry_gun && !hacked && !emp && !leaflet
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 		Sequence: turret2
@@ -949,7 +949,7 @@ vehicle.quad_cannon:
 		LocalOffset: 512,160,160, 512,-160,160
 		MuzzleSequence: muzzle
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithSpriteTurret:
 	WithMuzzleOverlay:
 	AcceptsDeliveredExperience:
@@ -1049,7 +1049,7 @@ vehicle.gatling_tank:
 		Condition: boss
 		Factions: boss
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithSpriteTurret:
 	WithMuzzleOverlay:
 	AcceptsDeliveredExperience:
@@ -1107,7 +1107,7 @@ vehicle.toxin_tractor:
 		TurnSpeed: 5
 		Speed: 30
 		Voice: Move
-		RequiresCondition: !hacked && !driver_killed && !emp && !spray
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !spray
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
 	Crushable:
@@ -1144,20 +1144,20 @@ vehicle.toxin_tractor:
 	AttackFrontal:
 		Armaments: deploy_alpha, deploy_beta, deploy_gamma
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp && !spray
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !spray
 	WithSpriteTurret:
 	Turreted:
 		TurnSpeed: 6
 		Offset: -192,0,160
 	FireWeaponAtSelf@ALPHA:
 		Name: deploy_alpha
-		RequiresCondition: !hacked && !driver_killed && !emp && !anthrax_beta && !anthrax_gamma && spray
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !anthrax_beta && !anthrax_gamma && spray
 	FireWeaponAtSelf@BETA:
 		Name: deploy_beta
-		RequiresCondition: !hacked && !driver_killed && !emp && anthrax_beta && !anthrax_gamma && spray
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && anthrax_beta && !anthrax_gamma && spray
 	FireWeaponAtSelf@GAMMA:
 		Name: deploy_gamma
-		RequiresCondition: !hacked && !driver_killed && !emp && anthrax_gamma && spray
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && anthrax_gamma && spray
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
@@ -1259,7 +1259,7 @@ vehicle.dragon_tank:
 		Condition: boss
 		Factions: boss
 	AttackFrontal:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	AcceptsDeliveredExperience:
 	RenderSprites:
 		Image: vehicle.dragon_tank
@@ -1344,7 +1344,7 @@ vehicle.rocket_buggy:
 		Condition: buggy_ammo
 		Prerequisites: upgrade.buggy_ammo
 	AttackFrontal:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	AcceptsDeliveredExperience:
 	ThrowsShrapnel@Mobile:
 		Weapons: debris.rocket_buggy.body
@@ -1438,7 +1438,7 @@ vehicle.avenger:
 		ShootStances: Neutral, Enemy
 		Armament: pdlaser
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	AcceptsDeliveredExperience:
@@ -1520,7 +1520,7 @@ vehicle.battle_Bus:
 	Mobile:
 		Speed: 70
 		Voice: Move
-		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !husk
+		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet && !husk
 	SpeedMultiplier@DAMAGED:
 		Modifier: 71
 	Crushable:
@@ -1533,7 +1533,7 @@ vehicle.battle_Bus:
 		EjectOnDeath: true
 		LoadedCondition: loaded
 		LoadingCondition: notmobile
-		PauseOnCondition: hacked || driver_killed || emp
+		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	WithFacingSpriteBody:
 		RequiresCondition: !husk
 	WithFacingSpriteBody@HUSK:
@@ -1543,7 +1543,7 @@ vehicle.battle_Bus:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
 		PortCones: 512, 512, 512, 512
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	GrantConditionOnHealth@HUSK:
 		HP: 65000
 		Condition: husk
@@ -1608,7 +1608,7 @@ vehicle.troop_crawler:
 	Mobile:
 		Speed: 40
 		Voice: Move
-		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
+		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
 	Crushable:
@@ -1621,7 +1621,7 @@ vehicle.troop_crawler:
 		InitialUnits: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard
 		EjectOnDeath: true
 		LoadingCondition: notmobile
-		PauseOnCondition: hacked || driver_killed || emp
+		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	Passenger:
 		Weight: 8
 	AIDeployHelper:
@@ -1654,7 +1654,7 @@ vehicle.assault_troop_crawler:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
 		PortCones: 512, 512, 512, 512
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	ProximityExternalCondition@SPEAKER:
 		Condition: speaker_tower
 		Range: 4c0
@@ -1698,7 +1698,7 @@ vehicle.listening_outpost:
 	Mobile:
 		Speed: 40
 		Voice: Move
-		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
+		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
 	Crushable:
@@ -1711,14 +1711,14 @@ vehicle.listening_outpost:
 		InitialUnits: infantry.tank_hunter, infantry.tank_hunter
 		EjectOnDeath: true
 		LoadingCondition: notmobile
-		PauseOnCondition: hacked || driver_killed || emp
+		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	Passenger:
 		Weight: 8
 	AttackGarrisoned:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
 		PortCones: 512, 512, 512, 512
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	Cloak:
 		InitialDelay: 100
 		CloakDelay: 50
@@ -1822,7 +1822,7 @@ vehicle.microwave_tank:
 		RequiresCondition: end_disable >= 1
 	ExplodeWeapon@AoE:
 		Weapon: aoe.microwave_tank
-		RequiresCondition: !firing && !hacked && !driver_killed && !emp
+		RequiresCondition: !firing && !hacked && !driver_killed && !emp && !leaflet
 	GrantStackableConditionOnFire@End:
 		Condition: end_disable
 		ArmamentName: primary
@@ -1839,7 +1839,7 @@ vehicle.microwave_tank:
 		RevokeAll: true
 		IsCyclic: false
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithSpriteTurret:
 	DamageMultiplier@COMPOSITE_ARMOR:
 		RequiresCondition: composite_armor
@@ -1926,12 +1926,12 @@ vehicle.ecm_tank:
 		RevokeAll: true
 		IsCyclic: false
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithSpriteTurret:
 	JamsMissiles:
 		Range: 3c0
 		DeflectionStances: Neutral, Enemy
-		RequiresCondition: !firing && !hacked && !driver_killed && !emp
+		RequiresCondition: !firing && !hacked && !driver_killed && !emp && !leaflet
 	WithRangeCircle:
 		Range: 3c0
 		Color: DDDD0088
@@ -2015,7 +2015,7 @@ vehicle.tomahawk_launcher:
 	AutoTarget:
 		ScanRadius: 8
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithSpriteTurret@Full:
 		AmmoPoolName: primary
 		Sequence: turret-full
@@ -2076,7 +2076,7 @@ vehicle.scud_launcher:
 		Type: vehicle.truck
 	Production:
 		Produces: queue.scud_launcher
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || leaflet
 		RequiresCondition: !toxin_missiles && !hi_explosive_missiles && !driver_killed
 	ProductionQueue:
 		Type: queue.scud_launcher
@@ -2117,7 +2117,7 @@ vehicle.scud_launcher:
 		RequiresCondition: hi_explosive_missiles
 		PauseOnCondition: !ammo
 	AttackFrontal:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithFacingSpriteBody:
 		RequiresCondition: ammo
 	WithFacingSpriteBody@EMPTY:
@@ -2227,7 +2227,7 @@ vehicle.inferno_cannon:
 		Condition: black_napalm
 		Prerequisites: upgrade.black_napalm
 	AttackFrontal:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithMuzzleOverlay:
 	Explodes:
 		Weapon: ArtilleryExplode
@@ -2300,7 +2300,7 @@ vehicle.paladin_tank:
 		Armament: pdlaser
 	AttackTurreted:
 		Armaments: primary, pdlaser
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	DamageMultiplier@COMPOSITE_ARMOR:
@@ -2441,7 +2441,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && anthrax_gamma && zh_units
 	AttackFrontal:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	GrantConditionOnPrerequisite@ZH_UNITS:
@@ -2547,14 +2547,14 @@ vehicle.overlord_tank:
 	Production:
 		Produces: queue.overlord_tank
 		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !speaker_upgrade && !driver_killed
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || leaflet
 	ProductionQueue:
 		Type: queue.overlord_tank
 	Mobile:
 		Speed: 20
 		Voiced: Move
 		Locomotor: locomotor.overlord
-		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp
+		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
 	Turreted@Cannon:
 		TurnSpeed: 2
 	Turreted@Gatling:
@@ -2600,13 +2600,13 @@ vehicle.overlord_tank:
 	AttackTurreted:
 		Armaments: gatling, primary
 		Turrets: gatling, primary
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	AttackGarrisoned:
 		Turret: bunker
 		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
-		RequiresCondition: !hacked && !driver_killed && !emp && bunker_upgrade
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && bunker_upgrade
 	WithMuzzleOverlay:
 	WithSpriteTurret@Cannon:
 	WithSpriteTurret@Bunker:
@@ -2635,7 +2635,7 @@ vehicle.overlord_tank:
 		MaxWeight: 5
 		PipCount: 5
 		EjectOnDeath: true
-		PauseOnCondition: hacked || driver_killed || emp
+		PauseOnCondition: hacked || driver_killed || emp || leaflet
 		LoadingCondition: notmobile
 		RequiresCondition: bunker_upgrade
 	SelectionDecorations:
@@ -2698,7 +2698,7 @@ vehicle.emparor_overlord:
 	ProductionQueue:
 		Type: queue.emparor_overlord
 	Mobile:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	-Cargo@BUNKER_UPGRADE:
 	-Turreted@Bunker:
 	-AttackGarrisoned:
@@ -2751,7 +2751,7 @@ vehicle.bomb_truck:
 		Type: vehicle.truck
 	Production:
 		Produces: queue.bomb_truck, queue.toxin_gen_bomb_truck, queue.demo_gen_bomb_truck
-		PauseOnCondition: emp || hacked
+		PauseOnCondition: emp || hacked || leaflet
 		RequiresCondition: !(bio_bombs && hi_explosive_bombs) && !(bio_bombs && toxin) && !(hi_explosive_bombs && demo) && !driver_killed
 	ProductionQueue@Vanilla:
 		Type: queue.bomb_truck
@@ -2981,7 +2981,7 @@ vehicle.nuke_cannon:
 		ScanRadius: 8
 	-Passenger:
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	SelectionDecorations:
@@ -3053,7 +3053,7 @@ vehicle.nuke_cannon.nuke:
 	Mobile:
 		Speed: 25
 		Voice: Move
-		RequiresCondition: !hacked && !driver_killed && !emp && !deployed
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !deployed
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
 	Crushable:
@@ -3082,7 +3082,7 @@ vehicle.nuke_cannon.nuke:
 		ShowSelectionBar: false
 		DeployedTicks: 50
 		CooldownTicks: 25
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	GrantConditionOnMovement:
 		Condition: moving
 		ConsiderTurning: true
@@ -3107,7 +3107,7 @@ vehicle.usa_mcc:
 		Name: USA Construction Vehicle
 	Production:
 		Produces: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
-		PauseOnCondition: emp || hacked || moving || in_transport || deployed
+		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
 		RequiresCondition: !driver_killed
 	ProductionBar@USA_BUILDING:
 		ProductionType: queue.usa_building
@@ -3175,7 +3175,7 @@ vehicle.gla_mcc:
 		Name: GLA Construction Vehicle
 	Production:
 		Produces: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
-		PauseOnCondition: emp || hacked || moving || in_transport || deployed
+		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
 		RequiresCondition: !driver_killed
 	ProductionBar@GLA_BUILDING:
 		ProductionType: queue.gla_building
@@ -3231,7 +3231,7 @@ vehicle.prc_mcc:
 		Name: PRC Construction Vehicle
 	Production:
 		Produces: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
-		PauseOnCondition: emp || hacked || moving || in_transport || deployed
+		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
 		RequiresCondition: !driver_killed
 	ProductionBar@PRC_BUILDING:
 		ProductionType: queue.prc_building

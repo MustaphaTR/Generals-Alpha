@@ -676,6 +676,16 @@ generals_power.fuel_air_bomb:
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~techlevel.unrestricted
 		Description: Enables Fuel Air Bomb support power from Command Center.
 
+generals_power.leaflet_drop:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Leaflet Drop
+	Buildable:
+		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
+		BuildPaletteOrder: 16
+		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~prerequisite.zh_units, ~techlevel.unrestricted
+		Description: Enables Leaflet Drop support power from Command Center.
+
 generals_power.sneak_attack:
 	Inherits: ^default.generals_power
 	Tooltip:

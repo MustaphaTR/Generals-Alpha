@@ -132,6 +132,13 @@ parabomb.emp:
 		Explosions: emp
 		ImpactSounds: sempexpl.wav
 
+parabomb.leaflet:
+	Inherits: ^ParaBomb
+	Warhead@2Dis: GrantExternalCondition
+		Range: 2c256
+		Duration: 500
+		Condition: leaflet
+
 parabomb.cluster_mines:
 	Inherits: ^ParaBomb
 	Warhead@1Dam: TargetDamage

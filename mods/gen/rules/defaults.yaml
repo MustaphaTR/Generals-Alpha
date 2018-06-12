@@ -248,6 +248,17 @@
 		Condition: adv_training
 		Prerequisites: upgrade.adv_training
 
+^AffectedByLeaflet:
+	Inherits@DISABLED: ^WithDisabledOverlay
+	TimedConditionBar@LEAFLET:
+		Condition: leaflet
+		Color: 333333
+	ExternalCondition@LEAFLET:
+		Condition: leaflet
+	GrantCondition@DISABLED-LEAFLET:
+		RequiresCondition: leaflet
+		Condition: disabled
+
 ^AffectedByEMP:
 	Inherits@DISABLED: ^WithDisabledOverlay
 	TimedConditionBar@EMP:
@@ -966,21 +977,21 @@
 		ExitByBudding: false
 		AggregateHealth: false
 		SpawnIsGroundUnit: true
-		RequiresCondition: scout_drone && !hacked && !emp && !driver_killed
+		RequiresCondition: scout_drone && !hacked && !emp && !driver_killed && !leaflet
 	MobSpawnerMaster@BATTLE_DRONE:
 		Actors: aircraft.battle_drone
 		SpawnReplaceDelay: 1500
 		ExitByBudding: false
 		AggregateHealth: false
 		SpawnIsGroundUnit: true
-		RequiresCondition: battle_drone && !hacked && !emp && !driver_killed
+		RequiresCondition: battle_drone && !hacked && !emp && !driver_killed && !leaflet
 	MobSpawnerMaster@HELLFIRE_DRONE:
 		Actors: aircraft.hellfire_drone
 		SpawnReplaceDelay: 1500
 		ExitByBudding: false
 		AggregateHealth: false
 		SpawnIsGroundUnit: true
-		RequiresCondition: hellfire_drone && !hacked && !emp && !driver_killed
+		RequiresCondition: hellfire_drone && !hacked && !emp && !driver_killed && !leaflet
 	Production:
 		Produces: queue.drone
 		PauseOnCondition: emp || hacked
@@ -1120,6 +1131,7 @@
 	Inherits@18: ^AffectedByAmbulanceZHOnly
 	Inherits@19: ^AffectedByRepairBay
 	Inherits@20: ^TakesBounty
+	Inherits@21: ^AffectedByLeaflet
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1132,7 +1144,7 @@
 	Mobile:
 		TurnSpeed: 5
 		Locomotor: locomotor.wheeled
-		RequiresCondition: !hacked && !driver_killed && !emp
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
@@ -1224,6 +1236,7 @@
 	Inherits@6: ^AffectedByEmergencyRepair
 	Inherits@7: ^AffectedByGPSScambler
 	Inherits@8: ^TakesBounty
+	Inherits@9: ^AffectedByLeaflet
 	Inherits@REVEAL: ^Reveal200
 	Huntable:
 	OwnerLostAction:
@@ -1234,7 +1247,7 @@
 		Speed: 90
 		TurnSpeed: 5
 		Locomotor: locomotor.sentry_drone
-		RequiresCondition: !disabled && !emp
+		RequiresCondition: !hacked && !emp && !leaflet
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
@@ -1329,6 +1342,7 @@
 	Inherits@11: ^AffectedByGPSScambler
 	Inherits@12: ^AffectedByAmbulance
 	Inherits@13: ^TakesBounty
+	Inherits@14: ^AffectedByLeaflet
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1340,6 +1354,7 @@
 	Mobile:
 		Speed: 20
 		Locomotor: locomotor.infantry
+		RequiresCondition: !leaflet
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
@@ -1479,6 +1494,7 @@
 	Inherits@15: ^AffectedByGPSScambler
 	Inherits@16: ^AffectedByRepairBay
 	Inherits@17: ^TakesBounty
+	Inherits@18: ^AffectedByLeaflet
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1486,7 +1502,7 @@
 	UpdatesPlayerStatistics:
 	Mobile:
 		Locomotor: locomotor.vessel
-		RequiresCondition: !disabled && !emp
+		RequiresCondition: !hacked && !emp && !leaflet
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:

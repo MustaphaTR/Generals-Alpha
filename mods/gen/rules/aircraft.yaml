@@ -93,6 +93,19 @@ aircraft.badger.fuel_air_bomb:
 	Tooltip:
 		Name: B-52
 
+aircraft.badger.leaflet:
+	Inherits: ^default.badger
+	-AttackFrontal:
+	AttackBomber:
+	Armament:
+		Weapon: parabomb.leaflet
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Ammo: 1
+		AmmoCondition: ammo
+	Tooltip:
+		Name: B-52
+
 aircraft.b2:
 	Inherits: aircraft.badger.fuel_air_bomb
 	Armament:
