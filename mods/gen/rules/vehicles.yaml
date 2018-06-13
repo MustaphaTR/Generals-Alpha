@@ -263,7 +263,7 @@ vehicle.technical:
 		Types: Infantry, Hacker
 		MaxWeight: 5
 		PipCount: 5
-		EjectOnDeath: true
+		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	AcceptsDeliveredExperience:
@@ -767,7 +767,7 @@ vehicle.ambulance:
 		Types: Infantry, Hacker
 		MaxWeight: 3
 		PipCount: 3
-		EjectOnDeath: true
+		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	Targetable:
@@ -1530,7 +1530,7 @@ vehicle.battle_Bus:
 		Types: Infantry, Hacker, Pilot
 		MaxWeight: 8
 		PipCount: 8
-		EjectOnDeath: true
+		EjectOnDeathDamage: 50
 		LoadedCondition: loaded
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
@@ -1619,7 +1619,7 @@ vehicle.troop_crawler:
 		MaxWeight: 8
 		PipCount: 8
 		InitialUnits: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard
-		EjectOnDeath: true
+		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	Passenger:
@@ -1650,6 +1650,7 @@ vehicle.assault_troop_crawler:
 		Type: vehicle.assault_troop_crawler
 	Cargo:
 		InitialUnits: infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner
+		EjectOnDeathDamage: 50
 	AttackGarrisoned:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
@@ -1709,7 +1710,7 @@ vehicle.listening_outpost:
 		MaxWeight: 2
 		PipCount: 2
 		InitialUnits: infantry.tank_hunter, infantry.tank_hunter
-		EjectOnDeath: true
+		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	Passenger:
@@ -1765,6 +1766,7 @@ vehicle.attack_outpost:
 		MaxWeight: 8
 		PipCount: 8
 		InitialUnits: infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter
+		EjectOnDeathDamage: 50
 	ProximityExternalCondition@SPEAKER:
 		Condition: speaker_tower
 		Range: 4c0
@@ -2634,7 +2636,7 @@ vehicle.overlord_tank:
 		Types: Infantry
 		MaxWeight: 5
 		PipCount: 5
-		EjectOnDeath: true
+		EjectOnDeathDamage: 50
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 		LoadingCondition: notmobile
 		RequiresCondition: bunker_upgrade

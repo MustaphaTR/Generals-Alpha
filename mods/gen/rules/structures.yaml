@@ -1973,7 +1973,7 @@ building.bunker:
 		Types: Infantry, Hacker, Pilot
 		MaxWeight: 5
 		PipCount: 5
-		EjectOnDeath: true
+		EjectOnDeathDamage: 0
 		LoadedCondition: loaded
 		PauseOnCondition: emp || hacked
 	AttackGarrisoned:
@@ -2761,7 +2761,7 @@ building.internet_center:
 		Types: Hacker
 		MaxWeight: 8
 		PipCount: 8
-		EjectOnDeath: true
+		EjectOnDeathDamage: 50
 		PauseOnCondition: emp || hacked
 	Power:
 		Amount: 0
@@ -2958,7 +2958,7 @@ building.palace:
 		Types: Infantry, Hacker, Pilot
 		MaxWeight: 5
 		PipCount: 5
-		EjectOnDeath: true
+		EjectOnDeathDamage: 0
 		PauseOnCondition: emp || hacked
 	AttackGarrisoned:
 		Armaments: garrison

@@ -101,27 +101,28 @@ CrateToxin.gamma:
 
 UnitExplode:
 	Inherits: ^Explosion
-	Warhead@1Dam: SpreadDamage
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
+	-Warhead@1Dam: SpreadDamage
 
 UnitExplodePlane:
-	Inherits: UnitExplode
+	Inherits: ^Explosion
+	Warhead@1Dam: SpreadDamage
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
 	Warhead@2Eff: CreateEffect
 		Explosions: large_napalm
 
 UnitExplodeHeli:
-	Inherits: UnitExplode
+	Inherits: UnitExplodePlane
 	Warhead@2Eff: CreateEffect
 		Explosions: napalm
 
 UnitExplodeDrone:
 	Inherits: UnitExplode
-	-Warhead@1Dam: SpreadDamage
 	Warhead@2Eff: CreateEffect
 		Explosions: med_explosion_air
 
 UnitExplodeShip:
 	Inherits: ^Explosion
+	-Warhead@1Dam: SpreadDamage
 	-Warhead@Smu: LeaveSmudge
 	-Warhead@SmuSnow: LeaveSmudge
 	Warhead@2Eff: CreateEffect
@@ -131,6 +132,7 @@ UnitExplodeShip:
 
 UnitExplodeSubmarine:
 	Inherits: ^Explosion
+	-Warhead@1Dam: SpreadDamage
 	-Warhead@Smu: LeaveSmudge
 	-Warhead@SmuSnow: LeaveSmudge
 	Warhead@2Eff: CreateEffect
@@ -140,22 +142,22 @@ UnitExplodeSubmarine:
 
 UnitExplodeSmall:
 	Inherits: ^Explosion
-	Warhead@1Dam: SpreadDamage
-		Damage: 4000
+	-Warhead@1Dam: SpreadDamage
 	Warhead@2Eff: CreateEffect
 		Explosions: large_explosion
 		ImpactSounds: kaboom15.aud
 
 ArtilleryExplode:
 	Inherits: ^Explosion
-	Warhead@1Dam: SpreadDamage
-		Damage: 15000
+	-Warhead@1Dam: SpreadDamage
 	Warhead@2Eff: CreateEffect
 		Explosions: self_destruct
 		ImpactSounds: kaboom22.aud
 
 V2Explode:
 	Inherits: missile.scud_launcher
+	-Warhead@1Dam: SpreadDamage
+	-Warhead@2Dam: SpreadDamage
 	-Report:
 
 BuildingExplode:
