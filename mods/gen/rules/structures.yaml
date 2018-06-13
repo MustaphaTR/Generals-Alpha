@@ -1847,7 +1847,7 @@ building.firebase:
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@GARRISON: ^WithGarrisonRangeCircle
 	Inherits@LEAFLET: ^AffectedByLeaflet
-	Inherits@REVEAL: ^Reveal200
+	Inherits@REVEAL: ^Reveal360
 	Inherits@SHAPE: ^2x2Shape
 	Tooltip:
 		Name: Firebase
@@ -1856,17 +1856,17 @@ building.firebase:
 		Dimensions: 2,2
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
-		BuildPaletteOrder: 5
-		BuildDuration: 125
+		BuildPaletteOrder: 7
+		BuildDuration: 625
 		BuildDurationModifier: 100
-		Prerequisites: building.usa_barracks, ~techlevel.infonly
+		Prerequisites: prerequisite.reactor, ~techlevel.infonly
 		Description: Static long range defense with fireports\nfor 4 garrisoned soldiers.
 	Valued:
-		Cost: 500
+		Cost: 1000
 	Health:
 		HP: 100000
 	Armor:
-		Type: building.normal
+		Type: building.stinger_site
 	Selectable:
 		Bounds: 48,48
 	ProvidesPrerequisite@buildingname:
@@ -1911,7 +1911,6 @@ building.firebase:
 		Types: Infantry, Hacker, Pilot
 		MaxWeight: 4
 		PipCount: 4
-		EjectOnDeath: true
 		PauseOnCondition: emp || hacked
 	AttackGarrisoned:
 		Armaments: garrison
@@ -2790,7 +2789,7 @@ building.strategy_center:
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
-		BuildPaletteOrder: 7
+		BuildPaletteOrder: 8
 		BuildDuration: 1500
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.usa_airfield_or_war_factory, ~techlevel.medium
@@ -3122,7 +3121,7 @@ building.detention_camp:
 		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
-		BuildPaletteOrder: 8
+		BuildPaletteOrder: 9
 		BuildDuration: 750
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~techlevel.high, ~!prerequisite.zh_units
@@ -3174,7 +3173,7 @@ building.supply_drop_zone:
 		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
-		BuildPaletteOrder: 9
+		BuildPaletteOrder: 10
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~techlevel.medium
@@ -3372,7 +3371,7 @@ building.particle_cannon:
 		Name: Particle Uplink Cannon
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building
-		BuildPaletteOrder: 10
+		BuildPaletteOrder: 11
 		BuildDuration: 1500
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, !prerequisite.enough_particle, ~techlevel.unrestricted
@@ -3707,7 +3706,7 @@ building.scud_storm.boss:
 	Inherits@MINE: ^CanHaveMines
 	Buildable:
 		Queue: queue.boss_gen_building
-		BuildPaletteOrder: 11
+		BuildPaletteOrder: 12
 		Prerequisites: building.prc_war_factory, building.prc_airfield, !prerequisite.enough_scud, ~techlevel.unrestricted
 	Production:
 		Produces: queue.boss_gen_scud_storm
