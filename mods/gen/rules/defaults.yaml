@@ -311,19 +311,19 @@
 		RequiresCondition: speaker_tower && subliminal_messaging
 		Modifier: 80
 	SelfHealing@SPEAKER_NORMAL:
+		Step: 0
 		PercentageStep: 2
 		Delay: 40
 		HealIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: speaker_tower && !subliminal_messaging
-		Step: 500
 	SelfHealing@SUBLIMINAL_MESSAGING:
+		Step: 0
 		PercentageStep: 4
 		Delay: 40
 		HealIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: speaker_tower && subliminal_messaging
-		Step: 500
 	ExternalCondition@SPEAKER_NORMAL:
 		Condition: speaker_tower
 	GrantConditionOnPrerequisite@SUBLIMINAL_MESSAGING:
@@ -587,7 +587,7 @@
 ^AffectedByAmbulance:
 	SelfHealing@AMBULANCE:
 		Step: 400
-		Delay: 20
+		Delay: 25
 		HealIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: ambulanceheal
@@ -602,6 +602,29 @@
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
+
+^HealedInTransports:
+	SelfHealing@IN_AMBULANCE:
+		Step: 0
+		PercentageStep: 25
+		Delay: 25
+		HealIfBelow: 100
+		DamageCooldown: 0
+		RequiresCondition: in_ambulance
+	SelfHealing@IN_CRAWLER:
+		Step: 0
+		PercentageStep: 10
+		Delay: 25
+		HealIfBelow: 100
+		DamageCooldown: 0
+		RequiresCondition: in_crawler_or_outpost
+	Passenger:
+		CargoConditions:
+			vehicle.ambulance: in_ambulance
+			vehicle.troop_crawler: in_crawler_or_outpost
+			vehicle.assault_troop_crawler: in_crawler_or_outpost
+			vehicle.listening_outpost: in_crawler_or_outpost
+			vehicle.attack_outpost: in_crawler_or_outpost
 
 ^AffectedByScrapCratePowerups:
 	DamageMultiplier@CRATE_ARMOR:
@@ -1343,6 +1366,7 @@
 	Inherits@12: ^AffectedByAmbulance
 	Inherits@13: ^TakesBounty
 	Inherits@14: ^AffectedByLeaflet
+	Inherits@15: ^HealedInTransports
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
