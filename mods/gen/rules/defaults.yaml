@@ -1790,10 +1790,8 @@
 	Inherits@REVEAL: ^Reveal100
 	OwnerLostAction:
 		Action: Kill
-	Capturable:
-		Types: hole
-		CaptureThreshold: 100
-		ValidStances: Ally
+	GrantConditionAfterDelay:
+		Condition: repaired
 	Tooltip:
 		Name: GLA Hole
 		GenericName: Hole
@@ -1803,9 +1801,8 @@
 		Type: building.normal
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Hole
-	TransformOnCapture:
-		Type: hole
-		ForceHealthPercentage: 20
+	TransformOnCondition:
+		RequiresCondition: repaired
 	Sellable:
 		SellSounds: cashturn.aud
 		ShowTooltipText: false

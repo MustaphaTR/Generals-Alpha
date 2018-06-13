@@ -6,7 +6,9 @@ hole.command_center:
 		Dimensions: 3,3
 	Tooltip:
 		Name: GLA Hole (Command Center)
-	TransformOnCapture:
+	GrantConditionAfterDelay:
+		Delay: 1625
+	TransformOnCondition:
 		IntoActor: building.gla_command_center
 	RenderSprites:
 		Image: hole.3x3
@@ -20,7 +22,9 @@ hole.barracks:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: GLA Hole (Barracks)
-	TransformOnCapture:
+	GrantConditionAfterDelay:
+		Delay: 750
+	TransformOnCondition:
 		IntoActor: building.gla_barracks
 	RenderSprites:
 		Image: hole.2x2
@@ -33,7 +37,9 @@ hole.supply_stash:
 		Dimensions: 2,2
 	Tooltip:
 		Name: GLA Hole (Supply Stash)
-	TransformOnCapture:
+	GrantConditionAfterDelay:
+		Delay: 750
+	TransformOnCondition:
 		IntoActor: building.gla_supply_stash.no_free_actor
 	RenderSprites:
 		Image: hole.supply_stash
@@ -47,7 +53,9 @@ hole.arms_dealer:
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
 		Name: GLA Hole (Arms Dealer)
-	TransformOnCapture:
+	GrantConditionAfterDelay:
+		Delay: 875
+	TransformOnCondition:
 		IntoActor: building.arms_dealer
 	RenderSprites:
 		Image: hole.3x2
@@ -60,7 +68,9 @@ hole.palace:
 		Dimensions: 3,2
 	Tooltip:
 		Name: GLA Hole (Palace)
-	TransformOnCapture:
+	GrantConditionAfterDelay:
+		Delay: 1625
+	TransformOnCondition:
 		IntoActor: building.palace
 	RenderSprites:
 		Image: hole.3x2
@@ -76,7 +86,9 @@ hole.black_market:
 		Dimensions: 2,2
 	Tooltip:
 		Name: GLA Hole (Black Market)
-	TransformOnCapture:
+	GrantConditionAfterDelay:
+		Delay: 1250
+	TransformOnCondition:
 		IntoActor: building.black_market
 	RenderSprites:
 		Image: hole.2x2
@@ -89,7 +101,9 @@ hole.scud_storm:
 		Dimensions: 2,2
 	Tooltip:
 		Name: GLA Hole (Scud Storm)
-	TransformOnCapture:
+	GrantConditionAfterDelay:
+		Delay: 2000
+	TransformOnCondition:
 		IntoActor: building.scud_storm
 	ProvidesPrerequisite@LIMIT:
 		Prerequisite: prerequisite.enough_scud
@@ -108,7 +122,9 @@ hole.tunnel_network:
 		Dimensions: 2,2
 	Tooltip:
 		Name: GLA Hole (Tunnel Network)
-	TransformOnCapture:
+	GrantConditionAfterDelay:
+		Delay: 875
+	TransformOnCondition:
 		IntoActor: building.tunnel_network.no_free_actor
 	-WithBuildingBib:
 	RenderSprites:
@@ -118,12 +134,12 @@ hole.toxin_tunnel_network:
 	Inherits: hole.tunnel_network
 	Tooltip:
 		Name: GLA Hole (Toxin Tunnel Network)
-	TransformOnCapture:
+	TransformOnCondition:
 		IntoActor: building.toxin_tunnel_network.no_free_actor
 
 hole.tunnel_network.boss:
 	Inherits: hole.tunnel_network
-	TransformOnCapture:
+	TransformOnCondition:
 		IntoActor: building.tunnel_network.boss.no_free_actor
 
 hole.stinger_site:
@@ -134,7 +150,9 @@ hole.stinger_site:
 		Dimensions: 2,2
 	Tooltip:
 		Name: GLA Hole (Stinger Site)
-	TransformOnCapture:
+	GrantConditionAfterDelay:
+		Delay: 875
+	TransformOnCondition:
 		IntoActor: building.stinger_site
 	RenderSprites:
 		Image: hole.2x2

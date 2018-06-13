@@ -34,7 +34,7 @@ infantry.worker:
 		BuildDuration: 75
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.infonly
-		Description: Collects supplies.\n\nCan repair GLA Holes.
+		Description: Collects supplies.
 		ReadyAudio: WorkerCreated
 	Valued:
 		Cost: 200
@@ -65,9 +65,6 @@ infantry.worker:
 		CloakTypes: Mine
 		Range: 2c512
 	WithSpriteBody:
-	Captures:
-		CaptureTypes: hole, driverless_vehcile
-		Voice: Repair
 	Voiced:
 		VoiceSet: WorkerVoice
 	RenderSprites:
