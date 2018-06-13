@@ -725,7 +725,7 @@ vehicle.ambulance:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.medium
-		Description: Heals nearby infantry.\n\nCan carry 3 infantry.\n\nPassengers can survive when it dies.
+		Description: Heals nearby infantry.\n\nCan carry 3 infantry.\n\nHeals damaged passengers.\n\nPassengers can survive when it dies.
 		ReadyAudio: AmbulanceCreated
 	Valued:
 		Cost: 600
@@ -1593,7 +1593,7 @@ vehicle.troop_crawler:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.low
-		Description: Tough infantry transport.\n\nCan carry 8 infantry.\n\nComes with 8 red guards.\n\nPassengers can survive when it dies.
+		Description: Tough infantry transport.\n\nCan carry 8 infantry.\n\nComes with 8 red guards.\n\nHeals damaged passengers.\n\nPassengers can survive when it dies.
 		ReadyAudio: TroopCrawlerCreated
 	Valued:
 		Cost: 1400
@@ -1638,7 +1638,7 @@ vehicle.assault_troop_crawler:
 	Buildable:
 		Queue: queue.inf_gen_vehicle
 		BuildDuration: 625
-		Description: Tough infantry transport.\n\nCan carry 8 infantry that can fire outside.\n\nComes with 8 minigunners.\n\nPassengers can survive when it dies.
+		Description: Tough infantry transport.\n\nCan carry 8 infantry that can fire outside.\n\nComes with 8 minigunners.\n\nHeals damaged passengers.\n\nHas a speaker tower attached.\n\nPassengers can survive when it dies.
 		ReadyAudio: AssaultTroopCrawlerCreated
 	Valued:
 		Cost: 2400
@@ -1684,7 +1684,7 @@ vehicle.listening_outpost:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.low, ~prerequisite.zh_units
-		Description: Stealth detector unit.\n\nCan carry 2 infantry that can fire outside.\n\nComes with 2 tank hunters.\n\nPassengers can survive when it dies.\n\nCamouflaged while not moving.
+		Description: Stealth detector unit.\n\nCan carry 2 infantry that can fire outside.\n\nComes with 2 tank hunters.\n\nHeals damaged passengers.\n\nHas a speaker tower attached.\n\nPassengers can survive when it dies.\n\nCamouflaged while not moving.
 		ReadyAudio: ListeningOutpostCreated
 	Valued:
 		Cost: 800
@@ -1753,7 +1753,7 @@ vehicle.attack_outpost:
 	Inherits: vehicle.listening_outpost
 	Buildable:
 		Queue: queue.inf_gen_vehicle
-		Description: Stealth detector unit.\n\nCan carry 8 infantry that can fire outside.\n\nComes with 3 tank hunters.\n\nPassengers can survive when it dies.\n\nCamouflaged while not moving.
+		Description: Stealth detector unit.\n\nCan carry 8 infantry that can fire outside.\n\nComes with 3 tank hunters.\n\nHeals damaged passengers.\n\nPassengers can survive when it dies.\n\nCamouflaged while not moving.
 	Tooltip:
 		Name: Attack Outpost
 	Valued:
