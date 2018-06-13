@@ -597,6 +597,7 @@ vehicle.laser_tank:
 		Weapon: laser.laser_tank
 	Power:
 		Amount: -1
+		RequiresCondition: !driver_killed
 	Mobile:
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !lowpower
 	AttackTurreted:
