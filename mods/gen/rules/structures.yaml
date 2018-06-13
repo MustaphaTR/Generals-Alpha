@@ -1219,6 +1219,12 @@ building.prc_barracks:
 	Exit@2:
 		SpawnOffset: -725,640,0
 		ExitCell: 0,2
+	DamageMultiplier@Infantry:
+		RequiresCondition: inf
+		Modifier: 83
+	GrantConditionOnFaction@Infantry:
+		Condition: inf
+		Factions: inf
 	LaysMinefield@LAND_MINES:
 		Locations: 0,-1, 1,-1, -1,0, -1,1, -1,2, 0,3, 1,3, 2,2, 2,1, 2,0
 	LaysMinefield@NEUTRON_MINES:
