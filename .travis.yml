@@ -28,7 +28,9 @@ deploy:
   api_key: ${GH_DEPLOY_API_KEY}
   file:
     - build/${PACKAGING_INSTALLER_NAME}-${TRAVIS_TAG}.exe
-    - build/${PACKAGING_INSTALLER_NAME}-${TRAVIS_TAG}.zip
+    - build/${PACKAGING_INSTALLER_NAME}-${TRAVIS_TAG}-macOS.zip
+    - build/${PACKAGING_INSTALLER_NAME}-${TRAVIS_TAG}-winportable.zip
+    - build/${PACKAGING_INSTALLER_NAME}-${TRAVIS_TAG}.AppImage
   skip_cleanup: true
   on:
     tags: true
