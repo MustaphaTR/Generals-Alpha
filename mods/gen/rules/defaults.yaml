@@ -666,7 +666,7 @@
 		DamageTypes: FireDeath
 
 ^AcceptsTimedDemoBomb:
-	DelayedWeaponAttachable:
+	DelayedWeaponAttachable@TIMED_DEMO_BOMB:
 		Type: timed_demo_bomb
 		ShowProgressBar: false
 		Condition: timed_demo_bomb
@@ -681,6 +681,23 @@
 		ZOffset: 256
 		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: timed_demo_bomb
+
+^AcceptsTNTCharges:
+	DelayedWeaponAttachable@TNT:
+		Type: tnt_charge
+		ShowProgressBar: false
+		Condition: tnt_charge
+	Targetable@TNT:
+		TargetTypes: TNTCharge
+		RequiresCondition: !tnt_charge
+	WithDecoration@TNT:
+		RequiresSelection: false
+		Image: tnt
+		Sequence: idle
+		ReferencePoint: Center
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: tnt_charge
 
 ^WithGarrisonRangeCircle:
 	Cargo:
@@ -1155,6 +1172,7 @@
 	Inherits@19: ^AffectedByRepairBay
 	Inherits@20: ^TakesBounty
 	Inherits@21: ^AffectedByLeaflet
+	Inherits@22: ^AcceptsTNTCharges
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1646,7 +1664,8 @@
 	Inherits@6: ^AffectedByHoldTheLine
 	Inherits@7: ^AffectsDemoTrap
 	Inherits@8: ^AcceptsTimedDemoBomb
-	Inherits@9: ^TakesBounty
+	Inherits@9: ^AcceptsTNTCharges
+	Inherits@10: ^TakesBounty
 	Inherits@SHAPE: ^1x1Shape
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:

@@ -574,37 +574,6 @@ melee.colonel_burton:
 		ValidTargets: Infantry
 		DamageTypes: DefaultDeath
 
-attach.colonel_burton.timed:
-	ValidTargets: TimedDemoBomb
-	ReloadDelay: 250
-	TargetActorCenter: true
-	RequiresForceFire: true
-	Range: 1c512
-	Projectile: InstantHit
-	Warhead@1Att: AttachDelayedWeapon
-		Weapon: explosion.demo_charge
-		Type: timed_demo_bomb
-		TriggerTime: 500
-
-attach.demo_jarmen_kell.timed:
-	Inherits: attach.colonel_burton.timed
-	RequiresForceFire: false
-	Warhead@1Att: AttachDelayedWeapon
-		Weapon: explosion.demo_charge.demo_gen
-
-detach.mcc:
-	ReloadDelay: 25
-	Warhead@1Det: DetachDelayedWeapon
-		Types: timed_demo_bomb
-		DetachLimit: 1024
-		Range: 4c0
-	Warhead@2Dam: SpreadDamage
-		Spread: 4c0
-		Falloff: 100, 100
-		Damage: 100000
-		ValidTargets: DemoTrap, Mine
-		ValidStances: Enemy, Neutral
-
 ^default.spawner:
 	ReloadDelay: 5
 	Range: 1c0

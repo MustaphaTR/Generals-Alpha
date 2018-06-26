@@ -443,6 +443,15 @@ explosion.demo_charge.demo_gen:
 	Warhead@2Dam: SpreadDamage
 		DamageTypes: TriggerProne, ExplosionDeath, DropCrate, Incendiary
 
+explosion.tnt_charge:
+	Inherits: explosion.demo_charge
+	Warhead@1Dam: SpreadDamage
+		Damage: 35000
+		Spread: 0c256
+	Warhead@2Dam: SpreadDamage
+		Damage: 15000
+		Spread: 1c256
+
 explosion.mine:
 	Warhead@1Dam: SpreadDamage
 		Spread: 256

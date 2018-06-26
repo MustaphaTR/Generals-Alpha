@@ -506,11 +506,8 @@ infantry.tank_hunter:
 	Inherits@HORDE_BONUS: ^Horde
 	Buildable:
 		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
+		Description: Anti-tank & anti-air infantry.\n\nCan place TNT charges on vehicles and\nbuildings by force firing.
 		ReadyAudio: TankHunterCreated
-	Armament@PRIMARY:
-		Weapon: missile.tank_hunter.ground
-	Armament@SECONDARY:
-		Weapon: missile.tank_hunter.air
 	CustomProductionCost@Nuke:
 		Queue: queue.nuke_gen_infantry
 		Cost: 350
@@ -522,6 +519,17 @@ infantry.tank_hunter:
 		BuildTime: 175
 	Tooltip:
 		Name: Tank Hunter
+	Armament@PRIMARY:
+		Weapon: missile.tank_hunter.ground
+	Armament@SECONDARY:
+		Weapon: missile.tank_hunter.air
+	Armament@TNT:
+		Name: tnt_charge
+		Weapon: attach.tank_hunter
+		Cursor: tnt
+		OutsideRangeCursor: tnt
+	AttackFrontal:
+		Armaments: primary, tnt_charge
 	Selectable:
 		Class: infantry.tank_hunter
 	RenderSprites:
