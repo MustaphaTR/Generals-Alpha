@@ -340,6 +340,10 @@ vehicle.radar_van:
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
+	Passenger:
+		CargoCondition: in_transport
+	SharedPassenger:
+		CargoCondition: in_transport
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
@@ -351,8 +355,10 @@ vehicle.radar_van:
 		Range: 5c0
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	ProvidesRadar:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !in_transport
 	SpawnActorPower@RADAR_VAN_SCAN:
+		PauseOnCondition: hacked || emp || leaflet || in_transport
+		RequiresCondition: !driver_killed
 		Actors:
 			1: camera.radar_van_scan
 		Prerequisites:
@@ -3064,6 +3070,8 @@ vehicle.nuke_cannon.nuke:
 		CrushClasses: vehicle
 	Passenger:
 		Weight: 5
+		CargoCondition: in_transport
+	SharedPassenger:
 		CargoCondition: in_transport
 	MustBeDestroyed:
 		RequiredForShortGame: true
