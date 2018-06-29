@@ -2282,26 +2282,15 @@ building.prc_war_factory:
 	Selectable:
 		Bounds: 48,48
 		Class: building.tunnel_network
-	RallyPoint:
-		Offset: 0,2
-	Exit:
-		SpawnOffset: 0,0,0
-		ExitCell: 1,1
 	Turreted:
 		TurnSpeed: 12
 		InitialFacing: 56
 		Offset: 0,0,256
-	NydusPrimaryExit:
-	Nydus:
+	SharedCargo:
+		Types: Infantry, Vehicle
+		PipCount: 8
 	Power:
 		Amount: 0
-	WithDecoration@primary:
-		RequiresSelection: true
-		Image: pips
-		Sequence: tag-primary
-		ReferencePoint: Top
-		ZOffset: 256
-		RequiresCondition: primary
 	-WithSpriteBody:
 	WithTerrainDependantSpriteBody:
 	Voiced:

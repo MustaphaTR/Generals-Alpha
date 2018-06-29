@@ -9,6 +9,8 @@ Player:
 	Inherits: ^BasePlayer
 	TechTree:
 	ConditionManager:
+	SharedCargoManager:
+		MaxWeight: 8
 	ClassicProductionQueue@USA_Vanilla:
 		Type: queue.usa_generals_power
 		Group: General

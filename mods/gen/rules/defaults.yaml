@@ -1206,6 +1206,9 @@
 	Passenger:
 		Weight: 3
 		CargoType: Vehicle
+	SharedPassenger:
+		Weight: 1
+		CargoType: Vehicle
 	NydusTransportable:
 	AttackMove:
 	HiddenUnderFog:
@@ -1299,6 +1302,9 @@
 		Voice: Move
 	Passenger:
 		Weight: 3
+		CargoType: Vehicle
+	SharedPassenger:
+		Weight: 1
 		CargoType: Vehicle
 	NydusTransportable:
 	HiddenUnderFog:
@@ -1421,6 +1427,8 @@
 		CrushedSequence: die-crushed
 	AttackMove:
 	Passenger:
+		CargoType: Infantry
+	SharedPassenger:
 		CargoType: Infantry
 	NydusTransportable:
 	HiddenUnderFog:
