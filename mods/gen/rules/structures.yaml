@@ -2309,7 +2309,7 @@ building.tunnel_network:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.gla_barracks, ~techlevel.infonly
-		Description: Allows unit movement from one to another quickly.\n\nArmed with a machine gun.\n\nComes with 2 RPG Troopers.
+		Description: Allows unit movement from one to another quickly.\n\nArmed with a machine gun.\n\nComes with 2 RPG Troopers.\n\nLosing your last tunnel network kills units in them.
 	FreeActor@1:
 		Actor: hack.rpg_trooper_spawner.1
 		SpawnOffset: 0, 2
@@ -2348,7 +2348,7 @@ building.toxin_tunnel_network:
 	Inherits: building.tunnel_network
 	Buildable:
 		Queue: queue.toxin_gen_building
-		Description: Allows unit movement from one to another quickly.\n\nArmed with a toxin sprayer.\n\nComes with 2 RPG Troopers.
+		Description: Allows unit movement from one to another quickly.\n\nArmed with a toxin sprayer.\n\nComes with 2 RPG Troopers.\n\nLosing your last tunnel network kills units in them.
 	Tooltip:
 		Name: Toxin Tunnel Network
 	Armament:
