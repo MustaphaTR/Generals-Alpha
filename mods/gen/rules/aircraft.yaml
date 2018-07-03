@@ -692,7 +692,7 @@ aircraft.aurora:
 		RepulsionSpeed: 40
 		MaximumPitch: 56
 		Voice: Move
-	GrantConditionOnAttack:
+	GrantConditionOnActivity:
 		Condition: supersonic
 	SpeedMultiplier:
 		Modifier: 266
@@ -1398,10 +1398,10 @@ aircraft.helix:
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
 		RequiresCondition: bunker_upgrade && loaded
-	GrantStackableConditionOnFire@GATLING:
+	GrantConditionOnAttack@GATLING:
 		Condition: gatling
-		ArmamentName: gatling
-		RequiredShotsPerStack: 10
+		ArmamentNames: gatling
+		RequiredShotsPerInstance: 10
 		MaximumInstances: 2
 		RevokeDelay: 40
 		RevokeAll: true
@@ -1480,6 +1480,6 @@ aircraft.assault_helix:
 	AttackHeli:
 		Armaments: primary
 	-Armament@GATLING:
-	-GrantStackableConditionOnFire@GATLING:
+	-GrantConditionOnAttack@GATLING:
 	-WithRangeCircle:
 	-ProximityExternalCondition@SPEAKER:

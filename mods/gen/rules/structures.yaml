@@ -1828,10 +1828,9 @@ building.gatling_cannon:
 	AttackTurreted:
 		PauseOnCondition: emp || hacked || lowpower
 	WithMuzzleOverlay:
-	GrantStackableConditionOnFire@gatling:
+	GrantConditionOnAttack@gatling:
 		Condition: gatling
-		ArmamentName: primary
-		RequiredShotsPerStack: 4
+		RequiredShotsPerInstance: 4
 		MaximumInstances: 2
 		RevokeDelay: 50
 		RevokeAll: true

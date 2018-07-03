@@ -360,18 +360,17 @@ infantry.minigunner:
 	Armament@GarrisonAA:
 		Name: garrison
 		Weapon: gatling.minigunner.garrison.air
-	GrantStackableConditionOnFire@gatling:
+	GrantConditionOnAttack@gatling:
 		Condition: gatling
-		ArmamentName: primary
-		RequiredShotsPerStack: 6
+		RequiredShotsPerInstance: 6
 		MaximumInstances: 2
 		RevokeDelay: 25
 		RevokeAll: true
 		IsCyclic: false
-	GrantStackableConditionOnFire@garrison:
+	GrantConditionOnAttack@garrison:
 		Condition: gatling
-		ArmamentName: garrison
-		RequiredShotsPerStack: 6
+		ArmamentNames: garrison
+		RequiredShotsPerInstance: 6
 		MaximumInstances: 2
 		RevokeDelay: 25
 		RevokeAll: true
@@ -998,10 +997,9 @@ infantry.hacker:
 		Weapon: disable.hacker.end
 		LocalOffset: 0,0,196
 		RequiresCondition: end_disable == 1 && !deployed
-	GrantStackableConditionOnFire@End:
+	GrantConditionOnAttack@End:
 		Condition: end_disable
-		ArmamentName: primary
-		RequiredShotsPerStack: 13
+		RequiredShotsPerInstance: 13
 		MaximumInstances: 2
 		RevokeDelay: 20
 		RevokeAll: true
@@ -1094,10 +1092,10 @@ infantry.super_hacker:
 		Weapon: disable.black_lotus.end
 		LocalOffset: 0,0,196
 		RequiresCondition: end_vehicle == 1
-	GrantStackableConditionOnFire@EndVehicle:
+	GrantConditionOnAttack@EndVehicle:
 		Condition: end_vehicle
-		ArmamentName: disable
-		RequiredShotsPerStack: 10
+		ArmamentNames: disable
+		RequiredShotsPerInstance: 10
 		MaximumInstances: 2
 		RevokeDelay: 20
 		RevokeAll: true
@@ -1252,18 +1250,17 @@ infantry.colonel_burton:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		IdleSequences: idle1,idle2,idle3
-	GrantStackableConditionOnFire@UNCLOAK_RIFLE:
+	GrantConditionOnAttack@UNCLOAK_RIFLE:
 		Condition: cloak-force-disabled
-		ArmamentName: primary
-		RequiredShotsPerStack: 1
+		RequiredShotsPerInstance: 1
 		MaximumInstances: 1
 		RevokeDelay: 120
 		RevokeAll: true
 		IsCyclic: false
-	GrantStackableConditionOnFire@UNCLOAK_DEMO_BOMB:
+	GrantConditionOnAttack@UNCLOAK_DEMO_BOMB:
 		Condition: cloak-force-disabled
-		ArmamentName: timed_demo_bomb
-		RequiredShotsPerStack: 1
+		ArmamentNames: timed_demo_bomb
+		RequiredShotsPerInstance: 1
 		MaximumInstances: 1
 		RevokeDelay: 120
 		RevokeAll: true
@@ -1478,18 +1475,18 @@ infantry.black_lotus:
 		Weapon: disable.black_lotus.end
 		LocalOffset: 0,0,196
 		RequiresCondition: end_disable == 1
-	GrantStackableConditionOnFire@EndCapture:
+	GrantConditionOnAttack@EndCapture:
 		Condition: end_capture
-		ArmamentName: capture
-		RequiredShotsPerStack: 15
+		ArmamentNames: capture
+		RequiredShotsPerInstance: 15
 		MaximumInstances: 2
 		RevokeDelay: 20
 		RevokeAll: true
 		IsCyclic: false
-	GrantStackableConditionOnFire@EndDisable:
+	GrantConditionOnAttack@EndDisable:
 		Condition: end_disable
-		ArmamentName: disable
-		RequiredShotsPerStack: 5
+		ArmamentNames: disable
+		RequiredShotsPerInstance: 5
 		MaximumInstances: 2
 		RevokeDelay: 20
 		RevokeAll: true
@@ -1521,8 +1518,8 @@ infantry.super_lotus:
 		Name: Super Lotus
 	Armament@DisableEnd:
 		Weapon: disable.super_lotus.end
-	GrantStackableConditionOnFire@EndCapture:
-		RequiredShotsPerStack: 12
+	GrantConditionOnAttack@EndCapture:
+		RequiredShotsPerInstance: 12
 
 infantry.black_lotus.boss:
 	Inherits: infantry.black_lotus

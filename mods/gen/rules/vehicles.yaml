@@ -1038,10 +1038,9 @@ vehicle.gatling_tank:
 		Weapon: gatling.gatling_tank.air
 		LocalOffset: 213,0,0
 		MuzzleSequence: muzzle
-	GrantStackableConditionOnFire@gatling:
+	GrantConditionOnAttack@gatling:
 		Condition: gatling
-		ArmamentName: primary
-		RequiredShotsPerStack: 4
+		RequiredShotsPerInstance: 4
 		MaximumInstances: 2
 		RevokeDelay: 25
 		RevokeAll: true
@@ -1832,17 +1831,15 @@ vehicle.microwave_tank:
 	ExplodeWeapon@AoE:
 		Weapon: aoe.microwave_tank
 		RequiresCondition: !firing && !hacked && !driver_killed && !emp && !leaflet
-	GrantStackableConditionOnFire@End:
+	GrantConditionOnAttack@End:
 		Condition: end_disable
-		ArmamentName: primary
-		RequiredShotsPerStack: 65
+		RequiredShotsPerInstance: 65
 		MaximumInstances: 1
 		RevokeDelay: 4
 		RevokeAll: true
-	GrantStackableConditionOnFire@Fire:
+	GrantConditionOnAttack@Fire:
 		Condition: firing
-		ArmamentName: primary
-		RequiredShotsPerStack: 1
+		RequiredShotsPerInstance: 1
 		MaximumInstances: 1
 		RevokeDelay: 4
 		RevokeAll: true
@@ -1918,18 +1915,16 @@ vehicle.ecm_tank:
 		Weapon: disable.ecm_tank.end
 		LocalOffset: 24,0,0
 		RequiresCondition: end_disable >= 1
-	GrantStackableConditionOnFire@End:
+	GrantConditionOnAttack@End:
 		Condition: end_disable
-		ArmamentName: primary
-		RequiredShotsPerStack: 25
+		RequiredShotsPerInstance: 25
 		MaximumInstances: 1
 		RevokeDelay: 4
 		RevokeAll: true
 		IsCyclic: false
-	GrantStackableConditionOnFire@Fire:
+	GrantConditionOnAttack@Fire:
 		Condition: firing
-		ArmamentName: primary
-		RequiredShotsPerStack: 1
+		RequiredShotsPerInstance: 1
 		MaximumInstances: 1
 		RevokeDelay: 4
 		RevokeAll: true
@@ -2648,10 +2643,10 @@ vehicle.overlord_tank:
 		LoadingCondition: notmobile
 		RequiresCondition: bunker_upgrade
 	SelectionDecorations:
-	GrantStackableConditionOnFire@gatling:
+	GrantConditionOnAttack@gatling:
 		Condition: gatling
-		ArmamentName: gatling
-		RequiredShotsPerStack: 4
+		ArmamentNames: gatling
+		RequiredShotsPerInstance: 4
 		MaximumInstances: 2
 		RevokeDelay: 25
 		RevokeAll: true
@@ -2857,7 +2852,7 @@ vehicle.bomb_truck:
 	-WithFacingSpriteBody:
 	WithDisguisingFacingSpriteBody:
 	WithDisguisingSpriteTurret:
-	GrantConditionOnAttack:
+	GrantConditionOnActivity:
 		Condition: keep_me_disabled
 	Armament@ThisLooksRequired:
 		Weapon: BombTruckExplosion
