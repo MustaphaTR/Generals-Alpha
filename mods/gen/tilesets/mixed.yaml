@@ -22,6 +22,12 @@ Terrain:
 		AcceptsSmudgeType: SnowCrater, SnowScorch
 		Color: C4C4C4
 		RestrictPlayerColor: true
+	TerrainType@Sand:
+		Type: Sand
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: 865F45
+		RestrictPlayerColor: true
 	TerrainType@Concrete:
 		Type: Concrete
 		TargetTypes: Ground
@@ -41,6 +47,11 @@ Terrain:
 		TargetTypes: Ground
 		AcceptsSmudgeType: SnowCrater, SnowScorch
 		Color: 587474
+	TerrainType@SandRoad:
+		Type: SandRoad
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: A87B53
 	TerrainType@Beach:
 		Type: Beach
 		TargetTypes: Ground
@@ -141,6 +152,30 @@ Templates:
 			17: Snow
 			18: Snow
 			19: Snow
+	Template@757:
+		Id: 757
+		Images: clear1.des
+		Size: 1,1
+		PickAny: True
+		Categories: Terrain
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
+			6: Sand
+			7: Sand
+			8: Sand
+			9: Sand
+			10: Sand
+			11: Sand
+			12: Sand
+			13: Sand
+			14: Sand
+			15: Sand
 	Template@2:
 		Id: 2
 		Images: clear1.int
@@ -935,6 +970,269 @@ Templates:
 			9: Rough
 			10: Rough
 			11: Grass
+	Template@758:
+		Id: 758
+		Images: b01.des
+		Size: 1,1
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Rock
+	Template@759:
+		Id: 759
+		Images: b02.des
+		Size: 2,1
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@760:
+		Id: 760
+		Images: b03.des
+		Size: 1,1
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Rock
+	Template@761:
+		Id: 761
+		Images: b04.des
+		Size: 1,1
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Rock
+	Template@762:
+		Id: 762
+		Images: b05.des
+		Size: 1,1
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Rock
+	Template@763:
+		Id: 763
+		Images: b06.des
+		Size: 1,1
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Rock
+	Template@764:
+		Id: 764
+		Images: p04.des
+		Size: 1,1
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Rock
+	Template@765:
+		Id: 765
+		Images: p09.des
+		Size: 1,2
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@766:
+		Id: 766
+		Images: br01.des
+		Size: 1,1
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Tree
+	Template@767:
+		Id: 767
+		Images: br02.des
+		Size: 1,1
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Tree
+	Template@768:
+		Id: 768
+		Images: br03.des
+		Size: 1,1
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Tree
+	Template@769:
+		Id: 769
+		Images: br04.des
+		Size: 1,1
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Tree
+	Template@770:
+		Id: 770
+		Images: br05.des
+		Size: 3,2
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Tree
+			1: Tree
+			2: Rock
+			3: Rock
+			4: Tree
+			5: Rock
+	Template@771:
+		Id: 771
+		Images: br06.des
+		Size: 2,2
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Tree
+			1: Tree
+			2: Tree
+			3: Tree
+	Template@772:
+		Id: 772
+		Images: br07.des
+		Size: 2,2
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Tree
+			1: Tree
+			2: Tree
+			3: Tree
+	Template@773:
+		Id: 773
+		Images: br08.des
+		Size: 3,2
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Tree
+			1: Tree
+			2: Tree
+			3: Tree
+			4: Tree
+			5: Tree
+	Template@774:
+		Id: 774
+		Images: br09.des
+		Size: 3,2
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Tree
+			1: Tree
+			2: Tree
+			3: Tree
+			4: Tree
+			5: Tree
+	Template@775:
+		Id: 775
+		Images: br10.des
+		Size: 2,2
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Tree
+			1: Tree
+			2: Tree
+			3: Tree
+	Template@776:
+		Id: 776
+		Images: p01.des
+		Size: 1,1
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Rock
+	Template@777:
+		Id: 777
+		Images: p02.des
+		Size: 1,1
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Rock
+	Template@778:
+		Id: 778
+		Images: p03.des
+		Size: 1,1
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Rough
+	Template@779:
+		Id: 779
+		Images: p07.des
+		Size: 4,2
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Rough
+			1: Rough
+			2: Rough
+			3: Rough
+			4: Rough
+			5: Rough
+			6: Rough
+	Template@780:
+		Id: 780
+		Images: p08.des
+		Size: 2,1
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Rough
+			1: Rough
+	Template@781:
+		Id: 781
+		Images: p05.des
+		Size: 2,2
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+	Template@782:
+		Id: 782
+		Images: p06.des
+		Size: 6,4
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			7: Sand
+			8: Sand
+			9: Sand
+			14: Sand
+			15: Sand
+			16: Sand
+			17: Sand
+			20: Sand
+			21: Sand
+			22: Sand
+			23: Sand
+	Template@783:
+		Id: 783
+		Images: p10.des
+		Size: 3,2
+		Categories: Debris
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: Sand
+			5: Sand
 	Template@82:
 		Id: 82
 		Images: arro0001.int
@@ -1395,6 +1693,83 @@ Templates:
 			1: SnowRoad
 			2: Snow
 			3: Snow
+	Template@784:
+		Id: 784
+		Images: d03.des
+		Size: 1,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: SandRoad
+	Template@785:
+		Id: 785
+		Images: d44.des
+		Size: 1,1
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+	Template@786:
+		Id: 786
+		Images: d07.des
+		Size: 3,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: SandRoad
+			2: Sand
+			4: SandRoad
+			5: Sand
+	Template@787:
+		Id: 787
+		Images: d08.des
+		Size: 3,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			1: SandRoad
+			3: Sand
+			4: SandRoad
+			5: Sand
+	Template@788:
+		Id: 788
+		Images: d06.des
+		Size: 2,3
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+			2: SandRoad
+			3: SandRoad
+			4: SandRoad
+			5: Sand
+	Template@789:
+		Id: 789
+		Images: d05.des
+		Size: 3,4
+		Categories: Road
+		Palette: desert
+		Tiles:
+			1: SandRoad
+			2: Sand
+			3: SandRoad
+			4: SandRoad
+			6: SandRoad
+			7: SandRoad
+			9: SandRoad
+			10: SandRoad
+	Template@790:
+		Id: 790
+		Images: d01.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			1: SandRoad
+			2: Sand
+			3: Sand
 	Template@132:
 		Id: 132
 		Images: d02.tem
@@ -1571,6 +1946,102 @@ Templates:
 			1: Snow
 			2: SnowRoad
 			3: Snow
+	Template@791:
+		Id: 791
+		Images: d02.des
+		Palette: desert
+		Size: 2,2
+		Categories: Road
+		Tiles:
+			0: Sand
+			1: SandRoad
+			2: Sand
+			3: Sand
+	Template@792:
+		Id: 792
+		Images: d45.des
+		Size: 1,1
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+	Template@793:
+		Id: 793
+		Images: d11.des
+		Size: 2,3
+		Categories: Road
+		Palette: desert
+		Tiles:
+			1: Sand
+			2: SandRoad
+			3: SandRoad
+			4: Sand
+	Template@794:
+		Id: 794
+		Images: d12.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: Sand
+			2: SandRoad
+			3: SandRoad
+	Template@795:
+		Id: 795
+		Images: d10.des
+		Size: 4,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: Sand
+			4: SandRoad
+			5: SandRoad
+			6: SandRoad
+			7: SandRoad
+	Template@796:
+		Id: 796
+		Images: d09.des
+		Size: 4,3
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Sand
+			4: SandRoad
+			5: SandRoad
+			6: SandRoad
+			7: SandRoad
+			10: Sand
+			11: Sand
+	Template@797:
+		Id: 797
+		Images: d13.des
+		Size: 4,3
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+			1: SandRoad
+			2: Sand
+			4: Sand
+			5: SandRoad
+			6: SandRoad
+			7: Sand
+			10: SandRoad
+			11: SandRoad
+	Template@798:
+		Id: 798
+		Images: d04.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			1: Sand
+			2: SandRoad
+			3: Sand
 	Template@148:
 		Id: 148
 		Images: d21.tem
@@ -1675,6 +2146,62 @@ Templates:
 			5: Snow
 			6: SnowRoad
 			7: SnowRoad
+	Template@799:
+		Id: 799
+		Images: d21.des
+		Size: 3,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: SandRoad
+			2: SandRoad
+			3: Sand
+			4: SandRoad
+			5: Sand
+	Template@800:
+		Id: 800
+		Images: d22.des
+		Size: 3,3
+		Categories: Road
+		Palette: desert
+		Tiles:
+			1: Sand
+			3: SandRoad
+			4: SandRoad
+			5: Sand
+			6: Sand
+			7: SandRoad
+			8: Sand
+	Template@801:
+		Id: 801
+		Images: d20.des
+		Size: 3,3
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+			1: Sand
+			3: SandRoad
+			4: SandRoad
+			5: Sand
+			6: Sand
+			7: SandRoad
+			8: SandRoad
+	Template@802:
+		Id: 802
+		Images: d23.des
+		Size: 3,3
+		Categories: Road
+		Palette: desert
+		Tiles:
+			1: SandRoad
+			2: Sand
+			3: Sand
+			4: SandRoad
+			5: Sand
+			6: SandRoad
+			7: SandRoad
 	Template@156:
 		Id: 156
 		Images: d17.tem
@@ -1845,6 +2372,97 @@ Templates:
 			6: SnowRoad
 			7: SnowRoad
 			8: Rock
+	Template@803:
+		Id: 803
+		Images: d17.des
+		Size: 3,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+			1: SandRoad
+			2: SandRoad
+			3: Sand
+			4: SandRoad
+			5: Sand
+	Template@804:
+		Id: 804
+		Images: d18.des
+		Size: 3,3
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: SandRoad
+			2: Sand
+			3: SandRoad
+			4: SandRoad
+			5: Sand
+			6: Sand
+			7: SandRoad
+			8: Sand
+	Template@805:
+		Id: 805
+		Images: d19.des
+		Size: 3,3
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: SandRoad
+			2: Sand
+			3: SandRoad
+			4: SandRoad
+			5: SandRoad
+			6: Sand
+			7: SandRoad
+			8: Sand
+	Template@806:
+		Id: 806
+		Images: d14.des
+		Size: 3,3
+		Categories: Road
+		Palette: desert
+		Tiles:
+			1: Sand
+			2: SandRoad
+			3: Sand
+			4: Sand
+			5: SandRoad
+			6: SandRoad
+			7: SandRoad
+			8: SandRoad
+	Template@807:
+		Id: 807
+		Images: d15.des
+		Size: 3,3
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+			1: SandRoad
+			2: SandRoad
+			3: SandRoad
+			4: SandRoad
+			5: Sand
+			6: SandRoad
+			7: Sand
+	Template@808:
+		Id: 808
+		Images: d16.des
+		Size: 3,3
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: SandRoad
+			2: SandRoad
+			3: SandRoad
+			4: SandRoad
+			5: SandRoad
+			6: SandRoad
+			7: SandRoad
+			8: Sand
 	Template@168:
 		Id: 168
 		Images: d24.tem
@@ -2037,6 +2655,112 @@ Templates:
 			1: SnowRoad
 			2: SnowRoad
 			3: SnowRoad
+	Template@809:
+		Id: 809
+		Images: d24.des
+		Size: 3,3
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+			1: SandRoad
+			3: SandRoad
+			4: SandRoad
+			5: SandRoad
+			7: SandRoad
+			8: SandRoad
+	Template@810:
+		Id: 810
+		Images: d25.des
+		Size: 3,3
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+			1: SandRoad
+			3: SandRoad
+			4: SandRoad
+			5: SandRoad
+			7: SandRoad
+			8: SandRoad
+	Template@811:
+		Id: 811
+		Images: d26.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			1: SandRoad
+			2: SandRoad
+	Template@812:
+		Id: 812
+		Images: d27.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			1: SandRoad
+			2: SandRoad
+	Template@813:
+		Id: 813
+		Images: d28.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+			1: Sand
+			2: Sand
+	Template@814:
+		Id: 814
+		Images: d29.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+			1: SandRoad
+			2: SandRoad
+	Template@815:
+		Id: 815
+		Images: d30.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+			1: SandRoad
+			2: SandRoad
+	Template@816:
+		Id: 816
+		Images: d31.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			1: SandRoad
+			2: SandRoad
+			3: SandRoad
+	Template@817:
+		Id: 817
+		Images: d32.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			1: Sand
+			2: SandRoad
+			3: Sand
+	Template@818:
+		Id: 818
+		Images: d33.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			1: SandRoad
+			2: SandRoad
+			3: SandRoad
 	Template@188:
 		Id: 188
 		Images: d34.tem
@@ -2229,6 +2953,112 @@ Templates:
 			0: Snow
 			2: SnowRoad
 			3: SnowRoad
+	Template@819:
+		Id: 819
+		Images: d34.des
+		Size: 3,3
+		Categories: Road
+		Palette: desert
+		Tiles:
+			1: SandRoad
+			2: SandRoad
+			3: SandRoad
+			4: SandRoad
+			5: SandRoad
+			6: SandRoad
+			7: SandRoad
+	Template@820:
+		Id: 820
+		Images: d35.des
+		Size: 3,3
+		Categories: Road
+		Palette: desert
+		Tiles:
+			1: SandRoad
+			2: SandRoad
+			3: SandRoad
+			4: SandRoad
+			5: SandRoad
+			6: SandRoad
+			7: SandRoad
+	Template@821:
+		Id: 821
+		Images: d36.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+			3: SandRoad
+	Template@822:
+		Id: 822
+		Images: d37.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+			3: SandRoad
+	Template@823:
+		Id: 823
+		Images: d38.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+			1: SandRoad
+			3: SandRoad
+	Template@824:
+		Id: 824
+		Images: d39.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+			1: SandRoad
+			3: SandRoad
+	Template@825:
+		Id: 825
+		Images: d40.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+			1: SandRoad
+			3: SandRoad
+	Template@826:
+		Id: 826
+		Images: d41.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: Sand
+			2: SandRoad
+			3: Sand
+	Template@827:
+		Id: 827
+		Images: d42.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: SandRoad
+			2: SandRoad
+			3: SandRoad
+	Template@828:
+		Id: 828
+		Images: d43.des
+		Size: 2,2
+		Categories: Road
+		Palette: desert
+		Tiles:
+			0: Sand
+			2: SandRoad
+			3: SandRoad
 	Template@208:
 		Id: 208
 		Images: s01.tem
@@ -2386,6 +3216,95 @@ Templates:
 		Images: s07.sno
 		Size: 2,2
 		Categories: Cliffs
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@829:
+		Id: 829
+		Images: s01.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@830:
+		Id: 830
+		Images: s02.des
+		Size: 2,3
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rough
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	Template@831:
+		Id: 831
+		Images: cliffsl1.des
+		Size: 1,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@832:
+		Id: 832
+		Images: s03.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@833:
+		Id: 833
+		Images: s04.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@834:
+		Id: 834
+		Images: s05.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@835:
+		Id: 835
+		Images: s06.des
+		Size: 2,3
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rough
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+	Template@836:
+		Id: 836
+		Images: s07.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
 		Tiles:
 			0: Rock
 			1: Rock
@@ -2553,6 +3472,95 @@ Templates:
 			0: Rock
 			1: Rough
 			2: Rock
+	Template@837:
+		Id: 837
+		Images: s08.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@838:
+		Id: 838
+		Images: s09.des
+		Size: 3,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	Template@839:
+		Id: 839
+		Images: cliffsl4.des
+		Size: 2,1
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@840:
+		Id: 840
+		Images: s10.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@841:
+		Id: 841
+		Images: s11.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@842:
+		Id: 842
+		Images: s12.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@843:
+		Id: 843
+		Images: s13.des
+		Size: 3,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rough
+			3: Rock
+			4: Rock
+			5: Rough
+	Template@844:
+		Id: 844
+		Images: s14.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rough
+			2: Rock
 	Template@240:
 		Id: 240
 		Images: s15.tem
@@ -2704,6 +3712,91 @@ Templates:
 		Images: s21.sno
 		Size: 1,2
 		Categories: Cliffs
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@845:
+		Id: 845
+		Images: s15.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@846:
+		Id: 846
+		Images: s16.des
+		Size: 2,3
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rough
+			2: Rock
+			3: Rock
+			5: Rock
+	Template@847:
+		Id: 847
+		Images: cliffsl2.des
+		Size: 1,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@848:
+		Id: 848
+		Images: s17.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@849:
+		Id: 849
+		Images: s18.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@850:
+		Id: 850
+		Images: s19.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@851:
+		Id: 851
+		Images: s20.des
+		Size: 2,3
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rough
+	Template@852:
+		Id: 852
+		Images: s21.des
+		Size: 1,2
+		Categories: Cliffs
+		Palette: desert
 		Tiles:
 			0: Rock
 			1: Rock
@@ -2865,6 +3958,93 @@ Templates:
 			0: Rock
 			1: Rock
 			3: Rock
+	Template@853:
+		Id: 853
+		Images: s22.des
+		Size: 2,1
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@854:
+		Id: 854
+		Images: s23.des
+		Size: 3,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rough
+	Template@855:
+		Id: 855
+		Images: cliffsl3.des
+		Size: 2,1
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@856:
+		Id: 856
+		Images: s24.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@857:
+		Id: 857
+		Images: s25.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@858:
+		Id: 858
+		Images: s26.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@859:
+		Id: 859
+		Images: s27.des
+		Size: 3,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rough
+			3: Rough
+			4: Rock
+			5: Rock
+	Template@860:
+		Id: 860
+		Images: s28.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			3: Rock
 	Template@272:
 		Id: 272
 		Images: s30.tem
@@ -2939,6 +4119,49 @@ Templates:
 		Images: s32.sno
 		Size: 2,2
 		Categories: Cliffs
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rough
+	Template@861:
+		Id: 861
+		Images: s30.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@862:
+		Id: 862
+		Images: s31.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rough
+			2: Rock
+			3: Rock
+	Template@863:
+		Id: 863
+		Images: s29.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@864:
+		Id: 864
+		Images: s32.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
 		Tiles:
 			0: Rock
 			1: Rock
@@ -3023,6 +4246,50 @@ Templates:
 			1: Rock
 			2: Rock
 			3: Rock
+	Template@865:
+		Id: 865
+		Images: s34.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@866:
+		Id: 866
+		Images: s35.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@867:
+		Id: 867
+		Images: s33.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@868:
+		Id: 868
+		Images: s36.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
 	Template@288:
 		Id: 288
 		Images: s37.tem
@@ -3058,6 +4325,28 @@ Templates:
 		Images: s38.sno
 		Size: 2,2
 		Categories: Cliffs
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@869:
+		Id: 869
+		Images: s37.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@870:
+		Id: 870
+		Images: s38.des
+		Size: 2,2
+		Categories: Cliffs
+		Palette: desert
 		Tiles:
 			0: Rock
 			1: Rock
@@ -3220,6 +4509,95 @@ Templates:
 		Images: wc07.sno
 		Size: 2,2
 		Categories: Water Cliffs
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@871:
+		Id: 871
+		Images: wc01.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@872:
+		Id: 872
+		Images: wc02.des
+		Size: 2,3
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rough
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	Template@873:
+		Id: 873
+		Images: cliffsw1.des
+		Size: 1,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@874:
+		Id: 874
+		Images: wc03.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@875:
+		Id: 875
+		Images: wc04.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@876:
+		Id: 876
+		Images: wc05.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@877:
+		Id: 877
+		Images: wc06.des
+		Size: 2,3
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rough
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+	Template@878:
+		Id: 878
+		Images: wc07.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
 		Tiles:
 			0: Rock
 			1: Rock
@@ -3389,6 +4767,96 @@ Templates:
 			1: Beach
 			2: Beach
 			3: Beach
+	Template@879:
+		Id: 879
+		Images: wc08.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@880:
+		Id: 880
+		Images: wc09.des
+		Size: 3,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: River
+			4: Rock
+			5: Rock
+	Template@881:
+		Id: 881
+		Images: cliffsw4.des
+		Size: 2,1
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@882:
+		Id: 882
+		Images: wc10.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@883:
+		Id: 883
+		Images: wc11.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@884:
+		Id: 884
+		Images: wc12.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@885:
+		Id: 885
+		Images: wc13.des
+		Size: 3,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rough
+			3: Rock
+			4: Rock
+			5: Snow
+	Template@886:
+		Id: 886
+		Images: wc14.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Beach
+			2: Beach
+			3: Beach
 	Template@324:
 		Id: 324
 		Images: wc15.tem
@@ -3540,6 +5008,91 @@ Templates:
 		Images: wc21.sno
 		Size: 1,2
 		Categories: Water Cliffs
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@887:
+		Id: 887
+		Images: wc15.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@888:
+		Id: 888
+		Images: wc16.des
+		Size: 2,3
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Water
+			2: Rock
+			3: Rock
+			5: Rock
+	Template@889:
+		Id: 889
+		Images: cliffsw2.des
+		Size: 1,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@890:
+		Id: 890
+		Images: wc17.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@891:
+		Id: 891
+		Images: wc18.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@892:
+		Id: 892
+		Images: wc19.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@893:
+		Id: 893
+		Images: wc20.des
+		Size: 2,3
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			1: River
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rough
+	Template@894:
+		Id: 894
+		Images: wc21.des
+		Size: 1,2
+		Categories: Water Cliffs
+		Palette: desert
 		Tiles:
 			0: Rock
 			1: Rock
@@ -3705,6 +5258,84 @@ Templates:
 			0: Rock
 			1: Rock
 			3: Rock
+	Template@895:
+		Id: 895
+		Images: wc23.des
+		Size: 3,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: River
+			3: Rock
+			4: Rock
+			5: Water
+	Template@896:
+		Id: 896
+		Images: cliffsw3.des
+		Size: 2,1
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+	Template@897:
+		Id: 897
+		Images: wc24.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@898:
+		Id: 898
+		Images: wc25.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@899:
+		Id: 899
+		Images: wc26.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@900:
+		Id: 900
+		Images: wc27.des
+		Size: 3,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Water
+			3: Snow
+			4: Rock
+			5: Rock
+	Template@901:
+		Id: 901
+		Images: wc28.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			3: Rock
 	Template@356:
 		Id: 356
 		Images: wc30.tem
@@ -3779,6 +5410,49 @@ Templates:
 		Images: wc32.sno
 		Size: 2,2
 		Categories: Water Cliffs
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Water
+	Template@902:
+		Id: 902
+		Images: wc30.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@903:
+		Id: 903
+		Images: wc31.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: River
+			2: Rock
+			3: Rock
+	Template@904:
+		Id: 904
+		Images: wc29.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@905:
+		Id: 905
+		Images: wc32.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
 		Tiles:
 			0: Rock
 			1: Rock
@@ -3863,6 +5537,50 @@ Templates:
 			1: Rock
 			2: Rock
 			3: Rock
+	Template@906:
+		Id: 906
+		Images: wc34.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@907:
+		Id: 907
+		Images: wc35.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@908:
+		Id: 908
+		Images: wc33.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@909:
+		Id: 909
+		Images: wc36.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
 	Template@372:
 		Id: 372
 		Images: wc37.tem
@@ -3898,6 +5616,28 @@ Templates:
 		Images: wc38.sno
 		Size: 2,2
 		Categories: Water Cliffs
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@910:
+		Id: 910
+		Images: wc37.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+	Template@911:
+		Id: 911
+		Images: wc38.des
+		Size: 2,2
+		Categories: Water Cliffs
+		Palette: desert
 		Tiles:
 			0: Rock
 			1: Rock
@@ -3957,6 +5697,32 @@ Templates:
 			3: River
 			4: River
 			5: River
+	Template@955:
+		Id: 955
+		Images: falls4.des
+		Size: 2,3
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: River
+			3: River
+			4: Rock
+			5: Rock
+	Template@956:
+		Id: 956
+		Images: falls3.des
+		Size: 3,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: River
+			2: Rock
+			3: Rock
+			4: River
+			5: Rock
 	Template@380:
 		Id: 380
 		Images: sccnr.tem
@@ -4046,6 +5812,110 @@ Templates:
 		Images: sccrs.tem
 		Size: 3,2
 		Categories: Water Cliffs
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	Template@957:
+		Id: 957
+		Images: wc44.des
+		Size: 2,3
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	Template@958:
+		Id: 958
+		Images: wc45.des
+		Size: 2,3
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	Template@959:
+		Id: 959
+		Images: wc46.des
+		Size: 2,3
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	Template@960:
+		Id: 960
+		Images: wc43.des
+		Size: 2,3
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	Template@961:
+		Id: 961
+		Images: wc40.des
+		Size: 3,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	Template@962:
+		Id: 962
+		Images: wc39.des
+		Size: 3,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	Template@963:
+		Id: 963
+		Images: wc42.des
+		Size: 3,2
+		Categories: Water Cliffs
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	Template@964:
+		Id: 964
+		Images: wc41.des
+		Size: 3,2
+		Categories: Water Cliffs
+		Palette: desert
 		Tiles:
 			0: Rock
 			1: Rock
@@ -6277,6 +8147,543 @@ Templates:
 			3: Beach
 			4: Beach
 			6: Snow
+	Template@912:
+		Id: 912
+		Images: sh19.des
+		Size: 3,2
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			1: Rock
+			2: Sand
+			3: Beach
+			4: Rock
+			5: Beach
+	Template@913:
+		Id: 913
+		Images: sh20.des
+		Size: 4,1
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Rock
+			2: Rock
+			3: Beach
+	Template@914:
+		Id: 914
+		Images: sh21.des
+		Size: 3,1
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Beach
+			2: Beach
+	Template@915:
+		Id: 915
+		Images: sh22.des
+		Size: 6,2
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			1: Rock
+			2: Rock
+			3: Rock
+			6: Beach
+			7: Water
+			8: Water
+			9: Rock
+			10: Beach
+			11: Beach
+	Template@916:
+		Id: 916
+		Images: sh23.des
+		Size: 2,2
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Beach
+			3: Beach
+	Template@917:
+		Id: 917
+		Images: sh24.des
+		Size: 3,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: River
+			2: Rock
+			3: River
+			4: River
+			5: Sand
+			6: River
+			7: Water
+			8: Beach
+	Template@918:
+		Id: 918
+		Images: sh54.des
+		Size: 3,2
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: Tree
+			2: River
+			3: Beach
+			4: Water
+			5: River
+	Template@919:
+		Id: 919
+		Images: sh55.des
+		Size: 3,2
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Sand
+			3: Water
+			4: Rock
+			5: Rock
+	Template@920:
+		Id: 920
+		Images: sh62.des
+		Size: 6,1
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Beach
+			2: Beach
+			3: Beach
+			4: Beach
+			5: Beach
+	Template@921:
+		Id: 921
+		Images: sh63.des
+		Size: 4,1
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Beach
+			2: Beach
+			3: Beach
+	Template@922:
+		Id: 922
+		Images: sh25.des
+		Size: 3,2
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Beach
+			2: Beach
+			3: Sand
+			4: Sand
+			5: Rock
+	Template@923:
+		Id: 923
+		Images: sh26.des
+		Size: 3,2
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Beach
+			2: Beach
+			4: Sand
+			5: Sand
+	Template@924:
+		Id: 924
+		Images: sh27.des
+		Size: 4,1
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Beach
+			2: Beach
+			3: Rock
+	Template@925:
+		Id: 925
+		Images: sh28.des
+		Size: 3,1
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Beach
+			2: Beach
+	Template@926:
+		Id: 926
+		Images: sh29.des
+		Size: 6,2
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Beach
+			2: Rock
+			3: Beach
+			4: Beach
+			5: Beach
+			7: Sand
+			8: Sand
+			9: Sand
+	Template@927:
+		Id: 927
+		Images: sh30.des
+		Size: 2,2
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Beach
+			2: Rock
+	Template@928:
+		Id: 928
+		Images: sh31.des
+		Size: 3,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: River
+			1: River
+			2: River
+			3: Rock
+			4: River
+			5: Rock
+			6: Sand
+			7: River
+			8: Rock
+	Template@929:
+		Id: 929
+		Images: sh56.des
+		Size: 3,2
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			1: Water
+			2: River
+			3: Beach
+			4: Rock
+			5: Rock
+	Template@930:
+		Id: 930
+		Images: sh57.des
+		Size: 3,2
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			3: Beach
+			4: Water
+			5: River
+	Template@931:
+		Id: 931
+		Images: sh36.des
+		Size: 1,1
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Sand
+	Template@932:
+		Id: 932
+		Images: sh37.des
+		Size: 1,1
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Sand
+	Template@933:
+		Id: 933
+		Images: sh38.des
+		Size: 1,1
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Sand
+	Template@934:
+		Id: 934
+		Images: sh39.des
+		Size: 1,1
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Sand
+	Template@935:
+		Id: 935
+		Images: sh40.des
+		Size: 3,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: Beach
+			2: Rock
+			3: Beach
+			4: Water
+			5: Water
+			6: Beach
+			7: Water
+			8: Water
+	Template@936:
+		Id: 936
+		Images: sh41.des
+		Size: 3,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Water
+			1: Water
+			2: Beach
+			3: Water
+			4: Beach
+			5: Sand
+			6: Beach
+			7: Rock
+			8: Sand
+	Template@937:
+		Id: 937
+		Images: sh46.des
+		Size: 3,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Beach
+			3: Sand
+			4: Beach
+			5: Water
+			6: Beach
+			7: Water
+			8: Water
+	Template@938:
+		Id: 938
+		Images: sh47.des
+		Size: 3,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Rock
+			3: Beach
+			4: Sand
+			6: Water
+			7: Beach
+			8: Beach
+	Template@939:
+		Id: 939
+		Images: sh48.des
+		Size: 3,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			3: Beach
+			6: Beach
+			7: Beach
+			8: Beach
+	Template@940:
+		Id: 940
+		Images: sh49.des
+		Size: 3,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			1: Water
+			2: Beach
+			3: Beach
+			4: Rock
+			5: Rock
+			6: Sand
+			7: Rock
+			8: Rock
+	Template@941:
+		Id: 941
+		Images: sh50.des
+		Size: 4,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			1: Water
+			2: Water
+			3: Beach
+			4: Rock
+			5: Rock
+			6: Rock
+			8: Beach
+			9: Sand
+	Template@942:
+		Id: 942
+		Images: sh51.des
+		Size: 4,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Water
+			4: Sand
+			5: Water
+			6: Water
+			8: Rock
+			9: Rock
+			10: Beach
+			11: Water
+	Template@943:
+		Id: 943
+		Images: sh52.des
+		Size: 4,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Water
+			1: Beach
+			2: Beach
+			3: Rock
+			6: Water
+			7: Rock
+			10: Water
+			11: River
+	Template@944:
+		Id: 944
+		Images: sh53.des
+		Size: 4,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: Sand
+			2: Sand
+			3: Beach
+			4: Sand
+			5: River
+			6: Water
+			7: Water
+			8: River
+			9: Water
+			10: River
+			11: River
+	Template@945:
+		Id: 945
+		Images: sh42.des
+		Size: 1,2
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Beach
+	Template@946:
+		Id: 946
+		Images: sh43.des
+		Size: 1,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Sand
+			2: Beach
+	Template@947:
+		Id: 947
+		Images: sh60.des
+		Size: 2,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Water
+			1: Beach
+			2: Beach
+			3: Sand
+			4: Beach
+			5: Sand
+	Template@948:
+		Id: 948
+		Images: sh61.des
+		Size: 2,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Sand
+			2: Water
+			3: Beach
+			5: Beach
+	Template@949:
+		Id: 949
+		Images: sh64.des
+		Size: 2,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: River
+			1: Rough
+			2: River
+			3: River
+			4: River
+			5: Rock
+	Template@950:
+		Id: 950
+		Images: sh44.des
+		Size: 1,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Sand
+			2: Beach
+	Template@951:
+		Id: 951
+		Images: sh45.des
+		Size: 1,2
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Beach
+	Template@952:
+		Id: 952
+		Images: sh58.des
+		Size: 2,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Beach
+			2: Beach
+			3: Water
+			4: Sand
+			5: Beach
+	Template@953:
+		Id: 953
+		Images: sh59.des
+		Size: 2,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: Beach
+			2: Beach
+			3: River
+			4: River
+			5: River
+	Template@954:
+		Id: 954
+		Images: sh65.des
+		Size: 2,3
+		Categories: Beach
+		Palette: desert
+		Tiles:
+			0: Rough
+			1: River
+			2: River
+			3: River
+			4: Rock
+			5: River
 	Template@561:
 		Id: 561
 		Images: rc01.tem
@@ -6829,6 +9236,490 @@ Templates:
 			3: River
 			4: Rock
 			5: Rock
+	Template@1006:
+		Id: 1006
+		Images: rv26.des
+		Size: 1,1
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: River
+	Template@1007:
+		Id: 1007
+		Images: rv27.des
+		Size: 1,1
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: River
+	Template@1008:
+		Id: 1008
+		Images: rvm01.des
+		Size: 2,3
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: River
+			3: River
+			4: Rock
+			5: Rock
+	Template@1009:
+		Id: 1009
+		Images: rvm02.des
+		Size: 1,3
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: River
+			2: Rock
+	Template@1010:
+		Id: 1010
+		Images: rvm03.des
+		Size: 3,2
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: River
+			2: Rock
+			3: Rock
+			4: River
+			5: Rock
+	Template@1011:
+		Id: 1011
+		Images: rvm04.des
+		Size: 3,1
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: River
+			2: Rock
+	Template@965:
+		Id: 965
+		Images: rv14.des
+		Size: 4,3
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Rock
+			7: River
+			8: Rock
+			9: Rock
+			10: Tree
+			11: Rock
+	Template@966:
+		Id: 966
+		Images: rv15.des
+		Size: 4,3
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Sand
+			4: River
+			5: River
+			6: Rock
+			7: River
+			8: Sand
+			9: Rock
+			10: Rock
+			11: Sand
+	Template@967:
+		Id: 967
+		Images: rv16.des
+		Size: 6,4
+		Categories: River
+		Palette: desert
+		Tiles:
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+			7: Rock
+			8: Rock
+			9: River
+			10: River
+			11: River
+			12: Rock
+			13: Rock
+			14: River
+			15: Rock
+			16: Tree
+			17: Rock
+			18: River
+			19: River
+			20: Rock
+			21: Tree
+	Template@968:
+		Id: 968
+		Images: rv17.des
+		Size: 6,5
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			6: River
+			7: Rock
+			8: Rock
+			9: Rock
+			10: Tree
+			12: Rock
+			13: Rock
+			14: River
+			15: River
+			16: River
+			17: Rock
+			18: Sand
+			19: Rock
+			20: Rock
+			21: Rock
+			22: River
+			23: River
+			28: Rock
+			29: River
+	Template@969:
+		Id: 969
+		Images: rv18.des
+		Size: 4,4
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: River
+			2: Tree
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Rock
+			8: Rock
+			9: River
+			10: Tree
+			12: Rock
+			13: River
+			14: Rock
+	Template@970:
+		Id: 970
+		Images: rv19.des
+		Size: 4,4
+		Categories: River
+		Palette: desert
+		Tiles:
+			1: Rock
+			2: River
+			3: Sand
+			5: Rock
+			6: River
+			7: Tree
+			8: Rock
+			9: Rock
+			10: River
+			11: Rock
+			12: Sand
+			13: Rock
+			14: River
+			15: Tree
+	Template@971:
+		Id: 971
+		Images: rv20.des
+		Size: 6,8
+		Categories: River
+		Palette: desert
+		Tiles:
+			2: Sand
+			3: Rock
+			4: River
+			5: Sand
+			7: Sand
+			8: Rock
+			9: River
+			10: Rock
+			12: Sand
+			13: Rock
+			14: Rock
+			15: River
+			16: Rock
+			18: Rock
+			19: Rock
+			20: River
+			21: Rock
+			22: Sand
+			24: Rock
+			25: Rock
+			26: River
+			27: Rock
+			28: Rock
+			30: Rock
+			31: Rock
+			32: River
+			33: Rock
+			36: Sand
+			37: River
+			38: River
+			39: Rock
+			42: Sand
+			43: River
+			44: Rock
+			45: Rock
+	Template@973:
+		Id: 973
+		Images: rv21.des
+		Size: 5,8
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Sand
+			3: Sand
+			5: Sand
+			6: River
+			7: River
+			8: Rock
+			11: Rock
+			12: River
+			13: Rock
+			16: Rock
+			17: River
+			18: Rock
+			19: Rock
+			21: Rock
+			22: River
+			23: River
+			24: Rock
+			27: Rock
+			28: River
+			29: Rock
+			32: Rock
+			33: River
+			34: River
+			38: Sand
+			39: River
+	Template@974:
+		Id: 974
+		Images: rv22.des
+		Size: 3,3
+		Categories: River
+		Palette: desert
+		Tiles:
+			1: Sand
+			2: Sand
+			3: Rock
+			4: Rock
+			5: River
+			6: Rock
+			7: River
+			8: Rock
+	Template@975:
+		Id: 975
+		Images: rv23.des
+		Size: 3,3
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: River
+			4: River
+			5: Rock
+			6: Rock
+			7: River
+			8: Rock
+	Template@976:
+		Id: 976
+		Images: rv24.des
+		Size: 3,3
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: River
+			2: Rock
+			3: Rock
+			4: River
+			5: River
+			7: Tree
+			8: Sand
+	Template@977:
+		Id: 977
+		Images: rv25.des
+		Size: 3,3
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Tree
+			1: River
+			2: Rock
+			3: River
+			4: Rock
+			5: Rock
+			6: Rock
+			7: Rock
+			8: Sand
+	Template@978:
+		Id: 978
+		Images: dt01.des
+		Size: 4,3
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: River
+			3: Rock
+			4: Rock
+			5: River
+			6: River
+			7: River
+			8: River
+			9: Rock
+			10: Tree
+			11: Rock
+	Template@979:
+		Id: 979
+		Images: dt02.des
+		Size: 2,4
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: River
+			2: River
+			3: Rock
+			4: Rock
+			5: River
+			6: Rough
+			7: River
+	Template@980:
+		Id: 980
+		Images: dt03.des
+		Size: 3,3
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rough
+			1: Tree
+			2: River
+			3: River
+			4: River
+			5: River
+			6: Tree
+			7: River
+			8: Rock
+	Template@981:
+		Id: 981
+		Images: dt04.des
+		Size: 3,4
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rough
+			3: River
+			4: River
+			5: Rough
+			6: Rock
+			7: Rock
+			8: River
+			9: Rough
+			10: River
+	Template@982:
+		Id: 982
+		Images: rc01.des
+		Size: 3,2
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	Template@983:
+		Id: 983
+		Images: rc02.des
+		Size: 2,3
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	Template@984:
+		Id: 984
+		Images: rc03.des
+		Size: 2,3
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	Template@985:
+		Id: 985
+		Images: rc04.des
+		Size: 3,2
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+	Template@986:
+		Id: 986
+		Images: falls2.des
+		Size: 3,2
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: River
+			2: Rock
+			3: Rock
+			4: River
+			5: Rock
+	Template@987:
+		Id: 987
+		Images: falls1.des
+		Size: 3,3
+		Categories: River
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: River
+			4: River
+			5: River
+			6: Rock
+			7: Rock
+			8: Rock
 	Template@603:
 		Id: 603
 		Images: br1a.tem
@@ -7185,6 +10076,186 @@ Templates:
 		Tiles:
 			0: SnowRoad
 			4: Beach
+	Template@988:
+		Id: 988
+		Images: br1a.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Bridge
+			2: Bridge
+			3: Rock
+			5: Bridge
+			6: Rock
+			7: River
+	Template@989:
+		Id: 989
+		Images: br1b.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Bridge
+			2: Bridge
+			3: Rock
+			5: Bridge
+			6: Rock
+			7: River
+	Template@990:
+		Id: 990
+		Images: br1c.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			5: River
+			6: Rock
+			7: River
+	Template@991:
+		Id: 991
+		Images: br2a.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Bridge
+			4: Bridge
+			5: Bridge
+			6: Rock
+			7: Rock
+	Template@992:
+		Id: 992
+		Images: br2b.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Bridge
+			4: Bridge
+			5: Bridge
+			6: Rock
+			7: Rock
+	Template@993:
+		Id: 993
+		Images: br2c.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: River
+			1: River
+			4: Rock
+			5: Rock
+			6: Rock
+			7: River
+	Template@994:
+		Id: 994
+		Images: br3a.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Bridge
+			5: Bridge
+			6: Rock
+			7: Rock
+	Template@995:
+		Id: 995
+		Images: br3b.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Bridge
+			5: Bridge
+			6: Rock
+			7: Rock
+	Template@996:
+		Id: 996
+		Images: br3c.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			5: Rock
+			6: Rock
+			7: Rock
+	Template@997:
+		Id: 997
+		Images: br3d.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: River
+			1: Rock
+			5: River
+			6: River
+			7: River
+	Template@998:
+		Id: 998
+		Images: br3e.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Water
+			1: Water
+			5: Rock
+			6: Water
+			7: Water
+	Template@999:
+		Id: 999
+		Images: br3f.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Water
+			1: Water
+			5: Water
+			6: Water
+			7: Water
+	Template@1000:
+		Id: 1000
+		Images: br1x.des
+		Size: 5,3
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: SandRoad
+			3: SandRoad
+			9: Rock
+			14: Rock
+	Template@1001:
+		Id: 1001
+		Images: br2x.des
+		Size: 5,3
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Beach
+			5: Rock
+			10: SandRoad
+			11: SandRoad
+			12: Rock
+			13: Rock
+			14: Rock
 	Template@631:
 		Id: 631
 		Images: bridge1.tem
@@ -7311,6 +10382,73 @@ Templates:
 			16: SnowRoad
 			18: Rock
 			19: Rock
+	Template@1002:
+		Id: 1002
+		Images: bridge1.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Bridge
+			2: Bridge
+			3: Rock
+			4: Bridge
+			5: Bridge
+			6: Rock
+			7: Rock
+	Template@1003:
+		Id: 1003
+		Images: bridge1h.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Bridge
+			2: Bridge
+			3: Rock
+			4: Bridge
+			5: Bridge
+			6: Rock
+			7: Rock
+	Template@1004:
+		Id: 1004
+		Images: bridge1d.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Rock
+			7: Rock
+	Template@1005:
+		Id: 1005
+		Images: bridge1x.des
+		Size: 6,4
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: SandRoad
+			4: SandRoad
+			6: River
+			11: Rock
+			12: Rock
+			17: Rock
+			18: SandRoad
+			19: SandRoad
+			20: Rock
+			21: Rock
+			22: River
+			23: River
 	Template@639:
 		Id: 639
 		Images: bridge2.tem
@@ -7439,6 +10577,73 @@ Templates:
 			19: SnowRoad
 			23: SnowRoad
 			24: SnowRoad
+	Template@1012:
+		Id: 1012
+		Images: bridge2.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Bridge
+			2: Bridge
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Bridge
+			7: Bridge
+	Template@1013:
+		Id: 1013
+		Images: bridge2h.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Bridge
+			2: Bridge
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Bridge
+			7: Bridge
+	Template@1014:
+		Id: 1014
+		Images: bridge2d.des
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: Rock
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Rock
+			7: Rock
+	Template@1015:
+		Id: 1015
+		Images: bridge2x.des
+		Size: 6,4
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			1: SandRoad
+			2: SandRoad
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Rock
+			11: River
+			12: Rock
+			17: Rock
+			18: River
+			19: River
+			20: Rock
+			21: Rock
+			22: SandRoad
+			23: SandRoad
 	Template@647:
 		Id: 647
 		Images: f01.tem
@@ -7619,6 +10824,102 @@ Templates:
 			6: Beach
 			7: Beach
 			8: Snow
+	Template@1016:
+		Id: 1016
+		Images: f01.des
+		Size: 3,3
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rough
+			1: SandRoad
+			2: SandRoad
+			3: Beach
+			4: Beach
+			5: Beach
+			6: Beach
+			7: Beach
+			8: Beach
+	Template@1017:
+		Id: 1017
+		Images: f02.des
+		Size: 3,3
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Beach
+			2: Beach
+			3: Beach
+			4: Beach
+			5: Beach
+			6: Beach
+			7: Beach
+			8: Beach
+	Template@1018:
+		Id: 1018
+		Images: f03.des
+		Size: 3,3
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Beach
+			2: Beach
+			3: Beach
+			4: Beach
+			5: Beach
+			6: Sand
+			7: SandRoad
+			8: Sand
+	Template@1019:
+		Id: 1019
+		Images: f04.des
+		Size: 3,3
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: Beach
+			2: Beach
+			3: SandRoad
+			4: Beach
+			5: Beach
+			6: Sand
+			7: Beach
+			8: Beach
+	Template@1020:
+		Id: 1020
+		Images: f05.des
+		Size: 3,3
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Beach
+			2: Beach
+			3: Beach
+			4: Beach
+			5: Beach
+			6: Beach
+			7: Beach
+			8: Beach
+	Template@1021:
+		Id: 1021
+		Images: f06.des
+		Size: 3,3
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Beach
+			1: Beach
+			2: Sand
+			3: Beach
+			4: Beach
+			5: SandRoad
+			6: Beach
+			7: Beach
+			8: Sand
 	Template@659:
 		Id: 659
 		Images: ford1.tem
@@ -7679,6 +10980,38 @@ Templates:
 			6: Snow
 			7: SnowRoad
 			8: Snow
+	Template@1022:
+		Id: 1022
+		Images: ford1.des
+		Size: 3,3
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Rock
+			1: River
+			2: Sand
+			3: SandRoad
+			4: Rough
+			5: SandRoad
+			6: Rock
+			7: River
+			8: Sand
+	Template@1023:
+		Id: 1023
+		Images: ford2.des
+		Size: 3,3
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: SandRoad
+			2: Sand
+			3: River
+			4: Rough
+			5: River
+			6: Rock
+			7: SandRoad
+			8: Sand
 	Template@663:
 		Id: 663
 		Images: sbridge1x.tem
@@ -8291,6 +11624,214 @@ Templates:
 		Tiles:
 			0: Beach
 			4: SnowRoad
+	Template@1024:
+		Id: 1024
+		Images: bridgec1.des
+		Frames: 0, 0, 1, 0, 2, 3, 4, 5, 6, 7, 8
+		Size: 4,3
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			1: Bridge
+			2: Rock
+			4: Rock
+			5: Bridge
+			6: Bridge
+			7: Rock
+			8: Rock
+			9: Rock
+			10: Bridge
+	Template@1025:
+		Id: 1025
+		Images: bridgecd1.des
+		Frames: 0, 0, 1, 0, 2, 3, 4, 5, 6, 7, 8
+		Size: 4,3
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			1: Rough
+			2: Rock
+			4: Rock
+			5: Rough
+			6: Rough
+			7: Rock
+			8: Rock
+			9: Rock
+			10: Rough
+	Template@1026:
+		Id: 1026
+		Images: bridgecb1.des
+		Frames: 0, 0, 1, 0, 2, 3, 4, 5, 6, 7, 8
+		Size: 4,3
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			1: Rock
+			2: Rock
+			4: Rock
+			5: Rock
+			6: Rock
+			7: Rock
+			8: Rock
+			9: Rock
+			10: Rock
+	Template@1027:
+		Id: 1027
+		Images: bridgec2.des
+		Frames: 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 0, 8, 9, 10
+		Size: 5,3
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			2: Bridge
+			3: Rock
+			4: Beach
+			5: Rock
+			6: Rock
+			7: Bridge
+			8: Bridge
+			9: Rock
+			11: Rock
+			12: Rock
+			13: Bridge
+	Template@1028:
+		Id: 1028
+		Images: bridgecd2.des
+		Frames: 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 0, 8, 9, 10
+		Size: 5,3
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			2: Rough
+			3: Rock
+			4: Beach
+			5: Rock
+			6: Rock
+			7: Rough
+			8: Rough
+			9: Rock
+			11: Rock
+			12: Rock
+			13: Rough
+	Template@1029:
+		Id: 1029
+		Images: bridgecb2.des
+		Frames: 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 0, 8, 9, 10
+		Size: 5,3
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			2: Water
+			3: Water
+			4: Beach
+			5: Rock
+			6: Rock
+			7: Rock
+			8: Rock
+			9: Rock
+			11: Rock
+			12: Rock
+			13: Rock
+	Template@1030:
+		Id: 1030
+		Images: bridgec3.des
+		Frames: 0, 0, 0, 1, 2, 3, 4
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			2: Bridge
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Bridge
+	Template@1031:
+		Id: 1031
+		Images: bridgecd3.des
+		Frames: 0, 0, 0, 1, 2, 3, 4
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			2: Bridge
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Bridge
+	Template@1032:
+		Id: 1032
+		Images: bridgecb3.des
+		Frames: 0, 0, 0, 1, 2, 3, 4
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			2: Rock
+			3: Rock
+			4: Rock
+			5: Rock
+			6: Rock
+	Template@1033:
+		Id: 1033
+		Images: bridgecb4.des
+		Frames: 0, 0, 0, 1, 2, 3, 4
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			2: River
+			3: Rock
+			4: River
+			5: River
+			6: River
+	Template@1034:
+		Id: 1034
+		Images: bridgecb5.des
+		Frames: 0, 0, 0, 1, 2, 3, 4
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Rock
+	Template@1035:
+		Id: 1035
+		Images: br3f.des
+		Frames: 0, 0, 0, 1, 5, 6, 7
+		Size: 4,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			2: Water
+			3: Water
+			4: Water
+			5: Water
+			6: Water
+	Template@1036:
+		Id: 1036
+		Images: bridgect1.des
+		Frames: 0, 1, 0, 0, 2, 3, 0, 0, 0, 0
+		Size: 5,2
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Sand
+			1: SandRoad
+			4: Rock
+			5: Rock
+	Template@1037:
+		Id: 1037
+		Images: bridgect2.des
+		Frames: 0, 0, 0, 0, 1
+		Size: 5,1
+		Categories: Bridge
+		Palette: desert
+		Tiles:
+			0: Beach
+			4: SandRoad
 	Template@709:
 		Id: 709
 		Images: bridgev1.tem
