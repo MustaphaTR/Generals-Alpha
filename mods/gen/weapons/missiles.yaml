@@ -296,10 +296,15 @@ missile.aurora:
 	ReloadDelay: 5
 	Range: 7c512
 	Report: vmigweaa.wav, vmigweab.wav
-	Projectile: Missile
+	-Projectile:
+	Projectile: Bullet
 		Speed: 256
 		Inaccuracy: 512
-		CruiseAltitude: 2c0
+		TrailImage: smokey
+		TrailInterval: 1
+		Blockable: false
+		Image: DRAGON
+		Shadow: True
 		RangeLimit: 10c0
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
