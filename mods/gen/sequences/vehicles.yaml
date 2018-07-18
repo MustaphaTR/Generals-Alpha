@@ -496,6 +496,33 @@ husk.nuke_cannon:
 		UseClassicFacingFudge: True
 		ZOffset: -512
 
+vehicle.combat_cycle:
+	idle: bikeempty
+		Facings: 8
+		ShadowStart: 8
+	idle-other: bike
+		Facings: 8
+		ShadowStart: 112
+	idle-gun: bike
+		Facings: 8
+		Start: 8
+		ShadowStart: 120
+	idle-rocket: bike
+		Facings: 8
+		Start: 16
+		ShadowStart: 128
+	shoot-gun: bike
+		Facings: 8
+		Length: 6
+		Start: 24
+		ShadowStart: 136
+	shoot-rocket: bike
+		Facings: -8
+		Length: 5
+		Start: 72
+		ShadowStart: 184
+	icon: ccycleicon
+
 vehicle.usa_mcc:
 	idle: mcv
 		Facings: 32

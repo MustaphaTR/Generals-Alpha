@@ -169,7 +169,7 @@ vehicle.humvee:
 		Condition: tow_missile
 		Prerequisites: upgrade.tow_missile
 	Cargo:
-		Types: Infantry, Hacker
+		Types: Infantry, GLAInfantry, Hacker
 		MaxWeight: 5
 		PipCount: 5
 		LoadingCondition: notmobile
@@ -260,7 +260,7 @@ vehicle.technical:
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	Cargo:
-		Types: Infantry, Hacker
+		Types: Infantry, GLAInfantry, Hacker
 		MaxWeight: 5
 		PipCount: 5
 		EjectOnDeathDamage: 10
@@ -771,7 +771,7 @@ vehicle.ambulance:
 		Condition: ambulanceheal
 		Range: 4c0
 	Cargo:
-		Types: Infantry, Hacker
+		Types: Infantry, GLAInfantry, Hacker
 		MaxWeight: 3
 		PipCount: 3
 		EjectOnDeathDamage: 10
@@ -1467,7 +1467,7 @@ vehicle.avenger.boss:
 	Inherits: vehicle.avenger
 	Buildable:
 		Queue: queue.boss_gen_vehicle
-		BuildPaletteOrder: 10
+		BuildPaletteOrder: 8
 		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
 
 vehicle.battle_Bus:
@@ -1533,7 +1533,7 @@ vehicle.battle_Bus:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Cargo:
-		Types: Infantry, Hacker, Pilot
+		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 8
 		PipCount: 8
 		EjectOnDeathDamage: 50
@@ -1621,7 +1621,7 @@ vehicle.troop_crawler:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Cargo:
-		Types: Infantry, Hacker, Pilot
+		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 8
 		PipCount: 8
 		InitialUnits: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard
@@ -1712,7 +1712,7 @@ vehicle.listening_outpost:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Cargo:
-		Types: Infantry, Hacker, Pilot
+		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 2
 		PipCount: 2
 		InitialUnits: infantry.tank_hunter, infantry.tank_hunter
@@ -2351,7 +2351,7 @@ vehicle.marauder_tank:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle
-		BuildPaletteOrder: 10
+		BuildPaletteOrder: 11
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -3029,6 +3029,268 @@ vehicle.nuke_cannon.nuke:
 	Buildable:
 		Queue: queue.nuke_gen_vehicle
 		Prerequisites: building.propaganda_center, ~techlevel.high
+
+vehicle.combat_cycle:
+	Inherits: ^Vehicle
+	Inherits@AP_BULLETS: ^AffectedByAPBullets
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@DEMOLITION: ^AffectedByDemolitions
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
+	Inherits@REVEAL: ^Reveal300
+	Inherits@SLOW: ^SlowsWhenDamaged
+	OwnerLostAction:
+		Action: Kill
+		-RequiresCondition:
+	-OwnerLostAction@DRIVER_KILLED:
+	Buildable:
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.stealth_gen_vehicle
+		BuildPaletteOrder: 10
+		ForceIconLocation: true
+		BuildDuration: 100
+		BuildDurationModifier: 100
+		Prerequisites: ~prerequisite.zh_units, ~techlevel.low
+		Description: Fast scout vehicle with weapon depending on passenger.\n\nComes with a rebel.
+		ReadyAudio: CycleCreated
+	Valued:
+		Cost: 500
+	CustomProductionCost@Refinery:
+		Queue: queue.gla_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 450
+	CustomProductionCost@Refinery_Toxin:
+		Queue: queue.demo_gen_vehicle, queue.toxin_gen_vehicle, queue.stealth_gen_vehicle
+		Prerequisites: tech.oil_refinery
+		Cost: 495
+	CustomProductionCost@Toxin:
+		Queue: queue.demo_gen_vehicle, queue.toxin_gen_vehicle, queue.stealth_gen_vehicle
+		Cost: 550
+	CustomProductionTime@Demo:
+		Queue: queue.demo_gen_vehicle
+		BuildTime: 125
+	CustomProductionTime@Boss:
+		Queue: queue.boss_gen_vehicle
+		BuildTime: 200
+	Tooltip:
+		Name: Combat Cycle
+	Health:
+		HP: 10000
+	Armor:
+		Type: vehicle.truck
+	Selectable:
+		Class: vehicle.combat_cycle
+	Mobile:
+		TurnSpeed: 8
+		Speed: 120
+		Voice: Move
+		Locomotor: locomotor.sentry_drone
+		RequiresCondition: !notmobile && !hacked && !emp && !leaflet && loaded
+	SpeedMultiplier@DAMAGED:
+		Modifier: 89
+	Crushable:
+		WarnProbability: 0
+		CrushClasses: vehicle
+	Armament@Rebel:
+		Name: mg
+		Weapon: mg.rebel.bike
+		RequiresCondition: rebel
+	Armament@RPG_G:
+		Name: ag_rocket
+		Weapon: missile.rpg_trooper.ground
+		RequiresCondition: rpg
+	Armament@RPG_A:
+		Name: aa_rocket
+		Weapon: missile.rpg_trooper.air
+		RequiresCondition: rpg
+	Armament@Jarmen:
+		Name: sniper_rifle
+		Weapon: sniper.jarmen_kell.bike
+		RequiresCondition: jarmen
+	Armament@Jarmen_Snipe:
+		Name: driver_snipe
+		Weapon: sniper.jarmen_kell.vehicle
+		PauseOnCondition: !ammo
+		RequiresCondition: jarmen
+	Explodes@Terrorist:
+		Weapon: explosion.terrorist.bike
+		EmptyWeapon: explosion.terrorist.bike
+		DeathTypes: Suicide
+		RequiresCondition: terrorist && !demo
+	Explodes@TerroristDemo:
+		Weapon: explosion.terrorist.demo.bike
+		EmptyWeapon: explosion.terrorist.demo.bike
+		DeathTypes: Suicide
+		RequiresCondition: terrorist && demo
+	AttackFrontal:
+		Armaments: mg, ag_rocket, aa_rocket, sniper_rifle, driver_snipe
+		RequiresCondition: !hacked && !emp && !leaflet
+	AttackSuicides:
+		RequiresCondition: terrorist
+		DamageTypes: Suicide
+	AmmoPool:
+		Ammo: 1
+		PipCount: 0
+		Armaments: driver_snipe
+		Name: driver_snipe
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		AmmoPool: driver_snipe
+		Delay: 750
+	Cargo:
+		Types: GLAInfantry
+		MaxWeight: 1
+		PipCount: 1
+		EjectOnDeathDamage: 100
+		LoadingCondition: notmobile
+		LoadedCondition: loaded
+		InitialUnits: infantry.rebel
+		PauseOnCondition: hacked || emp || leaflet
+		PassengerConditions:
+			infantry.worker: worker
+			infantry.rebel: rebel
+			infantry.toxin_rebel: rebel
+			infantry.rpg_trooper: rpg
+			infantry.terrorist: terrorist
+			infantry.toxin_terrorist: terrorist
+			infantry.hijacker: hijacker
+			infantry.hijacker.stealth: hijacker
+			infantry.saboteur: saboteur
+			infantry.jarmen_kell: jarmen
+			infantry.jarmen_kell.demo: jarmen
+			infantry.jarmen_kell.boss: jarmen
+	WithFacingSpriteBody:
+		RequiresCondition: !loaded
+	WithFacingSpriteBody@Other:
+		Sequence: idle-other
+		RequiresCondition: loaded && !(rebel || rpg || jarmen)
+	WithFacingSpriteBody@Gun:
+		Name: gun
+		Sequence: idle-gun
+		RequiresCondition: rebel || jarmen
+	WithFacingSpriteBody@Rocket:
+		Name: rocket
+		Sequence: idle-rocket
+		RequiresCondition: rpg
+	WithAttackAnimation@MG:
+		Body: gun
+		Armament: mg
+		AttackSequence: shoot-gun
+		RequiresCondition: rebel
+	WithAttackAnimation@RPG_G:
+		Body: rocket
+		Armament: ag_rocket
+		AttackSequence: shoot-rocket
+		RequiresCondition: rpg
+	WithAttackAnimation@RPG_A:
+		Body: rocket
+		Armament: aa_rocket
+		AttackSequence: shoot-rocket
+		RequiresCondition: rpg
+	WithAttackAnimation@Sniper:
+		Body: gun
+		Armament: sniper_rifle
+		AttackSequence: shoot-gun
+		RequiresCondition: jarmen
+	WithAttackAnimation@DriverSnipe:
+		Body: gun
+		Armament: driver_snipe
+		AttackSequence: shoot-gun
+		RequiresCondition: jarmen
+	WithDecoration@Rebel:
+		Image: pips
+		Sequence: pip-bike-rebel
+		Palette: effect
+		ReferencePoint: Top, Right
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: rebel
+		ZOffset: 256
+	WithDecoration@RPG:
+		Image: pips
+		Sequence: pip-bike-rpg
+		Palette: effect
+		ReferencePoint: Top, Right
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: rpg
+		ZOffset: 256
+	WithDecoration@Terrorist:
+		Image: pips
+		Sequence: pip-bike-terror
+		Palette: effect
+		ReferencePoint: Top, Right
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: terrorist
+		ZOffset: 256
+	WithDecoration@Jarmen:
+		Image: pips
+		Sequence: pip-bike-kell
+		Palette: effect
+		ReferencePoint: Top, Right
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: jarmen
+		ZOffset: 256
+	WithDecoration@Saboteur:
+		Image: pips
+		Sequence: pip-bike-sabot
+		Palette: effect
+		ReferencePoint: Top, Right
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: saboteur
+		ZOffset: 256
+	WithDecoration@Worker:
+		Image: pips
+		Sequence: pip-bike-worker
+		Palette: effect
+		ReferencePoint: Top, Right
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: worker
+		ZOffset: 256
+	WithDecoration@Hijacker:
+		Image: pips
+		Sequence: pip-bike-hijacker
+		Palette: effect
+		ReferencePoint: Top, Right
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: hijacker
+		ZOffset: 256
+	Cloak:
+		InitialDelay: 200
+		CloakDelay: 100
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled && ((camouflage && rebel) || jarmen || hijacker || saboteur)
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	GrantConditionOnFaction@CAMOUFLAGE:
+		Condition: camouflage
+		Factions: stealth
+	GrantConditionOnPrerequisite@CAMOUFLAGE:
+		Condition: camouflage
+		Prerequisites: upgrade.camouflage
+	GrantConditionOnFaction@Demo:
+		Condition: demo
+		Factions: demo
+	AcceptsDeliveredExperience:
+	-Targetable@DRIVER_KILLED:
+	-Capturable:
+	-CaptureNotification:
+	-Capturable@DRIVER_KILLED:
+	-WithColoredOverlay@DRIVER_KILLED:
+	-ExternalConditionThatRevokedOnCapture@DRIVER_KILLED:
+	-TimedConditionBar@DRIVER_KILLED:
+	RenderSprites:
+		Image: vehicle.combat_cycle
+	Voiced:
+		VoiceSet: CycleVoice
+
+vehicle.combat_cycle.demo:
+	Inherits: vehicle.combat_cycle
+	Buildable:
+		Queue: queue.demo_gen_vehicle, queue.boss_gen_vehicle
+		Description: Fast scout vehicle with weapon depending on passenger.\n\nComes with a terrorist.
+	Cargo:
+		InitialUnits: infantry.terrorist
 
 ^default.mcc:
 	Inherits: ^Vehicle

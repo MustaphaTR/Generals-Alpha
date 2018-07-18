@@ -161,6 +161,19 @@ pips:
 	pip-nuke: pip-nuke
 	pip-neutron: pip-nuke
 		Start: 1
+	pip-bike-rebel: pip-cycle
+	pip-bike-rpg: pip-cycle
+		Start: 1
+	pip-bike-terror: pip-cycle
+		Start: 2
+	pip-bike-kell: pip-cycle
+		Start: 3
+	pip-bike-sabot: pip-cycle
+		Start: 4
+	pip-bike-hijacker: pip-cycle
+		Start: 5
+	pip-bike-worker: pip-cycle
+		Start: 6
 
 v2:
 	idle:
@@ -558,6 +571,11 @@ tnt:
 	idle: bombcurs
 		Length: *
 		Tick: 500
+		ZOffset: 2047
+
+booby_trap:
+	idle: booby
+		Length: *
 		ZOffset: 2047
 
 iconchevrons:

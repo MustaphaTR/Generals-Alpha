@@ -180,6 +180,12 @@ mg.rebel.garrison:
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: TriggerProne, DropCrate, BulletDeath
 
+mg.rebel.bike:
+	Inherits: mg.rebel
+	Burst: 6
+	Warhead@1Dam: SpreadDamage
+		Damage: 800
+
 mg.red_guard:
 	Inherits: ^LightMG
 	ReloadDelay: 25
@@ -575,6 +581,10 @@ sniper.jarmen_kell:
 		Versus:
 			infantry.normal: 200
 		DamageTypes: TriggerProne, DropCrate, BulletDeath
+
+sniper.jarmen_kell.bike:
+	Inherits: sniper.jarmen_kell
+	ReloadDelay: 19
 
 sniper.jarmen_kell.garrison:
 	Inherits: sniper.jarmen_kell

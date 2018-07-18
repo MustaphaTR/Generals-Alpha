@@ -409,6 +409,13 @@ explosion.terrorist.toxin_gamma:
 	Warhead@5Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_gamma
 
+explosion.terrorist.bike:
+	Inherits: explosion.terrorist
+	Warhead@1Dam: SpreadDamage
+		Damage: 60000
+	Warhead@2Eff: CreateEffect
+		Damage: 10000
+
 explosion.suicide:
 	Inherits: explosion.terrorist
 	Warhead@1Dam: SpreadDamage
@@ -419,6 +426,13 @@ explosion.suicide:
 	-Warhead@2DamAlly:
 	-Warhead@Smu:
 	-Warhead@SmuSnow:
+
+explosion.terrorist.demo.bike:
+	Inherits: explosion.terrorist
+	Warhead@1Dam: SpreadDamage
+		Damage: 30000
+	Warhead@2Eff: CreateEffect
+		Damage: 50000
 
 explosion.demo_charge:
 	Inherits: explosion.terrorist

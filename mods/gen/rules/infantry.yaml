@@ -61,6 +61,8 @@ infantry.worker:
 		CollectionQueueMultiplier: 5
 		CollectionQueueCostModifier: 2
 		CollectVoice: Action
+	Passenger:
+		CargoType: GLAInfantry
 	DetectCloaked:
 		CloakTypes: Mine
 		Range: 2c512
@@ -176,6 +178,8 @@ infantry.rebel:
 	GrantConditionOnPrerequisite@CAMOUFLAGE:
 		Condition: camouflage
 		Prerequisites: upgrade.camouflage
+	Passenger:
+		CargoType: GLAInfantry
 	Voiced:
 		VoiceSet: RebelVoice
 	RenderSprites:
@@ -496,6 +500,8 @@ infantry.rpg_trooper:
 		Weapon: missile.rpg_trooper.garrison.air
 	Tooltip:
 		Name: RPG Trooper
+	Passenger:
+		CargoType: GLAInfantry
 	Voiced:
 		VoiceSet: RPGTrooperVoice
 
@@ -686,6 +692,8 @@ infantry.terrorist:
 		Voice: Capture
 	Targetable:
 		TargetTypes: Ground, Infantry, Infantry-Disguise, DetonateAttack, Terrorist
+	Passenger:
+		CargoType: GLAInfantry
 	Voiced:
 		VoiceSet: TerroristVoice
 	RenderSprites:
@@ -803,6 +811,8 @@ infantry.saboteur:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	Passenger:
+		CargoType: GLAInfantry
 	Voiced:
 		VoiceSet: SaboteurVoice
 
@@ -1167,6 +1177,8 @@ infantry.hijacker:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	Passenger:
+		CargoType: GLAInfantry
 	RenderSprites:
 		Image: infantry.hijacker
 
@@ -1363,6 +1375,8 @@ infantry.jarmen_kell:
 		Delay: 750
 	ProvidesPrerequisite@LIMIT:
 		Prerequisite: prerequisite.enough_jarmen_kell
+	Passenger:
+		CargoType: GLAInfantry
 	Voiced:
 		VoiceSet: JarmenVoice
 	-MustBeDestroyed:
