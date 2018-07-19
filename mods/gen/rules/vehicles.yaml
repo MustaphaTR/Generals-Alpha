@@ -3282,6 +3282,8 @@ vehicle.combat_cycle:
 	-WithColoredOverlay@DRIVER_KILLED:
 	-ExternalConditionThatRevokedOnCapture@DRIVER_KILLED:
 	-TimedConditionBar@DRIVER_KILLED:
+	MustBeDestroyed:
+		-RequiresCondition:
 	RenderSprites:
 		Image: vehicle.combat_cycle
 	Voiced:
