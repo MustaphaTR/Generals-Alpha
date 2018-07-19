@@ -3272,6 +3272,9 @@ vehicle.combat_cycle:
 		Condition: demo
 		Factions: demo
 	AcceptsDeliveredExperience:
+	Targetable:
+		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, NoDriverKill
+		RequiresCondition: !parachute
 	-Targetable@DRIVER_KILLED:
 	-Capturable:
 	-CaptureNotification:
