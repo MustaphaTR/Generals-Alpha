@@ -999,6 +999,13 @@ infantry.hacker:
 		Voice: Move
 		CargoConditions:
 			building.internet_center: in_internet_center
+	SelfHealing@IN_INTERNET_CENTER:
+		Step: 0
+		PercentageStep: 10
+		Delay: 25
+		HealIfBelow: 100
+		DamageCooldown: 0
+		RequiresCondition: in_internet_center
 	Armament@Anim:
 		Weapon: disable.hacker.anim
 		LocalOffset: 0,0,196
