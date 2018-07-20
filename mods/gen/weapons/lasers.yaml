@@ -27,7 +27,9 @@ laser.laser_turret.ground:
 		Spread: 0c77
 		Falloff: 100, 100
 		Versus:
+			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
+			aircraft.comanche.countermeasures: 110
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
@@ -50,7 +52,9 @@ laser.laser_turret.air:
 		Spread: 0c77
 		Falloff: 100, 100
 		Versus:
+			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
+			aircraft.comanche.countermeasures: 110
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
@@ -79,6 +83,7 @@ laser.avenger.air:
 			vehicle.dragon_tank: 25
 			aircraft.normal: 120
 			aircraft.comanche: 120
+			aircraft.comanche.countermeasures: 75
 			aircraft.chinook: 50
 			building.normal: 50
 			building.tough: 50

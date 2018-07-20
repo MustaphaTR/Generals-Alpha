@@ -57,6 +57,12 @@ aircraft.badger:
 
 aircraft.badger.paradrop:
 	Inherits: ^default.badger
+	Armor:
+		Type: aircraft.normal
+		RequiresCondition: !countermeasures
+	Armor@COUNTERMEASURES:
+		Type: aircraft.normal.countermeasures
+		RequiresCondition: countermeasures
 	ParaDrop:
 		DropRange: 5c0
 		ChuteSound: sparadra.wav
@@ -64,6 +70,9 @@ aircraft.badger.paradrop:
 		MaxWeight: 20
 	Tooltip:
 		Name: B-52
+	GrantConditionOnPrerequisite@COUNTERMEASURES:
+		Condition: countermeasures
+		Prerequisites: upgrade.countermeasures
 
 aircraft.badger.prc_paradrop:
 	Inherits: ^default.badger
@@ -82,6 +91,12 @@ aircraft.badger.tank_drop:
 
 aircraft.badger.fuel_air_bomb:
 	Inherits: ^default.badger
+	Armor:
+		Type: aircraft.normal
+		RequiresCondition: !countermeasures
+	Armor@COUNTERMEASURES:
+		Type: aircraft.normal.countermeasures
+		RequiresCondition: countermeasures
 	-AttackFrontal:
 	AttackBomber:
 	Armament:
@@ -92,9 +107,18 @@ aircraft.badger.fuel_air_bomb:
 		AmmoCondition: ammo
 	Tooltip:
 		Name: B-52
+	GrantConditionOnPrerequisite@COUNTERMEASURES:
+		Condition: countermeasures
+		Prerequisites: upgrade.countermeasures
 
 aircraft.badger.leaflet:
 	Inherits: ^default.badger
+	Armor:
+		Type: aircraft.normal
+		RequiresCondition: !countermeasures
+	Armor@COUNTERMEASURES:
+		Type: aircraft.normal.countermeasures
+		RequiresCondition: countermeasures
 	-AttackFrontal:
 	AttackBomber:
 	Armament:
@@ -105,6 +129,9 @@ aircraft.badger.leaflet:
 		AmmoCondition: ammo
 	Tooltip:
 		Name: B-52
+	GrantConditionOnPrerequisite@COUNTERMEASURES:
+		Condition: countermeasures
+		Prerequisites: upgrade.countermeasures
 
 aircraft.b2:
 	Inherits: aircraft.badger.fuel_air_bomb
@@ -400,6 +427,13 @@ aircraft.raptor:
 		HP: 16000
 	Armor:
 		Type: aircraft.normal
+		RequiresCondition: !countermeasures
+	Armor@COUNTERMEASURES:
+		Type: aircraft.normal.countermeasures
+		RequiresCondition: countermeasures
+	GrantConditionOnPrerequisite@COUNTERMEASURES:
+		Condition: countermeasures
+		Prerequisites: upgrade.countermeasures
 	Armament@AG:
 		Weapon: missile.raptor.ground
 		LocalOffset: 0,-640,0, 0,640,0
@@ -531,6 +565,10 @@ aircraft.stealth_fighter:
 		HP: 12000
 	Armor:
 		Type: aircraft.normal
+		RequiresCondition: !countermeasures
+	Armor@COUNTERMEASURES:
+		Type: aircraft.normal.countermeasures
+		RequiresCondition: countermeasures
 	Armament:
 		Weapon: missile.stealth_fighter
 		LocalOffset: 0,-640,0, 0,640,0
@@ -591,6 +629,9 @@ aircraft.stealth_fighter:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	GrantConditionOnPrerequisite@COUNTERMEASURES:
+		Condition: countermeasures
+		Prerequisites: upgrade.countermeasures
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
@@ -659,6 +700,10 @@ aircraft.aurora:
 		Modifier: 66
 	Armor:
 		Type: aircraft.normal
+		RequiresCondition: !countermeasures
+	Armor@COUNTERMEASURES:
+		Type: aircraft.normal.countermeasures
+		RequiresCondition: countermeasures
 	Armament:
 		Weapon: missile.aurora
 		LocalYaw: -40, 24
@@ -675,6 +720,9 @@ aircraft.aurora:
 	GrantConditionOnFaction@Airforce:
 		Condition: airforce
 		Factions: air
+	GrantConditionOnPrerequisite@COUNTERMEASURES:
+		Condition: countermeasures
+		Prerequisites: upgrade.countermeasures
 	AttackPlane:
 		FacingTolerance: 20
 	DockClient:
@@ -872,6 +920,13 @@ aircraft.a10:
 		HP: 60000
 	Armor:
 		Type: aircraft.normal
+		RequiresCondition: !countermeasures
+	Armor@COUNTERMEASURES:
+		Type: aircraft.normal.countermeasures
+		RequiresCondition: countermeasures
+	GrantConditionOnPrerequisite@COUNTERMEASURES:
+		Condition: countermeasures
+		Prerequisites: upgrade.countermeasures
 	Valued:
 		Cost: 2000
 	Aircraft:
@@ -1198,6 +1253,10 @@ aircraft.comanche:
 		HP: 22000
 	Armor:
 		Type: aircraft.comanche
+		RequiresCondition: !countermeasures
+	Armor@COUNTERMEASURES:
+		Type: aircraft.comanche.countermeasures
+		RequiresCondition: countermeasures
 	Armament@MG:
 		Weapon: mg.comanche
 		LocalOffset: 512,0,-85
@@ -1212,6 +1271,9 @@ aircraft.comanche:
 	GrantConditionOnPrerequisite@ROCKET_PODS:
 		Condition: rocket_pods
 		Prerequisites: upgrade.rocket_pods
+	GrantConditionOnPrerequisite@COUNTERMEASURES:
+		Condition: countermeasures
+		Prerequisites: upgrade.countermeasures
 	AmmoPool:
 		Name: secondary
 		Armaments: secondary
