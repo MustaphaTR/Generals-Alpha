@@ -48,6 +48,7 @@ vehicle.supply_truck:
 		Type: vehicle.truck
 	Mobile:
 		Speed: 40
+		TurnSpeed: 4
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
@@ -121,7 +122,7 @@ vehicle.humvee:
 	Selectable:
 		Class: vehicle.humvee
 	Mobile:
-		TurnSpeed: 10
+		TurnSpeed: 8
 		Speed: 60
 		Voice: Move
 		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
@@ -131,11 +132,11 @@ vehicle.humvee:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted@MG:
-		TurnSpeed: 10
+		TurnSpeed: 8
 		Offset: 32,0,85
 	Turreted@TOW:
 		Turret: tow
-		TurnSpeed: 6
+		TurnSpeed: 8
 		Offset: -160,0,85
 	Armament@MG:
 		Weapon: mg.sentry_drone
@@ -239,7 +240,7 @@ vehicle.technical:
 	Selectable:
 		Class: vehicle.technical
 	Mobile:
-		TurnSpeed: 10
+		TurnSpeed: 8
 		Speed: 90
 		Voice: Move
 		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
@@ -337,6 +338,7 @@ vehicle.radar_van:
 		Class: vehicle.radar_van
 	Mobile:
 		Speed: 40
+		TurnSpeed: 8
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
@@ -428,6 +430,7 @@ vehicle.scorpion_tank:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 40
+		TurnSpeed: 8
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
@@ -435,9 +438,9 @@ vehicle.scorpion_tank:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted@Cannon:
-		TurnSpeed: 7
+		TurnSpeed: 4
 	Turreted@SC_ROCKET:
-		TurnSpeed: 7
+		TurnSpeed: 4
 		Turret: sc_rocket
 		Offset: 0,64,128
 	Armament@Cannon:
@@ -553,6 +556,7 @@ vehicle.crusader_tank:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 30
+		TurnSpeed: 8
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
@@ -560,7 +564,7 @@ vehicle.crusader_tank:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 8
 	Armament:
 		Weapon: cannon.crusader_tank
 		Recoil: 128
@@ -662,6 +666,7 @@ vehicle.battlemaster_tank:
 		DecorationBounds: 28,28
 	Mobile:
 		Speed: 25
+		TurnSpeed: 8
 		Voice: Move
 	Crushable:
 		WarnProbability: 0
@@ -756,6 +761,7 @@ vehicle.ambulance:
 		Class: vehicle.ambulance
 	Mobile:
 		Speed: 60
+		TurnSpeed: 8
 		Voice: Move
 		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
 	SpeedMultiplier@DAMAGED:
@@ -932,6 +938,7 @@ vehicle.quad_cannon:
 		BuildTime: 150
 	Mobile:
 		Speed: 40
+		TurnSpeed: 8
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 63
@@ -945,7 +952,7 @@ vehicle.quad_cannon:
 	Selectable:
 		Class: vehicle.quad_cannon
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 15
 		Offset: -304,0,96
 	Armament@PRIMARY:
 		Weapon: mg.quad_cannon.ground
@@ -1002,6 +1009,7 @@ vehicle.gatling_tank:
 		Cost: 700
 	Mobile:
 		Speed: 40
+		TurnSpeed: 8
 		Voice: Move
 	Crushable:
 		WarnProbability: 0
@@ -1110,7 +1118,7 @@ vehicle.toxin_tractor:
 		Queue: queue.demo_gen_vehicle
 		Cost: 750
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 8
 		Speed: 30
 		Voice: Move
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !spray
@@ -1153,7 +1161,7 @@ vehicle.toxin_tractor:
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !spray
 	WithSpriteTurret:
 	Turreted:
-		TurnSpeed: 6
+		TurnSpeed: 8
 		Offset: -192,0,160
 	FireWeaponAtSelf@ALPHA:
 		Name: deploy_alpha
@@ -1230,7 +1238,7 @@ vehicle.dragon_tank:
 		Queue: queue.tank_gen_vehicle
 		Cost: 700
 	Mobile:
-		TurnSpeed: 6
+		TurnSpeed: 8
 		Speed: 30
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
@@ -1316,7 +1324,7 @@ vehicle.rocket_buggy:
 		Queue: queue.demo_gen_vehicle
 		Cost: 1000
 	Mobile:
-		TurnSpeed: 10
+		TurnSpeed: 8
 		Speed: 90
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
@@ -1341,7 +1349,7 @@ vehicle.rocket_buggy:
 		LocalYaw: 100, -100
 		RequiresCondition: buggy_ammo
 	Turreted:
-		TurnSpeed: 6
+		TurnSpeed: 8
 		Offset: -196,0,85
 	WithSpriteTurret:
 		Sequence: turret2
@@ -1421,6 +1429,7 @@ vehicle.avenger:
 		Type: vehicle.avenger
 	Mobile:
 		Speed: 30
+		TurnSpeed: 8
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
@@ -1430,7 +1439,7 @@ vehicle.avenger:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 8
 		Offset: -128,0,192
 	Armament@MG:
 		Weapon: laser.avenger.air
@@ -1525,6 +1534,7 @@ vehicle.battle_Bus:
 		DecorationBounds: 28, 28
 	Mobile:
 		Speed: 70
+		TurnSpeed: 4
 		Voice: Move
 		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet && !husk
 	SpeedMultiplier@DAMAGED:
@@ -1613,6 +1623,7 @@ vehicle.troop_crawler:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 40
+		TurnSpeed: 5
 		Voice: Move
 		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
 	SpeedMultiplier@DAMAGED:
@@ -1704,6 +1715,7 @@ vehicle.listening_outpost:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 40
+		TurnSpeed: 4
 		Voice: Move
 		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
 	SpeedMultiplier@DAMAGED:
@@ -1811,6 +1823,7 @@ vehicle.microwave_tank:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 30
+		TurnSpeed: 8
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
@@ -1900,6 +1913,7 @@ vehicle.ecm_tank:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 40
+		TurnSpeed: 8
 		Voice: Move
 	Crushable:
 		WarnProbability: 0
@@ -1989,6 +2003,7 @@ vehicle.tomahawk_launcher:
 		Cost: 1400
 	Mobile:
 		Speed: 30
+		TurnSpeed: 8
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
@@ -2002,7 +2017,7 @@ vehicle.tomahawk_launcher:
 	Selectable:
 		Class: vehicle.tomahawk_launcher
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 3
 		Offset: -128,0,128
 		RealignDelay: 0
 	Armament:
@@ -2093,7 +2108,7 @@ vehicle.scud_launcher:
 	ProvidesPrerequisite@unitname:
 	Mobile:
 		Speed: 20
-		TurnSpeed: 3
+		TurnSpeed: 2
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
@@ -2209,7 +2224,7 @@ vehicle.inferno_cannon:
 	Selectable:
 		Class: vehicle.inferno_cannon
 	Mobile:
-		TurnSpeed: 3
+		TurnSpeed: 5
 		Speed: 30
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
@@ -2280,6 +2295,7 @@ vehicle.paladin_tank:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 30
+		TurnSpeed: 8
 		Voiced: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
@@ -2287,7 +2303,7 @@ vehicle.paladin_tank:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
-		TurnSpeed: 3
+		TurnSpeed: 8
 		Offset: 0,0,160
 	Armament@Cannon:
 		Weapon: cannon.paladin_tank
@@ -2379,6 +2395,7 @@ vehicle.marauder_tank:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 40
+		TurnSpeed: 8
 		Voiced: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
@@ -2386,7 +2403,7 @@ vehicle.marauder_tank:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 8
 		Offset: 128,0,-64
 	Armament@Cannon:
 		Weapon: cannon.marauder_tank
@@ -2556,14 +2573,15 @@ vehicle.overlord_tank:
 		Type: queue.overlord_tank
 	Mobile:
 		Speed: 20
+		TurnSpeed: 3
 		Voiced: Move
 		Locomotor: locomotor.overlord
 		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
 	Turreted@Cannon:
-		TurnSpeed: 2
+		TurnSpeed: 3
 	Turreted@Gatling:
 		Turret: gatling
-		TurnSpeed: 2
+		TurnSpeed: 3
 		Offset: 0,0,384
 	Turreted@Bunker:
 		Turret: bunker
@@ -2790,6 +2808,7 @@ vehicle.bomb_truck:
 	SelectionDecorations:
 	Mobile:
 		Speed: 50
+		TurnSpeed: 4
 		Voice: Move
 	Crushable:
 		WarnProbability: 0
@@ -3080,8 +3099,8 @@ vehicle.combat_cycle:
 	Selectable:
 		Class: vehicle.combat_cycle
 	Mobile:
-		TurnSpeed: 8
 		Speed: 120
+		TurnSpeed: 5
 		Voice: Move
 		Locomotor: locomotor.sentry_drone
 		RequiresCondition: !notmobile && !hacked && !emp && !leaflet && loaded
@@ -3323,6 +3342,7 @@ vehicle.combat_cycle.demo:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 25
+		TurnSpeed: 4
 		Voice: Move
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !deployed
 	SpeedMultiplier@DAMAGED:

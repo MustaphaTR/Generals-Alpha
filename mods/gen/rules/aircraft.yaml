@@ -354,7 +354,7 @@ aircraft.mig:
 	Aircraft:
 		CruiseAltitude: 2560
 		InitialFacing: 192
-		TurnSpeed: 4
+		TurnSpeed: 5
 		Speed: 160
 		RepulsionSpeed: 40
 		MaximumPitch: 56
@@ -456,7 +456,7 @@ aircraft.raptor:
 	Aircraft:
 		CruiseAltitude: 2560
 		InitialFacing: 192
-		TurnSpeed: 4
+		TurnSpeed: 5
 		Speed: 175
 		RepulsionSpeed: 40
 		MaximumPitch: 56
@@ -586,7 +586,7 @@ aircraft.stealth_fighter:
 	Aircraft:
 		CruiseAltitude: 2560
 		InitialFacing: 192
-		TurnSpeed: 4
+		TurnSpeed: 8
 		Speed: 175
 		RepulsionSpeed: 40
 		MaximumPitch: 56
@@ -735,7 +735,7 @@ aircraft.aurora:
 	Aircraft:
 		CruiseAltitude: 2560
 		InitialFacing: 192
-		TurnSpeed: 6
+		TurnSpeed: 8
 		Speed: 180
 		RepulsionSpeed: 40
 		MaximumPitch: 56
@@ -887,6 +887,8 @@ aircraft.battle_drone:
 	-Contrail:
 	-DetectCloaked:
 	-RenderDetectionCircle:
+	Aircraft:
+		TurnSpeed: 5
 	Armament@MG:
 		Weapon: mg.battle_drone
 		LocalOffset: 300,0,-16
@@ -1013,7 +1015,7 @@ aircraft.chinook:
 		Type: aircraft.chinook
 	Mobile:
 		Speed: 60
-		TurnSpeed: 5
+		TurnSpeed: 8
 		Voice: Move
 		Locomotor: locomotor.chinook
 	SpeedMultiplier@DAMAGED:
@@ -1290,7 +1292,7 @@ aircraft.comanche:
 		CruiseAltitude: 1928
 		LandWhenIdle: false
 		InitialFacing: 224
-		TurnSpeed: 4
+		TurnSpeed: 8
 		Speed: 120
 		Voice: Move
 	WithIdleOverlay@ROTORAIR:
@@ -1430,7 +1432,7 @@ aircraft.helix:
 	Aircraft:
 		CruiseAltitude: 1928
 		InitialFacing: 192
-		TurnSpeed: 3
+		TurnSpeed: 8
 		Speed: 75
 		Voice: Move
 		LandableTerrainTypes: Grass, Snow, Sand, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Beach, Gems

@@ -1518,7 +1518,7 @@ building.patriot:
 	WithBuildingBib:
 		HasMinibib: Yes
 	Turreted:
-		TurnSpeed: 30
+		TurnSpeed: 8
 		InitialFacing: 0
 	-WithSpriteBody:
 	WithEmbeddedTurretSpriteBody:
@@ -1801,7 +1801,7 @@ building.gatling_cannon:
 	WithBuildingBib:
 		HasMinibib: Yes
 	Turreted:
-		TurnSpeed: 15
+		TurnSpeed: 8
 		InitialFacing: 224
 	-WithSpriteBody:
 	WithEmbeddedTurretSpriteBody:
@@ -1876,7 +1876,7 @@ building.firebase:
 		Bounds: 48,48
 	ProvidesPrerequisite@buildingname:
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 3
 		InitialFacing: 224
 	-WithMakeAnimation:
 	WithMakeAnimation@A:
@@ -2282,7 +2282,7 @@ building.prc_war_factory:
 		Bounds: 48,48
 		Class: building.tunnel_network
 	Turreted:
-		TurnSpeed: 12
+		TurnSpeed: 8
 		InitialFacing: 56
 		Offset: 0,0,256
 	SharedCargo:
@@ -2856,7 +2856,7 @@ building.strategy_center:
 		CircleSequence: circles
 		OrderName: CarpetBombingUSAPowerInfoOrder
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 3
 		InitialFacing: 96
 		Offset: -416, -576, 0
 	RenderDetectionCircle:
@@ -3569,22 +3569,22 @@ building.scud_storm:
 		PauseOnCondition: !ammo
 	Turreted@A:
 		Turret: A
-		TurnSpeed: 3
+		TurnSpeed: 2
 		PreviewFacing: 0
 		Offset: -512, -512, 0
 	Turreted@B:
 		Turret: B
-		TurnSpeed: 3
+		TurnSpeed: 2
 		PreviewFacing: 0
 		Offset: 512, -512, 0
 	Turreted@C:
 		Turret: C
-		TurnSpeed: 3
+		TurnSpeed: 2
 		PreviewFacing: 0
 		Offset: -512, 512, 0
 	Turreted@D:
 		Turret: D
-		TurnSpeed: 3
+		TurnSpeed: 2
 		PreviewFacing: 0
 		Offset: 512, 512, 0
 	AmmoPool:
