@@ -2943,7 +2943,7 @@ vehicle.nuke_cannon:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, ~generals_power.nuke_cannon, ~techlevel.high
-		Description: Heavy artillery unit armed with nuclear warheads.
+		Description: Heavy artillery unit armed with nuclear warheads.\n\nImmobilizes for 5 seconds after firing.
 		ReadyAudio: NukeCannonCreated
 	Valued:
 		Cost: 1600
@@ -2960,6 +2960,7 @@ vehicle.nuke_cannon:
 		Speed: 20
 		TurnSpeed: 4
 		Voice: Move
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !immobile
 	SpeedMultiplier@DAMAGED:
 		Modifier: 90
 	Crushable:
@@ -2987,6 +2988,13 @@ vehicle.nuke_cannon:
 		MuzzleSequence: muzzle
 		RequiresCondition: neutron
 		PauseOnCondition: !ammo || moving
+	GrantConditionOnAttack@Immobile:
+		Condition: immobile
+		RequiredShotsPerInstance: 1
+		MaximumInstances: 1
+		RevokeDelay: 125
+		RevokeAll: true
+		IsCyclic: false
 	Explodes:
 		Weapon: explosion.nuke_cannon
 		EmptyWeapon: explosion.nuke_cannon
