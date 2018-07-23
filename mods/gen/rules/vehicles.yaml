@@ -2943,7 +2943,7 @@ vehicle.nuke_cannon:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, ~generals_power.nuke_cannon, ~techlevel.high
-		Description: Heavy artillery unit armed with nuclear warheads.\n\nImmobilizes for 5 seconds after firing.
+		Description: Heavy artillery unit armed with nuclear warheads.\n\nShould be not moving for 3 seconds to fire.\n\nCan not move for 3 seconds after firing.
 		ReadyAudio: NukeCannonCreated
 	Valued:
 		Cost: 1600
@@ -2979,7 +2979,7 @@ vehicle.nuke_cannon:
 		RecoilRecovery: 30
 		MuzzleSequence: muzzle
 		RequiresCondition: !neutron
-		PauseOnCondition: !ammo || moving
+		PauseOnCondition: !ammo || moving || !deployed
 	Armament@Neutron:
 		Weapon: cannon.nuke_cannon.neutron
 		LocalOffset: 624,0,208
@@ -2987,12 +2987,12 @@ vehicle.nuke_cannon:
 		RecoilRecovery: 30
 		MuzzleSequence: muzzle
 		RequiresCondition: neutron
-		PauseOnCondition: !ammo || moving
+		PauseOnCondition: !ammo || moving || !deployed
 	GrantConditionOnAttack@Immobile:
 		Condition: immobile
 		RequiredShotsPerInstance: 1
 		MaximumInstances: 1
-		RevokeDelay: 125
+		RevokeDelay: 75
 		RevokeAll: true
 		IsCyclic: false
 	Explodes:
@@ -3028,6 +3028,11 @@ vehicle.nuke_cannon:
 	GrantConditionOnMovement:
 		Condition: moving
 		ConsiderTurning: true
+	GrantConditionAfterDelay:
+		Condition: deployed
+		Delay: 75
+		ShowSelectionBar: false
+		RequiresCondition: !moving
 	ThrowsShrapnel:
 		Weapons: debris.nuke_cannon
 		Pieces: 1, 1
