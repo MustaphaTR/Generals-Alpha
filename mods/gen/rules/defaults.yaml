@@ -627,21 +627,25 @@
 			vehicle.attack_outpost: in_crawler_or_outpost
 
 ^AffectedByScrapCratePowerups:
-	DamageMultiplier@CRATE_ARMOR:
-		RequiresCondition: crate.armor
-		Modifier: 90
-	FirepowerMultiplier@CRATE_FIREPOWER:
-		RequiresCondition: crate.firepower
-		Modifier: 110
-	SpeedMultiplier@CRATE_SPEED:
-		RequiresCondition: crate.speed
-		Modifier: 110
-	ExternalCondition@CRATE_ARMOR:
-		Condition: crate.armor
-	ExternalCondition@CRATE_FIREPOWER:
-		Condition: crate.firepower
-	ExternalCondition@CRATE_SPEED:
-		Condition: crate.speed
+	WithDecoration@CRATE-1:
+		Image: rank
+		Sequence: rank-crate-1
+		Palette: effect
+		ReferencePoint: Top, Left
+		RequiresCondition: scrap_create_bonus == 1
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	WithDecoration@CRATE-2:
+		Image: rank
+		Sequence: rank-crate-2
+		Palette: effect
+		ReferencePoint: Top, Left
+		RequiresCondition: scrap_create_bonus == 2
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+	ExternalCondition@SCRAP_CREATE_BONUS:
+		Condition: scrap_create_bonus
+		TotalCap: 2
 
 ^AffectedByRadiationAndToxins:
 	DamagedByRadioactivity@ANTHRAX_ALPHA:
@@ -1164,15 +1168,14 @@
 	Inherits@11: ^AffectedByDriverKill
 	Inherits@12: ^AffectedByEMP
 	Inherits@13: ^AffectedByEmergencyRepair
-	Inherits@14: ^AffectedByScrapCratePowerups
-	Inherits@15: ^AffectedByFrenzy
-	Inherits@16: ^AffectedByRadiationAndToxins
-	Inherits@17: ^AffectedByGPSScambler
-	Inherits@18: ^AffectedByAmbulanceZHOnly
-	Inherits@19: ^AffectedByRepairBay
-	Inherits@20: ^TakesBounty
-	Inherits@21: ^AffectedByLeaflet
-	Inherits@22: ^AcceptsTNTCharges
+	Inherits@14: ^AffectedByFrenzy
+	Inherits@15: ^AffectedByRadiationAndToxins
+	Inherits@16: ^AffectedByGPSScambler
+	Inherits@17: ^AffectedByAmbulanceZHOnly
+	Inherits@18: ^AffectedByRepairBay
+	Inherits@19: ^TakesBounty
+	Inherits@20: ^AffectedByLeaflet
+	Inherits@21: ^AcceptsTNTCharges
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1383,14 +1386,13 @@
 	Inherits@5: ^AffectedBySearchAndDestroy
 	Inherits@6: ^AffectedByHoldTheLine
 	Inherits@7: ^AffectsDemoTrap
-	Inherits@8: ^AffectedByScrapCratePowerups
-	Inherits@9: ^AffectedByFrenzy
-	Inherits@10: ^AffectedByRadiationAndToxins
-	Inherits@11: ^AffectedByGPSScambler
-	Inherits@12: ^AffectedByAmbulance
-	Inherits@13: ^TakesBounty
-	Inherits@14: ^AffectedByLeaflet
-	Inherits@15: ^HealedInTransports
+	Inherits@8: ^AffectedByFrenzy
+	Inherits@9: ^AffectedByRadiationAndToxins
+	Inherits@10: ^AffectedByGPSScambler
+	Inherits@11: ^AffectedByAmbulance
+	Inherits@12: ^TakesBounty
+	Inherits@13: ^AffectedByLeaflet
+	Inherits@14: ^HealedInTransports
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1537,14 +1539,13 @@
 	Inherits@8: ^AffectsDemoTrap
 	Inherits@9: ^AffectedByHacking
 	Inherits@10: ^AffectedByEMP
-	Inherits@11: ^AffectedByScrapCratePowerups
-	Inherits@12: ^AffectedByEmergencyRepair
-	Inherits@13: ^AffectedByFrenzy
-	Inherits@14: ^AffectedByRadiationAndToxins
-	Inherits@15: ^AffectedByGPSScambler
-	Inherits@16: ^AffectedByRepairBay
-	Inherits@17: ^TakesBounty
-	Inherits@18: ^AffectedByLeaflet
+	Inherits@11: ^AffectedByEmergencyRepair
+	Inherits@12: ^AffectedByFrenzy
+	Inherits@13: ^AffectedByRadiationAndToxins
+	Inherits@14: ^AffectedByGPSScambler
+	Inherits@15: ^AffectedByRepairBay
+	Inherits@16: ^TakesBounty
+	Inherits@17: ^AffectedByLeaflet
 	Huntable:
 	OwnerLostAction:
 		Action: Kill

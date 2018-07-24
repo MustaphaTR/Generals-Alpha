@@ -27,6 +27,10 @@ laser.laser_turret.ground:
 		Spread: 0c77
 		Falloff: 100, 100
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -52,6 +56,10 @@ laser.laser_turret.air:
 		Spread: 0c77
 		Falloff: 100, 100
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -81,6 +89,12 @@ laser.avenger.air:
 			vehicle.tank: 25
 			vehicle.assault_troop_crawler: 25
 			vehicle.dragon_tank: 25
+			vehicle.battle_bus: 25
+			vehicle.battle_bus.crate-1: 20
+			vehicle.battle_bus.crate-2: 15
+			husk.battle_bus: 25
+			husk.battle_bus.crate-1: 20
+			husk.battle_bus.crate-2: 15
 			aircraft.normal: 120
 			aircraft.comanche: 120
 			aircraft.comanche.countermeasures: 75

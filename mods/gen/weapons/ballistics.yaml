@@ -39,7 +39,11 @@ cannon.scorpion_tank:
 		Versus:
 			infantry.normal: 10
 			vehicle.battle_bus: 90
+			vehicle.battle_bus.crate-1: 81
+			vehicle.battle_bus.crate-2: 75
 			husk.battle_bus: 90
+			husk.battle_bus.crate-1: 81
+			husk.battle_bus.crate-2: 75
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 	-Warhead@2Smu: LeaveSmudge
 	-Warhead@2SmuSnow: LeaveSmudge
@@ -66,6 +70,48 @@ cannon.scorpion_tank.toxin_gamma:
 	Inherits: cannon.scorpion_tank.toxin
 	Warhead@1Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_gamma
+
+cannon.technical:
+	Inherits: cannon.scorpion_tank
+	Warhead@1Dam: SpreadDamage
+		Damage: 4500
+		Spread: 0c640
+		Versus:
+			infantry.normal: 100
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.avenger: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 50
+			vehicle.tank: 25
+			vehicle.assault_troop_crawler: 25
+			vehicle.dragon_tank: 25
+			vehicle.battle_bus: 25
+			vehicle.battle_bus.crate-1: 20
+			vehicle.battle_bus.crate-2: 15
+			husk.battle_bus: 25
+			husk.battle_bus.crate-1: 20
+			husk.battle_bus.crate-2: 15
+			aircraft.normal: 120
+			aircraft.normal.countermeasures: 75
+			aircraft.comanche: 120
+			aircraft.comanche.countermeasures: 75
+			aircraft.chinook: 50
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
+			building.wall: 6
+
+cannon.technical.zh:
+	Inherits: cannon.technical
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			vehicle.tank: 10
+			building.normal: 10
+			building.tough: 10
+			building.defense: 25
+			building.stinger_site: 10
 
 cannon.crusader_tank:
 	Inherits: ^Cannon
@@ -137,6 +183,16 @@ cannon.marauder_tank:
 			husk.battle_bus: 90
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
+cannon.marauder_tank.crate-1:
+	Inherits: cannon.marauder_tank
+	ReloadDelay: 38
+
+cannon.marauder_tank.crate-2:
+	Inherits: cannon.marauder_tank.crate-1
+	Burst: 2
+	BurstDelay: 3
+	ReloadDelay: 25
+
 cannon.marauder_tank.toxin:
 	Inherits: cannon.marauder_tank
 	Warhead@1Radio: CreateRadioactivity
@@ -146,31 +202,101 @@ cannon.marauder_tank.toxin:
 		Falloff: 100, 90, 50, 0
 		MaxLevel: 2500
 
+cannon.marauder_tank.crate-1.toxin:
+	Inherits: cannon.marauder_tank.toxin
+	ReloadDelay: 38
+
+cannon.marauder_tank.crate-2.toxin:
+	Inherits: cannon.marauder_tank.crate-1.toxin
+	Burst: 2
+	BurstDelay: 3
+	ReloadDelay: 19
+
 cannon.marauder_tank.toxin_beta:
 	Inherits: cannon.marauder_tank.toxin
 	Warhead@1Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_beta
+
+cannon.marauder_tank.crate-1.toxin_beta:
+	Inherits: cannon.marauder_tank.toxin_beta
+	ReloadDelay: 38
+
+cannon.marauder_tank.crate-2.toxin_beta:
+	Inherits: cannon.marauder_tank.crate-1.toxin_beta
+	Burst: 2
+	BurstDelay: 3
+	ReloadDelay: 19
 
 cannon.marauder_tank.toxin_gamma:
 	Inherits: cannon.marauder_tank.toxin
 	Warhead@1Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_gamma
 
+cannon.marauder_tank.crate-1.toxin_gamma:
+	Inherits: cannon.marauder_tank.toxin_gamma
+	ReloadDelay: 38
+
+cannon.marauder_tank.crate-2.toxin_gamma:
+	Inherits: cannon.marauder_tank.crate-1.toxin_gamma
+	Burst: 2
+	BurstDelay: 3
+	ReloadDelay: 19
+
 cannon.marauder_tank.zh:
 	Inherits: cannon.marauder_tank
 	Range: 4c256
+
+cannon.marauder_tank.crate-1.zh:
+	Inherits: cannon.marauder_tank.zh
+	ReloadDelay: 38
+
+cannon.marauder_tank.crate-2.zh:
+	Inherits: cannon.marauder_tank.crate-1.zh
+	Burst: 2
+	BurstDelay: 3
+	ReloadDelay: 19
 
 cannon.marauder_tank.toxin.zh:
 	Inherits: cannon.marauder_tank.toxin
 	Range: 4c256
 
+cannon.marauder_tank.crate-1.toxin.zh:
+	Inherits: cannon.marauder_tank.toxin.zh
+	ReloadDelay: 38
+
+cannon.marauder_tank.crate-2.toxin.zh:
+	Inherits: cannon.marauder_tank.crate-1.toxin.zh
+	Burst: 2
+	BurstDelay: 3
+	ReloadDelay: 19
+
 cannon.marauder_tank.toxin_beta.zh:
 	Inherits: cannon.marauder_tank.toxin_beta
 	Range: 4c256
 
+cannon.marauder_tank.crate-1.toxin_beta.zh:
+	Inherits: cannon.marauder_tank.toxin_beta.zh
+	ReloadDelay: 38
+
+cannon.marauder_tank.crate-2.toxin_beta.zh:
+	Inherits: cannon.marauder_tank.crate-1.toxin_beta.zh
+	Burst: 2
+	BurstDelay: 3
+	ReloadDelay: 19
+
 cannon.marauder_tank.toxin_gamma.zh:
 	Inherits: cannon.marauder_tank.toxin_gamma
 	Range: 4c256
+
+cannon.marauder_tank.crate-1.toxin_gamma.zh:
+	Inherits: cannon.marauder_tank.toxin_gamma.zh
+	ReloadDelay: 38
+
+cannon.marauder_tank.crate-2.toxin_gamma.zh:
+	Inherits: cannon.marauder_tank.crate-1.toxin_gamma.zh
+	Burst: 2
+	BurstDelay: 3
+	ReloadDelay: 19
 
 cannon.overlord_tank:
 	Inherits: ^Cannon
@@ -245,6 +371,10 @@ cannon.inferno_cannon:
 		Spread: 0c341
 		Damage: 3000
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -283,6 +413,10 @@ cannon.nuke_cannon:
 		Spread: 1c256
 		Damage: 38000
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -295,6 +429,10 @@ cannon.nuke_cannon:
 		Falloff: 100, 100
 		Damage: 2000
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -368,6 +506,10 @@ cannon.strategy_center:
 		Spread: 0c640
 		Damage: 20000
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -406,6 +548,10 @@ cannon.firebase:
 		Spread: 0c256
 		Damage: 7500
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -443,6 +589,10 @@ cannon.cruiser:
 		Spread: 0c341
 		Damage: 25000
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -463,6 +613,10 @@ cannon.gunboat:
 	Warhead@1Dam: SpreadDamage
 		Damage: 2500
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -483,6 +637,10 @@ bomb.carpet:
 		Spread: 1c0
 		Damage: 30000
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -556,6 +714,10 @@ grenade.ranger:
 		Damage: 1000
 		InvalidTargets: Vehicle, Tank, Structure, Wall
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -582,6 +744,10 @@ grenade.grenadier:
 		Spread: 0c256
 		Damage: 6000
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -612,6 +778,10 @@ ArtyBarrageWeapon:
 		Spread: 1c256
 		Damage: 10500
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110

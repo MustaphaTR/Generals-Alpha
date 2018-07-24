@@ -154,30 +154,21 @@ crate.scrap:
 		Name: Scrap Crate
 	GiveCashCrateAction@1:
 		Amount: 25
-		SelectionShares: 25
+		SelectionShares: 1
 		UseCashTick: true
 	GiveCashCrateAction@2:
 		Amount: 50
-		SelectionShares: 50
+		SelectionShares: 2
 		UseCashTick: true
 	GiveCashCrateAction@3:
 		Amount: 75
-		SelectionShares: 25
+		SelectionShares: 1
 		UseCashTick: true
 	LevelUpCrateAction:
-		SelectionShares: 25
-	GrantExternalConditionCrateAction@Armor:
-		SelectionShares: 10
-		Effect: armor
-		Condition: crate.armor
-	GrantExternalConditionCrateAction@Speed:
-		SelectionShares: 10
-		Effect: fpower
-		Condition: crate.fire_power
-	GrantExternalConditionCrateAction@Firepower:
-		SelectionShares: 10
-		Effect: speed
-		Condition: crate.speed
+		SelectionShares: 1
+	GrantExternalConditionCrateAction@SCRAP_CREATE_BONUS:
+		SelectionShares: 1000
+		Condition: scrap_create_bonus
 	RenderSprites:
 		Image: wcrate
 

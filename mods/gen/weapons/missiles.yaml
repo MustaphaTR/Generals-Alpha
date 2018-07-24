@@ -71,7 +71,11 @@ missile.mig.ground:
 			vehicle.avenger: 30
 			vehicle.assault_troop_crawler: 60
 			vehicle.battle_bus: 75
+			vehicle.battle_bus.crate-1: 70
+			vehicle.battle_bus.crate-2: 65
 			husk.battle_bus: 50
+			husk.battle_bus.crate-1: 45
+			husk.battle_bus.crate-2: 40
 			building.defense: 25
 			building.stinger_site: 40
 			aircraft.normal: 25
@@ -86,7 +90,11 @@ missile.mig.ground:
 			vehicle.avenger: 30
 			vehicle.assault_troop_crawler: 60
 			vehicle.battle_bus: 75
+			vehicle.battle_bus.crate-1: 70
+			vehicle.battle_bus.crate-2: 65
 			husk.battle_bus: 50
+			husk.battle_bus.crate-1: 45
+			husk.battle_bus.crate-2: 40
 			building.defense: 25
 			building.stinger_site: 40
 			aircraft.normal: 25
@@ -156,7 +164,11 @@ missile.mig.air:
 			vehicle.avenger: 30
 			vehicle.assault_troop_crawler: 60
 			vehicle.battle_bus: 75
+			vehicle.battle_bus.crate-1: 70
+			vehicle.battle_bus.crate-2: 65
 			husk.battle_bus: 50
+			husk.battle_bus.crate-1: 45
+			husk.battle_bus.crate-2: 40
 			building.defense: 25
 			building.stinger_site: 40
 			aircraft.normal: 25
@@ -171,7 +183,11 @@ missile.mig.air:
 			vehicle.avenger: 30
 			vehicle.assault_troop_crawler: 60
 			vehicle.battle_bus: 75
+			vehicle.battle_bus.crate-1: 70
+			vehicle.battle_bus.crate-2: 65
 			husk.battle_bus: 50
+			husk.battle_bus.crate-1: 45
+			husk.battle_bus.crate-2: 40
 			building.defense: 25
 			building.stinger_site: 40
 			aircraft.normal: 25
@@ -225,7 +241,11 @@ missile.raptor.ground:
 			vehicle.avenger: 30
 			vehicle.assault_troop_crawler: 60
 			vehicle.battle_bus: 75
+			vehicle.battle_bus.crate-1: 70
+			vehicle.battle_bus.crate-2: 65
 			husk.battle_bus: 50
+			husk.battle_bus.crate-1: 45
+			husk.battle_bus.crate-2: 40
 			building.defense: 25
 			building.stinger_site: 40
 			aircraft.normal: 25
@@ -249,7 +269,11 @@ missile.raptor.air:
 			vehicle.avenger: 30
 			vehicle.assault_troop_crawler: 60
 			vehicle.battle_bus: 75
+			vehicle.battle_bus.crate-1: 70
+			vehicle.battle_bus.crate-2: 65
 			husk.battle_bus: 50
+			husk.battle_bus.crate-1: 45
+			husk.battle_bus.crate-2: 40
 			building.defense: 25
 			building.stinger_site: 40
 			aircraft.normal: 25
@@ -287,7 +311,11 @@ missile.stealth_fighter:
 			vehicle.avenger: 23
 			vehicle.assault_troop_crawler: 60
 			vehicle.battle_bus: 50
+			vehicle.battle_bus.crate-1: 45
+			vehicle.battle_bus.crate-2: 40
 			husk.battle_bus: 75
+			husk.battle_bus.crate-1: 75
+			husk.battle_bus.crate-2: 65
 			building.defense: 250
 			building.stinger_site: 250
 
@@ -425,7 +453,11 @@ missile.missile_defender.ground:
 			vehicle.toxin_tractor: 50
 			vehicle.dragon_tank: 20
 			vehicle.battle_bus: 50
+			vehicle.battle_bus.crate-1: 45
+			vehicle.battle_bus.crate-2: 40
 			husk.battle_bus: 50
+			husk.battle_bus.crate-1: 45
+			husk.battle_bus.crate-2: 40
 			aircraft.normal: 120
 			aircraft.comanche: 120
 			aircraft.chinook: 25
@@ -455,7 +487,11 @@ missile.missile_defender.air:
 			vehicle.toxin_tractor: 50
 			vehicle.dragon_tank: 20
 			vehicle.battle_bus: 50
+			vehicle.battle_bus.crate-1: 45
+			vehicle.battle_bus.crate-2: 40
 			husk.battle_bus: 50
+			husk.battle_bus.crate-1: 45
+			husk.battle_bus.crate-2: 40
 			aircraft.normal: 120
 			aircraft.comanche: 120
 			aircraft.chinook: 25
@@ -539,6 +575,37 @@ missile.tank_hunter.air:
 	RequiresNormalFire: false
 	Report: itanweaa.wav, itanweab.wav, itanweac.wav, itanwead.wav
 
+missile.technical:
+	Inherits: missile.rpg_trooper.ground
+	Range: 3c768
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+		Versus:
+			infantry.normal: 100
+			vehicle.truck: 100
+			vehicle.humvee: 100
+			vehicle.avenger: 100
+			vehicle.anti-air: 100
+			vehicle.toxin_tractor: 100
+			vehicle.dragon_tank: 100
+			vehicle.battle_bus: 100
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus: 100
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
+			aircraft.normal: 100
+			aircraft.normal.countermeasures: 90
+			aircraft.comanche: 130
+			aircraft.comanche.countermeasures: 110
+			aircraft.chinook: 50
+			building.normal: 100
+			building.tough: 80
+			building.internet_center: 70
+			building.defense: 100
+			building.stinger_site: 100
+			building.wall: 100
+
 missile.hellfire_drone:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 25
@@ -548,6 +615,10 @@ missile.hellfire_drone:
 	Warhead@1Dam: SpreadDamage
 		Damage: 4000
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -565,6 +636,10 @@ missile.stinger_site.ground:
 	Warhead@1Dam: SpreadDamage
 		Damage: 2000
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -584,6 +659,10 @@ missile.stinger_site.air:
 		Spread: 0c256
 		Damage: 3000
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -606,6 +685,10 @@ missile.comanche:
 		Damage: 2000
 		ValidTargets: Ground, Water
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -618,6 +701,10 @@ missile.comanche:
 		Damage: 1000
 		ValidTargets: Ground, Water
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -644,6 +731,10 @@ missile.patriot.ground:
 	Warhead@1Dam: SpreadDamage
 		Damage: 3000
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -669,6 +760,10 @@ missile.patriot.air:
 		Damage: 2500
 		ValidTargets: Air
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -784,6 +879,10 @@ missile.rocket_buggy:
 		Damage: 1500
 		ValidTargets: Ground
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -796,6 +895,10 @@ missile.rocket_buggy:
 		Damage: 500
 		ValidTargets: Ground
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -804,9 +907,25 @@ missile.rocket_buggy:
 			building.internet_center: 70
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
 
+missile.rocket_buggy.crate-1:
+	Inherits: missile.rocket_buggy
+	Burst: 7
+
+missile.rocket_buggy.crate-2:
+	Inherits: missile.rocket_buggy
+	Burst: 8
+
 missile.rocket_buggy.upgraded:
 	Inherits: missile.rocket_buggy
 	Burst: 12
+
+missile.rocket_buggy.crate-1.upgraded:
+	Inherits: missile.rocket_buggy
+	Burst: 14
+
+missile.rocket_buggy.crate-2.upgraded:
+	Inherits: missile.rocket_buggy
+	Burst: 16
 
 missile.humvee.ground:
 	Inherits: ^AntiGroundMissile
@@ -821,6 +940,10 @@ missile.humvee.ground:
 	Warhead@1Dam: SpreadDamage
 		Damage: 3000
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -840,6 +963,10 @@ missile.humvee.air:
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -868,6 +995,10 @@ missile.scud_launcher:
 		Damage: 17500
 		ValidTargets: Ground, Water
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -881,6 +1012,10 @@ missile.scud_launcher:
 		Damage: 2500
 		ValidTargets: Ground, Water
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -894,6 +1029,17 @@ missile.scud_launcher:
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
 
+missile.scud_launcher.crate-1:
+	Inherits: missile.scud_launcher
+	Range: 11c256
+
+missile.scud_launcher.crate-2:
+	Inherits: missile.scud_launcher.crate-1
+	Warhead@1Dam: SpreadDamage
+		Damage: 25000
+	Warhead@2Dam: SpreadDamage
+		Damage: 5000
+
 missile.scud_launcher.toxin:
 	Inherits: missile.scud_launcher
 	Warhead@5Radio: CreateRadioactivity
@@ -903,15 +1049,48 @@ missile.scud_launcher.toxin:
 		Falloff: 100, 50, 0
 		MaxLevel: 2500
 
+missile.scud_launcher.crate-1.toxin:
+	Inherits: missile.scud_launcher.toxin
+	Range: 11c256
+
+missile.scud_launcher.crate-2.toxin:
+	Inherits: missile.scud_launcher.crate-1.toxin
+	Warhead@1Dam: SpreadDamage
+		Damage: 25000
+	Warhead@2Dam: SpreadDamage
+		Damage: 5000
+
 missile.scud_launcher.toxin_beta:
 	Inherits: missile.scud_launcher.toxin
 	Warhead@5Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_beta
 
+missile.scud_launcher.crate-1.toxin_beta:
+	Inherits: missile.scud_launcher.toxin_beta
+	Range: 11c256
+
+missile.scud_launcher.crate-2.toxin_beta:
+	Inherits: missile.scud_launcher.crate-1.toxin_beta
+	Warhead@1Dam: SpreadDamage
+		Damage: 25000
+	Warhead@2Dam: SpreadDamage
+		Damage: 5000
+
 missile.scud_launcher.toxin_gamma:
 	Inherits: missile.scud_launcher.toxin
 	Warhead@5Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_gamma
+
+missile.scud_launcher.crate-1.toxin_gamma:
+	Inherits: missile.scud_launcher.toxin_beta
+	Range: 11c256
+
+missile.scud_launcher.crate-2.toxin_gamma:
+	Inherits: missile.scud_launcher.crate-1.toxin_gamma
+	Warhead@1Dam: SpreadDamage
+		Damage: 25000
+	Warhead@2Dam: SpreadDamage
+		Damage: 5000
 
 missile.scud_launcher.explosive:
 	Inherits: missile.scud_launcher
@@ -921,6 +1100,17 @@ missile.scud_launcher.explosive:
 	Warhead@2Dam: SpreadDamage
 		Spread: 2c512
 		Damage: 5000
+
+missile.scud_launcher.crate-1.explosive:
+	Inherits: missile.scud_launcher.explosive
+	Range: 11c256
+
+missile.scud_launcher.crate-2.explosive:
+	Inherits: missile.scud_launcher.crate-1.explosive
+	Warhead@1Dam: SpreadDamage
+		Damage: 32500
+	Warhead@2Dam: SpreadDamage
+		Damage: 7500
 
 missile.scud_storm:
 	Inherits: missile.scud_launcher.toxin
@@ -1002,6 +1192,10 @@ missile.tomahawk_launcher:
 		Spread: 0c256
 		Damage: 10000
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -1014,6 +1208,10 @@ missile.tomahawk_launcher:
 		Damage: 5000
 		ValidTargets: Ground, Water
 		Versus:
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110

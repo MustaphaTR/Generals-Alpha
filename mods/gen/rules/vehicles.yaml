@@ -204,6 +204,7 @@ vehicle.technical:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
+	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
 	OwnerLostAction:
 		Action: Kill
@@ -216,7 +217,7 @@ vehicle.technical:
 		BuildDuration: 75
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.low
-		Description: Fast scout & anti-infantry vehicle.\n\nCan carry 5 infantry.\n\nPassengers can survive when it dies.
+		Description: Fast scout & anti-infantry vehicle.\n\nCan carry 5 infantry.\n\nPassengers can survive when it dies.\n\nGets different weapons from Scrap Crates.
 		ReadyAudio: TechnicalCreated
 	Valued:
 		Cost: 500
@@ -256,6 +257,27 @@ vehicle.technical:
 		Weapon: mg.technical
 		MuzzleSequence: muzzle
 		LocalOffset: 128,0,43
+		RequiresCondition: !zh_units && !scrap_create_bonus
+	Armament@CRATE-1:
+		Weapon: cannon.technical
+		MuzzleSequence: muzzle
+		LocalOffset: 128,0,43
+		RequiresCondition: !zh_units && scrap_create_bonus == 1
+	Armament@CRATE-2:
+		Weapon: missile.technical
+		MuzzleSequence: muzzle
+		LocalOffset: 128,0,43
+		RequiresCondition: scrap_create_bonus == 2
+	Armament@ZH:
+		Weapon: mg.technical.zh
+		MuzzleSequence: muzzle
+		LocalOffset: 128,0,43
+		RequiresCondition: zh_units && !scrap_create_bonus
+	Armament@ZH_CRATE-1:
+		Weapon: cannon.technical.zh
+		MuzzleSequence: muzzle
+		LocalOffset: 128,0,43
+		RequiresCondition: zh_units && scrap_create_bonus == 1
 	AttackTurreted:
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithMuzzleOverlay:
@@ -285,6 +307,9 @@ vehicle.technical:
 		Range: 1c0, 1c0
 	GrantConditionOnMovement:
 		Condition: moving
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	ProducibleWithLevel:
 		Prerequisites: generals_power.tech_training
 	RenderSprites:
@@ -305,6 +330,7 @@ vehicle.radar_van:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal500
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
+	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Tooltip:
 		Name: Radar Van
@@ -315,7 +341,7 @@ vehicle.radar_van:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.low
-		Description: Provides radar.
+		Description: Provides radar.\n\nGets cloak from Scrap Crates.
 		ReadyAudio: RadarVanCreated
 	Valued:
 		Cost: 500
@@ -376,12 +402,30 @@ vehicle.radar_van:
 		AllowMultiple: true
 		StartFullyCharged: false
 		OrderName: RadarScanPowerInfoOrder
+	Cloak@CRATE-1:
+		InitialDelay: 100
+		CloakDelay: 50
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled && scrap_create_bonus == 1
+	Cloak@CRATE-2:
+		InitialDelay: 50
+		CloakDelay: 50
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled && scrap_create_bonus == 2
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
 	ThrowsShrapnel:
 		Weapons: debris.radar_van
 		Pieces: 1, 1
 		Range: 1c0, 1c0
 	RenderSprites:
 		Image: vehicle.radar_van
+	-MustBeDestroyed:
 	Voiced:
 		VoiceSet: RadarVanVoice
 
@@ -394,6 +438,7 @@ vehicle.scorpion_tank:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
+	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle
@@ -402,7 +447,7 @@ vehicle.scorpion_tank:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.low
-		Description: Lightly armored main battle tank.
+		Description: Lightly armored main battle tank.\n\nGets better weapon from Scrap Crates.
 		ReadyAudio: ScorpionTankCreated
 	Valued:
 		Cost: 600
@@ -422,6 +467,10 @@ vehicle.scorpion_tank:
 		BuildTime: 175
 	FirepowerMultiplier@AP_ROCKETS:
 		Types: sc_rocket
+	FirepowerMultiplier@CRATE-1:
+		Modifier: 125
+		Types: primary
+		RequiresCondition: scrap_create_bonus >= 1
 	Tooltip:
 		Name: Scorpion Tank
 	Health:
@@ -439,10 +488,14 @@ vehicle.scorpion_tank:
 		CrushClasses: vehicle
 	Turreted@Cannon:
 		TurnSpeed: 4
-	Turreted@SC_ROCKET:
+	Turreted@SC_ROCKET-1:
 		TurnSpeed: 4
-		Turret: sc_rocket
+		Turret: sc_rocket-1
 		Offset: 0,64,128
+	Turreted@SC_ROCKET-2:
+		TurnSpeed: 4
+		Turret: sc_rocket-2
+		Offset: 0,-128,128
 	Armament@Cannon:
 		Weapon: cannon.scorpion_tank
 		Recoil: 85
@@ -471,33 +524,55 @@ vehicle.scorpion_tank:
 		LocalOffset: 768,0,90
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && anthrax_gamma
-	Armament@SC_ROCKET:
+	Armament@SC_ROCKET-1:
 		Weapon: missile.scorpion_tank
-		Name: sc_rocket
-		Turret: sc_rocket
+		Name: sc_rocket-1
+		Turret: sc_rocket-1
 		RequiresCondition: sc_rocket
-		PauseOnCondition: !ammo
+		PauseOnCondition: !ammo-1
+	Armament@SC_ROCKET-2:
+		Weapon: missile.scorpion_tank
+		Name: sc_rocket-2
+		Turret: sc_rocket-2
+		RequiresCondition: sc_rocket && scrap_create_bonus == 2
+		PauseOnCondition: !ammo-2
+		FireDelay: 5
 	AttackTurreted:
-		Armaments: primary, sc_rocket
-		Turrets: primary, sc_rocket
+		Armaments: primary, sc_rocket-1, sc_rocket-2
+		Turrets: primary, sc_rocket-1, sc_rocket-2
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithMuzzleOverlay:
 	WithSpriteTurret@NORMAL:
-	AmmoPool@SC_ROCKET:
-		Name: secondary
-		Armaments: sc_rocket
+	AmmoPool@SC_ROCKET-1:
+		Name: sc_rocket-1
+		Armaments: sc_rocket-1
 		Ammo: 1
 		PipCount: 0
-		AmmoCondition: ammo
-	ReloadAmmoPool:
-		AmmoPool: secondary
+		AmmoCondition: ammo-1
+	AmmoPool@SC_ROCKET-2:
+		Name: sc_rocket-2
+		Armaments: sc_rocket-2
+		Ammo: 1
+		PipCount: 0
+		AmmoCondition: ammo-2
+	ReloadAmmoPool@1:
+		AmmoPool: sc_rocket-1
 		Delay: 300
 		Count: 1
-	WithSpriteTurret@SC_ROCKET:
-		AmmoPoolName: secondary
+	ReloadAmmoPool@2:
+		AmmoPool: sc_rocket-2
+		Delay: 300
+		Count: 1
+	WithSpriteTurret@SC_ROCKET-1:
+		AmmoPoolName: sc_rocket-1
 		Sequence: rocket
-		Turret: sc_rocket
-		RequiresCondition: sc_rocket && ammo
+		Turret: sc_rocket-1
+		RequiresCondition: sc_rocket && ammo-1
+	WithSpriteTurret@SC_ROCKET-2:
+		AmmoPoolName: sc_rocket-2
+		Sequence: rocket
+		Turret: sc_rocket-2
+		RequiresCondition: sc_rocket && scrap_create_bonus == 2 && ammo-2
 	GrantConditionOnPrerequisite@SC_ROCKET:
 		Condition: sc_rocket
 		Prerequisites: upgrade.sc_rocket
@@ -908,6 +983,7 @@ vehicle.quad_cannon:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
+	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Tooltip:
 		Name: Quad Cannon
@@ -918,7 +994,7 @@ vehicle.quad_cannon:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.low
-		Description: Anti-infantry & anti-air vehicle.
+		Description: Anti-infantry & anti-air vehicle.\n\nGets better weapon from Scrap Crates.
 		ReadyAudio: QuadCannonCreated
 	Valued:
 		Cost: 700
@@ -958,10 +1034,32 @@ vehicle.quad_cannon:
 		Weapon: mg.quad_cannon.ground
 		LocalOffset: 512,160,160, 512,-160,160
 		MuzzleSequence: muzzle
+		RequiresCondition: !scrap_create_bonus
+	Armament@PRIMARY_CRATE-1:
+		Weapon: mg.quad_cannon.ground.crate-1
+		LocalOffset: 512,160,160, 512,-160,160
+		MuzzleSequence: muzzle
+		RequiresCondition: scrap_create_bonus == 1
+	Armament@PRIMARY_CRATE-2:
+		Weapon: mg.quad_cannon.ground.crate-2
+		LocalOffset: 512,160,160, 512,-160,160
+		MuzzleSequence: muzzle
+		RequiresCondition: scrap_create_bonus == 2
 	Armament@SECONDARY:
 		Weapon: mg.quad_cannon.air
 		LocalOffset: 512,160,160, 512,-160,160
 		MuzzleSequence: muzzle
+		RequiresCondition: !scrap_create_bonus
+	Armament@SECONDARY_CRATE-1:
+		Weapon: mg.quad_cannon.air.crate-1
+		LocalOffset: 512,160,160, 512,-160,160
+		MuzzleSequence: muzzle
+		RequiresCondition: scrap_create_bonus == 1
+	Armament@SECONDARY_CRATE-2:
+		Weapon: mg.quad_cannon.air.crate-2
+		LocalOffset: 512,160,160, 512,-160,160
+		MuzzleSequence: muzzle
+		RequiresCondition: scrap_create_bonus == 2
 	AttackTurreted:
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithSpriteTurret:
@@ -1085,6 +1183,7 @@ vehicle.toxin_tractor:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal200
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
+	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Tooltip:
 		Name: Toxin Tractor
@@ -1095,7 +1194,7 @@ vehicle.toxin_tractor:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: ~techlevel.medium
-		Description: Toxin-throwing vehicle.\n\nCan be deployed to speay toxins around it.
+		Description: Toxin-throwing vehicle.\n\nCan be deployed to speay toxins around it.\n\nGets better weapon from Scrap Crates.
 		ReadyAudio: ToxinTractorCreated
 	Valued:
 		Cost: 600
@@ -1134,15 +1233,39 @@ vehicle.toxin_tractor:
 	Armament@ALPHA:
 		Weapon: toxin.toxin_tractor
 		LocalOffset: 600,0,90
-		RequiresCondition: !anthrax_beta && !anthrax_gamma
+		RequiresCondition: !anthrax_beta && !anthrax_gamma && !scrap_create_bonus
+	Armament@ALPHA_CRATE-1:
+		Weapon: toxin.toxin_tractor.crate-1
+		LocalOffset: 600,0,90
+		RequiresCondition: !anthrax_beta && !anthrax_gamma && scrap_create_bonus == 1
+	Armament@ALPHA_CRATE-2:
+		Weapon: toxin.toxin_tractor.crate-2
+		LocalOffset: 600,0,90
+		RequiresCondition: !anthrax_beta && !anthrax_gamma && scrap_create_bonus == 2
 	Armament@BETA:
 		Weapon: toxin.toxin_tractor.beta
 		LocalOffset: 600,0,90
-		RequiresCondition: anthrax_beta && !anthrax_gamma
+		RequiresCondition: anthrax_beta && !anthrax_gamma && !scrap_create_bonus
+	Armament@BETA_CRATE-1:
+		Weapon: toxin.toxin_tractor.beta.crate-1
+		LocalOffset: 600,0,90
+		RequiresCondition: anthrax_beta && !anthrax_gamma && scrap_create_bonus == 1
+	Armament@BETA_CRATE-2:
+		Weapon: toxin.toxin_tractor.beta.crate-2
+		LocalOffset: 600,0,90
+		RequiresCondition: anthrax_beta && !anthrax_gamma && scrap_create_bonus == 2
 	Armament@GAMMA:
 		Weapon: toxin.toxin_tractor.gamma
 		LocalOffset: 600,0,90
-		RequiresCondition: anthrax_gamma
+		RequiresCondition: anthrax_gamma && !scrap_create_bonus
+	Armament@GAMMA_CRATE-1:
+		Weapon: toxin.toxin_tractor.gamma.crate-1
+		LocalOffset: 600,0,90
+		RequiresCondition: anthrax_gamma && scrap_create_bonus == 1
+	Armament@GAMMA_CRATE-2:
+		Weapon: toxin.toxin_tractor.gamma.crate-2
+		LocalOffset: 600,0,90
+		RequiresCondition: anthrax_gamma && scrap_create_bonus == 2
 	Armament@SPRAY_ALPHA:
 		Name: deploy_alpha
 		Weapon: toxin.toxin_tractor.deploy
@@ -1291,6 +1414,7 @@ vehicle.rocket_buggy:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal360
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
+	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Tooltip:
 		Name: Rocket Buggy
@@ -1301,7 +1425,7 @@ vehicle.rocket_buggy:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~techlevel.medium
-		Description: Rocket artillery.
+		Description: Rocket artillery.\n\nGets extra missiles per burst from Scrap Crates.
 		ReadyAudio: RocketBuggyCreated
 	Valued:
 		Cost: 900
@@ -1338,16 +1462,36 @@ vehicle.rocket_buggy:
 		Type: vehicle.truck
 	Selectable:
 		Class: vehicle.rocket_buggy
-	Armament@3:
+	Armament@6:
 		Weapon: missile.rocket_buggy
 		LocalOffset: -128, -170, 170, -128, 170, 170
 		LocalYaw: 100, -100
-		RequiresCondition: !buggy_ammo
-	Armament@6:
+		RequiresCondition: !buggy_ammo && !scrap_create_bonus
+	Armament@7:
+		Weapon: missile.rocket_buggy.crate-1
+		LocalOffset: -128, -170, 170, -128, 170, 170
+		LocalYaw: 100, -100
+		RequiresCondition: !buggy_ammo && scrap_create_bonus == 1
+	Armament@8:
+		Weapon: missile.rocket_buggy.crate-2
+		LocalOffset: -128, -170, 170, -128, 170, 170
+		LocalYaw: 100, -100
+		RequiresCondition: !buggy_ammo && scrap_create_bonus == 2
+	Armament@12:
 		Weapon: missile.rocket_buggy.upgraded
 		LocalOffset: -128, -170, 170, -128, 170, 170, -128, 0, 170
 		LocalYaw: 100, -100
-		RequiresCondition: buggy_ammo
+		RequiresCondition: buggy_ammo && !scrap_create_bonus
+	Armament@14:
+		Weapon: missile.rocket_buggy.crate-1.upgraded
+		LocalOffset: -128, -170, 170, -128, 170, 170, -128, 0, 170
+		LocalYaw: 100, -100
+		RequiresCondition: buggy_ammo && scrap_create_bonus == 1
+	Armament@16:
+		Weapon: missile.rocket_buggy.crate-1.upgraded
+		LocalOffset: -128, -170, 170, -128, 170, 170, -128, 0, 170
+		LocalYaw: 100, -100
+		RequiresCondition: buggy_ammo && scrap_create_bonus == 2
 	Turreted:
 		TurnSpeed: 8
 		Offset: -196,0,85
@@ -1486,6 +1630,7 @@ vehicle.battle_Bus:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal200
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
+	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
 	OwnerLostAction:
 		Action: Kill
@@ -1498,7 +1643,7 @@ vehicle.battle_Bus:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~techlevel.medium, ~prerequisite.zh_units
-		Description: Tough infantry transport.\n\nCan carry 8 infantry that can fire outside.\n\nTurns into a static bunker when damaged.
+		Description: Tough infantry transport.\n\nCan carry 8 infantry that can fire outside.\n\nTurns into a static bunker when damaged.\n\nGets better armor from Scrap Crates.
 		ReadyAudio: BattleBusCreated
 	Valued:
 		Cost: 1000
@@ -1526,10 +1671,22 @@ vehicle.battle_Bus:
 		HP: 105000
 	Armor:
 		Type: vehicle.battle_bus
-		RequiresCondition: !husk
+		RequiresCondition: !husk && !scrap_create_bonus
+	Armor@CRATE-1:
+		Type: vehicle.battle_bus.crate-1
+		RequiresCondition: !husk && scrap_create_bonus == 1
+	Armor@CRATE-2:
+		Type: vehicle.battle_bus.crate-2
+		RequiresCondition: !husk && scrap_create_bonus == 2
 	Armor@HUSK:
 		Type: husk.battle_bus
-		RequiresCondition: !husk
+		RequiresCondition: husk && !scrap_create_bonus
+	Armor@HUSK_CRATE-1:
+		Type: husk.battle_bus.crate-1
+		RequiresCondition: husk && scrap_create_bonus == 1
+	Armor@HUSK_CRATE-2:
+		Type: husk.battle_bus.crate-2
+		RequiresCondition: husk && scrap_create_bonus == 2
 	Selectable:
 		DecorationBounds: 28, 28
 	Mobile:
@@ -2069,6 +2226,7 @@ vehicle.scud_launcher:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
+	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle
@@ -2077,7 +2235,7 @@ vehicle.scud_launcher:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~generals_power.scud_launcher, ~techlevel.high
-		Description: Long-range rocket artillery.\n\nCan be armed with either toxin or high explosive missiles.
+		Description: Long-range rocket artillery.\n\nCan be armed with either toxin or high explosive missiles.\n\nGets better weapon from Scrap Crates.
 		ReadyAudio: ScudLauncherCreated
 	Valued:
 		Cost: 1200
@@ -2117,23 +2275,63 @@ vehicle.scud_launcher:
 		CrushClasses: vehicle
 	Armament:
 		Weapon: missile.scud_launcher
-		RequiresCondition: !toxin_missiles && !hi_explosive_missiles
+		RequiresCondition: !toxin_missiles && !hi_explosive_missiles && !scrap_create_bonus
+		PauseOnCondition: !ammo
+	Armament@CRATE-1:
+		Weapon: missile.scud_launcher.crate-1
+		RequiresCondition: !toxin_missiles && !hi_explosive_missiles && scrap_create_bonus == 1
+		PauseOnCondition: !ammo
+	Armament@CRATE-2:
+		Weapon: missile.scud_launcher.crate-2
+		RequiresCondition: !toxin_missiles && !hi_explosive_missiles && scrap_create_bonus == 2
 		PauseOnCondition: !ammo
 	Armament@BIO:
 		Weapon: missile.scud_launcher.toxin
-		RequiresCondition: toxin_missiles && !anthrax_beta && !anthrax_gamma
+		RequiresCondition: toxin_missiles && !anthrax_beta && !anthrax_gamma && !scrap_create_bonus
+		PauseOnCondition: !ammo
+	Armament@BIO_CRATE-1:
+		Weapon: missile.scud_launcher.crate-1.toxin
+		RequiresCondition: toxin_missiles && !anthrax_beta && !anthrax_gamma && scrap_create_bonus == 1
+		PauseOnCondition: !ammo
+	Armament@BIO_CRATE-2:
+		Weapon: missile.scud_launcher.crate-2.toxin
+		RequiresCondition: toxin_missiles && !anthrax_beta && !anthrax_gamma && scrap_create_bonus == 2
 		PauseOnCondition: !ammo
 	Armament@BETA:
 		Weapon: missile.scud_launcher.toxin_beta
-		RequiresCondition: toxin_missiles && anthrax_beta && !anthrax_gamma
+		RequiresCondition: toxin_missiles && anthrax_beta && !anthrax_gamma && !scrap_create_bonus
+		PauseOnCondition: !ammo
+	Armament@BETA_CRATE-1:
+		Weapon: missile.scud_launcher.crate-1.toxin_beta
+		RequiresCondition: toxin_missiles && anthrax_beta && !anthrax_gamma && scrap_create_bonus == 1
+		PauseOnCondition: !ammo
+	Armament@BETA_CRATE-2:
+		Weapon: missile.scud_launcher.crate-2.toxin_beta
+		RequiresCondition: toxin_missiles && anthrax_beta && !anthrax_gamma && scrap_create_bonus == 2
 		PauseOnCondition: !ammo
 	Armament@GAMMA:
 		Weapon: missile.scud_launcher.toxin_gamma
-		RequiresCondition: toxin_missiles && anthrax_gamma
+		RequiresCondition: toxin_missiles && anthrax_gamma && !scrap_create_bonus
+		PauseOnCondition: !ammo
+	Armament@GAMMA_CRATE-1:
+		Weapon: missile.scud_launcher.crate-1.toxin_gamma
+		RequiresCondition: toxin_missiles && anthrax_gamma && scrap_create_bonus == 1
+		PauseOnCondition: !ammo
+	Armament@GAMMA_CRATE-2:
+		Weapon: missile.scud_launcher.crate-2.toxin_gamma
+		RequiresCondition: toxin_missiles && anthrax_gamma && scrap_create_bonus == 2
 		PauseOnCondition: !ammo
 	Armament@EXP:
 		Weapon: missile.scud_launcher.explosive
-		RequiresCondition: hi_explosive_missiles
+		RequiresCondition: hi_explosive_missiles && !scrap_create_bonus
+		PauseOnCondition: !ammo
+	Armament@EXP_CRATE-1:
+		Weapon: missile.scud_launcher.crate-1.explosive
+		RequiresCondition: hi_explosive_missiles && scrap_create_bonus == 1
+		PauseOnCondition: !ammo
+	Armament@EXP_CRATE-2:
+		Weapon: missile.scud_launcher.crate-2.explosive
+		RequiresCondition: hi_explosive_missiles && scrap_create_bonus == 2
 		PauseOnCondition: !ammo
 	AttackFrontal:
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
@@ -2364,6 +2562,7 @@ vehicle.marauder_tank:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
+	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle
@@ -2372,7 +2571,7 @@ vehicle.marauder_tank:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, building.palace, ~generals_power.marauder_tank, ~techlevel.high
-		Description: Medium tank.
+		Description: Medium tank.\n\nGets better weapon from Scrap Crates.
 		ReadyAudio: MarauderTankCreated
 	Valued:
 		Cost: 800
@@ -2404,67 +2603,186 @@ vehicle.marauder_tank:
 		CrushClasses: vehicle
 	Turreted:
 		TurnSpeed: 8
-		Offset: 128,0,-64
+		Offset: 128,0,0
 	Armament@Cannon:
 		Weapon: cannon.marauder_tank
 		Recoil: 128
 		RecoilRecovery: 38
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		RequiresCondition: !toxin_shells && !zh_units && !scrap_create_bonus
+	Armament@Cannon_CRATE-1:
+		Weapon: cannon.marauder_tank.crate-1
+		Recoil: 128
+		RecoilRecovery: 38
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
-		RequiresCondition: !toxin_shells && !zh_units
+		RequiresCondition: !toxin_shells && !zh_units && scrap_create_bonus == 1
+	Armament@Cannon_CRATE-2:
+		Weapon: cannon.marauder_tank.crate-2
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 768,85,90, 768,-85,90
+		MuzzleSequence: muzzle
+		RequiresCondition: !toxin_shells && !zh_units && scrap_create_bonus == 2
 	Armament@Cannon_ZH:
 		Weapon: cannon.marauder_tank.zh
 		Recoil: 128
 		RecoilRecovery: 38
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		RequiresCondition: !toxin_shells && zh_units && !scrap_create_bonus
+	Armament@Cannon_ZH_CRATE-1:
+		Weapon: cannon.marauder_tank.crate-1.zh
+		Recoil: 128
+		RecoilRecovery: 38
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
-		RequiresCondition: !toxin_shells && zh_units
+		RequiresCondition: !toxin_shells && zh_units && scrap_create_bonus == 1
+	Armament@Cannon_ZH_CRATE-2:
+		Weapon: cannon.marauder_tank.crate-2.zh
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 768,85,90, 768,-85,90
+		MuzzleSequence: muzzle
+		RequiresCondition: !toxin_shells && zh_units && scrap_create_bonus == 2
 	Armament@TOXIN_SHELLS:
 		Weapon: cannon.marauder_tank.toxin
 		Recoil: 128
 		RecoilRecovery: 38
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma && !zh_units && !scrap_create_bonus
+	Armament@TOXIN_SHELLS_CRATE-1:
+		Weapon: cannon.marauder_tank.crate-1.toxin
+		Recoil: 128
+		RecoilRecovery: 38
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
-		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma && !zh_units
+		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma && !zh_units && scrap_create_bonus == 1
+	Armament@TOXIN_SHELLS_CRATE-2:
+		Weapon: cannon.marauder_tank.crate-2.toxin
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 768,85,90, 768,-85,90
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma && !zh_units && scrap_create_bonus == 2
 	Armament@TOXIN_SHELLS_ZH:
 		Weapon: cannon.marauder_tank.toxin.zh
 		Recoil: 128
 		RecoilRecovery: 38
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma && zh_units && !scrap_create_bonus
+	Armament@TOXIN_SHELLS_ZH_CRATE-1:
+		Weapon: cannon.marauder_tank.crate-1.toxin.zh
+		Recoil: 128
+		RecoilRecovery: 38
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
-		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma && zh_units
+		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma && zh_units && scrap_create_bonus == 1
+	Armament@TOXIN_SHELLS_ZH_CRATE-2:
+		Weapon: cannon.marauder_tank.crate-2.toxin.zh
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 768,85,90, 768,-85,90
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma && zh_units && scrap_create_bonus == 2
 	Armament@ANTHRAX_BETA:
 		Weapon: cannon.marauder_tank.toxin_beta
 		Recoil: 128
 		RecoilRecovery: 38
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma && !zh_units && !scrap_create_bonus
+	Armament@ANTHRAX_BETA_CRATE-1:
+		Weapon: cannon.marauder_tank.crate-1.toxin_beta
+		Recoil: 128
+		RecoilRecovery: 38
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
-		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma && !zh_units
+		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma && !zh_units && scrap_create_bonus == 1
+	Armament@ANTHRAX_BETA_CRATE-2:
+		Weapon: cannon.marauder_tank.crate-2.toxin_beta
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 768,85,90, 768,-85,90
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma && !zh_units && scrap_create_bonus == 2
 	Armament@ANTHRAX_BETA_ZH:
 		Weapon: cannon.marauder_tank.toxin_beta.zh
 		Recoil: 128
 		RecoilRecovery: 38
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma && zh_units && !scrap_create_bonus
+	Armament@ANTHRAX_BETA_ZH_CRATE-1:
+		Weapon: cannon.marauder_tank.crate-1.toxin_beta.zh
+		Recoil: 128
+		RecoilRecovery: 38
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
-		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma && zh_units
+		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma && zh_units && scrap_create_bonus == 1
+	Armament@ANTHRAX_BETA_ZH_CRATE-2:
+		Weapon: cannon.marauder_tank.crate-2.toxin_beta.zh
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 768,85,90, 768,-85,90
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma && zh_units && scrap_create_bonus == 2
 	Armament@ANTHRAX_GAMMA:
 		Weapon: cannon.marauder_tank.toxin_gamma
 		Recoil: 128
 		RecoilRecovery: 38
-		LocalOffset: 720,0,80
+		LocalOffset: 768,0,90
 		MuzzleSequence: muzzle
-		RequiresCondition: toxin_shells && anthrax_gamma && !zh_units
-	Armament@ANTHRAX_GAMMA_ZH:
-		Weapon: cannon.marauder_tank.toxin_gamma.zh
+		RequiresCondition: toxin_shells && anthrax_gamma && !zh_units && !scrap_create_bonus
+	Armament@ANTHRAX_GAMMA_CRATE-1:
+		Weapon: cannon.marauder_tank.crate-1.toxin_gamma
 		Recoil: 128
 		RecoilRecovery: 38
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
-		RequiresCondition: toxin_shells && anthrax_gamma && zh_units
+		RequiresCondition: toxin_shells && anthrax_gamma && !zh_units && scrap_create_bonus == 1
+	Armament@ANTHRAX_GAMMA_CRATE-2:
+		Weapon: cannon.marauder_tank.crate-2.toxin_gamma
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 768,85,90, 768,-85,90
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && anthrax_gamma && !zh_units && scrap_create_bonus == 2
+	Armament@ANTHRAX_GAMMA_ZH:
+		Weapon: cannon.marauder_tank.toxin_gamma.zh
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && anthrax_gamma && zh_units && !scrap_create_bonus
+	Armament@ANTHRAX_GAMMA_ZH_CRATE-1:
+		Weapon: cannon.marauder_tank.crate-1.toxin_gamma.zh
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && anthrax_gamma && zh_units && scrap_create_bonus == 1
+	Armament@ANTHRAX_GAMMA_ZH_CRATE-2:
+		Weapon: cannon.marauder_tank.crate-2.toxin_gamma.zh
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 768,85,90, 768,-85,90
+		MuzzleSequence: muzzle
+		RequiresCondition: toxin_shells && anthrax_gamma && zh_units && scrap_create_bonus == 2
 	AttackFrontal:
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithMuzzleOverlay:
 	WithSpriteTurret:
+		RequiresCondition: !scrap_create_bonus
+	WithSpriteTurret@CRATE-1:
+		Sequence: turret-crate-1
+		RequiresCondition: scrap_create_bonus == 1
+	WithSpriteTurret@CRATE-2:
+		Sequence: turret-crate-2
+		RequiresCondition: scrap_create_bonus == 2
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
@@ -2741,6 +3059,7 @@ vehicle.bomb_truck:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal200
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
+	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 6
@@ -2748,7 +3067,7 @@ vehicle.bomb_truck:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~techlevel.high
-		Description: Suicide vehicle.\n\nCan be armed with toxin or high explosive bombs.
+		Description: Suicide vehicle.\n\nCan be armed with toxin or high explosive bombs.\n\nGets speed from Scrap Crates.
 		ReadyAudio: BombTruckCreated
 	Valued:
 		Cost: 1200
@@ -2810,6 +3129,12 @@ vehicle.bomb_truck:
 		Speed: 50
 		TurnSpeed: 4
 		Voice: Move
+	SpeedMultiplier@CRATE-1:
+		Modifier: 110
+		RequiresCondition: scrap_create_bonus == 1
+	SpeedMultiplier@CRATE-2:
+		Modifier: 120
+		RequiresCondition: scrap_create_bonus == 2
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
@@ -3070,6 +3395,7 @@ vehicle.combat_cycle:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
+	# Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
 	OwnerLostAction:
 		Action: Kill
@@ -3473,10 +3799,12 @@ vehicle.gla_mcc:
 	Inherits: ^default.mcc
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
+	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Buildable:
 		Queue: queue.gla_command_center, queue.stealth_gen_command_center
 		Prerequisites: ~techlevel.infonly
 		ReadyAudio: WorkerCreated
+		Description: Builds structures.\n\nCan be deployed to disarm enemy bombs, demo traps or mines.\n\nGets better armor from Scrap Crates.
 	Tooltip:
 		Name: GLA Construction Vehicle
 	Production:
@@ -3524,6 +3852,12 @@ vehicle.gla_mcc:
 	WithTextDecoration@SIDE:
 		Text: GLA
 		Color: 00FF00
+	DamageMultiplier@CRATE-1:
+		RequiresCondition: scrap_create_bonus >= 1
+		Modifier: 83
+	DamageMultiplier@CRATE-2:
+		RequiresCondition: scrap_create_bonus == 2
+		Modifier: 86
 
 vehicle.prc_mcc:
 	Inherits: ^default.mcc

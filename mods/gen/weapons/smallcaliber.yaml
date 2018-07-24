@@ -52,7 +52,11 @@ mg.comanche:
 			vehicle.assault_troop_crawler: 25
 			vehicle.dragon_tank: 25
 			vehicle.battle_bus: 25
+			vehicle.battle_bus.crate-1: 20
+			vehicle.battle_bus.crate-2: 15
 			husk.battle_bus: 25
+			husk.battle_bus.crate-1: 20
+			husk.battle_bus.crate-2: 15
 			aircraft.normal: 120
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
@@ -83,7 +87,11 @@ mg.helix:
 			vehicle.assault_troop_crawler: 25
 			vehicle.dragon_tank: 25
 			vehicle.battle_bus: 25
+			vehicle.battle_bus.crate-1: 20
+			vehicle.battle_bus.crate-2: 15
 			husk.battle_bus: 25
+			husk.battle_bus.crate-1: 20
+			husk.battle_bus.crate-2: 15
 			aircraft.normal: 120
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
@@ -156,7 +164,11 @@ mg.ranger:
 			vehicle.assault_troop_crawler: 25
 			vehicle.dragon_tank: 25
 			vehicle.battle_bus: 25
+			vehicle.battle_bus.crate-1: 20
+			vehicle.battle_bus.crate-2: 15
 			husk.battle_bus: 25
+			husk.battle_bus.crate-1: 20
+			husk.battle_bus.crate-2: 15
 			aircraft.normal: 120
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
@@ -209,7 +221,11 @@ mg.red_guard:
 			vehicle.assault_troop_crawler: 25
 			vehicle.dragon_tank: 25
 			vehicle.battle_bus: 25
+			vehicle.battle_bus.crate-1: 20
+			vehicle.battle_bus.crate-2: 15
 			husk.battle_bus: 25
+			husk.battle_bus.crate-1: 20
+			husk.battle_bus.crate-2: 15
 			aircraft.normal: 120
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
@@ -246,7 +262,11 @@ mg.colonel_burton:
 			vehicle.assault_troop_crawler: 25
 			vehicle.dragon_tank: 25
 			vehicle.battle_bus: 25
+			vehicle.battle_bus.crate-1: 20
+			vehicle.battle_bus.crate-2: 15
 			husk.battle_bus: 25
+			husk.battle_bus.crate-1: 20
+			husk.battle_bus.crate-2: 15
 			aircraft.normal: 120
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
@@ -297,7 +317,11 @@ mg.humvee:
 			vehicle.assault_troop_crawler: 25
 			vehicle.dragon_tank: 25
 			vehicle.battle_bus: 25
+			vehicle.battle_bus.crate-1: 20
+			vehicle.battle_bus.crate-2: 15
 			husk.battle_bus: 25
+			husk.battle_bus.crate-1: 20
+			husk.battle_bus.crate-2: 15
 			aircraft.normal: 120
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
@@ -338,7 +362,11 @@ mg.technical:
 			vehicle.assault_troop_crawler: 25
 			vehicle.dragon_tank: 25
 			vehicle.battle_bus: 25
+			vehicle.battle_bus.crate-1: 20
+			vehicle.battle_bus.crate-2: 15
 			husk.battle_bus: 25
+			husk.battle_bus.crate-1: 20
+			husk.battle_bus.crate-2: 15
 			aircraft.normal: 120
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
@@ -350,6 +378,18 @@ mg.technical:
 			building.stinger_site: 50
 			building.wall: 6
 		DamageTypes: TriggerProne, DropCrate, BulletDeath
+
+mg.technical.zh:
+	Inherits: mg.technical
+	Range: 3c768
+	Warhead@1Dam: SpreadDamage
+		Damage: 1000
+		Versus:
+			vehicle.tank: 10
+			building.normal: 10
+			building.tough: 10
+			building.defense: 25
+			building.stinger_site: 10
 
 mg.tunnel_network:
 	Inherits: ^LightMG
@@ -368,7 +408,11 @@ mg.tunnel_network:
 			vehicle.assault_troop_crawler: 25
 			vehicle.dragon_tank: 25
 			vehicle.battle_bus: 25
+			vehicle.battle_bus.crate-1: 20
+			vehicle.battle_bus.crate-2: 15
 			husk.battle_bus: 25
+			husk.battle_bus.crate-1: 20
+			husk.battle_bus.crate-2: 15
 			aircraft.normal: 120
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
@@ -398,7 +442,11 @@ mg.quad_cannon.ground:
 			vehicle.assault_troop_crawler: 25
 			vehicle.dragon_tank: 25
 			vehicle.battle_bus: 25
+			vehicle.battle_bus.crate-1: 20
+			vehicle.battle_bus.crate-2: 15
 			husk.battle_bus: 25
+			husk.battle_bus.crate-1: 20
+			husk.battle_bus.crate-2: 15
 			aircraft.normal: 120
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
@@ -411,6 +459,16 @@ mg.quad_cannon.ground:
 			building.wall: 6
 		DamageTypes: TriggerProne, DropCrate, BulletDeath
 
+mg.quad_cannon.ground.crate-1:
+	Inherits: mg.quad_cannon.ground
+	ReloadDelay: 2
+	Warhead@1Dam: SpreadDamage
+		Damage: 800
+
+mg.quad_cannon.ground.crate-2:
+	Inherits: mg.quad_cannon.ground.crate-1
+	ReloadDelay: 1
+
 mg.quad_cannon.air:
 	Inherits: mg.quad_cannon.ground
 	Range: 8c768
@@ -420,6 +478,14 @@ mg.quad_cannon.air:
 	Warhead@1Dam: SpreadDamage
 		Damage: 500
 		ValidTargets: Air
+
+mg.quad_cannon.air.crate-1:
+	Inherits: mg.quad_cannon.air
+	ReloadDelay: 2
+
+mg.quad_cannon.air.crate-2:
+	Inherits: mg.quad_cannon.air.crate-1
+	ReloadDelay: 1
 
 gatling.minigunner.ground:
 	Inherits: ^LightMG
@@ -438,7 +504,11 @@ gatling.minigunner.ground:
 			vehicle.assault_troop_crawler: 25
 			vehicle.dragon_tank: 25
 			vehicle.battle_bus: 25
+			vehicle.battle_bus.crate-1: 20
+			vehicle.battle_bus.crate-2: 15
 			husk.battle_bus: 25
+			husk.battle_bus.crate-1: 20
+			husk.battle_bus.crate-2: 15
 			aircraft.normal: 120
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
@@ -495,7 +565,11 @@ gatling.gatling_tank.ground:
 			vehicle.assault_troop_crawler: 25
 			vehicle.dragon_tank: 25
 			vehicle.battle_bus: 25
+			vehicle.battle_bus.crate-1: 20
+			vehicle.battle_bus.crate-2: 15
 			husk.battle_bus: 25
+			husk.battle_bus.crate-1: 20
+			husk.battle_bus.crate-2: 15
 			aircraft.normal: 120
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
@@ -546,7 +620,11 @@ gatling.gatling_cannon.ground:
 			vehicle.assault_troop_crawler: 25
 			vehicle.dragon_tank: 25
 			vehicle.battle_bus: 25
+			vehicle.battle_bus.crate-1: 20
+			vehicle.battle_bus.crate-2: 15
 			husk.battle_bus: 25
+			husk.battle_bus.crate-1: 20
+			husk.battle_bus.crate-2: 15
 			aircraft.normal: 120
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
@@ -674,7 +752,11 @@ mg.a10:
 			vehicle.assault_troop_crawler: 25
 			vehicle.dragon_tank: 25
 			vehicle.battle_bus: 25
+			vehicle.battle_bus.crate-1: 20
+			vehicle.battle_bus.crate-2: 15
 			husk.battle_bus: 25
+			husk.battle_bus.crate-1: 20
+			husk.battle_bus.crate-2: 15
 			aircraft.normal: 120
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
