@@ -42,7 +42,7 @@ BindActorTriggers = function(a)
 		end)
 
 		Trigger.OnDamaged(a, function()
-			if a.Health <= 15 then
+			if a.Health <= 1500 then
 				a.Detonate()
 			end
 		end)
