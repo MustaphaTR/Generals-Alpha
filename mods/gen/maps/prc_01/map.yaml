@@ -52,7 +52,6 @@ Players:
 		NonCombatant: True
 		Faction: prc
 		Color: FF0000
-
 Actors:
 	Actor0: brik
 		Owner: Neutral
@@ -281,7 +280,7 @@ Actors:
 	Actor87: building.prc_war_factory
 		Owner: PRC
 		Location: 36,23
-	Actor96: building.prc_supply_center
+	PRCSupply: building.prc_supply_center
 		Owner: PRC
 		Location: 23,26
 	Actor97: building.prc_barracks
@@ -852,7 +851,7 @@ Actors:
 	Actor365: t11
 		Owner: Neutral
 		Location: 42,44
-	Actor366: building.tunnel_network.no_free_actor
+	GLATunnel1: building.tunnel_network.no_free_actor
 		Owner: GLA
 		Location: 41,51
 		TurretFacing: 92
@@ -1179,21 +1178,26 @@ Actors:
 		Location: 57,45
 	Actor383: v03
 		Owner: Neutral
+		Health: 5
 		Location: 15,45
 	Actor384: car.automobile_3
 		Owner: Neutral
+		Health: 4
 		Location: 9,49
 		Facing: 128
 	Actor385: car.automobile_7
 		Owner: Neutral
+		Health: 10
 		Location: 11,48
 		Facing: 0
 	Actor386: car.police_car
 		Owner: Neutral
+		Health: 6
 		Location: 12,48
 		Facing: 0
 	Actor387: car.taxi
 		Owner: Neutral
+		Health: 5
 		Location: 11,42
 		Facing: 0
 	Actor388: t01
@@ -1246,15 +1250,19 @@ Actors:
 		Location: 11,43
 	Actor404: v03
 		Owner: Neutral
+		Health: 10
 		Location: 16,63
 	Actor405: v08
 		Owner: Neutral
+		Health: 7
 		Location: 15,63
 	Actor406: v09
 		Owner: Neutral
+		Health: 7
 		Location: 17,65
 	Actor407: v08
 		Owner: Neutral
+		Health: 7
 		Location: 15,65
 	Actor408: wood
 		Owner: Neutral
@@ -1402,33 +1410,43 @@ Actors:
 		Location: 17,65
 	Actor456: v04
 		Owner: Neutral
+		Health: 6
 		Location: 2,61
 	Actor457: v08
 		Owner: Neutral
+		Health: 10
 		Location: 3,64
 	Actor458: v05
 		Owner: Neutral
+		Health: 2
 		Location: 0,61
 	Actor459: v02
 		Owner: Neutral
+		Health: 5
 		Location: 2,65
 	Actor460: v08
 		Owner: Neutral
+		Health: 4
 		Location: 3,68
 	Actor461: v09
 		Owner: Neutral
+		Health: 4
 		Location: 3,70
 	Actor462: v04
 		Owner: Neutral
+		Health: 5
 		Location: 11,54
 	Actor463: v02
 		Owner: Neutral
+		Health: 5
 		Location: 13,54
 	Actor464: v03
 		Owner: Neutral
+		Health: 4
 		Location: 11,56
 	Actor465: v04
 		Owner: Neutral
+		Health: 4
 		Location: 13,56
 	Actor466: t16
 		Owner: Neutral
@@ -1681,96 +1699,127 @@ Actors:
 		Location: 7,21
 	Actor549: v03
 		Owner: Neutral
+		Health: 7
 		Location: 15,24
 	Actor550: v04
 		Owner: Neutral
+		Health: 4
 		Location: 15,25
 	Actor551: rushouse
 		Owner: Neutral
+		Health: 5
 		Location: 8,28
 	Actor552: v07
 		Owner: Neutral
+		Health: 10
 		Location: 9,29
 	Actor553: v03
 		Owner: Neutral
+		Health: 10
 		Location: 7,39
 	Actor554: v02
 		Owner: Neutral
+		Health: 8
 		Location: 9,39
 	Actor555: v04
 		Owner: Neutral
+		Health: 9
 		Location: 12,39
 	Actor556: v06
 		Owner: Neutral
+		Health: 2
 		Location: 14,40
 	Actor557: v08
 		Owner: Neutral
+		Health: 4
 		Location: 17,40
 	Actor558: v09
 		Owner: Neutral
+		Health: 7
 		Location: 18,40
 	Actor559: v09
 		Owner: Neutral
+		Health: 7
 		Location: 7,37
 	Actor560: v04
 		Owner: Neutral
+		Health: 2
 		Location: 8,36
 	Actor561: v01
 		Owner: Neutral
+		Health: 1
 		Location: 10,36
 	Actor562: v02
 		Owner: Neutral
+		Health: 9
 		Location: 12,37
 	Actor563: v03
 		Owner: Neutral
+		Health: 5
 		Location: 14,37
 	Actor564: v07
 		Owner: Neutral
+		Health: 4
 		Location: 17,37
 	Actor565: v07
 		Owner: Neutral
+		Health: 7
 		Location: 16,35
 	Actor566: v08
 		Owner: Neutral
+		Health: 6
 		Location: 18,35
 	Actor567: v06
 		Owner: Neutral
+		Health: 5
 		Location: 13,35
 	Actor568: v03
 		Owner: Neutral
+		Health: 10
 		Location: 10,34
 	Actor569: v04
 		Owner: Neutral
+		Health: 12
 		Location: 7,34
 	Actor570: v02
 		Owner: Neutral
+		Health: 4
 		Location: 7,32
 	Actor571: v02
 		Owner: Neutral
+		Health: 5
 		Location: 7,30
 	Actor572: v04
 		Owner: Neutral
+		Health: 3
 		Location: 10,32
 	Actor573: v07
 		Owner: Neutral
+		Health: 8
 		Location: 12,33
 	Actor574: v09
 		Owner: Neutral
+		Health: 7
 		Location: 15,33
 	Actor575: v11
 		Owner: Neutral
+		Health: 4
 		Location: 16,33
 	Actor576: v10
 		Owner: Neutral
+		Health: 5
 		Location: 18,33
 	Actor577: v04
 		Owner: Neutral
+		Health: 10
 		Location: 17,30
 	Actor578: v05
 		Owner: Neutral
+		Health: 10
 		Location: 14,31
 	Actor579: v03
 		Owner: Neutral
+		Health: 3
 		Location: 11,31
 	Actor595: asianhut
 		Owner: Neutral
@@ -1832,16 +1881,6 @@ Actors:
 	GLAStinger1: building.stinger_site
 		Owner: GLA
 		Location: 78,36
-		TurretFacing: 92
-	Actor600: v03
-		Owner: Neutral
-		Location: 91,30
-	Actor601: v03
-		Owner: Neutral
-		Location: 91,36
-	GLAStinger2: building.stinger_site
-		Owner: GLA
-		Location: 92,39
 		TurretFacing: 92
 	Actor603: building.tunnel_network.no_free_actor
 		Owner: GLA
@@ -2037,15 +2076,6 @@ Actors:
 	Actor646: tc01
 		Owner: Neutral
 		Location: 79,65
-	Actor647: tc01
-		Owner: Neutral
-		Location: 94,25
-	Actor648: t15
-		Owner: Neutral
-		Location: 94,30
-	Actor649: t13
-		Owner: Neutral
-		Location: 93,34
 	Actor650: t10
 		Owner: Neutral
 		Location: 84,21
@@ -2173,11 +2203,11 @@ Actors:
 		Owner: GLA
 		Location: 89,50
 		TurretFacing: 92
-	Actor692: car.automobile_7
+	car3: car.automobile_7
 		Owner: Neutral
 		Location: 33,42
 		Facing: 0
-	Actor693: car.automobile_5
+	car4: car.automobile_5
 		Owner: Neutral
 		Location: 29,42
 		Facing: 128
@@ -2320,6 +2350,215 @@ Actors:
 	MiGTargetsMoveWaypoint: waypoint
 		Owner: Neutral
 		Location: 65,55
+	MediumTech4: vehicle.technical
+		Owner: GLA
+		Location: 80,59
+		Facing: 128
+		TurretFacing: 128
+	Actor693: vehicle.technical
+		Owner: GLA
+		Location: 82,59
+		Facing: 96
+		TurretFacing: 96
+	Actor694: vehicle.technical
+		Owner: GLA
+		Location: 84,60
+		Facing: 96
+		TurretFacing: 96
+	Actor695: vehicle.technical
+		Owner: GLA
+		Location: 85,61
+		Facing: 96
+		TurretFacing: 96
+	EasyTech5: vehicle.technical
+		Owner: GLA
+		Location: 85,63
+		Facing: 64
+		TurretFacing: 64
+	MediumScorp1: vehicle.scorpion_tank
+		Owner: GLA
+		Location: 84,58
+		Facing: 96
+		TurretFacing: 96
+	Actor698: vehicle.scorpion_tank
+		Owner: GLA
+		Location: 86,59
+		Facing: 96
+		TurretFacing: 96
+	MediumScorp5: vehicle.scorpion_tank
+		Owner: GLA
+		Location: 84,49
+		Facing: 128
+		TurretFacing: 128
+	Actor700: vehicle.technical
+		Owner: GLA
+		Location: 87,49
+		Facing: 128
+		TurretFacing: 128
+	Actor701: vehicle.technical
+		Owner: GLA
+		Location: 82,50
+		Facing: 160
+		TurretFacing: 160
+	Actor702: vehicle.technical
+		Owner: GLA
+		Location: 84,41
+		Facing: 128
+		TurretFacing: 128
+	Actor704: vehicle.technical
+		Owner: GLA
+		Location: 86,41
+		Facing: 128
+		TurretFacing: 128
+	MediumScorp2: vehicle.scorpion_tank
+		Owner: GLA
+		Location: 80,45
+		Facing: 160
+		TurretFacing: 160
+	Actor707: vehicle.scorpion_tank
+		Owner: GLA
+		Location: 81,44
+		Facing: 160
+		TurretFacing: 160
+	MediumTech5: vehicle.technical
+		Owner: GLA
+		Location: 85,42
+		Facing: 128
+		TurretFacing: 128
+	AttackInf9: infantry.rebel
+		Owner: GLA
+		Location: 84,45
+		SubCell: 3
+		Facing: 92
+		TurretFacing: 92
+	Actor710: infantry.rebel
+		Owner: GLA
+		Location: 84,45
+		SubCell: 1
+		Facing: 92
+		TurretFacing: 92
+	Actor711: infantry.rebel
+		Owner: GLA
+		Location: 84,45
+		SubCell: 4
+		Facing: 92
+		TurretFacing: 92
+	AttackInf10: infantry.rebel
+		Owner: GLA
+		Location: 87,44
+		SubCell: 3
+		Facing: 92
+		TurretFacing: 92
+	Actor713: infantry.rebel
+		Owner: GLA
+		Location: 87,44
+		SubCell: 2
+		Facing: 92
+		TurretFacing: 92
+	Actor714: infantry.rebel
+		Owner: GLA
+		Location: 87,44
+		SubCell: 5
+		Facing: 92
+		TurretFacing: 92
+	Actor715: infantry.rebel
+		Owner: GLA
+		Location: 84,36
+		SubCell: 3
+		Facing: 92
+		TurretFacing: 92
+	Actor716: infantry.rebel
+		Owner: GLA
+		Location: 84,36
+		SubCell: 1
+		Facing: 92
+		TurretFacing: 92
+	Actor717: infantry.rebel
+		Owner: GLA
+		Location: 84,36
+		SubCell: 2
+		Facing: 92
+		TurretFacing: 92
+	Actor718: infantry.rebel
+		Owner: GLA
+		Location: 84,36
+		SubCell: 4
+		Facing: 92
+		TurretFacing: 92
+	Actor719: infantry.rebel
+		Owner: GLA
+		Location: 84,36
+		SubCell: 5
+		Facing: 92
+		TurretFacing: 92
+	Actor720: v03
+		Owner: Neutral
+		Location: 87,31
+	Actor721: v03
+		Owner: Neutral
+		Location: 85,29
+	Actor722: t05
+		Owner: Neutral
+		Location: 92,33
+	Actor723: tc01
+		Owner: Neutral
+		Location: 89,28
+	Actor724: t17
+		Owner: Neutral
+		Location: 89,25
+	Actor725: tc05
+		Owner: Neutral
+		Location: 86,22
+	GLAStinger2: building.stinger_site
+		Owner: GLA
+		Location: 91,35
+		TurretFacing: 92
+	Actor727: t11
+		Owner: Neutral
+		Location: 92,40
+	Actor728: tc01
+		Owner: Neutral
+		Location: 91,45
+	MediumScorp4: vehicle.scorpion_tank
+		Owner: GLA
+		Location: 84,33
+		Facing: 96
+		TurretFacing: 96
+	Actor730: vehicle.technical
+		Owner: GLA
+		Location: 80,33
+		Facing: 160
+		TurretFacing: 160
+	Actor731: vehicle.technical
+		Owner: GLA
+		Location: 82,32
+		Facing: 160
+		TurretFacing: 160
+	Actor732: vehicle.technical
+		Owner: GLA
+		Location: 77,35
+		Facing: 160
+		TurretFacing: 160
+	EasyScorp1: vehicle.scorpion_tank
+		Owner: GLA
+		Location: 78,30
+		Facing: 128
+		TurretFacing: 128
+	MediumScorp3: vehicle.scorpion_tank
+		Owner: GLA
+		Location: 80,30
+		Facing: 128
+		TurretFacing: 128
+	Actor735: vehicle.scorpion_tank
+		Owner: GLA
+		Location: 81,30
+		Facing: 128
+		TurretFacing: 128
+	Actor726: vehicle.technical
+		Owner: GLA
+		Location: 90,52
+		Facing: 64
+		TurretFacing: 64
 
 Rules: gen|rules/campaign-rules.yaml, rules.yaml
 

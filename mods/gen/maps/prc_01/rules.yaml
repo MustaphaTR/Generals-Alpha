@@ -2,7 +2,6 @@ Player:
 	LobbyPrerequisiteCheckbox@GLOBALZHUNITS:
 		Enabled: False
 		Locked: True
-	EnemyWatcher:
 	ProvidesRadar:
 
 World:
@@ -103,6 +102,9 @@ upgrade.black_napalm:
 	Buildable:
 		Prerequisites: ~disabled
 
+building.prc_command_center:
+	-ConditionPrerequisite@RADAR:
+
 building.gatling_cannon:
 	Buildable:
 		Prerequisites: ~disabled
@@ -129,19 +131,23 @@ building.bunker.filled:
 		Prerequisites: ~disabled
 	Cargo:
 		InitialUnits: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard
+		EjectOnDeathDamage: 100
 	RenderSprites:
 		Image: building.bunker
 
 building.bunker.filled.gla:
 	Inherits: building.bunker.filled
 	Cargo:
-		InitialUnits: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel
+		InitialUnits: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel
 
 aircraft.mig:
 	-Selectable:
+	-ReturnOnIdle:
+	-RevealsShroud:
+	FlyAwayOnIdle:
 	Interactable:
 	Aircraft:
-		Speed: 180
+		Speed: 200
 
 ^Car:
 	ExternalCondition@lua:
