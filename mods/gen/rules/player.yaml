@@ -142,7 +142,7 @@ Player:
 		DefaultCash: 10000
 		InsufficientFundsNotification: InsufficientFunds
 	DeveloperMode:
-		CheckboxDisplayOrder: 8
+		CheckboxDisplayOrder: 9
 	GpsWatcher:
 	Shroud:
 		FogCheckboxDisplayOrder: 3
@@ -213,6 +213,8 @@ Player:
 	GrantConditionOnPrerequisite@SUPPLY_LINES:
 		Condition: supply_lines
 		Prerequisites: upgrade.supply_lines
+	Taunts:
+		CheckboxDisplayOrder: 8
 	SpawnActorPower@EMERGENCY_REPAIR:
 		Actors:
 			1: camera.emergency_repair.1
