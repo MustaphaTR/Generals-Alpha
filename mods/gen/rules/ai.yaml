@@ -333,322 +333,323 @@ Player:
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
 		SquadSize: 20
-		SupportPowerDecision@spydrone:
-			OrderName: SpyDronePowerInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 5c0
-		SupportPowerDecision@radar_van_scan:
-			OrderName: RadarScanPowerInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 5c0
-		SupportPowerDecision@spy_satellite:
-			OrderName: SpySatellitePowerInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 5c0
-		SupportPowerDecision@a10:
-			OrderName: A10PowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@arty_barrage:
-			OrderName: ArtilleryBarragePowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@cluster_mines:
-			OrderName: ClusterMinesPowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@tankdrop:
-			OrderName: TankDropPowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop:
-			OrderName: ParadropPowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop.inf_gen:
-			OrderName: PRCParadropPowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@ambush:
-			OrderName: AmbushPowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@toxin_ambush:
-			OrderName: ToxinAmbushPowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Infantry
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@fuel_air_bomb:
-			OrderName: FuelAirBombPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@usa_carpet_bombing:
-			OrderName: CarpetBombingUSAPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@prc_carpet_bombing:
-			OrderName: CarpetBombingPRCPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@nuke_carpet_bombing:
-			OrderName: CarpetBombingNukePowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@anthrax_bomb:
-			OrderName: AnthraxBombPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Infantry, Vehicle
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Infantry, Vehicle
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@leaflet_drop:
-			OrderName: LeafletDropPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Infantry, Vehicle
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Infantry, Vehicle
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@emp:
-			OrderName: EMPPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure, Vehicle
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@particle_cannon:
-			OrderName: IonCannonPowerInfoOrder
-			MinimumAttractiveness: 1000
-			FineScanRadius: 2
-			Consideration@1:
-				Against: Enemy
-				Types: Air, Tank, Vehicle, Infantry, Water
-				Attractiveness: 2
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@3:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 3c0
-		SupportPowerDecision@scud_storm:
-			OrderName: SCUDStormPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@nukepower:
-			OrderName: NukePowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@SupplyDrop:
-			OrderName: SupplyDropPowerInfoOrder
-			Consideration@1:
-				Against: Ally
-		SupportPowerDecision@Intelligence:
-			OrderName: IntelligencePowerInfoOrder
-			Consideration@1:
-				Against: Ally
-		SupportPowerDecision@IntelligenceZH:
-			OrderName: IntelligenceZHPowerInfoOrder
-			Consideration@1:
-				Against: Ally
+		SupportPowerDecisions:
+			spydrone:
+				OrderName: SpyDronePowerInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+			radar_van_scan:
+				OrderName: RadarScanPowerInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+			spy_satellite:
+				OrderName: SpySatellitePowerInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+			a10:
+				OrderName: A10PowerInfoOrder
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			arty_barrage:
+				OrderName: ArtilleryBarragePowerInfoOrder
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			cluster_mines:
+				OrderName: ClusterMinesPowerInfoOrder
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			tankdrop:
+				OrderName: TankDropPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			paradrop:
+				OrderName: ParadropPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			paradrop.inf_gen:
+				OrderName: PRCParadropPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			ambush:
+				OrderName: AmbushPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			toxin_ambush:
+				OrderName: ToxinAmbushPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Infantry
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			fuel_air_bomb:
+				OrderName: FuelAirBombPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			usa_carpet_bombing:
+				OrderName: CarpetBombingUSAPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			prc_carpet_bombing:
+				OrderName: CarpetBombingPRCPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			nuke_carpet_bombing:
+				OrderName: CarpetBombingNukePowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			anthrax_bomb:
+				OrderName: AnthraxBombPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Infantry, Vehicle
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Infantry, Vehicle
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			leaflet_drop:
+				OrderName: LeafletDropPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Infantry, Vehicle
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Infantry, Vehicle
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			emp:
+				OrderName: EMPPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure, Vehicle
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			particle_cannon:
+				OrderName: IonCannonPowerInfoOrder
+				MinimumAttractiveness: 1000
+				FineScanRadius: 2
+				Consideration@1:
+					Against: Enemy
+					Types: Air, Tank, Vehicle, Infantry, Water
+					Attractiveness: 2
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@3:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 3c0
+			scud_storm:
+				OrderName: SCUDStormPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			nukepower:
+				OrderName: NukePowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			SupplyDrop:
+				OrderName: SupplyDropPowerInfoOrder
+				Consideration@1:
+					Against: Ally
+			Intelligence:
+				OrderName: IntelligencePowerInfoOrder
+				Consideration@1:
+					Against: Ally
+			IntelligenceZH:
+				OrderName: IntelligenceZHPowerInfoOrder
+				Consideration@1:
+					Against: Ally
 	HackyAI@NormalAI:
 		Name: Normal AI
 		Type: normal
@@ -995,322 +996,322 @@ Player:
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
 		SquadSize: 40
-		SupportPowerDecision@spydrone:
-			OrderName: SpyDronePowerInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 5c0
-		SupportPowerDecision@radar_van_scan:
-			OrderName: RadarScanPowerInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 5c0
-		SupportPowerDecision@spy_satellite:
-			OrderName: SpySatellitePowerInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 5c0
-		SupportPowerDecision@a10:
-			OrderName: A10PowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@arty_barrage:
-			OrderName: ArtilleryBarragePowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@cluster_mines:
-			OrderName: ClusterMinesPowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@tankdrop:
-			OrderName: TankDropPowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop:
-			OrderName: ParadropPowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop.inf_gen:
-			OrderName: PRCParadropPowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@ambush:
-			OrderName: AmbushPowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@toxin_ambush:
-			OrderName: ToxinAmbushPowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Infantry
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@fuel_air_bomb:
-			OrderName: FuelAirBombPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@usa_carpet_bombing:
-			OrderName: CarpetBombingUSAPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@prc_carpet_bombing:
-			OrderName: CarpetBombingPRCPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@nuke_carpet_bombing:
-			OrderName: CarpetBombingNukePowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@anthrax_bomb:
-			OrderName: AnthraxBombPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Infantry, Vehicle
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Infantry, Vehicle
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@leaflet_drop:
-			OrderName: LeafletDropPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Infantry, Vehicle
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Infantry, Vehicle
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@emp:
-			OrderName: EMPPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure, Vehicle
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@particle_cannon:
-			OrderName: IonCannonPowerInfoOrder
-			MinimumAttractiveness: 1000
-			FineScanRadius: 2
-			Consideration@1:
-				Against: Enemy
-				Types: Air, Tank, Vehicle, Infantry, Water
-				Attractiveness: 2
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@3:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 3c0
-		SupportPowerDecision@scud_storm:
-			OrderName: SCUDStormPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@nukepower:
-			OrderName: NukePowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@SupplyDrop:
-			OrderName: SupplyDropPowerInfoOrder
-			Consideration@1:
-				Against: Ally
-		SupportPowerDecision@Intelligence:
-			OrderName: IntelligencePowerInfoOrder
-			Consideration@1:
-				Against: Ally
-		SupportPowerDecision@IntelligenceZH:
-			OrderName: IntelligenceZHPowerInfoOrder
-			Consideration@1:
-				Against: Ally
+			spydrone:
+				OrderName: SpyDronePowerInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+			radar_van_scan:
+				OrderName: RadarScanPowerInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+			spy_satellite:
+				OrderName: SpySatellitePowerInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+			a10:
+				OrderName: A10PowerInfoOrder
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			arty_barrage:
+				OrderName: ArtilleryBarragePowerInfoOrder
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			cluster_mines:
+				OrderName: ClusterMinesPowerInfoOrder
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			tankdrop:
+				OrderName: TankDropPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			paradrop:
+				OrderName: ParadropPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			paradrop.inf_gen:
+				OrderName: PRCParadropPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			ambush:
+				OrderName: AmbushPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			toxin_ambush:
+				OrderName: ToxinAmbushPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Infantry
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			fuel_air_bomb:
+				OrderName: FuelAirBombPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			usa_carpet_bombing:
+				OrderName: CarpetBombingUSAPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			prc_carpet_bombing:
+				OrderName: CarpetBombingPRCPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			nuke_carpet_bombing:
+				OrderName: CarpetBombingNukePowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			anthrax_bomb:
+				OrderName: AnthraxBombPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Infantry, Vehicle
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Infantry, Vehicle
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			leaflet_drop:
+				OrderName: LeafletDropPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Infantry, Vehicle
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Infantry, Vehicle
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			emp:
+				OrderName: EMPPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure, Vehicle
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			particle_cannon:
+				OrderName: IonCannonPowerInfoOrder
+				MinimumAttractiveness: 1000
+				FineScanRadius: 2
+				Consideration@1:
+					Against: Enemy
+					Types: Air, Tank, Vehicle, Infantry, Water
+					Attractiveness: 2
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@3:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 3c0
+			scud_storm:
+				OrderName: SCUDStormPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			nukepower:
+				OrderName: NukePowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			SupplyDrop:
+				OrderName: SupplyDropPowerInfoOrder
+				Consideration@1:
+					Against: Ally
+			Intelligence:
+				OrderName: IntelligencePowerInfoOrder
+				Consideration@1:
+					Against: Ally
+			IntelligenceZH:
+				OrderName: IntelligenceZHPowerInfoOrder
+				Consideration@1:
+					Against: Ally
 	HackyAI@TurtleAI:
 		Name: Turtle AI
 		Type: turtle
@@ -1655,319 +1656,319 @@ Player:
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
 		SquadSize: 10
-		SupportPowerDecision@spydrone:
-			OrderName: SpyDronePowerInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 5c0
-		SupportPowerDecision@radar_van_scan:
-			OrderName: RadarScanPowerInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 5c0
-		SupportPowerDecision@spy_satellite:
-			OrderName: SpySatellitePowerInfoOrder
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 5c0
-		SupportPowerDecision@a10:
-			OrderName: A10PowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@arty_barrage:
-			OrderName: ArtilleryBarragePowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@cluster_mines:
-			OrderName: ClusterMinesPowerInfoOrder
-			MinimumAttractiveness: 2000
-			Consideration@1:
-				Against: Enemy
-				Types: Vehicle, Infantry
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 2c0
-		SupportPowerDecision@tankdrop:
-			OrderName: TankDropPowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop:
-			OrderName: ParadropPowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@paradrop.inf_gen:
-			OrderName: PRCParadropPowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@ambush:
-			OrderName: AmbushPowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@toxin_ambush:
-			OrderName: ToxinAmbushPowerInfoOrder
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Infantry
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@fuel_air_bomb:
-			OrderName: FuelAirBombPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@usa_carpet_bombing:
-			OrderName: CarpetBombingUSAPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@prc_carpet_bombing:
-			OrderName: CarpetBombingPRCPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@nuke_carpet_bombing:
-			OrderName: CarpetBombingNukePowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@anthrax_bomb:
-			OrderName: AnthraxBombPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Infantry, Vehicle
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Infantry, Vehicle
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@leaflet_drop:
-			OrderName: LeafletDropPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Infantry, Vehicle
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Infantry, Vehicle
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@emp:
-			OrderName: EMPPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure, Vehicle
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@particle_cannon:
-			OrderName: IonCannonPowerInfoOrder
-			MinimumAttractiveness: 1000
-			FineScanRadius: 2
-			Consideration@1:
-				Against: Enemy
-				Types: Air, Tank, Vehicle, Infantry, Water
-				Attractiveness: 2
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@2:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 2c0
-			Consideration@3:
-				Against: Ally
-				Types: Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 3c0
-		SupportPowerDecision@scud_storm:
-			OrderName: SCUDStormPowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@nukepower:
-			OrderName: NukePowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air, Ground, Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-		SupportPowerDecision@SupplyDrop:
-			OrderName: SupplyDropPowerInfoOrder
-			Consideration@1:
-				Against: Ally
-		SupportPowerDecision@Intelligence:
-			OrderName: IntelligencePowerInfoOrder
-			Consideration@1:
-				Against: Ally
-		SupportPowerDecision@IntelligenceZH:
-			OrderName: IntelligenceZHPowerInfoOrder
-			Consideration@1:
-				Against: Ally
+			spydrone:
+				OrderName: SpyDronePowerInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+			radar_van_scan:
+				OrderName: RadarScanPowerInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+			spy_satellite:
+				OrderName: SpySatellitePowerInfoOrder
+				MinimumAttractiveness: 1
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 5c0
+			a10:
+				OrderName: A10PowerInfoOrder
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			arty_barrage:
+				OrderName: ArtilleryBarragePowerInfoOrder
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			cluster_mines:
+				OrderName: ClusterMinesPowerInfoOrder
+				MinimumAttractiveness: 2000
+				Consideration@1:
+					Against: Enemy
+					Types: Vehicle, Infantry
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 2c0
+			tankdrop:
+				OrderName: TankDropPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			paradrop:
+				OrderName: ParadropPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			paradrop.inf_gen:
+				OrderName: PRCParadropPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			ambush:
+				OrderName: AmbushPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			toxin_ambush:
+				OrderName: ToxinAmbushPowerInfoOrder
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Infantry
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			fuel_air_bomb:
+				OrderName: FuelAirBombPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			usa_carpet_bombing:
+				OrderName: CarpetBombingUSAPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			prc_carpet_bombing:
+				OrderName: CarpetBombingPRCPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			nuke_carpet_bombing:
+				OrderName: CarpetBombingNukePowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			anthrax_bomb:
+				OrderName: AnthraxBombPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Infantry, Vehicle
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Infantry, Vehicle
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			leaflet_drop:
+				OrderName: LeafletDropPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Infantry, Vehicle
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Infantry, Vehicle
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			emp:
+				OrderName: EMPPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure, Vehicle
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			particle_cannon:
+				OrderName: IonCannonPowerInfoOrder
+				MinimumAttractiveness: 1000
+				FineScanRadius: 2
+				Consideration@1:
+					Against: Enemy
+					Types: Air, Tank, Vehicle, Infantry, Water
+					Attractiveness: 2
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@2:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 2c0
+				Consideration@3:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 3c0
+			scud_storm:
+				OrderName: SCUDStormPowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			nukepower:
+				OrderName: NukePowerInfoOrder
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			SupplyDrop:
+				OrderName: SupplyDropPowerInfoOrder
+				Consideration@1:
+					Against: Ally
+			Intelligence:
+				OrderName: IntelligencePowerInfoOrder
+				Consideration@1:
+					Against: Ally
+			IntelligenceZH:
+				OrderName: IntelligenceZHPowerInfoOrder
+				Consideration@1:
+					Against: Ally
