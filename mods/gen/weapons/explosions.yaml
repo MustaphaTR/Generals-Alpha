@@ -473,7 +473,7 @@ explosion.terrorist.bike:
 	Inherits: explosion.terrorist
 	Warhead@1Dam: SpreadDamage
 		Damage: 60000
-	Warhead@2Eff: CreateEffect
+	Warhead@2Dam: SpreadDamage
 		Damage: 10000
 
 explosion.suicide:
@@ -482,16 +482,16 @@ explosion.suicide:
 		Damage: 40000
 	Warhead@2Eff: CreateEffect
 		Explosions: building
-	-Warhead@1DamAlly:
-	-Warhead@2DamAlly:
-	-Warhead@Smu:
-	-Warhead@SmuSnow:
+	-Warhead@1DamAlly: SpreadDamage
+	-Warhead@2DamAlly: SpreadDamage
+	-Warhead@Smu: LeaveSmudge
+	-Warhead@SmuSnow: LeaveSmudge
 
 explosion.terrorist.demo.bike:
 	Inherits: explosion.terrorist
 	Warhead@1Dam: SpreadDamage
 		Damage: 30000
-	Warhead@2Eff: CreateEffect
+	Warhead@2Dam: SpreadDamage
 		Damage: 50000
 
 explosion.demo_charge:
@@ -507,8 +507,8 @@ explosion.demo_charge:
 		DamageTypes: TriggerProne, ExplosionDeath, Incendiary
 	Warhead@2Eff: CreateEffect
 		Explosions: building
-	-Warhead@Smu:
-	-Warhead@SmuSnow:
+	-Warhead@Smu: LeaveSmudge
+	-Warhead@SmuSnow: LeaveSmudge
 
 explosion.demo_charge.demo_gen:
 	Inherits: explosion.demo_charge

@@ -333,7 +333,6 @@ missile.aurora:
 		Blockable: false
 		Image: DRAGON
 		Shadow: True
-		RangeLimit: 10c0
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
 		Damage: 40000
@@ -727,7 +726,8 @@ missile.patriot.ground:
 		HorizontalRateOfTurn: 25
 		RangeLimit: 6c512
 		Speed: 341
-		LaunchAngle: 62
+		MinimumLaunchAngle: 62
+		MaximumLaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
 		Damage: 3000
 		Versus:
@@ -755,7 +755,8 @@ missile.patriot.air:
 		Image: MISSILE
 		HorizontalRateOfTurn: 25
 		RangeLimit: 9c0
-		LaunchAngle: 62
+		MinimumLaunchAngle: 62
+		MaximumLaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
 		Damage: 2500
 		ValidTargets: Air
@@ -871,7 +872,8 @@ missile.rocket_buggy:
 	ValidTargets: Ground
 	TargetActorCenter: true
 	Projectile: Missile
-		LaunchAngle: 62
+		MinimumLaunchAngle: 62
+		MaximumLaunchAngle: 62
 		RangeLimit: 8c512
 		Speed: 341
 	Warhead@1Dam: SpreadDamage
@@ -1187,7 +1189,8 @@ missile.tomahawk_launcher:
 		Image: MISSILE
 		RangeLimit: 11c0
 		Shadow: True
-		LaunchAngle: 62
+		MinimumLaunchAngle: 62
+		MaximumLaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c256
 		Damage: 10000
