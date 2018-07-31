@@ -17,19 +17,7 @@ World:
 	-StartGameNotification:
 
 ^Vehicle:
-	GivesBounty:
-		Percentage: 0
-	DamageMultiplier@UNKILLABLE:
-		RequiresCondition: unkillable
-		Modifier: 0
-	Crushable:
-		RequiresCondition: !unkillable
-	ExternalCondition@UNKILLABLE:
-		Condition: unkillable
-
-^Tank:
-	GivesBounty:
-		Percentage: 0
+	-GivesBounty:
 	DamageMultiplier@UNKILLABLE:
 		RequiresCondition: unkillable
 		Modifier: 0
@@ -39,8 +27,7 @@ World:
 		Condition: unkillable
 
 ^Infantry:
-	GivesBounty:
-		Percentage: 0
+	-GivesBounty:
 	DamageMultiplier@UNKILLABLE:
 		RequiresCondition: unkillable
 		Modifier: 0
@@ -50,8 +37,7 @@ World:
 		Condition: unkillable
 
 ^Ship:
-	GivesBounty:
-		Percentage: 0
+	-GivesBounty:
 	DamageMultiplier@UNKILLABLE:
 		RequiresCondition: unkillable
 		Modifier: 0
@@ -59,8 +45,7 @@ World:
 		Condition: unkillable
 
 ^Plane:
-	GivesBounty:
-		Percentage: 0
+	-GivesBounty:
 	DamageMultiplier@UNKILLABLE:
 		RequiresCondition: unkillable
 		Modifier: 0
@@ -68,8 +53,7 @@ World:
 		Condition: unkillable
 
 ^Building:
-	GivesBounty:
-		Percentage: 0
+	-GivesBounty:
 	DamageMultiplier@UNKILLABLE:
 		RequiresCondition: unkillable
 		Modifier: 0
@@ -84,8 +68,6 @@ tech.communications_center:
 		Condition: unkillable
 
 ^Wall:
-	GivesBounty:
-		Percentage: 0
 	DamageMultiplier@UNKILLABLE:
 		RequiresCondition: unkillable
 		Modifier: 0
@@ -95,8 +77,6 @@ tech.communications_center:
 		Condition: unkillable
 
 ^Gate:
-	GivesBounty:
-		Percentage: 0
 	DamageMultiplier@UNKILLABLE:
 		RequiresCondition: unkillable
 		Modifier: 0
@@ -104,8 +84,6 @@ tech.communications_center:
 		Condition: unkillable
 
 ^Mine:
-	GivesBounty:
-		Percentage: 0
 	DamageMultiplier@UNKILLABLE:
 		RequiresCondition: unkillable
 		Modifier: 0
@@ -113,8 +91,6 @@ tech.communications_center:
 		Condition: unkillable
 
 ^Flag:
-	GivesBounty:
-		Percentage: 0
 	DamageMultiplier@UNKILLABLE:
 		RequiresCondition: unkillable
 		Modifier: 0
@@ -223,7 +199,7 @@ powerproxy.paradrop:
 		QuantizedFacings: 8
 		CameraActor: camera.paradrop
 		DisplayBeacon: false
-		BeaconPoster:
+		BeaconPosters:
 			1: paradrop2bcon
 		ArrowSequence: arrow
 		ClockSequence: clock
