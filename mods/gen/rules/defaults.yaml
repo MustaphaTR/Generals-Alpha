@@ -1024,21 +1024,21 @@
 ^CanHaveDrones:
 	MobSpawnerMaster@SCOUT_DRONE:
 		Actors: aircraft.scout_drone
-		SpawnReplaceDelay: 1500
+		RespawnTicks: 1500
 		ExitByBudding: false
 		AggregateHealth: false
 		SpawnIsGroundUnit: true
 		RequiresCondition: scout_drone && !hacked && !emp && !driver_killed && !leaflet
 	MobSpawnerMaster@BATTLE_DRONE:
 		Actors: aircraft.battle_drone
-		SpawnReplaceDelay: 1500
+		RespawnTicks: 1500
 		ExitByBudding: false
 		AggregateHealth: false
 		SpawnIsGroundUnit: true
 		RequiresCondition: battle_drone && !hacked && !emp && !driver_killed && !leaflet
 	MobSpawnerMaster@HELLFIRE_DRONE:
 		Actors: aircraft.hellfire_drone
-		SpawnReplaceDelay: 1500
+		RespawnTicks: 1500
 		ExitByBudding: false
 		AggregateHealth: false
 		SpawnIsGroundUnit: true
@@ -1051,7 +1051,6 @@
 		Type: queue.drone
 		Group: Tech
 		QueueLimit: 1
-		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 	ProductionBar:
@@ -1075,7 +1074,6 @@
 		Type: queue.prc_vehicle_upgrade
 		Group: Tech
 		QueueLimit: 1
-		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 	ProductionBar:
@@ -1770,7 +1768,6 @@
 	ProductionQueue:
 		Type: FakeToReal
 		Group: Vehicle
-		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 1
 	ProductionBar:
@@ -2008,17 +2005,17 @@
 	Targetable:
 		TargetTypes: Trees
 	WithDamageOverlay@SmallBurn:
-		DamageType: Incendiary
+		DamageTypes: Incendiary
 		Image: burn-s
 		MinimumDamageState: Light
 		MaximumDamageState: Medium
 	WithDamageOverlay@MediumBurn:
-		DamageType: Incendiary
+		DamageTypes: Incendiary
 		Image: burn-m
 		MinimumDamageState: Medium
 		MaximumDamageState: Heavy
 	WithDamageOverlay@LargeBurn:
-		DamageType: Incendiary
+		DamageTypes: Incendiary
 		Image: burn-l
 		MinimumDamageState: Heavy
 		MaximumDamageState: Dead

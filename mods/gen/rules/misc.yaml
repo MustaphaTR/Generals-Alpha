@@ -574,13 +574,16 @@ supply.pile.a:
 			834: one_third
 			1667: two_thirds
 	WithSpriteBody@100:
+		Name: 100
 		Sequence: idle-100
 		RenderInPreview: true
 		RequiresCondition: two_thirds
 	WithSpriteBody@66:
+		Name: 66
 		Sequence: idle-66
 		RequiresCondition: one_third && !two_thirds
 	WithSpriteBody@33:
+		Name: 33
 		Sequence: idle-33
 		RequiresCondition: not_empty && !one_third
 
@@ -595,16 +598,20 @@ supply.pile.c:
 			1251: half
 			1876: three_quarters
 	WithSpriteBody@100:
+		Name: 100
 		Sequence: idle-100
 		RenderInPreview: true
 		RequiresCondition: three_quarters
 	WithSpriteBody@75:
+		Name: 75
 		Sequence: idle-75
 		RequiresCondition: half && !three_quarters
 	WithSpriteBody@50:
+		Name: 50
 		Sequence: idle-50
 		RequiresCondition: quarter && !half
 	WithSpriteBody@25:
+		Name: 25
 		Sequence: idle-25
 		RequiresCondition: not_empty && !quarter
 
@@ -626,19 +633,24 @@ supply.pile.g:
 			1501: three_fifths
 			2001: four_fifths
 	WithSpriteBody@100:
+		Name: 100
 		Sequence: idle-100
 		RenderInPreview: true
 		RequiresCondition: four_fifths
 	WithSpriteBody@80:
+		Name: 80
 		Sequence: idle-80
 		RequiresCondition: three_fifths && !four_fifths
 	WithSpriteBody@60:
+		Name: 60
 		Sequence: idle-60
 		RequiresCondition: two_fifths && !three_fifths
 	WithSpriteBody@40:
+		Name: 40
 		Sequence: idle-40
 		RequiresCondition: one_fifth && !two_fifths
 	WithSpriteBody@20:
+		Name: 20
 		Sequence: idle-20
 		RequiresCondition: not_empty && !one_fifth
 
@@ -653,16 +665,20 @@ supply.pile.g:
 			15001: half
 			22501: three_quarters
 	WithSpriteBody@100:
+		Name: 100
 		Sequence: idle-100
 		RenderInPreview: true
 		RequiresCondition: three_quarters
 	WithSpriteBody@75:
+		Name: 75
 		Sequence: idle-75
 		RequiresCondition: half && !three_quarters
 	WithSpriteBody@50:
+		Name: 50
 		Sequence: idle-50
 		RequiresCondition: quarter && !half
 	WithSpriteBody@25:
+		Name: 25
 		Sequence: idle-25
 		RequiresCondition: not_empty && !quarter
 

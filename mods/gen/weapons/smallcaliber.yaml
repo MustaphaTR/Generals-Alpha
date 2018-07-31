@@ -119,7 +119,7 @@ pistol.angry_mob:
 	Inherits: ^LightMG
 	ReloadDelay: 75
 	Burst: 8
-	BurstDelay: 6
+	BurstDelays: 6
 	Range: 2c512
 	Report: gun27.aud
 	Warhead@1Dam: SpreadDamage
@@ -150,7 +150,7 @@ mg.ranger:
 	ReloadDelay: 18
 	Range: 2c512
 	Burst: 3
-	BurstDelay: 3
+	BurstDelays: 3
 	Report: iranweaa.wav, iranweab.wav, iranweac.wav, iranwead.wav, iranweae.wav, iranweaf.wav, iranweag.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 500
@@ -732,7 +732,7 @@ mg.a10:
 	Inherits: ^HeavyMG
 	Range: 11c128
 	Burst: 12
-	BurstDelay: 2
+	BurstDelays: 2
 	FirstBurstTargetOffset: -2984,0,0
 	FollowingBurstTargetOffset: 746,0,0
 	ReloadDelay: 125

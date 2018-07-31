@@ -12,7 +12,7 @@ laser.laser_tank:
 laser.laser_turret.ground:
 	Inherits: ^AntiGroundMissile
 	Burst: 3
-	BurstDelay: 32
+	BurstDelays: 32
 	ReloadDelay: 60
 	Range: 5c640
 	MinRange: 0c0
@@ -41,7 +41,7 @@ laser.laser_turret.ground:
 laser.laser_turret.air:
 	Inherits: ^AntiAirMissile
 	Burst: 4
-	BurstDelay: 32
+	BurstDelays: 32
 	ReloadDelay: 60
 	Range: 8c768
 	MinRange: 0c0

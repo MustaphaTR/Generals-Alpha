@@ -82,7 +82,6 @@ building.usa_command_center:
 		Group: Command
 		InstantCashDrain: true
 		LowPowerSlowdown: 2
-		RequireOwner: false
 		SpectatorUIOrder: 12
 	SpawnActorPower@SPY_DRONE:
 		PauseOnCondition: emp || hacked || sabotaged
@@ -491,7 +490,6 @@ building.prc_command_center:
 		Group: Command
 		InstantCashDrain: true
 		LowPowerSlowdown: 2
-		RequireOwner: false
 		SpectatorUIOrder: 14
 	ProductionBar@PRC_COMMAND_CENTER:
 		ProductionType: queue.prc_command_center
@@ -881,7 +879,6 @@ building.cold_fusion_reactor:
 	ProductionQueue:
 		Type: queue.cold_fusion_reactor
 		Group: Tech
-		RequireOwner: false
 		InstantCashDrain: true
 		QueueLimit: 1
 		LowPowerSlowdown: 2
@@ -1063,7 +1060,6 @@ building.usa_barracks:
 	ProductionQueue:
 		Type: queue.usa_infantry
 		Group: Infantry
-		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 2
 		SpectatorUIOrder: 19
@@ -1315,7 +1311,6 @@ building.usa_supply_center:
 		Factions: air
 		Group: Collector
 		InstantCashDrain: true
-		RequireOwner: false
 		LowPowerSlowdown: 2
 		SpectatorUIOrder: 16
 	ProductionBar@Vanilla:
@@ -1458,7 +1453,6 @@ building.prc_supply_center:
 	ProductionQueue:
 		Type: queue.prc_collector
 		Group: Collector
-		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 2
 		SpectatorUIOrder: 18
@@ -2509,7 +2503,6 @@ building.stinger_site:
 		Facing: 192
 	RallyPoint:
 	DockManager:
-		DockOnActor: true
 		DeadlockDetectionEnabled: false
 	Reservable:
 	RepairsUnits:
@@ -2735,7 +2728,6 @@ building.internet_center:
 	ProductionQueue:
 		Type: queue.internet_center
 		Group: Tech
-		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 2
 		SpectatorUIOrder: 52
@@ -3592,42 +3584,34 @@ building.scud_storm:
 		PipCount: 0
 		AmmoCondition: ammo
 	WithSpriteTurret@A_Full:
-		AmmoPoolName: primary
 		Turret: A
 		Sequence: turret-full
 		RequiresCondition: ammo
 	WithSpriteTurret@A_Empty:
-		AmmoPoolName: primary
 		Turret: A
 		Sequence: turret-empty
 		RequiresCondition: !ammo
 	WithSpriteTurret@B_Full:
-		AmmoPoolName: primary
 		Turret: B
 		Sequence: turret-full
 		RequiresCondition: ammo
 	WithSpriteTurret@B_Empty:
-		AmmoPoolName: primary
 		Turret: B
 		Sequence: turret-empty
 		RequiresCondition: !ammo
 	WithSpriteTurret@C_Full:
-		AmmoPoolName: primary
 		Turret: C
 		Sequence: turret-full
 		RequiresCondition: ammo
 	WithSpriteTurret@C_Empty:
-		AmmoPoolName: primary
 		Turret: C
 		Sequence: turret-empty
 		RequiresCondition: !ammo
 	WithSpriteTurret@D_Full:
-		AmmoPoolName: primary
 		Turret: D
 		Sequence: turret-full
 		RequiresCondition: ammo
 	WithSpriteTurret@D_Empty:
-		AmmoPoolName: primary
 		Turret: D
 		Sequence: turret-empty
 		RequiresCondition: !ammo

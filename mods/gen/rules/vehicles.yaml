@@ -37,9 +37,11 @@ vehicle.supply_truck:
 	WithFacingSpriteBody:
 		RequiresCondition: !half
 	WithFacingSpriteBody@Half:
+		Name: half
 		Sequence: half-idle
 		RequiresCondition: half && !full
 	WithFacingSpriteBody@Full:
+		Name: full
 		Sequence: full-idle
 		RequiresCondition: full
 	Health:
@@ -564,12 +566,10 @@ vehicle.scorpion_tank:
 		Delay: 300
 		Count: 1
 	WithSpriteTurret@SC_ROCKET-1:
-		AmmoPoolName: sc_rocket-1
 		Sequence: rocket
 		Turret: sc_rocket-1
 		RequiresCondition: sc_rocket && ammo-1
 	WithSpriteTurret@SC_ROCKET-2:
-		AmmoPoolName: sc_rocket-2
 		Sequence: rocket
 		Turret: sc_rocket-2
 		RequiresCondition: sc_rocket && scrap_create_bonus == 2 && ammo-2
@@ -1710,6 +1710,7 @@ vehicle.battle_Bus:
 	WithFacingSpriteBody:
 		RequiresCondition: !husk
 	WithFacingSpriteBody@HUSK:
+		Name: husk
 		Sequence: husk
 		RequiresCondition: husk
 	AttackGarrisoned:
@@ -1988,7 +1989,7 @@ vehicle.microwave_tank:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
-		TurnRate: 4
+		TurnSpeed: 4
 		Offset: -256,0,256
 	Armament@Anim:
 		Weapon: disable.microwave_tank.anim
@@ -2076,7 +2077,7 @@ vehicle.ecm_tank:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
-		TurnRate: 4
+		TurnSpeed: 4
 		Offset: -256,0,256
 	Armament@Anim:
 		Weapon: disable.ecm_tank.anim
@@ -2193,11 +2194,9 @@ vehicle.tomahawk_launcher:
 	AttackTurreted:
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	WithSpriteTurret@Full:
-		AmmoPoolName: primary
 		Sequence: turret-full
 		RequiresCondition: ammo
 	WithSpriteTurret@Empty:
-		AmmoPoolName: primary
 		Sequence: turret-empty
 		RequiresCondition: !ammo
 	AcceptsDeliveredExperience:
@@ -2260,7 +2259,6 @@ vehicle.scud_launcher:
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
-		RequireOwner: false
 		LowPowerSlowdown: 1
 	Exit:
 	ProvidesPrerequisite@unitname:
@@ -2338,6 +2336,7 @@ vehicle.scud_launcher:
 	WithFacingSpriteBody:
 		RequiresCondition: ammo
 	WithFacingSpriteBody@EMPTY:
+		Name: empty
 		RequiresCondition: !ammo
 		Sequence: empty-idle
 	SelectionDecorations:
@@ -2494,7 +2493,7 @@ vehicle.paladin_tank:
 	Mobile:
 		Speed: 30
 		TurnSpeed: 8
-		Voiced: Move
+		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
 	Crushable:
@@ -2595,7 +2594,7 @@ vehicle.marauder_tank:
 	Mobile:
 		Speed: 40
 		TurnSpeed: 8
-		Voiced: Move
+		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
 	Crushable:
@@ -2892,7 +2891,7 @@ vehicle.overlord_tank:
 	Mobile:
 		Speed: 20
 		TurnSpeed: 3
-		Voiced: Move
+		Voice: Move
 		Locomotor: locomotor.overlord
 		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
 	Turreted@Cannon:
@@ -2942,7 +2941,6 @@ vehicle.overlord_tank:
 		Turrets: gatling, primary
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	AttackGarrisoned:
-		Turret: bunker
 		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
@@ -3519,6 +3517,7 @@ vehicle.combat_cycle:
 	WithFacingSpriteBody:
 		RequiresCondition: !loaded
 	WithFacingSpriteBody@Other:
+		Name: other
 		Sequence: idle-other
 		RequiresCondition: loaded && !(rebel || rpg || jarmen)
 	WithFacingSpriteBody@Gun:
@@ -3532,27 +3531,27 @@ vehicle.combat_cycle:
 	WithAttackAnimation@MG:
 		Body: gun
 		Armament: mg
-		AttackSequence: shoot-gun
+		Sequence: shoot-gun
 		RequiresCondition: rebel
 	WithAttackAnimation@RPG_G:
 		Body: rocket
 		Armament: ag_rocket
-		AttackSequence: shoot-rocket
+		Sequence: shoot-rocket
 		RequiresCondition: rpg
 	WithAttackAnimation@RPG_A:
 		Body: rocket
 		Armament: aa_rocket
-		AttackSequence: shoot-rocket
+		Sequence: shoot-rocket
 		RequiresCondition: rpg
 	WithAttackAnimation@Sniper:
 		Body: gun
 		Armament: sniper_rifle
-		AttackSequence: shoot-gun
+		Sequence: shoot-gun
 		RequiresCondition: jarmen
 	WithAttackAnimation@DriverSnipe:
 		Body: gun
 		Armament: driver_snipe
-		AttackSequence: shoot-gun
+		Sequence: shoot-gun
 		RequiresCondition: jarmen
 	WithDecoration@Rebel:
 		Image: pips

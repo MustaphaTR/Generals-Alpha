@@ -22,8 +22,7 @@ vessel.transport:
 	Mobile:
 		TurnSpeed: 10
 		Speed: 50
-		TerrainSpeeds:
-			Beach: 70
+		Locomotor: locomotor.transport
 		RequiresCondition: !notmobile && !hacked && !emp
 	SelectionDecorations:
 	WithLandingCraftAnimation:

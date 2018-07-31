@@ -147,7 +147,7 @@ cannon.battlemaster_tank.nuke:
 cannon.battlemaster_tank.autoloader:
 	Inherits: cannon.battlemaster_tank
 	Burst: 3
-	BurstDelay: 12
+	BurstDelays: 12
 	Warhead@1Dam: SpreadDamage
 		Damage: 4000
 
@@ -190,7 +190,7 @@ cannon.marauder_tank.crate-1:
 cannon.marauder_tank.crate-2:
 	Inherits: cannon.marauder_tank.crate-1
 	Burst: 2
-	BurstDelay: 3
+	BurstDelays: 3
 	ReloadDelay: 25
 
 cannon.marauder_tank.toxin:
@@ -209,7 +209,7 @@ cannon.marauder_tank.crate-1.toxin:
 cannon.marauder_tank.crate-2.toxin:
 	Inherits: cannon.marauder_tank.crate-1.toxin
 	Burst: 2
-	BurstDelay: 3
+	BurstDelays: 3
 	ReloadDelay: 19
 
 cannon.marauder_tank.toxin_beta:
@@ -224,7 +224,7 @@ cannon.marauder_tank.crate-1.toxin_beta:
 cannon.marauder_tank.crate-2.toxin_beta:
 	Inherits: cannon.marauder_tank.crate-1.toxin_beta
 	Burst: 2
-	BurstDelay: 3
+	BurstDelays: 3
 	ReloadDelay: 19
 
 cannon.marauder_tank.toxin_gamma:
@@ -239,7 +239,7 @@ cannon.marauder_tank.crate-1.toxin_gamma:
 cannon.marauder_tank.crate-2.toxin_gamma:
 	Inherits: cannon.marauder_tank.crate-1.toxin_gamma
 	Burst: 2
-	BurstDelay: 3
+	BurstDelays: 3
 	ReloadDelay: 19
 
 cannon.marauder_tank.zh:
@@ -253,7 +253,7 @@ cannon.marauder_tank.crate-1.zh:
 cannon.marauder_tank.crate-2.zh:
 	Inherits: cannon.marauder_tank.crate-1.zh
 	Burst: 2
-	BurstDelay: 3
+	BurstDelays: 3
 	ReloadDelay: 19
 
 cannon.marauder_tank.toxin.zh:
@@ -267,7 +267,7 @@ cannon.marauder_tank.crate-1.toxin.zh:
 cannon.marauder_tank.crate-2.toxin.zh:
 	Inherits: cannon.marauder_tank.crate-1.toxin.zh
 	Burst: 2
-	BurstDelay: 3
+	BurstDelays: 3
 	ReloadDelay: 19
 
 cannon.marauder_tank.toxin_beta.zh:
@@ -281,7 +281,7 @@ cannon.marauder_tank.crate-1.toxin_beta.zh:
 cannon.marauder_tank.crate-2.toxin_beta.zh:
 	Inherits: cannon.marauder_tank.crate-1.toxin_beta.zh
 	Burst: 2
-	BurstDelay: 3
+	BurstDelays: 3
 	ReloadDelay: 19
 
 cannon.marauder_tank.toxin_gamma.zh:
@@ -295,14 +295,14 @@ cannon.marauder_tank.crate-1.toxin_gamma.zh:
 cannon.marauder_tank.crate-2.toxin_gamma.zh:
 	Inherits: cannon.marauder_tank.crate-1.toxin_gamma.zh
 	Burst: 2
-	BurstDelay: 3
+	BurstDelays: 3
 	ReloadDelay: 19
 
 cannon.overlord_tank:
 	Inherits: ^Cannon
 	ReloadDelay: 50
 	Burst: 2
-	BurstDelay: 6
+	BurstDelays: 6
 	Range: 4c384
 	Report: voveweaa.wav, voveweab.wav, voveweac.wav, vovewead.wav
 	Warhead@1Dam: SpreadDamage

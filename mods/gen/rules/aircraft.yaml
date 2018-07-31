@@ -30,7 +30,6 @@
 		Weapon: laser.king_raptor
 		LocalOffset: 0,213,-85
 		Name: pdlaser
-		AmmoPoolName: pdlaser
 	ShootsMissiles:
 		ShootStances: Neutral, Enemy
 		Armament: pdlaser
@@ -513,7 +512,6 @@ aircraft.king_raptor:
 		Weapon: laser.king_raptor
 		LocalOffset: 0,213,-85
 		Name: pdlaser
-		AmmoPoolName: pdlaser
 	ShootsMissiles:
 		ShootStances: Neutral, Enemy
 		Armament: pdlaser
@@ -654,7 +652,6 @@ aircraft.stealth_fighter.air:
 		Weapon: laser.king_raptor
 		LocalOffset: 0,213,-85
 		Name: pdlaser
-		AmmoPoolName: pdlaser
 	ShootsMissiles:
 		ShootStances: Neutral, Enemy
 		Armament: pdlaser
@@ -712,7 +709,6 @@ aircraft.aurora:
 		Weapon: laser.king_raptor
 		LocalOffset: 0,213,-85
 		Name: pdlaser
-		AmmoPoolName: pdlaser
 	ShootsMissiles:
 		ShootStances: Neutral, Enemy
 		Armament: pdlaser
@@ -1392,7 +1388,6 @@ aircraft.helix:
 	ProductionQueue:
 		Type: queue.helix
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, tank, boss
-		RequireOwner: true
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_helix
 		Factions: nuke

@@ -227,7 +227,6 @@ tech.soviet_barracks:
 	ProductionQueue:
 		Type: queue.soviet_infantry
 		Group: Infantry
-		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 2
 		SpectatorUIOrder: 29
@@ -636,7 +635,6 @@ tech.shipyard:
 	ProductionQueue:
 		Type: queue.vessel
 		Group: Vehicle
-		RequireOwner: false
 		InstantCashDrain: true
 		LowPowerSlowdown: 2
 		SpectatorUIOrder: 51
@@ -645,7 +643,7 @@ tech.shipyard:
 		Duration: 750
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
-		HP: 1000
+		HpPerStep: 1000
 	RallyPoint:
 	ProvidesPrerequisite@buildingname:
 	EditorTilesetFilter:

@@ -717,7 +717,7 @@ missile.patriot.ground:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 50
 	Burst: 4
-	BurstDelay: 6
+	BurstDelays: 6
 	Range: 5c640
 	Report: bpatweaa.wav, bpatweab.wav, bpatweac.wav
 	Projectile: Missile
@@ -746,7 +746,7 @@ missile.patriot.air:
 	Inherits: ^AntiAirMissile
 	ReloadDelay: 50
 	Burst: 4
-	BurstDelay: 6
+	BurstDelays: 6
 	Range: 8c768
 	Report: bpatweaa.wav, bpatweab.wav, bpatweac.wav
 	Projectile: Missile
@@ -834,7 +834,7 @@ missile.destroyer.ground:
 	ReloadDelay: 60
 	Range: 7c512
 	Burst: 2
-	BurstDelay: 0
+	BurstDelays: 0
 	InvalidTargets: Underwater
 	Projectile: Missile
 		Arm: 3
@@ -866,7 +866,7 @@ missile.rocket_buggy:
 	Range: 7c512
 	MinRange: 1c256
 	Burst: 6
-	BurstDelay: 10
+	BurstDelays: 10
 	Report: vrocweaa.wav, vrocweab.wav, vrocweac.wav, vrocwead.wav, vrocweae.wav, vrocweaf.wav
 	ValidTargets: Ground
 	TargetActorCenter: true
