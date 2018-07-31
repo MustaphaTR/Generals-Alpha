@@ -161,7 +161,7 @@
 	ExternalCondition@FRENZY3:
 		Condition: frenzy3
 
-^Horde:
+^InfantryHorde:
 	GrantHordeBonus:
 	HordeBonus:
 		Range: 3c0
@@ -192,6 +192,13 @@
 	GrantConditionOnFaction@NATIONALISM:
 		Condition: nationalism
 		Factions: inf
+
+^TankHorde:
+	Inherits: ^InfantryHorde
+	GrantHordeBonus:
+		HordeType: vehicle
+	HordeBonus:
+		HordeType: vehicle
 
 ^EmitRangersOnDeath:
 	EmitInfantryOnDeath:

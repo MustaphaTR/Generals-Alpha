@@ -291,7 +291,7 @@ infantry.toxin_rebel:
 
 infantry.red_guard:
 	Inherits: ^default.mg_infantry
-	Inherits@HORDE_BONUS: ^Horde
+	Inherits@HORDE_BONUS: ^InfantryHorde
 	Inherits@REVEAL: ^Reveal200
 	Buildable:
 		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
@@ -334,7 +334,7 @@ infantry.minigunner:
 	Inherits: ^default.mg_infantry
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@REVEAL: ^Reveal200
-	Inherits@HORDE_BONUS: ^Horde
+	Inherits@HORDE_BONUS: ^InfantryHorde
 	Buildable:
 		Queue: queue.inf_gen_infantry
 		BuildDuration: 250
@@ -508,7 +508,7 @@ infantry.rpg_trooper:
 infantry.tank_hunter:
 	Inherits: ^default.rocket_infantry
 	Inherits@CHEM: ^AffectedByChemicalSuitsBossOnly
-	Inherits@HORDE_BONUS: ^Horde
+	Inherits@HORDE_BONUS: ^InfantryHorde
 	Buildable:
 		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
 		Description: Anti-tank & anti-air infantry.\n\nCan place TNT charges on vehicles and\nbuildings by force firing.
