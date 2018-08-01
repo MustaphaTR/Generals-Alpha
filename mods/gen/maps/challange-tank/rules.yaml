@@ -1,0 +1,28 @@
+Player:
+	PlayerResources:
+		SelectableCash: 5000, 7500, 10000, 13000, 15000, 20000, 25000, 50000
+		DefaultCash: 13000
+	LobbyPrerequisiteCheckbox@GLOBALCCRADIUS:
+		Enabled: false
+		Locked: true
+
+World:
+	LuaScript:
+		Scripts: generals_powers.lua, challange_tank.lua
+	ScriptLobbyDropdown@difficulty:
+		ID: difficulty
+		Label: Difficulty
+		Values:
+			easy: Easy
+			normal: Normal
+			hard: Hard
+		Default: normal
+		DisplayOrder: 5
+
+building.bunker.filled:
+	Inherits: building.bunker
+	-Buildable:
+	Cargo:
+		InitialUnits: infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter
+	RenderSprites:
+		Image: building.bunker

@@ -1,0 +1,442 @@
+MapFormat: 11
+RequiresMod: gen
+Title: Challange - Kwai (WIP)
+Author: Mustafa Alperen SEKİ
+Tileset: TEMPERAT
+SkyboxImage:
+MapSize: 180,120
+Bounds: 23,1,156,79
+Visibility: Lobby
+Categories: Challange
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: General Kwai, Multi0
+	PlayerReference@General Kwai:
+		Name: General Kwai
+		Faction: tank
+		Color: FF0000
+		Enemies: Creeps, Multi0
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps, General Kwai
+Actors:
+	Actor34: supply.dock.30000.6x4
+		Owner: Neutral
+		Location: 154,2
+	Actor35: building.prc_supply_center
+		Owner: General Kwai
+		Location: 161,2
+	Actor36: building.prc_airfield
+		Owner: General Kwai
+		Location: 130,3
+	Actor37: building.nuclear_reactor
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 137,4
+	PRCBunker1: building.bunker.filled
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 123,6
+	Actor39: building.nuclear_reactor
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 151,6
+	Actor40: building.gatling_cannon
+		Owner: General Kwai
+		TurretFacing: 96
+		Location: 138,7
+	Actor41: building.nuclear_reactor
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 141,7
+	Actor42: building.internet_center
+		Owner: General Kwai
+		Location: 163,7
+	Actor43: building.gatling_cannon
+		Owner: General Kwai
+		TurretFacing: 64
+		Location: 123,8
+	Actor44: building.nuclear_reactor
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 146,8
+	Actor45: supply.dock.30000.6x4
+		Owner: Neutral
+		Location: 166,8
+	Actor46: building.gatling_cannon
+		Owner: General Kwai
+		TurretFacing: 0
+		Location: 157,10
+	Actor47: building.nuclear_reactor
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 155,11
+	Actor48: building.nuclear_reactor
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 159,11
+	Actor49: building.speaker_tower
+		Owner: General Kwai
+		Location: 139,12
+	Actor50: building.prc_war_factory
+		Owner: General Kwai
+		Location: 144,13
+	Actor51: building.nuclear_reactor
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 162,13
+	Actor52: building.prc_supply_center
+		Owner: General Kwai
+		Location: 170,13
+	Actor53: building.gatling_cannon
+		Owner: General Kwai
+		TurretFacing: 64
+		Location: 123,15
+	Actor54: building.nuclear_reactor
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 154,15
+	PRCBunker2: building.bunker.filled
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 123,16
+	Actor56: building.nuclear_reactor
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 162,16
+	Actor57: building.gatling_cannon
+		Owner: General Kwai
+		TurretFacing: 64
+		Location: 153,17
+	Actor58: building.prc_command_center
+		Owner: General Kwai
+		Location: 175,17
+	Actor59: building.prc_barracks
+		Owner: General Kwai
+		Location: 154,18
+	Actor60: tech.repair_bay
+		Owner: Neutral
+		Location: 85,19
+	Actor61: building.nuclear_reactor
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 159,19
+	Actor62: building.speaker_tower
+		Owner: General Kwai
+		Location: 157,20
+	Actor63: building.prc_war_factory
+		Owner: General Kwai
+		Location: 164,21
+	Actor64: building.gatling_cannon
+		Owner: General Kwai
+		TurretFacing: 160
+		Location: 141,22
+	Actor65: building.prc_airfield
+		Owner: General Kwai
+		Location: 174,22
+	Actor66: supply.pile.g
+		Owner: Neutral
+		Location: 85,23
+	Actor68: supply.pile.a
+		Owner: Neutral
+		Location: 86,23
+	PRCBunker3: building.bunker.filled
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 130,23
+	Actor96: building.gatling_cannon
+		Owner: General Kwai
+		TurretFacing: 32
+		Location: 153,23
+	Actor97: building.speaker_tower
+		Owner: General Kwai
+		Location: 162,23
+	Actor98: supply.pile.b
+		Owner: Neutral
+		Location: 85,24
+	Actor99: supply.pile.f
+		Owner: Neutral
+		Location: 84,25
+	Actor100: supply.pile.e
+		Owner: Neutral
+		Location: 85,25
+	Actor101: building.gatling_cannon
+		Owner: General Kwai
+		TurretFacing: 96
+		Location: 132,25
+	Actor102: building.nuclear_reactor
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 172,25
+	Actor103: building.speaker_tower
+		Owner: General Kwai
+		Location: 177,25
+	Actor104: supply.pile.d
+		Owner: Neutral
+		Location: 85,26
+	Actor105: building.propaganda_center
+		Owner: General Kwai
+		Location: 159,26
+	Actor106: building.speaker_tower
+		Owner: General Kwai
+		Location: 141,28
+	Actor107: building.nuclear_reactor
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 172,28
+	Actor108: building.gatling_cannon
+		Owner: General Kwai
+		TurretFacing: 96
+		Location: 138,29
+	PRCBunker4: building.bunker.filled
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 139,29
+	Actor110: building.gatling_cannon
+		Owner: General Kwai
+		TurretFacing: 160
+		Location: 158,29
+	Actor111: building.gatling_cannon
+		Owner: General Kwai
+		TurretFacing: 96
+		Location: 141,30
+	PRCBunker5: building.bunker.filled
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 149,31
+	Actor113: building.nuclear_reactor
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 172,31
+	Actor114: building.gatling_cannon
+		Owner: General Kwai
+		TurretFacing: 96
+		Location: 148,32
+	Actor115: building.gatling_cannon
+		Owner: General Kwai
+		TurretFacing: 96
+		Location: 170,32
+	Actor116: building.nuclear_reactor
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 174,33
+	Actor117: building.nuclear_reactor
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 177,33
+	PRCBunker6: building.bunker.filled
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 163,36
+	Actor119: building.gatling_cannon
+		Owner: General Kwai
+		TurretFacing: 128
+		Location: 165,37
+	PRCBunker7: building.bunker.filled
+		Owner: General Kwai
+		TurretFacing: 92
+		Location: 174,40
+	Actor121: building.gatling_cannon
+		Owner: General Kwai
+		TurretFacing: 128
+		Location: 173,41
+	Actor82: supply.pile.b
+		Owner: Neutral
+		Location: 51,98
+	Actor83: supply.pile.e
+		Owner: Neutral
+		Location: 52,99
+	Actor84: supply.pile.a
+		Owner: Neutral
+		Location: 52,100
+	Actor85: supply.pile.c
+		Owner: Neutral
+		Location: 54,100
+	Actor89: supply.dock.30000.skewed_a
+		Owner: Neutral
+		Location: 28,108
+	Actor90: supply.pile.c
+		Owner: Neutral
+		Location: 62,110
+	Actor91: supply.pile.a
+		Owner: Neutral
+		Location: 61,111
+	Actor93: supply.pile.b
+		Owner: Neutral
+		Location: 63,112
+	Actor92: supply.pile.c
+		Owner: Neutral
+		Location: 35,5
+	Actor95: tech.reinforcements_pad
+		Owner: Neutral
+		Location: 29,6
+	Actor122: supply.pile.b
+		Owner: Neutral
+		Location: 36,6
+	Actor123: supply.pile.c
+		Owner: Neutral
+		Location: 38,6
+	Actor124: supply.pile.a
+		Owner: Neutral
+		Location: 37,7
+	Actor79: supply.pile.a
+		Owner: Neutral
+		Location: 27,86
+	Actor80: supply.pile.f
+		Owner: Neutral
+		Location: 26,87
+	Actor81: supply.pile.d
+		Owner: Neutral
+		Location: 28,87
+	Actor78: supply.pile.b
+		Owner: Neutral
+		Location: 45,22
+	Actor86: supply.pile.b
+		Owner: Neutral
+		Location: 46,22
+	Actor87: supply.pile.f
+		Owner: Neutral
+		Location: 46,23
+	Actor88: supply.pile.b
+		Owner: Neutral
+		Location: 62,24
+	Actor125: supply.pile.f
+		Owner: Neutral
+		Location: 64,23
+	Actor126: supply.pile.e
+		Owner: Neutral
+		Location: 64,25
+	Actor127: supply.pile.a
+		Owner: Neutral
+		Location: 27,47
+	Actor128: supply.pile.f
+		Owner: Neutral
+		Location: 26,48
+	Actor129: supply.pile.d
+		Owner: Neutral
+		Location: 28,48
+	Actor130: supply.pile.b
+		Owner: Neutral
+		Location: 51,59
+	Actor131: supply.pile.e
+		Owner: Neutral
+		Location: 52,60
+	Actor132: supply.pile.a
+		Owner: Neutral
+		Location: 52,61
+	Actor133: supply.pile.c
+		Owner: Neutral
+		Location: 54,61
+	Actor134: supply.dock.30000.skewed_a
+		Owner: Neutral
+		Location: 28,69
+	Actor135: supply.pile.c
+		Owner: Neutral
+		Location: 62,71
+	Actor136: supply.pile.a
+		Owner: Neutral
+		Location: 61,72
+	Actor137: supply.pile.b
+		Owner: Neutral
+		Location: 63,73
+	Actor138: mpspawn
+		Owner: Neutral
+		Location: 36,65
+	Actor146: tech.oil_derrick
+		Owner: Neutral
+		Location: 133,69
+	Actor147: tech.oil_derrick
+		Owner: Neutral
+		Location: 126,68
+	Actor148: v04
+		Owner: Neutral
+		Location: 122,63
+	Actor149: supply.pile.a
+		Owner: Neutral
+		Location: 130,73
+	Actor150: supply.pile.e
+		Owner: Neutral
+		Location: 129,74
+	Actor151: supply.pile.f
+		Owner: Neutral
+		Location: 130,75
+	Actor152: supply.pile.g
+		Owner: Neutral
+		Location: 131,74
+	Actor153: supply.pile.f
+		Owner: Neutral
+		Location: 112,71
+	Actor154: supply.pile.e
+		Owner: Neutral
+		Location: 114,72
+	Actor155: supply.pile.b
+		Owner: Neutral
+		Location: 115,72
+	Actor156: v09
+		Owner: Neutral
+		Location: 111,73
+	Actor157: supply.pile.a
+		Owner: Neutral
+		Location: 108,65
+	Actor158: supply.pile.a
+		Owner: Neutral
+		Location: 127,69
+	Actor159: supply.pile.e
+		Owner: Neutral
+		Location: 108,66
+	Actor160: supply.pile.f
+		Owner: Neutral
+		Location: 109,66
+	Actor162: supply.pile.e
+		Owner: Neutral
+		Location: 100,54
+	Actor163: supply.pile.f
+		Owner: Neutral
+		Location: 101,55
+	Actor164: v01
+		Owner: Neutral
+		Location: 82,45
+	Actor165: v04
+		Owner: Neutral
+		Location: 94,49
+	Actor166: v07
+		Owner: Neutral
+		Location: 90,59
+	Actor167: v08
+		Owner: Neutral
+		Location: 95,61
+	Actor168: v03
+		Owner: Neutral
+		Location: 103,51
+	Actor139: v02
+		Owner: Neutral
+		Location: 163,64
+	Actor140: tech.soviet_barracks
+		Owner: Neutral
+		Location: 160,65
+	Actor141: supply.pile.b
+		Owner: Neutral
+		Location: 166,67
+	Actor142: supply.pile.e
+		Owner: Neutral
+		Location: 165,68
+	Actor143: supply.pile.b
+		Owner: Neutral
+		Location: 167,68
+	Actor144: supply.pile.g
+		Owner: Neutral
+		Location: 166,69
+	Actor145: supply.pile.d
+		Owner: Neutral
+		Location: 167,70
+Rules: rules.yaml
