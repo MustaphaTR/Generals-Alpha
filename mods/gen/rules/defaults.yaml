@@ -1272,7 +1272,7 @@
 		TargetTypes: Ground, C4, Repair, Tank, Vehicle-Disguise, DetonateAttack
 		RequiresCondition: !parachute && !driver_killed
 	Targetable@DRIVER_KILLED:
-		TargetTypes: Ground, C4, Repair, Tank, Vehicle-Disguise, DetonateAttack, NoAutoTarget
+		TargetTypes: Ground, C4, Repair, Tank, Vehicle-Disguise, DetonateAttack, NoDriverKill, NoAutoTarget
 		RequiresCondition: driver_killed
 	ProximityCaptor:
 		Types: Tank
