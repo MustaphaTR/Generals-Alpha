@@ -373,6 +373,8 @@ tech.repair_bay:
 		Notification: BuildingBeingCaptured
 		FlashBeep: ucapture.aud
 	ExternalCapturableBar:
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
 	WithIdleOverlay@ROOF:
 		Sequence: idle-roof
 	WithBuildingBib:
