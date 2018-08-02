@@ -8,7 +8,7 @@ Player:
 
 World:
 	LuaScript:
-		Scripts: generals_powers.lua, challange_tank.lua
+		Scripts: generals_powers.lua, unit_groups.lua, challange_tank.lua
 	ScriptLobbyDropdown@difficulty:
 		ID: difficulty
 		Label: Difficulty
@@ -18,6 +18,8 @@ World:
 			hard: Hard
 		Default: normal
 		DisplayOrder: 5
+	CrateSpawner:
+		CheckboxEnabled: false
 
 building.bunker.filled:
 	Inherits: building.bunker
