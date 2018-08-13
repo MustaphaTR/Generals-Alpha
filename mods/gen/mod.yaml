@@ -1,6 +1,6 @@
 Metadata:
 	Title: Generals Alpha
-	Version: gen-20180813
+	Version: gen-20180813_2
 	Website: https://www.moddb.com/mods/generals-alpha
 	WebIcon32: https://raw.githubusercontent.com/MustaphaTR/Generals-Alpha/master/packaging/linux/mod_32x32.png
 
@@ -61,7 +61,7 @@ Packages:
 
 MapFolders:
 	gen|maps: System
-	~^maps/gen/gen-20180813: User
+	~^maps/gen/gen-20180813_2: User
 
 Rules:
 	gen|rules/misc.yaml
@@ -285,7 +285,7 @@ ColorValidator:
 	TeamColorPresets: dde20d, ff0000, 4368fe, 3ed12e, ffa019, 32d7e6, 9600c8, ff96ff, 6e7106, 7F0000, 21347f, 1f6817, 7F500c, 166b73, 480064, 7F487F
 
 ModContent:
-	InstallPromptMessage: Red Alert requires artwork and audio from the original game.\n\nQuick Install will automatically download this content (without music\nor videos) from a mirror of the 2008 Red Alert freeware release.\n\nAdvanced Install includes options for downloading the music and for\ncopying the videos and other content from an original game disc.
+	InstallPromptMessage: Generals Alpha requires artwork and audio of original Red Alert.\n\nQuick Install will automatically download this content (without music\nor videos) from a mirror of the 2008 Red Alert freeware release.\n\nAdvanced Install includes options for downloading the music.
 	QuickDownload: quickinstall
 	HeaderMessage: Game content may be extracted from the original game discs or an\nexisting digital install. OpenRA can also download the base game\nfiles from an online mirror of the 2008 freeware release of RA.
 	Packages:
@@ -304,6 +304,10 @@ ModContent:
 			Sources: tfd, cnc-origin, cnc95, cnc95-linux
 			Required: true
 			Download: cncdesert
+		genmusic: Generals Music
+			TestFiles: ^Content/gen/CHI_01.aud, ^Content/gen/GLA_01.aud, ^Content/gen/USA_01.aud
+			Sources: genmusic
+			Download: genmusic
 	Downloads:
 		gen|installer/downloads.yaml
 	Sources:
