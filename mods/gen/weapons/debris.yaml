@@ -90,6 +90,12 @@ debris.battlemaster_tank:
 		Image: vehicle.battlemaster_tank
 		Sequences: turret
 
+debris.marauder_tank:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vehicle.marauder_tank
+		Sequences: turret-crate-2
+
 debris.overlord_tank:
 	Inherits: ^default.small_debris
 	Projectile: Bullet

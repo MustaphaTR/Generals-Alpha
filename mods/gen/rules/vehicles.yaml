@@ -2805,6 +2805,17 @@ vehicle.marauder_tank:
 		Weapons: debris.scorpion_tank
 		Pieces: 1, 1
 		Range: 1c0, 1c0
+		RequiresCondition: !scrap_create_bonus
+	ThrowsShrapnel@CRATE-1:
+		Weapons: debris.battlemaster_tank
+		Pieces: 1, 1
+		Range: 1c0, 1c0
+		RequiresCondition: scrap_create_bonus == 1
+	ThrowsShrapnel@CRATE-2:
+		Weapons: debris.marauder_tank
+		Pieces: 1, 1
+		Range: 1c0, 1c0
+		RequiresCondition: scrap_create_bonus == 2
 	Voiced:
 		VoiceSet: MarauderTankVoice
 
