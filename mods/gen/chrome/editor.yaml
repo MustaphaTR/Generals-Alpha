@@ -25,6 +25,7 @@ Background@NEW_MAP_BG:
 			Y: 60
 			Width: 160
 			Height: 25
+			VisualHeight: 0
 		Label@WIDTH_LABEL:
 			X: 20
 			Y: 94
@@ -58,6 +59,7 @@ Background@NEW_MAP_BG:
 			Y: PARENT_BOTTOM - 45
 			Width: 120
 			Height: 25
+			VisualHeight: 0
 			Text: Create
 			Font: Bold
 			Key: return
@@ -66,6 +68,7 @@ Background@NEW_MAP_BG:
 			Y: PARENT_BOTTOM - 45
 			Width: 120
 			Height: 25
+			VisualHeight: 0
 			Text: Cancel
 			Font: Bold
 			Key: escape
@@ -123,12 +126,14 @@ Background@SAVE_MAP_PANEL:
 			Y: 130
 			Width: 220
 			Height: 25
+			VisualHeight: 0
 			Text: Map Visibility
 		Label@DIRECTORY_LABEL:
 			X: 10
 			Y: 164
 			Width: 95
 			Height: 25
+			VisualHeight: 0
 			Align: Right
 			Text: Directory:
 		DropDownButton@DIRECTORY_DROPDOWN:
@@ -136,6 +141,7 @@ Background@SAVE_MAP_PANEL:
 			Y: 165
 			Width: 220
 			Height: 25
+			VisualHeight: 0
 		Label@FILENAME_LABEL:
 			X: 10
 			Y: 199
@@ -153,11 +159,13 @@ Background@SAVE_MAP_PANEL:
 			Y: 200
 			Width: 110
 			Height: 25
+			VisualHeight: 0
 		Button@SAVE_BUTTON:
 			X: 80
 			Y: PARENT_BOTTOM - 45
 			Width: 120
 			Height: 25
+			VisualHeight: 0
 			Text: Save
 			Font: Bold
 		Button@BACK_BUTTON:
@@ -165,6 +173,7 @@ Background@SAVE_MAP_PANEL:
 			Y: PARENT_BOTTOM - 45
 			Width: 120
 			Height: 25
+			VisualHeight: 0
 			Text: Cancel
 			Font: Bold
 			Key: escape
@@ -270,6 +279,7 @@ Container@EDITOR_WORLD_ROOT:
 							Y: 34
 							Width: PARENT_RIGHT - 70
 							Height: 25
+							VisualHeight: 0
 							Font: Bold
 						ScrollPanel@TILETEMPLATE_LIST:
 							X: 10
@@ -348,6 +358,7 @@ Container@EDITOR_WORLD_ROOT:
 							Y: 34
 							Width: PARENT_RIGHT - 70
 							Height: 25
+							VisualHeight: 0
 							Font: Bold
 						Label@OWNERS_LABEL:
 							Y: 58
@@ -361,6 +372,7 @@ Container@EDITOR_WORLD_ROOT:
 							Y: 58
 							Width: PARENT_RIGHT - 70
 							Height: 25
+							VisualHeight: 0
 							Font: Bold
 						ScrollPanel@ACTORTEMPLATE_LIST:
 							X: 10
@@ -392,18 +404,21 @@ Container@EDITOR_WORLD_ROOT:
 					X: 0
 					Width: 70
 					Height: 25
+					VisualHeight: 0
 					Text: Tiles
 					Font: Bold
 				Button@OVERLAYS_TAB:
 					X: 70
 					Width: 90
 					Height: 25
+					VisualHeight: 0
 					Text: Overlays
 					Font: Bold
 				Button@ACTORS_TAB:
 					X: 160
 					Width: 70
 					Height: 25
+					VisualHeight: 0
 					Text: Actors
 					Font: Bold
 		MenuButton@OPTIONS_BUTTON:
@@ -413,6 +428,7 @@ Container@EDITOR_WORLD_ROOT:
 			Pause: true
 			Width: 160
 			Height: 25
+			VisualHeight: 0
 			Text: Menu
 			TooltipText: Menu
 			TooltipContainer: TOOLTIP_CONTAINER
@@ -422,12 +438,14 @@ Container@EDITOR_WORLD_ROOT:
 			X: 170
 			Width: 90
 			Height: 25
+			VisualHeight: 0
 			Text: Copy/Paste
 			Font: Bold
 		Button@GRID_BUTTON:
 			X: 270
 			Width: 70
 			Height: 25
+			VisualHeight: 0
 			Text: Grid
 			TooltipTemplate: BUTTON_TOOLTIP
 			TooltipText: Toggle the terrain grid
@@ -446,6 +464,7 @@ Container@EDITOR_WORLD_ROOT:
 			X: 400
 			Width: 70
 			Height: 25
+			VisualHeight: 0
 			Font: Bold
 			Key: TogglePixelDouble
 		Label@COORDINATE_LABEL:
@@ -475,6 +494,7 @@ ScrollPanel@ACTOR_CATEGORY_FILTER_PANEL:
 					Y: 2
 					Width: 60
 					Height: 25
+					VisualHeight: 0
 					Text: All
 					Font: Bold
 				Button@SELECT_NONE:
@@ -482,6 +502,7 @@ ScrollPanel@ACTOR_CATEGORY_FILTER_PANEL:
 					Y: 2
 					Width: 60
 					Height: 25
+					VisualHeight: 0
 					Text: None
 					Font: Bold
 		Checkbox@CATEGORY_TEMPLATE:

@@ -28,6 +28,7 @@ Background@ASSETBROWSER_PANEL:
 			Y: 60
 			Width: 160
 			Height: 25
+			VisualHeight: 0
 			Font: Bold
 			Text: Folders
 		ScrollPanel@ASSET_LIST:
@@ -74,12 +75,14 @@ Background@ASSETBROWSER_PANEL:
 			Y: 60
 			Width: 150
 			Height: 25
+			VisualHeight: 0
 			Font: Bold
 		DropDownButton@COLOR:
 			X: PARENT_RIGHT - WIDTH - 20
 			Y: 60
 			Width: 80
 			Height: 25
+			VisualHeight: 0
 			Children:
 				ColorBlock@COLORBLOCK:
 					X: 5
@@ -116,6 +119,7 @@ Background@ASSETBROWSER_PANEL:
 					Y: 0
 					Width: 25
 					Height: 25
+					VisualHeight: 0
 					Key: LEFT
 					Children:
 						Image@IMAGE_PREV:
@@ -130,6 +134,7 @@ Background@ASSETBROWSER_PANEL:
 					Y: 0
 					Width: 25
 					Height: 25
+					VisualHeight: 0
 					Key: SPACE
 					Children:
 						Image@IMAGE_PLAY:
@@ -145,6 +150,7 @@ Background@ASSETBROWSER_PANEL:
 					Y: 0
 					Width: 25
 					Height: 25
+					VisualHeight: 0
 					Key: SPACE
 					Children:
 						Image@IMAGE_PAUSE:
@@ -159,6 +165,7 @@ Background@ASSETBROWSER_PANEL:
 					Y: 0
 					Width: 25
 					Height: 25
+					VisualHeight: 0
 					Key: RETURN
 					Children:
 						Image@IMAGE_STOP:
@@ -173,6 +180,7 @@ Background@ASSETBROWSER_PANEL:
 					Y: 0
 					Width: 25
 					Height: 25
+					VisualHeight: 0
 					Key: RIGHT
 					Children:
 						Image@IMAGE_NEXT:
@@ -200,5 +208,6 @@ Background@ASSETBROWSER_PANEL:
 			Y: PARENT_BOTTOM - 45
 			Width: 160
 			Height: 25
+			VisualHeight: 0
 			Font: Bold
 			Text: Close

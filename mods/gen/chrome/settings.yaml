@@ -42,6 +42,7 @@ Background@SETTINGS_PANEL:
 			Y: PARENT_BOTTOM - 45
 			Width: 160
 			Height: 25
+			VisualHeight: 0
 			Text: Reset
 			Font: Bold
 		Button@BACK_BUTTON:
@@ -50,6 +51,7 @@ Background@SETTINGS_PANEL:
 			Y: PARENT_BOTTOM - 45
 			Width: 160
 			Height: 25
+			VisualHeight: 0
 			Text: Back
 			Font: Bold
 		Container@TAB_CONTAINER:
@@ -61,24 +63,28 @@ Background@SETTINGS_PANEL:
 					X: 115
 					Width: 90
 					Height: 25
+					VisualHeight: 0
 					Text: Display
 					Font: Bold
 				Button@AUDIO_TAB:
 					X: 205
 					Width: 90
 					Height: 25
+					VisualHeight: 0
 					Text: Audio
 					Font: Bold
 				Button@INPUT_TAB:
 					X: 295
 					Width: 90
 					Height: 25
+					VisualHeight: 0
 					Text: Input
 					Font: Bold
 				Button@ADVANCED_TAB:
 					X: 385
 					Width: 90
 					Height: 25
+					VisualHeight: 0
 					Text: Advanced
 					Font: Bold
 		Container@DISPLAY_PANEL:
@@ -99,6 +105,7 @@ Background@SETTINGS_PANEL:
 					Y: 40
 					Width: 170
 					Height: 25
+					VisualHeight: 0
 					Font: Regular
 					Text: Windowed
 				Container@WINDOW_RESOLUTION:
@@ -207,6 +214,7 @@ Background@SETTINGS_PANEL:
 					Y: 195
 					Width: 70
 					Height: 25
+					VisualHeight: 0
 					IgnoreChildMouseOver: true
 					Children:
 						ColorBlock@COLORBLOCK:
@@ -223,6 +231,7 @@ Background@SETTINGS_PANEL:
 					Y: 265
 					Width: 170
 					Height: 25
+					VisualHeight: 0
 					Font: Regular
 					Text: Standard
 				Checkbox@DISPLAY_TARGET_LINES_CHECKBOX:
@@ -252,6 +261,7 @@ Background@SETTINGS_PANEL:
 					Y: 290
 					Width: 200
 					Height: 25
+					VisualHeight: 0
 					Visible: false
 				Label@LANGUAGE_DESC_A:
 					Y: 310
@@ -340,6 +350,7 @@ Background@SETTINGS_PANEL:
 					Y: 245
 					Width: 300
 					Height: 25
+					VisualHeight: 0
 				Label@AUDIO_DEVICE_DESC:
 					Y: 265
 					Width: PARENT_RIGHT
@@ -373,6 +384,7 @@ Background@SETTINGS_PANEL:
 					Y: 38
 					Width: 100
 					Height: 25
+					VisualHeight: 0
 					Font: Regular
 				Label@MIDDLE_MOUSE_SCROLL_LABEL:
 					X: PARENT_RIGHT - WIDTH - 120
@@ -387,6 +399,7 @@ Background@SETTINGS_PANEL:
 					Y: 68
 					Width: 100
 					Height: 25
+					VisualHeight: 0
 					Font: Regular
 				Label@ZOOM_MODIFIER_LABEL:
 					X: PARENT_RIGHT - WIDTH - 120
@@ -401,6 +414,7 @@ Background@SETTINGS_PANEL:
 					Y: 98
 					Width: 100
 					Height: 25
+					VisualHeight: 0
 					Font: Regular
 					Text: Alt
 				Checkbox@EDGESCROLL_CHECKBOX:
