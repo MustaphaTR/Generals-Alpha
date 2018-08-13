@@ -2894,6 +2894,10 @@ vehicle.overlord_tank:
 		Voice: Move
 		Locomotor: locomotor.overlord
 		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
+	SpeedMultiplier@NUCLEAR_TANKS:
+		Modifier: 150
+	SpeedMultiplier@NUKE_GEN:
+		Modifier: 200
 	Turreted@Cannon:
 		TurnSpeed: 3
 	Turreted@Gatling:

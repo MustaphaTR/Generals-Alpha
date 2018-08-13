@@ -703,7 +703,7 @@ upgrade.nuclear_tanks:
 		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: !upgrade.nuclear_tanks, ~techlevel.unrestricted
-		Description: Increases Overlord and Battlemaster speed by 25%.
+		Description: Increases Battlemaster speed by 40% and Overlord speed by 50%.
 		ReadyAudio: NuclearTanks
 	ProvidesPrerequisite@upgradename:
 		Prerequisite: upgrade.nuclear_tanks
@@ -717,7 +717,7 @@ upgrade.nuclear_tanks.boss:
 	Buildable:
 		Queue: queue.boss_gen_missile_silo
 		BuildPaletteOrder: 3
-		Description: Increases Overlord speed by 25%.
+		Description: Increases Overlord speed by 50%.
 
 upgrade.uranium_shells:
 	Inherits: ^default.upgrade

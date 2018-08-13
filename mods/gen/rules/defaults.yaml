@@ -437,17 +437,17 @@
 
 ^AffectedByNuclearTanks:
 	SpeedMultiplier@NUCLEAR_TANKS:
-		RequiresCondition: nuclear_tanks
-		Modifier: 125
+		RequiresCondition: nuclear_tanks && !nuke
+		Modifier: 140
+	SpeedMultiplier@NUKE_GEN:
+		RequiresCondition: nuke
+		Modifier: 180
 	GrantConditionOnPrerequisite@NUCLEAR_TANKS:
 		Condition: nuclear_tanks
 		Prerequisites: upgrade.nuclear_tanks
 	GrantConditionOnPrerequisite@ISOTOPE_STABILITY:
 		Condition: isotope_stability
 		Prerequisites: upgrade.isotope_stability
-	GrantConditionOnFaction@NUCLEAR_TANKS:
-		Condition: nuclear_tanks
-		Factions: nuke
 	GrantConditionOnFaction@Nuke:
 		Condition: nuke
 		Factions: nuke
@@ -455,10 +455,10 @@
 		Weapon: explosion.nuclear_tanks
 		EmptyWeapon: explosion.nuclear_tanks
 		RequiresCondition: !nuke && nuclear_tanks && !isotope_stability
-	Explodes@NuclearTanks_Nuke:
+	Explodes@NUKE_GEN:
 		Weapon: explosion.nuclear_tanks.nuke
 		EmptyWeapon: explosion.nuclear_tanks.nuke
-		RequiresCondition: nuke && nuclear_tanks && !isotope_stability
+		RequiresCondition: nuke && !isotope_stability
 
 ^AffectedByUraniumShells:
 	FirepowerMultiplier@URANIUM_SHELLS:
