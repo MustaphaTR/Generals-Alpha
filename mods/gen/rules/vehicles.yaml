@@ -3496,6 +3496,7 @@ vehicle.combat_cycle:
 		Types: GLAInfantry
 		MaxWeight: 1
 		PipCount: 1
+		ReplaceFirstWhenFull: true
 		EjectOnDeathDamage: 100
 		LoadingCondition: notmobile
 		LoadedCondition: loaded
@@ -3515,8 +3516,6 @@ vehicle.combat_cycle:
 			infantry.jarmen_kell.demo: jarmen
 			infantry.jarmen_kell.boss: jarmen
 	WithFacingSpriteBody:
-		RequiresCondition: !loaded
-	WithFacingSpriteBody@Other:
 		Name: other
 		Sequence: idle-other
 		RequiresCondition: loaded && !(rebel || rpg || jarmen)
@@ -3633,6 +3632,9 @@ vehicle.combat_cycle:
 		TargetTypes: Ground, Repair, Vehicle, DetonateAttack
 	KillsSelf:
 		RequiresCondition: driver_killed
+	KillsSelf@Empty:
+		Delay: 1
+		RequiresCondition: !loaded
 	MustBeDestroyed:
 		-RequiresCondition:
 	RenderSprites:
