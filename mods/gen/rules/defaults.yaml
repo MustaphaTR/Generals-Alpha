@@ -1733,6 +1733,12 @@
 		Condition: ccradius
 	RepairableBuilding:
 		RepairStep: 1500
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		ReferencePoint: Center
+		Palette: player
+		IsPlayerPalette: True
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
