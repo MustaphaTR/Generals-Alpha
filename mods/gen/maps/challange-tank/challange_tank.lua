@@ -7,6 +7,8 @@
    information, see COPYING.
 ]]
 
+EnemyBase = { EnemyCommandCenter, EnemyBarracks, EnemyWarFactory1, EnemyWarFactory2, EnemyAirfield1, EnemyAirfield2, EnemySupplyCenter1, EnemySupplyCenter2, EnemyPropaganda, EnemyReactor1, EnemyReactor2, EnemyReactor3, EnemyReactor4, EnemyReactor5, EnemyReactor6, EnemyReactor7, EnemyReactor8, EnemyReactor9, EnemyReactor10, EnemyReactor11, EnemyReactor12, EnemyReactor13, EnemyReactor14, EnemyReactor15, EnemyGatling1, EnemyGatling2, EnemyGatling3, EnemyGatling4, EnemyGatling5, EnemyGatling6, EnemyGatling7, EnemyGatling8, EnemyGatling9, EnemyGatling10, EnemyGatling11, EnemyGatling12, EnemyGatling13, EnemyGatling14, EnemyGatling15, EnemyBunker1, EnemyBunker2, EnemyBunker3, EnemyBunker4, EnemyBunker5, EnemyBunker6, EnemyBunker7, EnemySpeaker1, EnemySpeaker2, EnemySpeaker3, EnemySpeaker4, EnemySpeaker5 }
+
 RandomTaunts = { "19", "15", "16", "17", "18", "20", "22", "23", "24", "25", "26", "27", "29", "30" }
 
 ResearchUpgrade = function(building, upgrade)
@@ -42,13 +44,13 @@ DifficultySetup = function()
 	if Difficulty == "easy" then
 		player.Cash = player.Cash + ((player.Cash * 3) / 13)
 		
-		PRCBunker1.Destroy()
-		PRCBunker2.Destroy()
-		PRCBunker3.Destroy()
-		PRCBunker4.Destroy()
-		PRCBunker5.Destroy()
-		PRCBunker6.Destroy()
-		PRCBunker7.Destroy()
+		EnemyBunker1.Destroy()
+		EnemyBunker2.Destroy()
+		EnemyBunker3.Destroy()
+		EnemyBunker4.Destroy()
+		EnemyBunker5.Destroy()
+		EnemyBunker6.Destroy()
+		EnemyBunker7.Destroy()
 	end
 
 	if Difficulty == "hard" then
@@ -168,10 +170,9 @@ WorldLoaded = function()
 		ReducePoints(player)
 	end
 
-	Difficulty = Map.LobbyOption("difficulty")
-
 	DifficultySetup()
 	GiveGeneralPowers()
+	RepairBase(enemy, EnemyBase, 0.75)
 
 	ResearchUpgrade("building.prc_war_factory", "upgrade.chain_gun")
 	ResearchUpgrade("building.prc_airfield", "upgrade.mig_armor")
