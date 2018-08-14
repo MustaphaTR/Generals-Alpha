@@ -1561,7 +1561,7 @@ building.patriot.boss:
 	Inherits@MINE: ^CanHaveMines
 	Buildable:
 		Queue: queue.boss_gen_building
-		Prerequisites: building.prc_barracks, ~techlevel.low
+		BuildPaletteOrder: 9
 	Exit:
 	ProductionBar:
 	LaysMinefield@LAND_MINES:
@@ -2381,6 +2381,7 @@ building.tunnel_network.boss:
 	Inherits@MINE: ^CanHaveMines
 	Buildable:
 		Queue: queue.boss_gen_building
+		BuildPaletteOrder: 9
 		Prerequisites: building.prc_barracks, ~techlevel.infonly
 	-ProductionQueue@CAMO_NETTING:
 	SpawnActorOnDeath:
