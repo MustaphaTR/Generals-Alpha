@@ -289,7 +289,7 @@ ModContent:
 	QuickDownload: quickinstall
 	HeaderMessage: Game content may be extracted from the original game discs or an\nexisting digital install. OpenRA can also download the base game\nfiles from an online mirror of the 2008 freeware release of RA.
 	Packages:
-		base: Base Game Files
+		base: Red Alert Game Files
 			TestFiles: ^Content/ra/v2/allies.mix, ^Content/ra/v2/conquer.mix, ^Content/ra/v2/interior.mix, ^Content/ra/v2/hires.mix, ^Content/ra/v2/lores.mix, ^Content/ra/v2/local.mix, ^Content/ra/v2/speech.mix, ^Content/ra/v2/russian.mix, ^Content/ra/v2/snow.mix, ^Content/ra/v2/sounds.mix, ^Content/ra/v2/temperat.mix
 			Sources: allied, allied-linux, soviet, soviet-linux, tfd, ra-origin
 			Required: true
@@ -306,10 +306,10 @@ ModContent:
 			Download: cncdesert
 		genmusic: Generals Music
 			TestFiles: ^Content/gen/CHI_01.aud, ^Content/gen/GLA_01.aud, ^Content/gen/USA_01.aud
-			Sources: genmusic
 			Download: genmusic
 	Downloads:
 		gen|installer/downloads.yaml
+		gen|installer/genmusic.yaml
 	Sources:
 		gen|installer/aftermath.yaml
 		gen|installer/allies95.yaml
