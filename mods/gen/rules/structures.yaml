@@ -2514,6 +2514,14 @@ building.stinger_site:
 	Power:
 		Amount: -1
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@airfield:
+		Prerequisite: prerequisite.airfield
+	GrantConditionOnPrerequisite@Plane:
+		Prerequisites: prerequisite.plane
+		Condition: plane
+	GrantConditionOnPrerequisite@Airfield:
+		Prerequisites: prerequisite.airfield
+		Condition: airfield
 	InfiltrateForCondition:
 		Duration: 750
 
@@ -2605,6 +2613,26 @@ building.usa_airfield:
 		Factions: air
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.usa_airfield_or_war_factory
+	# ConditionPrerequisite@RAPTOR:
+	#	Queue: queue.usa_aircraft, queue.super_gen_aircraft
+	#	Actor: aircraft.raptor
+	#	PauseOnCondition: airfield * 4 <= plane
+	# ConditionPrerequisite@KING_RAPTOR:
+	#	Queue: queue.air_gen_aircraft
+	#	Actor: aircraft.king_raptor
+	#	PauseOnCondition: airfield * 4 <= plane
+	# ConditionPrerequisite@AURORA:
+	#	Queue: queue.usa_aircraft, queue.air_gen_aircraft
+	#	Actor: aircraft.aurora
+	#	PauseOnCondition: airfield * 4 <= plane
+	# ConditionPrerequisite@AURORA_ALPHA:
+	#	Queue: queue.super_gen_aircraft
+	#	Actor: aircraft.aurora_alpha
+	#	PauseOnCondition: airfield * 4 <= plane
+	# ConditionPrerequisite@STEALTH_FIGHTER:
+	#	Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft
+	#	Actor: aircraft.stealth_fighter
+	#	PauseOnCondition: airfield * 4 <= plane
 	Voiced:
 		VoiceSet: USAAirfieldVoice
 
@@ -2690,6 +2718,18 @@ building.prc_airfield:
 		Locations: 0,-1, 1,-1, 2,-1, 3,-1, -1,0, -1,1, -1,2, 0,3, 1,3, 2,3, 3,3, 4,2, 4,1, 4,0
 	LaysMinefield@NEUTRON_MINES:
 		Locations: 0,-1, 1,-1, 2,-1, 3,-1, -1,0, -1,1, -1,2, 0,3, 1,3, 2,3, 3,3, 4,2, 4,1, 4,0
+	# ConditionPrerequisite@MIG:
+	#	Queue: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft
+	#	Actor: aircraft.mig
+	#	PauseOnCondition: airfield * 4 <= plane
+	# ConditionPrerequisite@KING_RAPTOR:
+	#	Queue: queue.boss_gen_aircraft
+	#	Actor: aircraft.king_raptor.boss
+	#	PauseOnCondition: airfield * 4 <= plane
+	# ConditionPrerequisite@AURORA:
+	#	Queue: queue.boss_gen_aircraft
+	#	Actor: aircraft.aurora
+	#	PauseOnCondition: airfield * 4 <= plane
 	Voiced:
 		VoiceSet: PRCAirfieldVoice
 

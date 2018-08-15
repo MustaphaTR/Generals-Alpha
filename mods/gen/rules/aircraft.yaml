@@ -395,6 +395,8 @@ aircraft.mig:
 	DamageMultiplier:
 		Modifier: 80
 		RequiresCondition: mig_armor
+	ProvidesPrerequisite:
+		Prerequisite: prerequisite.plane
 	Voiced:
 		VoiceSet: MiGVoice
 
@@ -484,6 +486,8 @@ aircraft.raptor:
 	SmokeTrailWhenDamaged:
 		Offset: -853,0,171
 		Interval: 2
+	ProvidesPrerequisite:
+		Prerequisite: prerequisite.plane
 	Voiced:
 		VoiceSet: RaptorVoice
 	RenderSprites:
@@ -635,6 +639,8 @@ aircraft.stealth_fighter:
 		Prerequisites: prerequisite.zh_units
 	Voiced:
 		VoiceSet: StealthFighterVoice
+	ProvidesPrerequisite:
+		Prerequisite: prerequisite.plane
 	RenderSprites:
 		Image: aircraft.stealth_fighter
 		Scale: 0.9
@@ -771,6 +777,8 @@ aircraft.aurora:
 		Interval: 2
 	Voiced:
 		VoiceSet: AuroraVoice
+	ProvidesPrerequisite:
+		Prerequisite: prerequisite.plane
 	RenderSprites:
 		Scale: 0.9
 
