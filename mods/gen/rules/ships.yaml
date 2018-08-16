@@ -1,6 +1,8 @@
 vessel.transport:
 	Inherits: ^Ship
 	Inherits@REVEAL: ^Reveal200
+	GivesExperience:
+		Experience: 50
 	Buildable:
 		Queue: queue.vessel
 		BuildPaletteOrder: 1
@@ -42,6 +44,19 @@ vessel.gunboat:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal250
+	GivesExperience:
+		Experience: 25
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 400
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			50: rank-veteran
+			75: rank-veteran
+			150: rank-veteran
 	Buildable:
 		Queue: queue.vessel
 		BuildPaletteOrder: 2
@@ -91,6 +106,19 @@ vessel.destroyer:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal250
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			200: rank-veteran
+			300: rank-veteran
+			600: rank-veteran
 	Buildable:
 		Queue: queue.vessel
 		BuildPaletteOrder: 3
@@ -144,6 +172,19 @@ vessel.cruiser:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
+	GivesExperience:
+		Experience: 100
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 400
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			200: rank-veteran
+			400: rank-veteran
+			800: rank-veteran
 	Buildable:
 		Queue: queue.vessel
 		BuildPaletteOrder: 4

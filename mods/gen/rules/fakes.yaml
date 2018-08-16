@@ -54,6 +54,8 @@ fake.barracks:
 	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
+	GivesExperience:
+		Experience: 25
 	HitShape:
 		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
 	Buildable:

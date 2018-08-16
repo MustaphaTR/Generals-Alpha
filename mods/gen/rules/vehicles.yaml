@@ -3,6 +3,8 @@ vehicle.supply_truck:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 50
 	Buildable:
 		Queue: queue.prc_collector
 		BuildPaletteOrder: 1
@@ -86,6 +88,19 @@ vehicle.humvee:
 		Action: Kill
 		-RequiresCondition:
 	-OwnerLostAction@DRIVER_KILLED:
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			100: rank-veteran
+			150: rank-veteran
+			300: rank-veteran
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 0
@@ -212,6 +227,19 @@ vehicle.technical:
 		Action: Kill
 		-RequiresCondition:
 	-OwnerLostAction@DRIVER_KILLED:
+	GivesExperience:
+		Experience: 25
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 400
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			50: rank-veteran
+			75: rank-veteran
+			150: rank-veteran
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 0
@@ -334,6 +362,8 @@ vehicle.radar_van:
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 20
 	Tooltip:
 		Name: Radar Van
 	Buildable:
@@ -442,6 +472,19 @@ vehicle.scorpion_tank:
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 60
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 333
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			100: rank-veteran
+			200: rank-veteran
+			400: rank-veteran
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		BuildPaletteOrder: 1
@@ -609,6 +652,19 @@ vehicle.crusader_tank:
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	GivesExperience:
+		Experience: 100
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 400
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			200: rank-veteran
+			300: rank-veteran
+			600: rank-veteran
 	Buildable:
 		Queue: queue.usa_vehicle
 		BuildPaletteOrder: 1
@@ -705,6 +761,19 @@ vehicle.battlemaster_tank:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
+	GivesExperience:
+		Experience: 100
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 400
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			200: rank-veteran
+			300: rank-veteran
+			600: rank-veteran
 	Buildable:
 		Queue: queue.prc_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 0
@@ -804,6 +873,8 @@ vehicle.ambulance:
 		Action: Kill
 		-RequiresCondition:
 	-OwnerLostAction@DRIVER_KILLED:
+	GivesExperience:
+		Experience: 50
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 3
@@ -881,6 +952,8 @@ vehicle.sentry_drone:
 		Action: Kill
 		-RequiresCondition:
 	-OwnerLostAction@DRIVER_KILLED:
+	GivesExperience:
+		Experience: 50
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.boss_gen_vehicle
 		BuildPaletteOrder: 4
@@ -985,6 +1058,19 @@ vehicle.quad_cannon:
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			100: rank-veteran
+			150: rank-veteran
+			300: rank-veteran
 	Tooltip:
 		Name: Quad Cannon
 	Buildable:
@@ -1081,6 +1167,19 @@ vehicle.gatling_tank:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal360
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			80: rank-veteran
+			200: rank-veteran
+			300: rank-veteran
 	Tooltip:
 		Name: Gatling Tank
 	Buildable:
@@ -1185,6 +1284,19 @@ vehicle.toxin_tractor:
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			100: rank-veteran
+			150: rank-veteran
+			300: rank-veteran
 	Tooltip:
 		Name: Toxin Tractor
 	Buildable:
@@ -1329,6 +1441,19 @@ vehicle.dragon_tank:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			100: rank-veteran
+			150: rank-veteran
+			300: rank-veteran
 	Tooltip:
 		Name: Dragon Tank
 	Buildable:
@@ -1416,6 +1541,19 @@ vehicle.rocket_buggy:
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			200: rank-veteran
+			400: rank-veteran
+			800: rank-veteran
 	Tooltip:
 		Name: Rocket Buggy
 	Buildable:
@@ -1544,6 +1682,19 @@ vehicle.avenger:
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	GivesExperience:
+		Experience: 100
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 400
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			200: rank-veteran
+			300: rank-veteran
+			600: rank-veteran
 	Buildable:
 		Queue: queue.usa_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 6
@@ -1636,6 +1787,8 @@ vehicle.battle_Bus:
 		Action: Kill
 		-RequiresCondition:
 	-OwnerLostAction@DRIVER_KILLED:
+	GivesExperience:
+		Experience: 50
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 9
@@ -1960,6 +2113,19 @@ vehicle.microwave_tank:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 100
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 400
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			200: rank-veteran
+			300: rank-veteran
+			600: rank-veteran
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 7
@@ -2039,8 +2205,22 @@ vehicle.microwave_tank:
 vehicle.ecm_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal360
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			100: rank-veteran
+			150: rank-veteran
+			300: rank-veteran
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		BuildPaletteOrder: 8
@@ -2129,6 +2309,19 @@ vehicle.tomahawk_launcher:
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			200: rank-veteran
+			400: rank-veteran
+			800: rank-veteran
 	Tooltip:
 		Name: Tomahawk Launcher
 	Buildable:
@@ -2227,6 +2420,19 @@ vehicle.scud_launcher:
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			100: rank-veteran
+			200: rank-veteran
+			400: rank-veteran
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		BuildPaletteOrder: 8
@@ -2390,6 +2596,19 @@ vehicle.inferno_cannon:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			100: rank-veteran
+			200: rank-veteran
+			400: rank-veteran
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle
 		BuildPaletteOrder: 9
@@ -2471,6 +2690,19 @@ vehicle.paladin_tank:
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	GivesExperience:
+		Experience: 100
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 400
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			200: rank-veteran
+			300: rank-veteran
+			600: rank-veteran
 	Buildable:
 		Queue: queue.usa_vehicle
 		BuildPaletteOrder: 9
@@ -2563,6 +2795,19 @@ vehicle.marauder_tank:
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 100
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			200: rank-veteran
+			300: rank-veteran
+			600: rank-veteran
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		BuildPaletteOrder: 11
@@ -2845,6 +3090,19 @@ vehicle.overlord_tank:
 		RequiresCondition: (stance-attackanything || assault-move) && gatling_upgrade
 		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
 		InvalidTargets: NoAutoTarget
+	GivesExperience:
+		Experience: 200
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			400: rank-veteran
+			600: rank-veteran
+			1200: rank-veteran
 	FirepowerMultiplier@CHAIN_GUN:
 		Types: gatling
 	ReloadDelayMultiplier@Gatling1:
@@ -3073,6 +3331,8 @@ vehicle.bomb_truck:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
+	GivesExperience:
+		Experience: 50
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 6
@@ -3274,6 +3534,22 @@ vehicle.nuke_cannon:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-1:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 1
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 400
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 800
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			400: rank-veteran
+			600: rank-veteran
+			1000: rank-veteran
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle
 		BuildPaletteOrder: 10
@@ -3413,6 +3689,19 @@ vehicle.combat_cycle:
 		Action: Kill
 		-RequiresCondition:
 	-OwnerLostAction@DRIVER_KILLED:
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			200: rank-veteran
+			400: rank-veteran
+			800: rank-veteran
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 10

@@ -255,6 +255,19 @@ aircraft.mig:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			100: rank-veteran
+			200: rank-veteran
+			400: rank-veteran
 	Buildable:
 		Queue: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft
 		BuildPaletteOrder: 0
@@ -408,6 +421,19 @@ aircraft.raptor:
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			100: rank-veteran
+			200: rank-veteran
+			400: rank-veteran
 	Buildable:
 		Queue: queue.usa_aircraft, queue.super_gen_aircraft
 		BuildAtProductionType: queue.usa_plane
@@ -495,6 +521,12 @@ aircraft.raptor:
 
 aircraft.king_raptor:
 	Inherits: aircraft.raptor
+	GivesExperience:
+		Experience: 75
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 167
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 233
 	Buildable:
 		Queue: queue.air_gen_aircraft #, queue.boss_gen_aircraft
 		Description: Multi-role fighter plane.\n\nCan deflect enemy missiles with laser.
@@ -546,6 +578,19 @@ aircraft.stealth_fighter:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	GivesExperience:
+		Experience: 100
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			200: rank-veteran
+			300: rank-veteran
+			600: rank-veteran
 	Buildable:
 		Queue: queue.usa_aircraft, queue.super_gen_aircraft
 		BuildAtProductionType: queue.usa_plane
@@ -672,6 +717,19 @@ aircraft.aurora:
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	GivesExperience:
+		Experience: 200
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 200
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			200: rank-veteran
+			500: rank-veteran
+			800: rank-veteran
 	Buildable:
 		Queue: queue.usa_aircraft, queue.air_gen_aircraft
 		BuildAtProductionType: queue.usa_plane
@@ -864,6 +922,8 @@ aircraft.spy_drone:
 aircraft.scout_drone:
 	Inherits: aircraft.spy_drone
 	Inherits@REVEAL: ^Reveal500
+	GivesExperience:
+		Experience: 10
 	Tooltip:
 		Name: Scout Drone
 	Health:
@@ -982,6 +1042,8 @@ aircraft.chinook:
 	Inherits: ^Vehicle
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 50
 	Buildable:
 		Queue: queue.usa_collector, queue.air_gen_collector
 		BuildPaletteOrder: 0
@@ -1090,6 +1152,8 @@ aircraft.chinook:
 #	Inherits: ^Helicopter
 #	Inherits@REVEAL: ^Reveal600
 #	Inherits@SLOW: ^SlowsWhenDamaged
+#	GivesExperience:
+#		Experience: 50
 #	RevealsShroud:
 #		Type: CenterPosition
 #	RevealsShroud@SEARCH_AND_DESTROY:
@@ -1182,6 +1246,8 @@ aircraft.chinook:
 aircraft.combat_chinook:
 	Inherits: aircraft.chinook
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	GivesExperience:
+		Experience: 60
 	Buildable:
 		Queue: queue.air_gen_collector
 		BuildPaletteOrder: 2
@@ -1217,6 +1283,19 @@ aircraft.comanche:
 	Inherits@PILOT: ^EjectsPilotOnAir
 	Inherits@REVEAL: ^Reveal600
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 400
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			100: rank-veteran
+			200: rank-veteran
+			400: rank-veteran
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
@@ -1342,6 +1421,22 @@ aircraft.helix:
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@UPGRADE: ^CanHavePRCVehicleUpgrades
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-1:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 1
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 300
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 400
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			100: rank-veteran
+			200: rank-veteran
+			400: rank-veteran
 	Buildable:
 		Queue: queue.prc_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft
 		BuildPaletteOrder: 1

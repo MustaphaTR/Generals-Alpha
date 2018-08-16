@@ -3,6 +3,8 @@
 	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SABOTAGE: ^CanBeSabotaged
+	GivesExperience:
+		Experience: 200
 	RevealsShroudToIntelligenceOwner@SATELLITE_HACK1:
 		Types: SatelliteHack1
 		Range: 6c256
@@ -834,6 +836,8 @@ building.prc_command_center.radar:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SABOTAGE: ^CanBeSabotaged
 	Inherits@SHAPE: ^2x2Shape
+	GivesExperience:
+		Experience: 100
 	Buildable:
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1011,6 +1015,8 @@ building.advanced_nuclear_reactor:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SABOTAGE: ^CanBeSabotaged
 	Inherits@SHAPE: ^2x2Shape
+	GivesExperience:
+		Experience: 100
 	HitShape:
 		UseTargetableCellsOffsets: false
 	Buildable:
@@ -1231,6 +1237,8 @@ building.prc_barracks:
 ^default.supply_center:
 	Inherits: ^Building
 	Inherits@REVEAL: ^Reveal200
+	GivesExperience:
+		Experience: 200
 	Buildable:
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1488,6 +1496,8 @@ building.patriot:
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Inherits@REVEAL: ^Reveal360
 	Inherits@SHAPE: ^2x1Shape
+	GivesExperience:
+		Experience: 200
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building
 		BuildPaletteOrder: 4
@@ -1634,6 +1644,8 @@ building.laser_turret:
 building.demo_trap:
 	Inherits: ^Defense
 	Inherits@REVEAL: ^Reveal150
+	GivesExperience:
+		Experience: 50
 	Buildable:
 		Queue: queue.gla_building
 		BuildPaletteOrder: 3
@@ -1768,6 +1780,8 @@ building.gatling_cannon:
 	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@MINE: ^CanHaveMines
 	Inherits@REVEAL: ^Reveal360
+	GivesExperience:
+		Experience: 200
 	Buildable:
 		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
 		BuildPaletteOrder: 5
@@ -1848,6 +1862,8 @@ building.firebase:
 	Inherits@LEAFLET: ^AffectedByLeaflet
 	Inherits@REVEAL: ^Reveal360
 	Inherits@SHAPE: ^2x2Shape
+	GivesExperience:
+		Experience: 200
 	Tooltip:
 		Name: Firebase
 	Building:
@@ -1937,6 +1953,8 @@ building.bunker:
 	Inherits@MINE: ^CanHaveMines
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
+	GivesExperience:
+		Experience: 20
 	Tooltip:
 		Name: Bunker
 	Building:
@@ -2014,6 +2032,8 @@ building.fortified_bunker:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SABOTAGE: ^CanBeSabotaged
 	Inherits@SHAPE: ^3x2Shape
+	GivesExperience:
+		Experience: 200
 	Buildable:
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -2259,6 +2279,8 @@ building.prc_war_factory:
 	Inherits: ^Defense
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
+	GivesExperience:
+		Experience: 100
 	Tooltip:
 		Name: Tunnel Network
 	Building:
@@ -2409,6 +2431,8 @@ building.stinger_site:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@LEAFLET: ^AffectedByLeaflet
 	Inherits@REVEAL: ^Reveal400
+	GivesExperience:
+		Experience: 200
 	Buildable:
 		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		BuildPaletteOrder: 6
@@ -2489,6 +2513,8 @@ building.stinger_site:
 	Inherits: ^Building
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SABOTAGE: ^CanBeSabotaged
+	GivesExperience:
+		Experience: 250
 	Buildable:
 		BuildDuration: 750
 		BuildDurationModifier: 100
@@ -2737,6 +2763,8 @@ building.internet_center:
 	Inherits: ^Building
 	Inherits@MINE: ^CanHaveMines
 	Inherits@REVEAL: ^Reveal200
+	GivesExperience:
+		Experience: 200
 	HitShape:
 		TargetableOffsets: 0,0,0, 0,512,0, 420,-598,256
 		Type: Rectangle
@@ -2815,6 +2843,8 @@ building.strategy_center:
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SHAPE: ^3x2Shape
+	GivesExperience:
+		Experience: 250
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 8
@@ -2948,6 +2978,8 @@ building.palace:
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@SHAPE: ^3x2Shape
 	Inherits@REVEAL: ^Reveal300
+	GivesExperience:
+		Experience: 300
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 0,-896,0, 0,896,0, 840,0,0, -706,0,0, -706,-768,0, -706,640,0
@@ -3063,6 +3095,8 @@ building.propaganda_center:
 	Inherits@MINE: ^CanHaveMines
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^3x2Shape
+	GivesExperience:
+		Experience: 200
 	HitShape:
 		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	Buildable:
@@ -3196,6 +3230,8 @@ building.supply_drop_zone:
 	Inherits@SUPPLY_LINES: ^AffectedBySupplyLines
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Inherits@REVEAL: ^Reveal100
+	GivesExperience:
+		Experience: 200
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
@@ -3250,6 +3286,8 @@ building.black_market:
 	Inherits@CAMO: ^CanHaveCamoNettingStealthGenOnly
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@REVEAL: ^Reveal200
+	GivesExperience:
+		Experience: 200
 	HitShape:
 		TargetableOffsets: 0,0,0, 0,512,0, 420,-598,256
 		Type: Rectangle
@@ -3323,6 +3361,8 @@ building.speaker_tower:
 	Inherits: ^Building
 	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@REVEAL: ^Reveal200
+	GivesExperience:
+		Experience: 50
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -3388,6 +3428,8 @@ building.particle_cannon:
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SABOTAGE: ^CanBeSabotaged
+	GivesExperience:
+		Experience: 400
 	HitShape:
 		TargetableOffsets: 0,0,0, 0,512,128, 420,-598,213
 		Type: Rectangle
@@ -3496,6 +3538,8 @@ building.scud_storm:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SABOTAGE: ^CanBeSabotaged
 	Inherits@SHAPE: ^2x2Shape
+	GivesExperience:
+		Experience: 400
 	Valued:
 		Cost: 5000
 	Tooltip:
@@ -3749,6 +3793,8 @@ building.missile_silo:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SABOTAGE: ^CanBeSabotaged
 	Inherits@SHAPE: ^2x1Shape
+	GivesExperience:
+		Experience: 400
 	Valued:
 		Cost: 5000
 	Tooltip:

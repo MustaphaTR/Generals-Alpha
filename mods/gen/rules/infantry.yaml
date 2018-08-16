@@ -3,6 +3,13 @@ infantry.pilot:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 10
+	GainsExperience:
+		Conditions:
+			1: rank-veteran
+			2: rank-veteran
+			3: rank-veteran
 	Valued:
 		Cost: 100
 	Tooltip:
@@ -77,6 +84,11 @@ infantry.worker:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GainsExperience:
+		Conditions:
+			40: rank-veteran
+			60: rank-veteran
+			120: rank-veteran
 	Buildable:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
@@ -116,6 +128,14 @@ infantry.ranger:
 	Inherits@CHEM: ^AffectedByChemicalSuits
 	Inherits@REVEAL: ^Reveal400
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	GivesExperience:
+		Experience: 20
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 150
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 200
+		RequiresCondition: rank-elite
 	Buildable:
 		Queue: queue.usa_infantry, queue.boss_gen_infantry
 		ReadyAudio: RangerCreated
@@ -147,6 +167,14 @@ infantry.rebel:
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal300
+	GivesExperience:
+		Experience: 15
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 267
+		RequiresCondition: rank-elite
 	Buildable:
 		Queue: queue.gla_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
 		ReadyAudio: RebelCreated
@@ -189,6 +217,14 @@ infantry.toxin_rebel:
 	Inherits: ^default.mg_infantry
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal300
+	GivesExperience:
+		Experience: 15
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 267
+		RequiresCondition: rank-elite
 	Buildable:
 		Queue: queue.toxin_gen_infantry
 		Description: General-purpose infantry armed with toxins.
@@ -293,6 +329,19 @@ infantry.red_guard:
 	Inherits: ^default.mg_infantry
 	Inherits@HORDE_BONUS: ^InfantryHorde
 	Inherits@REVEAL: ^Reveal200
+	GivesExperience:
+		Experience: 5
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 400
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			20: rank-veteran
+			40: rank-veteran
+			80: rank-veteran
 	Buildable:
 		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
 		BuildAmount: 2
@@ -335,6 +384,19 @@ infantry.minigunner:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@REVEAL: ^Reveal200
 	Inherits@HORDE_BONUS: ^InfantryHorde
+	GivesExperience:
+		Experience: 5
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 400
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			20: rank-veteran
+			40: rank-veteran
+			80: rank-veteran
 	Buildable:
 		Queue: queue.inf_gen_infantry
 		BuildDuration: 250
@@ -389,6 +451,14 @@ infantry.minigunner:
 infantry.conscript:
 	Inherits: ^default.mg_infantry
 	Inherits@REVEAL: ^Reveal200
+	GivesExperience:
+		Experience: 15
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 267
+		RequiresCondition: rank-elite
 	Buildable:
 		Queue: queue.soviet_infantry
 		BuildDuration: 100
@@ -417,6 +487,19 @@ infantry.conscript:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 20
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 150
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 200
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			100: rank-veteran
+			200: rank-veteran
+			400: rank-veteran
 	Buildable:
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
@@ -582,6 +665,19 @@ infantry.pathfinder:
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	GivesExperience:
+		Experience: 40
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 150
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 200
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			50: rank-veteran
+			100: rank-veteran
+			200: rank-veteran
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -647,6 +743,8 @@ infantry.terrorist:
 	Inherits: ^Soldier
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 20
 	Buildable:
 		Queue: queue.gla_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
 		BuildPaletteOrder: 3
@@ -734,6 +832,19 @@ infantry.flamethrower:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 40
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 150
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 200
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			50: rank-veteran
+			100: rank-veteran
+			200: rank-veteran
 	Buildable:
 		Queue: queue.soviet_infantry
 		BuildPaletteOrder: 2
@@ -774,6 +885,8 @@ infantry.saboteur:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 15
 	Buildable:
 		Queue: queue.gla_infantry, queue.stealth_gen_infantry
 		BuildPaletteOrder: 9
@@ -822,6 +935,13 @@ infantry.saboteur:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal150
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 5
+	GainsExperience:
+		Conditions: # 1/10 of original values, in original nexus gained the XP.
+			15: rank-veteran
+			45: rank-veteran
+			90: rank-veteran
 	Valued:
 		Cost: 160
 	Tooltip:
@@ -965,6 +1085,22 @@ infantry.hacker:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-1:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 1
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 300
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 800
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			100: rank-veteran
+			300: rank-veteran
+			500: rank-veteran
 	Buildable:
 		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
 		BuildPaletteOrder: 3
@@ -1042,7 +1178,7 @@ infantry.hacker:
 		RequiresCondition: in_internet_center && rank-veteran == 0
 	ExperienceTrickler@RANK-0:
 		Interval: 50
-		Amount: 1950
+		Amount: 1
 		RequiresCondition: (deployed || in_internet_center) && rank-veteran == 0
 	CashTrickler@RANK-1:
 		Interval: 45
@@ -1054,7 +1190,7 @@ infantry.hacker:
 		RequiresCondition: in_internet_center && rank-veteran == 1
 	ExperienceTrickler@RANK-1:
 		Interval: 45
-		Amount: 1950
+		Amount: 1
 		RequiresCondition: (deployed || in_internet_center) && rank-veteran == 1
 	CashTrickler@RANK-2:
 		Interval: 35
@@ -1066,7 +1202,7 @@ infantry.hacker:
 		RequiresCondition: in_internet_center && rank-veteran == 2
 	ExperienceTrickler@RANK-2:
 		Interval: 35
-		Amount: 1950
+		Amount: 1
 		RequiresCondition: (deployed || in_internet_center) && rank-veteran == 2
 	CashTrickler@RANK-ELITE:
 		Interval: 25
@@ -1138,6 +1274,8 @@ infantry.hijacker:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 50
 	Buildable:
 		Queue: queue.gla_infantry
 		BuildPaletteOrder: 6
@@ -1209,6 +1347,22 @@ infantry.colonel_burton:
 	Inherits@REVEAL: ^Reveal500
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-1:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 1
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			200: rank-veteran
+			300: rank-veteran
+			600: rank-veteran
 	RadarIcon:
 	Valued:
 		Cost: 1500
@@ -1317,6 +1471,19 @@ infantry.jarmen_kell:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			100: rank-veteran
+			200: rank-veteran
+			400: rank-veteran
 	RadarIcon:
 	Valued:
 		Cost: 1500
@@ -1421,6 +1588,22 @@ infantry.black_lotus:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
+	GainsExperience:
+		Conditions:
+			150: rank-veteran
+			450: rank-veteran
+			900: rank-veteran
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-1:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 1
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 300
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 800
+		RequiresCondition: rank-elite
 	RadarIcon:
 	Buildable:
 		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
