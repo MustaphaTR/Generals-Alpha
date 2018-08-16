@@ -1,5 +1,6 @@
 laser.laser_tank:
 	Inherits: cannon.crusader_tank
+	ReloadDelay: 58
 	Report: vpalwe2d.aud
 	-Projectile:
 	Projectile: LaserZap
@@ -12,8 +13,8 @@ laser.laser_tank:
 laser.laser_turret.ground:
 	Inherits: ^AntiGroundMissile
 	Burst: 3
-	BurstDelays: 32
-	ReloadDelay: 60
+	BurstDelays: 6
+	ReloadDelay: 50
 	Range: 5c640
 	MinRange: 0c0
 	Report: vpalwe2d.aud
@@ -41,8 +42,8 @@ laser.laser_turret.ground:
 laser.laser_turret.air:
 	Inherits: ^AntiAirMissile
 	Burst: 4
-	BurstDelays: 32
-	ReloadDelay: 60
+	BurstDelays: 6
+	ReloadDelay: 50
 	Range: 8c768
 	MinRange: 0c0
 	Report: vpalwe2d.aud
