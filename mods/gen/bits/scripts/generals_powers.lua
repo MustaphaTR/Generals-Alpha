@@ -100,7 +100,7 @@ ReducePoints = function(player)
 	end)
 end
 
-Tick = function()
+TickGeneralsPowers = function()
 	for _,player in pairs(players) do
 		if player.IsLocalPlayer then
 			if Levels[player.InternalName] < 4 then
@@ -152,6 +152,10 @@ Tick = function()
 			Actor.Create("hack.rank_5", true, { Owner = player })
 		end
 	end
+end
+
+Tick = function()
+	TickGeneralsPowers()
 end
 
 WorldLoaded = function()

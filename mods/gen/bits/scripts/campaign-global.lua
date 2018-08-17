@@ -44,12 +44,12 @@ TrainHackers = function(owner, hacker, amount, rally_point, internet)
 		if built and amount > 1 then
 			TrainHackers(owner, hacker, amount - 1, rally_point, internet)
 		elseif not built then
-			Trigger.AfterDelay(DateTime.Minutes(1), function()
+			Trigger.AfterDelay(DateTime.Seconds(15), function()
 				TrainHackers(owner, hacker, amount, rally_point, internet)
 			end)
 		end
 	else
-		Trigger.AfterDelay(DateTime.Minutes(1), function()
+		Trigger.AfterDelay(DateTime.Seconds(15), function()
 			TrainHackers(owner, hacker, amount, rally_point, internet)
 		end)
 	end

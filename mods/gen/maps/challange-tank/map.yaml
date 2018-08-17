@@ -252,30 +252,6 @@ Actors:
 		Owner: General Kwai
 		TurretFacing: 128
 		Location: 173,41
-	Actor82: supply.pile.b
-		Owner: Neutral
-		Location: 51,98
-	Actor83: supply.pile.e
-		Owner: Neutral
-		Location: 52,99
-	Actor84: supply.pile.a
-		Owner: Neutral
-		Location: 52,100
-	Actor85: supply.pile.c
-		Owner: Neutral
-		Location: 54,100
-	Actor89: supply.dock.30000.skewed_a
-		Owner: Neutral
-		Location: 28,108
-	Actor90: supply.pile.c
-		Owner: Neutral
-		Location: 62,110
-	Actor91: supply.pile.a
-		Owner: Neutral
-		Location: 61,111
-	Actor93: supply.pile.b
-		Owner: Neutral
-		Location: 63,112
 	Actor92: supply.pile.c
 		Owner: Neutral
 		Location: 35,5
@@ -291,15 +267,6 @@ Actors:
 	Actor124: supply.pile.a
 		Owner: Neutral
 		Location: 37,7
-	Actor79: supply.pile.a
-		Owner: Neutral
-		Location: 27,86
-	Actor80: supply.pile.f
-		Owner: Neutral
-		Location: 26,87
-	Actor81: supply.pile.d
-		Owner: Neutral
-		Location: 28,87
 	Actor78: supply.pile.b
 		Owner: Neutral
 		Location: 45,22
@@ -390,9 +357,6 @@ Actors:
 	Actor157: supply.pile.a
 		Owner: Neutral
 		Location: 108,65
-	Actor158: supply.pile.a
-		Owner: Neutral
-		Location: 127,69
 	Actor159: supply.pile.e
 		Owner: Neutral
 		Location: 108,66
@@ -750,4 +714,150 @@ Actors:
 	HackerWP2: waypoint
 		Owner: Neutral
 		Location: 164,10
+	Actor269: vehicle.prc_mcc
+		Owner: General Kwai
+		Location: 173,18
+		Facing: 128
+	Actor270: vehicle.prc_mcc
+		Owner: General Kwai
+		Location: 171,18
+		Facing: 64
+	CenterStart: waypoint
+		Owner: Neutral
+		Location: 147,23
+	CenterWP1: waypoint
+		Owner: Neutral
+		Location: 143,26
+	CenterWP2: waypoint
+		Owner: Neutral
+		Location: 133,26
+	CenterWP3: waypoint
+		Owner: Neutral
+		Location: 143,32
+	CenterWP4: waypoint
+		Owner: Neutral
+		Location: 91,32
+	CenterWP5: waypoint
+		Owner: Neutral
+		Location: 71,36
+	Actor277: t11
+		Owner: Neutral
+		Location: 102,35
+	Actor278: t13
+		Owner: Neutral
+		Location: 105,36
+	Actor279: t14
+		Owner: Neutral
+		Location: 106,35
+	Actor280: t14
+		Owner: Neutral
+		Location: 108,36
+	CenterWP6: waypoint
+		Owner: Neutral
+		Location: 107,38
+	CenterWP7: waypoint
+		Owner: Neutral
+		Location: 98,53
+	CenterWP8: waypoint
+		Owner: Neutral
+		Location: 71,62
+	CenterEnd3: waypoint
+		Owner: Neutral
+		Location: 52,64
+	CenterEnd2: waypoint
+		Owner: Neutral
+		Location: 48,59
+	CenterEnd1: waypoint
+		Owner: Neutral
+		Location: 41,56
+	CenterWP9: waypoint
+		Owner: Neutral
+		Location: 62,47
+	CenterWP10: waypoint
+		Owner: Neutral
+		Location: 70,52
+	CenterWP11: waypoint
+		Owner: Neutral
+		Location: 121,41
+	BackDoorStart: waypoint
+		Owner: Neutral
+		Location: 171,35
+	BackDoorWP1: waypoint
+		Owner: Neutral
+		Location: 163,55
+	BackDoorWP2: waypoint
+		Owner: Neutral
+		Location: 170,69
+	BackDoorWP3: waypoint
+		Owner: Neutral
+		Location: 129,76
+	BackDoorEnd3: waypoint
+		Owner: Neutral
+		Location: 55,75
+	BackDoorEnd2: waypoint
+		Owner: Neutral
+		Location: 55,72
+	BackDoorEnd1: waypoint
+		Owner: Neutral
+		Location: 54,70
+	BackDoorWP4: waypoint
+		Owner: Neutral
+		Location: 155,46
+	BackDoorWP5: waypoint
+		Owner: Neutral
+		Location: 126,43
+	BackDoorWP6: waypoint
+		Owner: Neutral
+		Location: 119,52
+	BackDoorWP7: waypoint
+		Owner: Neutral
+		Location: 106,58
+	BackDoorWP8: waypoint
+		Owner: Neutral
+		Location: 78,66
+	BackDoorWP9: waypoint
+		Owner: Neutral
+		Location: 91,70
+	BackDoorWP10: waypoint
+		Owner: Neutral
+		Location: 149,60
+	BackDoorWP11: waypoint
+		Owner: Neutral
+		Location: 118,61
+	FlankStart: waypoint
+		Owner: Neutral
+		Location: 129,11
+	FlankWP1: waypoint
+		Owner: Neutral
+		Location: 100,8
+	FlankWP2: waypoint
+		Owner: Neutral
+		Location: 107,17
+	FlankWP3: waypoint
+		Owner: Neutral
+		Location: 96,19
+	FlankWP4: waypoint
+		Owner: Neutral
+		Location: 85,10
+	FlankWP5: waypoint
+		Owner: Neutral
+		Location: 33,9
+	FlankWP6: waypoint
+		Owner: Neutral
+		Location: 60,23
+	FlankWP7: waypoint
+		Owner: Neutral
+		Location: 85,30
+	FlankWP8: waypoint
+		Owner: Neutral
+		Location: 29,32
+	FlankWP9: waypoint
+		Owner: Neutral
+		Location: 39,34
+	FlankEnd1: waypoint
+		Owner: Neutral
+		Location: 28,53
+	FlankEnd2: waypoint
+		Owner: Neutral
+		Location: 34,54
 Rules: rules.yaml
