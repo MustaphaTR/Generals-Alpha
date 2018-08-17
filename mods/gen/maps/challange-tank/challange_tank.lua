@@ -11,17 +11,6 @@ EnemyBase = { EnemyCommandCenter, EnemyBarracks, EnemyWarFactory1, EnemyWarFacto
 
 RandomTaunts = { "19", "15", "16", "17", "18", "20", "22", "23", "24", "25", "26", "27", "29", "30" }
 
-ResearchUpgrade = function(building, upgrade)
-	local buildings = enemy.GetActorsByType(building)
-	if #buildings > 0 then
-		buildings[1].Build( { upgrade } )
-	else
-		Trigger.AfterDelay(DateTime.Minutes(1), function()
-			ResearchUpgrade(building, upgrade)
-		end)
-	end
-end
-
 GiveGeneralPowers = function()
 	Actor.Create("generals_power.carpet_bombing",		true, { Owner = enemy })
 	Actor.Create("generals_power.cluster_mines",		true, { Owner = enemy })
@@ -43,7 +32,7 @@ end
 DifficultySetup = function()
 	if Difficulty == "easy" then
 		player.Cash = player.Cash + ((player.Cash * 3) / 13)
-		
+
 		EnemyBunker1.Destroy()
 		EnemyBunker2.Destroy()
 		EnemyBunker3.Destroy()
@@ -51,10 +40,21 @@ DifficultySetup = function()
 		EnemyBunker5.Destroy()
 		EnemyBunker6.Destroy()
 		EnemyBunker7.Destroy()
+
+		TrainHackers(enemy, "infantry.hacker", 2, HackerWP1.Location, false )
+		TrainHackers(enemy, "infantry.hacker", 2, HackerWP2.Location, false )
+	end
+
+	if Difficulty == "normal" then
+		TrainHackers(enemy, "infantry.hacker", 4, HackerWP1.Location, false )
+		TrainHackers(enemy, "infantry.hacker", 4, HackerWP2.Location, false )
 	end
 
 	if Difficulty == "hard" then
 		player.Cash = player.Cash - ((player.Cash * 3) / 13)
+
+		TrainHackers(enemy, "infantry.hacker", 4, HackerWP1.Location, true )
+		TrainHackers(enemy, "infantry.hacker", 4, HackerWP2.Location, true )
 	end
 end
 
