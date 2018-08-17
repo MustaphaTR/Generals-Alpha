@@ -141,7 +141,7 @@ end
 SendA10s = function()
 	powerproxyA10.SendAirstrike(A10Waypoint.CenterPosition)
 
-	Trigger.AfterDelay(DateTime.Minutes(4), SendParadrop)
+	Trigger.AfterDelay(DateTime.Minutes(4), SendA10s)
 end
 
 SendParadrop = function()
