@@ -7,7 +7,7 @@
 		Factions: usa
 		BaseActor: infantry.colonel_burton
 		SupportActors: infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, infantry.missile_defender, infantry.missile_defender, infantry.pathfinder, vehicle.humvee, vehicle.humvee, vehicle.crusader_tank, vehicle.crusader_tank, vehicle.paladin_tank, vehicle.tomahawk_launcher, vehicle.ambulance
-		SupportProxyActors: upgrade.capture_building
+		SupportProxyActors: hack.no_bases, upgrade.capture_building
 		InnerSupportRadius: 2
 		OuterSupportRadius: 8
 	MPStartUnits@nobasesair:
@@ -16,7 +16,7 @@
 		Factions: air
 		BaseActor: infantry.colonel_burton
 		SupportActors: infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, infantry.missile_defender, infantry.missile_defender, vehicle.humvee, vehicle.humvee, vehicle.humvee, vehicle.tomahawk_launcher, vehicle.tomahawk_launcher, vehicle.ambulance
-		SupportProxyActors: upgrade.capture_building, upgrade.tow_missile
+		SupportProxyActors: hack.no_bases, upgrade.capture_building, upgrade.tow_missile
 		InnerSupportRadius: 2
 		OuterSupportRadius: 8
 	MPStartUnits@nobaseslaser:
@@ -25,7 +25,7 @@
 		Factions: laser
 		BaseActor: infantry.colonel_burton
 		SupportActors: infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, infantry.missile_defender, infantry.missile_defender, infantry.pathfinder, vehicle.humvee, vehicle.humvee, vehicle.mobile_reactor, vehicle.laser_tank, vehicle.laser_tank, vehicle.laser_tank, vehicle.ambulance
-		SupportProxyActors: upgrade.capture_building
+		SupportProxyActors: hack.no_bases, upgrade.capture_building
 		InnerSupportRadius: 2
 		OuterSupportRadius: 8
 	MPStartUnits@nobasessuper:
@@ -34,7 +34,7 @@
 		Factions: super
 		BaseActor: infantry.colonel_burton
 		SupportActors: infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, infantry.missile_defender, infantry.missile_defender, infantry.pathfinder, vehicle.humvee, vehicle.humvee, vehicle.humvee, vehicle.tomahawk_launcher, vehicle.tomahawk_launcher, vehicle.ambulance
-		SupportProxyActors: upgrade.capture_building, upgrade.tow_missile
+		SupportProxyActors: hack.no_bases, upgrade.capture_building, upgrade.tow_missile
 		InnerSupportRadius: 2
 		OuterSupportRadius: 8
 	MPStartUnits@nobasesgla:
@@ -43,7 +43,7 @@
 		Factions: gla
 		BaseActor: infantry.jarmen_kell
 		SupportActors: infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.rpg_trooper, infantry.rpg_trooper, infantry.rpg_trooper, infantry.angry_mob, vehicle.technical, vehicle.combat_cycle, vehicle.scorpion_tank, vehicle.scorpion_tank, vehicle.toxin_tractor, vehicle.marauder_tank, vehicle.rocket_buggy, vehicle.rocket_buggy, vehicle.battle_bus
-		SupportProxyActors: upgrade.capture_building
+		SupportProxyActors: hack.no_bases, upgrade.capture_building
 		InnerSupportRadius: 2
 		OuterSupportRadius: 8
 	MPStartUnits@nobasestoxin:
@@ -52,7 +52,7 @@
 		Factions: toxin
 		BaseActor: infantry.jarmen_kell
 		SupportActors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rpg_trooper, infantry.rpg_trooper, infantry.rpg_trooper, infantry.angry_mob, vehicle.technical, vehicle.combat_cycle, vehicle.scorpion_tank, vehicle.scorpion_tank, vehicle.toxin_tractor, vehicle.marauder_tank, vehicle.rocket_buggy, vehicle.rocket_buggy, vehicle.battle_bus
-		SupportProxyActors: upgrade.capture_building
+		SupportProxyActors: hack.no_bases, upgrade.capture_building
 		InnerSupportRadius: 2
 		OuterSupportRadius: 8
 	MPStartUnits@nobasesdemo:
@@ -61,7 +61,7 @@
 		Factions: demo
 		BaseActor: infantry.jarmen_kell.demo
 		SupportActors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rpg_trooper, infantry.rpg_trooper, infantry.rpg_trooper, infantry.angry_mob, vehicle.technical, vehicle.combat_cycle.demo, vehicle.scorpion_tank, vehicle.scorpion_tank, vehicle.scorpion_tank, vehicle.marauder_tank, vehicle.rocket_buggy, vehicle.rocket_buggy, vehicle.battle_bus
-		SupportProxyActors: upgrade.capture_building
+		SupportProxyActors: hack.no_bases, upgrade.capture_building
 		InnerSupportRadius: 2
 		OuterSupportRadius: 8
 	MPStartUnits@nobasesstealth:
@@ -70,7 +70,7 @@
 		Factions: stealth
 		BaseActor: infantry.jarmen_kell
 		SupportActors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rpg_trooper, infantry.rpg_trooper, infantry.rpg_trooper, infantry.angry_mob, vehicle.technical, vehicle.technical, vehicle.combat_cycle, vehicle.toxin_tractor, vehicle.toxin_tractor, vehicle.rocket_buggy, vehicle.rocket_buggy, vehicle.rocket_buggy, vehicle.battle_bus
-		SupportProxyActors: upgrade.capture_building, upgrade.ap_rockets
+		SupportProxyActors: hack.no_bases, upgrade.capture_building, upgrade.ap_rockets
 		InnerSupportRadius: 2
 		OuterSupportRadius: 8
 	MPStartUnits@nobasesprc:
@@ -79,7 +79,7 @@
 		Factions: prc
 		BaseActor: infantry.black_lotus
 		SupportActors: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.hacker, vehicle.gatling_tank, vehicle.listening_outpost, vehicle.battlemaster_tank, vehicle.battlemaster_tank, vehicle.dragon_tank, vehicle.overlord_tank, vehicle.inferno_cannon, vehicle.troop_crawler
-		SupportProxyActors: upgrade.capture_building
+		SupportProxyActors: hack.no_bases, upgrade.capture_building
 		InnerSupportRadius: 2
 		OuterSupportRadius: 8
 	MPStartUnits@nobasesinf:
@@ -88,7 +88,7 @@
 		Factions: inf
 		BaseActor: infantry.super_lotus
 		SupportActors: infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.super_hacker, vehicle.attack_outpost, vehicle.attack_outpost, vehicle.dragon_tank, vehicle.dragon_tank, vehicle.inferno_cannon, vehicle.inferno_cannon, vehicle.inferno_cannon, vehicle.assault_troop_crawler
-		SupportProxyActors: upgrade.capture_building
+		SupportProxyActors: hack.no_bases, upgrade.capture_building
 		InnerSupportRadius: 2
 		OuterSupportRadius: 8
 	MPStartUnits@nobasesnuke:
@@ -97,7 +97,7 @@
 		Factions: nuke
 		BaseActor: infantry.black_lotus
 		SupportActors: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.hacker, vehicle.gatling_tank, vehicle.listening_outpost, vehicle.nuclear_battlemaster_tank, vehicle.nuclear_battlemaster_tank, vehicle.dragon_tank, vehicle.overlord_tank, vehicle.inferno_cannon, vehicle.troop_crawler
-		SupportProxyActors: upgrade.capture_building
+		SupportProxyActors: hack.no_bases, upgrade.capture_building
 		InnerSupportRadius: 2
 		OuterSupportRadius: 8
 	MPStartUnits@nobasestank:
@@ -106,7 +106,7 @@
 		Factions: tank
 		BaseActor: infantry.black_lotus
 		SupportActors: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.hacker, vehicle.gatling_tank, vehicle.listening_outpost, vehicle.battlemaster_tank, vehicle.battlemaster_tank, vehicle.dragon_tank, vehicle.emparor_overlord, vehicle.inferno_cannon, vehicle.troop_crawler
-		SupportProxyActors: upgrade.capture_building
+		SupportProxyActors: hack.no_bases, upgrade.capture_building
 		InnerSupportRadius: 2
 		OuterSupportRadius: 8
 	MPStartUnits@nobasesboss_a:
@@ -115,7 +115,7 @@
 		Factions: boss
 		BaseActor: infantry.colonel_burton
 		SupportActors: infantry.ranger, infantry.ranger, infantry.ranger, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.pathfinder, vehicle.gatling_tank, vehicle.combat_cycle.demo, vehicle.paladin_tank, vehicle.paladin_tank, vehicle.dragon_tank, vehicle.overlord_tank, vehicle.tomahawk_launcher, vehicle.rocket_buggy
-		SupportProxyActors: upgrade.capture_building
+		SupportProxyActors: hack.no_bases, upgrade.capture_building
 		InnerSupportRadius: 2
 		OuterSupportRadius: 8
 	MPStartUnits@nobasesboss_b:
@@ -124,7 +124,7 @@
 		Factions: boss
 		BaseActor: infantry.jarmen_kell
 		SupportActors: infantry.ranger, infantry.ranger, infantry.ranger, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.angry_mob, vehicle.gatling_tank, vehicle.combat_cycle.demo, vehicle.paladin_tank, vehicle.paladin_tank, vehicle.dragon_tank, vehicle.overlord_tank, vehicle.tomahawk_launcher, vehicle.rocket_buggy
-		SupportProxyActors: upgrade.capture_building
+		SupportProxyActors: hack.no_bases, upgrade.capture_building
 		InnerSupportRadius: 2
 		OuterSupportRadius: 8
 	MPStartUnits@nobasesboss_c:
@@ -133,7 +133,7 @@
 		Factions: boss
 		BaseActor: infantry.black_lotus
 		SupportActors: infantry.ranger, infantry.ranger, infantry.ranger, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.hacker, vehicle.gatling_tank, vehicle.combat_cycle.demo, vehicle.paladin_tank, vehicle.paladin_tank, vehicle.dragon_tank, vehicle.overlord_tank, vehicle.tomahawk_launcher, vehicle.rocket_buggy
-		SupportProxyActors: upgrade.capture_building
+		SupportProxyActors: hack.no_bases, upgrade.capture_building
 		InnerSupportRadius: 2
 		OuterSupportRadius: 8
 	MPStartUnits@cvonlyusa:

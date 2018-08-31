@@ -75,17 +75,20 @@ CRATE:
 	GiveMcvCrateAction@usa:
 		SelectionShares: 0
 		NoBaseSelectionShares: 100
-		ValidFactions: usa
+		Prerequisites: !hack.no_bases
+		ValidFactions: usa, air, laser, super
 		Units: vehicle.usa_mcc
 	GiveMcvCrateAction@gla:
 		SelectionShares: 0
 		NoBaseSelectionShares: 100
-		ValidFactions: gla
+		Prerequisites: !hack.no_bases
+		ValidFactions: gla, toxin, demo, stealth
 		Units: vehicle.gla_mcc
 	GiveMcvCrateAction@prc:
 		SelectionShares: 0
 		NoBaseSelectionShares: 100
-		ValidFactions: prc
+		Prerequisites: !hack.no_bases
+		ValidFactions: prc, inf, nuke, tank, boss
 		Units: vehicle.prc_mcc
 	GrantExternalConditionCrateAction@invuln:
 		SelectionShares: 5
@@ -385,6 +388,10 @@ firestorm.blue.plus:
 	ExplodeWeapon@4:
 		Weapon: hack.spawn_1_firestrorm.blue
 		LocalOffset: 1024,0,0
+
+hack.no_bases:
+	Inherits: ^default.upgrade
+	-Buildable:
 
 hack.mine:
 	Inherits: ^Mine
