@@ -4224,3 +4224,27 @@ vehicle.prc_mcc:
 	WithTextDecoration@SIDE:
 		Text: PRC
 		Color: FF0000
+
+# used by laser general in no base mode
+vehicle.mobile_reactor:
+	Inherits: ^Vehicle
+	Inherits@REVEAL: ^Reveal300
+	Inherits@SLOW: ^SlowsWhenDamaged
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Mobile Reactor
+	Health:
+		HP: 22000
+	Armor:
+		Type: vehicle.truck
+	Mobile:
+		Speed: 30
+		TurnSpeed: 8
+	SpeedMultiplier@DAMAGED:
+		Modifier: 83
+	WithIdleOverlay@SPINNER:
+		Offset: -299,0,171
+		Sequence: spinner
+	Power:
+		Amount: 5

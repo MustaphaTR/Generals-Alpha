@@ -1,0 +1,558 @@
+^MPSpawnUnits:
+	SpawnMPUnits:
+		DropdownDisplayOrder: 1
+	MPStartUnits@nobasesusa:
+		Class: nobases
+		ClassName: No Bases
+		Factions: usa
+		BaseActor: infantry.colonel_burton
+		SupportActors: infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, infantry.missile_defender, infantry.missile_defender, infantry.pathfinder, vehicle.humvee, vehicle.humvee, vehicle.crusader_tank, vehicle.crusader_tank, vehicle.paladin_tank, vehicle.tomahawk_launcher, vehicle.ambulance
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	MPStartUnits@nobasesair:
+		Class: nobases
+		ClassName: No Bases
+		Factions: air
+		BaseActor: infantry.colonel_burton
+		SupportActors: infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, infantry.missile_defender, infantry.missile_defender, vehicle.humvee, vehicle.humvee, vehicle.humvee, vehicle.tomahawk_launcher, vehicle.tomahawk_launcher, vehicle.ambulance
+		SupportProxyActors: upgrade.capture_building, upgrade.tow_missile
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	MPStartUnits@nobaseslaser:
+		Class: nobases
+		ClassName: No Bases
+		Factions: laser
+		BaseActor: infantry.colonel_burton
+		SupportActors: infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, infantry.missile_defender, infantry.missile_defender, infantry.pathfinder, vehicle.humvee, vehicle.humvee, vehicle.mobile_reactor, vehicle.laser_tank, vehicle.laser_tank, vehicle.laser_tank, vehicle.ambulance
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	MPStartUnits@nobasessuper:
+		Class: nobases
+		ClassName: No Bases
+		Factions: super
+		BaseActor: infantry.colonel_burton
+		SupportActors: infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, infantry.missile_defender, infantry.missile_defender, infantry.pathfinder, vehicle.humvee, vehicle.humvee, vehicle.humvee, vehicle.tomahawk_launcher, vehicle.tomahawk_launcher, vehicle.ambulance
+		SupportProxyActors: upgrade.capture_building, upgrade.tow_missile
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	MPStartUnits@nobasesgla:
+		Class: nobases
+		ClassName: No Bases
+		Factions: gla
+		BaseActor: infantry.jarmen_kell
+		SupportActors: infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.rpg_trooper, infantry.rpg_trooper, infantry.rpg_trooper, infantry.angry_mob, vehicle.technical, vehicle.combat_cycle, vehicle.scorpion_tank, vehicle.scorpion_tank, vehicle.toxin_tractor, vehicle.marauder_tank, vehicle.rocket_buggy, vehicle.rocket_buggy, vehicle.battle_bus
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	MPStartUnits@nobasestoxin:
+		Class: nobases
+		ClassName: No Bases
+		Factions: toxin
+		BaseActor: infantry.jarmen_kell
+		SupportActors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rpg_trooper, infantry.rpg_trooper, infantry.rpg_trooper, infantry.angry_mob, vehicle.technical, vehicle.combat_cycle, vehicle.scorpion_tank, vehicle.scorpion_tank, vehicle.toxin_tractor, vehicle.marauder_tank, vehicle.rocket_buggy, vehicle.rocket_buggy, vehicle.battle_bus
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	MPStartUnits@nobasesdemo:
+		Class: nobases
+		ClassName: No Bases
+		Factions: demo
+		BaseActor: infantry.jarmen_kell.demo
+		SupportActors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rpg_trooper, infantry.rpg_trooper, infantry.rpg_trooper, infantry.angry_mob, vehicle.technical, vehicle.combat_cycle.demo, vehicle.scorpion_tank, vehicle.scorpion_tank, vehicle.scorpion_tank, vehicle.marauder_tank, vehicle.rocket_buggy, vehicle.rocket_buggy, vehicle.battle_bus
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	MPStartUnits@nobasesstealth:
+		Class: nobases
+		ClassName: No Bases
+		Factions: stealth
+		BaseActor: infantry.jarmen_kell
+		SupportActors: infantry.rebel, infantry.rebel, infantry.rebel, infantry.rpg_trooper, infantry.rpg_trooper, infantry.rpg_trooper, infantry.angry_mob, vehicle.technical, vehicle.technical, vehicle.combat_cycle, vehicle.toxin_tractor, vehicle.toxin_tractor, vehicle.rocket_buggy, vehicle.rocket_buggy, vehicle.rocket_buggy, vehicle.battle_bus
+		SupportProxyActors: upgrade.capture_building, upgrade.ap_rockets
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	MPStartUnits@nobasesprc:
+		Class: nobases
+		ClassName: No Bases
+		Factions: prc
+		BaseActor: infantry.black_lotus
+		SupportActors: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.hacker, vehicle.gatling_tank, vehicle.listening_outpost, vehicle.battlemaster_tank, vehicle.battlemaster_tank, vehicle.dragon_tank, vehicle.overlord_tank, vehicle.inferno_cannon, vehicle.troop_crawler
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	MPStartUnits@nobasesinf:
+		Class: nobases
+		ClassName: No Bases
+		Factions: inf
+		BaseActor: infantry.super_lotus
+		SupportActors: infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.super_hacker, vehicle.attack_outpost, vehicle.attack_outpost, vehicle.dragon_tank, vehicle.dragon_tank, vehicle.inferno_cannon, vehicle.inferno_cannon, vehicle.inferno_cannon, vehicle.assault_troop_crawler
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	MPStartUnits@nobasesnuke:
+		Class: nobases
+		ClassName: No Bases
+		Factions: nuke
+		BaseActor: infantry.black_lotus
+		SupportActors: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.hacker, vehicle.gatling_tank, vehicle.listening_outpost, vehicle.nuclear_battlemaster_tank, vehicle.nuclear_battlemaster_tank, vehicle.dragon_tank, vehicle.overlord_tank, vehicle.inferno_cannon, vehicle.troop_crawler
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	MPStartUnits@nobasestank:
+		Class: nobases
+		ClassName: No Bases
+		Factions: tank
+		BaseActor: infantry.black_lotus
+		SupportActors: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.hacker, vehicle.gatling_tank, vehicle.listening_outpost, vehicle.battlemaster_tank, vehicle.battlemaster_tank, vehicle.dragon_tank, vehicle.emparor_overlord, vehicle.inferno_cannon, vehicle.troop_crawler
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	MPStartUnits@nobasesboss_a:
+		Class: nobases
+		ClassName: No Bases
+		Factions: boss
+		BaseActor: infantry.colonel_burton
+		SupportActors: infantry.ranger, infantry.ranger, infantry.ranger, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.pathfinder, vehicle.gatling_tank, vehicle.combat_cycle.demo, vehicle.paladin_tank, vehicle.paladin_tank, vehicle.dragon_tank, vehicle.overlord_tank, vehicle.tomahawk_launcher, vehicle.rocket_buggy
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	MPStartUnits@nobasesboss_b:
+		Class: nobases
+		ClassName: No Bases
+		Factions: boss
+		BaseActor: infantry.jarmen_kell
+		SupportActors: infantry.ranger, infantry.ranger, infantry.ranger, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.angry_mob, vehicle.gatling_tank, vehicle.combat_cycle.demo, vehicle.paladin_tank, vehicle.paladin_tank, vehicle.dragon_tank, vehicle.overlord_tank, vehicle.tomahawk_launcher, vehicle.rocket_buggy
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	MPStartUnits@nobasesboss_c:
+		Class: nobases
+		ClassName: No Bases
+		Factions: boss
+		BaseActor: infantry.black_lotus
+		SupportActors: infantry.ranger, infantry.ranger, infantry.ranger, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.hacker, vehicle.gatling_tank, vehicle.combat_cycle.demo, vehicle.paladin_tank, vehicle.paladin_tank, vehicle.dragon_tank, vehicle.overlord_tank, vehicle.tomahawk_launcher, vehicle.rocket_buggy
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	MPStartUnits@cvonlyusa:
+		Class: cvonly
+		ClassName: Constr. Veh. Only
+		Factions: usa, air, laser, super
+		BaseActor: vehicle.usa_mcc
+	MPStartUnits@cvonlygla:
+		Class: cvonly
+		ClassName: Constr. Veh. Only
+		Factions: gla, toxin, demo, stealth
+		BaseActor: vehicle.gla_mcc
+	MPStartUnits@cvonlyprc:
+		Class: cvonly
+		ClassName: Constr. Veh. Only
+		Factions: prc, inf, nuke, tank, boss
+		BaseActor: vehicle.prc_mcc
+	MPStartUnits@commonlyusa:
+		Class: commonly
+		ClassName: Comm. Cent. Only
+		Factions: usa, air, laser, super
+		BaseActor: building.usa_command_center
+		BaseActorOffset: -1, -1
+	MPStartUnits@commonlygla:
+		Class: commonly
+		ClassName: Comm. Cent. Only
+		Factions: gla, toxin, demo, stealth
+		BaseActor: building.gla_command_center
+		BaseActorOffset: -1, -1
+	MPStartUnits@commonlyprc:
+		Class: commonly
+		ClassName: Comm. Cent. Only
+		Factions: prc, inf, nuke, tank, boss
+		BaseActor: building.prc_command_center
+		BaseActorOffset: -1, -1
+	MPStartUnits@commandcvusa:
+		Class: none
+		ClassName: CC and CV
+		Factions: usa, air, laser, super
+		BaseActor: building.usa_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.usa_mcc
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@commandcvgla:
+		Class: none
+		ClassName: CC and CV
+		Factions: gla, toxin, demo, stealth
+		BaseActor: building.gla_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.gla_mcc
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@commandcvprc:
+		Class: none
+		ClassName: CC and CV
+		Factions: prc, inf, nuke, tank, boss
+		BaseActor: building.prc_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.prc_mcc
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@lightusa:
+		Class: light
+		ClassName: Light Support
+		Factions: usa, air, laser, super
+		BaseActor: building.usa_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.usa_mcc, infantry.ranger, infantry.ranger, infantry.missile_defender, vehicle.humvee
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@lightgla:
+		Class: light
+		ClassName: Light Support
+		Factions: gla, demo, stealth
+		BaseActor: building.gla_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.gla_mcc, infantry.rebel, infantry.rebel, infantry.rpg_trooper, vehicle.technical
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@lighttoxin:
+		Class: light
+		ClassName: Light Support
+		Factions: toxin
+		BaseActor: building.gla_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.gla_mcc, infantry.toxin_rebel, infantry.toxin_rebel, infantry.rpg_trooper, vehicle.technical
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@lightprc:
+		Class: light
+		ClassName: Light Support
+		Factions: prc, nuke, tank
+		BaseActor: building.prc_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.prc_mcc, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, vehicle.gatling_tank
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@lightinf:
+		Class: light
+		ClassName: Light Support
+		Factions: inf
+		BaseActor: building.prc_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.prc_mcc, infantry.minigunner, infantry.minigunner, infantry.tank_hunter, vehicle.gatling_tank
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@lightboss:
+		Class: light
+		ClassName: Light Support
+		Factions: boss
+		BaseActor: building.prc_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.prc_mcc, infantry.ranger, infantry.ranger, infantry.tank_hunter, vehicle.gatling_tank
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@mediumusa:
+		Class: medium
+		ClassName: Medium Support
+		Factions: usa
+		BaseActor: building.usa_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.usa_mcc, infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, vehicle.humvee, vehicle.crusader_tank
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@mediumair:
+		Class: medium
+		ClassName: Medium Support
+		Factions: air, super
+		BaseActor: building.usa_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.usa_mcc, infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, vehicle.humvee, vehicle.humvee, vehicle.humvee
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@mediumlaser:
+		Class: medium
+		ClassName: Medium Support
+		Factions: laser
+		BaseActor: building.usa_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.usa_mcc, infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, vehicle.humvee, vehicle.laser_tank
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@mediumgla:
+		Class: medium
+		ClassName: Medium Support
+		Factions: gla, demo
+		BaseActor: building.gla_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.gla_mcc, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rpg_trooper, vehicle.technical, vehicle.scorpion_tank
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@mediumtoxin:
+		Class: medium
+		ClassName: Medium Support
+		Factions: toxin
+		BaseActor: building.gla_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.gla_mcc, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.rpg_trooper, vehicle.technical, vehicle.scorpion_tank
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@mediumstealth:
+		Class: medium
+		ClassName: Medium Support
+		Factions: stealth
+		BaseActor: building.gla_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.gla_mcc, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rpg_trooper, vehicle.technical, vehicle.quad_cannon
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@mediumprc:
+		Class: medium
+		ClassName: Medium Support
+		Factions: prc, nuke, tank
+		BaseActor: building.prc_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.prc_mcc, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, vehicle.gatling_tank, vehicle.battlemaster_tank
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@mediuminf:
+		Class: medium
+		ClassName: Medium Support
+		Factions: inf
+		BaseActor: building.prc_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.prc_mcc, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.tank_hunter, vehicle.assault_troop_crawler
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@mediumboss:
+		Class: medium
+		ClassName: Medium Support
+		Factions: boss
+		BaseActor: building.prc_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.prc_mcc, infantry.ranger, infantry.ranger, infantry.ranger, infantry.tank_hunter, vehicle.gatling_tank, vehicle.paladin_tank
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@heavyusa:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: usa
+		BaseActor: building.usa_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.usa_mcc, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, infantry.missile_defender, vehicle.humvee, vehicle.crusader_tank, vehicle.ambulance
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@heavyair:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: air, super
+		BaseActor: building.usa_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.usa_mcc, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, infantry.missile_defender, vehicle.humvee, vehicle.humvee, vehicle.humvee, vehicle.ambulance
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@heavylaser:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: laser
+		BaseActor: building.usa_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.usa_mcc, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.missile_defender, infantry.missile_defender, vehicle.humvee, vehicle.laser_tank, vehicle.ambulance
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@heavygla:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: gla, demo
+		BaseActor: building.gla_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.gla_mcc, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rpg_trooper, infantry.rpg_trooper, vehicle.technical, vehicle.scorpion_tank, vehicle.toxin_tractor
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@heavytoxin:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: toxin
+		BaseActor: building.gla_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.gla_mcc, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.toxin_rebel, infantry.rpg_trooper, infantry.rpg_trooper, vehicle.technical, vehicle.scorpion_tank, vehicle.toxin_tractor
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@heavystealth:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: stealth
+		BaseActor: building.gla_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.gla_mcc, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rebel, infantry.rpg_trooper, infantry.rpg_trooper, vehicle.technical, vehicle.quad_cannon, vehicle.toxin_tractor
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@heavyprc:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: prc, nuke, tank
+		BaseActor: building.prc_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.prc_mcc, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.tank_hunter, infantry.tank_hunter, vehicle.gatling_tank, vehicle.battlemaster_tank, vehicle.dragon_tank
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@heavyinf:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: inf
+		BaseActor: building.prc_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.prc_mcc, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.minigunner, infantry.tank_hunter, infantry.tank_hunter, vehicle.assault_troop_crawler, vehicle.dragon_tank
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@heavyboss:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: boss
+		BaseActor: building.prc_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.prc_mcc, infantry.ranger, infantry.ranger, infantry.ranger, infantry.ranger, infantry.tank_hunter, infantry.tank_hunter, vehicle.gatling_tank, vehicle.paladin_tank, vehicle.dragon_tank
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@prebuiltusa:
+		Class: prebuilt
+		ClassName: Prebuilt
+		Factions: usa, air
+		BaseActor: building.usa_command_center
+		BaseActorOffset: -1, -1
+		SupportBuildings: building.cold_fusion_reactor, building.cold_fusion_reactor, building.usa_barracks, building.usa_supply_center, building.usa_war_factory, building.patriot, building.patriot
+		SupportActors: vehicle.usa_mcc, vehicle.usa_mcc, aircraft.chinook, aircraft.chinook, aircraft.chinook
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+		InnerBuildingRadius: 4
+		OuterBuildingRadius: 10
+	MPStartUnits@prebuiltlaser:
+		Class: prebuilt
+		ClassName: Prebuilt
+		Factions: laser
+		BaseActor: building.usa_command_center
+		BaseActorOffset: -1, -1
+		SupportBuildings: building.cold_fusion_reactor.laser, building.cold_fusion_reactor.laser, building.usa_barracks, building.usa_supply_center, building.usa_war_factory, building.laser_turret, building.laser_turret
+		SupportActors: vehicle.usa_mcc, vehicle.usa_mcc, aircraft.chinook, aircraft.chinook, aircraft.chinook
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+		InnerBuildingRadius: 4
+		OuterBuildingRadius: 10
+	MPStartUnits@prebuiltsuper:
+		Class: prebuilt
+		ClassName: Prebuilt
+		Factions: super
+		BaseActor: building.usa_command_center
+		BaseActorOffset: -1, -1
+		SupportBuildings: building.advanced_cold_fusion_reactor, building.advanced_cold_fusion_reactor, building.usa_barracks, building.usa_supply_center, building.usa_war_factory, building.emp_patriot, building.emp_patriot
+		SupportActors: vehicle.usa_mcc, vehicle.usa_mcc, aircraft.chinook, aircraft.chinook, aircraft.chinook
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+		InnerBuildingRadius: 4
+		OuterBuildingRadius: 10
+	MPStartUnits@prebuiltgla:
+		Class: prebuilt
+		ClassName: Prebuilt
+		Factions: gla, demo, stealth
+		BaseActor: building.gla_command_center
+		BaseActorOffset: -1, -1
+		SupportBuildings: building.gla_barracks, building.gla_supply_stash, building.arms_dealer, building.stinger_site, building.tunnel_network
+		SupportActors: vehicle.gla_mcc, vehicle.gla_mcc, infantry.worker, infantry.worker, infantry.worker, infantry.worker, infantry.worker, infantry.worker, vehicle.radar_van
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+		InnerBuildingRadius: 4
+		OuterBuildingRadius: 10
+	MPStartUnits@prebuilttoxin:
+		Class: prebuilt
+		ClassName: Prebuilt
+		Factions: toxin
+		BaseActor: building.gla_command_center
+		BaseActorOffset: -1, -1
+		SupportBuildings: building.gla_barracks, building.gla_supply_stash, building.arms_dealer, building.stinger_site, building.toxin_tunnel_network
+		SupportActors: vehicle.gla_mcc, vehicle.gla_mcc, infantry.worker, infantry.worker, infantry.worker, infantry.worker, infantry.worker, infantry.worker, vehicle.radar_van
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+		InnerBuildingRadius: 4
+		OuterBuildingRadius: 10
+	MPStartUnits@prebuiltprc:
+		Class: prebuilt
+		ClassName: Prebuilt
+		Factions: prc, tank
+		BaseActor: building.prc_command_center.radar
+		BaseActorOffset: -1, -1
+		SupportBuildings: building.nuclear_reactor, building.prc_barracks, building.prc_supply_center, building.prc_war_factory, building.gatling_cannon, building.bunker
+		SupportActors: vehicle.prc_mcc, vehicle.prc_mcc, vehicle.supply_truck, vehicle.supply_truck, vehicle.supply_truck
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+		InnerBuildingRadius: 4
+		OuterBuildingRadius: 10
+	MPStartUnits@prebuiltinf:
+		Class: prebuilt
+		ClassName: Prebuilt
+		Factions: inf
+		BaseActor: building.prc_command_center.radar
+		BaseActorOffset: -1, -1
+		SupportBuildings: building.nuclear_reactor, building.prc_barracks, building.prc_supply_center, building.prc_war_factory, building.gatling_cannon, building.fortified_bunker
+		SupportActors: vehicle.prc_mcc, vehicle.prc_mcc, vehicle.supply_truck, vehicle.supply_truck, vehicle.supply_truck
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+		InnerBuildingRadius: 4
+		OuterBuildingRadius: 10
+	MPStartUnits@prebuiltnuke:
+		Class: prebuilt
+		ClassName: Prebuilt
+		Factions: nuke
+		BaseActor: building.prc_command_center.radar
+		BaseActorOffset: -1, -1
+		SupportBuildings: building.advanced_nuclear_reactor, building.prc_barracks, building.prc_supply_center, building.prc_war_factory, building.gatling_cannon, building.bunker
+		SupportActors: vehicle.prc_mcc, vehicle.prc_mcc, vehicle.supply_truck, vehicle.supply_truck, vehicle.supply_truck
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+		InnerBuildingRadius: 4
+		OuterBuildingRadius: 10
+	MPStartUnits@prebuiltboss:
+		Class: prebuilt
+		ClassName: Prebuilt
+		Factions: boss
+		BaseActor: building.prc_command_center.radar
+		BaseActorOffset: -1, -1
+		SupportBuildings: building.cold_fusion_reactor, building.cold_fusion_reactor, building.prc_barracks, building.prc_supply_center, building.prc_war_factory, building.patriot, building.tunnel_network
+		SupportActors: vehicle.prc_mcc, vehicle.prc_mcc, vehicle.supply_truck, vehicle.supply_truck, vehicle.supply_truck
+		SupportProxyActors: upgrade.capture_building
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+		InnerBuildingRadius: 4
+		OuterBuildingRadius: 10
+	MPStartUnits@allusa:
+		Class: all
+		ClassName: All Tech
+		Factions: usa, air, laser, super
+		BaseActor: building.usa_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@allgla:
+		Class: all
+		ClassName: All Tech
+		Factions: gla, toxin, demo, stealth
+		BaseActor: building.gla_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6
+	MPStartUnits@allprc:
+		Class: all
+		ClassName: All Tech
+		Factions: prc, inf, nuke, tank, boss
+		BaseActor: building.prc_command_center
+		BaseActorOffset: -1, -1
+		SupportActors: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+		InnerSupportRadius: 3
+		OuterSupportRadius: 6

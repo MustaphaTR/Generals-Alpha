@@ -1,0 +1,134 @@
+^BaseWorld:
+	Inherits@PAL: ^Palettes
+	Inherits@FAC: ^Factions
+	Inherits@LOC: ^Locomotors
+	AlwaysVisible:
+	ActorMap:
+	ScreenMap:
+	MusicPlaylist:
+		VictoryMusic: score
+		DefeatMusic: map
+	TerrainGeometryOverlay:
+	DebugVisualizations:
+	ShroudRenderer:
+		FogVariants: shroud
+		Index: 255, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 20, 40, 56, 65, 97, 130, 148, 194, 24, 33, 66, 132, 28, 41, 67, 134, 1, 2, 4, 8, 3, 6, 12, 9, 7, 14, 13, 11, 5, 10, 15, 255
+		UseExtendedIndex: true
+	ResourceType@ore:
+		Type: Ore
+		Name: Valuable Minerals
+		PipColor: Yellow
+		ResourceType: 1
+		TerrainType: Ore
+		Palette: player
+		Sequences: gold01,gold02,gold03,gold04
+		MaxDensity: 66
+		ValuePerUnit: 25
+		AllowedTerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
+		AllowUnderActors: true
+	ResourceType@gem:
+		Type: Gems
+		Name: Valuable Minerals
+		PipColor: Red
+		ResourceType: 2
+		TerrainType: Gems
+		Palette: player
+		Sequences: gem01,gem02,gem03,gem04
+		MaxDensity: 66
+		ValuePerUnit: 50
+		AllowedTerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
+		AllowUnderActors: true
+
+World:
+	Inherits: ^BaseWorld
+	Inherits@MP: ^MPSpawnUnits
+	LuaScript:
+		Scripts: generals_powers.lua
+	ChatCommands:
+	DevCommands:
+	PlayerCommands:
+	HelpCommand:
+	ScreenShaker:
+	BuildingInfluence:
+	ProductionQueueFromSelection:
+		ProductionPaletteWidget: PRODUCTION_PALETTE
+	CustomTerrainDebugOverlay:
+	CrateSpawner:
+		DeliveryAircraft: aircraft.badger
+		QuantizedFacings: 16
+		Minimum: 1
+		Maximum: 3
+		SpawnInterval: 3000
+		WaterChance: 20
+		InitialSpawnDelay: 1500
+		CheckboxDisplayOrder: 1
+	DomainIndex:
+	SmudgeLayer@SCORCH:
+		Type: Scorch
+		Sequence: scorches
+		SmokePercentage: 50
+	SmudgeLayer@SNOWSCORCH:
+		Type: SnowScorch
+		Sequence: snow_scorches
+		SmokePercentage: 50
+	SmudgeLayer@CRATER:
+		Type: Crater
+		Sequence: craters
+	SmudgeLayer@SNOWCRATER:
+		Type: SnowCrater
+		Sequence: snow_craters
+	ResourceLayer:
+	ResourceClaimLayer:
+	WarheadDebugOverlay:
+	SpawnMapActors:
+	MapBuildRadius:
+		AllyBuildRadiusCheckboxDisplayOrder: 4
+		BuildRadiusCheckboxVisible: False
+	MapOptions:
+		ShortGameCheckboxDisplayOrder: 2
+		TechLevelDropdownDisplayOrder: 2
+		GameSpeedDropdownDisplayOrder: 3
+	ScriptLobbyDropdown@GPMODIFIER:
+		ID: gpmodifier
+		Label: GP Per Rank
+		Values:
+			one: 1, 1, 1, 1, 1
+			normal: 1, 1, 1, 1, 3
+			two: 2, 2, 2, 2, 2
+			double: 2, 2, 2, 2, 6
+			three: 3, 3, 3, 3, 3
+			triple: 3, 3, 3, 3, 9
+			all: 5, 0, 15, 0, 5
+		Default: normal
+		Description: General's Points you get when you rank up, per rank.
+		DisplayOrder: 4
+	CreateMPPlayers:
+	MPStartLocations:
+		SeparateTeamSpawnsCheckboxDisplayOrder: 9
+	PathFinder:
+	ValidateOrder:
+	DebugPauseState:
+	RadarPings:
+	StartGameNotification:
+	ObjectivesPanel:
+		PanelName: SKIRMISH_STATS
+	LoadWidgetAtGameStart:
+	RadioactivityLayer@ANTHRAX_ALPHA:
+		Name: anthrax_alpha
+		Color: 00FF00
+	RadioactivityLayer@ANTHRAX_BETA:
+		Name: anthrax_beta
+		Color: 0000FF
+	RadioactivityLayer@ANTHRAX_GAMMA:
+		Name: anthrax_gamma
+		Color: FF00FF
+	RadioactivityLayer@RADIOACTIVITY:
+		Name: radioactivity
+		Color: FF7F00
+
+EditorWorld:
+	Inherits: ^BaseWorld
+	EditorActorLayer:
+	EditorResourceLayer:
+	EditorSelectionLayer:
+	LoadWidgetAtGameStart:
