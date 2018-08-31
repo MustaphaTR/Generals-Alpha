@@ -588,6 +588,43 @@ infantry.rpg_trooper:
 	Voiced:
 		VoiceSet: RPGTrooperVoice
 
+infantry.stinger_soldier:
+	Inherits: ^default.rocket_infantry
+	Inherits@AP_ROCKETS: ^AffectedByAPRockets
+	-Buildable:
+	-SelectionDecorations:
+	Mobile:
+		RequiresCondition: !disable_movement
+		TurnWhileDisabledCondition: disable_movement
+	GrantConditionAfterDelay:
+		Condition: disable_movement
+		ShowSelectionBar: false
+		Delay: 5
+	Armament@PRIMARY:
+		Weapon: missile.stinger_site.ground
+	Armament@SECONDARY:
+		Weapon: missile.stinger_site.air
+	-Armament@PRIMARY_GARRISON:
+	-Armament@SECONDARY_GARRISON:
+	Tooltip:
+		Name: Stinger Soldier
+	Targetable:
+		TargetTypes: Ground, Infantry, StingerSoldier
+	Valued:
+		Cost: 100
+	Armor:
+		Type: infantry.stinger_soldier
+	Cloak@CAMO_NETTING:
+		InitialDelay: 60
+		CloakDelay: 60
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		RequiresCondition: stinger_cloak && !leaflet
+	ExternalCondition@CAMO_NETTING:
+		Condition: stinger_cloak
+	MobSpawnerSlave:
+
 infantry.tank_hunter:
 	Inherits: ^default.rocket_infantry
 	Inherits@CHEM: ^AffectedByChemicalSuitsBossOnly

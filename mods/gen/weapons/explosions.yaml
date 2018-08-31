@@ -69,6 +69,7 @@ CrateExplosion:
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		AffectsParent: true
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -201,10 +202,17 @@ BarrelExplode:
 		Delay: 5
 		ValidTargets: Ground, Trees
 		Versus:
-			None: 120
-			Wood: 200
-			Light: 50
-			Concrete: 10
+			infantry.stinger_site: 10
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
+			aircraft.normal.countermeasures: 90
+			aircraft.comanche: 130
+			aircraft.comanche.countermeasures: 110
+			aircraft.chinook: 50
+			building.tough: 80
+			building.internet_center: 70
 		DamageTypes: TriggerProne, ExplosionDeath, Incendiary
 	Warhead@2Eff: CreateEffect
 		Explosions: napalm
@@ -226,6 +234,7 @@ explosion.nuclear_tanks:
 		Spread: 0c512
 		Damage: 2500
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -241,6 +250,7 @@ explosion.nuclear_tanks:
 		Spread: 1c0
 		Damage: 1000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -283,6 +293,7 @@ explosion.demo_trap:
 		Damage: 20000
 		ValidTargets: Ground, Trees
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -300,6 +311,7 @@ explosion.demo_trap:
 		Damage: 40000
 		ValidTargets: Ground, Trees
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -370,6 +382,7 @@ explosion.terrorist:
 		ValidStances: Enemy, Neutral
 		AffectsParent: true
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -390,6 +403,7 @@ explosion.terrorist:
 		AffectsParent: true
 		InvalidTargets: Terrorist
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -409,6 +423,7 @@ explosion.terrorist:
 		ValidStances: Enemy, Neutral
 		AffectsParent: true
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -429,6 +444,7 @@ explosion.terrorist:
 		AffectsParent: true
 		InvalidTargets: Terrorist
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -635,6 +651,7 @@ BombTruckExplosion:
 		Falloff: 100, 100
 		ValidTargets: Ground, Trees, Water
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -653,6 +670,7 @@ BombTruckExplosion:
 		Falloff: 100, 100
 		ValidTargets: Ground, Trees, Water
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -725,6 +743,7 @@ explosion.nuclear_reactor:
 		Falloff: 100, 100
 		Damage: 35000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -741,6 +760,7 @@ explosion.nuclear_reactor:
 		Falloff: 100, 100
 		Damage: 5000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80

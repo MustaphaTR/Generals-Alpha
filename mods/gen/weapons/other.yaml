@@ -186,28 +186,6 @@ Demolish:
 		Explosions: building
 		ImpactSounds: kaboom25.aud
 
-Claw:
-	ReloadDelay: 30
-	Range: 1c512
-	Projectile: Bullet
-		Speed: 1c682
-	Warhead@1Dam: SpreadDamage
-		Spread: 213
-		Damage: 3300
-		Versus:
-			None: 90
-			Wood: 10
-			Light: 30
-			Heavy: 10
-			Concrete: 10
-		DamageTypes: TriggerProne, DefaultDeath
-
-Mandible:
-	Inherits: Claw
-	ReloadDelay: 10
-	Warhead@1Dam: SpreadDamage
-		Damage: 6000
-
 hack.nuclear_reactor:
 	ReloadDelay: 25
 	Range: 2c0
@@ -254,7 +232,7 @@ toxin.toxin_tractor:
 	InvalidTargets: Structure, Wall
 	Range: 2c512
 	ReloadDelay: 6
-	InvalidTargets: ImmueToToxin
+	InvalidTargets: Structure, ImmueToToxin, Wall
 	Projectile: RadBeam
 		ZOffset: 1024
 	Warhead@1Dam: SpreadDamage
@@ -413,6 +391,17 @@ hack.angry_mob.weapon:
 		Spread: 1
 		Damage: 0
 		ValidTargets: Ground, Water
+
+hack.stinger_site:
+	ReloadDelay: 30
+	Range: 10c0
+	ValidTargets: Ground, Water,  Air
+	Projectile: Bullet
+		Speed: 10c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 1
+		Damage: 0
+		ValidTargets: Ground, Water,  Air
 
 capture.black_lotus.anim:
 	ReloadDelay: 15

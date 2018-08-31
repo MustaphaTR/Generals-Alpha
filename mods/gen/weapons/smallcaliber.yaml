@@ -38,10 +38,12 @@ mg.comanche:
 	Range: 5c0
 	MinRange: 0c768
 	Report: vcomwe2a.wav, vcomwe2b.wav, vcomwe2c.wav, vcomwe2d.wav
+	InvalidTargets: StingerSoldier
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 600
+		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -73,10 +75,12 @@ mg.helix:
 	ReloadDelay: 3
 	Range: 2c896
 	MinRange: 0c768
+	InvalidTargets: StingerSoldier
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 600
+		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -155,6 +159,7 @@ mg.ranger:
 	Warhead@1Dam: SpreadDamage
 		Damage: 500
 		Versus:
+			infantry.stinger_soldier: 25
 			vehicle.truck: 50
 			vehicle.humvee: 50
 			vehicle.avenger: 50
@@ -212,6 +217,7 @@ mg.red_guard:
 	Warhead@1Dam: SpreadDamage
 		Damage: 1500
 		Versus:
+			infantry.stinger_soldier: 25
 			vehicle.truck: 50
 			vehicle.humvee: 50
 			vehicle.avenger: 50
@@ -253,6 +259,7 @@ mg.colonel_burton:
 	Warhead@1Dam: SpreadDamage
 		Damage: 4000
 		Versus:
+			infantry.stinger_soldier: 25
 			vehicle.truck: 50
 			vehicle.humvee: 50
 			vehicle.avenger: 50
@@ -305,8 +312,10 @@ mg.humvee:
 	ReloadDelay: 5
 	Range: 3c768
 	Report: vhumweaa.wav, vhumweab.wav, vhumweac.wav, vhumwead.wav
+	InvalidTargets: StingerSoldier
 	Warhead@1Dam: SpreadDamage
 		Damage: 1000
+		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -350,8 +359,10 @@ mg.technical:
 	ReloadDelay: 5
 	Range: 3c0
 	Report: vtecweaa.wav, vtecweab.wav, vtecweac.wav, vtecwead.wav
+	InvalidTargets: StingerSoldier
 	Warhead@1Dam: SpreadDamage
 		Damage: 800
+		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -399,6 +410,7 @@ mg.tunnel_network:
 	Warhead@1Dam: SpreadDamage
 		Damage: 1000
 		Versus:
+			infantry.stinger_soldier: 25
 			vehicle.truck: 50
 			vehicle.humvee: 50
 			vehicle.avenger: 50
@@ -433,6 +445,7 @@ mg.quad_cannon.ground:
 	Warhead@1Dam: SpreadDamage
 		Damage: 1000
 		Versus:
+			infantry.stinger_soldier: 25
 			vehicle.truck: 50
 			vehicle.humvee: 50
 			vehicle.avenger: 50
@@ -492,8 +505,10 @@ gatling.minigunner.ground:
 	ReloadDelay: 12
 	Range: 3c128
 	Report: iremweaa.wav, iremweab.wav, iremweac.wav, iremwead.wav
+	InvalidTargets: StingerSoldier
 	Warhead@1Dam: SpreadDamage
 		Damage: 1000
+		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -553,8 +568,10 @@ gatling.gatling_tank.ground:
 	ReloadDelay: 10
 	Range: 4c384
 	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav
+	InvalidTargets: StingerSoldier
 	Warhead@1Dam: SpreadDamage
 		Damage: 2000
+		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -608,8 +625,10 @@ gatling.gatling_cannon.ground:
 	ReloadDelay: 6
 	Range: 5c640
 	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav
+	InvalidTargets: StingerSoldier
 	Warhead@1Dam: SpreadDamage
 		Damage: 1000
+		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.truck: 50
 			vehicle.humvee: 50
@@ -743,6 +762,7 @@ mg.a10:
 		Spread: 512
 		Damage: 1000
 		Versus:
+			infantry.stinger_soldier: 25
 			vehicle.truck: 50
 			vehicle.humvee: 50
 			vehicle.avenger: 50

@@ -2439,7 +2439,7 @@ building.stinger_site:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.gla_barracks, ~techlevel.low
-		Description: Anti-tank & anti-air base defense.\n\nLoses soldiers in it when damaged.
+		Description: Anti-tank & anti-air base defense.\n\nInfantry is vulnerable to damage by some weapons.
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -2456,27 +2456,8 @@ building.stinger_site:
 	WithBuildingBib:
 	Turreted:
 		TurnSpeed: 225
+	-WithMakeAnimation:
 	WithSpriteBody:
-	Armament@AG1:
-		Weapon: missile.stinger_site.ground
-	Armament@AA1:
-		Weapon: missile.stinger_site.air
-	Armament@AG2:
-		Weapon: missile.stinger_site.ground
-		FireDelay: 5
-		RequiresCondition: !heavily-damaged
-	Armament@AA2:
-		Weapon: missile.stinger_site.air
-		FireDelay: 5
-		RequiresCondition: !heavily-damaged
-	Armament@AG3:
-		Weapon: missile.stinger_site.ground
-		FireDelay: 10
-		RequiresCondition: !critically-damaged
-	Armament@AA3:
-		Weapon: missile.stinger_site.air
-		FireDelay: 10
-		RequiresCondition: !critically-damaged
 	WithRangeCircle:
 		Range: 5c640
 	WithRangeCircle@AA:
@@ -2485,19 +2466,43 @@ building.stinger_site:
 		Color: 00DDDD88
 	AttackTurreted:
 		RequiresCondition: !emp && !hacked && !leaflet
+	Armament@PRIMARY:
+		Weapon: hack.stinger_site
 	BodyOrientation:
 		QuantizedFacings: 8
 	Power:
 		Amount: 0
-	GrantConditionOnDamageState@HEAVY:
-		Condition: heavily-damaged
-		ValidDamageStates: Critical, Heavy
-	GrantConditionOnDamageState@CRITICAL:
-		Condition: critically-damaged
-		ValidDamageStates: Critical
 	GrantConditionOnFaction@CAMO_NETTING:
 		Condition: camo_netted
 		Factions: stealth
+	ProximityExternalCondition@Cloak:
+		Condition: stinger_cloak
+		Range: 1c0
+		RequiresCondition: camo_netted
+	WithIdleOverlay@CAMO:
+		Sequence: idle-camo
+		Palette: cloak
+	MobSpawnerMaster@A:
+		Actors: infantry.stinger_soldier
+		Offset: 511,511,0
+		RespawnTicks: 750
+		ExitByBudding: false
+		AggregateHealth: false
+		SpawnIsGroundUnit: true
+	MobSpawnerMaster@B:
+		Actors: infantry.stinger_soldier
+		Offset: -511,-511,0
+		RespawnTicks: 750
+		ExitByBudding: false
+		AggregateHealth: false
+		SpawnIsGroundUnit: true
+	MobSpawnerMaster@C:
+		Actors: infantry.stinger_soldier
+		Offset: -511,511,0
+		RespawnTicks: 750
+		ExitByBudding: false
+		AggregateHealth: false
+		SpawnIsGroundUnit: true
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0

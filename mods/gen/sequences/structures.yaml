@@ -787,10 +787,13 @@ building.toxin_tunnel_network:
 building.stinger_site:
 	idle: stinger
 	damaged-idle: stinger
-		Start: 1
-	dead: stinger
 		Start: 2
-		Tick: 800
+	idle-camo: stinger
+		Start: 1 
+	damaged-idle-camo: stinger
+		Start: 3 
+	hole: stinger
+		Start: 4
 	make: stingermake
 		Length: *
 		Tick: 80

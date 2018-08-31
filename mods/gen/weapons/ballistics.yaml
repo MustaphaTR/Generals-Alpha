@@ -121,6 +121,7 @@ cannon.crusader_tank:
 		Damage: 6000
 		Versus:
 			infantry.normal: 10
+			infantry.stinger_site: 10
 			vehicle.battle_bus: 90
 			husk.battle_bus: 90
 
@@ -132,6 +133,7 @@ cannon.battlemaster_tank:
 		Damage: 6000
 		Versus:
 			infantry.normal: 10
+			infantry.stinger_site: 10
 			vehicle.battle_bus: 90
 			husk.battle_bus: 90
 
@@ -168,6 +170,7 @@ cannon.paladin_tank:
 		Damage: 6000
 		Versus:
 			infantry.normal: 10
+			infantry.stinger_site: 10
 			vehicle.battle_bus: 90
 			husk.battle_bus: 90
 
@@ -179,6 +182,7 @@ cannon.marauder_tank:
 		Damage: 6000
 		Versus:
 			infantry.normal: 10
+			infantry.stinger_site: 10
 			vehicle.battle_bus: 90
 			husk.battle_bus: 90
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
@@ -309,6 +313,7 @@ cannon.overlord_tank:
 		Damage: 8000
 		Versus:
 			infantry.normal: 10
+			infantry.stinger_site: 10
 			vehicle.battle_bus: 90
 			husk.battle_bus: 90
 
@@ -371,6 +376,7 @@ cannon.inferno_cannon:
 		Spread: 0c341
 		Damage: 3000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -413,6 +419,7 @@ cannon.nuke_cannon:
 		Spread: 1c256
 		Damage: 38000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -429,6 +436,7 @@ cannon.nuke_cannon:
 		Falloff: 100, 100
 		Damage: 2000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -506,6 +514,7 @@ cannon.strategy_center:
 		Spread: 0c640
 		Damage: 20000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -548,6 +557,7 @@ cannon.firebase:
 		Spread: 0c256
 		Damage: 7500
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -589,6 +599,7 @@ cannon.cruiser:
 		Spread: 0c341
 		Damage: 25000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -613,6 +624,7 @@ cannon.gunboat:
 	Warhead@1Dam: SpreadDamage
 		Damage: 2500
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -637,6 +649,7 @@ bomb.carpet:
 		Spread: 1c0
 		Damage: 30000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -684,6 +697,7 @@ molotov.angry_mob:
 		Spread: 0c154
 		Damage: 4000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.dragon_tank: 20
 			vehicle.toxin_tractor: 20
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
@@ -713,17 +727,6 @@ grenade.ranger:
 		Falloff: 100, 100
 		Damage: 1000
 		InvalidTargets: Vehicle, Tank, Structure, Wall
-		Versus:
-			vehicle.battle_bus.crate-1: 90
-			vehicle.battle_bus.crate-2: 80
-			husk.battle_bus.crate-1: 80
-			husk.battle_bus.crate-2: 70
-			aircraft.normal.countermeasures: 90
-			aircraft.comanche: 130
-			aircraft.comanche.countermeasures: 110
-			aircraft.chinook: 50
-			building.tough: 80
-			building.internet_center: 70
 		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@3Eff: CreateEffect
 		Explosions: flashbang
@@ -744,6 +747,7 @@ grenade.grenadier:
 		Spread: 0c256
 		Damage: 6000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -778,6 +782,7 @@ ArtyBarrageWeapon:
 		Spread: 1c256
 		Damage: 10500
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80

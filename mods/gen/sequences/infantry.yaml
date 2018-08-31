@@ -166,7 +166,7 @@ infantry.conscript:
 	Inherits: ^default.mg_infantry
 	icon: e1icon
 
-infantry.missile_defender:
+infantry.stinger_soldier:
 	stand: e3
 		Facings: 8
 	stand2: e3
@@ -234,6 +234,79 @@ infantry.missile_defender:
 		Facings: 8
 		Tick: 120
 	prone-shoot: e3
+		Start: 192
+		Length: 10
+		Facings: 8
+	icon: e3icon
+
+infantry.missile_defender:
+	stand: misdef
+		Facings: 8
+	stand2: misdef
+		Start: 8
+		Facings: 8
+	run: misdef
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 120
+	shoot: misdef
+		Start: 64
+		Length: 8
+		Facings: 8
+	idle1: misdef
+		Start: 272
+		Length: 14
+		Tick: 120
+	idle2: misdef
+		Start: 287
+		Length: 16
+		Tick: 120
+	die1: misdef
+		Start: 304
+		Length: 8
+	die2: misdef
+		Start: 312
+		Length: 8
+	die3: misdef
+		Start: 320
+		Length: 8
+	die4: misdef
+		Start: 328
+		Length: 12
+	die5: misdef
+		Start: 340
+		Length: 18
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			MIXED: TEMPERAT
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+			MIXED: TEMPERAT
+	prone-stand: misdef
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-stand2: misdef
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-run: misdef
+		Start: 144
+		Length: 4
+		Facings: 8
+		Tick: 120
+	prone-shoot: misdef
 		Start: 192
 		Length: 10
 		Facings: 8

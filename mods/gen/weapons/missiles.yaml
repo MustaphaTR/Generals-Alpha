@@ -53,6 +53,7 @@
 missile.mig.ground:
 	Inherits: ^AntiGroundMissile
 	ValidTargets: Ground, Water, Trees
+	InvalidTargets: StingerSoldier
 	ReloadDelay: 8
 	Range: 8c0
 	MinRange: 2c0
@@ -65,7 +66,9 @@ missile.mig.ground:
 	Warhead@1Dam: SpreadDamage
 		Damage: 7500
 		ValidTargets: Ground, Water, Trees
+		InvalidTargets: StingerSoldier
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.anti-air: 30
 			vehicle.humvee: 30
 			vehicle.avenger: 30
@@ -84,6 +87,7 @@ missile.mig.ground:
 		Falloff: 100, 100
 		Damage: 4000
 		ValidTargets: Ground, Water, Trees
+		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.anti-air: 30
 			vehicle.humvee: 30
@@ -158,6 +162,7 @@ missile.mig.air:
 	Warhead@1Dam: SpreadDamage
 		Damage: 7500
 		ValidTargets: Air
+		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.anti-air: 30
 			vehicle.humvee: 30
@@ -177,6 +182,7 @@ missile.mig.air:
 		Falloff: 100, 100
 		Damage: 4000
 		ValidTargets: Air
+		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.anti-air: 30
 			vehicle.humvee: 30
@@ -228,6 +234,7 @@ missile.raptor.ground:
 	Range: 8c0
 	MinRange: 2c512
 	Report: vmigweaa.wav, vmigweab.wav
+	InvalidTargets: StingerSoldier
 	Projectile: Missile
 		Speed: 256
 		Inaccuracy: 128
@@ -235,6 +242,7 @@ missile.raptor.ground:
 		RangeLimit: 12c410
 	Warhead@1Dam: SpreadDamage
 		Damage: 10000
+		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.anti-air: 30
 			vehicle.humvee: 30
@@ -256,6 +264,7 @@ missile.raptor.air:
 	Range: 8c0
 	MinRange: 2c512
 	Report: vmigweaa.wav, vmigweab.wav
+	InvalidTargets: StingerSoldier
 	Projectile: Missile
 		Speed: 384
 		CruiseAltitude: 2c0
@@ -263,6 +272,7 @@ missile.raptor.air:
 	Warhead@1Dam: SpreadDamage
 		Damage: 10000
 		ValidTargets: Air
+		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.anti-air: 30
 			vehicle.humvee: 30
@@ -306,6 +316,7 @@ missile.stealth_fighter:
 	Warhead@1Dam: SpreadDamage
 		Damage: 10000
 		Versus:
+			infantry.stinger_soldier: 25
 			vehicle.anti-air: 30
 			vehicle.humvee: 30
 			vehicle.avenger: 23
@@ -337,6 +348,7 @@ missile.aurora:
 		Spread: 0c512
 		Damage: 40000
 		Versus:
+			infantry.stinger_soldier: 25
 			vehicle.assault_troop_crawler: 80
 			building.normal: 250
 			building.tough: 250
@@ -356,6 +368,11 @@ missile.aurora_alpha:
 		Delay: 10
 		Damage: 90000
 		Versus:
+			infantry.stinger_site: 10
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -389,6 +406,11 @@ missile.a10:
 		Spread: 1c256
 		Damage: 20000
 		Versus:
+			infantry.stinger_site: 10
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -414,6 +436,11 @@ missile.scorpion_tank:
 		Falloff: 100, 100
 		Damage: 2000
 		Versus:
+			infantry.stinger_site: 10
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -425,6 +452,11 @@ missile.scorpion_tank:
 		Damage: 8000
 		ValidTargets: Ground, Water
 		Versus:
+			infantry.stinger_site: 10
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
@@ -445,6 +477,7 @@ missile.missile_defender.ground:
 		Damage: 4000
 		Versus:
 			infantry.normal: 10
+			infantry.stinger_site: 10
 			vehicle.truck: 50
 			vehicle.humvee: 50
 			vehicle.avenger: 50
@@ -479,6 +512,7 @@ missile.missile_defender.air:
 		Damage: 4000
 		Versus:
 			infantry.normal: 10
+			infantry.stinger_site: 10
 			vehicle.truck: 50
 			vehicle.humvee: 50
 			vehicle.avenger: 50
@@ -614,6 +648,7 @@ missile.hellfire_drone:
 	Warhead@1Dam: SpreadDamage
 		Damage: 4000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -635,6 +670,7 @@ missile.stinger_site.ground:
 	Warhead@1Dam: SpreadDamage
 		Damage: 2000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -658,6 +694,7 @@ missile.stinger_site.air:
 		Spread: 0c256
 		Damage: 3000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -684,6 +721,7 @@ missile.comanche:
 		Damage: 2000
 		ValidTargets: Ground, Water
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -700,6 +738,7 @@ missile.comanche:
 		Damage: 1000
 		ValidTargets: Ground, Water
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -731,6 +770,7 @@ missile.patriot.ground:
 	Warhead@1Dam: SpreadDamage
 		Damage: 3000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -761,6 +801,7 @@ missile.patriot.air:
 		Damage: 2500
 		ValidTargets: Air
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -847,9 +888,17 @@ missile.destroyer.ground:
 	Warhead@1Dam: SpreadDamage
 		Damage: 3000
 		Versus:
-			None: 30
-			Light: 75
-			Concrete: 50
+			infantry.stinger_site: 10
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
+			aircraft.normal.countermeasures: 90
+			aircraft.comanche: 130
+			aircraft.comanche.countermeasures: 110
+			aircraft.chinook: 50
+			building.tough: 80
+			building.internet_center: 70
 
 missile.destroyer.air:
 	Inherits: missile.destroyer.ground
@@ -881,6 +930,7 @@ missile.rocket_buggy:
 		Damage: 1500
 		ValidTargets: Ground
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -897,6 +947,7 @@ missile.rocket_buggy:
 		Damage: 500
 		ValidTargets: Ground
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -942,6 +993,7 @@ missile.humvee.ground:
 	Warhead@1Dam: SpreadDamage
 		Damage: 3000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -965,6 +1017,7 @@ missile.humvee.air:
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -997,6 +1050,7 @@ missile.scud_launcher:
 		Damage: 17500
 		ValidTargets: Ground, Water
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -1014,6 +1068,7 @@ missile.scud_launcher:
 		Damage: 2500
 		ValidTargets: Ground, Water
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -1195,6 +1250,7 @@ missile.tomahawk_launcher:
 		Spread: 0c256
 		Damage: 10000
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -1211,6 +1267,7 @@ missile.tomahawk_launcher:
 		Damage: 5000
 		ValidTargets: Ground, Water
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80

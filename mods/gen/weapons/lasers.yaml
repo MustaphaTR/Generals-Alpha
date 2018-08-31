@@ -28,6 +28,7 @@ laser.laser_turret.ground:
 		Spread: 0c77
 		Falloff: 100, 100
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -57,6 +58,7 @@ laser.laser_turret.air:
 		Spread: 0c77
 		Falloff: 100, 100
 		Versus:
+			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
 			husk.battle_bus.crate-1: 80
@@ -119,6 +121,7 @@ laser.paladin_tank:
 		Damage: 10000
 		Versus:
 			infantry.normal: 50
+			infantry.stinger_site: 25
 		InvalidTargets: Vehicle, Tank, Structure, Wall
 		DamageTypes: TriggerProne, FireDeath
 

@@ -154,5 +154,9 @@ hole.stinger_site:
 		Delay: 875
 	TransformOnCondition:
 		IntoActor: building.stinger_site
+	Selectable:
+		Bounds: 48,48
+	WithSpriteBody:
+		Sequence: hole
 	RenderSprites:
-		Image: hole.2x2
+		Image: building.stinger_site
