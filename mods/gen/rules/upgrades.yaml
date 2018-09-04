@@ -94,7 +94,6 @@ upgrade.control_rods:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 375
-		Prerequisites: ~techlevel.infonly
 		Description: Doubles power output of the Cold Fusion Reactor.
 	Power:
 		Amount: 5
@@ -147,7 +146,6 @@ upgrade.capture_building:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 750
-		Prerequisites: prerequisite.barracks, ~techlevel.infonly
 		Description: Allows AP Infantry to capture enemy and neutral structures.
 	Valued:
 		Cost: 1000
@@ -161,7 +159,6 @@ upgrade.flashbang_grenades:
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		BuildDuration: 750
-		Prerequisites: ~techlevel.low
 		Description: Gives Rangers ability to use to flashbang grenades.
 		ReadyAudio: Flashbang
 	Valued:
@@ -176,7 +173,6 @@ upgrade.tow_missile:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 750
-		Prerequisites: ~techlevel.low
 		Description: Allows Humvees to fire Missiles.
 		ReadyAudio: TOW
 	Valued:
@@ -190,7 +186,7 @@ upgrade.sentry_gun:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.boss_gen_particle_cannon
 		BuildPaletteOrder: 5
 		BuildDuration: 250
-		Prerequisites: ~techlevel.low, ~prerequisite.zh_units
+		Prerequisites: ~prerequisite.zh_units
 		Description: Allows Senrty Drones to fire.
 	Valued:
 		Cost: 1000
@@ -204,7 +200,6 @@ upgrade.sc_rocket:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 750
-		Prerequisites: ~techlevel.low
 		Description: Gives Scorpion Tanks a rocket.
 		ReadyAudio: ScorpionRocket
 	Valued:
@@ -219,7 +214,6 @@ upgrade.chain_gun:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1125
-		Prerequisites: ~techlevel.low
 		Description: Increases damage of gatling weapons by 25%.
 		ReadyAudio: ChainGun
 	Valued:
@@ -234,7 +228,6 @@ upgrade.black_napalm:
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		BuildDuration: 1125
-		Prerequisites: ~techlevel.medium
 		Description: Increases damage of fire based weapons.
 		ReadyAudio: BlackNapalm
 	Valued:
@@ -250,7 +243,6 @@ upgrade.rocket_pods:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: ~techlevel.high
 		Description: Allows Comanches to fire Missiles.
 		ReadyAudio: RocketPods
 	Valued:
@@ -266,7 +258,6 @@ upgrade.laser_guided_missiles:
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		BuildDuration: 1000
-		Prerequisites: ~techlevel.high
 		Description: Increases the damage output of Raptor and Stealth Bomber by 25%.
 		ReadyAudio: LaserGuide
 	Valued:
@@ -282,7 +273,7 @@ upgrade.countermeasures:
 		BuildPaletteOrder: 6
 		ForceIconLocation: true
 		BuildDuration: 1000
-		Prerequisites: ~techlevel.high, ~prerequisite.zh_units
+		Prerequisites: ~prerequisite.zh_units
 		Description: Increases aircraft armor.\n\nEffective change depends on weapon and aircraft.
 		ReadyAudio: Countermeasures
 	Valued:
@@ -298,7 +289,6 @@ upgrade.stealth_comanche:
 		BuildPaletteOrder: 8
 		ForceIconLocation: true
 		BuildDuration: 750
-		Prerequisites: ~techlevel.high
 		Description: Allows Comanches to stealth when not firing.
 	Valued:
 		Cost: 1500
@@ -312,7 +302,6 @@ upgrade.mig_armor:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1000
-		Prerequisites: ~techlevel.high
 		Description: Increases MiGs' armor.
 		ReadyAudio: MiGArmor
 	Valued:
@@ -326,7 +315,7 @@ upgrade.satellite_hack1:
 		Queue: queue.internet_center
 		BuildPaletteOrder: 0
 		BuildDuration: 500
-		Prerequisites: ~!upgrade.satellite_hack1, ~techlevel.medium
+		Prerequisites: ~!upgrade.satellite_hack1
 		Description: Allows seeing around the enemy Command Centers.
 	Valued:
 		Cost: 1000
@@ -339,7 +328,7 @@ upgrade.satellite_hack2:
 		Queue: queue.internet_center
 		BuildPaletteOrder: 1
 		BuildDuration: 500
-		Prerequisites: ~upgrade.satellite_hack1, ~techlevel.high
+		Prerequisites: ~upgrade.satellite_hack1
 		Description: Reveals all enemy units and buildings every 4 minutes for 20 seconds.
 	Valued:
 		Cost: 2500
@@ -352,7 +341,6 @@ upgrade.adv_training:
 		Queue: queue.strategy_center, queue.air_gen_strategy_center, queue.boss_gen_particle_cannon
 		BuildPaletteOrder: 3
 		BuildDuration: 1500
-		Prerequisites: ~techlevel.medium
 		Description: Doubles the rate units gain veterancy.
 		QueuedAudio: NoAudio
 		ReadyAudio: AdvancedTraining
@@ -367,7 +355,6 @@ upgrade.drone_armor:
 		Queue: queue.strategy_center, queue.air_gen_strategy_center
 		BuildPaletteOrder: 4
 		BuildDuration: 1000
-		Prerequisites: ~techlevel.medium
 		Description: Increases Drones' armor by 50%.
 		ReadyAudio: DroneArmor
 	Valued:
@@ -381,8 +368,8 @@ upgrade.composite_armor:
 		Queue: queue.strategy_center, queue.boss_gen_particle_cannon
 		BuildPaletteOrder: 5
 		BuildDuration: 1500
-		Prerequisites: ~techlevel.medium
 		Description: Increases Crusader Tank armor by 40%.\n\nIncreases Paladin and Microwave Tank armor by 20%.
+		Prerequisites: !techlevel.infonly
 		ReadyAudio: CompositeArmor
 	Valued:
 		Cost: 2000
@@ -395,7 +382,7 @@ upgrade.chemical_suits:
 		Queue: queue.strategy_center, queue.air_gen_strategy_center
 		BuildPaletteOrder: 6
 		BuildDuration: 1500
-		Prerequisites: !upgrade.chemical_suits, ~techlevel.medium, ~prerequisite.zh_units
+		Prerequisites: !upgrade.chemical_suits, ~prerequisite.zh_units, !techlevel.vehicleonly
 		Description: Decreases the damage dealt to infantry from Microwaves, Toxins and Radiation.
 		ReadyAudio: ChemicalSuits
 	ProvidesPrerequisite@upgradename:
@@ -419,7 +406,7 @@ upgrade.supply_lines:
 		Queue: queue.strategy_center, queue.air_gen_strategy_center
 		BuildPaletteOrder: 7
 		BuildDuration: 1500
-		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
+		Prerequisites: ~prerequisite.zh_units
 		Description: Increases output from Supply Centers, Supply Drop Zones and Oil Derricks by 10%.
 		ReadyAudio: SupplyLines
 	Valued:
@@ -434,7 +421,7 @@ upgrade.moab:
 		BuildPaletteOrder: 8
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: ~generals_power.fuel_air_bomb, ~techlevel.high, ~prerequisite.zh_units
+		Prerequisites: prerequisite.fuel_air_bomb, ~prerequisite.zh_units
 		Description: Upgrades Fuel Air Bomb to Mother of All Bombs.
 	Valued:
 		Cost: 4000
@@ -447,8 +434,8 @@ upgrade.camouflage:
 		Queue: queue.palace
 		BuildPaletteOrder: 0
 		BuildDuration: 1500
-		Prerequisites: ~techlevel.medium
 		Description: Allows Rebels to cloak while not firing.
+		Prerequisites: !techlevel.vehicleonly
 		ReadyAudio: Camouflage
 	Valued:
 		Cost: 2000
@@ -461,8 +448,8 @@ upgrade.arm_the_mob:
 		Queue: queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.boss_gen_scud_storm
 		BuildPaletteOrder: 1
 		BuildDuration: 750
-		Prerequisites: ~techlevel.medium
 		Description: Replaces pistols of Angry Mobs with AK-47s.
+		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
 		ReadyAudio: ArmTheMob
 	Valued:
 		Cost: 1000
@@ -475,9 +462,9 @@ upgrade.toxin_shells:
 		Queue: queue.palace
 		BuildPaletteOrder: 2
 		BuildDuration: 750
-		Prerequisites: ~techlevel.medium
 		Description: Makes Scorpion and Marauder tank shells leave toxin.
 		ReadyAudio: ToxinShells
+		Prerequisites: !techlevel.infonly
 	Valued:
 		Cost: 1000
 
@@ -489,7 +476,6 @@ upgrade.anthrax_beta:
 		Queue: queue.palace, queue.stealth_gen_palace
 		BuildPaletteOrder: 3
 		BuildDuration: 750
-		Prerequisites: ~techlevel.medium
 		Description: Increases all toxin weapons' damage by 25%.
 		ReadyAudio: AnthraxBeta
 	Valued:
@@ -503,7 +489,6 @@ upgrade.anthrax_gamma:
 		Queue: queue.toxin_gen_palace
 		BuildPaletteOrder: 3
 		BuildDuration: 1500
-		Prerequisites: ~techlevel.medium
 		Description: Increases all toxin weapons' damage by 25%.
 		ReadyAudio: AnthraxGamma
 	Valued:
@@ -517,7 +502,7 @@ upgrade.fortified_structures:
 		Queue: queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace
 		BuildPaletteOrder: 4
 		BuildDuration: 750
-		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
+		Prerequisites: ~prerequisite.zh_units
 		Description: Increases structure armor by 33%.
 	Valued:
 		Cost: 1000
@@ -530,7 +515,6 @@ upgrade.demolitions:
 		Queue: queue.demo_gen_palace
 		BuildPaletteOrder: 5
 		BuildDuration: 750
-		Prerequisites: ~techlevel.medium
 		Description: Makes units end defenses explode on dealth.
 	Valued:
 		Cost: 2000
@@ -544,7 +528,6 @@ upgrade.nationalism:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: ~techlevel.medium
 		Description: Makes Horde Bonus give an additional 25% firing speed.
 		ReadyAudio: Nationalism
 	Valued:
@@ -559,7 +542,6 @@ upgrade.patriotism:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: ~techlevel.medium
 		Description: Makes Horde Bonus give an additional 25% firing speed.
 		ReadyAudio: Patriotism
 	Valued:
@@ -574,8 +556,8 @@ upgrade.autoloader:
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: ~techlevel.medium
 		Description: Makes Battlemaster Tanks to fire 3 cannon at once.
+		Prerequisites: !techlevel.infonly
 		ReadyAudio: Autoloader
 	Valued:
 		Cost: 2500
@@ -589,8 +571,8 @@ upgrade.isotope_stability:
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: ~techlevel.medium
 		Description: Makes Battlemaster and Overlord Tank not explode on death.
+		Prerequisites: !techlevel.infonly
 	Valued:
 		Cost: 2000
 
@@ -603,7 +585,6 @@ upgrade.subliminal_messaging:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1000
-		Prerequisites: ~techlevel.medium
 		Description: Doubles the efficency of Speaker Towers.
 		ReadyAudio: Subliminal
 	Valued:
@@ -617,7 +598,6 @@ upgrade.ap_bullets:
 		Queue: queue.black_market, queue.stealth_gen_black_market
 		BuildPaletteOrder: 0
 		BuildDuration: 1500
-		Prerequisites: ~techlevel.high
 		Description: Increases bullet weapons' damage by 25%.
 		ReadyAudio: APBullets
 	Valued:
@@ -631,7 +611,6 @@ upgrade.ap_rockets:
 		Queue: queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_scud_storm
 		BuildPaletteOrder: 1
 		BuildDuration: 1500
-		Prerequisites: ~techlevel.high
 		Description: Increases rocket weapons' damage by 25%.
 		ReadyAudio: APRockets
 	Valued:
@@ -645,9 +624,9 @@ upgrade.radar_van_scan:
 		Queue: queue.black_market, queue.stealth_gen_black_market
 		BuildPaletteOrder: 2
 		BuildDuration: 500
-		Prerequisites: ~techlevel.high
 		Description: Gives you a Radar Van Scan support power for each Radar Van you have.
 		ReadyAudio: RadarVanScan
+		Prerequisites: !techlevel.infonly
 	Valued:
 		Cost: 500
 
@@ -659,9 +638,9 @@ upgrade.junk_repair:
 		Queue: queue.black_market, queue.stealth_gen_black_market
 		BuildPaletteOrder: 3
 		BuildDuration: 1500
-		Prerequisites: ~techlevel.high
 		Description: Allows vehicles to repair themselves on field.
 		ReadyAudio: JunkRepair
+		Prerequisites: !techlevel.infonly
 	Valued:
 		Cost: 2000
 
@@ -673,9 +652,9 @@ upgrade.buggy_ammo:
 		Queue: queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_scud_storm
 		BuildPaletteOrder: 4
 		BuildDuration: 750
-		Prerequisites: ~techlevel.high
 		Description: Doubles the rockets fired from Rocket Buggies.
 		ReadyAudio: BuggyAmmo
+		Prerequisites: !techlevel.infonly
 	Valued:
 		Cost: 1200
 
@@ -687,7 +666,7 @@ upgrade.worker_shoes:
 		Queue: queue.black_market, queue.stealth_gen_black_market
 		BuildPaletteOrder: 5
 		BuildDuration: 250
-		Prerequisites: ~techlevel.high, ~prerequisite.zh_units
+		Prerequisites: ~prerequisite.zh_units
 		Description: Increases worker speed and output by 10%.
 		ReadyAudio: WorkerShoes
 	Valued:
@@ -702,7 +681,7 @@ upgrade.nuclear_tanks:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: !upgrade.nuclear_tanks, ~techlevel.unrestricted
+		Prerequisites: !upgrade.nuclear_tanks, !techlevel.infonly
 		Description: Increases Battlemaster speed by 40% and Overlord speed by 50%.
 		ReadyAudio: NuclearTanks
 	ProvidesPrerequisite@upgradename:
@@ -728,7 +707,7 @@ upgrade.uranium_shells:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: !upgrade.uranium_shells, ~techlevel.unrestricted
+		Prerequisites: !upgrade.uranium_shells, !techlevel.infonly
 		Description: Increases Overlord and Battlemaster damage by 25%.
 		ReadyAudio: UraniumShells
 	ProvidesPrerequisite@upgradename:
@@ -754,7 +733,7 @@ upgrade.neutron_shells:
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Prerequisites: ~generals_power.nuke_cannon, !upgrade.neutron_shells, ~prerequisite.zh_units, ~techlevel.unrestricted
+		Prerequisites: prerequisite.nuke_cannon, !upgrade.neutron_shells, ~prerequisite.zh_units, !techlevel.infonly
 		Description: Allows Nuke Cannons to be switched to fire Neutron Shells.
 	ProvidesPrerequisite@upgradename:
 		Prerequisite: upgrade.neutron_shells
@@ -767,7 +746,7 @@ upgrade.neutron_shells.nuke:
 	Inherits: upgrade.neutron_shells
 	Buildable:
 		Queue: queue.nuke_gen_missile_silo
-		Prerequisites: !upgrade.neutron_shells, ~prerequisite.zh_units, ~techlevel.unrestricted
+		Prerequisites: !upgrade.neutron_shells, ~prerequisite.zh_units, !techlevel.infonly
 
 upgrade.tactical_nuke_mig:
 	Inherits: ^default.upgrade
@@ -778,7 +757,7 @@ upgrade.tactical_nuke_mig:
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 1000
-		Prerequisites: ~techlevel.unrestricted
+		Prerequisites: !techlevel.infonly, !techlevel.noair
 		Description: Arms MiGs with a Tactical Nukes.
 	Valued:
 		Cost: 2000
@@ -1018,7 +997,6 @@ strategy.bombardment:
 	Buildable:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
-		Prerequisites: ~techlevel.infonly
 		Description: Increases all units' damage by 20%.\n\nGives Strategy Center an Artillery piece.
 		ReadyAudio: Bombardment
 
@@ -1029,7 +1007,6 @@ strategy.search_and_destroy:
 	Buildable:
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
-		Prerequisites: ~techlevel.infonly
 		Description: Increases all units' fire range by 20%.\n\nGives Strategy Center ability to detect stealth units.
 		ReadyAudio: SearchAndDestroy
 
@@ -1040,7 +1017,6 @@ strategy.hold_the_line:
 	Buildable:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
-		Prerequisites: ~techlevel.infonly
 		Description: Increases all units' armor by 10%.\n\nDoubles Strategy Center's armor.
 		ReadyAudio: HoldTheLine
 

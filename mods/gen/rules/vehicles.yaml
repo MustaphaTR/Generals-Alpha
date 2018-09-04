@@ -10,7 +10,6 @@ vehicle.supply_truck:
 		BuildPaletteOrder: 1
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.infonly
 		Description: Collects supplies.
 		ReadyAudio: SupplyTruckCreated
 	Valued:
@@ -107,7 +106,6 @@ vehicle.humvee:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_war_factory, ~techlevel.low
 		Description: Fast scout & anti-infantry vehicle.\n\nCan carry 5 infantry that can fire outside.
 		ReadyAudio: HumveeCreated
 	Valued:
@@ -246,7 +244,6 @@ vehicle.technical:
 		ForceIconLocation: true
 		BuildDuration: 75
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.low
 		Description: Fast scout & anti-infantry vehicle.\n\nCan carry 5 infantry.\n\nPassengers can survive when it dies.\n\nGets different weapons from Scrap Crates.
 		ReadyAudio: TechnicalCreated
 	Valued:
@@ -372,7 +369,6 @@ vehicle.radar_van:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.low
 		Description: Provides radar.\n\nGets cloak from Scrap Crates.
 		ReadyAudio: RadarVanCreated
 	Valued:
@@ -491,7 +487,6 @@ vehicle.scorpion_tank:
 		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.low
 		Description: Lightly armored main battle tank.\n\nGets better weapon from Scrap Crates.
 		ReadyAudio: ScorpionTankCreated
 	Valued:
@@ -671,7 +666,6 @@ vehicle.crusader_tank:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.low
 		Description: Medium armored main battle tank.
 		ReadyAudio: CrusaderTankCreated
 	Valued:
@@ -780,7 +774,6 @@ vehicle.battlemaster_tank:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.low
 		Description: Medium armored main battle tank.
 		ReadyAudio: BattlemasterTankCreated
 	Valued:
@@ -881,7 +874,6 @@ vehicle.ambulance:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.medium
 		Description: Heals nearby infantry.\n\nCan carry 3 infantry.\n\nHeals damaged passengers.\n\nPassengers can survive when it dies.
 		ReadyAudio: AmbulanceCreated
 	Valued:
@@ -960,7 +952,7 @@ vehicle.sentry_drone:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.low, ~prerequisite.zh_units
+		Prerequisites: ~prerequisite.zh_units
 		Description: Detection vehicle.\n\nCamouflaged while not moving.
 	Valued:
 		Cost: 800
@@ -1079,7 +1071,6 @@ vehicle.quad_cannon:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.low
 		Description: Anti-infantry & anti-air vehicle.\n\nGets better weapon from Scrap Crates.
 		ReadyAudio: QuadCannonCreated
 	Valued:
@@ -1188,7 +1179,6 @@ vehicle.gatling_tank:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.low
 		Description: Anti-infantry & anti-air vehicle.
 		ReadyAudio: GatlingTankCreated
 	Valued:
@@ -1305,7 +1295,6 @@ vehicle.toxin_tractor:
 		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.medium
 		Description: Toxin-throwing vehicle.\n\nCan be deployed to speay toxins around it.\n\nGets better weapon from Scrap Crates.
 		ReadyAudio: ToxinTractorCreated
 	Valued:
@@ -1462,7 +1451,6 @@ vehicle.dragon_tank:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.medium
 		Description: Flame-throwing vehicle.
 		ReadyAudio: DragonTankCreated
 	Valued:
@@ -1562,7 +1550,7 @@ vehicle.rocket_buggy:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: building.palace, ~techlevel.medium
+		Prerequisites: building.palace, !techlevel.notech
 		Description: Rocket artillery.\n\nGets extra missiles per burst from Scrap Crates.
 		ReadyAudio: RocketBuggyCreated
 	Valued:
@@ -1670,7 +1658,7 @@ vehicle.rocket_buggy.boss:
 	Buildable:
 		Queue: queue.boss_gen_vehicle
 		BuildPaletteOrder: 6
-		Prerequisites: ~techlevel.medium
+		Prerequisites: !techlevel.notech
 
 vehicle.avenger:
 	Inherits: ^Vehicle
@@ -1700,7 +1688,7 @@ vehicle.avenger:
 		BuildPaletteOrder: 6
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
+		Prerequisites: ~prerequisite.zh_units, !techlevel.notech
 		Description: Advanced anti-air unit.\n\nCan deflect enemy missiles with laser.
 		ReadyAudio: AvengerCreated
 	Valued:
@@ -1765,14 +1753,13 @@ vehicle.avenger.air:
 	Inherits: vehicle.avenger
 	Buildable:
 		Queue: queue.air_gen_vehicle
-		Prerequisites: building.strategy_center, ~techlevel.medium, ~prerequisite.zh_units
+		Prerequisites: building.strategy_center, ~prerequisite.zh_units, !techlevel.notech
 
 vehicle.avenger.boss:
 	Inherits: vehicle.avenger
 	Buildable:
 		Queue: queue.boss_gen_vehicle
 		BuildPaletteOrder: 8
-		Prerequisites: ~techlevel.medium, ~prerequisite.zh_units
 
 vehicle.battle_Bus:
 	Inherits: ^Tank
@@ -1795,7 +1782,7 @@ vehicle.battle_Bus:
 		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: building.palace, ~techlevel.medium, ~prerequisite.zh_units
+		Prerequisites: building.palace, ~prerequisite.zh_units, !techlevel.notech
 		Description: Tough infantry transport.\n\nCan carry 8 infantry that can fire outside.\n\nTurns into a static bunker when damaged.\n\nGets better armor from Scrap Crates.
 		ReadyAudio: BattleBusCreated
 	Valued:
@@ -1918,7 +1905,6 @@ vehicle.troop_crawler:
 		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.low
 		Description: Tough infantry transport.\n\nCan carry 8 infantry.\n\nComes with 8 red guards.\n\nHeals damaged passengers.\n\nPassengers can survive when it dies.
 		ReadyAudio: TroopCrawlerCreated
 	Valued:
@@ -2010,7 +1996,7 @@ vehicle.listening_outpost:
 		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.low, ~prerequisite.zh_units
+		Prerequisites: ~prerequisite.zh_units
 		Description: Stealth detector unit.\n\nCan carry 2 infantry that can fire outside.\n\nComes with 2 tank hunters.\n\nHeals damaged passengers.\n\nHas a speaker tower attached.\n\nPassengers can survive when it dies.\n\nCamouflaged while not moving.
 		ReadyAudio: ListeningOutpostCreated
 	Valued:
@@ -2131,7 +2117,7 @@ vehicle.microwave_tank:
 		BuildPaletteOrder: 7
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: building.strategy_center, ~techlevel.medium, ~prerequisite.zh_units
+		Prerequisites: building.strategy_center, ~prerequisite.zh_units
 		Description: Disables enemy structures.\n\nBurns enemy infantry around.
 		ReadyAudio: MicrowaveTankCreated
 	Valued:
@@ -2227,7 +2213,7 @@ vehicle.ecm_tank:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: building.propaganda_center, ~techlevel.medium, ~prerequisite.zh_units
+		Prerequisites: building.propaganda_center, ~prerequisite.zh_units
 		Description: Disables enemy vehicles.\n\nJams enemy missiles.
 		ReadyAudio: ECMTankCreated
 	Valued:
@@ -2329,7 +2315,7 @@ vehicle.tomahawk_launcher:
 		BuildPaletteOrder: 8
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: building.strategy_center, ~techlevel.medium
+		Prerequisites: building.strategy_center, !techlevel.notech
 		Description: Long-range rocket artillery.
 		ReadyAudio: TomahawkCreated
 	Valued:
@@ -2408,7 +2394,7 @@ vehicle.tomahawk_launcher.boss:
 	Buildable:
 		Queue: queue.boss_gen_vehicle
 		BuildPaletteOrder: 7
-		Prerequisites: ~techlevel.medium
+		Prerequisites: !techlevel.notech
 
 vehicle.scud_launcher:
 	Inherits: ^Vehicle
@@ -2439,7 +2425,7 @@ vehicle.scud_launcher:
 		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: building.palace, ~generals_power.scud_launcher, ~techlevel.high
+		Prerequisites: building.palace, prerequisite.scud_launcher
 		Description: Long-range rocket artillery.\n\nCan be armed with either toxin or high explosive missiles.\n\nGets better weapon from Scrap Crates.
 		ReadyAudio: ScudLauncherCreated
 	Valued:
@@ -2615,7 +2601,7 @@ vehicle.inferno_cannon:
 		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: building.propaganda_center, ~techlevel.medium
+		Prerequisites: building.propaganda_center
 		Description: Long-range artillery.
 		ReadyAudio: InfernoCannonCreated
 	Valued:
@@ -2708,7 +2694,7 @@ vehicle.paladin_tank:
 		BuildPaletteOrder: 9
 		BuildDuration: 300
 		BuildDurationModifier: 100
-		Prerequisites: ~generals_power.paladin_tank, ~techlevel.medium
+		Prerequisites: prerequisite.paladin_tank
 		Description: Heavy tank.\n\nCan deflect enemy missiles with laser.
 		ReadyAudio: PaladinTankCreated
 	Valued:
@@ -2783,7 +2769,7 @@ vehicle.paladin_tank.boss:
 		Queue: queue.boss_gen_vehicle
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
-		Prerequisites: ~generals_power.paladin_tank, ~techlevel.low
+		Prerequisites: prerequisite.paladin_tank
 
 vehicle.marauder_tank:
 	Inherits: ^Tank
@@ -2814,7 +2800,7 @@ vehicle.marauder_tank:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.arms_dealer, building.palace, ~generals_power.marauder_tank, ~techlevel.high
+		Prerequisites: ~building.arms_dealer, building.palace, prerequisite.marauder_tank
 		Description: Medium tank.\n\nGets better weapon from Scrap Crates.
 		ReadyAudio: MarauderTankCreated
 	Valued:
@@ -3119,7 +3105,7 @@ vehicle.overlord_tank:
 		ForceIconLocation: true
 		BuildDuration: 625
 		BuildDurationModifier: 100
-		Prerequisites: building.propaganda_center, ~techlevel.high
+		Prerequisites: building.propaganda_center, !techlevel.notech
 		Description: Big and slow tank.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
 		ReadyAudio: OverlordTankCreated
 	Valued:
@@ -3293,7 +3279,7 @@ vehicle.overlord_tank.boss:
 	Buildable:
 		Queue: queue.boss_gen_vehicle
 		BuildPaletteOrder: 9
-		Prerequisites: ~techlevel.high
+		Prerequisites: !techlevel.notech
 	RenderSprites:
 		Image: vehicle.overlord_tank
 
@@ -3339,7 +3325,7 @@ vehicle.bomb_truck:
 		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: building.palace, ~techlevel.high
+		Prerequisites: building.palace
 		Description: Suicide vehicle.\n\nCan be armed with toxin or high explosive bombs.\n\nGets speed from Scrap Crates.
 		ReadyAudio: BombTruckCreated
 	Valued:
@@ -3556,7 +3542,7 @@ vehicle.nuke_cannon:
 		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: building.propaganda_center, ~generals_power.nuke_cannon, ~techlevel.high
+		Prerequisites: building.propaganda_center, prerequisite.nuke_cannon
 		Description: Heavy artillery unit armed with nuclear warheads.\n\nShould be not moving for 3 seconds to fire.\n\nCan not move for 3 seconds after firing.
 		ReadyAudio: NukeCannonCreated
 	Valued:
@@ -3674,7 +3660,7 @@ vehicle.nuke_cannon.nuke:
 	Inherits: vehicle.nuke_cannon
 	Buildable:
 		Queue: queue.nuke_gen_vehicle
-		Prerequisites: building.propaganda_center, ~techlevel.high
+		Prerequisites: building.propaganda_center
 
 vehicle.combat_cycle:
 	Inherits: ^Vehicle
@@ -3708,7 +3694,7 @@ vehicle.combat_cycle:
 		ForceIconLocation: true
 		BuildDuration: 100
 		BuildDurationModifier: 100
-		Prerequisites: ~prerequisite.zh_units, ~techlevel.low
+		Prerequisites: ~prerequisite.zh_units
 		Description: Fast scout vehicle with weapon depending on passenger.\n\nComes with a rebel.
 		ReadyAudio: CycleCreated
 	Valued:
@@ -4031,7 +4017,6 @@ vehicle.usa_mcc:
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Buildable:
 		Queue: queue.usa_command_center
-		Prerequisites: ~techlevel.infonly
 		ReadyAudio: USAMCCCreated
 	Tooltip:
 		Name: USA Construction Vehicle
@@ -4100,7 +4085,6 @@ vehicle.gla_mcc:
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Buildable:
 		Queue: queue.gla_command_center, queue.stealth_gen_command_center
-		Prerequisites: ~techlevel.infonly
 		ReadyAudio: WorkerCreated
 		Description: Builds structures.\n\nCan be deployed to disarm enemy bombs, demo traps or mines.\n\nGets better armor from Scrap Crates.
 	Tooltip:
@@ -4163,7 +4147,6 @@ vehicle.prc_mcc:
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Buildable:
 		Queue: queue.prc_command_center
-		Prerequisites: ~techlevel.infonly
 		ReadyAudio: PRCMCCCreated
 	Tooltip:
 		Name: PRC Construction Vehicle

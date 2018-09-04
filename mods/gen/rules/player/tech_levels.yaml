@@ -1,0 +1,33 @@
+^TechLevels:
+	ProvidesTechPrerequisite@infonly:
+		Name: Infantry Only
+		Prerequisites: techlevel.infonly
+		Id: infantryonly
+	ProvidesTechPrerequisite@vehicleonly:
+		Name: Vehicle Only
+		Prerequisites: techlevel.vehicleonly
+		Id: vehicleonly
+	ProvidesTechPrerequisite@nodefense:
+		Name: No Base Defense
+		Prerequisites: techlevel.nodefense
+		Id: nodefense
+	ProvidesTechPrerequisite@noair:
+		Name: No Air
+		Prerequisites: techlevel.noair
+		Id: noair
+	ProvidesTechPrerequisite@notech:
+		Name: No Tech
+		Prerequisites: techlevel.notech
+		Id: notech
+	ProvidesTechPrerequisite@nosw:
+		Name: No SuperWeapons
+		Prerequisites: techlevel.nosw
+		Id: nosw
+	ProvidesTechPrerequisite@nocc:
+		Name: No CC Rebuild
+		Prerequisites: techlevel.nocc
+		Id: nocc
+	ProvidesTechPrerequisite@unrestricted:
+		Name: Unrestricted
+		Prerequisites: techlevel.unrestricted
+		Id: unrestricted

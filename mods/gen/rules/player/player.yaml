@@ -7,6 +7,7 @@ EditorPlayer:
 
 Player:
 	Inherits: ^BasePlayer
+	Inherits@TECH: ^TechLevels
 	TechTree:
 	ConditionManager:
 	SharedCargoManager:
@@ -171,26 +172,6 @@ Player:
 	BaseAttackNotifier:
 	PlayerStatistics:
 	PlaceBeacon:
-	ProvidesTechPrerequisite@infonly:
-		Name: Infantry Only
-		Prerequisites: techlevel.infonly
-		Id: infantryonly
-	ProvidesTechPrerequisite@low:
-		Name: Low
-		Prerequisites: techlevel.infonly, techlevel.low
-		Id: low
-	ProvidesTechPrerequisite@medium:
-		Name: Medium
-		Prerequisites: techlevel.infonly, techlevel.low, techlevel.medium
-		Id: medium
-	ProvidesTechPrerequisite@high:
-		Name: High
-		Prerequisites: techlevel.infonly, techlevel.low, techlevel.medium, techlevel.high
-		Id: high
-	ProvidesTechPrerequisite@unrestricted:
-		Name: Unrestricted
-		Prerequisites: techlevel.infonly, techlevel.low, techlevel.medium, techlevel.high, techlevel.unrestricted
-		Id: unrestricted
 	GrantConditionOnPrerequisiteManager:
 	EnemyWatcher:
 	# VeteranProductionIconOverlay: This needs to be rewritten and is blocking a lot of stuff to make actual veterancy production work.

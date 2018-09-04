@@ -14,7 +14,7 @@
 	Buildable:
 		BuildDuration: 1125
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.infonly
+		Prerequisites: !techlevel.nocc
 		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
 	Health:
 		HP: 500000
@@ -207,7 +207,7 @@ building.usa_command_center:
 	AirstrikePower@FUEL_AIR_BOMB:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
-			1: generals_power.fuel_air_bomb
+			1: prerequisite.fuel_air_bomb
 			2: upgrade.moab
 		Icons:
 			1: fuel_air
@@ -466,7 +466,7 @@ building.prc_command_center:
 		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
 		BuildPaletteOrder: 14
 		Description: Produces construction vehicles.\n\nResearches and Provides General's Powers
-		Prerequisites: !building.prc_command_center.radar
+		Prerequisites: !building.prc_command_center.radar, !techlevel.nocc
 	Tooltip:
 		Name: PRC Command Center
 	ProvidesRadar:
@@ -865,7 +865,6 @@ building.cold_fusion_reactor:
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building
 		BuildPaletteOrder: 1
-		Prerequisites: ~techlevel.infonly
 		Description: Provides power for other structures.
 		IconPalette: cnc
 	Valued:
@@ -959,7 +958,6 @@ building.nuclear_reactor:
 	Buildable:
 		Queue: queue.prc_building, queue.inf_gen_building
 		BuildPaletteOrder: 1
-		Prerequisites: ~techlevel.infonly
 		Description: Provides power for other structures.\n\nCan be Overcharged to incrase power output, but damages the building by doing so.\n\nExplodes when destroyed.
 	Valued:
 		Cost: 1000
@@ -1023,6 +1021,7 @@ building.advanced_nuclear_reactor:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Description: Trains infantry.
+		Prerequisites: !techlevel.vehicleonly
 	Valued:
 		Cost: 500
 	Building:
@@ -1055,7 +1054,6 @@ building.usa_barracks:
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 2
-		Prerequisites: ~techlevel.infonly
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -1090,7 +1088,6 @@ building.gla_barracks:
 	Buildable:
 		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		BuildPaletteOrder: 1
-		Prerequisites: ~techlevel.infonly
 	Tooltip:
 		Name: GLA Barracks
 	Production:
@@ -1162,7 +1159,6 @@ building.prc_barracks:
 	Buildable:
 		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
 		BuildPaletteOrder: 2
-		Prerequisites: ~techlevel.infonly
 	Tooltip:
 		Name: PRC Barracks
 	Production:
@@ -1292,7 +1288,7 @@ building.usa_supply_center:
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 3
-		Prerequisites: prerequisite.reactor, ~techlevel.infonly
+		Prerequisites: prerequisite.reactor
 		Description: Deposit for the collected supplies.\n\nProduces chinooks.
 	Valued:
 		Cost: 2000
@@ -1340,6 +1336,12 @@ building.usa_supply_center:
 		Type: Rectangle
 			TopLeft: -512, -1450
 			BottomRight: 896, -512
+	ProvidesPrerequisite@WarFactory:
+		Prerequisite: building.usa_war_factory
+		RequiresPrerequisites: techlevel.infonly
+	ProvidesPrerequisite@AirfieldOrWarFactory:
+		Prerequisite: prerequisite.usa_airfield_or_war_factory
+		RequiresPrerequisites: techlevel.infonly
 	Voiced:
 		VoiceSet: USASupplyVoice
 	RenderSprites:
@@ -1357,7 +1359,6 @@ building.gla_supply_stash:
 	Buildable:
 		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		BuildPaletteOrder: 2
-		Prerequisites: ~techlevel.infonly
 		Description: Deposit for the collected supplies.\n\nTrains workers.
 	Tooltip:
 		Name: GLA Supply Stash
@@ -1421,6 +1422,12 @@ building.gla_supply_stash:
 	SpawnActorOnDeath:
 		Actor: hole.supply_stash
 		SpawnAfterDefeat: false
+	ProvidesPrerequisite@Barracks:
+		Prerequisite: building.gla_barracks
+		RequiresPrerequisites: techlevel.vehicleonly
+	ProvidesPrerequisite@ArmsDealer:
+		Prerequisite: building.arms_dealer
+		RequiresPrerequisites: techlevel.infonly
 	Power:
 		Amount: 0
 	Voiced:
@@ -1439,7 +1446,7 @@ building.prc_supply_center:
 	Buildable:
 		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
 		BuildPaletteOrder: 4
-		Prerequisites: prerequisite.reactor, ~techlevel.infonly
+		Prerequisites: prerequisite.reactor
 		Description: Deposit for the collected supplies.\n\nProduces supply trucks.
 	Tooltip:
 		Name: PRC Supply Center
@@ -1486,6 +1493,15 @@ building.prc_supply_center:
 		Type: Rectangle
 			TopLeft: -1536, 598
 			BottomRight: -512, 1280
+	ProvidesPrerequisite@Barracks:
+		Prerequisite: building.prc_barracks
+		RequiresPrerequisites: techlevel.vehicleonly
+	ProvidesPrerequisite@WarFactory:
+		Prerequisite: building.prc_war_factory
+		RequiresPrerequisites: techlevel.infonly
+	ProvidesPrerequisite@AirfieldOrWarFactory:
+		Prerequisite: prerequisite.prc_airfield_or_war_factory
+		RequiresPrerequisites: techlevel.infonly
 	Voiced:
 		VoiceSet: PRCSupplyVoice
 
@@ -1503,7 +1519,7 @@ building.patriot:
 		BuildPaletteOrder: 4
 		BuildDuration: 625
 		BuildDurationModifier: 100
-		Prerequisites: prerequisite.reactor, ~techlevel.low
+		Prerequisites: prerequisite.reactor, !techlevel.nodefense
 		Description: Anti-tank & anti-air base defense.
 	Valued:
 		Cost: 1000
@@ -1592,7 +1608,7 @@ building.laser_turret:
 		BuildPaletteOrder: 4
 		BuildDuration: 625
 		BuildDurationModifier: 100
-		Prerequisites: prerequisite.reactor, ~techlevel.low
+		Prerequisites: prerequisite.reactor, !techlevel.nodefense
 		Description: Anti-tank & anti-air base defense.
 	Valued:
 		Cost: 1000
@@ -1651,7 +1667,7 @@ building.demo_trap:
 		BuildPaletteOrder: 3
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.medium
+		Prerequisites: !techlevel.nodefense
 		Description: Stealth trap with explosives.
 	Valued:
 		Cost: 400
@@ -1787,7 +1803,7 @@ building.gatling_cannon:
 		BuildPaletteOrder: 5
 		BuildDuration: 625
 		BuildDurationModifier: 100
-		Prerequisites: prerequisite.reactor, ~techlevel.low
+		Prerequisites: prerequisite.reactor, !techlevel.nodefense
 		Description: Anti-infantry & anti-air base defense.
 	LaysMinefield@LAND_MINES:
 		Locations: 0,-1, -1,0, 0,1, 1,0
@@ -1874,7 +1890,7 @@ building.firebase:
 		BuildPaletteOrder: 7
 		BuildDuration: 625
 		BuildDurationModifier: 100
-		Prerequisites: prerequisite.reactor, ~techlevel.infonly
+		Prerequisites: prerequisite.reactor, !techlevel.nodefense
 		Description: Static long range defense with fireports\nfor 4 garrisoned soldiers.
 	Valued:
 		Cost: 1000
@@ -1965,7 +1981,7 @@ building.bunker:
 		BuildPaletteOrder: 7
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Prerequisites: building.prc_barracks, ~techlevel.infonly
+		Prerequisites: building.prc_barracks, !techlevel.vehicleonly, !techlevel.nodefense
 		Description: Static defense with fireports for 5\ngarrisoned soldiers.
 	GivesBuildableArea:
 		AreaTypes: mine
@@ -2038,6 +2054,7 @@ building.fortified_bunker:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Description: Produces vehicles.
+		Prerequisites: prerequisite.supply_center, !techlevel.infonly
 	Valued:
 		Cost: 2000
 	Building:
@@ -2072,7 +2089,6 @@ building.usa_war_factory:
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 5
-		Prerequisites: prerequisite.supply_center, ~techlevel.low
 	Tooltip:
 		Name: USA War Factory
 	Building:
@@ -2148,7 +2164,6 @@ building.arms_dealer:
 	Buildable:
 		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		BuildPaletteOrder: 4
-		Prerequisites: prerequisite.supply_center, ~techlevel.low
 	Valued:
 		Cost: 2500
 	Tooltip:
@@ -2213,7 +2228,6 @@ building.prc_war_factory:
 	Buildable:
 		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
 		BuildPaletteOrder: 8
-		Prerequisites: prerequisite.supply_center, ~techlevel.low
 	Tooltip:
 		Name: PRC War Factory
 	Production:
@@ -2323,7 +2337,7 @@ building.tunnel_network:
 		BuildPaletteOrder: 5
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: building.gla_barracks, ~techlevel.infonly
+		Prerequisites: building.gla_barracks, !techlevel.nodefense
 		Description: Allows unit movement from one to another quickly.\n\nArmed with a machine gun.\n\nComes with 2 RPG Troopers.\n\nLosing your last tunnel network kills units in them.
 	FreeActor@1:
 		Actor: hack.rpg_trooper_spawner.1
@@ -2404,7 +2418,7 @@ building.tunnel_network.boss:
 	Buildable:
 		Queue: queue.boss_gen_building
 		BuildPaletteOrder: 9
-		Prerequisites: building.prc_barracks, ~techlevel.infonly
+		Prerequisites: building.prc_barracks, !techlevel.nodefense
 	-ProductionQueue@CAMO_NETTING:
 	SpawnActorOnDeath:
 		Actor: hole.tunnel_network.boss
@@ -2438,7 +2452,7 @@ building.stinger_site:
 		BuildPaletteOrder: 6
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: building.gla_barracks, ~techlevel.low
+		Prerequisites: building.gla_barracks, !techlevel.nodefense
 		Description: Anti-tank & anti-air base defense.\n\nInfantry is vulnerable to damage by some weapons.
 	Valued:
 		Cost: 900
@@ -2524,6 +2538,7 @@ building.stinger_site:
 		BuildDuration: 750
 		BuildDurationModifier: 100
 		Description: Produces and reloads aircraft.
+		Prerequisites: prerequisite.supply_center, !techlevel.infonly, !techlevel.noair
 	Valued:
 		Cost: 1000
 	Health:
@@ -2567,7 +2582,6 @@ building.usa_airfield:
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 6
-		Prerequisites: prerequisite.supply_center, ~techlevel.medium
 	CustomProductionCost@Airforce:
 		Queue: queue.air_gen_building
 		Cost: 800
@@ -2677,7 +2691,6 @@ building.prc_airfield:
 	Buildable:
 		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
 		BuildPaletteOrder: 9
-		Prerequisites: prerequisite.supply_center, ~techlevel.medium
 	Tooltip:
 		Name: PRC Airfield
 	Building:
@@ -2784,7 +2797,7 @@ building.internet_center:
 		BuildPaletteOrder: 10
 		BuildDuration: 750
 		BuildDurationModifier: 100
-		Prerequisites: building.prc_war_factory, ~prerequisite.zh_units, ~techlevel.medium
+		Prerequisites: building.prc_war_factory, ~prerequisite.zh_units
 		Description: Can be garrissoned by hackers to allow them give cash safely.\n\nCan be upgraded with Satellite Hack to get intel from enemy.\n\nMaximum 1 can be built.
 		BuildLimit: 1
 	Building:
@@ -2855,7 +2868,7 @@ building.strategy_center:
 		BuildPaletteOrder: 8
 		BuildDuration: 1500
 		BuildDurationModifier: 100
-		Prerequisites: prerequisite.usa_airfield_or_war_factory, ~techlevel.medium
+		Prerequisites: prerequisite.usa_airfield_or_war_factory, !techlevel.notech
 		Description: Provides USA advanced technologies.
 	Valued:
 		Cost: 2500
@@ -2993,7 +3006,7 @@ building.palace:
 		BuildPaletteOrder: 7
 		BuildDuration: 1125
 		BuildDurationModifier: 100
-		Prerequisites: building.arms_dealer, ~techlevel.medium
+		Prerequisites: building.arms_dealer, !techlevel.notech
 		Description: Provides GLA advanced technologies.\n\nCan be garrisoned by 5 infantry.
 	Valued:
 		Cost: 2500
@@ -3109,7 +3122,7 @@ building.propaganda_center:
 		BuildPaletteOrder: 11
 		BuildDuration: 1125
 		BuildDurationModifier: 100
-		Prerequisites: prerequisite.prc_airfield_or_war_factory, ~techlevel.medium
+		Prerequisites: prerequisite.prc_airfield_or_war_factory, !techlevel.notech
 		Description: Provides PRC advanced technologies.
 	Valued:
 		Cost: 2000
@@ -3191,7 +3204,7 @@ building.detention_camp:
 		BuildPaletteOrder: 9
 		BuildDuration: 750
 		BuildDurationModifier: 100
-		Prerequisites: building.strategy_center, ~techlevel.high, ~!prerequisite.zh_units
+		Prerequisites: building.strategy_center, ~!prerequisite.zh_units, !techlevel.notech
 		Description: Provides support power to reveal all enemy units for a while.
 	Valued:
 		Cost: 1000
@@ -3245,7 +3258,7 @@ building.supply_drop_zone:
 		BuildPaletteOrder: 10
 		BuildDuration: 1125
 		BuildDurationModifier: 100
-		Prerequisites: building.strategy_center, ~techlevel.medium
+		Prerequisites: building.strategy_center, !techlevel.notech
 		Description: A Cargo Plane drops money crates here every 2 minutes.
 	Valued:
 		Cost: 2500
@@ -3307,7 +3320,7 @@ building.black_market:
 		BuildPaletteOrder: 8
 		BuildDuration: 750
 		BuildDurationModifier: 100
-		Prerequisites: building.palace, ~techlevel.medium
+		Prerequisites: building.palace, !techlevel.notech
 		Description: Enables some upgrades.\n\nGives cash periodically.
 	Building:
 		Footprint: XX xx
@@ -3377,7 +3390,7 @@ building.speaker_tower:
 		BuildPaletteOrder: 12
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: building.propaganda_center, ~techlevel.medium
+		Prerequisites: building.propaganda_center, !techlevel.notech, !techlevel.nodefense
 		Description: Increases fire speed of nearby units and allows them to heal.
 	Selectable:
 		Bounds: 24,24
@@ -3425,7 +3438,7 @@ building.speaker_tower.boss:
 	Buildable:
 		Queue: queue.boss_gen_building
 		BuildPaletteOrder: 9
-		Prerequisites: building.prc_airfield, ~techlevel.medium
+		Prerequisites: building.prc_airfield, !techlevel.notech, !techlevel.nodefense
 
 building.particle_cannon:
 	Inherits: ^Building
@@ -3449,7 +3462,7 @@ building.particle_cannon:
 		BuildPaletteOrder: 11
 		BuildDuration: 1500
 		BuildDurationModifier: 100
-		Prerequisites: building.strategy_center, !prerequisite.enough_particle, ~techlevel.unrestricted
+		Prerequisites: building.strategy_center, !prerequisite.enough_particle, !techlevel.notech, !techlevel.nosw
 		Description: Provides Particle Cannon support power.
 	Building:
 		Footprint: XX xx
@@ -3518,7 +3531,7 @@ building.particle_cannon.boss:
 	Inherits@MINE: ^CanHaveMines
 	Buildable:
 		Queue: queue.boss_gen_building
-		Prerequisites: building.prc_war_factory, building.prc_airfield, !prerequisite.enough_particle, ~techlevel.unrestricted
+		Prerequisites: building.prc_war_factory, building.prc_airfield, !prerequisite.enough_particle, !techlevel.notech, !techlevel.nosw
 	Exit:
 	Production:
 		Produces: queue.boss_gen_particle_cannon
@@ -3554,7 +3567,7 @@ building.scud_storm:
 		BuildPaletteOrder: 9
 		BuildDuration: 1500
 		BuildDurationModifier: 100
-		Prerequisites: building.palace, !prerequisite.enough_scud, ~techlevel.unrestricted
+		Prerequisites: building.palace, !prerequisite.enough_scud, !techlevel.notech, !techlevel.nosw
 		Description: Provides SCUD Storm support power.
 	Building:
 		Footprint: xx xx
@@ -3776,7 +3789,7 @@ building.scud_storm.boss:
 	Buildable:
 		Queue: queue.boss_gen_building
 		BuildPaletteOrder: 12
-		Prerequisites: building.prc_war_factory, building.prc_airfield, !prerequisite.enough_scud, ~techlevel.unrestricted
+		Prerequisites: building.prc_war_factory, building.prc_airfield, !prerequisite.enough_scud, !techlevel.notech, !techlevel.nosw
 	Production:
 		Produces: queue.boss_gen_scud_storm
 		PauseOnCondition: emp || hacked || sabotaged
@@ -3809,7 +3822,7 @@ building.missile_silo:
 		BuildPaletteOrder: 13
 		BuildDuration: 1500
 		BuildDurationModifier: 100
-		Prerequisites: building.propaganda_center, !prerequisite.enough_nuke, ~techlevel.unrestricted
+		Prerequisites: building.propaganda_center, !prerequisite.enough_nuke, !techlevel.notech, !techlevel.nosw
 		Description: Provides Atom Bomb support power.
 	CustomProductionCost@Nuke:
 		Queue: queue.nuke_gen_building
@@ -3937,7 +3950,7 @@ building.missile_silo.boss:
 	Inherits: building.missile_silo
 	Buildable:
 		Queue: queue.boss_gen_building
-		Prerequisites: building.prc_war_factory, building.prc_airfield, !prerequisite.enough_nuke, ~techlevel.unrestricted
+		Prerequisites: building.prc_war_factory, building.prc_airfield, !prerequisite.enough_nuke, !techlevel.notech, !techlevel.nosw
 
 SBAG:
 	Inherits: ^Wall

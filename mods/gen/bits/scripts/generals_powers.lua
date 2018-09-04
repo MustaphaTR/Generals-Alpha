@@ -155,7 +155,9 @@ TickGeneralsPowers = function()
 end
 
 Tick = function()
-	TickGeneralsPowers()
+	if GPModifier ~= "disabled" then
+		TickGeneralsPowers()
+	end
 end
 
 WorldLoaded = function()
@@ -175,7 +177,9 @@ WorldLoaded = function()
 
 	players = { mp0, mp1, mp2, mp3, mp4, mp5, mp6, mp7, mp8, mp9, mp10, mp11 }
 
-	for _,player in pairs(players) do
-		ReducePoints(player)
+	if GPModifier ~= "disabled" then
+		for _,player in pairs(players) do
+			ReducePoints(player)
+		end
 	end
 end

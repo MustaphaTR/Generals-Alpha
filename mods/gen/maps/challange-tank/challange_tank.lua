@@ -233,7 +233,9 @@ lowPowerTauntTimer = 0
 randomTauntTimer = Utils.RandomInteger(DateTime.Seconds(45), DateTime.Seconds(120))
 randomTauntToPlay = 1
 Tick = function()
-	TickGeneralsPowers()
+	if GPModifier ~= "disabled" then
+		TickGeneralsPowers()
+	end
 
 	randomTauntTimer = randomTauntTimer - 1
 	if randomTauntTimer == 0 then

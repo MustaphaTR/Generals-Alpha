@@ -8,7 +8,6 @@ vessel.transport:
 		BuildPaletteOrder: 1
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~tech.shipyard, ~techlevel.infonly
 		Description: General-purpose naval transport.\n\nCan carry infantry and vehicles.
 	Valued:
 		Cost: 700
@@ -62,7 +61,7 @@ vessel.gunboat:
 		BuildPaletteOrder: 2
 		BuildDuration: 200
 		BuildDurationModifier: 100
-		Prerequisites: ~tech.shipyard, ~techlevel.low
+		Prerequisites: ~tech.shipyard, !techlevel.infonly
 		Description: Light scout & support ship.
 	Valued:
 		Cost: 500
@@ -124,7 +123,7 @@ vessel.destroyer:
 		BuildPaletteOrder: 3
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: ~tech.shipyard, prerequisite.tech_center, ~techlevel.medium
+		Prerequisites: prerequisite.tech_center, !techlevel.infonly
 		Description: Fast multi-role ship.
 	Valued:
 		Cost: 1000
@@ -190,7 +189,7 @@ vessel.cruiser:
 		BuildPaletteOrder: 4
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: ~tech.shipyard, prerequisite.tech_center, ~techlevel.high
+		Prerequisites: prerequisite.tech_center, !techlevel.infonly
 		Description: Very slow long-range ship.
 	Valued:
 		Cost: 2400

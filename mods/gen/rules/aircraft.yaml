@@ -274,7 +274,7 @@ aircraft.mig:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.prc_airfield, ~techlevel.medium
+		Prerequisites: ~building.prc_airfield
 		Description: Multi-role fighter plane.\n\nCan attack both ground and air targets.
 		ReadyAudio: MiGCreated
 	Valued:
@@ -440,7 +440,6 @@ aircraft.raptor:
 		BuildPaletteOrder: 0
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.medium
 		Description: Multi-role fighter plane.\n\nCan attack both ground and air targets.
 		ReadyAudio: RaptorCreated
 	Valued:
@@ -598,7 +597,7 @@ aircraft.stealth_fighter:
 		ForceIconLocation: true
 		BuildDuration: 625
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_airfield, ~generals_power.stealth_fighter, ~techlevel.high
+		Prerequisites: prerequisite.stealth_fighter
 		Description: Stealth fighter plane.
 		ReadyAudio: StealthFighterCreated
 	Valued:
@@ -694,7 +693,7 @@ aircraft.stealth_fighter.air:
 	Inherits: aircraft.stealth_fighter
 	Buildable:
 		Queue: queue.air_gen_aircraft
-		Prerequisites: ~building.usa_airfield, ~techlevel.high
+		Prerequisites: ~building.usa_airfield
 	Valued:
 		Cost: 1250
 	Health:
@@ -736,7 +735,7 @@ aircraft.aurora:
 		BuildPaletteOrder: 4
 		BuildDuration: 625
 		BuildDurationModifier: 100
-		Prerequisites: building.strategy_center, ~techlevel.high
+		Prerequisites: building.strategy_center, !techlevel.notech
 		Description: Fast fighter plane.\n\nCan not be damaged while attacking.\n\nSlows down and becomes vulnerable after attacking.
 		ReadyAudio: AuroraCreated
 	Valued:
@@ -844,7 +843,7 @@ aircraft.aurora.boss:
 	Inherits: aircraft.aurora
 	Buildable:
 		Queue: queue.boss_gen_aircraft
-		Prerequisites: ~techlevel.high
+		Prerequisites: !techlevel.notech
 	RenderSprites:
 		Image: aircraft.aurora
 
@@ -1052,7 +1051,6 @@ aircraft.chinook:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.infonly
 		Description: Collects supplies.\n\nCan carry infantry and vehicles.
 		ReadyAudio: ChinookCreated
 	Valued:
@@ -1168,7 +1166,6 @@ aircraft.chinook:
 #		ForceIconLocation: true
 #		BuildDuration: 250
 #		BuildDurationModifier: 100
-#		Prerequisites: ~techlevel.infonly
 #		Description: Collects supplies.\n\nCan carry infantry and vehicles.
 #		ReadyAudio: ChinookCreated
 #	Valued:
@@ -1255,7 +1252,7 @@ aircraft.combat_chinook:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 625
-		Prerequisites: building.usa_war_factory, ~techlevel.medium
+		Prerequisites: building.usa_war_factory
 		Description: Collects supplies.\n\nCan carry infantry and vehicles.\n\nInfantry can fire outside.\n\nCan deflect enemy missiles with laser.
 		ReadyAudio: CombatChinookCreated
 	Tooltip:
@@ -1311,7 +1308,7 @@ aircraft.comanche:
 		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: ~building.usa_airfield, ~techlevel.medium
+		Prerequisites: ~building.usa_airfield
 		Description: Helicopter gunship armed with machine gun.
 		ReadyAudio: ComancheCreated
 	Valued:
@@ -1445,7 +1442,7 @@ aircraft.helix:
 		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: ~building.prc_airfield, ~techlevel.medium, ~prerequisite.zh_units
+		Prerequisites: ~building.prc_airfield, ~prerequisite.zh_units
 		Description: Helicopter gunship armed with machine gun.\n\nCan carry 5 infantry.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
 		ReadyAudio: HelixCreated
 	Valued:

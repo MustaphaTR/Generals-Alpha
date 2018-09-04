@@ -40,7 +40,6 @@ infantry.worker:
 		BuildPaletteOrder: 1
 		BuildDuration: 75
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.infonly
 		Description: Collects supplies.
 		ReadyAudio: WorkerCreated
 	Valued:
@@ -94,7 +93,7 @@ infantry.worker:
 		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.infonly
+		Prerequisites: !techlevel.vehicleonly
 		Description: General-purpose infantry armed with a automatic rifle.
 	Valued:
 		Cost: 150
@@ -505,7 +504,7 @@ infantry.conscript:
 		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.infonly
+		Prerequisites: !techlevel.vehicleonly
 		Description: Anti-tank & anti-air infantry.
 	Valued:
 		Cost: 300
@@ -725,7 +724,7 @@ infantry.pathfinder:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: building.strategy_center, ~generals_power.pathfinder, ~techlevel.medium
+		Prerequisites: building.strategy_center, prerequisite.pathfinder, !techlevel.vehicleonly, !techlevel.notech
 		Description: Elite sniper infantry.
 		ReadyAudio: PathfinderCreated
 	Health:
@@ -774,7 +773,7 @@ infantry.pathfinder.boss:
 	Buildable:
 		Queue: queue.boss_gen_infantry
 		BuildPaletteOrder: 6
-		Prerequisites: ~generals_power.pathfinder, ~techlevel.medium
+		Prerequisites: prerequisite.pathfinder, !techlevel.vehicleonly, !techlevel.notech
 
 infantry.terrorist:
 	Inherits: ^Soldier
@@ -788,8 +787,8 @@ infantry.terrorist:
 		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Prerequisites: ~techlevel.low
 		Description: Explodes.
+		Prerequisites: !techlevel.vehicleonly
 		ReadyAudio: TerroristCreated
 	Valued:
 		Cost: 200
@@ -886,7 +885,7 @@ infantry.flamethrower:
 		Queue: queue.soviet_infantry
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
-		Prerequisites: tech.flame_tower, ~techlevel.low
+		Prerequisites: tech.flame_tower, !techlevel.vehicleonly
 		Description: Advanced anti-structure infantry.
 	Valued:
 		Cost: 300
@@ -929,7 +928,7 @@ infantry.saboteur:
 		BuildPaletteOrder: 9
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: building.arms_dealer, ~prerequisite.zh_units, ~techlevel.medium
+		Prerequisites: building.arms_dealer, ~prerequisite.zh_units, !techlevel.vehicleonly
 		Description: Infiltrates enemy structures to disable them for a while.\n\nCan climb cliffs.
 		ReadyAudio: SaboteurCreated
 	Valued:
@@ -1058,7 +1057,7 @@ infantry.angry_mob:
 		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: building.palace, ~techlevel.medium
+		Prerequisites: building.palace, !techlevel.vehicleonly, !techlevel.notech
 		Description: Group of civilians armed with pistols and molotov coctails.
 		IconPalette: cameo
 		ReadyAudio: AngryMobCreated
@@ -1115,7 +1114,7 @@ infantry.angry_mob.boss:
 	Inherits: infantry.angry_mob
 	Buildable:
 		Queue: queue.boss_gen_infantry
-		Prerequisites: ~techlevel.medium
+		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
 
 infantry.hacker:
 	Inherits: ^Soldier
@@ -1144,7 +1143,7 @@ infantry.hacker:
 		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: building.propaganda_center, ~techlevel.medium
+		Prerequisites: building.propaganda_center, !techlevel.vehicleonly, !techlevel.notech
 		Description: Hacks internet to gain money while deployed.\n\nCan disable enemy structures.
 		ReadyAudio: HackerCreated
 	Valued:
@@ -1260,7 +1259,7 @@ infantry.hacker.boss:
 	Inherits@CHEM: ^AffectedByChemicalSuits
 	Buildable:
 		Queue: queue.boss_gen_infantry
-		Prerequisites: ~techlevel.medium
+		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
 	RenderSprites:
 		Image: infantry.hacker
 
@@ -1319,7 +1318,7 @@ infantry.hijacker:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: building.palace, ~generals_power.hijacker, ~techlevel.high
+		Prerequisites: building.palace, prerequisite.hijacker, !techlevel.vehicleonly, !techlevel.notech
 		Description: Hijacks enemy vehicles.\n\nCamouflaged while not moving.
 		ReadyAudio: HijackerCreated
 	Valued:
@@ -1369,8 +1368,8 @@ infantry.hijacker.stealth:
 	Buildable:
 		Queue: queue.stealth_gen_infantry
 		BuildDuration: 375
-		Prerequisites: ~techlevel.high
 		Description: Hijacks enemy vehicles.\n\nCamouflaged.
+		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
 	Valued:
 		Cost: 600
 	Cloak:
@@ -1410,7 +1409,7 @@ infantry.colonel_burton:
 		BuildPaletteOrder: 4
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: building.strategy_center, !prerequisite.enough_colonel_burton, ~techlevel.high
+		Prerequisites: building.strategy_center, !prerequisite.enough_colonel_burton, !techlevel.notech
 		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures by force firing.\n\nCan backstab infantry without getting detected by force firing.\n\nCamouflaged.
 		ReadyAudio: BurtonCreated
 		BuildLimit: 1
@@ -1499,7 +1498,7 @@ infantry.colonel_burton.boss:
 		Queue: queue.boss_gen_infantry
 		BuildPaletteOrder: 7
 		ForceIconLocation: true
-		Prerequisites: building.particle_cannon, !prerequisite.enough_colonel_burton, ~techlevel.high
+		Prerequisites: building.particle_cannon, !prerequisite.enough_colonel_burton, ~!prerequisite.nosw
 
 infantry.jarmen_kell:
 	Inherits: ^Soldier
@@ -1531,7 +1530,7 @@ infantry.jarmen_kell:
 		BuildPaletteOrder: 7
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: building.palace, !prerequisite.enough_jarmen_kell, ~techlevel.high
+		Prerequisites: building.palace, !prerequisite.enough_jarmen_kell, !techlevel.notech
 		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCamouflaged.
 		ReadyAudio: JarmenCreated
 		BuildLimit: 1
@@ -1618,7 +1617,7 @@ infantry.jarmen_kell.boss:
 	Buildable:
 		Queue: queue.boss_gen_infantry
 		BuildPaletteOrder: 9
-		Prerequisites: building.scud_storm, !prerequisite.enough_jarmen_kell, ~techlevel.high
+		Prerequisites: building.scud_storm, !prerequisite.enough_jarmen_kell, ~!prerequisite.nosw
 
 infantry.black_lotus:
 	Inherits: ^Soldier
@@ -1647,7 +1646,7 @@ infantry.black_lotus:
 		BuildPaletteOrder: 4
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: building.propaganda_center, !prerequisite.enough_black_lotus, ~techlevel.high
+		Prerequisites: building.propaganda_center, !prerequisite.enough_black_lotus, !techlevel.notech
 		Description: Can capture enemy structures from a distance.\n\nCan disable enemy vehicles.\n\nCamouflaged.
 		ReadyAudio: LotusCreated
 		BuildLimit: 1
@@ -1771,6 +1770,6 @@ infantry.black_lotus.boss:
 	Buildable:
 		Queue: queue.boss_gen_infantry
 		BuildPaletteOrder: 10
-		Prerequisites: building.missile_silo, !prerequisite.enough_black_lotus, ~techlevel.high
+		Prerequisites: building.missile_silo, !prerequisite.enough_black_lotus, ~!prerequisite.nosw
 	RenderSprites:
 		Image: infantry.black_lotus

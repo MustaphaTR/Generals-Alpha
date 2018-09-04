@@ -269,7 +269,7 @@ tech.flame_tower:
 		Queue: queue.soviet_infantry
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
-		Prerequisites: ~techlevel.low
+		Prerequisites: !techlevel.nodefense
 		Description: Anti-infantry base defense.
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
