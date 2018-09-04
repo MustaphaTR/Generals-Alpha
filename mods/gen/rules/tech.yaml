@@ -257,6 +257,9 @@ tech.soviet_barracks:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.barracks
+	ProvidesPrerequisite@FlameTower:
+		Prerequisite: tech.flame_tower
+		RequiresPrerequisites: techlevel.nodefense
 	InfiltrateForCondition:
 		Duration: 750
 
