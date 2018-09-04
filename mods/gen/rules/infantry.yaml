@@ -1498,7 +1498,7 @@ infantry.colonel_burton.boss:
 		Queue: queue.boss_gen_infantry
 		BuildPaletteOrder: 7
 		ForceIconLocation: true
-		Prerequisites: building.particle_cannon, !prerequisite.enough_colonel_burton, ~tech.nosw
+		Prerequisites: building.particle_cannon, !prerequisite.enough_colonel_burton, ~techlevel.nosw
 
 infantry.jarmen_kell:
 	Inherits: ^Soldier
@@ -1617,7 +1617,7 @@ infantry.jarmen_kell.boss:
 	Buildable:
 		Queue: queue.boss_gen_infantry
 		BuildPaletteOrder: 9
-		Prerequisites: building.scud_storm, !prerequisite.enough_jarmen_kell, ~tech.nosw
+		Prerequisites: building.scud_storm, !prerequisite.enough_jarmen_kell, ~techlevel.nosw
 
 infantry.black_lotus:
 	Inherits: ^Soldier
@@ -1770,6 +1770,6 @@ infantry.black_lotus.boss:
 	Buildable:
 		Queue: queue.boss_gen_infantry
 		BuildPaletteOrder: 10
-		Prerequisites: building.missile_silo, !prerequisite.enough_black_lotus, ~tech.nosw
+		Prerequisites: building.missile_silo, !prerequisite.enough_black_lotus, ~techlevel.nosw
 	RenderSprites:
 		Image: infantry.black_lotus
