@@ -773,6 +773,18 @@
 		Color: 00DDDD88
 		RequiresCondition: range_circle.minigunner
 
+^KilledWithoutAirfield:
+	SelfHealing@PLANE:
+		Step: 0
+		PercentageStep: -10
+		Delay: 25
+		HealIfBelow: 101
+		DamageCooldown: 0
+		RequiresCondition: !airfield && !ammo
+	GrantConditionOnPrerequisite@AIRFIELD:
+		Prerequisites: prerequisite.airfield
+		Condition: airfield
+
 ^Reveal80:
 	RevealsShroud:
 		Range: 2c0

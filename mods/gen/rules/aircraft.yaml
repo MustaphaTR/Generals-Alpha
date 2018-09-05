@@ -254,6 +254,7 @@ aircraft.cargo_plane:
 
 aircraft.mig:
 	Inherits: ^Plane
+	Inherits@AIRFIELD: ^KilledWithoutAirfield
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
@@ -417,6 +418,7 @@ aircraft.mig:
 
 aircraft.raptor:
 	Inherits: ^Plane
+	Inherits@AIRFIELD: ^KilledWithoutAirfield
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@LASER_MISSILES: ^AffectedByLaserGuidedMissiles
@@ -573,6 +575,7 @@ aircraft.king_raptor.boss:
 
 aircraft.stealth_fighter:
 	Inherits: ^Plane
+	Inherits@AIRFIELD: ^KilledWithoutAirfield
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@LASER_MISSILES: ^AffectedByLaserGuidedMissiles
@@ -713,6 +716,7 @@ aircraft.stealth_fighter.air:
 
 aircraft.aurora:
 	Inherits: ^Plane
+	Inherits@AIRFIELD: ^KilledWithoutAirfield
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal600
