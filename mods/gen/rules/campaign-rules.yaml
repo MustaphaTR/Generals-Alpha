@@ -12,9 +12,6 @@ Player:
 		DefaultCash: 0
 
 World:
-	CrateSpawner:
-		CheckboxEnabled: False
-		CheckboxLocked: True
 	-SpawnMPUnits:
 	-MPStartLocations:
 	ObjectivesPanel:
@@ -26,5 +23,7 @@ World:
 		BuildRadiusCheckboxEnabled: True
 	MapOptions:
 		TechLevelDropdownLocked: True
+		CratesCheckboxEnabled: False
+		CratesCheckboxLocked: True
 		ShortGameCheckboxLocked: True
 		ShortGameCheckboxEnabled: False

@@ -53,6 +53,8 @@ aircraft.badger:
 		MaxWeight: 10
 	Tooltip:
 		Name: Cargo Plane
+	-Targetable@GROUND:
+	-Targetable@AIRBORNE:
 
 aircraft.badger.paradrop:
 	Inherits: ^default.badger

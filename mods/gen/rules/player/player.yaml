@@ -220,3 +220,15 @@ Player:
 			3: Repairs vehicles in 5 cell range by 90%.
 		StartFullyCharged: false
 		OrderName: EmergencyRepairPowerInfoOrder
+	CrateSpawner:
+		DeliveryAircraft: aircraft.badger
+		QuantizedFacings: 16
+		Minimum: 1
+		Maximum: 1
+		WaterChance: 0
+		SpawnInterval: 1500
+		InitialSpawnDelay: 0
+		RequiresCondition: no_bases
+	GrantConditionOnPrerequisite@NoBases:
+		Prerequisites: hack.no_bases
+		Condition: no_bases
