@@ -4,14 +4,17 @@ CRATE:
 		Amount: 500
 		SelectionShares: 10
 		UseCashTick: true
+		Prerequisites: !hack.no_bases
 	GiveCashCrateAction@1000:
 		Amount: 1000
 		SelectionShares: 30
 		UseCashTick: true
+		Prerequisites: !hack.no_bases
 	GiveCashCrateAction@1500:
 		Amount: 1500
 		SelectionShares: 10
 		UseCashTick: true
+		Prerequisites: !hack.no_bases
 	LevelUpCrateAction:
 		SelectionShares: 40
 	ExplodeCrateAction@NAPLAM:
