@@ -130,6 +130,14 @@
 		Condition: invulnerability
 	ExternalCondition@INVULNERABILITY:
 		Condition: invulnerability
+	DamagedByRadioactivity@ANTHRAX_ALPHA:
+		RequiresCondition: !invulnerability
+	DamagedByRadioactivity@ANTHRAX_BETA:
+		RequiresCondition: !invulnerability
+	DamagedByRadioactivity@ANTHRAX_GAMMA:
+		RequiresCondition: !invulnerability
+	DamagedByRadioactivity@RADIOACTIVITY:
+		RequiresCondition: !invulnerability
 
 ^AffectedByFrenzy:
 	WithColoredOverlay@FRENZY:
@@ -1594,13 +1602,12 @@
 
 ^Plane:
 	Inherits@1: ^ExistsInWorld
-	Inherits@3: ^IronCurtainable
-	Inherits@4: ^SpriteActor
-	Inherits@5: ^AffectedBySpeakerTower
-	Inherits@6: ^AffectedByBombardment
-	Inherits@7: ^AffectedBySearchAndDestroy
-	Inherits@8: ^AffectedByHoldTheLine
-	Inherits@9: ^TakesBounty
+	Inherits@2: ^SpriteActor
+	Inherits@3: ^AffectedBySpeakerTower
+	Inherits@4: ^AffectedByBombardment
+	Inherits@5: ^AffectedBySearchAndDestroy
+	Inherits@6: ^AffectedByHoldTheLine
+	Inherits@7: ^TakesBounty
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1670,15 +1677,14 @@
 
 ^BasicBuilding:
 	Inherits@1: ^ExistsInWorld
-	Inherits@2: ^IronCurtainable
-	Inherits@3: ^SpriteActor
-	Inherits@4: ^AffectedByBombardment
-	Inherits@5: ^AffectedBySearchAndDestroy
-	Inherits@6: ^AffectedByHoldTheLine
-	Inherits@7: ^AffectsDemoTrap
-	Inherits@8: ^AcceptsTimedDemoBomb
-	Inherits@9: ^AcceptsTNTCharges
-	Inherits@10: ^TakesBounty
+	Inherits@2: ^SpriteActor
+	Inherits@3: ^AffectedByBombardment
+	Inherits@4: ^AffectedBySearchAndDestroy
+	Inherits@5: ^AffectedByHoldTheLine
+	Inherits@6: ^AffectsDemoTrap
+	Inherits@7: ^AcceptsTimedDemoBomb
+	Inherits@8: ^AcceptsTNTCharges
+	Inherits@9: ^TakesBounty
 	Inherits@SHAPE: ^1x1Shape
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
