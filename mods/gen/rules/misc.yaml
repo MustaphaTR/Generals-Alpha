@@ -75,6 +75,15 @@ CRATE:
 		SelectionShares: 1
 		Units: infantry.saboteur
 		Prerequisites: prerequisite.zh_units
+	GiveUnitCrateAction@CRUSADER:
+		SelectionShares: 1
+		Units: vehicle.crusader_tank
+	GiveUnitCrateAction@SCORPION:
+		SelectionShares: 1
+		Units: vehicle.scorpion_tank
+	GiveUnitCrateAction@BATTLEMASTER:
+		SelectionShares: 1
+		Units: vehicle.battlemaster_tank
 	GiveMcvCrateAction@usa:
 		SelectionShares: 0
 		NoBaseSelectionShares: 100
