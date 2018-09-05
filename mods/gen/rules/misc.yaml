@@ -50,6 +50,7 @@ CRATE:
 		MaxAmount: 3
 		MinAmount: 1
 		MaxDuplicateValue: 2000
+		ExcludedActorTypes: hack.angry_mob.male, hack.angry_mob.female, hack.angry_mob.molotov, infantry.stinger_soldier, fake.stinger_soldier
 	GiveUnitCrateAction@MG_INFANTRY:
 		SelectionShares: 10
 		Units: infantry.ranger, infantry.rebel, infantry.red_guard, infantry.conscript
