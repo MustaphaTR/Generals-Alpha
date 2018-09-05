@@ -4211,6 +4211,7 @@ vehicle.prc_mcc:
 # used by laser general in no base mode
 vehicle.mobile_reactor:
 	Inherits: ^Vehicle
+	Inherits@DRONE: ^CanHaveDrones
 	Inherits@REVEAL: ^Reveal300
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
