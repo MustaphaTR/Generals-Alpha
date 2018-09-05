@@ -1890,7 +1890,7 @@ building.firebase:
 		BuildPaletteOrder: 7
 		BuildDuration: 625
 		BuildDurationModifier: 100
-		Prerequisites: prerequisite.reactor, !techlevel.nodefense
+		Prerequisites: prerequisite.reactor, ~prerequisite.zh_units, !techlevel.nodefense
 		Description: Static long range defense with fireports\nfor 4 garrisoned soldiers.
 	Valued:
 		Cost: 1000
