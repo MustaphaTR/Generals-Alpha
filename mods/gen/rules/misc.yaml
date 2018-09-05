@@ -2,116 +2,166 @@ CRATE:
 	Inherits: ^Crate
 	GiveCashCrateAction@500:
 		Amount: 500
-		SelectionShares: 10
+		SelectionShares: 20
 		UseCashTick: true
 		Prerequisites: !hack.no_bases
 	GiveCashCrateAction@1000:
 		Amount: 1000
-		SelectionShares: 30
+		SelectionShares: 60
 		UseCashTick: true
 		Prerequisites: !hack.no_bases
 	GiveCashCrateAction@1500:
 		Amount: 1500
-		SelectionShares: 10
+		SelectionShares: 20
 		UseCashTick: true
 		Prerequisites: !hack.no_bases
 	LevelUpCrateAction:
-		SelectionShares: 40
+		SelectionShares: 80
 	ExplodeCrateAction@NAPLAM:
 		Weapon: CrateNapalm
-		SelectionShares: 5
+		SelectionShares: 10
 	ExplodeCrateAction@EXPLOSION:
 		Weapon: CrateExplosion
-		SelectionShares: 5
+		SelectionShares: 10
 	ExplodeCrateAction@TOXIN_ALPHA:
 		Weapon: CrateToxin
-		SelectionShares: 1
+		SelectionShares: 2
 	ExplodeCrateAction@TOXIN_BETA:
 		Weapon: CrateToxin.beta
-		SelectionShares: 3
+		SelectionShares: 6
 	ExplodeCrateAction@TOXIN_GAMMA:
 		Weapon: CrateToxin.gamma
-		SelectionShares: 1
+		SelectionShares: 2
 	ExplodeCrateAction@NUKE:
 		Weapon: Atomic
 		SelectionShares: 1
 	RevealMapCrateAction:
-		SelectionShares: 1
+		SelectionShares: 2
 		Effect: reveal-map
 	HideMapCrateAction:
 		SelectionShares: 5
 		Effect: hide-map
 	HealUnitsCrateAction:
 		Notification: heal2.aud
-		SelectionShares: 2
+		SelectionShares: 4
 		Effect: heal
 	DuplicateUnitCrateAction:
-		SelectionShares: 5
+		SelectionShares: 10
 		MaxAmount: 3
 		MinAmount: 1
 		MaxDuplicateValue: 2000
 		ExcludedActorTypes: hack.angry_mob.male, hack.angry_mob.female, hack.angry_mob.molotov, infantry.stinger_soldier, fake.stinger_soldier
 	GiveUnitCrateAction@MG_INFANTRY:
-		SelectionShares: 10
+		SelectionShares: 20
 		Units: infantry.ranger, infantry.rebel, infantry.red_guard, infantry.conscript
 	GiveUnitCrateAction@ROCKET_INFANTRY:
-		SelectionShares: 5
+		SelectionShares: 10
 		Units: infantry.missile_defender, infantry.rpg_trooper, infantry.tank_hunter, infantry.grenadier
 	GiveUnitCrateAction@TERRORIST:
-		SelectionShares: 2
+		SelectionShares: 4
 		Units: infantry.terrorist, infantry.terrorist
 	GiveUnitCrateAction@PATHFINDER:
-		SelectionShares: 1
+		SelectionShares: 2
 		Units: infantry.pathfinder
 	GiveUnitCrateAction@FLAMETHROWER:
-		SelectionShares: 1
+		SelectionShares: 2
 		Units: infantry.flamethrower
 	GiveUnitCrateAction@ANGRY_MOB:
-		SelectionShares: 1
+		SelectionShares: 2
 		Units: infantry.angry_mob
 	GiveUnitCrateAction@HACKER:
-		SelectionShares: 1
+		SelectionShares: 2
 		Units: infantry.hacker
 	GiveUnitCrateAction@HIJACKER:
-		SelectionShares: 1
+		SelectionShares: 2
 		Units: infantry.hijacker
 	GiveUnitCrateAction@SABOTEUR:
-		SelectionShares: 1
+		SelectionShares: 2
 		Units: infantry.saboteur
 		Prerequisites: prerequisite.zh_units
+	GiveUnitCrateAction@HUMVEE:
+		SelectionShares: 4
+		Units: vehicle.technical
+	GiveUnitCrateAction@TECHNICAL:
+		SelectionShares: 4
+		Units: vehicle.humvee
+	GiveUnitCrateAction@GATLING:
+		SelectionShares: 4
+		Units: vehicle.gatling_tank
 	GiveUnitCrateAction@CRUSADER:
-		SelectionShares: 1
+		SelectionShares: 3
 		Units: vehicle.crusader_tank
 	GiveUnitCrateAction@SCORPION:
-		SelectionShares: 1
+		SelectionShares: 3
 		Units: vehicle.scorpion_tank
 	GiveUnitCrateAction@BATTLEMASTER:
-		SelectionShares: 1
+		SelectionShares: 3
 		Units: vehicle.battlemaster_tank
+	GiveUnitCrateAction@AMBULANCE:
+		SelectionShares: 3
+		Units: vehicle.ambulance
 	GiveUnitCrateAction@RADAR_VAN:
-		SelectionShares: 2
+		SelectionShares: 3
 		Units: vehicle.radar_van
-		RequiresCondition: hack.no_bases
+	GiveUnitCrateAction@LISTENING_OUTPOST:
+		SelectionShares: 3
+		Units: vehicle.listening_outpost
+	GiveUnitCrateAction@SENTRY_DRONE:
+		SelectionShares: 3
+		Units: vehicle.senrty_drone
+	GiveUnitCrateAction@COMBAT_CYCLE:
+		SelectionShares: 3
+		Units: vehicle.combat_cycle
+	GiveUnitCrateAction@ECM_TANK:
+		SelectionShares: 3
+		Units: vehicle.combat_cycle
+	GiveUnitCrateAction@MICROWAVE:
+		SelectionShares: 2
+		Units: vehicle.microwave_tank
+	GiveUnitCrateAction@TRACTOR:
+		SelectionShares: 2
+		Units: vehicle.toxin_tractor
+	GiveUnitCrateAction@DRAGON:
+		SelectionShares: 2
+		Units: vehicle.dragon_tank
+	GiveUnitCrateAction@TOMAHAWK:
+		SelectionShares: 2
+		Units: vehicle.tomahawk_launcher
+	GiveUnitCrateAction@BUGGY:
+		SelectionShares: 2
+		Units: vehicle.rocket_buggy
+	GiveUnitCrateAction@INFERNO:
+		SelectionShares: 2
+		Units: vehicle.inferno_cannon
+	GiveUnitCrateAction@PALADIN:
+		SelectionShares: 1
+		Units: vehicle.paladin_tank
+	GiveUnitCrateAction@MARAUDER:
+		SelectionShares: 1
+		Units: vehicle.marauder_tank
+	GiveUnitCrateAction@OVERLORD:
+		SelectionShares: 1
+		Units: vehicle.overlord_tank
 	GiveMcvCrateAction@usa:
 		SelectionShares: 0
-		NoBaseSelectionShares: 100
+		NoBaseSelectionShares: 1000
 		Prerequisites: !hack.no_bases
 		ValidFactions: usa, air, laser, super
 		Units: vehicle.usa_mcc
 	GiveMcvCrateAction@gla:
 		SelectionShares: 0
-		NoBaseSelectionShares: 100
+		NoBaseSelectionShares: 1000
 		Prerequisites: !hack.no_bases
 		ValidFactions: gla, toxin, demo, stealth
 		Units: vehicle.gla_mcc
 	GiveMcvCrateAction@prc:
 		SelectionShares: 0
-		NoBaseSelectionShares: 100
+		NoBaseSelectionShares: 1000
 		Prerequisites: !hack.no_bases
 		ValidFactions: prc, inf, nuke, tank, boss
 		Units: vehicle.prc_mcc
 	GrantExternalConditionCrateAction@invuln:
-		SelectionShares: 5
+		SelectionShares: 10
 		Effect: invuln
 		Notification: ironcur9.aud
 		Condition: invulnerability
