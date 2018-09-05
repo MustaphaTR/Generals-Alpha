@@ -569,12 +569,47 @@ fake.stinger_site:
 		Produces: queue.stinger_site.fake
 	ProductionQueue:
 		Type: queue.stinger_site.fake
+	-WithMakeAnimation:
 	WithBuildingBib:
+	WithIdleOverlay@CAMO:
+		Sequence: idle-camo
+		Palette: cloak
 	RenderSprites:
 		Image: building.stinger_site
 	TransformOnCondition:
 		IntoActor: building.stinger_site
 	Valued:
 		Cost: 100
+	MobSpawnerMaster@A:
+		Actors: fake.stinger_soldier
+		Offset: 511,511,0
+		RespawnTicks: 750
+		ExitByBudding: false
+		AggregateHealth: false
+		SpawnIsGroundUnit: true
+	MobSpawnerMaster@B:
+		Actors: fake.stinger_soldier
+		Offset: -511,-511,0
+		RespawnTicks: 750
+		ExitByBudding: false
+		AggregateHealth: false
+		SpawnIsGroundUnit: true
+	MobSpawnerMaster@C:
+		Actors: fake.stinger_soldier
+		Offset: -511,511,0
+		RespawnTicks: 750
+		ExitByBudding: false
+		AggregateHealth: false
+		SpawnIsGroundUnit: true
 	Voiced:
 		VoiceSet: StingerSiteVoice
+
+fake.stinger_soldier:
+	Inherits: infantry.stinger_soldier
+	Tooltip:
+		Name: Fake Stinger Soldier
+		GenericName: Stinger Soldier
+		GenericVisibility: Enemy
+		GenericStancePrefix: False
+	-Armament@PRIMARY:
+	-Armament@SECONDARY:
