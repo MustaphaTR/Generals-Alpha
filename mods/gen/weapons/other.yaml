@@ -392,16 +392,25 @@ hack.angry_mob.weapon:
 		Damage: 0
 		ValidTargets: Ground, Water
 
-hack.stinger_site:
+hack.stinger_site.ground:
 	ReloadDelay: 30
-	Range: 10c0
-	ValidTargets: Ground, Water,  Air
+	Range: 5c640
 	Projectile: Bullet
 		Speed: 10c0
 	Warhead@1Dam: SpreadDamage
 		Spread: 1
 		Damage: 0
-		ValidTargets: Ground, Water,  Air
+
+hack.stinger_site.air:
+	ReloadDelay: 30
+	Range: 10c0
+	ValidTargets: Air
+	Projectile: Bullet
+		Speed: 10c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 1
+		Damage: 0
+		ValidTargets: Air
 
 capture.black_lotus.anim:
 	ReloadDelay: 15

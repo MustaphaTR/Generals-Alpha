@@ -2481,7 +2481,9 @@ building.stinger_site:
 	AttackTurreted:
 		RequiresCondition: !emp && !hacked && !leaflet
 	Armament@PRIMARY:
-		Weapon: hack.stinger_site
+		Weapon: hack.stinger_site.ground
+	Armament@SECONDARY:
+		Weapon: hack.stinger_site.air
 	BodyOrientation:
 		QuantizedFacings: 8
 	Power:
