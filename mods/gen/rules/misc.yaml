@@ -84,6 +84,10 @@ CRATE:
 	GiveUnitCrateAction@BATTLEMASTER:
 		SelectionShares: 1
 		Units: vehicle.battlemaster_tank
+	GiveUnitCrateAction@RADAR_VAN:
+		SelectionShares: 2
+		Units: vehicle.radar_van
+		RequiresCondition: hack.no_bases
 	GiveMcvCrateAction@usa:
 		SelectionShares: 0
 		NoBaseSelectionShares: 100
