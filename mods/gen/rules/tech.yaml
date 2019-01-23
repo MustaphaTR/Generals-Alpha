@@ -18,11 +18,8 @@ tech.oil_derrick:
 	Health:
 		HP: 200000
 	Capturable:
-	ExternalCapturable:
-		ShowChatMessage: true
-		Notification: BuildingBeingCaptured
-		FlashBeep: ucapture.aud
-	ExternalCapturableBar:
+		Types: building
+	CapturableProgressBar:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
@@ -42,6 +39,11 @@ tech.oil_derrick:
 		Weapon: BarrelExplode
 	GivesCashOnCapture:
 		Amount: 1000
+	CapturableProgressBlink:
+		Sound: ucapture.aud
+	CaptureManager:
+		ShowChatMessage: true
+		BeingCapturedNotification: BuildingBeingCaptured
 
 tech.oil_refinery:
 	Inherits: ^TechBuilding
@@ -59,11 +61,8 @@ tech.oil_refinery:
 	Health:
 		HP: 200000
 	Capturable:
-	ExternalCapturable:
-		ShowChatMessage: true
-		Notification: BuildingBeingCaptured
-		FlashBeep: ucapture.aud
-	ExternalCapturableBar:
+		Types: building
+	CapturableProgressBar:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
@@ -80,6 +79,11 @@ tech.oil_refinery:
 		UseDeathTypeSuffix: false
 	ProvidesPrerequisite@buildingname:
 		RequiresCondition: !emp && !hacked
+	CapturableProgressBlink:
+		Sound: ucapture.aud
+	CaptureManager:
+		ShowChatMessage: true
+		BeingCapturedNotification: BuildingBeingCaptured
 
 # This is a campaign building, not an actual tech structure.
 tech.nuclear_bunker:
@@ -121,11 +125,8 @@ tech.hospital:
 	Health:
 		HP: 200000
 	Capturable:
-	ExternalCapturable:
-		ShowChatMessage: true
-		Notification: BuildingBeingCaptured
-		FlashBeep: ucapture.aud
-	ExternalCapturableBar:
+		Types: building
+	CapturableProgressBar:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
@@ -144,6 +145,11 @@ tech.hospital:
 		UseDeathTypeSuffix: false
 	ProvidesPrerequisite@buildingname:
 		RequiresCondition: !emp && !hacked
+	CapturableProgressBlink:
+		Sound: ucapture.aud
+	CaptureManager:
+		ShowChatMessage: true
+		BeingCapturedNotification: BuildingBeingCaptured
 
 tech.communications_center:
 	Inherits: ^TechBuilding
@@ -182,11 +188,8 @@ tech.communications_center:
 		RequiresCondition: (emp || hacked)
 	WithBuildingBib:
 	Capturable:
-	ExternalCapturable:
-		ShowChatMessage: true
-		Notification: BuildingBeingCaptured
-		FlashBeep: ucapture.aud
-	ExternalCapturableBar:
+		Types: building
+	CapturableProgressBar:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
@@ -195,6 +198,11 @@ tech.communications_center:
 	RepairableBuilding:
 		RepairStep: 1500
 	ProvidesPrerequisite@buildingname:
+	CapturableProgressBlink:
+		Sound: ucapture.aud
+	CaptureManager:
+		ShowChatMessage: true
+		BeingCapturedNotification: BuildingBeingCaptured
 
 tech.soviet_barracks:
 	Inherits: ^TechBuilding
@@ -228,9 +236,10 @@ tech.soviet_barracks:
 		Type: queue.soviet_infantry
 		Group: Infantry
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 29
 	ProductionBar:
+		ProductionType: queue.soviet_infantry
 	RallyPoint:
 		Offset: 0, 2
 	Exit@1:
@@ -241,11 +250,8 @@ tech.soviet_barracks:
 		ExitCell: 0,2
 	WithBuildingBib:
 	Capturable:
-	ExternalCapturable:
-		ShowChatMessage: true
-		Notification: BuildingBeingCaptured
-		FlashBeep: ucapture.aud
-	ExternalCapturableBar:
+		Types: building
+	CapturableProgressBar:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
@@ -262,6 +268,11 @@ tech.soviet_barracks:
 		RequiresPrerequisites: techlevel.nodefense
 	InfiltrateForCondition:
 		Duration: 750
+	CapturableProgressBlink:
+		Sound: ucapture.aud
+	CaptureManager:
+		ShowChatMessage: true
+		BeingCapturedNotification: BuildingBeingCaptured
 
 tech.flame_tower:
 	Inherits: ^Defense
@@ -333,11 +344,8 @@ tech.power_plant:
 		HP: 100000
 	WithBuildingBib:
 	Capturable:
-	ExternalCapturable:
-		ShowChatMessage: true
-		Notification: BuildingBeingCaptured
-		FlashBeep: ucapture.aud
-	ExternalCapturableBar:
+		Types: building
+	CapturableProgressBar:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
@@ -351,6 +359,11 @@ tech.power_plant:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.reactor
+	CapturableProgressBlink:
+		Sound: ucapture.aud
+	CaptureManager:
+		ShowChatMessage: true
+		BeingCapturedNotification: BuildingBeingCaptured
 
 tech.repair_bay:
 	Inherits: ^TechBuilding
@@ -370,11 +383,8 @@ tech.repair_bay:
 	Health:
 		HP: 100000
 	Capturable:
-	ExternalCapturable:
-		ShowChatMessage: true
-		Notification: BuildingBeingCaptured
-		FlashBeep: ucapture.aud
-	ExternalCapturableBar:
+		Types: building
+	CapturableProgressBar:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
 	WithIdleOverlay@ROOF:
@@ -384,6 +394,11 @@ tech.repair_bay:
 		PlayerPalette: cncplayer
 	ProvidesPrerequisite@buildingname:
 		RequiresCondition: !emp && !hacked
+	CapturableProgressBlink:
+		Sound: ucapture.aud
+	CaptureManager:
+		ShowChatMessage: true
+		BeingCapturedNotification: BuildingBeingCaptured
 
 tech.reinforcements_pad:
 	Inherits: ^TechBuilding
@@ -409,11 +424,8 @@ tech.reinforcements_pad:
 		Footprint: _X_ xxx _X_
 		Dimensions: 3,3
 	Capturable:
-	ExternalCapturable:
-		ShowChatMessage: true
-		Notification: BuildingBeingCaptured
-		FlashBeep: ucapture.aud
-	ExternalCapturableBar:
+		Types: building
+	CapturableProgressBar:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
@@ -585,6 +597,11 @@ tech.reinforcements_pad:
 	ProvidesPrerequisite@buildingname:
 	RenderSprites:
 		PlayerPalette: cncplayer
+	CapturableProgressBlink:
+		Sound: ucapture.aud
+	CaptureManager:
+		ShowChatMessage: true
+		BeingCapturedNotification: BuildingBeingCaptured
 
 tech.shipyard:
 	Inherits: ^TechBuilding
@@ -605,11 +622,8 @@ tech.shipyard:
 		Dimensions: 3,3
 		TerrainTypes: Water
 	Capturable:
-	ExternalCapturable:
-		ShowChatMessage: true
-		Notification: BuildingBeingCaptured
-		FlashBeep: ucapture.aud
-	ExternalCapturableBar:
+		Types: building
+	CapturableProgressBar:
 	EngineerRepairable:
 	RepairableBuilding:
 		RepairStep: 1500
@@ -640,17 +654,19 @@ tech.shipyard:
 		Type: queue.vessel
 		Group: Vehicle
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 51
 	ProductionBar:
+		ProductionType: queue.vessel
 	InfiltrateForCondition:
 		Duration: 750
 	RepairsUnits:
+		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
 		HpPerStep: 1000
 	RallyPoint:
 	ProvidesPrerequisite@buildingname:
-	EditorTilesetFilter:
+	MapEditorData:
 		ExcludeTilesets: INTERIOR
 	HitShape:
 		TargetableOffsets: 768,0,0, 768,-1024,0, 768,1024,0
@@ -662,3 +678,8 @@ tech.shipyard:
 		Type: Rectangle
 			TopLeft: -512, 598
 			BottomRight: 512, 1110
+	CapturableProgressBlink:
+		Sound: ucapture.aud
+	CaptureManager:
+		ShowChatMessage: true
+		BeingCapturedNotification: BuildingBeingCaptured

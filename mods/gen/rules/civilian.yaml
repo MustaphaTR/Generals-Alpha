@@ -351,7 +351,7 @@ V13.SNOW:
 
 V14:
 	Inherits: ^CivField
-	EditorTilesetFilter:
+	MapEditorData:
 		ExcludeTilesets: INTERIOR
 
 V14.SNOW:
@@ -359,7 +359,7 @@ V14.SNOW:
 
 V15:
 	Inherits: ^CivField
-	EditorTilesetFilter:
+	MapEditorData:
 		ExcludeTilesets: INTERIOR
 
 V15.SNOW:
@@ -367,7 +367,7 @@ V15.SNOW:
 
 V16:
 	Inherits: ^CivField
-	EditorTilesetFilter:
+	MapEditorData:
 		ExcludeTilesets: INTERIOR
 
 V16.SNOW:
@@ -375,7 +375,7 @@ V16.SNOW:
 
 V17:
 	Inherits: ^CivField
-	EditorTilesetFilter:
+	MapEditorData:
 		ExcludeTilesets: INTERIOR
 
 V17.SNOW:
@@ -383,7 +383,7 @@ V17.SNOW:
 
 V18:
 	Inherits: ^CivField
-	EditorTilesetFilter:
+	MapEditorData:
 		ExcludeTilesets: INTERIOR
 
 V18.SNOW:
@@ -487,7 +487,7 @@ BARL:
 	-ShakeOnDeath:
 	-SoundOnDamageTransition:
 	-Demolishable:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Decoration
 	Interactable:
 		Bounds: 24,24
@@ -511,7 +511,7 @@ BRL3:
 	-ShakeOnDeath:
 	-SoundOnDamageTransition:
 	-Demolishable:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Decoration
 	Interactable:
 		Bounds: 24,24
@@ -527,12 +527,12 @@ AMMOBOX3:
 
 RICE:
 	Inherits: ^CivField
-	EditorTilesetFilter:
+	MapEditorData:
 		RequireTilesets: TEMPERAT
 
 RUSHOUSE:
 	Inherits: ^CivBuilding
-	EditorTilesetFilter:
+	MapEditorData:
 		RequireTilesets: TEMPERAT
 	Building:
 		Footprint: x x
@@ -542,12 +542,12 @@ RUSHOUSE:
 
 ASIANHUT:
 	Inherits: ^CivBuilding
-	EditorTilesetFilter:
+	MapEditorData:
 		RequireTilesets: TEMPERAT
 
 SNOWHUT:
 	Inherits: ^CivBuilding
-	EditorTilesetFilter:
+	MapEditorData:
 		RequireTilesets: SNOW
 	Building:
 		Footprint: x x
@@ -559,7 +559,7 @@ SNOWHUT:
 
 LHUS:
 	Inherits: ^CivBuilding
-	EditorTilesetFilter:
+	MapEditorData:
 		RequireTilesets: TEMPERAT
 	Selectable:
 		Bounds: 24,48,0,-16
@@ -571,7 +571,7 @@ LHUS:
 
 WINDMILL:
 	Inherits: ^CivBuilding
-	EditorTilesetFilter:
+	MapEditorData:
 		RequireTilesets: TEMPERAT
 	Selectable:
 		Bounds: 24,24,0,-14

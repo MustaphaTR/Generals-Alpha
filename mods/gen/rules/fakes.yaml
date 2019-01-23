@@ -32,6 +32,9 @@ fake.command_center:
 		Produces: queue.command_center.fake
 	ProductionQueue:
 		Type: queue.command_center.fake
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.command_center.fake
 	WithBuildingBib:
 	WithTextDecoration@SIDE:
 		Text: GLA
@@ -84,6 +87,9 @@ fake.barracks:
 		Produces: queue.barracks.fake
 	ProductionQueue:
 		Type: queue.barracks.fake
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.barracks.fake
 	WithBuildingBib:
 	RenderSprites:
 		Image: building.gla_barracks
@@ -130,13 +136,18 @@ fake.supply_stash:
 		Produces: queue.supply_stash.fake
 	ProductionQueue:
 		Type: queue.supply_stash.fake
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.supply_stash.fake
 	WithBuildingBib:
 	WithMakeAnimation@RA_SILO:
 		Sequence: make
 		BodyNames: rasilo
+		Condition: build-incomplete
 	WithMakeAnimation@TD_SILO:
 		Sequence: make2
 		BodyNames: tdsilo
+		Condition: build-incomplete
 	WithSpriteBody:
 		Name: rasilo
 	WithSpriteBody@TD_SILO:
@@ -184,6 +195,9 @@ fake.arms_dealer:
 		Produces: queue.arms_dealer.fake
 	ProductionQueue:
 		Type: queue.arms_dealer.fake
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.arms_dealer.fake
 	WithBuildingBib:
 	WithProductionDoorOverlay:
 		Sequence: build-top
@@ -230,6 +244,9 @@ fake.palace:
 		Produces: queue.palace.fake
 	ProductionQueue:
 		Type: queue.palace.fake
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.palace.fake
 	Cargo:
 		Types: fake
 		MaxWeight: 5
@@ -278,6 +295,9 @@ fake.black_market:
 		Produces: queue.black_market.fake
 	ProductionQueue:
 		Type: queue.black_market.fake
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.black_market.fake
 	WithBuildingBib:
 	RenderSprites:
 		Image: building.black_market
@@ -322,6 +342,9 @@ fake.scud_storm:
 		Produces: queue.scud_storm.fake
 	ProductionQueue:
 		Type: queue.scud_storm.fake
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.scud_storm.fake
 	Selectable:
 		Bounds: 48,48,0,0
 	AttackTurreted:
@@ -420,6 +443,9 @@ fake.demo_trap:
 		Produces: queue.demo_trap.fake
 	ProductionQueue:
 		Type: queue.demo_trap.fake
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.demo_trap.fake
 	Cloak:
 		InitialDelay: 125
 		CloakDelay: 60
@@ -447,6 +473,9 @@ fake.demo_trap.toxin:
 		Produces: queue.demo_trap.toxin.fake
 	ProductionQueue:
 		Type: queue.demo_trap.toxin.fake
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.demo_trap.toxin.fake
 	TransformOnCondition:
 		IntoActor: building.demo_trap.toxin
 	Valued:
@@ -464,6 +493,9 @@ fake.advanced_demo_trap:
 		Produces: queue.advanced_demo_trap.fake
 	ProductionQueue:
 		Type: queue.advanced_demo_trap.fake
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.advanced_demo_trap.fake
 	RenderSprites:
 		Image: building.advanced_demo_trap
 	TransformOnCondition:
@@ -501,9 +533,13 @@ fake.tunnel_network:
 		Produces: queue.tunnel_network.fake
 	ProductionQueue:
 		Type: queue.tunnel_network.fake
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.tunnel_network.fake
 	Turreted:
 		TurnSpeed: 12
 		InitialFacing: 56
+		PreviewFacing: 56
 		Offset: 0,0,256
 	GrantConditionOnActivity:
 		Condition: keep_me_disabled
@@ -534,6 +570,9 @@ fake.toxin_tunnel_network:
 		Produces: queue.toxin_tunnel_network.fake
 	ProductionQueue:
 		Type: queue.toxin_tunnel_network.fake
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.toxin_tunnel_network.fake
 	TransformOnCondition:
 		IntoActor: building.toxin_tunnel_network
 	RenderSprites:
@@ -569,6 +608,9 @@ fake.stinger_site:
 		Produces: queue.stinger_site.fake
 	ProductionQueue:
 		Type: queue.stinger_site.fake
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.stinger_site.fake
 	-WithMakeAnimation:
 	WithBuildingBib:
 	WithIdleOverlay@CAMO:

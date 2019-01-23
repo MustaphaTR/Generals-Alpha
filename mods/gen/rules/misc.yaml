@@ -42,7 +42,7 @@ CRATE:
 		SelectionShares: 5
 		Effect: hide-map
 	HealUnitsCrateAction:
-		Notification: heal2.aud
+		Sound: heal2.aud
 		SelectionShares: 4
 		Effect: heal
 	DuplicateUnitCrateAction:
@@ -163,7 +163,7 @@ CRATE:
 	GrantExternalConditionCrateAction@invuln:
 		SelectionShares: 10
 		Effect: invuln
-		Notification: ironcur9.aud
+		Sound: ironcur9.aud
 		Condition: invulnerability
 		Duration: 600
 
@@ -205,7 +205,7 @@ HEALCRATE:
 	Tooltip:
 		Name: Heal Crate
 	HealUnitsCrateAction:
-		Notification: heal2.aud
+		Sound: heal2.aud
 		SelectionShares: 1
 		Effect: heal
 
@@ -242,7 +242,7 @@ crate.scrap:
 	GrantExternalConditionCrateAction@SCRAP_CREATE_BONUS:
 		SelectionShares: 1000
 		Condition: scrap_create_bonus
-		Notification: gsalvage.wav
+		Sound: gsalvage.wav
 	RenderSprites:
 		Image: wcrate
 
@@ -261,7 +261,7 @@ CAMERA:
 	WithSpriteBody:
 	RenderSpritesEditorOnly:
 		Image: camera
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: System
 
 camera.paradrop:
@@ -509,7 +509,7 @@ FLARE:
 	Tooltip:
 		Name: Flare
 		ShowOwnerRow: false
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Decoration
 	Interactable:
 
@@ -624,7 +624,7 @@ hack.mine_spawner.2:
 		Terrain: Ore
 	RenderSprites:
 		Palette: player
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Supply
 
 ^default.supply_pile:
@@ -992,7 +992,7 @@ RAILMINE:
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
-	EditorTilesetFilter:
+	MapEditorData:
 		ExcludeTilesets: INTERIOR
 		Categories: Civilian building
 
@@ -1008,7 +1008,7 @@ QUEE:
 		Dimensions: 2,1
 	WithSpriteBody:
 	AppearsOnRadar:
-	EditorTilesetFilter:
+	MapEditorData:
 		RequireTilesets: INTERIOR, MIXED
 		Categories: Critter
 
@@ -1026,7 +1026,7 @@ LAR1:
 		Palette: terrain
 	WithSpriteBody:
 	AppearsOnRadar:
-	EditorTilesetFilter:
+	MapEditorData:
 		RequireTilesets: INTERIOR, MIXED
 		Categories: Critter
 
@@ -1046,7 +1046,7 @@ mpspawn:
 	RenderSpritesEditorOnly:
 	BodyOrientation:
 		QuantizedFacings: 1
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: System
 
 waypoint:
@@ -1060,7 +1060,7 @@ waypoint:
 	RenderSpritesEditorOnly:
 	BodyOrientation:
 		QuantizedFacings: 1
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: System
 
 colorpicker.overlord_tank:
@@ -1086,6 +1086,6 @@ CTFLAG:
 	-Selectable:
 	-SelectionDecorations:
 	-Targetable:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Decoration
 	Interactable:

@@ -307,15 +307,16 @@
 		Color: AAAAAA
 	Capturable@DRIVER_KILLED:
 		Types: driverless_vehcile
-		CaptureThreshold: 100
 		RequiresCondition: driver_killed
 		ValidStances: Enemy, Neutral, Ally
 	MustBeDestroyed:
 		RequiresCondition: !driver_killed
+	CaptureManager:
 
 ^CanCaptureDriverlessVehicles:
 	Captures:
 		CaptureTypes: driverless_vehcile
+	CaptureManager:
 
 ^AffectedBySpeakerTower:
 	ReloadDelayMultiplier@SPEAKER_NORMAL:
@@ -1071,8 +1072,8 @@
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 	ProductionBar:
+		ProductionType: queue.drone
 	Exit:
 	GrantConditionOnProduction@SCOUT_DRONE:
 		Condition: scout_drone
@@ -1094,8 +1095,8 @@
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 	ProductionBar:
+		ProductionType: queue.prc_vehicle_upgrade
 	Exit:
 	GrantConditionOnProduction@BUNKER_UPGRADE:
 		Condition: bunker_upgrade
@@ -1118,7 +1119,6 @@
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 	GrantConditionOnProduction@CAMO_NETTING:
 		Condition: camo_netted
 		Actors: upgrade.camo_netting
@@ -1138,6 +1138,7 @@
 	Inherits@CAMO: ^CanHaveCamoNetting
 	ProductionQueue@CAMO_NETTING:
 		Factions: stealth
+		LowPowerModifier: 300
 
 ^CanHaveMines:
 	Production:
@@ -1148,7 +1149,7 @@
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 	GrantConditionOnProduction@LAND_MINES:
 		Condition: land_mines
 		Actors: upgrade.land_mines
@@ -1250,7 +1251,6 @@
 		GenericName: Vehicle
 	Capturable:
 		Types: vehicle
-		CaptureThreshold: 100
 		CancelActivity: True
 	CaptureNotification:
 		Notification: UnitStolen
@@ -1280,8 +1280,9 @@
 	HitShape:
 	SpeedMultiplier@GENERIC:
 		Modifier: 200
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Vehicle
+	CaptureManager:
 
 ^Tank:
 	Inherits: ^Vehicle
@@ -1339,7 +1340,6 @@
 	Guardable:
 	Capturable:
 		Types: car
-		CaptureThreshold: 100
 		CancelActivity: True
 		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: !car_bomb
@@ -1397,10 +1397,11 @@
 	Targetable:
 		TargetTypes: Ground, C4, Repair, Tank, Vehicle-Disguise, DetonateAttack
 		RequiresCondition: !parachute
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Civilian vehicle
 	Voiced:
 		VoiceSet: CarVoice
+	CaptureManager:
 
 ^Infantry:
 	Inherits@1: ^ExistsInWorld
@@ -1506,7 +1507,7 @@
 	HitShape:
 		Type: Circle
 			Radius: 128
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Infantry
 
 ^Soldier:
@@ -1541,7 +1542,7 @@
 	Wanders:
 		MinMoveDelay: 150
 		MaxMoveDelay: 750
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Civilian infantry
 
 ^ArmedCivilian:
@@ -1602,7 +1603,7 @@
 	Tooltip:
 		GenericName: Ship
 	MustBeDestroyed:
-	EditorTilesetFilter:
+	MapEditorData:
 		ExcludeTilesets: INTERIOR
 		Categories: Naval
 	SpeedMultiplier@GENERIC:
@@ -1632,8 +1633,6 @@
 	Selectable:
 		Bounds: 24,24
 	Aircraft:
-		RepairBuildings: building.prc_airfield, building.usa_airfield
-		RearmBuildings: building.prc_airfield, building.usa_airfield
 		AirborneCondition: airborne
 	Targetable@GROUND:
 		TargetTypes: Ground, Repair, Vehicle
@@ -1660,7 +1659,7 @@
 	SpeedMultiplier@GENERIC:
 		Modifier: 150
 	HitShape:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Aircraft
 	SpawnActorOnDeath:
 		RequiresCondition: airborne
@@ -1673,8 +1672,6 @@
 	Tooltip:
 		GenericName: Helicopter
 	Aircraft:
-		-RearmBuildings:
-		-RepairBuildings:
 		CanHover: True
 		CruisingCondition: cruising
 		WaitDistanceFromResupplyBase: 4c0
@@ -1728,7 +1725,7 @@
 	Tooltip:
 		GenericName: Structure
 	Demolishable:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Building
 	CommandBarBlacklist:
 	RequiresBuildableArea:
@@ -1761,16 +1758,20 @@
 	EngineerRepairable:
 	AcceptsDeliveredCash:
 	WithMakeAnimation:
+		Condition: build-incomplete
 	Capturable:
-	ExternalCapturable:
-		ShowChatMessage: true
-		Notification: BuildingBeingCaptured
-		FlashBeep: ucapture.aud
-	ExternalCapturableBar:
+		Types: building
+	CapturableProgressBar:
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	Sellable:
 		SellSounds: cashturn.aud
+		RequiresCondition: !build-incomplete
+	CapturableProgressBlink:
+		Sound: ucapture.aud
+	CaptureManager:
+		ShowChatMessage: true
+		BeingCapturedNotification: BuildingBeingCaptured
 
 ^FakeBuilding:
 	Inherits: ^Building
@@ -1794,15 +1795,15 @@
 		Type: FakeToReal
 		Group: Vehicle
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 	ProductionBar:
+		ProductionType: FakeToReal
 	Exit:
 	ProvidesPrerequisite@buildingname:
 	GrantConditionOnProduction:
 		Condition: turn_real
 	TransformOnCondition:
 		RequiresCondition: turn_real
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Fake
 
 ^CanBeSabotaged:
@@ -1830,15 +1831,16 @@
 	-GivesBuildableArea:
 	-GrantConditionOnPrerequisite@GLOBALCCRADIUS:
 	-AcceptsDeliveredCash:
-	-ExternalCapturable:
-	-ExternalCapturableBar:
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
 	DrawLineToTarget:
 	WithRangeCircle:
 		Color: DDDD0088
 	Explodes:
 		Weapon: SmallBuildingExplode
 		EmptyWeapon: SmallBuildingExplode
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Defense
 	-CommandBarBlacklist:
 
@@ -1867,7 +1869,7 @@
 	Explodes:
 		Weapon: SmallBuildingExplode
 		EmptyWeapon: SmallBuildingExplode
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: GLA Hole
 
 ^Wall:
@@ -1904,7 +1906,7 @@
 	FrozenUnderFog:
 	Health:
 		HP: 10000
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Wall
 	RequiresBuildableArea:
 		AreaTypes: building
@@ -1929,7 +1931,7 @@
 	Building:
 		BuildSounds: place2.aud
 		TerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Wall
 	RequiresBuildableArea:
 		AreaTypes: building
@@ -1950,7 +1952,7 @@
 		Name: Civilian Building
 		GenericVisibility: None
 	FrozenUnderFog:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Tech building
 
 ^AmmoBox:
@@ -1968,7 +1970,7 @@
 		TargetTypes: Ground, Structure, C4, DetonateAttack, NoAutoTarget
 	Armor:
 		Type: building.normal
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Decoration
 	Interactable:
 		Bounds: 24,24
@@ -1977,7 +1979,7 @@
 	Inherits: ^TechBuilding
 	RenderSprites:
 		Palette: player
-	EditorTilesetFilter:
+	MapEditorData:
 		ExcludeTilesets: INTERIOR
 		Categories: Civilian building
 	SpawnActorOnDeath@1:
@@ -2003,7 +2005,7 @@
 	-HitShape:
 	-Health:
 	-Explodes:
-	EditorTilesetFilter:
+	MapEditorData:
 		ExcludeTilesets: INTERIOR
 	Interactable:
 
@@ -2046,7 +2048,7 @@
 		MaximumDamageState: Dead
 	HiddenUnderShroud:
 	ScriptTriggers:
-	EditorTilesetFilter:
+	MapEditorData:
 		ExcludeTilesets: INTERIOR
 		Categories: Tree
 
@@ -2065,7 +2067,7 @@
 		ShowOwnerRow: false
 	FrozenUnderFog:
 	ScriptTriggers:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Tree
 
 ^BasicHusk:
@@ -2081,7 +2083,7 @@
 	ScriptTriggers:
 	WithFacingSpriteBody:
 	HitShape:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Husk
 
 ^Husk:
@@ -2109,7 +2111,7 @@
 		Moves: True
 		Velocity: 86
 		Explosion: UnitExplodePlane
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Husk
 	RevealOnDeath:
 		Duration: 60
@@ -2150,7 +2152,7 @@
 		Terrain: Tree
 	HiddenUnderShroud:
 	ScriptTriggers:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Decoration
 
 ^Crate:
@@ -2184,7 +2186,7 @@
 		ShadowSequence: idle
 		RequiresCondition: parachute
 	ConditionManager:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: System
 
 ^Mine:
@@ -2224,7 +2226,7 @@
 	Targetable:
 		TargetTypes: Ground, Mine
 	HitShape:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: System
 	RequiresBuildableArea:
 		AreaTypes: mine

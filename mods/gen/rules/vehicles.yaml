@@ -2452,7 +2452,6 @@ vehicle.scud_launcher:
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 	Exit:
 	ProvidesPrerequisite@unitname:
 	Mobile:
@@ -3144,6 +3143,9 @@ vehicle.overlord_tank:
 		PauseOnCondition: emp || hacked || leaflet
 	ProductionQueue:
 		Type: queue.overlord_tank
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.overlord_tank
 	Mobile:
 		Speed: 20
 		TurnSpeed: 3
@@ -3295,6 +3297,9 @@ vehicle.emparor_overlord:
 		Produces: queue.emparor_overlord
 	ProductionQueue:
 		Type: queue.emparor_overlord
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.emparor_overlord
 	Mobile:
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	-Cargo@BUNKER_UPGRADE:
@@ -3361,21 +3366,18 @@ vehicle.bomb_truck:
 		ItemLimit: 1
 		QueueLimit: 2
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_bomb_truck
 		Factions: toxin
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_bomb_truck
 		Factions: demo
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 	ProductionBar@Vanilla:
 		ProductionType: queue.bomb_truck
 	ProductionBar@Toxin:
@@ -4038,7 +4040,7 @@ vehicle.usa_mcc:
 		Factions: usa, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		Group: Building
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		QueuedAudio: USABuilding
 		CannotBuildAudio: USABuildingCannotPlaceAudio
 		ReadyAudio: USAConstructionComplete
@@ -4048,7 +4050,7 @@ vehicle.usa_mcc:
 		Factions: air
 		Group: Building
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		QueuedAudio: USABuilding
 		CannotBuildAudio: USABuildingCannotPlaceAudio
 		ReadyAudio: USAConstructionComplete
@@ -4058,7 +4060,7 @@ vehicle.usa_mcc:
 		Factions: laser
 		Group: Building
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		QueuedAudio: USABuilding
 		CannotBuildAudio: USABuildingCannotPlaceAudio
 		ReadyAudio: USAConstructionComplete
@@ -4068,7 +4070,7 @@ vehicle.usa_mcc:
 		Factions: super
 		Group: Building
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		QueuedAudio: USABuilding
 		CannotBuildAudio: USABuildingCannotPlaceAudio
 		ReadyAudio: USAConstructionComplete
@@ -4105,7 +4107,6 @@ vehicle.gla_mcc:
 		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank, boss
 		Group: Building
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		QueuedAudio: GLABuilding
 		CannotBuildAudio: GLABuildingCannotPlaceAudio
 		ReadyAudio: GLAConstructionComplete
@@ -4115,7 +4116,6 @@ vehicle.gla_mcc:
 		Factions: toxin
 		Group: Building
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		QueuedAudio: GLABuilding
 		CannotBuildAudio: GLABuildingCannotPlaceAudio
 		ReadyAudio: GLAConstructionComplete
@@ -4125,7 +4125,6 @@ vehicle.gla_mcc:
 		Factions: demo
 		Group: Building
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		QueuedAudio: GLABuilding
 		CannotBuildAudio: GLABuildingCannotPlaceAudio
 		ReadyAudio: GLAConstructionComplete
@@ -4168,7 +4167,7 @@ vehicle.prc_mcc:
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, tank
 		Group: Building
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
 		CannotBuildAudio: PRCBuildingCannotPlaceAudio
 		ReadyAudio: PRCConstructionComplete
@@ -4178,7 +4177,7 @@ vehicle.prc_mcc:
 		Factions: inf
 		Group: Building
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
 		CannotBuildAudio: PRCBuildingCannotPlaceAudio
 		ReadyAudio: PRCConstructionComplete
@@ -4188,7 +4187,7 @@ vehicle.prc_mcc:
 		Factions: nuke
 		Group: Building
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
 		CannotBuildAudio: PRCBuildingCannotPlaceAudio
 		ReadyAudio: PRCConstructionComplete
@@ -4198,7 +4197,7 @@ vehicle.prc_mcc:
 		Factions: boss
 		Group: Building
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
 		CannotBuildAudio: PRCBuildingCannotPlaceAudio
 		ReadyAudio: PRCConstructionComplete

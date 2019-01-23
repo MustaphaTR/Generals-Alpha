@@ -357,7 +357,7 @@ aircraft.mig:
 		LocalYaw: -40, 24
 		RequiresCondition: tactical_nuke_mig && nuke
 		PauseOnCondition: !ammo
-	AttackPlane:
+	AttackAircraft:
 		FacingTolerance: 20
 	DockClient:
 	RevealsShroud:
@@ -413,6 +413,10 @@ aircraft.mig:
 		RequiresCondition: mig_armor
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.plane
+	Rearmable:
+		RearmActors: building.prc_airfield, building.usa_airfield
+	Repairable:
+		RepairBuildings: building.prc_airfield, building.usa_airfield
 	Voiced:
 		VoiceSet: MiGVoice
 
@@ -474,7 +478,7 @@ aircraft.raptor:
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
 		PauseOnCondition: !ammo
-	AttackPlane:
+	AttackAircraft:
 		FacingTolerance: 20
 	DockClient:
 	RevealsShroud:
@@ -517,6 +521,10 @@ aircraft.raptor:
 		Interval: 2
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.plane
+	Rearmable:
+		RearmActors: building.prc_airfield, building.usa_airfield
+	Repairable:
+		RepairBuildings: building.prc_airfield, building.usa_airfield
 	Voiced:
 		VoiceSet: RaptorVoice
 	RenderSprites:
@@ -625,7 +633,7 @@ aircraft.stealth_fighter:
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
 		PauseOnCondition: !ammo
-	AttackPlane:
+	AttackAircraft:
 		FacingTolerance: 20
 	DockClient:
 	RevealsShroud:
@@ -690,6 +698,10 @@ aircraft.stealth_fighter:
 		VoiceSet: StealthFighterVoice
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.plane
+	Rearmable:
+		RearmActors: building.prc_airfield, building.usa_airfield
+	Repairable:
+		RepairBuildings: building.prc_airfield, building.usa_airfield
 	RenderSprites:
 		Image: aircraft.stealth_fighter
 		Scale: 0.9
@@ -788,7 +800,7 @@ aircraft.aurora:
 	GrantConditionOnPrerequisite@COUNTERMEASURES:
 		Condition: countermeasures
 		Prerequisites: upgrade.countermeasures
-	AttackPlane:
+	AttackAircraft:
 		FacingTolerance: 20
 	DockClient:
 	RevealsShroud:
@@ -838,6 +850,10 @@ aircraft.aurora:
 	SmokeTrailWhenDamaged:
 		Offset: -853,0,171
 		Interval: 2
+	Rearmable:
+		RearmActors: building.prc_airfield, building.usa_airfield
+	Repairable:
+		RepairBuildings: building.prc_airfield, building.usa_airfield
 	Voiced:
 		VoiceSet: AuroraVoice
 	ProvidesPrerequisite:
@@ -885,8 +901,6 @@ aircraft.spy_drone:
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
 	Aircraft:
-		-RearmBuildings:
-		-RepairBuildings:
 		CruiseAltitude: 2560
 		InitialFacing: 192
 		TurnSpeed: 8
@@ -964,7 +978,7 @@ aircraft.battle_drone:
 		LocalOffset: 300,0,-16
 		MuzzleSequence: muzzle
 	WithMuzzleOverlay:
-	AttackHeli:
+	AttackAircraft:
 		Armaments: primary
 		FacingTolerance: 20
 	RenderSprites:
@@ -982,7 +996,7 @@ aircraft.hellfire_drone:
 		Weapon: missile.hellfire_drone
 		LocalOffset: 0,-320,0, 0,320,0
 		LocalYaw: -40, 24
-	AttackPlane:
+	AttackAircraft:
 		FacingTolerance: 20
 
 aircraft.a10:
@@ -1374,7 +1388,7 @@ aircraft.comanche:
 		AmmoPool: secondary
 		Delay: 375
 		Count: 12
-	AttackHeli:
+	AttackAircraft:
 		FacingTolerance: 20
 	Aircraft:
 		CruiseAltitude: 1928
@@ -1496,13 +1510,17 @@ aircraft.helix:
 	ProductionQueue:
 		Type: queue.helix
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, tank, boss
+		LowPowerModifier: 300
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_helix
 		Factions: nuke
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
+	ProductionBar:
+		ProductionType: queue.helix
+	ProductionBar@Nuke:
+		ProductionType: queue.nuke_gen_helix
 	Armament@MG:
 		Weapon: mg.helix
 		LocalOffset: 1024,0,-125
@@ -1523,7 +1541,7 @@ aircraft.helix:
 		Weapon: parabomb.helix.nuke
 		RequiresCondition: nuke_upgrade
 	WithMuzzleOverlay:
-	AttackHeli:
+	AttackAircraft:
 		Armaments: primary, gatling
 		FacingTolerance: 20
 	RevealsShroud:
@@ -1639,12 +1657,14 @@ aircraft.assault_helix:
 	ProductionQueue:
 		Type: queue.assault_helix
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
+		LowPowerModifier: 300
 	-ProductionQueue@Nuke:
+		LowPowerModifier: 300
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker
 		MaxWeight: 8
 		PipCount: 8
-	AttackHeli:
+	AttackAircraft:
 		Armaments: primary
 	-Armament@GATLING:
 	-GrantConditionOnAttack@GATLING:

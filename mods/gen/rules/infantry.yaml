@@ -110,17 +110,22 @@ infantry.worker:
 		RequiresCondition: !leaflet
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-	ExternalCaptures:
+	Captures:
 		CaptureTypes: building
 		Voice: Capture
 		CaptureCompleteVoice: CaptureComplete
 		RequiresCondition: capture_building
-		CapturingCondition: capturing
+		CaptureDelay: 375
+		ConsumedByCapture: False
+		EnterCursor: ability
+		EnterBlockedCursor: move-blocked
 	Cloak@GPS_SCRAMBLER:
 		RequiresCondition: gps_scrambler && !capturing
 	GrantConditionOnPrerequisite@CAPTURE_BUILDING:
 		Condition: capture_building
 		Prerequisites: upgrade.capture_building
+	CaptureManager:
+		CapturingCondition: capturing
 
 infantry.ranger:
 	Inherits: ^default.mg_infantry
@@ -256,8 +261,12 @@ infantry.toxin_rebel:
 		Name: garrison
 		Weapon: toxin.toxin_rebel.garrison.gamma
 		RequiresCondition: anthrax_gamma
-	ExternalCaptures:
-		CapturingCondition: capturing
+	Captures:
+		CaptureDelay: 375
+		ConsumedByCapture: False
+		EnterCursor: ability
+		EnterBlockedCursor: move-blocked
+		CaptureTypes: building
 	WithInfantryBody:
 		RequiresCondition: !anthrax_beta  && !anthrax_gamma
 	WithInfantryBody@BETA:
@@ -323,6 +332,8 @@ infantry.toxin_rebel:
 	-DamagedByRadioactivity@ANTHRAX_GAMMA:
 	Voiced:
 		VoiceSet: ToxinRebelVoice
+	CaptureManager:
+		CapturingCondition: capturing
 
 infantry.red_guard:
 	Inherits: ^default.mg_infantry
@@ -475,10 +486,16 @@ infantry.conscript:
 	Armament@GARRISON:
 		Name: garrison
 		Weapon: mg.ranger.garrison
-	ExternalCaptures:
+	Captures:
 		-CaptureCompleteVoice:
+		CaptureDelay: 375
+		ConsumedByCapture: False
+		EnterCursor: ability
+		EnterBlockedCursor: move-blocked
+		CaptureTypes: building
 	Voiced:
 		VoiceSet: ConscriptVoice
+	CaptureManager:
 
 ^default.rocket_infantry:
 	Inherits: ^Soldier
@@ -833,6 +850,7 @@ infantry.terrorist:
 		VoiceSet: TerroristVoice
 	RenderSprites:
 		Image: infantry.terrorist
+	CaptureManager:
 
 infantry.toxin_terrorist:
 	Inherits: infantry.terrorist
@@ -1102,7 +1120,7 @@ infantry.angry_mob:
 	BodyOrientation:
 		UseClassicFacingFudge: True
 	HitShape:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Infantry
 	SpeedMultiplier@Generic:
 		Modifier: 200
@@ -1363,6 +1381,7 @@ infantry.hijacker:
 		CargoType: GLAInfantry
 	RenderSprites:
 		Image: infantry.hijacker
+	CaptureManager:
 
 infantry.hijacker.stealth:
 	Inherits: infantry.hijacker

@@ -82,8 +82,9 @@ building.usa_command_center:
 	ProductionQueue@USA_COMMAND_CENTER:
 		Type: queue.usa_command_center
 		Group: Command
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 12
 	SpawnActorPower@SPY_DRONE:
 		PauseOnCondition: emp || hacked || sabotaged
@@ -295,15 +296,15 @@ building.gla_command_center:
 		Type: queue.gla_command_center
 		Factions: usa, air, laser, super, gla, toxin, demo, prc, inf, nuke, tank, boss
 		Group: Command
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 13
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_command_center
 		Factions: stealth
 		Group: Command
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 13
 	ConditionPrerequisite@CAMO_NETTING:
 		Queue: queue.stealth_gen_command_center
@@ -487,11 +488,13 @@ building.prc_command_center:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
+		LowPowerModifier: 300
 	ProductionQueue@PRC_COMMAND_CENTER:
 		Type: queue.prc_command_center
 		Group: Command
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 14
 	ProductionBar@PRC_COMMAND_CENTER:
 		ProductionType: queue.prc_command_center
@@ -884,9 +887,10 @@ building.cold_fusion_reactor:
 		Group: Tech
 		InstantCashDrain: true
 		QueueLimit: 1
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		ReadyAudio: ConstructionComplete
 	ProductionBar:
+		ProductionType: queue.cold_fusion_reactor
 	Exit:
 	Power:
 		Amount: 5
@@ -907,6 +911,9 @@ building.cold_fusion_reactor.laser:
 		Produces: queue.laser_gen_cold_fusion_reactor
 	ProductionQueue:
 		Type: queue.laser_gen_cold_fusion_reactor
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.laser_gen_cold_fusion_reactor
 	Valued:
 		Cost: 700
 	Power:
@@ -925,6 +932,9 @@ building.advanced_cold_fusion_reactor:
 		Produces: queue.advanced_cold_fusion_reactor
 	ProductionQueue:
 		Type: queue.advanced_cold_fusion_reactor
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.advanced_cold_fusion_reactor
 	Valued:
 		Cost: 900
 	Power@CONTROL_RODS:
@@ -939,8 +949,12 @@ building.cold_fusion_reactor.boss:
 		Produces: queue.boss_gen_cold_fusion_reactor
 		RequiresCondition: ((!control_rods || !land_mines) && !zh_units) || ((!control_rods || !neutron_mines) && zh_units)
 	-ProductionQueue@JUST_MINE:
+		LowPowerModifier: 300
 	ProductionQueue:
 		Type: queue.boss_gen_cold_fusion_reactor
+		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.boss_gen_cold_fusion_reactor
 	GrantConditionOnProduction:
 		Actors: upgrade.control_rods
 	ConditionPrerequisite@CONTROL_RODS:
@@ -990,6 +1004,7 @@ building.nuclear_reactor:
 		DeployedCondition: overcharge
 	Exit:
 	ProductionBar:
+		ProductionType: queue.just_mine
 	Voiced:
 		VoiceSet: NuclearReactorVoice
 	RenderSprites:
@@ -1040,6 +1055,7 @@ building.advanced_nuclear_reactor:
 	InfiltrateForCondition:
 		Duration: 750
 	RepairsUnits:
+		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
 		HpPerStep: 1000
 
@@ -1064,10 +1080,12 @@ building.usa_barracks:
 	ProductionQueue:
 		Type: queue.usa_infantry
 		Group: Infantry
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 19
 	ProductionBar:
+		ProductionType: queue.usa_infantry
 	Exit@1:
 		SpawnOffset: -426,85,0
 		ExitCell: 0,1
@@ -1095,33 +1113,34 @@ building.gla_barracks:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@CAMO_NETTING:
+		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.gla_infantry
 		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
 		Group: Infantry
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 20
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_infantry
 		Factions: toxin
 		Group: Infantry
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 21
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_infantry
 		Factions: demo
 		Group: Infantry
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 22
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_infantry
 		Factions: stealth
 		Group: Infantry
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 23
 	ConditionPrerequisite@CAMO_NETTING:
 		Queue: queue.stealth_gen_infantry
@@ -1166,40 +1185,46 @@ building.prc_barracks:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
+		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.prc_infantry
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
 		Group: Infantry
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 24
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_infantry
 		Factions: inf
 		Group: Infantry
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 25
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_infantry
 		Factions: nuke
 		Group: Infantry
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 26
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_infantry
 		Factions: tank
 		Group: Infantry
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 27
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_infantry
 		Factions: boss
 		Group: Infantry
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 28
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_infantry
@@ -1307,15 +1332,17 @@ building.usa_supply_center:
 		Type: queue.usa_collector
 		Factions: usa, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Collector
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 15
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_collector
 		Factions: air
 		Group: Collector
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 16
 	ProductionBar@Vanilla:
 		ProductionType: queue.usa_collector
@@ -1373,19 +1400,20 @@ building.gla_supply_stash:
 		PauseOnCondition: emp || hacked
 		-RequiresCondition:
 	-ProductionQueue@CAMO_NETTING:
+		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.gla_collector
 		Factions: usa, air, laser, super, gla, toxin, demo, prc, inf, nuke, tank
 		Group: Collector
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 17
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_collector
 		Factions: stealth
 		Group: Collector
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 17
 	ConditionPrerequisite@CAMO_NETTING:
 		Queue: queue.stealth_gen_collector
@@ -1407,9 +1435,11 @@ building.gla_supply_stash:
 	WithMakeAnimation@RA_SILO:
 		Sequence: make
 		BodyNames: rasilo
+		Condition: build-incomplete
 	WithMakeAnimation@TD_SILO:
 		Sequence: make2
 		BodyNames: tdsilo
+		Condition: build-incomplete
 	WithSpriteBody:
 		Name: rasilo
 	WithSpriteBody@TD_SILO:
@@ -1465,13 +1495,16 @@ building.prc_supply_center:
 		PauseOnCondition: emp || hacked
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
+		LowPowerModifier: 300
 	ProductionQueue:
 		Type: queue.prc_collector
 		Group: Collector
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 18
 	ProductionBar:
+		ProductionType: queue.prc_collector
 	Exit@1:
 		SpawnOffset: -42,810,0
 		ExitCell: 1,2
@@ -1540,6 +1573,7 @@ building.patriot:
 	Turreted:
 		TurnSpeed: 8
 		InitialFacing: 0
+		PreviewFacing: 0
 	-WithSpriteBody:
 	WithEmbeddedTurretSpriteBody:
 	Armament@AG:
@@ -1590,6 +1624,7 @@ building.patriot.boss:
 		BuildPaletteOrder: 9
 	Exit:
 	ProductionBar:
+		ProductionType: queue.just_mine
 	LaysMinefield@LAND_MINES:
 		Locations: 0,-1, 1,-1, -1,0, 0,1, 1,1, 2,0
 	LaysMinefield@NEUTRON_MINES:
@@ -1628,6 +1663,7 @@ building.laser_turret:
 	Turreted:
 		TurnSpeed: 30
 		InitialFacing: 56
+		PreviewFacing: 56
 	-WithSpriteBody:
 	WithEmbeddedTurretSpriteBody:
 	Armament@AG:
@@ -1827,6 +1863,7 @@ building.gatling_cannon:
 	Turreted:
 		TurnSpeed: 8
 		InitialFacing: 224
+		PreviewFacing: 224
 	-WithSpriteBody:
 	WithEmbeddedTurretSpriteBody:
 	ReloadDelayMultiplier@Gatling1:
@@ -1863,6 +1900,7 @@ building.gatling_cannon:
 		Amount: -3
 	Exit:
 	ProductionBar:
+		ProductionType: queue.just_mine
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
@@ -1904,22 +1942,28 @@ building.firebase:
 	Turreted:
 		TurnSpeed: 3
 		InitialFacing: 224
+		PreviewFacing: 224
 	-WithMakeAnimation:
 	WithMakeAnimation@A:
 		Sequence: make-a
 		BodyNames: A
+		Condition: build-incomplete
 	WithMakeAnimation@B:
 		Sequence: make-b
 		BodyNames: B
+		Condition: build-incomplete
 	WithMakeAnimation@C:
 		Sequence: make-c
 		BodyNames: C
+		Condition: build-incomplete
 	WithMakeAnimation@D:
 		Sequence: make-d
 		BodyNames: D
+		Condition: build-incomplete
 	WithMakeAnimation@Turret:
 		Sequence: make-turret
 		BodyNames: turret
+		Condition: build-incomplete
 	WithSpriteBody:
 		Sequence: idle-a
 		Name: A
@@ -1996,6 +2040,7 @@ building.bunker:
 		Class: building.bunker
 	Exit:
 	ProductionBar:
+		ProductionType: queue.just_mine
 	ProvidesPrerequisite@buildingname:
 	Turreted:
 		TurnSpeed: 255
@@ -2068,6 +2113,7 @@ building.fortified_bunker:
 	WithBuildingBib:
 	WithProductionDoorOverlay:
 		Sequence: build-top
+		RequiresCondition: !build-incomplete
 	RallyPoint:
 	Selectable:
 		Bounds: 72,48
@@ -2080,6 +2126,7 @@ building.fortified_bunker:
 	InfiltrateForCondition:
 		Duration: 750
 	RepairsUnits:
+		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
 		HpPerStep: 1000
 
@@ -2102,29 +2149,33 @@ building.usa_war_factory:
 		Type: queue.usa_vehicle
 		Factions: usa, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Vehicle
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 30
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_vehicle
 		Factions: air
 		Group: Vehicle
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 31
 	ProductionQueue@Laser:
 		Type: queue.laser_gen_vehicle
 		Factions: laser
 		Group: Vehicle
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 32
 	ProductionQueue@Super:
 		Type: queue.super_gen_vehicle
 		Factions: super
 		Group: Vehicle
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 33
 	ProductionBar@Vanilla:
 		ProductionType: queue.usa_vehicle
@@ -2173,33 +2224,34 @@ building.arms_dealer:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@CAMO_NETTING:
+		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.gla_vehicle
 		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
 		Group: Vehicle
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 34
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_vehicle
 		Factions: toxin
 		Group: Vehicle
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 35
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_vehicle
 		Factions: demo
 		Group: Vehicle
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 36
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_vehicle
 		Factions: stealth
 		Group: Vehicle
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 37
 	ConditionPrerequisite@CAMO_NETTING:
 		Queue: queue.stealth_gen_vehicle
@@ -2235,40 +2287,46 @@ building.prc_war_factory:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
+		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.prc_vehicle
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
 		Group: Vehicle
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 38
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_vehicle
 		Factions: inf
 		Group: Vehicle
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 39
 	ProductionQueue@Nuclear:
 		Type: queue.nuke_gen_vehicle
 		Factions: nuke
 		Group: Vehicle
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 40
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_vehicle
 		Factions: tank
 		Group: Vehicle
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 41
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_vehicle
 		Factions: boss
 		Group: Vehicle
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 42
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_vehicle
@@ -2314,6 +2372,7 @@ building.prc_war_factory:
 	Turreted:
 		TurnSpeed: 8
 		InitialFacing: 56
+		PreviewFacing: 56
 		Offset: 0,0,256
 	SharedCargo:
 		Types: Infantry, Vehicle
@@ -2360,6 +2419,7 @@ building.tunnel_network:
 	WithMuzzleOverlay:
 	Exit:
 	ProductionBar:
+		ProductionType: queue.camo_netting
 	GrantConditionOnFaction@CAMO_NETTING:
 		Condition: camo_netted
 		Factions: stealth
@@ -2420,6 +2480,7 @@ building.tunnel_network.boss:
 		BuildPaletteOrder: 9
 		Prerequisites: building.prc_barracks, !techlevel.nodefense
 	-ProductionQueue@CAMO_NETTING:
+		LowPowerModifier: 300
 	SpawnActorOnDeath:
 		Actor: hole.tunnel_network.boss
 	-GrantConditionOnProduction@CAMO_NETTING:
@@ -2524,6 +2585,7 @@ building.stinger_site:
 		Range: 5c0
 	Exit:
 	ProductionBar:
+		ProductionType: queue.camo_netting
 	SpawnActorOnDeath:
 		Actor: hole.stinger_site
 		SpawnAfterDefeat: false
@@ -2557,8 +2619,9 @@ building.stinger_site:
 	RepairsUnits:
 		Interval: 14
 		HpPerStep: 500
-	WithRepairAnimation:
-	WithRearmAnimation:
+		StartRepairingNotification: Repairing
+		FinishRepairingNotification: UnitRepaired
+	WithResupplyAnimation:
 	Power:
 		Amount: -1
 	ProvidesPrerequisite@buildingname:
@@ -2604,22 +2667,25 @@ building.usa_airfield:
 		Type: queue.usa_aircraft
 		Factions: usa, laser, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Aircraft
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 43
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_aircraft
 		Factions: air
 		Group: Aircraft
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 44
 	ProductionQueue@Super:
 		Type: queue.super_gen_aircraft
 		Factions: super
 		Group: Aircraft
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 45
 	ProductionBar@Vanilla:
 		ProductionType: queue.usa_aircraft
@@ -2703,40 +2769,46 @@ building.prc_airfield:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
+		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.prc_aircraft
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
 		Group: Aircraft
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 46
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_aircraft
 		Factions: inf
 		Group: Aircraft
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 47
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_aircraft
 		Factions: nuke
 		Group: Aircraft
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 48
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_aircraft
 		Factions: tank
 		Group: Aircraft
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 49
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_aircraft
 		Factions: boss
 		Group: Aircraft
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 50
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_aircraft
@@ -2814,13 +2886,16 @@ building.internet_center:
 		PauseOnCondition: emp || hacked
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
+		LowPowerModifier: 300
 	ProductionQueue:
 		Type: queue.internet_center
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 52
 	ProductionBar:
+		ProductionType: queue.internet_center
 	PeriodicProducer:
 		Actors: camera.satellite_hack2
 		Type: SatelliteHack2
@@ -2897,15 +2972,17 @@ building.strategy_center:
 		Type: queue.strategy_center
 		Factions: usa, laser, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 53
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_strategy_center
 		Factions: air, super
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 54
 	ProductionBar@Vanilla:
 		ProductionType: queue.strategy_center
@@ -3054,33 +3131,34 @@ building.palace:
 		PauseOnCondition: emp || hacked
 		-RequiresCondition:
 	-ProductionQueue@CAMO_NETTING:
+		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.palace
 		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 55
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_palace
 		Factions: toxin
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 56
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_palace
 		Factions: demo
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 57
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_palace
 		Factions: stealth
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 58
 	ConditionPrerequisite@CAMO_NETTING:
 		Queue: queue.stealth_gen_palace
@@ -3145,33 +3223,38 @@ building.propaganda_center:
 		PauseOnCondition: emp || hacked
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
+		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.propaganda_center
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 59
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_propaganda_center
 		Factions: inf
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 60
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_propaganda_center
 		Factions: nuke
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 61
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_propaganda_center
 		Factions: tank
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 62
 	ProductionBar@Vanilla:
 		ProductionType: queue.propaganda_center
@@ -3335,19 +3418,20 @@ building.black_market:
 		PauseOnCondition: emp || hacked
 		-RequiresCondition:
 	-ProductionQueue@CAMO_NETTING:
+		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.black_market
 		Factions: usa, air, laser, super, gla, toxin, demo, prc, inf, nuke, tank, boss
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 61
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_black_market
 		Factions: stealth
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 62
 	ConditionPrerequisite@CAMO_NETTING:
 		Queue: queue.stealth_gen_black_market
@@ -3420,8 +3504,9 @@ building.speaker_tower:
 			BottomRight: 512, 512
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, Disable
-	-ExternalCapturable:
-	-ExternalCapturableBar:
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
 	WithRangeCircle:
 		Type: speaker
 		Range: 4c0
@@ -3540,14 +3625,17 @@ building.particle_cannon.boss:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
+		LowPowerModifier: 300
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_particle_cannon
 		Factions: boss
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 65
 	ProductionBar:
+		ProductionType: queue.boss_gen_particle_cannon
 	RenderSprites:
 		Image: building.particle_cannon
 
@@ -3767,6 +3855,7 @@ building.scud_storm:
 		RequiresCondition: limited_sw
 	Exit:
 	ProductionBar:
+		ProductionType: queue.camo_netting
 	GrantConditionOnPrerequisite@LIMIT:
 		Condition: limited_sw
 		Prerequisites: prerequisite.limited_sw
@@ -3797,14 +3886,18 @@ building.scud_storm.boss:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
+		LowPowerModifier: 300
 	-ProductionQueue@CAMO_NETTING:
+		LowPowerModifier: 300
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_scud_storm
 		Factions: boss
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 1
 		SpectatorUIOrder: 65
+	ProductionBar:
+		ProductionType: queue.boss_gen_scud_storm
 
 building.missile_silo:
 	Inherits: ^Building
@@ -3846,33 +3939,38 @@ building.missile_silo:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
+		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.missile_silo
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, tank
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 64
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_missile_silo
 		Factions: inf
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 65
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_missile_silo
 		Factions: nuke
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 66
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_missile_silo
 		Factions: boss
 		Group: Tech
+		QueuedAudio: Training
 		InstantCashDrain: true
-		LowPowerSlowdown: 2
+		LowPowerModifier: 200
 		SpectatorUIOrder: 67
 	ProductionBar@Vanilla:
 		ProductionType: queue.missile_silo
@@ -3932,13 +4030,13 @@ building.missile_silo:
 	-WithSpriteBody:
 	WithTerrainDependantSpriteBody:
 	WithNukeLaunchAnimation@GREEN:
-		RequiresCondition: !on_snow && !on_sand
+		RequiresCondition: !on_snow && !on_sand && !build-incomplete
 	WithNukeLaunchAnimation@WHITE:
 		Sequence: active-snow
-		RequiresCondition: on_snow
+		RequiresCondition: on_snow && !build-incomplete
 	WithNukeLaunchAnimation@YELLOW:
 		Sequence: active-sand
-		RequiresCondition: on_sand
+		RequiresCondition: on_sand && !build-incomplete
 	GrantConditionOnTerrain@SNOW:
 		Condition: on_snow
 		TerrainTypes: Snow, SnowRoad
