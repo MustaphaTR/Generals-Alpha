@@ -97,6 +97,8 @@ infantry.worker:
 		Description: General-purpose infantry armed with a automatic rifle.
 	Valued:
 		Cost: 150
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 12000
 	Armor:
@@ -525,6 +527,8 @@ infantry.conscript:
 		Description: Anti-tank & anti-air infantry.
 	Valued:
 		Cost: 300
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 10000
 	Armor:
@@ -737,6 +741,8 @@ infantry.pathfinder:
 		Cost: 600
 	Tooltip:
 		Name: Pathfinder
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Buildable:
 		Queue: queue.usa_infantry
 		BuildPaletteOrder: 3
@@ -812,6 +818,8 @@ infantry.terrorist:
 		Cost: 200
 	Tooltip:
 		Name: Terrorist
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 12000
 	Armor:
@@ -910,6 +918,8 @@ infantry.flamethrower:
 		Cost: 300
 	Tooltip:
 		Name: Flamethrower
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 12000
 	Armor:
@@ -1083,6 +1093,8 @@ infantry.angry_mob:
 	Tooltip:
 		Name: Angry Mob
 		GenericName: Soldier
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Valued:
 		Cost: 800
 	MobSpawnerMaster:
@@ -1424,6 +1436,8 @@ infantry.colonel_burton:
 		Cost: 1500
 	Tooltip:
 		Name: Colonel Burton
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Buildable:
 		Queue: queue.usa_infantry
 		BuildPaletteOrder: 4
@@ -1545,6 +1559,8 @@ infantry.jarmen_kell:
 		Cost: 1500
 	Tooltip:
 		Name: Jarmen Kell
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Buildable:
 		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.stealth_gen_infantry
 		BuildPaletteOrder: 7
@@ -1679,6 +1695,8 @@ infantry.black_lotus:
 		Cost: 1875
 	Tooltip:
 		Name: Black Lotus
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 15000
 	Armor:

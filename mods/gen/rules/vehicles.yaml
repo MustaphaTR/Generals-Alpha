@@ -130,6 +130,8 @@ vehicle.humvee:
 		Cost: 850
 	Tooltip:
 		Name: Humvee
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 24000
 	Armor:
@@ -261,6 +263,8 @@ vehicle.technical:
 		Cost: 600
 	Tooltip:
 		Name: Technical
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 18000
 	Armor:
@@ -513,6 +517,8 @@ vehicle.scorpion_tank:
 		RequiresCondition: scrap_create_bonus >= 1
 	Tooltip:
 		Name: Scorpion Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 37000
 	Armor:
@@ -675,6 +681,8 @@ vehicle.crusader_tank:
 		Cost: 810
 	Tooltip:
 		Name: Crusader Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 48000
 	Armor:
@@ -794,6 +802,8 @@ vehicle.battlemaster_tank:
 		BuildTime: 300
 	Tooltip:
 		Name: Battlemaster Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 40000
 	Armor:
@@ -976,6 +986,8 @@ vehicle.sentry_drone:
 		Cost: 1000
 	Tooltip:
 		Name: Sentry Drone
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 30000
 	Armor:
@@ -1066,6 +1078,8 @@ vehicle.quad_cannon:
 			300: rank-veteran
 	Tooltip:
 		Name: Quad Cannon
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 4
@@ -1174,6 +1188,8 @@ vehicle.gatling_tank:
 			300: rank-veteran
 	Tooltip:
 		Name: Gatling Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Buildable:
 		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle
 		BuildPaletteOrder: 1
@@ -1290,6 +1306,8 @@ vehicle.toxin_tractor:
 			300: rank-veteran
 	Tooltip:
 		Name: Toxin Tractor
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 5
@@ -1446,6 +1464,8 @@ vehicle.dragon_tank:
 			300: rank-veteran
 	Tooltip:
 		Name: Dragon Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle
 		BuildPaletteOrder: 3
@@ -1545,6 +1565,8 @@ vehicle.rocket_buggy:
 			800: rank-veteran
 	Tooltip:
 		Name: Rocket Buggy
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 7
@@ -1707,6 +1729,8 @@ vehicle.avenger:
 		Cost: 1500
 	Tooltip:
 		Name: Avenger
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 30000
 	Armor:
@@ -1808,6 +1832,8 @@ vehicle.battle_Bus:
 		Cost: 1200
 	Tooltip:
 		Name: Battle Bus
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 105000
 	Armor:
@@ -1915,6 +1941,8 @@ vehicle.troop_crawler:
 		Cost: 1260
 	Tooltip:
 		Name: Troop Crawler
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 24000
 	Armor:
@@ -2007,6 +2035,8 @@ vehicle.listening_outpost:
 		Cost: 780
 	Tooltip:
 		Name: Listening Outpost
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 24000
 	Armor:
@@ -2128,6 +2158,8 @@ vehicle.microwave_tank:
 		Cost: 780
 	Tooltip:
 		Name: Microwave Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 48000
 	Armor:
@@ -2232,6 +2264,8 @@ vehicle.ecm_tank:
 		Cost: 900
 	Tooltip:
 		Name: ECM Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 30000
 	Armor:
@@ -2311,6 +2345,8 @@ vehicle.tomahawk_launcher:
 			800: rank-veteran
 	Tooltip:
 		Name: Tomahawk Launcher
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle
 		BuildPaletteOrder: 8
@@ -2439,6 +2475,8 @@ vehicle.scud_launcher:
 		BuildTime: 375
 	Tooltip:
 		Name: SCUD Launcher
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 18000
 	Armor:
@@ -2619,6 +2657,8 @@ vehicle.inferno_cannon:
 		Cost: 1100
 	Tooltip:
 		Name: Inferno Cannon
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 12000
 	Armor:
@@ -2704,6 +2744,8 @@ vehicle.paladin_tank:
 		Cost: 990
 	Tooltip:
 		Name: Paladin Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 50000
 	Armor:
@@ -2818,6 +2860,8 @@ vehicle.marauder_tank:
 		Cost: 900
 	Tooltip:
 		Name: Marauder Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 50000
 	Armor:
@@ -3133,6 +3177,8 @@ vehicle.overlord_tank:
 		BuildTime: 500
 	Tooltip:
 		Name: Overlord Tank
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 110000
 	Armor:
@@ -3351,6 +3397,8 @@ vehicle.bomb_truck:
 	DisguiseTooltip:
 		Name: Bomb Truck
 		GenericName: Vehicle
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 22000
 	Armor:
@@ -3555,6 +3603,8 @@ vehicle.nuke_cannon:
 		Cost: 1440
 	Tooltip:
 		Name: Nuke Cannon
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 24000
 	Armor:
@@ -3721,6 +3771,8 @@ vehicle.combat_cycle:
 		BuildTime: 200
 	Tooltip:
 		Name: Combat Cycle
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Health:
 		HP: 10000
 	Armor:
