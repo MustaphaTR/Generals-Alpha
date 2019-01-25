@@ -108,8 +108,6 @@ infantry.worker:
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
-	AttackFrontal:
-		RequiresCondition: !leaflet
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	Captures:
@@ -121,6 +119,8 @@ infantry.worker:
 		ConsumedByCapture: False
 		EnterCursor: ability
 		EnterBlockedCursor: move-blocked
+	AttackFrontal:
+		RequiresCondition: !leaflet
 	Cloak@GPS_SCRAMBLER:
 		RequiresCondition: gps_scrambler && !capturing
 	GrantConditionOnPrerequisite@CAPTURE_BUILDING:
