@@ -1670,8 +1670,10 @@ aircraft.assault_helix:
 		Type: queue.assault_helix
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.assault_helix
 	-ProductionQueue@Nuke:
-		LowPowerModifier: 300
+	-ProductionBar@Nuke:
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker
 		MaxWeight: 8
