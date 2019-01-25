@@ -686,3 +686,10 @@ hack.spawn_1_firestrorm.blue:
 	ReloadDelay: 10000
 	Warhead@2Spawner: SpawnActor
 		Actors: firestorm.blue
+
+hack.spawn_sneak_attack:
+	Inherits: ^default.spawner
+	ReloadDelay: 10000
+	-Warhead@2Spawner: SpawnActor
+	Warhead@2Spawner: SpawnBuilding
+		Buildings: building.tunnel_network.sneak_attack
