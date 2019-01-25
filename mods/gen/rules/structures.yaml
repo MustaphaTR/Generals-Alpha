@@ -2416,6 +2416,7 @@ building.tunnel_network:
 	AttackTurreted:
 		RequiresCondition: !emp && !hacked
 	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
 	WithMuzzleOverlay:
 	Exit:
 	ProductionBar:
@@ -3044,7 +3045,7 @@ building.strategy_center:
 		Color: DDDD0088
 		RequiresCondition: bombardment
 	WithSpriteTurret:
-		RequiresCondition: bombardment
+		RequiresCondition: bombardment && !build-incomplete
 	-CommandBarBlacklist:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
