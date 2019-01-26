@@ -169,6 +169,10 @@ Attack = function(units, paths)
 end
 
 BuildAttackForce = function(unit_list, factory, paths)
+	if factory.IsDead then
+		return
+	end
+
 	factory.Build(Utils.Random(unit_list), function(units)
 		Attack(units, paths)
 
