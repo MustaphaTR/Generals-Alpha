@@ -2482,7 +2482,8 @@ building.tunnel_network.boss:
 		BuildPaletteOrder: 9
 		Prerequisites: building.prc_barracks, !techlevel.nodefense
 	-ProductionQueue@CAMO_NETTING:
-		LowPowerModifier: 300
+	ProductionBar:
+		ProductionType: queue.just_mine
 	SpawnActorOnDeath:
 		Actor: hole.tunnel_network.boss
 	-GrantConditionOnProduction@CAMO_NETTING:
