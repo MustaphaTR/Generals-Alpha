@@ -153,7 +153,6 @@ building.usa_command_center:
 			2: 2
 			3: 4
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		AllowImpassableCells: false
 		QuantizedFacings: 8
 		CameraActor: camera.paradrop
@@ -190,7 +189,6 @@ building.usa_command_center:
 			2: 2 A-10 Thunderbolts strikes anywhere on the map.
 			3: 3 A-10 Thunderbolts strikes anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		UnitTypes:
 			1: aircraft.a10
 			2: aircraft.a10
@@ -225,7 +223,6 @@ building.usa_command_center:
 			1: A B-52 drops a Fuel Air Bomb at the target.
 			2: A B-2 drops a Mother of All Bombs at the target.
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		UnitTypes:
 			1: aircraft.badger.fuel_air_bomb
 			2: aircraft.b2
@@ -253,7 +250,6 @@ building.usa_command_center:
 		LongDescs:
 			1: A B-52 drops Leaflets at the target, disabling enemy vehicles and infantry.
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		UnitTypes:
 			1: aircraft.badger.leaflet
 		CameraActor: camera.paradrop
@@ -341,7 +337,6 @@ building.gla_command_center:
 			3: Spawns 16 Rebels anywhere on the map.
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: AmbushPowerInfoOrder
 	SpawnActorPower@TOXIN_AMBUSH:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
@@ -369,7 +364,6 @@ building.gla_command_center:
 			3: Spawns 16 Toxin Rebels anywhere on the map.
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: ToxinAmbushPowerInfoOrder
 	AirstrikePower@ANTHRAX_BOMB:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
@@ -386,7 +380,6 @@ building.gla_command_center:
 		LongDescs:
 			1: A B-52 drops an Anthrax Bomb at the target.
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		UnitTypes:
 			1: aircraft.badger.anthrax_bomb
 		CameraActor: camera.paradrop
@@ -425,7 +418,6 @@ building.gla_command_center:
 			2: Makes 5 units invisible while not firing.
 			3: Makes 13 units invisible while not firing.
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		Conditions:
 			1: gps_scrambler
 			2: gps_scrambler
@@ -447,7 +439,6 @@ building.gla_command_center:
 			1: Spawns a Tunnel Network anywhere on the map.
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: SneakAttackPowerInfoOrder
 	WithTextDecoration@SIDE:
 		Text: GLA
@@ -488,7 +479,6 @@ building.prc_command_center:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
-		LowPowerModifier: 300
 	ProductionQueue@PRC_COMMAND_CENTER:
 		Type: queue.prc_command_center
 		Group: Command
@@ -531,7 +521,6 @@ building.prc_command_center:
 			3: 750
 		OnFireSound: sfrenzya.wav
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		Conditions:
 			1: frenzy1
 			2: frenzy2
@@ -563,7 +552,6 @@ building.prc_command_center:
 		StartFullyCharged: false
 		OnFireSound: scashhac.aud
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: CashHackPowerInfoOrder
 	ParatroopersPower@PRC_PARADROP:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
@@ -598,7 +586,6 @@ building.prc_command_center:
 			2: 2
 			3: 3
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		AllowImpassableCells: false
 		QuantizedFacings: 8
 		CameraActor: camera.paradrop
@@ -636,7 +623,6 @@ building.prc_command_center:
 			3: Fires 36 Artillery Shells anywhere on the map.
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: ArtilleryBarragePowerInfoOrder
 	ParatroopersPower@TANK_DROP:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
@@ -671,7 +657,6 @@ building.prc_command_center:
 			2: 1
 			3: 1
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		AllowImpassableCells: false
 		QuantizedFacings: 8
 		CameraActor: camera.paradrop
@@ -698,7 +683,6 @@ building.prc_command_center:
 		LongDescs:
 			1: A Badger drops 13 Land Mines at the target.
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		UnitTypes:
 			1: aircraft.badger.cluster_mines
 		CameraActor: camera.paradrop
@@ -724,7 +708,6 @@ building.prc_command_center:
 		LongDescs:
 			1: A Badger does carpet bombing at the target.
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		UnitTypes:
 			1: aircraft.badger.carpet
 		CameraActor: camera.paradrop
@@ -750,7 +733,6 @@ building.prc_command_center:
 		LongDescs:
 			1: A Badger does carpet bombing at the target with nuclear warheads.
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		UnitTypes:
 			1: aircraft.badger.carpet.nuke
 		DisplayBeacon: True
@@ -777,7 +759,6 @@ building.prc_command_center:
 			1: Spawns a Tunnel Network anywhere on the map.
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		OrderName: SneakAttackPowerInfoOrder
 		RequiresCondition: boss
 	AirstrikePower@EMP:
@@ -795,7 +776,6 @@ building.prc_command_center:
 		LongDescs:
 			1: A Badger drops an EMP at the target.
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		UnitTypes:
 			1: aircraft.badger.emp
 		CameraActor: camera.paradrop
@@ -949,10 +929,8 @@ building.cold_fusion_reactor.boss:
 		Produces: queue.boss_gen_cold_fusion_reactor
 		RequiresCondition: ((!control_rods || !land_mines) && !zh_units) || ((!control_rods || !neutron_mines) && zh_units)
 	-ProductionQueue@JUST_MINE:
-		LowPowerModifier: 300
 	ProductionQueue:
 		Type: queue.boss_gen_cold_fusion_reactor
-		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: queue.boss_gen_cold_fusion_reactor
 	GrantConditionOnProduction:
@@ -1113,7 +1091,6 @@ building.gla_barracks:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@CAMO_NETTING:
-		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.gla_infantry
 		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
@@ -1185,7 +1162,6 @@ building.prc_barracks:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
-		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.prc_infantry
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
@@ -1400,7 +1376,6 @@ building.gla_supply_stash:
 		PauseOnCondition: emp || hacked
 		-RequiresCondition:
 	-ProductionQueue@CAMO_NETTING:
-		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.gla_collector
 		Factions: usa, air, laser, super, gla, toxin, demo, prc, inf, nuke, tank
@@ -1495,7 +1470,6 @@ building.prc_supply_center:
 		PauseOnCondition: emp || hacked
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
-		LowPowerModifier: 300
 	ProductionQueue:
 		Type: queue.prc_collector
 		Group: Collector
@@ -1728,6 +1702,8 @@ building.demo_trap:
 	-SoundOnDamageTransition:
 	-WithMakeAnimation:
 	-Demolishable:
+	Sellable:
+		-RequiresCondition:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, DemoTrap
 	ExternalCondition@SELF_DESTRUCT:
@@ -2225,7 +2201,6 @@ building.arms_dealer:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@CAMO_NETTING:
-		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.gla_vehicle
 		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
@@ -2288,7 +2263,6 @@ building.prc_war_factory:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
-		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.prc_vehicle
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
@@ -2535,6 +2509,8 @@ building.stinger_site:
 	Turreted:
 		TurnSpeed: 225
 	-WithMakeAnimation:
+	Sellable:
+		-RequiresCondition:
 	WithSpriteBody:
 	WithRangeCircle:
 		Range: 5c640
@@ -2772,7 +2748,6 @@ building.prc_airfield:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
-		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.prc_aircraft
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
@@ -2889,7 +2864,6 @@ building.internet_center:
 		PauseOnCondition: emp || hacked
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
-		LowPowerModifier: 300
 	ProductionQueue:
 		Type: queue.internet_center
 		Group: Tech
@@ -3007,7 +2981,6 @@ building.strategy_center:
 		LongDescs:
 			1: A B-2 does carpet bombing at the target.
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		UnitTypes:
 			1: aircraft.b2.carpet
 		CameraActor: camera.paradrop
@@ -3134,7 +3107,6 @@ building.palace:
 		PauseOnCondition: emp || hacked
 		-RequiresCondition:
 	-ProductionQueue@CAMO_NETTING:
-		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.palace
 		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
@@ -3226,7 +3198,6 @@ building.propaganda_center:
 		PauseOnCondition: emp || hacked
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
-		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.propaganda_center
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
@@ -3421,7 +3392,6 @@ building.black_market:
 		PauseOnCondition: emp || hacked
 		-RequiresCondition:
 	-ProductionQueue@CAMO_NETTING:
-		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.black_market
 		Factions: usa, air, laser, super, gla, toxin, demo, prc, inf, nuke, tank, boss
@@ -3585,7 +3555,6 @@ building.particle_cannon:
 			1: Initiates an Particle Cannon strike.
 		DisplayTimerStances: Enemy, Neutral, Ally
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		IncomingSpeechNotification: ParticleCannonLaunchDetected
 		AllowMultiple: True
 	SupportPowerChargeBar:
@@ -3628,7 +3597,6 @@ building.particle_cannon.boss:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
-		LowPowerModifier: 300
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_particle_cannon
 		Factions: boss
@@ -3814,6 +3782,8 @@ building.scud_storm:
 	SupportPowerChargeBar:
 	WithBuildingBib:
 	-WithMakeAnimation:
+	Sellable:
+		-RequiresCondition:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
@@ -3841,7 +3811,6 @@ building.scud_storm:
 		LongDescs:
 			1: Fires 4 SCUD Missiles anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		IncomingSpeechNotification: ScudLaunchDetected
 		AllowMultiple: True
 		DisplayBeacon: False
@@ -3889,9 +3858,7 @@ building.scud_storm.boss:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
-		LowPowerModifier: 300
 	-ProductionQueue@CAMO_NETTING:
-		LowPowerModifier: 300
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_scud_storm
 		Factions: boss
@@ -3942,7 +3909,6 @@ building.missile_silo:
 		PauseOnCondition: emp || hacked || sabotaged
 		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
-		LowPowerModifier: 300
 	ProductionQueue@Vanilla:
 		Type: queue.missile_silo
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, tank
@@ -3995,7 +3961,6 @@ building.missile_silo:
 		LongDescs:
 			1: Launches a devastating atomic bomb\nat a target location.
 		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
 		IncomingSpeechNotification: NukeLaunchDetected
 		AllowMultiple: True
 		MissileWeapon: atomic

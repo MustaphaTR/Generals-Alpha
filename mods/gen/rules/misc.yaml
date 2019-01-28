@@ -37,14 +37,14 @@ CRATE:
 		SelectionShares: 1
 	RevealMapCrateAction:
 		SelectionShares: 2
-		Effect: reveal-map
+		Sequence: reveal-map
 	HideMapCrateAction:
 		SelectionShares: 5
-		Effect: hide-map
+		Sequence: hide-map
 	HealUnitsCrateAction:
 		Sound: heal2.aud
 		SelectionShares: 4
-		Effect: heal
+		Sequence: heal
 	DuplicateUnitCrateAction:
 		SelectionShares: 10
 		MaxAmount: 3
@@ -162,7 +162,7 @@ CRATE:
 		Units: vehicle.prc_mcc
 	GrantExternalConditionCrateAction@invuln:
 		SelectionShares: 10
-		Effect: invuln
+		Sequence: invuln
 		Sound: ironcur9.aud
 		Condition: invulnerability
 		Duration: 600
@@ -207,7 +207,7 @@ HEALCRATE:
 	HealUnitsCrateAction:
 		Sound: heal2.aud
 		SelectionShares: 1
-		Effect: heal
+		Sequence: heal
 
 WCRATE:
 	Inherits: ^Crate

@@ -2045,6 +2045,7 @@ vehicle.listening_outpost:
 		Speed: 40
 		TurnSpeed: 4
 		Voice: Move
+		AlwaysConsiderTurnAsMove: true
 		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
@@ -2082,7 +2083,6 @@ vehicle.listening_outpost:
 		PauseOnCondition: moving
 	GrantConditionOnMovement:
 		Condition: moving
-		ConsiderTurning: true
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 7c512
@@ -3439,6 +3439,7 @@ vehicle.bomb_truck:
 		Speed: 50
 		TurnSpeed: 4
 		Voice: Move
+		AlwaysConsiderTurnAsMove: true
 	SpeedMultiplier@CRATE-1:
 		Modifier: 110
 		RequiresCondition: scrap_create_bonus == 1
@@ -3534,7 +3535,6 @@ vehicle.bomb_truck:
 		RequiresCondition: listening_outpost
 	GrantConditionOnMovement:
 		Condition: moving
-		ConsiderTurning: true
 	WithTextDecoration@SIDE_USA:
 		Text: USA
 		ZOffset: 2048
@@ -3613,6 +3613,7 @@ vehicle.nuke_cannon:
 		Speed: 20
 		TurnSpeed: 4
 		Voice: Move
+		AlwaysConsiderTurnAsMove: true
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !immobile
 	SpeedMultiplier@DAMAGED:
 		Modifier: 90
@@ -3680,7 +3681,6 @@ vehicle.nuke_cannon:
 		RequiresCondition: neutron_shells
 	GrantConditionOnMovement:
 		Condition: moving
-		ConsiderTurning: true
 	GrantConditionAfterDelay:
 		Condition: deployed
 		Delay: 75
@@ -4022,6 +4022,7 @@ vehicle.combat_cycle.demo:
 		Speed: 25
 		TurnSpeed: 4
 		Voice: Move
+		AlwaysConsiderTurnAsMove: true
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !deployed
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
@@ -4038,7 +4039,7 @@ vehicle.combat_cycle.demo:
 	BaseBuilding:
 	BaseProvider:
 		Range: 8c0
-		OnlyAllowPlacementFromSelf: true
+		# OnlyAllowPlacementFromSelf: true
 	GivesBuildableArea:
 		AreaTypes: building
 		OnlyAllowPlacementFromSelf: true
@@ -4056,7 +4057,6 @@ vehicle.combat_cycle.demo:
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
 	GrantConditionOnMovement:
 		Condition: moving
-		ConsiderTurning: true
 	DetectCloaked:
 		CloakTypes: Mine
 		Range: 4c0

@@ -402,6 +402,8 @@ fake.scud_storm:
 		Sequence: turret-full
 	WithBuildingBib:
 	-WithMakeAnimation:
+	Sellable:
+		-RequiresCondition:
 	RenderSprites:
 		Image: building.scud_storm
 	TransformOnCondition:
@@ -457,6 +459,8 @@ fake.demo_trap:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
 	-WithMakeAnimation:
+	Sellable:
+		-RequiresCondition:
 	RenderSprites:
 		Image: building.demo_trap
 	TransformOnCondition:
@@ -612,6 +616,8 @@ fake.stinger_site:
 	ProductionBar:
 		ProductionType: queue.stinger_site.fake
 	-WithMakeAnimation:
+	Sellable:
+		-RequiresCondition:
 	WithBuildingBib:
 	WithIdleOverlay@CAMO:
 		Sequence: idle-camo
