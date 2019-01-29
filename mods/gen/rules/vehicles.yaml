@@ -1430,6 +1430,8 @@ vehicle.toxin_tractor:
 	-DamagedByRadioactivity@ANTHRAX_ALPHA:
 	-DamagedByRadioactivity@ANTHRAX_BETA:
 	-DamagedByRadioactivity@ANTHRAX_GAMMA:
+	AutoTarget:
+		ScanRadius: 4
 	AcceptsDeliveredExperience:
 	ThrowsShrapnel:
 		Weapons: debris.scorpion_tank
@@ -1531,6 +1533,8 @@ vehicle.dragon_tank:
 		Factions: boss
 	AttackFrontal:
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+	AutoTarget:
+		ScanRadius: 4
 	AcceptsDeliveredExperience:
 	RenderSprites:
 		Image: vehicle.dragon_tank
