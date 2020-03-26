@@ -1,9 +1,9 @@
 # Travis-CI Build for OpenRAModSDK
 # see travis-ci.org for details
 
+dist: xenial
 language: csharp
-mono: 4.6.1
-sudo: false
+mono: 5.20.1
 
 addons:
   apt:
