@@ -125,7 +125,7 @@ vessel.destroyer:
 		BuildPaletteOrder: 3
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Prerequisites: prerequisite.tech_center, !techlevel.infonly
+		Prerequisites: prerequisite.tech_center_or_boss_airfield, !techlevel.infonly
 		Description: Fast multi-role ship.
 	Valued:
 		Cost: 1000
@@ -193,7 +193,7 @@ vessel.cruiser:
 		BuildPaletteOrder: 4
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: prerequisite.tech_center, !techlevel.infonly
+		Prerequisites: prerequisite.tech_center_or_boss_sw, !techlevel.infonly
 		Description: Very slow long-range ship.
 	Valued:
 		Cost: 2400

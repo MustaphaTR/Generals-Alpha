@@ -2810,6 +2810,9 @@ building.prc_airfield:
 		Sequence: idle-flag
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.prc_airfield_or_war_factory
+	ProvidesPrerequisite@destroyer:
+		Prerequisite: prerequisite.tech_center_or_boss_airfield
+		Factions: boss
 	LaysMinefield@LAND_MINES:
 		Locations: 0,-1, 1,-1, 2,-1, 3,-1, -1,0, -1,1, -1,2, 0,3, 1,3, 2,3, 3,3, 4,2, 4,1, 4,0
 	LaysMinefield@NEUTRON_MINES:
@@ -3025,6 +3028,10 @@ building.strategy_center:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.tech_center
+	ProvidesPrerequisite@destroyer:
+		Prerequisite: prerequisite.tech_center_or_boss_airfield
+	ProvidesPrerequisite@cruiser:
+		Prerequisite: prerequisite.tech_center_or_boss_sw
 	ProduceActorPower@INTELLIGENCE:
 		PauseOnCondition: emp || hacked
 		Prerequisites:
@@ -3102,6 +3109,10 @@ building.palace:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.tech_center
+	ProvidesPrerequisite@destroyer:
+		Prerequisite: prerequisite.tech_center_or_boss_airfield
+	ProvidesPrerequisite@cruiser:
+		Prerequisite: prerequisite.tech_center_or_boss_sw
 	Production:
 		Produces: queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace
 		PauseOnCondition: emp || hacked
@@ -3244,6 +3255,10 @@ building.propaganda_center:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.tech_center
+	ProvidesPrerequisite@destroyer:
+		Prerequisite: prerequisite.tech_center_or_boss_airfield
+	ProvidesPrerequisite@cruiser:
+		Prerequisite: prerequisite.tech_center_or_boss_sw
 	LaysMinefield@LAND_MINES:
 		Locations: 0,-1, 1,-1, 2,-1, -1,0, -1,1, 0,2, 1,2, 2,2, 3,1, 3,0
 	LaysMinefield@NEUTRON_MINES:
@@ -3562,6 +3577,9 @@ building.particle_cannon:
 		Amount: -10
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: building.particle_cannon
+	ProvidesPrerequisite@cruiser:
+		Prerequisite: prerequisite.tech_center_or_boss_sw
+		Factions: boss
 	ProvidesPrerequisite@LIMIT:
 		Prerequisite: prerequisite.enough_particle
 		RequiresCondition: limited_sw
@@ -3822,6 +3840,9 @@ building.scud_storm:
 		OrderName: SCUDStormPowerInfoOrder
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: building.scud_storm
+	ProvidesPrerequisite@cruiser:
+		Prerequisite: prerequisite.tech_center_or_boss_sw
+		Factions: boss
 	ProvidesPrerequisite@LIMIT:
 		Prerequisite: prerequisite.enough_scud
 		RequiresCondition: limited_sw
@@ -3982,6 +4003,9 @@ building.missile_silo:
 		Amount: -10
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: building.missile_silo
+	ProvidesPrerequisite@cruiser:
+		Prerequisite: prerequisite.tech_center_or_boss_sw
+		Factions: boss
 	ProvidesPrerequisite@LIMIT:
 		Prerequisite: prerequisite.enough_nuke
 		RequiresCondition: limited_sw
@@ -4215,6 +4239,22 @@ prerequisite.supply_center:
 		Description: Supply Center
 
 prerequisite.tech_center:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Tech Center
+	Buildable:
+		Description: Tech Center
+
+prerequisite.tech_center_or_boss_airfield:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Tech Center
+	Buildable:
+		Description: Tech Center
+
+prerequisite.tech_center_or_boss_sw:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
