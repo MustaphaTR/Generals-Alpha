@@ -27,6 +27,12 @@ tech.oil_derrick:
 		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 1500
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		ReferencePoint: Center
+		Palette: player
+		IsPlayerPalette: True
 	CashTrickler:
 		Interval: 300
 		Amount: 200
@@ -70,6 +76,12 @@ tech.oil_refinery:
 		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 1500
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		ReferencePoint: Center
+		Palette: player
+		IsPlayerPalette: True
 	Tooltip:
 		Name: Oil Refinery
 	TooltipDescription:
@@ -134,6 +146,12 @@ tech.hospital:
 		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 1500
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		ReferencePoint: Center
+		Palette: player
+		IsPlayerPalette: True
 	Tooltip:
 		Name: Hospital
 	TooltipDescription:
@@ -197,6 +215,12 @@ tech.communications_center:
 		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 1500
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		ReferencePoint: Center
+		Palette: player
+		IsPlayerPalette: True
 	ProvidesPrerequisite@buildingname:
 	CapturableProgressBlink:
 		Sound: ucapture.aud
@@ -258,6 +282,12 @@ tech.soviet_barracks:
 	EngineerRepairable:
 	RepairableBuilding:
 		RepairStep: 1500
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		ReferencePoint: Center
+		Palette: player
+		IsPlayerPalette: True
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 		HpPerStep: 1000
@@ -354,6 +384,12 @@ tech.power_plant:
 		AreaTypes: mine
 	RepairableBuilding:
 		RepairStep: 1500
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		ReferencePoint: Center
+		Palette: player
+		IsPlayerPalette: True
 	Power:
 		Amount: 10
 		RequiresCondition: !emp && !hacked
@@ -433,7 +469,13 @@ tech.reinforcements_pad:
 	GivesBuildableArea:
 		AreaTypes: mine
 	RepairableBuilding:
-		RepairStep: 9000
+		RepairStep: 1500
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		ReferencePoint: Center
+		Palette: player
+		IsPlayerPalette: True
 	Selectable:
 		Priority: 0
 		Bounds: 64,34,0,3
@@ -628,6 +670,12 @@ tech.shipyard:
 	EngineerRepairable:
 	RepairableBuilding:
 		RepairStep: 1500
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		ReferencePoint: Center
+		Palette: player
+		IsPlayerPalette: True
 	Targetable:
 		TargetTypes: Ground, Water, Structure, WaterStructure, C4, DetonateAttack, Capture, Disable
 	Health:
