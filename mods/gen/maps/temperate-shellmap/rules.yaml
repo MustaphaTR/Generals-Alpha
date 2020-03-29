@@ -163,6 +163,10 @@ infantry.hacker:
 	CashTrickler@RANK-ELITE:
 		ShowTicks: false
 
+infantry.terrorist:
+	ExternalCondition@triggered:
+		Condition: triggered
+
 infantry.jarmen_kell:
 	Cloak:
 		InitialDelay: 0
@@ -196,6 +200,10 @@ hack.rebel_spawner.8:
 aircraft.chinook:
 	Targetable:
 		TargetTypes: Air, Chinook
+
+vehicle.bomb_truck:
+	ExternalCondition@triggered:
+		Condition: triggered
 
 powerproxy.paradrop:
 	AlwaysVisible:

@@ -147,6 +147,10 @@ infantry.hacker:
 	CashTrickler@RANK-ELITE:
 		ShowTicks: false
 
+infantry.terrorist:
+	ExternalCondition@triggered:
+		Condition: triggered
+
 infantry.black_lotus:
 	Cloak:
 		InitialDelay: 0
@@ -176,6 +180,8 @@ hack.rebel_spawner.8:
 vehicle.bomb_truck:
 	Health:
 		HP: 2000
+	ExternalCondition@triggered:
+		Condition: triggered
 
 powerproxy.paradrop:
 	AlwaysVisible:

@@ -34,16 +34,16 @@ OverlordUpgrades = { "upgrade.overlord_gatling", "upgrade.overlord_speaker" }
 ParadropWaypoints = { Paradrop1, Paradrop2, Paradrop3 }
 
 BindActorTriggers = function(a)
-	if a.HasProperty("DetonateAttack") then
+	if a.Type == "infantry.terrorist" or a.Type == "vehicle.bomb_truck" then
 		Trigger.OnIdle(a, function(a)
 			if a.IsInWorld then
-				a.DetonateAttack(USASupplyDrop2)
+				a.AttackMove(USASupplyDrop2.Location)
 			end
 		end)
 
 		Trigger.OnDamaged(a, function()
 			if a.Health <= 1500 then
-				a.Detonate()
+				a.GrantCondition("triggered")
 			end
 		end)
 	else

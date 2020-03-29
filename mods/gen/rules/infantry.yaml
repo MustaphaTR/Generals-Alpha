@@ -841,9 +841,19 @@ infantry.terrorist:
 		EmptyWeapon: explosion.suicide
 		DeathTypes: Suicide
 		RequiresCondition: demo
-	AttackSuicides:
-		DamageTypes: Suicide
+	AttackFrontal:
+		FacingTolerance: 128
 		RequiresCondition: !leaflet
+	Armament@PRIMARY:
+		Weapon: hack.suicide_targeting
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		DeployedCondition: triggered
+		RequiresCondition: !leaflet
+	KillsSelf@Triggered:
+		DamageTypes: Suicide
+		RequiresCondition: triggered
 	GrantConditionOnFaction@Demo:
 		Condition: demo
 		Factions: demo

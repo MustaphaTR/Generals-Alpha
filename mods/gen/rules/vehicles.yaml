@@ -3475,8 +3475,18 @@ vehicle.bomb_truck:
 		Weapon: BombTruckExplosion.hi_exp
 		EmptyWeapon: BombTruckExplosion.hi_exp
 		RequiresCondition: hi_explosive_bombs
-	AttackSuicides:
+	AttackFrontal:
+		FacingTolerance: 128
 		RequiresCondition: !driver_killed
+	Armament@PRIMARY:
+		Weapon: hack.suicide_targeting
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		DeployedCondition: triggered
+		RequiresCondition: !driver_killed
+	KillsSelf@Triggered:
+		RequiresCondition: triggered
 	ConditionPrerequisite@BIO_BOMBS:
 		Queue: queue.bomb_truck, queue.toxin_gen_bomb_truck
 		Actor: upgrade.bio_bombs
@@ -3511,13 +3521,6 @@ vehicle.bomb_truck:
 	-WithFacingSpriteBody:
 	WithDisguisingFacingSpriteBody:
 	WithDisguisingSpriteTurret:
-	GrantConditionOnActivity:
-		Condition: keep_me_disabled
-	Armament@ThisLooksRequired:
-		Weapon: BombTruckExplosion
-		RequiresCondition: keep_me_disabled
-	AttackFrontal:
-		RequiresCondition: keep_me_disabled
 	Disguise:
 		TargetTypes: Vehicle-Disguise
 		Voice: Disguise
@@ -3806,6 +3809,9 @@ vehicle.combat_cycle:
 		Name: aa_rocket
 		Weapon: missile.rpg_trooper.air
 		RequiresCondition: rpg
+	Armament@Terrorist:
+		Name: terror
+		Weapon: hack.suicide_targeting
 	Armament@Jarmen:
 		Name: sniper_rifle
 		Weapon: sniper.jarmen_kell.bike
@@ -3815,6 +3821,12 @@ vehicle.combat_cycle:
 		Weapon: sniper.jarmen_kell.vehicle
 		PauseOnCondition: !ammo
 		RequiresCondition: jarmen
+	GrantConditionOnAttack:
+		ArmamentNames: terror
+		Condition: triggered
+	GrantConditionOnDeploy:
+		DeployedCondition: triggered
+		RequiresCondition: terrorist && !hacked && !emp && !leaflet
 	Explodes@Terrorist:
 		Weapon: explosion.terrorist.bike
 		EmptyWeapon: explosion.terrorist.bike
@@ -3825,12 +3837,12 @@ vehicle.combat_cycle:
 		EmptyWeapon: explosion.terrorist.demo.bike
 		DeathTypes: Suicide
 		RequiresCondition: terrorist && demo
-	AttackFrontal:
-		Armaments: mg, ag_rocket, aa_rocket, sniper_rifle, driver_snipe
-		RequiresCondition: !hacked && !emp && !leaflet
-	AttackSuicides:
-		RequiresCondition: terrorist
+	KillsSelf@Triggered:
 		DamageTypes: Suicide
+		RequiresCondition: triggered
+	AttackFrontal:
+		Armaments: mg, ag_rocket, aa_rocket, terror, sniper_rifle, driver_snipe
+		RequiresCondition: !hacked && !emp && !leaflet
 	AmmoPool:
 		Ammo: 1
 		PipCount: 0

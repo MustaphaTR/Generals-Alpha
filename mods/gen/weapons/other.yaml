@@ -693,3 +693,10 @@ hack.spawn_sneak_attack:
 	-Warhead@2Spawner: SpawnActor
 	Warhead@2Spawner: SpawnBuilding
 		Buildings: building.tunnel_network.sneak_attack
+
+hack.suicide_targeting:
+	ValidTargets: DetonateAttack
+	Range: 1c768
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		ValidTargets: DetonateAttack

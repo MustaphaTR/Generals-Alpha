@@ -162,6 +162,10 @@ infantry.hacker:
 	CashTrickler@RANK-ELITE:
 		ShowTicks: false
 
+infantry.terrorist:
+	ExternalCondition@triggered:
+		Condition: triggered
+
 infantry.jarmen_kell:
 	Cloak:
 		InitialDelay: 0
@@ -196,6 +200,10 @@ vehicle.inferno_cannon:
 
 vehicle.nuke_cannon:
 	-Targetable:
+
+vehicle.bomb_truck:
+	ExternalCondition@triggered:
+		Condition: triggered
 
 building.speaker_tower:
 	-Targetable:

@@ -1367,9 +1367,19 @@
 		EmptyWeapon: explosion.terrorist.bike
 		DeathTypes: Suicide
 		RequiresCondition: car_bomb
-	AttackSuicides:
+	AttackFrontal:
+		FacingTolerance: 128
 		RequiresCondition: car_bomb
+	Armament@PRIMARY:
+		Weapon: hack.suicide_targeting
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		DeployedCondition: triggered
+		RequiresCondition: car_bomb
+	KillsSelf@Triggered:
 		DamageTypes: Suicide
+		RequiresCondition: triggered
 	WithFacingSpriteBody:
 	WithParachute:
 		ShadowImage: parach-shadow
