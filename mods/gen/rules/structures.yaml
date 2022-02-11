@@ -1253,8 +1253,6 @@ building.prc_barracks:
 	Armor:
 		Type: building.normal
 	WithBuildingBib:
-	DockManager:
-	Dock:
 	Refinery:
 	SupplyCenter:
 		UseStorage: false
@@ -2592,8 +2590,6 @@ building.stinger_site:
 		ExitCell: 1,1
 		Facing: 192
 	RallyPoint:
-	DockManager:
-		DeadlockDetectionEnabled: false
 	Reservable:
 	RepairsUnits:
 		Interval: 14
@@ -2635,7 +2631,7 @@ building.usa_airfield:
 	Tooltip:
 		Name: USA Airfield
 	Building:
-		Footprint: XXXX xxxx xxxx
+		Footprint: XXXX xxx= xx==
 		Dimensions: 4,3
 	Selectable:
 		Bounds: 96,64,0,6
@@ -2672,14 +2668,9 @@ building.usa_airfield:
 		ProductionType: queue.air_gen_aircraft
 	ProductionBar@Super:
 		ProductionType: queue.super_gen_aircraft
-	Dock@0:
-		DockOffset: 2,2
-	Dock@1:
-		DockOffset: 3,2
-	Dock@2:
-		DockOffset: 2,1
-	Dock@3:
-		DockOffset: 3,1
+	LaysMinefield@DOCK:
+		Mines: hack.dock
+		Locations: 2,2, 3,1, 3,2
 	WithIdleOverlay@DISH:
 		Sequence: idle-dish
 	Exit@0:
@@ -2741,7 +2732,7 @@ building.prc_airfield:
 	Tooltip:
 		Name: PRC Airfield
 	Building:
-		Footprint: xxxx xxxx xxxx
+		Footprint: xxxx =x== xxxx
 		Dimensions: 4,3
 	Production:
 		Produces: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft
@@ -2796,14 +2787,9 @@ building.prc_airfield:
 		ProductionType: queue.nuke_gen_aircraft
 	ProductionBar@Tank:
 		ProductionType: queue.tank_gen_aircraft
-	Dock@0:
-		DockOffset: 0,1
-	Dock@1:
-		DockOffset: 1,1
-	Dock@2:
-		DockOffset: 2,1
-	Dock@3:
-		DockOffset: 3,1
+	LaysMinefield@DOCK:
+		Mines: hack.dock
+		Locations: 0,1, 2,1, 3,1
 	Selectable:
 		Bounds: 96,64,0,-4
 	WithIdleOverlay@FLAG:
@@ -2831,6 +2817,27 @@ building.prc_airfield:
 	#	PauseOnCondition: airfield * 4 <= plane
 	Voiced:
 		VoiceSet: PRCAirfieldVoice
+
+hack.dock:
+	Interactable:
+	AlwaysVisible:
+	ConditionManager:
+	Reservable:
+	Tooltip:
+		Name: Dummy Dock
+	RepairsUnits:
+		Interval: 14
+		HpPerStep: 500
+		StartRepairingNotification: Repairing
+		FinishRepairingNotification: UnitRepaired
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+		AllowInvalidPlacement: true
+	Exit@1:
+		Facing: 192
+	Targetable: # This is needed for some reason, otherwise they can't land.
+	RejectsOrders:
 
 building.internet_center:
 	Inherits: ^Building

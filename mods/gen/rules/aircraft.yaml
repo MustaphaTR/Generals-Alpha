@@ -361,7 +361,6 @@ aircraft.mig:
 		PauseOnCondition: !ammo
 	AttackAircraft:
 		FacingTolerance: 20
-	DockClient:
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
@@ -416,9 +415,9 @@ aircraft.mig:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.plane
 	Rearmable:
-		RearmActors: building.prc_airfield, building.usa_airfield
+		RearmActors: building.prc_airfield, building.usa_airfield, hack.dock
 	Repairable:
-		RepairBuildings: building.prc_airfield, building.usa_airfield
+		RepairBuildings: building.prc_airfield, building.usa_airfield, hack.dock
 	Voiced:
 		VoiceSet: MiGVoice
 
@@ -484,7 +483,6 @@ aircraft.raptor:
 		PauseOnCondition: !ammo
 	AttackAircraft:
 		FacingTolerance: 20
-	DockClient:
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
@@ -526,9 +524,9 @@ aircraft.raptor:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.plane
 	Rearmable:
-		RearmActors: building.prc_airfield, building.usa_airfield
+		RearmActors: building.prc_airfield, building.usa_airfield, hack.dock
 	Repairable:
-		RepairBuildings: building.prc_airfield, building.usa_airfield
+		RepairBuildings: building.prc_airfield, building.usa_airfield, hack.dock
 	Voiced:
 		VoiceSet: RaptorVoice
 	RenderSprites:
@@ -641,7 +639,6 @@ aircraft.stealth_fighter:
 		PauseOnCondition: !ammo
 	AttackAircraft:
 		FacingTolerance: 20
-	DockClient:
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
@@ -705,9 +702,9 @@ aircraft.stealth_fighter:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.plane
 	Rearmable:
-		RearmActors: building.prc_airfield, building.usa_airfield
+		RearmActors: building.prc_airfield, building.usa_airfield, hack.dock
 	Repairable:
-		RepairBuildings: building.prc_airfield, building.usa_airfield
+		RepairBuildings: building.prc_airfield, building.usa_airfield, hack.dock
 	RenderSprites:
 		Image: aircraft.stealth_fighter
 		Scale: 0.9
@@ -810,7 +807,6 @@ aircraft.aurora:
 		Prerequisites: upgrade.countermeasures
 	AttackAircraft:
 		FacingTolerance: 20
-	DockClient:
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
@@ -859,9 +855,9 @@ aircraft.aurora:
 		Offset: -853,0,171
 		Interval: 2
 	Rearmable:
-		RearmActors: building.prc_airfield, building.usa_airfield
+		RearmActors: building.prc_airfield, building.usa_airfield, hack.dock
 	Repairable:
-		RepairBuildings: building.prc_airfield, building.usa_airfield
+		RepairBuildings: building.prc_airfield, building.usa_airfield, hack.dock
 	Voiced:
 		VoiceSet: AuroraVoice
 	ProvidesPrerequisite:
@@ -1114,7 +1110,6 @@ aircraft.chinook:
 		Locomotor: locomotor.chinook
 	SpeedMultiplier@DAMAGED:
 		Modifier: 40
-	DockClient:
 	SupplyCollector:
 		IsAircraft: true
 		CollectionDelay: 200 # 240, -40 goes to WSCO WaitDelay
