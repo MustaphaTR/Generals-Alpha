@@ -401,9 +401,8 @@ firestorm.normal:
 	HiddenUnderFog:
 		Type: CenterPosition
 	Aircraft:
-	Armament:
+	PeriodicExplosion:
 		Weapon: hack.firestorm.normal
-	FireWeaponAtSelf:
 	AttackTurreted:
 	RejectsOrders:
 	Turreted:
@@ -420,16 +419,16 @@ firestorm.normal.50:
 
 firestorm.normal.plus:
 	Inherits: firestorm.normal
-	ExplodeWeapon@1:
+	PeriodicExplosion@1:
 		Weapon: hack.spawn_1_firestrorm
 		LocalOffset: 0,-1024,0
-	ExplodeWeapon@2:
+	PeriodicExplosion@2:
 		Weapon: hack.spawn_1_firestrorm
 		LocalOffset: 0,1024,0
-	ExplodeWeapon@3:
+	PeriodicExplosion@3:
 		Weapon: hack.spawn_1_firestrorm
 		LocalOffset: -1024,0,0
-	ExplodeWeapon@4:
+	PeriodicExplosion@4:
 		Weapon: hack.spawn_1_firestrorm
 		LocalOffset: 1024,0,0
 
@@ -447,16 +446,16 @@ firestorm.blue.50:
 
 firestorm.blue.plus:
 	Inherits: firestorm.blue
-	ExplodeWeapon@1:
+	PeriodicExplosion@1:
 		Weapon: hack.spawn_1_firestrorm.blue
 		LocalOffset: 0,-1024,0
-	ExplodeWeapon@2:
+	PeriodicExplosion@2:
 		Weapon: hack.spawn_1_firestrorm.blue
 		LocalOffset: 0,1024,0
-	ExplodeWeapon@3:
+	PeriodicExplosion@3:
 		Weapon: hack.spawn_1_firestrorm.blue
 		LocalOffset: -1024,0,0
-	ExplodeWeapon@4:
+	PeriodicExplosion@4:
 		Weapon: hack.spawn_1_firestrorm.blue
 		LocalOffset: 1024,0,0
 
@@ -470,7 +469,7 @@ hack.mine:
 	-RequiresBuildableArea:
 	Mobile:
 		Locomotor: locomotor.mine
-		RequiresCondition: keep_me_disabled
+		RequiresCondition: !keep_me_disabled
 	GrantCondition:
 		Condition: keep_me_disabled
 	-Sellable:
@@ -518,15 +517,10 @@ hack.artillery_barrager.1:
 	Inherits: CAMERA
 	RevealsShroud:
 		Range: 5c0
-	Armament@1:
-		Name: 1
-		Weapon: ArtyBarrageWeapon
-		FireDelay: 25
+	PeriodicExplosion@1:
+		Weapon: ArtyBarrageSpawner
+		AmmoPoolName: 1
 		LocalOffset: 0,0,20000
-	FireWeaponAtSelf@1:
-		Name: 1
-	AttackTurreted:
-	Turreted:
 	AmmoPool@1:
 		Name: 1
 		Ammo: 12
@@ -537,13 +531,10 @@ hack.artillery_barrager.1:
 
 hack.artillery_barrager.2:
 	Inherits: hack.artillery_barrager.1
-	Armament@2:
-		Name: 2
-		Weapon: ArtyBarrageWeapon
-		FireDelay: 25
+	PeriodicExplosion@2:
+		Weapon: ArtyBarrageSpawner
+		AmmoPoolName: 2
 		LocalOffset: 0,0,20000
-	FireWeaponAtSelf@2:
-		Name: 2
 	AmmoPool@2:
 		Name: 2
 		Ammo: 12
@@ -551,71 +542,65 @@ hack.artillery_barrager.2:
 
 hack.artillery_barrager.3:
 	Inherits: hack.artillery_barrager.2
-	Armament@3:
-		Name: 3
-		Weapon: ArtyBarrageWeapon
-		FireDelay: 25
+	PeriodicExplosion@3:
+		Weapon: ArtyBarrageSpawner
+		AmmoPoolName: 3
 		LocalOffset: 0,0,20000
-	FireWeaponAtSelf@3:
-		Name: 3
 	AmmoPool@3:
-		Name: 2
+		Name: 3
 		Ammo: 12
 		PipCount: 0
 
 hack.rebel_spawner.4:
 	Inherits: CAMERA
 	-RevealsShroud:
-	Armament@1:
-		Name: 1
+	PeriodicExplosion@1:
 		Weapon: hack.spawn_4_rebels
-	FireWeaponAtSelf@1:
-		Name: 1
 	AttackTurreted:
 	Turreted:
 
 hack.rebel_spawner.8:
 	Inherits: hack.rebel_spawner.4
-	Armament@1:
+	PeriodicExplosion@1:
 		Weapon: hack.spawn_8_rebels
 
 hack.rebel_spawner.16:
 	Inherits: hack.rebel_spawner.8
-	Armament@1:
+	PeriodicExplosion@1:
 		Weapon: hack.spawn_16_rebels
 
 hack.toxin_rebel_spawner.4:
 	Inherits: hack.rebel_spawner.4
-	Armament@1:
+	PeriodicExplosion@1:
 		Weapon: hack.spawn_4_toxin_rebels
 
 hack.toxin_rebel_spawner.8:
 	Inherits: hack.rebel_spawner.8
-	Armament@1:
+	PeriodicExplosion@1:
 		Weapon: hack.spawn_8_toxin_rebels
 
 hack.toxin_rebel_spawner.16:
 	Inherits: hack.rebel_spawner.16
-	Armament@1:
+	PeriodicExplosion@1:
 		Weapon: hack.spawn_16_toxin_rebels
 
 hack.rpg_trooper_spawner.1:
 	Inherits: hack.rebel_spawner.4
-	Armament@1:
+	PeriodicExplosion@1:
 		Weapon: hack.spawn_1_rpg_trooper
 	KillsSelf:
 		Delay: 1
 
 hack.mine_spawner.2:
 	Inherits: hack.rebel_spawner.4
-	Armament@1:
+	PeriodicExplosion@1:
 		Weapon: hack.spawn_2_mines
 	KillsSelf:
 		Delay: 1
 
 hack.spawn_sneak_attack:
 	Inherits: hack.rebel_spawner.4
-	Armament@1:
+	PeriodicExplosion@1:
 		Weapon: hack.spawn_sneak_attack
 	KillsSelf:
 		Delay: 1
@@ -629,6 +614,8 @@ hack.spawn_sneak_attack:
 		TargetTypes: SupplyDock
 	AppearsOnRadar:
 	RadarColorFromTerrain:
+		Terrain: Ore
+	AppearsOnMapPreview:
 		Terrain: Ore
 	RenderSprites:
 		Palette: player
@@ -976,7 +963,7 @@ hack.particle_beam:
 		Speed: 30
 		TurnSpeed: 255
 	-Targetable:
-	ExplodeWeapon:
+	PeriodicExplosion:
 		Weapon: aoe.particle_beam
 	Selectable:
 		Priority: 5
@@ -1087,7 +1074,7 @@ CTFLAG:
 	Tooltip:
 		Name: Flag
 	WithBuildingBib:
-		HasMinibib: Yes
+		HasMinibib: true
 	-HitShape:
 	-Health:
 	-Explodes:

@@ -100,25 +100,25 @@
 		Sequence: rank-veteran-1
 		Palette: effect
 		ReferencePoint: Bottom, Right
+		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: rank-veteran == 1
 		ZOffset: 256
-		ValidStances: Ally, Neutral, Enemy
 	WithDecoration@RANK-2:
 		Image: rank
 		Sequence: rank-veteran-2
 		Palette: effect
 		ReferencePoint: Bottom, Right
+		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: rank-veteran == 2
 		ZOffset: 256
-		ValidStances: Ally, Neutral, Enemy
 	WithDecoration@RANK-ELITE:
 		Image: rank
 		Sequence: rank-veteran-3
 		Palette: effect
 		ReferencePoint: Bottom, Right
+		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: rank-elite
 		ZOffset: 256
-		ValidStances: Ally, Neutral, Enemy
 
 ^IronCurtainable:
 	WithColoredOverlay@IRONCURTAIN:
@@ -684,6 +684,11 @@
 		DamageInterval: 10
 		DamageTypes: FireDeath
 
+^AffectedByOilRefinery:
+	ProductionCostMultiplier@OIL_REFINERY:
+		Multiplier: 90
+		Prerequisites: tech.oil_refinery
+
 ^AcceptsTimedDemoBomb:
 	DelayedWeaponAttachable@TIMED_DEMO_BOMB:
 		Type: timed_demo_bomb
@@ -990,7 +995,7 @@
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: stance-attackanything || assault-move
 	AttackMove:
-		AssaultMoveScanCondition: assault-move
+		AssaultMoveCondition: assault-move
 
 ^AutoTargetAir:
 	AutoTarget:
@@ -1017,7 +1022,7 @@
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: stance-attackanything || assault-move
 	AttackMove:
-		AssaultMoveScanCondition: assault-move
+		AssaultMoveCondition: assault-move
 
 ^EjectsPilotOnAir:
 	EjectOnDeath:
@@ -1179,6 +1184,14 @@
 		RequiresCondition: land_mines && zh_units
 	ProvidesPrerequisite@buildingname:
 
+^FlatSelectionMode:
+	Selectable:
+		PriorityModifiers: Ctrl
+
+^LowPrioritySelectionMode:
+	Selectable:
+		PriorityModifiers: Ctrl, Alt
+
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^IronCurtainable
@@ -1201,6 +1214,8 @@
 	Inherits@19: ^TakesBounty
 	Inherits@20: ^AffectedByLeaflet
 	Inherits@21: ^AcceptsTNTCharges
+	Inherits@22: ^AffectedByOilRefinery
+	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1213,7 +1228,7 @@
 	Mobile:
 		TurnSpeed: 5
 		Locomotor: locomotor.wheeled
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
@@ -1225,10 +1240,10 @@
 		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, NoDriverKill, NoAutoTarget
 		RequiresCondition: driver_killed
 	RepairableNear:
-		Buildings: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
+		RepairActors: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
 		CloseEnough: 3c0
 	Repairable:
-		RepairBuildings: tech.service_depot
+		RepairActors: tech.service_depot
 		Voice: Move
 	Passenger:
 		Weight: 3
@@ -1317,13 +1332,13 @@
 		Speed: 90
 		TurnSpeed: 5
 		Locomotor: locomotor.sentry_drone
-		RequiresCondition: !hacked && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
 		Bounds: 24, 24
 	Repairable:
-		RepairBuildings: tech.service_depot
+		RepairActors: tech.service_depot
 		Voice: Move
 	Passenger:
 		Weight: 3
@@ -1424,6 +1439,7 @@
 	Inherits@12: ^TakesBounty
 	Inherits@13: ^AffectedByLeaflet
 	Inherits@14: ^HealedInTransports
+	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1435,7 +1451,7 @@
 	Mobile:
 		Speed: 20
 		Locomotor: locomotor.infantry
-		RequiresCondition: !leaflet
+		PauseOnCondition: leaflet
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
@@ -1444,7 +1460,7 @@
 		TargetTypes: Ground, Infantry, Infantry-Disguise, DetonateAttack
 		RequiresCondition: !parachute
 	RepairableNear:
-		Buildings: building.usa_barracks, building.gla_barracks, building.prc_barracks, tech.soviet_barracks
+		RepairActors: building.usa_barracks, building.gla_barracks, building.prc_barracks, tech.soviet_barracks
 		CloseEnough: 3c0
 	QuantizeFacingsFromSequence:
 		Sequence: stand
@@ -1576,6 +1592,8 @@
 	Inherits@15: ^AffectedByRepairBay
 	Inherits@16: ^TakesBounty
 	Inherits@17: ^AffectedByLeaflet
+	Inherits@18: ^AffectedByOilRefinery
+	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1583,7 +1601,7 @@
 	UpdatesPlayerStatistics:
 	Mobile:
 		Locomotor: locomotor.vessel
-		RequiresCondition: !hacked && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
@@ -1597,7 +1615,7 @@
 		Types: Ship
 	GivesBounty:
 	RepairableNear:
-		Buildings: tech.shipyard
+		RepairActors: tech.shipyard
 		CloseEnough: 3c0
 	WithDamageOverlay:
 	Explodes:
@@ -1626,6 +1644,8 @@
 	Inherits@5: ^AffectedBySearchAndDestroy
 	Inherits@6: ^AffectedByHoldTheLine
 	Inherits@7: ^TakesBounty
+	Inherits@8: ^AffectedByOilRefinery
+	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1680,9 +1700,11 @@
 		CanHover: True
 		CruisingCondition: cruising
 		WaitDistanceFromResupplyBase: 4c0
+		Crushes: crate, mine
 		VTOL: true
+		CanSlide: True
 	RepairableNear:
-		Buildings: building.usa_airfield, building.prc_airfield
+		RepairActors: building.usa_airfield, building.prc_airfield
 		CloseEnough: 1c0
 	Hovers@CRUISING:
 		RequiresCondition: cruising
@@ -1712,6 +1734,10 @@
 		TerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
 		BuildSounds: placbldg.aud, build5.aud
 		RequiresBaseProvider: true
+	ActorPreviewPlaceBuildingPreview:
+		OverridePalette: placebuilding
+	RequiresBuildableArea:
+		AreaTypes: building
 	SoundOnDamageTransition:
 		DamagedSounds: kaboom1.aud
 		DestroyedSounds: kaboom22.aud
@@ -1733,8 +1759,6 @@
 	MapEditorData:
 		Categories: Building
 	CommandBarBlacklist:
-	RequiresBuildableArea:
-		AreaTypes: building
 
 ^Building:
 	Inherits: ^BasicBuilding
@@ -1766,6 +1790,7 @@
 		Condition: build-incomplete
 	Capturable:
 		Types: building
+		RequiresCondition: !build-incomplete
 	CapturableProgressBar:
 	MustBeDestroyed:
 		RequiredForShortGame: true
@@ -1889,6 +1914,11 @@
 		Footprint: x
 		BuildSounds: placbldg.aud
 		TerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
+	FootprintPlaceBuildingPreview:
+		LineBuildSegmentPalette: placelinesegment
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 7
 	SoundOnDamageTransition:
 		DamagedSounds: sandbag2.aud
 		DestroyedSounds: sandbag2.aud
@@ -1911,11 +1941,12 @@
 	FrozenUnderFog:
 	Health:
 		HP: 10000
+	RadarColorFromTerrain:
+		Terrain: Wall
+	AppearsOnMapPreview:
+		Terrain: Wall
 	MapEditorData:
 		Categories: Wall
-	RequiresBuildableArea:
-		AreaTypes: building
-		Adjacent: 7
 
 ^Gate:
 	Inherits: ^BasicBuilding
@@ -1936,15 +1967,14 @@
 	Building:
 		BuildSounds: place2.aud
 		TerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
-	MapEditorData:
-		Categories: Wall
-	RequiresBuildableArea:
-		AreaTypes: building
-		Adjacent: 4
 	Gate:
 		OpeningSound: cashturn.aud
 		ClosingSound: cashturn.aud
 		BlocksProjectilesHeight: 0
+	RequiresBuildableArea:
+		Adjacent: 4
+	MapEditorData:
+		Categories: Wall
 
 ^TechBuilding:
 	Inherits: ^BasicBuilding
@@ -2030,6 +2060,8 @@
 	AppearsOnRadar:
 	RadarColorFromTerrain:
 		Terrain: Tree
+	AppearsOnMapPreview:
+		Terrain: Tree
 	Health:
 		HP: 50000
 	Armor:
@@ -2062,6 +2094,8 @@
 	Interactable:
 	AppearsOnRadar:
 	RadarColorFromTerrain:
+		Terrain: Tree
+	AppearsOnMapPreview:
 		Terrain: Tree
 	Building:
 		Footprint: x
@@ -2132,6 +2166,7 @@
 	Aircraft:
 		CanHover: True
 		VTOL: true
+		CanSlide: True
 	FallsToEarth:
 		Explosion: UnitExplodeHeli
 	BodyOrientation:
@@ -2154,6 +2189,8 @@
 		Dimensions: 2,2
 	AppearsOnRadar:
 	RadarColorFromTerrain:
+		Terrain: Tree
+	AppearsOnMapPreview:
 		Terrain: Tree
 	HiddenUnderShroud:
 	ScriptTriggers:

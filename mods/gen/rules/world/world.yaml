@@ -5,6 +5,7 @@
 	AlwaysVisible:
 	ActorMap:
 	ScreenMap:
+	Selection:
 	MusicPlaylist:
 		VictoryMusic: score
 		DefeatMusic: map
@@ -87,7 +88,7 @@ World:
 	MapOptions:
 		ShortGameCheckboxDisplayOrder: 2
 		TechLevelDropdownDisplayOrder: 2
-		GameSpeedDropdownDisplayOrder: 3
+		GameSpeedDropdownDisplayOrder: 5
 		TechLevelDropdownLabel: Restrictions
 	ScriptLobbyDropdown@GPMODIFIER:
 		ID: gpmodifier
@@ -115,6 +116,18 @@ World:
 	ObjectivesPanel:
 		PanelName: SKIRMISH_STATS
 	LoadWidgetAtGameStart:
+	ScriptTriggers:
+	TimeLimitManager:
+		TimeLimitWarnings:
+			40: FourtyMinutesRemaining
+			30: ThirtyMinutesRemaining
+			20: TwentyMinutesRemaining
+			10: TenMinutesRemaining
+			5: WarningFiveMinutesRemaining
+			4: WarningFourMinutesRemaining
+			3: WarningThreeMinutesRemaining
+			2: WarningTwoMinutesRemaining
+			1: WarningOneMinuteRemaining
 	RadioactivityLayer@ANTHRAX_ALPHA:
 		Name: anthrax_alpha
 		Color: 00FF00
@@ -134,3 +147,4 @@ EditorWorld:
 	EditorResourceLayer:
 	EditorSelectionLayer:
 	LoadWidgetAtGameStart:
+	EditorActionManager:

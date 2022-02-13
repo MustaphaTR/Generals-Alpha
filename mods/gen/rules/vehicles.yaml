@@ -14,9 +14,6 @@ vehicle.supply_truck:
 		ReadyAudio: SupplyTruckCreated
 	Valued:
 		Cost: 600
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 540
 	Tooltip:
 		Name: Supply Truck
 		GenericName: Collector
@@ -109,18 +106,6 @@ vehicle.humvee:
 		ReadyAudio: HumveeCreated
 	Valued:
 		Cost: 700
-	CustomProductionCost@Refinery:
-		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 630
-	CustomProductionCost@Refinery_Airforce:
-		Queue: queue.air_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 720
-	CustomProductionCost@Refinery_Super:
-		Queue: queue.super_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 765
 	CustomProductionCost@Airforce:
 		Queue: queue.air_gen_vehicle
 		Cost: 800
@@ -141,7 +126,7 @@ vehicle.humvee:
 		TurnSpeed: 8
 		Speed: 60
 		Voice: Move
-		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Crushable:
@@ -249,14 +234,6 @@ vehicle.technical:
 		ReadyAudio: TechnicalCreated
 	Valued:
 		Cost: 500
-	CustomProductionCost@Refinery:
-		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.stealth_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 450
-	CustomProductionCost@Refinery_Demo:
-		Queue: queue.demo_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 540
 	CustomProductionCost@Demo:
 		Queue: queue.demo_gen_vehicle
 		Cost: 600
@@ -274,7 +251,7 @@ vehicle.technical:
 		TurnSpeed: 8
 		Speed: 90
 		Voice: Move
-		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
 	SpeedMultiplier@DAMAGED:
 		Modifier: 89
 	Crushable:
@@ -376,14 +353,6 @@ vehicle.radar_van:
 		ReadyAudio: RadarVanCreated
 	Valued:
 		Cost: 500
-	CustomProductionCost@Refinery:
-		Queue: queue.gla_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 450
-	CustomProductionCost@Refinery_Toxin:
-		Queue: queue.toxin_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 495
 	CustomProductionCost@Toxin:
 		Queue: queue.toxin_gen_vehicle
 		Cost: 550
@@ -494,14 +463,6 @@ vehicle.scorpion_tank:
 		ReadyAudio: ScorpionTankCreated
 	Valued:
 		Cost: 600
-	CustomProductionCost@Refinery:
-		Queue: queue.gla_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 540
-	CustomProductionCost@Refinery_Toxin:
-		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 585
 	CustomProductionCost@Toxin:
 		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		Cost: 650
@@ -675,9 +636,6 @@ vehicle.crusader_tank:
 		ReadyAudio: CrusaderTankCreated
 	Valued:
 		Cost: 900
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 810
 	Tooltip:
 		Name: Crusader Tank
 	UpdatesPlayerStatistics:
@@ -741,7 +699,7 @@ vehicle.laser_tank:
 		Amount: -1
 		RequiresCondition: !driver_killed
 	Mobile:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !lowpower
+		PauseOnCondition: !(!hacked && !driver_killed && !emp && !leaflet && !lowpower)
 	AttackTurreted:
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !lowpower
 	MobSpawnerMaster@SCOUT_DRONE:
@@ -785,14 +743,6 @@ vehicle.battlemaster_tank:
 		ReadyAudio: BattlemasterTankCreated
 	Valued:
 		Cost: 800
-	CustomProductionCost@Refinery:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 720
-	CustomProductionCost@Refinery_Tank:
-		Queue: queue.tank_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 630
 	CustomProductionCost@Tank:
 		Queue: queue.tank_gen_vehicle
 		Cost: 700
@@ -887,14 +837,6 @@ vehicle.ambulance:
 		ReadyAudio: AmbulanceCreated
 	Valued:
 		Cost: 600
-	CustomProductionCost@Refinery:
-		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 540
-	CustomProductionCost@Refinery_Airforce:
-		Queue: queue.air_gen_vehicle, queue.super_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 630
 	CustomProductionCost@Airforce:
 		Queue: queue.air_gen_vehicle, queue.super_gen_vehicle
 		Cost: 700
@@ -910,7 +852,7 @@ vehicle.ambulance:
 		Speed: 60
 		TurnSpeed: 8
 		Voice: Move
-		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Crushable:
@@ -965,18 +907,6 @@ vehicle.sentry_drone:
 		Description: Detection vehicle.\n\nCamouflaged while not moving.
 	Valued:
 		Cost: 800
-	CustomProductionCost@Refinery:
-		Queue: queue.usa_vehicle, queue.laser_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 720
-	CustomProductionCost@Refinery_Airforce:
-		Queue: queue.air_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 765
-	CustomProductionCost@Refinery_Super:
-		Queue: queue.super_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 900
 	CustomProductionCost@Airforce:
 		Queue: queue.air_gen_vehicle
 		Cost: 850
@@ -998,7 +928,7 @@ vehicle.sentry_drone:
 		Speed: 60
 		Voice: Move
 		Locomotor: locomotor.sentry_drone
-		RequiresCondition: !hacked && !emp && !leaflet
+		PauseOnCondition: !(!hacked && !emp && !leaflet)
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
 	Crushable:
@@ -1089,14 +1019,6 @@ vehicle.quad_cannon:
 		ReadyAudio: QuadCannonCreated
 	Valued:
 		Cost: 700
-	CustomProductionCost@Refinery:
-		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 630
-	CustomProductionCost@Refinery_Toxin:
-		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 675
 	CustomProductionCost@Toxin:
 		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		Cost: 750
@@ -1199,14 +1121,6 @@ vehicle.gatling_tank:
 		ReadyAudio: GatlingTankCreated
 	Valued:
 		Cost: 800
-	CustomProductionCost@Refinery:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 720
-	CustomProductionCost@Refinery_Tank:
-		Queue: queue.tank_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 630
 	CustomProductionCost@Tank:
 		Queue: queue.tank_gen_vehicle
 		Cost: 700
@@ -1317,18 +1231,6 @@ vehicle.toxin_tractor:
 		ReadyAudio: ToxinTractorCreated
 	Valued:
 		Cost: 600
-	CustomProductionCost@Refinery:
-		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 540
-	CustomProductionCost@Refinery_Toxin:
-		Queue: queue.toxin_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 585
-	CustomProductionCost@Refinery_Demo:
-		Queue: queue.demo_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 675
 	CustomProductionCost@Toxin:
 		Queue: queue.toxin_gen_vehicle
 		Cost: 650
@@ -1339,7 +1241,7 @@ vehicle.toxin_tractor:
 		TurnSpeed: 8
 		Speed: 30
 		Voice: Move
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !spray
+		PauseOnCondition: !(!hacked && !driver_killed && !emp && !leaflet && !spray)
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
 	Crushable:
@@ -1385,18 +1287,6 @@ vehicle.toxin_tractor:
 		Weapon: toxin.toxin_tractor.gamma.crate-2
 		LocalOffset: 600,0,90
 		RequiresCondition: anthrax_gamma && scrap_create_bonus == 2
-	Armament@SPRAY_ALPHA:
-		Name: deploy_alpha
-		Weapon: toxin.toxin_tractor.deploy
-		RequiresCondition: !anthrax_beta && !anthrax_gamma && spray
-	Armament@SPRAY_BETA:
-		Name: deploy_beta
-		Weapon: toxin.toxin_tractor.deploy.beta
-		RequiresCondition: anthrax_beta && !anthrax_gamma && spray
-	Armament@SPRAY_GAMMA:
-		Name: deploy_gamma
-		Weapon: toxin.toxin_tractor.deploy.gamma
-		RequiresCondition: anthrax_gamma && spray
 	AttackFrontal:
 		Armaments: deploy_alpha, deploy_beta, deploy_gamma
 	AttackTurreted:
@@ -1405,14 +1295,14 @@ vehicle.toxin_tractor:
 	Turreted:
 		TurnSpeed: 8
 		Offset: -192,0,160
-	FireWeaponAtSelf@ALPHA:
-		Name: deploy_alpha
+	PeriodicExplosion@ALPHA:
+		Weapon: toxin.toxin_tractor.deploy
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !anthrax_beta && !anthrax_gamma && spray
-	FireWeaponAtSelf@BETA:
-		Name: deploy_beta
+	PeriodicExplosion@BETA:
+		Weapon: toxin.toxin_tractor.deploy.beta
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && anthrax_beta && !anthrax_gamma && spray
-	FireWeaponAtSelf@GAMMA:
-		Name: deploy_gamma
+	PeriodicExplosion@GAMMA:
+		Weapon: toxin.toxin_tractor.deploy.gamma
 		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && anthrax_gamma && spray
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
@@ -1477,18 +1367,6 @@ vehicle.dragon_tank:
 		ReadyAudio: DragonTankCreated
 	Valued:
 		Cost: 800
-	CustomProductionCost@Refinery:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 720
-	CustomProductionCost@Refinery_Infantry:
-		Queue: queue.inf_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 810
-	CustomProductionCost@Refinery_Tank:
-		Queue: queue.tank_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 630
 	CustomProductionCost@Infantry:
 		Queue: queue.inf_gen_vehicle
 		Cost: 900
@@ -1580,18 +1458,6 @@ vehicle.rocket_buggy:
 		Description: Rocket artillery.\n\nGets extra missiles per burst from Scrap Crates.
 		ReadyAudio: RocketBuggyCreated
 	Valued:
-		Cost: 900
-	CustomProductionCost@Refinery:
-		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 810
-	CustomProductionCost@Refinery_Toxin:
-		Queue: queue.toxin_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 990
-	CustomProductionCost@Refinery_Demo:
-		Queue: queue.toxin_gen_vehicle
-		Prerequisites: tech.oil_refinery
 		Cost: 900
 	CustomProductionCost@Toxin:
 		Queue: queue.toxin_gen_vehicle
@@ -1719,14 +1585,6 @@ vehicle.avenger:
 		ReadyAudio: AvengerCreated
 	Valued:
 		Cost: 2000
-	CustomProductionCost@Refinery:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 1800
-	CustomProductionCost@Laser_Refinery:
-		Queue: queue.laser_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 1350
 	CustomProductionCost@Laser:
 		Queue: queue.laser_gen_vehicle
 		Cost: 1500
@@ -1815,18 +1673,6 @@ vehicle.battle_Bus:
 		ReadyAudio: BattleBusCreated
 	Valued:
 		Cost: 1000
-	CustomProductionCost@Refinery:
-		Queue: queue.gla_vehicle, queue.stealth_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 900
-	CustomProductionCost@Refinery_Toxin:
-		Queue: queue.toxin_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 990
-	CustomProductionCost@Refinery_Demo:
-		Queue: queue.demo_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 1080
 	CustomProductionCost@Toxin:
 		Queue: queue.toxin_gen_vehicle
 		Cost: 1100
@@ -1863,7 +1709,7 @@ vehicle.battle_Bus:
 		Speed: 70
 		TurnSpeed: 4
 		Voice: Move
-		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet && !husk
+		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet && !husk)
 	SpeedMultiplier@DAMAGED:
 		Modifier: 71
 	Crushable:
@@ -1939,9 +1785,6 @@ vehicle.troop_crawler:
 		ReadyAudio: TroopCrawlerCreated
 	Valued:
 		Cost: 1400
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 1260
 	Tooltip:
 		Name: Troop Crawler
 	UpdatesPlayerStatistics:
@@ -1954,7 +1797,7 @@ vehicle.troop_crawler:
 		Speed: 40
 		TurnSpeed: 5
 		Voice: Move
-		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
 	Crushable:
@@ -1987,9 +1830,6 @@ vehicle.assault_troop_crawler:
 		ReadyAudio: AssaultTroopCrawlerCreated
 	Valued:
 		Cost: 2400
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 2160
 	Tooltip:
 		Name: Assault Troop Crawler
 	Armor:
@@ -2033,9 +1873,6 @@ vehicle.listening_outpost:
 		ReadyAudio: ListeningOutpostCreated
 	Valued:
 		Cost: 800
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 780
 	Tooltip:
 		Name: Listening Outpost
 	UpdatesPlayerStatistics:
@@ -2048,8 +1885,7 @@ vehicle.listening_outpost:
 		Speed: 40
 		TurnSpeed: 4
 		Voice: Move
-		AlwaysConsiderTurnAsMove: true
-		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
 	Crushable:
@@ -2106,9 +1942,6 @@ vehicle.attack_outpost:
 		Name: Attack Outpost
 	Valued:
 		Cost: 1000
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 900
 	Health:
 		HP: 30000
 	Cargo:
@@ -2156,9 +1989,6 @@ vehicle.microwave_tank:
 		ReadyAudio: MicrowaveTankCreated
 	Valued:
 		Cost: 800
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 780
 	Tooltip:
 		Name: Microwave Tank
 	UpdatesPlayerStatistics:
@@ -2187,7 +2017,7 @@ vehicle.microwave_tank:
 		Weapon: disable.microwave_tank.end
 		LocalOffset: 24,0,0
 		RequiresCondition: end_disable >= 1
-	ExplodeWeapon@AoE:
+	PeriodicExplosion@AoE:
 		Weapon: aoe.microwave_tank
 		RequiresCondition: !firing && !hacked && !driver_killed && !emp && !leaflet
 	GrantConditionOnAttack@End:
@@ -2254,14 +2084,6 @@ vehicle.ecm_tank:
 		ReadyAudio: ECMTankCreated
 	Valued:
 		Cost: 800
-	CustomProductionCost@Refinery:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 780
-	CustomProductionCost@Refinery_Infantry:
-		Queue: queue.inf_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 810
 	CustomProductionCost@Infantry:
 		Queue: queue.inf_gen_vehicle
 		Cost: 900
@@ -2360,18 +2182,6 @@ vehicle.tomahawk_launcher:
 		ReadyAudio: TomahawkCreated
 	Valued:
 		Cost: 1200
-	CustomProductionCost@Refinery:
-		Queue: queue.usa_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 1080
-	CustomProductionCost@Refinery_Airforce:
-		Queue: queue.air_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 1170
-	CustomProductionCost@Refinery_Super:
-		Queue: queue.super_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 1260
 	CustomProductionCost@Airforce:
 		Queue: queue.air_gen_vehicle
 		Cost: 1300
@@ -2470,9 +2280,6 @@ vehicle.scud_launcher:
 		ReadyAudio: ScudLauncherCreated
 	Valued:
 		Cost: 1200
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 1080
 	CustomProductionTime@ZH:
 		Prerequisites: prerequisite.zh_units
 		BuildTime: 375
@@ -2647,14 +2454,6 @@ vehicle.inferno_cannon:
 		ReadyAudio: InfernoCannonCreated
 	Valued:
 		Cost: 900
-	CustomProductionCost@Refinery:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 810
-	CustomProductionCost@Refinery_Infantry:
-		Queue: queue.inf_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 990
 	CustomProductionCost@Infantry:
 		Queue: queue.inf_gen_vehicle
 		Cost: 1100
@@ -2742,9 +2541,6 @@ vehicle.paladin_tank:
 		ReadyAudio: PaladinTankCreated
 	Valued:
 		Cost: 1100
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 990
 	Tooltip:
 		Name: Paladin Tank
 	UpdatesPlayerStatistics:
@@ -2850,14 +2646,6 @@ vehicle.marauder_tank:
 		ReadyAudio: MarauderTankCreated
 	Valued:
 		Cost: 800
-	CustomProductionCost@Refinery:
-		Queue: queue.gla_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 720
-	CustomProductionCost@Refinery_Toxin:
-		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 810
 	CustomProductionCost@Toxin:
 		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		Cost: 900
@@ -3157,14 +2945,6 @@ vehicle.overlord_tank:
 		ReadyAudio: OverlordTankCreated
 	Valued:
 		Cost: 2000
-	CustomProductionCost@Refinery:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 1800
-	CustomProductionCost@Refinery_Tank:
-		Queue: queue.tank_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 1710
 	CustomProductionCost@Tank:
 		Queue: queue.tank_gen_vehicle
 		Cost: 1900
@@ -3200,7 +2980,7 @@ vehicle.overlord_tank:
 		TurnSpeed: 3
 		Voice: Move
 		Locomotor: locomotor.overlord
-		RequiresCondition: !notmobile && !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
 	SpeedMultiplier@NUCLEAR_TANKS:
 		Modifier: 150
 	SpeedMultiplier@NUKE_GEN:
@@ -3350,7 +3130,7 @@ vehicle.emparor_overlord:
 	ProductionBar:
 		ProductionType: queue.emparor_overlord
 	Mobile:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: !(!hacked && !driver_killed && !emp && !leaflet)
 	-Cargo@BUNKER_UPGRADE:
 	-Turreted@Bunker:
 	-AttackGarrisoned:
@@ -3385,14 +3165,6 @@ vehicle.bomb_truck:
 		ReadyAudio: BombTruckCreated
 	Valued:
 		Cost: 1200
-	CustomProductionCost@Refinery:
-		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.stealth_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 1080
-	CustomProductionCost@Refinery_Demo:
-		Queue: queue.demo_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 900
 	CustomProductionCost@Demo:
 		Queue: queue.demo_gen_vehicle
 		Cost: 1000
@@ -3442,7 +3214,6 @@ vehicle.bomb_truck:
 		Speed: 50
 		TurnSpeed: 4
 		Voice: Move
-		AlwaysConsiderTurnAsMove: true
 	SpeedMultiplier@CRATE-1:
 		Modifier: 110
 		RequiresCondition: scrap_create_bonus == 1
@@ -3604,9 +3375,6 @@ vehicle.nuke_cannon:
 		ReadyAudio: NukeCannonCreated
 	Valued:
 		Cost: 1600
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 1440
 	Tooltip:
 		Name: Nuke Cannon
 	UpdatesPlayerStatistics:
@@ -3619,8 +3387,7 @@ vehicle.nuke_cannon:
 		Speed: 20
 		TurnSpeed: 4
 		Voice: Move
-		AlwaysConsiderTurnAsMove: true
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !immobile
+		PauseOnCondition: !(!hacked && !driver_killed && !emp && !leaflet && !immobile)
 	SpeedMultiplier@DAMAGED:
 		Modifier: 90
 	Crushable:
@@ -3758,14 +3525,6 @@ vehicle.combat_cycle:
 		ReadyAudio: CycleCreated
 	Valued:
 		Cost: 500
-	CustomProductionCost@Refinery:
-		Queue: queue.gla_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 450
-	CustomProductionCost@Refinery_Toxin:
-		Queue: queue.demo_gen_vehicle, queue.toxin_gen_vehicle, queue.stealth_gen_vehicle
-		Prerequisites: tech.oil_refinery
-		Cost: 495
 	CustomProductionCost@Toxin:
 		Queue: queue.demo_gen_vehicle, queue.toxin_gen_vehicle, queue.stealth_gen_vehicle
 		Cost: 550
@@ -3790,7 +3549,7 @@ vehicle.combat_cycle:
 		TurnSpeed: 5
 		Voice: Move
 		Locomotor: locomotor.sentry_drone
-		RequiresCondition: !notmobile && !hacked && !emp && !leaflet && loaded
+		PauseOnCondition: !(!notmobile && !hacked && !emp && !leaflet && loaded)
 	SpeedMultiplier@DAMAGED:
 		Modifier: 89
 	Crushable:
@@ -4022,9 +3781,6 @@ vehicle.combat_cycle.demo:
 		Description: Builds structures.\n\nCan be deployed to disarm enemy bombs, demo traps or mines.
 	Valued:
 		Cost: 1000
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 900
 	Selectable:
 		Priority: 4
 		DecorationBounds: 42,42
@@ -4037,8 +3793,7 @@ vehicle.combat_cycle.demo:
 		Speed: 25
 		TurnSpeed: 4
 		Voice: Move
-		AlwaysConsiderTurnAsMove: true
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !deployed
+		PauseOnCondition: !(!hacked && !driver_killed && !emp && !leaflet && !deployed)
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
 	Crushable:
@@ -4075,7 +3830,7 @@ vehicle.combat_cycle.demo:
 	DetectCloaked:
 		CloakTypes: Mine
 		Range: 4c0
-	ExplodeWeapon@DISARM:
+	PeriodicExplosion@DISARM:
 		Weapon: detach.mcc
 		RequiresCondition: deployed
 	WithRangeCircle@DISARM:
@@ -4295,6 +4050,7 @@ vehicle.mobile_reactor:
 		TurnSpeed: 8
 	Repairable:
 		Voice: Action
+		RepairActors: fix
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
 	WithIdleOverlay@SPINNER:

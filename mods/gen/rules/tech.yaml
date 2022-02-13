@@ -43,8 +43,10 @@ tech.oil_derrick:
 		Description: Gives cash periodically.
 	Explodes:
 		Weapon: BarrelExplode
+	AppearsOnMapPreview:
 	GivesCashOnCapture:
 		Amount: 1000
+	UpdatesDerrickCount:
 	CapturableProgressBlink:
 		Sound: ucapture.aud
 	CaptureManager:
@@ -91,6 +93,7 @@ tech.oil_refinery:
 		UseDeathTypeSuffix: false
 	ProvidesPrerequisite@buildingname:
 		RequiresCondition: !emp && !hacked
+	AppearsOnMapPreview:
 	CapturableProgressBlink:
 		Sound: ucapture.aud
 	CaptureManager:
@@ -157,12 +160,13 @@ tech.hospital:
 	TooltipDescription:
 		Description: Makes infantry self-heal.
 	WithBuildingBib:
-		HasMinibib: Yes
+		HasMinibib: true
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
 	ProvidesPrerequisite@buildingname:
 		RequiresCondition: !emp && !hacked
+	AppearsOnMapPreview:
 	CapturableProgressBlink:
 		Sound: ucapture.aud
 	CaptureManager:
@@ -222,6 +226,7 @@ tech.communications_center:
 		Palette: player
 		IsPlayerPalette: True
 	ProvidesPrerequisite@buildingname:
+	AppearsOnMapPreview:
 	CapturableProgressBlink:
 		Sound: ucapture.aud
 	CaptureManager:
@@ -294,6 +299,7 @@ tech.soviet_barracks:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.barracks
+	AppearsOnMapPreview:
 	ProvidesPrerequisite@FlameTower:
 		Prerequisite: tech.flame_tower
 		RequiresPrerequisites: techlevel.nodefense
@@ -329,7 +335,7 @@ tech.flame_tower:
 	Armor:
 		Type: building.defense
 	WithBuildingBib:
-		HasMinibib: Yes
+		HasMinibib: true
 	Turreted:
 		TurnSpeed: 255
 		Offset: 0,0,112
@@ -345,6 +351,7 @@ tech.flame_tower:
 	DetectCloaked:
 		Range: 5c0
 	ProvidesPrerequisite@buildingname:
+	AppearsOnMapPreview:
 	Explodes:
 		Weapon: BuildingExplode
 		EmptyWeapon: BuildingExplode
@@ -396,6 +403,7 @@ tech.power_plant:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.reactor
+	AppearsOnMapPreview:
 	CapturableProgressBlink:
 		Sound: ucapture.aud
 	CaptureManager:
@@ -431,6 +439,7 @@ tech.repair_bay:
 		PlayerPalette: cncplayer
 	ProvidesPrerequisite@buildingname:
 		RequiresCondition: !emp && !hacked
+	AppearsOnMapPreview:
 	CapturableProgressBlink:
 		Sound: ucapture.aud
 	CaptureManager:
@@ -484,7 +493,7 @@ tech.reinforcements_pad:
 	Health:
 		HP: 100000
 	WithBuildingBib:
-		HasMinibib: Yes
+		HasMinibib: true
 	RallyPoint:
 	Exit:
 		ExitCell: 1,1
@@ -638,6 +647,7 @@ tech.reinforcements_pad:
 		Factions: boss
 		ResetOnOwnerChange: true
 	ProvidesPrerequisite@buildingname:
+	AppearsOnMapPreview:
 	RenderSprites:
 		PlayerPalette: cncplayer
 	CapturableProgressBlink:
@@ -716,6 +726,7 @@ tech.shipyard:
 		HpPerStep: 1000
 	RallyPoint:
 	ProvidesPrerequisite@buildingname:
+	AppearsOnMapPreview:
 	MapEditorData:
 		ExcludeTilesets: INTERIOR
 	HitShape:

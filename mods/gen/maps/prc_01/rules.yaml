@@ -146,12 +146,11 @@ building.bunker.filled.gla:
 
 aircraft.mig:
 	-Selectable:
-	-ReturnOnIdle:
 	-RevealsShroud:
-	FlyAwayOnIdle:
 	Interactable:
 	Aircraft:
 		Speed: 200
+		IdleBehavior: LeaveMap
 
 ^Car:
 	ExternalCondition@lua:

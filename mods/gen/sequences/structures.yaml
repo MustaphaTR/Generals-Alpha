@@ -667,6 +667,8 @@ building.usa_war_factory:
 		Start: 10
 		Length: 10
 		ZOffset: -1024
+	place: usweapmake
+		Start: 19
 	make: usweapmake
 		Length: *
 		Tick: 80
@@ -697,6 +699,8 @@ building.arms_dealer:
 	idle: weap
 	damaged-idle: weap
 		Start: 1
+	place: weapmake
+		Start: 14
 	make: weapmake
 		Length: *
 	build-top: weap3
@@ -726,6 +730,8 @@ building.prc_war_factory:
 	idle: weap
 	damaged-idle: weap
 		Start: 1
+	place: weapmake
+		Start: 14
 	make: weapmake
 		Length: *
 	build-top: weap3

@@ -770,6 +770,16 @@ grenade.grenadier.garrison:
 	Warhead@1Dam: SpreadDamage
 		Damage: 7500
 
+ArtyBarrageSpawner:
+	ReloadDelay: 10
+	TargetActorCenter: true
+	Projectile: Bullet
+	Warhead@1Clu: FireCluster
+		Weapon: ArtyBarrageWeapon
+		Dimensions: 1,1
+		Footprint: x
+		Delay: 1
+
 ArtyBarrageWeapon:
 	Inherits: ^Artillery
 	ReloadDelay: 10

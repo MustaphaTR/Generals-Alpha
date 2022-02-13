@@ -91,6 +91,8 @@ fake.barracks:
 	ProductionBar:
 		ProductionType: queue.barracks.fake
 	WithBuildingBib:
+	-WithSpriteBody:
+	WithTerrainDependantSpriteBody:
 	RenderSprites:
 		Image: building.gla_barracks
 	TransformOnCondition:
@@ -201,6 +203,7 @@ fake.arms_dealer:
 	WithBuildingBib:
 	WithProductionDoorOverlay:
 		Sequence: build-top
+		RequiresCondition: !build-incomplete
 	RenderSprites:
 		Image: building.arms_dealer
 	TransformOnCondition:
@@ -252,6 +255,8 @@ fake.palace:
 		MaxWeight: 5
 		PipCount: 5
 	WithBuildingBib:
+	ActorPreviewPlaceBuildingPreview:
+		OverridePalette: cncplacebuilding
 	RenderSprites:
 		Image: building.palace
 		PlayerPalette: cncplayer

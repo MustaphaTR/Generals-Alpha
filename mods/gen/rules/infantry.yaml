@@ -614,7 +614,7 @@ infantry.stinger_soldier:
 	-Buildable:
 	-SelectionDecorations:
 	Mobile:
-		RequiresCondition: !disable_movement
+		PauseOnCondition: !(!disable_movement)
 		TurnWhileDisabledCondition: disable_movement
 	GrantConditionAfterDelay:
 		Condition: disable_movement
@@ -1203,7 +1203,7 @@ infantry.hacker:
 	Mobile:
 		Speed: 20
 		Voice: Move
-		RequiresCondition: !deployed
+		PauseOnCondition: !(!deployed)
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Passenger:

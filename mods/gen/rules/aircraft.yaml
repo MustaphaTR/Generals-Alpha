@@ -282,18 +282,6 @@ aircraft.mig:
 		ReadyAudio: MiGCreated
 	Valued:
 		Cost: 1200
-	CustomProductionCost@Refinery:
-		Queue: queue.prc_aircraft, queue.inf_gen_aircraft
-		Prerequisites: tech.oil_refinery
-		Cost: 1080
-	CustomProductionCost@Refinery_Nuke:
-		Queue: queue.nuke_gen_aircraft
-		Prerequisites: tech.oil_refinery
-		Cost: 1260
-	CustomProductionCost@Refinery_Tank:
-		Queue: queue.tank_gen_aircraft
-		Prerequisites: tech.oil_refinery
-		Cost: 1440
 	CustomProductionCost@Nuke:
 		Queue: queue.nuke_gen_aircraft
 		Cost: 1400
@@ -382,7 +370,6 @@ aircraft.mig:
 		Ammo: 2
 		ReloadDelay: 100
 		AmmoCondition: ammo
-	ReturnOnIdle:
 	Selectable:
 		Bounds: 36,28,0,2
 		DecorationBounds: 40,29,0,1
@@ -417,7 +404,7 @@ aircraft.mig:
 	Rearmable:
 		RearmActors: building.prc_airfield, building.usa_airfield, hack.dock
 	Repairable:
-		RepairBuildings: building.prc_airfield, building.usa_airfield, hack.dock
+		RepairActors: building.prc_airfield, building.usa_airfield, hack.dock
 	Voiced:
 		VoiceSet: MiGVoice
 
@@ -453,9 +440,6 @@ aircraft.raptor:
 		ReadyAudio: RaptorCreated
 	Valued:
 		Cost: 1400
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 1260
 	Tooltip:
 		Name: Raptor
 	UpdatesPlayerStatistics:
@@ -506,7 +490,6 @@ aircraft.raptor:
 		Ammo: 4
 		ReloadDelay: 50
 		AmmoCondition: ammo
-	ReturnOnIdle:
 	Selectable:
 		Bounds: 36,28,0,2
 		DecorationBounds: 40,29,0,1
@@ -526,7 +509,7 @@ aircraft.raptor:
 	Rearmable:
 		RearmActors: building.prc_airfield, building.usa_airfield, hack.dock
 	Repairable:
-		RepairBuildings: building.prc_airfield, building.usa_airfield, hack.dock
+		RepairActors: building.prc_airfield, building.usa_airfield, hack.dock
 	Voiced:
 		VoiceSet: RaptorVoice
 	RenderSprites:
@@ -546,9 +529,6 @@ aircraft.king_raptor:
 		ReadyAudio: KingRaptorCreated
 	Valued:
 		Cost: 1100
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 990
 	Tooltip:
 		Name: King Raptor
 	Health:
@@ -617,9 +597,6 @@ aircraft.stealth_fighter:
 		ReadyAudio: StealthFighterCreated
 	Valued:
 		Cost: 1600
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 1440
 	Tooltip:
 		Name: Stealth Fighter
 	UpdatesPlayerStatistics:
@@ -665,7 +642,6 @@ aircraft.stealth_fighter:
 		Ammo: 2
 		ReloadDelay: 100
 		AmmoCondition: ammo
-	ReturnOnIdle:
 	Selectable:
 		Bounds: 36,28,0,2
 		DecorationBounds: 40,29,0,1
@@ -704,7 +680,7 @@ aircraft.stealth_fighter:
 	Rearmable:
 		RearmActors: building.prc_airfield, building.usa_airfield, hack.dock
 	Repairable:
-		RepairBuildings: building.prc_airfield, building.usa_airfield, hack.dock
+		RepairActors: building.prc_airfield, building.usa_airfield, hack.dock
 	RenderSprites:
 		Image: aircraft.stealth_fighter
 		Scale: 0.9
@@ -725,9 +701,6 @@ aircraft.stealth_fighter.air:
 	ShootsMissiles:
 		ShootStances: Neutral, Enemy
 		Armament: pdlaser
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 1125
 
 aircraft.aurora:
 	Inherits: ^Plane
@@ -761,14 +734,6 @@ aircraft.aurora:
 		ReadyAudio: AuroraCreated
 	Valued:
 		Cost: 2500
-	CustomProductionCost@Refinery:
-		Queue: queue.usa_aircraft
-		Prerequisites: tech.oil_refinery
-		Cost: 2250
-	CustomProductionCost@Refinery_Airforce:
-		Queue: queue.air_gen_aircraft, queue.super_gen_aircraft
-		Prerequisites: tech.oil_refinery
-		Cost: 1800
 	CustomProductionCost@Airforce:
 		Queue: queue.air_gen_aircraft, queue.super_gen_aircraft
 		Cost: 2000
@@ -838,7 +803,6 @@ aircraft.aurora:
 		Ammo: 1
 		ReloadDelay: 125
 		AmmoCondition: ammo
-	ReturnOnIdle:
 	Selectable:
 		Class: aircraft.aurora
 		Bounds: 36,28,0,2
@@ -857,7 +821,7 @@ aircraft.aurora:
 	Rearmable:
 		RearmActors: building.prc_airfield, building.usa_airfield, hack.dock
 	Repairable:
-		RepairBuildings: building.prc_airfield, building.usa_airfield, hack.dock
+		RepairActors: building.prc_airfield, building.usa_airfield, hack.dock
 	Voiced:
 		VoiceSet: AuroraVoice
 	ProvidesPrerequisite:
@@ -958,7 +922,6 @@ aircraft.scout_drone:
 		Range: 3c768
 	Aircraft:
 		CruiseAltitude: 896
-	FlyCircleOnIdle:
 	-Cloak:
 	-GrantConditionOnDamageState@UNCLOAK:
 	-ActorLostNotification:
@@ -983,6 +946,7 @@ aircraft.battle_drone:
 		MuzzleSequence: muzzle
 	WithMuzzleOverlay:
 	AttackAircraft:
+		AttackType: Hover
 		Armaments: primary
 		FacingTolerance: 20
 	RenderSprites:
@@ -1079,14 +1043,6 @@ aircraft.chinook:
 		ReadyAudio: ChinookCreated
 	Valued:
 		Cost: 1200
-	CustomProductionCost@Refinery:
-		Queue: queue.usa_collector
-		Prerequisites: tech.oil_refinery
-		Cost: 1080
-	CustomProductionCost@Refinery_Airforce:
-		Queue: queue.air_gen_collector
-		Prerequisites: tech.oil_refinery
-		Cost: 855
 	CustomProductionCost@Airforce:
 		Queue: queue.air_gen_collector
 		Cost: 950
@@ -1148,7 +1104,7 @@ aircraft.chinook:
 		MaxWeight: 8
 		PipCount: 8
 	RepairableNear:
-		Buildings: building.usa_airfield, building.prc_airfield
+		RepairActors: building.usa_airfield, building.prc_airfield
 		CloseEnough: 1c0
 	Targetable:
 		TargetTypes: Air
@@ -1193,14 +1149,6 @@ aircraft.chinook:
 #		ReadyAudio: ChinookCreated
 #	Valued:
 #		Cost: 1200
-#	CustomProductionCost@Refinery:
-#		Queue: queue.usa_collector
-#		Prerequisites: tech.oil_refinery
-#		Cost: 1080
-#	CustomProductionCost@Refinery_Airforce:
-#		Queue: queue.air_gen_collector
-#		Prerequisites: tech.oil_refinery
-#		Cost: 855
 #	CustomProductionCost@Airforce:
 #		Queue: queue.air_gen_collector
 #		Cost: 950
@@ -1280,11 +1228,6 @@ aircraft.combat_chinook:
 		ReadyAudio: CombatChinookCreated
 	Tooltip:
 		Name: Combat Chinook
-	CustomProductionCost@Refinery:
-		-Queue:
-		Prerequisites: tech.oil_refinery
-		Cost: 1080
-	-CustomProductionCost@Refinery_Airforce:
 	-CustomProductionCost@Airforce:
 	Health:
 		HP: 35000
@@ -1336,18 +1279,6 @@ aircraft.comanche:
 		ReadyAudio: ComancheCreated
 	Valued:
 		Cost: 1500
-	CustomProductionCost@Refinery:
-		Queue: queue.usa_aircraft
-		Prerequisites: tech.oil_refinery
-		Cost: 1350
-	CustomProductionCost@Refinery_Airforce:
-		Queue: queue.air_gen_aircraft
-		Prerequisites: tech.oil_refinery
-		Cost: 1080
-	CustomProductionCost@Refinery_Super:
-		Queue: queue.super_gen_aircraft
-		Prerequisites: tech.oil_refinery
-		Cost: 1620
 	CustomProductionCost@Airforce:
 		Queue: queue.air_gen_aircraft
 		Cost: 1200
@@ -1394,10 +1325,10 @@ aircraft.comanche:
 		Delay: 375
 		Count: 12
 	AttackAircraft:
+		AttackType: Hover
 		FacingTolerance: 20
 	Aircraft:
 		CruiseAltitude: 1928
-		LandWhenIdle: false
 		InitialFacing: 224
 		TurnSpeed: 8
 		Speed: 120
@@ -1472,18 +1403,6 @@ aircraft.helix:
 		ReadyAudio: HelixCreated
 	Valued:
 		Cost: 1500
-	CustomProductionCost@Refinery:
-		Queue: queue.prc_aircraft, queue.inf_gen_aircraft
-		Prerequisites: tech.oil_refinery
-		Cost: 1350
-	CustomProductionCost@Refinery_Nuke:
-		Queue: queue.nuke_gen_aircraft
-		Prerequisites: tech.oil_refinery
-		Cost: 1575
-	CustomProductionCost@Refinery_Tank:
-		Queue: queue.tank_gen_aircraft
-		Prerequisites: tech.oil_refinery
-		Cost: 1800
 	CustomProductionCost@Nuke:
 		Queue: queue.nuke_gen_aircraft
 		Cost: 1750
@@ -1549,6 +1468,7 @@ aircraft.helix:
 		RequiresCondition: nuke_upgrade
 	WithMuzzleOverlay:
 	AttackAircraft:
+		AttackType: Hover
 		Armaments: primary, gatling
 		FacingTolerance: 20
 	RevealsShroud:

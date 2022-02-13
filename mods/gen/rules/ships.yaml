@@ -11,9 +11,6 @@ vessel.transport:
 		Description: General-purpose naval transport.\n\nCan carry infantry and vehicles.
 	Valued:
 		Cost: 700
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 630
 	Tooltip:
 		Name: Transport Boat
 	Health:
@@ -24,7 +21,7 @@ vessel.transport:
 		TurnSpeed: 10
 		Speed: 50
 		Locomotor: locomotor.transport
-		RequiresCondition: !notmobile && !hacked && !emp
+		PauseOnCondition: notmobile || hacked || emp
 	SelectionDecorations:
 	WithLandingCraftAnimation:
 		OpenTerrainTypes: Grass, Snow, Sand, Concrete, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Gems, Beach
@@ -65,9 +62,6 @@ vessel.gunboat:
 		Description: Light scout & support ship.
 	Valued:
 		Cost: 500
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 450
 	Tooltip:
 		Name: Gunboat
 	UpdatesPlayerStatistics:
@@ -129,9 +123,6 @@ vessel.destroyer:
 		Description: Fast multi-role ship.
 	Valued:
 		Cost: 1000
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 900
 	Tooltip:
 		Name: Destroyer
 	UpdatesPlayerStatistics:
@@ -197,9 +188,6 @@ vessel.cruiser:
 		Description: Very slow long-range ship.
 	Valued:
 		Cost: 2400
-	CustomProductionCost@Refinery:
-		Prerequisites: tech.oil_refinery
-		Cost: 2160
 	Tooltip:
 		Name: Cruiser
 	UpdatesPlayerStatistics:

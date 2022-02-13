@@ -1,6 +1,6 @@
 Metadata:
 	Title: Generals Alpha
-	Version: gen-20200328
+	Version: gen-20220213
 	Website: https://www.moddb.com/mods/generals-alpha
 	WebIcon32: https://raw.githubusercontent.com/MustaphaTR/Generals-Alpha/master/packaging/linux/mod_32x32.png
 
@@ -120,47 +120,49 @@ Assemblies:
 	common|OpenRA.Mods.Cnc.dll
 
 ChromeLayout:
-	gen|chrome/ingame.yaml
-	gen|chrome/ingame-chat.yaml
-	gen|chrome/ingame-fmvplayer.yaml
+	common|chrome/ingame.yaml
+	common|chrome/ingame-chat.yaml
+	common|chrome/ingame-fmvplayer.yaml
 	gen|chrome/ingame-info.yaml
-	gen|chrome/ingame-infochat.yaml
-	gen|chrome/ingame-infoscripterror.yaml
-	gen|chrome/ingame-infobriefing.yaml
-	gen|chrome/ingame-infoobjectives.yaml
+	common|chrome/ingame-infochat.yaml
+	common|chrome/ingame-infoscripterror.yaml
+	common|chrome/ingame-infobriefing.yaml
+	common|chrome/ingame-infoobjectives.yaml
 	gen|chrome/ingame-infostats.yaml
-	gen|chrome/ingame-menu.yaml
+	common|chrome/ingame-menu.yaml
 	gen|chrome/ingame-observer.yaml
-	gen|chrome/ingame-observerstats.yaml
 	gen|chrome/ingame-player.yaml
-	gen|chrome/ingame-perf.yaml
-	gen|chrome/ingame-debug.yaml
-	gen|chrome/mainmenu.yaml
-	gen|chrome/settings.yaml
-	gen|chrome/credits.yaml
-	gen|chrome/lobby.yaml
-	gen|chrome/lobby-mappreview.yaml
+	common|chrome/ingame-perf.yaml
+	common|chrome/ingame-debug.yaml
+	common|chrome/ingame-debuginfo.yaml
+	common|chrome/mainmenu.yaml
+	common|chrome/settings.yaml
+	common|chrome/credits.yaml
+	common|chrome/lobby.yaml
+	common|chrome/lobby-mappreview.yaml
 	gen|chrome/lobby-players.yaml
 	gen|chrome/lobby-options.yaml
-	gen|chrome/lobby-music.yaml
-	gen|chrome/lobby-kickdialogs.yaml
-	gen|chrome/lobby-servers.yaml
+	common|chrome/lobby-music.yaml
+	common|chrome/lobby-kickdialogs.yaml
+	common|chrome/lobby-servers.yaml
 	gen|chrome/playerprofile.yaml
 	gen|chrome/color-picker.yaml
-	gen|chrome/map-chooser.yaml
-	gen|chrome/multiplayer-browser.yaml
-	gen|chrome/multiplayer-browserpanels.yaml
-	gen|chrome/multiplayer-createserver.yaml
-	gen|chrome/multiplayer-directconnect.yaml
-	gen|chrome/connection.yaml
-	gen|chrome/replaybrowser.yaml
-	gen|chrome/dropdowns.yaml
-	gen|chrome/musicplayer.yaml
+	common|chrome/map-chooser.yaml
+	common|chrome/multiplayer-browser.yaml
+	common|chrome/multiplayer-browserpanels.yaml
+	common|chrome/multiplayer-createserver.yaml
+	common|chrome/multiplayer-directconnect.yaml
+	common|chrome/connection.yaml
+	common|chrome/replaybrowser.yaml
+	common|chrome/gamesave-browser.yaml
+	gen|chrome/gamesave-loading.yaml
+	common|chrome/dropdowns.yaml
+	common|chrome/musicplayer.yaml
 	gen|chrome/tooltips.yaml
-	gen|chrome/assetbrowser.yaml
-	gen|chrome/missionbrowser.yaml
-	gen|chrome/confirmation-dialogs.yaml
-	gen|chrome/editor.yaml
+	common|chrome/assetbrowser.yaml
+	common|chrome/missionbrowser.yaml
+	common|chrome/confirmation-dialogs.yaml
+	common|chrome/editor.yaml
 
 Weapons:
 	gen|weapons/ballistics.yaml
@@ -211,27 +213,35 @@ Fonts:
 	Tiny:
 		Font: common|FreeSans.ttf
 		Size: 10
+		Ascender: 8
 	TinyBold:
 		Font: common|FreeSansBold.ttf
 		Size: 10
+		Ascender: 8
 	Small:
 		Font: common|FreeSans.ttf
 		Size: 12
+		Ascender: 9
 	Regular:
 		Font: common|FreeSans.ttf
 		Size: 14
+		Ascender: 11
 	Bold:
 		Font: common|FreeSansBold.ttf
 		Size: 14
+		Ascender: 11
 	MediumBold:
 		Font: common|FreeSansBold.ttf
 		Size: 18
+		Ascender: 14
 	BigBold:
 		Font: common|FreeSansBold.ttf
 		Size: 24
+		Ascender: 18
 	Title:
 		Font: gen|ZoodRangmah.ttf
 		Size: 48
+		Ascender: 26
 
 Missions:
 	gen|missions.yaml

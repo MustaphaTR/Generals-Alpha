@@ -164,6 +164,8 @@ building.usa_command_center:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
 	AirstrikePower@A10:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
@@ -202,6 +204,8 @@ building.usa_command_center:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
 		OrderName: A10PowerInfoOrder
 	AirstrikePower@FUEL_AIR_BOMB:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
@@ -234,6 +238,8 @@ building.usa_command_center:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
 		OrderName: FuelAirBombPowerInfoOrder
 	AirstrikePower@LEAFLET_DROP:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
@@ -259,6 +265,8 @@ building.usa_command_center:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
 		OrderName: LeafletDropPowerInfoOrder
 	WithDeathAnimation:
 		DeathSequencePalette: cncplayer
@@ -267,6 +275,8 @@ building.usa_command_center:
 		Color: 0000FF
 	ProvidesRadar:
 		RequiresCondition: !emp && !hacked && !lowpower && !sabotaged
+	ActorPreviewPlaceBuildingPreview:
+		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 	HitShape:
@@ -389,6 +399,8 @@ building.gla_command_center:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
 		OrderName: AnthraxBombPowerInfoOrder
 	GrantExternalConditionPower@GPS_SCRAMBLER:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
@@ -597,6 +609,8 @@ building.prc_command_center:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
 	SpawnActorPower@ARTY_BARRAGE:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Actors:
@@ -668,6 +682,8 @@ building.prc_command_center:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
 	AirstrikePower@CLUSTER_MINES:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
@@ -692,6 +708,8 @@ building.prc_command_center:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
 		OrderName: ClusterMinesPowerInfoOrder
 	AirstrikePower@CARPET_BOMB:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
@@ -717,6 +735,8 @@ building.prc_command_center:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
 		OrderName: CarpetBombingPRCPowerInfoOrder
 	AirstrikePower@NUKE_BOMB:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
@@ -742,6 +762,8 @@ building.prc_command_center:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
 		OrderName: CarpetBombingNukePowerInfoOrder
 	SpawnActorPower@SNEAK_ATTACK:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
@@ -785,6 +807,8 @@ building.prc_command_center:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
 		OrderName: EMPPowerInfoOrder
 	WithTextDecoration@SIDE:
 		Text: PRC
@@ -957,34 +981,31 @@ building.nuclear_reactor:
 		Name: Nuclear Reactor
 	Health:
 		HP: 150000
-	Turreted:
-		TurnSpeed: 255
-	Armament:
-		Weapon: hack.nuclear_reactor
-		RequiresCondition: overcharge && !emp && !hacked && !sabotaged
 	Explodes:
 		Type: CenterPosition
 		Weapon: explosion.nuclear_reactor
 		EmptyWeapon: explosion.nuclear_reactor
-	AttackTurreted:
 	Power@notovercharged:
 		Amount: 10
 		RequiresCondition: !overcharge && !emp && !hacked && !sabotaged
 	Power@overcharged:
 		Amount: 15
 		RequiresCondition: overcharge && !emp && !hacked && !sabotaged
-	FireWeaponAtSelf:
-		Name: primary
-	WithDeathAnimation:
-		DeathSequencePalette: cncplayer
+	PeriodicExplosion:
+		Weapon: hack.nuclear_reactor
+		RequiresCondition: overcharge && !emp && !hacked && !sabotaged
 	GrantConditionOnDeploy:
 		MakeAnimationDeployTypes:
 		DeployedCondition: overcharge
+	WithDeathAnimation:
+		DeathSequencePalette: cncplayer
 	Exit:
 	ProductionBar:
 		ProductionType: queue.just_mine
 	Voiced:
 		VoiceSet: NuclearReactorVoice
+	ActorPreviewPlaceBuildingPreview:
+		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -1072,6 +1093,8 @@ building.usa_barracks:
 		ExitCell: 1,1
 	Voiced:
 		VoiceSet: USABarracksVoice
+	ActorPreviewPlaceBuildingPreview:
+		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -1325,7 +1348,6 @@ building.usa_supply_center:
 	Exit@1:
 		SpawnOffset: 0,1024,0
 		ExitCell: 1,2
-		MoveIntoWorld: false
 		Facing: 224
 	WithDeathAnimation:
 		DeathSequencePalette: cncplayer
@@ -1345,6 +1367,8 @@ building.usa_supply_center:
 		RequiresPrerequisites: techlevel.infonly
 	Voiced:
 		VoiceSet: USASupplyVoice
+	ActorPreviewPlaceBuildingPreview:
+		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -1542,7 +1566,7 @@ building.patriot:
 		Bounds: 48,24
 		Class: building.patriot
 	WithBuildingBib:
-		HasMinibib: Yes
+		HasMinibib: true
 	Turreted:
 		TurnSpeed: 8
 		InitialFacing: 0
@@ -1632,7 +1656,7 @@ building.laser_turret:
 	Selectable:
 		Bounds: 24,24
 	WithBuildingBib:
-		HasMinibib: Yes
+		HasMinibib: true
 	Turreted:
 		TurnSpeed: 30
 		InitialFacing: 56
@@ -1834,7 +1858,7 @@ building.gatling_cannon:
 		Type: building.defense
 	ProvidesPrerequisite@buildingname:
 	WithBuildingBib:
-		HasMinibib: Yes
+		HasMinibib: true
 	Turreted:
 		TurnSpeed: 8
 		InitialFacing: 224
@@ -2104,6 +2128,10 @@ building.fortified_bunker:
 		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
 		HpPerStep: 1000
+	-ActorPreviewPlaceBuildingPreview:
+	SequencePlaceBuildingPreview:
+		Sequence: place
+		SequencePalette: placebuilding
 
 building.usa_war_factory:
 	Inherits: ^default.war_factory
@@ -2180,6 +2208,8 @@ building.usa_war_factory:
 		VoiceSet: USAWarFactoryVoice
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.usa_airfield_or_war_factory
+	SequencePlaceBuildingPreview:
+		SequencePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -2589,6 +2619,7 @@ building.stinger_site:
 	Exit@1:
 		ExitCell: 1,1
 		Facing: 192
+		SpawnOffset: -512,0,0
 	RallyPoint:
 	Reservable:
 	RepairsUnits:
@@ -2915,6 +2946,8 @@ building.internet_center:
 		Prerequisites: upgrade.satellite_hack2
 	Voiced:
 		VoiceSet: InternetCenterVoice
+	ActorPreviewPlaceBuildingPreview:
+		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -3000,6 +3033,8 @@ building.strategy_center:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
 		OrderName: CarpetBombingUSAPowerInfoOrder
 	Turreted:
 		TurnSpeed: 3
@@ -3176,6 +3211,8 @@ building.palace:
 	SpawnActorOnDeath:
 		Actor: hole.palace
 		SpawnAfterDefeat: false
+	ActorPreviewPlaceBuildingPreview:
+		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 	Voiced:
@@ -3485,7 +3522,7 @@ building.speaker_tower:
 	Armor:
 		Type: building.normal
 	WithBuildingBib:
-		HasMinibib: Yes
+		HasMinibib: true
 	Power:
 		Amount: -1
 	MustBeDestroyed:
@@ -3600,6 +3637,8 @@ building.particle_cannon:
 		ValidStances: Enemy
 	Voiced:
 		VoiceSet: ParticleCannonVoice
+	ActorPreviewPlaceBuildingPreview:
+		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 
