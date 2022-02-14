@@ -106,12 +106,18 @@ vehicle.humvee:
 		ReadyAudio: HumveeCreated
 	Valued:
 		Cost: 700
-	CustomProductionCost@Airforce:
+	ProductionCostMultiplier@Airforce1:
 		Queue: queue.air_gen_vehicle
-		Cost: 800
-	CustomProductionCost@Super:
+		Multiplier: 123 # 800
+	ProductionCostMultiplier@Airforce2:
+		Queue: queue.air_gen_vehicle
+		Multiplier: 93 # 800
+	ProductionCostMultiplier@Super1:
 		Queue: queue.super_gen_vehicle
-		Cost: 850
+		Multiplier: 124 # 850
+	ProductionCostMultiplier@Super2:
+		Queue: queue.super_gen_vehicle
+		Multiplier: 98 # 850
 	Tooltip:
 		Name: Humvee
 	UpdatesPlayerStatistics:
@@ -234,9 +240,9 @@ vehicle.technical:
 		ReadyAudio: TechnicalCreated
 	Valued:
 		Cost: 500
-	CustomProductionCost@Demo:
+	ProductionCostMultiplier@Demo:
 		Queue: queue.demo_gen_vehicle
-		Cost: 600
+		Multiplier: 120 # 600
 	Tooltip:
 		Name: Technical
 	UpdatesPlayerStatistics:
@@ -353,9 +359,9 @@ vehicle.radar_van:
 		ReadyAudio: RadarVanCreated
 	Valued:
 		Cost: 500
-	CustomProductionCost@Toxin:
+	ProductionCostMultiplier@Toxin:
 		Queue: queue.toxin_gen_vehicle
-		Cost: 550
+		Multiplier: 110 # 550
 	Health:
 		HP: 20000
 	Armor:
@@ -463,12 +469,15 @@ vehicle.scorpion_tank:
 		ReadyAudio: ScorpionTankCreated
 	Valued:
 		Cost: 600
-	CustomProductionCost@Toxin:
+	ProductionCostMultiplier@Toxin1:
 		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
-		Cost: 650
-	CustomProductionTime@ZH:
+		Multiplier: 113 # 650
+	ProductionCostMultiplier@Toxin2:
+		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
+		Multiplier: 96 # 650
+	ProductionTimeMultiplier@ZH:
 		Prerequisites: prerequisite.zh_units
-		BuildTime: 175
+		Multiplier: 140 # 175
 	FirepowerMultiplier@AP_ROCKETS:
 		Types: sc_rocket
 	FirepowerMultiplier@CRATE-1:
@@ -743,12 +752,15 @@ vehicle.battlemaster_tank:
 		ReadyAudio: BattlemasterTankCreated
 	Valued:
 		Cost: 800
-	CustomProductionCost@Tank:
+	ProductionCostMultiplier@Tank1:
 		Queue: queue.tank_gen_vehicle
-		Cost: 700
-	CustomProductionTime@Tank:
+		Multiplier: 875 # 700
+	ProductionCostMultiplier@Tank2:
+		Queue: queue.tank_gen_vehicle
+		Multiplier: 10 # 700
+	ProductionTimeMultiplier@Tank:
 		Queue: queue.nuke_gen_vehicle, queue.tank_gen_vehicle
-		BuildTime: 300
+		Multiplier: 120 # 300
 	Tooltip:
 		Name: Battlemaster Tank
 	UpdatesPlayerStatistics:
@@ -837,9 +849,12 @@ vehicle.ambulance:
 		ReadyAudio: AmbulanceCreated
 	Valued:
 		Cost: 600
-	CustomProductionCost@Airforce:
+	ProductionCostMultiplier@Airforce1:
 		Queue: queue.air_gen_vehicle, queue.super_gen_vehicle
-		Cost: 700
+		Multiplier: 118 # 700
+	ProductionCostMultiplier@Airforce2:
+		Queue: queue.air_gen_vehicle, queue.super_gen_vehicle
+		Multiplier: 99 # 700
 	Tooltip:
 		Name: Ambulance
 	Health:
@@ -852,7 +867,7 @@ vehicle.ambulance:
 		Speed: 60
 		TurnSpeed: 8
 		Voice: Move
-		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
+		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Crushable:
@@ -907,12 +922,15 @@ vehicle.sentry_drone:
 		Description: Detection vehicle.\n\nCamouflaged while not moving.
 	Valued:
 		Cost: 800
-	CustomProductionCost@Airforce:
+	ProductionCostMultiplier@Airforce1:
 		Queue: queue.air_gen_vehicle
-		Cost: 850
-	CustomProductionCost@Super:
+		Multiplier: 10625 # 850
+	ProductionCostMultiplier@Airforce2:
+		Queue: queue.air_gen_vehicle
+		Multiplier: 1 # 850
+	ProductionCostMultiplier@Super:
 		Queue: queue.super_gen_vehicle
-		Cost: 1000
+		Multiplier: 125 # 1000
 	Tooltip:
 		Name: Sentry Drone
 	UpdatesPlayerStatistics:
@@ -1019,12 +1037,15 @@ vehicle.quad_cannon:
 		ReadyAudio: QuadCannonCreated
 	Valued:
 		Cost: 700
-	CustomProductionCost@Toxin:
+	ProductionCostMultiplier@Toxin1:
 		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
-		Cost: 750
-	CustomProductionTime@ZH:
+		Multiplier: 114 # 750
+	ProductionCostMultiplier@Toxin2:
+		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
+		Multiplier: 94 # 750
+	ProductionTimeMultiplier@ZH:
 		Prerequisites: prerequisite.zh_units
-		BuildTime: 150
+		Multiplier: 60 # 150
 	Mobile:
 		Speed: 40
 		TurnSpeed: 8
@@ -1121,9 +1142,12 @@ vehicle.gatling_tank:
 		ReadyAudio: GatlingTankCreated
 	Valued:
 		Cost: 800
-	CustomProductionCost@Tank:
+	ProductionCostMultiplier@Tank1:
 		Queue: queue.tank_gen_vehicle
-		Cost: 700
+		Multiplier: 875 # 700
+	ProductionCostMultiplier@Tank2:
+		Queue: queue.tank_gen_vehicle
+		Multiplier: 10 # 700
 	Mobile:
 		Speed: 40
 		TurnSpeed: 8
@@ -1231,12 +1255,15 @@ vehicle.toxin_tractor:
 		ReadyAudio: ToxinTractorCreated
 	Valued:
 		Cost: 600
-	CustomProductionCost@Toxin:
+	ProductionCostMultiplier@Toxin1:
 		Queue: queue.toxin_gen_vehicle
-		Cost: 650
-	CustomProductionCost@Demo:
+		Multiplier: 113 # 650
+	ProductionCostMultiplier@Toxin2:
+		Queue: queue.toxin_gen_vehicle
+		Multiplier: 96 # 650
+	ProductionCostMultiplier@Demo:
 		Queue: queue.demo_gen_vehicle
-		Cost: 750
+		Multiplier: 125 # 750
 	Mobile:
 		TurnSpeed: 8
 		Speed: 30
@@ -1367,12 +1394,18 @@ vehicle.dragon_tank:
 		ReadyAudio: DragonTankCreated
 	Valued:
 		Cost: 800
-	CustomProductionCost@Infantry:
+	ProductionCostMultiplier@Infantry1:
 		Queue: queue.inf_gen_vehicle
-		Cost: 900
-	CustomProductionCost@Tank:
+		Multiplier: 1125 # 900
+	ProductionCostMultiplier@Infantry2:
+		Queue: queue.inf_gen_vehicle
+		Multiplier: 10 # 900
+	ProductionCostMultiplier@Tank1:
 		Queue: queue.tank_gen_vehicle
-		Cost: 700
+		Multiplier: 875 # 700
+	ProductionCostMultiplier@Tank2:
+		Queue: queue.tank_gen_vehicle
+		Multiplier: 10 # 700
 	Mobile:
 		TurnSpeed: 8
 		Speed: 30
@@ -1459,12 +1492,18 @@ vehicle.rocket_buggy:
 		ReadyAudio: RocketBuggyCreated
 	Valued:
 		Cost: 900
-	CustomProductionCost@Toxin:
+	ProductionCostMultiplier@Toxin1:
 		Queue: queue.toxin_gen_vehicle
-		Cost: 1100
-	CustomProductionCost@Demo:
+		Multiplier: 139 # 1100
+	ProductionCostMultiplier@Toxin2:
+		Queue: queue.toxin_gen_vehicle
+		Multiplier: 88 # 1100
+	ProductionCostMultiplier@Demo1:
 		Queue: queue.demo_gen_vehicle
-		Cost: 1000
+		Multiplier: 117 # 1000
+	ProductionCostMultiplier@Demo2:
+		Queue: queue.demo_gen_vehicle
+		Multiplier: 95 # 1000
 	Mobile:
 		TurnSpeed: 8
 		Speed: 90
@@ -1585,9 +1624,9 @@ vehicle.avenger:
 		ReadyAudio: AvengerCreated
 	Valued:
 		Cost: 2000
-	CustomProductionCost@Laser:
+	ProductionCostMultiplier@Laser:
 		Queue: queue.laser_gen_vehicle
-		Cost: 1500
+		Multiplier: 75 # 1500
 	Tooltip:
 		Name: Avenger
 	UpdatesPlayerStatistics:
@@ -1673,12 +1712,12 @@ vehicle.battle_Bus:
 		ReadyAudio: BattleBusCreated
 	Valued:
 		Cost: 1000
-	CustomProductionCost@Toxin:
+	ProductionCostMultiplier@Toxin:
 		Queue: queue.toxin_gen_vehicle
-		Cost: 1100
-	CustomProductionCost@Demo:
+		Multiplier: 110 # 1100
+	ProductionCostMultiplier@Demo:
 		Queue: queue.demo_gen_vehicle
-		Cost: 1200
+		Multiplier: 120 # 1200
 	Tooltip:
 		Name: Battle Bus
 	UpdatesPlayerStatistics:
@@ -2084,9 +2123,12 @@ vehicle.ecm_tank:
 		ReadyAudio: ECMTankCreated
 	Valued:
 		Cost: 800
-	CustomProductionCost@Infantry:
+	ProductionCostMultiplier@Infantry1:
 		Queue: queue.inf_gen_vehicle
-		Cost: 900
+		Multiplier: 1125 # 900
+	ProductionCostMultiplier@Infantry2:
+		Queue: queue.inf_gen_vehicle
+		Multiplier: 10 # 900
 	Tooltip:
 		Name: ECM Tank
 	UpdatesPlayerStatistics:
@@ -2182,12 +2224,21 @@ vehicle.tomahawk_launcher:
 		ReadyAudio: TomahawkCreated
 	Valued:
 		Cost: 1200
-	CustomProductionCost@Airforce:
+	ProductionCostMultiplier@Airforce1:
 		Queue: queue.air_gen_vehicle
-		Cost: 1300
-	CustomProductionCost@Super:
+		Multiplier: 126 # 1300
+	ProductionCostMultiplier@Airforce2:
+		Queue: queue.air_gen_vehicle
+		Multiplier: 86 # 1300
+	ProductionCostMultiplier@Super1:
 		Queue: queue.super_gen_vehicle
-		Cost: 1400
+		Multiplier: 108 # 1400
+	ProductionCostMultiplier@Super2:
+		Queue: queue.super_gen_vehicle
+		Multiplier: 107 # 1400
+	ProductionCostMultiplier@Super3:
+		Queue: queue.super_gen_vehicle
+		Multiplier: 101 # 1400
 	Mobile:
 		Speed: 30
 		TurnSpeed: 8
@@ -2280,9 +2331,9 @@ vehicle.scud_launcher:
 		ReadyAudio: ScudLauncherCreated
 	Valued:
 		Cost: 1200
-	CustomProductionTime@ZH:
+	ProductionTimeMultiplier@ZH:
 		Prerequisites: prerequisite.zh_units
-		BuildTime: 375
+		Multiplier: 75 # 375
 	Tooltip:
 		Name: SCUD Launcher
 	UpdatesPlayerStatistics:
@@ -2454,9 +2505,12 @@ vehicle.inferno_cannon:
 		ReadyAudio: InfernoCannonCreated
 	Valued:
 		Cost: 900
-	CustomProductionCost@Infantry:
+	ProductionCostMultiplier@Infantry1:
 		Queue: queue.inf_gen_vehicle
-		Cost: 1100
+		Multiplier: 139 # 1100
+	ProductionCostMultiplier@Infantry2:
+		Queue: queue.inf_gen_vehicle
+		Multiplier: 88 # 1100
 	Tooltip:
 		Name: Inferno Cannon
 	UpdatesPlayerStatistics:
@@ -2646,9 +2700,12 @@ vehicle.marauder_tank:
 		ReadyAudio: MarauderTankCreated
 	Valued:
 		Cost: 800
-	CustomProductionCost@Toxin:
+	ProductionCostMultiplier@Toxin1:
 		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
-		Cost: 900
+		Multiplier: 1125 # 900
+	ProductionCostMultiplier@Toxin2:
+		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
+		Multiplier: 10 # 900
 	Tooltip:
 		Name: Marauder Tank
 	UpdatesPlayerStatistics:
@@ -2945,19 +3002,20 @@ vehicle.overlord_tank:
 		ReadyAudio: OverlordTankCreated
 	Valued:
 		Cost: 2000
-	CustomProductionCost@Tank:
+	ProductionCostMultiplier@Tank:
 		Queue: queue.tank_gen_vehicle
-		Cost: 1900
-	CustomProductionTime@Nuke_ZH:
+		Multiplier: 95 # 1900
+	ProductionCostMultiplier@Nuke_ZH:
 		Prerequisites: prerequisite.zh_units
 		Queue: queue.nuke_gen_vehicle
-		BuildTime: 550
-	CustomProductionTime@Nuke:
+		Multiplier: 88 # 550
+	ProductionTimeMultiplier@Nuke:
 		Queue: queue.nuke_gen_vehicle
-		BuildTime: 675
-	CustomProductionTime@ZH:
+		Multiplier: 108 # 675
+	ProductionTimeMultiplier@ZH:
 		Prerequisites: prerequisite.zh_units
-		BuildTime: 500
+		Queue: queue.prc_vehicle, queue.tank_gen_vehicle
+		Multiplier: 80 # 500
 	Tooltip:
 		Name: Overlord Tank
 	UpdatesPlayerStatistics:
@@ -3165,9 +3223,12 @@ vehicle.bomb_truck:
 		ReadyAudio: BombTruckCreated
 	Valued:
 		Cost: 1200
-	CustomProductionCost@Demo:
+	ProductionCostMultiplier@Demo1:
 		Queue: queue.demo_gen_vehicle
-		Cost: 1000
+		Multiplier: 60 # 1000
+	ProductionCostMultiplier@Demo2:
+		Queue: queue.demo_gen_vehicle
+		Multiplier: 139 # 1000
 	-Tooltip:
 	DisguiseTooltip:
 		Name: Bomb Truck
@@ -3387,7 +3448,7 @@ vehicle.nuke_cannon:
 		Speed: 20
 		TurnSpeed: 4
 		Voice: Move
-		PauseOnCondition: !(!hacked && !driver_killed && !emp && !leaflet && !immobile)
+		PauseOnCondition: hacked || driver_killed || emp || leaflet || immobile
 	SpeedMultiplier@DAMAGED:
 		Modifier: 90
 	Crushable:
@@ -3525,15 +3586,15 @@ vehicle.combat_cycle:
 		ReadyAudio: CycleCreated
 	Valued:
 		Cost: 500
-	CustomProductionCost@Toxin:
+	ProductionCostMultiplier@Toxin:
 		Queue: queue.demo_gen_vehicle, queue.toxin_gen_vehicle, queue.stealth_gen_vehicle
-		Cost: 550
-	CustomProductionTime@Demo:
+		Multiplier: 110 # 550
+	ProductionTimeMultiplier@Demo:
 		Queue: queue.demo_gen_vehicle
-		BuildTime: 125
-	CustomProductionTime@Boss:
+		Multiplier: 125 # 125
+	ProductionTimeMultiplier@Boss:
 		Queue: queue.boss_gen_vehicle
-		BuildTime: 200
+		Multiplier: 200 # 200
 	Tooltip:
 		Name: Combat Cycle
 	UpdatesPlayerStatistics:

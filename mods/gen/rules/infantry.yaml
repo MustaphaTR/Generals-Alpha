@@ -184,9 +184,12 @@ infantry.rebel:
 	Buildable:
 		Queue: queue.gla_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
 		ReadyAudio: RebelCreated
-	CustomProductionCost@Stealth:
+	ProductionCostMultiplier@Stealth1:
 		Queue: queue.stealth_gen_infantry
-		Cost: 200
+		Multiplier: 135 # 200
+	ProductionCostMultiplier@Stealth2:
+		Queue: queue.stealth_gen_infantry
+		Multiplier: 99 # 200
 	Selectable:
 		Class: infantry.rebel
 	Tooltip:
@@ -362,15 +365,17 @@ infantry.red_guard:
 		ReadyAudio: RedGuardCreated
 	Valued:
 		Cost: 150
-	CustomProductionCost@Vanilla:
-		Queue: queue.prc_infantry
-		Cost: 300
-	CustomProductionCost@Nuke:
+	ProductionCostMultiplier@DoubleAmount:
+		Multiplier: 200 # 300
+	ProductionCostMultiplier@Nuke1:
 		Queue: queue.nuke_gen_infantry
-		Cost: 350
-	CustomProductionCost@Tank:
+		Multiplier: 118 # 350
+	ProductionCostMultiplier@Nuke2:
+		Queue: queue.nuke_gen_infantry
+		Multiplier: 99 # 350
+	ProductionCostMultiplier@Tank:
 		Queue: queue.tank_gen_infantry
-		Cost: 375
+		Multiplier: 125 # 375
 	Mobile:
 		Speed: 25
 	SpeedMultiplier@DAMAGED:
@@ -614,7 +619,7 @@ infantry.stinger_soldier:
 	-Buildable:
 	-SelectionDecorations:
 	Mobile:
-		PauseOnCondition: !(!disable_movement)
+		RequiresCondition: !disable_movement
 		TurnWhileDisabledCondition: disable_movement
 	GrantConditionAfterDelay:
 		Condition: disable_movement
@@ -655,15 +660,18 @@ infantry.tank_hunter:
 		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
 		Description: Anti-tank & anti-air infantry.\n\nCan place TNT charges on vehicles and\nbuildings by force firing.
 		ReadyAudio: TankHunterCreated
-	CustomProductionCost@Nuke:
+	ProductionCostMultiplier@Nuke1:
 		Queue: queue.nuke_gen_infantry
-		Cost: 350
-	CustomProductionCost@Tank:
+		Multiplier: 118 # 350
+	ProductionCostMultiplier@Nuke2:
+		Queue: queue.nuke_gen_infantry
+		Multiplier: 99 # 350
+	ProductionCostMultiplier@Tank:
 		Queue: queue.tank_gen_infantry
-		Cost: 375
-	CustomProductionTime@Nuke:
+		Multiplier: 125 # 375
+	ProductionTimeMultiplier@Nuke:
 		Queue: queue.nuke_gen_infantry, queue.tank_gen_infantry
-		BuildTime: 175
+		Multiplier: 140 # 175
 	Tooltip:
 		Name: Tank Hunter
 	Armament@PRIMARY:
@@ -1189,9 +1197,12 @@ infantry.hacker:
 		ReadyAudio: HackerCreated
 	Valued:
 		Cost: 625
-	CustomProductionCost@Tank:
+	ProductionCostMultiplier@Tank1:
 		Queue: queue.tank_gen_infantry
-		Cost: 780
+		Multiplier: 1248 # 780
+	ProductionCostMultiplier@Tank2:
+		Queue: queue.tank_gen_infantry
+		Multiplier: 10 # 780
 	Tooltip:
 		Name: Hacker
 	Health:
@@ -1697,12 +1708,15 @@ infantry.black_lotus:
 		BuildLimit: 1
 	Valued:
 		Cost: 1500
-	CustomProductionCost@Nuke:
+	ProductionCostMultiplier@Nuke1:
 		Queue: queue.nuke_gen_infantry
-		Cost: 1600
-	CustomProductionCost@Tank:
+		Multiplier: 110 # 1600
+	ProductionCostMultiplier@Nuke2:
+		Queue: queue.nuke_gen_infantry
+		Multiplier: 97 # 1600
+	ProductionCostMultiplier@Tank:
 		Queue: queue.tank_gen_infantry
-		Cost: 1875
+		Multiplier: 125 # 1875
 	Tooltip:
 		Name: Black Lotus
 	UpdatesPlayerStatistics:

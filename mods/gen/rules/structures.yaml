@@ -2653,9 +2653,9 @@ building.usa_airfield:
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		BuildPaletteOrder: 6
-	CustomProductionCost@Airforce:
+	ProductionCostMultiplier@Airforce:
 		Queue: queue.air_gen_building
-		Cost: 800
+		Multiplier: 80
 	DamageMultiplier@Airforce:
 		RequiresCondition: air
 		Modifier: 60
@@ -3956,9 +3956,9 @@ building.missile_silo:
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, !prerequisite.enough_nuke, !techlevel.notech, !techlevel.nosw
 		Description: Provides Atom Bomb support power.
-	CustomProductionCost@Nuke:
+	ProductionCostMultiplier@Nuke:
 		Queue: queue.nuke_gen_building
-		Cost: 4500
+		Multiplier: 90
 	Building:
 		Footprint: xx ==
 		Dimensions: 2,2

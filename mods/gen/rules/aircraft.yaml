@@ -282,15 +282,24 @@ aircraft.mig:
 		ReadyAudio: MiGCreated
 	Valued:
 		Cost: 1200
-	CustomProductionCost@Nuke:
+	ProductionCostMultiplier@Nuke1:
 		Queue: queue.nuke_gen_aircraft
-		Cost: 1400
-	CustomProductionCost@Tank:
+		Multiplier: 108 # 1400
+	ProductionCostMultiplier@Nuke2:
+		Queue: queue.nuke_gen_aircraft
+		Multiplier: 107 # 1400
+	ProductionCostMultiplier@Nuke3:
+		Queue: queue.nuke_gen_aircraft
+		Multiplier: 101 # 1400
+	ProductionCostMultiplier@Tank1:
 		Queue: queue.tank_gen_aircraft
-		Cost: 1600
-	CustomProductionTime@Tank:
+		Multiplier: 127 # 1600
+	ProductionCostMultiplier@Tank2:
 		Queue: queue.tank_gen_aircraft
-		BuildTime: 300
+		Multiplier: 105 # 1600
+	ProductionTimeMultiplier@Tank:
+		Queue: queue.tank_gen_aircraft
+		Multiplier: 120 # 300
 	Tooltip:
 		Name: MiG
 	UpdatesPlayerStatistics:
@@ -734,9 +743,9 @@ aircraft.aurora:
 		ReadyAudio: AuroraCreated
 	Valued:
 		Cost: 2500
-	CustomProductionCost@Airforce:
+	ProductionCostMultiplier@Airforce:
 		Queue: queue.air_gen_aircraft, queue.super_gen_aircraft
-		Cost: 2000
+		Multiplier: 80 # 2000
 	Tooltip:
 		Name: Aurora
 	UpdatesPlayerStatistics:
@@ -1043,9 +1052,12 @@ aircraft.chinook:
 		ReadyAudio: ChinookCreated
 	Valued:
 		Cost: 1200
-	CustomProductionCost@Airforce:
+	ProductionCostMultiplier@Airforce1:
 		Queue: queue.air_gen_collector
-		Cost: 950
+		Multiplier: 74 # 950
+	ProductionCostMultiplier@Airforce2:
+		Queue: queue.air_gen_collector
+		Multiplier: 107 # 950
 	HitShape:
 		TargetableOffsets: 0,0,2048
 		Type: Circle
@@ -1149,9 +1161,12 @@ aircraft.chinook:
 #		ReadyAudio: ChinookCreated
 #	Valued:
 #		Cost: 1200
-#	CustomProductionCost@Airforce:
+#	ProductionCostMultiplier@Airforce1:
 #		Queue: queue.air_gen_collector
-#		Cost: 950
+#		Multiplier: 74 # 950
+#	ProductionCostMultiplier@Airforce2:
+#		Queue: queue.air_gen_collector
+#		Multiplier: 107 # 950
 #	Tooltip:
 #		Name: Chinook
 #		GenericName: Collector
@@ -1228,7 +1243,8 @@ aircraft.combat_chinook:
 		ReadyAudio: CombatChinookCreated
 	Tooltip:
 		Name: Combat Chinook
-	-CustomProductionCost@Airforce:
+	-ProductionCostMultiplier@Airforce1:
+	-ProductionCostMultiplier@Airforce2:
 	Health:
 		HP: 35000
 	AttackFrontal:
@@ -1279,12 +1295,12 @@ aircraft.comanche:
 		ReadyAudio: ComancheCreated
 	Valued:
 		Cost: 1500
-	CustomProductionCost@Airforce:
+	ProductionCostMultiplier@Airforce:
 		Queue: queue.air_gen_aircraft
-		Cost: 1200
-	CustomProductionCost@Super:
+		Multiplier: 80 # 1200
+	ProductionCostMultiplier@Super:
 		Queue: queue.super_gen_aircraft
-		Cost: 1800
+		Multiplier: 120 # 1800
 	Tooltip:
 		Name: Comanche
 	UpdatesPlayerStatistics:
@@ -1403,15 +1419,24 @@ aircraft.helix:
 		ReadyAudio: HelixCreated
 	Valued:
 		Cost: 1500
-	CustomProductionCost@Nuke:
+	ProductionCostMultiplier@Nuke1:
 		Queue: queue.nuke_gen_aircraft
-		Cost: 1750
-	CustomProductionCost@Tank:
+		Multiplier: 108 # 1750
+	ProductionCostMultiplier@Nuke2:
+		Queue: queue.nuke_gen_aircraft
+		Multiplier: 107 # 1750
+	ProductionCostMultiplier@Nuke3:
+		Queue: queue.nuke_gen_aircraft
+		Multiplier: 101 # 1750
+	ProductionCostMultiplier@Tank1:
 		Queue: queue.tank_gen_aircraft
-		Cost: 2000
-	CustomProductionTime@Tank:
+		Multiplier: 127 # 2000
+	ProductionCostMultiplier@Tank2:
 		Queue: queue.tank_gen_aircraft
-		BuildTime: 625
+		Multiplier: 105 # 2000
+	ProductionTimeMultiplier@Tank:
+		Queue: queue.tank_gen_aircraft
+		Multiplier: 125 # 625
 	FirepowerMultiplier@CHAIN_GUN:
 		Types: gatling
 	ReloadDelayMultiplier@Gatling1:
