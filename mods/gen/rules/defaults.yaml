@@ -431,12 +431,23 @@
 	SpeedMultiplier@WORKER_SHOES:
 		RequiresCondition: worker_shoes
 		Modifier: 110
+	HarvesterResourceMultiplier@WORKER_SHOES:
+		RequiresCondition: worker_shoes
+		Modifier: 110
 	GrantConditionOnPrerequisite@WORKER_SHOES:
 		Condition: worker_shoes
 		Prerequisites: upgrade.worker_shoes
 
 ^AffectedBySupplyLines:
 	CashTricklerMultiplier@SUPPLY_LINES:
+		RequiresCondition: supply_lines
+		Modifier: 110
+	GrantConditionOnPrerequisite@SUPPLY_LINES:
+		Condition: supply_lines
+		Prerequisites: upgrade.supply_lines
+
+^AffectedBySupplyLinesChinook:
+	HarvesterResourceMultiplier@SUPPLY_LINES:
 		RequiresCondition: supply_lines
 		Modifier: 110
 	GrantConditionOnPrerequisite@SUPPLY_LINES:

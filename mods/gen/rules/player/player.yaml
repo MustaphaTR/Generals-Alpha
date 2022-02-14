@@ -165,20 +165,6 @@ Player:
 	#	Image: iconchevrons
 	#	Sequence: veteran
 	PlayerExperience:
-	ResourcePurifier@WORKER_SHOES:
-		Modifier: 10
-		HarvestersToPurify: infantry.worker
-		RequiresCondition: worker_shoes
-	ResourcePurifier@SUPPLY_LINES:
-		Modifier: 10
-		HarvestersToPurify: aircraft.chinook, aircraft.chinook.air, aircraft.combat.chinook
-		RequiresCondition: supply_lines
-	GrantConditionOnPrerequisite@WORKER_SHOES:
-		Condition: worker_shoes
-		Prerequisites: upgrade.worker_shoes
-	GrantConditionOnPrerequisite@SUPPLY_LINES:
-		Condition: supply_lines
-		Prerequisites: upgrade.supply_lines
 	Taunts:
 		CheckboxDisplayOrder: 8
 	SpawnActorPower@EMERGENCY_REPAIR:
