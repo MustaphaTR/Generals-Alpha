@@ -799,11 +799,11 @@ aircraft.aurora:
 		Condition: supersonic
 	SpeedMultiplier:
 		Modifier: 266
-		RequiresCondition: supersonic
+		RequiresCondition: supersonic && ammo
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
 	DamageMultiplier@SUPERSONIC:
-		RequiresCondition: supersonic
+		RequiresCondition: supersonic && ammo
 		Modifier: 0
 	AutoTarget:
 		InitialStance: HoldFire
