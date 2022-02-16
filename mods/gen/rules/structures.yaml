@@ -4093,9 +4093,12 @@ building.missile_silo.boss:
 SBAG:
 	Inherits: ^Wall
 	Buildable:
-		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
-		BuildPaletteOrder: 40
-		Prerequisites: ~disabled
+		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
+		BuildPaletteOrder: 12
+		ForceIconLocation: true
+		BuildDuration: 75
+		BuildDurationModifier: 100
+		Prerequisites: ~prerequisite.walls
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Valued:
 		Cost: 50
@@ -4118,9 +4121,12 @@ SBAG:
 FENC:
 	Inherits: ^Wall
 	Buildable:
-		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
-		BuildPaletteOrder: 45
-		Prerequisites: ~disabled
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
+		BuildPaletteOrder: 24
+		ForceIconLocation: true
+		BuildDuration: 75
+		BuildDurationModifier: 100
+		Prerequisites: ~prerequisite.walls
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Valued:
 		Cost: 50
@@ -4140,12 +4146,42 @@ FENC:
 	WithWallSpriteBody:
 		Type: fence
 
+CYCL:
+	Inherits: ^Wall
+	Buildable:
+		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
+		BuildPaletteOrder: 15
+		ForceIconLocation: true
+		BuildDuration: 75
+		BuildDurationModifier: 100
+		Prerequisites: ~prerequisite.walls
+		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
+	Valued:
+		Cost: 50
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: Chain-Link Barrier
+	Health:
+		HP: 30000
+	Armor:
+		Type: building.normal
+	LineBuild:
+		Range: 8
+		NodeTypes: chain
+	LineBuildNode:
+		Types: chain
+	WithWallSpriteBody:
+		Type: chain
+
 BRIK:
 	Inherits: ^Wall
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
-		BuildPaletteOrder: 50
-		Prerequisites: ~disabled
+		BuildPaletteOrder: 25
+		BuildDuration: 150
+		BuildDurationModifier: 100
+		Prerequisites: ~prerequisite.walls
 		Description: Stop units and blocks enemy fire.
 	Valued:
 		Cost: 200
@@ -4213,19 +4249,6 @@ HGATE:
 			prc: sgate
 	Gate:
 
-CYCL:
-	Inherits: ^Wall
-	Tooltip:
-		Name: Chain-Link Barrier
-	Armor:
-		Type: building.normal
-	LineBuild:
-		NodeTypes: chain
-	LineBuildNode:
-		Types: chain
-	WithWallSpriteBody:
-		Type: chain
-
 BARB:
 	Inherits: ^Wall
 	Tooltip:
@@ -4257,69 +4280,51 @@ prerequisite.command_center:
 	Interactable:
 	Tooltip:
 		Name: Command Center
-	Buildable:
-		Description: Command Center
 
 prerequisite.reactor:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: Reactor
-	Buildable:
-		Description: Reactor
 
 prerequisite.barracks:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: Barracks
-	Buildable:
-		Description: Barracks
 
 prerequisite.supply_center:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: Supply Center
-	Buildable:
-		Description: Supply Center
 
 prerequisite.tech_center:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: Tech Center
-	Buildable:
-		Description: Tech Center
 
 prerequisite.tech_center_or_boss_airfield:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: Tech Center
-	Buildable:
-		Description: Tech Center
 
 prerequisite.tech_center_or_boss_sw:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: Tech Center
-	Buildable:
-		Description: Tech Center
 
 prerequisite.usa_airfield_or_war_factory:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: USA Airfield or War Factory
-	Buildable:
-		Description: USA Airfield or War Factory
 
 prerequisite.prc_airfield_or_war_factory:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: PRC Airfield or War Factory
-	Buildable:
-		Description: PRC Airfield or War Factory

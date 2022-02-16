@@ -130,7 +130,7 @@ Player:
 		DefaultCash: 10000
 		InsufficientFundsNotification: InsufficientFunds
 	DeveloperMode:
-		CheckboxDisplayOrder: 10
+		CheckboxDisplayOrder: 11
 	GpsWatcher:
 	Shroud:
 		FogCheckboxDisplayOrder: 3
@@ -155,15 +155,33 @@ Player:
 		Enabled: True
 		DisplayOrder: 7
 		Prerequisites: prerequisite.ccradius
+	LobbyPrerequisiteCheckbox@GLOBALWALLS:
+		ID: walls
+		Label: Enable Walls
+		Description: Enables construction of Fences and Walls
+		Enabled: False
+		DisplayOrder: 10
+		Prerequisites: prerequisite.walls
 	FrozenActorLayer:
 	BaseAttackNotifier:
 	PlayerStatistics:
 	PlaceBeacon:
 	GrantConditionOnPrerequisiteManager:
 	EnemyWatcher:
-	# VeteranProductionIconOverlay: This needs to be rewritten and is blocking a lot of stuff to make actual veterancy production work.
-	#	Image: iconchevrons
-	#	Sequence: veteran
+	ProductionIconOverlayManager:
+		Type: Veterancy
+		Image: iconchevrons
+		Sequence: veteran
+	ProductionIconOverlayManager@2:
+		Type: Veterancy-Elite
+		Image: iconchevrons
+		Sequence: elite
+	ProvidesPrerequisite@inf_gen_player:
+		Factions: inf
+		Prerequisite: prerequisite.inf_gen_player
+	ProvidesPrerequisite@tank_gen_player:
+		Factions: tank
+		Prerequisite: prerequisite.tank_gen_player
 	PlayerExperience:
 	Taunts:
 		CheckboxDisplayOrder: 8
