@@ -371,6 +371,7 @@ aircraft.mig:
 		Speed: 160
 		RepulsionSpeed: 40
 		MaximumPitch: 56
+		LandableActorTypes: building.prc_airfield, building.usa_airfield, hack.dock
 		Voice: Move
 	AutoTarget:
 		InitialStance: HoldFire
@@ -489,6 +490,7 @@ aircraft.raptor:
 		Speed: 175
 		RepulsionSpeed: 40
 		MaximumPitch: 56
+		LandableActorTypes: building.prc_airfield, building.usa_airfield, hack.dock
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 69
@@ -638,6 +640,7 @@ aircraft.stealth_fighter:
 		Speed: 175
 		RepulsionSpeed: 40
 		MaximumPitch: 56
+		LandableActorTypes: building.prc_airfield, building.usa_airfield, hack.dock
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 69
@@ -794,6 +797,7 @@ aircraft.aurora:
 		Speed: 180
 		RepulsionSpeed: 40
 		MaximumPitch: 56
+		LandableActorTypes: building.prc_airfield, building.usa_airfield, hack.dock
 		Voice: Move
 	GrantConditionOnActivity:
 		Condition: supersonic
