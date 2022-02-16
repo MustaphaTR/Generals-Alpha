@@ -19,7 +19,7 @@ Player:
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
-		SpectatorUIOrder: 0
+		DisplayOrder: 0
 	ClassicProductionQueue@Airforce:
 		Type: queue.air_gen_generals_power
 		Group: General
@@ -27,7 +27,7 @@ Player:
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
-		SpectatorUIOrder: 0
+		DisplayOrder: 0
 	ClassicProductionQueue@Laser:
 		Type: queue.laser_gen_generals_power
 		Group: General
@@ -35,7 +35,7 @@ Player:
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
-		SpectatorUIOrder: 0
+		DisplayOrder: 0
 	ClassicProductionQueue@Super:
 		Type: queue.super_gen_generals_power
 		Group: General
@@ -43,7 +43,7 @@ Player:
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
-		SpectatorUIOrder: 0
+		DisplayOrder: 0
 	ClassicProductionQueue@GLA_Vanilla:
 		Type: queue.gla_generals_power
 		Group: General
@@ -51,7 +51,7 @@ Player:
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
-		SpectatorUIOrder: 0
+		DisplayOrder: 0
 	ClassicProductionQueue@Toxin:
 		Type: queue.toxin_gen_generals_power
 		Group: General
@@ -59,7 +59,7 @@ Player:
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
-		SpectatorUIOrder: 0
+		DisplayOrder: 0
 	ClassicProductionQueue@Demo:
 		Type: queue.demo_gen_generals_power
 		Group: General
@@ -67,7 +67,7 @@ Player:
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
-		SpectatorUIOrder: 0
+		DisplayOrder: 0
 	ClassicProductionQueue@Stealth:
 		Type: queue.stealth_gen_generals_power
 		Group: General
@@ -75,7 +75,7 @@ Player:
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
-		SpectatorUIOrder: 0
+		DisplayOrder: 0
 	ClassicProductionQueue@PRC_Vanilla:
 		Type: queue.prc_generals_power
 		Group: General
@@ -83,7 +83,7 @@ Player:
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
-		SpectatorUIOrder: 0
+		DisplayOrder: 0
 	ClassicProductionQueue@Infantry:
 		Type: queue.inf_gen_generals_power
 		Group: General
@@ -91,7 +91,7 @@ Player:
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
-		SpectatorUIOrder: 0
+		DisplayOrder: 0
 	ClassicProductionQueue@Nuke:
 		Type: queue.nuke_gen_generals_power
 		Group: General
@@ -99,7 +99,7 @@ Player:
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
-		SpectatorUIOrder: 0
+		DisplayOrder: 0
 	ClassicProductionQueue@Tank:
 		Type: queue.tank_gen_generals_power
 		Group: General
@@ -107,7 +107,7 @@ Player:
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
-		SpectatorUIOrder: 0
+		DisplayOrder: 0
 	ClassicProductionQueue@Boss:
 		Type: queue.boss_gen_generals_power
 		Group: General
@@ -115,7 +115,7 @@ Player:
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
-		SpectatorUIOrder: 0
+		DisplayOrder: 0
 	Production:
 		Produces: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
 	PlaceBuilding:
@@ -183,6 +183,7 @@ Player:
 		Factions: tank
 		Prerequisite: prerequisite.tank_gen_player
 	PlayerExperience:
+	GameSaveViewportManager:
 	Taunts:
 		CheckboxDisplayOrder: 8
 	SpawnActorPower@EMERGENCY_REPAIR:
