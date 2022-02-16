@@ -3562,6 +3562,18 @@ vehicle.combat_cycle:
 		Action: Kill
 		-RequiresCondition:
 	-OwnerLostAction@DRIVER_KILLED:
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move && !rpg
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: (stance-attackanything || assault-move) && !rpg
+	AutoTargetPriority@DEFAULT_GATLING:
+		RequiresCondition: !stance-attackanything && !assault-move && rpg
+		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Defense
+		InvalidTargets: NoAutoTarget
+	AutoTargetPriority@ATTACKANYTHING_GATLING:
+		RequiresCondition: (stance-attackanything || assault-move) && rpg
+		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
+		InvalidTargets: NoAutoTarget
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -3610,7 +3622,7 @@ vehicle.combat_cycle:
 		TurnSpeed: 5
 		Voice: Move
 		Locomotor: locomotor.sentry_drone
-		PauseOnCondition: !(!notmobile && !hacked && !emp && !leaflet && loaded)
+		PauseOnCondition: notmobile || hacked || emp || leaflet || !loaded
 	SpeedMultiplier@DAMAGED:
 		Modifier: 89
 	Crushable:
