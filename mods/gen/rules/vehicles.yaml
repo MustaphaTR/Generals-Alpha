@@ -325,6 +325,9 @@ vehicle.technical:
 		Prerequisites: prerequisite.zh_units
 	ProducibleWithLevel:
 		Prerequisites: generals_power.tech_training
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: generals_power.tech_training
 	RenderSprites:
 		Image: vehicle.technical
 	Voiced:
@@ -814,6 +817,12 @@ vehicle.battlemaster_tank:
 		Factions: tank
 	ProducibleWithLevel@Training:
 		Prerequisites: generals_power.battlemaster_training
+	WithProductionIconOverlay@Tank:
+		Types: Veterancy
+		Prerequisites: prerequisite.tank_gen_player
+	WithProductionIconOverlay@Training:
+		Types: Veterancy-Elite
+		Prerequisites: generals_power.battlemaster_training
 
 vehicle.nuclear_battlemaster_tank:
 	Inherits: vehicle.battlemaster_tank
@@ -1214,6 +1223,9 @@ vehicle.gatling_tank:
 		Range: 1c0, 1c0
 	ProducibleWithLevel@Tank:
 		Factions: tank
+	WithProductionIconOverlay@Tank:
+		Types: Veterancy
+		Prerequisites: prerequisite.tank_gen_player
 	RenderSprites:
 		Image: vehicle.gatling_tank
 	Voiced:
@@ -1448,8 +1460,11 @@ vehicle.dragon_tank:
 	AcceptsDeliveredExperience:
 	RenderSprites:
 		Image: vehicle.dragon_tank
-	ProducibleWithLevel:
+	ProducibleWithLevel@Tank:
 		Factions: tank
+	WithProductionIconOverlay@Tank:
+		Types: Veterancy
+		Prerequisites: prerequisite.tank_gen_player
 	Voiced:
 		VoiceSet: DragonTankVoice
 
@@ -2552,6 +2567,9 @@ vehicle.inferno_cannon:
 		LoadedChance: 75
 	ProducibleWithLevel:
 		Prerequisites: generals_power.arty_training
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: generals_power.arty_training
 	AcceptsDeliveredExperience:
 	ThrowsShrapnel:
 		Weapons: debris.nuke_cannon
@@ -3158,6 +3176,9 @@ vehicle.overlord_tank:
 		Factions: nuke
 	ProducibleWithLevel@Tank:
 		Factions: tank
+	WithProductionIconOverlay@Tank:
+		Types: Veterancy
+		Prerequisites: prerequisite.tank_gen_player
 	Voiced:
 		VoiceSet: OverlordTankVoice
 	Selectable:
@@ -3505,6 +3526,9 @@ vehicle.nuke_cannon:
 	WithSpriteTurret:
 	SelectionDecorations:
 	ProducibleWithLevel:
+		Prerequisites: generals_power.arty_training
+	WithProductionIconOverlay:
+		Types: Veterancy
 		Prerequisites: generals_power.arty_training
 	AcceptsDeliveredExperience:
 	GrantConditionOnPrerequisite@NEUTRON_SHELLS:

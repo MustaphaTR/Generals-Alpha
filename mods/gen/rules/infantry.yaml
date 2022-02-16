@@ -1,5 +1,5 @@
 infantry.pilot:
-	Inherits@1: ^Soldier
+	Inherits: ^Soldier
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -30,7 +30,7 @@ infantry.pilot:
 		VoiceSet: PilotVoice
 
 infantry.worker:
-	Inherits@1: ^Soldier
+	Inherits: ^Soldier
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHOES: ^AffectedByWorkerShoes
@@ -395,6 +395,9 @@ infantry.red_guard:
 		VoiceSet: RedGuardVoice
 	ProducibleWithLevel:
 		Prerequisites: generals_power.red_training
+	WithProductionIconOverlay:
+		Types: Veterancy
+		Prerequisites: generals_power.red_training
 
 infantry.minigunner:
 	Inherits: ^default.mg_infantry
@@ -463,6 +466,12 @@ infantry.minigunner:
 	ProducibleWithLevel@Infantry:
 		Factions: inf
 	ProducibleWithLevel@Training:
+		Prerequisites: generals_power.minigunner_training
+	WithProductionIconOverlay@Infantry:
+		Types: Veterancy
+		Prerequisites: prerequisite.inf_gen_player
+	WithProductionIconOverlay@Training:
+		Types: Veterancy-Elite
 		Prerequisites: generals_power.minigunner_training
 
 infantry.conscript:
@@ -691,6 +700,9 @@ infantry.tank_hunter:
 		Image: infantry.tank_hunter
 	ProducibleWithLevel@Infantry:
 		Factions: inf
+	WithProductionIconOverlay@Infantry:
+		Types: Veterancy
+		Prerequisites: prerequisite.inf_gen_player
 	Voiced:
 		VoiceSet: TankHunterVoice
 
@@ -1302,6 +1314,9 @@ infantry.hacker:
 		RequiresCondition: in_internet_center && rank-elite
 	ProducibleWithLevel@Infantry:
 		Factions: inf
+	WithProductionIconOverlay@Infantry:
+		Types: Veterancy
+		Prerequisites: prerequisite.inf_gen_player
 	Voiced:
 		VoiceSet: HackerVoice
 	-MustBeDestroyed:
@@ -1811,6 +1826,9 @@ infantry.black_lotus:
 		Prerequisites: prerequisite.zh_units
 	ProducibleWithLevel@Infantry:
 		Factions: inf
+	WithProductionIconOverlay@Infantry:
+		Types: Veterancy
+		Prerequisites: prerequisite.inf_gen_player
 	Voiced:
 		VoiceSet: LotusVoice
 
