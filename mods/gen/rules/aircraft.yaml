@@ -1132,6 +1132,9 @@ aircraft.chinook:
 		Types: Infantry, GLAInfantry, Hacker, Pilot, Vehicle
 		MaxWeight: 8
 		PipCount: 8
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
 	RepairableNear:
 		RepairActors: building.usa_airfield, building.prc_airfield
 		CloseEnough: 1c0
@@ -1233,6 +1236,9 @@ aircraft.chinook:
 #		Types: Infantry, Vehicle
 #		MaxWeight: 8
 #		PipCount: 8
+#		AfterLoadDelay: 0
+#		BeforeUnloadDelay: 0
+#		AfterUnloadDelay: 0
 #	RepairableNear:
 #		Buildings: building.usa_airfield, building.prc_airfield
 #		CloseEnough: 1c0
@@ -1547,6 +1553,9 @@ aircraft.helix:
 		Types: Infantry, GLAInfantry, Hacker, Vehicle
 		MaxWeight: 5
 		PipCount: 5
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
 		LoadedCondition: loaded
 	AttackGarrisoned:
 		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128

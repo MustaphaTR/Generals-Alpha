@@ -1988,6 +1988,9 @@ building.firebase:
 		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 4
 		PipCount: 4
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
 		PauseOnCondition: emp || hacked
 	AttackGarrisoned:
 		Armaments: garrison
@@ -2055,6 +2058,9 @@ building.bunker:
 		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 5
 		PipCount: 5
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 0
 		LoadedCondition: loaded
 		PauseOnCondition: emp || hacked
@@ -2387,6 +2393,9 @@ building.prc_war_factory:
 	SharedCargo:
 		Types: Infantry, Vehicle
 		PipCount: 10
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
 	Power:
 		Amount: 0
 	-WithSpriteBody:
@@ -2939,6 +2948,9 @@ building.internet_center:
 		Types: Hacker
 		MaxWeight: 8
 		PipCount: 8
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 50
 		PauseOnCondition: emp || hacked
 	Power:
@@ -3149,6 +3161,9 @@ building.palace:
 		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 5
 		PipCount: 5
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 0
 		PauseOnCondition: emp || hacked
 	AttackGarrisoned:

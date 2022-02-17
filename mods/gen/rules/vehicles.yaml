@@ -181,6 +181,9 @@ vehicle.humvee:
 		Types: Infantry, GLAInfantry, Hacker
 		MaxWeight: 5
 		PipCount: 5
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	AcceptsDeliveredExperience:
@@ -300,6 +303,9 @@ vehicle.technical:
 		Types: Infantry, GLAInfantry, Hacker
 		MaxWeight: 5
 		PipCount: 5
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
@@ -894,6 +900,9 @@ vehicle.ambulance:
 		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 3
 		PipCount: 3
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
@@ -1774,6 +1783,9 @@ vehicle.battle_Bus:
 		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 8
 		PipCount: 8
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 50
 		LoadedCondition: loaded
 		LoadingCondition: notmobile
@@ -1862,6 +1874,9 @@ vehicle.troop_crawler:
 		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 8
 		PipCount: 8
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
 		InitialUnits: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard
 		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
@@ -1950,6 +1965,9 @@ vehicle.listening_outpost:
 		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 2
 		PipCount: 2
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
 		InitialUnits: infantry.tank_hunter, infantry.tank_hunter
 		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
@@ -3712,6 +3730,9 @@ vehicle.combat_cycle:
 		Types: GLAInfantry
 		MaxWeight: 1
 		PipCount: 1
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
 		ReplaceFirstWhenFull: true
 		EjectOnDeathDamage: 100
 		LoadingCondition: notmobile
