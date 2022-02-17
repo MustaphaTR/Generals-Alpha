@@ -1044,6 +1044,7 @@ aircraft.a10:
 aircraft.chinook:
 	Inherits: ^Vehicle
 	Inherits@REVEAL: ^Reveal600
+	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@SUPPLY_LINES: ^AffectedBySupplyLinesChinook
 	GivesExperience:

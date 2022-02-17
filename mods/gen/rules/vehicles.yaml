@@ -2,6 +2,7 @@ vehicle.supply_truck:
 	Inherits: ^Vehicle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
+	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SLOW: ^SlowsWhenDamaged
 	GivesExperience:
 		Experience: 50
@@ -3869,6 +3870,7 @@ vehicle.combat_cycle.demo:
 	Inherits: ^Vehicle
 	Inherits@REVEAL: ^Reveal200
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
+	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
 		BuildPaletteOrder: 0
