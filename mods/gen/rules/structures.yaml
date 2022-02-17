@@ -482,6 +482,9 @@ building.prc_command_center:
 		Queue: queue.prc_command_center
 		Actor: upgrade.radar
 		PauseOnCondition: radar
+	WithIdleOverlay@RADAR:
+		Sequence: radar
+		RequiresCondition: !build-incomplete && radar
 	Voiced:
 		VoiceSet: PRCCommandCenterVoice
 	Selectable:

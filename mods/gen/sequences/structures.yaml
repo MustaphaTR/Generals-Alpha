@@ -81,6 +81,13 @@ building.prc_command_center:
 	damaged-build: fact
 		Start: 27
 		Length: 25
+	radar: prcradar
+		Length: 16
+		Tick: 100
+		Offset: 19, -20
+	damaged-radar: prcradar
+		Start: 16
+		Offset: 19, -20
 	dead: factdead
 		Tick: 800
 	bib: bib2.tem
