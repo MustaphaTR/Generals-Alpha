@@ -625,6 +625,13 @@ aircraft.stealth_fighter:
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
 		PauseOnCondition: !ammo
+		RequiresCondition: !bunker_busters
+	Armament@BUNKER_BUSTERS:
+		Weapon: missile.stealth_fighter.buster
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+		PauseOnCondition: !ammo
+		RequiresCondition: bunker_busters
 	AttackAircraft:
 		FacingTolerance: 20
 	RevealsShroud:
@@ -682,6 +689,9 @@ aircraft.stealth_fighter:
 	GrantConditionOnPrerequisite@COUNTERMEASURES:
 		Condition: countermeasures
 		Prerequisites: upgrade.countermeasures
+	GrantConditionOnPrerequisite@BUNKER_BUSTERS:
+		Condition: bunker_busters
+		Prerequisites: upgrade.bunker_busters
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units

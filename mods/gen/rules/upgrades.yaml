@@ -279,6 +279,22 @@ upgrade.countermeasures:
 	Valued:
 		Cost: 1000
 
+upgrade.bunker_busters:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Bunker Busters
+	Buildable:
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft
+		BuildAtProductionType: queue.usa_air_upgrade
+		BuildPaletteOrder: 7
+		ForceIconLocation: true
+		BuildDuration: 1000
+		Prerequisites: ~prerequisite.zh_units
+		Description: Enables Stealth Bombers to kill garrisoned infantry in Bunkers, Firebases and Tunnels.
+		ReadyAudio: BunkerBusters
+	Valued:
+		Cost: 1500
+
 upgrade.stealth_comanche:
 	Inherits: ^default.upgrade
 	Tooltip:

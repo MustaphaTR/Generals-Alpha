@@ -330,6 +330,29 @@ missile.stealth_fighter:
 			building.defense: 250
 			building.stinger_site: 250
 
+missile.stealth_fighter.buster:
+	Inherits: missile.stealth_fighter
+	Warhead@2Dam: OpenToppedDamage
+		Spread: 0c128
+		Falloff: 100, 100
+		Damage: 10000
+		ValidTargets: BunkerBustable
+		Versus:
+			infantry.stinger_soldier: 25
+			vehicle.anti-air: 30
+			vehicle.humvee: 30
+			vehicle.avenger: 23
+			vehicle.assault_troop_crawler: 60
+			vehicle.battle_bus: 50
+			vehicle.battle_bus.crate-1: 45
+			vehicle.battle_bus.crate-2: 40
+			husk.battle_bus: 75
+			husk.battle_bus.crate-1: 75
+			husk.battle_bus.crate-2: 65
+			building.defense: 250
+			building.stinger_site: 250
+		DamageTypes: TriggerProne, ExplosionDeath
+
 missile.aurora:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 5
