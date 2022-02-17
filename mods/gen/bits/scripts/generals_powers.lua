@@ -1,5 +1,5 @@
 --[[
-   Copyright 2007-2018 The OpenRA Developers (see AUTHORS)
+   Copyright 2007-2019 The OpenRA Developers (see AUTHORS)
    This file is part of OpenRA, which is free software. It is made
    available to you under the terms of the GNU General Public License
    as published by the Free Software Foundation, either version 3 of
@@ -101,13 +101,19 @@ ReducePoints = function(player)
 end
 
 TickGeneralsPowers = function()
+	local localPlayerIsNull = true
 	for _,player in pairs(players) do
 		if player.IsLocalPlayer then
+			localPlayerIsNull = false
 			if Levels[player.InternalName] < 4 then
 				UserInterface.SetMissionText("Current Rank: " .. Ranks[Levels[player.InternalName] + 1] .. "\nGeneral's Points: " .. Points[player.InternalName] .. "\nProgress to Next Rank: " .. player.Experience - RankXPs[Levels[player.InternalName] + 1] .. "/" .. RankXPs[Levels[player.InternalName] + 2] - RankXPs[Levels[player.InternalName] + 1] .. "", player.Color)
 			else 
 				UserInterface.SetMissionText("Current Rank: " .. Ranks[Levels[player.InternalName] + 1] .. "\nGeneral's Points: " .. Points[player.InternalName] .. "", player.Color)
 			end
+		end
+
+		if localPlayerIsNull then
+			UserInterface.SetMissionText("")
 		end
 
 		if Points[player.InternalName] > 0 and not PointActorExists[player.InternalName] then
