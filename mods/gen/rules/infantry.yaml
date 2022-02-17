@@ -628,6 +628,9 @@ infantry.stinger_soldier:
 	Inherits@AP_ROCKETS: ^AffectedByAPRockets
 	-Buildable:
 	-SelectionDecorations:
+	Selectable:
+		Priority: 3
+		-PriorityModifiers:
 	Mobile:
 		RequiresCondition: !disable_movement
 		TurnWhileDisabledCondition: disable_movement
