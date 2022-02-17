@@ -1591,7 +1591,7 @@ building.patriot:
 		Range: 8c768
 		Color: 00DDDD88
 	AttackTurreted:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: build-incomplete || emp || hacked || lowpower
 	WithMuzzleOverlay:
 	Power:
 		Amount: -3
@@ -1681,7 +1681,7 @@ building.laser_turret:
 		Range: 8c768
 		Color: 00DDDD88
 	AttackTurreted:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: build-incomplete || emp || hacked || lowpower
 	WithMuzzleOverlay:
 	Power:
 		Amount: -5
@@ -1889,7 +1889,7 @@ building.gatling_cannon:
 		Range: 10c0
 		Color: 00DDDD88
 	AttackTurreted:
-		PauseOnCondition: emp || hacked || lowpower
+		PauseOnCondition: build-incomplete || emp || hacked || lowpower
 	WithMuzzleOverlay:
 	GrantConditionOnAttack@gatling:
 		Condition: gatling
@@ -1994,12 +1994,12 @@ building.firebase:
 		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
-		RequiresCondition: !emp && !hacked && !leaflet
+		PauseOnCondition: build-incomplete || emp || hacked || leaflet
 	Armament:
 		Weapon: cannon.firebase
 		LocalOffset: 520,0,450
 	AttackTurreted:
-		RequiresCondition: !emp && !hacked
+		PauseOnCondition: build-incomplete || emp || hacked
 	WithRangeCircle@ARTY:
 		Range: 6c896
 		Color: DDDD0088
@@ -2061,7 +2061,7 @@ building.bunker:
 		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
-		RequiresCondition: !emp && !hacked
+		PauseOnCondition: build-incomplete || emp || hacked
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
 		RequiresCondition: loaded
@@ -2420,7 +2420,7 @@ building.tunnel_network:
 	DetectCloaked:
 		Range: 3c768
 	AttackTurreted:
-		RequiresCondition: !emp && !hacked
+		PauseOnCondition: build-incomplete || emp || hacked
 	WithSpriteTurret:
 		RequiresCondition: !build-incomplete
 	WithMuzzleOverlay:
@@ -2550,7 +2550,7 @@ building.stinger_site:
 		Range: 10c0
 		Color: 00DDDD88
 	AttackTurreted:
-		RequiresCondition: !emp && !hacked && !leaflet
+		PauseOnCondition: emp || hacked || leaflet
 	Armament@PRIMARY:
 		Weapon: hack.stinger_site.ground
 	Armament@SECONDARY:
@@ -3062,7 +3062,7 @@ building.strategy_center:
 		Sequence: search_and_destroy
 		RequiresCondition: search_and_destroy
 	AttackTurreted:
-		RequiresCondition: !emp && !hacked && !lowpower
+		PauseOnCondition: build-incomplete || emp || hacked || lowpower
 	WithRangeCircle:
 		Range: 10c0
 		Color: DDDD0088
@@ -3150,7 +3150,7 @@ building.palace:
 		PortOffsets: 0,-896,128, 0,896,128, 840,0,128, -706,0,128, -706,-768,128, -706,640,128
 		PortYaws: 256, 768, 0, 512, 384, 640
 		PortCones: 88, 88, 88, 88, 88, 88
-		RequiresCondition: !emp
+		PauseOnCondition: build-incomplete || emp
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.tech_center
