@@ -121,7 +121,7 @@ infantry.worker:
 		EnterCursor: ability
 		EnterBlockedCursor: move-blocked
 	AttackFrontal:
-		RequiresCondition: !leaflet
+		PauseOnCondition: leaflet
 	Cloak@GPS_SCRAMBLER:
 		RequiresCondition: gps_scrambler && !capturing
 	GrantConditionOnPrerequisite@CAPTURE_BUILDING:
@@ -568,7 +568,7 @@ infantry.conscript:
 	TakeCover:
 		ProneOffset: 384,0,-395
 	AttackFrontal:
-		RequiresCondition: !leaflet
+		PauseOnCondition: leaflet
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	AutoTarget:
@@ -794,7 +794,7 @@ infantry.pathfinder:
 		Name: garrison
 		Weapon: sniper.pathfinder.garrison
 	AttackFrontal:
-		RequiresCondition: !leaflet
+		PauseOnCondition: leaflet
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	Cloak:
@@ -867,7 +867,7 @@ infantry.terrorist:
 		RequiresCondition: demo
 	AttackFrontal:
 		FacingTolerance: 128
-		RequiresCondition: !leaflet
+		PauseOnCondition: leaflet
 	Armament@PRIMARY:
 		Weapon: hack.suicide_targeting
 	GrantConditionOnAttack:
@@ -973,7 +973,7 @@ infantry.flamethrower:
 	TakeCover:
 		ProneOffset: 160,0,-288
 	AttackFrontal:
-		RequiresCondition: !leaflet
+		PauseOnCondition: leaflet
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	Voiced:
@@ -1077,7 +1077,7 @@ hack.angry_mob.male:
 		Weapon: mg.angry_mob
 		RequiresCondition: arm_the_mob
 	AttackFrontal:
-		RequiresCondition: !leaflet
+		PauseOnCondition: leaflet
 	GrantConditionOnPrerequisite@ARM_THE_MOB:
 		Condition: arm_the_mob
 		Prerequisites: upgrade.arm_the_mob
@@ -1092,7 +1092,7 @@ hack.angry_mob.female:
 		Weapon: mg.angry_mob
 		RequiresCondition: arm_the_mob
 	AttackFrontal:
-		RequiresCondition: !leaflet
+		PauseOnCondition: leaflet
 	GrantConditionOnPrerequisite@ARM_THE_MOB:
 		Condition: arm_the_mob
 		Prerequisites: upgrade.arm_the_mob
@@ -1104,7 +1104,7 @@ hack.angry_mob.molotov:
 		LocalOffset: 0,0,555
 		FireDelay: 15
 	AttackFrontal:
-		RequiresCondition: !leaflet
+		PauseOnCondition: leaflet
 	WithInfantryBody:
 		DefaultAttackSequence: throw
 
@@ -1262,7 +1262,8 @@ infantry.hacker:
 		RevokeAll: true
 		IsCyclic: false
 	AttackFrontal:
-		RequiresCondition: !deployed && !leaflet
+		PauseOnCondition: leaflet
+		RequiresCondition: !deployed
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
 		Facing: 128
@@ -1362,7 +1363,7 @@ infantry.super_hacker:
 		IsCyclic: false
 	AttackFrontal:
 		Armaments: primary, disable
-		RequiresCondition: !leaflet
+		PauseOnCondition: leaflet
 	Cloak:
 		InitialDelay: 0
 		CloakDelay: 125
@@ -1528,7 +1529,7 @@ infantry.colonel_burton:
 	AttackFrontal:
 		Armaments: primary, knife, timed_demo_bomb
 		Voice: Attack
-		RequiresCondition: !leaflet
+		PauseOnCondition: leaflet
 	AttackMove:
 		Voice: Attack
 	WithInfantryBody:
@@ -1640,7 +1641,7 @@ infantry.jarmen_kell:
 		PauseOnCondition: !ammo
 	AttackFrontal:
 		Armaments: primary, driver_snipe
-		RequiresCondition: !leaflet
+		PauseOnCondition: leaflet
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	Cloak:
@@ -1817,11 +1818,11 @@ infantry.black_lotus:
 	AttackFrontal@Capture:
 		Armaments: capture
 		Voice: Capture
-		RequiresCondition: !leaflet
+		PauseOnCondition: leaflet
 	AttackFrontal@Disable:
 		Armaments: disable
 		Voice: Disable
-		RequiresCondition: !leaflet
+		PauseOnCondition: leaflet
 	DamageMultiplier@ZH_UNITS:
 		Modifier: 75
 		RequiresCondition: zh_units

@@ -80,8 +80,8 @@ vessel.gunboat:
 		Weapon: cannon.gunboat
 		LocalOffset: 208,0,48
 		MuzzleSequence: muzzle
-		RequiresCondition: !hacked && !emp
 	AttackTurreted:
+		PauseOnCondition: hacked || emp
 	WithMuzzleOverlay:
 	SelectionDecorations:
 	WithSpriteTurret:
@@ -141,13 +141,12 @@ vessel.destroyer:
 		Weapon: missile.destroyer.ground
 		LocalOffset: 0,-100,0, 0,100,0
 		LocalYaw: 64, -64
-		RequiresCondition: !hacked && !emp
 	Armament@AA:
 		Weapon: missile.destroyer.air
 		LocalOffset: 0,-100,0, 0,100,0
 		LocalYaw: 64, -64
-		RequiresCondition: !hacked && !emp
 	AttackTurreted:
+		PauseOnCondition: hacked || emp
 	SelectionDecorations:
 	WithSpriteTurret:
 	DetectCloaked:
@@ -214,7 +213,6 @@ vessel.cruiser:
 		Recoil: 171
 		RecoilRecovery: 34
 		MuzzleSequence: muzzle
-		RequiresCondition: !hacked && !emp
 	Armament@SECONDARY:
 		Turret: secondary
 		Weapon: cannon.cruiser
@@ -222,9 +220,9 @@ vessel.cruiser:
 		Recoil: 171
 		RecoilRecovery: 34
 		MuzzleSequence: muzzle
-		RequiresCondition: !hacked && !emp
 	AttackTurreted:
 		Turrets: primary, secondary
+		PauseOnCondition: hacked || emp
 	WithMuzzleOverlay:
 	SelectionDecorations:
 	WithSpriteTurret@PRIMARY:

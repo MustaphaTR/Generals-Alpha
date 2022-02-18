@@ -164,7 +164,8 @@ vehicle.humvee:
 		RequiresCondition: tow_missile
 	AttackTurreted:
 		Turrets: primary, tow
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	WithMuzzleOverlay:
 	WithSpriteTurret@MG:
 	WithSpriteTurret@TOW:
@@ -191,7 +192,8 @@ vehicle.humvee:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
 		PortCones: 512, 512, 512, 512
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	ThrowsShrapnel@Turret1:
 		Weapons: debris.humvee.turret
 		Pieces: 1, 1
@@ -296,7 +298,8 @@ vehicle.technical:
 		LocalOffset: 128,0,43
 		RequiresCondition: zh_units && scrap_create_bonus == 1
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	Cargo:
@@ -565,7 +568,8 @@ vehicle.scorpion_tank:
 	AttackTurreted:
 		Armaments: primary, sc_rocket-1, sc_rocket-2
 		Turrets: primary, sc_rocket-1, sc_rocket-2
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	WithMuzzleOverlay:
 	WithSpriteTurret@NORMAL:
 	AmmoPool@SC_ROCKET-1:
@@ -681,7 +685,8 @@ vehicle.crusader_tank:
 		LocalOffset: 720,0,80
 		MuzzleSequence: muzzle
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	DamageMultiplier@COMPOSITE_ARMOR:
@@ -718,9 +723,10 @@ vehicle.laser_tank:
 		Amount: -1
 		RequiresCondition: !driver_killed
 	Mobile:
-		PauseOnCondition: !(!hacked && !driver_killed && !emp && !leaflet && !lowpower)
+		PauseOnCondition: hacked || driver_killed || emp || leaflet || lowpower
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !lowpower
+		PauseOnCondition: hacked || emp || leaflet || lowpower
+		RequiresCondition: !driver_killed
 	MobSpawnerMaster@SCOUT_DRONE:
 		RequiresCondition: scout_drone && !hacked && !emp && !driver_killed && !leaflet && !lowpower
 	MobSpawnerMaster@BATTLE_DRONE:
@@ -806,7 +812,8 @@ vehicle.battlemaster_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: autoloader
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: parachute || hacked || emp || leaflet
+		RequiresCondition: !driver_killed 
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	SelectionDecorations:
@@ -1000,7 +1007,8 @@ vehicle.sentry_drone:
 		MuzzleSequence: muzzle
 		RequiresCondition: sentry_gun
 	AttackTurreted:
-		RequiresCondition: sentry_gun && !hacked && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: sentry_gun
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 		Sequence: turret2
@@ -1114,7 +1122,8 @@ vehicle.quad_cannon:
 		MuzzleSequence: muzzle
 		RequiresCondition: scrap_create_bonus == 2
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	WithSpriteTurret:
 	WithMuzzleOverlay:
 	AcceptsDeliveredExperience:
@@ -1223,7 +1232,8 @@ vehicle.gatling_tank:
 		Condition: boss
 		Factions: boss
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	WithSpriteTurret:
 	WithMuzzleOverlay:
 	AcceptsDeliveredExperience:
@@ -1336,10 +1346,9 @@ vehicle.toxin_tractor:
 		Weapon: toxin.toxin_tractor.gamma.crate-2
 		LocalOffset: 600,0,90
 		RequiresCondition: anthrax_gamma && scrap_create_bonus == 2
-	AttackFrontal:
-		Armaments: deploy_alpha, deploy_beta, deploy_gamma
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !spray
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed && !spray
 	WithSpriteTurret:
 	Turreted:
 		TurnSpeed: 8
@@ -1464,7 +1473,8 @@ vehicle.dragon_tank:
 		Condition: boss
 		Factions: boss
 	AttackFrontal:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	AutoTarget:
 		ScanRadius: 4
 	AcceptsDeliveredExperience:
@@ -1584,7 +1594,8 @@ vehicle.rocket_buggy:
 		Condition: buggy_ammo
 		Prerequisites: upgrade.buggy_ammo
 	AttackFrontal:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	AcceptsDeliveredExperience:
 	ThrowsShrapnel@Mobile:
 		Weapons: debris.rocket_buggy.body
@@ -1686,7 +1697,8 @@ vehicle.avenger:
 		ShootStances: Neutral, Enemy
 		Armament: pdlaser
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	AcceptsDeliveredExperience:
@@ -1800,7 +1812,8 @@ vehicle.battle_Bus:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
 		PortCones: 512, 512, 512, 512
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	GrantConditionOnHealth@HUSK:
 		HP: 65000
 		Condition: husk
@@ -1911,7 +1924,8 @@ vehicle.assault_troop_crawler:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
 		PortCones: 512, 512, 512, 512
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	ProximityExternalCondition@SPEAKER:
 		Condition: speaker_tower
 		Range: 4c0
@@ -1978,7 +1992,8 @@ vehicle.listening_outpost:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
 		PortCones: 512, 512, 512, 512
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	Cloak:
 		InitialDelay: 100
 		CloakDelay: 50
@@ -2107,7 +2122,8 @@ vehicle.microwave_tank:
 		RevokeAll: true
 		IsCyclic: false
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	WithSpriteTurret:
 	DamageMultiplier@COMPOSITE_ARMOR:
 		RequiresCondition: composite_armor
@@ -2204,7 +2220,8 @@ vehicle.ecm_tank:
 		RevokeAll: true
 		IsCyclic: false
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	WithSpriteTurret:
 	JamsMissiles:
 		Range: 3c0
@@ -2306,7 +2323,8 @@ vehicle.tomahawk_launcher:
 	AutoTarget:
 		ScanRadius: 8
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	WithSpriteTurret@Full:
 		Sequence: turret-full
 		RequiresCondition: ammo
@@ -2457,7 +2475,8 @@ vehicle.scud_launcher:
 		RequiresCondition: hi_explosive_missiles && scrap_create_bonus == 2
 		PauseOnCondition: !ammo
 	AttackFrontal:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	WithFacingSpriteBody:
 		RequiresCondition: ammo
 	WithFacingSpriteBody@EMPTY:
@@ -2578,7 +2597,8 @@ vehicle.inferno_cannon:
 		Condition: black_napalm
 		Prerequisites: upgrade.black_napalm
 	AttackFrontal:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	WithMuzzleOverlay:
 	Explodes:
 		Weapon: ArtilleryExplode
@@ -2667,7 +2687,8 @@ vehicle.paladin_tank:
 		Armament: pdlaser
 	AttackTurreted:
 		Armaments: primary, pdlaser
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	DamageMultiplier@COMPOSITE_ARMOR:
@@ -2932,7 +2953,8 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && anthrax_gamma && zh_units && scrap_create_bonus == 2
 	AttackFrontal:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 		RequiresCondition: !scrap_create_bonus
@@ -3125,12 +3147,14 @@ vehicle.overlord_tank:
 	AttackTurreted:
 		Armaments: gatling, primary
 		Turrets: gatling, primary
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	AttackGarrisoned:
 		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && bunker_upgrade
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed && bunker_upgrade
 	WithMuzzleOverlay:
 	WithSpriteTurret@Cannon:
 	WithSpriteTurret@Bunker:
@@ -3540,7 +3564,8 @@ vehicle.nuke_cannon:
 		ScanRadius: 8
 	-Passenger:
 	AttackTurreted:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	SelectionDecorations:
@@ -3716,7 +3741,7 @@ vehicle.combat_cycle:
 		RequiresCondition: triggered
 	AttackFrontal:
 		Armaments: mg, ag_rocket, aa_rocket, terror, sniper_rifle, driver_snipe
-		RequiresCondition: !hacked && !emp && !leaflet
+		PauseOnCondition: hacked || emp || leaflet
 	AmmoPool:
 		Ammo: 1
 		PipCount: 0
