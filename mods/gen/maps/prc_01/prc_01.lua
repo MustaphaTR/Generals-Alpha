@@ -42,7 +42,7 @@ BunkerCarAttack = function(number)
 
 		PlaceMeBomb(car)
 		car.Move(CarBunkerLocations[number] + CVec.New(0, 2))
-		car.DetonateAttack(CarBunkers[number])
+		car.Attack(CarBunkers[number])
 	end
 end
 
@@ -51,7 +51,7 @@ BaseAttack = function()
 		if Difficulty == "hard" and not car.IsDead then
 			car.Owner = gla
 			PlaceMeBomb(car)
-			car.DetonateAttack(HardCarTarget)
+			car.Attack(HardCarTarget)
 		end
 	end)
 
@@ -63,7 +63,7 @@ BaseAttack = function()
 
 	Utils.Do(Terrorists, function(terrorist)
 		if not terrorist.IsDead then
-			terrorist.DetonateAttack(PRCCommand)
+			terrorist.Attack(PRCCommand)
 
 			Trigger.OnDamaged(terrorist, function()
 				if terrorist.Health <= 1500 then
