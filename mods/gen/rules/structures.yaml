@@ -2719,6 +2719,7 @@ building.usa_airfield:
 		ProductionType: queue.super_gen_aircraft
 	LaysMinefield@DOCK:
 		Mines: hack.dock
+		RecreationInterval: -1
 		Locations: 2,2, 3,1, 3,2
 	WithIdleOverlay@DISH:
 		Sequence: idle-dish
@@ -2838,6 +2839,7 @@ building.prc_airfield:
 		ProductionType: queue.tank_gen_aircraft
 	LaysMinefield@DOCK:
 		Mines: hack.dock
+		RecreationInterval: -1
 		Locations: 0,1, 2,1, 3,1
 	Selectable:
 		Bounds: 96,64,0,-4
