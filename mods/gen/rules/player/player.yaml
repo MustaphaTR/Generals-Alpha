@@ -222,3 +222,10 @@ Player:
 	GrantConditionOnPrerequisite@NoBases:
 		Prerequisites: hack.no_bases
 		Condition: no_bases
+	ExternalCondition@PadAircraft:
+		Condition: padaircraft
+	ExternalCondition@AirDock:
+		Condition: airdock
+	ProvidesPrerequisite@enoughair:
+		Prerequisite: prerequisite.enoughair
+		RequiresCondition: padaircraft >= airdock

@@ -2640,6 +2640,8 @@ building.stinger_site:
 		SpawnOffset: -512,0,0
 	RallyPoint:
 	Reservable:
+	GrantExternalConditionToOwner:
+		Condition: airdock
 	RepairsUnits:
 		Interval: 14
 		HpPerStep: 500
@@ -2874,6 +2876,8 @@ hack.dock:
 	AlwaysVisible:
 	ConditionManager:
 	Reservable:
+	GrantExternalConditionToOwner:
+		Condition: airdock
 	Tooltip:
 		Name: Dummy Dock
 	RepairsUnits:

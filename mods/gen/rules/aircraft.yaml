@@ -277,7 +277,7 @@ aircraft.mig:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Prerequisites: ~building.prc_airfield
+		Prerequisites: !prerequisite.enoughair
 		Description: Multi-role fighter plane.\n\nCan attack both ground and air targets.
 		ReadyAudio: MiGCreated
 	Valued:
@@ -373,6 +373,8 @@ aircraft.mig:
 		MaximumPitch: 56
 		LandableActorTypes: building.prc_airfield, building.usa_airfield, hack.dock
 		Voice: Move
+	GrantExternalConditionToOwner:
+		Condition: padaircraft
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
@@ -446,6 +448,7 @@ aircraft.raptor:
 		BuildPaletteOrder: 0
 		BuildDuration: 500
 		BuildDurationModifier: 100
+		Prerequisites: !prerequisite.enoughair
 		Description: Multi-role fighter plane.\n\nCan attack both ground and air targets.
 		ReadyAudio: RaptorCreated
 	Valued:
@@ -492,6 +495,8 @@ aircraft.raptor:
 		MaximumPitch: 56
 		LandableActorTypes: building.prc_airfield, building.usa_airfield, hack.dock
 		Voice: Move
+	GrantExternalConditionToOwner:
+		Condition: padaircraft
 	SpeedMultiplier@DAMAGED:
 		Modifier: 69
 	AutoTarget:
@@ -603,7 +608,7 @@ aircraft.stealth_fighter:
 		ForceIconLocation: true
 		BuildDuration: 625
 		BuildDurationModifier: 100
-		Prerequisites: prerequisite.stealth_fighter
+		Prerequisites: prerequisite.stealth_fighter, !prerequisite.enoughair
 		Description: Stealth fighter plane.
 		ReadyAudio: StealthFighterCreated
 	Valued:
@@ -649,6 +654,8 @@ aircraft.stealth_fighter:
 		MaximumPitch: 56
 		LandableActorTypes: building.prc_airfield, building.usa_airfield, hack.dock
 		Voice: Move
+	GrantExternalConditionToOwner:
+		Condition: padaircraft
 	SpeedMultiplier@DAMAGED:
 		Modifier: 69
 	DamageMultiplier@ZH_UNITS:
@@ -711,7 +718,7 @@ aircraft.stealth_fighter.air:
 	Inherits: aircraft.stealth_fighter
 	Buildable:
 		Queue: queue.air_gen_aircraft
-		Prerequisites: ~building.usa_airfield
+		Prerequisites: !prerequisite.enoughair
 	Valued:
 		Cost: 1250
 	Health:
@@ -751,7 +758,7 @@ aircraft.aurora:
 		BuildPaletteOrder: 4
 		BuildDuration: 625
 		BuildDurationModifier: 100
-		Prerequisites: building.strategy_center, !techlevel.notech
+		Prerequisites: building.strategy_center, !prerequisite.enoughair, !techlevel.notech
 		Description: Fast fighter plane.\n\nCan not be damaged while attacking.\n\nSlows down and becomes vulnerable after attacking.
 		ReadyAudio: AuroraCreated
 	Valued:
@@ -809,6 +816,8 @@ aircraft.aurora:
 		MaximumPitch: 56
 		LandableActorTypes: building.prc_airfield, building.usa_airfield, hack.dock
 		Voice: Move
+	GrantExternalConditionToOwner:
+		Condition: padaircraft
 	GrantConditionOnActivity:
 		Condition: supersonic
 	SpeedMultiplier:
