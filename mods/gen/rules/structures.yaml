@@ -1119,7 +1119,7 @@ building.gla_barracks:
 	-ProductionQueue@CAMO_NETTING:
 	ProductionQueue@Vanilla:
 		Type: queue.gla_infantry
-		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
+		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank, boss
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -1330,7 +1330,7 @@ building.usa_supply_center:
 		PauseOnCondition: emp || hacked
 	ProductionQueue@Vanilla:
 		Type: queue.usa_collector
-		Factions: usa, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
+		Factions: usa, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		Group: Collector
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -1403,7 +1403,7 @@ building.gla_supply_stash:
 	-ProductionQueue@CAMO_NETTING:
 	ProductionQueue@Vanilla:
 		Type: queue.gla_collector
-		Factions: usa, air, laser, super, gla, toxin, demo, prc, inf, nuke, tank
+		Factions: usa, air, laser, super, gla, toxin, demo, prc, inf, nuke, tank, boss
 		Group: Collector
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -2163,7 +2163,7 @@ building.usa_war_factory:
 		PauseOnCondition: emp || hacked || sabotaged
 	ProductionQueue@Vanilla:
 		Type: queue.usa_vehicle
-		Factions: usa, gla, toxin, demo, stealth, prc, inf, nuke, tank
+		Factions: usa, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -2244,7 +2244,7 @@ building.arms_dealer:
 	-ProductionQueue@CAMO_NETTING:
 	ProductionQueue@Vanilla:
 		Type: queue.gla_vehicle
-		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
+		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank, boss
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -2691,7 +2691,7 @@ building.usa_airfield:
 		PauseOnCondition: emp || hacked || sabotaged
 	ProductionQueue@Vanilla:
 		Type: queue.usa_aircraft
-		Factions: usa, laser, gla, toxin, demo, stealth, prc, inf, nuke, tank
+		Factions: usa, laser, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		Group: Aircraft
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3017,7 +3017,7 @@ building.strategy_center:
 		PauseOnCondition: emp || hacked
 	ProductionQueue@Vanilla:
 		Type: queue.strategy_center
-		Factions: usa, laser, gla, toxin, demo, stealth, prc, inf, nuke, tank
+		Factions: usa, laser, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3192,7 +3192,7 @@ building.palace:
 	-ProductionQueue@CAMO_NETTING:
 	ProductionQueue@Vanilla:
 		Type: queue.palace
-		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank
+		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank, boss
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3285,7 +3285,7 @@ building.propaganda_center:
 	-ProductionQueue@JUST_MINE:
 	ProductionQueue@Vanilla:
 		Type: queue.propaganda_center
-		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, boss
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
