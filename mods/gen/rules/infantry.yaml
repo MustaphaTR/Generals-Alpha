@@ -26,6 +26,8 @@ infantry.pilot:
 		Modifier: 67
 	Passenger:
 		CargoType: Pilot
+	WithInfantryBody:
+		IdleSequences: idle1
 	Voiced:
 		VoiceSet: PilotVoice
 
@@ -890,6 +892,8 @@ infantry.terrorist:
 		CargoType: GLAInfantry
 	Voiced:
 		VoiceSet: TerroristVoice
+	WithInfantryBody:
+		-IdleSequences:
 	RenderSprites:
 		Image: infantry.terrorist
 	CaptureManager:
@@ -1081,6 +1085,8 @@ hack.angry_mob.male:
 	GrantConditionOnPrerequisite@ARM_THE_MOB:
 		Condition: arm_the_mob
 		Prerequisites: upgrade.arm_the_mob
+	WithInfantryBody:
+		-IdleSequences:
 
 hack.angry_mob.female:
 	Inherits: ^default.angry_mob
@@ -1096,6 +1102,8 @@ hack.angry_mob.female:
 	GrantConditionOnPrerequisite@ARM_THE_MOB:
 		Condition: arm_the_mob
 		Prerequisites: upgrade.arm_the_mob
+	WithInfantryBody:
+		-IdleSequences:
 
 hack.angry_mob.molotov:
 	Inherits: ^default.angry_mob

@@ -813,7 +813,7 @@ vehicle.battlemaster_tank:
 		RequiresCondition: autoloader
 	AttackTurreted:
 		PauseOnCondition: parachute || hacked || emp || leaflet
-		RequiresCondition: !driver_killed 
+		RequiresCondition: !driver_killed
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	SelectionDecorations:

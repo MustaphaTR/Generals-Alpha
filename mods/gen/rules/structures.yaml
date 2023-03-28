@@ -49,7 +49,7 @@
 	InfiltrateForCondition:
 		Duration: 250
 	RallyPoint:
-		Offset: 3,3
+		Path: 3,3
 	WithTextDecoration@SIDE:
 		Text:
 		ZOffset: 2048
@@ -1430,7 +1430,7 @@ building.gla_supply_stash:
 	SupplyCenter:
 		DeliveryOffsets: 1,1
 	RallyPoint:
-		Offset: 2,1
+		Path: 2,1
 	-WithMakeAnimation:
 	WithMakeAnimation@RA_SILO:
 		Sequence: make
@@ -2157,7 +2157,7 @@ building.usa_war_factory:
 	Building:
 		Footprint: xxx === ===
 	RallyPoint:
-		Offset: 0,2
+		Path: 0,2
 	Production:
 		Produces: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		PauseOnCondition: emp || hacked || sabotaged
