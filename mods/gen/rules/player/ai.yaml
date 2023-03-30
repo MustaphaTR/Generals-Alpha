@@ -14,11 +14,11 @@ Player:
 	BaseBuilderBotModule@rush:
 		RequiresCondition: enable-rush-ai
 		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine, queue.soviet_barracks, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
-		DefenseQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
+		DefenseQueues: # queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
 		MinimumExcessPower: 3
-		MaximumExcessPower: 20
-		ExcessPowerIncrement: 3
-		ExcessPowerIncreaseThreshold: 5
+		MaximumExcessPower: 8
+		ExcessPowerIncrement: 2
+		ExcessPowerIncreaseThreshold: 4
 		ConstructionMinimumCash: 2000
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		RefineryTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -367,11 +367,11 @@ Player:
 	BaseBuilderBotModule@normal:
 		RequiresCondition: enable-normal-ai
 		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine, queue.soviet_barracks, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
-		DefenseQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
+		DefenseQueues: # queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
 		MinimumExcessPower: 3
-		MaximumExcessPower: 20
-		ExcessPowerIncrement: 3
-		ExcessPowerIncreaseThreshold: 5
+		MaximumExcessPower: 10
+		ExcessPowerIncrement: 2
+		ExcessPowerIncreaseThreshold: 4
 		ConstructionMinimumCash: 2000
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		RefineryTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -732,11 +732,11 @@ Player:
 	BaseBuilderBotModule@turtle:
 		RequiresCondition: enable-turtle-ai
 		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine, queue.soviet_barracks, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
-		DefenseQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
+		DefenseQueues: # queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
 		MinimumExcessPower: 3
-		MaximumExcessPower: 20
-		ExcessPowerIncrement: 3
-		ExcessPowerIncreaseThreshold: 5
+		MaximumExcessPower: 13
+		ExcessPowerIncrement: 2
+		ExcessPowerIncreaseThreshold: 3
 		ConstructionMinimumCash: 2000
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		RefineryTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
