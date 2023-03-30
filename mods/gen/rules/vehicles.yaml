@@ -3982,6 +3982,14 @@ vehicle.combat_cycle.demo:
 	WithRangeCircle@DISARM:
 		Range: 4c0
 		Color: CC550066
+	Wanders:
+		WanderMoveRadius: 4
+		MinMoveDelay: 1000
+		MaxMoveDelay: 1750
+		RequiresCondition: any-ai
+	GrantConditionOnBotOwner@any:
+		Condition: any-ai
+		Bots: rush, normal, turtle
 
 vehicle.usa_mcc:
 	Inherits: ^default.mcc
