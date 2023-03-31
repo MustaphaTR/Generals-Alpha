@@ -6,13 +6,6 @@
 		Enabled: True
 		DisplayOrder: 5
 		Prerequisites: prerequisite.zh_units
-	LobbyPrerequisiteCheckbox@LIMITSW:
-		ID: limitsw
-		Label: Limit Super Weapons
-		Description: Allow only 1 of each Super Weapon to be built
-		Enabled: False
-		DisplayOrder: 6
-		Prerequisites: prerequisite.limited_sw
 	LobbyPrerequisiteCheckbox@CCRADIUS:
 		ID: ccradius
 		Label: Build off Comm. Cent.
@@ -20,6 +13,13 @@
 		Enabled: True
 		DisplayOrder: 7
 		Prerequisites: prerequisite.ccradius
+	LobbyPrerequisiteCheckbox@LIMITSW:
+		ID: limitsw
+		Label: Limit Super Weapons
+		Description: Allow only 1 of each Super Weapon to be built
+		Enabled: False
+		DisplayOrder: 9
+		Prerequisites: prerequisite.limited_sw
 	LobbyPrerequisiteCheckbox@WALLS:
 		ID: walls
 		Label: Enable Walls
