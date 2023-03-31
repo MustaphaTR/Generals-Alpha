@@ -1,0 +1,352 @@
+^default.supply:
+	Inherits@1: ^SpriteActor
+	ConditionManager:
+	Interactable:
+	HiddenUnderShroud:
+	Targetable:
+		TargetTypes: SupplyDock
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Ore
+	AppearsOnMapPreview:
+		Terrain: Ore
+	RenderSprites:
+		Palette: player
+	MapEditorData:
+		Categories: Supply
+
+^default.supply_pile:
+	Inherits@1: ^default.supply
+	Tooltip:
+		Name: Supply Pile
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	SupplyDock:
+		Capacity: 2500
+		CollectionOffsets: 0,-1, -1,0, 1,0, 0,1
+		AircraftCollectionOffsets: 0,0
+		FullnessConditions:
+			1: not_empty
+	KillsSelf:
+		RemoveInstead: true
+		RequiresCondition: !not_empty
+
+supply.pile.a:
+	Inherits@1: ^default.supply_pile
+	SupplyDock:
+		FullnessConditions:
+			834: one_third
+			1667: two_thirds
+	WithSpriteBody@100:
+		Name: 100
+		Sequence: idle-100
+		RenderInPreview: true
+		RequiresCondition: two_thirds
+	WithSpriteBody@66:
+		Name: 66
+		Sequence: idle-66
+		RequiresCondition: one_third && !two_thirds
+	WithSpriteBody@33:
+		Name: 33
+		Sequence: idle-33
+		RequiresCondition: not_empty && !one_third
+
+supply.pile.b:
+	Inherits@1: supply.pile.a
+
+supply.pile.c:
+	Inherits@1: ^default.supply_pile
+	SupplyDock:
+		FullnessConditions:
+			626: quarter
+			1251: half
+			1876: three_quarters
+	WithSpriteBody@100:
+		Name: 100
+		Sequence: idle-100
+		RenderInPreview: true
+		RequiresCondition: three_quarters
+	WithSpriteBody@75:
+		Name: 75
+		Sequence: idle-75
+		RequiresCondition: half && !three_quarters
+	WithSpriteBody@50:
+		Name: 50
+		Sequence: idle-50
+		RequiresCondition: quarter && !half
+	WithSpriteBody@25:
+		Name: 25
+		Sequence: idle-25
+		RequiresCondition: not_empty && !quarter
+
+supply.pile.d:
+	Inherits@1: supply.pile.a
+
+supply.pile.e:
+	Inherits@1: supply.pile.a
+
+supply.pile.f:
+	Inherits@1: supply.pile.a
+
+supply.pile.g:
+	Inherits@1: ^default.supply_pile
+	SupplyDock:
+		FullnessConditions:
+			501: one_fifth
+			1001: two_fifths
+			1501: three_fifths
+			2001: four_fifths
+	WithSpriteBody@100:
+		Name: 100
+		Sequence: idle-100
+		RenderInPreview: true
+		RequiresCondition: four_fifths
+	WithSpriteBody@80:
+		Name: 80
+		Sequence: idle-80
+		RequiresCondition: three_fifths && !four_fifths
+	WithSpriteBody@60:
+		Name: 60
+		Sequence: idle-60
+		RequiresCondition: two_fifths && !three_fifths
+	WithSpriteBody@40:
+		Name: 40
+		Sequence: idle-40
+		RequiresCondition: one_fifth && !two_fifths
+	WithSpriteBody@20:
+		Name: 20
+		Sequence: idle-20
+		RequiresCondition: not_empty && !one_fifth
+
+^default.supply_dock:
+	Inherits@1: ^default.supply
+	Tooltip:
+		Name: Supply Dock
+	SupplyDock:
+		FullnessConditions:
+			1: not_empty
+			7501: quarter
+			15001: half
+			22501: three_quarters
+	WithSpriteBody@100:
+		Name: 100
+		Sequence: idle-100
+		RenderInPreview: true
+		RequiresCondition: three_quarters
+	WithSpriteBody@75:
+		Name: 75
+		Sequence: idle-75
+		RequiresCondition: half && !three_quarters
+	WithSpriteBody@50:
+		Name: 50
+		Sequence: idle-50
+		RequiresCondition: quarter && !half
+	WithSpriteBody@25:
+		Name: 25
+		Sequence: idle-25
+		RequiresCondition: not_empty && !quarter
+	GrantConditionOnPrerequisite@RESUPPLY:
+		Condition: resupply
+		Prerequisites: prerequisite.docksresupply
+	ResupplyDock:
+		Amount: 600
+		Delay: 750
+		RequiresCondition: resupply
+
+supply.dock.30000.6x4:
+	Inherits@1: ^default.supply_dock
+	Building:
+		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
+		Dimensions: 6,4
+	SupplyDock:
+		CollectionOffsets: 0,-1, 1,-1, 2,-1, 3,-1, 4,-1, 5,-1, -1,0, -1,1, -1,2, -1,3, 6,0, 6,1, 6,2, 6,3, 0,4, 1,4, 2,4, 3,4, 4,4, 5,4
+		AircraftCollectionOffsets: 0,0, 1,0, 2,0, 3,0, 4,0, 5,0, 0,1, 0,2, 0,3, 5,1, 5,2, 5,3, 1,3, 2,3, 3,3, 4,3
+	RenderSprites:
+		Image: supply.dock.6x4
+	WithIdleOverlay@Bib-Tem:
+		Sequence: bib-tem
+		RequiresCondition: !snow && !desert
+	WithIdleOverlay@Bib-Sno:
+		Sequence: bib-sno
+		RequiresCondition: snow
+	WithIdleOverlay@Bib-des:
+		Sequence: bib-des
+		Palette: desert
+		RequiresCondition: desert
+	GrantConditionOnTerrain@Sno:
+		TerrainTypes: Snow, SnowRoad
+		Condition: snow
+	GrantConditionOnTerrain@Des:
+		TerrainTypes: Sand, SandRoad
+		Condition: desert
+
+supply.dock.40000.6x4:
+	Inherits@1: supply.dock.30000.6x4
+	SupplyDock:
+		Capacity: 40000
+		FullnessConditions:
+			10001: quarter
+			20001: half
+			30001: three_quarters
+
+supply.dock.20000.6x4:
+	Inherits@1: supply.dock.30000.6x4
+	SupplyDock:
+		Capacity: 20000
+		FullnessConditions:
+			5001: quarter
+			10001: half
+			15001: three_quarters
+
+supply.dock.30000.4x6:
+	Inherits@1: ^default.supply_dock
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx xxxx xxxx
+		Dimensions: 4,6
+	SupplyDock:
+		CollectionOffsets: 0,-1, 1,-1, 2,-1, 3,-1, -1,0, -1,1, -1,2, -1,3, -1,4, -1,5, 4,0, 4,1, 4,2, 4,3, 4,4, 4,5, 0,6, 1,6, 2,6, 3,6
+		AircraftCollectionOffsets: 0,0, 1,0, 2,0, 3,0, 0,1, 0,2, 0,3, 0,4, 0,5, 3,1, 3,2, 3,3, 3,4, 3,5, 1,5, 2,5
+	RenderSprites:
+		Image: supply.dock.4x6
+	WithIdleOverlay@Bib-Tem:
+		Sequence: bib-tem
+		RequiresCondition: !snow && !desert
+	WithIdleOverlay@Bib-Sno:
+		Sequence: bib-sno
+		RequiresCondition: snow
+	WithIdleOverlay@Bib-des:
+		Sequence: bib-des
+		Palette: desert
+		RequiresCondition: desert
+	GrantConditionOnTerrain@Sno:
+		TerrainTypes: Snow, SnowRoad
+		Condition: snow
+	GrantConditionOnTerrain@Des:
+		TerrainTypes: Sand, SandRoad
+		Condition: desert
+
+supply.dock.40000.4x6:
+	Inherits@1: supply.dock.30000.4x6
+	SupplyDock:
+		Capacity: 40000
+		FullnessConditions:
+			10001: quarter
+			20001: half
+			30001: three_quarters
+
+supply.dock.20000.4x6:
+	Inherits@1: supply.dock.30000.4x6
+	SupplyDock:
+		Capacity: 20000
+		FullnessConditions:
+			5001: quarter
+			10001: half
+			15001: three_quarters
+
+supply.dock.30000.skewed_a:
+	Inherits@1: ^default.supply_dock
+	Building:
+		Footprint: xxx___ xxxxxx xxxxxx xxxxxx ___xxx
+		Dimensions: 6,5
+	SupplyDock:
+		CollectionOffsets: 0,-1, 1,-1, 2,-1, 3,0, 4,0, 5,0, -1,0, -1,1, -1,2, -1,3, 6,1, 6,2, 6,3, 6,4, 0,4, 1,4, 2,4, 3,5, 4,5, 5,5
+		AircraftCollectionOffsets: 0,0, 1,0, 2,0, 3,1, 4,1, 5,1, 0,1, 0,2, 0,3, 5,2, 5,3, 5,4, 1,3, 2,3, 3,4, 4,4
+	RenderSprites:
+		Image: supply.dock.skewed_a
+	WithIdleOverlay@Bib-Tem:
+		Sequence: bib-tem
+		RequiresCondition: !snow && !desert
+	WithIdleOverlay@Bib-Sno:
+		Sequence: bib-sno
+		RequiresCondition: snow
+	WithIdleOverlay@Bib-des:
+		Sequence: bib-des
+		Palette: desert
+		RequiresCondition: desert
+	GrantConditionOnTerrain@Sno:
+		TerrainTypes: Snow, SnowRoad
+		Condition: snow
+	GrantConditionOnTerrain@Des:
+		TerrainTypes: Sand, SandRoad
+		Condition: desert
+
+supply.dock.40000.skewed_a:
+	Inherits@1: supply.dock.30000.skewed_a
+	SupplyDock:
+		Capacity: 40000
+		FullnessConditions:
+			10001: quarter
+			20001: half
+			30001: three_quarters
+
+supply.dock.20000.skewed_a:
+	Inherits@1: supply.dock.30000.skewed_a
+	SupplyDock:
+		Capacity: 20000
+		FullnessConditions:
+			5001: quarter
+			10001: half
+			15001: three_quarters
+
+supply.dock.30000.skewed_b:
+	Inherits@1: ^default.supply_dock
+	Building:
+		Footprint: ___xxx xxxxxx xxxxxx xxxxxx xxx___
+		Dimensions: 6,5
+	SupplyDock:
+		CollectionOffsets: 0,0, 1,0, 2,0, 3,-1, 4,-1, 5,-1, -1,1, -1,2, -1,3, -1,4, 6,0, 6,1, 6,2, 6,3, 0,5, 1,5, 2,5, 3,4, 4,4, 5,4
+		AircraftCollectionOffsets: 0,1, 1,1, 2,1, 3,0, 4,0, 5,0, 0,2, 0,3, 0,4, 5,1, 5,2, 5,3, 1,4, 2,4, 3,3, 4,3
+	RenderSprites:
+		Image: supply.dock.skewed_b
+	WithIdleOverlay@Bib-Tem:
+		Sequence: bib-tem
+		RequiresCondition: !snow && !desert
+	WithIdleOverlay@Bib-Sno:
+		Sequence: bib-sno
+		RequiresCondition: snow
+	WithIdleOverlay@Bib-des:
+		Sequence: bib-des
+		Palette: desert
+		RequiresCondition: desert
+	GrantConditionOnTerrain@Sno:
+		TerrainTypes: Snow, SnowRoad
+		Condition: snow
+	GrantConditionOnTerrain@Des:
+		TerrainTypes: Sand, SandRoad
+		Condition: desert
+
+supply.dock.40000.skewed_b:
+	Inherits@1: supply.dock.30000.skewed_b
+	SupplyDock:
+		Capacity: 40000
+		FullnessConditions:
+			10001: quarter
+			20001: half
+			30001: three_quarters
+
+supply.dock.20000.skewed_b:
+	Inherits@1: supply.dock.30000.skewed_b
+	SupplyDock:
+		Capacity: 20000
+		FullnessConditions:
+			5001: quarter
+			10001: half
+			15001: three_quarters
+
+supply.dock.2x2:
+	Inherits@1: ^default.supply_dock
+	Tooltip:
+		Name: Small Supply Dock
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	SupplyDock:
+		Capacity: 10000
+		CollectionOffsets: 0,-1, 1,-1, -1,0, -1,1, 2,0, 2,1, 0,2, 1,2
+		AircraftCollectionOffsets: 0,0, 1,0, 0,1, 1,1
+		FullnessConditions:
+			2501: quarter
+			5001: half
+			7501: three_quarters
+	WithBuildingBib:

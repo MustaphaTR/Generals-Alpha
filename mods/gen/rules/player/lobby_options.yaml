@@ -1,0 +1,36 @@
+^LobbyOptions:
+	LobbyPrerequisiteCheckbox@ZHUNITS:
+		ID: zhunits
+		Label: Zero Hour
+		Description: Enables the Zero Hour stuff
+		Enabled: True
+		DisplayOrder: 5
+		Prerequisites: prerequisite.zh_units
+	LobbyPrerequisiteCheckbox@LIMITSW:
+		ID: limitsw
+		Label: Limit Super Weapons
+		Description: Allow only 1 of each Super Weapon to be built
+		Enabled: False
+		DisplayOrder: 6
+		Prerequisites: prerequisite.limited_sw
+	LobbyPrerequisiteCheckbox@CCRADIUS:
+		ID: ccradius
+		Label: Build off Comm. Cent.
+		Description: Allow placing structures around Command Centers (Keep this enabled while playing against AI, it sucks without that)
+		Enabled: True
+		DisplayOrder: 7
+		Prerequisites: prerequisite.ccradius
+	LobbyPrerequisiteCheckbox@WALLS:
+		ID: walls
+		Label: Enable Walls
+		Description: Enables construction of Fences and Walls
+		Enabled: False
+		DisplayOrder: 10
+		Prerequisites: prerequisite.walls
+	LobbyPrerequisiteCheckbox@DOCKSRESUPPLY:
+		ID: docksresupply
+		Label: Docks Resupply
+		Description: Supply Docks fill back with time
+		Enabled: False
+		DisplayOrder: 12
+		Prerequisites: prerequisite.docksresupply
