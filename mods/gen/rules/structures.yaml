@@ -2007,7 +2007,7 @@ building.firebase:
 		Range: 6c896
 		Color: DDDD0088
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable, BunkerBustable
+		TargetTypes: Ground, Structure, C4, DetonateAttack, Disable, BunkerBustable
 	Power:
 		Amount: 0
 	Voiced:
@@ -2074,7 +2074,7 @@ building.bunker:
 		Sequence: idle-flag
 		RequiresCondition: loaded
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable, BunkerBustable
+		TargetTypes: Ground, Structure, C4, DetonateAttack, Disable, BunkerBustable
 	Power:
 		Amount: 0
 	Voiced:
@@ -2444,7 +2444,7 @@ building.tunnel_network:
 		Condition: camo_netted
 		Factions: stealth
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable, BunkerBustable
+		TargetTypes: Ground, Structure, C4, DetonateAttack, Disable, BunkerBustable
 	SpawnActorOnDeath:
 		Actor: hole.tunnel_network
 		SpawnAfterDefeat: false
