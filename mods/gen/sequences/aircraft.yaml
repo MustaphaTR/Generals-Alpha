@@ -42,7 +42,7 @@ aircraft.scout_drone:
 aircraft.battle_drone:
 	idle: bdrn
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: minigun
 		Length: 6
 		Facings: 8
@@ -56,7 +56,7 @@ aircraft.hellfire_drone:
 aircraft.comanche:
 	idle: heli
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	rotor: lrotor
 		Length: 4
 	slow-rotor: lrotor
@@ -70,7 +70,7 @@ aircraft.comanche:
 aircraft.helix:
 	idle: hind
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	rotor: lrotorlg
 		Length: 4
 	slow-rotor: lrotorlg
@@ -88,7 +88,7 @@ aircraft.assault_helix:
 aircraft.chinook:
 	idle: tran2
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		Offset: 0, -50
 	rotor: lrotor
 		Length: 4
@@ -104,7 +104,7 @@ aircraft.chinook:
 		Length: 8
 	shadow: transhadow
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	open: tran2
 		Start: 32
 		Length: 4
@@ -112,11 +112,11 @@ aircraft.chinook:
 		Start: 35
 	dock: tran2
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		Offset: 0, -50
 	dock-loop: tran2
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		Offset: 0, -50
 	collect: chinookcrane
 		Length: *
@@ -154,12 +154,12 @@ aircraft.b2:
 aircraft.cargo_plane:
 	idle: c17
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 
 aircraft.a10:
 	idle: a10
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: minigun
 		Length: 6
 		Facings: 8

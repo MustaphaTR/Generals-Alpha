@@ -6,11 +6,15 @@
 		ActorExperienceModifier: 100
 		PlayerExperienceModifier: 100
 	ScriptTriggers:
-	ConditionManager:
 	RenderDebugState:
 
 ^SpriteActor:
 	BodyOrientation:
+	QuantizeFacingsFromSequence:
+	RenderSprites:
+
+^ClassicFacingSpriteActor:
+	ClassicFacingBodyOrientation:
 	QuantizeFacingsFromSequence:
 	RenderSprites:
 
@@ -89,36 +93,36 @@
 	ReloadDelayMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
 		Modifier: 62
-	SelfHealing@ELITE:
+	ChangesHealth@ELITE:
 		Step: 200
 		Delay: 125
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 125
 		RequiresCondition: rank-elite
 	WithDecoration@RANK-1:
 		Image: rank
 		Sequence: rank-veteran-1
 		Palette: effect
-		ReferencePoint: Bottom, Right
-		ValidStances: Ally, Neutral, Enemy
+		Position: BottomRight
+		Margin: 5, 6
+		ValidRelationships: Ally, Enemy, Neutral
 		RequiresCondition: rank-veteran == 1
-		ZOffset: 256
 	WithDecoration@RANK-2:
 		Image: rank
 		Sequence: rank-veteran-2
 		Palette: effect
-		ReferencePoint: Bottom, Right
-		ValidStances: Ally, Neutral, Enemy
+		Position: BottomRight
+		Margin: 5, 6
+		ValidRelationships: Ally, Enemy, Neutral
 		RequiresCondition: rank-veteran == 2
-		ZOffset: 256
 	WithDecoration@RANK-ELITE:
 		Image: rank
 		Sequence: rank-veteran-3
 		Palette: effect
-		ReferencePoint: Bottom, Right
-		ValidStances: Ally, Neutral, Enemy
+		Position: BottomRight
+		Margin: 5, 6
+		ValidRelationships: Ally, Enemy, Neutral
 		RequiresCondition: rank-elite
-		ZOffset: 256
 
 ^IronCurtainable:
 	WithColoredOverlay@IRONCURTAIN:
@@ -186,10 +190,10 @@
 		Image: rank
 		Sequence: rank-elite
 		Palette: effect
-		ReferencePoint: Top, Right
+		Position: TopRight
+		Margin: 5, 5
 		RequiresCondition: horde_bonus
-		ValidStances: Ally, Neutral, Enemy
-		ZOffset: 256
+		ValidRelationships: Ally, Neutral, Enemy
 	GrantConditionOnPrerequisite@NATIONALISM:
 		Condition: nationalism
 		Prerequisites: upgrade.nationalism
@@ -251,7 +255,7 @@
 ^AffectsDemoTrap:
 	ProximityExternalCondition@SELF_DESTRUCT:
 		Condition: self_destruct
-		ValidStances: enemy
+		ValidRelationships: enemy
 		Range: 1c512
 
 ^AffectedByAdvancedTraining:
@@ -308,7 +312,7 @@
 	Capturable@DRIVER_KILLED:
 		Types: driverless_vehcile
 		RequiresCondition: driver_killed
-		ValidStances: Enemy, Neutral, Ally
+		ValidRelationships: Enemy, Neutral, Ally
 	MustBeDestroyed:
 		RequiresCondition: !driver_killed
 	CaptureManager:
@@ -325,18 +329,18 @@
 	ReloadDelayMultiplier@SUBLIMINAL_MESSAGING:
 		RequiresCondition: speaker_tower && subliminal_messaging
 		Modifier: 80
-	SelfHealing@SPEAKER_NORMAL:
+	ChangesHealth@SPEAKER_NORMAL:
 		Step: 0
 		PercentageStep: 2
 		Delay: 40
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: speaker_tower && !subliminal_messaging
-	SelfHealing@SUBLIMINAL_MESSAGING:
+	ChangesHealth@SUBLIMINAL_MESSAGING:
 		Step: 0
 		PercentageStep: 4
 		Delay: 40
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: speaker_tower && subliminal_messaging
 	ExternalCondition@SPEAKER_NORMAL:
@@ -346,10 +350,10 @@
 		Prerequisites: upgrade.subliminal_messaging
 
 ^AffectedByEmergencyRepair:
-	SelfHealing@EMERGENCY_REPAIR:
+	ChangesHealth@EMERGENCY_REPAIR:
 		PercentageStep: 5
 		Delay: 25
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: emergency_repair
 		Step: 500
@@ -359,9 +363,8 @@
 		Sequence: repair
 		Palette: player
 		IsPlayerPalette: true
-		ReferencePoint: Center
-		ZOffset: 256
-		ValidStances: Ally, Neutral, Enemy
+		Position: Center
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: emergency_repair
 	ExternalCondition@EMERGENCY_REPAIR:
 		Condition: emergency_repair
@@ -378,10 +381,10 @@
 		Condition: gps_scrambler
 
 ^AffectedByJunkRepair:
-	SelfHealing@JUNK_REPAIR:
+	ChangesHealth@JUNK_REPAIR:
 		Step: 200
 		Delay: 25
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 25
 		RequiresCondition: junk_repair
 	GrantConditionOnPrerequisite@JUNK_REPAIR:
@@ -389,10 +392,10 @@
 		Prerequisites: upgrade.junk_repair
 
 ^AffectedByRepairBay:
-	SelfHealing@REPAIR_BAY:
+	ChangesHealth@REPAIR_BAY:
 		Step: 200
 		Delay: 25
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 25
 		RequiresCondition: repair_bay
 	GrantConditionOnPrerequisite@REPAIR_BAY:
@@ -611,10 +614,10 @@
 		Prerequisites: strategy.hold_the_line
 
 ^AffectedByAmbulance:
-	SelfHealing@AMBULANCE:
+	ChangesHealth@AMBULANCE:
 		Step: 400
 		Delay: 25
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: ambulanceheal
 	ExternalCondition@AMBULANCE:
@@ -622,7 +625,7 @@
 
 ^AffectedByAmbulanceZHOnly:
 	Inherits: ^AffectedByAmbulance
-	SelfHealing@AMBULANCE:
+	ChangesHealth@AMBULANCE:
 		RequiresCondition: ambulanceheal && zh_units
 		Step: 500
 	GrantConditionOnPrerequisite@ZH_UNITS:
@@ -630,18 +633,18 @@
 		Prerequisites: prerequisite.zh_units
 
 ^HealedInTransports:
-	SelfHealing@IN_AMBULANCE:
+	ChangesHealth@IN_AMBULANCE:
 		Step: 0
 		PercentageStep: 25
 		Delay: 25
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: in_ambulance
-	SelfHealing@IN_CRAWLER:
+	ChangesHealth@IN_CRAWLER:
 		Step: 0
 		PercentageStep: 10
 		Delay: 25
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: in_crawler_or_outpost
 	Passenger:
@@ -657,18 +660,16 @@
 		Image: rank
 		Sequence: rank-crate-1
 		Palette: effect
-		ReferencePoint: Top, Left
+		Margin: 5, 5
 		RequiresCondition: scrap_create_bonus == 1
-		ZOffset: 256
-		ValidStances: Ally, Neutral, Enemy
+		ValidRelationships: Ally, Neutral, Enemy
 	WithDecoration@CRATE-2:
 		Image: rank
 		Sequence: rank-crate-2
 		Palette: effect
-		ReferencePoint: Top, Left
+		Margin: 5, 5
 		RequiresCondition: scrap_create_bonus == 2
-		ZOffset: 256
-		ValidStances: Ally, Neutral, Enemy
+		ValidRelationships: Ally, Neutral, Enemy
 	ExternalCondition@SCRAP_CREATE_BONUS:
 		Condition: scrap_create_bonus
 		TotalCap: 2
@@ -712,9 +713,8 @@
 		RequiresSelection: false
 		Image: car_bomb
 		Sequence: c4
-		ReferencePoint: Center
-		ZOffset: 256
-		ValidStances: Ally, Neutral, Enemy
+		Position: Center
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: timed_demo_bomb
 
 ^AcceptsTNTCharges:
@@ -729,9 +729,8 @@
 		RequiresSelection: false
 		Image: tnt
 		Sequence: idle
-		ReferencePoint: Center
-		ZOffset: 256
-		ValidStances: Ally, Neutral, Enemy
+		Position: Center
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: tnt_charge
 
 ^WithGarrisonRangeCircle:
@@ -791,11 +790,11 @@
 		RequiresCondition: range_circle.minigunner
 
 ^KilledWithoutAirfield:
-	SelfHealing@PLANE:
+	ChangesHealth@PLANE:
 		Step: 0
 		PercentageStep: -10
 		Delay: 25
-		HealIfBelow: 101
+		StartIfBelow: 101
 		DamageCooldown: 0
 		RequiresCondition: !airfield && !ammo
 	GrantConditionOnPrerequisite@AIRFIELD:
@@ -1203,10 +1202,15 @@
 	Selectable:
 		PriorityModifiers: Ctrl, Alt
 
+^PlayerHandicaps:
+	HandicapFirepowerMultiplier:
+	HandicapDamageMultiplier:
+	HandicapProductionTimeMultiplier:
+
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^IronCurtainable
-	Inherits@3: ^SpriteActor
+	Inherits@3: ^ClassicFacingSpriteActor
 	Inherits@4: ^AffectedBySpeakerTower
 	Inherits@5: ^AffectedByBombardment
 	Inherits@6: ^AffectedBySearchAndDestroy
@@ -1226,6 +1230,7 @@
 	Inherits@20: ^AffectedByLeaflet
 	Inherits@21: ^AcceptsTNTCharges
 	Inherits@22: ^AffectedByOilRefinery
+	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
 	OwnerLostAction:
@@ -1237,7 +1242,7 @@
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Locomotor: locomotor.wheeled
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	SelectionDecorations:
@@ -1299,8 +1304,6 @@
 		OpeningSequence: open
 		Offset: 0,0,200
 		RequiresCondition: parachute
-	BodyOrientation:
-		UseClassicFacingFudge: True
 	HitShape:
 	SpeedMultiplier@GENERIC:
 		Modifier: 200
@@ -1325,7 +1328,7 @@
 
 ^Car:
 	Inherits@1: ^ExistsInWorld
-	Inherits@2: ^SpriteActor
+	Inherits@2: ^ClassicFacingSpriteActor
 	Inherits@3: ^AffectsDemoTrap
 	Inherits@4: ^AffectedByHacking
 	Inherits@5: ^AffectedByEMP
@@ -1333,6 +1336,7 @@
 	Inherits@7: ^AffectedByGPSScambler
 	Inherits@8: ^TakesBounty
 	Inherits@9: ^AffectedByLeaflet
+	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@REVEAL: ^Reveal200
 	Huntable:
 	OwnerLostAction:
@@ -1341,7 +1345,7 @@
 	UpdatesPlayerStatistics:
 	Mobile:
 		Speed: 90
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Locomotor: locomotor.sentry_drone
 		PauseOnCondition: hacked || emp || leaflet
 	SelectionDecorations:
@@ -1363,7 +1367,7 @@
 	Capturable:
 		Types: car
 		CancelActivity: True
-		ValidStances: Ally, Neutral, Enemy
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: !car_bomb
 	GrantConditionOnCapture:
 		Condition: car_bomb
@@ -1392,7 +1396,7 @@
 		DeathTypes: Suicide
 		RequiresCondition: car_bomb
 	AttackFrontal:
-		FacingTolerance: 128
+		FacingTolerance: 512
 		RequiresCondition: car_bomb
 	Armament@PRIMARY:
 		Weapon: hack.suicide_targeting
@@ -1417,12 +1421,9 @@
 		RequiresSelection: false
 		Image: car_bomb
 		Sequence: c4
-		ReferencePoint: Center
-		ZOffset: 256
-		ValidStances: Ally
+		Position: Center
+		ValidRelationships: Ally
 		RequiresCondition: car_bomb
-	BodyOrientation:
-		UseClassicFacingFudge: True
 	HitShape:
 	SpeedMultiplier@GENERIC:
 		Modifier: 200
@@ -1450,6 +1451,7 @@
 	Inherits@12: ^TakesBounty
 	Inherits@13: ^AffectedByLeaflet
 	Inherits@14: ^HealedInTransports
+	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
 	OwnerLostAction:
@@ -1500,10 +1502,10 @@
 	Guardable:
 	Tooltip:
 		GenericName: Soldier
-	SelfHealing@HOSPITAL:
+	ChangesHealth@HOSPITAL:
 		Step: 500
 		Delay: 100
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 125
 		RequiresCondition: hospitalheal
 	GrantConditionOnPrerequisite@HOSPITAL:
@@ -1604,6 +1606,7 @@
 	Inherits@16: ^TakesBounty
 	Inherits@17: ^AffectedByLeaflet
 	Inherits@18: ^AffectedByOilRefinery
+	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
 	OwnerLostAction:
@@ -1656,6 +1659,7 @@
 	Inherits@6: ^AffectedByHoldTheLine
 	Inherits@7: ^TakesBounty
 	Inherits@8: ^AffectedByOilRefinery
+	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
 	OwnerLostAction:
@@ -1719,8 +1723,8 @@
 		CloseEnough: 1c0
 	Hovers@CRUISING:
 		RequiresCondition: cruising
-	BodyOrientation:
-		UseClassicFacingFudge: True
+	-BodyOrientation:
+	ClassicFacingBodyOrientation:
 
 ^BasicBuilding:
 	Inherits@1: ^ExistsInWorld
@@ -1732,6 +1736,7 @@
 	Inherits@7: ^AcceptsTimedDemoBomb
 	Inherits@8: ^AcceptsTNTCharges
 	Inherits@9: ^TakesBounty
+	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SHAPE: ^1x1Shape
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
@@ -1790,7 +1795,7 @@
 	WithBuildingRepairDecoration:
 		Image: allyrepair
 		Sequence: repair
-		ReferencePoint: Center
+		Position: Center
 		Palette: player
 		IsPlayerPalette: True
 	Targetable:
@@ -1826,8 +1831,7 @@
 		RequiresSelection: true
 		Image: pips
 		Sequence: tag-fake
-		ReferencePoint: Center
-		ZOffset: 256
+		Position: Center
 	-MustBeDestroyed:
 	Production:
 		Produces: FakeToReal
@@ -1916,6 +1920,7 @@
 ^Wall:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
+	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SHAPE: ^1x1Shape
 	Interactable:
 	OwnerLostAction:
@@ -2005,7 +2010,6 @@
 	Inherits: ^TechBuilding
 	-Selectable:
 	SelectionDecorations:
-		RenderSelectionBars: False
 	Health:
 		HP: 1000
 	Explodes:
@@ -2121,9 +2125,7 @@
 		Categories: Tree
 
 ^BasicHusk:
-	Inherits@1: ^SpriteActor
 	Interactable:
-	ConditionManager:
 	Health:
 		HP: 28000
 	Armor:
@@ -2138,6 +2140,7 @@
 
 ^Husk:
 	Inherits: ^BasicHusk
+	Inherits@2: ^ClassicFacingSpriteActor
 	Husk:
 		AllowedTerrain: Grass, Snow, Sand, Concrete, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Gems, Beach
 	Targetable:
@@ -2145,11 +2148,10 @@
 		RequiresForceFire: true
 	Tooltip:
 		GenericName: Destroyed Vehicle
-	BodyOrientation:
-		UseClassicFacingFudge: True
 
 ^PlaneHusk:
 	Inherits: ^BasicHusk
+	Inherits@2: ^SpriteActor
 	WithShadow:
 		Offset: 43, 128, 0
 		ZOffset: -129
@@ -2169,6 +2171,7 @@
 
 ^HelicopterHusk:
 	Inherits: ^BasicHusk
+	Inherits@2: ^ClassicFacingSpriteActor
 	WithShadow:
 		Offset: 43, 128, 0
 		ZOffset: -129
@@ -2180,8 +2183,6 @@
 		CanSlide: True
 	FallsToEarth:
 		Explosion: UnitExplodeHeli
-	BodyOrientation:
-		UseClassicFacingFudge: True
 	RevealOnDeath:
 		Duration: 60
 		Radius: 3c0
@@ -2238,18 +2239,17 @@
 		ShadowImage: parach-shadow
 		ShadowSequence: idle
 		RequiresCondition: parachute
-	ConditionManager:
 	MapEditorData:
 		Categories: System
 
 ^Mine:
 	Inherits: ^SpriteActor
+	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@REVEAL: ^Reveal100
 	Interactable:
 	OwnerLostAction:
 		Action: Kill
 	WithSpriteBody:
-	ConditionManager:
 	HiddenUnderFog:
 	Mine:
 		BlockFriendly: false
@@ -2310,3 +2310,26 @@
 	GrantCondition@DISABLED-PO:
 		RequiresCondition: power-outage
 		Condition: disabled
+
+^CargoPips:
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
+
+^PrimaryBuilding:
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+	WithDecoration@primary:
+		RequiresCondition: primary
+		Position: Top
+		Margin: 0, 4
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary

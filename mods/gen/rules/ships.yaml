@@ -1,5 +1,6 @@
 vessel.transport:
 	Inherits: ^Ship
+	Inherits@CARGO: ^CargoPips
 	Inherits@REVEAL: ^Reveal200
 	GivesExperience:
 		Experience: 50
@@ -18,7 +19,7 @@ vessel.transport:
 	Armor:
 		Type: vehicle.truck
 	Mobile:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 50
 		Locomotor: locomotor.transport
 		PauseOnCondition: notmobile || hacked || emp
@@ -28,7 +29,6 @@ vessel.transport:
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker, Pilot, Vehicle
 		MaxWeight: 8
-		PipCount: 8
 		PassengerFacing: 0
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || emp
@@ -71,10 +71,10 @@ vessel.gunboat:
 	Armor:
 		Type: vehicle.truck
 	Mobile:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Speed: 60
 	Turreted:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Offset: 512,0,0
 	Armament:
 		Weapon: cannon.gunboat
@@ -132,10 +132,10 @@ vessel.destroyer:
 	Armor:
 		Type: vehicle.tank
 	Mobile:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Speed: 40
 	Turreted:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Offset: 341,0,128
 	Armament@AG:
 		Weapon: missile.destroyer.ground
@@ -196,16 +196,16 @@ vessel.cruiser:
 	Armor:
 		Type: vehicle.tank
 	Mobile:
-		TurnSpeed: 3
+		TurnSpeed: 12
 		Speed: 20
 	Turreted@PRIMARY:
 		Turret: primary
 		Offset: -864,0,128
-		TurnSpeed: 3
+		TurnSpeed: 12
 	Turreted@SECONDARY:
 		Turret: secondary
 		Offset: 768,0,128
-		TurnSpeed: 3
+		TurnSpeed: 12
 	Armament@PRIMARY:
 		Turret: primary
 		Weapon: cannon.cruiser

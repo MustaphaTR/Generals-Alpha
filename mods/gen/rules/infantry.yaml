@@ -868,7 +868,7 @@ infantry.terrorist:
 		DeathTypes: Suicide
 		RequiresCondition: demo
 	AttackFrontal:
-		FacingTolerance: 128
+		FacingTolerance: 512
 		PauseOnCondition: leaflet
 	Armament@PRIMARY:
 		Weapon: hack.suicide_targeting
@@ -1013,7 +1013,7 @@ infantry.saboteur:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
 	Passenger:
-		PipType: Yellow
+		CustomPipType: yellow
 		Voice: Move
 	Infiltrates:
 		Types: Sabotage
@@ -1052,8 +1052,8 @@ infantry.saboteur:
 	-SelectionDecorations:
 	-WithSpriteControlGroupDecoration:
 	-Passenger:
-	-SelfHealing@IN_AMBULANCE:
-	-SelfHealing@IN_CRAWLER:
+	-ChangesHealth@IN_AMBULANCE:
+	-ChangesHealth@IN_CRAWLER:
 	Health:
 		HP: 5000
 	Armor:
@@ -1118,7 +1118,7 @@ hack.angry_mob.molotov:
 
 infantry.angry_mob:
 	Inherits@1: ^ExistsInWorld
-	Inherits@4: ^SpriteActor
+	Inherits@2: ^ClassicFacingSpriteActor
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@LEAFLET: ^AffectedByLeaflet
 	-AppearsOnRadar:
@@ -1171,8 +1171,6 @@ infantry.angry_mob:
 		Type: CenterPosition
 	RevealsShroud@INTELLIGENCE:
 		Type: CenterPosition
-	BodyOrientation:
-		UseClassicFacingFudge: True
 	HitShape:
 	MapEditorData:
 		Categories: Infantry
@@ -1243,15 +1241,15 @@ infantry.hacker:
 		Modifier: 50
 	Passenger:
 		CargoType: Hacker
-		PipType: Yellow
+		CustomPipType: yellow
 		Voice: Move
 		CargoConditions:
 			building.internet_center: in_internet_center
-	SelfHealing@IN_INTERNET_CENTER:
+	ChangesHealth@IN_INTERNET_CENTER:
 		Step: 0
 		PercentageStep: 10
 		Delay: 25
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: in_internet_center
 	Armament@Anim:
@@ -1274,7 +1272,7 @@ infantry.hacker:
 		RequiresCondition: !deployed
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
-		Facing: 128
+		Facing: 512
 	WithInfantryBody:
 		DefaultAttackSequence: hack
 		RequiresCondition: !deployed
@@ -1417,7 +1415,7 @@ infantry.hijacker:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
 	Passenger:
-		PipType: Yellow
+		CustomPipType: yellow
 	Captures:
 		CaptureTypes: vehicle, driverless_vehcile
 	Voiced:
@@ -1513,7 +1511,7 @@ infantry.colonel_burton:
 	Selectable:
 		Class: infantry.colonel_burton
 	Passenger:
-		PipType: Red
+		CustomPipType: red
 		Voice: Move
 	AutoTarget:
 		ScanRadius: 8
@@ -1678,6 +1676,10 @@ infantry.jarmen_kell:
 		VoiceSet: JarmenVoice
 	RenderSprites:
 		Image: infantry.jarmen_kell
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
 
 infantry.jarmen_kell.demo:
 	Inherits: infantry.jarmen_kell
@@ -1786,7 +1788,7 @@ infantry.black_lotus:
 		Cursor: ability
 		OutsideRangeCursor: ability
 		Weapon: capture.black_lotus.anim
-		TargetStances: Enemy, Neutral
+		TargetRelationships: Enemy, Neutral
 		LocalOffset: 0,0,196
 		RequiresCondition: end_capture == 0
 	Armament@CaptureEnd:
@@ -1794,7 +1796,7 @@ infantry.black_lotus:
 		Cursor: ability
 		OutsideRangeCursor: ability
 		Weapon: capture.black_lotus.end
-		TargetStances: Enemy, Neutral
+		TargetRelationships: Enemy, Neutral
 		LocalOffset: 0,0,196
 		RequiresCondition: end_capture == 1
 	Armament@DisableAnim:

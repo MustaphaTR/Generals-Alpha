@@ -160,7 +160,7 @@ Heal:
 	Warhead@1Dam: SpreadDamage
 		Spread: 213
 		Damage: -5000
-		ValidStances: Ally
+		ValidRelationships: Ally
 		ValidTargets: Infantry
 		DebugOverlayColor: 00FF00
 
@@ -426,7 +426,7 @@ capture.black_lotus.anim:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Capture
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 
 capture.black_lotus.end:
 	ReloadDelay: 25
@@ -442,7 +442,7 @@ capture.black_lotus.end:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Capture
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 	Warhead@2Cap: CaptureActor
 		CaptureTypes: building
 		Experience: 20
@@ -462,7 +462,7 @@ disable.black_lotus.anim:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Vehicle, Tank, Ship
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 
 disable.black_lotus.end:
 	ReloadDelay: 25
@@ -478,7 +478,7 @@ disable.black_lotus.end:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Vehicle, Tank, Ship
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c512
 		Duration: 375
@@ -503,7 +503,7 @@ disable.hacker.anim:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Disable
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 
 disable.hacker.end:
 	ReloadDelay: 25
@@ -519,7 +519,7 @@ disable.hacker.end:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Disable
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c512
 		Duration: 50
@@ -539,7 +539,7 @@ disable.ecm_tank.anim:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Vehicle, Tank, Ship
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 
 disable.ecm_tank.end:
 	ReloadDelay: 3
@@ -555,7 +555,7 @@ disable.ecm_tank.end:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Vehicle, Tank, Ship
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c512
 		Duration: 55
@@ -575,7 +575,7 @@ disable.microwave_tank.anim:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Disable
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 
 disable.microwave_tank.end:
 	ReloadDelay: 3
@@ -591,7 +591,7 @@ disable.microwave_tank.end:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Disable
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c512
 		Duration: 135
@@ -606,7 +606,7 @@ aoe.microwave_tank:
 		Falloff: 100, 100
 		Spread: 3c0
 		Damage: 800
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 		ValidTargets: Infantry
 		DamageTypes: FireDeath
 		Versus:

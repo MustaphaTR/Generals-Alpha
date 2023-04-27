@@ -447,12 +447,12 @@ building.prc_supply_center:
 building.patriot:
 	idle: sam2
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		Offset: -2,-2
 	damaged-idle: sam2
 		Start: 34
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		Offset: -2,-2
 	make: sammake
 		Length: *
@@ -485,21 +485,21 @@ building.emp_patriot:
 building.laser_turret:
 	idle: gun
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	recoil: gun
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	make: gunmake
 		Length: *
 	damaged-idle: gun
 		Start: 64
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	damaged-recoil: gun
 		Start: 96
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
 	bib: mbGUN.tem
@@ -534,12 +534,12 @@ building.advanced_demo_trap:
 building.gatling_cannon:
 	idle: agun
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		Offset: 0,-13
 	recoil: agun
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		Offset: 0,-13
 	make: agunmake
 		Length: *
@@ -547,12 +547,12 @@ building.gatling_cannon:
 	damaged-idle: agun
 		Start: 64
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		Offset: 0,-13
 	damaged-recoil: agun
 		Start: 96
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		Offset: 0,-13
 	muzzle: gunfire2
 		Start: 1
@@ -609,7 +609,7 @@ building.firebase:
 		Offset: 12,12
 	idle-turret: agun
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		Offset: 0,-18
 	make-turret: agunmake
 		Length: *
@@ -785,7 +785,7 @@ building.tunnel_network:
 		Length: *
 	turret: gun.shp
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: gunfire2.shp
 		Length: 5
 	icon: tunnelicon.shp
@@ -802,9 +802,9 @@ building.stinger_site:
 	damaged-idle: stinger
 		Start: 2
 	idle-camo: stinger
-		Start: 1 
+		Start: 1
 	damaged-idle-camo: stinger
-		Start: 3 
+		Start: 3
 	hole: stinger
 		Start: 4
 	make: stingermake
@@ -919,12 +919,12 @@ building.strategy_center:
 		Start: 1
 	turret: agun
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		Offset: 0,-13
 	damaged-turret: agun
 		Start: 64
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		Offset: 0,-13
 	bib: bib2.tem
 		Length: *
@@ -1195,11 +1195,11 @@ building.scud_storm:
 	idle: invis
 	turret-full: v2rl
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret-empty: v2rl
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	bib: bib3.tem
 		Length: *
 		AddExtension: False

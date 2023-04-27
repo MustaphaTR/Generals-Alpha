@@ -6,13 +6,12 @@
 		Type: aircraft.normal
 	Aircraft:
 		CruiseAltitude: 2560
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 150
 		Repulsable: False
 		MaximumPitch: 56
 	-Selectable:
 	SelectionDecorations:
-		RenderSelectionBars: False
 	Contrail@1:
 		Offset: -432,560,0
 	Contrail@2:
@@ -244,7 +243,7 @@ aircraft.cargo_plane:
 		Offset: -261,650,0
 		TrailLength: 15
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 326
 		Repulsable: False
 		MaximumPitch: 36
@@ -357,7 +356,7 @@ aircraft.mig:
 		RequiresCondition: tactical_nuke_mig && nuke
 		PauseOnCondition: !ammo
 	AttackAircraft:
-		FacingTolerance: 20
+		FacingTolerance: 80
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
@@ -366,8 +365,8 @@ aircraft.mig:
 		Type: CenterPosition
 	Aircraft:
 		CruiseAltitude: 2560
-		InitialFacing: 192
-		TurnSpeed: 5
+		InitialFacing: 768
+		TurnSpeed: 20
 		Speed: 160
 		RepulsionSpeed: 40
 		MaximumPitch: 56
@@ -419,6 +418,10 @@ aircraft.mig:
 		RepairActors: building.prc_airfield, building.usa_airfield, hack.dock
 	Voiced:
 		VoiceSet: MiGVoice
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
 
 aircraft.raptor:
 	Inherits: ^Plane
@@ -479,7 +482,7 @@ aircraft.raptor:
 		LocalYaw: -40, 24
 		PauseOnCondition: !ammo
 	AttackAircraft:
-		FacingTolerance: 20
+		FacingTolerance: 80
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
@@ -488,8 +491,8 @@ aircraft.raptor:
 		Type: CenterPosition
 	Aircraft:
 		CruiseAltitude: 2560
-		InitialFacing: 192
-		TurnSpeed: 5
+		InitialFacing: 768
+		TurnSpeed: 20
 		Speed: 175
 		RepulsionSpeed: 40
 		MaximumPitch: 56
@@ -530,6 +533,10 @@ aircraft.raptor:
 		VoiceSet: RaptorVoice
 	RenderSprites:
 		Scale: 0.9
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
 
 aircraft.king_raptor:
 	Inherits: aircraft.raptor
@@ -572,6 +579,10 @@ aircraft.king_raptor:
 		Image: aircraft.king_raptor
 	Voiced:
 		VoiceSet: KingRaptorVoice
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
 
 aircraft.king_raptor.boss:
 	Inherits: aircraft.king_raptor
@@ -638,7 +649,7 @@ aircraft.stealth_fighter:
 		PauseOnCondition: !ammo
 		RequiresCondition: bunker_busters
 	AttackAircraft:
-		FacingTolerance: 20
+		FacingTolerance: 80
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
@@ -647,8 +658,8 @@ aircraft.stealth_fighter:
 		Type: CenterPosition
 	Aircraft:
 		CruiseAltitude: 2560
-		InitialFacing: 192
-		TurnSpeed: 8
+		InitialFacing: 768
+		TurnSpeed: 32
 		Speed: 175
 		RepulsionSpeed: 40
 		MaximumPitch: 56
@@ -713,6 +724,10 @@ aircraft.stealth_fighter:
 	RenderSprites:
 		Image: aircraft.stealth_fighter
 		Scale: 0.9
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
 
 aircraft.stealth_fighter.air:
 	Inherits: aircraft.stealth_fighter
@@ -800,7 +815,7 @@ aircraft.aurora:
 		Condition: countermeasures
 		Prerequisites: upgrade.countermeasures
 	AttackAircraft:
-		FacingTolerance: 20
+		FacingTolerance: 80
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
@@ -809,8 +824,8 @@ aircraft.aurora:
 		Type: CenterPosition
 	Aircraft:
 		CruiseAltitude: 2560
-		InitialFacing: 192
-		TurnSpeed: 8
+		InitialFacing: 768
+		TurnSpeed: 32
 		Speed: 180
 		RepulsionSpeed: 40
 		MaximumPitch: 56
@@ -860,6 +875,10 @@ aircraft.aurora:
 		Prerequisite: prerequisite.plane
 	RenderSprites:
 		Scale: 0.9
+	WithAmmoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
 
 aircraft.aurora.boss:
 	Inherits: aircraft.aurora
@@ -902,8 +921,8 @@ aircraft.spy_drone:
 		Type: CenterPosition
 	Aircraft:
 		CruiseAltitude: 2560
-		InitialFacing: 192
-		TurnSpeed: 8
+		InitialFacing: 768
+		TurnSpeed: 32
 		Speed: 65
 		RepulsionSpeed: 40
 		MaximumPitch: 56
@@ -972,7 +991,7 @@ aircraft.battle_drone:
 	-DetectCloaked:
 	-RenderDetectionCircle:
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 	Armament@MG:
 		Weapon: mg.battle_drone
 		LocalOffset: 300,0,-16
@@ -981,7 +1000,7 @@ aircraft.battle_drone:
 	AttackAircraft:
 		AttackType: Hover
 		Armaments: primary
-		FacingTolerance: 20
+		FacingTolerance: 80
 	RenderSprites:
 		Scale: 0.75
 
@@ -998,7 +1017,7 @@ aircraft.hellfire_drone:
 		LocalOffset: 0,-320,0, 0,320,0
 		LocalYaw: -40, 24
 	AttackAircraft:
-		FacingTolerance: 20
+		FacingTolerance: 80
 
 aircraft.a10:
 	Inherits: ^Plane
@@ -1018,7 +1037,7 @@ aircraft.a10:
 	Valued:
 		Cost: 2000
 	Aircraft:
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Speed: 120
 		Repulsable: False
 	AttackBomber:
@@ -1048,11 +1067,9 @@ aircraft.a10:
 		Name: missile
 		Armaments: missile
 		Ammo: 6
-		PipCount: 0
 		AmmoCondition: ammo
 	-Selectable:
 	SelectionDecorations:
-		RenderSelectionBars: False
 	RejectsOrders:
 	SpawnActorOnDeath:
 		Actor: husk.a10
@@ -1099,7 +1116,7 @@ aircraft.chinook:
 		Type: aircraft.chinook
 	Mobile:
 		Speed: 60
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Voice: Move
 		Locomotor: locomotor.chinook
 	SpeedMultiplier@DAMAGED:
@@ -1140,7 +1157,6 @@ aircraft.chinook:
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker, Pilot, Vehicle
 		MaxWeight: 8
-		PipCount: 8
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
@@ -1154,7 +1170,7 @@ aircraft.chinook:
 	-Passenger:
 	-ProximityExternalCondition@SELF_DESTRUCT:
 	-SpawnActorOnDeath@CRATE:
-	-SelfHealing@EMERGENCY_REPAIR:
+	-ChangesHealth@EMERGENCY_REPAIR:
 	-WithDecoration@EMERGENCY_REPAIR:
 	-ExternalCondition@EMERGENCY_REPAIR:
 	-DamagedByRadioactivity@ANTHRAX_ALPHA:
@@ -1167,6 +1183,9 @@ aircraft.chinook:
 	SelectionDecorations:
 	Voiced:
 		VoiceSet: ChinookVoice
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
 
 # aircraft.chinook:
 #	Inherits: ^Helicopter
@@ -1367,7 +1386,6 @@ aircraft.comanche:
 		Name: secondary
 		Armaments: secondary
 		Ammo: 12
-		PipCount: 0
 		AmmoCondition: ammo
 	ReloadAmmoPool:
 		AmmoPool: secondary
@@ -1375,11 +1393,11 @@ aircraft.comanche:
 		Count: 12
 	AttackAircraft:
 		AttackType: Hover
-		FacingTolerance: 20
+		FacingTolerance: 80
 	Aircraft:
 		CruiseAltitude: 1928
-		InitialFacing: 224
-		TurnSpeed: 8
+		InitialFacing: 896
+		TurnSpeed: 32
 		Speed: 120
 		Voice: Move
 	WithIdleOverlay@ROTORAIR:
@@ -1528,7 +1546,7 @@ aircraft.helix:
 	AttackAircraft:
 		AttackType: Hover
 		Armaments: primary, gatling
-		FacingTolerance: 20
+		FacingTolerance: 80
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
@@ -1537,8 +1555,8 @@ aircraft.helix:
 		Type: CenterPosition
 	Aircraft:
 		CruiseAltitude: 1928
-		InitialFacing: 192
-		TurnSpeed: 8
+		InitialFacing: 768
+		TurnSpeed: 32
 		Speed: 75
 		Voice: Move
 		LandableTerrainTypes: Grass, Snow, Sand, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Beach, Gems
@@ -1561,7 +1579,6 @@ aircraft.helix:
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker, Vehicle
 		MaxWeight: 5
-		PipCount: 5
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
@@ -1628,6 +1645,9 @@ aircraft.helix:
 		DecorationBounds: 40,35
 	RenderSprites:
 		Scale: 1.3
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
 
 aircraft.assault_helix:
 	Inherits: aircraft.helix
@@ -1653,10 +1673,12 @@ aircraft.assault_helix:
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker
 		MaxWeight: 8
-		PipCount: 8
 	AttackAircraft:
 		Armaments: primary
 	-Armament@GATLING:
 	-GrantConditionOnAttack@GATLING:
 	-WithRangeCircle:
 	-ProximityExternalCondition@SPEAKER:
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true

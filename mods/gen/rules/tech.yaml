@@ -30,7 +30,7 @@ tech.oil_derrick:
 	WithBuildingRepairDecoration:
 		Image: allyrepair
 		Sequence: repair
-		ReferencePoint: Center
+		Position: Center
 		Palette: player
 		IsPlayerPalette: True
 	CashTrickler:
@@ -81,7 +81,7 @@ tech.oil_refinery:
 	WithBuildingRepairDecoration:
 		Image: allyrepair
 		Sequence: repair
-		ReferencePoint: Center
+		Position: Center
 		Palette: player
 		IsPlayerPalette: True
 	Tooltip:
@@ -152,7 +152,7 @@ tech.hospital:
 	WithBuildingRepairDecoration:
 		Image: allyrepair
 		Sequence: repair
-		ReferencePoint: Center
+		Position: Center
 		Palette: player
 		IsPlayerPalette: True
 	Tooltip:
@@ -222,7 +222,7 @@ tech.communications_center:
 	WithBuildingRepairDecoration:
 		Image: allyrepair
 		Sequence: repair
-		ReferencePoint: Center
+		Position: Center
 		Palette: player
 		IsPlayerPalette: True
 	ProvidesPrerequisite@buildingname:
@@ -290,7 +290,7 @@ tech.soviet_barracks:
 	WithBuildingRepairDecoration:
 		Image: allyrepair
 		Sequence: repair
-		ReferencePoint: Center
+		Position: Center
 		Palette: player
 		IsPlayerPalette: True
 	RepairsUnits:
@@ -337,7 +337,7 @@ tech.flame_tower:
 	WithBuildingBib:
 		HasMinibib: true
 	Turreted:
-		TurnSpeed: 255
+		TurnSpeed: 1023
 		Offset: 0,0,112
 	Armament:
 		Weapon: flamer.flame_tower
@@ -394,7 +394,7 @@ tech.power_plant:
 	WithBuildingRepairDecoration:
 		Image: allyrepair
 		Sequence: repair
-		ReferencePoint: Center
+		Position: Center
 		Palette: player
 		IsPlayerPalette: True
 	Power:
@@ -482,7 +482,7 @@ tech.reinforcements_pad:
 	WithBuildingRepairDecoration:
 		Image: allyrepair
 		Sequence: repair
-		ReferencePoint: Center
+		Position: Center
 		Palette: player
 		IsPlayerPalette: True
 	Selectable:
@@ -683,7 +683,7 @@ tech.shipyard:
 	WithBuildingRepairDecoration:
 		Image: allyrepair
 		Sequence: repair
-		ReferencePoint: Center
+		Position: Center
 		Palette: player
 		IsPlayerPalette: True
 	Targetable:
@@ -692,19 +692,19 @@ tech.shipyard:
 		HP: 200000
 	Exit@1:
 		SpawnOffset: -1024,1024,0
-		Facing: 160
+		Facing: 640
 		ExitCell: 0,2
 	Exit@2:
 		SpawnOffset: 1024,1024,0
-		Facing: 224
+		Facing: 896
 		ExitCell: 2,2
 	Exit@3:
 		SpawnOffset: -1024,-1024,0
-		Facing: 96
+		Facing: 384
 		ExitCell: 0,0
 	Exit@4:
 		SpawnOffset: 1024,-1024,0
-		Facing: 32
+		Facing: 128
 		ExitCell: 2,0
 	Production:
 		Produces: queue.vessel

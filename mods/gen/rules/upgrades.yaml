@@ -14,7 +14,6 @@
 
 ^default.strategy:
 	Inherits: ^default.upgrade
-	ConditionManager:
 	Buildable:
 		Queue: queue.strategy_center, queue.air_gen_strategy_center
 		BuildDuration: 175

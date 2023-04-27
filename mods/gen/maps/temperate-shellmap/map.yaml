@@ -345,11 +345,10 @@ Actors:
 	Actor225: building.patriot
 		Owner: USA
 		Location: 94,50
-		TurretFacing: 0
 	Actor226: building.patriot
 		Owner: USA
 		Location: 94,55
-		TurretFacing: 128
+		TurretFacing: 512
 	USAAirfield1: building.usa_airfield
 		Owner: USA
 		Location: 103,48
@@ -368,7 +367,7 @@ Actors:
 	USAStrategy: building.strategy_center
 		Owner: USA
 		Location: 88,52
-		TurretFacing: 92
+		TurretFacing: 368
 	ParticleCannon: building.particle_cannon
 		Owner: USA
 		Location: 94,52
@@ -405,34 +404,34 @@ Actors:
 	Actor245: building.patriot
 		Owner: USA
 		Location: 101,64
-		TurretFacing: 128
+		TurretFacing: 512
 	Actor246: building.patriot
 		Owner: USA
 		Location: 95,64
-		TurretFacing: 128
+		TurretFacing: 512
 	Actor247: building.patriot
 		Owner: USA
 		Location: 78,59
-		TurretFacing: 64
+		TurretFacing: 256
 	Actor248: building.patriot
 		Owner: USA
 		Location: 86,45
-		TurretFacing: 32
+		TurretFacing: 128
 	GLACommand: building.gla_command_center
 		Owner: GLA
 		Location: 90,88
 	Actor253: building.stinger_site
 		Owner: GLA
 		Location: 77,85
-		TurretFacing: 92
+		TurretFacing: 368
 	Actor254: building.stinger_site
 		Owner: GLA
 		Location: 78,76
-		TurretFacing: 92
+		TurretFacing: 368
 	Actor251: building.tunnel_network.no_free_actor
 		Owner: GLA
 		Location: 74,80
-		TurretFacing: 64
+		TurretFacing: 256
 	GLAWarFactory: building.arms_dealer
 		Owner: GLA
 		Location: 83,77
@@ -442,7 +441,7 @@ Actors:
 	GLAPalace: building.palace
 		Owner: GLA
 		Location: 85,83
-		TurretFacing: 91
+		TurretFacing: 364
 	Actor258: tc05
 		Owner: Neutral
 		Location: 96,90
@@ -497,13 +496,11 @@ Actors:
 	Actor279: aircraft.chinook
 		Owner: USA
 		Location: 79,50
-		Facing: 64
-		TurretFacing: 64
+		Facing: 256
 	Actor280: aircraft.chinook
 		Owner: USA
 		Location: 79,54
-		Facing: 64
-		TurretFacing: 64
+		Facing: 256
 	Actor281: building.gla_supply_stash.no_free_actor
 		Owner: GLA
 		Location: 98,86
@@ -514,74 +511,62 @@ Actors:
 		Owner: GLA
 		Location: 111,76
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor284: infantry.worker
 		Owner: GLA
 		Location: 112,76
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor285: infantry.worker
 		Owner: GLA
 		Location: 113,76
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor286: infantry.worker
 		Owner: GLA
 		Location: 114,76
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor287: infantry.worker
 		Owner: GLA
 		Location: 115,76
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor288: infantry.worker
 		Owner: GLA
 		Location: 116,76
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor289: infantry.worker
 		Owner: GLA
 		Location: 101,86
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor290: infantry.worker
 		Owner: GLA
 		Location: 102,86
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor291: infantry.worker
 		Owner: GLA
 		Location: 103,86
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor292: infantry.worker
 		Owner: GLA
 		Location: 104,86
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor293: infantry.worker
 		Owner: GLA
 		Location: 105,86
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor294: infantry.worker
 		Owner: GLA
 		Location: 106,86
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor295: flag.gla
 		Owner: GLA
 		Location: 84,77
@@ -597,66 +582,60 @@ Actors:
 	Actor299: aircraft.spy_drone
 		Owner: USA
 		Location: 109,84
-		Facing: 92
+		Facing: 368
 	PaladinTank1: vehicle.paladin_tank
 		Owner: USA
 		Location: 99,64
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 	Actor301: vehicle.usa_mcc
 		Owner: USA
 		Location: 98,54
-		Facing: 192
+		Facing: 768
 	Actor302: vehicle.usa_mcc
 		Owner: USA
 		Location: 98,51
-		Facing: 192
+		Facing: 768
 	Actor303: infantry.pathfinder
 		Owner: USA
 		Location: 91,66
 		SubCell: 3
-		Facing: 160
-		TurretFacing: 160
+		Facing: 640
 	Actor304: infantry.pathfinder
 		Owner: USA
 		Location: 94,65
 		SubCell: 3
-		Facing: 160
-		TurretFacing: 160
+		Facing: 640
 	Actor305: vessel.destroyer
 		Owner: USA
 		Location: 85,41
 		Facing: 0
-		TurretFacing: 0
 	Actor306: vessel.destroyer
 		Owner: USA
 		Location: 94,39
 		Facing: 0
-		TurretFacing: 0
 	Actor308: vessel.gunboat
 		Owner: USA
 		Location: 89,39
-		Facing: 32
-		TurretFacing: 32
+		Facing: 128
 	PRCPower1: building.nuclear_reactor
 		Owner: PRC
 		Location: 27,46
-		TurretFacing: 92
+		TurretFacing: 368
 	PRCPower2: building.nuclear_reactor
 		Owner: PRC
 		Location: 27,48
-		TurretFacing: 92
+		TurretFacing: 368
 	PRCBarracks: building.prc_barracks
 		Owner: PRC
 		Location: 49,62
 	Actor313: building.gatling_cannon
 		Owner: PRC
 		Location: 52,54
-		TurretFacing: 192
+		TurretFacing: 768
 	Actor314: building.gatling_cannon
 		Owner: PRC
 		Location: 52,59
-		TurretFacing: 192
+		TurretFacing: 768
 	PRCWarFactory: building.prc_war_factory
 		Owner: PRC
 		Location: 42,62
@@ -672,15 +651,15 @@ Actors:
 	PRCPower3: building.nuclear_reactor
 		Owner: PRC
 		Location: 34,62
-		TurretFacing: 92
+		TurretFacing: 368
 	PRCPower4: building.nuclear_reactor
 		Owner: PRC
 		Location: 29,62
-		TurretFacing: 92
+		TurretFacing: 368
 	Actor322: tech.flame_tower
 		Owner: USA
 		Location: 33,89
-		TurretFacing: 92
+		TurretFacing: 368
 	USABarracks3: tech.soviet_barracks
 		Owner: USA
 		Location: 27,89
@@ -691,137 +670,115 @@ Actors:
 		Owner: USA
 		Location: 31,87
 		SubCell: 3
-		Facing: 128
-		TurretFacing: 128
+		Facing: 512
 	Actor331: infantry.conscript
 		Owner: USA
 		Location: 33,91
 		SubCell: 3
-		Facing: 192
-		TurretFacing: 192
+		Facing: 768
 	Actor332: infantry.conscript
 		Owner: USA
 		Location: 33,91
 		SubCell: 1
-		Facing: 192
-		TurretFacing: 192
+		Facing: 768
 	Actor334: infantry.grenadier
 		Owner: USA
 		Location: 33,91
 		SubCell: 4
-		Facing: 192
-		TurretFacing: 192
+		Facing: 768
 	Actor333: building.black_market
 		Owner: GLA
 		Location: 94,78
 	Actor335: vehicle.radar_van
 		Owner: GLA
 		Location: 93,79
-		Facing: 64
+		Facing: 256
 	Actor336: vehicle.rocket_buggy
 		Owner: GLA
 		Location: 78,78
-		Facing: 64
-		TurretFacing: 64
+		Facing: 256
 	Actor337: vehicle.rocket_buggy
 		Owner: GLA
 		Location: 78,84
-		Facing: 64
-		TurretFacing: 64
+		Facing: 256
 	Actor338: vehicle.quad_cannon
 		Owner: GLA
 		Location: 83,76
 		Facing: 0
-		TurretFacing: 0
 	Actor339: vehicle.quad_cannon
 		Owner: GLA
 		Location: 85,76
 		Facing: 0
-		TurretFacing: 0
 	Hacker1: infantry.hacker
 		Owner: PRC
 		Location: 44,56
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Hacker2: infantry.hacker
 		Owner: PRC
 		Location: 45,56
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Hacker3: infantry.hacker
 		Owner: PRC
 		Location: 46,56
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Hacker4: infantry.hacker
 		Owner: PRC
 		Location: 47,56
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Hacker5: infantry.hacker
 		Owner: PRC
 		Location: 33,41
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Hacker6: infantry.hacker
 		Owner: PRC
 		Location: 35,41
 		SubCell: 3
-		Facing: 92
-		TurretFacing: 92
+		Facing: 368
 	Actor346: infantry.black_lotus
 		Owner: PRC
 		Location: 34,43
 		SubCell: 3
-		Facing: 128
-		TurretFacing: 128
+		Facing: 512
 	Actor347: infantry.flamethrower
 		Owner: USA
 		Location: 32,89
 		SubCell: 3
-		Facing: 192
-		TurretFacing: 192
+		Facing: 768
 	Actor348: vessel.destroyer
 		Owner: PRC
 		Location: 70,39
-		Facing: 192
-		TurretFacing: 192
+		Facing: 768
 	Actor349: vessel.destroyer
 		Owner: GLA
 		Location: 98,76
-		Facing: 32
-		TurretFacing: 32
+		Facing: 128
 	Actor350: vehicle.battlemaster_tank
 		Owner: PRC
 		Location: 49,69
-		Facing: 128
-		TurretFacing: 128
+		Facing: 512
 	Actor351: vehicle.battlemaster_tank
 		Owner: PRC
 		Location: 51,69
-		Facing: 128
-		TurretFacing: 128
+		Facing: 512
 	Actor352: infantry.colonel_burton
 		Owner: USA
 		Location: 89,43
 		SubCell: 3
-		Facing: 32
-		TurretFacing: 32
+		Facing: 128
 	Actor353: infantry.jarmen_kell
 		Owner: GLA
 		Location: 88,79
 		SubCell: 3
 		Facing: 0
-		TurretFacing: 0
 	Actor340: vehicle.prc_mcc
 		Owner: PRC
 		Location: 39,55
-		Facing: 96
+		Facing: 384
 	Actor341: vehicle.prc_mcc
 		Owner: PRC
 		Location: 46,62
@@ -829,11 +786,11 @@ Actors:
 	Actor342: vehicle.prc_mcc
 		Owner: PRC
 		Location: 29,44
-		Facing: 32
+		Facing: 128
 	Actor343: vehicle.gla_mcc
 		Owner: GLA
 		Location: 92,90
-		Facing: 92
+		Facing: 368
 	Actor344: vehicle.gla_mcc
 		Owner: GLA
 		Location: 78,88
@@ -841,64 +798,55 @@ Actors:
 	Actor345: vehicle.gla_mcc
 		Owner: GLA
 		Location: 106,75
-		Facing: 32
+		Facing: 128
 	Actor323: vehicle.toxin_tractor
 		Owner: GLA
 		Location: 75,79
-		Facing: 32
-		TurretFacing: 32
+		Facing: 128
 	Actor354: vehicle.toxin_tractor
 		Owner: GLA
 		Location: 75,82
-		Facing: 96
-		TurretFacing: 96
+		Facing: 384
 	Actor355: infantry.rpg_trooper
 		Owner: GLA
 		Location: 76,80
 		SubCell: 3
-		Facing: 64
-		TurretFacing: 64
+		Facing: 256
 	Actor356: infantry.rpg_trooper
 		Owner: GLA
 		Location: 76,81
 		SubCell: 3
-		Facing: 64
-		TurretFacing: 64
+		Facing: 256
 	Actor357: infantry.rpg_trooper
 		Owner: GLA
 		Location: 76,80
 		SubCell: 1
-		Facing: 64
-		TurretFacing: 64
+		Facing: 256
 	Actor358: infantry.rpg_trooper
 		Owner: GLA
 		Location: 76,81
 		SubCell: 1
-		Facing: 64
-		TurretFacing: 64
+		Facing: 256
 	Actor396: infantry.rpg_trooper
 		Owner: GLA
 		Location: 76,80
 		SubCell: 4
-		Facing: 64
-		TurretFacing: 64
+		Facing: 256
 	Actor397: infantry.rpg_trooper
 		Owner: GLA
 		Location: 76,81
 		SubCell: 4
-		Facing: 64
-		TurretFacing: 64
+		Facing: 256
 	Actor359: t02
 		Owner: Neutral
 		Location: 89,65
 	Actor360: building.patriot
 		Owner: USA
 		Location: 104,52
-		TurretFacing: 0
 	Actor361: building.patriot
 		Owner: USA
 		Location: 104,53
-		TurretFacing: 128
+		TurretFacing: 512
 	Actor362: flag.american
 		Owner: USA
 		Location: 95,52
@@ -962,7 +910,7 @@ Actors:
 	PRCBunker: building.bunker
 		Owner: PRC
 		Location: 61,67
-		TurretFacing: 92
+		TurretFacing: 368
 	ScudLauncher1: vehicle.scud_launcher
 		Owner: GLA
 		Location: 91,76
@@ -1020,45 +968,39 @@ Actors:
 		Location: 89,88
 		SubCell: 3
 		Facing: 0
-		TurretFacing: 0
 	Actor399: infantry.rebel
 		Owner: GLA
 		Location: 89,88
 		SubCell: 1
 		Facing: 0
-		TurretFacing: 0
 	Actor401: infantry.rebel
 		Owner: GLA
 		Location: 89,88
 		SubCell: 2
 		Facing: 0
-		TurretFacing: 0
 	Actor404: infantry.rebel
 		Owner: GLA
 		Location: 93,88
 		SubCell: 3
 		Facing: 0
-		TurretFacing: 0
 	Actor405: infantry.rebel
 		Owner: GLA
 		Location: 93,88
 		SubCell: 1
 		Facing: 0
-		TurretFacing: 0
 	Actor406: infantry.rebel
 		Owner: GLA
 		Location: 93,88
 		SubCell: 2
 		Facing: 0
-		TurretFacing: 0
 	Actor407: vehicle.troop_crawler
 		Owner: PRC
 		Location: 32,59
-		Facing: 224
+		Facing: 896
 	Actor408: vehicle.inferno_cannon
 		Owner: PRC
 		Location: 41,47
-		Facing: 192
+		Facing: 768
 	Actor409: brik
 		Owner: USA
 		Location: 99,57
@@ -1365,11 +1307,11 @@ Actors:
 	Actor510: car.automobile_4
 		Owner: Neutral
 		Location: 55,85
-		Facing: 128
+		Facing: 512
 	Actor511: car.police_car
 		Owner: Neutral
 		Location: 34,69
-		Facing: 192
+		Facing: 768
 	Actor512: t15
 		Owner: Neutral
 		Location: 33,69
@@ -1385,7 +1327,7 @@ Actors:
 	Actor516: car.ambulance
 		Owner: Neutral
 		Location: 41,82
-		Facing: 64
+		Facing: 256
 	Actor517: v08
 		Owner: Neutral
 		Location: 41,83
@@ -1411,15 +1353,15 @@ Actors:
 		Owner: Neutral
 		Location: 49,84
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 	Actor525: car.school_bus
 		Owner: Neutral
 		Location: 46,90
-		Facing: 92
+		Facing: 368
 	Actor526: car.automobile_3
 		Owner: Neutral
 		Location: 44,87
-		Facing: 32
+		Facing: 128
 	Actor527: v07
 		Owner: Neutral
 		Location: 43,88
@@ -1433,42 +1375,42 @@ Actors:
 		Owner: Neutral
 		Location: 60,87
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 	Actor532: c2
 		Owner: Neutral
 		Location: 44,84
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 	Actor533: c3
 		Owner: Neutral
 		Location: 54,81
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 	Actor534: c4
 		Owner: Neutral
 		Location: 46,89
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 	Actor535: c11
 		Owner: Neutral
 		Location: 42,84
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 	Actor536: c6
 		Owner: Neutral
 		Location: 52,87
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 	Actor537: c8
 		Owner: Neutral
 		Location: 54,84
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 	Actor538: c2
 		Owner: Neutral
 		Location: 47,81
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 	Actor539: wood
 		Owner: Neutral
 		Location: 54,88
@@ -1524,12 +1466,12 @@ Actors:
 		Owner: Neutral
 		Location: 53,91
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 	Actor556: c10
 		Owner: Neutral
 		Location: 63,83
 		SubCell: 3
-		Facing: 92
+		Facing: 368
 	Actor557: v09
 		Owner: Neutral
 		Location: 48,77
@@ -1713,19 +1655,18 @@ Actors:
 	Actor616: vehicle.supply_truck
 		Owner: PRC
 		Location: 49,42
-		Facing: 92
+		Facing: 368
 	Actor618: vehicle.supply_truck
 		Owner: PRC
 		Location: 57,48
-		Facing: 92
+		Facing: 368
 	Actor619: vehicle.supply_truck
 		Owner: PRC
 		Location: 52,57
-		Facing: 92
+		Facing: 368
 	Actor620: vessel.destroyer
 		Owner: USA
-		TurretFacing: 96
-		Facing: 96
+		Facing: 384
 		Location: 85,66
 
 Rules: rules.yaml

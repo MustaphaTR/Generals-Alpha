@@ -39,9 +39,9 @@ fake.command_center:
 	WithTextDecoration@SIDE:
 		Text: GLA
 		Color: 00FF00
-		ZOffset: 2048
-		ReferencePoint: Top
-		ValidStances: Ally, Neutral, Enemy
+		Position: Top
+		Margin: 0, -6
+		ValidRelationships: Ally, Neutral, Enemy
 	RenderSprites:
 		Image: building.gla_command_center
 	TransformOnCondition:
@@ -215,6 +215,7 @@ fake.arms_dealer:
 
 fake.palace:
 	Inherits: ^FakeBuilding
+	Inherits@CARGO: ^CargoPips
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
@@ -253,7 +254,6 @@ fake.palace:
 	Cargo:
 		Types: fake
 		MaxWeight: 5
-		PipCount: 5
 	WithBuildingBib:
 	ActorPreviewPlaceBuildingPreview:
 		OverridePalette: cncplacebuilding
@@ -372,27 +372,22 @@ fake.scud_storm:
 		Weapon: missile.scud_storm
 	Turreted@A:
 		Turret: A
-		TurnSpeed: 2
-		PreviewFacing: 0
+		TurnSpeed: 8
 		Offset: -512, -512, 0
 	Turreted@B:
 		Turret: B
-		TurnSpeed: 2
-		PreviewFacing: 0
+		TurnSpeed: 8
 		Offset: 512, -512, 0
 	Turreted@C:
 		Turret: C
-		TurnSpeed: 2
-		PreviewFacing: 0
+		TurnSpeed: 8
 		Offset: -512, 512, 0
 	Turreted@D:
 		Turret: D
-		TurnSpeed: 2
-		PreviewFacing: 0
+		TurnSpeed: 8
 		Offset: 512, 512, 0
 	AmmoPool:
 		Ammo: 4
-		PipCount: 0
 	WithSpriteTurret@A:
 		Turret: A
 		Sequence: turret-full
@@ -417,7 +412,7 @@ fake.scud_storm:
 		Cost: 1000
 	RevealsShroud@SW:
 		Range: 2c0
-		ValidStances: Enemy
+		ValidRelationships: Enemy
 	Voiced:
 		VoiceSet: SCUDStormVoice
 	ReloadAmmoPool@1:
@@ -546,9 +541,8 @@ fake.tunnel_network:
 	ProductionBar:
 		ProductionType: queue.tunnel_network.fake
 	Turreted:
-		TurnSpeed: 12
-		InitialFacing: 56
-		PreviewFacing: 56
+		TurnSpeed: 48
+		InitialFacing: 224
 		Offset: 0,0,256
 	GrantConditionOnActivity:
 		Condition: keep_me_disabled

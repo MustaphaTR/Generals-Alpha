@@ -48,7 +48,7 @@ vehicle.supply_truck:
 		Type: vehicle.truck
 	Mobile:
 		Speed: 40
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
@@ -61,6 +61,7 @@ vehicle.supply_truck:
 vehicle.humvee:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CARGO: ^CargoPips
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PILOT: ^EjectsPilotOnGround
@@ -130,7 +131,7 @@ vehicle.humvee:
 	Selectable:
 		Class: vehicle.humvee
 	Mobile:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Speed: 60
 		Voice: Move
 		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
@@ -140,11 +141,11 @@ vehicle.humvee:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted@MG:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Offset: 32,0,85
 	Turreted@TOW:
 		Turret: tow
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Offset: -160,0,85
 	Armament@MG:
 		Weapon: mg.sentry_drone
@@ -181,7 +182,6 @@ vehicle.humvee:
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker
 		MaxWeight: 5
-		PipCount: 5
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
@@ -212,6 +212,7 @@ vehicle.technical:
 	Inherits: ^Vehicle
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CARGO: ^CargoPips
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
@@ -260,7 +261,7 @@ vehicle.technical:
 	Selectable:
 		Class: vehicle.technical
 	Mobile:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Speed: 90
 		Voice: Move
 		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
@@ -270,7 +271,7 @@ vehicle.technical:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Offset: 0,0,128
 	Armament:
 		Weapon: mg.technical
@@ -305,7 +306,6 @@ vehicle.technical:
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker
 		MaxWeight: 5
-		PipCount: 5
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
@@ -383,7 +383,7 @@ vehicle.radar_van:
 		Class: vehicle.radar_van
 	Mobile:
 		Speed: 40
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
@@ -421,6 +421,7 @@ vehicle.radar_van:
 		AllowMultiple: true
 		StartFullyCharged: false
 		OrderName: RadarScanPowerInfoOrder
+		EffectSequence: idle
 	Cloak@CRATE-1:
 		InitialDelay: 100
 		CloakDelay: 50
@@ -507,7 +508,7 @@ vehicle.scorpion_tank:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 40
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
@@ -515,13 +516,13 @@ vehicle.scorpion_tank:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted@Cannon:
-		TurnSpeed: 4
+		TurnSpeed: 16
 	Turreted@SC_ROCKET-1:
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Turret: sc_rocket-1
 		Offset: 0,64,128
 	Turreted@SC_ROCKET-2:
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Turret: sc_rocket-2
 		Offset: 0,-128,128
 	Armament@Cannon:
@@ -576,13 +577,11 @@ vehicle.scorpion_tank:
 		Name: sc_rocket-1
 		Armaments: sc_rocket-1
 		Ammo: 1
-		PipCount: 0
 		AmmoCondition: ammo-1
 	AmmoPool@SC_ROCKET-2:
 		Name: sc_rocket-2
 		Armaments: sc_rocket-2
 		Ammo: 1
-		PipCount: 0
 		AmmoCondition: ammo-2
 	ReloadAmmoPool@1:
 		AmmoPool: sc_rocket-1
@@ -669,7 +668,7 @@ vehicle.crusader_tank:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 30
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
@@ -677,7 +676,7 @@ vehicle.crusader_tank:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 32
 	Armament:
 		Weapon: cannon.crusader_tank
 		Recoil: 128
@@ -790,13 +789,13 @@ vehicle.battlemaster_tank:
 		DecorationBounds: 28,28
 	Mobile:
 		Speed: 25
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Voice: Move
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 20
 	Armament:
 		Weapon: cannon.battlemaster_tank
 		Recoil: 128
@@ -851,6 +850,7 @@ vehicle.nuclear_battlemaster_tank:
 
 vehicle.ambulance:
 	Inherits: ^Vehicle
+	Inherits@CARGO: ^CargoPips
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal400
@@ -888,7 +888,7 @@ vehicle.ambulance:
 		Class: vehicle.ambulance
 	Mobile:
 		Speed: 60
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Voice: Move
 		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
 	SpeedMultiplier@DAMAGED:
@@ -906,7 +906,6 @@ vehicle.ambulance:
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 3
-		PipCount: 3
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
@@ -968,7 +967,7 @@ vehicle.sentry_drone:
 	Selectable:
 		Class: vehicle.sentry_drone
 	Mobile:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Speed: 60
 		Voice: Move
 		Locomotor: locomotor.sentry_drone
@@ -1001,7 +1000,7 @@ vehicle.sentry_drone:
 	AutoTarget:
 		InitialStance: HoldFire
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 32
 	Armament:
 		Weapon: mg.sentry_drone
 		MuzzleSequence: muzzle
@@ -1075,7 +1074,7 @@ vehicle.quad_cannon:
 		Multiplier: 60 # 150
 	Mobile:
 		Speed: 40
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 63
@@ -1089,7 +1088,7 @@ vehicle.quad_cannon:
 	Selectable:
 		Class: vehicle.quad_cannon
 	Turreted:
-		TurnSpeed: 15
+		TurnSpeed: 60
 		Offset: -304,0,96
 	Armament@PRIMARY:
 		Weapon: mg.quad_cannon.ground
@@ -1178,7 +1177,7 @@ vehicle.gatling_tank:
 		Multiplier: 10 # 700
 	Mobile:
 		Speed: 40
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Voice: Move
 	Crushable:
 		WarnProbability: 0
@@ -1193,7 +1192,7 @@ vehicle.gatling_tank:
 		RequiresCondition: composite_armor && boss
 		Modifier: 74
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Offset: 0,0,160
 	ReloadDelayMultiplier@Gatling1:
 		RequiresCondition: gatling >= 1
@@ -1297,7 +1296,7 @@ vehicle.toxin_tractor:
 		Queue: queue.demo_gen_vehicle
 		Multiplier: 125 # 750
 	Mobile:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Speed: 30
 		Voice: Move
 		PauseOnCondition: !(!hacked && !driver_killed && !emp && !leaflet && !spray)
@@ -1351,7 +1350,7 @@ vehicle.toxin_tractor:
 		RequiresCondition: !driver_killed && !spray
 	WithSpriteTurret:
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Offset: -192,0,160
 	PeriodicExplosion@ALPHA:
 		Weapon: toxin.toxin_tractor.deploy
@@ -1438,7 +1437,7 @@ vehicle.dragon_tank:
 		Queue: queue.tank_gen_vehicle
 		Multiplier: 10 # 700
 	Mobile:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Speed: 30
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
@@ -1540,7 +1539,7 @@ vehicle.rocket_buggy:
 		Queue: queue.demo_gen_vehicle
 		Multiplier: 95 # 1000
 	Mobile:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Speed: 90
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
@@ -1585,7 +1584,7 @@ vehicle.rocket_buggy:
 		LocalYaw: 100, -100
 		RequiresCondition: buggy_ammo && scrap_create_bonus == 2
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Offset: -196,0,85
 	WithSpriteTurret:
 		Sequence: turret2
@@ -1673,7 +1672,7 @@ vehicle.avenger:
 		Type: vehicle.avenger
 	Mobile:
 		Speed: 30
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
@@ -1683,7 +1682,7 @@ vehicle.avenger:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Offset: -128,0,192
 	Armament@MG:
 		Weapon: laser.avenger.air
@@ -1726,6 +1725,7 @@ vehicle.avenger.boss:
 vehicle.battle_Bus:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@CARGO: ^CargoPips
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal200
@@ -1783,7 +1783,7 @@ vehicle.battle_Bus:
 		DecorationBounds: 28, 28
 	Mobile:
 		Speed: 70
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Voice: Move
 		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet && !husk)
 	SpeedMultiplier@DAMAGED:
@@ -1794,7 +1794,6 @@ vehicle.battle_Bus:
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 8
-		PipCount: 8
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
@@ -1822,15 +1821,15 @@ vehicle.battle_Bus:
 	GrantConditionOnHealth@DAMAGED:
 		HP: 75000
 		Condition: damaged
-	SelfHealing@JUNK_REPAIR:
+	ChangesHealth@JUNK_REPAIR:
 		RequiresCondition: junk_repair && !husk
-	SelfHealing@JUNK_REPAIR_HUSK:
+	ChangesHealth@JUNK_REPAIR_HUSK:
 		Step: 200
 		Delay: 25
-		HealIfBelow: 65
+		StartIfBelow: 65
 		DamageCooldown: 25
 		RequiresCondition: junk_repair && husk
-	SelfHealing@AMBULANCE:
+	ChangesHealth@AMBULANCE:
 		RequiresCondition: ambulanceheal && zh_units && !husk
 	KillsSelf:
 		RequiresCondition: !loaded && husk
@@ -1848,6 +1847,7 @@ vehicle.battle_Bus:
 
 vehicle.troop_crawler:
 	Inherits: ^Tank
+	Inherits@CARGO: ^CargoPips
 	Inherits@REVEAL: ^Reveal400
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -1875,7 +1875,7 @@ vehicle.troop_crawler:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 40
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Voice: Move
 		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
 	SpeedMultiplier@DAMAGED:
@@ -1886,7 +1886,6 @@ vehicle.troop_crawler:
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 8
-		PipCount: 8
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
@@ -1939,6 +1938,7 @@ vehicle.assault_troop_crawler:
 vehicle.listening_outpost:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@CARGO: ^CargoPips
 	Inherits@REVEAL: ^Reveal500
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -1967,7 +1967,7 @@ vehicle.listening_outpost:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 40
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Voice: Move
 		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
 	SpeedMultiplier@DAMAGED:
@@ -1978,7 +1978,6 @@ vehicle.listening_outpost:
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 2
-		PipCount: 2
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
@@ -2034,7 +2033,6 @@ vehicle.attack_outpost:
 		HP: 30000
 	Cargo:
 		MaxWeight: 8
-		PipCount: 8
 		InitialUnits: infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter
 		EjectOnDeathDamage: 50
 	ProximityExternalCondition@SPEAKER:
@@ -2087,7 +2085,7 @@ vehicle.microwave_tank:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 30
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
@@ -2095,7 +2093,7 @@ vehicle.microwave_tank:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Offset: -256,0,256
 	Armament@Anim:
 		Weapon: disable.microwave_tank.anim
@@ -2189,13 +2187,13 @@ vehicle.ecm_tank:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 40
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Voice: Move
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Offset: -256,0,256
 	Armament@Anim:
 		Weapon: disable.ecm_tank.anim
@@ -2225,7 +2223,7 @@ vehicle.ecm_tank:
 	WithSpriteTurret:
 	JamsMissiles:
 		Range: 3c0
-		DeflectionStances: Neutral, Enemy
+		DeflectionRelationships: Neutral, Enemy
 		RequiresCondition: !firing && !hacked && !driver_killed && !emp && !leaflet
 	WithRangeCircle:
 		Range: 3c0
@@ -2292,7 +2290,7 @@ vehicle.tomahawk_launcher:
 		Multiplier: 101 # 1400
 	Mobile:
 		Speed: 30
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
@@ -2306,7 +2304,7 @@ vehicle.tomahawk_launcher:
 	Selectable:
 		Class: vehicle.tomahawk_launcher
 	Turreted:
-		TurnSpeed: 3
+		TurnSpeed: 12
 		Offset: -128,0,128
 		RealignDelay: 0
 	Armament:
@@ -2315,7 +2313,6 @@ vehicle.tomahawk_launcher:
 		PauseOnCondition: !ammo
 	AmmoPool:
 		Ammo: 1
-		PipCount: 0
 		AmmoCondition: ammo
 	ReloadAmmoPool:
 		Delay: 90
@@ -2407,7 +2404,7 @@ vehicle.scud_launcher:
 	ProvidesPrerequisite@unitname:
 	Mobile:
 		Speed: 20
-		TurnSpeed: 2
+		TurnSpeed: 8
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
@@ -2509,7 +2506,6 @@ vehicle.scud_launcher:
 		Factions: demo
 	AmmoPool:
 		Ammo: 1
-		PipCount: 0
 		AmmoCondition: ammo
 	ReloadAmmoPool:
 		Delay: 200
@@ -2575,7 +2571,7 @@ vehicle.inferno_cannon:
 	Selectable:
 		Class: vehicle.inferno_cannon
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 30
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
@@ -2662,7 +2658,7 @@ vehicle.paladin_tank:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 30
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
@@ -2670,7 +2666,7 @@ vehicle.paladin_tank:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Offset: 0,0,160
 	Armament@Cannon:
 		Weapon: cannon.paladin_tank
@@ -2697,10 +2693,10 @@ vehicle.paladin_tank:
 	GrantConditionOnPrerequisite@COMPOSITE_ARMOR:
 		Condition: composite_armor
 		Prerequisites: upgrade.composite_armor
-	SelfHealing:
+	ChangesHealth:
 		Step: 100
 		Delay: 3
-		HealIfBelow: 50
+		StartIfBelow: 50
 		DamageCooldown: 150
 	SelectionDecorations:
 	AcceptsDeliveredExperience:
@@ -2774,7 +2770,7 @@ vehicle.marauder_tank:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 40
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
@@ -2782,7 +2778,7 @@ vehicle.marauder_tank:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Offset: 128,0,0
 	Armament@Cannon:
 		Weapon: cannon.marauder_tank
@@ -3005,6 +3001,7 @@ vehicle.overlord_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CARGO: ^CargoPips
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@NUCLEAR_TANKS: ^AffectedByNuclearTanks
 	Inherits@REVEAL: ^Reveal200
@@ -3094,7 +3091,7 @@ vehicle.overlord_tank:
 		ProductionType: queue.overlord_tank
 	Mobile:
 		Speed: 20
-		TurnSpeed: 3
+		TurnSpeed: 12
 		Voice: Move
 		Locomotor: locomotor.overlord
 		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
@@ -3103,18 +3100,18 @@ vehicle.overlord_tank:
 	SpeedMultiplier@NUKE_GEN:
 		Modifier: 200
 	Turreted@Cannon:
-		TurnSpeed: 3
+		TurnSpeed: 12
 	Turreted@Gatling:
 		Turret: gatling
-		TurnSpeed: 3
+		TurnSpeed: 12
 		Offset: 0,0,384
 	Turreted@Bunker:
 		Turret: bunker
-		TurnSpeed: 255
+		TurnSpeed: 1023
 		Offset: 0,0,384
 	Turreted@Speaker:
 		Turret: speaker
-		TurnSpeed: 255
+		TurnSpeed: 1023
 		Offset: 0,0,256
 	Armament:
 		Weapon: cannon.overlord_tank
@@ -3173,18 +3170,19 @@ vehicle.overlord_tank:
 	DetectCloaked:
 		Range: 5c0
 		RequiresCondition: gatling_upgrade
-	SelfHealing:
+	ChangesHealth:
 		Step: 100
 		Delay: 3
-		HealIfBelow: 50
+		StartIfBelow: 50
 		DamageCooldown: 150
 	Cargo@BUNKER_UPGRADE:
 		Types: Infantry, GLAInfantry, Hacker
 		MaxWeight: 5
-		PipCount: 5
 		EjectOnDeathDamage: 50
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 		LoadingCondition: notmobile
+		RequiresCondition: bunker_upgrade
+	WithCargoPipsDecoration:
 		RequiresCondition: bunker_upgrade
 	SelectionDecorations:
 	GrantConditionOnAttack@gatling:
@@ -3337,7 +3335,7 @@ vehicle.bomb_truck:
 	SelectionDecorations:
 	Mobile:
 		Speed: 50
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Voice: Move
 	SpeedMultiplier@CRATE-1:
 		Modifier: 110
@@ -3371,7 +3369,7 @@ vehicle.bomb_truck:
 		EmptyWeapon: BombTruckExplosion.hi_exp
 		RequiresCondition: hi_explosive_bombs
 	AttackFrontal:
-		FacingTolerance: 128
+		FacingTolerance: 512
 		RequiresCondition: !driver_killed
 	Armament@PRIMARY:
 		Weapon: hack.suicide_targeting
@@ -3439,24 +3437,24 @@ vehicle.bomb_truck:
 		Condition: moving
 	WithTextDecoration@SIDE_USA:
 		Text: USA
-		ZOffset: 2048
-		ReferencePoint: Top
+		Position: Top
+		Margin: 0, 5
 		Color: 0000FF
-		ValidStances: Ally, Neutral, Enemy
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: usa_mcc
 	WithTextDecoration@SIDE_GLA:
 		Text: GLA
-		ZOffset: 2048
-		ReferencePoint: Top
+		Position: Top
+		Margin: 0, 5
 		Color: 00FF00
-		ValidStances: Ally, Neutral, Enemy
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: gla_mcc
 	WithTextDecoration@SIDE_PRC:
 		Text: PRC
-		ZOffset: 2048
-		ReferencePoint: Top
+		Position: Top
+		Margin: 0, 5
 		Color: FF0000
-		ValidStances: Ally, Neutral, Enemy
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: prc_mcc
 	RenderSprites:
 		Image: vehicle.bomb_truck
@@ -3510,7 +3508,7 @@ vehicle.nuke_cannon:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 20
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Voice: Move
 		PauseOnCondition: hacked || driver_killed || emp || leaflet || immobile
 	SpeedMultiplier@DAMAGED:
@@ -3519,7 +3517,7 @@ vehicle.nuke_cannon:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Turreted:
-		TurnSpeed: 3
+		TurnSpeed: 12
 		Offset: 0,0,160
 	Selectable:
 		DecorationBounds: 44,38,0,-4
@@ -3554,7 +3552,6 @@ vehicle.nuke_cannon:
 		Name: primary
 		Armaments: primary
 		Ammo: 1
-		PipCount: 0
 		AmmoCondition: ammo
 	ReloadAmmoPool:
 		AmmoPool: primary
@@ -3596,16 +3593,16 @@ vehicle.nuke_cannon:
 		Image: pips
 		Sequence: pip-nuke
 		Palette: effect
-		ReferencePoint: Top, Right
+		Position: TopRight
+		Margin: 5, 5
 		RequiresCondition: neutron_shells && !neutron
-		ZOffset: 256
 	WithDecoration@NEUTRON:
 		Image: pips
 		Sequence: pip-neutron
 		Palette: effect
-		ReferencePoint: Top, Right
+		Position: TopRight
+		Margin: 5, 5
 		RequiresCondition: neutron_shells && neutron
-		ZOffset: 256
 	RenderSprites:
 		Image: vehicle.nuke_cannon
 	Voiced:
@@ -3621,6 +3618,7 @@ vehicle.combat_cycle:
 	Inherits: ^Vehicle
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CARGO: ^CargoPips
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
@@ -3687,7 +3685,7 @@ vehicle.combat_cycle:
 		Class: vehicle.combat_cycle
 	Mobile:
 		Speed: 120
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Voice: Move
 		Locomotor: locomotor.sentry_drone
 		PauseOnCondition: notmobile || hacked || emp || leaflet || !loaded
@@ -3745,7 +3743,6 @@ vehicle.combat_cycle:
 		PauseOnCondition: hacked || emp || leaflet
 	AmmoPool:
 		Ammo: 1
-		PipCount: 0
 		Armaments: driver_snipe
 		Name: driver_snipe
 		AmmoCondition: ammo
@@ -3755,7 +3752,6 @@ vehicle.combat_cycle:
 	Cargo:
 		Types: GLAInfantry
 		MaxWeight: 1
-		PipCount: 1
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
@@ -3819,58 +3815,58 @@ vehicle.combat_cycle:
 		Image: pips
 		Sequence: pip-bike-rebel
 		Palette: effect
-		ReferencePoint: Top, Right
-		ValidStances: Ally, Neutral, Enemy
+		Position: TopRight
+		Margin: 5, 5
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: rebel
-		ZOffset: 256
 	WithDecoration@RPG:
 		Image: pips
 		Sequence: pip-bike-rpg
 		Palette: effect
-		ReferencePoint: Top, Right
-		ValidStances: Ally, Neutral, Enemy
+		Position: TopRight
+		Margin: 5, 5
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: rpg
-		ZOffset: 256
 	WithDecoration@Terrorist:
 		Image: pips
 		Sequence: pip-bike-terror
 		Palette: effect
-		ReferencePoint: Top, Right
-		ValidStances: Ally, Neutral, Enemy
+		Position: TopRight
+		Margin: 5, 5
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: terrorist
-		ZOffset: 256
 	WithDecoration@Jarmen:
 		Image: pips
 		Sequence: pip-bike-kell
 		Palette: effect
-		ReferencePoint: Top, Right
-		ValidStances: Ally, Neutral, Enemy
+		Position: TopRight
+		Margin: 5, 5
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: jarmen
-		ZOffset: 256
 	WithDecoration@Saboteur:
 		Image: pips
 		Sequence: pip-bike-sabot
 		Palette: effect
-		ReferencePoint: Top, Right
-		ValidStances: Ally, Neutral, Enemy
+		Position: TopRight
+		Margin: 5, 5
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: saboteur
-		ZOffset: 256
 	WithDecoration@Worker:
 		Image: pips
 		Sequence: pip-bike-worker
 		Palette: effect
-		ReferencePoint: Top, Right
-		ValidStances: Ally, Neutral, Enemy
+		Position: TopRight
+		Margin: 5, 5
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: worker
-		ZOffset: 256
 	WithDecoration@Hijacker:
 		Image: pips
 		Sequence: pip-bike-hijacker
 		Palette: effect
-		ReferencePoint: Top, Right
-		ValidStances: Ally, Neutral, Enemy
+		Position: TopRight
+		Margin: 5, 5
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: hijacker
-		ZOffset: 256
 	Cloak:
 		InitialDelay: 200
 		CloakDelay: 100
@@ -3937,7 +3933,7 @@ vehicle.combat_cycle.demo:
 		Type: vehicle.tank
 	Mobile:
 		Speed: 25
-		TurnSpeed: 4
+		TurnSpeed: 16
 		Voice: Move
 		PauseOnCondition: !(!hacked && !driver_killed && !emp && !leaflet && !deployed)
 	SpeedMultiplier@DAMAGED:
@@ -3962,9 +3958,9 @@ vehicle.combat_cycle.demo:
 	ProvidesPrerequisite@vehiclename:
 	WithTextDecoration@SIDE:
 		Text:
-		ZOffset: 2048
-		ReferencePoint: Top
-		ValidStances: Ally, Neutral, Enemy
+		Position: Top
+		Margin: 0, 5
+		ValidRelationships: Ally, Neutral, Enemy
 	GrantTimedConditionOnDeploy@DISARM:
 		DeployedCondition: deployed
 		ShowSelectionBar: false
@@ -4201,7 +4197,7 @@ vehicle.mobile_reactor:
 		Type: vehicle.truck
 	Mobile:
 		Speed: 30
-		TurnSpeed: 8
+		TurnSpeed: 32
 	Repairable:
 		Voice: Action
 		RepairActors: fix

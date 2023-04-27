@@ -1,6 +1,6 @@
 Metadata:
 	Title: Generals Alpha
-	Version: gen-20230424
+	Version: gen-20230427
 	Website: https://www.moddb.com/mods/generals-alpha
 	WebIcon32: https://raw.githubusercontent.com/MustaphaTR/Generals-Alpha/master/packaging/linux/mod_32x32.png
 
@@ -11,14 +11,15 @@ ModCredits:
 PackageFormats: Mix
 
 Packages:
-	~^Content/ra/v2/
-	~^Content/ra/v2/expand
-	~^Content/ra/v2/cnc
-	~^Content/ra/v2/movies
-	~^Content/gen/
-	.
+	~^SupportDir|Content/ra/v2/
+	~^SupportDir|Content/ra/v2/expand
+	~^SupportDir|Content/ra/v2/cnc
+	~^SupportDir|Content/ra/v2/movies
+	~^SupportDir|Content/gen/
+	^EngineDir
 	$gen: gen
-	./mods/common: common
+	$ra: ra
+	^EngineDir|mods/common: common
 	~main.mix
 	~conquer.mix
 	~lores.mix: lores
@@ -61,7 +62,7 @@ Packages:
 
 MapFolders:
 	gen|maps: System
-	~^maps/gen/gen-20230424: User
+	~^SupportDir|maps/gen/gen-20230427: User
 
 Rules:
 	gen|rules/player/player.yaml
@@ -117,9 +118,10 @@ Chrome:
 	gen|chrome.yaml
 
 Assemblies:
-	common|OpenRA.Mods.Gen.dll
-	common|OpenRA.Mods.Common.dll
-	common|OpenRA.Mods.Cnc.dll
+	^BinDir|OpenRA.Mods.Gen.dll
+	^BinDir|OpenRA.Mods.GenSDK.dll
+	^BinDir|OpenRA.Mods.Common.dll
+	^BinDir|OpenRA.Mods.Cnc.dll
 
 ChromeLayout:
 	common|chrome/ingame.yaml
@@ -312,31 +314,34 @@ ModContent:
 	HeaderMessage: Game content may be extracted from the original game discs or an\nexisting digital install. OpenRA can also download the base game\nfiles from an online mirror of the 2008 freeware release of RA.
 	Packages:
 		base: Red Alert Game Files
-			TestFiles: ^Content/ra/v2/allies.mix, ^Content/ra/v2/conquer.mix, ^Content/ra/v2/interior.mix, ^Content/ra/v2/hires.mix, ^Content/ra/v2/lores.mix, ^Content/ra/v2/local.mix, ^Content/ra/v2/speech.mix, ^Content/ra/v2/russian.mix, ^Content/ra/v2/snow.mix, ^Content/ra/v2/sounds.mix, ^Content/ra/v2/temperat.mix
+			TestFiles: ^SupportDir|Content/ra/v2/allies.mix, ^SupportDir|Content/ra/v2/conquer.mix, ^SupportDir|Content/ra/v2/interior.mix, ^SupportDir|Content/ra/v2/hires.mix, ^SupportDir|Content/ra/v2/lores.mix, ^SupportDir|Content/ra/v2/local.mix, ^SupportDir|Content/ra/v2/speech.mix, ^SupportDir|Content/ra/v2/russian.mix, ^SupportDir|Content/ra/v2/snow.mix, ^SupportDir|Content/ra/v2/sounds.mix, ^SupportDir|Content/ra/v2/temperat.mix
 			Sources: allied, allied-linux, soviet, soviet-linux, tfd, ra-origin
 			Required: true
 			Download: basefiles
 		aftermathbase: Aftermath Expansion Files
-			TestFiles: ^Content/ra/v2/expand/expand2.mix, ^Content/ra/v2/expand/hires1.mix, ^Content/ra/v2/expand/lores1.mix, ^Content/ra/v2/expand/chrotnk1.aud, ^Content/ra/v2/expand/fixit1.aud, ^Content/ra/v2/expand/jburn1.aud, ^Content/ra/v2/expand/jchrge1.aud, ^Content/ra/v2/expand/jcrisp1.aud, ^Content/ra/v2/expand/jdance1.aud, ^Content/ra/v2/expand/jjuice1.aud, ^Content/ra/v2/expand/jjump1.aud, ^Content/ra/v2/expand/jlight1.aud, ^Content/ra/v2/expand/jpower1.aud, ^Content/ra/v2/expand/jshock1.aud, ^Content/ra/v2/expand/jyes1.aud, ^Content/ra/v2/expand/madchrg2.aud, ^Content/ra/v2/expand/madexplo.aud, ^Content/ra/v2/expand/mboss1.aud, ^Content/ra/v2/expand/mhear1.aud, ^Content/ra/v2/expand/mhotdig1.aud, ^Content/ra/v2/expand/mhowdy1.aud, ^Content/ra/v2/expand/mhuh1.aud, ^Content/ra/v2/expand/mlaff1.aud, ^Content/ra/v2/expand/mrise1.aud, ^Content/ra/v2/expand/mwrench1.aud, ^Content/ra/v2/expand/myeehaw1.aud, ^Content/ra/v2/expand/myes1.aud
+			TestFiles: ^SupportDir|Content/ra/v2/expand/expand2.mix, ^SupportDir|Content/ra/v2/expand/hires1.mix, ^SupportDir|Content/ra/v2/expand/lores1.mix, ^SupportDir|Content/ra/v2/expand/chrotnk1.aud, ^SupportDir|Content/ra/v2/expand/fixit1.aud, ^SupportDir|Content/ra/v2/expand/jburn1.aud, ^SupportDir|Content/ra/v2/expand/jchrge1.aud, ^SupportDir|Content/ra/v2/expand/jcrisp1.aud, ^SupportDir|Content/ra/v2/expand/jdance1.aud, ^SupportDir|Content/ra/v2/expand/jjuice1.aud, ^SupportDir|Content/ra/v2/expand/jjump1.aud, ^SupportDir|Content/ra/v2/expand/jlight1.aud, ^SupportDir|Content/ra/v2/expand/jpower1.aud, ^SupportDir|Content/ra/v2/expand/jshock1.aud, ^SupportDir|Content/ra/v2/expand/jyes1.aud, ^SupportDir|Content/ra/v2/expand/madchrg2.aud, ^SupportDir|Content/ra/v2/expand/madexplo.aud, ^SupportDir|Content/ra/v2/expand/mboss1.aud, ^SupportDir|Content/ra/v2/expand/mhear1.aud, ^SupportDir|Content/ra/v2/expand/mhotdig1.aud, ^SupportDir|Content/ra/v2/expand/mhowdy1.aud, ^SupportDir|Content/ra/v2/expand/mhuh1.aud, ^SupportDir|Content/ra/v2/expand/mlaff1.aud, ^SupportDir|Content/ra/v2/expand/mrise1.aud, ^SupportDir|Content/ra/v2/expand/mwrench1.aud, ^SupportDir|Content/ra/v2/expand/myeehaw1.aud, ^SupportDir|Content/ra/v2/expand/myes1.aud
 			Sources: aftermath, aftermath-linux, tfd, ra-origin
 			Required: true
 			Download: aftermath
 		cncdesert: C&C Desert Tileset
-			TestFiles: ^Content/ra/v2/cnc/desert.mix
+			TestFiles: ^SupportDir|Content/ra/v2/cnc/desert.mix
 			Sources: tfd, cnc-origin, cnc95, cnc95-linux
 			Required: true
 			Download: cncdesert
 		genmusic: Generals Music
-			TestFiles: ^Content/gen/CHI_01.aud, ^Content/gen/GLA_01.aud, ^Content/gen/USA_01.aud
+			TestFiles: ^SupportDir|Content/gen/CHI_01.aud, ^SupportDir|Content/gen/GLA_01.aud, ^SupportDir|Content/gen/USA_01.aud
 			Download: genmusic
 	Downloads:
-		gen|installer/downloads.yaml
+		ra|installer/downloads.yaml
 		gen|installer/genmusic.yaml
 	Sources:
-		gen|installer/aftermath.yaml
-		gen|installer/allies95.yaml
-		gen|installer/cnc95.yaml
-		gen|installer/counterstrike.yaml
-		gen|installer/firstdecade.yaml
-		gen|installer/origin.yaml
-		gen|installer/soviet95.yaml
+		ra|installer/aftermath.yaml
+		ra|installer/allies95.yaml
+		ra|installer/cnc95.yaml
+		ra|installer/counterstrike.yaml
+		ra|installer/firstdecade.yaml
+		ra|installer/origin.yaml
+		ra|installer/soviet95.yaml
+
+DiscordService:
+	ApplicationId: 1101187974890270750

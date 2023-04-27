@@ -1,7 +1,7 @@
 vehicle.supply_truck:
 	idle: harvempty
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: invis
 	harvest: harvempty
 		Start: 32
@@ -9,21 +9,21 @@ vehicle.supply_truck:
 		Facings: 8
 	empty-idle: harvempty
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	empty-harvest: harvempty
 		Start: 32
 		Length: 8
 		Facings: 8
 	half-idle: harvhalf
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	half-harvest: harvhalf
 		Start: 32
 		Length: 8
 		Facings: 8
 	full-idle: harv
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	full-harvest: harv
 		Start: 32
 		Length: 8
@@ -38,23 +38,23 @@ vehicle.supply_truck:
 husk.supply_truck.full:
 	idle: hhusk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -1023
 
 husk.supply_truck.empty:
 	idle: hhusk2
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -1023
 
 vehicle.humvee:
 	idle: humv
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: humv
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret2: stnk
 		Start: 38
 		Facings: 32
@@ -66,11 +66,11 @@ vehicle.humvee:
 vehicle.technical:
 	idle: jeep
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: jeep
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: minigun
 		Length: 6
 		Facings: 8
@@ -79,7 +79,7 @@ vehicle.technical:
 vehicle.radar_van:
 	idle: mrj
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: invis
 	spinner: mrj
 		Start: 32
@@ -89,11 +89,11 @@ vehicle.radar_van:
 vehicle.scorpion_tank:
 	idle: 1tnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: 1tnk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	rocket: missile
 		Facings: 32
 	rocket1: missile
@@ -107,12 +107,12 @@ vehicle.scorpion_tank:
 husk.scorpion_tank:
 	idle: 1tnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512
 	turret: 1tnk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512
 	rocket: missile
 		Facings: 32
@@ -124,11 +124,11 @@ husk.scorpion_tank:
 vehicle.crusader_tank:
 	idle: mtnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: mtnk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
 	icon: crusicon
@@ -136,11 +136,11 @@ vehicle.crusader_tank:
 vehicle.laser_tank:
 	idle: mtnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: mtnk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
 	icon: lsrtnkicon
@@ -148,22 +148,22 @@ vehicle.laser_tank:
 husk.crusader_tank:
 	idle: mtnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512
 	turret: mtnk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512
 
 vehicle.battlemaster_tank:
 	idle: 3tnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: 2tnk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
 	icon: bmstricon
@@ -175,30 +175,30 @@ vehicle.nuclear_battlemaster_tank:
 husk.battlemaster_tank:
 	idle: 3tnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512
 	turret: 2tnk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512
 
 vehicle.ambulance:
 	idle: truk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: invis
 	icon: ambuicon
 
 vehicle.sentry_drone:
 	idle: sentry
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: invis
 	turret2: sentry
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: minigun
 		Length: 6
 		Facings: 8
@@ -207,10 +207,10 @@ vehicle.sentry_drone:
 vehicle.quad_cannon:
 	idle: mgg
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: quadturret
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: minigun
 		Length: 6
 		Facings: 8
@@ -219,11 +219,11 @@ vehicle.quad_cannon:
 vehicle.gatling_tank:
 	idle: 1tnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: gattnk
 		Start: 64
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: minigun
 		Length: 6
 		Facings: 8
@@ -232,7 +232,7 @@ vehicle.gatling_tank:
 vehicle.rocket_buggy:
 	idle: bggy
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: invis
 	turret2: stnk
 		Start: 38
@@ -242,17 +242,17 @@ vehicle.rocket_buggy:
 vehicle.toxin_tractor:
 	idle: truk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: 1tnk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	icon: ttrkicon
 
 vehicle.dragon_tank:
 	idle: ftnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: invis
 	icon: dragonicon
 
@@ -260,21 +260,21 @@ vehicle.battle_bus:
 	idle: bbus
 		Facings: 32
 		ShadowStart: 64
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		Offset: 0, 3
 	turret: invis
 	husk: bbus
 		Start: 32
 		Facings: 32
 		ShadowStart: 96
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		Offset: 0, 3
 	icon: bbusicon
 
 vehicle.troop_crawler:
 	idle: apc
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: invis
 	open: apc
 		Start: 32
@@ -290,7 +290,7 @@ vehicle.assault_troop_crawler:
 vehicle.listening_outpost:
 	idle: mnly
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: invis
 	spinner: mrj
 		Start: 32
@@ -304,7 +304,7 @@ vehicle.attack_outpost:
 vehicle.microwave_tank:
 	idle: humv
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: mrj
 		Start: 32
 		Facings: 32
@@ -313,7 +313,7 @@ vehicle.microwave_tank:
 vehicle.ecm_tank:
 	idle: apc
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: mrj
 		Start: 32
 		Facings: 32
@@ -322,11 +322,11 @@ vehicle.ecm_tank:
 vehicle.avenger:
 	idle: msam
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: ftrk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 2
 	icon: avengericon
@@ -334,35 +334,35 @@ vehicle.avenger:
 vehicle.tomahawk_launcher:
 	idle: mlrs
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: mlrs
 		Start: 64
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret-full: mlrs
 		Start: 64
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret-empty: mlrs
 		Start: 96
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	icon: thwkicon
 
 vehicle.scud_launcher:
 	idle: v2rl
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	empty-idle: v2rl
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	icon: scudlicon
 
 vehicle.inferno_cannon:
 	idle: arty
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: invis
 	muzzle: gunfire2
 		Length: 5
@@ -371,11 +371,11 @@ vehicle.inferno_cannon:
 vehicle.paladin_tank:
 	idle: 5tnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: mtnk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
 	icon: palicon
@@ -383,31 +383,31 @@ vehicle.paladin_tank:
 husk.paladin_tank:
 	idle: 5tnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512
 	turret: 2tnk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512
 
 vehicle.marauder_tank:
 	idle: 2tnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: 1tnk
 		Start: 32
 		Facings: 32
 		Offset: 0,2
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret-crate-1: 2tnk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret-crate-2: 3tnk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
 	icon: maraudericon
@@ -415,26 +415,26 @@ vehicle.marauder_tank:
 husk.marauder_tank:
 	idle: 2tnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512
 	turret: 1tnk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512
 
 vehicle.overlord_tank:
 	idle: 4tnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: 4tnk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret_gatling: gattnk
 		Start: 64
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret_bunker: 4tnkpbox
 	turret_speaker: 4tnkgap
 		Length: 32
@@ -453,31 +453,31 @@ vehicle.emparor_overlord:
 husk.overlord_tank:
 	idle: 4tnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512
 	turret: 4tnk
 		Start: 32
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512
 
 colorpicker.overlord_tank:
 	idle: 4tnk
 		Facings: 32
 		Offset: -16, 0
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: 4tnk
 		Start: 32
 		Facings: 32
 		Offset: -16, 0
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
 
 vehicle.bomb_truck:
 	idle: dtrk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: invis
 	radar_van_spinner: mrj
 		Start: 32
@@ -487,10 +487,10 @@ vehicle.bomb_truck:
 vehicle.nuke_cannon:
 	idle: 4tnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: artytur
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
 	icon: nkcanicon
@@ -498,11 +498,11 @@ vehicle.nuke_cannon:
 husk.nuke_cannon:
 	idle: 4tnk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512
 	turret: artytur
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512
 
 vehicle.combat_cycle:
@@ -535,34 +535,34 @@ vehicle.combat_cycle:
 vehicle.usa_mcc:
 	idle: mcv
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: invis
 	icon: usmccicon
 
 vehicle.gla_mcc:
 	idle: mcv
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: invis
 	icon: glamccicon
 
 vehicle.prc_mcc:
 	idle: mcv
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret: invis
 	icon: prcmccicon
 
 husk.mcc:
 	idle: mcvhusk
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -1023
 
 vehicle.mobile_reactor:
 	idle: mgg
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	spinner: mgg
 		Start: 32
 		Length: 8
@@ -574,7 +574,7 @@ vehicle.mobile_reactor:
 mgg.destroyed:
 	idle: mgg
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 		ZOffset: -512
 	spinner: mgg
 		Start: 32
@@ -586,7 +586,7 @@ mgg.destroyed:
 ttnk:
 	idle:
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	spinner:
 		Start: 32
 		Length: 32
@@ -595,7 +595,7 @@ ttnk:
 ctnk:
 	idle:
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	muzzle: gunfire2
 		Length: 5
 	icon: ctnkicon
@@ -603,7 +603,7 @@ ctnk:
 qtnk:
 	idle:
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	piston:
 		Start: 32
 		Facings: 8
@@ -613,7 +613,7 @@ qtnk:
 stnk:
 	idle:
 		Facings: 32
-		UseClassicFacingFudge: True
+		UseClassicFacings: True
 	turret:
 		Start: 38
 		Facings: 32

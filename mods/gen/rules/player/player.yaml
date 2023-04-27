@@ -10,7 +10,6 @@ Player:
 	Inherits@TECH: ^TechLevels
 	Inherits@OPTIONS: ^LobbyOptions
 	TechTree:
-	ConditionManager:
 	SharedCargoManager:
 		MaxWeight: 10
 	ClassicProductionQueue@USA_Vanilla:
@@ -183,6 +182,7 @@ Player:
 			3: Repairs vehicles in 5 cell range by 90%.
 		StartFullyCharged: false
 		OrderName: EmergencyRepairPowerInfoOrder
+		EffectSequence: idle
 	CrateSpawner:
 		DeliveryAircraft: aircraft.badger
 		QuantizedFacings: 16

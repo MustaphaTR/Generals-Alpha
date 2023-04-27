@@ -52,9 +52,9 @@
 		Path: 3,3
 	WithTextDecoration@SIDE:
 		Text:
-		ZOffset: 2048
-		ReferencePoint: Top
-		ValidStances: Ally, Neutral, Enemy
+		Position: Top
+		Margin: 0, 5
+		ValidRelationships: Ally, Neutral, Enemy
 	HitShape:
 		TargetableOffsets: 1273,939,0, -980,-640,0, -980,640,0
 
@@ -103,6 +103,7 @@ building.usa_command_center:
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: SpyDronePowerInfoOrder
+		EffectSequence: idle
 	SpawnActorPower@SPY_SATELLITE:
 		PauseOnCondition: emp || hacked || sabotaged
 		Actors:
@@ -120,6 +121,7 @@ building.usa_command_center:
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: SpySatellitePowerInfoOrder
+		EffectSequence: idle
 	ParatroopersPower@PARADROP:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		OrderName: ParadropPowerInfoOrder
@@ -348,6 +350,7 @@ building.gla_command_center:
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: AmbushPowerInfoOrder
+		EffectSequence: idle
 	SpawnActorPower@TOXIN_AMBUSH:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Actors:
@@ -375,6 +378,7 @@ building.gla_command_center:
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: ToxinAmbushPowerInfoOrder
+		EffectSequence: idle
 	AirstrikePower@ANTHRAX_BOMB:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
@@ -413,10 +417,14 @@ building.gla_command_center:
 			2: scrambler2
 			3: scrambler3
 		ChargeInterval: 6000
-		Ranges:
-			1: 0
-			2: 1
-			3: 2
+		Footprints:
+			1: x
+			2: _x_ xxx _x_
+			3: xxx xxx xxx
+		Dimensions:
+			1: 1,1
+			2: 3,3
+			3: 3,3
 		Durations:
 			1: 0
 			2: 0
@@ -428,7 +436,7 @@ building.gla_command_center:
 		LongDescs:
 			1: Makes 1 unit invisible while not firing.
 			2: Makes 5 units invisible while not firing.
-			3: Makes 13 units invisible while not firing.
+			3: Makes 9 units invisible while not firing.
 		SelectTargetSpeechNotification: SelectTarget
 		Conditions:
 			1: gps_scrambler
@@ -452,6 +460,7 @@ building.gla_command_center:
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: SneakAttackPowerInfoOrder
+		EffectSequence: idle
 	WithTextDecoration@SIDE:
 		Text: GLA
 		Color: 00FF00
@@ -518,10 +527,14 @@ building.prc_command_center:
 			2: frenzy2
 			3: frenzy3
 		ChargeInterval: 6000
-		Ranges:
-			1: 2
-			2: 2
-			3: 2
+		Footprints:
+			1: __x__ _xxx_ xxxxx _xxx_ __x__
+			2: __x__ _xxx_ xxxxx _xxx_ __x__
+			3: __x__ _xxx_ xxxxx _xxx_ __x__
+		Dimensions:
+			1: 5,5
+			2: 5,5
+			3: 5,5
 		Descriptions:
 			1: Frenzy
 			2: Frenzy
@@ -641,6 +654,7 @@ building.prc_command_center:
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: ArtilleryBarragePowerInfoOrder
+		EffectSequence: idle
 	ParatroopersPower@TANK_DROP:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		OrderName: TankDropPowerInfoOrder
@@ -786,6 +800,7 @@ building.prc_command_center:
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: SneakAttackPowerInfoOrder
 		RequiresCondition: boss
+		EffectSequence: idle
 	AirstrikePower@EMP:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Prerequisites:
@@ -1291,13 +1306,13 @@ building.prc_barracks:
 		Types: Sabotage
 		Minimum: 0
 		Maximum: 1000
-		Notification: CreditsStolen
+		InfiltratedNotification: CreditsStolen
 	Targetable@SABOTAGE:
 		TargetTypes: Sabotage
 	FreeActor:
 		Actor: aircraft.chinook
 		SpawnOffset: 1,2
-		Facing: 64
+		Facing: 256
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.supply_center
@@ -1351,7 +1366,7 @@ building.usa_supply_center:
 	Exit@1:
 		SpawnOffset: 0,1024,0
 		ExitCell: 1,2
-		Facing: 224
+		Facing: 896
 	WithDeathAnimation:
 		DeathSequencePalette: cncplayer
 	HitShape:
@@ -1571,9 +1586,8 @@ building.patriot:
 	WithBuildingBib:
 		HasMinibib: true
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		InitialFacing: 0
-		PreviewFacing: 0
 	-WithSpriteBody:
 	WithEmbeddedTurretSpriteBody:
 	Armament@AG:
@@ -1598,8 +1612,8 @@ building.patriot:
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
-	BodyOrientation:
-		UseClassicFacingFudge: True
+	-BodyOrientation:
+	ClassicFacingBodyOrientation:
 	Voiced:
 		VoiceSet: PatriotVoice
 
@@ -1661,9 +1675,8 @@ building.laser_turret:
 	WithBuildingBib:
 		HasMinibib: true
 	Turreted:
-		TurnSpeed: 30
-		InitialFacing: 56
-		PreviewFacing: 56
+		TurnSpeed: 120
+		InitialFacing: 224
 	-WithSpriteBody:
 	WithEmbeddedTurretSpriteBody:
 	Armament@AG:
@@ -1688,8 +1701,8 @@ building.laser_turret:
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
-	BodyOrientation:
-		UseClassicFacingFudge: True
+	-BodyOrientation:
+	ClassicFacingBodyOrientation:
 	Voiced:
 		VoiceSet: PatriotVoice
 
@@ -1863,9 +1876,8 @@ building.gatling_cannon:
 	WithBuildingBib:
 		HasMinibib: true
 	Turreted:
-		TurnSpeed: 8
-		InitialFacing: 224
-		PreviewFacing: 224
+		TurnSpeed: 32
+		InitialFacing: 896
 	-WithSpriteBody:
 	WithEmbeddedTurretSpriteBody:
 	ReloadDelayMultiplier@Gatling1:
@@ -1906,14 +1918,15 @@ building.gatling_cannon:
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
-	BodyOrientation:
-		UseClassicFacingFudge: True
+	-BodyOrientation:
+	ClassicFacingBodyOrientation:
 	Voiced:
 		VoiceSet: GatlingCannonVoice
 
 building.firebase:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@CARGO: ^CargoPips
 	Inherits@GARRISON: ^WithGarrisonRangeCircle
 	Inherits@LEAFLET: ^AffectedByLeaflet
 	Inherits@REVEAL: ^Reveal360
@@ -1942,9 +1955,8 @@ building.firebase:
 		Bounds: 48,48
 	ProvidesPrerequisite@buildingname:
 	Turreted:
-		TurnSpeed: 3
-		InitialFacing: 224
-		PreviewFacing: 224
+		TurnSpeed: 12
+		InitialFacing: 896
 	-WithMakeAnimation:
 	WithMakeAnimation@A:
 		Sequence: make-a
@@ -1987,7 +1999,6 @@ building.firebase:
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 4
-		PipCount: 4
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
@@ -2016,6 +2027,7 @@ building.firebase:
 building.bunker:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@CARGO: ^CargoPips
 	Inherits@GARRISON: ^WithGarrisonRangeCircle
 	Inherits@MINE: ^CanHaveMines
 	Inherits@REVEAL: ^Reveal200
@@ -2050,14 +2062,13 @@ building.bunker:
 		ProductionType: queue.just_mine
 	ProvidesPrerequisite@buildingname:
 	Turreted:
-		TurnSpeed: 255
+		TurnSpeed: 1023
 	-QuantizeFacingsFromSequence:
 	BodyOrientation:
 		QuantizedFacings: 8
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 5
-		PipCount: 5
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
@@ -2096,7 +2107,6 @@ building.fortified_bunker:
 		Type: building.tough
 	Cargo:
 		MaxWeight: 10
-		PipCount: 10
 	GrantCondition:
 		Condition: land_mines
 
@@ -2386,9 +2396,8 @@ building.prc_war_factory:
 		Bounds: 48,48
 		Class: building.tunnel_network
 	Turreted:
-		TurnSpeed: 8
-		InitialFacing: 56
-		PreviewFacing: 56
+		TurnSpeed: 32
+		InitialFacing: 224
 		Offset: 0,0,256
 	SharedCargo:
 		Types: Infantry, Vehicle
@@ -2553,7 +2562,7 @@ building.stinger_site:
 		Bounds: 48,48
 	WithBuildingBib:
 	Turreted:
-		TurnSpeed: 225
+		TurnSpeed: 900
 	-WithMakeAnimation:
 	Sellable:
 		-RequiresCondition:
@@ -2636,7 +2645,7 @@ building.stinger_site:
 		Type: building.normal
 	Exit@1:
 		ExitCell: 1,1
-		Facing: 192
+		Facing: 768
 		SpawnOffset: -512,0,0
 	RallyPoint:
 	Reservable:
@@ -2732,12 +2741,12 @@ building.usa_airfield:
 		SpawnOffset: 512,0,0
 	Exit@2:
 		ExitCell: 1,1
-		Facing: 192
+		Facing: 768
 		SpawnOffset: -1024,0,0
 		ProductionTypes: queue.usa_helicopter
 	Exit@3:
 		ExitCell: 1,2
-		Facing: 192
+		Facing: 768
 		SpawnOffset: -1024,544,0
 		ProductionTypes: queue.usa_helicopter
 	WithDeathAnimation:
@@ -2874,7 +2883,6 @@ building.prc_airfield:
 hack.dock:
 	Interactable:
 	AlwaysVisible:
-	ConditionManager:
 	Reservable:
 	GrantExternalConditionToOwner:
 		Condition: airdock
@@ -2890,12 +2898,13 @@ hack.dock:
 		Dimensions: 1,1
 		AllowInvalidPlacement: true
 	Exit@1:
-		Facing: 192
+		Facing: 768
 	Targetable: # This is needed for some reason, otherwise they can't land.
 	RejectsOrders:
 
 building.internet_center:
 	Inherits: ^Building
+	Inherits@CARGO: ^CargoPips
 	Inherits@MINE: ^CanHaveMines
 	Inherits@REVEAL: ^Reveal200
 	GivesExperience:
@@ -2953,7 +2962,6 @@ building.internet_center:
 	Cargo:
 		Types: Hacker
 		MaxWeight: 8
-		PipCount: 8
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
@@ -3064,8 +3072,8 @@ building.strategy_center:
 		DirectionArrowAnimation: paradirection
 		OrderName: CarpetBombingUSAPowerInfoOrder
 	Turreted:
-		TurnSpeed: 3
-		InitialFacing: 96
+		TurnSpeed: 12
+		InitialFacing: 384
 		Offset: -416, -576, 0
 	RenderDetectionCircle:
 	DetectCloaked:
@@ -3123,6 +3131,7 @@ building.palace:
 	Inherits: ^Building
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@CAMO: ^CanHaveCamoNettingStealthGenOnly
+	Inherits@CARGO: ^CargoPips
 	Inherits@GARRISON: ^WithGarrisonRangeCircle
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@SHAPE: ^3x2Shape
@@ -3158,7 +3167,7 @@ building.palace:
 	Power:
 		Amount: 0
 	Turreted:
-		TurnSpeed: 255
+		TurnSpeed: 1023
 	-CommandBarBlacklist:
 	-QuantizeFacingsFromSequence:
 	BodyOrientation:
@@ -3166,7 +3175,6 @@ building.palace:
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 5
-		PipCount: 5
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
@@ -3642,11 +3650,12 @@ building.particle_cannon:
 			1: Particle Cannon
 		LongDescs:
 			1: Initiates an Particle Cannon strike.
-		DisplayTimerStances: Enemy, Neutral, Ally
+		DisplayTimerRelationships: Enemy, Neutral, Ally
 		SelectTargetSpeechNotification: SelectTarget
 		IncomingSpeechNotification: ParticleCannonLaunchDetected
 		AllowMultiple: True
 		OrderName: ParticleCannonPowerInfoOrder
+		EffectSequence: idle
 	SupportPowerChargeBar:
 	Power:
 		Amount: -10
@@ -3665,7 +3674,7 @@ building.particle_cannon:
 		Duration: 250
 	RevealsShroud@SW:
 		Range: 2c0
-		ValidStances: Enemy
+		ValidRelationships: Enemy
 	Voiced:
 		VoiceSet: ParticleCannonVoice
 	ActorPreviewPlaceBuildingPreview:
@@ -3820,27 +3829,22 @@ building.scud_storm:
 		PauseOnCondition: !ammo
 	Turreted@A:
 		Turret: A
-		TurnSpeed: 2
-		PreviewFacing: 0
+		TurnSpeed: 8
 		Offset: -512, -512, 0
 	Turreted@B:
 		Turret: B
-		TurnSpeed: 2
-		PreviewFacing: 0
+		TurnSpeed: 8
 		Offset: 512, -512, 0
 	Turreted@C:
 		Turret: C
-		TurnSpeed: 2
-		PreviewFacing: 0
+		TurnSpeed: 8
 		Offset: -512, 512, 0
 	Turreted@D:
 		Turret: D
-		TurnSpeed: 2
-		PreviewFacing: 0
+		TurnSpeed: 8
 		Offset: 512, 512, 0
 	AmmoPool:
 		Ammo: 4
-		PipCount: 0
 		AmmoCondition: ammo
 	WithSpriteTurret@A_Full:
 		Turret: A
@@ -3931,7 +3935,7 @@ building.scud_storm:
 		Prerequisites: prerequisite.limited_sw
 	RevealsShroud@SW:
 		Range: 2c0
-		ValidStances: Enemy
+		ValidRelationships: Enemy
 		RequiresCondition: !camo_netted
 	SpawnActorOnDeath:
 		Actor: hole.scud_storm
@@ -4063,12 +4067,11 @@ building.missile_silo:
 		AllowMultiple: True
 		MissileWeapon: atomic
 		SpawnOffset: 0,427,0
-		DisplayTimerStances: Enemy, Neutral, Ally
+		DisplayTimerRelationships: Enemy, Neutral, Ally
 		DisplayBeacon: True
 		DisplayRadarPing: True
 		BeaconPosters:
 			1: nukeswbcon
-		FlashType: Nuke
 		CameraRange: 7c0
 		CameraSpawnAdvance: 0
 		CameraRemoveDelay: 50
@@ -4093,17 +4096,17 @@ building.missile_silo:
 		Duration: 250
 	RevealsShroud@SW:
 		Range: 2c0
-		ValidStances: Enemy
+		ValidRelationships: Enemy
 	Voiced:
 		VoiceSet: MissileSiloVoice
 	-WithSpriteBody:
 	WithTerrainDependantSpriteBody:
-	WithNukeLaunchAnimation@GREEN:
+	WithSupportPowerActivationAnimation@GREEN:
 		RequiresCondition: !on_snow && !on_sand && !build-incomplete
-	WithNukeLaunchAnimation@WHITE:
+	WithSupportPowerActivationAnimation@WHITE:
 		Sequence: active-snow
 		RequiresCondition: on_snow && !build-incomplete
-	WithNukeLaunchAnimation@YELLOW:
+	WithSupportPowerActivationAnimation@YELLOW:
 		Sequence: active-sand
 		RequiresCondition: on_sand && !build-incomplete
 	GrantConditionOnTerrain@SNOW:
