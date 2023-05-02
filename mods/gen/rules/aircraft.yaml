@@ -1079,6 +1079,7 @@ aircraft.a10:
 
 aircraft.chinook:
 	Inherits: ^Vehicle
+	Inherits@CARGO: ^CargoPips
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -1160,6 +1161,8 @@ aircraft.chinook:
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
+	WithCargoPipsDecoration:
+		Margin: 4, 6
 	RepairableNear:
 		RepairActors: building.usa_airfield, building.prc_airfield
 		CloseEnough: 1c0
@@ -1183,12 +1186,10 @@ aircraft.chinook:
 	SelectionDecorations:
 	Voiced:
 		VoiceSet: ChinookVoice
-	WithCargoPipsDecoration:
-		Position: BottomLeft
-		RequiresSelection: true
 
 # aircraft.chinook:
 #	Inherits: ^Helicopter
+#	Inherits@CARGO: ^CargoPips
 #	Inherits@REVEAL: ^Reveal600
 #	Inherits@SLOW: ^SlowsWhenDamaged
 #	Inherits@SUPPLY_LINES: ^AffectedBySupplyLinesChinook
