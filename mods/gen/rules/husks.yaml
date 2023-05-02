@@ -34,6 +34,15 @@ husk.overlord_tank:
 	TransformOnCapture:
 		IntoActor: vehicle.overlord_tank
 
+husk.emperor_overlord:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Emperor Overlord (Destroyed)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: vehicle.emparor_overlord
+
 husk.paladin_tank:
 	Inherits: ^Husk
 	Tooltip:
