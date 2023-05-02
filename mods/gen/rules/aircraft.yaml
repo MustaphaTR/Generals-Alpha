@@ -1083,6 +1083,7 @@ aircraft.chinook:
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@SUPPLY_PIPS: ^SupplyCollectorPips
 	Inherits@SUPPLY_LINES: ^AffectedBySupplyLinesChinook
 	GivesExperience:
 		Experience: 50
@@ -1126,10 +1127,11 @@ aircraft.chinook:
 		IsAircraft: true
 		CollectionDelay: 200 # 240, -40 goes to WSCO WaitDelay
 		DeliveryDelay: 58 # 73, -25 goes to WSDO WaitDelay
-		PipCount: 8
 		Capacity: 600
 		MaxDeliveryQueue: 8
 		CollectVoice: Action
+	WithSupplyCollectorPipsDecoration:
+		PipCount: 8
 	WithIdleOverlay@ROTOR1AIR:
 		Offset: 597,0,213
 		Sequence: rotor
@@ -1192,6 +1194,7 @@ aircraft.chinook:
 #	Inherits@CARGO: ^CargoPips
 #	Inherits@REVEAL: ^Reveal600
 #	Inherits@SLOW: ^SlowsWhenDamaged
+#	Inherits@SUPPLY_PIPS: ^SupplyCollectorPips
 #	Inherits@SUPPLY_LINES: ^AffectedBySupplyLinesChinook
 #	GivesExperience:
 #		Experience: 50
@@ -1229,9 +1232,10 @@ aircraft.chinook:
 #	SupplyCollector:
 #		CollectionDelay: 240
 #		DeliveryDelay: 73
-#		PipCount: 8
 #		Capacity: 600
 #		CollectVoice: Action
+#	WithSupplyCollectorPipsDecoration:
+#		PipCount: 8
 #	WithIdleOverlay@ROTOR1AIR:
 #		Offset: 597,0,213
 #		Sequence: rotor

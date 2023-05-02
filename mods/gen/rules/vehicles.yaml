@@ -4,6 +4,7 @@ vehicle.supply_truck:
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@SUPPLY_PIPS: ^SupplyCollectorPips
 	GivesExperience:
 		Experience: 50
 	Buildable:
@@ -30,6 +31,8 @@ vehicle.supply_truck:
 		FullnessConditions:
 			150: half
 			300: full
+	WithSupplyCollectorPipsDecoration:
+		PipCount: 7
 	WithSupplyDeliveryAnimation:
 		WaitDelay: 10
 	WithFacingSpriteBody:
@@ -3347,7 +3350,7 @@ vehicle.bomb_truck:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	DisguisingTurreted:
-		TurnSpeed: 255
+		TurnSpeed: 1023
 	Explodes@Normal:
 		Weapon: BombTruckExplosion
 		EmptyWeapon: BombTruckExplosion

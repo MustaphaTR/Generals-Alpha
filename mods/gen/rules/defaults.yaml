@@ -2322,14 +2322,24 @@
 			blue: pip-blue
 			red: pip-red
 
-^PrimaryBuilding:
-	PrimaryBuilding:
-		PrimaryCondition: primary
-		SelectionNotification: PrimaryBuildingSelected
-	WithDecoration@primary:
-		RequiresCondition: primary
-		Position: Top
-		Margin: 0, 4
+^SharedCargoPips:
+	WithSharedCargoPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
 		RequiresSelection: true
-		Image: pips
-		Sequence: tag-primary
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
+
+^SupplyCollectorPips:
+	WithSupplyCollectorPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red

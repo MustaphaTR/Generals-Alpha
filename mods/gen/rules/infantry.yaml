@@ -38,6 +38,7 @@ infantry.worker:
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SHOES: ^AffectedByWorkerShoes
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@SUPPLY_PIPS: ^SupplyCollectorPips
 	Buildable:
 		Queue: queue.gla_collector, queue.stealth_gen_collector
 		BuildPaletteOrder: 1
@@ -64,12 +65,13 @@ infantry.worker:
 	SupplyCollector:
 		CollectionDelay: 50 # 37 # 4
 		DeliveryDelay: 50 # 38 # 4
-		PipCount: 2
 		Capacity: 75
 		MaxDeliveryQueue: 20
 		CollectionQueueMultiplier: 5
 		CollectionQueueCostModifier: 2
 		CollectVoice: Action
+	WithSupplyCollectorPipsDecoration:
+		PipCount: 2
 	Passenger:
 		CargoType: GLAInfantry
 	DetectCloaked:
