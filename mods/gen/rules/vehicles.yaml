@@ -3244,7 +3244,7 @@ vehicle.emparor_overlord:
 		Queue: queue.tank_gen_vehicle
 		Description: Big and slow tank.\n\nComes with a speaker tower.\n\nCan be upgraded to have a gatling cannon.
 	Tooltip:
-		Name: Emparor Overlord
+		Name: Emperor Overlord
 	Production:
 		Produces: queue.emparor_overlord
 	ProductionQueue:
@@ -3255,6 +3255,7 @@ vehicle.emparor_overlord:
 	Mobile:
 		PauseOnCondition: !(!hacked && !driver_killed && !emp && !leaflet)
 	-Cargo@BUNKER_UPGRADE:
+	-WithCargoPipsDecoration:
 	-Turreted@Bunker:
 	-AttackGarrisoned:
 	-WithSpriteTurret@Bunker:
@@ -3264,6 +3265,8 @@ vehicle.emparor_overlord:
 		-RequiresCondition:
 	ProximityExternalCondition@SPEAKER:
 		-RequiresCondition:
+	ThrowsShrapnel@Turret:
+		Weapons: debris.emperor_overlord
 	Selectable:
 		Class: vehicle.emparor_overlord
 	Voiced:
@@ -3427,6 +3430,7 @@ vehicle.bomb_truck:
 			vehicle.usa_mcc: usa_mcc
 			vehicle.gla_mcc: gla_mcc
 			vehicle.prc_mcc: prc_mcc
+			vehicle.tech_mcc: tech_mcc
 	WithIdleOverlay@RADAR_VAN_SPINNER:
 		Sequence: radar_van_spinner
 		Offset: -256,0,256
@@ -3459,6 +3463,13 @@ vehicle.bomb_truck:
 		Color: FF0000
 		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: prc_mcc
+	WithTextDecoration@SIDE_TECH:
+		Text: TECH
+		Position: Top
+		Margin: 0, 5
+		Color: 888888
+		ValidRelationships: Ally, Neutral, Enemy
+		RequiresCondition: tech_mcc
 	RenderSprites:
 		Image: vehicle.bomb_truck
 	Voiced:
@@ -4182,6 +4193,34 @@ vehicle.prc_mcc:
 	WithTextDecoration@SIDE:
 		Text: PRC
 		Color: FF0000
+
+# debug unit, not normally buildable
+vehicle.tech_mcc:
+	Inherits: ^default.mcc
+	Inherits@REVEAL: ^Reveal300
+	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
+	Buildable:
+		Queue: queue.disabled
+	Tooltip:
+		Name: Tech Construction Vehicle
+	Production:
+		Produces: queue.tech_building
+		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
+		RequiresCondition: !driver_killed
+	ProductionBar@TECH_BUILDING:
+		ProductionType: queue.tech_building
+	ProductionQueue@TECH_BUILDING:
+		Type: queue.tech_building
+		Group: Building
+		InstantCashDrain: true
+		LowPowerModifier: 200
+		QueuedAudio: Building
+		CannotBuildAudio: BuildingCannotPlaceAudio
+		ReadyAudio: ConstructionComplete
+		DisplayOrder: 99
+	WithTextDecoration@SIDE:
+		Text: TECH
+		Color: 888888
 
 # used by laser general in no base mode
 vehicle.mobile_reactor:

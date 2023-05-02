@@ -106,6 +106,16 @@ debris.overlord_tank:
 	Warhead@2Eff: CreateEffect
 		Explosions: large_splash
 
+debris.emperor_overlord:
+	Inherits: ^default.small_debris
+	Projectile: Bullet
+		Image: vehicle.emparor_overlord
+		Sequences: turret
+	Warhead@1Eff: CreateEffect
+		Explosions: building
+	Warhead@2Eff: CreateEffect
+		Explosions: large_splash
+
 debris.gatling_tank:
 	Inherits: ^default.small_debris
 	Projectile: Bullet

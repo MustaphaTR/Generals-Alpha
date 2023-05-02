@@ -449,7 +449,7 @@ vehicle.overlord_tank:
 vehicle.emparor_overlord:
 	Inherits: vehicle.overlord_tank
 	turret: 4tnkemp
-	icon: emparoricon
+	icon: emperoricon
 
 husk.overlord_tank:
 	idle: 4tnk
@@ -461,6 +461,10 @@ husk.overlord_tank:
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
+
+husk.emperor_overlord:
+	Inherits: husk.overlord_tank
+	turret: 4tnkemp
 
 colorpicker.overlord_tank:
 	idle: 4tnk
