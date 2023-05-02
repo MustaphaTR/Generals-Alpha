@@ -468,50 +468,30 @@ V19.Husk:
 	Interactable:
 
 BARL:
-	Inherits: ^TechBuilding
-	-Selectable:
-	SelectionDecorations:
-	Health:
-		HP: 1000
+	Inherits: ^AmmoBox
 	Explodes:
 		Weapon: BarrelExplode
 	Tooltip:
 		Name: Explosive Barrel
 		ShowOwnerRow: False
-	Armor:
-		Type: building.normal
 	Targetable:
 		TargetTypes: Ground, DemoTruck, Barrel, NoAutoTarget
 	-ShakeOnDeath:
 	-SoundOnDamageTransition:
 	-Demolishable:
-	MapEditorData:
-		Categories: Decoration
-	Interactable:
-		Bounds: 24,24
 
 BRL3:
-	Inherits: ^TechBuilding
-	-Selectable:
-	SelectionDecorations:
-	Health:
-		HP: 1000
+	Inherits: ^AmmoBox
 	Explodes:
 		Weapon: BarrelExplode
 	Tooltip:
 		Name: Explosive Barrel
 		ShowOwnerRow: False
-	Armor:
-		Type: building.normal
 	Targetable:
 		TargetTypes: Ground, DemoTruck, Barrel, NoAutoTarget
 	-ShakeOnDeath:
 	-SoundOnDamageTransition:
 	-Demolishable:
-	MapEditorData:
-		Categories: Decoration
-	Interactable:
-		Bounds: 24,24
 
 AMMOBOX1:
 	Inherits: ^AmmoBox

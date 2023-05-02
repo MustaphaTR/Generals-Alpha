@@ -1995,6 +1995,49 @@
 ^TechBuilding:
 	Inherits: ^BasicBuilding
 	Huntable:
+	OwnerLostAction:
+		Action: ChangeOwner
+	AppearsOnMapPreview:
+	Selectable:
+		Priority: 0
+	Buildable:
+		Queue: queue.tech_building
+		BuildDurationModifier: 100
+	WithMakeAnimation:
+		Condition: build-incomplete
+	Health:
+		HP: 40000
+	Armor:
+		Type: building.normal
+	Tooltip:
+		Name: Tech Building
+		GenericVisibility: None
+	Capturable:
+		Types: building
+		RequiresCondition: !build-incomplete
+	CapturableProgressBar:
+	CapturableProgressBlink:
+		Sound: ucapture.aud
+	CaptureManager:
+		ShowChatMessage: true
+		BeingCapturedNotification: BuildingBeingCaptured
+	GivesBuildableArea:
+		AreaTypes: mine
+	EngineerRepairable:
+	RepairableBuilding:
+		RepairStep: 1500
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		Position: Center
+		Palette: player
+		IsPlayerPalette: True
+	MapEditorData:
+		Categories: Tech building
+
+^CivBuilding:
+	Inherits: ^BasicBuilding
+	Huntable:
 	Health:
 		HP: 40000
 	Armor:
@@ -2002,36 +2045,6 @@
 	Tooltip:
 		Name: Civilian Building
 		GenericVisibility: None
-	FrozenUnderFog:
-	MapEditorData:
-		Categories: Tech building
-
-^AmmoBox:
-	Inherits: ^TechBuilding
-	-Selectable:
-	SelectionDecorations:
-	Health:
-		HP: 1000
-	Explodes:
-		Weapon: UnitExplode
-	Tooltip:
-		Name: Ammo Box
-	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, NoAutoTarget
-	Armor:
-		Type: building.normal
-	MapEditorData:
-		Categories: Decoration
-	Interactable:
-		Bounds: 24,24
-
-^CivBuilding:
-	Inherits: ^TechBuilding
-	RenderSprites:
-		Palette: player
-	MapEditorData:
-		ExcludeTilesets: INTERIOR
-		Categories: Civilian building
 	SpawnActorOnDeath@1:
 		Actor: c1
 		Probability: 40
@@ -2043,6 +2056,11 @@
 		Probability: 15
 	Explodes:
 		Weapon: CivBuildingExplosion
+	RenderSprites:
+		Palette: player
+	MapEditorData:
+		ExcludeTilesets: INTERIOR
+		Categories: Civilian building
 
 ^CivField:
 	Inherits: ^CivBuilding
@@ -2058,6 +2076,25 @@
 	MapEditorData:
 		ExcludeTilesets: INTERIOR
 	Interactable:
+
+^AmmoBox:
+	Inherits: ^BasicBuilding
+	-Selectable:
+	-SelectionDecorations:
+	Health:
+		HP: 1000
+	Explodes:
+		Weapon: UnitExplode
+	Tooltip:
+		Name: Ammo Box
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, NoAutoTarget
+	Armor:
+		Type: building.normal
+	MapEditorData:
+		Categories: Decoration
+	Interactable:
+		Bounds: 24,24
 
 ^Tree:
 	Inherits@1: ^SpriteActor

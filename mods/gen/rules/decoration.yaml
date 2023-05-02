@@ -666,7 +666,7 @@ TANKTRAP2:
 		Name: Tank Trap
 
 ^default.flag:
-	Inherits: ^TechBuilding
+	Inherits: ^BasicBuilding
 	Interactable:
 	Health:
 		HP: 20000
@@ -676,6 +676,8 @@ TANKTRAP2:
 	Tooltip:
 		Name: Flag
 		GenericName: Flag
+	Armor:
+		Type: building.normal
 	WithBuildingBib:
 		HasMinibib: true
 	-Selectable:

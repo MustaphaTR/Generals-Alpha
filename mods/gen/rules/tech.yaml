@@ -5,53 +5,33 @@ tech.oil_derrick:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Inherits@SUPPLY_LINES: ^AffectedBySupplyLines
-	OwnerLostAction:
-		Action: ChangeOwner
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 630,-300,0, 420,512,0, -420,-512,0, -630,300,0
-	Selectable:
-		Priority: 0
+	Buildable:
+		BuildPaletteOrder: 3
+		BuildDuration: 250
+		Description: Gives cash periodically.
+	Tooltip:
+		Name: Oil Derrick
+	TooltipDescription:
+		Description: Gives cash periodically.
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
 		HP: 200000
-	Capturable:
-		Types: building
-	CapturableProgressBar:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
-	EngineerRepairable:
-	GivesBuildableArea:
-		AreaTypes: mine
-	RepairableBuilding:
-		RepairStep: 1500
-	WithBuildingRepairDecoration:
-		Image: allyrepair
-		Sequence: repair
-		Position: Center
-		Palette: player
-		IsPlayerPalette: True
 	CashTrickler:
 		Interval: 300
 		Amount: 200
 		PauseOnCondition: emp || hacked
-	Tooltip:
-		Name: Oil Derrick
-	TooltipDescription:
-		Description: Gives cash periodically.
 	Explodes:
 		Weapon: BarrelExplode
-	AppearsOnMapPreview:
 	GivesCashOnCapture:
 		Amount: 1000
 	UpdatesDerrickCount:
-	CapturableProgressBlink:
-		Sound: ucapture.aud
-	CaptureManager:
-		ShowChatMessage: true
-		BeingCapturedNotification: BuildingBeingCaptured
 
 tech.oil_refinery:
 	Inherits: ^TechBuilding
@@ -59,31 +39,17 @@ tech.oil_refinery:
 	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
-	OwnerLostAction:
-		Action: ChangeOwner
-	Selectable:
-		Priority: 0
+	Buildable:
+		BuildPaletteOrder: 9
+		BuildDuration: 375
+		Description: Reduces vehicle and aircraft cost by 10%.
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
 		HP: 200000
-	Capturable:
-		Types: building
-	CapturableProgressBar:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
-	EngineerRepairable:
-	GivesBuildableArea:
-		AreaTypes: mine
-	RepairableBuilding:
-		RepairStep: 1500
-	WithBuildingRepairDecoration:
-		Image: allyrepair
-		Sequence: repair
-		Position: Center
-		Palette: player
-		IsPlayerPalette: True
 	Tooltip:
 		Name: Oil Refinery
 	TooltipDescription:
@@ -93,36 +59,6 @@ tech.oil_refinery:
 		UseDeathTypeSuffix: false
 	ProvidesPrerequisite@buildingname:
 		RequiresCondition: !emp && !hacked
-	AppearsOnMapPreview:
-	CapturableProgressBlink:
-		Sound: ucapture.aud
-	CaptureManager:
-		ShowChatMessage: true
-		BeingCapturedNotification: BuildingBeingCaptured
-
-# This is a campaign building, not an actual tech structure.
-tech.nuclear_bunker:
-	Inherits: ^TechBuilding
-	Inherits@REVEAL: ^Reveal200
-	Inherits@SHAPE: ^2x2Shape
-	OwnerLostAction:
-		Action: ChangeOwner
-	Selectable:
-		Priority: 0
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	Health:
-		HP: 200000
-	Tooltip:
-		Name: Bunker
-	WithDeathAnimation:
-		DeathSequence: dead
-		UseDeathTypeSuffix: false
-	Explodes:
-		Type: CenterPosition
-		Weapon: explosion.nuclear_reactor
-		EmptyWeapon: explosion.nuclear_reactor
 
 tech.hospital:
 	Inherits: ^TechBuilding
@@ -130,35 +66,21 @@ tech.hospital:
 	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
-	OwnerLostAction:
-		Action: ChangeOwner
-	Selectable:
-		Priority: 0
+	Buildable:
+		BuildPaletteOrder: 7
+		BuildDuration: 250
+		Description: Makes infantry self-heal.
+	Tooltip:
+		Name: Hospital
+	TooltipDescription:
+		Description: Makes infantry self-heal.
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
 		HP: 200000
-	Capturable:
-		Types: building
-	CapturableProgressBar:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
-	EngineerRepairable:
-	GivesBuildableArea:
-		AreaTypes: mine
-	RepairableBuilding:
-		RepairStep: 1500
-	WithBuildingRepairDecoration:
-		Image: allyrepair
-		Sequence: repair
-		Position: Center
-		Palette: player
-		IsPlayerPalette: True
-	Tooltip:
-		Name: Hospital
-	TooltipDescription:
-		Description: Makes infantry self-heal.
 	WithBuildingBib:
 		HasMinibib: true
 	WithDeathAnimation:
@@ -166,12 +88,6 @@ tech.hospital:
 		UseDeathTypeSuffix: false
 	ProvidesPrerequisite@buildingname:
 		RequiresCondition: !emp && !hacked
-	AppearsOnMapPreview:
-	CapturableProgressBlink:
-		Sound: ucapture.aud
-	CaptureManager:
-		ShowChatMessage: true
-		BeingCapturedNotification: BuildingBeingCaptured
 
 tech.communications_center:
 	Inherits: ^TechBuilding
@@ -179,22 +95,22 @@ tech.communications_center:
 	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal500
 	Inherits@SHAPE: ^2x2Shape
-	OwnerLostAction:
-		Action: ChangeOwner
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 630,-384,0, 630,384,0, -700,-512,0, -700,512,0
-	Selectable:
-		Priority: 0
+	Buildable:
+		BuildPaletteOrder: 6
+		BuildDuration: 750
+		Description: Provides radar and reveals a big area around it.
+	Tooltip:
+		Name: Communications Center
+	TooltipDescription:
+		Description: Provides radar and reveals a big area around it.
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
 		HP: 100000
-	Tooltip:
-		Name: Communications Center
-	TooltipDescription:
-		Description: Reveals a big area around it.
 	RevealsShroud:
 		RequiresCondition: !emp && !hacked
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
@@ -208,30 +124,12 @@ tech.communications_center:
 		Types: Intelligence
 		Range: 4c512
 		RequiresCondition: (emp || hacked)
+	ProvidesRadar:
+		RequiresCondition: !emp && !hacked
 	WithBuildingBib:
-	Capturable:
-		Types: building
-	CapturableProgressBar:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
-	EngineerRepairable:
-	GivesBuildableArea:
-		AreaTypes: mine
-	RepairableBuilding:
-		RepairStep: 1500
-	WithBuildingRepairDecoration:
-		Image: allyrepair
-		Sequence: repair
-		Position: Center
-		Palette: player
-		IsPlayerPalette: True
 	ProvidesPrerequisite@buildingname:
-	AppearsOnMapPreview:
-	CapturableProgressBlink:
-		Sound: ucapture.aud
-	CaptureManager:
-		ShowChatMessage: true
-		BeingCapturedNotification: BuildingBeingCaptured
 
 tech.soviet_barracks:
 	Inherits: ^TechBuilding
@@ -240,8 +138,14 @@ tech.soviet_barracks:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SABOTAGE: ^CanBeSabotaged
 	Inherits@SHAPE: ^2x2Shape
-	OwnerLostAction:
-		Action: ChangeOwner
+	Buildable:
+		BuildPaletteOrder: 2
+		BuildDuration: 250
+		Description: Produces old Soviet era units.
+	Tooltip:
+		Name: Soviet Barracks
+	TooltipDescription:
+		Description: Produces old Soviet era units.
 	Building:
 		Footprint: xx xx ==
 		Dimensions: 2,3
@@ -250,14 +154,8 @@ tech.soviet_barracks:
 		AreaTypes: mine, flame_tower
 	BaseProvider:
 		Range: 4c0
-	Selectable:
-		Priority: 0
 	Health:
 		HP: 100000
-	Tooltip:
-		Name: Soviet Barracks
-	TooltipDescription:
-		Description: Produces old Soviet era units.
 	Production:
 		Produces: queue.soviet_infantry
 		PauseOnCondition: emp || hacked || sabotaged
@@ -279,37 +177,19 @@ tech.soviet_barracks:
 		SpawnOffset: -725,640,0
 		ExitCell: 0,2
 	WithBuildingBib:
-	Capturable:
-		Types: building
-	CapturableProgressBar:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
-	EngineerRepairable:
-	RepairableBuilding:
-		RepairStep: 1500
-	WithBuildingRepairDecoration:
-		Image: allyrepair
-		Sequence: repair
-		Position: Center
-		Palette: player
-		IsPlayerPalette: True
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 		HpPerStep: 1000
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.barracks
-	AppearsOnMapPreview:
 	ProvidesPrerequisite@FlameTower:
 		Prerequisite: tech.flame_tower
 		RequiresPrerequisites: techlevel.nodefense
 	InfiltrateForCondition:
 		Duration: 750
-	CapturableProgressBlink:
-		Sound: ucapture.aud
-	CaptureManager:
-		ShowChatMessage: true
-		BeingCapturedNotification: BuildingBeingCaptured
 
 tech.flame_tower:
 	Inherits: ^Defense
@@ -362,10 +242,12 @@ tech.power_plant:
 	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^3x2Shape
-	OwnerLostAction:
-		Action: ChangeOwner
 	HitShape:
 		TargetableOffsets: -355,-1024,0
+	Buildable:
+		BuildPaletteOrder: 1
+		BuildDuration: 250
+		Description: Provides power.
 	Tooltip:
 		Name: Power Plant
 	TooltipDescription:
@@ -375,40 +257,19 @@ tech.power_plant:
 		Dimensions: 3,3
 		LocalCenterOffset: 0,-512,0
 	Selectable:
-		Priority: 0
 		Bounds: 72,48
 		DecorationBounds: 72,68,0,-10
 	Health:
 		HP: 100000
 	WithBuildingBib:
-	Capturable:
-		Types: building
-	CapturableProgressBar:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
-	EngineerRepairable:
-	GivesBuildableArea:
-		AreaTypes: mine
-	RepairableBuilding:
-		RepairStep: 1500
-	WithBuildingRepairDecoration:
-		Image: allyrepair
-		Sequence: repair
-		Position: Center
-		Palette: player
-		IsPlayerPalette: True
 	Power:
 		Amount: 10
 		RequiresCondition: !emp && !hacked
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.reactor
-	AppearsOnMapPreview:
-	CapturableProgressBlink:
-		Sound: ucapture.aud
-	CaptureManager:
-		ShowChatMessage: true
-		BeingCapturedNotification: BuildingBeingCaptured
 
 tech.repair_bay:
 	Inherits: ^TechBuilding
@@ -416,8 +277,10 @@ tech.repair_bay:
 	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^3x2Shape
-	OwnerLostAction:
-		Action: ChangeOwner
+	Buildable:
+		BuildPaletteOrder: 8
+		BuildDuration: 375
+		Description: Makes vehicles auto-repair.
 	Tooltip:
 		Name: Repair Bay
 	TooltipDescription:
@@ -427,32 +290,26 @@ tech.repair_bay:
 		Dimensions: 3,3
 	Health:
 		HP: 100000
-	Capturable:
-		Types: building
-	CapturableProgressBar:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
+	-WithMakeAnimation:
+	Capturable:
+		-RequiresCondition:
 	WithIdleOverlay@ROOF:
 		Sequence: idle-roof
 	WithBuildingBib:
+	ActorPreviewPlaceBuildingPreview:
+		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 	ProvidesPrerequisite@buildingname:
 		RequiresCondition: !emp && !hacked
-	AppearsOnMapPreview:
-	CapturableProgressBlink:
-		Sound: ucapture.aud
-	CaptureManager:
-		ShowChatMessage: true
-		BeingCapturedNotification: BuildingBeingCaptured
 
 tech.reinforcements_pad:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal200
-	OwnerLostAction:
-		Action: ChangeOwner
 	HitShape:
 		Type: Rectangle
 			TopLeft: -1536, -683
@@ -462,6 +319,10 @@ tech.reinforcements_pad:
 		Type: Rectangle
 			TopLeft: -640, -980
 			BottomRight: 640, 1110
+	Buildable:
+		BuildPaletteOrder: 4
+		BuildDuration: 375
+		Description: Delivers vehicles every 2 minutes.
 	Tooltip:
 		Name: Reinforcements Pad
 	TooltipDescription:
@@ -469,24 +330,9 @@ tech.reinforcements_pad:
 	Building:
 		Footprint: _X_ xxx _X_
 		Dimensions: 3,3
-	Capturable:
-		Types: building
-	CapturableProgressBar:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
-	EngineerRepairable:
-	GivesBuildableArea:
-		AreaTypes: mine
-	RepairableBuilding:
-		RepairStep: 1500
-	WithBuildingRepairDecoration:
-		Image: allyrepair
-		Sequence: repair
-		Position: Center
-		Palette: player
-		IsPlayerPalette: True
 	Selectable:
-		Priority: 0
 		Bounds: 64,34,0,3
 		DecorationBounds: 72,48
 	SelectionDecorations:
@@ -497,7 +343,7 @@ tech.reinforcements_pad:
 	RallyPoint:
 	Exit:
 		ExitCell: 1,1
-	GrantConditionOnCapture:
+	GrantConditionOnCombatantOwner:
 		Condition: enabled
 	ProductionParadrop:
 		Produces: queue.reinforcements_pad
@@ -647,14 +493,10 @@ tech.reinforcements_pad:
 		Factions: boss
 		ResetOnOwnerChange: true
 	ProvidesPrerequisite@buildingname:
-	AppearsOnMapPreview:
+	ActorPreviewPlaceBuildingPreview:
+		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
-	CapturableProgressBlink:
-		Sound: ucapture.aud
-	CaptureManager:
-		ShowChatMessage: true
-		BeingCapturedNotification: BuildingBeingCaptured
 
 tech.shipyard:
 	Inherits: ^TechBuilding
@@ -662,10 +504,12 @@ tech.shipyard:
 	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SABOTAGE: ^CanBeSabotaged
-	OwnerLostAction:
-		Action: ChangeOwner
 	Valued:
 		Cost: 1000
+	Buildable:
+		BuildPaletteOrder: 5
+		BuildDuration: 375
+		Description: Produces ships.
 	Tooltip:
 		Name: Shipyard
 	TooltipDescription:
@@ -674,18 +518,6 @@ tech.shipyard:
 		Footprint: XXX xxx XXX
 		Dimensions: 3,3
 		TerrainTypes: Water
-	Capturable:
-		Types: building
-	CapturableProgressBar:
-	EngineerRepairable:
-	RepairableBuilding:
-		RepairStep: 1500
-	WithBuildingRepairDecoration:
-		Image: allyrepair
-		Sequence: repair
-		Position: Center
-		Palette: player
-		IsPlayerPalette: True
 	Targetable:
 		TargetTypes: Ground, Water, Structure, WaterStructure, C4, DetonateAttack, Capture, Disable
 	Health:
@@ -726,7 +558,6 @@ tech.shipyard:
 		HpPerStep: 1000
 	RallyPoint:
 	ProvidesPrerequisite@buildingname:
-	AppearsOnMapPreview:
 	MapEditorData:
 		ExcludeTilesets: INTERIOR
 	HitShape:
@@ -739,8 +570,27 @@ tech.shipyard:
 		Type: Rectangle
 			TopLeft: -512, 598
 			BottomRight: 512, 1110
-	CapturableProgressBlink:
-		Sound: ucapture.aud
-	CaptureManager:
-		ShowChatMessage: true
-		BeingCapturedNotification: BuildingBeingCaptured
+
+# This is a campaign building, not an actual tech structure.
+tech.nuclear_bunker:
+	Inherits: ^CivBuilding
+	Inherits@REVEAL: ^Reveal200
+	Inherits@SHAPE: ^2x2Shape
+	OwnerLostAction:
+		Action: ChangeOwner
+	Selectable:
+		Priority: 0
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 200000
+	Tooltip:
+		Name: Bunker
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+	Explodes:
+		Type: CenterPosition
+		Weapon: explosion.nuclear_reactor
+		EmptyWeapon: explosion.nuclear_reactor

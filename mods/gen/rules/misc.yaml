@@ -717,7 +717,7 @@ colorpicker.overlord_tank:
 		Palette: colorpicker
 
 CTFLAG:
-	Inherits: ^TechBuilding
+	Inherits: ^BasicBuilding
 	Building:
 		Footprint: x
 		Dimensions: 1,1
@@ -726,7 +726,6 @@ CTFLAG:
 	WithBuildingBib:
 		HasMinibib: true
 	-HitShape:
-	-Health:
 	-Explodes:
 	-Selectable:
 	-SelectionDecorations:

@@ -21,6 +21,8 @@ tech.oil_derrick:
 	bib-SandRoad: bib3.des
 		Length: *
 		AddExtension: False
+	icon: xxicon
+		Offset: 0,0
 
 tech.oil_refinery:
 	idle: oil
@@ -31,16 +33,7 @@ tech.oil_refinery:
 		Tick: 800
 	make: biomake
 		Length: *
-
-tech.nuclear_bunker:
-	idle: bio
-	damaged-idle: bio
-		Start: 1
-	dead: bio
-		Start: 2
-		Tick: 800
-	make: biomake
-		Length: *
+	icon: xxicon
 
 tech.hospital:
 	idle: hosp
@@ -99,6 +92,7 @@ tech.communications_center:
 	bib-SandRoad: bib3.des
 		Length: *
 		AddExtension: False
+	icon: domeicon
 
 tech.soviet_barracks:
 	idle: fcom
@@ -121,6 +115,7 @@ tech.soviet_barracks:
 	bib-SandRoad: bib3.des
 		Length: *
 		AddExtension: False
+	icon: barricon
 
 tech.flame_tower:
 	idle: ftur
@@ -172,6 +167,7 @@ tech.power_plant:
 	bib-SandRoad: bib2.des
 		Length: *
 		AddExtension: False
+	icon: apwricon
 
 tech.repair_bay:
 	idle: rbay
@@ -199,6 +195,7 @@ tech.repair_bay:
 	bib-SandRoad: bib2.des
 		Length: *
 		AddExtension: False
+	icon: xxicon
 
 tech.reinforcements_pad:
 	idle: tdfix
@@ -213,6 +210,9 @@ tech.reinforcements_pad:
 		Start: 7
 		Length: 7
 		ZOffset: -1c511
+	make: tdfixmake
+		Length: 14
+		Tick: 60
 	bib: mbFIX.tem
 		Length: *
 		ZOffset: -1c511
@@ -238,6 +238,7 @@ tech.reinforcements_pad:
 		ZOffset: -1c511
 		Offset: 0,-4
 		AddExtension: False
+	icon: fixicon
 
 tech.shipyard:
 	idle: syrd
@@ -247,3 +248,13 @@ tech.shipyard:
 		Length: *
 	icon: syrdicon
 	fake-icon: syrficon
+
+tech.nuclear_bunker:
+	idle: bio
+	damaged-idle: bio
+		Start: 1
+	dead: bio
+		Start: 2
+		Tick: 800
+	make: biomake
+		Length: *
