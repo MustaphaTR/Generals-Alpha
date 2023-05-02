@@ -554,6 +554,7 @@ fake.tunnel_network:
 	AttackTurreted:
 		RequiresCondition: keep_me_disabled
 	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
 	RenderSprites:
 		Image: building.tunnel_network
 	TransformOnCondition:
