@@ -1588,6 +1588,7 @@ building.patriot:
 	Turreted:
 		TurnSpeed: 32
 		InitialFacing: 0
+		RealignDelay: -1
 	-WithSpriteBody:
 	WithEmbeddedTurretSpriteBody:
 	Armament@AG:
@@ -1677,6 +1678,7 @@ building.laser_turret:
 	Turreted:
 		TurnSpeed: 120
 		InitialFacing: 224
+		RealignDelay: -1
 	-WithSpriteBody:
 	WithEmbeddedTurretSpriteBody:
 	Armament@AG:
@@ -1878,6 +1880,7 @@ building.gatling_cannon:
 	Turreted:
 		TurnSpeed: 32
 		InitialFacing: 896
+		RealignDelay: -1
 	-WithSpriteBody:
 	WithEmbeddedTurretSpriteBody:
 	ReloadDelayMultiplier@Gatling1:
@@ -1957,6 +1960,7 @@ building.firebase:
 	Turreted:
 		TurnSpeed: 12
 		InitialFacing: 896
+		RealignDelay: -1
 	-WithMakeAnimation:
 	WithMakeAnimation@A:
 		Sequence: make-a
@@ -2377,6 +2381,7 @@ building.prc_war_factory:
 	Inherits: ^Defense
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
+	Inherits@SHARED_CARGO: ^SharedCargoPips
 	GivesExperience:
 		Experience: 100
 	Tooltip:
@@ -2398,6 +2403,7 @@ building.prc_war_factory:
 	Turreted:
 		TurnSpeed: 32
 		InitialFacing: 224
+		RealignDelay: -1
 		Offset: 0,0,256
 	SharedCargo:
 		Types: Infantry, Vehicle
@@ -3074,6 +3080,7 @@ building.strategy_center:
 	Turreted:
 		TurnSpeed: 12
 		InitialFacing: 384
+		RealignDelay: -1
 		Offset: -416, -576, 0
 	RenderDetectionCircle:
 	DetectCloaked:
