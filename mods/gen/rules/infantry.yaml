@@ -1015,6 +1015,10 @@ infantry.saboteur:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
 	Passenger:
+		CargoType: GLAInfantry
+		CustomPipType: yellow
+		Voice: Move
+	SharedPassenger:
 		CustomPipType: yellow
 		Voice: Move
 	Infiltrates:
@@ -1029,8 +1033,6 @@ infantry.saboteur:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
-	Passenger:
-		CargoType: GLAInfantry
 	Voiced:
 		VoiceSet: SaboteurVoice
 
@@ -1054,6 +1056,7 @@ infantry.saboteur:
 	-SelectionDecorations:
 	-WithSpriteControlGroupDecoration:
 	-Passenger:
+	-SharedPassenger:
 	-ChangesHealth@IN_AMBULANCE:
 	-ChangesHealth@IN_CRAWLER:
 	Health:
@@ -1247,6 +1250,9 @@ infantry.hacker:
 		Voice: Move
 		CargoConditions:
 			building.internet_center: in_internet_center
+	SharedPassenger:
+		CustomPipType: yellow
+		Voice: Move
 	ChangesHealth@IN_INTERNET_CENTER:
 		Step: 0
 		PercentageStep: 10
@@ -1417,6 +1423,9 @@ infantry.hijacker:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
 	Passenger:
+		CargoType: GLAInfantry
+		CustomPipType: yellow
+	SharedPassenger:
 		CustomPipType: yellow
 	Captures:
 		CaptureTypes: vehicle, driverless_vehcile
@@ -1438,8 +1447,6 @@ infantry.hijacker:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
-	Passenger:
-		CargoType: GLAInfantry
 	RenderSprites:
 		Image: infantry.hijacker
 	CaptureManager:
@@ -1513,6 +1520,9 @@ infantry.colonel_burton:
 	Selectable:
 		Class: infantry.colonel_burton
 	Passenger:
+		CustomPipType: red
+		Voice: Move
+	SharedPassenger:
 		CustomPipType: red
 		Voice: Move
 	AutoTarget:
@@ -1767,6 +1777,8 @@ infantry.black_lotus:
 	Crushable:
 		CrushClasses: hero
 	Passenger:
+		Voice: Move
+	SharedPassenger:
 		Voice: Move
 	WithInfantryBody:
 		DefaultAttackSequence: stand2
