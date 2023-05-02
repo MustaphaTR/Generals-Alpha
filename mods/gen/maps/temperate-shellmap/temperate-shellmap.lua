@@ -157,7 +157,7 @@ end
 
 SummonActor = function(actor, owner, location, date_time)
 	Trigger.AfterDelay(date_time, function()
-		local a = Actor.Create(actor, true, { Owner = owner, Facing = 0, Location = location})
+		local a = Actor.Create(actor, true, { Owner = owner, Facing = Angle.North, Location = location})
 		if a.HasProperty("Hunt") then
 			Trigger.OnIdle(a, function(a)
 				if a.IsInWorld then
