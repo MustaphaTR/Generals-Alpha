@@ -108,7 +108,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 			Amount = 0;
 		}
 
-		public void Created(Actor self)
+		void INotifyCreated.Created(Actor self)
 		{
 			if (Info.SearchOnCreation)
 				self.QueueActivity(new FindGoods(self, Color.Green));
@@ -116,7 +116,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 			CheckConditions(self);
 		}
 
-		public void OnNotifyBlockingMove(Actor self, Actor blocking)
+		void INotifyBlockingMove.OnNotifyBlockingMove(Actor self, Actor blocking)
 		{
 			// If I'm just waiting around then get out of the way:
 			if (self.IsIdle)
@@ -139,7 +139,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 			}
 		}
 
-		public void TickIdle(Actor self)
+		void INotifyIdle.TickIdle(Actor self)
 		{
 			// Should we be intelligent while idle?
 			if (!idleSmart) return;
