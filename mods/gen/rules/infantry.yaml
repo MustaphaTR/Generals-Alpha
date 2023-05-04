@@ -82,6 +82,7 @@ infantry.worker:
 	WithInfantryBody:
 		-IdleSequences:
 		StandSequences: stand
+	-TakeCover:
 	Voiced:
 		VoiceSet: WorkerVoice
 	RenderSprites:
@@ -900,6 +901,8 @@ infantry.terrorist:
 		VoiceSet: TerroristVoice
 	WithInfantryBody:
 		-IdleSequences:
+		StandSequences: stand
+	-TakeCover:
 	RenderSprites:
 		Image: infantry.terrorist
 	CaptureManager:
@@ -1097,6 +1100,7 @@ hack.angry_mob.male:
 	WithInfantryBody:
 		-IdleSequences:
 		StandSequences: stand
+	-TakeCover:
 
 hack.angry_mob.female:
 	Inherits: ^default.angry_mob
@@ -1115,6 +1119,7 @@ hack.angry_mob.female:
 	WithInfantryBody:
 		-IdleSequences:
 		StandSequences: stand
+	-TakeCover:
 
 hack.angry_mob.molotov:
 	Inherits: ^default.angry_mob
