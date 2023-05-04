@@ -140,14 +140,22 @@ Player:
 	PlaceBeacon:
 	GrantConditionOnPrerequisiteManager:
 	EnemyWatcher:
-	ProductionIconOverlayManager:
+	ProductionIconOverlayManager@veteran:
 		Type: Veterancy
 		Image: iconchevrons
 		Sequence: veteran
-	ProductionIconOverlayManager@2:
+	ProductionIconOverlayManager@elite:
 		Type: Veterancy-Elite
 		Image: iconchevrons
 		Sequence: elite
+	ProductionIconOverlayManager@upgraded:
+		Type: Stripe-Upgraded
+		Image: iconstripes
+		Sequence: upgraded
+	ProductionIconOverlayManager@taken:
+		Type: Stripe-Taken
+		Image: iconstripes
+		Sequence: taken
 	ProvidesPrerequisite@inf_gen_player:
 		Factions: inf
 		Prerequisite: prerequisite.inf_gen_player

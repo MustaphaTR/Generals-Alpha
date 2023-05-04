@@ -23,6 +23,9 @@
 		IconPalette: cameo
 	RenderSprites:
 	ProvidesPrerequisite@powername:
+	WithProductionIconOverlay:
+		Prerequisites: default.generals_power
+		Types: Stripe-Taken
 
 generals_power.spy_drone:
 	Inherits: ^default.generals_power
@@ -34,6 +37,8 @@ generals_power.spy_drone:
 		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points
 		Description: Enables Spy Drone support power from Command Center.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.spy_drone
 
 generals_power.tech_training:
 	Inherits: ^default.generals_power
@@ -45,6 +50,8 @@ generals_power.tech_training:
 		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points, !techlevel.infonly
 		Description: Makes Technicals trained as veteran.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.tech_training
 
 generals_power.red_training:
 	Inherits: ^default.generals_power
@@ -56,6 +63,8 @@ generals_power.red_training:
 		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points
 		Description: Makes Red Guards trained as veteran.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.red_training
 
 generals_power.minigunner_training:
 	Inherits: ^default.generals_power
@@ -67,6 +76,8 @@ generals_power.minigunner_training:
 		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points
 		Description: Makes Minigunners trained at Rank 2.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.minigunner_training
 
 generals_power.arty_training:
 	Inherits: ^default.generals_power
@@ -78,6 +89,8 @@ generals_power.arty_training:
 		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points, !techlevel.infonly
 		Description: Makes Inferno and Nuke Cannons trained as veteran.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.arty_training
 
 generals_power.battlemaster_training:
 	Inherits: ^default.generals_power
@@ -89,6 +102,8 @@ generals_power.battlemaster_training:
 		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points, !techlevel.infonly
 		Description: Makes Battlemaster Tanks trained at Rank 2.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.battlemaster_training
 
 generals_power.nuke_cannon:
 	Inherits: ^default.generals_power
@@ -102,6 +117,8 @@ generals_power.nuke_cannon:
 		Description: Enables Nuke Cannon.
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.nuke_cannon
+	WithProductionIconOverlay:
+		Prerequisites: prerequisite.nuke_cannon
 
 hack.cameo_filler.1:
 	Inherits: ^default.cameo_filler
@@ -122,6 +139,8 @@ generals_power.paladin_tank:
 		Description: Enables Paladin Tank.
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.paladin_tank
+	WithProductionIconOverlay:
+		Prerequisites: prerequisite.paladin_tank
 	RenderSprites:
 		Image: generals_power.paladin_tank
 
@@ -142,6 +161,8 @@ generals_power.stealth_fighter:
 		Description: Enables Stealth Fighter.
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.stealth_fighter
+	WithProductionIconOverlay:
+		Prerequisites: prerequisite.stealth_fighter
 
 generals_power.pathfinder:
 	Inherits: ^default.generals_power
@@ -154,6 +175,8 @@ generals_power.pathfinder:
 		Description: Enables Pathfinder.
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.pathfinder
+	WithProductionIconOverlay:
+		Prerequisites: prerequisite.pathfinder
 	RenderSprites:
 		Image: generals_power.pathfinder
 
@@ -173,6 +196,8 @@ generals_power.carpet_bombing.airforce:
 		BuildPaletteOrder: 5
 		Prerequisites: prerequisite.has_points
 		Description: Enables Carpet Bombing support power from Strategy Center.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.carpet_bombing.airforce
 
 generals_power.scud_launcher:
 	Inherits: ^default.generals_power
@@ -185,6 +210,8 @@ generals_power.scud_launcher:
 		Description: Enables SCUD Launcher.
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.scud_launcher
+	WithProductionIconOverlay:
+		Prerequisites: prerequisite.scud_launcher
 
 generals_power.marauder_tank:
 	Inherits: ^default.generals_power
@@ -197,6 +224,8 @@ generals_power.marauder_tank:
 		Description: Enables Marauder Tank.
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.marauder_tank
+	WithProductionIconOverlay:
+		Prerequisites: prerequisite.marauder_tank
 
 generals_power.hijacker:
 	Inherits: ^default.generals_power
@@ -209,6 +238,8 @@ generals_power.hijacker:
 		Description: Enables Hijacker.
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.hijacker
+	WithProductionIconOverlay:
+		Prerequisites: prerequisite.hijacker
 
 hack.cameo_filler.2:
 	Inherits: ^default.cameo_filler
@@ -229,6 +260,8 @@ generals_power.emergency_repair1:
 		Description: Enables Emergency Repair support power from Command Center.
 	ProvidesPrerequisite@powername:
 		Prerequisite: generals_power.emergency_repair1
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.emergency_repair1
 	RenderSprites:
 		Image: generals_power.emergency_repair1
 
@@ -246,6 +279,8 @@ generals_power.emergency_repair2:
 		BuildPaletteOrder: 7
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.emergency_repair1
 		Description: Upgrades Emergency Repair support power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.emergency_repair2
 
 generals_power.emergency_repair3:
 	Inherits: ^default.generals_power
@@ -255,6 +290,8 @@ generals_power.emergency_repair3:
 		BuildPaletteOrder: 8
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.emergency_repair2
 		Description: Upgrades Emergency Repair support power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.emergency_repair3
 
 generals_power.paradrop1:
 	Inherits: ^default.generals_power
@@ -265,6 +302,8 @@ generals_power.paradrop1:
 		BuildPaletteOrder: 9
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, !techlevel.vehicleonly
 		Description: Enables Paradrop support power from Command Center.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.paradrop1
 
 generals_power.paradrop2:
 	Inherits: ^default.generals_power
@@ -275,6 +314,8 @@ generals_power.paradrop2:
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.paradrop1, !techlevel.vehicleonly
 		Description: Upgrades Paradrop support power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.paradrop2
 
 generals_power.paradrop3:
 	Inherits: ^default.generals_power
@@ -285,6 +326,8 @@ generals_power.paradrop3:
 		BuildPaletteOrder: 11
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.paradrop2, !techlevel.vehicleonly
 		Description: Upgrades Paradrop support power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.paradrop3
 
 generals_power.paradrop1.inf_gen:
 	Inherits: ^default.generals_power
@@ -295,6 +338,8 @@ generals_power.paradrop1.inf_gen:
 		BuildPaletteOrder: 12
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, !techlevel.vehicleonly
 		Description: Enables Paradrop support power from Command Center.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.paradrop1.inf_gen
 	RenderSprites:
 		Image: generals_power.paradrop1
 
@@ -307,6 +352,8 @@ generals_power.paradrop2.inf_gen:
 		BuildPaletteOrder: 13
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.paradrop1.inf_gen, !techlevel.vehicleonly
 		Description: Upgrades Paradrop support power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.paradrop2.inf_gen
 	RenderSprites:
 		Image: generals_power.paradrop2
 
@@ -319,6 +366,8 @@ generals_power.paradrop3.inf_gen:
 		BuildPaletteOrder: 14
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.paradrop2.inf_gen, !techlevel.vehicleonly
 		Description: Upgrades Paradrop support power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.paradrop3.inf_gen
 	RenderSprites:
 		Image: generals_power.paradrop3
 
@@ -331,6 +380,8 @@ generals_power.ambush1:
 		BuildPaletteOrder: 9
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, !techlevel.vehicleonly
 		Description: Enables Rebel Ambush support power from Command Center.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.ambush1
 
 generals_power.ambush2:
 	Inherits: ^default.generals_power
@@ -341,6 +392,8 @@ generals_power.ambush2:
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.ambush1, !techlevel.vehicleonly
 		Description: Upgrades Rebel Ambush support power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.ambush2
 
 generals_power.ambush3:
 	Inherits: ^default.generals_power
@@ -351,6 +404,8 @@ generals_power.ambush3:
 		BuildPaletteOrder: 11
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.ambush2, !techlevel.vehicleonly
 		Description: Upgrades Rebel Ambush support power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.ambush3
 
 generals_power.ambush1.toxin:
 	Inherits: ^default.generals_power
@@ -361,6 +416,8 @@ generals_power.ambush1.toxin:
 		BuildPaletteOrder: 9
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, !techlevel.vehicleonly
 		Description: Enables Toxin Rebel Ambush support power from Command Center.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.ambush1.toxin
 
 generals_power.ambush2.toxin:
 	Inherits: ^default.generals_power
@@ -371,6 +428,8 @@ generals_power.ambush2.toxin:
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.ambush1.toxin, !techlevel.vehicleonly
 		Description: Upgrades Toxin Rebel Ambush support power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.ambush2.toxin
 
 generals_power.ambush3.toxin:
 	Inherits: ^default.generals_power
@@ -381,6 +440,8 @@ generals_power.ambush3.toxin:
 		BuildPaletteOrder: 11
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.ambush2.toxin, !techlevel.vehicleonly
 		Description: Upgrades Toxin Rebel Ambush support power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.ambush3.toxin
 
 generals_power.frenzy1:
 	Inherits: ^default.generals_power
@@ -393,6 +454,8 @@ generals_power.frenzy1:
 		Description: Enables Frenzy support power from Command Center.
 	ProvidesPrerequisite@powername:
 		Prerequisite: generals_power.frenzy1
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.frenzy1
 	RenderSprites:
 		Image: generals_power.frenzy1
 
@@ -411,6 +474,8 @@ generals_power.frenzy2:
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.frenzy1, ~prerequisite.zh_units
 		Description: Upgrades Frenzy support power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.frenzy2
 
 generals_power.frenzy3:
 	Inherits: ^default.generals_power
@@ -421,6 +486,8 @@ generals_power.frenzy3:
 		BuildPaletteOrder: 11
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.frenzy2, ~prerequisite.zh_units
 		Description: Upgrades Frenzy support power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.frenzy3
 
 generals_power.cash_hack1:
 	Inherits: ^default.generals_power
@@ -431,6 +498,8 @@ generals_power.cash_hack1:
 		BuildPaletteOrder: 15
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points
 		Description: Enables Cash Hack support power from Command Center.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.cash_hack1
 
 generals_power.cash_hack2:
 	Inherits: ^default.generals_power
@@ -441,6 +510,8 @@ generals_power.cash_hack2:
 		BuildPaletteOrder: 16
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_hack1
 		Description: Upgrades Cash Hack support power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.cash_hack2
 
 generals_power.cash_hack3:
 	Inherits: ^default.generals_power
@@ -451,6 +522,8 @@ generals_power.cash_hack3:
 		BuildPaletteOrder: 17
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_hack2
 		Description: Upgrades Cash Hack support power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.cash_hack3
 
 generals_power.a101:
 	Inherits: ^default.generals_power
@@ -461,6 +534,8 @@ generals_power.a101:
 		BuildPaletteOrder: 12
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points
 		Description: Enables A-10 Strike support power from Command Center.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.a101
 
 generals_power.a102:
 	Inherits: ^default.generals_power
@@ -471,6 +546,8 @@ generals_power.a102:
 		BuildPaletteOrder: 13
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.a101
 		Description: Upgrades A-10 Strike support power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.a102
 
 generals_power.a103:
 	Inherits: ^default.generals_power
@@ -481,6 +558,8 @@ generals_power.a103:
 		BuildPaletteOrder: 14
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.a102
 		Description: Upgrades A-10 Strike support power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.a103
 
 generals_power.cash_bounty1:
 	Inherits: ^default.generals_power
@@ -491,6 +570,8 @@ generals_power.cash_bounty1:
 		BuildPaletteOrder: 12
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points
 		Description: Enemy units give 5% of their worth on death.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.cash_bounty1
 
 generals_power.cash_bounty2:
 	Inherits: ^default.generals_power
@@ -501,6 +582,8 @@ generals_power.cash_bounty2:
 		BuildPaletteOrder: 13
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_bounty1
 		Description: Enemy units give 10% of their worth on death.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.cash_bounty2
 
 generals_power.cash_bounty3:
 	Inherits: ^default.generals_power
@@ -511,6 +594,8 @@ generals_power.cash_bounty3:
 		BuildPaletteOrder: 14
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_bounty2
 		Description: Enemy units give 20% of their worth on death.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.cash_bounty3
 
 generals_power.gps_scrambler1:
 	Inherits: ^default.generals_power
@@ -523,6 +608,8 @@ generals_power.gps_scrambler1:
 		Description: Enables GPS Scrambler support power from Command Center.
 	ProvidesPrerequisite@powername:
 		Prerequisite: generals_power.gps_scrambler1
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.gps_scrambler1
 	RenderSprites:
 		Image: generals_power.gps_scrambler1
 
@@ -537,20 +624,24 @@ generals_power.gps_scrambler2:
 	Tooltip:
 		Name: GPS Scrambler - Level 2
 	-Buildable:
-#		Queue: queue.stealth_gen_generals_power
-#		BuildPaletteOrder: 16
-#		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.gps_scrambler1, ~prerequisite.zh_units
-#		Description: Upgrades GPS Scrambler support power to Level 2.
+	#	Queue: queue.stealth_gen_generals_power
+	#	BuildPaletteOrder: 16
+	#	Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.gps_scrambler1, ~prerequisite.zh_units
+	#	Description: Upgrades GPS Scrambler support power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.gps_scrambler2
 
 generals_power.gps_scrambler3:
 	Inherits: ^default.generals_power
 	Tooltip:
 		Name: GPS Scrambler - Level 3
 	-Buildable:
-#		Queue: queue.stealth_gen_generals_power
-#		BuildPaletteOrder: 17
-#		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.gps_scrambler2, ~prerequisite.zh_units
-#		Description: Upgrades GPS Scrambler support power to Level 3.
+	#	Queue: queue.stealth_gen_generals_power
+	#	BuildPaletteOrder: 17
+	#	Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.gps_scrambler2, ~prerequisite.zh_units
+	#	Description: Upgrades GPS Scrambler support power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.gps_scrambler3
 
 generals_power.arty_barrage1:
 	Inherits: ^default.generals_power
@@ -561,6 +652,8 @@ generals_power.arty_barrage1:
 		BuildPaletteOrder: 18
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points
 		Description: Enables Artillery Barrage support power from Command Center.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.arty_barrage1
 
 generals_power.arty_barrage2:
 	Inherits: ^default.generals_power
@@ -571,6 +664,8 @@ generals_power.arty_barrage2:
 		BuildPaletteOrder: 19
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.arty_barrage1
 		Description: Upgrades Artillery Barrage support power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.arty_barrage2
 
 generals_power.arty_barrage3:
 	Inherits: ^default.generals_power
@@ -581,6 +676,8 @@ generals_power.arty_barrage3:
 		BuildPaletteOrder: 20
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.arty_barrage2
 		Description: Upgrades Artillery Barrage support power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.arty_barrage3
 
 generals_power.tank_drop1:
 	Inherits: ^default.generals_power
@@ -591,6 +688,8 @@ generals_power.tank_drop1:
 		BuildPaletteOrder: 21
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, !techlevel.infonly
 		Description: Enables Tank Drop support power from Command Center.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.tank_drop1
 
 generals_power.tank_drop2:
 	Inherits: ^default.generals_power
@@ -601,6 +700,8 @@ generals_power.tank_drop2:
 		BuildPaletteOrder: 22
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.tank_drop1, !techlevel.infonly
 		Description: Upgrades Tank Drop support power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.tank_drop2
 
 generals_power.tank_drop3:
 	Inherits: ^default.generals_power
@@ -611,6 +712,8 @@ generals_power.tank_drop3:
 		BuildPaletteOrder: 23
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.tank_drop2, !techlevel.infonly
 		Description: Upgrades Tank Drop support power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.tank_drop3
 
 generals_power.anthrax_bomb:
 	Inherits: ^default.generals_power
@@ -621,6 +724,8 @@ generals_power.anthrax_bomb:
 		BuildPaletteOrder: 27
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points
 		Description: Enables Anthrax Bomb support power from Command Center.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.anthrax_bomb
 
 hack.cameo_filler.3:
 	Inherits: ^default.cameo_filler
@@ -638,6 +743,8 @@ generals_power.cluster_mines:
 		BuildPaletteOrder: 24
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points
 		Description: Enables Cluster Mines support power from Command Center.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.cluster_mines
 
 hack.cameo_filler.4:
 	Inherits: ^default.cameo_filler
@@ -657,6 +764,8 @@ generals_power.carpet_bombing:
 		Description: Enables Carpet Bombing support power from Command Center.
 	ProvidesPrerequisite@powername:
 		Prerequisite: generals_power.carpet_bombing
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.carpet_bombing
 	RenderSprites:
 		Image: generals_power.carpet_bombing
 
@@ -675,6 +784,8 @@ generals_power.carpet_bombing.nuke:
 		BuildPaletteOrder: 25
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~prerequisite.zh_units
 		Description: Enables Nuclear Carpet Bombing support power from Command Center.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.carpet_bombing.nuke
 
 generals_power.fuel_air_bomb:
 	Inherits: ^default.generals_power
@@ -687,6 +798,8 @@ generals_power.fuel_air_bomb:
 		Description: Enables Fuel Air Bomb support power from Command Center.
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.fuel_air_bomb
+	WithProductionIconOverlay:
+		Prerequisites: prerequisite.fuel_air_bomb
 
 generals_power.leaflet_drop:
 	Inherits: ^default.generals_power
@@ -699,6 +812,8 @@ generals_power.leaflet_drop:
 		Description: Enables Leaflet Drop support power from Command Center.
 	ProvidesPrerequisite@powername:
 		Prerequisite: generals_power.leaflet_drop
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.leaflet_drop
 	RenderSprites:
 		Image: generals_power.leaflet_drop
 
@@ -717,6 +832,8 @@ generals_power.sneak_attack:
 		BuildPaletteOrder: 29
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~prerequisite.zh_units
 		Description: Enables Sneak Attack support power from Command Center.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.sneak_attack
 
 hack.cameo_filler.5:
 	Inherits: ^default.cameo_filler
@@ -734,6 +851,8 @@ generals_power.emp:
 		BuildPaletteOrder: 27
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points
 		Description: Enables E. M. Pulse support power from Command Center.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.emp
 
 hack.has_points:
 	AlwaysVisible:

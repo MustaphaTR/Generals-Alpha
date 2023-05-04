@@ -1140,6 +1140,11 @@
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
+	ConditionIconOverlay@CAMO_NETTING:
+		Image: iconstripes
+		Sequence: upgraded
+		Actor: upgrade.camo_netting
+		RequiresCondition: camo_netted
 	Cloak:
 		InitialDelay: 60
 		CloakDelay: 60
@@ -1154,6 +1159,11 @@
 	ProductionQueue@CAMO_NETTING:
 		Factions: stealth
 		LowPowerModifier: 300
+	ConditionPrerequisite@CAMO_NETTING:
+		Queue: queue.stealth_gen_command_center, queue.stealth_gen_infantry, queue.stealth_gen_collector, queue.stealth_gen_vehicle, queue.stealth_gen_palace, queue.stealth_gen_black_market
+		Actor: upgrade.camo_netting
+		PauseOnCondition: camo_netted
+		RequiresCondition: zh_units
 
 ^CanHaveMines:
 	Production:
@@ -1192,6 +1202,16 @@
 		Actor: upgrade.neutron_mines
 		PauseOnCondition: neutron_mines
 		RequiresCondition: land_mines && zh_units
+	ConditionIconOverlay@NEUTRON_MINES:
+		Image: iconstripes
+		Sequence: upgraded
+		Actor: upgrade.land_mines
+		RequiresCondition: land_mines
+	ConditionIconOverlay@LAND_MINES:
+		Image: iconstripes
+		Sequence: upgraded
+		Actor: upgrade.neutron_mines
+		RequiresCondition: neutron_mines
 	ProvidesPrerequisite@buildingname:
 
 ^FlatSelectionMode:

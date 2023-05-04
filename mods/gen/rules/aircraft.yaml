@@ -1621,6 +1621,31 @@ aircraft.helix:
 		Queue: queue.nuke_gen_helix
 		Actor: upgrade.helix_nuke
 		PauseOnCondition: nuke_upgrade
+	ConditionIconOverlay@BUNKER:
+		Image: iconstripes
+		Sequence: upgraded
+		Actor: upgrade.helix_bunker
+		RequiresCondition: bunker_upgrade
+	ConditionIconOverlay@GATLING:
+		Image: iconstripes
+		Sequence: upgraded
+		Actor: upgrade.helix_speaker
+		RequiresCondition: gatling_upgrade
+	ConditionIconOverlay@SPEAKER:
+		Image: iconstripes
+		Sequence: upgraded
+		Actor: upgrade.helix_speaker
+		RequiresCondition: speaker_upgrade
+	ConditionIconOverlay@NAPALM:
+		Image: iconstripes
+		Sequence: upgraded
+		Actor: upgrade.helix_napalm
+		RequiresCondition: napalm_upgrade
+	ConditionIconOverlay@NUKE:
+		Image: iconstripes
+		Sequence: upgraded
+		Actor: upgrade.helix_nuke
+		RequiresCondition: nuke_upgrade
 	GrantConditionOnProduction@NAPALM:
 		Condition: napalm_upgrade
 		Actors: upgrade.helix_napalm

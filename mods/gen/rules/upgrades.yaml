@@ -11,6 +11,9 @@
 	RenderSprites:
 	Doctrine:
 	ProvidesPrerequisite@upgradename:
+	WithProductionIconOverlay:
+		Prerequisites: default.upgrade
+		Types: Stripe-Upgraded
 
 ^default.strategy:
 	Inherits: ^default.upgrade
@@ -38,6 +41,7 @@
 		BuildLimit: 0
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 upgrade.radar:
 	Inherits: ^default.upgrade
@@ -53,6 +57,8 @@ upgrade.radar:
 		Cost: 500
 	KillsSelf:
 		RemoveInstead: true
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.radar
 
 upgrade.land_mines:
 	Inherits: ^default.upgrade
@@ -68,6 +74,7 @@ upgrade.land_mines:
 		Cost: 250
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 upgrade.neutron_mines:
 	Inherits: ^default.upgrade
@@ -83,6 +90,7 @@ upgrade.neutron_mines:
 		Cost: 500
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 upgrade.control_rods:
 	Inherits: ^default.upgrade
@@ -100,6 +108,7 @@ upgrade.control_rods:
 		Cost: 500
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 upgrade.control_rods.laser:
 	Inherits: upgrade.control_rods
@@ -135,6 +144,7 @@ upgrade.camo_netting:
 		Cost: 500
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 upgrade.capture_building:
 	Inherits: ^default.upgrade
@@ -148,6 +158,8 @@ upgrade.capture_building:
 		Description: Allows AP Infantry to capture enemy and neutral structures.
 	Valued:
 		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.capture_building
 
 upgrade.flashbang_grenades:
 	Inherits: ^default.upgrade
@@ -162,6 +174,8 @@ upgrade.flashbang_grenades:
 		ReadyAudio: Flashbang
 	Valued:
 		Cost: 800
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.flashbang_grenades
 
 upgrade.tow_missile:
 	Inherits: ^default.upgrade
@@ -176,6 +190,8 @@ upgrade.tow_missile:
 		ReadyAudio: TOW
 	Valued:
 		Cost: 1200
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.tow_missile
 
 upgrade.sentry_gun:
 	Inherits: ^default.upgrade
@@ -189,6 +205,8 @@ upgrade.sentry_gun:
 		Description: Allows Senrty Drones to fire.
 	Valued:
 		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.sentry_gun
 
 upgrade.sc_rocket:
 	Inherits: ^default.upgrade
@@ -203,6 +221,8 @@ upgrade.sc_rocket:
 		ReadyAudio: ScorpionRocket
 	Valued:
 		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.sc_rocket
 
 upgrade.chain_gun:
 	Inherits: ^default.upgrade
@@ -217,6 +237,8 @@ upgrade.chain_gun:
 		ReadyAudio: ChainGun
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.chain_gun
 
 upgrade.black_napalm:
 	Inherits: ^default.upgrade
@@ -231,6 +253,8 @@ upgrade.black_napalm:
 		ReadyAudio: BlackNapalm
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.black_napalm
 
 upgrade.rocket_pods:
 	Inherits: ^default.upgrade
@@ -246,6 +270,8 @@ upgrade.rocket_pods:
 		ReadyAudio: RocketPods
 	Valued:
 		Cost: 800
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.rocket_pods
 
 upgrade.laser_guided_missiles:
 	Inherits: ^default.upgrade
@@ -261,6 +287,8 @@ upgrade.laser_guided_missiles:
 		ReadyAudio: LaserGuide
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.laser_guided_missiles
 
 upgrade.countermeasures:
 	Inherits: ^default.upgrade
@@ -277,6 +305,8 @@ upgrade.countermeasures:
 		ReadyAudio: Countermeasures
 	Valued:
 		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.countermeasures
 
 upgrade.bunker_busters:
 	Inherits: ^default.upgrade
@@ -293,6 +323,8 @@ upgrade.bunker_busters:
 		ReadyAudio: BunkerBusters
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.bunker_busters
 
 upgrade.stealth_comanche:
 	Inherits: ^default.upgrade
@@ -307,6 +339,8 @@ upgrade.stealth_comanche:
 		Description: Allows Comanches to stealth when not firing.
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.stealth_comanche
 
 upgrade.mig_armor:
 	Inherits: ^default.upgrade
@@ -321,6 +355,8 @@ upgrade.mig_armor:
 		ReadyAudio: MiGArmor
 	Valued:
 		Cost: 1200
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.mig_armor
 
 upgrade.satellite_hack1:
 	Inherits: ^default.upgrade
@@ -334,6 +370,8 @@ upgrade.satellite_hack1:
 		Description: Allows seeing around the enemy Command Centers.
 	Valued:
 		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.satellite_hack1
 
 upgrade.satellite_hack2:
 	Inherits: ^default.upgrade
@@ -347,6 +385,8 @@ upgrade.satellite_hack2:
 		Description: Reveals all enemy units and buildings every 4 minutes for 20 seconds.
 	Valued:
 		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.satellite_hack2
 
 upgrade.adv_training:
 	Inherits: ^default.upgrade
@@ -361,6 +401,8 @@ upgrade.adv_training:
 		ReadyAudio: AdvancedTraining
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.adv_training
 
 upgrade.drone_armor:
 	Inherits: ^default.upgrade
@@ -374,6 +416,8 @@ upgrade.drone_armor:
 		ReadyAudio: DroneArmor
 	Valued:
 		Cost: 500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.drone_armor
 
 upgrade.composite_armor:
 	Inherits: ^default.upgrade
@@ -388,6 +432,8 @@ upgrade.composite_armor:
 		ReadyAudio: CompositeArmor
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.composite_armor
 
 upgrade.chemical_suits:
 	Inherits: ^default.upgrade
@@ -404,6 +450,8 @@ upgrade.chemical_suits:
 		Prerequisite: upgrade.chemical_suits
 	Valued:
 		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.chemical_suits
 	RenderSprites:
 		Image: upgrade.chemical_suits
 
@@ -426,6 +474,8 @@ upgrade.supply_lines:
 		ReadyAudio: SupplyLines
 	Valued:
 		Cost: 800
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.supply_lines
 
 upgrade.moab:
 	Inherits: ^default.upgrade
@@ -440,6 +490,8 @@ upgrade.moab:
 		Description: Upgrades Fuel Air Bomb to Mother of All Bombs.
 	Valued:
 		Cost: 4000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.moab
 
 upgrade.camouflage:
 	Inherits: ^default.upgrade
@@ -454,6 +506,8 @@ upgrade.camouflage:
 		ReadyAudio: Camouflage
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.camouflage
 
 upgrade.arm_the_mob:
 	Inherits: ^default.upgrade
@@ -468,6 +522,8 @@ upgrade.arm_the_mob:
 		ReadyAudio: ArmTheMob
 	Valued:
 		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.arm_the_mob
 
 upgrade.toxin_shells:
 	Inherits: ^default.upgrade
@@ -482,6 +538,8 @@ upgrade.toxin_shells:
 		Prerequisites: !techlevel.infonly
 	Valued:
 		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.toxin_shells
 
 upgrade.anthrax_beta:
 	Inherits: ^default.upgrade
@@ -495,6 +553,8 @@ upgrade.anthrax_beta:
 		ReadyAudio: AnthraxBeta
 	Valued:
 		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.anthrax_beta
 
 upgrade.anthrax_gamma:
 	Inherits: ^default.upgrade
@@ -508,6 +568,8 @@ upgrade.anthrax_gamma:
 		ReadyAudio: AnthraxGamma
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.anthrax_gamma
 
 upgrade.fortified_structures:
 	Inherits: ^default.upgrade
@@ -521,6 +583,8 @@ upgrade.fortified_structures:
 		Description: Increases structure armor by 33%.
 	Valued:
 		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.fortified_structures
 
 upgrade.demolitions:
 	Inherits: ^default.upgrade
@@ -533,6 +597,8 @@ upgrade.demolitions:
 		Description: Makes units end defenses explode on dealth.
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.demolitions
 
 upgrade.nationalism:
 	Inherits: ^default.upgrade
@@ -547,6 +613,8 @@ upgrade.nationalism:
 		ReadyAudio: Nationalism
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.nationalism
 
 upgrade.patriotism:
 	Inherits: ^default.upgrade
@@ -561,6 +629,8 @@ upgrade.patriotism:
 		ReadyAudio: Patriotism
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.patriotism
 
 upgrade.autoloader:
 	Inherits: ^default.upgrade
@@ -576,6 +646,8 @@ upgrade.autoloader:
 		ReadyAudio: Autoloader
 	Valued:
 		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.autoloader
 
 upgrade.isotope_stability:
 	Inherits: ^default.upgrade
@@ -590,6 +662,8 @@ upgrade.isotope_stability:
 		Prerequisites: !techlevel.infonly
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.isotope_stability
 
 upgrade.subliminal_messaging:
 	Inherits: ^default.upgrade
@@ -604,6 +678,8 @@ upgrade.subliminal_messaging:
 		ReadyAudio: Subliminal
 	Valued:
 		Cost: 500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.subliminal_messaging
 
 upgrade.ap_bullets:
 	Inherits: ^default.upgrade
@@ -617,6 +693,8 @@ upgrade.ap_bullets:
 		ReadyAudio: APBullets
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.ap_bullets
 
 upgrade.ap_rockets:
 	Inherits: ^default.upgrade
@@ -630,6 +708,8 @@ upgrade.ap_rockets:
 		ReadyAudio: APRockets
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.ap_rockets
 
 upgrade.radar_van_scan:
 	Inherits: ^default.upgrade
@@ -644,6 +724,8 @@ upgrade.radar_van_scan:
 		Prerequisites: !techlevel.infonly
 	Valued:
 		Cost: 500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.radar_van_scan
 
 upgrade.junk_repair:
 	Inherits: ^default.upgrade
@@ -658,6 +740,8 @@ upgrade.junk_repair:
 		Prerequisites: !techlevel.infonly
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.junk_repair
 
 upgrade.buggy_ammo:
 	Inherits: ^default.upgrade
@@ -672,6 +756,8 @@ upgrade.buggy_ammo:
 		Prerequisites: !techlevel.infonly
 	Valued:
 		Cost: 1200
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.buggy_ammo
 
 upgrade.worker_shoes:
 	Inherits: ^default.upgrade
@@ -686,6 +772,8 @@ upgrade.worker_shoes:
 		ReadyAudio: WorkerShoes
 	Valued:
 		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.worker_shoes
 
 upgrade.nuclear_tanks:
 	Inherits: ^default.upgrade
@@ -703,6 +791,8 @@ upgrade.nuclear_tanks:
 		Prerequisite: upgrade.nuclear_tanks
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.nuclear_tanks
 	RenderSprites:
 		Image: upgrade.nuclear_tanks
 
@@ -729,6 +819,8 @@ upgrade.uranium_shells:
 		Prerequisite: upgrade.uranium_shells
 	Valued:
 		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.uranium_shells
 	RenderSprites:
 		Image: upgrade.uranium_shells
 
@@ -754,6 +846,8 @@ upgrade.neutron_shells:
 		Prerequisite: upgrade.neutron_shells
 	Valued:
 		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.neutron_shells
 	RenderSprites:
 		Image: upgrade.neutron_shells
 
@@ -776,6 +870,8 @@ upgrade.tactical_nuke_mig:
 		Description: Arms MiGs with a Tactical Nukes.
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.tactical_nuke_mig
 
 upgrade.scout_drone:
 	Inherits: ^default.upgrade
@@ -791,6 +887,7 @@ upgrade.scout_drone:
 		Cost: 100
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 upgrade.battle_drone:
 	Inherits: ^default.upgrade
@@ -806,6 +903,7 @@ upgrade.battle_drone:
 		Cost: 300
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 upgrade.hellfire_drone:
 	Inherits: ^default.upgrade
@@ -822,6 +920,7 @@ upgrade.hellfire_drone:
 		Cost: 500
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 upgrade.bio_bombs:
 	Inherits: ^default.upgrade
@@ -840,6 +939,7 @@ upgrade.bio_bombs:
 		Cost: 500
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 upgrade.hi_explosive_bombs:
 	Inherits: ^default.upgrade
@@ -858,6 +958,7 @@ upgrade.hi_explosive_bombs:
 		Cost: 500
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 upgrade.toxin_missiles:
 	Inherits: ^default.upgrade
@@ -875,6 +976,7 @@ upgrade.toxin_missiles:
 		Cost: 0
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 upgrade.hi_explosive_missiles:
 	Inherits: ^default.upgrade
@@ -892,6 +994,7 @@ upgrade.hi_explosive_missiles:
 		Cost: 0
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 upgrade.overlord_bunker:
 	Inherits: ^default.upgrade
@@ -908,6 +1011,7 @@ upgrade.overlord_bunker:
 		Cost: 400
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 upgrade.overlord_gatling:
 	Inherits: ^default.upgrade
@@ -924,6 +1028,7 @@ upgrade.overlord_gatling:
 		Cost: 1200
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 upgrade.overlord_speaker:
 	Inherits: ^default.upgrade
@@ -940,6 +1045,7 @@ upgrade.overlord_speaker:
 		Cost: 500
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 upgrade.helix_bunker:
 	Inherits: upgrade.overlord_bunker
@@ -987,6 +1093,7 @@ upgrade.helix_napalm:
 		Cost: 800
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 upgrade.helix_nuke:
 	Inherits: ^default.upgrade
@@ -1004,6 +1111,7 @@ upgrade.helix_nuke:
 		Cost: 800
 	KillsSelf:
 		RemoveInstead: true
+	-WithProductionIconOverlay:
 
 strategy.bombardment:
 	Inherits: ^default.strategy

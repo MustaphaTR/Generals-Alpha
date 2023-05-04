@@ -314,11 +314,6 @@ building.gla_command_center:
 		QueuedAudio: Training
 		InstantCashDrain: true
 		DisplayOrder: 13
-	ConditionPrerequisite@CAMO_NETTING:
-		Queue: queue.stealth_gen_command_center
-		Actor: upgrade.camo_netting
-		PauseOnCondition: camo_netted
-		RequiresCondition: zh_units
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_command_center
 	ProductionBar@Stealth:
@@ -491,6 +486,11 @@ building.prc_command_center:
 		Queue: queue.prc_command_center
 		Actor: upgrade.radar
 		PauseOnCondition: radar
+	ConditionIconOverlay@RADAR:
+		Image: iconstripes
+		Sequence: upgraded
+		Actor: upgrade.radar
+		RequiresCondition: radar
 	WithIdleOverlay@RADAR:
 		Sequence: radar
 		RequiresCondition: !build-incomplete && radar
@@ -981,6 +981,11 @@ building.cold_fusion_reactor.boss:
 		Queue: queue.boss_gen_cold_fusion_reactor
 		Actor: upgrade.control_rods
 		PauseOnCondition: control_rods
+	ConditionIconOverlay@CONTROL_RODS:
+		Image: iconstripes
+		Sequence: upgraded
+		Actor: upgrade.control_rods
+		RequiresCondition: control_rods
 	RenderSprites:
 		Image: building.cold_fusion_reactor
 
@@ -1160,11 +1165,6 @@ building.gla_barracks:
 		QueuedAudio: Training
 		InstantCashDrain: true
 		DisplayOrder: 23
-	ConditionPrerequisite@CAMO_NETTING:
-		Queue: queue.stealth_gen_infantry
-		Actor: upgrade.camo_netting
-		PauseOnCondition: camo_netted
-		RequiresCondition: zh_units
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_infantry
 	ProductionBar@Toxin:
@@ -1430,11 +1430,6 @@ building.gla_supply_stash:
 		QueuedAudio: Training
 		InstantCashDrain: true
 		DisplayOrder: 17
-	ConditionPrerequisite@CAMO_NETTING:
-		Queue: queue.stealth_gen_collector
-		Actor: upgrade.camo_netting
-		PauseOnCondition: camo_netted
-		RequiresCondition: zh_units
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_collector
 	ProductionBar@Stealth:
@@ -2284,11 +2279,6 @@ building.arms_dealer:
 		QueuedAudio: Training
 		InstantCashDrain: true
 		DisplayOrder: 37
-	ConditionPrerequisite@CAMO_NETTING:
-		Queue: queue.stealth_gen_vehicle
-		Actor: upgrade.camo_netting
-		PauseOnCondition: camo_netted
-		RequiresCondition: zh_units
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_vehicle
 	ProductionBar@Toxin:
@@ -3195,11 +3185,6 @@ building.palace:
 		QueuedAudio: Training
 		InstantCashDrain: true
 		DisplayOrder: 58
-	ConditionPrerequisite@CAMO_NETTING:
-		Queue: queue.stealth_gen_palace
-		Actor: upgrade.camo_netting
-		PauseOnCondition: camo_netted
-		RequiresCondition: zh_units
 	ProductionBar@Vanilla:
 		ProductionType: queue.palace
 	ProductionBar@Toxin:
@@ -3472,11 +3457,6 @@ building.black_market:
 		QueuedAudio: Training
 		InstantCashDrain: true
 		DisplayOrder: 62
-	ConditionPrerequisite@CAMO_NETTING:
-		Queue: queue.stealth_gen_black_market
-		Actor: upgrade.camo_netting
-		PauseOnCondition: camo_netted
-		RequiresCondition: zh_units
 	ProductionBar@Vanilla:
 		ProductionType: queue.black_market
 	ProductionBar@Stealth:
