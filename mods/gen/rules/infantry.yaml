@@ -28,6 +28,7 @@ infantry.pilot:
 		CargoType: Pilot
 	WithInfantryBody:
 		IdleSequences: idle1
+		StandSequences: stand
 	Voiced:
 		VoiceSet: PilotVoice
 
@@ -78,6 +79,9 @@ infantry.worker:
 		CloakTypes: Mine
 		Range: 2c512
 	WithSpriteBody:
+	WithInfantryBody:
+		-IdleSequences:
+		StandSequences: stand
 	Voiced:
 		VoiceSet: WorkerVoice
 	RenderSprites:
@@ -1282,6 +1286,7 @@ infantry.hacker:
 		DeployedCondition: deployed
 		Facing: 512
 	WithInfantryBody:
+		StandSequences: stand
 		DefaultAttackSequence: hack
 		RequiresCondition: !deployed
 	WithSpriteBody@DEPLOYED:

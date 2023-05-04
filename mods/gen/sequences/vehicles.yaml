@@ -467,17 +467,9 @@ husk.emperor_overlord:
 	turret: 4tnkemp
 
 colorpicker.overlord_tank:
-	idle: 4tnk
-		Facings: 32
+	Inherits: vehicle.overlord_tank
+	Defaults:
 		Offset: -16, 0
-		UseClassicFacings: True
-	turret: 4tnk
-		Start: 32
-		Facings: 32
-		Offset: -16, 0
-		UseClassicFacings: True
-	muzzle: gunfire2
-		Length: 5
 
 vehicle.bomb_truck:
 	idle: dtrk

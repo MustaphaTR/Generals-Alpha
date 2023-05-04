@@ -2407,7 +2407,6 @@ building.prc_war_factory:
 		Offset: 0,0,256
 	SharedCargo:
 		Types: Infantry, Vehicle
-		PipCount: 10
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
@@ -3852,6 +3851,8 @@ building.scud_storm:
 	WithBuildingBib:
 	-WithMakeAnimation:
 	Sellable:
+		-RequiresCondition:
+	Capturable:
 		-RequiresCondition:
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
