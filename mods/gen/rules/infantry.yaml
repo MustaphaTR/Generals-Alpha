@@ -1096,6 +1096,7 @@ hack.angry_mob.male:
 		Prerequisites: upgrade.arm_the_mob
 	WithInfantryBody:
 		-IdleSequences:
+		StandSequences: stand
 
 hack.angry_mob.female:
 	Inherits: ^default.angry_mob
@@ -1113,6 +1114,7 @@ hack.angry_mob.female:
 		Prerequisites: upgrade.arm_the_mob
 	WithInfantryBody:
 		-IdleSequences:
+		StandSequences: stand
 
 hack.angry_mob.molotov:
 	Inherits: ^default.angry_mob
