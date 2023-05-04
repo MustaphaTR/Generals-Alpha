@@ -420,7 +420,7 @@ fake.scud_storm:
 		Count: 4
 
 fake.demo_trap:
-	Inherits: ^FakeBuilding
+	Inherits: ^FakeDefense
 	Inherits@REVEAL: ^Reveal200
 	Buildable:
 		BuildPaletteOrder: 16
@@ -508,7 +508,7 @@ fake.advanced_demo_trap:
 		Cost: 25
 
 fake.tunnel_network:
-	Inherits: ^FakeBuilding
+	Inherits: ^FakeDefense
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
@@ -583,7 +583,7 @@ fake.toxin_tunnel_network:
 		Image: building.toxin_tunnel_network
 
 fake.stinger_site:
-	Inherits: ^FakeBuilding
+	Inherits: ^FakeDefense
 	Inherits@REVEAL: ^Reveal150
 	Inherits@SHAPE: ^1x1Shape
 	Buildable:

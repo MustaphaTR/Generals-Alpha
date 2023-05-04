@@ -1883,6 +1883,18 @@
 		Categories: Defense
 	-CommandBarBlacklist:
 
+^FakeDefense:
+	Inherits: ^FakeBuilding
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack, Disable
+	-AcceptsDeliveredCash:
+	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	Explodes:
+		Weapon: SmallBuildingExplode
+		EmptyWeapon: SmallBuildingExplode
+
 ^Hole:
 	Inherits: ^BasicBuilding
 	Inherits@REVEAL: ^Reveal100
