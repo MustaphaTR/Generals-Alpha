@@ -691,7 +691,7 @@ hack.spawn_sneak_attack:
 	Inherits: ^default.spawner
 	Report: placbldg.aud
 	ReloadDelay: 10000
-	-Warhead@2Spawner: SpawnActor
+	-Warhead@2Spawner:
 	Warhead@2Spawner: SpawnBuilding
 		Buildings: building.tunnel_network.sneak_attack
 

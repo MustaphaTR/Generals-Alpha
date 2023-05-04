@@ -45,8 +45,8 @@ cannon.scorpion_tank:
 			husk.battle_bus.crate-1: 81
 			husk.battle_bus.crate-2: 75
 		DamageTypes: TriggerProne, DropCrate, ExplosionDeath
-	-Warhead@2Smu: LeaveSmudge
-	-Warhead@2SmuSnow: LeaveSmudge
+	-Warhead@2Smu:
+	-Warhead@2SmuSnow:
 	Warhead@3Eff: CreateEffect
 		-ImpactSounds:
 	Warhead@4EffWater: CreateEffect
@@ -490,8 +490,8 @@ cannon.nuke_cannon.neutron:
 		Damage: 100000
 		ValidTargets: Infantry
 		DamageTypes: FireDeath
-	-Warhead@2Smu: LeaveSmudge
-	-Warhead@2SmuSnow: LeaveSmudge
+	-Warhead@2Smu:
+	-Warhead@2SmuSnow:
 	Warhead@3Eff: CreateEffect
 		Explosions: mininuke
 		ImpactSounds: gexpneua.aud, gexpneub.aud, gexpneuc.aud, gexpneud.aud

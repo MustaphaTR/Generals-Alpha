@@ -126,7 +126,7 @@ missile.mig.ground.nuke:
 		ValidTargets: Ground, Water
 	Warhead@2Dam: SpreadDamage
 		ValidTargets: Ground, Water
-	-Warhead@1Fire: SpawnActor
+	-Warhead@1Fire:
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion
 		ImpactSounds: kaboom25.aud
@@ -1234,8 +1234,8 @@ missile.scud_storm.demo:
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c896
 		Damage: 45000
-	-Warhead@5Radio: CreateRadioactivity
-	-Warhead@6Radio: CreateRadioactivity
+	-Warhead@5Radio:
+	-Warhead@6Radio:
 	Warhead@7Rev: RevealShroud
 		Radius: 3c512
 		Duration: 50
