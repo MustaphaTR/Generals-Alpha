@@ -2323,6 +2323,7 @@ vehicle.tomahawk_launcher:
 	AutoTarget:
 		ScanRadius: 8
 	AttackTurreted:
+		TargetFrozenActors: true
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
 	WithSpriteTurret@Full:
@@ -2475,6 +2476,7 @@ vehicle.scud_launcher:
 		RequiresCondition: hi_explosive_missiles && scrap_create_bonus == 2
 		PauseOnCondition: !ammo
 	AttackFrontal:
+		TargetFrozenActors: true
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
 	WithFacingSpriteBody:
@@ -2596,6 +2598,7 @@ vehicle.inferno_cannon:
 		Condition: black_napalm
 		Prerequisites: upgrade.black_napalm
 	AttackFrontal:
+		TargetFrozenActors: true
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
 	WithMuzzleOverlay:
@@ -3575,6 +3578,7 @@ vehicle.nuke_cannon:
 		ScanRadius: 8
 	-Passenger:
 	AttackTurreted:
+		TargetFrozenActors: true
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
 	WithMuzzleOverlay:
