@@ -11,6 +11,8 @@
 	RenderSprites:
 	Doctrine:
 	ProvidesPrerequisite@upgradename:
+	UpdatesPlayerStatistics:
+		AddToUpgradesTab: true
 	WithProductionIconOverlay:
 		Prerequisites: default.upgrade
 		Types: Stripe-Upgraded
@@ -41,6 +43,7 @@
 		BuildLimit: 0
 	KillsSelf:
 		RemoveInstead: true
+	-UpdatesPlayerStatistics:
 	-WithProductionIconOverlay:
 
 upgrade.radar:

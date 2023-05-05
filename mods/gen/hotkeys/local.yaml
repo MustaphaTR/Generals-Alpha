@@ -1,0 +1,25 @@
+CycleCollectors: N
+	Description: Cycle Collectors
+	Types: World, Player, Spectator
+
+ProductionTypeGeneralsPower: G
+	Description: Gen. Power
+	Types: Production, Player
+
+ProductionScrollUp: O
+	Description: Scroll up
+	Types: Production, Player
+
+ProductionScrollDown: L
+	Description: Scroll down
+	Types: Production, Player
+
+StatisticsMinimal: BACKQUOTE
+	Description: Minimal statistics
+	Types: Observer
+	Contexts: Spectator
+
+StatisticsUpgrades: F8
+	Description: CP and Upgrade statistics
+	Types: Observer
+	Contexts: Spectator

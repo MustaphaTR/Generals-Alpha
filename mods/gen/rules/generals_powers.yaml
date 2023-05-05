@@ -23,6 +23,8 @@
 		IconPalette: cameo
 	RenderSprites:
 	ProvidesPrerequisite@powername:
+	UpdatesPlayerStatistics:
+		AddToUpgradesTab: true
 	WithProductionIconOverlay:
 		Prerequisites: default.generals_power
 		Types: Stripe-Taken
