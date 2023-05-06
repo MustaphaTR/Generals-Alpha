@@ -52,6 +52,7 @@
 
 missile.mig.ground:
 	Inherits: ^AntiGroundMissile
+	TargetActorCenter: true
 	ValidTargets: Ground, Water, Trees
 	InvalidTargets: StingerSoldier
 	ReloadDelay: 8
@@ -102,9 +103,24 @@ missile.mig.ground:
 			building.defense: 25
 			building.stinger_site: 40
 			aircraft.normal: 25
-	Warhead@1Fire: SpawnActor
-		Actors: firestorm.normal.50
-		InvalidTargets: Water
+	Warhead@test2: TriggerLayerWeapon
+		LayerName: InfernoLayer
+		TiggerWeapon: explosion.inferno_layer.firestorm
+		TiggerAtLevelMin: 320
+		Level: 0
+		TiggerSetLevel: 99
+		ImpactActors: false
+		ValidTargets: Ground, Air, Water
+		AirThreshold: 8c0
+	Warhead@test1: TriggerLayerWeapon
+		LayerName: InfernoLayer
+		TiggerAtLevelMin: 150
+		Level: 75
+		TiggerWeapon: explosion.inferno_layer.flame
+		AllowSetLevelWhenTrigger: false
+		ImpactActors: false
+		ValidTargets: Ground, Air, Water
+		AirThreshold: 8c0
 	Warhead@3Eff: CreateEffect
 		Explosions: napalm
 		ImpactSounds: firebl3.aud
@@ -113,8 +129,10 @@ missile.mig.ground.blue:
 	Inherits: missile.mig.ground
 	Warhead@2Dam: SpreadDamage
 		Damage: 5000
-	Warhead@1Fire: SpawnActor
-		Actors: firestorm.blue.50
+	Warhead@test2: TriggerLayerWeapon
+		TiggerWeapon: explosion.inferno_layer.blackfirestorm
+	Warhead@test1: TriggerLayerWeapon
+		TiggerWeapon: explosion.inferno_layer.blackflame
 	Warhead@3Eff: CreateEffect
 		Explosions: blue_napalm
 
@@ -126,7 +144,8 @@ missile.mig.ground.nuke:
 		ValidTargets: Ground, Water
 	Warhead@2Dam: SpreadDamage
 		ValidTargets: Ground, Water
-	-Warhead@1Fire:
+	-Warhead@test1:
+	-Warhead@test2:
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion
 		ImpactSounds: kaboom25.aud
