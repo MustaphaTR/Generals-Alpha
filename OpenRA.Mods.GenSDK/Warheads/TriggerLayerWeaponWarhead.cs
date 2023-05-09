@@ -1,14 +1,25 @@
-﻿using System;
+﻿#region Copyright & License Information
+/*
+ * Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
+ * This file is part of OpenRA, which is free software. It is made
+ * available to you under the terms of the GNU General Public License
+ * as published by the Free Software Foundation, either version 3 of
+ * the License, or (at your option) any later version. For more
+ * information, see COPYING.
+ */
+#endregion
+
+using System;
 using System.Linq;
 using OpenRA.GameRules;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Warheads;
-using OpenRA.Mods.TA.Traits;
+using OpenRA.Mods.GenSDK.Traits;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.TA.Warheads
+namespace OpenRA.Mods.GenSDK.Warheads
 {
-	[Desc("Works like infernal cannon like in cnc General, used by TA")]
+	[Desc("Works like Inferno Canon like in CnC General, used by TA.")]
 	public class TriggerLayerWeaponWarhead : Warhead, IRulesetLoaded<WeaponInfo>
 	{
 		[Desc("Range between falloff steps in cells.")]
