@@ -167,44 +167,20 @@ parabomb.helix:
 	Inherits: ^ParaBomb
 	ReloadDelay: 250
 	RequiresForceFire: true
-	Warhead@1Dam: SpreadDamage
-		Spread: 0c128
-		Damage: 3500
-		Versus:
-			vehicle.battle_bus.crate-1: 90
-			vehicle.battle_bus.crate-2: 80
-			husk.battle_bus.crate-1: 80
-			husk.battle_bus.crate-2: 70
-			aircraft.normal.countermeasures: 90
-			aircraft.comanche: 130
-			aircraft.comanche.countermeasures: 110
-			aircraft.chinook: 50
-			building.tough: 80
-			building.internet_center: 70
-		DamageTypes: FireDeath, TriggerProne, Incendiary
-	Warhead@2Dam: SpreadDamage
-		Spread: 0c640
-		Damage: 4000
-		Versus:
-			vehicle.battle_bus.crate-1: 90
-			vehicle.battle_bus.crate-2: 80
-			husk.battle_bus.crate-1: 80
-			husk.battle_bus.crate-2: 70
-			aircraft.normal.countermeasures: 90
-			aircraft.comanche: 130
-			aircraft.comanche.countermeasures: 110
-			aircraft.chinook: 50
-			building.tough: 80
-			building.internet_center: 70
-		DamageTypes: FireDeath, TriggerProne, Incendiary
-	Warhead@3Fire: SpawnActor
-		Actors: firestorm.normal.plus
-		InvalidTargets: Water
+	Warhead@test2: TriggerLayerWeapon
+		LayerName: InfernoLayer
+		TiggerWeapon: explosion.inferno_layer.firestorm
+		TiggerSetLevel: 0
+		AllowSetLevelWhenTrigger: false
+		Level: 0
+		ImpactActors: false
+		ValidTargets: Ground, Air, Water
+		AirThreshold: 8c0
 
 parabomb.helix.blue:
 	Inherits: parabomb.helix
-	Warhead@3Fire: SpawnActor
-		Actors: firestorm.blue.plus
+	Warhead@test2: TriggerLayerWeapon
+		TiggerWeapon: explosion.inferno_layer.blackfirestorm
 
 parabomb.helix.nuke:
 	Inherits: parabomb.helix
@@ -214,7 +190,7 @@ parabomb.helix.nuke:
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c512
 		Damage: 5000
-	-Warhead@3Fire:
+	-Warhead@test2:
 	Warhead@4Eff_impact: CreateEffect
 		Explosions: mininuke
 		ImpactSounds: kaboom1.aud

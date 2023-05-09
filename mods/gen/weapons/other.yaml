@@ -53,9 +53,6 @@ flamer.dragon_tank:
 			building.tough: 50
 			building.defense: 50
 			building.stinger_site: 50
-	Warhead@1Fire: SpawnActor
-		Actors: firestorm.normal.50
-		InvalidTargets: Water
 
 flamer.dragon_tank.blue:
 	Inherits: flamer.dragon_tank
@@ -64,8 +61,6 @@ flamer.dragon_tank.blue:
 		Image: blue_FB1
 	Warhead@1Dam: SpreadDamage
 		Damage: 20000
-	Warhead@1Fire: SpawnActor
-		Actors: firestorm.blue.50
 	Warhead@3Eff: CreateEffect
 		Explosions: blue_napalm
 
@@ -194,39 +189,6 @@ hack.nuclear_reactor:
 		Spread: 0c128
 		Damage: 3
 		AffectsParent: true
-
-hack.firestorm.normal:
-	ValidTargets: Ground, Water, Trees
-	ReloadDelay: 15
-	Range: 2c0
-	Projectile: InstantHit
-	Warhead@1Dam: SpreadDamage
-		Spread: 0c128
-		Damage: 3000
-		ValidTargets: Ground, Water, Trees
-		Versus:
-			infantry.normal: 150
-			vehicle.humvee: 50
-			vehicle.avenger: 50
-			vehicle.tank: 25
-			vehicle.assault_troop_crawler: 25
-			vehicle.dragon_tank: 0
-			vehicle.battle_bus: 50
-			vehicle.battle_bus.crate-1: 45
-			vehicle.battle_bus.crate-2: 40
-			husk.battle_bus: 50
-			husk.battle_bus.crate-1: 45
-			husk.battle_bus.crate-2: 40
-			building.normal: 50
-			building.tough: 50
-			building.defense: 50
-			building.stinger_site: 50
-		DamageTypes: TriggerProne, FireDeath, Incendiary
-
-hack.firestorm.blue:
-	Inherits: hack.firestorm.normal
-	Warhead@1Dam: SpreadDamage
-		Damage: 4500
 
 toxin.toxin_tractor:
 	InvalidTargets: Structure, Wall
@@ -674,18 +636,6 @@ hack.spawn_2_mines:
 	Inherits: ^default.spawner
 	Warhead@2Spawner: SpawnActor
 		Actors: hack.mine, hack.mine
-
-hack.spawn_1_firestrorm:
-	Inherits: ^default.spawner
-	ReloadDelay: 10000
-	Warhead@2Spawner: SpawnActor
-		Actors: firestorm.normal
-
-hack.spawn_1_firestrorm.blue:
-	Inherits: ^default.spawner
-	ReloadDelay: 10000
-	Warhead@2Spawner: SpawnActor
-		Actors: firestorm.blue
 
 hack.spawn_sneak_attack:
 	Inherits: ^default.spawner

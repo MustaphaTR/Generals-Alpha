@@ -372,6 +372,7 @@ cannon.inferno_cannon:
 		Speed: 384
 		TrailImage: fb2
 		Image: FB1
+		Inaccuracy: 0
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c341
 		Damage: 3000
@@ -387,9 +388,23 @@ cannon.inferno_cannon:
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
-	Warhead@1Fire: SpawnActor
-		Actors: firestorm.normal
-		InvalidTargets: Water
+	Warhead@test2: TriggerLayerWeapon
+		LayerName: InfernoLayer
+		TiggerWeapon: explosion.inferno_layer.firestorm
+		TiggerSetLevel: 0
+		Level: 0
+		ImpactActors: false
+		ValidTargets: Ground, Air, Water
+		AirThreshold: 8c0
+		TiggerAtLevelMin: 320
+	Warhead@test1: TriggerLayerWeapon
+		LayerName: InfernoLayer
+		AllowSetLevelWhenTrigger: false
+		TiggerAtLevelMin: 50
+		TiggerWeapon: explosion.inferno_layer.flame
+		ImpactActors: false
+		ValidTargets: Ground, Air, Water
+		AirThreshold: 8c0
 	Warhead@3Eff: CreateEffect
 		Explosions: napalm
 		ImpactSounds: firebl3.aud
@@ -401,8 +416,10 @@ cannon.inferno_cannon.blue:
 		Image: blue_FB1
 	Warhead@1Dam: SpreadDamage
 		Damage: 4500
-	Warhead@1Fire: SpawnActor
-		Actors: firestorm.blue
+	Warhead@test2: TriggerLayerWeapon
+		TiggerWeapon: explosion.inferno_layer.blackfirestorm
+	Warhead@test1: TriggerLayerWeapon
+		TiggerWeapon: explosion.inferno_layer.blackflame
 	Warhead@3Eff: CreateEffect
 		Explosions: blue_napalm
 
