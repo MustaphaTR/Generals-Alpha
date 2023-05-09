@@ -13,14 +13,14 @@ using System;
 using System.Linq;
 using OpenRA.GameRules;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Warheads;
 using OpenRA.Mods.GenSDK.Traits;
+using OpenRA.Mods.Yupgi_alert.Warheads;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.GenSDK.Warheads
 {
 	[Desc("Works like Inferno Canon like in CnC General, used by TA.")]
-	public class TriggerLayerWeaponWarhead : Warhead, IRulesetLoaded<WeaponInfo>
+	public class TriggerLayerWeaponWarhead : WarheadAS, IRulesetLoaded<WeaponInfo>
 	{
 		[Desc("Range between falloff steps in cells.")]
 		public readonly WDist Spread = new WDist(1024);

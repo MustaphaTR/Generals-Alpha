@@ -388,7 +388,7 @@ cannon.inferno_cannon:
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
-	Warhead@test2: TriggerLayerWeapon
+	Warhead@1Fire: TriggerLayerWeapon
 		LayerName: InfernoLayer
 		TiggerWeapon: explosion.inferno_layer.firestorm
 		TiggerSetLevel: 0
@@ -397,7 +397,7 @@ cannon.inferno_cannon:
 		ValidTargets: Ground, Air, Water
 		AirThreshold: 8c0
 		TiggerAtLevelMin: 320
-	Warhead@test1: TriggerLayerWeapon
+	Warhead@2Fire: TriggerLayerWeapon
 		LayerName: InfernoLayer
 		AllowSetLevelWhenTrigger: false
 		TiggerAtLevelMin: 50
@@ -416,9 +416,9 @@ cannon.inferno_cannon.blue:
 		Image: blue_FB1
 	Warhead@1Dam: SpreadDamage
 		Damage: 4500
-	Warhead@test2: TriggerLayerWeapon
+	Warhead@1Fire: TriggerLayerWeapon
 		TiggerWeapon: explosion.inferno_layer.blackfirestorm
-	Warhead@test1: TriggerLayerWeapon
+	Warhead@2Fire: TriggerLayerWeapon
 		TiggerWeapon: explosion.inferno_layer.blackflame
 	Warhead@3Eff: CreateEffect
 		Explosions: blue_napalm

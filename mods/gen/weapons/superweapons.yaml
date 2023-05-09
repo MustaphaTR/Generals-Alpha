@@ -167,7 +167,7 @@ parabomb.helix:
 	Inherits: ^ParaBomb
 	ReloadDelay: 250
 	RequiresForceFire: true
-	Warhead@test2: TriggerLayerWeapon
+	Warhead@1Fire: TriggerLayerWeapon
 		LayerName: InfernoLayer
 		TiggerWeapon: explosion.inferno_layer.firestorm
 		TiggerSetLevel: 0
@@ -179,7 +179,7 @@ parabomb.helix:
 
 parabomb.helix.blue:
 	Inherits: parabomb.helix
-	Warhead@test2: TriggerLayerWeapon
+	Warhead@1Fire: TriggerLayerWeapon
 		TiggerWeapon: explosion.inferno_layer.blackfirestorm
 
 parabomb.helix.nuke:
@@ -190,7 +190,7 @@ parabomb.helix.nuke:
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c512
 		Damage: 5000
-	-Warhead@test2:
+	-Warhead@1Fire:
 	Warhead@4Eff_impact: CreateEffect
 		Explosions: mininuke
 		ImpactSounds: kaboom1.aud

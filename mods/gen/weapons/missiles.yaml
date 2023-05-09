@@ -103,7 +103,7 @@ missile.mig.ground:
 			building.defense: 25
 			building.stinger_site: 40
 			aircraft.normal: 25
-	Warhead@test2: TriggerLayerWeapon
+	Warhead@1Fire: TriggerLayerWeapon
 		LayerName: InfernoLayer
 		TiggerWeapon: explosion.inferno_layer.firestorm
 		TiggerAtLevelMin: 320
@@ -112,7 +112,7 @@ missile.mig.ground:
 		ImpactActors: false
 		ValidTargets: Ground, Air, Water
 		AirThreshold: 8c0
-	Warhead@test1: TriggerLayerWeapon
+	Warhead@2Fire: TriggerLayerWeapon
 		LayerName: InfernoLayer
 		TiggerAtLevelMin: 150
 		Level: 75
@@ -129,9 +129,9 @@ missile.mig.ground.blue:
 	Inherits: missile.mig.ground
 	Warhead@2Dam: SpreadDamage
 		Damage: 5000
-	Warhead@test2: TriggerLayerWeapon
+	Warhead@1Fire: TriggerLayerWeapon
 		TiggerWeapon: explosion.inferno_layer.blackfirestorm
-	Warhead@test1: TriggerLayerWeapon
+	Warhead@2Fire: TriggerLayerWeapon
 		TiggerWeapon: explosion.inferno_layer.blackflame
 	Warhead@3Eff: CreateEffect
 		Explosions: blue_napalm
@@ -144,8 +144,8 @@ missile.mig.ground.nuke:
 		ValidTargets: Ground, Water
 	Warhead@2Dam: SpreadDamage
 		ValidTargets: Ground, Water
-	-Warhead@test1:
-	-Warhead@test2:
+	-Warhead@1Fire:
+	-Warhead@2Fire:
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion
 		ImpactSounds: kaboom25.aud
