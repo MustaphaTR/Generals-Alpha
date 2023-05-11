@@ -150,6 +150,7 @@ Heal:
 	Range: 4c0
 	Report: heal2.aud
 	ValidTargets: Infantry
+	ValidRelationships: Ally
 	Projectile: Bullet
 		Speed: 1c682
 	Warhead@1Dam: SpreadDamage
@@ -166,6 +167,19 @@ Repair:
 	Warhead@1Dam: SpreadDamage
 		Damage: -2000
 		ValidTargets: Repair
+
+repair.battledrone:
+	Inherits: Repair
+	ReloadDelay: 40
+	Range: 0c256
+	Projectile: LaserZap
+		Duration: 0
+		HitAnim: explosion 
+		HitAnimSequence: smallspark
+		LaunchEffectImage: explosion
+		LaunchEffectSequence: smallspark
+	Warhead@1Dam: TargetDamage
+		Damage: -1000
 
 Crush:
 	Warhead@1Dam: SpreadDamage

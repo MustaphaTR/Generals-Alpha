@@ -996,6 +996,15 @@ aircraft.battle_drone:
 		Weapon: mg.battle_drone
 		LocalOffset: 300,0,-16
 		MuzzleSequence: muzzle
+	Armament@repair:
+		Weapon: repair.battledrone
+		LocalOffset: 0,0,-100
+		TargetRelationships: Ally
+		ForceTargetRelationships: Ally
+	AutoTarget:
+		ScanRadius: 4
+		MinimumScanTimeInterval: 19
+		MaximumScanTimeInterval: 19
 	WithMuzzleOverlay:
 	AttackAircraft:
 		AttackType: Hover
