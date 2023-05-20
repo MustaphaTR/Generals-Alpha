@@ -1269,11 +1269,17 @@
 	WithSpriteControlGroupDecoration:
 	Selectable:
 		Bounds: 24, 24
+	GrantConditionOnDamageState@FullHealth:
+		Condition: fullhealth
+		ValidDamageStates: Undamaged
+	Targetable@REPAIR:
+		RequiresCondition: !parachute && !fullhealth
+		TargetTypes: Repair
 	Targetable:
-		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack
+		TargetTypes: Ground, Vehicle, Vehicle-Disguise, DetonateAttack
 		RequiresCondition: !parachute && !driver_killed
 	Targetable@DRIVER_KILLED:
-		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, NoDriverKill, NoAutoTarget
+		TargetTypes: Ground, Vehicle, Vehicle-Disguise, DetonateAttack, NoDriverKill, NoAutoTarget
 		RequiresCondition: driver_killed
 	RepairableNear:
 		RepairActors: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
@@ -1333,10 +1339,10 @@
 	Mobile:
 		Locomotor: locomotor.tracked
 	Targetable:
-		TargetTypes: Ground, C4, Repair, Tank, Vehicle-Disguise, DetonateAttack
+		TargetTypes: Ground, C4, Tank, Vehicle-Disguise, DetonateAttack
 		RequiresCondition: !parachute && !driver_killed
 	Targetable@DRIVER_KILLED:
-		TargetTypes: Ground, C4, Repair, Tank, Vehicle-Disguise, DetonateAttack, NoDriverKill, NoAutoTarget
+		TargetTypes: Ground, C4, Tank, Vehicle-Disguise, DetonateAttack, NoDriverKill, NoAutoTarget
 		RequiresCondition: driver_killed
 	ProximityCaptor:
 		Types: Tank
@@ -1442,7 +1448,7 @@
 	SpeedMultiplier@GENERIC:
 		Modifier: 200
 	Targetable:
-		TargetTypes: Ground, C4, Repair, Tank, Vehicle-Disguise, DetonateAttack
+		TargetTypes: Ground, C4, Tank, Vehicle-Disguise, DetonateAttack
 		RequiresCondition: !parachute
 	MapEditorData:
 		Categories: Civilian vehicle
@@ -1634,8 +1640,14 @@
 	WithSpriteControlGroupDecoration:
 	Selectable:
 		Bounds: 24,24
+	GrantConditionOnDamageState@FullHealth:
+		Condition: fullhealth
+		ValidDamageStates: Undamaged
+	Targetable@REPAIR:
+		RequiresCondition: !fullhealth
+		TargetTypes: Repair
 	Targetable:
-		TargetTypes: Ground, Water, Ship, Repair, DetonateAttack
+		TargetTypes: Ground, Water, Ship, DetonateAttack
 	HiddenUnderFog:
 	AttackMove:
 	ActorLostNotification:
@@ -1688,8 +1700,14 @@
 		Bounds: 24,24
 	Aircraft:
 		AirborneCondition: airborne
+	GrantConditionOnDamageState@FullHealth:
+		Condition: fullhealth
+		ValidDamageStates: Undamaged
+	Targetable@REPAIR:
+		RequiresCondition: !airborne && !fullhealth
+		TargetTypes: Repair
 	Targetable@GROUND:
-		TargetTypes: Ground, Repair, Vehicle
+		TargetTypes: Ground, Vehicle
 		RequiresCondition: !airborne
 	Targetable@AIRBORNE:
 		TargetTypes: Air

@@ -916,9 +916,9 @@ vehicle.ambulance:
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	Targetable:
-		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, ImmueToToxin
+		TargetTypes: Ground, Vehicle, Vehicle-Disguise, DetonateAttack, ImmueToToxin
 	Targetable@DRIVER_KILLED:
-		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, ImmueToToxin, NoDriverKill, NoAutoTarget
+		TargetTypes: Ground, Vehicle, Vehicle-Disguise, DetonateAttack, ImmueToToxin, NoDriverKill, NoAutoTarget
 	-DamagedByRadioactivity@RADIOACTIVITY:
 	-DamagedByRadioactivity@ANTHRAX_ALPHA:
 	-DamagedByRadioactivity@ANTHRAX_BETA:
@@ -981,7 +981,7 @@ vehicle.sentry_drone:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Targetable:
-		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, NoDriverKill
+		TargetTypes: Ground, Vehicle, Vehicle-Disguise, DetonateAttack, NoDriverKill
 		RequiresCondition: !parachute
 	-Targetable@DRIVER_KILLED:
 	-Capturable:
@@ -1387,9 +1387,9 @@ vehicle.toxin_tractor:
 		Pieces: 1, 1
 		Range: 1c0, 1c0
 	Targetable:
-		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, ImmueToToxin
+		TargetTypes: Ground, Vehicle, Vehicle-Disguise, DetonateAttack, ImmueToToxin
 	Targetable@DRIVER_KILLED:
-		TargetTypes: Ground, Repair, Vehicle, Vehicle-Disguise, DetonateAttack, ImmueToToxin, NoDriverKill, NoAutoTarget
+		TargetTypes: Ground, Vehicle, Vehicle-Disguise, DetonateAttack, ImmueToToxin, NoDriverKill, NoAutoTarget
 	Voiced:
 		VoiceSet: ToxinTractorVoice
 
@@ -1841,7 +1841,7 @@ vehicle.battle_Bus:
 	Targetable@DRIVER_KILLED:
 		RequiresCondition: !parachute && driver_killed && !husk
 	Targetable@HUSK:
-		TargetTypes: Ground, Repair, Vehicle, DetonateAttack, NoDriverKill
+		TargetTypes: Ground, Vehicle, DetonateAttack, NoDriverKill
 		RequiresCondition: !parachute && husk
 	Passenger:
 		Weight: 8
@@ -3906,7 +3906,7 @@ vehicle.combat_cycle:
 		Factions: demo
 	AcceptsDeliveredExperience:
 	Targetable:
-		TargetTypes: Ground, Repair, Vehicle, DetonateAttack
+		TargetTypes: Ground, Vehicle, DetonateAttack
 	KillsSelf:
 		RequiresCondition: driver_killed
 	KillsSelf@Empty:
