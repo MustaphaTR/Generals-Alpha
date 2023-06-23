@@ -38,6 +38,8 @@
 		ValuePerUnit: 50
 		AllowedTerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
 		AllowUnderActors: true
+	ResourceRenderer:
+		RenderTypes: Ore, Gems
 
 World:
 	Inherits: ^BaseWorld
@@ -87,8 +89,6 @@ World:
 		SmokeImage: smoke_m
 		SmokeSequences: idle
 	ResourceLayer:
-	ResourceRenderer:
-		RenderTypes: Ore, Gems
 	ResourceClaimLayer:
 	WarheadDebugOverlay:
 	SpawnMapActors:
