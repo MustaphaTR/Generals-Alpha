@@ -3732,7 +3732,7 @@ vehicle.combat_cycle:
 	Armament@Terrorist:
 		Name: terror
 		Weapon: hack.suicide_targeting
-		RequiresCondition: terrorist
+		RequiresCondition: terrorist || toxin_terrorist
 	Armament@Jarmen:
 		Name: sniper_rifle
 		Weapon: sniper.jarmen_kell.bike
@@ -3752,12 +3752,33 @@ vehicle.combat_cycle:
 		Weapon: explosion.terrorist.bike
 		EmptyWeapon: explosion.terrorist.bike
 		DeathTypes: Suicide
-		RequiresCondition: terrorist && !demo
+		RequiresCondition: (terrorist || toxin_terrorist) && !demo
 	Explodes@TerroristDemo:
 		Weapon: explosion.terrorist.demo.bike
 		EmptyWeapon: explosion.terrorist.demo.bike
 		DeathTypes: Suicide
-		RequiresCondition: terrorist && demo
+		RequiresCondition: (terrorist || toxin_terrorist) && demo
+	Explodes@Terrorist_Toxin:
+		Weapon: explosion.terrorist.toxin
+		EmptyWeapon: explosion.terrorist.toxin
+		RequiresCondition: toxin_terrorist && !anthrax_beta && !anthrax_gamma
+	Explodes@Terrorist_Toxin_Beta:
+		Weapon: explosion.terrorist.toxin_beta
+		EmptyWeapon: explosion.terrorist.toxin_beta
+		RequiresCondition: toxin_terrorist && anthrax_beta && !anthrax_gamma
+	Explodes@Terrorist_Toxin_Gamma:
+		Weapon: explosion.terrorist.toxin_gamma
+		EmptyWeapon: explosion.terrorist.toxin_gamma
+		RequiresCondition: toxin_terrorist && anthrax_gamma
+	GrantConditionOnPrerequisite@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Prerequisites: upgrade.anthrax_beta
+	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
+		Condition: anthrax_gamma
+		Prerequisites: upgrade.anthrax_gamma
+	GrantConditionOnFaction@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Factions: toxin
 	KillsSelf@Triggered:
 		DamageTypes: Suicide
 		RequiresCondition: triggered
@@ -3790,7 +3811,7 @@ vehicle.combat_cycle:
 			infantry.toxin_rebel: rebel
 			infantry.rpg_trooper: rpg
 			infantry.terrorist: terrorist
-			infantry.toxin_terrorist: terrorist
+			infantry.toxin_terrorist: toxin_terrorist
 			infantry.hijacker: hijacker
 			infantry.hijacker.stealth: hijacker
 			infantry.saboteur: saboteur
@@ -3857,7 +3878,7 @@ vehicle.combat_cycle:
 		Position: TopRight
 		Margin: 5, 5
 		ValidRelationships: Ally, Neutral, Enemy
-		RequiresCondition: terrorist
+		RequiresCondition: terrorist || toxin_terrorist
 	WithDecoration@Jarmen:
 		Image: pips
 		Sequence: pip-bike-kell
