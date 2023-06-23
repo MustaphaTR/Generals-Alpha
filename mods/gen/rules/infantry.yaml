@@ -916,15 +916,15 @@ infantry.toxin_terrorist:
 		Name: Toxin Terrorist
 	Explodes@Toxin:
 		Weapon: explosion.terrorist.toxin
-		EmptyWeapon: explosion.terrorist
+		EmptyWeapon: explosion.terrorist.toxin
 		RequiresCondition: !anthrax_beta && !anthrax_gamma
 	Explodes@Toxin_Beta:
 		Weapon: explosion.terrorist.toxin_beta
-		EmptyWeapon: explosion.terrorist
+		EmptyWeapon: explosion.terrorist.toxin_beta
 		RequiresCondition: anthrax_beta && !anthrax_gamma
 	Explodes@Toxin_Gamma:
 		Weapon: explosion.terrorist.toxin_gamma
-		EmptyWeapon: explosion.terrorist
+		EmptyWeapon: explosion.terrorist.toxin_gamma
 		RequiresCondition: anthrax_gamma
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
