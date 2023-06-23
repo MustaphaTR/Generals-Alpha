@@ -3635,6 +3635,7 @@ vehicle.nuke_cannon.nuke:
 vehicle.combat_cycle:
 	Inherits: ^Vehicle
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
+	Inherits@AP_ROCKETS: ^AffectedByAPRockets
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CARGO: ^CargoPips
 	Inherits@DEMOLITION: ^AffectedByDemolitions
@@ -3671,6 +3672,10 @@ vehicle.combat_cycle:
 			200: rank-veteran
 			400: rank-veteran
 			800: rank-veteran
+	FirepowerMultiplier@AP_BULLETS:
+		Types: mg, sniper_rifle, driver_snipe
+	FirepowerMultiplier@AP_ROCKETS:
+		Types: ag_rocket, aa_rocket
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.stealth_gen_vehicle
 		BuildPaletteOrder: 10
