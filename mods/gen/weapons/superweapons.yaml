@@ -162,8 +162,8 @@ parabomb.helix:
 	RequiresForceFire: true
 	Warhead@1Fire: TriggerLayerWeapon
 		LayerName: InfernoLayer
-		TiggerWeapon: explosion.inferno_layer.firestorm
-		TiggerSetLevel: 0
+		TriggerWeapon: explosion.inferno_layer.firestorm
+		TriggerSetLevel: 0
 		AllowSetLevelWhenTrigger: false
 		Level: 0
 		ImpactActors: false
@@ -173,7 +173,7 @@ parabomb.helix:
 parabomb.helix.blue:
 	Inherits: parabomb.helix
 	Warhead@1Fire: TriggerLayerWeapon
-		TiggerWeapon: explosion.inferno_layer.blackfirestorm
+		TriggerWeapon: explosion.inferno_layer.blackfirestorm
 
 parabomb.helix.nuke:
 	Inherits: parabomb.helix
