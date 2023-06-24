@@ -195,15 +195,6 @@ Demolish:
 		Explosions: building
 		ImpactSounds: kaboom25.aud
 
-hack.nuclear_reactor:
-	ReloadDelay: 25
-	Range: 2c0
-	Projectile: InstantHit
-	Warhead@1Dam: HealthPercentageDamage
-		Spread: 0c128
-		Damage: 3
-		AffectsParent: true
-
 toxin.toxin_tractor:
 	InvalidTargets: Structure, Wall
 	Range: 2c512

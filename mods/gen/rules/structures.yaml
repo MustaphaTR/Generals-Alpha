@@ -1014,8 +1014,10 @@ building.nuclear_reactor:
 	Power@overcharged:
 		Amount: 15
 		RequiresCondition: overcharge && !emp && !hacked && !sabotaged
-	PeriodicExplosion:
-		Weapon: hack.nuclear_reactor
+	ChangesHealth@overcharge:
+		Step: -4500 # there seems to be a calulation error with PercentageStep, -3 gives -4495 damage.
+		Delay: 25
+		StartIfBelow: 101
 		RequiresCondition: overcharge && !emp && !hacked && !sabotaged
 	GrantConditionOnDeploy:
 		MakeAnimationDeployTypes:
