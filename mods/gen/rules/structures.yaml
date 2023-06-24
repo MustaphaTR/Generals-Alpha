@@ -1008,6 +1008,10 @@ building.nuclear_reactor:
 		Type: CenterPosition
 		Weapon: explosion.nuclear_reactor
 		EmptyWeapon: explosion.nuclear_reactor
+	Explodes@Radiation:
+		Type: Footprint
+		Weapon: explosion.nuclear_reactor.radioactivity
+		EmptyWeapon: explosion.nuclear_reactor.radioactivity
 	Power@notovercharged:
 		Amount: 10
 		RequiresCondition: !overcharge && !emp && !hacked && !sabotaged

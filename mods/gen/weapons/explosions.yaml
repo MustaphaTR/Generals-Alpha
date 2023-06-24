@@ -772,6 +772,11 @@ explosion.nuclear_reactor:
 			building.tough: 80
 			building.internet_center: 70
 		DamageTypes: TriggerProne, FireDeath, Incendiary
+	Warhead@3Eff: CreateEffect
+		Explosions: nuke
+		ImpactSounds: kaboom1.aud
+
+explosion.nuclear_reactor.radioactivity:
 	Warhead@3Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
 		InvalidTargets: Vehicle, Tank, Structure, Wall
@@ -780,13 +785,10 @@ explosion.nuclear_reactor:
 		SmudgeType: SnowScorch
 		InvalidTargets: Vehicle, Tank, Structure, Wall
 		Size: 2
-	Warhead@3Eff: CreateEffect
-		Explosions: nuke
-		ImpactSounds: kaboom1.aud
 	Warhead@4Radio: CreateRadioactivity
 		RadioactivityLayerName: radioactivity
 		Range: 2
-		Level: 2500
+		Level: 750
 		Falloff: 100, 90, 80
 		MaxLevel: 7500
 
