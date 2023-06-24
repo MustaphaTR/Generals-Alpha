@@ -2,6 +2,7 @@
 	ReloadDelay: 50
 	Range: 3c768
 	Report: cannon1.aud
+	ValidTargets: Ground, Water, GroundActor, WaterActor
 	Projectile: Bullet
 		Speed: 682
 		Image: 120MM
@@ -10,22 +11,23 @@
 		Spread: 0c128
 		Falloff: 100, 100
 		Damage: 4000
+		ValidTargets: GroundActor, WaterActor
 		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
+		ValidTargets: Ground, Infantry
 	Warhead@2SmuSnow: LeaveSmudge
 		SmudgeType: SnowCrater
-		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
+		ValidTargets: Ground, Infantry
 	Warhead@3Eff: CreateEffect
 		Explosions: small_explosion
 		ImpactSounds: kaboom12.aud
-		ValidTargets: Ground, Ship
+		ValidTargets: Ground, GroundActor, WaterActor, Trees
 	Warhead@4EffWater: CreateEffect
 		Explosions: small_splash
 		ImpactSounds: splash9.aud
 		ValidTargets: Water, Underwater
-		InvalidTargets: Ship, Structure
+		InvalidTargets: Bridge
 
 cannon.scorpion_tank:
 	Inherits: ^Cannon
@@ -394,7 +396,7 @@ cannon.inferno_cannon:
 		TiggerSetLevel: 0
 		Level: 0
 		ImpactActors: false
-		ValidTargets: Ground, Air, Water
+		ValidTargets: Ground, Water, Air, GroundActor, WaterActor, AirborneActor
 		AirThreshold: 8c0
 		TiggerAtLevelMin: 320
 	Warhead@2Fire: TriggerLayerWeapon
@@ -403,7 +405,7 @@ cannon.inferno_cannon:
 		TiggerAtLevelMin: 50
 		TiggerWeapon: explosion.inferno_layer.flame
 		ImpactActors: false
-		ValidTargets: Ground, Air, Water
+		ValidTargets: Ground, Water, Air, GroundActor, WaterActor, AirborneActor
 		AirThreshold: 8c0
 	Warhead@3Eff: CreateEffect
 		Explosions: napalm
@@ -467,11 +469,11 @@ cannon.nuke_cannon:
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@3Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Tank, Structure, Wall
+		ValidTargets: Ground, Infantry
 		Size: 1
 	Warhead@3Smu_impactSnow: LeaveSmudge
 		SmudgeType: SnowScorch
-		InvalidTargets: Vehicle, Tank, Structure, Wall
+		ValidTargets: Ground, Infantry
 		Size: 1
 	Warhead@3Eff: CreateEffect
 		Explosions: mininuke
@@ -545,18 +547,19 @@ cannon.strategy_center:
 		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
+		ValidTargets: Ground, Infantry
 	Warhead@2SmuSnow: LeaveSmudge
 		SmudgeType: SnowCrater
-		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
+		ValidTargets: Ground, Infantry
 	Warhead@3Eff: CreateEffect
 		Explosions: artillery_explosion
 		ImpactSounds: kaboom15.aud
-		InvalidTargets: Water
+		ValidTargets: Ground, GroundActor, WaterActor, Trees
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
 		ImpactSounds: splash9.aud
-		ValidTargets: Water
+		ValidTargets: Water, Underwater
+		InvalidTargets: Bridge
 
 cannon.firebase:
 	ReloadDelay: 50
@@ -588,18 +591,19 @@ cannon.firebase:
 		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
+		ValidTargets: Ground, Infantry
 	Warhead@2SmuSnow: LeaveSmudge
 		SmudgeType: SnowCrater
-		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
+		ValidTargets: Ground, Infantry
 	Warhead@3Eff: CreateEffect
 		Explosions: artillery_explosion
 		ImpactSounds: kaboom15.aud
-		InvalidTargets: Water
+		ValidTargets: Ground, GroundActor, WaterActor, Trees
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
 		ImpactSounds: splash9.aud
-		ValidTargets: Water
+		ValidTargets: Water, Underwater
+		InvalidTargets: Bridge
 
 cannon.cruiser:
 	Inherits: ^Artillery
@@ -729,7 +733,7 @@ grenade.ranger:
 	ReloadDelay: 50
 	Range: 4c384
 	MinRange: 0c512
-	InvalidTargets: Vehicle, Tank, Structure, Wall
+	ValidTargets: Infantry
 	Report: grenade1.aud
 	Projectile: Bullet
 		Speed: 128
@@ -738,12 +742,12 @@ grenade.ranger:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c256
 		Damage: 2500
-		InvalidTargets: Vehicle, Tank, Structure, Wall
+		ValidTargets: Infantry
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c0
 		Falloff: 100, 100
 		Damage: 1000
-		InvalidTargets: Vehicle, Tank, Structure, Wall
+		ValidTargets: Infantry
 		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@3Eff: CreateEffect
 		Explosions: flashbang

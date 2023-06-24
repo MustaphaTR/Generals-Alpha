@@ -3,6 +3,7 @@
 	Range: 5c0
 	MinRange: 0c512
 	Report: missile6.aud
+	ValidTargets: Ground, Water, GroundActor, WaterActor
 	Projectile: Missile
 		Speed: 213
 		Arm: 2
@@ -18,7 +19,7 @@
 		Spread: 0c128
 		Falloff: 100, 100
 		Damage: 5000
-		ValidTargets: Ground, Water, Air
+		ValidTargets: GroundActor, WaterActor
 		Versus:
 			None: 10
 			Wood: 75
@@ -28,32 +29,34 @@
 		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
-		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
+		ValidTargets: Ground, Infantry
 	Warhead@2SmuSnow: LeaveSmudge
 		SmudgeType: SnowCrater
-		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
+		ValidTargets: Ground, Infantry
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion
 		ImpactSounds: kaboom25.aud
-		ValidTargets: Ground, Air, Ship
+		ValidTargets: Ground, Air, GroundActor, AirborneActor, WaterActor, Trees
 	Warhead@4EffWater: CreateEffect
 		Explosions: med_splash
 		ImpactSounds: splash9.aud
 		ValidTargets: Water, Underwater
-		InvalidTargets: Ship, Structure
+		InvalidTargets: Bridge
 
 ^AntiAirMissile:
 	Inherits: ^AntiGroundMissile
-	ValidTargets: Air
+	ValidTargets: AirborneActor
 	Projectile: Missile
 		Speed: 384
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: AirborneActor
 	Warhead@3Eff: CreateEffect
 		ImpactActors: false
 
 missile.mig.ground:
 	Inherits: ^AntiGroundMissile
 	TargetActorCenter: true
-	ValidTargets: Ground, Water, Trees
+	ValidTargets: Ground, Water, GroundActor, WaterActor, Trees
 	InvalidTargets: StingerSoldier
 	ReloadDelay: 8
 	Range: 8c0
@@ -66,7 +69,7 @@ missile.mig.ground:
 		RangeLimit: 12c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 7500
-		ValidTargets: Ground, Water, Trees
+		ValidTargets: GroundActor, WaterActor, Trees
 		InvalidTargets: StingerSoldier
 		Versus:
 			infantry.stinger_site: 10
@@ -87,7 +90,7 @@ missile.mig.ground:
 		Spread: 0c768
 		Falloff: 100, 100
 		Damage: 4000
-		ValidTargets: Ground, Water, Trees
+		ValidTargets: GroundActor, WaterActor, Trees
 		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.anti-air: 30
@@ -110,7 +113,7 @@ missile.mig.ground:
 		Level: 0
 		TiggerSetLevel: 99
 		ImpactActors: false
-		ValidTargets: Ground, Air, Water
+		ValidTargets: Ground, Water, Air, GroundActor, WaterActor, AirborneActor
 		AirThreshold: 8c0
 	Warhead@2Fire: TriggerLayerWeapon
 		LayerName: InfernoLayer
@@ -119,7 +122,7 @@ missile.mig.ground:
 		TiggerWeapon: explosion.inferno_layer.flame
 		AllowSetLevelWhenTrigger: false
 		ImpactActors: false
-		ValidTargets: Ground, Air, Water
+		ValidTargets: Ground, Water, Air, GroundActor, WaterActor, AirborneActor
 		AirThreshold: 8c0
 	Warhead@3Eff: CreateEffect
 		Explosions: napalm
@@ -138,12 +141,12 @@ missile.mig.ground.blue:
 
 missile.mig.ground.nuke:
 	Inherits: missile.mig.ground
-	ValidTargets: Ground, Water
+	ValidTargets: Ground, Water, GroundActor, WaterActor
 	Warhead@1Dam: SpreadDamage
 		Damage: 10000
-		ValidTargets: Ground, Water
+		ValidTargets: GroundActor, WaterActor
 	Warhead@2Dam: SpreadDamage
-		ValidTargets: Ground, Water
+		ValidTargets: GroundActor, WaterActor
 	-Warhead@1Fire:
 	-Warhead@2Fire:
 	Warhead@3Eff: CreateEffect
@@ -180,7 +183,7 @@ missile.mig.air:
 		RangeLimit: 12c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 7500
-		ValidTargets: Air
+		ValidTargets: AirborneActor
 		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.anti-air: 30
@@ -200,7 +203,7 @@ missile.mig.air:
 		Spread: 0c768
 		Falloff: 100, 100
 		Damage: 4000
-		ValidTargets: Air
+		ValidTargets: AirborneActor
 		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.anti-air: 30
@@ -290,7 +293,7 @@ missile.raptor.air:
 		RangeLimit: 12c410
 	Warhead@1Dam: SpreadDamage
 		Damage: 10000
-		ValidTargets: Air
+		ValidTargets: AirborneActor
 		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.anti-air: 30
@@ -425,13 +428,13 @@ missile.aurora_alpha:
 		Delay: 10
 		Explosions: nuke
 		ImpactSounds: kaboom1.aud
-		ValidTargets: Ground, Air, Ship
+		ValidTargets: Ground, Air, GroundActor, AirborneActor, WaterActor, Trees
 	Warhead@6EffWater: CreateEffect
 		Delay: 10
 		Explosions: large_splash
 		ImpactSounds: splash9.aud
 		ValidTargets: Water, Underwater
-		InvalidTargets: Ship, Structure
+		InvalidTargets: Bridge
 
 missile.a10:
 	Inherits: ^AntiGroundMissile
@@ -491,7 +494,7 @@ missile.scorpion_tank:
 	Warhead@5Dam: SpreadDamage
 		Spread: 0c640
 		Damage: 8000
-		ValidTargets: Ground, Water
+		ValidTargets: GroundActor, WaterActor
 		Versus:
 			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
@@ -760,7 +763,7 @@ missile.comanche:
 		Inaccuracy: 1c256
 	Warhead@1Dam: SpreadDamage
 		Damage: 2000
-		ValidTargets: Ground, Water
+		ValidTargets: GroundActor, WaterActor
 		Versus:
 			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
@@ -777,7 +780,7 @@ missile.comanche:
 		Spread: 1c0
 		Falloff: 100, 100
 		Damage: 1000
-		ValidTargets: Ground, Water
+		ValidTargets: GroundActor, WaterActor
 		Versus:
 			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
@@ -840,7 +843,7 @@ missile.patriot.air:
 		MaximumLaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
 		Damage: 2500
-		ValidTargets: Air
+		ValidTargets: AirborneActor
 		Versus:
 			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
@@ -888,7 +891,7 @@ NikeAA:
 		RangeLimit: 9c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
-		ValidTargets: Air
+		ValidTargets: AirborneActor
 		Versus:
 			None: 90
 			Light: 90
@@ -906,7 +909,7 @@ RedEye:
 		Speed: 384
 	Warhead@1Dam: SpreadDamage
 		Damage: 4000
-		ValidTargets: Air
+		ValidTargets: AirborneActor
 		Versus:
 			Wood: 75
 			Light: 60
@@ -943,7 +946,7 @@ missile.destroyer.ground:
 
 missile.destroyer.air:
 	Inherits: missile.destroyer.ground
-	ValidTargets: Air
+	ValidTargets: AirborneActor
 	Projectile: Missile
 		Speed: 384
 		CloseEnough: 298
@@ -959,7 +962,7 @@ missile.rocket_buggy:
 	Burst: 6
 	BurstDelays: 10
 	Report: vrocweaa.wav, vrocweab.wav, vrocweac.wav, vrocwead.wav, vrocweae.wav, vrocweaf.wav
-	ValidTargets: Ground
+	ValidTargets: Ground, GroundActor
 	TargetActorCenter: true
 	Projectile: Missile
 		MinimumLaunchAngle: 62
@@ -969,7 +972,7 @@ missile.rocket_buggy:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Damage: 1500
-		ValidTargets: Ground
+		ValidTargets: GroundActor
 		Versus:
 			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
@@ -986,7 +989,7 @@ missile.rocket_buggy:
 	Warhead@2Dam: SpreadDamage
 		Spread: 0c256
 		Damage: 500
-		ValidTargets: Ground
+		ValidTargets: GroundActor
 		Versus:
 			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
@@ -1089,7 +1092,7 @@ missile.scud_launcher:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c768
 		Damage: 17500
-		ValidTargets: Ground, Water
+		ValidTargets: GroundActor, WaterActor
 		Versus:
 			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
@@ -1107,7 +1110,7 @@ missile.scud_launcher:
 		Spread: 1c512
 		Falloff: 100, 100
 		Damage: 2500
-		ValidTargets: Ground, Water
+		ValidTargets: GroundActor, WaterActor
 		Versus:
 			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
@@ -1306,7 +1309,7 @@ missile.tomahawk_launcher:
 		Spread: 0c640
 		Falloff: 100, 100
 		Damage: 5000
-		ValidTargets: Ground, Water
+		ValidTargets: GroundActor, WaterActor
 		Versus:
 			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90

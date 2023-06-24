@@ -656,7 +656,7 @@ infantry.stinger_soldier:
 	Tooltip:
 		Name: Stinger Soldier
 	Targetable:
-		TargetTypes: Ground, Infantry, StingerSoldier
+		TargetTypes: GroundActor, Infantry, StingerSoldier
 	Valued:
 		Cost: 100
 	Armor:
@@ -894,7 +894,7 @@ infantry.terrorist:
 		CaptureTypes: car, driverless_vehcile
 		Voice: Capture
 	Targetable:
-		TargetTypes: Ground, Infantry, Infantry-Disguise, DetonateAttack, Terrorist
+		TargetTypes: GroundActor, Infantry, Infantry-Disguise, DetonateAttack, Terrorist
 	Passenger:
 		CargoType: GLAInfantry
 	Voiced:

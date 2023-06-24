@@ -10,6 +10,7 @@ attach.colonel_burton.timed:
 		Type: timed_demo_bomb
 		TriggerTime: 500
 		Range: 0c128
+		ValidTargets: TimedDemoBomb
 
 attach.demo_jarmen_kell.timed:
 	Inherits: attach.colonel_burton.timed
@@ -24,6 +25,7 @@ attach.tank_hunter:
 		Weapon: explosion.tnt_charge
 		Type: tnt_charge
 		TriggerTime: 250
+		ValidTargets: TNTCharge
 
 detach.mcc:
 	ReloadDelay: 25
@@ -31,6 +33,7 @@ detach.mcc:
 		Types: timed_demo_bomb, tnt_charge
 		DetachLimit: 1024
 		Range: 4c0
+		ValidTargets: Ground, Water, GroundActor, WaterActor
 	Warhead@2Dam: SpreadDamage
 		Spread: 4c0
 		Falloff: 100, 100

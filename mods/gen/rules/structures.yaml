@@ -1746,7 +1746,7 @@ building.demo_trap:
 	Sellable:
 		-RequiresCondition:
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, DemoTrap
+		TargetTypes: GroundActor, Structure, C4, DetonateAttack, DemoTrap
 	ExternalCondition@SELF_DESTRUCT:
 		Condition: self_destruct
 	GrantConditionOnDamageState@UNCLOAK:
@@ -2023,7 +2023,7 @@ building.firebase:
 		Range: 6c896
 		Color: DDDD0088
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, Disable, BunkerBustable
+		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Disable, BunkerBustable
 	Power:
 		Amount: 0
 	Voiced:
@@ -2090,7 +2090,7 @@ building.bunker:
 		Sequence: idle-flag
 		RequiresCondition: loaded
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, Disable, BunkerBustable
+		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Disable, BunkerBustable
 	Power:
 		Amount: 0
 	Voiced:
@@ -2455,7 +2455,7 @@ building.tunnel_network:
 		Condition: camo_netted
 		Factions: stealth
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, Disable, BunkerBustable
+		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Disable, BunkerBustable
 	SpawnActorOnDeath:
 		Actor: hole.tunnel_network
 		SpawnAfterDefeat: false
@@ -3528,7 +3528,7 @@ building.speaker_tower:
 			TopLeft: -512, -512
 			BottomRight: 512, 512
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, Disable
+		TargetTypes: GroundActor, C4, DetonateAttack, Structure, Disable
 	-Capturable:
 	-CapturableProgressBar:
 	-CapturableProgressBlink:

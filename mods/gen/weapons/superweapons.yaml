@@ -2,6 +2,7 @@
 	ReloadDelay: 10
 	Range: 1c0
 	Report: sparadra.wav
+	ValidTargets: Ground, Water, GroundActor, WaterActor
 	Projectile: GravityBomb
 		Image: PARABOMB
 		OpenSequence: open
@@ -16,6 +17,7 @@ parabomb.fuel_air_bomb:
 		Spread: 4c0
 		Damage: 15000
 		Delay: 15
+		ValidTargets: GroundActor, WaterActor
 		Versus:
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
@@ -28,26 +30,19 @@ parabomb.fuel_air_bomb:
 			building.tough: 80
 			building.internet_center: 70
 		DamageTypes: TriggerProne, FireDeath, Incendiary
-	Warhead@2Dam_areanuke2: SpreadDamage
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		Spread: 4c0
-		Damage: 15000
-		Delay: 15
-		ValidTargets: Trees
-		DamageTypes: Incendiary
-	Warhead@3Eff_impact: CreateEffect
+	Warhead@2Eff_impact: CreateEffect
 		Delay: 15
 		Explosions: nuke
 		ImpactSounds: kaboom1.aud
 		ImpactActors: false
-	Warhead@4Smu_impact: LeaveSmudge
+	Warhead@3Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Tank, Structure, Wall
+		ValidTargets: Ground, Infantry
 		Delay: 15
 		Size: 4
-	Warhead@4Smu_impactSnow: LeaveSmudge
+	Warhead@3Smu_impactSnow: LeaveSmudge
 		SmudgeType: SnowScorch
-		InvalidTargets: Vehicle, Tank, Structure, Wall
+		ValidTargets: Ground, Infantry
 		Delay: 15
 		Size: 4
 
@@ -56,14 +51,11 @@ parabomb.moab:
 	Warhead@1Dam: SpreadDamage
 		Delay: 0
 		Damage: 20000
-	Warhead@2Dam_areanuke2: SpreadDamage
+	Warhead@2Eff_impact: CreateEffect
 		Delay: 0
-		Damage: 20000
-	Warhead@3Eff_impact: CreateEffect
+	Warhead@3Smu_impact: LeaveSmudge
 		Delay: 0
-	Warhead@4Smu_impact: LeaveSmudge
-		Delay: 0
-	Warhead@4Smu_impactSnow: LeaveSmudge
+	Warhead@3Smu_impactSnow: LeaveSmudge
 		Delay: 0
 
 parabomb.anthrax:
@@ -71,6 +63,7 @@ parabomb.anthrax:
 	Warhead@1Dam: SpreadDamage
 		Spread: 2c512
 		Damage: 10000
+		ValidTargets: GroundActor, WaterActor
 		Versus:
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
@@ -105,7 +98,6 @@ parabomb.anthrax:
 		Explosions: small_splash
 		ImpactSounds: splash9.aud
 		ValidTargets: Water, Underwater
-		InvalidTargets: Ship, Structure
 
 parabomb.anthrax.beta:
 	Inherits: parabomb.anthrax
@@ -130,6 +122,7 @@ parabomb.emp:
 	Warhead@1Dam: SpreadDamage
 		Spread: 2c512
 		Damage: 10000
+		ValidTargets: GroundActor, WaterActor
 		Versus:
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
@@ -174,7 +167,7 @@ parabomb.helix:
 		AllowSetLevelWhenTrigger: false
 		Level: 0
 		ImpactActors: false
-		ValidTargets: Ground, Air, Water
+		ValidTargets: Ground, Water, Air, GroundActor, WaterActor, AirborneActor
 		AirThreshold: 8c0
 
 parabomb.helix.blue:
@@ -197,11 +190,11 @@ parabomb.helix.nuke:
 		ImpactActors: false
 	Warhead@5Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Tank, Structure, Wall
+		ValidTargets: Ground, Infantry
 		Size: 2
 	Warhead@5Smu_impactSnow: LeaveSmudge
 		SmudgeType: SnowScorch
-		InvalidTargets: Vehicle, Tank, Structure, Wall
+		ValidTargets: Ground, Infantry
 		Size: 2
 	Warhead@5Radio: CreateRadioactivity
 		RadioactivityLayerName: radioactivity
@@ -211,12 +204,12 @@ parabomb.helix.nuke:
 		MaxLevel: 2500
 
 Atomic:
-	ValidTargets: Ground, Trees, Water, Underwater, Air
+	ValidTargets: Ground, Water, GroundActor, WaterActor, Underwater, AirborneActor, Trees
 	Warhead@1Dam_impact: SpreadDamage
 		Spread: 0c768
 		Damage: 15000
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: Ground, Trees, Water, Underwater, Air
+		ValidTargets: GroundActor, WaterActor, Underwater, AirborneActor, Trees
 		Versus:
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
@@ -231,11 +224,11 @@ Atomic:
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@3Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Tank, Structure, Wall
+		ValidTargets: Ground, Infantry
 		Size: 3
 	Warhead@3Smu_impactSnow: LeaveSmudge
 		SmudgeType: SnowScorch
-		InvalidTargets: Vehicle, Tank, Structure, Wall
+		ValidTargets: Ground, Infantry
 		Size: 3
 	Warhead@4Eff_impact: CreateEffect
 		Explosions: nuke
@@ -251,7 +244,7 @@ Atomic:
 		Spread: 1c512
 		Damage: 6000
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: Ground, Trees, Water, Underwater, Air
+		ValidTargets: GroundActor, WaterActor, Underwater, AirborneActor, Trees
 		Versus:
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
@@ -277,7 +270,7 @@ Atomic:
 		Spread: 2c256
 		Damage: 6000
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: Ground, Water, Underwater, Air
+		ValidTargets: GroundActor, WaterActor, Underwater, AirborneActor, Trees
 		Versus:
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
@@ -290,12 +283,6 @@ Atomic:
 			building.tough: 80
 			building.internet_center: 70
 		DamageTypes: TriggerProne, FireDeath, Incendiary
-	Warhead@12Dam_areanuke2: SpreadDamage
-		Spread: 3c0
-		Damage: 12000
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: Trees
-		DamageTypes: Incendiary
 	Warhead@15Radio: CreateRadioactivity
 		RadioactivityLayerName: radioactivity
 		Range: 3
@@ -306,7 +293,7 @@ Atomic:
 		Spread: 3c0
 		Damage: 6000
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: Ground, Water, Underwater, Air
+		ValidTargets: GroundActor, WaterActor, Underwater, AirborneActor, Trees
 		Versus:
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
@@ -319,12 +306,6 @@ Atomic:
 			building.tough: 80
 			building.internet_center: 70
 		DamageTypes: TriggerProne, FireDeath, Incendiary
-	Warhead@17Dam_areanuke3: SpreadDamage
-		Spread: 4c0
-		Damage: 12000
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: Trees
-		DamageTypes: Incendiary
 	Warhead@20Radio: CreateRadioactivity
 		RadioactivityLayerName: radioactivity
 		Range: 4
@@ -335,7 +316,7 @@ Atomic:
 		Spread: 3c768
 		Damage: 6000
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: Ground, Water, Underwater, Air
+		ValidTargets: GroundActor, WaterActor, Underwater, AirborneActor, Trees
 		Versus:
 			vehicle.battle_bus.crate-1: 90
 			vehicle.battle_bus.crate-2: 80
@@ -348,12 +329,6 @@ Atomic:
 			building.tough: 80
 			building.internet_center: 70
 		DamageTypes: TriggerProne, FireDeath, Incendiary
-	Warhead@22Dam_areanuke4: SpreadDamage
-		Spread: 3c768
-		Damage: 12000
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: Trees
-		DamageTypes: Incendiary
 	Warhead@21Shake: ShakeScreen
 		Duration: 20
 		Intensity: 5
@@ -363,7 +338,7 @@ Atomic:
 		FlashType: Nuke
 
 aoe.particle_beam:
-	ValidTargets: Ground, Water, Air, Trees
+	ValidTargets: Ground, Water, GroundActor, WaterActor, Underwater, AirborneActor, Trees
 	Range: 1c0
 	ReloadDelay: 2
 	Projectile: InstantHit
@@ -371,8 +346,7 @@ aoe.particle_beam:
 		Falloff: 100, 100
 		Spread: 1c512
 		Damage: 3200
-		ValidTargets: Ground, Water, Air, Trees
-		DamageTypes: FireDeath
+		ValidTargets: GroundActor, WaterActor, Underwater, AirborneActor, Trees
 		Versus:
 			infantry.normal: 150
 			vehicle.battle_bus.crate-1: 90
@@ -384,14 +358,13 @@ aoe.particle_beam:
 			building.internet_center: 20
 			building.tough: 25
 			building.defense: 200
+		DamageTypes: FireDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: particle_ring
 		ValidTargets: Ground, Water, Air, Trees
 	Warhead@3Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Tank, Structure, Wall
-		Size: 0
+		ValidTargets: Ground, Infantry
 	Warhead@3Smu_impactSnow: LeaveSmudge
 		SmudgeType: SnowScorch
-		InvalidTargets: Vehicle, Tank, Structure, Wall
-		Size: 0
+		ValidTargets: Ground, Infantry

@@ -11,11 +11,12 @@
 		AirburstAltitude: 768
 	Warhead@1Eff: CreateEffect
 		Explosions: building
-		ValidTargets: Ground, Air
+		ValidTargets: Ground, GroundActor, Air, AirborneActor
 	Warhead@2Eff: CreateEffect
 		Explosions: large_splash
 		ImpactSounds: splash9.aud
 		ValidTargets: Water, Underwater
+		InvalidTargets: Bridge
 
 ^default.small_debris:
 	Inherits: ^default.big_debris

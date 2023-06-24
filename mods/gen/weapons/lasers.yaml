@@ -112,7 +112,7 @@ laser.paladin_tank:
 	ReloadDelay: 25
 	Range: 3c0
 	Report: vpalwe2d.aud
-	InvalidTargets: Vehicle, Tank, Structure, Wall
+	ValidTargets: Infantry, Air
 	Projectile: LaserZap
 		Width: 60
 		ZOffset: 2047
@@ -122,7 +122,7 @@ laser.paladin_tank:
 		Versus:
 			infantry.normal: 50
 			infantry.stinger_site: 25
-		InvalidTargets: Vehicle, Tank, Structure, Wall
+		ValidTargets: Infantry, Air
 		DamageTypes: TriggerProne, FireDeath
 
 laser.king_raptor:

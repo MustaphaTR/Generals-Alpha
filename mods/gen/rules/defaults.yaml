@@ -1010,7 +1010,7 @@
 ^AutoTargetAir:
 	AutoTarget:
 	AutoTargetPriority@DEFAULT:
-		ValidTargets: Air
+		ValidTargets: AirborneActor
 		InvalidTargets: NoAutoTarget
 
 ^AutoTargetAll:
@@ -1018,11 +1018,11 @@
 		AttackAnythingCondition: stance-attackanything
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything
-		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Defense
+		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, AirborneActor, Defense
 		InvalidTargets: NoAutoTarget, WaterStructure
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: stance-attackanything
-		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
+		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, AirborneActor, Structure, Defense
 		InvalidTargets: NoAutoTarget
 
 ^AutoTargetAllAssaultMove:
@@ -1276,10 +1276,10 @@
 		RequiresCondition: !parachute && !fullhealth
 		TargetTypes: Repair
 	Targetable:
-		TargetTypes: Ground, Vehicle, Vehicle-Disguise, DetonateAttack
+		TargetTypes: GroundActor, Vehicle, Vehicle-Disguise, DetonateAttack
 		RequiresCondition: !parachute && !driver_killed
 	Targetable@DRIVER_KILLED:
-		TargetTypes: Ground, Vehicle, Vehicle-Disguise, DetonateAttack, NoDriverKill, NoAutoTarget
+		TargetTypes: GroundActor, Vehicle, Vehicle-Disguise, DetonateAttack, NoDriverKill, NoAutoTarget
 		RequiresCondition: driver_killed
 	RepairableNear:
 		RepairActors: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
@@ -1339,10 +1339,10 @@
 	Mobile:
 		Locomotor: locomotor.tracked
 	Targetable:
-		TargetTypes: Ground, C4, Tank, Vehicle-Disguise, DetonateAttack
+		TargetTypes: GroundActor, C4, Tank, Vehicle-Disguise, DetonateAttack
 		RequiresCondition: !parachute && !driver_killed
 	Targetable@DRIVER_KILLED:
-		TargetTypes: Ground, C4, Tank, Vehicle-Disguise, DetonateAttack, NoDriverKill, NoAutoTarget
+		TargetTypes: GroundActor, C4, Tank, Vehicle-Disguise, DetonateAttack, NoDriverKill, NoAutoTarget
 		RequiresCondition: driver_killed
 	ProximityCaptor:
 		Types: Tank
@@ -1448,7 +1448,7 @@
 	SpeedMultiplier@GENERIC:
 		Modifier: 200
 	Targetable:
-		TargetTypes: Ground, C4, Tank, Vehicle-Disguise, DetonateAttack
+		TargetTypes: GroundActor, C4, Vehicle, Vehicle-Disguise, DetonateAttack
 		RequiresCondition: !parachute
 	MapEditorData:
 		Categories: Civilian vehicle
@@ -1490,7 +1490,7 @@
 	Selectable:
 		Bounds: 12,18,0,-8
 	Targetable:
-		TargetTypes: Ground, Infantry, Infantry-Disguise, DetonateAttack
+		TargetTypes: GroundActor, Infantry, Infantry-Disguise, DetonateAttack
 		RequiresCondition: !parachute
 	RepairableNear:
 		RepairActors: building.usa_barracks, building.gla_barracks, building.prc_barracks, tech.soviet_barracks
@@ -1647,7 +1647,7 @@
 		RequiresCondition: !fullhealth
 		TargetTypes: Repair
 	Targetable:
-		TargetTypes: Ground, Water, Ship, DetonateAttack
+		TargetTypes: WaterActor, Ship, DetonateAttack
 	HiddenUnderFog:
 	AttackMove:
 	ActorLostNotification:
@@ -1707,10 +1707,10 @@
 		RequiresCondition: !airborne && !fullhealth
 		TargetTypes: Repair
 	Targetable@GROUND:
-		TargetTypes: Ground, Vehicle
+		TargetTypes: GroundActor, Vehicle
 		RequiresCondition: !airborne
 	Targetable@AIRBORNE:
-		TargetTypes: Air
+		TargetTypes: AirborneActor
 		RequiresCondition: airborne
 	HiddenUnderFog:
 		Type: GroundPosition
@@ -1775,7 +1775,7 @@
 	Selectable:
 		Priority: 3
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack
+		TargetTypes: GroundActor, Structure, C4, DetonateAttack
 	Building:
 		Dimensions: 1,1
 		Footprint: x
@@ -1831,7 +1831,7 @@
 		Palette: player
 		IsPlayerPalette: True
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, Capture, Disable
+		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Capture, Disable
 	EngineerRepairable:
 	AcceptsDeliveredCash:
 	WithMakeAnimation:
@@ -1902,7 +1902,7 @@
 ^Defense:
 	Inherits: ^Building
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, Disable
+		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Disable
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	-GivesBuildableArea:
@@ -1924,7 +1924,7 @@
 ^FakeDefense:
 	Inherits: ^FakeBuilding
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, Disable
+		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Disable
 	-AcceptsDeliveredCash:
 	-Capturable:
 	-CapturableProgressBar:
@@ -1948,7 +1948,7 @@
 	Armor:
 		Type: building.normal
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, Hole
+		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Hole
 	TransformOnCondition:
 		RequiresCondition: repaired
 	Sellable:
@@ -1990,7 +1990,7 @@
 	LineBuildNode:
 		Types: wall
 	Targetable:
-		TargetTypes: Ground, Wall, DetonateAttack, NoAutoTarget
+		TargetTypes: GroundActor, Wall, DetonateAttack, NoAutoTarget
 	-GivesExperience:
 	RenderSprites:
 		Palette: effect
@@ -2132,7 +2132,7 @@
 	Tooltip:
 		Name: Ammo Box
 	Targetable:
-		TargetTypes: Ground, Structure, C4, DetonateAttack, NoAutoTarget
+		TargetTypes: GroundActor, Structure, C4, DetonateAttack, NoAutoTarget
 	Armor:
 		Type: building.normal
 	MapEditorData:
@@ -2225,7 +2225,7 @@
 	Husk:
 		AllowedTerrain: Grass, Snow, Sand, Concrete, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Gems, Beach
 	Targetable:
-		TargetTypes: Ground, Husk, NoAutoTarget
+		TargetTypes: GroundActor, Husk, NoAutoTarget
 		RequiresForceFire: true
 	Tooltip:
 		GenericName: Destroyed Vehicle
@@ -2359,7 +2359,7 @@
 	Tooltip:
 		Name: Mine
 	Targetable:
-		TargetTypes: Ground, Mine
+		TargetTypes: GroundActor, Mine
 	HitShape:
 	MapEditorData:
 		Categories: System

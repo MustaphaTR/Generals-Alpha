@@ -128,7 +128,7 @@ DOG:
 	Passenger:
 		Voice: Move
 	Targetable:
-		TargetTypes: Ground, Infantry
+		TargetTypes: GroundActor, Infantry
 	WithInfantryBody:
 		StandSequences: stand
 	-ScaredyCat:
@@ -446,7 +446,7 @@ V19:
 	SpawnActorOnDeath:
 		Actor: V19.Husk
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, NoAutoTarget
+		TargetTypes: GroundActor, C4, DetonateAttack, Structure, NoAutoTarget
 
 V19.Husk:
 	Inherits: ^CivBuilding
@@ -476,7 +476,7 @@ BARL:
 		Name: Explosive Barrel
 		ShowOwnerRow: False
 	Targetable:
-		TargetTypes: Ground, DemoTruck, Barrel, NoAutoTarget
+		TargetTypes: GroundActor, DemoTruck, Barrel, NoAutoTarget
 	-ShakeOnDeath:
 	-SoundOnDamageTransition:
 	-Demolishable:
@@ -489,7 +489,7 @@ BRL3:
 		Name: Explosive Barrel
 		ShowOwnerRow: False
 	Targetable:
-		TargetTypes: Ground, DemoTruck, Barrel, NoAutoTarget
+		TargetTypes: GroundActor, DemoTruck, Barrel, NoAutoTarget
 	-ShakeOnDeath:
 	-SoundOnDamageTransition:
 	-Demolishable:

@@ -1,11 +1,11 @@
 ^FireWeapon:
-	ValidTargets: Ground, Water, Trees
+	ValidTargets: Ground, Water, GroundActor, WaterActor, Trees
 	ReloadDelay: 65
 	Range: 3c768
 	Warhead@1Dam: SpreadDamage
 		Spread: 213
 		Damage: 15000
-		ValidTargets: Ground, Water, Trees
+		ValidTargets: GroundActor, WaterActor, Trees
 		Versus:
 			None: 90
 			Wood: 50
@@ -196,15 +196,17 @@ Demolish:
 		ImpactSounds: kaboom25.aud
 
 toxin.toxin_tractor:
-	InvalidTargets: Structure, Wall
 	Range: 2c512
 	ReloadDelay: 6
+	ValidTargets: Ground, Water, GroundActor, WaterActor
 	InvalidTargets: Structure, ImmueToToxin, Wall
 	Projectile: RadBeam
 		ZOffset: 1024
 	Warhead@1Dam: SpreadDamage
 		Spread: 341
 		Damage: 1000
+		ValidTargets: GroundActor, WaterActor
+		InvalidTargets: Structure, ImmueToToxin, Wall
 		Versus:
 			infantry.chem_suit: 20
 			vehicle.truck: 50
@@ -224,7 +226,6 @@ toxin.toxin_tractor:
 			aircraft.normal: 25
 			aircraft.comanche: 25
 			aircraft.chinook: 25
-		InvalidTargets: Structure, ImmueToToxin, Wall
 		DamageTypes: FireDeath, DropCrate
 	Warhead@2Radio: CreateRadioactivity
 		RadioactivityLayerName: anthrax_alpha
@@ -329,6 +330,7 @@ toxin.toxin_tunnel_network.gamma:
 toxin.toxin_tractor.deploy:
 	Range: 1c0
 	ReloadDelay: 6
+	ValidTargets: Ground, Water, GroundActor, WaterActor
 	InvalidTargets: Structure, ImmueToToxin, Wall
 	Projectile: InstantHit
 	Warhead@1Radio: CreateRadioactivity
@@ -351,33 +353,35 @@ toxin.toxin_tractor.deploy.gamma:
 hack.angry_mob.weapon:
 	ReloadDelay: 30
 	Range: 2c384
-	ValidTargets: Ground, Water
+	ValidTargets: Ground, Water, GroundActor, WaterActor
 	Projectile: Bullet
 		Speed: 10c0
 	Warhead@1Dam: SpreadDamage
 		Spread: 1
 		Damage: 0
-		ValidTargets: Ground, Water
+		ValidTargets: GroundActor, WaterActor
 
 hack.stinger_site.ground:
 	ReloadDelay: 30
 	Range: 5c640
+	ValidTargets: Ground, Water, GroundActor, WaterActor
 	Projectile: Bullet
 		Speed: 10c0
 	Warhead@1Dam: SpreadDamage
 		Spread: 1
 		Damage: 0
+		ValidTargets: GroundActor, WaterActor
 
 hack.stinger_site.air:
 	ReloadDelay: 30
 	Range: 10c0
-	ValidTargets: Air
+	ValidTargets: AirborneActor
 	Projectile: Bullet
 		Speed: 10c0
 	Warhead@1Dam: SpreadDamage
 		Spread: 1
 		Damage: 0
-		ValidTargets: Air
+		ValidTargets: AirborneActor
 
 capture.black_lotus.anim:
 	ReloadDelay: 15
@@ -414,6 +418,7 @@ capture.black_lotus.end:
 		CaptureTypes: building
 		Experience: 20
 		PlayerExperience: 20
+		ValidTargets: Capture
 
 disable.black_lotus.anim:
 	ReloadDelay: 15
@@ -450,6 +455,7 @@ disable.black_lotus.end:
 		Range: 0c512
 		Duration: 375
 		Condition: hacked
+		ValidTargets: Vehicle, Tank, Ship
 
 disable.super_lotus.end:
 	Inherits: disable.black_lotus.end
@@ -491,6 +497,7 @@ disable.hacker.end:
 		Range: 0c512
 		Duration: 50
 		Condition: hacked
+		ValidTargets: Disable
 
 disable.ecm_tank.anim:
 	ReloadDelay: 2
@@ -527,6 +534,7 @@ disable.ecm_tank.end:
 		Range: 0c512
 		Duration: 55
 		Condition: hacked
+		ValidTargets: Vehicle, Tank, Ship
 
 disable.microwave_tank.anim:
 	ReloadDelay: 2
@@ -563,6 +571,7 @@ disable.microwave_tank.end:
 		Range: 0c512
 		Duration: 135
 		Condition: hacked
+		ValidTargets: Disable
 
 aoe.microwave_tank:
 	ValidTargets: Ground, Water
