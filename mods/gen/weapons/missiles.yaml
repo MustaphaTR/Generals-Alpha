@@ -108,18 +108,18 @@ missile.mig.ground:
 			aircraft.normal: 25
 	Warhead@1Fire: TriggerLayerWeapon
 		LayerName: InfernoLayer
-		TiggerWeapon: explosion.inferno_layer.firestorm
-		TiggerAtLevelMin: 320
+		TriggerWeapon: explosion.inferno_layer.firestorm
+		TriggerAtLevelMin: 320
 		Level: 0
-		TiggerSetLevel: 99
+		TriggerSetLevel: 99
 		ImpactActors: false
 		ValidTargets: Ground, Water, Air, GroundActor, WaterActor, AirborneActor
 		AirThreshold: 8c0
 	Warhead@2Fire: TriggerLayerWeapon
 		LayerName: InfernoLayer
-		TiggerAtLevelMin: 150
+		TriggerAtLevelMin: 150
 		Level: 75
-		TiggerWeapon: explosion.inferno_layer.flame
+		TriggerWeapon: explosion.inferno_layer.flame
 		AllowSetLevelWhenTrigger: false
 		ImpactActors: false
 		ValidTargets: Ground, Water, Air, GroundActor, WaterActor, AirborneActor
@@ -133,9 +133,9 @@ missile.mig.ground.blue:
 	Warhead@2Dam: SpreadDamage
 		Damage: 5000
 	Warhead@1Fire: TriggerLayerWeapon
-		TiggerWeapon: explosion.inferno_layer.blackfirestorm
+		TriggerWeapon: explosion.inferno_layer.blackfirestorm
 	Warhead@2Fire: TriggerLayerWeapon
-		TiggerWeapon: explosion.inferno_layer.blackflame
+		TriggerWeapon: explosion.inferno_layer.blackflame
 	Warhead@3Eff: CreateEffect
 		Explosions: blue_napalm
 

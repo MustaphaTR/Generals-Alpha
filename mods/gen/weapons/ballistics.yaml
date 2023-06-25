@@ -392,18 +392,18 @@ cannon.inferno_cannon:
 			building.internet_center: 70
 	Warhead@1Fire: TriggerLayerWeapon
 		LayerName: InfernoLayer
-		TiggerWeapon: explosion.inferno_layer.firestorm
-		TiggerSetLevel: 0
+		TriggerWeapon: explosion.inferno_layer.firestorm
+		TriggerSetLevel: 0
 		Level: 0
 		ImpactActors: false
 		ValidTargets: Ground, Water, Air, GroundActor, WaterActor, AirborneActor
 		AirThreshold: 8c0
-		TiggerAtLevelMin: 320
+		TriggerAtLevelMin: 320
 	Warhead@2Fire: TriggerLayerWeapon
 		LayerName: InfernoLayer
 		AllowSetLevelWhenTrigger: false
-		TiggerAtLevelMin: 50
-		TiggerWeapon: explosion.inferno_layer.flame
+		TriggerAtLevelMin: 50
+		TriggerWeapon: explosion.inferno_layer.flame
 		ImpactActors: false
 		ValidTargets: Ground, Water, Air, GroundActor, WaterActor, AirborneActor
 		AirThreshold: 8c0
@@ -419,9 +419,9 @@ cannon.inferno_cannon.blue:
 	Warhead@1Dam: SpreadDamage
 		Damage: 4500
 	Warhead@1Fire: TriggerLayerWeapon
-		TiggerWeapon: explosion.inferno_layer.blackfirestorm
+		TriggerWeapon: explosion.inferno_layer.blackfirestorm
 	Warhead@2Fire: TriggerLayerWeapon
-		TiggerWeapon: explosion.inferno_layer.blackflame
+		TriggerWeapon: explosion.inferno_layer.blackflame
 	Warhead@3Eff: CreateEffect
 		Explosions: blue_napalm
 
