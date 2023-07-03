@@ -518,14 +518,13 @@ cannon.nuke_cannon.neutron:
 		Explosions: med_splash
 
 cannon.strategy_center:
+	Inherits: ^Artillery
 	ReloadDelay: 175
 	Range: 10c0
 	MinRange: 2c512
 	Report: turret1.aud
 	Projectile: Bullet
 		Speed: 200
-		Image: 120MM
-		Shadow: True
 		LaunchAngle: 62
 		Inaccuracy: 1c0
 		ContrailLength: 30
@@ -545,32 +544,17 @@ cannon.strategy_center:
 			building.tough: 80
 			building.internet_center: 70
 		DamageTypes: TriggerProne, ExplosionDeath
-	Warhead@2Smu: LeaveSmudge
-		SmudgeType: Crater
-		ValidTargets: Ground, Infantry
-	Warhead@2SmuSnow: LeaveSmudge
-		SmudgeType: SnowCrater
-		ValidTargets: Ground, Infantry
-	Warhead@3Eff: CreateEffect
-		Explosions: artillery_explosion
-		ImpactSounds: kaboom15.aud
-		ValidTargets: Ground, GroundActor, WaterActor, Trees
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
-		ImpactSounds: splash9.aud
-		ValidTargets: Water, Underwater
-		InvalidTargets: Bridge
 
 cannon.firebase:
+	Inherits: ^Artillery
 	ReloadDelay: 50
 	Range: 6c896
 	MinRange: 1c256
 	Report: turret1.aud
 	Projectile: Bullet
 		Speed: 200
-		Image: 120MM
-		Shadow: True
-		LaunchAngle: 62
 		Inaccuracy: 0c384
 		ContrailLength: 30
 	Warhead@1Dam: SpreadDamage
@@ -589,21 +573,8 @@ cannon.firebase:
 			building.tough: 80
 			building.internet_center: 70
 		DamageTypes: TriggerProne, ExplosionDeath
-	Warhead@2Smu: LeaveSmudge
-		SmudgeType: Crater
-		ValidTargets: Ground, Infantry
-	Warhead@2SmuSnow: LeaveSmudge
-		SmudgeType: SnowCrater
-		ValidTargets: Ground, Infantry
-	Warhead@3Eff: CreateEffect
-		Explosions: artillery_explosion
-		ImpactSounds: kaboom15.aud
-		ValidTargets: Ground, GroundActor, WaterActor, Trees
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
-		ImpactSounds: splash9.aud
-		ValidTargets: Water, Underwater
-		InvalidTargets: Bridge
 
 cannon.cruiser:
 	Inherits: ^Artillery
