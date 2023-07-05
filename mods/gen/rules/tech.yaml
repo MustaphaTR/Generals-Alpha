@@ -573,7 +573,7 @@ tech.shipyard:
 
 # This is a campaign building, not an actual tech structure.
 tech.nuclear_bunker:
-	Inherits: ^CivBuilding
+	Inherits: ^BasicBuilding
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	OwnerLostAction:
@@ -585,6 +585,8 @@ tech.nuclear_bunker:
 		Dimensions: 2,2
 	Health:
 		HP: 200000
+	Armor:
+		Type: building.normal
 	Tooltip:
 		Name: Bunker
 	WithDeathAnimation:
