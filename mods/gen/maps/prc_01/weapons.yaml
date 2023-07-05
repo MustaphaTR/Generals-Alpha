@@ -1,7 +1,10 @@
 missile.mig.ground:
-	Warhead@Dam1: SpreadDamage
+	Warhead@3Dam: SpreadDamage
 		Spread: 1c512
 		Damage: 50000
+		ValidTargets: Infantry, Vehicle, Tank
+		Versus:
+			infantry.normal: 200
 
 explosion.terrorist.bike:
 	Warhead@1Dam: SpreadDamage
