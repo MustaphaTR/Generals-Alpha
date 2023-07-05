@@ -3092,6 +3092,7 @@ vehicle.overlord_tank:
 		PauseOnCondition: emp || hacked || leaflet
 	ProductionQueue:
 		Type: queue.overlord_tank
+		QueueLimit: 1
 		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: queue.overlord_tank

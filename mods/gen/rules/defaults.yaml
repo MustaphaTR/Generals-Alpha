@@ -1108,7 +1108,7 @@
 	ProductionQueue:
 		Type: queue.prc_vehicle_upgrade
 		Group: Tech
-		QueueLimit: 1
+		ItemLimit: 1
 		InstantCashDrain: true
 	ProductionBar:
 		ProductionType: queue.prc_vehicle_upgrade
@@ -1132,7 +1132,7 @@
 		Type: queue.camo_netting
 		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank, boss
 		Group: Tech
-		QueueLimit: 1
+		ItemLimit: 1
 		InstantCashDrain: true
 	GrantConditionOnProduction@CAMO_NETTING:
 		Condition: camo_netted
@@ -1172,7 +1172,7 @@
 	ProductionQueue@JUST_MINE:
 		Type: queue.just_mine
 		Group: Tech
-		QueueLimit: 1
+		ItemLimit: 1
 		InstantCashDrain: true
 		LowPowerModifier: 200
 	GrantConditionOnProduction@LAND_MINES:
