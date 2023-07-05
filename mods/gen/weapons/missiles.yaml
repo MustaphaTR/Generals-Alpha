@@ -870,6 +870,7 @@ missile.emp_patriot.ground:
 		Range: 2c0
 		Duration: 250
 		Condition: emp
+		ValidTargets: GroundActor, WaterActor
 
 missile.emp_patriot.air:
 	Inherits: missile.patriot.air

@@ -139,6 +139,7 @@ parabomb.emp:
 		Range: 6c0
 		Duration: 750
 		Condition: emp
+		ValidTargets: GroundActor, WaterActor
 	Warhead@5EffWater: CreateEffect
 		Explosions: emp
 		ImpactSounds: sempexpl.wav
@@ -149,6 +150,7 @@ parabomb.leaflet:
 		Range: 2c768
 		Duration: 500
 		Condition: leaflet
+		ValidTargets: GroundActor, WaterActor
 
 parabomb.cluster_mines:
 	Inherits: ^ParaBomb
