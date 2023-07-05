@@ -139,7 +139,7 @@ SendMiGs = function(waypoints)
 end
 
 SendA10s = function()
-	powerproxyA10.SendAirstrike(A10Waypoint.CenterPosition)
+	powerproxyA10.TargetAirstrike(A10Waypoint.CenterPosition, Angle.West)
 
 	Trigger.AfterDelay(DateTime.Minutes(4), SendA10s)
 end
