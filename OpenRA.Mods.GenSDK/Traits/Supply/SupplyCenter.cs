@@ -1,6 +1,6 @@
 ﻿#region Copyright & License Information
 /*
- * Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
+ * Copyright (c) The OpenRA Developers and Contributors
  * This file is part of OpenRA, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -49,7 +49,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		readonly Actor self;
 		public readonly SupplyCenterInfo Info;
 		PlayerResources playerResources;
-		RefineryResourceMultiplier[] resourceMultipliers;
+		IResourceValueModifier[] resourceMultipliers;
 
 		int currentDisplayTick = 0;
 		int currentDisplayValue = 0;
@@ -64,14 +64,14 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 		void INotifyCreated.Created(Actor self)
 		{
-			resourceMultipliers = self.TraitsImplementing<RefineryResourceMultiplier>().ToArray();
+			resourceMultipliers = self.TraitsImplementing<IResourceValueModifier>().ToArray();
 		}
 
 		public bool CanGiveResource(int amount) { return !Info.UseStorage || Info.DiscardExcessResources || playerResources.CanGiveResources(amount); }
 
 		public void GiveResource(int amount, string collector)
 		{
-			amount = Util.ApplyPercentageModifiers(amount, resourceMultipliers.Select(m => m.GetModifier()));
+			amount = Util.ApplyPercentageModifiers(amount, resourceMultipliers.Select(m => m.GetResourceValueModifier()));
 
 			if (Info.UseStorage)
 			{

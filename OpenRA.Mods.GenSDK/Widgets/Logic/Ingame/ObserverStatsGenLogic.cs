@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
+ * Copyright (c) The OpenRA Developers and Contributors
  * This file is part of OpenRA, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -59,6 +59,45 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 
 		readonly string clickSound = ChromeMetrics.Get<string>("ClickSound");
 		ObserverStatsGenPanel activePanel;
+
+		[TranslationReference]
+		const string Minimal = "options-observer-stats.minimal";
+
+		[TranslationReference]
+		const string InformationNone = "options-observer-stats.none";
+
+		[TranslationReference]
+		const string Basic = "options-observer-stats.basic";
+
+		[TranslationReference]
+		const string Economy = "options-observer-stats.economy";
+
+		[TranslationReference]
+		const string Production = "options-observer-stats.production";
+
+		[TranslationReference]
+		const string SupportPowers = "options-observer-stats.support-powers";
+
+		[TranslationReference]
+		const string Combat = "options-observer-stats.combat";
+
+		[TranslationReference]
+		const string Army = "options-observer-stats.army";
+
+		[TranslationReference]
+		const string GPsAndUpgrades = "options-observer-stats.gps-and-upgrades";
+
+		[TranslationReference]
+		const string EarningsGraph = "options-observer-stats.earnings-graph";
+
+		[TranslationReference]
+		const string ArmyGraph = "options-observer-stats.army-graph";
+
+		[TranslationReference("team")]
+		const string TeamNumber = "label-team-name";
+
+		[TranslationReference]
+		const string NoTeam = "label-no-team";
 
 		[ObjectCreator.UseCtor]
 		public ObserverStatsGenLogic(World world, ModData modData, WorldRenderer worldRenderer, Widget widget, Dictionary<string, MiniYaml> logicArgs)
@@ -123,9 +162,10 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 			var statsDropDown = widget.Get<DropDownButtonWidget>("STATS_DROPDOWN");
 			Func<string, ObserverStatsGenPanel, ScrollItemWidget, Action, StatsDropDownOption> createStatsOption = (title, panel, template, a) =>
 			{
+				title = TranslationProvider.GetString(title);
 				return new StatsDropDownOption
 				{
-					Title = title,
+					Title = TranslationProvider.GetString(title),
 					IsSelected = () => activePanel == panel,
 					OnClick = () =>
 					{
@@ -146,26 +186,26 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 			{
 				new StatsDropDownOption
 				{
-					Title = "Information: None",
+					Title = TranslationProvider.GetString(InformationNone),
 					IsSelected = () => activePanel == ObserverStatsGenPanel.None,
 					OnClick = () =>
 					{
-						statsDropDown.GetText = () => "Information: None";
+						var informationNone = TranslationProvider.GetString(InformationNone);
 						playerStatsPanel.Visible = false;
 						ClearStats();
 						activePanel = ObserverStatsGenPanel.None;
 					}
 				},
-				createStatsOption("Minimal", ObserverStatsGenPanel.Minimal, minimalPlayerTemplate, () => DisplayStats(MinimalStats)),
-				createStatsOption("Basic", ObserverStatsGenPanel.Basic, basicPlayerTemplate, () => DisplayStats(BasicStats)),
-				createStatsOption("Economy", ObserverStatsGenPanel.Economy, economyPlayerTemplate, () => DisplayStats(EconomyStats)),
-				createStatsOption("Production", ObserverStatsGenPanel.Production, productionPlayerTemplate, () => DisplayStats(ProductionStats)),
-				createStatsOption("Support Powers", ObserverStatsGenPanel.SupportPowers, supportPowersPlayerTemplate, () => DisplayStats(SupportPowerStats)),
-				createStatsOption("Combat", ObserverStatsGenPanel.Combat, combatPlayerTemplate, () => DisplayStats(CombatStats)),
-				createStatsOption("Army", ObserverStatsGenPanel.Army, armyPlayerTemplate, () => DisplayStats(ArmyStats)),
-				createStatsOption("GPs and Upgrades", ObserverStatsGenPanel.Upgrades, upgradesPlayerTemplate, () => DisplayStats(UpgradesStats)),
-				createStatsOption("Earnings (graph)", ObserverStatsGenPanel.Graph, null, () => IncomeGraph()),
-				createStatsOption("Army (graph)", ObserverStatsGenPanel.ArmyGraph, null, () => ArmyValueGraph()),
+				createStatsOption(Minimal, ObserverStatsGenPanel.Minimal, minimalPlayerTemplate, () => DisplayStats(MinimalStats, modData)),
+				createStatsOption(Basic, ObserverStatsGenPanel.Basic, basicPlayerTemplate, () => DisplayStats(BasicStats, modData)),
+				createStatsOption(Economy, ObserverStatsGenPanel.Economy, economyPlayerTemplate, () => DisplayStats(EconomyStats, modData)),
+				createStatsOption(Production, ObserverStatsGenPanel.Production, productionPlayerTemplate, () => DisplayStats(ProductionStats, modData)),
+				createStatsOption(SupportPowers, ObserverStatsGenPanel.SupportPowers, supportPowersPlayerTemplate, () => DisplayStats(SupportPowerStats, modData)),
+				createStatsOption(Combat, ObserverStatsGenPanel.Combat, combatPlayerTemplate, () => DisplayStats(CombatStats, modData)),
+				createStatsOption(Army, ObserverStatsGenPanel.Army, armyPlayerTemplate, () => DisplayStats(ArmyStats, modData)),
+				createStatsOption(GPsAndUpgrades, ObserverStatsGenPanel.Upgrades, upgradesPlayerTemplate, () => DisplayStats(UpgradesStats, modData)),
+				createStatsOption(EarningsGraph, ObserverStatsGenPanel.Graph, null, () => IncomeGraph()),
+				createStatsOption(ArmyGraph, ObserverStatsGenPanel.ArmyGraph, null, () => ArmyValueGraph()),
 			};
 
 			Func<StatsDropDownOption, ScrollItemWidget, ScrollItemWidget> setupItem = (option, template) =>
@@ -246,7 +286,7 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 					(p.PlayerActor.TraitOrDefault<PlayerStatistics>() ?? new PlayerStatistics(p.PlayerActor)).ArmySamples.Select(s => (float)s)));
 		}
 
-		void DisplayStats(Func<Player, ScrollItemWidget> createItem)
+		void DisplayStats(Func<Player, ScrollItemWidget> createItem, ModData modData)
 		{
 			foreach (var team in teams)
 			{
@@ -256,7 +296,8 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 					tt.IgnoreMouseOver = true;
 
 					var teamLabel = tt.Get<LabelWidget>("TEAM");
-					var teamText = team.Key == 0 ? "No Team" : "Team " + team.Key;
+					var teamText = team.Key > 0 ? TranslationProvider.GetString(TeamNumber, Translation.Arguments("team", team.Key))
+						: TranslationProvider.GetString(NoTeam);
 					teamLabel.GetText = () => teamText;
 					tt.Bounds.Width = teamLabel.Bounds.Width = Game.Renderer.Fonts[tt.Font].Measure(teamText).X;
 
@@ -320,6 +361,9 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 
 			var armyText = new CachedTransform<int, string>(i => "$" + i);
 			template.Get<LabelWidget>("ARMY_VALUE").GetText = () => armyText.Update(stats.ArmyValue);
+
+			var visionText = new CachedTransform<int, string>(i => Vision(i));
+			template.Get<LabelWidget>("VISION").GetText = () => player.Shroud.Disabled ? "100%" : visionText.Update(player.Shroud.RevealedCells);
 
 			return template;
 		}
@@ -602,6 +646,11 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 		string AverageOrdersPerMinute(double orders)
 		{
 			return (world.WorldTick == 0 ? 0 : orders / (world.WorldTick / 1500.0)).ToString("F1");
+		}
+
+		string Vision(int revealedCells)
+		{
+			return Math.Ceiling(revealedCells / (float)world.Map.ProjectedCells.Length * 100).ToString("F0") + "%";
 		}
 
 		static Color GetPowerColor(PowerState state)

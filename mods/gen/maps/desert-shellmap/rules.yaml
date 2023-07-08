@@ -1,5 +1,9 @@
 Player:
 	-ConquestVictoryConditions:
+	PlayerResources:
+		ResourceValues:
+			Ore: 0
+			Gems: 0
 	Shroud:
 		FogCheckboxLocked: True
 		FogCheckboxEnabled: False
@@ -8,15 +12,11 @@ Player:
 
 World:
 	-CrateSpawner:
-	-SpawnMPUnits:
-	-MPStartLocations:
+	-SpawnStartingUnits:
+	-MapStartingLocations:
 	MusicPlaylist:
 		StartingMusic: chi_01
 		DisableWorldSounds: true
-	ResourceType@ore:
-		ValuePerUnit: 0
-	ResourceType@gem:
-		ValuePerUnit: 0
 	LuaScript:
 		Scripts: desert-shellmap.lua
 	-StartGameNotification:
@@ -195,9 +195,9 @@ powerproxy.paradrop:
 			1: paradrop2
 		Prerequisites:
 			1: prerequisite.reactor
-		Descriptions:
+		Names:
 			1: ParaDrop
-		LongDescs:
+		Descriptions:
 			1: 2 B-52 drop total of 10 Rangers\nanywhere on the map.
 		UnitTypes:
 			1: aircraft.badger.paradrop

@@ -134,18 +134,18 @@
 		Condition: invulnerability
 	ExternalCondition@INVULNERABILITY:
 		Condition: invulnerability
-	DamagedByRadioactivity@ANTHRAX_ALPHA:
+	DamagedByTintedCells@ANTHRAX_ALPHA:
 		RequiresCondition: !invulnerability
-	DamagedByRadioactivity@ANTHRAX_BETA:
+	DamagedByTintedCells@ANTHRAX_BETA:
 		RequiresCondition: !invulnerability
-	DamagedByRadioactivity@ANTHRAX_GAMMA:
+	DamagedByTintedCells@ANTHRAX_GAMMA:
 		RequiresCondition: !invulnerability
-	DamagedByRadioactivity@RADIOACTIVITY:
+	DamagedByTintedCells@RADIOACTIVITY:
 		RequiresCondition: !invulnerability
 
 ^AffectedByFrenzy:
 	WithColoredOverlay@FRENZY:
-		Palette: frenzy
+		Color: C4000080
 		RequiresCondition: frenzy1 || frenzy2 || frenzy3
 	FirepowerMultiplier@FRENZY1:
 		RequiresCondition: frenzy1
@@ -301,11 +301,11 @@
 
 ^AffectedByDriverKill:
 	WithColoredOverlay@DRIVER_KILLED:
+		Color: 80808080
 		RequiresCondition: driver_killed
-		Palette: driver_killed
-	ExternalConditionThatRevokedOnCapture@DRIVER_KILLED:
-		Condition: driver_killed
-		TotalCap: 1
+	# ExternalConditionThatRevokedOnCapture@DRIVER_KILLED: # This will be rewritten with ChangeOwnerWarhead.
+	#	Condition: driver_killed
+	#	TotalCap: 1
 	TimedConditionBar@DRIVER_KILLED:
 		Condition: driver_killed
 		Color: AAAAAA
@@ -374,7 +374,7 @@
 		InitialDelay: 250
 		CloakDelay: 250
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: gps_scrambler
 	ExternalCondition@GPS_SCRAMBLER:
@@ -434,7 +434,7 @@
 	SpeedMultiplier@WORKER_SHOES:
 		RequiresCondition: worker_shoes
 		Modifier: 110
-	HarvesterResourceMultiplier@WORKER_SHOES:
+	ResourceValueMultiplier@WORKER_SHOES:
 		RequiresCondition: worker_shoes
 		Modifier: 110
 	GrantConditionOnPrerequisite@WORKER_SHOES:
@@ -450,7 +450,7 @@
 		Prerequisites: upgrade.supply_lines
 
 ^AffectedBySupplyLinesChinook:
-	HarvesterResourceMultiplier@SUPPLY_LINES:
+	ResourceValueMultiplier@SUPPLY_LINES:
 		RequiresCondition: supply_lines
 		Modifier: 110
 	GrantConditionOnPrerequisite@SUPPLY_LINES:
@@ -529,33 +529,33 @@
 	Armor@CHEMICAL_SUITS:
 		Type: infantry.chem_suit
 		RequiresCondition: chemical_suits
-	DamagedByRadioactivity@ANTHRAX_ALPHA:
+	DamagedByTintedCells@ANTHRAX_ALPHA:
 		RequiresCondition: !chemical_suits
-	DamagedByRadioactivity@ANTHRAX_BETA:
+	DamagedByTintedCells@ANTHRAX_BETA:
 		RequiresCondition: !chemical_suits
-	DamagedByRadioactivity@ANTHRAX_GAMMA:
+	DamagedByTintedCells@ANTHRAX_GAMMA:
 		RequiresCondition: !chemical_suits
-	DamagedByRadioactivity@RADIOACTIVITY:
+	DamagedByTintedCells@RADIOACTIVITY:
 		RequiresCondition: !chemical_suits
-	DamagedByRadioactivity@ANTHRAX_ALPHA_CHEM:
+	DamagedByTintedCells@ANTHRAX_ALPHA_CHEM:
 		RadioactivityLayerName: anthrax_alpha
 		DamageCoeff: 400
 		DamageInterval: 10
 		DamageTypes: FireDeath
 		RequiresCondition: chemical_suits
-	DamagedByRadioactivity@ANTHRAX_BETA_CHEM:
+	DamagedByTintedCells@ANTHRAX_BETA_CHEM:
 		RadioactivityLayerName: anthrax_beta
 		DamageCoeff: 500
 		DamageInterval: 10
 		DamageTypes: FireDeath
 		RequiresCondition: chemical_suits
-	DamagedByRadioactivity@ANTHRAX_GAMMA_CHEM:
+	DamagedByTintedCells@ANTHRAX_GAMMA_CHEM:
 		RadioactivityLayerName: anthrax_gamma
 		DamageCoeff: 600
 		DamageInterval: 10
 		DamageTypes: FireDeath
 		RequiresCondition: chemical_suits
-	DamagedByRadioactivity@RADIOACTIVITY_CHEM:
+	DamagedByTintedCells@RADIOACTIVITY_CHEM:
 		RadioactivityLayerName: radioactivity
 		DamageCoeff: 400
 		DamageInterval: 10
@@ -569,21 +569,21 @@
 	Inherits: ^AffectedByChemicalSuits
 	Armor@CHEMICAL_SUITS:
 		RequiresCondition: chemical_suits || !boss
-	DamagedByRadioactivity@ANTHRAX_ALPHA:
+	DamagedByTintedCells@ANTHRAX_ALPHA:
 		RequiresCondition: !chemical_suits || !boss
-	DamagedByRadioactivity@ANTHRAX_BETA:
+	DamagedByTintedCells@ANTHRAX_BETA:
 		RequiresCondition: !chemical_suits || !boss
-	DamagedByRadioactivity@ANTHRAX_GAMMA:
+	DamagedByTintedCells@ANTHRAX_GAMMA:
 		RequiresCondition: !chemical_suits || !boss
-	DamagedByRadioactivity@RADIOACTIVITY:
+	DamagedByTintedCells@RADIOACTIVITY:
 		RequiresCondition: !chemical_suits || !boss
-	DamagedByRadioactivity@ANTHRAX_ALPHA_CHEM:
+	DamagedByTintedCells@ANTHRAX_ALPHA_CHEM:
 		RequiresCondition: chemical_suits && boss
-	DamagedByRadioactivity@ANTHRAX_BETA_CHEM:
+	DamagedByTintedCells@ANTHRAX_BETA_CHEM:
 		RequiresCondition: chemical_suits && boss
-	DamagedByRadioactivity@ANTHRAX_GAMMA_CHEM:
+	DamagedByTintedCells@ANTHRAX_GAMMA_CHEM:
 		RequiresCondition: chemical_suits && boss
-	DamagedByRadioactivity@RADIOACTIVITY_CHEM:
+	DamagedByTintedCells@RADIOACTIVITY_CHEM:
 		RequiresCondition: chemical_suits && boss
 	GrantConditionOnFaction@Boss:
 		Condition: boss
@@ -675,22 +675,22 @@
 		TotalCap: 2
 
 ^AffectedByRadiationAndToxins:
-	DamagedByRadioactivity@ANTHRAX_ALPHA:
+	DamagedByTintedCells@ANTHRAX_ALPHA:
 		RadioactivityLayerName: anthrax_alpha
 		DamageCoeff: 2000
 		DamageInterval: 10
 		DamageTypes: FireDeath
-	DamagedByRadioactivity@ANTHRAX_BETA:
+	DamagedByTintedCells@ANTHRAX_BETA:
 		RadioactivityLayerName: anthrax_beta
 		DamageCoeff: 2500
 		DamageInterval: 10
 		DamageTypes: FireDeath
-	DamagedByRadioactivity@ANTHRAX_GAMMA:
+	DamagedByTintedCells@ANTHRAX_GAMMA:
 		RadioactivityLayerName: anthrax_gamma
 		DamageCoeff: 3000
 		DamageInterval: 10
 		DamageTypes: FireDeath
-	DamagedByRadioactivity@RADIOACTIVITY:
+	DamagedByTintedCells@RADIOACTIVITY:
 		RadioactivityLayerName: radioactivity
 		DamageCoeff: 2000
 		DamageInterval: 10
@@ -1149,7 +1149,7 @@
 		InitialDelay: 60
 		CloakDelay: 60
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: camo_netted && !emp && !hacked
 	ProvidesPrerequisite@buildingname:
@@ -1268,7 +1268,7 @@
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24, 24
+		Bounds: 1024, 1024
 	GrantConditionOnDamageState@FullHealth:
 		Condition: fullhealth
 		ValidDamageStates: Undamaged
@@ -1374,7 +1374,7 @@
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24, 24
+		Bounds: 1024, 1024
 	Passenger:
 		Weight: 3
 		CargoType: Vehicle
@@ -1488,7 +1488,7 @@
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 12,18,0,-8
+		Bounds: 512, 768, 0, -341
 	Targetable:
 		TargetTypes: GroundActor, Infantry, Infantry-Disguise, DetonateAttack
 		RequiresCondition: !parachute
@@ -1604,6 +1604,7 @@
 	Armament:
 		Weapon: Pistol
 	AttackFrontal:
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 
@@ -1639,7 +1640,7 @@
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	GrantConditionOnDamageState@FullHealth:
 		Condition: fullhealth
 		ValidDamageStates: Undamaged
@@ -1697,7 +1698,7 @@
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	Aircraft:
 		AirborneCondition: airborne
 	GrantConditionOnDamageState@FullHealth:
@@ -1783,7 +1784,7 @@
 		BuildSounds: placbldg.aud, build5.aud
 		RequiresBaseProvider: true
 	ActorPreviewPlaceBuildingPreview:
-		OverridePalette: placebuilding
+		PreviewAlpha: 0.65
 	RequiresBuildableArea:
 		AreaTypes: building
 	SoundOnDamageTransition:
@@ -1832,7 +1833,7 @@
 		IsPlayerPalette: True
 	Targetable:
 		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Capture, Disable
-	EngineerRepairable:
+	InstantlyRepairable:
 	AcceptsDeliveredCash:
 	WithMakeAnimation:
 		Condition: build-incomplete
@@ -1888,7 +1889,7 @@
 	GrantCondition@DISABLED-SABOTAGE:
 		RequiresCondition: sabotaged
 		Condition: disabled
-	InfiltrateForCondition:
+	GrantConditionOnInfiltration:
 		Types: Sabotage
 		Condition: sabotaged
 	Targetable@SABOTAGE:
@@ -1975,7 +1976,7 @@
 		BuildSounds: placbldg.aud
 		TerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
 	FootprintPlaceBuildingPreview:
-		LineBuildSegmentPalette: placelinesegment
+		LineBuildFootprintAlpha: 0.65
 	RequiresBuildableArea:
 		AreaTypes: building
 		Adjacent: 7
@@ -2067,7 +2068,7 @@
 		BeingCapturedNotification: BuildingBeingCaptured
 	GivesBuildableArea:
 		AreaTypes: mine
-	EngineerRepairable:
+	InstantlyRepairable:
 	RepairableBuilding:
 		RepairStep: 1500
 	WithBuildingRepairDecoration:
@@ -2138,7 +2139,7 @@
 	MapEditorData:
 		Categories: Decoration
 	Interactable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 
 ^Tree:
 	Inherits@1: ^SpriteActor
@@ -2299,7 +2300,7 @@
 		GenericName: Crate
 		ShowOwnerRow: false
 	Crate:
-		Lifetime: 180
+		Duration: 4500
 		TerrainTypes: Grass, Snow, Sand, Concrete, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Beach
 	RenderSprites:
 		Palette: effect
@@ -2353,7 +2354,7 @@
 		CloakSound:
 		UncloakSound:
 		Palette:
-		CloakTypes: Mine
+		DetectionTypes: Mine
 		InitialDelay: 0
 		UncloakWhenAlone: false
 	Tooltip:
@@ -2369,8 +2370,8 @@
 
 ^WithDisabledOverlay:
 	WithColoredOverlay@IDISABLE:
+		Color: 000000B4
 		RequiresCondition: disabled
-		Palette: disabled
 
 ^DisableOnLowPower:
 	Inherits@DISABLED: ^WithDisabledOverlay

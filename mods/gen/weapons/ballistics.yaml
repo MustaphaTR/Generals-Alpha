@@ -56,8 +56,8 @@ cannon.scorpion_tank:
 
 cannon.scorpion_tank.toxin:
 	Inherits: cannon.scorpion_tank
-	Warhead@1Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_alpha
+	Warhead@1Radio: CreateTintedCells
+		LayerName: anthrax_alpha
 		Range: 0
 		Level: 1250
 		Falloff: 100, 90, 50, 0
@@ -65,13 +65,13 @@ cannon.scorpion_tank.toxin:
 
 cannon.scorpion_tank.toxin_beta:
 	Inherits: cannon.scorpion_tank.toxin
-	Warhead@1Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_beta
+	Warhead@1Radio: CreateTintedCells
+		LayerName: anthrax_beta
 
 cannon.scorpion_tank.toxin_gamma:
 	Inherits: cannon.scorpion_tank.toxin
-	Warhead@1Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_gamma
+	Warhead@1Radio: CreateTintedCells
+		LayerName: anthrax_gamma
 
 cannon.technical:
 	Inherits: cannon.scorpion_tank
@@ -141,8 +141,8 @@ cannon.battlemaster_tank:
 
 cannon.battlemaster_tank.nuke:
 	Inherits: cannon.battlemaster_tank
-	Warhead@1Radio: CreateRadioactivity
-		RadioactivityLayerName: radioactivity
+	Warhead@1Radio: CreateTintedCells
+		LayerName: radioactivity
 		Range: 0
 		Level: 1250
 		Falloff: 100, 90, 50, 0
@@ -157,8 +157,8 @@ cannon.battlemaster_tank.autoloader:
 
 cannon.battlemaster_tank.nuke.autoloader:
 	Inherits: cannon.battlemaster_tank.autoloader
-	Warhead@1Radio: CreateRadioactivity
-		RadioactivityLayerName: radioactivity
+	Warhead@1Radio: CreateTintedCells
+		LayerName: radioactivity
 		Range: 0
 		Level: 1250
 		Falloff: 100, 90, 50, 0
@@ -201,8 +201,8 @@ cannon.marauder_tank.crate-2:
 
 cannon.marauder_tank.toxin:
 	Inherits: cannon.marauder_tank
-	Warhead@1Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_alpha
+	Warhead@1Radio: CreateTintedCells
+		LayerName: anthrax_alpha
 		Range: 0
 		Level: 1250
 		Falloff: 100, 90, 50, 0
@@ -220,8 +220,8 @@ cannon.marauder_tank.crate-2.toxin:
 
 cannon.marauder_tank.toxin_beta:
 	Inherits: cannon.marauder_tank.toxin
-	Warhead@1Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_beta
+	Warhead@1Radio: CreateTintedCells
+		LayerName: anthrax_beta
 
 cannon.marauder_tank.crate-1.toxin_beta:
 	Inherits: cannon.marauder_tank.toxin_beta
@@ -235,8 +235,8 @@ cannon.marauder_tank.crate-2.toxin_beta:
 
 cannon.marauder_tank.toxin_gamma:
 	Inherits: cannon.marauder_tank.toxin
-	Warhead@1Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_gamma
+	Warhead@1Radio: CreateTintedCells
+		LayerName: anthrax_gamma
 
 cannon.marauder_tank.crate-1.toxin_gamma:
 	Inherits: cannon.marauder_tank.toxin_gamma
@@ -321,8 +321,8 @@ cannon.overlord_tank:
 
 cannon.overlord_tank.nuke:
 	Inherits: cannon.overlord_tank
-	Warhead@1Radio: CreateRadioactivity
-		RadioactivityLayerName: radioactivity
+	Warhead@1Radio: CreateTintedCells
+		LayerName: radioactivity
 		Range: 0
 		Level: 1250
 		Falloff: 100, 90, 50, 0
@@ -478,14 +478,14 @@ cannon.nuke_cannon:
 	Warhead@3Eff: CreateEffect
 		Explosions: mininuke
 		ImpactSounds: kaboom1.aud
-	Warhead@4Radio: CreateRadioactivity
-		RadioactivityLayerName: radioactivity
+	Warhead@4Radio: CreateTintedCells
+		LayerName: radioactivity
 		Range: 1
 		Level: 1000
 		Falloff: 100, 90, 80
 		MaxLevel: 7500
-	Warhead@5Radio: CreateRadioactivity
-		RadioactivityLayerName: radioactivity
+	Warhead@5Radio: CreateTintedCells
+		LayerName: radioactivity
 		Range: 2
 		Level: 2000
 		Falloff: 100, 90, 80
@@ -668,8 +668,8 @@ bomb.carpet.nuke:
 	Warhead@3Eff: CreateEffect
 		Explosions: mininuke
 		ImpactSounds: kaboom1.aud
-	Warhead@5Radio: CreateRadioactivity
-		RadioactivityLayerName: radioactivity
+	Warhead@5Radio: CreateTintedCells
+		LayerName: radioactivity
 		Range: 2
 		Level: 2500
 		Falloff: 100, 90, 80

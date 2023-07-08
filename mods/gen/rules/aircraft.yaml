@@ -18,20 +18,33 @@
 		Offset: -432,-560,0
 	SpawnActorOnDeath:
 		Actor: husk.badger
-	SmokeTrailWhenDamaged@0:
-		Offset: -432,560,0
-		Interval: 2
-	SmokeTrailWhenDamaged@1:
-		Offset: -432,-560,0
-		Interval: 2
+	LeavesTrails@0:
+		Offsets: -432,560,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
+	LeavesTrails@1:
+		Offsets: -432,-560,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	AttackFrontal:
+		FacingTolerance: 0
 	Armament@PDLASER:
 		Weapon: laser.king_raptor
 		LocalOffset: 0,213,-85
 		Name: pdlaser
-	ShootsMissiles:
-		ShootStances: Neutral, Enemy
+	PointDefense:
 		Armament: pdlaser
+		PointDefenseTypes: missilepd
 		RequiresCondition: airforce
 	GrantConditionOnFaction@Airforce:
 		Condition: airforce
@@ -42,6 +55,8 @@
 	GivesExperience:
 		Experience: 1000
 	Interactable:
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 
 aircraft.badger:
 	Inherits: ^default.badger
@@ -99,6 +114,7 @@ aircraft.badger.fuel_air_bomb:
 		RequiresCondition: countermeasures
 	-AttackFrontal:
 	AttackBomber:
+		FacingTolerance: 8
 	Armament:
 		Weapon: parabomb.fuel_air_bomb
 		PauseOnCondition: !ammo
@@ -121,6 +137,7 @@ aircraft.badger.leaflet:
 		RequiresCondition: countermeasures
 	-AttackFrontal:
 	AttackBomber:
+		FacingTolerance: 8
 	Armament:
 		Weapon: parabomb.leaflet
 		PauseOnCondition: !ammo
@@ -155,6 +172,7 @@ aircraft.badger.anthrax_bomb:
 	Inherits: ^default.badger
 	-AttackFrontal:
 	AttackBomber:
+		FacingTolerance: 8
 	Armament@Normal:
 		Weapon: parabomb.anthrax
 		RequiresCondition: !anthrax_beta && !anthrax_gamma
@@ -186,6 +204,7 @@ aircraft.badger.emp:
 	Inherits: ^default.badger
 	-AttackFrontal:
 	AttackBomber:
+		FacingTolerance: 8
 	Armament:
 		Weapon: parabomb.emp
 		PauseOnCondition: !ammo
@@ -199,6 +218,7 @@ aircraft.badger.cluster_mines:
 	Inherits: ^default.badger
 	-AttackFrontal:
 	AttackBomber:
+		FacingTolerance: 8
 	Armament:
 		Weapon: parabomb.cluster_mines
 		PauseOnCondition: !ammo
@@ -212,6 +232,7 @@ aircraft.badger.carpet:
 	Inherits: ^default.badger
 	-AttackFrontal:
 	AttackBomber:
+		FacingTolerance: 8
 	Armament:
 		Weapon: bomb.carpet.prc
 		PauseOnCondition: !ammo
@@ -382,8 +403,8 @@ aircraft.mig:
 		ReloadDelay: 100
 		AmmoCondition: ammo
 	Selectable:
-		Bounds: 36,28,0,2
-		DecorationBounds: 40,29,0,1
+		Bounds: 1536, 1194, 0, 85
+		DecorationBounds: 1706, 1237, 0, 42
 	SelectionDecorations:
 	Contrail@1:
 		Offset: -598,-683,0
@@ -392,9 +413,15 @@ aircraft.mig:
 	-RevealOnDeath:
 	SpawnActorOnDeath:
 		Actor: husk.mig
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	GrantConditionOnPrerequisite@MiGArmor:
 		Condition: mig_armor
 		Prerequisites: upgrade.mig_armor
@@ -422,6 +449,8 @@ aircraft.mig:
 		Position: BottomLeft
 		Margin: 4, 3
 		RequiresSelection: true
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 
 aircraft.raptor:
 	Inherits: ^Plane
@@ -510,8 +539,8 @@ aircraft.raptor:
 		ReloadDelay: 50
 		AmmoCondition: ammo
 	Selectable:
-		Bounds: 36,28,0,2
-		DecorationBounds: 40,29,0,1
+		Bounds: 1536, 1194, 0, 85
+		DecorationBounds: 1706, 1237, 0, 42
 	SelectionDecorations:
 	Contrail@1:
 		Offset: -598,-683,0
@@ -520,9 +549,15 @@ aircraft.raptor:
 	-RevealOnDeath:
 	SpawnActorOnDeath:
 		Actor: husk.raptor
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.plane
 	Rearmable:
@@ -531,12 +566,12 @@ aircraft.raptor:
 		RepairActors: building.prc_airfield, building.usa_airfield, hack.dock
 	Voiced:
 		VoiceSet: RaptorVoice
-	RenderSprites:
-		Scale: 0.9
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3
 		RequiresSelection: true
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 
 aircraft.king_raptor:
 	Inherits: aircraft.raptor
@@ -564,9 +599,9 @@ aircraft.king_raptor:
 		Weapon: laser.king_raptor
 		LocalOffset: 0,213,-85
 		Name: pdlaser
-	ShootsMissiles:
-		ShootStances: Neutral, Enemy
+	PointDefense:
 		Armament: pdlaser
+		PointDefenseTypes: missilepd
 	AmmoPool:
 		Ammo: 6
 		ReloadDelay: 6
@@ -680,8 +715,8 @@ aircraft.stealth_fighter:
 		ReloadDelay: 100
 		AmmoCondition: ammo
 	Selectable:
-		Bounds: 36,28,0,2
-		DecorationBounds: 40,29,0,1
+		Bounds: 1536, 1194, 0, 85
+		DecorationBounds: 1706, 1237, 0, 42
 		Class: aircraft.stealth_fighter
 	SelectionDecorations:
 	Contrail@1:
@@ -691,14 +726,20 @@ aircraft.stealth_fighter:
 	-RevealOnDeath:
 	SpawnActorOnDeath:
 		Actor: husk.stealth_fighter
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	Cloak:
 		InitialDelay: 125
 		CloakDelay: 60
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
@@ -723,11 +764,12 @@ aircraft.stealth_fighter:
 		RepairActors: building.prc_airfield, building.usa_airfield, hack.dock
 	RenderSprites:
 		Image: aircraft.stealth_fighter
-		Scale: 0.9
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3
 		RequiresSelection: true
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 
 aircraft.stealth_fighter.air:
 	Inherits: aircraft.stealth_fighter
@@ -742,9 +784,9 @@ aircraft.stealth_fighter.air:
 		Weapon: laser.king_raptor
 		LocalOffset: 0,213,-85
 		Name: pdlaser
-	ShootsMissiles:
-		ShootStances: Neutral, Enemy
+	PointDefense:
 		Armament: pdlaser
+		PointDefenseTypes: missilepd
 
 aircraft.aurora:
 	Inherits: ^Plane
@@ -804,9 +846,9 @@ aircraft.aurora:
 		Weapon: laser.king_raptor
 		LocalOffset: 0,213,-85
 		Name: pdlaser
-	ShootsMissiles:
-		ShootStances: Neutral, Enemy
+	PointDefense:
 		Armament: pdlaser
+		PointDefenseTypes: missilepd
 		RequiresCondition: airforce
 	GrantConditionOnFaction@Airforce:
 		Condition: airforce
@@ -852,8 +894,8 @@ aircraft.aurora:
 		AmmoCondition: ammo
 	Selectable:
 		Class: aircraft.aurora
-		Bounds: 36,28,0,2
-		DecorationBounds: 40,29,0,1
+		Bounds: 1536, 1194, 0, 85
+		DecorationBounds: 1706, 1237, 0, 42
 	SelectionDecorations:
 	Contrail@1:
 		Offset: -598,-683,0
@@ -862,9 +904,15 @@ aircraft.aurora:
 	-RevealOnDeath:
 	SpawnActorOnDeath:
 		Actor: husk.aurora
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	Rearmable:
 		RearmActors: building.prc_airfield, building.usa_airfield, hack.dock
 	Repairable:
@@ -873,12 +921,12 @@ aircraft.aurora:
 		VoiceSet: AuroraVoice
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.plane
-	RenderSprites:
-		Scale: 0.9
 	WithAmmoPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3
 		RequiresSelection: true
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 
 aircraft.aurora.boss:
 	Inherits: aircraft.aurora
@@ -932,7 +980,7 @@ aircraft.spy_drone:
 		InitialDelay: 0
 		CloakDelay: 50
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
@@ -951,13 +999,19 @@ aircraft.spy_drone:
 		Weapon: UnitExplodeDrone
 		EmptyWeapon: UnitExplodeDrone
 		-RequiresCondition:
-	SmokeTrailWhenDamaged:
-		Offset: -511,0,0
-		Interval: 2
-	RenderSprites:
-		Scale: 0.5
+	LeavesTrails:
+		Offsets: -511,0,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	Interactable:
-		DecorationBounds: 30,28,0,2
+		DecorationBounds: 1280, 1194, 0, 85
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 
 aircraft.scout_drone:
 	Inherits: aircraft.spy_drone
@@ -1010,8 +1064,6 @@ aircraft.battle_drone:
 		AttackType: Hover
 		Armaments: primary
 		FacingTolerance: 80
-	RenderSprites:
-		Scale: 0.75
 
 aircraft.hellfire_drone:
 	Inherits: aircraft.scout_drone
@@ -1051,6 +1103,7 @@ aircraft.a10:
 		Repulsable: False
 	AttackBomber:
 		Armaments: gun, missile
+		FacingTolerance: 8
 	Armament@GUNS:
 		Name: gun
 		Weapon: mg.a10
@@ -1154,13 +1207,14 @@ aircraft.chinook:
 	WithSupplyDeliveryOverlay:
 	Turreted:
 	AttackFrontal:
+		FacingTolerance: 0
 	Armament@PDLASER:
 		Weapon: laser.paladin_tank
 		LocalOffset: 0,213,2048
 		Name: pdlaser
-	ShootsMissiles:
-		ShootStances: Neutral, Enemy
+	PointDefense:
 		Armament: pdlaser
+		PointDefenseTypes: missilepd
 		RequiresCondition: airforce
 	GrantConditionOnFaction@Airforce:
 		Condition: airforce
@@ -1187,13 +1241,14 @@ aircraft.chinook:
 	-ChangesHealth@EMERGENCY_REPAIR:
 	-WithDecoration@EMERGENCY_REPAIR:
 	-ExternalCondition@EMERGENCY_REPAIR:
-	-DamagedByRadioactivity@ANTHRAX_ALPHA:
-	-DamagedByRadioactivity@ANTHRAX_BETA:
-	-DamagedByRadioactivity@RADIOACTIVITY:
+	-DamagedByTintedCells@ANTHRAX_ALPHA:
+	-DamagedByTintedCells@ANTHRAX_BETA:
+	-DamagedByTintedCells@ANTHRAX_GAMMA:
+	-DamagedByTintedCells@RADIOACTIVITY:
 	Selectable:
 		Priority: 7
-		Bounds: 40,36,0,-50
-		DecorationBounds: 40,36,0,-50
+		Bounds: 1706, 1536, 0, -2133
+		DecorationBounds: 1706, 1536, 0, -2133
 	SelectionDecorations:
 	Voiced:
 		VoiceSet: ChinookVoice
@@ -1256,9 +1311,9 @@ aircraft.chinook:
 #		Weapon: laser.paladin_tank
 #		LocalOffset: 0,213,2048
 #		Name: pdlaser
-#	ShootsMissiles:
-#		ShootStances: Neutral, Enemy
+#	PointDefense:
 #		Armament: pdlaser
+#		PointDefenseTypes: missilepd
 #		RequiresCondition: airforce
 #	Aircraft:
 #		CruiseAltitude: 1928
@@ -1315,6 +1370,7 @@ aircraft.combat_chinook:
 		HP: 35000
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 0
 	AttackGarrisoned:
 		PortOffsets: 256,128,2060, 256,-128,2060, -256,128,2060, -256,-128,2060
 		PortYaws: 0, 0, 512, 512
@@ -1425,13 +1481,20 @@ aircraft.comanche:
 	SelectionDecorations:
 	SpawnActorOnDeath:
 		Actor: husk.comanche
-	SmokeTrailWhenDamaged:
-		Offset: -427,0,0
+	LeavesTrails:
+		Offsets: -427,0,0
+		Image: smokey
+		MovingInterval: 3
+		StationaryInterval: 3
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	Cloak:
 		InitialDelay: 120
 		CloakDelay: 60
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled && stealth_comanche
 	GrantConditionOnDamageState@UNCLOAK:
@@ -1446,8 +1509,10 @@ aircraft.comanche:
 	Voiced:
 		VoiceSet: ComancheVoice
 	Selectable:
-		DecorationBounds: 36,28
+		DecorationBounds: 1536, 1194
 		Class: aircraft.comanche
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 
 aircraft.helix:
 	Inherits: ^Helicopter
@@ -1588,8 +1653,15 @@ aircraft.helix:
 	SelectionDecorations:
 	SpawnActorOnDeath:
 		Actor: husk.helix
-	SmokeTrailWhenDamaged:
-		Offset: -427,0,0
+	LeavesTrails:
+		Offsets: -427,0,0
+		Image: smokey
+		MovingInterval: 3
+		StationaryInterval: 3
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+		RequiresCondition: enable-smoke
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker, Vehicle
 		MaxWeight: 5
@@ -1681,12 +1753,12 @@ aircraft.helix:
 	Voiced:
 		VoiceSet: HelixVoice
 	Selectable:
-		DecorationBounds: 40,35
-	RenderSprites:
-		Scale: 1.3
+		DecorationBounds: 1706, 1493
 	WithCargoPipsDecoration:
 		Position: BottomLeft
 		RequiresSelection: true
+	GrantConditionOnDamageState@SmokeTrail:
+		Condition: enable-smoke
 
 aircraft.assault_helix:
 	Inherits: aircraft.helix

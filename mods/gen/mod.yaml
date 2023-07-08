@@ -3,6 +3,7 @@ Metadata:
 	Version: gen-20230705
 	Website: https://www.moddb.com/mods/generals-alpha
 	WebIcon32: https://raw.githubusercontent.com/MustaphaTR/Generals-Alpha/master/packaging/artwork/icon_32x32.png
+	WindowTitle: OpenRA - Generals Alpha
 
 ModCredits:
 	ModTabTitle: Generals Alpha
@@ -118,7 +119,7 @@ Chrome:
 	gen|chrome.yaml
 
 Assemblies:
-	^BinDir|OpenRA.Mods.Gen.dll
+	^BinDir|OpenRA.Mods.AS.dll
 	^BinDir|OpenRA.Mods.GenSDK.dll
 	^BinDir|OpenRA.Mods.Common.dll
 	^BinDir|OpenRA.Mods.Cnc.dll
@@ -126,6 +127,7 @@ Assemblies:
 ChromeLayout:
 	gen|chrome/ingame.yaml
 	common|chrome/ingame-chat.yaml
+	common|chrome/ingame-transients.yaml
 	common|chrome/ingame-fmvplayer.yaml
 	gen|chrome/ingame-info.yaml
 	common|chrome/ingame-infochat.yaml
@@ -133,24 +135,31 @@ ChromeLayout:
 	common|chrome/ingame-infobriefing.yaml
 	common|chrome/ingame-infoobjectives.yaml
 	gen|chrome/ingame-infostats.yaml
+	common|chrome/ingame-info-lobby-options.yaml
 	common|chrome/ingame-menu.yaml
 	gen|chrome/ingame-observer.yaml
 	gen|chrome/ingame-player.yaml
 	common|chrome/ingame-perf.yaml
 	common|chrome/ingame-debug.yaml
+	common|chrome/ingame-debug-hpf.yaml
 	common|chrome/ingame-debuginfo.yaml
+	common|chrome/ingame-infochat.yaml
 	common|chrome/mainmenu.yaml
 	common|chrome/mainmenu-prompts.yaml
 	common|chrome/settings.yaml
+	common|chrome/settings-display.yaml
+	common|chrome/settings-audio.yaml
+	common|chrome/settings-input.yaml
+	common|chrome/settings-hotkeys.yaml
+	common|chrome/settings-advanced.yaml
 	common|chrome/credits.yaml
 	common|chrome/lobby.yaml
 	common|chrome/lobby-mappreview.yaml
 	gen|chrome/lobby-players.yaml
 	gen|chrome/lobby-options.yaml
 	common|chrome/lobby-music.yaml
-	common|chrome/lobby-kickdialogs.yaml
 	common|chrome/lobby-servers.yaml
-	gen|chrome/playerprofile.yaml
+	common|chrome/lobby-kickdialogs.yaml
 	gen|chrome/color-picker.yaml
 	common|chrome/map-chooser.yaml
 	common|chrome/multiplayer-browser.yaml
@@ -168,6 +177,15 @@ ChromeLayout:
 	common|chrome/missionbrowser.yaml
 	common|chrome/confirmation-dialogs.yaml
 	common|chrome/editor.yaml
+	gen|chrome/playerprofile.yaml
+	common|chrome/text-notifications.yaml
+
+Translations:
+	common|languages/en.ftl
+	common|languages/rules/en.ftl
+	gen|languages/rules/en.ftl
+	gen|languages/difficulties/en.ftl
+	gen|languages/en.ftl
 
 Weapons:
 	gen|weapons/ballistics.yaml
@@ -190,15 +208,15 @@ Notifications:
 Music:
 	gen|audio/music.yaml
 
-Translations:
-	gen|languages/english.yaml
-
 Hotkeys:
 	gen|hotkeys/game.yaml
 	common|hotkeys/observer.yaml
 	common|hotkeys/production-common.yaml
 	common|hotkeys/supportpowers.yaml
 	common|hotkeys/viewport.yaml
+	common|hotkeys/chat.yaml
+	common|hotkeys/editor.yaml
+	common|hotkeys/control-groups.yaml
 	gen|hotkeys/local.yaml
 
 LoadScreen: LogoStripeLoadScreen
@@ -258,78 +276,88 @@ MapGrid:
 	TileSize: 24,24
 	Type: Rectangular
 
+DefaultOrderGenerator: UnitOrderGenerator
+
 SupportsMapsFrom: gen
 
 SoundFormats: Aud, Wav
 
 SpriteFormats: ShpD2, ShpTD, TmpRA, TmpTD, ShpTS, PngSheet
 
-SpriteSequenceFormat: TilesetSpecificSpriteSequence
-	TilesetExtensions:
-		TEMPERAT: .tem
-		SNOW: .sno
-		INTERIOR: .int
-		DESERT: .des
+VideoFormats: Vqa, Wsa
+
+TerrainFormat: DefaultTerrain
+
+SpriteSequenceFormat: ClassicTilesetSpecificSpriteSequence
 
 ModelSequenceFormat: PlaceholderModelSequence
 
 AssetBrowser:
-	SupportedExtensions: .shp, .tmp, .tem, .des, .sno, .int, .vqa
+	SpriteExtensions: .shp, .tmp, .tem, .des, .sno, .int
+	AudioExtensions: .aud, .wav, .r00, .r01, .r02, .r03, .v00, .v01, .v02, .v03
+	VideoExtensions: .vqa, .wsa
 
 GameSpeeds:
-	slowest:
-		Name: Slowest
-		Timestep: 80
-		OrderLatency: 2
-	slower:
-		Name: Slower
-		Timestep: 50
-		OrderLatency: 3
-	default:
-		Name: Normal
-		Timestep: 40
-		OrderLatency: 3
-	fast:
-		Name: Fast
-		Timestep: 35
-		OrderLatency: 4
-	faster:
-		Name: Faster
-		Timestep: 30
-		OrderLatency: 4
-	fastest:
-		Name: Fastest
-		Timestep: 20
-		OrderLatency: 6
-	superfast:
-		Name: Super Fast
-		Timestep: 5
-		OrderLatency: 10
-
-ColorValidator:
-	TeamColorPresets: dde20d, ff0000, 4368fe, 3ed12e, ffa019, 32d7e6, 9600c8, ff96ff, 6e7106, 7F0000, 21347f, 1f6817, 7F500c, 166b73, 480064, 7F487F
+	DefaultSpeed: default
+	Speeds:
+		slowest:
+			Name: options-game-speed.slowest
+			Timestep: 80
+			OrderLatency: 2
+		slower:
+			Name: options-game-speed.slower
+			Timestep: 50
+			OrderLatency: 3
+		default:
+			Name: options-game-speed.normal
+			Timestep: 40
+			OrderLatency: 3
+		fast:
+			Name: options-game-speed.fast
+			Timestep: 35
+			OrderLatency: 4
+		faster:
+			Name: options-game-speed.faster
+			Timestep: 30
+			OrderLatency: 4
+		fastest:
+			Name: options-game-speed.fastest
+			Timestep: 20
+			OrderLatency: 6
+		superfast:
+			Name: options-game-speed.superfast
+			Timestep: 5
+			OrderLatency: 10
 
 ModContent:
-	InstallPromptMessage: Generals Alpha requires artwork and audio of original Red Alert.\n\nQuick Install will automatically download this content (without music\nor videos) from a mirror of the 2008 Red Alert freeware release.\n\nAdvanced Install includes options for downloading the music.
+	InstallPromptMessage: Generals Alpha requires artwork and audio of original Red Alert.\n\nQuick Install will automatically download this content (without music\nor videos) from a mirror of the 2008 Red Alert freeware release.\n\nAdvanced Install includes options for copying the music, videos, and\nother content from an original game disc or digital installation.
 	QuickDownload: quickinstall
 	HeaderMessage: Game content may be extracted from the original game discs or an\nexisting digital install. OpenRA can also download the base game\nfiles from an online mirror of the 2008 freeware release of RA.
 	Packages:
-		base: Red Alert Game Files
+		ContentPackage@base:
+			Title: Red Alert Game Files
+			Identifier: base
 			TestFiles: ^SupportDir|Content/ra/v2/allies.mix, ^SupportDir|Content/ra/v2/conquer.mix, ^SupportDir|Content/ra/v2/interior.mix, ^SupportDir|Content/ra/v2/hires.mix, ^SupportDir|Content/ra/v2/lores.mix, ^SupportDir|Content/ra/v2/local.mix, ^SupportDir|Content/ra/v2/speech.mix, ^SupportDir|Content/ra/v2/russian.mix, ^SupportDir|Content/ra/v2/snow.mix, ^SupportDir|Content/ra/v2/sounds.mix, ^SupportDir|Content/ra/v2/temperat.mix
-			Sources: allied, allied-linux, soviet, soviet-linux, tfd, ra-origin
+			Sources: allied, soviet, tfd, ra-origin, cncr-steam, cncr-origin
 			Required: true
 			Download: basefiles
-		aftermathbase: Aftermath Expansion Files
+		ContentPackage@aftermathbase:
+			Title: Aftermath Expansion Files
+			Identifier: aftermathbase
 			TestFiles: ^SupportDir|Content/ra/v2/expand/expand2.mix, ^SupportDir|Content/ra/v2/expand/hires1.mix, ^SupportDir|Content/ra/v2/expand/lores1.mix, ^SupportDir|Content/ra/v2/expand/chrotnk1.aud, ^SupportDir|Content/ra/v2/expand/fixit1.aud, ^SupportDir|Content/ra/v2/expand/jburn1.aud, ^SupportDir|Content/ra/v2/expand/jchrge1.aud, ^SupportDir|Content/ra/v2/expand/jcrisp1.aud, ^SupportDir|Content/ra/v2/expand/jdance1.aud, ^SupportDir|Content/ra/v2/expand/jjuice1.aud, ^SupportDir|Content/ra/v2/expand/jjump1.aud, ^SupportDir|Content/ra/v2/expand/jlight1.aud, ^SupportDir|Content/ra/v2/expand/jpower1.aud, ^SupportDir|Content/ra/v2/expand/jshock1.aud, ^SupportDir|Content/ra/v2/expand/jyes1.aud, ^SupportDir|Content/ra/v2/expand/madchrg2.aud, ^SupportDir|Content/ra/v2/expand/madexplo.aud, ^SupportDir|Content/ra/v2/expand/mboss1.aud, ^SupportDir|Content/ra/v2/expand/mhear1.aud, ^SupportDir|Content/ra/v2/expand/mhotdig1.aud, ^SupportDir|Content/ra/v2/expand/mhowdy1.aud, ^SupportDir|Content/ra/v2/expand/mhuh1.aud, ^SupportDir|Content/ra/v2/expand/mlaff1.aud, ^SupportDir|Content/ra/v2/expand/mrise1.aud, ^SupportDir|Content/ra/v2/expand/mwrench1.aud, ^SupportDir|Content/ra/v2/expand/myeehaw1.aud, ^SupportDir|Content/ra/v2/expand/myes1.aud
-			Sources: aftermath, aftermath-linux, tfd, ra-origin
+			Sources: aftermath, tfd, ra-origin, cncr-steam, cncr-origin
 			Required: true
 			Download: aftermath
-		cncdesert: C&C Desert Tileset
+		ContentPackage@cncdesert:
+			Title: C&C Desert Tileset
+			Identifier: cncdesert
 			TestFiles: ^SupportDir|Content/ra/v2/cnc/desert.mix
-			Sources: tfd, cnc-origin, cnc95, cnc95-linux
+			Sources: tfd, cnc-origin, cnc95, cncr-steam, cncr-origin
 			Required: true
 			Download: cncdesert
-		genmusic: Generals Music
+		ContentPackage@genmusic:
+			Title: Generals Music
+			Identifier: genmusic
 			TestFiles: ^SupportDir|Content/gen/CHI_01.aud, ^SupportDir|Content/gen/GLA_01.aud, ^SupportDir|Content/gen/USA_01.aud
 			Download: genmusic
 	Downloads:
@@ -343,6 +371,7 @@ ModContent:
 		ra|installer/firstdecade.yaml
 		ra|installer/origin.yaml
 		ra|installer/soviet95.yaml
+		ra|installer/steam.yaml
 
 DiscordService:
 	ApplicationId: 1101187974890270750

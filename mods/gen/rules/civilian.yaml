@@ -95,6 +95,7 @@ GNRL:
 		Voice: Move
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 0
 	AttackMove:
 		Voice: Move
 	Passenger:
@@ -115,8 +116,8 @@ DOG:
 		Name: Dog
 		GenericName: Dog
 	Selectable:
-		Bounds: 12,17,-1,-4
-		DecorationBounds: 12,17,-1,-4
+		Bounds: 512, 725, -42, -170
+		DecorationBounds: 512, 725, -42, -170
 	SelectionDecorations:
 	Health:
 		HP: 1800
@@ -133,7 +134,7 @@ DOG:
 		StandSequences: stand
 	-ScaredyCat:
 	DetectCloaked:
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 	Voiced:
 		VoiceSet: DogVoice
 
@@ -530,8 +531,6 @@ SNOWHUT:
 	Building:
 		Footprint: x x
 		Dimensions: 1,2
-	RenderSprites:
-		Scale: 0.7
 	HitShape:
 		UseTargetableCellsOffsets: false
 
@@ -540,7 +539,7 @@ LHUS:
 	MapEditorData:
 		RequireTilesets: TEMPERAT
 	Selectable:
-		Bounds: 24,48,0,-16
+		Bounds: 1024, 2048, 0, -682
 	Tooltip:
 		Name: Lighthouse
 	Building:
@@ -552,8 +551,8 @@ WINDMILL:
 	MapEditorData:
 		RequireTilesets: TEMPERAT
 	Selectable:
-		Bounds: 24,24,0,-14
-		DecorationBounds: 36,36,0,-14
+		Bounds: 1024, 1024, 0, -597
+		DecorationBounds: 1536, 1536, 0, -597
 	SelectionDecorations:
 	Tooltip:
 		Name: Windmill

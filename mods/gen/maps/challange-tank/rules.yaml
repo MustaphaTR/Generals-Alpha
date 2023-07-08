@@ -11,11 +11,12 @@ World:
 		Scripts: generals_powers.lua, campaign-global.lua, unit_groups.lua, challange_tank.lua
 	ScriptLobbyDropdown@difficulty:
 		ID: difficulty
-		Label: Difficulty
+		Label: dropdown-difficulty.label
+		Description: dropdown-difficulty.description
 		Values:
-			easy: Easy
-			normal: Normal
-			hard: Hard
+			easy: options-difficulty.easy
+			normal: options-difficulty.normal
+			hard: options-difficulty.hard
 		Default: normal
 		DisplayOrder: 5
 	MapOptions:

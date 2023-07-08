@@ -174,7 +174,7 @@ repair.battledrone:
 	Range: 0c256
 	Projectile: LaserZap
 		Duration: 0
-		HitAnim: explosion 
+		HitAnim: explosion
 		HitAnimSequence: smallspark
 		LaunchEffectImage: explosion
 		LaunchEffectSequence: smallspark
@@ -227,8 +227,8 @@ toxin.toxin_tractor:
 			aircraft.comanche: 25
 			aircraft.chinook: 25
 		DamageTypes: FireDeath, DropCrate
-	Warhead@2Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_alpha
+	Warhead@2Radio: CreateTintedCells
+		LayerName: anthrax_alpha
 		Range: 1
 		Level: 500
 		Falloff: 100, 90, 50, 0
@@ -250,8 +250,8 @@ toxin.toxin_tractor.beta:
 		Color: 0000FF
 	Warhead@1Dam: SpreadDamage
 		Damage: 1250
-	Warhead@2Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_beta
+	Warhead@2Radio: CreateTintedCells
+		LayerName: anthrax_beta
 
 toxin.toxin_tractor.beta.crate-1:
 	Inherits: toxin.toxin_tractor.beta
@@ -269,8 +269,8 @@ toxin.toxin_tractor.gamma:
 		Color: FF00FF
 	Warhead@1Dam: SpreadDamage
 		Damage: 2050
-	Warhead@2Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_gamma
+	Warhead@2Radio: CreateTintedCells
+		LayerName: anthrax_gamma
 
 toxin.toxin_tractor.gamma.crate-1:
 	Inherits: toxin.toxin_tractor.gamma
@@ -333,8 +333,8 @@ toxin.toxin_tractor.deploy:
 	ValidTargets: Ground, Water, GroundActor, WaterActor
 	InvalidTargets: Structure, ImmueToToxin, Wall
 	Projectile: InstantHit
-	Warhead@1Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_alpha
+	Warhead@1Radio: CreateTintedCells
+		LayerName: anthrax_alpha
 		Range: 3
 		Level: 500
 		Falloff: 100, 90, 50, 0
@@ -342,13 +342,13 @@ toxin.toxin_tractor.deploy:
 
 toxin.toxin_tractor.deploy.beta:
 	Inherits: toxin.toxin_tractor.deploy
-	Warhead@1Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_beta
+	Warhead@1Radio: CreateTintedCells
+		LayerName: anthrax_beta
 
 toxin.toxin_tractor.deploy.gamma:
 	Inherits: toxin.toxin_tractor.deploy
-	Warhead@1Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_gamma
+	Warhead@1Radio: CreateTintedCells
+		LayerName: anthrax_gamma
 
 hack.angry_mob.weapon:
 	ReloadDelay: 30

@@ -129,7 +129,7 @@ fake.supply_stash:
 		LocalCenterOffset: 0,-512,0
 	Selectable:
 		Class: building.gla_supply_stash
-		Bounds: 48,48,0,12
+		Bounds: 2048, 2048, 0, 512
 	Health:
 		HP: 25000
 	Armor:
@@ -192,7 +192,7 @@ fake.arms_dealer:
 	Armor:
 		Type: building.normal
 	Selectable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	Production:
 		Produces: queue.arms_dealer.fake
 	ProductionQueue:
@@ -237,8 +237,8 @@ fake.palace:
 		Footprint: xxx xxx
 		Dimensions: 3,2
 	Selectable:
-		Bounds: 72,48
-		DecorationBounds: 72,68,0,-12
+		Bounds: 3072, 2048
+		DecorationBounds: 3072, 2901, 0, -512
 	SelectionDecorations:
 	Health:
 		HP: 30000
@@ -256,7 +256,6 @@ fake.palace:
 		MaxWeight: 5
 	WithBuildingBib:
 	ActorPreviewPlaceBuildingPreview:
-		OverridePalette: cncplacebuilding
 	RenderSprites:
 		Image: building.palace
 		PlayerPalette: cncplayer
@@ -290,7 +289,7 @@ fake.black_market:
 		Footprint: XX xx
 		Dimensions: 2,2
 	Selectable:
-		Bounds: 48,60,0,-10
+		Bounds: 2048, 2560, 0, -426
 	SelectionDecorations:
 	Health:
 		HP: 12500
@@ -351,7 +350,7 @@ fake.scud_storm:
 	ProductionBar:
 		ProductionType: queue.scud_storm.fake
 	Selectable:
-		Bounds: 48,48,0,0
+		Bounds: 2048, 2048, 0, 0
 	AttackTurreted:
 		Armaments: A, B, C, D
 	Armament@NORMAL_A:
@@ -442,7 +441,7 @@ fake.demo_trap:
 	Armor:
 		Type: building.normal
 	Selectable:
-		Bounds: 12,12
+		Bounds: 512, 512
 	Production:
 		Produces: queue.demo_trap.fake
 	ProductionQueue:
@@ -454,7 +453,7 @@ fake.demo_trap:
 		InitialDelay: 125
 		CloakDelay: 60
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled && !emp
 	GrantConditionOnDamageState@UNCLOAK:
@@ -534,7 +533,7 @@ fake.tunnel_network:
 	Armor:
 		Type: building.stinger_site
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	Production:
 		Produces: queue.tunnel_network.fake
 	ProductionQueue:
@@ -609,7 +608,7 @@ fake.stinger_site:
 	Armor:
 		Type: building.normal
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	Production:
 		Produces: queue.stinger_site.fake
 	ProductionQueue:
@@ -632,21 +631,21 @@ fake.stinger_site:
 		Cost: 100
 	MobSpawnerMaster@A:
 		Actors: fake.stinger_soldier
-		Offset: 511,511,0
+		SpawnOffset: 511,511,0
 		RespawnTicks: 750
 		ExitByBudding: false
 		AggregateHealth: false
 		SpawnIsGroundUnit: true
 	MobSpawnerMaster@B:
 		Actors: fake.stinger_soldier
-		Offset: -511,-511,0
+		SpawnOffset: -511,-511,0
 		RespawnTicks: 750
 		ExitByBudding: false
 		AggregateHealth: false
 		SpawnIsGroundUnit: true
 	MobSpawnerMaster@C:
 		Actors: fake.stinger_soldier
-		Offset: -511,511,0
+		SpawnOffset: -511,511,0
 		RespawnTicks: 750
 		ExitByBudding: false
 		AggregateHealth: false

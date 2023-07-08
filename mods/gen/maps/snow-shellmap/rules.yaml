@@ -1,5 +1,9 @@
 Player:
 	-ConquestVictoryConditions:
+	PlayerResources:
+		ResourceValues:
+			Ore: 0
+			Gems: 0
 	Shroud:
 		FogCheckboxLocked: True
 		FogCheckboxEnabled: False
@@ -8,15 +12,11 @@ Player:
 
 World:
 	-CrateSpawner:
-	-SpawnMPUnits:
-	-MPStartLocations:
+	-SpawnStartingUnits:
+	-MapStartingLocations:
 	MusicPlaylist:
 		StartingMusic: usa_01
 		DisableWorldSounds: true
-	ResourceType@ore:
-		ValuePerUnit: 0
-	ResourceType@gem:
-		ValuePerUnit: 0
 	LuaScript:
 		Scripts: snow-shellmap.lua
 	-StartGameNotification:

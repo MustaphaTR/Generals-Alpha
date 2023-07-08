@@ -142,19 +142,19 @@ CRATE:
 	GiveUnitCrateAction@OVERLORD:
 		SelectionShares: 1
 		Units: vehicle.overlord_tank
-	GiveMcvCrateAction@usa:
+	GiveBaseBuilderCrateAction@usa:
 		SelectionShares: 0
 		NoBaseSelectionShares: 1000
 		Prerequisites: !hack.no_bases
 		ValidFactions: usa, air, laser, super
 		Units: vehicle.usa_mcc
-	GiveMcvCrateAction@gla:
+	GiveBaseBuilderCrateAction@gla:
 		SelectionShares: 0
 		NoBaseSelectionShares: 1000
 		Prerequisites: !hack.no_bases
 		ValidFactions: gla, toxin, demo, stealth
 		Units: vehicle.gla_mcc
-	GiveMcvCrateAction@prc:
+	GiveBaseBuilderCrateAction@prc:
 		SelectionShares: 0
 		NoBaseSelectionShares: 1000
 		Prerequisites: !hack.no_bases
@@ -284,7 +284,7 @@ camera.spyplane:
 		Name: (support power proxy camera)
 	DetectCloaked:
 		Range: 10c0
-		CloakTypes: Cloak, Hijacker
+		DetectionTypes: Cloak, Hijacker
 
 camera.radar_van_scan:
 	Inherits: CAMERA
@@ -548,7 +548,7 @@ hack.particle_beam:
 		Weapon: aoe.particle_beam
 	Selectable:
 		Priority: 5
-		Bounds: 24,120,0,-60
+		Bounds: 1024, 5120, 0, -2560
 	AmbientSound:
 		SoundFiles: sparlo2a.aud, sparlo2b.aud, sparlo2c.aud, sparlo3a.aud, sparlo3b.aud, sparlo3c.aud, sparlo4a.aud, sparlo4b.aud, sparlo4c.aud
 		Interval: 2
@@ -644,7 +644,6 @@ colorpicker.overlord_tank:
 	-Buildable:
 	RenderSprites:
 		Image: colorpicker.overlord_tank
-		Scale: 1.5
 		Palette: colorpicker
 
 CTFLAG:

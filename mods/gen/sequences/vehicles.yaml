@@ -1,462 +1,607 @@
 vehicle.supply_truck:
-	idle: harvempty
+	idle:
+		Filename: harvempty.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: invis
-	harvest: harvempty
+	turret:
+		Filename: invis.shp
+	harvest:
+		Filename: harvempty.shp
 		Start: 32
 		Length: 8
 		Facings: 8
-	empty-idle: harvempty
+	empty-idle:
+		Filename: harvempty.shp
 		Facings: 32
 		UseClassicFacings: True
-	empty-harvest: harvempty
+	empty-harvest:
+		Filename: harvempty.shp
 		Start: 32
 		Length: 8
 		Facings: 8
-	half-idle: harvhalf
+	half-idle:
+		Filename: harvhalf.shp
 		Facings: 32
 		UseClassicFacings: True
-	half-harvest: harvhalf
+	half-harvest:
+		Filename: harvhalf.shp
 		Start: 32
 		Length: 8
 		Facings: 8
-	full-idle: harv
+	full-idle:
+		Filename: harv.shp
 		Facings: 32
 		UseClassicFacings: True
-	full-harvest: harv
+	full-harvest:
+		Filename: harv.shp
 		Start: 32
 		Length: 8
 		Facings: 8
-	deliver: harv
+	deliver:
+		Filename: harv.shp
 		Frames: 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 104, 103, 102, 101, 100, 99, 98, 97, 96
 		Length: 21
 		Tick: 20
-	icon: harvicon
+	icon:
+		Filename: harvicon.shp
 		Start: 0
 
 husk.supply_truck.full:
-	idle: hhusk
+	idle:
+		Filename: hhusk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -1023
 
 husk.supply_truck.empty:
-	idle: hhusk2
+	idle:
+		Filename: hhusk2.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -1023
 
 vehicle.humvee:
-	idle: humv
+	idle:
+		Filename: humv.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: humv
+	turret:
+		Filename: humv.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	turret2: stnk
+	turret2:
+		Filename: stnk.shp
 		Start: 38
 		Facings: 32
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: humvicon
+	icon:
+		Filename: humvicon.shp
 
 vehicle.technical:
-	idle: jeep
+	idle:
+		Filename: jeep.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: jeep
+	turret:
+		Filename: jeep.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: techicon
+	icon:
+		Filename: techicon.shp
 
 vehicle.radar_van:
-	idle: mrj
+	idle:
+		Filename: mrj.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: invis
-	spinner: mrj
+	turret:
+		Filename: invis.shp
+	spinner:
+		Filename: mrj.shp
 		Start: 32
 		Length: 32
-	icon: radvanicon
+	icon:
+		Filename: radvanicon.shp
 
 vehicle.scorpion_tank:
-	idle: 1tnk
+	idle:
+		Filename: 1tnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: 1tnk
+	turret:
+		Filename: 1tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	rocket: missile
+	rocket:
+		Filename: missile.shp
 		Facings: 32
-	rocket1: missile
+	rocket1:
+		Filename: missile.shp
 		Facings: 32
-	rocket0: invis
+	rocket0:
+		Filename: invis.shp
 		Facings: 1
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 2
-	icon: scorpicon
+	icon:
+		Filename: scorpicon.shp
 
 husk.scorpion_tank:
-	idle: 1tnk
+	idle:
+		Filename: 1tnk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: 1tnk
+	turret:
+		Filename: 1tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	rocket: missile
+	rocket:
+		Filename: missile.shp
 		Facings: 32
-	rocket1: missile
+	rocket1:
+		Filename: missile.shp
 		Facings: 32
-	rocket0: invis
+	rocket0:
+		Filename: invis.shp
 		Facings: 1
 
 vehicle.crusader_tank:
-	idle: mtnk
+	idle:
+		Filename: mtnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: mtnk
+	turret:
+		Filename: mtnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: crusicon
+	icon:
+		Filename: crusicon.shp
 
 vehicle.laser_tank:
-	idle: mtnk
+	idle:
+		Filename: mtnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: mtnk
+	turret:
+		Filename: mtnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: lsrtnkicon
+	icon:
+		Filename: lsrtnkicon.shp
 
 husk.crusader_tank:
-	idle: mtnk
+	idle:
+		Filename: mtnk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: mtnk
+	turret:
+		Filename: mtnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 vehicle.battlemaster_tank:
-	idle: 3tnk
+	idle:
+		Filename: 3tnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: 2tnk
+	turret:
+		Filename: 2tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: bmstricon
+	icon:
+		Filename: bmstricon.shp
 
 vehicle.nuclear_battlemaster_tank:
 	Inherits: vehicle.battlemaster_tank
-	icon: nkbmstricon
+	icon:
+		Filename: nkbmstricon.shp
 
 husk.battlemaster_tank:
-	idle: 3tnk
+	idle:
+		Filename: 3tnk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: 2tnk
+	turret:
+		Filename: 2tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 vehicle.ambulance:
-	idle: truk
+	idle:
+		Filename: truk.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: invis
-	icon: ambuicon
+	turret:
+		Filename: invis.shp
+	icon:
+		Filename: ambuicon.shp
 
 vehicle.sentry_drone:
-	idle: sentry
+	idle:
+		Filename: sentry.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: invis
-	turret2: sentry
+	turret:
+		Filename: invis.shp
+	turret2:
+		Filename: sentry.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: sentryicon
+	icon:
+		Filename: sentryicon.shp
 
 vehicle.quad_cannon:
-	idle: mgg
+	idle:
+		Filename: mgg.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: quadturret
+	turret:
+		Filename: quadturret.shp
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: quadicon
+	icon:
+		Filename: quadicon.shp
 
 vehicle.gatling_tank:
-	idle: 1tnk
+	idle:
+		Filename: 1tnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: gattnk
+	turret:
+		Filename: gattnk.shp
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: gattnkicon
+	icon:
+		Filename: gattnkicon.shp
 
 vehicle.rocket_buggy:
-	idle: bggy
+	idle:
+		Filename: bggy.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: invis
-	turret2: stnk
+	turret:
+		Filename: invis.shp
+	turret2:
+		Filename: stnk.shp
 		Start: 38
 		Facings: 32
-	icon: rbggyicon
+	icon:
+		Filename: rbggyicon.shp
 
 vehicle.toxin_tractor:
-	idle: truk
+	idle:
+		Filename: truk.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: 1tnk
+	turret:
+		Filename: 1tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	icon: ttrkicon
+	icon:
+		Filename: ttrkicon.shp
 
 vehicle.dragon_tank:
-	idle: ftnk
+	idle:
+		Filename: ftnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: invis
-	icon: dragonicon
+	turret:
+		Filename: invis.shp
+	icon:
+		Filename: dragonicon.shp
 
 vehicle.battle_bus:
-	idle: bbus
+	idle:
+		Filename: bbus.shp
 		Facings: 32
 		ShadowStart: 64
 		UseClassicFacings: True
 		Offset: 0, 3
-	turret: invis
-	husk: bbus
+	turret:
+		Filename: invis.shp
+	husk:
+		Filename: bbus.shp
 		Start: 32
 		Facings: 32
 		ShadowStart: 96
 		UseClassicFacings: True
 		Offset: 0, 3
-	icon: bbusicon
+	icon:
+		Filename: bbusicon.shp
 
 vehicle.troop_crawler:
-	idle: apc
+	idle:
+		Filename: apc.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: invis
-	open: apc
+	turret:
+		Filename: invis.shp
+	open:
+		Filename: apc.shp
 		Start: 32
 		Length: 3
-	unload: apc
+	unload:
+		Filename: apc.shp
 		Start: 32
-	icon: apcicon
+	icon:
+		Filename: apcicon.shp
 
 vehicle.assault_troop_crawler:
 	Inherits: vehicle.troop_crawler
-	icon: acrawlericon
+	icon:
+		Filename: acrawlericon.shp
 
 vehicle.listening_outpost:
-	idle: mnly
+	idle:
+		Filename: mnly.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: invis
-	spinner: mrj
+	turret:
+		Filename: invis.shp
+	spinner:
+		Filename: mrj.shp
 		Start: 32
 		Length: 32
-	icon: louticon
+	icon:
+		Filename: louticon.shp
 
 vehicle.attack_outpost:
 	Inherits: vehicle.listening_outpost
-	icon: aouticon
+	icon:
+		Filename: aouticon.shp
 
 vehicle.microwave_tank:
-	idle: humv
+	idle:
+		Filename: humv.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: mrj
+	turret:
+		Filename: mrj.shp
 		Start: 32
 		Facings: 32
-	icon: mwaveicon
+	icon:
+		Filename: mwaveicon.shp
 
 vehicle.ecm_tank:
-	idle: apc
+	idle:
+		Filename: apc.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: mrj
+	turret:
+		Filename: mrj.shp
 		Start: 32
 		Facings: 32
-	icon: ecmicon
+	icon:
+		Filename: ecmicon.shp
 
 vehicle.avenger:
-	idle: msam
+	idle:
+		Filename: msam.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: ftrk
+	turret:
+		Filename: ftrk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 2
-	icon: avengericon
+	icon:
+		Filename: avengericon.shp
 
 vehicle.tomahawk_launcher:
-	idle: mlrs
+	idle:
+		Filename: mlrs.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: mlrs
+	turret:
+		Filename: mlrs.shp
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True
-	turret-full: mlrs
+	turret-full:
+		Filename: mlrs.shp
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True
-	turret-empty: mlrs
+	turret-empty:
+		Filename: mlrs.shp
 		Start: 96
 		Facings: 32
 		UseClassicFacings: True
-	icon: thwkicon
+	icon:
+		Filename: thwkicon.shp
 
 vehicle.scud_launcher:
-	idle: v2rl
+	idle:
+		Filename: v2rl.shp
 		Facings: 32
 		UseClassicFacings: True
-	empty-idle: v2rl
+	empty-idle:
+		Filename: v2rl.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	turret: invis
-	icon: scudlicon
+	turret:
+		Filename: invis.shp
+	icon:
+		Filename: scudlicon.shp
 
 vehicle.inferno_cannon:
-	idle: arty
+	idle:
+		Filename: arty.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: invis
-	muzzle: gunfire2
+	turret:
+		Filename: invis.shp
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: artyicon
+	icon:
+		Filename: artyicon.shp
 
 vehicle.paladin_tank:
-	idle: 5tnk
+	idle:
+		Filename: 5tnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: mtnk
+	turret:
+		Filename: mtnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: palicon
+	icon:
+		Filename: palicon.shp
 
 husk.paladin_tank:
-	idle: 5tnk
+	idle:
+		Filename: 5tnk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: 2tnk
+	turret:
+		Filename: 2tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 vehicle.marauder_tank:
-	idle: 2tnk
+	idle:
+		Filename: 2tnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: 1tnk
+	turret:
+		Filename: 1tnk.shp
 		Start: 32
 		Facings: 32
 		Offset: 0,2
 		UseClassicFacings: True
-	turret-crate-1: 2tnk
+	turret-crate-1:
+		Filename: 2tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	turret-crate-2: 3tnk
+	turret-crate-2:
+		Filename: 3tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: maraudericon
+	icon:
+		Filename: maraudericon.shp
 
 husk.marauder_tank:
-	idle: 2tnk
+	idle:
+		Filename: 2tnk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: 1tnk
+	turret:
+		Filename: 1tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 vehicle.overlord_tank:
-	idle: 4tnk
+	idle:
+		Filename: 4tnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: 4tnk
+	turret:
+		Filename: 4tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	turret_gatling: gattnk
+	turret_gatling:
+		Filename: gattnk.shp
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True
-	turret_bunker: 4tnkpbox
-	turret_speaker: 4tnkgap
+	turret_bunker:
+		Filename: 4tnkpbox.shp
+	turret_speaker:
+		Filename: 4tnkgap.shp
 		Length: 32
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	muzzle2: minigun
+	muzzle2:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	icon: lordicon
+	icon:
+		Filename: lordicon.shp
 
 vehicle.emparor_overlord:
 	Inherits: vehicle.overlord_tank
-	turret: 4tnkemp
-	icon: emperoricon
+	turret:
+		Filename: 4tnkemp.shp
+	icon:
+		Filename: emperoricon.shp
 
 husk.overlord_tank:
-	idle: 4tnk
+	idle:
+		Filename: 4tnk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: 4tnk
+	turret:
+		Filename: 4tnk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
@@ -464,145 +609,193 @@ husk.overlord_tank:
 
 husk.emperor_overlord:
 	Inherits: husk.overlord_tank
-	turret: 4tnkemp
+	turret:
+		Filename: 4tnkemp.shp
 
 colorpicker.overlord_tank:
 	Inherits: vehicle.overlord_tank
+	Defaults:
+		Scale: 1.5
 
 vehicle.bomb_truck:
-	idle: dtrk
+	idle:
+		Filename: dtrk.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: invis
-	radar_van_spinner: mrj
+	turret:
+		Filename: invis.shp
+	radar_van_spinner:
+		Filename: mrj.shp
 		Start: 32
 		Length: 32
-	icon: bombicon
+	icon:
+		Filename: bombicon.shp
 
 vehicle.nuke_cannon:
-	idle: 4tnk
+	idle:
+		Filename: 4tnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: artytur
+	turret:
+		Filename: artytur.shp
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: nkcanicon
+	icon:
+		Filename: nkcanicon.shp
 
 husk.nuke_cannon:
-	idle: 4tnk
+	idle:
+		Filename: 4tnk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	turret: artytur
+	turret:
+		Filename: artytur.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 vehicle.combat_cycle:
-	idle: bikeempty
+	idle:
+		Filename: bikeempty.shp
 		Facings: 8
 		ShadowStart: 8
-	idle-other: bike
+	idle-other:
+		Filename: bike.shp
 		Facings: 8
 		ShadowStart: 112
-	idle-gun: bike
+	idle-gun:
+		Filename: bike.shp
 		Facings: 8
 		Start: 8
 		ShadowStart: 120
-	idle-rocket: bike
+	idle-rocket:
+		Filename: bike.shp
 		Facings: 8
 		Start: 16
 		ShadowStart: 128
-	shoot-gun: bike
+	shoot-gun:
+		Filename: bike.shp
 		Facings: 8
 		Length: 6
 		Start: 24
 		ShadowStart: 136
-	shoot-rocket: bike
+	shoot-rocket:
+		Filename: bike.shp
 		Facings: -8
 		Length: 5
 		Start: 72
 		ShadowStart: 184
-	icon: ccycleicon
+	icon:
+		Filename: ccycleicon.shp
 
 vehicle.usa_mcc:
-	idle: mcv
+	idle:
+		Filename: mcv.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: invis
-	icon: usmccicon
+	turret:
+		Filename: invis.shp
+	icon:
+		Filename: usmccicon.shp
 
 vehicle.gla_mcc:
-	idle: mcv
+	idle:
+		Filename: mcv.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: invis
-	icon: glamccicon
+	turret:
+		Filename: invis.shp
+	icon:
+		Filename: glamccicon.shp
 
 vehicle.prc_mcc:
-	idle: mcv
+	idle:
+		Filename: mcv.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: invis
-	icon: prcmccicon
+	turret:
+		Filename: invis.shp
+	icon:
+		Filename: prcmccicon.shp
 
 vehicle.tech_mcc:
-	idle: mcv
+	idle:
+		Filename: mcv.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret: invis
-	icon: mcvicon
+	turret:
+		Filename: invis.shp
+	icon:
+		Filename: mcvicon.shp
 
 husk.mcc:
-	idle: mcvhusk
+	idle:
+		Filename: mcvhusk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -1023
 
 vehicle.mobile_reactor:
-	idle: mgg
+	idle:
+		Filename: mgg.shp
 		Facings: 32
 		UseClassicFacings: True
-	spinner: mgg
+	spinner:
+		Filename: mgg.shp
 		Start: 32
 		Length: 8
-	spinner-idle: mgg
+	spinner-idle:
+		Filename: mgg.shp
 		Start: 32
 		Length: 1
-	icon: mggicon
+	icon:
+		Filename: mggicon.shp
 
 mgg.destroyed:
-	idle: mgg
+	idle:
+		Filename: mgg.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
-	spinner: mgg
+	spinner:
+		Filename: mgg.shp
 		Start: 32
 		Length: 8
 		ZOffset: -512
-	spinner-idle: mgg
+	spinner-idle:
+		Filename: mgg.shp
 		Start: 32
 
 ttnk:
+	Defaults:
+		Filename: ttnk.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
 	spinner:
 		Start: 32
 		Length: 32
-	icon: ttnkicon
+	icon:
+		Filename: ttnkicon.shp
 
 ctnk:
 	idle:
+		Filename: ctnk.shp
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: ctnkicon
+	icon:
+		Filename: ctnkicon.shp
 
 qtnk:
+	Defaults:
+		Filename: qtnk.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -610,13 +803,17 @@ qtnk:
 		Start: 32
 		Facings: 8
 		Length: 8
-	icon: qtnkicon
+	icon:
+		Filename: qtnkicon.shp
 
 stnk:
+	Defaults:
+		Filename: stnk.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
 	turret:
 		Start: 38
 		Facings: 32
-	icon: stnkicon
+	icon:
+		Filename: stnkicon.shp

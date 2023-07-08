@@ -188,7 +188,7 @@ tech.soviet_barracks:
 	ProvidesPrerequisite@FlameTower:
 		Prerequisite: tech.flame_tower
 		RequiresPrerequisites: techlevel.nodefense
-	InfiltrateForCondition:
+	GrantConditionOnInfiltration:
 		Duration: 750
 
 tech.flame_tower:
@@ -257,8 +257,8 @@ tech.power_plant:
 		Dimensions: 3,3
 		LocalCenterOffset: 0,-512,0
 	Selectable:
-		Bounds: 72,48
-		DecorationBounds: 72,68,0,-10
+		Bounds: 3072, 2048
+		DecorationBounds: 3072, 2901, 0, -426
 	Health:
 		HP: 100000
 	WithBuildingBib:
@@ -298,8 +298,6 @@ tech.repair_bay:
 	WithIdleOverlay@ROOF:
 		Sequence: idle-roof
 	WithBuildingBib:
-	ActorPreviewPlaceBuildingPreview:
-		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 	ProvidesPrerequisite@buildingname:
@@ -333,8 +331,8 @@ tech.reinforcements_pad:
 	Targetable:
 		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Capture, Disable
 	Selectable:
-		Bounds: 64,34,0,3
-		DecorationBounds: 72,48
+		Bounds: 2730, 1450, 0, 128
+		DecorationBounds: 3072, 2048
 	SelectionDecorations:
 	Health:
 		HP: 100000
@@ -493,8 +491,6 @@ tech.reinforcements_pad:
 		Factions: boss
 		ResetOnOwnerChange: true
 	ProvidesPrerequisite@buildingname:
-	ActorPreviewPlaceBuildingPreview:
-		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -550,7 +546,7 @@ tech.shipyard:
 		DisplayOrder: 51
 	ProductionBar:
 		ProductionType: queue.vessel
-	InfiltrateForCondition:
+	GrantConditionOnInfiltration:
 		Duration: 750
 	RepairsUnits:
 		StartRepairingNotification: Repairing

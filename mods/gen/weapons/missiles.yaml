@@ -15,6 +15,7 @@
 		Shadow: True
 		HorizontalRateOfTurn: 20
 		RangeLimit: 6c0
+		PointDefenseTypes: missilepd
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 100
@@ -152,8 +153,8 @@ missile.mig.ground.nuke:
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion
 		ImpactSounds: kaboom25.aud
-	Warhead@5Radio: CreateRadioactivity
-		RadioactivityLayerName: radioactivity
+	Warhead@5Radio: CreateTintedCells
+		LayerName: radioactivity
 		Range: 2
 		Level: 2500
 		Falloff: 100, 50, 0
@@ -1144,8 +1145,8 @@ missile.scud_launcher.crate-2:
 
 missile.scud_launcher.toxin:
 	Inherits: missile.scud_launcher
-	Warhead@5Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_alpha
+	Warhead@5Radio: CreateTintedCells
+		LayerName: anthrax_alpha
 		Range: 2
 		Level: 2500
 		Falloff: 100, 50, 0
@@ -1164,8 +1165,8 @@ missile.scud_launcher.crate-2.toxin:
 
 missile.scud_launcher.toxin_beta:
 	Inherits: missile.scud_launcher.toxin
-	Warhead@5Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_beta
+	Warhead@5Radio: CreateTintedCells
+		LayerName: anthrax_beta
 
 missile.scud_launcher.crate-1.toxin_beta:
 	Inherits: missile.scud_launcher.toxin_beta
@@ -1180,8 +1181,8 @@ missile.scud_launcher.crate-2.toxin_beta:
 
 missile.scud_launcher.toxin_gamma:
 	Inherits: missile.scud_launcher.toxin
-	Warhead@5Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_gamma
+	Warhead@5Radio: CreateTintedCells
+		LayerName: anthrax_gamma
 
 missile.scud_launcher.crate-1.toxin_gamma:
 	Inherits: missile.scud_launcher.toxin_beta
@@ -1227,8 +1228,8 @@ missile.scud_storm:
 	Warhead@2Dam: SpreadDamage
 		Spread: 5c0
 		Damage: 15000
-	Warhead@6Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_alpha
+	Warhead@6Radio: CreateTintedCells
+		LayerName: anthrax_alpha
 		Range: 3
 		Level: 750
 		Falloff: 100, 50, 0
@@ -1239,17 +1240,17 @@ missile.scud_storm:
 
 missile.scud_storm.beta:
 	Inherits: missile.scud_storm
-	Warhead@5Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_beta
-	Warhead@6Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_beta
+	Warhead@5Radio: CreateTintedCells
+		LayerName: anthrax_beta
+	Warhead@6Radio: CreateTintedCells
+		LayerName: anthrax_beta
 
 missile.scud_storm.gamma:
 	Inherits: missile.scud_storm
-	Warhead@5Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_gamma
-	Warhead@6Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_gamma
+	Warhead@5Radio: CreateTintedCells
+		LayerName: anthrax_gamma
+	Warhead@6Radio: CreateTintedCells
+		LayerName: anthrax_gamma
 
 missile.scud_storm.demo:
 	Inherits: missile.scud_storm
@@ -1264,17 +1265,17 @@ missile.scud_storm.demo:
 
 missile.scud_storm.beta:
 	Inherits: missile.scud_storm
-	Warhead@5Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_beta
-	Warhead@6Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_beta
+	Warhead@5Radio: CreateTintedCells
+		LayerName: anthrax_beta
+	Warhead@6Radio: CreateTintedCells
+		LayerName: anthrax_beta
 
 missile.scud_storm.gamma:
 	Inherits: missile.scud_storm
-	Warhead@5Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_gamma
-	Warhead@6Radio: CreateRadioactivity
-		RadioactivityLayerName: anthrax_gamma
+	Warhead@5Radio: CreateTintedCells
+		LayerName: anthrax_gamma
+	Warhead@6Radio: CreateTintedCells
+		LayerName: anthrax_gamma
 
 missile.tomahawk_launcher:
 	Inherits: ^AntiGroundMissile

@@ -21,7 +21,7 @@
 	Armor:
 		Type: building.tough
 	Selectable:
-		Bounds: 72,72
+		Bounds: 3072, 3072
 	WithBuildingBib:
 	Exit@1:
 		SpawnOffset: 768,768,0
@@ -46,7 +46,7 @@
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.command_center
-	InfiltrateForCondition:
+	GrantConditionOnInfiltration:
 		Duration: 250
 	RallyPoint:
 		Path: 3,3
@@ -73,7 +73,7 @@ building.usa_command_center:
 	Building:
 		Footprint: XXX xxx XXX
 	Selectable:
-		Bounds: 72,64
+		Bounds: 3072, 2730
 	Production:
 		Produces: queue.usa_command_center
 		PauseOnCondition: emp || hacked || sabotaged
@@ -96,9 +96,9 @@ building.usa_command_center:
 		ChargeInterval: 1500
 		Icons:
 			1: spy_drone
-		Descriptions:
+		Names:
 			1: Spy Drone
-		LongDescs:
+		Descriptions:
 			1: Spawns a Spy Drone anywhere on the map.
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
@@ -114,9 +114,9 @@ building.usa_command_center:
 		ChargeInterval: 1500
 		Icons:
 			1: satellite
-		Descriptions:
+		Names:
 			1: Spy Satellite
-		LongDescs:
+		Descriptions:
 			1: Reveals are large area of map for a while.\n\nAlso detects cloaked units in that area.
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
@@ -134,11 +134,11 @@ building.usa_command_center:
 			2: paradrop2
 			3: paradrop3
 		ChargeInterval: 6000
-		Descriptions:
+		Names:
 			1: ParaDrop
 			2: ParaDrop
 			3: ParaDrop
-		LongDescs:
+		Descriptions:
 			1: A B-52 drops 5 Rangers\nanywhere on the map.
 			2: 2 B-52s drop total of 10 Rangers\nanywhere on the map.
 			3: 4 B-52s drop total of 20 Rangers\nanywhere on the map.
@@ -184,14 +184,14 @@ building.usa_command_center:
 			2: 2
 			3: 3
 		QuantizedFacings: 8
-		Descriptions:
+		Names:
 			1: A-10 Strike
 			2: A-10 Strike
 			3: A-10 Strike
-		LongDescs:
+		Descriptions:
 			1: 1 A-10 Thunderbolt strikes anywhere on the map.
-			2: 2 A-10 Thunderbolts strikes anywhere on the map.
-			3: 3 A-10 Thunderbolts strikes anywhere on the map.
+			2: 2 A-10 Thunderbolts strike anywhere on the map.
+			3: 3 A-10 Thunderbolts strike anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
 			1: aircraft.a10
@@ -222,10 +222,10 @@ building.usa_command_center:
 			1: 1
 			2: 1
 		QuantizedFacings: 8
-		Descriptions:
+		Names:
 			1: Fuel Air Bomb
 			2: Mother of All Bombs
-		LongDescs:
+		Descriptions:
 			1: A B-52 drops a Fuel Air Bomb at the target.
 			2: A B-2 drops a Mother of All Bombs at the target.
 		SelectTargetSpeechNotification: SelectTarget
@@ -253,9 +253,9 @@ building.usa_command_center:
 		SquadSizes:
 			1: 1
 		QuantizedFacings: 8
-		Descriptions:
+		Names:
 			1: Leaflet Drops
-		LongDescs:
+		Descriptions:
 			1: A B-52 drops Leaflets at the target, disabling enemy vehicles and infantry.
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
@@ -277,8 +277,6 @@ building.usa_command_center:
 		Color: 0000FF
 	ProvidesRadar:
 		RequiresCondition: !emp && !hacked && !lowpower && !sabotaged
-	ActorPreviewPlaceBuildingPreview:
-		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 	HitShape:
@@ -334,11 +332,11 @@ building.gla_command_center:
 			1: ambush1
 			2: ambush2
 			3: ambush3
-		Descriptions:
+		Names:
 			1: Rebel Ambush
 			2: Rebel Ambush
 			3: Rebel Ambush
-		LongDescs:
+		Descriptions:
 			1: Spawns 4 Rebels anywhere on the map.
 			2: Spawns 8 Rebels anywhere on the map.
 			3: Spawns 16 Rebels anywhere on the map.
@@ -362,11 +360,11 @@ building.gla_command_center:
 			1: tambush1
 			2: tambush2
 			3: tambush3
-		Descriptions:
+		Names:
 			1: Toxin Rebel Ambush
 			2: Toxin Rebel Ambush
 			3: Toxin Rebel Ambush
-		LongDescs:
+		Descriptions:
 			1: Spawns 4 Toxin Rebels anywhere on the map.
 			2: Spawns 8 Toxin Rebels anywhere on the map.
 			3: Spawns 16 Toxin Rebels anywhere on the map.
@@ -384,9 +382,9 @@ building.gla_command_center:
 		SquadSizes:
 			1: 1
 		QuantizedFacings: 8
-		Descriptions:
+		Names:
 			1: Anthrax Bomb
-		LongDescs:
+		Descriptions:
 			1: A B-52 drops an Anthrax Bomb at the target.
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
@@ -424,11 +422,11 @@ building.gla_command_center:
 			1: 0
 			2: 0
 			3: 0
-		Descriptions:
+		Names:
 			1: GPS Scrambler
 			2: GPS Scrambler
 			3: GPS Scrambler
-		LongDescs:
+		Descriptions:
 			1: Makes 1 unit invisible while not firing.
 			2: Makes 5 units invisible while not firing.
 			3: Makes 9 units invisible while not firing.
@@ -448,9 +446,9 @@ building.gla_command_center:
 		ChargeInterval: 3750
 		Icons:
 			1: sneak
-		Descriptions:
+		Names:
 			1: Sneak Attack
-		LongDescs:
+		Descriptions:
 			1: Spawns a Tunnel Network anywhere on the map.
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
@@ -535,11 +533,11 @@ building.prc_command_center:
 			1: 5,5
 			2: 5,5
 			3: 5,5
-		Descriptions:
+		Names:
 			1: Frenzy
 			2: Frenzy
 			3: Frenzy
-		LongDescs:
+		Descriptions:
 			1: Makes a group of units deal 10% more damage\nfor 10 seconds.
 			2: Makes a group of units deal 20% more damage\nfor 20 seconds.
 			3: Makes a group of units deal 30% more damage\nfor 30 seconds.
@@ -569,11 +567,11 @@ building.prc_command_center:
 			1: cash1
 			2: cash2
 			3: cash3
-		Descriptions:
+		Names:
 			1: Cash Hack
 			2: Cash Hack
 			3: Cash Hack
-		LongDescs:
+		Descriptions:
 			1: Steals $1000 credits from enemy.\n\nTarget their Supply Center or Stash to do so.
 			2: Steals $2000 credits from enemy.\n\nTarget their Supply Center or Stash to do so.
 			3: Steals $4000 credits from enemy.\n\nTarget their Supply Center or Stash to do so.
@@ -593,11 +591,11 @@ building.prc_command_center:
 			2: paradrop2
 			3: paradrop3
 		ChargeInterval: 6000
-		Descriptions:
+		Names:
 			1: ParaDrop
 			2: ParaDrop
 			3: ParaDrop
-		LongDescs:
+		Descriptions:
 			1: A Badger drops 5 Minigunners\nanywhere on the map.
 			2: 2 Badgers drop total of 10 Minigunners\nanywhere on the map.
 			3: 3 Badgers drop total of 15 Minigunners\nanywhere on the map.
@@ -643,11 +641,11 @@ building.prc_command_center:
 			1: arty_barrage1
 			2: arty_barrage2
 			3: arty_barrage3
-		Descriptions:
+		Names:
 			1: Artillery Barrage
 			2: Artillery Barrage
 			3: Artillery Barrage
-		LongDescs:
+		Descriptions:
 			1: Fires 12 Artillery Shells anywhere on the map.
 			2: Fires 24 Artillery Shells anywhere on the map.
 			3: Fires 36 Artillery Shells anywhere on the map.
@@ -667,11 +665,11 @@ building.prc_command_center:
 			2: tank_drop2
 			3: tank_drop2
 		ChargeInterval: 6000
-		Descriptions:
+		Names:
 			1: Tank Drop
 			2: Tank Drop
 			3: Tank Drop
-		LongDescs:
+		Descriptions:
 			1: A Badger drops 1 Battlemaster Tank\nanywhere on the map.
 			2: A Badger drops 2 Battlemaster Tanks\nanywhere on the map.
 			3: A Badger drops 4 Battlemaster Tanks\nanywhere on the map.
@@ -711,9 +709,9 @@ building.prc_command_center:
 		SquadSizes:
 			1: 1
 		QuantizedFacings: 8
-		Descriptions:
+		Names:
 			1: Cluster Mines
-		LongDescs:
+		Descriptions:
 			1: A Badger drops 13 Land Mines at the target.
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
@@ -738,9 +736,9 @@ building.prc_command_center:
 		SquadSizes:
 			1: 1
 		QuantizedFacings: 8
-		Descriptions:
+		Names:
 			1: Carpet Bombing
-		LongDescs:
+		Descriptions:
 			1: A Badger does carpet bombing at the target.
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
@@ -765,9 +763,9 @@ building.prc_command_center:
 		SquadSizes:
 			1: 1
 		QuantizedFacings: 8
-		Descriptions:
+		Names:
 			1: Nuclear Carpet Bombing
-		LongDescs:
+		Descriptions:
 			1: A Badger does carpet bombing at the target with nuclear warheads.
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
@@ -792,9 +790,9 @@ building.prc_command_center:
 		ChargeInterval: 3750
 		Icons:
 			1: sneak
-		Descriptions:
+		Names:
 			1: Sneak Attack
-		LongDescs:
+		Descriptions:
 			1: Spawns a Tunnel Network anywhere on the map.
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
@@ -811,9 +809,9 @@ building.prc_command_center:
 		SquadSizes:
 			1: 1
 		QuantizedFacings: 8
-		Descriptions:
+		Names:
 			1: E. M. Pulse
-		LongDescs:
+		Descriptions:
 			1: A Badger drops an EMP at the target.
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
@@ -875,7 +873,7 @@ building.prc_command_center.radar:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.reactor
-	InfiltrateForCondition:
+	GrantConditionOnInfiltration:
 		Duration: 750
 	WithDeathAnimation:
 		DeathSequence: dead
@@ -899,7 +897,7 @@ building.cold_fusion_reactor:
 	Health:
 		HP: 80000
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	Production:
 		Produces: queue.cold_fusion_reactor
 		PauseOnCondition: emp || hacked || sabotaged
@@ -1033,8 +1031,6 @@ building.nuclear_reactor:
 		ProductionType: queue.just_mine
 	Voiced:
 		VoiceSet: NuclearReactorVoice
-	ActorPreviewPlaceBuildingPreview:
-		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -1080,7 +1076,7 @@ building.advanced_nuclear_reactor:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.barracks
-	InfiltrateForCondition:
+	GrantConditionOnInfiltration:
 		Duration: 750
 	RepairsUnits:
 		StartRepairingNotification: Repairing
@@ -1122,8 +1118,6 @@ building.usa_barracks:
 		ExitCell: 1,1
 	Voiced:
 		VoiceSet: USABarracksVoice
-	ActorPreviewPlaceBuildingPreview:
-		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -1343,8 +1337,8 @@ building.usa_supply_center:
 	Tooltip:
 		Name: USA Supply Center
 	Selectable:
-		Bounds: 72,56,0,12
-		DecorationBounds: 72,70,0,-2
+		Bounds: 3072, 2389, 0, 512
+		DecorationBounds: 3072, 2986, 0, -85
 	SelectionDecorations:
 	Production:
 		Produces: queue.usa_collector, queue.air_gen_collector
@@ -1391,8 +1385,6 @@ building.usa_supply_center:
 		RequiresPrerequisites: techlevel.infonly
 	Voiced:
 		VoiceSet: USASupplyVoice
-	ActorPreviewPlaceBuildingPreview:
-		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -1415,7 +1407,7 @@ building.gla_supply_stash:
 		Footprint: xx x=
 		Dimensions: 2,2
 	Selectable:
-		Bounds: 48,48,0,12
+		Bounds: 2048, 2048, 0, 512
 		Class: building.gla_supply_stash, queue.stealth_gen_collector
 	Production:
 		Produces: queue.gla_collector, queue.stealth_gen_collector
@@ -1503,8 +1495,8 @@ building.prc_supply_center:
 	LaysMinefield@NEUTRON_MINES:
 		Locations: 0,0, 1,-1, -1,1, -1,2, -1,3, 0,4, 1,4, 2,4, 3,3, 3,2, 3,1, 2,0
 	Selectable:
-		Bounds: 72,50,0,12
-		DecorationBounds: 72,70,0,-2
+		Bounds: 3072, 2133, 0, 512
+		DecorationBounds: 3072, 2986, 0, -85
 	SelectionDecorations:
 	Production:
 		Produces: queue.prc_collector
@@ -1582,7 +1574,7 @@ building.patriot:
 	Armor:
 		Type: building.defense
 	Selectable:
-		Bounds: 48,24
+		Bounds: 2048, 1024
 		Class: building.patriot
 	WithBuildingBib:
 		HasMinibib: true
@@ -1673,7 +1665,7 @@ building.laser_turret:
 	Armor:
 		Type: building.defense
 	Selectable:
-		Bounds: 24,24
+		Bounds: 1024, 1024
 	WithBuildingBib:
 		HasMinibib: true
 	Turreted:
@@ -1730,12 +1722,12 @@ building.demo_trap:
 	Armor:
 		Type: building.normal
 	Selectable:
-		Bounds: 12,12
+		Bounds: 512, 512
 	Cloak:
 		InitialDelay: 125
 		CloakDelay: 60
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled && !emp && !hacked
 	-Explodes:
@@ -1781,7 +1773,7 @@ building.demo_trap.explode:
 		SoundFiles: gdembeep.aud
 		Interval: 5
 	WithColoredOverlay@DETECTED:
-		Palette: detected
+		Color: FF7F0080
 	RenderSprites:
 		Image: building.demo_trap
 
@@ -1868,8 +1860,8 @@ building.gatling_cannon:
 	Tooltip:
 		Name: Gatling Cannon
 	Selectable:
-		Bounds: 24,24
-		DecorationBounds: 24,32,0,-4
+		Bounds: 1024, 1024
+		DecorationBounds: 1024, 1365, 0, -170
 	SelectionDecorations:
 	Health:
 		HP: 100000
@@ -1956,7 +1948,7 @@ building.firebase:
 	Armor:
 		Type: building.stinger_site
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	ProvidesPrerequisite@buildingname:
 	Turreted:
 		TurnSpeed: 12
@@ -2060,7 +2052,7 @@ building.bunker:
 	Armor:
 		Type: building.normal
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 		Class: building.bunker
 	Exit:
 	ProductionBar:
@@ -2143,14 +2135,14 @@ building.fortified_bunker:
 		RequiresCondition: !build-incomplete
 	RallyPoint:
 	Selectable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	Exit@1:
 		SpawnOffset: 213,-128,0
 		ExitCell: 1,2
 	Power:
 		Amount: -1
 	ProvidesPrerequisite@buildingname:
-	InfiltrateForCondition:
+	GrantConditionOnInfiltration:
 		Duration: 750
 	RepairsUnits:
 		StartRepairingNotification: Repairing
@@ -2159,7 +2151,7 @@ building.fortified_bunker:
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
 		Sequence: place
-		SequencePalette: placebuilding
+		SequenceAlpha: 0.65
 
 building.usa_war_factory:
 	Inherits: ^default.war_factory
@@ -2221,7 +2213,7 @@ building.usa_war_factory:
 		ExitCell: 0,1
 		ExitDelay: 3
 	Selectable:
-		DecorationBounds: 72,64,0,-16
+		DecorationBounds: 3072, 2730, 0, -682
 	SelectionDecorations:
 	WithDeathAnimation:
 		DeathSequence: dead
@@ -2237,7 +2229,7 @@ building.usa_war_factory:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.usa_airfield_or_war_factory
 	SequencePlaceBuildingPreview:
-		SequencePalette: cncplacebuilding
+		SequenceAlpha: 0.65
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -2394,7 +2386,7 @@ building.prc_war_factory:
 	Armor:
 		Type: building.normal
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 		Class: building.tunnel_network
 	Turreted:
 		TurnSpeed: 32
@@ -2410,6 +2402,7 @@ building.prc_war_factory:
 		Amount: 0
 	-WithSpriteBody:
 	WithTerrainDependantSpriteBody:
+	RallyPoint:
 	Voiced:
 		VoiceSet: TunnelNetworkVoice
 	RenderSprites:
@@ -2448,7 +2441,6 @@ building.tunnel_network:
 		RequiresCondition: !build-incomplete
 	WithMuzzleOverlay:
 	Exit:
-	RallyPoint:
 	ProductionBar:
 		ProductionType: queue.camo_netting
 	GrantConditionOnFaction@CAMO_NETTING:
@@ -2561,7 +2553,7 @@ building.stinger_site:
 	Armor:
 		Type: building.stinger_site
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	WithBuildingBib:
 	Turreted:
 		TurnSpeed: 900
@@ -2597,21 +2589,21 @@ building.stinger_site:
 		Palette: cloak
 	MobSpawnerMaster@A:
 		Actors: infantry.stinger_soldier
-		Offset: 511,511,0
+		SpawnOffset: 511,511,0
 		RespawnTicks: 750
 		ExitByBudding: false
 		AggregateHealth: false
 		SpawnIsGroundUnit: true
 	MobSpawnerMaster@B:
 		Actors: infantry.stinger_soldier
-		Offset: -511,-511,0
+		SpawnOffset: -511,-511,0
 		RespawnTicks: 750
 		ExitByBudding: false
 		AggregateHealth: false
 		SpawnIsGroundUnit: true
 	MobSpawnerMaster@C:
 		Actors: infantry.stinger_soldier
-		Offset: -511,511,0
+		SpawnOffset: -511,511,0
 		RespawnTicks: 750
 		ExitByBudding: false
 		AggregateHealth: false
@@ -2664,7 +2656,7 @@ building.stinger_site:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@airfield:
 		Prerequisite: prerequisite.airfield
-	InfiltrateForCondition:
+	GrantConditionOnInfiltration:
 		Duration: 750
 
 building.usa_airfield:
@@ -2690,7 +2682,7 @@ building.usa_airfield:
 		Footprint: XXXX xxx= xx==
 		Dimensions: 4,3
 	Selectable:
-		Bounds: 96,64,0,6
+		Bounds: 4096, 2730, 0, 256
 	Production:
 		Produces: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_plane, queue.usa_helicopter, queue.usa_air_upgrade
 		PauseOnCondition: emp || hacked || sabotaged
@@ -2829,7 +2821,7 @@ building.prc_airfield:
 		RecreationInterval: -1
 		Locations: 0,1, 2,1, 3,1
 	Selectable:
-		Bounds: 96,64,0,-4
+		Bounds: 4096, 2730, 0, -170
 	WithIdleOverlay@FLAG:
 		Sequence: idle-flag
 	ProvidesPrerequisite:
@@ -2894,8 +2886,8 @@ building.internet_center:
 		Footprint: XX xx
 		Dimensions: 2,2
 	Selectable:
-		Bounds: 48,40,0,9
-		DecorationBounds: 48,53,0,-4
+		Bounds: 2048, 1706, 0, 384
+		DecorationBounds: 2048, 2261, 0, -170
 	SelectionDecorations:
 	Production:
 		Produces: queue.internet_center, SatelliteHack2
@@ -2945,8 +2937,6 @@ building.internet_center:
 		Prerequisites: upgrade.satellite_hack2
 	Voiced:
 		VoiceSet: InternetCenterVoice
-	ActorPreviewPlaceBuildingPreview:
-		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -2974,8 +2964,8 @@ building.strategy_center:
 		Footprint: Xxx xxX
 		Dimensions: 3,2
 	Selectable:
-		Bounds: 72,48
-		DecorationBounds: 72,58,0,-10
+		Bounds: 3072, 2048
+		DecorationBounds: 3072, 2474, 0, -426
 	SelectionDecorations:
 	Health:
 		HP: 150000
@@ -3018,9 +3008,9 @@ building.strategy_center:
 		SquadSizes:
 			1: 1
 		QuantizedFacings: 8
-		Descriptions:
+		Names:
 			1: Carpet Bombing
-		LongDescs:
+		Descriptions:
 			1: A B-2 does carpet bombing at the target.
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
@@ -3078,9 +3068,9 @@ building.strategy_center:
 		PauseOnCondition: emp || hacked
 		Prerequisites:
 			1: prerequisite.zh_units
-		Descriptions:
+		Names:
 			1: Intelligence
-		LongDescs:
+		Descriptions:
 			1: Makes all enemy units visible for 30 seconds.
 		Icons:
 			1: intelligence
@@ -3121,8 +3111,8 @@ building.palace:
 		Footprint: xxx xxx
 		Dimensions: 3,2
 	Selectable:
-		Bounds: 72,48
-		DecorationBounds: 72,68,0,-12
+		Bounds: 3072, 2048
+		DecorationBounds: 3072, 2901, 0, -512
 	SelectionDecorations:
 	Health:
 		HP: 300000
@@ -3209,8 +3199,6 @@ building.palace:
 	SpawnActorOnDeath:
 		Actor: hole.palace
 		SpawnAfterDefeat: false
-	ActorPreviewPlaceBuildingPreview:
-		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 	Voiced:
@@ -3244,7 +3232,7 @@ building.propaganda_center:
 	Armor:
 		Type: building.normal
 	Selectable:
-		Bounds: 72,48
+		Bounds: 3072, 2048
 	WithBuildingBib:
 	Production:
 		Produces: queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center
@@ -3344,9 +3332,9 @@ building.detention_camp:
 		PauseOnCondition: emp || hacked
 		Prerequisites:
 			1: !prerequisite.zh_units
-		Descriptions:
+		Names:
 			1: Intelligence
-		LongDescs:
+		Descriptions:
 			1: Makes all enemy units visible for 30 seconds.
 		Icons:
 			1: intelligence
@@ -3392,7 +3380,7 @@ building.supply_drop_zone:
 	Armor:
 		Type: Wood
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 	WithBuildingBib:
 	Power:
 		Amount: -4
@@ -3442,7 +3430,7 @@ building.black_market:
 		Footprint: XX xx
 		Dimensions: 2,2
 	Selectable:
-		Bounds: 48,60,0,-10
+		Bounds: 2048, 2560, 0, -426
 	SelectionDecorations:
 	Production:
 		Produces: queue.black_market, queue.stealth_gen_black_market
@@ -3504,8 +3492,8 @@ building.speaker_tower:
 		Prerequisites: building.propaganda_center, !techlevel.notech, !techlevel.nodefense
 		Description: Increases fire speed of nearby units and allows them to heal.
 	Selectable:
-		Bounds: 24,24
-		DecorationBounds: 24,48,0,-12
+		Bounds: 1024, 1024
+		DecorationBounds: 1024, 2048, 0, -512
 		Class: building.speaker_tower
 	SelectionDecorations:
 	WithSpriteBody:
@@ -3580,8 +3568,8 @@ building.particle_cannon:
 		Footprint: XX xx
 		Dimensions: 2,2
 	Selectable:
-		Bounds: 48,40,0,9
-		DecorationBounds: 48,53,0,-4
+		Bounds: 2048, 1706, 0, 384
+		DecorationBounds: 2048, 2261, 0, -170
 		Class: building.particle_cannon
 	SelectionDecorations:
 	WithSpriteBody:
@@ -3601,9 +3589,9 @@ building.particle_cannon:
 		ChargeInterval: 6000
 		Icons:
 			1: particle
-		Descriptions:
+		Names:
 			1: Particle Cannon
-		LongDescs:
+		Descriptions:
 			1: Initiates an Particle Cannon strike.
 		DisplayTimerRelationships: Enemy, Neutral, Ally
 		SelectTargetSpeechNotification: SelectTarget
@@ -3625,15 +3613,13 @@ building.particle_cannon:
 	GrantConditionOnPrerequisite@LIMIT:
 		Condition: limited_sw
 		Prerequisites: prerequisite.limited_sw
-	InfiltrateForCondition:
+	GrantConditionOnInfiltration:
 		Duration: 250
 	RevealsShroud@SW:
 		Range: 2c0
 		ValidRelationships: Enemy
 	Voiced:
 		VoiceSet: ParticleCannonVoice
-	ActorPreviewPlaceBuildingPreview:
-		OverridePalette: cncplacebuilding
 	RenderSprites:
 		PlayerPalette: cncplayer
 
@@ -3697,7 +3683,7 @@ building.scud_storm:
 	Armor:
 		Type: building.tough
 	Selectable:
-		Bounds: 48,48
+		Bounds: 2048, 2048
 		Class: building.scud_storm
 	AttackTurreted:
 		Turrets: A, B, C, D
@@ -3861,14 +3847,14 @@ building.scud_storm:
 		Cursor: nuke
 		ChargeInterval: 7500
 		ArmamentName: primary
-		Descriptions:
+		Names:
 			1: SCUD Storm
-		DisplayTimerRelationships: Enemy, Neutral, Ally
-		LongDescs:
+		Descriptions:
 			1: Fires 4 SCUD Missiles anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
 		IncomingSpeechNotification: ScudLaunchDetected
 		AllowMultiple: True
+		DisplayTimerRelationships: Enemy, Neutral, Ally
 		DisplayBeacon: False
 		BeaconPosters:
 			1: scudswbcon
@@ -3961,7 +3947,7 @@ building.missile_silo:
 	Armor:
 		Type: building.tough
 	Selectable:
-		Bounds: 48,24
+		Bounds: 2048, 1024
 		Class: building.missile_silo
 	Production:
 		Produces: queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo
@@ -4015,14 +4001,15 @@ building.missile_silo:
 		Icons:
 			1: abomb
 		ChargeInterval: 9000
-		Descriptions:
+		Names:
 			1: Atom Bomb
-		LongDescs:
+		Descriptions:
 			1: Launches a devastating atomic bomb\nat a target location.
 		SelectTargetSpeechNotification: SelectTarget
 		IncomingSpeechNotification: NukeLaunchDetected
 		AllowMultiple: True
-		MissileWeapon: atomic
+		MissileWeapons:
+			1: atomic
 		SpawnOffset: 0,427,0
 		DisplayTimerRelationships: Enemy, Neutral, Ally
 		DisplayBeacon: True
@@ -4035,6 +4022,7 @@ building.missile_silo:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+		MissileImage: atomic
 	SupportPowerChargeBar:
 	Power:
 		Amount: -10
@@ -4049,7 +4037,7 @@ building.missile_silo:
 	GrantConditionOnPrerequisite@LIMIT:
 		Condition: limited_sw
 		Prerequisites: prerequisite.limited_sw
-	InfiltrateForCondition:
+	GrantConditionOnInfiltration:
 		Duration: 250
 	RevealsShroud@SW:
 		Range: 2c0

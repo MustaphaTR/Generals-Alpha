@@ -33,7 +33,7 @@ vessel.transport:
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || emp
 	Selectable:
-		DecorationBounds: 36,36
+		DecorationBounds: 1536, 1536
 
 vessel.gunboat:
 	Inherits: ^Ship
@@ -86,11 +86,11 @@ vessel.gunboat:
 	SelectionDecorations:
 	WithSpriteTurret:
 	DetectCloaked:
-		CloakTypes: Underwater
+		DetectionTypes: Underwater
 		Range: 4c0
 	RenderDetectionCircle:
 	Selectable:
-		DecorationBounds: 36,36
+		DecorationBounds: 1536, 1536
 	ThrowsShrapnel:
 		Weapons: debris.gunboat
 		Pieces: 1, 1
@@ -150,11 +150,11 @@ vessel.destroyer:
 	SelectionDecorations:
 	WithSpriteTurret:
 	DetectCloaked:
-		CloakTypes: Underwater
+		DetectionTypes: Underwater
 		Range: 4c0
 	RenderDetectionCircle:
 	Selectable:
-		DecorationBounds: 38,38
+		DecorationBounds: 1621, 1621
 	ThrowsShrapnel:
 		Weapons: debris.destroyer
 		Pieces: 1, 1
@@ -231,7 +231,7 @@ vessel.cruiser:
 	WithSpriteTurret@SECONDARY:
 		Turret: secondary
 	Selectable:
-		DecorationBounds: 44,44
+		DecorationBounds: 1877, 1877
 	ThrowsShrapnel:
 		Weapons: debris.cruiser
 		Pieces: 1, 2

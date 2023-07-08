@@ -1,6 +1,6 @@
 ﻿#region Copyright & License Information
 /*
- * Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
+ * Copyright (c) The OpenRA Developers and Contributors
  * This file is part of OpenRA, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -46,9 +46,9 @@ namespace OpenRA.Mods.GenSDK.Activities
 			if (IsCanceling)
 				return true;
 
-			if (collector.DeliveryBuilding == null || !collector.DeliveryBuilding.IsInWorld || !collectorInfo.DeliveryRelationships.HasStance(self.Owner.RelationshipWith(collector.DeliveryBuilding.Owner)))
+			if (collector.DeliveryBuilding == null || !collector.DeliveryBuilding.IsInWorld || !collectorInfo.DeliveryRelationships.HasRelationship(self.Owner.RelationshipWith(collector.DeliveryBuilding.Owner)))
 			{
-				collector.DeliveryBuilding = collector.ClosestDeliveryBuilding(self);
+				collector.DeliveryBuilding = collector.ClosestDeliveryBuilding(self, null);
 			}
 
 			if (collector.DeliveryBuilding == null || !collector.DeliveryBuilding.IsInWorld)
@@ -130,7 +130,7 @@ namespace OpenRA.Mods.GenSDK.Activities
 					}
 				}
 
-				var amountToGive = Util.ApplyPercentageModifiers(amount, collector.ResourceMultipliers.Select(m => m.GetModifier()));
+				var amountToGive = Util.ApplyPercentageModifiers(amount, collector.ResourceMultipliers.Select(m => m.GetResourceValueModifier()));
 				collector.Waiting = false;
 				collector.DeliveryAnimPlayed = false;
 				centerTrait.GiveResource(amountToGive, self.Info.Name);

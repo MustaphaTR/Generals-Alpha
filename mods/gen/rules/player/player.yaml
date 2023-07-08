@@ -1,6 +1,10 @@
 ^BasePlayer:
 	AlwaysVisible:
 	Shroud:
+	PlayerResources:
+		ResourceValues:
+			Ore: 25
+			Gems: 50
 
 EditorPlayer:
 	Inherits: ^BasePlayer
@@ -16,6 +20,7 @@ Player:
 		Type: queue.usa_generals_power
 		Group: General
 		Factions: usa
+		AlwaysShowForFactions: usa
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
@@ -24,6 +29,7 @@ Player:
 		Type: queue.air_gen_generals_power
 		Group: General
 		Factions: air
+		AlwaysShowForFactions: air
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
@@ -32,6 +38,7 @@ Player:
 		Type: queue.laser_gen_generals_power
 		Group: General
 		Factions: laser
+		AlwaysShowForFactions: laser
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
@@ -40,6 +47,7 @@ Player:
 		Type: queue.super_gen_generals_power
 		Group: General
 		Factions: super
+		AlwaysShowForFactions: super
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
@@ -48,6 +56,7 @@ Player:
 		Type: queue.gla_generals_power
 		Group: General
 		Factions: gla
+		AlwaysShowForFactions: gla
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
@@ -56,6 +65,7 @@ Player:
 		Type: queue.toxin_gen_generals_power
 		Group: General
 		Factions: toxin
+		AlwaysShowForFactions: toxin
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
@@ -64,6 +74,7 @@ Player:
 		Type: queue.demo_gen_generals_power
 		Group: General
 		Factions: demo
+		AlwaysShowForFactions: demo
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
@@ -72,6 +83,7 @@ Player:
 		Type: queue.stealth_gen_generals_power
 		Group: General
 		Factions: stealth
+		AlwaysShowForFactions: stealth
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
@@ -80,6 +92,7 @@ Player:
 		Type: queue.prc_generals_power
 		Group: General
 		Factions: prc
+		AlwaysShowForFactions: prc
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
@@ -88,6 +101,7 @@ Player:
 		Type: queue.inf_gen_generals_power
 		Group: General
 		Factions: inf
+		AlwaysShowForFactions: inf
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
@@ -96,6 +110,7 @@ Player:
 		Type: queue.nuke_gen_generals_power
 		Group: General
 		Factions: nuke
+		AlwaysShowForFactions: nuke
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
@@ -104,6 +119,7 @@ Player:
 		Type: queue.tank_gen_generals_power
 		Group: General
 		Factions: tank
+		AlwaysShowForFactions: tank
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
@@ -112,6 +128,7 @@ Player:
 		Type: queue.boss_gen_generals_power
 		Group: General
 		Factions: boss
+		AlwaysShowForFactions: boss
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
@@ -180,11 +197,11 @@ Player:
 			1: repair1
 			2: repair2
 			3: repair3
-		Descriptions:
+		Names:
 			1: Emergency Repair
 			2: Emergency Repair
 			3: Emergency Repair
-		LongDescs:
+		Descriptions:
 			1: Repairs vehicles in 3 cell range by 30%.
 			2: Repairs vehicles in 4 cell range by 60%.
 			3: Repairs vehicles in 5 cell range by 90%.
@@ -199,10 +216,12 @@ Player:
 		WaterChance: 0
 		SpawnInterval: 1500
 		InitialSpawnDelay: 0
-		RequiresCondition: no_bases
+		RequiresCondition: creates_enabled && combatant_player && no_bases
 	GrantConditionOnPrerequisite@NoBases:
 		Prerequisites: hack.no_bases
 		Condition: no_bases
+	GrantConditionOnCombatantOwner:
+		Condition: combatant_player
 	ExternalCondition@PadAircraft:
 		Condition: padaircraft
 	ExternalCondition@AirDock:

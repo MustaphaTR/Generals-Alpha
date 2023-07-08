@@ -1,1381 +1,1693 @@
 building.usa_command_center:
-	build: usfact
+	build:
+		Filename: usfact.shp
 		Start: 4
 		Length: 20
 		Tick: 100
-	idle: usfact
+	idle:
+		Filename: usfact.shp
 		Length: 4
 		Tick: 100
-	damaged-idle: usfact
+	damaged-idle:
+		Filename: usfact.shp
 		Start: 24
 		Length: 4
 		Tick: 100
-	damaged-build: usfact
+	damaged-build:
+		Filename: usfact.shp
 		Start: 28
 		Length: 20
 		Tick: 100
-	dead: usfact
+	dead:
+		Filename: usfact.shp
 		Start: 48
 		Tick: 800
-	make: usfactmake
+	make:
+		Filename: usfactmake.shp
 		Length: *
 		Tick: 80
-	bib: bib2.tem
+	bib:
+		Filename: bib2.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib2.sno
+	bib-Snow:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib2.sno
+	bib-SnowRoad:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib2.des
+	bib-Sand:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib2.des
+	bib-SandRoad:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	icon: usfacticon
+	icon:
+		Filename: usfacticon.shp
 
 building.gla_command_center:
-	idle: fact
-	make: factmake
+	idle:
+		Filename: fact.shp
+	make:
+		Filename: factmake.shp
 		Length: *
-	build: fact
+	build:
+		Filename: fact.shp
 		Start: 1
 		Length: 25
-	damaged-idle: fact
+	damaged-idle:
+		Filename: fact.shp
 		Start: 26
-	damaged-build: fact
+	damaged-build:
+		Filename: fact.shp
 		Start: 27
 		Length: 25
-	dead: factdead
+	dead:
+		Filename: factdead.shp
 		Tick: 800
-	bib: bib2.tem
+	bib:
+		Filename: bib2.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib2.sno
+	bib-Snow:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib2.sno
+	bib-SnowRoad:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib2.des
+	bib-Sand:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib2.des
+	bib-SandRoad:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	active: invis
-	icon: commicon
-	fake-icon: fakecommicon
+	active:
+		Filename: invis.shp
+	icon:
+		Filename: commicon.shp
+	fake-icon:
+		Filename: fakecommicon.shp
 
 building.prc_command_center:
-	idle: fact
-	make: factmake
+	idle:
+		Filename: fact.shp
+	make:
+		Filename: factmake.shp
 		Length: *
-	build: fact
+	build:
+		Filename: fact.shp
 		Start: 1
 		Length: 25
-	damaged-idle: fact
+	damaged-idle:
+		Filename: fact.shp
 		Start: 26
-	damaged-build: fact
+	damaged-build:
+		Filename: fact.shp
 		Start: 27
 		Length: 25
-	radar: prcradar
+	radar:
+		Filename: prcradar.shp
 		Length: 16
 		Tick: 100
 		Offset: 19, -20
-	damaged-radar: prcradar
+	damaged-radar:
+		Filename: prcradar.shp
 		Start: 16
 		Offset: 19, -20
-	dead: factdead
+	dead:
+		Filename: factdead.shp
 		Tick: 800
-	bib: bib2.tem
+	bib:
+		Filename: bib2.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib2.sno
+	bib-Snow:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib2.sno
+	bib-SnowRoad:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib2.des
+	bib-Sand:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib2.des
+	bib-SandRoad:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	active: invis
-	icon: facticon
+	active:
+		Filename: invis.shp
+	icon:
+		Filename: facticon.shp
 
 building.cold_fusion_reactor:
-	idle: powr
-	damaged-idle: powr
+	idle:
+		Filename: powr.shp
+	damaged-idle:
+		Filename: powr.shp
 		Start: 1
-	make: powrmake
+	make:
+		Filename: powrmake.shp
 		Length: *
-	dead: powrdead
+	dead:
+		Filename: powrdead.shp
 		Tick: 800
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	icon: powricon
+	icon:
+		Filename: powricon.shp
 
 building.advanced_cold_fusion_reactor:
-	idle: powr
-	damaged-idle: powr
+	idle:
+		Filename: powr.shp
+	damaged-idle:
+		Filename: powr.shp
 		Start: 1
-	make: powrmake
+	make:
+		Filename: powrmake.shp
 		Length: *
-	dead: powrdead
+	dead:
+		Filename: powrdead.shp
 		Tick: 800
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	icon: advpowricon
+	icon:
+		Filename: advpowricon.shp
 
 building.nuclear_reactor:
-	idle: nuke
+	idle:
+		Filename: nuke.shp
 		Length: 4
 		Tick: 1000
-	damaged-idle: nuke
+	damaged-idle:
+		Filename: nuke.shp
 		Start: 4
 		Length: 4
 		Tick: 1000
-	dead: nuke
+	dead:
+		Filename: nuke.shp
 		Start: 8
 		Tick: 800
-	make: nukemake
+	make:
+		Filename: nukemake.shp
 		Length: *
 		Tick: 80
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	icon: nkpwricon
+	icon:
+		Filename: nkpwricon.shp
 
 building.advanced_nuclear_reactor:
-	idle: nuk2
+	idle:
+		Filename: nuk2.shp
 		Length: 4
 		Tick: 1000
-	damaged-idle: nuk2
+	damaged-idle:
+		Filename: nuk2.shp
 		Start: 4
 		Length: 4
 		Tick: 1000
-	dead: nuk2
+	dead:
+		Filename: nuk2.shp
 		Start: 8
 		Tick: 800
-	make: nuk2make
+	make:
+		Filename: nuk2make.shp
 		Length: *
 		Tick: 80
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	icon: advnukeicon
+	icon:
+		Filename: advnukeicon.shp
 
 building.usa_barracks:
-	idle: pyle
+	idle:
+		Filename: pyle.shp
 		Length: 10
 		Tick: 100
-	damaged-idle: pyle
+	damaged-idle:
+		Filename: pyle.shp
 		Start: 10
 		Length: 10
 		Tick: 100
-	dead: pyle
+	dead:
+		Filename: pyle.shp
 		Start: 20
 		Tick: 800
-	make: pylemake
+	make:
+		Filename: pylemake.shp
 		Length: *
 		Tick: 80
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	icon: pyleicon
+	icon:
+		Filename: pyleicon.shp
 
 building.gla_barracks:
-	Defaults:
-		AddExtension: False
-	idle: tent.tem
+	idle:
+		Filename: tent.tem
 		Length: 10
-	idle-Snow: tent.sno
+	idle-Snow:
+		Filename: tent.sno
 		Length: 10
-	idle-SnowRoad: tent.sno
+	idle-SnowRoad:
+		Filename: tent.sno
 		Length: 10
-	idle-Sand: tent.des
+	idle-Sand:
+		Filename: tent.des
 		Length: 10
-	idle-SandRoad: tent.des
+	idle-SandRoad:
+		Filename: tent.des
 		Length: 10
-	damaged-idle: tent.tem
+	damaged-idle:
+		Filename: tent.tem
 		Start: 10
 		Length: 10
-	damaged-idle-Snow: tent.sno
+	damaged-idle-Snow:
+		Filename: tent.sno
 		Start: 10
 		Length: 10
-	damaged-idle-SnowRoad: tent.sno
+	damaged-idle-SnowRoad:
+		Filename: tent.sno
 		Start: 10
 		Length: 10
-	damaged-idle-Sand: tent.des
+	damaged-idle-Sand:
+		Filename: tent.des
 		Start: 10
 		Length: 10
-	damaged-idle-SandRoad: tent.des
+	damaged-idle-SandRoad:
+		Filename: tent.des
 		Start: 10
 		Length: 10
-	make: tentmake.tem
+	make:
+		Filename: tentmake.tem
 		Length: *
-	make-Snow: tentmake.sno
+	make-Snow:
+		Filename: tentmake.sno
 		Length: *
-	make-SnowRoad: tentmake.sno
+	make-SnowRoad:
+		Filename: tentmake.des
 		Length: *
-	make-Sand: tentmake.des
+	make-Sand:
+		Filename: tentmake.des
 		Length: *
-	make-SnowRoad: tentmake.des
+	make-SnowRoad:
+		Filename: tentmake.des
 		Length: *
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-	icon: tenticon.shp
-	fake-icon: faketenticon.shp
+	icon:
+		Filename: tenticon.shp
+	fake-icon:
+		Filename: faketenticon.shp
 
 building.prc_barracks:
-	idle: barr
+	idle:
+		Filename: barr.shp
 		Length: 10
 		Offset: 0,-6
-	damaged-idle: barr
+	damaged-idle:
+		Filename: barr.shp
 		Start: 10
 		Length: 10
 		Offset: 0,-6
-	make: barrmake
+	make:
+		Filename: barrmake.shp
 		Length: *
 		Offset: 0,-6
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	icon: craxicon
+	icon:
+		Filename: craxicon.shp
 
 building.mine:
-	idle: minp
+	idle:
+		Filename: minp.shp
 		ZOffset: -512
-	idle-neutron: minn
+	idle-neutron:
+		Filename: minn.shp
 		ZOffset: -512
-	icon: lminicon
+	icon:
+		Filename: lminicon.shp
 
 building.usa_supply_center:
-	idle: usproc
+	idle:
+		Filename: usproc.shp
 		Length: 6
 		Tick: 120
 		Offset: 2,4
-	damaged-idle: usproc
+	damaged-idle:
+		Filename: usproc.shp
 		Start: 30
 		Length: 6
 		Tick: 120
 		Offset: 2,4
-	dead: usproc
+	dead:
+		Filename: usproc.shp
 		Start: 60
 		Tick: 800
 		Offset: 2,4
-	make: usprocmake
+	make:
+		Filename: usprocmake.shp
 		Length: *
 		Tick: 80
 		Offset: 2,4
-	resources: usproctwr
+	resources:
+		Filename: usproctwr.shp
 		Length: 6
 		Offset: -30,-17
-	damaged-resources: usproctwr
+	damaged-resources:
+		Filename: usproctwr.shp
 		Start: 6
 		Length: 6
 		Offset: -30,-17
-	bib: bib2.tem
+	bib:
+		Filename: bib2.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib2.sno
+	bib-Snow:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib2.sno
+	bib-SnowRoad:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib2.des
+	bib-Sand:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib2.des
+	bib-SandRoad:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	icon: usprocicon
+	icon:
+		Filename: usprocicon.shp
 
 building.gla_supply_stash:
-	idle: silo2
+	idle:
+		Filename: silo2.shp
 		Offset: -12,23
-	damaged-idle: silo2
+	damaged-idle:
+		Filename: silo2.shp
 		Start: 9
 		Offset: -12,23
-	idle2: tdsilo
+	idle2:
+		Filename: tdsilo.shp
 		Offset: 0,-1
-	damaged-idle2: tdsilo
+	damaged-idle2:
+		Filename: tdsilo.shp
 		Start: 5
 		Offset: 0,-1
-	make: silomake
+	make:
+		Filename: silomake.shp
 		Length: *
 		Offset: -12,23
-	make2: tdsilomake
+	make2:
+		Filename: tdsilomake.shp
 		Length: *
 		Offset: 0,-1
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	icon: siloicon
-	fake-icon: fakesiloicon
+	icon:
+		Filename: siloicon.shp
+	fake-icon:
+		Filename: fakesiloicon.shp
 
 building.prc_supply_center:
-	idle: proc
+	idle:
+		Filename: proc.shp
 		ZOffset: -1c511
-	damaged-idle: proc
+	damaged-idle:
+		Filename: proc.shp
 		ZOffset: -1c511
-	idle-top: proctop
+	idle-top:
+		Filename: proctop.shp
 		ZOffset: 0
-	damaged-idle-top: proctop
+	damaged-idle-top:
+		Filename: proctop.shp
 		Start: 1
 		ZOffset: 0
-	make: procmake
+	make:
+		Filename: procmake.shp
 		Length: *
-	dead: procdead
+	dead:
+		Filename: procdead.shp
 		Tick: 800
-	bib: bib2.tem
+	bib:
+		Filename: bib2.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib2.sno
+	bib-Snow:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib2.sno
+	bib-SnowRoad:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib2.des
+	bib-Sand:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib2.des
+	bib-SandRoad:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	icon: procicon
+	icon:
+		Filename: procicon.shp
 
 building.patriot:
-	idle: sam2
+	idle:
+		Filename: sam2.shp
 		Facings: 32
 		UseClassicFacings: True
 		Offset: -2,-2
-	damaged-idle: sam2
+	damaged-idle:
+		Filename: sam2.shp
 		Start: 34
 		Facings: 32
 		UseClassicFacings: True
 		Offset: -2,-2
-	make: sammake
+	make:
+		Filename: sammake.shp
 		Length: *
 		Offset: -2,-2
-	muzzle: samfire
+	muzzle:
+		Filename: samfire.shp
 		Length: 18
 		Facings: 8
 		Offset: -2,6
-	bib: mbSAM.tem
+	bib:
+		Filename: mbSAM.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: mbSAM.sno
+	bib-Snow:
+		Filename: mbSAM.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: mbSAM.sno
+	bib-SnowRoad:
+		Filename: mbSAM.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: mbSAM.des
+	bib-Sand:
+		Filename: mbSAM.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: mbSAM.des
+	bib-SandRoad:
+		Filename: mbSAM.des
 		Length: *
-		AddExtension: False
-	icon: samicon
+	icon:
+		Filename: samicon.shp
 
 building.emp_patriot:
 	Inherits: building.patriot
-	icon: empsamicon
+	icon:
+		Filename: empsamicon.shp
 
 building.laser_turret:
-	idle: gun
+	idle:
+		Filename: gun.shp
 		Facings: 32
 		UseClassicFacings: True
-	recoil: gun
+	recoil:
+		Filename: gun.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	make: gunmake
+	make:
+		Filename: gunmake.shp
 		Length: *
-	damaged-idle: gun
+	damaged-idle:
+		Filename: gun.shp
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True
-	damaged-recoil: gun
+	damaged-recoil:
+		Filename: gun.shp
 		Start: 96
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	bib: mbGUN.tem
+	bib:
+		Filename: mbGUN.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGUN.sno
+	bib-Snow:
+		Filename: mbGUN.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGUN.sno
+	bib-SnowRoad:
+		Filename: mbGUN.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGUN.des
+	bib-Sand:
+		Filename: mbGUN.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGUN.des
+	bib-SandRoad:
+		Filename: mbGUN.des
 		Length: *
-		AddExtension: false
-	icon: lturicon
+	icon:
+		Filename: lturicon.shp
 
 building.demo_trap:
-	idle: dmtrp
+	idle:
+		Filename: dmtrp.shp
 		Offset: 2, 0
-	icon: demoicon
-	fake-icon: fakedemoicon
+	icon:
+		Filename: demoicon.shp
+	fake-icon:
+		Filename: fakedemoicon.shp
 
 building.advanced_demo_trap:
-	idle: dmtrp_adv
+	idle:
+		Filename: dmtrp_adv.shp
 		Offset: 2, 0
-	icon: ademoicon
-	fake-icon: fakeademoicon
+	icon:
+		Filename: ademoicon.shp
+	fake-icon:
+		Filename: fakeademoicon.shp
 
 building.gatling_cannon:
-	idle: agun
+	idle:
+		Filename: agun.shp
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-13
-	recoil: agun
+	recoil:
+		Filename: agun.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-13
-	make: agunmake
+	make:
+		Filename: agunmake.shp
 		Length: *
 		Offset: 0,-13
-	damaged-idle: agun
+	damaged-idle:
+		Filename: agun.shp
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-13
-	damaged-recoil: agun
+	damaged-recoil:
+		Filename: agun.shp
 		Start: 96
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-13
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Start: 1
 		Length: 4
-	bib: mbAGUN.tem
+	bib:
+		Filename: mbAGUN.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbAGUN.sno
+	bib-Snow:
+		Filename: mbAGUN.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbAGUN.sno
+	bib-SnowRoad:
+		Filename: mbAGUN.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbAGUN.des
+	bib-Sand:
+		Filename: mbAGUN.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbAGUN.des
+	bib-SandRoad:
+		Filename: mbAGUN.des
 		Length: *
-		AddExtension: false
-	icon: gatcanicon
+	icon:
+		Filename: gatcanicon.shp
 
 building.firebase:
-	idle-a: pbox
+	idle-a:
+		Filename: pbox.shp
 		Offset: -12,-12
-	damaged-idle-a: pbox
+	damaged-idle-a:
+		Filename: pbox.shp
 		Start: 1
 		Offset: -12,-12
-	make-a: pboxmake
+	make-a:
+		Filename: pboxmake.shp
 		Length: *
 		Offset: -12,-12
-	idle-b: pbox
+	idle-b:
+		Filename: pbox.shp
 		Offset: -12,12
-	damaged-idle-b: pbox
+	damaged-idle-b:
+		Filename: pbox.shp
 		Start: 1
 		Offset: -12,12
-	make-b: pboxmake
+	make-b:
+		Filename: pboxmake.shp
 		Length: *
 		Offset: -12,12
-	idle-c: pbox
+	idle-c:
+		Filename: pbox.shp
 		Offset: 12,-12
-	damaged-idle-c: pbox
+	damaged-idle-c:
+		Filename: pbox.shp
 		Start: 1
 		Offset: 12,-12
-	make-c: pboxmake
+	make-c:
+		Filename: pboxmake.shp
 		Length: *
 		Offset: 12,-12
-	idle-d: pbox
+	idle-d:
+		Filename: pbox.shp
 		Offset: 12,12
-	damaged-idle-d: pbox
+	damaged-idle-d:
+		Filename: pbox.shp
 		Start: 1
 		Offset: 12,12
-	make-d: pboxmake
+	make-d:
+		Filename: pboxmake.shp
 		Length: *
 		Offset: 12,12
-	idle-turret: agun
+	idle-turret:
+		Filename: agun.shp
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-18
-	make-turret: agunmake
+	make-turret:
+		Filename: agunmake.shp
 		Length: *
 		Offset: 0,-18
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: *
-	icon: fbaseicon
+	icon:
+		Filename: fbaseicon.shp
 
 building.bunker:
-	idle: bunker
-	damaged-idle: bunker
+	idle:
+		Filename: bunker.shp
+	damaged-idle:
+		Filename: bunker.shp
 		Start: 1
-	make: bunkermake
+	make:
+		Filename: bunkermake.shp
 		Length: *
-	idle-flag: flagfly
+	idle-flag:
+		Filename: flagfly.shp
 		Length: *
 		Offset: 9,-12
-	muzzle: minigun
+	muzzle:
+		Filename: minigun.shp
 		Length: 6
 		Facings: 8
-	bib: mbPBOX.tem
+	bib:
+		Filename: mbPBOX.tem
 		Length: *
 		Offset: 0,-2
-		AddExtension: false
-	bib-Snow: mbPBOX.sno
+	bib-Snow:
+		Filename: mbPBOX.sno
 		Length: *
 		Offset: 0,-2
-		AddExtension: false
-	bib-SnowRoad: mbPBOX.sno
+	bib-SnowRoad:
+		Filename: mbPBOX.sno
 		Length: *
 		Offset: 0,-2
-		AddExtension: false
-	bib-Sand: mbPBOX.des
+	bib-Sand:
+		Filename: mbPBOX.des
 		Length: *
 		Offset: 0,-2
-		AddExtension: false
-	bib-SandRoad: mbPBOX.des
+	bib-SandRoad:
+		Filename: mbPBOX.des
 		Length: *
 		Offset: 0,-2
-		AddExtension: false
-	icon: bunkericon
+	icon:
+		Filename: bunkericon.shp
 
 building.fortified_bunker:
 	Inherits: building.bunker
-	icon: fortbicon
+	icon:
+		Filename: fortbicon.shp
 
 building.usa_war_factory:
-	Defaults: usweap
+	Defaults:
 		Offset: 0,-12
-	idle: usweap
+	idle:
+		Filename: usweap.shp
 		ZOffset: -511
-	damaged-idle: usweap
+	damaged-idle:
+		Filename: usweap.shp
 		Start: 1
 		ZOffset: -511
-	dead: usweap
+	dead:
+		Filename: usweap.shp
 		Start: 2
 		Tick: 800
-	build-top: usweap2
+	build-top:
+		Filename: usweap2.shp
 		Length: 10
 		ZOffset: -1024
-	damaged-build-top: usweap2
+	damaged-build-top:
+		Filename: usweap2.shp
 		Start: 10
 		Length: 10
 		ZOffset: -1024
-	place: usweapmake
+	place:
+		Filename: usweapmake.shp
 		Start: 19
-	make: usweapmake
+	make:
+		Filename: usweapmake.shp
 		Length: *
 		Tick: 80
-	bib: bib2.tem
+	bib:
+		Filename: bib2.tem
 		Length: *
 		Offset: 0,0
-		AddExtension: False
-	bib-Snow: bib2.sno
+	bib-Snow:
+		Filename: bib2.sno
 		Length: *
 		Offset: 0,0
-		AddExtension: False
-	bib-SnowRoad: bib2.sno
+	bib-SnowRoad:
+		Filename: bib2.sno
 		Length: *
 		Offset: 0,0
-		AddExtension: False
-	bib-Sand: bib2.des
+	bib-Sand:
+		Filename: bib2.des
 		Length: *
 		Offset: 0,0
-		AddExtension: False
-	bib-SandRoad: bib2.des
+	bib-SandRoad:
+		Filename: bib2.des
 		Length: *
 		Offset: 0,0
-		AddExtension: False
-	icon: usweapicon
+	icon:
+		Filename: usweapicon.shp
 		Offset: 0,0
 
 building.arms_dealer:
-	idle: weap
-	damaged-idle: weap
+	idle:
+		Filename: weap.shp
+	damaged-idle:
+		Filename: weap.shp
 		Start: 1
-	place: weapmake
+	place:
+		Filename: weapmake.shp
 		Start: 14
-	make: weapmake
+	make:
+		Filename: weapmake.shp
 		Length: *
-	build-top: weap3
+	build-top:
+		Filename: weap3.shp
 		Length: 10
-	damaged-build-top: weap2
+	damaged-build-top:
+		Filename: weap2.shp
 		Start: 4
 		Length: 4
-	bib: bib2.tem
+	bib:
+		Filename: bib2.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib2.sno
+	bib-Snow:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib2.sno
+	bib-SnowRoad:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib2.des
+	bib-Sand:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib2.des
+	bib-SandRoad:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	icon: dealicon
-	fake-icon: fakedealicon
+	icon:
+		Filename: dealicon.shp
+	fake-icon:
+		Filename: fakedealicon.shp
 
 building.prc_war_factory:
-	idle: weap
-	damaged-idle: weap
+	idle:
+		Filename: weap.shp
+	damaged-idle:
+		Filename: weap.shp
 		Start: 1
-	place: weapmake
+	place:
+		Filename: weapmake.shp
 		Start: 14
-	make: weapmake
+	make:
+		Filename: weapmake.shp
 		Length: *
-	build-top: weap3
+	build-top:
+		Filename: weap3.shp
 		Length: 10
-	damaged-build-top: weap2
+	damaged-build-top:
+		Filename: weap2.shp
 		Start: 4
 		Length: 4
-	bib: bib2.tem
+	bib:
+		Filename: bib2.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib2.sno
+	bib-Snow:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib2.sno
+	bib-SnowRoad:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib2.des
+	bib-Sand:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib2.des
+	bib-SandRoad:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	icon: weapicon
+	icon:
+		Filename: weapicon.shp
 
 building.tunnel_network:
-	Defaults:
-		AddExtension: false
-	idle: hbox.tem
-	idle-Snow: hbox.sno
-	idle-SnowRoad: hbox.sno
-	idle-Sand: hbox.des
-	idle-SandRoad: hbox.des
-	damaged-idle: hbox.tem
+	idle:
+		Filename: hbox.tem
+	idle-Snow:
+		Filename: hbox.sno
+	idle-SnowRoad:
+		Filename: hbox.sno
+	idle-Sand:
+		Filename: hbox.des
+	idle-SandRoad:
+		Filename: hbox.des
+	damaged-idle:
+		Filename: hbox.tem
 		Start: 2
-	damaged-idle-Snow: hbox.sno
+	damaged-idle-Snow:
+		Filename: hbox.sno
 		Start: 2
-	damaged-idle-SnowRoad: hbox.sno
+	damaged-idle-SnowRoad:
+		Filename: hbox.sno
 		Start: 2
-	damaged-idle-Sand: hbox.des
+	damaged-idle-Sand:
+		Filename: hbox.des
 		Start: 2
-	damaged-idle-SandRoad: hbox.des
+	damaged-idle-SandRoad:
+		Filename: hbox.des
 		Start: 2
-	make: hboxmake.tem
+	make:
+		Filename: hboxmake.tem
 		Length: *
-	turret: gun.shp
+	turret:
+		Filename: gun.shp
 		Facings: 32
 		UseClassicFacings: True
-	muzzle: gunfire2.shp
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	icon: tunnelicon.shp
-		UseTilesetExtension: false
-	fake-icon: faketunnelicon.shp
+	icon:
+		Filename: tunnelicon.shp
+	fake-icon:
+		Filename: faketunnelicon.shp
 
 building.toxin_tunnel_network:
 	Inherits: building.tunnel_network
-	icon: txtunnelicon.shp
-	fake-icon: faketxtunnelicon.shp
+	icon:
+		Filename: txtunnelicon.shp
+	fake-icon:
+		Filename: faketxtunnelicon.shp
 
 building.stinger_site:
-	idle: stinger
-	damaged-idle: stinger
+	idle:
+		Filename: stinger.shp
+	damaged-idle:
+		Filename: stinger.shp
 		Start: 2
-	idle-camo: stinger
+	idle-camo:
+		Filename: stinger.shp
 		Start: 1
-	damaged-idle-camo: stinger
+	damaged-idle-camo:
+		Filename: stinger.shp
 		Start: 3
-	hole: stinger
+	hole:
+		Filename: stinger.shp
 		Start: 4
-	make: stingermake
+	make:
+		Filename: stingermake.shp
 		Length: *
 		Tick: 80
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	icon: stngricon
-	fake-icon: fakestngricon
+	icon:
+		Filename: stngricon.shp
+	fake-icon:
+		Filename: fakestngricon.shp
 
 building.usa_airfield:
-	idle: usafld
+	idle:
+		Filename: usafld.shp
 		Tick: 120
 		Offset: 0,8
 		ZOffset: -1023
-	damaged-idle: usafld
+	damaged-idle:
+		Filename: usafld.shp
 		Start: 16
 		Tick: 120
 		Offset: 0,8
 		ZOffset: -1023
-	active: usafld
+	active:
+		Filename: usafld.shp
 		Length: 16
 		Tick: 120
 		Offset: 0,8
 		ZOffset: -1023
-	damaged-active: usafld
+	damaged-active:
+		Filename: usafld.shp
 		Start: 16
 		Length: 16
 		Tick: 120
 		Offset: 0,8
 		ZOffset: -1023
-	idle-dish: usafld_d
+	idle-dish:
+		Filename: usafld_d.shp
 		Length: 16
 		Tick: 160
 		Offset: 0,8
-	damaged-idle-dish: usafld_d
+	damaged-idle-dish:
+		Filename: usafld_d.shp
 		Start: 16
 		Length: 16
 		Tick: 160
 		Offset: 0,8
-	dead: usafld
+	dead:
+		Filename: usafld.shp
 		Start: 32
 		Tick: 800
 		Offset: 0,8
 		ZOffset: -1023
-	make: usafldmake
+	make:
+		Filename: usafldmake.shp
 		Length: *
 		Tick: 80
 		Offset: 0,8
-	icon: usafldicon
+	icon:
+		Filename: usafldicon.shp
 
 building.prc_airfield:
-	idle: afld
+	idle:
+		Filename: afld.shp
 		ZOffset: -1023
 		Offset: 0,-4
-	damaged-idle: afld
+	damaged-idle:
+		Filename: afld.shp
 		Start: 1
 		ZOffset: -1023
 		Offset: 0,-4
-	idle-flag: afld_flag
+	idle-flag:
+		Filename: afld_flag.shp
 		Length: *
 		Tick: 160
 		ZOffset: -1023
 		Offset: 0,-4
-	active: afld_light
+	active:
+		Filename: afld_light.shp
 		Length: 8
 		Tick: 160
 		ZOffset: -1023
 		Offset: 0,-4
-	damaged-active: afld_light
+	damaged-active:
+		Filename: afld_light.shp
 		Start: 8
 		Length: 8
 		Tick: 160
 		ZOffset: -1023
 		Offset: 0,-4
-	make: afldmake
+	make:
+		Filename: afldmake.shp
 		Length: *
 		Offset: 0,-4
-	icon: afldicon
+	icon:
+		Filename: afldicon.shp
 
 building.strategy_center:
-	Defaults: atek
+	Defaults:
 		Offset: 10,-12
-	idle: atek
-	damaged-idle: atek
+	idle:
+		Filename: atek.shp
+	damaged-idle:
+		Filename: atek.shp
 		Start: 1
-	make: atekmake
+	make:
+		Filename: atekmake.shp
 		Length: *
-	active: sputdoor
+	active:
+		Filename: sputdoor.shp
 		Length: *
 		Offset: -4,0
-	hold_the_line: atek_htl
+	hold_the_line:
+		Filename: atek_htl.shp
 		Offset: 12,-12
-	damaged-hold_the_line: atek_htl
+	damaged-hold_the_line:
+		Filename: atek_htl.shp
 		Start: 1
 		Offset: 12,-12
-	search_and_destroy: atek_sad
-	damaged-search_and_destroy: atek_sad
+	search_and_destroy:
+		Filename: atek_sad.shp
+	damaged-search_and_destroy:
+		Filename: atek_sad.shp
 		Start: 1
-	turret: agun
+	turret:
+		Filename: agun.shp
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-13
-	damaged-turret: agun
+	damaged-turret:
+		Filename: agun.shp
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-13
-	bib: bib2.tem
+	bib:
+		Filename: bib2.tem
 		Length: *
 		Offset: 0,0
-		AddExtension: False
-	bib-Snow: bib2.sno
+	bib-Snow:
+		Filename: bib2.sno
 		Length: *
 		Offset: 0,0
-		AddExtension: False
-	bib-SnowRoad: bib2.sno
+	bib-SnowRoad:
+		Filename: bib2.sno
 		Length: *
 		Offset: 0,0
-		AddExtension: False
-	bib-Sand: bib2.des
+	bib-Sand:
+		Filename: bib2.des
 		Length: *
 		Offset: 0,0
-		AddExtension: False
-	bib-SandRoad: bib2.des
+	bib-SandRoad:
+		Filename: bib2.des
 		Length: *
 		Offset: 0,0
-		AddExtension: False
-	icon: straicon
+	icon:
+		Filename: straicon.shp
 		Offset: 0,0
 
 building.palace:
-	Defaults: palace
+	Defaults:
 		Offset: 0,-12
-	idle: palace
-	damaged-idle: palace
+	idle:
+		Filename: palace.shp
+	damaged-idle:
+		Filename: palace.shp
 		Start: 5
-	active: palace
+	active:
+		Filename: palace.shp
 		Length: 5
-	damaged-active: palace
+	damaged-active:
+		Filename: palace.shp
 		Start: 5
 		Length: 5
-	dead: palace
+	dead:
+		Filename: palace.shp
 		Start: 10
 		Tick: 800
-	make: palacemake
+	make:
+		Filename: palacemake.shp
 		Length: *
 		Tick: 60
-	bib: bib2.tem
+	bib:
+		Filename: bib2.tem
 		Length: *
 		Offset: 0,0
-		AddExtension: False
-	bib-Snow: bib2.sno
+	bib-Snow:
+		Filename: bib2.sno
 		Length: *
 		Offset: 0,0
-		AddExtension: False
-	bib-SnowRoad: bib2.sno
+	bib-SnowRoad:
+		Filename: bib2.sno
 		Length: *
 		Offset: 0,0
-		AddExtension: False
-	bib-Sand: bib2.des
+	bib-Sand:
+		Filename: bib2.des
 		Length: *
 		Offset: 0,0
-		AddExtension: False
-	bib-SandRoad: bib2.des
+	bib-SandRoad:
+		Filename: bib2.des
 		Length: *
 		Offset: 0,0
-		AddExtension: False
-	icon: palaceicon
+	icon:
+		Filename: palaceicon.shp
 		Offset: 0,0
-	fake-icon: fakepalaceicon
+	fake-icon:
+		Filename: fakepalaceicon.shp
 		Offset: 0,0
 
 building.propaganda_center:
-	idle: stek
-	damaged-idle: stek
+	idle:
+		Filename: stek.shp
+	damaged-idle:
+		Filename: stek.shp
 		Start: 1
-	make: stekmake
+	make:
+		Filename: stekmake.shp
 		Length: *
-	bib: bib2.tem
+	bib:
+		Filename: bib2.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib2.sno
+	bib-Snow:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib2.sno
+	bib-SnowRoad:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib2.des
+	bib-Sand:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib2.des
+	bib-SandRoad:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	icon: stekicon
+	icon:
+		Filename: stekicon.shp
 
 building.detention_camp:
-	idle: miss
-	damaged-idle: miss
+	idle:
+		Filename: miss.shp
+	damaged-idle:
+		Filename: miss.shp
 		Start: 1
-	dead: miss
+	dead:
+		Filename: miss.shp
 		Start: 2
 		Tick: 800
-	make: missmake
+	make:
+		Filename: missmake.shp
 		Length: *
-	bib: bib2.tem
+	bib:
+		Filename: bib2.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib2.sno
+	bib-Snow:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib2.sno
+	bib-SnowRoad:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib2.des
+	bib-Sand:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib2.des
+	bib-SandRoad:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	icon: deteicon
+	icon:
+		Filename: deteicon.shp
 
 building.supply_drop_zone:
-	idle: hpad
-	damaged-idle: hpad
+	idle:
+		Filename: hpad.shp
+	damaged-idle:
+		Filename: hpad.shp
 		Start: 7
-	active: hpad
+	active:
+		Filename: hpad.shp
 		Start: 1
 		Length: 6
-	damaged-active: hpad
+	damaged-active:
+		Filename: hpad.shp
 		Start: 8
 		Length: 6
-	make: hpadmake
+	make:
+		Filename: hpadmake.shp
 		Length: *
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	icon: sdropicon
+	icon:
+		Filename: sdropicon.shp
 
 building.black_market:
-	idle: market
+	idle:
+		Filename: market.shp
 		Start: 30
 		Offset: 0, -8
-	damaged-idle: market
+	damaged-idle:
+		Filename: market.shp
 		Start: 31
 		Offset: 0, -8
-	make: market
+	make:
+		Filename: market.shp
 		Length: 31
 		Offset: 0, -8
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	icon: bmrkticon
-	fake-icon: fakebmrkticon
+	icon:
+		Filename: bmrkticon.shp
+	fake-icon:
+		Filename: fakebmrkticon.shp
 
 building.internet_center:
-	idle: bmrkt
+	idle:
+		Filename: bmrkt.shp
 		Length: 16
 		Tick: 100
-	damaged-idle: bmrkt
+	damaged-idle:
+		Filename: bmrkt.shp
 		Start: 16
 		Length: 16
 		Tick: 100
-	dead: bmrkt
+	dead:
+		Filename: bmrkt.shp
 		Start: 32
 		Tick: 800
-	make: bmrktmake
+	make:
+		Filename: bmrktmake.shp
 		Length: *
 		Tick: 80
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	icon: intericon
+	icon:
+		Filename: intericon.shp
 
 building.speaker_tower:
-	idle: gap
+	idle:
+		Filename: gap.shp
 		Length: 32
 		Offset: 0,-14
-	damaged-idle: gap
+	damaged-idle:
+		Filename: gap.shp
 		Start: 32
 		Length: 32
 		Offset: 0,-14
-	make: gapmake
+	make:
+		Filename: gapmake.shp
 		Length: *
 		Offset: 0,-14
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	icon: speakicon
+	icon:
+		Filename: speakicon.shp
 
 building.particle_cannon:
-	idle: pcan
+	idle:
+		Filename: pcan.shp
 		Length: 16
 		Tick: 100
-	damaged-idle: pcan
+	damaged-idle:
+		Filename: pcan.shp
 		Start: 16
 		Length: 16
 		Tick: 100
-	dead: pcan
+	dead:
+		Filename: pcan.shp
 		Start: 32
 		Tick: 800
-	make: pcanmake
+	make:
+		Filename: pcanmake.shp
 		Length: *
 		Tick: 80
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	icon: pcanicon
+	icon:
+		Filename: pcanicon.shp
 
 building.particle_cannon.super:
 	Inherits: building.particle_cannon
-	icon: pcansupericon
+	icon:
+		Filename: pcansupericon.shp
 
 building.scud_storm:
-	idle: invis
-	turret-full: v2rl
+	idle:
+		Filename: invis.shp
+	turret-full:
+		Filename: v2rl.shp
 		Facings: 32
 		UseClassicFacings: True
-	turret-empty: v2rl
+	turret-empty:
+		Filename: v2rl.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	icon: scudsicon
-	fake-icon: fakescudsicon
+	icon:
+		Filename: scudsicon.shp
+	fake-icon:
+		Filename: fakescudsicon.shp
 
 building.missile_silo:
-	Defaults:
-		AddExtension: False
-	idle: mslo.tem
-	idle-Snow: mslo.sno
-	idle-SnowRoad: mslo.sno
-	idle-Sand: mslo.des
-	idle-SandRoad: mslo.des
-	damaged-idle: mslo.tem
+	idle:
+		Filename: mslo.tem
+	idle-Snow:
+		Filename: mslo.sno
+	idle-SnowRoad:
+		Filename: mslo.sno
+	idle-Sand:
+		Filename: mslo.des
+	idle-SandRoad:
+		Filename: mslo.des
+	damaged-idle:
+		Filename: mslo.tem
 		Start: 8
-	damaged-idle-Snow: mslo.sno
+	damaged-idle-Snow:
+		Filename: mslo.sno
 		Start: 8
-	damaged-idle-SnowRoad: mslo.sno
+	damaged-idle-SnowRoad:
+		Filename: mslo.sno
 		Start: 8
-	damaged-idle-Sand: mslo.des
+	damaged-idle-Sand:
+		Filename: mslo.des
 		Start: 8
-	damaged-idle-SandRoad: mslo.des
+	damaged-idle-SandRoad:
+		Filename: mslo.des
 		Start: 8
-	make: mslomake.tem
+	make:
+		Filename: mslomake.tem
 		Length: *
-	make-Snow: mslomake.sno
+	make-Snow:
+		Filename: mslomake.sno
 		Length: *
-	make-SnowRoad: mslomake.sno
+	make-SnowRoad:
+		Filename: mslomake.sno
 		Length: *
-	make-Sand: mslomake.des
+	make-Sand:
+		Filename: mslomake.des
 		Length: *
-	make-SandRoad: mslomake.des
+	make-SandRoad:
+		Filename: mslomake.des
 		Length: *
-	active: mslo.tem
+	active:
+		Filename: mslo.tem
 		Start: 1
 		Length: 7
 		Tick: 80
-	active-snow: mslo.sno
+	active-snow:
+		Filename: mslo.sno
 		Start: 1
 		Length: 7
 		Tick: 80
-	active-sand: mslo.des
+	active-sand:
+		Filename: mslo.des
 		Start: 1
 		Length: 7
 		Tick: 80
-	damaged-active: mslo.tem
+	damaged-active:
+		Filename: mslo.tem
 		Start: 9
 		Length: 7
-	damaged-active-snow: mslo.sno
+	damaged-active-snow:
+		Filename: mslo.sno
 		Start: 9
 		Length: 7
-	damaged-active-sand: mslo.des
+	damaged-active-sand:
+		Filename: mslo.des
 		Start: 9
 		Length: 7
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-	icon: nukeicon.shp
+	icon:
+		Filename: nukeicon.shp
 
 hole.supply_stash:
-	idle: hole_supply
-	bib: bib3.tem
+	idle:
+		Filename: hole_supply.shp
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
 
 hole.2x2:
-	idle: hole4848
-	bib: bib3.tem
+	idle:
+		Filename: hole4848.shp
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
 
 hole.3x2:
-	idle: hole7248
-	bib: bib2.tem
+	idle:
+		Filename: hole7248.shp
+	bib:
+		Filename: bib2.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib2.sno
+	bib-Snow:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib2.sno
+	bib-SnowRoad:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib2.des
+	bib-Sand:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib2.des
+	bib-SandRoad:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
 
 hole.3x3:
-	idle: hole7272
-	bib: bib2.tem
+	idle:
+		Filename: hole7272.shp
+	bib:
+		Filename: bib2.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib2.sno
+	bib-Snow:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib2.sno
+	bib-SnowRoad:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib2.des
+	bib-Sand:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib2.des
+	bib-SandRoad:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
 
 kenn:
+	Defaults:
+		Filename: kenn.shp
 	idle:
 	damaged-idle:
 		Start: 1
-	make: kennmake
+	make:
+		Filename: kennmake.shp
 		Length: *
-	bib: mbSILO
+	bib:
+		Filename: mbSILO.tem
+		TilesetFilenames:
+			SNOW: mbSILO.sno
+			INTERIOR: mbSILO.int
+			DESERT: mbSILO.des
 		Length: *
-		UseTilesetExtension: true
-	icon: kennicon
+	icon:
+		Filename: kennicon.shp
 
 spen:
+	Defaults:
+		Filename: spen.shp
 	idle:
 		Offset: 0,2
 	damaged-idle:
 		Start: 1
 		Offset: 0,2
-	make: spenmake
+	make:
+		Filename: spenmake.shp
 		Length: *
 		Offset: 0,2
-	icon: spenicon
+	icon:
+		Filename: spenicon.shp
 
 fix:
+	Defaults:
+		Filename: fix.shp
 	idle:
 		Offset: 0,1
 		ZOffset: -1c511
@@ -1393,23 +1705,32 @@ fix:
 		Length: 6
 		Offset: 0,1
 		ZOffset: -1c511
-	make: fixmake
+	make:
+		Filename: fixmake.shp
 		Length: *
 		Offset: 0,1
-	bib: mbFIX
+	bib:
+		Filename: mbFIX.tem
+		TilesetFilenames:
+			SNOW: mbFIX.sno
+			INTERIOR: mbFIX.int
+			DESERT: mbFIX.des
 		Length: *
 		ZOffset: -1c511
 		Offset: 0,-4
-		UseTilesetExtension: true
-	icon: fixicon
+	icon:
+		Filename: fixicon.shp
 
 tsla:
+	Defaults:
+		Filename: tsla.shp
 	idle:
 		Offset: 0,-13
 	damaged-idle:
 		Start: 10
 		Offset: 0,-13
-	make: tslamake
+	make:
+		Filename: tslamake.shp
 		Length: *
 		Offset: 0,-13
 	active:
@@ -1422,12 +1743,19 @@ tsla:
 		Length: 9
 		Tick: 100
 		Offset: 0,-13
-	bib: mbTSLA
+	bib:
+		Filename: mbTSLA.tem
+		TilesetFilenames:
+			SNOW: mbTSLA.sno
+			INTERIOR: mbTSLA.int
+			DESERT: mbTSLA.des
 		Length: *
-		UseTilesetExtension: true
-	icon: tslaicon
+	icon:
+		Filename: tslaicon.shp
 
 iron:
+	Defaults:
+		Filename: iron.shp
 	idle:
 		Offset: 0,-12
 	active:
@@ -1440,16 +1768,24 @@ iron:
 		Start: 11
 		Length: 11
 		Offset: 0,-12
-	make: ironmake
+	make:
+		Filename: ironmake.shp
 		Length: *
 		Offset: 0,-12
-	bib: mbIRON
+	bib:
+		Filename: mbIRON.tem
+		TilesetFilenames:
+			SNOW: mbIRON.sno
+			INTERIOR: mbIRON.int
+			DESERT: mbIRON.des
 		Length: *
 		Offset: 0,2
-		UseTilesetExtension: true
-	icon: ironicon
+	icon:
+		Filename: ironicon.shp
 
 pdox:
+	Defaults:
+		Filename: pdox.shp
 	idle:
 	damaged-idle:
 		Start: 29
@@ -1458,15 +1794,23 @@ pdox:
 	damaged-active:
 		Start: 29
 		Length: 29
-	make: pdoxmake
+	make:
+		Filename: pdoxmake.shp
 		Length: *
-	bib: mbPDOX
+	bib:
+		Filename: mbPDOX.tem
+		TilesetFilenames:
+			SNOW: mbPDOX.sno
+			INTERIOR: mbPDOX.int
+			DESERT: mbPDOX.des
 		Length: *
 		Offset: 0,-4
-		UseTilesetExtension: true
-	icon: pdoxicon
+	icon:
+		Filename: pdoxicon.shp
 
 brik:
+	Defaults:
+		Filename: brik.shp
 	idle:
 		Length: 16
 	scratched-idle:
@@ -1475,9 +1819,12 @@ brik:
 	damaged-idle:
 		Start: 32
 		Length: 16
-	icon: brikicon
+	icon:
+		Filename: brikicon.shp
 
 vgate:
+	Defaults:
+		Filename: vgate.shp
 	make:
 		Length: 7
 	idle:
@@ -1490,6 +1837,8 @@ vgate:
 		ZOffset: -1c511
 
 agate:
+	Defaults:
+		Filename: agate.shp
 	make:
 		Length: 7
 	idle:
@@ -1503,21 +1852,30 @@ agate:
 
 sgate:
 	Inherits: agate
+	Defaults:
+		Filename: sgate.shp
 
 sbag:
 	idle:
+		Filename: sbag.shp
 		Length: 16
-	icon: sbagicon
+	icon:
+		Filename: sbagicon.shp
 
 fenc:
 	idle:
+		Filename: fenc.shp
 		Length: 16
-	icon: fencicon
+	icon:
+		Filename: fencicon.shp
 
 cycl:
+	Defaults:
+		Filename: cycl.shp
 	idle:
 		Length: 16
 	damaged-idle:
 		Start: 16
 		Length: 16
-	icon: cyclicon
+	icon:
+		Filename: cyclicon.shp

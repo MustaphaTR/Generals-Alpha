@@ -3,27 +3,31 @@ Player:
 	MissionObjectives:
 		EarlyGameOver: true
 	Shroud:
-		FogCheckboxLocked: True
-		FogCheckboxEnabled: True
 		ExploredMapCheckboxLocked: True
 		ExploredMapCheckboxEnabled: False
+		ExploredMapCheckboxVisible: False
 	PlayerResources:
 		DefaultCashDropdownLocked: True
+		DefaultCashDropdownVisible: False
 		DefaultCash: 0
+		SelectableCash: 0
 
 World:
-	-SpawnMPUnits:
-	-MPStartLocations:
+	-SpawnStartingUnits:
+	-MapStartingLocations:
 	ObjectivesPanel:
 		PanelName: MISSION_OBJECTIVES
 	MapBuildRadius:
 		AllyBuildRadiusCheckboxLocked: True
 		AllyBuildRadiusCheckboxEnabled: False
+		AllyBuildRadiusCheckboxVisible: False
 		BuildRadiusCheckboxLocked: True
 		BuildRadiusCheckboxEnabled: True
+		BuildRadiusCheckboxVisible: False
 	MapOptions:
-		TechLevelDropdownLocked: True
 		CratesCheckboxEnabled: False
 		CratesCheckboxLocked: True
+		CratesCheckboxVisible: False
 		ShortGameCheckboxLocked: True
 		ShortGameCheckboxEnabled: False
+		ShortGameCheckboxVisible: False

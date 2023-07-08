@@ -1,6 +1,6 @@
 ﻿#region Copyright & License Information
 /*
- * Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
+ * Copyright (c) The OpenRA Developers and Contributors
  * This file is part of OpenRA, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -46,9 +46,9 @@ namespace OpenRA.Mods.GenSDK.Activities
 			if (IsCanceling)
 				return true;
 
-			if (collector.CollectionBuilding == null || !collector.CollectionBuilding.IsInWorld || !collectorInfo.CollectionRelationships.HasStance(self.Owner.RelationshipWith(collector.CollectionBuilding.Owner)) || collector.CollectionBuilding.Trait<SupplyDock>().IsEmpty)
+			if (collector.CollectionBuilding == null || !collector.CollectionBuilding.IsInWorld || !collectorInfo.CollectionRelationships.HasRelationship(self.Owner.RelationshipWith(collector.CollectionBuilding.Owner)) || collector.CollectionBuilding.Trait<SupplyDock>().IsEmpty)
 			{
-				collector.CollectionBuilding = collector.ClosestTradeBuilding(self);
+				collector.CollectionBuilding = collector.ClosestTradeBuilding(self, null);
 			}
 
 			if (collector.CollectionBuilding == null || !collector.CollectionBuilding.IsInWorld)

@@ -151,14 +151,22 @@ husk.badger:
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 149
-	SmokeTrailWhenDamaged@0:
-		Offset: -432,560,0
-		Interval: 2
-		MinDamage: Undamaged
-	SmokeTrailWhenDamaged@1:
-		Offset: -432,-560,0
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails@0:
+		Offsets: -432,560,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
+	LeavesTrails@1:
+		Offsets: -432,-560,0
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
 	RenderSprites:
 		Image: aircraft.badger
 	-RevealOnDeath:
@@ -198,10 +206,14 @@ husk.mig:
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 160
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
 	RenderSprites:
 		Image: aircraft.mig
 
@@ -223,13 +235,16 @@ husk.raptor:
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 175
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
 	RenderSprites:
 		Image: aircraft.raptor
-		Scale: 0.9
 
 husk.king_raptor:
 	Inherits: ^PlaneHusk
@@ -249,13 +264,16 @@ husk.king_raptor:
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 175
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
 	RenderSprites:
 		Image: aircraft.king_raptor
-		Scale: 0.9
 
 husk.stealth_fighter:
 	Inherits: ^PlaneHusk
@@ -275,13 +293,16 @@ husk.stealth_fighter:
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 175
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
 	RenderSprites:
 		Image: aircraft.stealth_fighter
-		Scale: 0.9
 
 husk.aurora:
 	Inherits: ^PlaneHusk
@@ -301,13 +322,16 @@ husk.aurora:
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 180
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
 	RenderSprites:
 		Image: aircraft.aurora
-		Scale: 0.9
 
 husk.aurora_alpha:
 	Inherits: ^PlaneHusk
@@ -327,13 +351,16 @@ husk.aurora_alpha:
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 180
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -853,0,171
+		MovingInterval: 2
+		Image: smokey
+		StationaryInterval: 2
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
 	RenderSprites:
 		Image: aircraft.aurora_alpha
-		Scale: 0.9
 
 husk.comanche:
 	Inherits: ^HelicopterHusk
@@ -352,9 +379,14 @@ husk.comanche:
 	WithIdleOverlay:
 		Offset: 0,0,85
 		Sequence: rotor
-	SmokeTrailWhenDamaged:
-		Offset: -427,0,0
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -427,0,0
+		Image: smokey
+		MovingInterval: 3
+		StationaryInterval: 3
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
 	RenderSprites:
 		Image: aircraft.comanche
 
@@ -377,12 +409,16 @@ husk.helix:
 	WithIdleOverlay:
 		Offset: 0,0,85
 		Sequence: rotor
-	SmokeTrailWhenDamaged:
-		Offset: -427,0,0
-		MinDamage: Undamaged
+	LeavesTrails:
+		Offsets: -427,0,0
+		Image: smokey
+		MovingInterval: 3
+		StationaryInterval: 3
+		SpawnAtLastPosition: False
+		TrailWhileStationary: True
+		Type: CenterPosition
 	RenderSprites:
 		Image: aircraft.helix
-		Scale: 1.3
 
 T01.Husk:
 	Inherits: ^TreeHusk

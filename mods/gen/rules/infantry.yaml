@@ -76,7 +76,7 @@ infantry.worker:
 	Passenger:
 		CargoType: GLAInfantry
 	DetectCloaked:
-		CloakTypes: Mine
+		DetectionTypes: Mine
 		Range: 2c512
 	WithSpriteBody:
 	WithInfantryBody:
@@ -131,6 +131,7 @@ infantry.worker:
 		EnterBlockedCursor: move-blocked
 	AttackFrontal:
 		PauseOnCondition: leaflet
+		FacingTolerance: 0
 	Cloak@GPS_SCRAMBLER:
 		RequiresCondition: gps_scrambler && !capturing
 	GrantConditionOnPrerequisite@CAPTURE_BUILDING:
@@ -213,7 +214,7 @@ infantry.rebel:
 		InitialDelay: 200
 		CloakDelay: 100
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled && !capturing && camouflage
 	GrantConditionOnDamageState@UNCLOAK:
@@ -324,7 +325,7 @@ infantry.toxin_rebel:
 		InitialDelay: 200
 		CloakDelay: 100
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled && !capturing && camouflage
 	GrantConditionOnDamageState@UNCLOAK:
@@ -342,9 +343,9 @@ infantry.toxin_rebel:
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
-	-DamagedByRadioactivity@ANTHRAX_ALPHA:
-	-DamagedByRadioactivity@ANTHRAX_BETA:
-	-DamagedByRadioactivity@ANTHRAX_GAMMA:
+	-DamagedByTintedCells@ANTHRAX_ALPHA:
+	-DamagedByTintedCells@ANTHRAX_BETA:
+	-DamagedByTintedCells@ANTHRAX_GAMMA:
 	Voiced:
 		VoiceSet: ToxinRebelVoice
 	CaptureManager:
@@ -578,6 +579,7 @@ infantry.conscript:
 		ProneOffset: 384,0,-395
 	AttackFrontal:
 		PauseOnCondition: leaflet
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	AutoTarget:
@@ -665,7 +667,7 @@ infantry.stinger_soldier:
 		InitialDelay: 60
 		CloakDelay: 60
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: stinger_cloak && !leaflet
 	ExternalCondition@CAMO_NETTING:
@@ -707,6 +709,7 @@ infantry.tank_hunter:
 		OutsideRangeCursor: tnt
 	AttackFrontal:
 		Armaments: primary, tnt_charge
+		FacingTolerance: 0
 	Selectable:
 		Class: infantry.tank_hunter
 	RenderSprites:
@@ -804,6 +807,7 @@ infantry.pathfinder:
 		Weapon: sniper.pathfinder.garrison
 	AttackFrontal:
 		PauseOnCondition: leaflet
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	Cloak:
@@ -987,6 +991,7 @@ infantry.flamethrower:
 		ProneOffset: 160,0,-288
 	AttackFrontal:
 		PauseOnCondition: leaflet
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	Voiced:
@@ -1034,7 +1039,7 @@ infantry.saboteur:
 		InitialDelay: 250
 		CloakDelay: 120
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
@@ -1094,6 +1099,7 @@ hack.angry_mob.male:
 		RequiresCondition: arm_the_mob
 	AttackFrontal:
 		PauseOnCondition: leaflet
+		FacingTolerance: 0
 	GrantConditionOnPrerequisite@ARM_THE_MOB:
 		Condition: arm_the_mob
 		Prerequisites: upgrade.arm_the_mob
@@ -1113,6 +1119,7 @@ hack.angry_mob.female:
 		RequiresCondition: arm_the_mob
 	AttackFrontal:
 		PauseOnCondition: leaflet
+		FacingTolerance: 0
 	GrantConditionOnPrerequisite@ARM_THE_MOB:
 		Condition: arm_the_mob
 		Prerequisites: upgrade.arm_the_mob
@@ -1129,6 +1136,7 @@ hack.angry_mob.molotov:
 		FireDelay: 15
 	AttackFrontal:
 		PauseOnCondition: leaflet
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: throw
 
@@ -1175,7 +1183,7 @@ infantry.angry_mob:
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	Selectable:
-		Bounds: 32, 32
+		Bounds: 1365, 1365
 		Class: infantry.angry_mob
 	AttackMove:
 	WithSpriteBody:
@@ -1289,6 +1297,7 @@ infantry.hacker:
 	AttackFrontal:
 		PauseOnCondition: leaflet
 		RequiresCondition: !deployed
+		FacingTolerance: 0
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
 		Facing: 512
@@ -1390,11 +1399,12 @@ infantry.super_hacker:
 	AttackFrontal:
 		Armaments: primary, disable
 		PauseOnCondition: leaflet
+		FacingTolerance: 0
 	Cloak:
 		InitialDelay: 0
 		CloakDelay: 125
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
@@ -1453,7 +1463,7 @@ infantry.hijacker:
 		InitialDelay: 250
 		CloakDelay: 120
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
@@ -1560,6 +1570,7 @@ infantry.colonel_burton:
 		Armaments: primary, knife, timed_demo_bomb
 		Voice: Attack
 		PauseOnCondition: leaflet
+		FacingTolerance: 0
 	AttackMove:
 		Voice: Attack
 	WithInfantryBody:
@@ -1584,7 +1595,7 @@ infantry.colonel_burton:
 		InitialDelay: 250
 		CloakDelay: 120
 		UncloakOn: Unload, Infiltrate, Demolish
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
@@ -1672,13 +1683,14 @@ infantry.jarmen_kell:
 	AttackFrontal:
 		Armaments: primary, driver_snipe
 		PauseOnCondition: leaflet
+		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	Cloak:
 		InitialDelay: 250
 		CloakDelay: 120
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
@@ -1718,6 +1730,7 @@ infantry.jarmen_kell.demo:
 		OutsideRangeCursor: c4
 	AttackFrontal:
 		Armaments: primary, driver_snipe, timed_demo_bomb
+		FacingTolerance: 0
 	Voiced:
 		VoiceSet: DemoJarmenVoice
 
@@ -1800,7 +1813,7 @@ infantry.black_lotus:
 		InitialDelay: 250
 		CloakDelay: 120
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
@@ -1855,10 +1868,12 @@ infantry.black_lotus:
 		Armaments: capture
 		Voice: Capture
 		PauseOnCondition: leaflet
+		FacingTolerance: 0
 	AttackFrontal@Disable:
 		Armaments: disable
 		Voice: Disable
 		PauseOnCondition: leaflet
+		FacingTolerance: 0
 	DamageMultiplier@ZH_UNITS:
 		Modifier: 75
 		RequiresCondition: zh_units

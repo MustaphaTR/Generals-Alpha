@@ -1,260 +1,310 @@
 tech.oil_derrick:
-	Defaults: oilb
+	Defaults:
+		Filename: oilb.shp
 		Offset: 0,-6
-	idle: oilb
+	idle:
+		Filename: oilb.shp
 	damaged-idle:
 		Start: 1
 		Length: *
-	make: oilb
-	bib: bib3.tem
+	make:
+		Filename: oilb.shp
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	icon: oildicon
+	icon:
+		Filename: oildicon.shp
 		Offset: 0,0
 
 tech.oil_refinery:
-	idle: oil
-	damaged-idle: oil
+	idle:
+		Filename: oil.shp
+	damaged-idle:
+		Filename: oil.shp
 		Start: 1
-	dead: oil
+	dead:
+		Filename: oil.shp
 		Start: 2
 		Tick: 800
-	make: biomake
+	make:
+		Filename: biomake.shp
 		Length: *
-	icon: oreficon
+	icon:
+		Filename: oreficon.shp
 
 tech.hospital:
-	idle: hosp
+	idle:
+		Filename: hosp.shp
 		Length: 4
-	damaged-idle: hosp
+	damaged-idle:
+		Filename: hosp.shp
 		Start: 4
 		Length: 4
-	dead: hosp
+	dead:
+		Filename: hosp.shp
 		Start: 8
 		Tick: 800
-	make: hospmake
+	make:
+		Filename: hospmake.shp
 		Length: *
-	bib: mbHOSP.tem
-		Length: *
-		Offset: 0,1
-		AddExtension: False
-	bib-Snow: mbHOSP.sno
+	bib:
+		Filename: mbHOSP.tem
 		Length: *
 		Offset: 0,1
-		AddExtension: False
-	bib-SnowRoad: mbHOSP.sno
+	bib-Snow:
+		Filename: mbHOSP.sno
 		Length: *
 		Offset: 0,1
-		AddExtension: False
-	bib-Sand: mbHOSP.des
+	bib-SnowRoad:
+		Filename: mbHOSP.sno
 		Length: *
 		Offset: 0,1
-		AddExtension: False
-	bib-SandRoad: mbHOSP.des
+	bib-Sand:
+		Filename: mbHOSP.des
 		Length: *
 		Offset: 0,1
-		AddExtension: False
-	icon: hospicon
+	bib-SandRoad:
+		Filename: mbHOSP.des
+		Length: *
+		Offset: 0,1
+	icon:
+		Filename: hospicon.shp
 
 tech.communications_center:
-	idle: dome
+	idle:
+		Filename: dome.shp
 		Offset: 0,-4
-	damaged-idle: dome
+	damaged-idle:
+		Filename: dome.shp
 		Start: 1
 		Offset: 0,-4
-	make: domemake
+	make:
+		Filename: domemake.shp
 		Length: *
 		Offset: 0,-4
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	icon: domeicon
+	icon:
+		Filename: domeicon.shp
 
 tech.soviet_barracks:
-	idle: fcom
-	damaged-idle: fcom
+	idle:
+		Filename: fcom.shp
+	damaged-idle:
+		Filename: fcom.shp
 		Start: 1
-	make: fcommake
+	make:
+		Filename: fcommake.shp
 		Length: *
-	bib: bib3.tem
+	bib:
+		Filename: bib3.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib3.sno
+	bib-Snow:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib3.sno
+	bib-SnowRoad:
+		Filename: bib3.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib3.des
+	bib-Sand:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib3.des
+	bib-SandRoad:
+		Filename: bib3.des
 		Length: *
-		AddExtension: False
-	icon: barricon
+	icon:
+		Filename: barricon.shp
 
 tech.flame_tower:
-	idle: ftur
+	idle:
+		Filename: ftur.shp
 		Offset: 0,-2
-	damaged-idle: ftur
+	damaged-idle:
+		Filename: ftur.shp
 		Start: 1
 		Offset: 0,-2
-	make: fturmake
+	make:
+		Filename: fturmake.shp
 		Length: *
 		Offset: 0,-2
-	bib: mbFTUR.tem
+	bib:
+		Filename: mbFTUR.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: mbFTUR.sno
+	bib-Snow:
+		Filename: mbFTUR.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: mbFTUR.sno
+	bib-SnowRoad:
+		Filename: mbFTUR.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: mbFTUR.des
+	bib-Sand:
+		Filename: mbFTUR.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: mbFTUR.des
+	bib-SandRoad:
+		Filename: mbFTUR.des
 		Length: *
-		AddExtension: False
-	icon: fturicon
+	icon:
+		Filename: fturicon.shp
 
 tech.power_plant:
-	idle: apwr
+	idle:
+		Filename: apwr.shp
 		Offset: 0,-10
-	damaged-idle: apwr
+	damaged-idle:
+		Filename: apwr.shp
 		Start: 1
 		Offset: 0,-10
-	make: apwrmake
+	make:
+		Filename: apwrmake.shp
 		Length: *
 		Offset: 0,-10
-	bib: bib2.tem
+	bib:
+		Filename: bib2.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib2.sno
+	bib-Snow:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib2.sno
+	bib-SnowRoad:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib2.des
+	bib-Sand:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib2.des
+	bib-SandRoad:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	icon: apwricon
+	icon:
+		Filename: apwricon.shp
 
 tech.repair_bay:
-	idle: rbay
+	idle:
+		Filename: rbay.shp
 		Offset: 0, -6
-	idle-roof: rbay2
+	idle-roof:
+		Filename: rbay2.shp
 		Offset: 0, -6
-	damaged-idle: rbay
+	damaged-idle:
+		Filename: rbay.shp
 		Start: 1
 		Offset: 0, -6
-	damaged-roof: rbay2
+	damaged-roof:
+		Filename: rbay2.shp
 		Start: 1
 		Offset: 0, -6
-	bib: bib2.tem
+	bib:
+		Filename: bib2.tem
 		Length: *
-		AddExtension: False
-	bib-Snow: bib2.sno
+	bib-Snow:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-SnowRoad: bib2.sno
+	bib-SnowRoad:
+		Filename: bib2.sno
 		Length: *
-		AddExtension: False
-	bib-Sand: bib2.des
+	bib-Sand:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	bib-SandRoad: bib2.des
+	bib-SandRoad:
+		Filename: bib2.des
 		Length: *
-		AddExtension: False
-	icon: rbayicon
+	icon:
+		Filename: rbayicon.shp
 
 tech.reinforcements_pad:
-	idle: tdfix
+	idle:
+		Filename: tdfix.shp
 		ZOffset: -1c511
-	damaged-idle: tdfix
+	damaged-idle:
+		Filename: tdfix.shp
 		Start: 7
 		ZOffset: -1c511
-	active: tdfix
+	active:
+		Filename: tdfix.shp
 		Length: 7
 		ZOffset: -1c511
-	damaged-active: tdfix
+	damaged-active:
+		Filename: tdfix.shp
 		Start: 7
 		Length: 7
 		ZOffset: -1c511
-	make: tdfixmake
+	make:
+		Filename: tdfixmake.shp
 		Length: 14
 		Tick: 60
-	bib: mbFIX.tem
+	bib:
+		Filename: mbFIX.tem
 		Length: *
 		ZOffset: -1c511
 		Offset: 0,-4
-		AddExtension: False
-	bib-Snow: mbFIX.sno
+	bib-Snow:
+		Filename: mbFIX.sno
 		Length: *
 		ZOffset: -1c511
 		Offset: 0,-4
-		AddExtension: False
-	bib-SnowRoad: mbFIX.sno
+	bib-SnowRoad:
+		Filename: mbFIX.sno
 		Length: *
 		ZOffset: -1c511
 		Offset: 0,-4
-		AddExtension: False
-	bib-Sand: mbFIX.des
+	bib-Sand:
+		Filename: mbFIX.des
 		Length: *
 		ZOffset: -1c511
 		Offset: 0,-4
-		AddExtension: False
-	bib-SandRoad: mbFIX.des
+	bib-SandRoad:
+		Filename: mbFIX.des
 		Length: *
 		ZOffset: -1c511
 		Offset: 0,-4
-		AddExtension: False
-	icon: reinicon
+	icon:
+		Filename: reinicon.shp
 
 tech.shipyard:
-	idle: syrd
-	damaged-idle: syrd
+	idle:
+		Filename: syrd.shp
+	damaged-idle:
+		Filename: syrd.shp
 		Start: 1
-	make: syrdmake
+	make:
+		Filename: syrdmake.shp
 		Length: *
-	icon: syrdicon
-	fake-icon: syrficon
+	icon:
+		Filename: syrdicon.shp
+	fake-icon:
+		Filename: syrficon.shp
 
 tech.nuclear_bunker:
-	idle: bio
-	damaged-idle: bio
+	idle:
+		Filename: bio.shp
+	damaged-idle:
+		Filename: bio.shp
 		Start: 1
-	dead: bio
+	dead:
+		Filename: bio.shp
 		Start: 2
 		Tick: 800
-	make: biomake
+	make:
+		Filename: biomake.shp
 		Length: *

@@ -141,7 +141,7 @@ Container@LOBBY_PLAYER_BIN:
 									Height: 15
 								Label@FACTIONNAME:
 									X: 40
-									Width: 60
+									Width: 90
 									Height: 25
 									Text: Faction
 						DropDownButton@TEAM_DROPDOWN:
@@ -486,7 +486,7 @@ ScrollPanel@FACTION_DROPDOWN_TEMPLATE:
 	Width: DROPDOWN_WIDTH
 	Children:
 		ScrollItem@HEADER:
-			BaseName: scrollheader
+			Background: scrollheader
 			Width: PARENT_RIGHT - 27
 			Height: 13
 			X: 2
@@ -513,5 +513,5 @@ ScrollPanel@FACTION_DROPDOWN_TEMPLATE:
 					Height: 15
 				Label@LABEL:
 					X: 40
-					Width: 60
+					Width: 90
 					Height: 25

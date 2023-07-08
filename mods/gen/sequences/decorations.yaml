@@ -1,16 +1,14 @@
 tc04:
-	Defaults:
-		AddExtension: false
-	idle: tc04.tem
+	idle:
+		Filename: tc04.tem
 
 tc04.snow:
-	Defaults:
-		AddExtension: false
-	idle: tc04.sno
+	idle:
+		Filename: tc04.sno
 
 tc04.husk:
-	Defaults: tc04.tem
-		AddExtension: false
+	Defaults:
+		Filename: tc04.tem
 	idle:
 		Start: 1
 	dead:
@@ -19,8 +17,8 @@ tc04.husk:
 		Tick: 80
 
 tc04.snow.husk:
-	Defaults: tc04.sno
-		AddExtension: false
+	Defaults:
+		Filename: tc04.sno
 	idle:
 		Start: 1
 	dead:
@@ -29,18 +27,16 @@ tc04.snow.husk:
 		Tick: 80
 
 tc05:
-	Defaults:
-		AddExtension: false
-	idle: tc05.tem
+	idle:
+		Filename: tc05.tem
 
 tc05.snow:
-	Defaults:
-		AddExtension: false
-	idle: tc05.sno
+	idle:
+		Filename: tc05.sno
 
 tc05.husk:
-	Defaults: tc05.tem
-		AddExtension: false
+	Defaults:
+		Filename: tc05.tem
 	idle:
 		Start: 1
 	dead:
@@ -49,8 +45,8 @@ tc05.husk:
 		Tick: 80
 
 tc05.snow.husk:
-	Defaults: tc05.sno
-		AddExtension: false
+	Defaults:
+		Filename: tc05.sno
 	idle:
 		Start: 1
 	dead:
@@ -59,18 +55,18 @@ tc05.snow.husk:
 		Tick: 80
 
 tc03:
-	Defaults: tc03.tem
-		AddExtension: false
+	Defaults:
+		Filename: tc03.tem
 	idle:
 
 tc03.snow:
-	Defaults: tc03.sno
-		AddExtension: false
+	Defaults:
+		Filename: tc03.sno
 	idle:
 
 tc03.husk:
-	Defaults: tc03.tem
-		AddExtension: false
+	Defaults:
+		Filename: tc03.tem
 	idle:
 		Start: 1
 	dead:
@@ -79,8 +75,8 @@ tc03.husk:
 		Tick: 80
 
 tc03.snow.husk:
-	Defaults: tc03.sno
-		AddExtension: false
+	Defaults:
+		Filename: tc03.sno
 	idle:
 		Start: 1
 	dead:
@@ -89,18 +85,18 @@ tc03.snow.husk:
 		Tick: 80
 
 tc02:
-	Defaults: tc02.tem
-		AddExtension: false
+	Defaults:
+		Filename: tc02.tem
 	idle:
 
 tc02.snow:
-	Defaults: tc02.sno
-		AddExtension: false
+	Defaults:
+		Filename: tc02.sno
 	idle:
 
 tc02.husk:
-	Defaults: tc02.tem
-		AddExtension: false
+	Defaults:
+		Filename: tc02.tem
 	idle:
 		Start: 1
 	dead:
@@ -109,8 +105,8 @@ tc02.husk:
 		Tick: 80
 
 tc02.snow.husk:
-	Defaults: tc02.sno
-		AddExtension: false
+	Defaults:
+		Filename: tc02.sno
 	idle:
 		Start: 1
 	dead:
@@ -119,23 +115,23 @@ tc02.snow.husk:
 		Tick: 80
 
 tc01:
-	Defaults: tc01.tem
-		AddExtension: false
+	Defaults:
+		Filename: tc01.tem
 	idle:
 
 tc01.snow:
-	Defaults: tc01.sno
-		AddExtension: false
+	Defaults:
+		Filename: tc01.sno
 	idle:
 
 tc01.desert:
-	Defaults: tc01.des
-		AddExtension: false
+	Defaults:
+		Filename: tc01.des
 	idle:
 
 tc01.husk:
-	Defaults: tc01.tem
-		AddExtension: false
+	Defaults:
+		Filename: tc01.tem
 	idle:
 		Start: 1
 	dead:
@@ -144,8 +140,8 @@ tc01.husk:
 		Tick: 80
 
 tc01.snow.husk:
-	Defaults: tc01.sno
-		AddExtension: false
+	Defaults:
+		Filename: tc01.sno
 	idle:
 		Start: 1
 	dead:
@@ -154,8 +150,8 @@ tc01.snow.husk:
 		Tick: 80
 
 tc01.desert.husk:
-	Defaults: tc01.des
-		AddExtension: false
+	Defaults:
+		Filename: tc01.des
 	idle:
 		Start: 1
 	dead:
@@ -164,18 +160,18 @@ tc01.desert.husk:
 		Tick: 80
 
 t17:
-	Defaults: t17.tem
-		AddExtension: false
+	Defaults:
+		Filename: t17.tem
 	idle:
 
 t17.snow:
-	Defaults: t17.sno
-		AddExtension: false
+	Defaults:
+		Filename: t17.sno
 	idle:
 
 t17.husk:
-	Defaults: t17.tem
-		AddExtension: false
+	Defaults:
+		Filename: t17.tem
 	idle:
 		Start: 1
 	dead:
@@ -184,8 +180,8 @@ t17.husk:
 		Tick: 80
 
 t17.snow.husk:
-	Defaults: t17.sno
-		AddExtension: false
+	Defaults:
+		Filename: t17.sno
 	idle:
 		Start: 1
 	dead:
@@ -194,18 +190,18 @@ t17.snow.husk:
 		Tick: 80
 
 t16:
-	Defaults: t16.tem
-		AddExtension: false
+	Defaults:
+		Filename: t16.tem
 	idle:
 
 t16.snow:
-	Defaults: t16.sno
-		AddExtension: false
+	Defaults:
+		Filename: t16.sno
 	idle:
 
 t16.husk:
-	Defaults: t16.tem
-		AddExtension: false
+	Defaults:
+		Filename: t16.tem
 	idle:
 		Start: 1
 	dead:
@@ -214,8 +210,8 @@ t16.husk:
 		Tick: 80
 
 t16.snow.husk:
-	Defaults: t16.sno
-		AddExtension: false
+	Defaults:
+		Filename: t16.sno
 	idle:
 		Start: 1
 	dead:
@@ -224,18 +220,18 @@ t16.snow.husk:
 		Tick: 80
 
 t15:
-	Defaults: t15.tem
-		AddExtension: false
+	Defaults:
+		Filename: t15.tem
 	idle:
 
 t15.snow:
-	Defaults: t15.sno
-		AddExtension: false
+	Defaults:
+		Filename: t15.sno
 	idle:
 
 t15.husk:
-	Defaults: t15.tem
-		AddExtension: false
+	Defaults:
+		Filename: t15.tem
 	idle:
 		Start: 1
 	dead:
@@ -244,8 +240,8 @@ t15.husk:
 		Tick: 80
 
 t15.snow.husk:
-	Defaults: t15.sno
-		AddExtension: false
+	Defaults:
+		Filename: t15.sno
 	idle:
 		Start: 1
 	dead:
@@ -254,18 +250,18 @@ t15.snow.husk:
 		Tick: 80
 
 t14:
-	Defaults: t14.tem
-		AddExtension: false
+	Defaults:
+		Filename: t14.tem
 	idle:
 
 t14.snow:
-	Defaults: t14.sno
-		AddExtension: false
+	Defaults:
+		Filename: t14.sno
 	idle:
 
 t14.husk:
-	Defaults: t14.tem
-		AddExtension: false
+	Defaults:
+		Filename: t14.tem
 	idle:
 		Start: 1
 	dead:
@@ -274,8 +270,8 @@ t14.husk:
 		Tick: 80
 
 t14.snow.husk:
-	Defaults: t14.sno
-		AddExtension: false
+	Defaults:
+		Filename: t14.sno
 	idle:
 		Start: 1
 	dead:
@@ -284,18 +280,18 @@ t14.snow.husk:
 		Tick: 80
 
 t13:
-	Defaults: t13.tem
-		AddExtension: false
+	Defaults:
+		Filename: t13.tem
 	idle:
 
 t13.snow:
-	Defaults: t13.sno
-		AddExtension: false
+	Defaults:
+		Filename: t13.sno
 	idle:
 
 t13.husk:
-	Defaults: t13.tem
-		AddExtension: false
+	Defaults:
+		Filename: t13.tem
 	idle:
 		Start: 1
 	dead:
@@ -304,8 +300,8 @@ t13.husk:
 		Tick: 80
 
 t13.snow.husk:
-	Defaults: t13.sno
-		AddExtension: false
+	Defaults:
+		Filename: t13.sno
 	idle:
 		Start: 1
 	dead:
@@ -314,18 +310,18 @@ t13.snow.husk:
 		Tick: 80
 
 t12:
-	Defaults: t12.tem
-		AddExtension: false
+	Defaults:
+		Filename: t12.tem
 	idle:
 
 t12.snow:
-	Defaults: t12.sno
-		AddExtension: false
+	Defaults:
+		Filename: t12.sno
 	idle:
 
 t12.husk:
-	Defaults: t12.tem
-		AddExtension: false
+	Defaults:
+		Filename: t12.tem
 	idle:
 		Start: 1
 	dead:
@@ -334,8 +330,8 @@ t12.husk:
 		Tick: 80
 
 t12.snow.husk:
-	Defaults: t12.sno
-		AddExtension: false
+	Defaults:
+		Filename: t12.sno
 	idle:
 		Start: 1
 	dead:
@@ -344,18 +340,18 @@ t12.snow.husk:
 		Tick: 80
 
 t11:
-	Defaults: t11.tem
-		AddExtension: false
+	Defaults:
+		Filename: t11.tem
 	idle:
 
 t11.snow:
-	Defaults: t11.sno
-		AddExtension: false
+	Defaults:
+		Filename: t11.sno
 	idle:
 
 t11.husk:
-	Defaults: t11.tem
-		AddExtension: false
+	Defaults:
+		Filename: t11.tem
 	idle:
 		Start: 1
 	dead:
@@ -364,8 +360,8 @@ t11.husk:
 		Tick: 80
 
 t11.snow.husk:
-	Defaults: t11.sno
-		AddExtension: false
+	Defaults:
+		Filename: t11.sno
 	idle:
 		Start: 1
 	dead:
@@ -374,18 +370,18 @@ t11.snow.husk:
 		Tick: 80
 
 t10:
-	Defaults: t10.tem
-		AddExtension: false
+	Defaults:
+		Filename: t10.tem
 	idle:
 
 t10.snow:
-	Defaults: t10.sno
-		AddExtension: false
+	Defaults:
+		Filename: t10.sno
 	idle:
 
 t10.husk:
-	Defaults: t10.tem
-		AddExtension: false
+	Defaults:
+		Filename: t10.tem
 	idle:
 		Start: 1
 	dead:
@@ -394,8 +390,8 @@ t10.husk:
 		Tick: 80
 
 t10.snow.husk:
-	Defaults: t10.sno
-		AddExtension: false
+	Defaults:
+		Filename: t10.sno
 	idle:
 		Start: 1
 	dead:
@@ -404,23 +400,23 @@ t10.snow.husk:
 		Tick: 80
 
 t08:
-	Defaults: t08.tem
-		AddExtension: false
+	Defaults:
+		Filename: t08.tem
 	idle:
 
 t08.snow:
-	Defaults: t08.sno
-		AddExtension: false
+	Defaults:
+		Filename: t08.sno
 	idle:
 
 t08.desert:
-	Defaults: t08.des
-		AddExtension: false
+	Defaults:
+		Filename: t08.des
 	idle:
 
 t08.husk:
-	Defaults: t08.tem
-		AddExtension: false
+	Defaults:
+		Filename: t08.tem
 	idle:
 		Start: 1
 	dead:
@@ -429,8 +425,8 @@ t08.husk:
 		Tick: 80
 
 t08.snow.husk:
-	Defaults: t08.sno
-		AddExtension: false
+	Defaults:
+		Filename: t08.sno
 	idle:
 		Start: 1
 	dead:
@@ -439,8 +435,8 @@ t08.snow.husk:
 		Tick: 80
 
 t08.desert.husk:
-	Defaults: t08.des
-		AddExtension: false
+	Defaults:
+		Filename: t08.des
 	idle:
 		Start: 1
 	dead:
@@ -449,18 +445,18 @@ t08.desert.husk:
 		Tick: 80
 
 t07:
-	Defaults: t07.tem
-		AddExtension: false
+	Defaults:
+		Filename: t07.tem
 	idle:
 
 t07.snow:
-	Defaults: t07.sno
-		AddExtension: false
+	Defaults:
+		Filename: t07.sno
 	idle:
 
 t07.husk:
-	Defaults: t07.tem
-		AddExtension: false
+	Defaults:
+		Filename: t07.tem
 	idle:
 		Start: 1
 	dead:
@@ -469,8 +465,8 @@ t07.husk:
 		Tick: 80
 
 t07.snow.husk:
-	Defaults: t07.sno
-		AddExtension: false
+	Defaults:
+		Filename: t07.sno
 	idle:
 		Start: 1
 	dead:
@@ -479,18 +475,18 @@ t07.snow.husk:
 		Tick: 80
 
 t06:
-	Defaults: t06.tem
-		AddExtension: false
+	Defaults:
+		Filename: t06.tem
 	idle:
 
 t06.snow:
-	Defaults: t06.sno
-		AddExtension: false
+	Defaults:
+		Filename: t06.sno
 	idle:
 
 t06.husk:
-	Defaults: t06.tem
-		AddExtension: false
+	Defaults:
+		Filename: t06.tem
 	idle:
 		Start: 1
 	dead:
@@ -499,8 +495,8 @@ t06.husk:
 		Tick: 80
 
 t06.snow.husk:
-	Defaults: t06.sno
-		AddExtension: false
+	Defaults:
+		Filename: t06.sno
 	idle:
 		Start: 1
 	dead:
@@ -509,18 +505,18 @@ t06.snow.husk:
 		Tick: 80
 
 t05:
-	Defaults: t05.tem
-		AddExtension: false
+	Defaults:
+		Filename: t05.tem
 	idle:
 
 t05.snow:
-	Defaults: t05.sno
-		AddExtension: false
+	Defaults:
+		Filename: t05.sno
 	idle:
 
 t05.husk:
-	Defaults: t05.tem
-		AddExtension: false
+	Defaults:
+		Filename: t05.tem
 	idle:
 		Start: 1
 	dead:
@@ -529,8 +525,8 @@ t05.husk:
 		Tick: 80
 
 t05.snow.husk:
-	Defaults: t05.sno
-		AddExtension: false
+	Defaults:
+		Filename: t05.sno
 	idle:
 		Start: 1
 	dead:
@@ -539,18 +535,18 @@ t05.snow.husk:
 		Tick: 80
 
 t03:
-	Defaults: t03.tem
-		AddExtension: false
+	Defaults:
+		Filename: t03.tem
 	idle:
 
 t03.snow:
-	Defaults: t03.sno
-		AddExtension: false
+	Defaults:
+		Filename: t03.sno
 	idle:
 
 t03.husk:
-	Defaults: t03.tem
-		AddExtension: false
+	Defaults:
+		Filename: t03.tem
 	idle:
 		Start: 1
 	dead:
@@ -559,8 +555,8 @@ t03.husk:
 		Tick: 80
 
 t03.snow.husk:
-	Defaults: t03.sno
-		AddExtension: false
+	Defaults:
+		Filename: t03.sno
 	idle:
 		Start: 1
 	dead:
@@ -569,18 +565,18 @@ t03.snow.husk:
 		Tick: 80
 
 t02:
-	Defaults: t02.tem
-		AddExtension: false
+	Defaults:
+		Filename: t02.tem
 	idle:
 
 t02.snow:
-	Defaults: t02.sno
-		AddExtension: false
+	Defaults:
+		Filename: t02.sno
 	idle:
 
 t02.husk:
-	Defaults: t02.tem
-		AddExtension: false
+	Defaults:
+		Filename: t02.tem
 	idle:
 		Start: 1
 	dead:
@@ -589,8 +585,8 @@ t02.husk:
 		Tick: 80
 
 t02.snow.husk:
-	Defaults: t02.sno
-		AddExtension: false
+	Defaults:
+		Filename: t02.sno
 	idle:
 		Start: 1
 	dead:
@@ -599,18 +595,18 @@ t02.snow.husk:
 		Tick: 80
 
 t01:
-	Defaults: t01.tem
-		AddExtension: false
+	Defaults:
+		Filename: t01.tem
 	idle:
 
 t01.snow:
-	Defaults: t01.sno
-		AddExtension: false
+	Defaults:
+		Filename: t01.sno
 	idle:
 
 t01.husk:
-	Defaults: t01.tem
-		AddExtension: false
+	Defaults:
+		Filename: t01.tem
 	idle:
 		Start: 1
 	dead:
@@ -619,8 +615,8 @@ t01.husk:
 		Tick: 80
 
 t01.snow.husk:
-	Defaults: t01.sno
-		AddExtension: false
+	Defaults:
+		Filename: t01.sno
 	idle:
 		Start: 1
 	dead:
@@ -629,1004 +625,1045 @@ t01.snow.husk:
 		Tick: 80
 
 ice01:
-	idle: ice01.sno
+	idle:
+		Filename: ice01.sno
 		Length: *
-		AddExtension: false
 
 ice02:
-	idle: ice02.sno
+	idle:
+		Filename: ice02.sno
 		Length: *
-		AddExtension: false
 
 ice03:
-	idle: ice03.sno
+	idle:
+		Filename: ice03.sno
 		Length: *
-		AddExtension: false
 
 ice04:
-	idle: ice04.sno
+	idle:
+		Filename: ice04.sno
 		Length: *
-		AddExtension: false
 
 ice05:
-	idle: ice05.sno
+	idle:
+		Filename: ice05.sno
 		Length: *
-		AddExtension: false
 
 # Interior Terrain
 boxes01:
-	idle: boxes01.int
-		AddExtension: false
+	idle:
+		Filename: boxes01.int
 
 boxes02:
-	idle: boxes02.int
-		AddExtension: false
+	idle:
+		Filename: boxes02.int
 
 boxes03:
-	idle: boxes03.int
-		AddExtension: false
+	idle:
+		Filename: boxes03.int
 
 boxes04:
-	idle: boxes04.int
-		AddExtension: false
+	idle:
+		Filename: boxes04.int
 
 boxes05:
-	idle: boxes05.int
-		AddExtension: false
+	idle:
+		Filename: boxes05.int
 
 boxes06:
-	idle: boxes06.int
-		AddExtension: false
+	idle:
+		Filename: boxes06.int
 
 boxes07:
-	idle: boxes07.int
-		AddExtension: false
+	idle:
+		Filename: boxes07.int
 
 boxes08:
-	idle: boxes08.int
-		AddExtension: false
+	idle:
+		Filename: boxes08.int
 
 boxes09:
-	idle: boxes09.int
-		AddExtension: false
+	idle:
+		Filename: boxes09.int
 
 # Desert Terrain Expansion
 rock1:
-	idle: rock1.des
-		AddExtension: false
+	idle:
+		Filename: rock1.des
 
 rock2:
-	idle: rock2.des
-		AddExtension: false
+	idle:
+		Filename: rock2.des
 
 rock3:
-	idle: rock3.des
-		AddExtension: false
+	idle:
+		Filename: rock3.des
 
 rock4:
-	idle: rock4.des
-		AddExtension: false
+	idle:
+		Filename: rock4.des
 
 rock5:
-	idle: rock5.des
-		AddExtension: false
+	idle:
+		Filename: rock5.des
 
 rock6:
-	idle: rock6.des
-		AddExtension: false
+	idle:
+		Filename: rock6.des
 
 rock7:
-	idle: rock7.des
-		AddExtension: false
+	idle:
+		Filename: rock7.des
 
 t04:
-	Defaults:
-		AddExtension: false
-	idle: t04.des
+	idle:
+		Filename: t04.des
 
 t04.husk:
-	Defaults: t04.des
-		AddExtension: false
+	Defaults:
+		Filename: t04.des
 	idle:
 		Start: 1
-	dead: t04.des
+	dead:
+		Filename: t04.des
 		Start: 2
 		Length: 8
 		Tick: 80
 
 t09:
-	Defaults:
-		AddExtension: false
-	idle: t09.des
+	idle:
+		Filename: t09.des
 
 t09.husk:
-	Defaults: t09
-		AddExtension: false
-	idle: t09.des
+	idle:
+		Filename: t09.des
 		Start: 1
-	dead: t09.des
+	dead:
+		Filename: t09.des
 		Start: 2
 		Length: 8
 		Tick: 80
 
 flag.british:
-	idle: british_flag
+	idle:
+		Filename: british_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.french:
-	idle: french_flag
+	idle:
+		Filename: french_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.french.2:
-	idle: french_flag_2
+	idle:
+		Filename: french_flag_2.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.german:
-	idle: german_flag
+	idle:
+		Filename: german_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.greek:
-	idle: greek_flag
+	idle:
+		Filename: greek_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.spanish:
-	idle: spanish_flag
+	idle:
+		Filename: spanish_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.turkish:
-	idle: turkish_flag
+	idle:
+		Filename: turkish_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.belgian:
-	idle: belgian_flag
+	idle:
+		Filename: belgian_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.dutch:
-	idle: dutch_flag
+	idle:
+		Filename: dutch_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.luxembourgish:
-	idle: luxembourgish_flag
+	idle:
+		Filename: luxembourgish_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.american:
-	idle: usa_flag
+	idle:
+		Filename: usa_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.italian:
-	idle: italian_flag
+	idle:
+		Filename: italian_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.austrian:
-	idle: austrian_flag
+	idle:
+		Filename: austrian_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.hungarian:
-	idle: hungarian_flag
+	idle:
+		Filename: hungarian_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.bulgarian:
-	idle: bulgarian_flag
+	idle:
+		Filename: bulgarian_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.irish:
-	idle: irish_flag
+	idle:
+		Filename: irish_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.danish:
-	idle: danish_flag
+	idle:
+		Filename: danish_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.finnish:
-	idle: finnish_flag
+	idle:
+		Filename: finnish_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.swedish:
-	idle: swedish_flag
+	idle:
+		Filename: swedish_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.polish:
-	idle: polish_flag
+	idle:
+		Filename: polish_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.nigerian:
-	idle: nigerian_flag
+	idle:
+		Filename: nigerian_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.chilean:
-	idle: chilean_flag
+	idle:
+		Filename: chilean_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.peruvian:
-	idle: peruvian_flag
+	idle:
+		Filename: peruvian_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.japanese:
-	idle: japanese_flag
+	idle:
+		Filename: japanese_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.indonesian:
-	idle: indonesian_flag
+	idle:
+		Filename: indonesian_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.chinese:
-	idle: chinese_flag
+	idle:
+		Filename: chinese_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.ussr:
-	idle: ussr_flag
+	idle:
+		Filename: ussr_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.russian:
-	idle: russian_flag
+	idle:
+		Filename: russian_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.russian_sfsr:
-	idle: russian_sfsr_flag
+	idle:
+		Filename: russian_sfsr_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.ukrainian_ssr:
-	idle: ukrainian_ssr_flag
+	idle:
+		Filename: ukrainian_ssr_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.moldovan_ssr:
-	idle: moldovan_ssr_flag
+	idle:
+		Filename: moldovan_ssr_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.azerbaijani_ssr:
-	idle: azerbaijani_ssr_flag
+	idle:
+		Filename: azerbaijani_ssr_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.armenian_ssr:
-	idle: armenian_ssr_flag
+	idle:
+		Filename: armenian_ssr_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.kazakh_ssr:
-	idle: kazakh_ssr_flag
+	idle:
+		Filename: kazakh_ssr_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.uzbek_ssr:
-	idle: uzbek_ssr_flag
+	idle:
+		Filename: uzbek_ssr_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.vietnamese:
-	idle: vietnamese_flag
+	idle:
+		Filename: vietnamese_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.yemeni:
-	idle: yemeni_flag
+	idle:
+		Filename: yemeni_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.syrian:
-	idle: syrian_flag
+	idle:
+		Filename: syrian_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.bangladeshi:
-	idle: bangladeshi_flag
+	idle:
+		Filename: bangladeshi_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.libyan_green:
-	idle: libyan_flag_green
+	idle:
+		Filename: libyan_flag_green.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.saudi:
-	idle: saudi_flag
+	idle:
+		Filename: saudi_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
 
 flag.gla:
-	idle: gla_flag
+	idle:
+		Filename: gla_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
-	bib: mbGAP.tem
+	bib:
+		Filename: mbGAP.tem
 		Length: *
-		AddExtension: false
-	bib-Snow: mbGAP.sno
+	bib-Snow:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-SnowRoad: mbGAP.sno
+	bib-SnowRoad:
+		Filename: mbGAP.sno
 		Length: *
-		AddExtension: false
-	bib-Sand: mbGAP.des
+	bib-Sand:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false
-	bib-SandRoad: mbGAP.des
+	bib-SandRoad:
+		Filename: mbGAP.des
 		Length: *
-		AddExtension: false

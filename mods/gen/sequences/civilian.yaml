@@ -28,22 +28,18 @@
 	die5:
 		Start: 160
 		Length: 8
-	die6: electro
+	die6:
+		Filename: electro.tem
+		TilesetFilenames:
+			SNOW: electro.sno
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-			MIXED: TEMPERAT
-	die-crushed: corpse1
+	die-crushed:
+		Filename: corpse1.tem
+		TilesetFilenames:
+			SNOW: corpse1.sno
 		Length: 6
 		Tick: 1600
 		ZOffset: -511
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-			MIXED: TEMPERAT
 	run:
 		Start: 56
 		Length: 6
@@ -52,38 +48,62 @@
 
 c1:
 	Inherits: ^default.civilian
+	Defaults:
+		Filename: c1.shp
 
 c2:
 	Inherits: ^default.civilian
+	Defaults:
+		Filename: c2.shp
 
 c3:
 	Inherits: ^default.civilian
+	Defaults:
+		Filename: c3.shp
 
 c4:
 	Inherits: ^default.civilian
+	Defaults:
+		Filename: c4.shp
 
 c5:
 	Inherits: ^default.civilian
+	Defaults:
+		Filename: c5.shp
 
 c6:
 	Inherits: ^default.civilian
+	Defaults:
+		Filename: c6.shp
 
 c7:
 	Inherits: ^default.civilian
+	Defaults:
+		Filename: c7.shp
 
 c8:
 	Inherits: ^default.civilian
+	Defaults:
+		Filename: c8.shp
 
 c9:
 	Inherits: ^default.civilian
+	Defaults:
+		Filename: c9.shp
 
 c10:
 	Inherits: ^default.civilian
+	Defaults:
+		Filename: c10.shp
 
 c11:
 	Inherits: ^default.civilian
+	Defaults:
+		Filename: c11.shp
 
 dog:
+	Defaults:
+		Filename: dog.shp
 	stand:
 		Facings: 8
 	run:
@@ -114,23 +134,26 @@ dog:
 	die5:
 		Start: 251
 		Length: 14
-	die6: electdog
+	die6:
+		Filename: electdog.shp
 		Length: *
-	die-crushed: corpse1
+	die-crushed:
+		Filename: corpse1.tem
+		TilesetFilenames:
+			SNOW: corpse1.sno
 		Length: 6
 		Tick: 1600
 		ZOffset: -511
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-			MIXED: TEMPERAT
-	shoot: dogbullt
+	shoot:
+		Filename: dogbullt.shp
 		Length: 4
 		Facings: 8
-	icon: dogicon
+	icon:
+		Filename: dogicon.shp
 
 einstein:
+	Defaults:
+		Filename: einstein.shp
 	stand:
 		Facings: 8
 	panic-run:
@@ -161,24 +184,22 @@ einstein:
 	die5:
 		Start: 123
 		Length: 8
-	die6: electro
+	die6:
+		Filename: electro.tem
+		TilesetFilenames:
+			SNOW: electro.sno
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-			MIXED: TEMPERAT
-	die-crushed: corpse1
+	die-crushed:
+		Filename: corpse1.tem
+		TilesetFilenames:
+			SNOW: corpse1.sno
 		Length: 6
 		Tick: 1600
 		ZOffset: -511
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-			MIXED: TEMPERAT
 
 delphi:
+	Defaults:
+		Filename: delphi.shp
 	stand:
 		Facings: 8
 	panic-run:
@@ -209,24 +230,22 @@ delphi:
 	die5:
 		Start: 123
 		Length: 8
-	die6: electro
+	die6:
+		Filename: electro.tem
+		TilesetFilenames:
+			SNOW: electro.sno
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-			MIXED: TEMPERAT
-	die-crushed: corpse1
+	die-crushed:
+		Filename: corpse1.tem
+		TilesetFilenames:
+			SNOW: corpse1.sno
 		Length: 6
 		Tick: 1600
 		ZOffset: -511
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-			MIXED: TEMPERAT
 
 chan:
+	Defaults:
+		Filename: chan.shp
 	stand:
 		Facings: 8
 	panic-run:
@@ -257,68 +276,64 @@ chan:
 	die5:
 		Start: 123
 		Length: 8
-	die6: electro
+	die6:
+		Filename: electro.tem
+		TilesetFilenames:
+			SNOW: electro.sno
 		Length: *
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-			MIXED: TEMPERAT
-	die-crushed: corpse1
+	die-crushed:
+		Filename: corpse1.tem
+		TilesetFilenames:
+			SNOW: corpse1.sno
 		Length: 6
 		Tick: 1600
 		ZOffset: -511
-		UseTilesetExtension: true
-		TilesetOverrides:
-			DESERT: TEMPERAT
-			INTERIOR: TEMPERAT
-			MIXED: TEMPERAT
 
 v01:
-	Defaults: v01.tem
-		AddExtension: false
+	Defaults:
+		Filename: v01.tem
 	idle:
 	damaged-idle:
 		Start: 1
 
 v01.snow:
-	Defaults: v01.sno
-		AddExtension: false
+	Defaults:
+		Filename: v01.sno
 	idle:
 	damaged-idle:
 		Start: 1
 
 v02:
-	Defaults: v02.tem
-		AddExtension: false
+	Defaults:
+		Filename: v02.tem
 	idle:
 	damaged-idle:
 		Start: 1
 
 v02.snow:
-	Defaults: v02.sno
-		AddExtension: false
+	Defaults:
+		Filename: v02.sno
 	idle:
 	damaged-idle:
 		Start: 1
 
 v03:
-	Defaults: v03.tem
-		AddExtension: false
+	Defaults:
+		Filename: v03.tem
 	idle:
 	damaged-idle:
 		Start: 1
 
 v03.snow:
-	Defaults: v03.sno
-		AddExtension: false
+	Defaults:
+		Filename: v03.sno
 	idle:
 	damaged-idle:
 		Start: 1
 
 v04:
-	Defaults: v04.tem
-		AddExtension: false
+	Defaults:
+		Filename: v04.tem
 	idle:
 	damaged-idle:
 		Start: 2
@@ -328,8 +343,8 @@ v04:
 		Start: 3
 
 v04.snow:
-	Defaults: v04.sno
-		AddExtension: false
+	Defaults:
+		Filename: v04.sno
 	idle:
 	damaged-idle:
 		Start: 2
@@ -339,134 +354,134 @@ v04.snow:
 		Start: 3
 
 v05:
-	Defaults: v05.tem
-		AddExtension: false
+	Defaults:
+		Filename: v05.tem
 	idle:
 	damaged-idle:
 		Start: 2
 
 v05.snow:
-	Defaults: v05.sno
-		AddExtension: false
+	Defaults:
+		Filename: v05.sno
 	idle:
 	damaged-idle:
 		Start: 2
 
 v06:
-	Defaults: v06.tem
-		AddExtension: false
+	Defaults:
+		Filename: v06.tem
 	idle:
 	damaged-idle:
 		Start: 1
 
 v06.snow:
-	Defaults: v06.sno
-		AddExtension: false
+	Defaults:
+		Filename: v06.sno
 	idle:
 	damaged-idle:
 		Start: 1
 
 v07:
-	Defaults: v07.tem
-		AddExtension: false
+	Defaults:
+		Filename: v07.tem
 	idle:
 	damaged-idle:
 		Start: 2
 
 v07.snow:
-	Defaults: v07.sno
-		AddExtension: false
+	Defaults:
+		Filename: v07.sno
 	idle:
 	damaged-idle:
 		Start: 2
 
 v08:
-	Defaults: v08.tem
-		AddExtension: false
+	Defaults:
+		Filename: v08.tem
 	idle:
 	damaged-idle:
 		Start: 1
 
 v08.snow:
-	Defaults: v08.sno
-		AddExtension: false
+	Defaults:
+		Filename: v08.sno
 	idle:
 	damaged-idle:
 		Start: 1
 
 v09:
-	Defaults: v09.tem
-		AddExtension: false
+	Defaults:
+		Filename: v09.tem
 	idle:
 	damaged-idle:
 		Start: 1
 
 v09.snow:
-	Defaults: v09.sno
-		AddExtension: false
+	Defaults:
+		Filename: v09.sno
 	idle:
 	damaged-idle:
 		Start: 1
 
 v10:
-	Defaults: v10.tem
-		AddExtension: false
+	Defaults:
+		Filename: v10.tem
 	idle:
 	damaged-idle:
 		Start: 1
 
 v10.snow:
-	Defaults: v10.sno
-		AddExtension: false
+	Defaults:
+		Filename: v10.sno
 	idle:
 	damaged-idle:
 		Start: 1
 
 v11:
-	Defaults: v11.tem
-		AddExtension: false
+	Defaults:
+		Filename: v11.tem
 	idle:
 	damaged-idle:
 		Start: 1
 
 v11.snow:
-	Defaults: v11.sno
-		AddExtension: false
+	Defaults:
+		Filename: v11.sno
 	idle:
 	damaged-idle:
 		Start: 1
 
 v12:
-	Defaults: v12.tem
-		AddExtension: false
+	Defaults:
+		Filename: v12.tem
 	idle:
 	damaged-idle:
 		Start: 1
 
 v12.snow:
-	Defaults: v12.sno
-		AddExtension: false
+	Defaults:
+		Filename: v12.sno
 	idle:
 	damaged-idle:
 		Start: 1
 
 v13:
-	Defaults: v13.tem
-		AddExtension: false
+	Defaults:
+		Filename: v13.tem
 	idle:
 	damaged-idle:
 		Start: 1
 
 v13.snow:
-	Defaults: v13.sno
-		AddExtension: false
+	Defaults:
+		Filename: v13.sno
 	idle:
 	damaged-idle:
 		Start: 1
 
 v14:
-	Defaults: v14.tem
-		AddExtension: false
+	Defaults:
+		Filename: v14.tem
 	idle:
 		ZOffset: -512
 	damaged-idle:
@@ -474,8 +489,8 @@ v14:
 		ZOffset: -512
 
 v14.snow:
-	Defaults: v14.sno
-		AddExtension: false
+	Defaults:
+		Filename: v14.sno
 	idle:
 		ZOffset: -512
 	damaged-idle:
@@ -483,8 +498,8 @@ v14.snow:
 		ZOffset: -512
 
 v15:
-	Defaults: v15.tem
-		AddExtension: false
+	Defaults:
+		Filename: v15.tem
 	idle:
 		ZOffset: -512
 	damaged-idle:
@@ -492,8 +507,8 @@ v15:
 		ZOffset: -512
 
 v15.snow:
-	Defaults: v15.sno
-		AddExtension: false
+	Defaults:
+		Filename: v15.sno
 	idle:
 		ZOffset: -512
 	damaged-idle:
@@ -501,8 +516,8 @@ v15.snow:
 		ZOffset: -512
 
 v16:
-	Defaults: v16.tem
-		AddExtension: false
+	Defaults:
+		Filename: v16.tem
 	idle:
 		ZOffset: -512
 	damaged-idle:
@@ -510,8 +525,8 @@ v16:
 		ZOffset: -512
 
 v16.snow:
-	Defaults: v16.sno
-		AddExtension: false
+	Defaults:
+		Filename: v16.sno
 	idle:
 		ZOffset: -512
 	damaged-idle:
@@ -519,8 +534,8 @@ v16.snow:
 		ZOffset: -512
 
 v17:
-	Defaults: v17.tem
-		AddExtension: false
+	Defaults:
+		Filename: v17.tem
 	idle:
 		ZOffset: -512
 	damaged-idle:
@@ -528,8 +543,8 @@ v17:
 		ZOffset: -512
 
 v17.snow:
-	Defaults: v17.sno
-		AddExtension: false
+	Defaults:
+		Filename: v17.sno
 	idle:
 		ZOffset: -512
 	damaged-idle:
@@ -537,8 +552,8 @@ v17.snow:
 		ZOffset: -512
 
 v18:
-	Defaults: v18.tem
-		AddExtension: false
+	Defaults:
+		Filename: v18.tem
 	idle:
 		ZOffset: -512
 	damaged-idle:
@@ -546,8 +561,8 @@ v18:
 		ZOffset: -512
 
 v18.snow:
-	Defaults: v18.sno
-		AddExtension: false
+	Defaults:
+		Filename: v18.sno
 	idle:
 		ZOffset: -512
 	damaged-idle:
@@ -555,32 +570,38 @@ v18.snow:
 		ZOffset: -512
 
 rice:
-	Defaults:
-		AddExtension: false
-	idle: rice.tem
+	idle:
+		Filename: rice.tem
 		ZOffset: -512
-	damaged-idle: rice.tem
+	damaged-idle:
+		Filename: rice.tem
 		Start: 1
 		ZOffset: -512
 
 v19:
 	idle:
+		Filename: v19.shp
 		Length: 14
 
 v19.husk:
-	idle: v19
+	idle:
+		Filename: v19.shp
 		Start: 28
-	fire-start: flmspt
+	fire-start:
+		Filename: flmspt.shp
 		Length: *
 		Offset: 7,-15
 		ZOffset: 1
-	fire-loop: flmspt
+	fire-loop:
+		Filename: flmspt.shp
 		Start: 50
 		Length: *
 		Offset: 7,-15
 		ZOffset: 1
 
 utilpol1:
+	Defaults:
+		Filename: utilpol1.shp
 	idle:
 	damaged-idle:
 		Start: 1
@@ -588,6 +609,8 @@ utilpol1:
 		Start: 1
 
 utilpol2:
+	Defaults:
+		Filename: utilpol2.shp
 	idle:
 	damaged-idle:
 		Start: 1
@@ -596,30 +619,41 @@ utilpol2:
 
 ammobox1:
 	idle:
+		Filename: ammobox1.shp
 
 ammobox2:
 	idle:
+		Filename: ammobox2.shp
 
 ammobox3:
 	idle:
+		Filename: ammobox3.shp
 
 tanktrap1:
 	idle:
+		Filename: tanktrap1.shp
 
 tanktrap2:
 	idle:
+		Filename: tanktrap2.shp
 
 rushouse:
+	Defaults:
+		Filename: rushouse.shp
 	idle:
 	damaged-idle:
 		Start: 1
 
 asianhut:
+	Defaults:
+		Filename: asianhut.shp
 	idle:
 	damaged-idle:
 		Start: 1
 
 barb:
+	Defaults:
+		Filename: barb.shp
 	idle:
 		Length: 16
 	damaged-idle:
@@ -627,6 +661,8 @@ barb:
 		Length: 16
 
 wood:
+	Defaults:
+		Filename: wood.shp
 	idle:
 		Length: 16
 	damaged-idle:
@@ -635,155 +671,159 @@ wood:
 
 barl:
 	idle:
+		Filename: barl.shp
 
 brl3:
 	idle:
+		Filename: brl3.shp
 
 v20:
-	Defaults:
-		AddExtension: false
-	idle: v20.des
+	idle:
+		Filename: v20.des
 		Length: 3
 		Tick: 120
-	damaged-idle: v20.des
+	damaged-idle:
+		Filename: v20.des
 		Start: 3
 		Length: 3
 		Tick: 120
 
 v21:
-	Defaults:
-		AddExtension: false
-	idle: v21.des
+	idle:
+		Filename: v21.des
 		Length: 3
 		Tick: 120
-	damaged-idle: v21.des
+	damaged-idle:
+		Filename: v21.des
 		Start: 3
 		Length: 3
 		Tick: 120
 
 v22:
-	Defaults:
-		AddExtension: false
-	idle: v22.des
+	idle:
+		Filename: v22.des
 		Length: 3
 		Tick: 120
-	damaged-idle: v22.des
+	damaged-idle:
+		Filename: v22.des
 		Start: 3
 		Length: 3
 		Tick: 120
 
 v23:
-	Defaults:
-		AddExtension: false
-	idle: v23.des
+	idle:
+		Filename: v23.des
 		Length: 3
 		Tick: 120
-	damaged-idle: v23.des
+	damaged-idle:
+		Filename: v23.des
 		Start: 3
 		Length: 3
 		Tick: 120
 
 v24:
-	Defaults:
-		AddExtension: false
-	idle: v24.des
-	damaged-idle: v24.des
+	idle:
+		Filename: v24.des
+	damaged-idle:
+		Filename: v24.des
 		Start: 1
 
 v25:
-	Defaults:
-		AddExtension: false
-	idle: v25.des
-	damaged-idle: v25.des
+	idle:
+		Filename: v25.des
+	damaged-idle:
+		Filename: v25.des
 		Start: 1
 
 v26:
-	Defaults:
-		AddExtension: false
-	idle: v26.des
-	damaged-idle: v26.des
+	idle:
+		Filename: v26.des
+	damaged-idle:
+		Filename: v26.des
 		Start: 1
 
 v27:
-	Defaults:
-		AddExtension: false
-	idle: v27.des
-	damaged-idle: v27.des
+	idle:
+		Filename: v27.des
+	damaged-idle:
+		Filename: v27.des
 		Start: 1
 
 v28:
-	Defaults:
-		AddExtension: false
-	idle: v28.des
-	damaged-idle: v28.des
+	idle:
+		Filename: v28.des
+	damaged-idle:
+		Filename: v28.des
 		Start: 1
 
 v29:
-	Defaults:
-		AddExtension: false
-	idle: v29.des
-	damaged-idle: v29.des
+	idle:
+		Filename: v29.des
+	damaged-idle:
+		Filename: v29.des
 		Start: 1
 
 v30:
-	Defaults:
-		AddExtension: false
-	idle: v30.des
-	damaged-idle: v30.des
+	idle:
+		Filename: v30.des
+	damaged-idle:
+		Filename: v30.des
 		Start: 2
 
 v31:
-	Defaults:
-		AddExtension: false
-	idle: v31.des
-	damaged-idle: v31.des
+	idle:
+		Filename: v31.des
+	damaged-idle:
+		Filename: v31.des
 		Start: 1
 
 v32:
-	Defaults:
-		AddExtension: false
-	idle: v32.des
-	damaged-idle: v32.des
+	idle:
+		Filename: v32.des
+	damaged-idle:
+		Filename: v32.des
 		Start: 1
 
 v33:
-	Defaults:
-		AddExtension: false
-	idle: v33.des
-	damaged-idle: v33.des
+	idle:
+		Filename: v33.des
+	damaged-idle:
+		Filename: v33.des
 		Start: 1
 
 v34:
-	Defaults:
-		AddExtension: false
-	idle: v34.des
-	damaged-idle: v34.des
+	idle:
+		Filename: v34.des
+	damaged-idle:
+		Filename: v34.des
 		Start: 1
 
 v35:
-	Defaults:
-		AddExtension: false
-	idle: v35.des
-	damaged-idle: v35.des
+	idle:
+		Filename: v35.des
+	damaged-idle:
+		Filename: v35.des
 		Start: 1
 
 v36:
-	Defaults:
-		AddExtension: false
-	idle: v36.des
-	damaged-idle: v36.des
+	idle:
+		Filename: v36.des
+	damaged-idle:
+		Filename: v36.des
 		Start: 1
 
 v37:
-	Defaults:
-		AddExtension: false
-	idle: v37.des
-	damaged-idle: v37.des
+	idle:
+		Filename: v37.des
+	damaged-idle:
+		Filename: v37.des
 		Start: 1
 
 snowhut:
 	Defaults:
+		Filename: snowhut.shp
 		Offset: 0,-5
+		Scale: 0.7
 	idle:
 		Length: 3
 		Tick: 360
@@ -793,6 +833,7 @@ snowhut:
 
 lhus:
 	Defaults:
+		Filename: lhus.shp
 		Offset: 0,-16
 	idle:
 		Length: 16
@@ -804,6 +845,7 @@ lhus:
 
 windmill:
 	Defaults:
+		Filename: windmill.shp
 		Offset: 0,-16
 	idle:
 		Length: 8
@@ -814,76 +856,91 @@ windmill:
 		Tick: 80
 
 car.automobile_1:
-	idle: bcab
+	idle:
+		Filename: bcab.shp
 		Facings: -32
 		ShadowStart: 32
 
 car.automobile_2:
-	idle: belair
+	idle:
+		Filename: belair.shp
 		Facings: -32
 		ShadowStart: 32
 
 car.automobile_3:
-	idle: bcar
+	idle:
+		Filename: bcar.shp
 		Facings: -64
 		ShadowStart: 64
 
 car.automobile_4:
-	idle: budgatti
+	idle:
+		Filename: budgatti.shp
 		Facings: -64
 		ShadowStart: 64
 
 car.automobile_5:
-	idle: stang
+	idle:
+		Filename: stang.shp
 		Facings: -64
 		ShadowStart: 64
 
 car.automobile_6:
-	idle: porsche90
+	idle:
+		Filename: porsche90.shp
 		Facings: -64
 		ShadowStart: 64
 
 car.automobile_7:
-	idle: suvw
+	idle:
+		Filename: suvw.shp
 		Facings: -64
 		ShadowStart: 64
 
 car.ambulance:
-	idle: amb
+	idle:
+		Filename: amb.shp
 		Facings: -64
 		ShadowStart: 64
 
 car.cement_mixer:
-	idle: cement
+	idle:
+		Filename: cement.shp
 		Facings: -64
 		ShadowStart: 64
 
 car.taxi:
-	idle: taxi
+	idle:
+		Filename: taxi.shp
 		Facings: -64
 		ShadowStart: 64
 
 car.limousine:
-	idle: limo
+	idle:
+		Filename: limo.shp
 		Facings: -64
 		ShadowStart: 64
 
 car.police_car:
-	idle: cop
+	idle:
+		Filename: cop.shp
 		Facings: -64
 		ShadowStart: 64
 
 car.fire_truck:
-	idle: fire
+	idle:
+		Filename: fire.shp
 		Facings: -32
 		ShadowStart: 32
 
 car.pickup_truck:
-	idle: ptruck
+	idle:
+		Filename: ptruck.shp
 		Facings: -64
 		ShadowStart: 64
 
 car.school_bus:
-	idle: sbus
+	idle:
+		Filename: sbus.shp
 		Facings: -32
 		ShadowStart: 32

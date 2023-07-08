@@ -1,73 +1,99 @@
 vessel.transport:
-	idle: lst
-	open: lst
+	idle:
+		Filename: lst.shp
+	open:
+		Filename: lst.shp
 		Start: 1
 		Length: 4
 		Tick: 150
-	close: lst
+	close:
+		Filename: lst.shp
 		Frames: 4, 3, 2, 1
 		Length: 4
 		Tick: 150
-	unload: lst
+	unload:
+		Filename: lst.shp
 		Start: 4
 		ZOffset: -511
-	repair: allyrepair
+	repair:
+		Filename: allyrepair.shp
 		Length: *
 		Tick: 160
 		ZOffset: 2047
-	icon: lsticon
+	icon:
+		Filename: lsticon.shp
 
 vessel.gunboat:
-	idle: pt
+	idle:
+		Filename: pt.shp
 		Facings: 16
-	turret: mgun
+	turret:
+		Filename: mgun.shp
 		Facings: 32
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	repair: allyrepair
+	repair:
+		Filename: allyrepair.shp
 		Length: *
 		Tick: 160
 		ZOffset: 2047
-	icon: pticon
+	icon:
+		Filename: pticon.shp
 
 vessel.destroyer:
-	idle: dd
+	idle:
+		Filename: dd.shp
 		Facings: 16
-	turret: ssam
+	turret:
+		Filename: ssam.shp
 		Facings: 32
-	repair: allyrepair
+	repair:
+		Filename: allyrepair.shp
 		Length: *
 		Tick: 160
 		ZOffset: 2047
-	icon: ddicon
+	icon:
+		Filename: ddicon.shp
 
 vessel.cruiser:
-	idle: ca
+	idle:
+		Filename: ca.shp
 		Facings: 16
-	turret: turr
+	turret:
+		Filename: turr.shp
 		Facings: 32
-	muzzle: gunfire2
+	muzzle:
+		Filename: gunfire2.shp
 		Length: 5
-	repair: allyrepair
+	repair:
+		Filename: allyrepair.shp
 		Length: *
 		Tick: 160
 		ZOffset: 2047
-	icon: caicon
+	icon:
+		Filename: caicon.shp
 
 ss:
 	idle:
+		Filename: ss.shp
 		Facings: 16
-	repair: allyrepair
+	repair:
+		Filename: allyrepair.shp
 		Length: *
 		Tick: 160
 		ZOffset: 2047
-	icon: ssicon
+	icon:
+		Filename: ssicon.shp
 
 msub:
 	idle:
+		Filename: msub.shp
 		Facings: 16
-	repair: allyrepair
+	repair:
+		Filename: allyrepair.shp
 		Length: *
 		Tick: 160
 		ZOffset: 2047
-	icon: msubicon
+	icon:
+		Filename: msubicon.shp

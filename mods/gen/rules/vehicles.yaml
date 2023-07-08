@@ -21,7 +21,7 @@ vehicle.supply_truck:
 		GenericName: Collector
 	Selectable:
 		Priority: 7
-		DecorationBounds: 42,42
+		DecorationBounds: 1792, 1792
 	SelectionDecorations:
 	SupplyCollector:
 		CollectionDelay: 100
@@ -417,9 +417,9 @@ vehicle.radar_van:
 		ChargeInterval: 750
 		Icons:
 			1: radarscan
-		Descriptions:
+		Names:
 			1: Radar Van Scan
-		LongDescs:
+		Descriptions:
 			1: Reveals are small area of map for a while.\n\nAlso detects cloaked units in that area.
 		AllowMultiple: true
 		StartFullyCharged: false
@@ -429,14 +429,14 @@ vehicle.radar_van:
 		InitialDelay: 100
 		CloakDelay: 50
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled && scrap_create_bonus == 1
 	Cloak@CRATE-2:
 		InitialDelay: 50
 		CloakDelay: 50
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled && scrap_create_bonus == 2
 	GrantConditionOnDamageState@UNCLOAK:
@@ -706,7 +706,7 @@ vehicle.crusader_tank:
 	Voiced:
 		VoiceSet: CrusaderTankVoice
 	Selectable:
-		DecorationBounds: 28,28
+		DecorationBounds: 1194, 1194
 
 vehicle.laser_tank:
 	Inherits: vehicle.crusader_tank
@@ -789,7 +789,7 @@ vehicle.battlemaster_tank:
 		Type: vehicle.tank
 	Selectable:
 		Class: vehicle.battlemaster_tank
-		DecorationBounds: 28,28
+		DecorationBounds: 1194, 1194
 	Mobile:
 		Speed: 25
 		TurnSpeed: 32
@@ -919,10 +919,10 @@ vehicle.ambulance:
 		TargetTypes: GroundActor, Vehicle, Vehicle-Disguise, DetonateAttack, ImmueToToxin
 	Targetable@DRIVER_KILLED:
 		TargetTypes: GroundActor, Vehicle, Vehicle-Disguise, DetonateAttack, ImmueToToxin, NoDriverKill, NoAutoTarget
-	-DamagedByRadioactivity@RADIOACTIVITY:
-	-DamagedByRadioactivity@ANTHRAX_ALPHA:
-	-DamagedByRadioactivity@ANTHRAX_BETA:
-	-DamagedByRadioactivity@ANTHRAX_GAMMA:
+	-DamagedByTintedCells@RADIOACTIVITY:
+	-DamagedByTintedCells@ANTHRAX_ALPHA:
+	-DamagedByTintedCells@ANTHRAX_BETA:
+	-DamagedByTintedCells@ANTHRAX_GAMMA:
 	RenderSprites:
 		Image: vehicle.ambulance
 	Voiced:
@@ -988,13 +988,13 @@ vehicle.sentry_drone:
 	-CaptureNotification:
 	-Capturable@DRIVER_KILLED:
 	-WithColoredOverlay@DRIVER_KILLED:
-	-ExternalConditionThatRevokedOnCapture@DRIVER_KILLED:
+	# -ExternalConditionThatRevokedOnCapture@DRIVER_KILLED:
 	-TimedConditionBar@DRIVER_KILLED:
 	Cloak:
 		InitialDelay: 100
 		CloakDelay: 50
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled
 	RenderDetectionCircle:
@@ -1375,10 +1375,10 @@ vehicle.toxin_tractor:
 		Factions: toxin
 	GrantConditionOnDeploy@SPRAY:
 		DeployedCondition: spray
-	-DamagedByRadioactivity@RADIOACTIVITY:
-	-DamagedByRadioactivity@ANTHRAX_ALPHA:
-	-DamagedByRadioactivity@ANTHRAX_BETA:
-	-DamagedByRadioactivity@ANTHRAX_GAMMA:
+	-DamagedByTintedCells@RADIOACTIVITY:
+	-DamagedByTintedCells@ANTHRAX_ALPHA:
+	-DamagedByTintedCells@ANTHRAX_BETA:
+	-DamagedByTintedCells@ANTHRAX_GAMMA:
 	AutoTarget:
 		ScanRadius: 4
 	AcceptsDeliveredExperience:
@@ -1477,6 +1477,7 @@ vehicle.dragon_tank:
 	AttackFrontal:
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
+		FacingTolerance: 0
 	AutoTarget:
 		ScanRadius: 4
 	AcceptsDeliveredExperience:
@@ -1598,6 +1599,7 @@ vehicle.rocket_buggy:
 	AttackFrontal:
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
+		FacingTolerance: 0
 	AcceptsDeliveredExperience:
 	ThrowsShrapnel@Mobile:
 		Weapons: debris.rocket_buggy.body
@@ -1695,9 +1697,9 @@ vehicle.avenger:
 		Weapon: laser.avenger.point_defense
 		LocalOffset: 0,213,0
 		Name: pdlaser
-	ShootsMissiles:
-		ShootStances: Neutral, Enemy
+	PointDefense:
 		Armament: pdlaser
+		PointDefenseTypes: missilepd
 	AttackTurreted:
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
@@ -1783,7 +1785,7 @@ vehicle.battle_Bus:
 		Type: husk.battle_bus.crate-2
 		RequiresCondition: husk && scrap_create_bonus == 2
 	Selectable:
-		DecorationBounds: 28, 28
+		DecorationBounds: 1194, 1194
 	Mobile:
 		Speed: 70
 		TurnSpeed: 16
@@ -1817,12 +1819,12 @@ vehicle.battle_Bus:
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
 	GrantConditionOnHealth@HUSK:
-		HP: 65000
+		MaxHP: 65000
 		Condition: husk
 		GrantPermanently: true
 	-GrantConditionOnDamageState@DAMAGED:
 	GrantConditionOnHealth@DAMAGED:
-		HP: 75000
+		MaxHP: 75000
 		Condition: damaged
 	ChangesHealth@JUNK_REPAIR:
 		RequiresCondition: junk_repair && !husk
@@ -1898,7 +1900,7 @@ vehicle.troop_crawler:
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	Passenger:
 		Weight: 8
-	AIDeployHelper:
+	AutoDeployer:
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 4c384
@@ -2000,7 +2002,7 @@ vehicle.listening_outpost:
 		InitialDelay: 100
 		CloakDelay: 50
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
@@ -2479,6 +2481,7 @@ vehicle.scud_launcher:
 		TargetFrozenActors: true
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
+		FacingTolerance: 0
 	WithFacingSpriteBody:
 		RequiresCondition: ammo
 	WithFacingSpriteBody@EMPTY:
@@ -2526,7 +2529,7 @@ vehicle.scud_launcher:
 	Voiced:
 		VoiceSet: SCUDLauncherVoice
 	Selectable:
-		DecorationBounds: 28,28
+		DecorationBounds: 1194, 1194
 
 vehicle.inferno_cannon:
 	Inherits: ^Tank
@@ -2601,6 +2604,7 @@ vehicle.inferno_cannon:
 		TargetFrozenActors: true
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
+		FacingTolerance: 0
 	WithMuzzleOverlay:
 	Explodes:
 		Weapon: ArtilleryExplode
@@ -2684,9 +2688,9 @@ vehicle.paladin_tank:
 		Weapon: laser.paladin_tank
 		LocalOffset: 0,213,-85
 		Name: pdlaser
-	ShootsMissiles:
-		ShootStances: Neutral, Enemy
+	PointDefense:
 		Armament: pdlaser
+		PointDefenseTypes: missilepd
 	AttackTurreted:
 		Armaments: primary, pdlaser
 		PauseOnCondition: hacked || emp || leaflet
@@ -2714,7 +2718,7 @@ vehicle.paladin_tank:
 		VoiceSet: PaladinTankVoice
 	Selectable:
 		Class: vehicle.paladin_tank
-		DecorationBounds: 28,28,0,-4
+		DecorationBounds: 1194, 1194, 0, -170
 	RenderSprites:
 		Image: vehicle.paladin_tank
 
@@ -2957,6 +2961,7 @@ vehicle.marauder_tank:
 	AttackFrontal:
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
+		FacingTolerance: 0
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 		RequiresCondition: !scrap_create_bonus
@@ -3231,7 +3236,7 @@ vehicle.overlord_tank:
 		VoiceSet: OverlordTankVoice
 	Selectable:
 		Class: vehicle.overlord_tank
-		DecorationBounds: 44,38,0,-4
+		DecorationBounds: 1877, 1621, 0, -170
 
 vehicle.overlord_tank.boss:
 	Inherits: vehicle.overlord_tank
@@ -3425,7 +3430,6 @@ vehicle.bomb_truck:
 	WithDisguisingFacingSpriteBody:
 	WithDisguisingSpriteTurret:
 	Disguise:
-		TargetTypes: Vehicle-Disguise
 		Voice: Disguise
 		DisguisedAsConditions:
 			vehicle.radar_van: radar_van
@@ -3480,7 +3484,7 @@ vehicle.bomb_truck:
 		VoiceSet: BombTruckVoice
 	Selectable:
 		Class: vehicle.bomb_truck
-		DecorationBounds: 42,42
+		DecorationBounds: 1792, 1792
 
 vehicle.nuke_cannon:
 	Inherits: ^Tank
@@ -3538,7 +3542,7 @@ vehicle.nuke_cannon:
 		TurnSpeed: 12
 		Offset: 0,0,160
 	Selectable:
-		DecorationBounds: 44,38,0,-4
+		DecorationBounds: 1877, 1621, 0, -170
 		Class: vehicle.nuke_cannon
 	Armament@Nuke:
 		Weapon: cannon.nuke_cannon
@@ -3786,6 +3790,7 @@ vehicle.combat_cycle:
 	AttackFrontal:
 		Armaments: mg, ag_rocket, aa_rocket, terror, sniper_rifle, driver_snipe
 		PauseOnCondition: hacked || emp || leaflet
+		FacingTolerance: 0
 	AmmoPool:
 		Ammo: 1
 		Armaments: driver_snipe
@@ -3916,7 +3921,7 @@ vehicle.combat_cycle:
 		InitialDelay: 200
 		CloakDelay: 100
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
-		CloakTypes: Cloak
+		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: !cloak-force-disabled && ((camouflage && rebel) || jarmen || hijacker || saboteur)
 	GrantConditionOnDamageState@UNCLOAK:
@@ -3970,7 +3975,7 @@ vehicle.combat_cycle.demo:
 		Cost: 1000
 	Selectable:
 		Priority: 4
-		DecorationBounds: 42,42
+		DecorationBounds: 1792, 1792
 	SelectionDecorations:
 	Health:
 		HP: 25000
@@ -4015,7 +4020,7 @@ vehicle.combat_cycle.demo:
 	GrantConditionOnMovement:
 		Condition: moving
 	DetectCloaked:
-		CloakTypes: Mine
+		DetectionTypes: Mine
 		Range: 4c0
 	PeriodicExplosion@DISARM:
 		Weapon: detach.mcc

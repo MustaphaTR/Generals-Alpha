@@ -6,6 +6,7 @@
 	ActorMap:
 	ScreenMap:
 	Selection:
+	ControlGroups:
 	MusicPlaylist:
 		VictoryMusic: score
 		DefeatMusic: map
@@ -16,30 +17,16 @@
 		FogVariants: shroud
 		Index: 255, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 20, 40, 56, 65, 97, 130, 148, 194, 24, 33, 66, 132, 28, 41, 67, 134, 1, 2, 4, 8, 3, 6, 12, 9, 7, 14, 13, 11, 5, 10, 15, 255
 		UseExtendedIndex: true
-	ResourceType@ore:
-		Type: Ore
-		Name: Valuable Minerals
-		ResourceType: 1
-		TerrainType: Ore
-		Palette: player
-		Sequences: gold01,gold02,gold03,gold04
-		MaxDensity: 66
-		ValuePerUnit: 25
-		AllowedTerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
-		AllowUnderActors: true
-	ResourceType@gem:
-		Type: Gems
-		Name: Valuable Minerals
-		ResourceType: 2
-		TerrainType: Gems
-		Palette: player
-		Sequences: gem01,gem02,gem03,gem04
-		MaxDensity: 66
-		ValuePerUnit: 50
-		AllowedTerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
-		AllowUnderActors: true
 	ResourceRenderer:
-		RenderTypes: Ore, Gems
+		ResourceTypes:
+			Ore:
+				Sequences: gold01, gold02, gold03, gold04
+				Palette: player
+				Name: Valuable Minerals
+			Gems:
+				Sequences: gem01, gem02, gem03, gem04
+				Palette: player
+				Name: Valuable Minerals
 
 World:
 	Inherits: ^BaseWorld
@@ -63,7 +50,14 @@ World:
 		WaterChance: 0
 		SpawnInterval: 3000
 		InitialSpawnDelay: 1500
-	DomainIndex:
+		RequiresCondition: creates_enabled
+	LobbySystemActorConditionCheckbox@crates:
+		ID: crates
+		Label: checkbox-crates.label
+		Description: checkbox-crates.description
+		Enabled: true
+		Actors: World, Player
+		Condition: creates_enabled
 	SmudgeLayer@SCORCH:
 		Type: Scorch
 		Sequence: scorches
@@ -89,6 +83,18 @@ World:
 		SmokeImage: smoke_m
 		SmokeSequences: idle
 	ResourceLayer:
+		RecalculateResourceDensity: true
+		ResourceTypes:
+			Ore:
+				ResourceIndex: 1
+				TerrainType: Ore
+				AllowedTerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
+				MaxDensity: 12
+			Gems:
+				ResourceIndex: 2
+				TerrainType: Gems
+				AllowedTerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
+				MaxDensity: 3
 	ResourceClaimLayer:
 	WarheadDebugOverlay:
 	SpawnMapActors:
@@ -102,21 +108,21 @@ World:
 		TechLevelDropdownLabel: Restrictions
 	ScriptLobbyDropdown@GPMODIFIER:
 		ID: gpmodifier
-		Label: GP Per Rank
+		Label: dropdown-gpmodifier.label
+		Description: dropdown-gpmodifier.description
 		Values:
-			disabled: 0, 0, 0, 0, 0
-			one: 1, 1, 1, 1, 1
-			normal: 1, 1, 1, 1, 3
-			two: 2, 2, 2, 2, 2
-			double: 2, 2, 2, 2, 6
-			three: 3, 3, 3, 3, 3
-			triple: 3, 3, 3, 3, 9
-			all: 5, 0, 15, 0, 5
+			disabled: options-gpmodifier.disabled
+			one: options-gpmodifier.one
+			normal: options-gpmodifier.normal
+			two: options-gpmodifier.two
+			double: options-gpmodifier.double
+			three: options-gpmodifier.three
+			triple: options-gpmodifier.triple
+			all: options-gpmodifier.all
 		Default: normal
-		Description: General's Points you get when you rank up, per rank.
 		DisplayOrder: 4
-	CreateMPPlayers:
-	MPStartLocations:
+	CreateMapPlayers:
+	MapStartingLocations:
 		SeparateTeamSpawnsCheckboxDisplayOrder: 6
 	PathFinder:
 	ValidateOrder:
@@ -138,27 +144,50 @@ World:
 			3: WarningThreeMinutesRemaining
 			2: WarningTwoMinutesRemaining
 			1: WarningOneMinuteRemaining
-	RadioactivityLayer@ANTHRAX_ALPHA:
+	ColorPickerManager:
+		PreviewActor: colorpicker.overlord_tank
+		PresetColors: DDE20D, FF0000, 4368FE, 3ED12E, FFA019, 32D7E6, 9600C8, FF96FF, 6E7106, 7F0000, 21347F, 1F6817, 7F500C, 166B73, 480064, 7F487F
+	OrderEffects:
+		TerrainFlashImage: moveflsh
+		TerrainFlashSequence: idle
+		TerrainFlashPalette: moveflash
+	TintedCellsLayer@ANTHRAX_ALPHA:
 		Name: anthrax_alpha
 		Color: 00FF00
-	RadioactivityLayer@ANTHRAX_BETA:
+	TintedCellsLayer@ANTHRAX_BETA:
 		Name: anthrax_beta
 		Color: 0000FF
-	RadioactivityLayer@ANTHRAX_GAMMA:
+	TintedCellsLayer@ANTHRAX_GAMMA:
 		Name: anthrax_gamma
 		Color: FF00FF
-	RadioactivityLayer@RADIOACTIVITY:
+	TintedCellsLayer@RADIOACTIVITY:
 		Name: radioactivity
 		Color: FF7F00
 	WeaponTriggerCells@Inferno:
 		Name: InfernoLayer
 		#ShowDebugOverlay: true
+	PathFinderOverlay:
+	HierarchicalPathFinderOverlay:
 
 EditorWorld:
 	Inherits: ^BaseWorld
 	EditorActorLayer:
 	EditorCursorLayer:
 	EditorResourceLayer:
+		RecalculateResourceDensity: true
+		ResourceTypes:
+			Ore:
+				ResourceIndex: 1
+				TerrainType: Ore
+				AllowedTerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
+				MaxDensity: 12
+			Gems:
+				ResourceIndex: 2
+				TerrainType: Gems
+				AllowedTerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
+				MaxDensity: 3
 	EditorSelectionLayer:
 	LoadWidgetAtGameStart:
 	EditorActionManager:
+	BuildableTerrainOverlay:
+		AllowedTerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad

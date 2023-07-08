@@ -1,6 +1,6 @@
 ﻿#region Copyright & License Information
 /*
- * Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
+ * Copyright (c) The OpenRA Developers and Contributors
  * This file is part of OpenRA, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -14,7 +14,7 @@ using System.Linq;
 using OpenRA.Mods.Common.Pathfinder;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.GenSDK.Activities;
-using OpenRA.Mods.Yupgi_alert.Orders;
+using OpenRA.Mods.GenSDK.Orders;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 
@@ -88,7 +88,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		bool idleSmart = true;
 		public bool Waiting = false;
 		public bool DeliveryAnimPlayed = false;
-		public HarvesterResourceMultiplier[] ResourceMultipliers;
+		public IResourceValueModifier[] ResourceMultipliers;
 
 		[Sync]
 		public Actor DeliveryBuilding = null;
@@ -103,13 +103,13 @@ namespace OpenRA.Mods.GenSDK.Traits
 			this.self = self;
 			Info = info;
 			mobile = self.TraitOrDefault<Mobile>();
-			ResourceMultipliers = self.TraitsImplementing<HarvesterResourceMultiplier>().ToArray();
 
 			Amount = 0;
 		}
 
 		void INotifyCreated.Created(Actor self)
 		{
+			ResourceMultipliers = self.TraitsImplementing<IResourceValueModifier>().ToArray();
 			if (Info.SearchOnCreation)
 				self.QueueActivity(new FindGoods(self, Color.Green));
 
@@ -163,10 +163,10 @@ namespace OpenRA.Mods.GenSDK.Traits
 			get
 			{
 				yield return new GenericTargeter<BuildingInfo>("Collect", 5,
-					a => IsEmpty && a.TraitOrDefault<SupplyDock>() != null && Info.SupplyTypes.Overlaps(a.Trait<SupplyDock>().Info.SupplyTypes) && !a.Trait<SupplyDock>().IsEmpty && (Info.CollectionRelationships.HasStance(self.Owner.RelationshipWith(a.Owner))),
+					a => IsEmpty && a.TraitOrDefault<SupplyDock>() != null && Info.SupplyTypes.Overlaps(a.Trait<SupplyDock>().Info.SupplyTypes) && !a.Trait<SupplyDock>().IsEmpty && (Info.CollectionRelationships.HasRelationship(self.Owner.RelationshipWith(a.Owner))),
 					a => "enter");
 				yield return new GenericTargeter<BuildingInfo>("Deliver", 5,
-					a => !IsEmpty && a.TraitOrDefault<SupplyCenter>() != null && Info.SupplyTypes.Overlaps(a.Trait<SupplyCenter>().Info.SupplyTypes) && (Info.DeliveryRelationships.HasStance(self.Owner.RelationshipWith(a.Owner))),
+					a => !IsEmpty && a.TraitOrDefault<SupplyCenter>() != null && Info.SupplyTypes.Overlaps(a.Trait<SupplyCenter>().Info.SupplyTypes) && (Info.DeliveryRelationships.HasRelationship(self.Owner.RelationshipWith(a.Owner))),
 					a => "enter");
 			}
 		}
@@ -264,103 +264,101 @@ namespace OpenRA.Mods.GenSDK.Traits
 			}
 		}
 
-		public Actor ClosestTradeBuilding(Actor self)
+		bool IsAcceptableTradeBuilding(Actor supplyDock)
 		{
-			// Find all docks
-			var docks = (
-				from a in self.World.ActorsWithTrait<SupplyDock>()
-				where (Info.SupplyTypes.Overlaps(a.Actor.Trait<SupplyDock>().Info.SupplyTypes)) && (!a.Actor.Trait<SupplyDock>().IsEmpty) && (Info.CollectionRelationships.HasStance(self.Owner.RelationshipWith(a.Actor.Owner)))
-				select new
+			return Info.CollectionRelationships.HasRelationship(self.Owner.RelationshipWith(supplyDock.Owner)) && Info.SupplyTypes.Overlaps(supplyDock.Trait<SupplyDock>().Info.SupplyTypes);
+		}
+
+		public Actor ClosestTradeBuilding(Actor self, Actor ignore)
+		{
+			// Find all supply docks and their occupancy count:
+			// Exclude supply docks with too many collectors clogging the delivery location.
+			var docks = self.World.ActorsWithTrait<SupplyDock>()
+				.Where(a => a.Actor != ignore && IsAcceptableTradeBuilding(a.Actor))
+				.Select(a => new
 				{
-					Location = a.Actor.Location,
+					Location = a.Actor.World.Map.CellContaining(a.Actor.CenterPosition),
 					Actor = a.Actor,
-					Occupancy = self.World.ActorsHavingTrait<SupplyCollector>(t => t.CollectionBuilding == a.Actor && (t.Info.IsAircraft == Info.IsAircraft || !t.CollectionBuilding.Trait<SupplyDock>().Info.AircraftCollectionOffsets.Any())).Count()
+					Trait = a.Trait,
+					Occupancy = self.World.ActorsHavingTrait<SupplyCollector>(c => c.CollectionBuilding == a.Actor && (c.Info.IsAircraft == Info.IsAircraft || !c.CollectionBuilding.Trait<SupplyDock>().Info.AircraftCollectionOffsets.Any())).Count()
 				})
+				.Where(a => a.Occupancy < (Info.IsAircraft ? a.Trait.Info.AircraftCollectionOffsets.Count() : a.Trait.Info.CollectionOffsets.Count()) * Info.CollectionQueueMultiplier)
 				.ToDictionary(a => a.Location);
 
 			if (mobile == null)
 			{
-				if (!docks.Any())
+				if (docks.Count == 0)
 					return null;
 
 				return docks.Values
-					.Where(r => r.Occupancy < r.Actor.Trait<SupplyDock>().Info.AircraftCollectionOffsets.Count())
-					.Select(r => r.Actor)
+					.Select(a => a.Actor)
 					.MinByOrDefault(a => (a.CenterPosition - self.CenterPosition).LengthSquared);
 			}
 
-			// Start a search from each supply center's delivery location:
-			List<CPos> path;
-			using (var search = PathSearch.FromPoints(self.World, mobile.Locomotor, self, docks.Values.Select(r => r.Location), self.Location, BlockedByActor.None)
-				.WithCustomCost(loc =>
-			{
-				if (!docks.ContainsKey(loc))
-					return 0;
+			// Start a search from each supply dock's collection location:
+			var path = mobile.PathFinder.FindPathToTargetCells(
+				self, self.Location, docks.Select(r => r.Key), BlockedByActor.None,
+				location =>
+				{
+					if (!docks.ContainsKey(location))
+						return 0;
 
-				var occupancy = docks[loc].Occupancy;
+					// Prefer supply dock with less occupancy (multiplier is to offset distance cost):
+					var occupancy = docks[location].Occupancy;
+					return occupancy * Info.CollectionQueueCostModifier;
+				});
 
-				// Too many collectors clogs up the supply center's delivery location:
-				var dockInfo = docks[loc].Actor.Trait<SupplyDock>().Info;
-				if (occupancy >= (Info.IsAircraft ? dockInfo.AircraftCollectionOffsets.Count() : dockInfo.CollectionOffsets.Count()) * Info.CollectionQueueMultiplier)
-					return int.MaxValue; // PathGraph.CostForInvalidCell;
-
-				// Prefer supply centers with less occupancy (multiplier is to offset distance cost):
-				return occupancy * Info.CollectionQueueCostModifier;
-				}))
-				path = self.World.WorldActor.Trait<IPathFinder>().FindPath(search);
-
-			if (path.Count != 0)
-				return docks[path.Last()].Actor;
+			if (path.Count > 0)
+				return docks[path[0]].Actor;
 
 			return null;
 		}
 
-		public Actor ClosestDeliveryBuilding(Actor self)
+		bool IsAcceptableDeliveryBuilding(Actor supplyCenter)
 		{
-			// Find all supply centers
-			var centers = (
-				from a in self.World.ActorsWithTrait<SupplyCenter>()
-				where (Info.SupplyTypes.Overlaps(a.Actor.Trait<SupplyCenter>().Info.SupplyTypes)) && (self.Owner == a.Actor.Owner)
-				select new
+			return Info.DeliveryRelationships.HasRelationship(self.Owner.RelationshipWith(supplyCenter.Owner)) && Info.SupplyTypes.Overlaps(supplyCenter.Trait<SupplyCenter>().Info.SupplyTypes);
+		}
+
+		public Actor ClosestDeliveryBuilding(Actor self, Actor ignore)
+		{
+			// Find all supply centers and their occupancy count:
+			// Exclude supply centers with too many collectors clogging the delivery location.
+			var centers = self.World.ActorsWithTrait<SupplyCenter>()
+				.Where(a => a.Actor != ignore && IsAcceptableDeliveryBuilding(a.Actor))
+				.Select(a => new
 				{
-					Location = a.Actor.Location,
+					Location = a.Actor.World.Map.CellContaining(a.Actor.CenterPosition),
 					Actor = a.Actor,
-					Occupancy = self.World.ActorsHavingTrait<SupplyCollector>(t => t.DeliveryBuilding == a.Actor).Count()
+					Occupancy = self.World.ActorsHavingTrait<SupplyCollector>(c => c.DeliveryBuilding == a.Actor).Count()
 				})
-				.ToDictionary(a => a.Location);
+				.Where(r => r.Occupancy < Info.MaxDeliveryQueue)
+				.ToDictionary(r => r.Location);
 
 			if (mobile == null)
 			{
-				if (!centers.Any())
+				if (centers.Count == 0)
 					return null;
 
 				return centers.Values
-					.Where(r => r.Occupancy < Info.MaxDeliveryQueue)
 					.Select(r => r.Actor)
 					.MinByOrDefault(a => (a.CenterPosition - self.CenterPosition).LengthSquared);
 			}
 
 			// Start a search from each supply center's delivery location:
-			List<CPos> path;
-			using (var search = PathSearch.FromPoints(self.World, mobile.Locomotor, self, centers.Values.Select(r => r.Location), self.Location, BlockedByActor.None)
-				.WithCustomCost(loc =>
+			var path = mobile.PathFinder.FindPathToTargetCells(
+				self, self.Location, centers.Select(r => r.Key), BlockedByActor.None,
+				location =>
 				{
-					if (!centers.ContainsKey(loc))
+					if (!centers.ContainsKey(location))
 						return 0;
 
-					var occupancy = centers[loc].Occupancy;
-
-					// Too many collectors clogs up the supply center's delivery location:
-					if (occupancy >= Info.MaxDeliveryQueue)
-						return int.MaxValue; // PathGraph.CostForInvalidCell;
-
-					// Prefer supply centers with less occupancy (multiplier is to offset distance cost):
+					// Prefer supply center with less occupancy (multiplier is to offset distance cost):
+					var occupancy = centers[location].Occupancy;
 					return occupancy * Info.DeliveryQueueCostModifier;
-				}))
-				path = self.World.WorldActor.Trait<IPathFinder>().FindPath(search);
+				});
 
-			if (path.Count != 0)
-				return centers[path.Last()].Actor;
+			if (path.Count > 0)
+				return centers[path[0]].Actor;
 
 			return null;
 		}
