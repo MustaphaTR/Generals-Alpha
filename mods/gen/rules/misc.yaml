@@ -556,6 +556,12 @@ hack.particle_beam:
 		RemoveInstead: true
 		Delay: 250
 
+hack.queue_updater:
+	AlwaysVisible:
+	ProvidesPrerequisite:
+	KillsSelf:
+		RemoveInstead: true
+
 RAILMINE:
 	Inherits@1: ^SpriteActor
 	Interactable:

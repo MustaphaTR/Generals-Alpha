@@ -1127,10 +1127,11 @@
 ^CanHaveCamoNetting:
 	Production:
 		Produces: queue.camo_netting
-		RequiresCondition: !camo_netted && zh_units
+		RequiresCondition: zh_units
 	ProductionQueue@CAMO_NETTING:
 		Type: queue.camo_netting
 		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank, boss
+		AlwaysShowForFactions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank, boss
 		Group: Tech
 		ItemLimit: 1
 		InstantCashDrain: true
@@ -1140,6 +1141,11 @@
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
+	ConditionPrerequisite@CAMO_NETTING:
+		Queue: queue.camo_netting, queue.stealth_gen_command_center, queue.stealth_gen_infantry, queue.stealth_gen_collector, queue.stealth_gen_vehicle, queue.stealth_gen_palace, queue.stealth_gen_black_market
+		Actor: upgrade.camo_netting
+		PauseOnCondition: camo_netted
+		RequiresCondition: zh_units
 	ConditionIconOverlay@CAMO_NETTING:
 		Image: iconstripes
 		Sequence: upgraded
@@ -1154,24 +1160,38 @@
 		RequiresCondition: camo_netted && !emp && !hacked
 	ProvidesPrerequisite@buildingname:
 
+^CanHaveCamoNettingFreeForStealthGen:
+	Inherits@CAMO: ^CanHaveCamoNetting
+	ProductionQueue@CAMO_NETTING:
+		Type: queue.camo_netting
+		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank, boss
+		AlwaysShowForFactions: usa, air, laser, super, gla, prc, inf, nuke, tank, boss
+	GrantConditionOnFaction@CAMO_NETTING:
+		Condition: camo_netted
+		Factions: stealth
+
 ^CanHaveCamoNettingStealthGenOnly:
 	Inherits@CAMO: ^CanHaveCamoNetting
 	ProductionQueue@CAMO_NETTING:
 		Factions: stealth
 		LowPowerModifier: 300
-	ConditionPrerequisite@CAMO_NETTING:
-		Queue: queue.stealth_gen_command_center, queue.stealth_gen_infantry, queue.stealth_gen_collector, queue.stealth_gen_vehicle, queue.stealth_gen_palace, queue.stealth_gen_black_market
-		Actor: upgrade.camo_netting
-		PauseOnCondition: camo_netted
-		RequiresCondition: zh_units
+    # Without this other actors in the queue appear unbuildable until something else updates the queue.
+    # Not sure why only Camo Netting has this issue, Mines work fine.
+	FreeActor@queue_updater:
+		Actor: hack.queue_updater
+		RequiresCondition: update_queue
+	GrantConditionAfterDelay@queue_updater:
+		Delay: 1
+		Condition: update_queue
+		ShowSelectionBar: false
 
 ^CanHaveMines:
 	Production:
 		Produces: queue.just_mine
-		RequiresCondition: (!land_mines && !zh_units) || (!neutron_mines && zh_units)
 	ProductionQueue@JUST_MINE:
 		Type: queue.just_mine
 		Group: Tech
+		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		ItemLimit: 1
 		InstantCashDrain: true
 		LowPowerModifier: 200

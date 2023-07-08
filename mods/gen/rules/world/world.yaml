@@ -35,6 +35,9 @@ World:
 		Scripts: generals_powers.lua
 	ChatCommands:
 	DevCommands:
+	DebugVisualizationCommands:
+	PathFinderOverlay:
+	HierarchicalPathFinderOverlay:
 	PlayerCommands:
 	HelpCommand:
 	ScreenShaker:
@@ -166,8 +169,6 @@ World:
 	WeaponTriggerCells@Inferno:
 		Name: InfernoLayer
 		#ShowDebugOverlay: true
-	PathFinderOverlay:
-	HierarchicalPathFinderOverlay:
 
 EditorWorld:
 	Inherits: ^BaseWorld

@@ -499,7 +499,6 @@ building.prc_command_center:
 	Production:
 		Produces: queue.prc_command_center
 		PauseOnCondition: emp || hacked || sabotaged
-		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
 	ProductionQueue@PRC_COMMAND_CENTER:
 		Type: queue.prc_command_center
@@ -901,10 +900,10 @@ building.cold_fusion_reactor:
 	Production:
 		Produces: queue.cold_fusion_reactor
 		PauseOnCondition: emp || hacked || sabotaged
-		RequiresCondition: !control_rods
 	ProductionQueue:
 		Type: queue.cold_fusion_reactor
 		Group: Tech
+		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		InstantCashDrain: true
 		ItemLimit: 1
 		LowPowerModifier: 200
@@ -967,7 +966,6 @@ building.cold_fusion_reactor.boss:
 		Queue: queue.boss_gen_building
 	Production:
 		Produces: queue.boss_gen_cold_fusion_reactor
-		RequiresCondition: ((!control_rods || !land_mines) && !zh_units) || ((!control_rods || !neutron_mines) && zh_units)
 	-ProductionQueue@JUST_MINE:
 	ProductionQueue:
 		Type: queue.boss_gen_cold_fusion_reactor
@@ -1201,7 +1199,6 @@ building.prc_barracks:
 	Production:
 		Produces: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
 		PauseOnCondition: emp || hacked || sabotaged
-		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
 	ProductionQueue@Vanilla:
 		Type: queue.prc_infantry
@@ -1500,8 +1497,7 @@ building.prc_supply_center:
 	SelectionDecorations:
 	Production:
 		Produces: queue.prc_collector
-		PauseOnCondition: emp || hacked
-		-RequiresCondition:
+		PauseOnCondition: emp || hacke
 	-ProductionQueue@JUST_MINE:
 	ProductionQueue:
 		Type: queue.prc_collector
@@ -2304,7 +2300,6 @@ building.prc_war_factory:
 	Production:
 		Produces: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle
 		PauseOnCondition: emp || hacked || sabotaged
-		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
 	ProductionQueue@Vanilla:
 		Type: queue.prc_vehicle
@@ -2411,7 +2406,7 @@ building.prc_war_factory:
 building.tunnel_network:
 	Inherits: ^default.tunnel_network
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@CAMO: ^CanHaveCamoNetting
+	Inherits@CAMO: ^CanHaveCamoNettingFreeForStealthGen
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Buildable:
 		Queue: queue.gla_building, queue.demo_gen_building
@@ -2443,9 +2438,6 @@ building.tunnel_network:
 	Exit:
 	ProductionBar:
 		ProductionType: queue.camo_netting
-	GrantConditionOnFaction@CAMO_NETTING:
-		Condition: camo_netted
-		Factions: stealth
 	Targetable:
 		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Disable, BunkerBustable
 	SpawnActorOnDeath:
@@ -2528,7 +2520,7 @@ building.stinger_site:
 	Inherits: ^Defense
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetAll
-	Inherits@CAMO: ^CanHaveCamoNetting
+	Inherits@CAMO: ^CanHaveCamoNettingFreeForStealthGen
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@LEAFLET: ^AffectedByLeaflet
 	Inherits@REVEAL: ^Reveal400
@@ -2577,9 +2569,6 @@ building.stinger_site:
 		QuantizedFacings: 8
 	Power:
 		Amount: 0
-	GrantConditionOnFaction@CAMO_NETTING:
-		Condition: camo_netted
-		Factions: stealth
 	ProximityExternalCondition@Cloak:
 		Condition: stinger_cloak
 		Range: 1c0
@@ -2766,7 +2755,6 @@ building.prc_airfield:
 	Production:
 		Produces: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft
 		PauseOnCondition: emp || hacked || sabotaged
-		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
 	ProductionQueue@Vanilla:
 		Type: queue.prc_aircraft
@@ -2892,11 +2880,11 @@ building.internet_center:
 	Production:
 		Produces: queue.internet_center, SatelliteHack2
 		PauseOnCondition: emp || hacked
-		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
 	ProductionQueue:
 		Type: queue.internet_center
 		Group: Tech
+		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		QueuedAudio: Training
 		InstantCashDrain: true
 		LowPowerModifier: 200
@@ -2980,6 +2968,7 @@ building.strategy_center:
 	ProductionQueue@Vanilla:
 		Type: queue.strategy_center
 		Factions: usa, laser, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
+		AlwaysShowForFactions: usa, laser, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -2988,6 +2977,7 @@ building.strategy_center:
 	ProductionQueue@Airforce:
 		Type: queue.air_gen_strategy_center
 		Factions: air, super
+		AlwaysShowForFactions: air, super
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3156,6 +3146,7 @@ building.palace:
 	ProductionQueue@Vanilla:
 		Type: queue.palace
 		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank, boss
+		AlwaysShowForFactions: usa, air, laser, super, gla, prc, inf, nuke, tank, boss
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3163,6 +3154,7 @@ building.palace:
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_palace
 		Factions: toxin
+		AlwaysShowForFactions: toxin
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3170,6 +3162,7 @@ building.palace:
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_palace
 		Factions: demo
+		AlwaysShowForFactions: demo
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3177,6 +3170,7 @@ building.palace:
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_palace
 		Factions: stealth
+		AlwaysShowForFactions: stealth
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3237,11 +3231,11 @@ building.propaganda_center:
 	Production:
 		Produces: queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center
 		PauseOnCondition: emp || hacked
-		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
 	ProductionQueue@Vanilla:
 		Type: queue.propaganda_center
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, boss
+		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, boss
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3250,6 +3244,7 @@ building.propaganda_center:
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_propaganda_center
 		Factions: inf
+		AlwaysShowForFactions: inf
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3258,6 +3253,7 @@ building.propaganda_center:
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_propaganda_center
 		Factions: nuke
+		AlwaysShowForFactions: nuke
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3266,6 +3262,7 @@ building.propaganda_center:
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_propaganda_center
 		Factions: tank
+		AlwaysShowForFactions: tank
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3440,6 +3437,7 @@ building.black_market:
 	ProductionQueue@Vanilla:
 		Type: queue.black_market
 		Factions: usa, air, laser, super, gla, toxin, demo, prc, inf, nuke, tank, boss
+		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, prc, inf, nuke, tank, boss
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3447,6 +3445,7 @@ building.black_market:
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_black_market
 		Factions: stealth
+		AlwaysShowForFactions: stealth
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3640,11 +3639,11 @@ building.particle_cannon.boss:
 	Production:
 		Produces: queue.boss_gen_particle_cannon
 		PauseOnCondition: emp || hacked || sabotaged
-		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_particle_cannon
 		Factions: boss
+		AlwaysShowForFactions: boss
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3901,12 +3900,12 @@ building.scud_storm.boss:
 	Production:
 		Produces: queue.boss_gen_scud_storm
 		PauseOnCondition: emp || hacked || sabotaged
-		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
 	-ProductionQueue@CAMO_NETTING:
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_scud_storm
 		Factions: boss
+		AlwaysShowForFactions: boss
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3952,11 +3951,11 @@ building.missile_silo:
 	Production:
 		Produces: queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo
 		PauseOnCondition: emp || hacked || sabotaged
-		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
 	ProductionQueue@Vanilla:
 		Type: queue.missile_silo
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, tank
+		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, tank
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3965,6 +3964,7 @@ building.missile_silo:
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_missile_silo
 		Factions: inf
+		AlwaysShowForFactions: inf
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3973,6 +3973,7 @@ building.missile_silo:
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_missile_silo
 		Factions: nuke
+		AlwaysShowForFactions: nuke
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3981,6 +3982,7 @@ building.missile_silo:
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_missile_silo
 		Factions: boss
+		AlwaysShowForFactions: boss
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
