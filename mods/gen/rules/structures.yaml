@@ -2482,6 +2482,8 @@ building.toxin_tunnel_network:
 		Actor: hole.toxin_tunnel_network
 	RenderSprites:
 		Image: building.toxin_tunnel_network
+	ActorStatValues:
+		Upgrades: upgrade.anthrax_gamma
 
 building.toxin_tunnel_network.no_free_actor:
 	Inherits: building.toxin_tunnel_network
@@ -2518,7 +2520,7 @@ building.tunnel_network.sneak_attack:
 
 building.stinger_site:
 	Inherits: ^Defense
-	Inherits@AP_BULLETS: ^AffectedByAPBullets
+	Inherits@AP_ROCKETS: ^AffectedByAPRockets
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@CAMO: ^CanHaveCamoNettingFreeForStealthGen
 	Inherits@DEMOLITION: ^AffectedByDemolitions
@@ -3531,6 +3533,8 @@ building.speaker_tower:
 		Image: building.speaker_tower
 	Voiced:
 		VoiceSet: SpeakerTowerVoice
+	ActorStatValues:
+		Upgrades: upgrade.subliminal_messaging
 
 building.speaker_tower.boss:
 	Inherits: building.speaker_tower
@@ -3889,6 +3893,8 @@ building.scud_storm:
 	ReloadAmmoPool:
 		Delay: 100
 		Count: 4
+	ActorStatValues:
+		Upgrades: upgrade.anthrax_beta, upgrade.anthrax_gamma
 
 building.scud_storm.boss:
 	Inherits: building.scud_storm
@@ -3912,6 +3918,8 @@ building.scud_storm.boss:
 		DisplayOrder: 65
 	ProductionBar:
 		ProductionType: queue.boss_gen_scud_storm
+	ActorStatValues:
+		-Upgrades:
 
 building.missile_silo:
 	Inherits: ^Building

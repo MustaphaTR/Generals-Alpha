@@ -139,6 +139,8 @@ infantry.worker:
 		Prerequisites: upgrade.capture_building
 	CaptureManager:
 		CapturingCondition: capturing
+	ActorStatValues:
+		Upgrades: upgrade.capture_building
 
 infantry.ranger:
 	Inherits: ^default.mg_infantry
@@ -178,6 +180,8 @@ infantry.ranger:
 		Prerequisites: upgrade.flashbang_grenades
 	Voiced:
 		VoiceSet: RangerVoice
+	ActorStatValues:
+		Upgrades: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.adv_training, upgrade.chemical_suits
 
 infantry.rebel:
 	Inherits: ^default.mg_infantry
@@ -232,6 +236,8 @@ infantry.rebel:
 		VoiceSet: RebelVoice
 	RenderSprites:
 		Image: infantry.rebel
+	ActorStatValues:
+		Upgrades: upgrade.capture_building, upgrade.camouflage, upgrade.ap_bullets
 
 infantry.toxin_rebel:
 	Inherits: ^default.mg_infantry
@@ -350,6 +356,8 @@ infantry.toxin_rebel:
 		VoiceSet: ToxinRebelVoice
 	CaptureManager:
 		CapturingCondition: capturing
+	ActorStatValues:
+		Upgrades: upgrade.anthrax_gamma
 
 infantry.red_guard:
 	Inherits: ^default.mg_infantry
@@ -409,6 +417,8 @@ infantry.red_guard:
 	WithProductionIconOverlay:
 		Types: Veterancy
 		Prerequisites: generals_power.red_training
+	ActorStatValues:
+		Upgrades: upgrade.capture_building, upgrade.nationalism
 
 infantry.minigunner:
 	Inherits: ^default.mg_infantry
@@ -484,6 +494,8 @@ infantry.minigunner:
 	WithProductionIconOverlay@Training:
 		Types: Veterancy-Elite
 		Prerequisites: generals_power.minigunner_training
+	ActorStatValues:
+		Upgrades: upgrade.capture_building, upgrade.patriotism
 
 infantry.conscript:
 	Inherits: ^default.mg_infantry
@@ -611,6 +623,8 @@ infantry.missile_defender:
 		OutsideRangeCursor: ability
 	Voiced:
 		VoiceSet: MissileDefenderVoice
+	ActorStatValues:
+		Upgrades: upgrade.adv_training, upgrade.chemical_suits
 
 infantry.rpg_trooper:
 	Inherits: ^default.rocket_infantry
@@ -633,6 +647,8 @@ infantry.rpg_trooper:
 		CargoType: GLAInfantry
 	Voiced:
 		VoiceSet: RPGTrooperVoice
+	ActorStatValues:
+		Upgrades: upgrade.ap_rockets
 
 infantry.stinger_soldier:
 	Inherits: ^default.rocket_infantry
@@ -675,6 +691,7 @@ infantry.stinger_soldier:
 	MobSpawnerSlave:
 	RenderSprites:
 		Image: infantry.stinger_soldier
+	-ActorStatValues:
 
 infantry.tank_hunter:
 	Inherits: ^default.rocket_infantry
@@ -721,6 +738,8 @@ infantry.tank_hunter:
 		Prerequisites: prerequisite.inf_gen_player
 	Voiced:
 		VoiceSet: TankHunterVoice
+	ActorStatValues:
+		Upgrades: upgrade.nationalism
 
 infantry.grenadier:
 	Inherits: ^default.rocket_infantry
@@ -828,6 +847,8 @@ infantry.pathfinder:
 		VoiceSet: PathfinderVoice
 	RenderSprites:
 		Image: infantry.pathfinder
+	ActorStatValues:
+		Upgrades: upgrade.adv_training, upgrade.chemical_suits
 
 infantry.pathfinder.boss:
 	Inherits: infantry.pathfinder
@@ -939,6 +960,8 @@ infantry.toxin_terrorist:
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
+	ActorStatValues:
+		Upgrades: upgrade.anthrax_gamma
 
 infantry.flamethrower:
 	Inherits: ^Soldier
@@ -1087,6 +1110,7 @@ infantry.saboteur:
 		Class: angry_mob
 	Voiced:
 		VoiceSet: AngryMobVoice
+	-ActorStatValues:
 
 hack.angry_mob.male:
 	Inherits: ^default.angry_mob
@@ -1204,6 +1228,8 @@ infantry.angry_mob:
 		Modifier: 0
 	RenderSprites:
 		Image: infantry.angry_mob
+	ActorStatValues:
+		Upgrades: upgrade.arm_the_mob, upgrade.ap_bullets
 
 infantry.angry_mob.boss:
 	Inherits: infantry.angry_mob
@@ -1607,6 +1633,8 @@ infantry.colonel_burton:
 		Image: infantry.colonel_burton
 	Voiced:
 		VoiceSet: BurtonVoice
+	ActorStatValues:
+		Upgrades: upgrade.adv_training, upgrade.chemical_suits
 
 infantry.colonel_burton.boss:
 	Inherits: infantry.colonel_burton
@@ -1716,6 +1744,8 @@ infantry.jarmen_kell:
 		Position: BottomLeft
 		Margin: 4, 3
 		RequiresSelection: true
+	ActorStatValues:
+		Upgrades: upgrade.ap_bullets
 
 infantry.jarmen_kell.demo:
 	Inherits: infantry.jarmen_kell
@@ -1733,6 +1763,8 @@ infantry.jarmen_kell.demo:
 		FacingTolerance: 0
 	Voiced:
 		VoiceSet: DemoJarmenVoice
+	ActorStatValues:
+		Upgrades: upgrade.ap_bullets, upgrade.demolitions
 
 infantry.jarmen_kell.boss:
 	Inherits: infantry.jarmen_kell

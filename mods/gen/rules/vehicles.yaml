@@ -210,6 +210,8 @@ vehicle.humvee:
 		Image: vehicle.humvee
 	Voiced:
 		VoiceSet: HumveeVoice
+	ActorStatValues:
+		Upgrades: upgrade.tow_missile, upgrade.adv_traning
 
 vehicle.technical:
 	Inherits: ^Vehicle
@@ -345,6 +347,8 @@ vehicle.technical:
 		Image: vehicle.technical
 	Voiced:
 		VoiceSet: TechnicalVoice
+	ActorStatValues:
+		Upgrades: upgrade.ap_bullets, upgrade.junk_repair
 
 vehicle.technical.demo_reinforce:
 	Inherits: vehicle.technical
@@ -451,6 +455,8 @@ vehicle.radar_van:
 	-MustBeDestroyed:
 	Voiced:
 		VoiceSet: RadarVanVoice
+	ActorStatValues:
+		Upgrades: upgrade.radar_van_scan, upgrade.junk_repair
 
 vehicle.scorpion_tank:
 	Inherits: ^Tank
@@ -627,6 +633,8 @@ vehicle.scorpion_tank:
 		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: ScorpionTankVoice
+	ActorStatValues:
+		Upgrades: upgrade.sc_rocket, upgrade.toxin_shells, upgrade.ap_rockets, upgrade.junk_repair
 
 vehicle.crusader_tank:
 	Inherits: ^Tank
@@ -707,6 +715,8 @@ vehicle.crusader_tank:
 		VoiceSet: CrusaderTankVoice
 	Selectable:
 		DecorationBounds: 1194, 1194
+	ActorStatValues:
+		Upgrades: upgrade.adv_traning, upgrade.composite_armor
 
 vehicle.laser_tank:
 	Inherits: vehicle.crusader_tank
@@ -839,6 +849,8 @@ vehicle.battlemaster_tank:
 	WithProductionIconOverlay@Training:
 		Types: Veterancy-Elite
 		Prerequisites: generals_power.battlemaster_training
+	ActorStatValues:
+		Upgrades: upgrade.nationalism, upgrade.autoloader, upgrade.nuclear_tanks, upgrade.uranium_shells
 
 vehicle.nuclear_battlemaster_tank:
 	Inherits: vehicle.battlemaster_tank
@@ -850,6 +862,8 @@ vehicle.nuclear_battlemaster_tank:
 		Weapon: cannon.battlemaster_tank.nuke
 	Armament@AUTOLOADER:
 		Weapon: cannon.battlemaster_tank.nuke.autoloader
+	ActorStatValues:
+		Upgrades: upgrade.nationalism, upgrade.isotope_stability
 
 vehicle.ambulance:
 	Inherits: ^Vehicle
@@ -1027,6 +1041,8 @@ vehicle.sentry_drone:
 		Image: vehicle.sentry_drone
 	Voiced:
 		VoiceSet: SentryDroneVoice
+	ActorStatValues:
+		Upgrades: upgrade.sentry_gun, upgrade.drone_armor
 
 vehicle.quad_cannon:
 	Inherits: ^Tank
@@ -1137,6 +1153,8 @@ vehicle.quad_cannon:
 		Image: vehicle.quad_cannon
 	Voiced:
 		VoiceSet: QuadCannonVoice
+	ActorStatValues:
+		Upgrades: upgrade.ap_bullets, upgrade.junk_repair
 
 vehicle.gatling_tank:
 	Inherits: ^Tank
@@ -1392,6 +1410,8 @@ vehicle.toxin_tractor:
 		TargetTypes: GroundActor, Vehicle, Vehicle-Disguise, DetonateAttack, ImmueToToxin, NoDriverKill, NoAutoTarget
 	Voiced:
 		VoiceSet: ToxinTractorVoice
+	ActorStatValues:
+		Upgrades: upgrade.anthrax_beta, upgrade.anthrax_gamma, upgrade.junk_repair
 
 vehicle.dragon_tank:
 	Inherits: ^Tank
@@ -1490,6 +1510,8 @@ vehicle.dragon_tank:
 		Prerequisites: prerequisite.tank_gen_player
 	Voiced:
 		VoiceSet: DragonTankVoice
+	ActorStatValues:
+		Upgrades: upgrade.black_napalm
 
 vehicle.rocket_buggy:
 	Inherits: ^Vehicle
@@ -1623,6 +1645,8 @@ vehicle.rocket_buggy:
 		VoiceSet: RocketBuggyVoice
 	RenderSprites:
 		Image: vehicle.rocket_buggy
+	ActorStatValues:
+		Upgrades: upgrade.ap_rockets, upgrade.junk_repair, upgrade.buggy_ammo
 
 vehicle.rocket_buggy.boss:
 	Inherits: vehicle.rocket_buggy
@@ -1630,6 +1654,8 @@ vehicle.rocket_buggy.boss:
 		Queue: queue.boss_gen_vehicle
 		BuildPaletteOrder: 6
 		Prerequisites: !techlevel.notech
+	ActorStatValues:
+		Upgrades: upgrade.ap_rockets, upgrade.buggy_ammo
 
 vehicle.avenger:
 	Inherits: ^Vehicle
@@ -1939,6 +1965,8 @@ vehicle.assault_troop_crawler:
 		Color: DD000066
 	Voiced:
 		VoiceSet: AssaultTroopCrawlerVoice
+	ActorStatValues:
+		Upgrades: upgrade.subliminal_messaging
 
 vehicle.listening_outpost:
 	Inherits: ^Tank
@@ -2047,6 +2075,8 @@ vehicle.attack_outpost:
 		Type: speaker
 		Range: 4c0
 		Color: DD000066
+	ActorStatValues:
+		Upgrades: upgrade.subliminal_messaging
 
 vehicle.microwave_tank:
 	Inherits: ^Tank
@@ -2145,6 +2175,8 @@ vehicle.microwave_tank:
 		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: MicrowaveTankVoice
+	ActorStatValues:
+		Upgrades: upgrade.adv_traning, upgrade.composite_armor
 
 vehicle.ecm_tank:
 	Inherits: ^Tank
@@ -2530,6 +2562,8 @@ vehicle.scud_launcher:
 		VoiceSet: SCUDLauncherVoice
 	Selectable:
 		DecorationBounds: 1194, 1194
+	ActorStatValues:
+		Upgrades: upgrade.anthrax_beta, upgrade.anthrax_gamma, upgrade.junk_repair
 
 vehicle.inferno_cannon:
 	Inherits: ^Tank
@@ -2624,6 +2658,8 @@ vehicle.inferno_cannon:
 		Image: vehicle.inferno_cannon
 	Voiced:
 		VoiceSet: InfernoCannonVoice
+	ActorStatValues:
+		Upgrades: upgrade.black_napalm
 
 vehicle.paladin_tank:
 	Inherits: ^Tank
@@ -2721,6 +2757,8 @@ vehicle.paladin_tank:
 		DecorationBounds: 1194, 1194, 0, -170
 	RenderSprites:
 		Image: vehicle.paladin_tank
+	ActorStatValues:
+		Upgrades: upgrade.adv_traning, upgrade.composite_armor
 
 vehicle.paladin_tank.boss:
 	Inherits: vehicle.paladin_tank
@@ -3007,6 +3045,8 @@ vehicle.marauder_tank:
 		RequiresCondition: scrap_create_bonus == 2
 	Voiced:
 		VoiceSet: MarauderTankVoice
+	ActorStatValues:
+		Upgrades: upgrade.toxin_shells, upgrade.junk_repair
 
 vehicle.overlord_tank:
 	Inherits: ^Tank
@@ -3237,6 +3277,8 @@ vehicle.overlord_tank:
 	Selectable:
 		Class: vehicle.overlord_tank
 		DecorationBounds: 1877, 1621, 0, -170
+	ActorStatValues:
+		Upgrades: upgrade.isotope_stability, upgrade.nuclear_tanks, upgrade.uranium_shells
 
 vehicle.overlord_tank.boss:
 	Inherits: vehicle.overlord_tank
@@ -3246,6 +3288,8 @@ vehicle.overlord_tank.boss:
 		Prerequisites: !techlevel.notech
 	RenderSprites:
 		Image: vehicle.overlord_tank
+	ActorStatValues:
+		Upgrades: upgrade.nuclear_tanks, upgrade.uranium_shells
 
 vehicle.emparor_overlord:
 	Inherits: vehicle.overlord_tank
@@ -3280,6 +3324,8 @@ vehicle.emparor_overlord:
 		Class: vehicle.emparor_overlord
 	Voiced:
 		VoiceSet: EmparorOverlordVoice
+	ActorStatValues:
+		Upgrades: upgrade.subliminal_messaging, upgrade.nuclear_tanks, upgrade.uranium_shells
 
 vehicle.bomb_truck:
 	Inherits: ^Vehicle
@@ -3485,6 +3531,8 @@ vehicle.bomb_truck:
 	Selectable:
 		Class: vehicle.bomb_truck
 		DecorationBounds: 1792, 1792
+	ActorStatValues:
+		Upgrades: upgrade.anthrax_beta, upgrade.anthrax_gamma, upgrade.junk_repair
 
 vehicle.nuke_cannon:
 	Inherits: ^Tank
@@ -3630,6 +3678,8 @@ vehicle.nuke_cannon:
 		Image: vehicle.nuke_cannon
 	Voiced:
 		VoiceSet: NukeCannonVoice
+	ActorStatValues:
+		Upgrades: upgrade.neutron_shells
 
 vehicle.nuke_cannon.nuke:
 	Inherits: vehicle.nuke_cannon

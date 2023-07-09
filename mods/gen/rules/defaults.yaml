@@ -123,6 +123,18 @@
 		Margin: 5, 6
 		ValidRelationships: Ally, Enemy, Neutral
 		RequiresCondition: rank-elite
+	WithStatIconOverlay@RANK-1:
+		Image: iconchevrons
+		Sequence: veteran
+		RequiresCondition: rank-veteran >= 1
+	WithStatIconOverlay@RANK-2:
+		Image: iconchevrons
+		Sequence: elite
+		RequiresCondition: rank-veteran >= 2
+	WithStatIconOverlay@RANK-ELITE:
+		Image: iconchevrons
+		Sequence: heroic
+		RequiresCondition: rank-elite
 
 ^IronCurtainable:
 	WithColoredOverlay@IRONCURTAIN:
@@ -259,6 +271,8 @@
 		Range: 1c512
 
 ^AffectedByAdvancedTraining:
+	ActorStatValues:
+		Upgrades: upgrade.adv_training
 	GainsExperienceMultiplier@ADV_TRAINING:
 		RequiresCondition: adv_training
 		Modifier: 200
@@ -381,6 +395,8 @@
 		Condition: gps_scrambler
 
 ^AffectedByJunkRepair:
+	ActorStatValues:
+		Upgrades: upgrade.junk_repair
 	ChangesHealth@JUNK_REPAIR:
 		Step: 200
 		Delay: 25
@@ -403,6 +419,8 @@
 		Prerequisites: tech.repair_bay
 
 ^AffectedByFortifiedStructures:
+	ActorStatValues:
+		Upgrades: upgrade.fortified_structures
 	DamageMultiplier@FORTIFY:
 		RequiresCondition: fortified_structures
 		Modifier: 75
@@ -411,6 +429,8 @@
 		Prerequisites: upgrade.fortified_structures
 
 ^AffectedByDemolitions:
+	ActorStatValues:
+		Upgrades: upgrade.demolitions
 	Explodes@Demo:
 		Weapon: explosion.suicide
 		EmptyWeapon: explosion.suicide
@@ -423,6 +443,8 @@
 		Prerequisites: upgrade.demolitions
 
 ^AffectedByChainGun:
+	ActorStatValues:
+		Upgrades: upgrade.chain_gun
 	FirepowerMultiplier@CHAIN_GUN:
 		RequiresCondition: chain_gun
 		Modifier: 125
@@ -431,6 +453,8 @@
 		Prerequisites: upgrade.chain_gun
 
 ^AffectedByWorkerShoes:
+	ActorStatValues:
+		Upgrades: upgrade.worker_shoes
 	SpeedMultiplier@WORKER_SHOES:
 		RequiresCondition: worker_shoes
 		Modifier: 110
@@ -442,6 +466,8 @@
 		Prerequisites: upgrade.worker_shoes
 
 ^AffectedBySupplyLines:
+	ActorStatValues:
+		Upgrades: upgrade.supply_lines
 	CashTricklerMultiplier@SUPPLY_LINES:
 		RequiresCondition: supply_lines
 		Modifier: 110
@@ -450,6 +476,8 @@
 		Prerequisites: upgrade.supply_lines
 
 ^AffectedBySupplyLinesChinook:
+	ActorStatValues:
+		Upgrades: upgrade.supply_lines
 	ResourceValueMultiplier@SUPPLY_LINES:
 		RequiresCondition: supply_lines
 		Modifier: 110
@@ -458,6 +486,8 @@
 		Prerequisites: upgrade.supply_lines
 
 ^AffectedByNuclearTanks:
+	ActorStatValues:
+		Upgrades: upgrade.nuclear_tanks, upgrade.isotope_stability
 	SpeedMultiplier@NUCLEAR_TANKS:
 		RequiresCondition: nuclear_tanks && !nuke
 		Modifier: 140
@@ -483,6 +513,8 @@
 		RequiresCondition: nuke && !isotope_stability
 
 ^AffectedByUraniumShells:
+	ActorStatValues:
+		Upgrades: upgrade.uranium_shells
 	FirepowerMultiplier@URANIUM_SHELLS:
 		RequiresCondition: uranium_shells
 		Modifier: 125
@@ -494,6 +526,8 @@
 		Factions: nuke
 
 ^AffectedByLaserGuidedMissiles:
+	ActorStatValues:
+		Upgrades: upgrade.laser_guided_missiles
 	FirepowerMultiplier@LASER_GUIDED_MISSILES:
 		RequiresCondition: laser_guided_missiles
 		Modifier: 125
@@ -502,6 +536,8 @@
 		Prerequisites: upgrade.laser_guided_missiles
 
 ^AffectedByAPBullets:
+	ActorStatValues:
+		Upgrades: upgrade.ap_bullets
 	FirepowerMultiplier@AP_BULLETS:
 		RequiresCondition: ap_bullets
 		Modifier: 125
@@ -510,6 +546,8 @@
 		Prerequisites: upgrade.ap_bullets
 
 ^AffectedByAPRockets:
+	ActorStatValues:
+		Upgrades: upgrade.ap_rockets
 	FirepowerMultiplier@AP_ROCKETS:
 		RequiresCondition: ap_rockets
 		Modifier: 125
@@ -518,6 +556,8 @@
 		Prerequisites: upgrade.ap_rockets
 
 ^AffectedByDroneArmor:
+	ActorStatValues:
+		Upgrades: upgrade.drone_armor
 	DamageMultiplier@DRONE_ARMOR:
 		RequiresCondition: drone_armor
 		Modifier: 80
@@ -526,6 +566,8 @@
 		Prerequisites: upgrade.drone_armor
 
 ^AffectedByChemicalSuits:
+	ActorStatValues:
+		Upgrades: upgrade.chemical_suits
 	Armor@CHEMICAL_SUITS:
 		Type: infantry.chem_suit
 		RequiresCondition: chemical_suits
@@ -567,6 +609,8 @@
 
 ^AffectedByChemicalSuitsBossOnly:
 	Inherits: ^AffectedByChemicalSuits
+	ActorStatValues:
+		-Upgrades:
 	Armor@CHEMICAL_SUITS:
 		RequiresCondition: chemical_suits || !boss
 	DamagedByTintedCells@ANTHRAX_ALPHA:
@@ -1353,6 +1397,7 @@
 	MapEditorData:
 		Categories: Vehicle
 	CaptureManager:
+	ActorStatValues:
 
 ^Tank:
 	Inherits: ^Vehicle
@@ -1475,6 +1520,7 @@
 	Voiced:
 		VoiceSet: CarVoice
 	CaptureManager:
+	ActorStatValues:
 
 ^Infantry:
 	Inherits@1: ^ExistsInWorld
@@ -1583,6 +1629,7 @@
 			Radius: 128
 	MapEditorData:
 		Categories: Infantry
+	ActorStatValues:
 
 ^Soldier:
 	Inherits: ^Infantry
@@ -1696,6 +1743,7 @@
 		VoiceSet: VehicleVoice
 	WithFacingSpriteBody:
 	HitShape:
+	ActorStatValues:
 
 ^Plane:
 	Inherits@1: ^ExistsInWorld
@@ -1759,6 +1807,7 @@
 	Explodes:
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
+	ActorStatValues:
 
 ^Helicopter:
 	Inherits: ^Plane
@@ -1828,6 +1877,7 @@
 	MapEditorData:
 		Categories: Building
 	CommandBarBlacklist:
+	ActorStatValues:
 
 ^Building:
 	Inherits: ^BasicBuilding

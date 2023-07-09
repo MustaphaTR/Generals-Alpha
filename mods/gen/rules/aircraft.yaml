@@ -451,6 +451,8 @@ aircraft.mig:
 		RequiresSelection: true
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
+	ActorStatValues:
+		Upgrades: upgrade.mig_armor, upgrade.black_napalm, upgrade.tactical_nuke_mig
 
 aircraft.raptor:
 	Inherits: ^Plane
@@ -572,6 +574,8 @@ aircraft.raptor:
 		RequiresSelection: true
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
+	ActorStatValues:
+		Upgrades: upgrade.adv_training, upgrade.laser_guided_missiles, upgrade.countermeasures
 
 aircraft.king_raptor:
 	Inherits: aircraft.raptor
@@ -770,6 +774,8 @@ aircraft.stealth_fighter:
 		RequiresSelection: true
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
+	ActorStatValues:
+		Upgrades: upgrade.adv_training, upgrade.laser_guided_missiles, upgrade.countermeasures, upgrade.bunker_busters
 
 aircraft.stealth_fighter.air:
 	Inherits: aircraft.stealth_fighter
@@ -927,6 +933,8 @@ aircraft.aurora:
 		RequiresSelection: true
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
+	ActorStatValues:
+		Upgrades: upgrade.adv_training, upgrade.laser_guided_missiles, upgrade.countermeasures
 
 aircraft.aurora.boss:
 	Inherits: aircraft.aurora
@@ -1513,6 +1521,8 @@ aircraft.comanche:
 		Class: aircraft.comanche
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
+	ActorStatValues:
+		Upgrades: upgrade.adv_training, upgrade.rocket_pods, upgrade.stealth_comanche
 
 aircraft.helix:
 	Inherits: ^Helicopter

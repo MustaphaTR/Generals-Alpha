@@ -86,6 +86,10 @@ command-button-usa-highlighted-disabled:
 	PanelRegion: 87, 31, 0, 0, 22, 22, 0, 0
 	PanelSides: Center
 
+actor-stats-background-usa:
+	Inherits: ^Sidebar
+	PanelRegion: 479, 123, 11, 11, 22, 22, 11, 11
+
 sidebar-prc:
 	Inherits: ^Sidebar
 	Regions:
@@ -154,6 +158,10 @@ command-button-prc-highlighted-disabled:
 	Inherits: ^Sidebar
 	PanelRegion: 31, 31, 0, 0, 22, 22, 0, 0
 	PanelSides: Center
+
+actor-stats-background-prc:
+	Inherits: ^Sidebar
+	PanelRegion: 435, 123, 11, 11, 22, 22, 11, 11
 
 sidebar-gla:
 	Inherits: ^Sidebar
@@ -232,6 +240,14 @@ command-button-gla-highlighted-disabled:
 	Inherits: ^Sidebar
 	PanelRegion: 227, 31, 0, 0, 22, 22, 0, 0
 	PanelSides: Center
+
+actor-stats-background-gla:
+	Inherits: ^Sidebar
+	PanelRegion: 523, 123, 11, 11, 22, 22, 11, 11
+
+actor-stats-background-observer:
+	Inherits: ^Sidebar
+	PanelRegion: 567, 123, 11, 11, 22, 22, 11, 11
 
 sidebar-bits:
 	Inherits: ^Glyphs
@@ -531,6 +547,27 @@ lobby-bits:
 		player-registered: 17, 51, 16, 16
 		player-anonymous: 51, 51, 16, 16
 
+actor-stats-bits:
+	Image: staticons.png
+	Image2x: staticons-2x.png
+	Image3x: staticons-3x.png
+	Regions:
+		actor-stats-armor: 0, 0, 16, 16
+		actor-stats-shield: 176, 0, 16, 16
+		actor-stats-sight: 32, 0, 16, 16
+		actor-stats-damage: 16, 0, 16, 16
+		actor-stats-mindcontrol: 128, 0, 16, 16
+		actor-stats-range: 48, 0, 16, 16
+		actor-stats-shortrange: 48, 0, 16, 16
+		actor-stats-longrange: 192, 0, 16, 16
+		actor-stats-spread: 96, 0, 16, 16
+		actor-stats-rof: 208, 0, 16, 16
+		actor-stats-speed: 80, 0, 16, 16
+		actor-stats-power: 224, 0, 16, 16
+		actor-stats-resources: 112, 0, 16, 16
+		actor-stats-cargo: 144, 0, 16, 16
+		actor-stats-carrier: 160, 0, 16, 16
+
 reload-icon:
 	Inherits: ^Glyphs
 	Regions:
@@ -596,6 +633,18 @@ progressbar-bg:
 
 progressbar-thumb:
 	Inherits: button
+
+progressbar-thumb-green:
+	Inherits: ^ZeroHour
+	PanelRegion: 555, 299, 3, 3, 122, 122, 3, 3
+
+progressbar-thumb-yellow:
+	Inherits: ^ZeroHour
+	PanelRegion: 427, 299, 3, 3, 122, 122, 3, 3
+
+progressbar-thumb-red:
+	Inherits: ^ZeroHour
+	PanelRegion: 299, 299, 3, 3, 122, 122, 3, 3
 
 # A copy of dialog2 (normal button)
 button:
