@@ -739,12 +739,12 @@ vehicle.laser_tank:
 	AttackTurreted:
 		PauseOnCondition: hacked || emp || leaflet || lowpower
 		RequiresCondition: !driver_killed
-	MobSpawnerMaster@SCOUT_DRONE:
-		RequiresCondition: scout_drone && !hacked && !emp && !driver_killed && !leaflet && !lowpower
-	MobSpawnerMaster@BATTLE_DRONE:
-		RequiresCondition: battle_drone && !hacked && !emp && !driver_killed && !leaflet && !lowpower
-	MobSpawnerMaster@HELLFIRE_DRONE:
-		RequiresCondition: hellfire_drone && !hacked && !emp && !driver_killed && !leaflet && !lowpower
+	DroneSpawnerMaster@SCOUT_DRONE:
+		PauseOnCondition: !scout_drone || hacked || emp || driver_killed || leaflet || lowpower
+	DroneSpawnerMaster@BATTLE_DRONE:
+		PauseOnCondition: !battle_drone || hacked || emp || driver_killed || leaflet || lowpower
+	DroneSpawnerMaster@HELLFIRE_DRONE:
+		PauseOnCondition: !hellfire_drone || hacked || emp || driver_killed || leaflet || lowpower
 	Voiced:
 		VoiceSet: LaserTankVoice
 

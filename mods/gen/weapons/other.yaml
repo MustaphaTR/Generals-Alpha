@@ -181,6 +181,11 @@ repair.battledrone:
 	Warhead@1Dam: TargetDamage
 		Damage: -1000
 
+recon.scoutdrone:
+	ValidTargets: Air, Ground, GroundActor, Trees, Water, WaterActor, Underwater
+	Range: 0c512
+	ReloadDelay: 1900000
+
 Crush:
 	Warhead@1Dam: SpreadDamage
 		Damage: 10000
