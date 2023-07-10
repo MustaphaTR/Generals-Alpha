@@ -1215,12 +1215,6 @@ vehicle.gatling_tank:
 	Turreted:
 		TurnSpeed: 32
 		Offset: 0,0,160
-	ReloadDelayMultiplier@Gatling1:
-		RequiresCondition: gatling >= 1
-		Modifier: 50
-	ReloadDelayMultiplier@Gatling2:
-		RequiresCondition: gatling >= 2
-		Modifier: 50
 	Armament@GatlingAG:
 		Weapon: gatling.gatling_tank.ground
 		LocalOffset: 213,0,0
@@ -1235,13 +1229,10 @@ vehicle.gatling_tank:
 		Weapon: gatling.gatling_tank.air
 		LocalOffset: 213,0,0
 		MuzzleSequence: muzzle
-	GrantConditionOnAttack@gatling:
-		Condition: gatling
-		RequiredShotsPerInstance: 4
-		MaximumInstances: 2
-		RevokeDelay: 25
-		RevokeAll: true
-		IsCyclic: false
+	GatlingReloadDelayMultiplier:
+		MinModifier: 25
+		CoolDownDelay: 20
+		CoolDownChange: 3
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
@@ -3090,14 +3081,12 @@ vehicle.overlord_tank:
 			1200: rank-veteran
 	FirepowerMultiplier@CHAIN_GUN:
 		Types: gatling
-	ReloadDelayMultiplier@Gatling1:
-		RequiresCondition: gatling >= 1
-		Types: gatling
-		Modifier: 50
-	ReloadDelayMultiplier@Gatling2:
-		RequiresCondition: gatling >= 2
-		Types: gatling
-		Modifier: 50
+	GatlingReloadDelayMultiplier:
+		MinModifier: 25
+		CoolDownDelay: 20
+		CoolDownChange: 3
+		RequiresCondition: gatling_upgrade ## TODO: Remove this after you add "Type" to ReloadDelayMultiplier and GatlingReloadDelayMultiplier
+		Types: gatling 
 	Buildable:
 		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
 		BuildPaletteOrder: 6
@@ -3237,14 +3226,6 @@ vehicle.overlord_tank:
 	WithCargoPipsDecoration:
 		RequiresCondition: bunker_upgrade
 	SelectionDecorations:
-	GrantConditionOnAttack@gatling:
-		Condition: gatling
-		ArmamentNames: gatling
-		RequiredShotsPerInstance: 4
-		MaximumInstances: 2
-		RevokeDelay: 25
-		RevokeAll: true
-		IsCyclic: false
 	WithRangeCircle:
 		Type: speaker
 		Range: 4c0

@@ -1872,12 +1872,6 @@ building.gatling_cannon:
 		RealignDelay: -1
 	-WithSpriteBody:
 	WithEmbeddedTurretSpriteBody:
-	ReloadDelayMultiplier@Gatling1:
-		RequiresCondition: gatling >= 1
-		Modifier: 50
-	ReloadDelayMultiplier@Gatling2:
-		RequiresCondition: gatling >= 2
-		Modifier: 50
 	Armament@GatlingAG:
 		Weapon: gatling.gatling_cannon.ground
 		LocalOffset: 520,100,450, 520,-150,450
@@ -1886,6 +1880,10 @@ building.gatling_cannon:
 		Weapon: gatling.gatling_cannon.air
 		LocalOffset: 520,100,450, 520,-150,450
 		MuzzleSequence: muzzle
+	GatlingReloadDelayMultiplier:
+		MinModifier: 25
+		CoolDownDelay: 20
+		CoolDownChange: 3
 	WithRangeCircle:
 		Range: 5c640
 	WithRangeCircle@AA:
@@ -1895,13 +1893,6 @@ building.gatling_cannon:
 	AttackTurreted:
 		PauseOnCondition: build-incomplete || emp || hacked || lowpower
 	WithMuzzleOverlay:
-	GrantConditionOnAttack@gatling:
-		Condition: gatling
-		RequiredShotsPerInstance: 4
-		MaximumInstances: 2
-		RevokeDelay: 50
-		RevokeAll: true
-		IsCyclic: false
 	Power:
 		Amount: -3
 	Exit:

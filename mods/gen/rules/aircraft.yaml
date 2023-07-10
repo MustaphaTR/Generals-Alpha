@@ -1579,14 +1579,12 @@ aircraft.helix:
 		Multiplier: 125 # 625
 	FirepowerMultiplier@CHAIN_GUN:
 		Types: gatling
-	ReloadDelayMultiplier@Gatling1:
-		RequiresCondition: gatling >= 1
-		Types: gatling
-		Modifier: 50
-	ReloadDelayMultiplier@Gatling2:
-		RequiresCondition: gatling >= 2
-		Types: gatling
-		Modifier: 50
+	GatlingReloadDelayMultiplier:
+		MinModifier: 25
+		CoolDownDelay: 20
+		CoolDownChange: 3
+		RequiresCondition: gatling_upgrade ## TODO: Remove this after you add "Type" to ReloadDelayMultiplier and GatlingReloadDelayMultiplier
+		Types: gatling 
 	Tooltip:
 		Name: Helix
 	UpdatesPlayerStatistics:
@@ -1684,14 +1682,6 @@ aircraft.helix:
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
 		RequiresCondition: bunker_upgrade && loaded
-	GrantConditionOnAttack@GATLING:
-		Condition: gatling
-		ArmamentNames: gatling
-		RequiredShotsPerInstance: 10
-		MaximumInstances: 2
-		RevokeDelay: 40
-		RevokeAll: true
-		IsCyclic: false
 	ConditionPrerequisite@BUNKER:
 		Queue: queue.helix, queue.assault_helix, queue.nuke_gen_helix
 		Actor: upgrade.helix_bunker
@@ -1777,8 +1767,6 @@ aircraft.assault_helix:
 		Description: Helicopter gunship armed with machine gun.\n\nCan carry 8 infantry.\n\nCan be upgraded to have a bunker.
 	-FirepowerMultiplier@CHAIN_GUN:
 	-GrantConditionOnPrerequisite@CHAIN_GUN:
-	-ReloadDelayMultiplier@Gatling1:
-	-ReloadDelayMultiplier@Gatling2:
 	Tooltip:
 		Name: Assault Helix
 	Production:
@@ -1797,7 +1785,7 @@ aircraft.assault_helix:
 	AttackAircraft:
 		Armaments: primary
 	-Armament@GATLING:
-	-GrantConditionOnAttack@GATLING:
+	-GatlingReloadDelayMultiplier:
 	-WithRangeCircle:
 	-ProximityExternalCondition@SPEAKER:
 	WithCargoPipsDecoration:
