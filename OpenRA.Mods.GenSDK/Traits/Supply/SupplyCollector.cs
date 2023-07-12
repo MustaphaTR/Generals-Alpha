@@ -266,7 +266,8 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 		bool IsAcceptableTradeBuilding(Actor supplyDock)
 		{
-			return Info.CollectionRelationships.HasRelationship(self.Owner.RelationshipWith(supplyDock.Owner)) && Info.SupplyTypes.Overlaps(supplyDock.Trait<SupplyDock>().Info.SupplyTypes);
+			var dock = supplyDock.Trait<SupplyDock>();
+			return Info.SupplyTypes.Overlaps(dock.Info.SupplyTypes) && !dock.IsEmpty && Info.CollectionRelationships.HasRelationship(self.Owner.RelationshipWith(supplyDock.Owner));
 		}
 
 		public Actor ClosestTradeBuilding(Actor self, Actor ignore)
@@ -316,7 +317,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 		bool IsAcceptableDeliveryBuilding(Actor supplyCenter)
 		{
-			return Info.DeliveryRelationships.HasRelationship(self.Owner.RelationshipWith(supplyCenter.Owner)) && Info.SupplyTypes.Overlaps(supplyCenter.Trait<SupplyCenter>().Info.SupplyTypes);
+			return Info.SupplyTypes.Overlaps(supplyCenter.Trait<SupplyCenter>().Info.SupplyTypes) && Info.DeliveryRelationships.HasRelationship(self.Owner.RelationshipWith(supplyCenter.Owner));
 		}
 
 		public Actor ClosestDeliveryBuilding(Actor self, Actor ignore)
