@@ -1035,11 +1035,11 @@
 		AttackAnythingCondition: stance-attackanything
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything
-		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Defense
+		ValidTargets: Infantry, Vehicle, Tank, Ship, Underwater, Defense
 		InvalidTargets: NoAutoTarget, WaterStructure
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: stance-attackanything
-		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Structure, Defense
+		ValidTargets: Infantry, Vehicle, Tank, Ship, Underwater, Structure, Defense
 		InvalidTargets: NoAutoTarget
 
 ^AutoTargetGroundAssaultMove:
@@ -1062,11 +1062,11 @@
 		AttackAnythingCondition: stance-attackanything
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything
-		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, AirborneActor, Defense
+		ValidTargets: Infantry, Vehicle, Tank, Ship, Underwater, AirborneActor, Defense
 		InvalidTargets: NoAutoTarget, WaterStructure
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: stance-attackanything
-		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, AirborneActor, Structure, Defense
+		ValidTargets: Infantry, Vehicle, Tank, Ship, Underwater, AirborneActor, Structure, Defense
 		InvalidTargets: NoAutoTarget
 
 ^AutoTargetAllAssaultMove:
