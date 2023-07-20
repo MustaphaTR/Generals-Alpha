@@ -1032,6 +1032,10 @@ aircraft.scout_drone:
 		HP: 10000
 	Armor:
 		Type: vehicle.tank
+	Armament@Recon:
+		Weapon: recon.scoutdrone
+	AttackAircraft:
+		FacingTolerance: 512
 	DetectCloaked:
 		Range: 3c768
 	Aircraft:
@@ -1039,7 +1043,9 @@ aircraft.scout_drone:
 	-Cloak:
 	-GrantConditionOnDamageState@UNCLOAK:
 	-ActorLostNotification:
-	MobSpawnerSlave:
+	DroneSpawnerSlave:
+		AttackCallBackDistance: 8c0
+		MovingCallBackCellDistance: 1
 
 aircraft.battle_drone:
 	Inherits: aircraft.scout_drone
@@ -1054,6 +1060,7 @@ aircraft.battle_drone:
 	-RenderDetectionCircle:
 	Aircraft:
 		TurnSpeed: 20
+	-Armament@Recon:
 	Armament@MG:
 		Weapon: mg.battle_drone
 		LocalOffset: 300,0,-16
@@ -1081,6 +1088,7 @@ aircraft.hellfire_drone:
 	-DetectCloaked:
 	-RenderDetectionCircle:
 	-Contrail:
+	-Armament@Recon:
 	Armament:
 		Weapon: missile.hellfire_drone
 		LocalOffset: 0,-320,0, 0,320,0

@@ -1101,27 +1101,24 @@
 		DeathType: DropCrate
 
 ^CanHaveDrones:
-	MobSpawnerMaster@SCOUT_DRONE:
+	DroneSpawnerMaster@SCOUT_DRONE:
 		Actors: aircraft.scout_drone
 		RespawnTicks: 1500
-		ExitByBudding: false
-		AggregateHealth: false
-		SpawnIsGroundUnit: true
-		RequiresCondition: scout_drone && !hacked && !emp && !driver_killed && !leaflet
-	MobSpawnerMaster@BATTLE_DRONE:
+		ShouldSpawnInitialLoad: false
+		FollowAfterAttackDelay: 21 ## bigger than general reload time
+		PauseOnCondition: !scout_drone || hacked || emp || driver_killed || leaflet
+	DroneSpawnerMaster@BATTLE_DRONE:
 		Actors: aircraft.battle_drone
 		RespawnTicks: 1500
-		ExitByBudding: false
-		AggregateHealth: false
-		SpawnIsGroundUnit: true
-		RequiresCondition: battle_drone && !hacked && !emp && !driver_killed && !leaflet
-	MobSpawnerMaster@HELLFIRE_DRONE:
+		ShouldSpawnInitialLoad: false
+		FollowAfterAttackDelay: 21 ## bigger than general reload time
+		PauseOnCondition: !battle_drone || hacked || emp || driver_killed || leaflet
+	DroneSpawnerMaster@HELLFIRE_DRONE:
 		Actors: aircraft.hellfire_drone
 		RespawnTicks: 1500
-		ExitByBudding: false
-		AggregateHealth: false
-		SpawnIsGroundUnit: true
-		RequiresCondition: hellfire_drone && !hacked && !emp && !driver_killed && !leaflet
+		ShouldSpawnInitialLoad: false
+		FollowAfterAttackDelay: 21 ## bigger than general reload time
+		PauseOnCondition: !hellfire_drone || hacked || emp || driver_killed || leaflet
 	Production:
 		Produces: queue.drone
 		PauseOnCondition: emp || hacked
