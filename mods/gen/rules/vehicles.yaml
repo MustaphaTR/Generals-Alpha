@@ -137,7 +137,7 @@ vehicle.humvee:
 		TurnSpeed: 32
 		Speed: 60
 		Voice: Move
-		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
+		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Crushable:
@@ -269,7 +269,7 @@ vehicle.technical:
 		TurnSpeed: 32
 		Speed: 90
 		Voice: Move
-		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
+		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 89
 	Crushable:
@@ -988,7 +988,7 @@ vehicle.sentry_drone:
 		Speed: 60
 		Voice: Move
 		Locomotor: locomotor.sentry_drone
-		PauseOnCondition: !(!hacked && !emp && !leaflet)
+		PauseOnCondition: hacked || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
 	Crushable:
@@ -1320,7 +1320,7 @@ vehicle.toxin_tractor:
 		TurnSpeed: 32
 		Speed: 30
 		Voice: Move
-		PauseOnCondition: !(!hacked && !driver_killed && !emp && !leaflet && !spray)
+		PauseOnCondition: hacked || driver_killed || emp || leaflet || spray
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
 	Crushable:
@@ -1816,7 +1816,8 @@ vehicle.battle_Bus:
 		Speed: 70
 		TurnSpeed: 16
 		Voice: Move
-		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet && !husk)
+		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
+		RequiresCondition: !husk
 	SpeedMultiplier@DAMAGED:
 		Modifier: 71
 	Crushable:
@@ -1908,7 +1909,7 @@ vehicle.troop_crawler:
 		Speed: 40
 		TurnSpeed: 20
 		Voice: Move
-		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
+		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
 	Crushable:
@@ -2003,7 +2004,7 @@ vehicle.listening_outpost:
 		Speed: 40
 		TurnSpeed: 16
 		Voice: Move
-		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
+		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
 	Crushable:
@@ -3147,7 +3148,7 @@ vehicle.overlord_tank:
 		TurnSpeed: 12
 		Voice: Move
 		Locomotor: locomotor.overlord
-		PauseOnCondition: !(!notmobile && !hacked && !driver_killed && !emp && !leaflet)
+		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
 	SpeedMultiplier@NUCLEAR_TANKS:
 		Modifier: 150
 	SpeedMultiplier@NUKE_GEN:
@@ -3307,7 +3308,7 @@ vehicle.emparor_overlord:
 	ProductionBar:
 		ProductionType: queue.emparor_overlord
 	Mobile:
-		PauseOnCondition: !(!hacked && !driver_killed && !emp && !leaflet)
+		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	-Cargo@BUNKER_UPGRADE:
 	-WithCargoPipsDecoration:
 	-Turreted@Bunker:
@@ -4036,7 +4037,7 @@ vehicle.combat_cycle.demo:
 		Speed: 25
 		TurnSpeed: 16
 		Voice: Move
-		PauseOnCondition: !(!hacked && !driver_killed && !emp && !leaflet && !deployed)
+		PauseOnCondition: hacked || driver_killed || emp || leaflet || deployed
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
 	Crushable:
