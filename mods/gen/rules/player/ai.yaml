@@ -30,8 +30,8 @@ Player:
 		VehiclesFactoryTypes: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
 		NavalProductionTypes: tech.shipyard
 		ProductionTypes: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, usa_airfield, prc_airfield
-		FragileTypes: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center
-		DefenseTypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.firebase, building.stinger_site, building.tunnel_network, building.tunnel_network.boss, building.toxin_tunnel_network, building.gatling_cannon, tech.flame_tower
+		FragileTypes: building.strategy_center, building.detention_camp, building.internet_center, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center
+		DefenseTypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.firebase, building.stinger_site, building.tunnel_network, building.tunnel_network.boss, building.toxin_tunnel_network, building.bunker, building.fortified_bunker, building.gatling_cannon, tech.flame_tower
 		StrategyTypes: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		CashGeneratorTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center, building.supply_drop_zone, building.black_market
 		BuildingLimits:
@@ -51,6 +51,7 @@ Player:
 			building.palace: 1
 			building.propaganda_center: 1
 			building.detention_camp: 1
+			building.internet_center: 1
 			building.supply_drop_zone: 4
 			building.black_market: 4
 			building.usa_airfield: 1
@@ -75,6 +76,8 @@ Player:
 			building.laser_turret: 4
 			building.firebase: 2
 			building.stinger_site: 3
+			building.bunker: 1
+			building.fortified_bunker: 1
 			building.gatling_cannon: 4
 			building.tunnel_network: 2
 			building.tunnel_network.boss: 2
@@ -85,6 +88,7 @@ Player:
 			building.palace: 1
 			building.propaganda_center: 1
 			building.detention_camp: 1
+			building.internet_center: 1
 			building.supply_drop_zone: 10
 			building.black_market: 10
 			building.usa_airfield: 1
@@ -179,7 +183,7 @@ Player:
 		RequiresCondition: enable-rush-ai
 		SquadSize: 20
 		NavalUnitsTypes: vessel.gunboat, vessel.destroyer, vessel.cruiser
-		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, firestorm.normal, firestorm.normal.50, firestorm.normal.plus, firestorm.blue, firestorm.blue.50, firestorm.blue.plus
+		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, infantry.hacker, infantry.hacker.boss, infantry.super_hacker
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		NavalProductionTypes: tech.shipyard
 		StaticAATypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.stinger_site, building.gatling_cannon
@@ -385,8 +389,8 @@ Player:
 		VehiclesFactoryTypes: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
 		NavalProductionTypes: tech.shipyard
 		ProductionTypes: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, usa_airfield, prc_airfield
-		FragileTypes: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, building.particle_cannon.boss, building.scud_storm, building.scud_storm.boss, building.missile_silo, building.missile_silo.boss
-		DefenseTypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.firebase, building.stinger_site, building.tunnel_network, building.tunnel_network.boss, building.toxin_tunnel_network, building.gatling_cannon, tech.flame_tower
+		FragileTypes: building.strategy_center, building.detention_camp, building.internet_center, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, building.particle_cannon.boss, building.scud_storm, building.scud_storm.boss, building.missile_silo, building.missile_silo.boss
+		DefenseTypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.firebase, building.stinger_site, building.tunnel_network, building.tunnel_network.boss, building.toxin_tunnel_network, building.bunker, building.fortified_bunker, building.gatling_cannon, tech.flame_tower
 		StrategyTypes: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		CashGeneratorTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center, building.supply_drop_zone, building.black_market
 		BuildingLimits:
@@ -406,6 +410,7 @@ Player:
 			building.palace: 1
 			building.propaganda_center: 1
 			building.detention_camp: 1
+			building.internet_center: 1
 			building.supply_drop_zone: 4
 			building.black_market: 4
 			building.usa_airfield: 1
@@ -436,6 +441,8 @@ Player:
 			building.laser_turret: 6
 			building.firebase: 2
 			building.stinger_site: 4
+			building.bunker: 1
+			building.fortified_bunker: 1
 			building.gatling_cannon: 6
 			building.tunnel_network: 3
 			building.tunnel_network.boss: 3
@@ -446,6 +453,7 @@ Player:
 			building.palace: 1
 			building.propaganda_center: 1
 			building.detention_camp: 1
+			building.internet_center: 1
 			building.supply_drop_zone: 10
 			building.black_market: 10
 			building.usa_airfield: 1
@@ -546,7 +554,7 @@ Player:
 		RequiresCondition: enable-normal-ai
 		SquadSize: 40
 		NavalUnitsTypes: vessel.gunboat, vessel.destroyer, vessel.cruiser
-		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, firestorm.normal, firestorm.normal.50, firestorm.normal.plus, firestorm.blue, firestorm.blue.50, firestorm.blue.plus
+		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, infantry.hacker, infantry.hacker.boss, infantry.super_hacker
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		NavalProductionTypes: tech.shipyard
 		StaticAATypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.stinger_site, building.gatling_cannon
@@ -752,8 +760,8 @@ Player:
 		VehiclesFactoryTypes: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
 		NavalProductionTypes: tech.shipyard
 		ProductionTypes: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, usa_airfield, prc_airfield
-		FragileTypes: building.strategy_center, building.detention_camp, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, building.particle_cannon.boss, building.scud_storm, building.scud_storm.boss, building.missile_silo, building.missile_silo.boss
-		DefenseTypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.firebase, building.stinger_site, building.tunnel_network, building.tunnel_network.boss, building.toxin_tunnel_network, building.gatling_cannon, tech.flame_tower
+		FragileTypes: building.strategy_center, building.detention_camp, building.internet_center, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, building.particle_cannon.boss, building.scud_storm, building.scud_storm.boss, building.missile_silo, building.missile_silo.boss
+		DefenseTypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.firebase, building.stinger_site, building.tunnel_network, building.tunnel_network.boss, building.toxin_tunnel_network, building.bunker, building.fortified_bunker, building.gatling_cannon, tech.flame_tower
 		StrategyTypes: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		CashGeneratorTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center, building.supply_drop_zone, building.black_market
 		BuildingLimits:
@@ -773,6 +781,7 @@ Player:
 			building.palace: 1
 			building.propaganda_center: 1
 			building.detention_camp: 1
+			building.internet_center: 1
 			building.supply_drop_zone: 4
 			building.black_market: 4
 			building.usa_airfield: 1
@@ -803,6 +812,8 @@ Player:
 			building.laser_turret: 8
 			building.firebase: 3
 			building.stinger_site: 5
+			building.bunker: 1
+			building.fortified_bunker: 1
 			building.gatling_cannon: 8
 			building.tunnel_network: 4
 			building.tunnel_network.boss: 4
@@ -813,6 +824,7 @@ Player:
 			building.palace: 1
 			building.propaganda_center: 1
 			building.detention_camp: 1
+			building.internet_center: 1
 			building.supply_drop_zone: 10
 			building.black_market: 10
 			building.usa_airfield: 1
@@ -913,7 +925,7 @@ Player:
 		RequiresCondition: enable-turtle-ai
 		SquadSize: 10
 		NavalUnitsTypes: vessel.gunboat, vessel.destroyer, vessel.cruiser
-		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, firestorm.normal, firestorm.normal.50, firestorm.normal.plus, firestorm.blue, firestorm.blue.50, firestorm.blue.plus
+		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, infantry.hacker, infantry.hacker.boss, infantry.super_hacker
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		NavalProductionTypes: tech.shipyard
 		StaticAATypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.stinger_site, building.gatling_cannon
@@ -1104,6 +1116,14 @@ Player:
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner, infantry.conscript
 		CapturableActorTypes: tech.oil_derrick, tech.oil_refinery, tech.hospital, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.reinforcements_pad, tech.repair_bay
 	BuildingRepairBotModule:
+		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+	LoadCargoBotModule@Hacker:
+		Transports: building.internet_center
+		Passengers: infantry.hacker, infantry.hacker.boss, infantry.super_hacker
+		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+	LoadCargoBotModule@Defense:
+		Transports: building.firebase, building.bunker, building,fortified_bunker, building.palace
+		Passengers: infantry.ranger, infantry.rebel, infantry.red_guard, infantry.minigunner, infantry.conscript, infantry.missile_defender, infantry.rpg_trooper, infantry.tank_hunter, infantry.grenadier, infantry.pathfinder, infantry.flamethrower
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 	SupportPowerBotModule:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai

@@ -1294,7 +1294,8 @@ infantry.hacker:
 	Mobile:
 		Speed: 20
 		Voice: Move
-		PauseOnCondition: !(!deployed)
+		PauseOnCondition: deployed
+		RequireForceMoveCondition: deployed
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Passenger:
@@ -1303,9 +1304,11 @@ infantry.hacker:
 		Voice: Move
 		CargoConditions:
 			building.internet_center: in_internet_center
+		RequireForceMoveCondition: deployed
 	SharedPassenger:
 		CustomPipType: yellow
 		Voice: Move
+		RequireForceMoveCondition: deployed
 	ChangesHealth@IN_INTERNET_CENTER:
 		Step: 0
 		PercentageStep: 10
@@ -1335,6 +1338,8 @@ infantry.hacker:
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
 		Facing: 512
+		SmartDeploy: True
+		UndeployOnMove: true
 	WithInfantryBody:
 		StandSequences: stand
 		DefaultAttackSequence: hack
@@ -1391,6 +1396,9 @@ infantry.hacker:
 	WithProductionIconOverlay@Infantry:
 		Types: Veterancy
 		Prerequisites: prerequisite.inf_gen_player
+	AutoDeployer:
+		DeployTrigger: BecomingIdle
+		RequiresCondition: !deployed
 	Voiced:
 		VoiceSet: HackerVoice
 	-MustBeDestroyed:
