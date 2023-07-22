@@ -1085,6 +1085,7 @@
 		EjectOnGround: false
 		EjectInAir: true
 		AllowUnsuitableCell: true
+		RequiresCondition: rank-veteran
 
 ^EjectsPilotOnGround:
 	EjectOnDeath:
@@ -1092,6 +1093,7 @@
 		EjectOnGround: true
 		EjectInAir: false
 		AllowUnsuitableCell: true
+		RequiresCondition: rank-veteran
 
 ^DropsScrapCrate:
 	SpawnActorOnDeath@CRATE:
@@ -1546,6 +1548,7 @@
 		Type: infantry.normal
 	Mobile:
 		Speed: 20
+		AlwaysTurnInPlace: true
 		Locomotor: locomotor.infantry
 		PauseOnCondition: leaflet
 	SelectionDecorations:
