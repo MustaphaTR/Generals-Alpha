@@ -10,6 +10,14 @@ infantry.pilot:
 			1: rank-veteran
 			2: rank-veteran
 			3: rank-veteran
+	Buildable:
+		Queue: queue.usa_infantry
+		BuildPaletteOrder: 6
+		ForceIconLocation: true
+		BuildDuration: 100
+		BuildDurationModifier: 100
+		Prerequisites: ~disabled
+		Description: Veteran vehicle pilot.
 	Valued:
 		Cost: 100
 	Tooltip:
