@@ -1474,6 +1474,10 @@ building.gla_supply_stash.no_free_actor:
 	-FreeActor:
 	RenderSprites:
 		Image: building.gla_supply_stash
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: building.gla_supply_stash
 
 building.prc_supply_center:
 	Inherits: ^default.supply_center
@@ -2449,6 +2453,10 @@ building.tunnel_network.no_free_actor:
 	-Buildable:
 	-FreeActor@1:
 	-FreeActor@2:
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: building.tunnel_network
 
 building.toxin_tunnel_network:
 	Inherits: building.tunnel_network
@@ -2490,6 +2498,10 @@ building.toxin_tunnel_network.no_free_actor:
 	-Buildable:
 	-FreeActor@1:
 	-FreeActor@2:
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: building.toxin_tunnel_network
 
 building.tunnel_network.boss:
 	Inherits: building.tunnel_network
@@ -2514,6 +2526,10 @@ building.tunnel_network.boss.no_free_actor:
 	-FreeActor@2:
 	RenderSprites:
 		Image: building.tunnel_network
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: building.tunnel_network.boss
 
 building.tunnel_network.sneak_attack:
 	Inherits: ^default.tunnel_network

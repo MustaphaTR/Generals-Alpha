@@ -12,6 +12,9 @@ hole.command_center:
 		IntoActor: building.gla_command_center
 	RenderSprites:
 		Image: hole.3x3
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
 
 hole.barracks:
 	Inherits: ^Hole
@@ -28,6 +31,9 @@ hole.barracks:
 		IntoActor: building.gla_barracks
 	RenderSprites:
 		Image: hole.2x2
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
 
 hole.supply_stash:
 	Inherits: ^Hole
@@ -43,6 +49,9 @@ hole.supply_stash:
 		IntoActor: building.gla_supply_stash.no_free_actor
 	RenderSprites:
 		Image: hole.supply_stash
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
 
 hole.arms_dealer:
 	Inherits: ^Hole
@@ -59,6 +68,9 @@ hole.arms_dealer:
 		IntoActor: building.arms_dealer
 	RenderSprites:
 		Image: hole.3x2
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
 
 hole.palace:
 	Inherits: ^Hole
@@ -74,6 +86,9 @@ hole.palace:
 		IntoActor: building.palace
 	RenderSprites:
 		Image: hole.3x2
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
 
 hole.black_market:
 	Inherits: ^Hole
@@ -92,6 +107,9 @@ hole.black_market:
 		IntoActor: building.black_market
 	RenderSprites:
 		Image: hole.2x2
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
 
 hole.scud_storm:
 	Inherits: ^Hole
@@ -113,6 +131,9 @@ hole.scud_storm:
 		Prerequisites: prerequisite.limited_sw
 	RenderSprites:
 		Image: hole.2x2
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
 
 hole.tunnel_network:
 	Inherits: ^Hole
@@ -129,6 +150,9 @@ hole.tunnel_network:
 	-WithBuildingBib:
 	RenderSprites:
 		Image: hole.2x2
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
 
 hole.toxin_tunnel_network:
 	Inherits: hole.tunnel_network
@@ -160,3 +184,6 @@ hole.stinger_site:
 		Sequence: hole
 	RenderSprites:
 		Image: building.stinger_site
+	ActorStatValues:
+		Icon: hole-icon
+		IconPalette: chrome
