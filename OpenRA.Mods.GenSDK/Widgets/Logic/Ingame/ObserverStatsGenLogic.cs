@@ -29,7 +29,6 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 		"StatisticsArmyGraphKey")]
 	public class ObserverStatsGenLogic : ChromeLogic
 	{
-
 		[TranslationReference]
 		const string Minimal = "options-observer-stats.minimal";
 

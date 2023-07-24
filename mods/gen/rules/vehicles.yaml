@@ -4252,6 +4252,9 @@ vehicle.gla_mcc:
 	DamageMultiplier@CRATE-2:
 		RequiresCondition: scrap_create_bonus == 2
 		Modifier: 86
+	ActorStatValues:
+		FactionUpgrades:
+			demo: upgrade.demolitions, upgrade.junk_repair
 
 vehicle.prc_mcc:
 	Inherits: ^default.mcc

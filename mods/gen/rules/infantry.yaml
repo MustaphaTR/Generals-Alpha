@@ -1221,6 +1221,8 @@ infantry.angry_mob:
 		ExitByBudding: false
 	Health:
 		HP: 10000
+	Armor:
+		Type: infantry.normal
 	AttackOmni:
 		RequiresCondition: !leaflet
 	Armament@PRIMARY:
@@ -1258,12 +1260,15 @@ infantry.angry_mob:
 		Image: infantry.angry_mob
 	ActorStatValues:
 		Upgrades: upgrade.arm_the_mob, upgrade.ap_bullets
+		Vision: 3c768
 
 infantry.angry_mob.boss:
 	Inherits: infantry.angry_mob
 	Buildable:
 		Queue: queue.boss_gen_infantry
 		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
+	ActorStatValues:
+		Upgrades: upgrade.arm_the_mob
 
 infantry.hacker:
 	Inherits: ^Soldier
