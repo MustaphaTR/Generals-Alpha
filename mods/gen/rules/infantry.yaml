@@ -763,6 +763,7 @@ infantry.tank_hunter:
 	ActorStatValues:
 		Upgrades: upgrade.nationalism
 		FactionUpgrades:
+			inf: upgrade.patriotism
 			boss: upgrade.chemical_suits, upgrade.nationalism
 
 infantry.grenadier:
@@ -1260,7 +1261,7 @@ infantry.angry_mob:
 		Image: infantry.angry_mob
 	ActorStatValues:
 		Upgrades: upgrade.arm_the_mob, upgrade.ap_bullets
-		Vision: 3c768
+		Sight: 3c768
 
 infantry.angry_mob.boss:
 	Inherits: infantry.angry_mob

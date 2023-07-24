@@ -322,7 +322,7 @@ vehicle.technical:
 		Weapons: debris.technical.body
 		Pieces: 1, 1
 		Range: 2c0, 2c0
-		CondierFacing: true
+		ConsiderFacing: true
 		RequiresCondition: moving
 	ThrowsShrapnel@Static:
 		Weapons: debris.technical.body
@@ -1648,7 +1648,7 @@ vehicle.rocket_buggy:
 		Weapons: debris.rocket_buggy.body
 		Pieces: 1, 1
 		Range: 2c0, 2c0
-		CondierFacing: true
+		ConsiderFacing: true
 		RequiresCondition: moving
 	ThrowsShrapnel@Static:
 		Weapons: debris.rocket_buggy.body
@@ -4154,7 +4154,7 @@ vehicle.usa_mcc:
 		InstantCashDrain: true
 		LowPowerModifier: 200
 		QueuedAudio: USABuilding
-		CannotBuildAudio: USABuildingCannotPlaceAudio
+		CannotPlaceAudio: USABuildingCannotPlaceAudio
 		ReadyAudio: USAConstructionComplete
 		DisplayOrder: 1
 	ProductionQueue@AIR_BUILDING:
@@ -4164,7 +4164,7 @@ vehicle.usa_mcc:
 		InstantCashDrain: true
 		LowPowerModifier: 200
 		QueuedAudio: USABuilding
-		CannotBuildAudio: USABuildingCannotPlaceAudio
+		CannotPlaceAudio: USABuildingCannotPlaceAudio
 		ReadyAudio: USAConstructionComplete
 		DisplayOrder: 2
 	ProductionQueue@LASER_BUILDING:
@@ -4174,7 +4174,7 @@ vehicle.usa_mcc:
 		InstantCashDrain: true
 		LowPowerModifier: 200
 		QueuedAudio: USABuilding
-		CannotBuildAudio: USABuildingCannotPlaceAudio
+		CannotPlaceAudio: USABuildingCannotPlaceAudio
 		ReadyAudio: USAConstructionComplete
 		DisplayOrder: 3
 	ProductionQueue@SUPER_BUILDING:
@@ -4184,7 +4184,7 @@ vehicle.usa_mcc:
 		InstantCashDrain: true
 		LowPowerModifier: 200
 		QueuedAudio: USABuilding
-		CannotBuildAudio: USABuildingCannotPlaceAudio
+		CannotPlaceAudio: USABuildingCannotPlaceAudio
 		ReadyAudio: USAConstructionComplete
 		DisplayOrder: 4
 	Voiced:
@@ -4220,7 +4220,7 @@ vehicle.gla_mcc:
 		Group: Building
 		InstantCashDrain: true
 		QueuedAudio: GLABuilding
-		CannotBuildAudio: GLABuildingCannotPlaceAudio
+		CannotPlaceAudio: GLABuildingCannotPlaceAudio
 		ReadyAudio: GLAConstructionComplete
 		DisplayOrder: 5
 	ProductionQueue@TOXIN_BUILDING:
@@ -4229,7 +4229,7 @@ vehicle.gla_mcc:
 		Group: Building
 		InstantCashDrain: true
 		QueuedAudio: GLABuilding
-		CannotBuildAudio: GLABuildingCannotPlaceAudio
+		CannotPlaceAudio: GLABuildingCannotPlaceAudio
 		ReadyAudio: GLAConstructionComplete
 		DisplayOrder: 6
 	ProductionQueue@DEMO_BUILDING:
@@ -4238,7 +4238,7 @@ vehicle.gla_mcc:
 		Group: Building
 		InstantCashDrain: true
 		QueuedAudio: GLABuilding
-		CannotBuildAudio: GLABuildingCannotPlaceAudio
+		CannotPlaceAudio: GLABuildingCannotPlaceAudio
 		ReadyAudio: GLAConstructionComplete
 		DisplayOrder: 7
 	Voiced:
@@ -4284,7 +4284,7 @@ vehicle.prc_mcc:
 		InstantCashDrain: true
 		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
-		CannotBuildAudio: PRCBuildingCannotPlaceAudio
+		CannotPlaceAudio: PRCBuildingCannotPlaceAudio
 		ReadyAudio: PRCConstructionComplete
 		DisplayOrder: 8
 	ProductionQueue@INF_BUILDING:
@@ -4294,7 +4294,7 @@ vehicle.prc_mcc:
 		InstantCashDrain: true
 		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
-		CannotBuildAudio: PRCBuildingCannotPlaceAudio
+		CannotPlaceAudio: PRCBuildingCannotPlaceAudio
 		ReadyAudio: PRCConstructionComplete
 		DisplayOrder: 9
 	ProductionQueue@NUKE_BUILDING:
@@ -4304,7 +4304,7 @@ vehicle.prc_mcc:
 		InstantCashDrain: true
 		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
-		CannotBuildAudio: PRCBuildingCannotPlaceAudio
+		CannotPlaceAudio: PRCBuildingCannotPlaceAudio
 		ReadyAudio: PRCConstructionComplete
 		DisplayOrder: 10
 	ProductionQueue@BOSS_BUILDING:
@@ -4314,7 +4314,7 @@ vehicle.prc_mcc:
 		InstantCashDrain: true
 		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
-		CannotBuildAudio: PRCBuildingCannotPlaceAudio
+		CannotPlaceAudio: PRCBuildingCannotPlaceAudio
 		ReadyAudio: PRCConstructionComplete
 		DisplayOrder: 11
 	Voiced:
@@ -4344,7 +4344,7 @@ vehicle.tech_mcc:
 		InstantCashDrain: true
 		LowPowerModifier: 200
 		QueuedAudio: Building
-		CannotBuildAudio: BuildingCannotPlaceAudio
+		CannotPlaceAudio: BuildingCannotPlaceAudio
 		ReadyAudio: ConstructionComplete
 		DisplayOrder: 99
 	WithTextDecoration@SIDE:

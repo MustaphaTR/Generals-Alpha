@@ -581,26 +581,26 @@
 	DamagedByTintedCells@RADIOACTIVITY:
 		RequiresCondition: !chemical_suits
 	DamagedByTintedCells@ANTHRAX_ALPHA_CHEM:
-		RadioactivityLayerName: anthrax_alpha
-		DamageCoeff: 400
+		LayerName: anthrax_alpha
+		Damage: 400
 		DamageInterval: 10
 		DamageTypes: FireDeath
 		RequiresCondition: chemical_suits
 	DamagedByTintedCells@ANTHRAX_BETA_CHEM:
-		RadioactivityLayerName: anthrax_beta
-		DamageCoeff: 500
+		LayerName: anthrax_beta
+		Damage: 500
 		DamageInterval: 10
 		DamageTypes: FireDeath
 		RequiresCondition: chemical_suits
 	DamagedByTintedCells@ANTHRAX_GAMMA_CHEM:
-		RadioactivityLayerName: anthrax_gamma
-		DamageCoeff: 600
+		LayerName: anthrax_gamma
+		Damage: 600
 		DamageInterval: 10
 		DamageTypes: FireDeath
 		RequiresCondition: chemical_suits
 	DamagedByTintedCells@RADIOACTIVITY_CHEM:
-		RadioactivityLayerName: radioactivity
-		DamageCoeff: 400
+		LayerName: radioactivity
+		Damage: 400
 		DamageInterval: 10
 		DamageTypes: FireDeath
 		RequiresCondition: chemical_suits
@@ -721,23 +721,23 @@
 
 ^AffectedByRadiationAndToxins:
 	DamagedByTintedCells@ANTHRAX_ALPHA:
-		RadioactivityLayerName: anthrax_alpha
-		DamageCoeff: 2000
+		LayerName: anthrax_alpha
+		Damage: 2000
 		DamageInterval: 10
 		DamageTypes: FireDeath
 	DamagedByTintedCells@ANTHRAX_BETA:
-		RadioactivityLayerName: anthrax_beta
-		DamageCoeff: 2500
+		LayerName: anthrax_beta
+		Damage: 2500
 		DamageInterval: 10
 		DamageTypes: FireDeath
 	DamagedByTintedCells@ANTHRAX_GAMMA:
-		RadioactivityLayerName: anthrax_gamma
-		DamageCoeff: 3000
+		LayerName: anthrax_gamma
+		Damage: 3000
 		DamageInterval: 10
 		DamageTypes: FireDeath
 	DamagedByTintedCells@RADIOACTIVITY:
-		RadioactivityLayerName: radioactivity
-		DamageCoeff: 2000
+		LayerName: radioactivity
+		Damage: 2000
 		DamageInterval: 10
 		DamageTypes: FireDeath
 
@@ -1357,6 +1357,7 @@
 	AttackMove:
 	HiddenUnderFog:
 	ActorLostNotification:
+		TextNotification: Unit lost.
 	ProximityCaptor:
 		Types: Vehicle
 	GivesBounty:
@@ -1581,6 +1582,7 @@
 		CargoType: Infantry
 	HiddenUnderFog:
 	ActorLostNotification:
+		TextNotification: Unit lost.
 	GivesBounty:
 	Crushable:
 		WarnProbability: 0
@@ -1720,6 +1722,7 @@
 	HiddenUnderFog:
 	AttackMove:
 	ActorLostNotification:
+		TextNotification: Unit lost.
 	ProximityCaptor:
 		Types: Ship
 	GivesBounty:
@@ -1788,6 +1791,7 @@
 	Guard:
 	Guardable:
 	ActorLostNotification:
+		TextNotification: Unit lost.
 	ProximityCaptor:
 		Types: Plane
 	GivesBounty:
@@ -1920,8 +1924,8 @@
 	CapturableProgressBlink:
 		Sound: ucapture.aud
 	CaptureManager:
-		ShowChatMessage: true
 		BeingCapturedNotification: BuildingBeingCaptured
+		BeingCapturedTextNotification: One of our buildings is being captured.
 
 ^FakeBuilding:
 	Inherits: ^Building
@@ -2135,8 +2139,8 @@
 	CapturableProgressBlink:
 		Sound: ucapture.aud
 	CaptureManager:
-		ShowChatMessage: true
 		BeingCapturedNotification: BuildingBeingCaptured
+		BeingCapturedTextNotification: One of our buildings is being captured.
 	GivesBuildableArea:
 		AreaTypes: mine
 	InstantlyRepairable:
