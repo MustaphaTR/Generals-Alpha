@@ -9,11 +9,30 @@ options-tech-level =
     .no-cc-rebuild = No CC Rebuild
     .unrestricted = Unrestricted
 
-checkbox-redeployable-mcvs =
-    .label = Redeployable MCVs
-    .description = Allow undeploying Construction Yard
+checkbox-zhunits =
+    .label = Zero Hour
+    .description = Enables the Zero Hour stuff
+
+checkbox-ccradius =
+    .label = Build off Comm. Cent.
+    .description = Allow placing structures around Command Centers (Keep this enabled while playing against AI, it sucks without that)
+
+checkbox-limitsw =
+    .label = Limit Super Weapons
+    .description = Allow only 1 of each Super Weapon to be built
+
+checkbox-walls =
+    .label = Enable Walls
+    .description = Enables construction of Fences and Walls
+
+checkbox-docksresupply =
+    .label = Docks Resupply
+    .description = Supply Docks fill back with time
 
 ## World
+dropdown-restrictions =
+    .label = Restrictions
+
 options-starting-units =
     .no-bases = No Bases
     .cv-only = Constr. Veh. Only
