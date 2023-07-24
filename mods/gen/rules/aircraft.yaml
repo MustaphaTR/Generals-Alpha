@@ -14,8 +14,10 @@
 	SelectionDecorations:
 	Contrail@1:
 		Offset: -432,560,0
+		StartColorAlpha: 128
 	Contrail@2:
 		Offset: -432,-560,0
+		StartColorAlpha: 128
 	SpawnActorOnDeath:
 		Actor: husk.badger
 	LeavesTrails@0:
@@ -260,9 +262,11 @@ aircraft.cargo_plane:
 	Contrail@3:
 		Offset: -85,384,0
 		TrailLength: 16
+		StartColorAlpha: 128
 	Contrail@4:
 		Offset: -261,650,0
 		TrailLength: 15
+		StartColorAlpha: 128
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 326
@@ -408,8 +412,10 @@ aircraft.mig:
 	SelectionDecorations:
 	Contrail@1:
 		Offset: -598,-683,0
+		StartColorAlpha: 128
 	Contrail@2:
 		Offset: -598,683,0
+		StartColorAlpha: 128
 	-RevealOnDeath:
 	SpawnActorOnDeath:
 		Actor: husk.mig
@@ -548,8 +554,10 @@ aircraft.raptor:
 	SelectionDecorations:
 	Contrail@1:
 		Offset: -598,-683,0
+		StartColorAlpha: 128
 	Contrail@2:
 		Offset: -598,683,0
+		StartColorAlpha: 128
 	-RevealOnDeath:
 	SpawnActorOnDeath:
 		Actor: husk.raptor
@@ -729,8 +737,10 @@ aircraft.stealth_fighter:
 	SelectionDecorations:
 	Contrail@1:
 		Offset: -598,-683,0
+		StartColorAlpha: 128
 	Contrail@2:
 		Offset: -598,683,0
+		StartColorAlpha: 128
 	-RevealOnDeath:
 	SpawnActorOnDeath:
 		Actor: husk.stealth_fighter
@@ -909,8 +919,10 @@ aircraft.aurora:
 	SelectionDecorations:
 	Contrail@1:
 		Offset: -598,-683,0
+		StartColorAlpha: 128
 	Contrail@2:
 		Offset: -598,683,0
+		StartColorAlpha: 128
 	-RevealOnDeath:
 	SpawnActorOnDeath:
 		Actor: husk.aurora
@@ -1002,6 +1014,7 @@ aircraft.spy_drone:
 		ValidDamageStates: Critical
 	Contrail:
 		Offset: -511,0,0
+		StartColorAlpha: 128
 	RenderDetectionCircle:
 	AutoTakesOff:
 	DetectCloaked:
@@ -1144,9 +1157,11 @@ aircraft.a10:
 	Contrail@1:
 		Offset: -640,171,0
 		TrailLength: 15
+		StartColorAlpha: 128
 	Contrail@2:
 		Offset: -640,-171,0
 		TrailLength: 15
+		StartColorAlpha: 128
 	AmmoPool:
 		Name: missile
 		Armaments: missile
