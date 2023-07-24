@@ -452,7 +452,9 @@ aircraft.mig:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	ActorStatValues:
-		Upgrades: upgrade.mig_armor, upgrade.black_napalm, upgrade.tactical_nuke_mig
+		Upgrades: upgrade.mig_armor, upgrade.black_napalm
+		FactionUpgrades:
+			nuke: upgrade.mig_armor, upgrade.tactical_nuke_mig
 
 aircraft.raptor:
 	Inherits: ^Plane
@@ -628,6 +630,8 @@ aircraft.king_raptor.boss:
 	Buildable:
 		Queue: queue.boss_gen_aircraft
 		BuildPaletteOrder: 3
+	ActorStatValues:
+		Upgrades: upgrade.adv_training
 
 aircraft.stealth_fighter:
 	Inherits: ^Plane
@@ -943,6 +947,8 @@ aircraft.aurora.boss:
 		Prerequisites: !techlevel.notech
 	RenderSprites:
 		Image: aircraft.aurora
+	ActorStatValues:
+		Upgrades: upgrade.adv_training
 
 aircraft.aurora_alpha:
 	Inherits: aircraft.aurora
@@ -1530,7 +1536,9 @@ aircraft.comanche:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	ActorStatValues:
-		Upgrades: upgrade.adv_training, upgrade.rocket_pods, upgrade.countermeasures, upgrade.stealth_comanche
+		Upgrades: upgrade.adv_training, upgrade.rocket_pods, upgrade.countermeasures
+		FactionUpgrades:
+			air: upgrade.adv_training, upgrade.rocket_pods, upgrade.countermeasures, upgrade.stealth_comanche
 
 aircraft.helix:
 	Inherits: ^Helicopter

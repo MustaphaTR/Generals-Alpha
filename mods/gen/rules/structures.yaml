@@ -2491,7 +2491,9 @@ building.toxin_tunnel_network:
 	RenderSprites:
 		Image: building.toxin_tunnel_network
 	ActorStatValues:
-		Upgrades: upgrade.anthrax_gamma
+		Upgrades: upgrade.anthrax_beta
+		FactionUpgrades:
+			toxin: upgrade.anthrax_gamma
 
 building.toxin_tunnel_network.no_free_actor:
 	Inherits: building.toxin_tunnel_network
@@ -2626,6 +2628,9 @@ building.stinger_site:
 		SpawnAfterDefeat: false
 	Voiced:
 		VoiceSet: StingerSiteVoice
+	ActorStatValues:
+		FactionUpgrades:
+			demo: upgrade.demolitions, upgrade.ap_rockets
 
 ^default.airfield:
 	Inherits: ^Building
@@ -3910,7 +3915,10 @@ building.scud_storm:
 		Delay: 100
 		Count: 4
 	ActorStatValues:
-		Upgrades: upgrade.anthrax_beta, upgrade.anthrax_gamma
+		Upgrades: upgrade.anthrax_beta
+		FactionUpgrades:
+			toxin: upgrade.anthrax_gamma
+			demo:
 
 building.scud_storm.boss:
 	Inherits: building.scud_storm

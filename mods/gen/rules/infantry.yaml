@@ -95,6 +95,9 @@ infantry.worker:
 		VoiceSet: WorkerVoice
 	RenderSprites:
 		Image: hack.angry_mob.male
+	ActorStatValues:
+		FactionUpgrades:
+			demo: upgrade.demolitions, upgrade.worker_shoes
 
 ^default.mg_infantry:
 	Inherits: ^Soldier
@@ -245,7 +248,10 @@ infantry.rebel:
 	RenderSprites:
 		Image: infantry.rebel
 	ActorStatValues:
-		Upgrades: upgrade.capture_building, upgrade.camouflage, upgrade.ap_bullets
+		Upgrades: upgrade.capture_building, upgrade.ap_bullets
+		FactionUpgrades:
+			gla: upgrade.capture_building, upgrade.camouflage, upgrade.ap_bullets
+			demo: upgrade.capture_building, upgrade.demolitions, upgrade.ap_bullets
 
 infantry.toxin_rebel:
 	Inherits: ^default.mg_infantry
@@ -365,7 +371,10 @@ infantry.toxin_rebel:
 	CaptureManager:
 		CapturingCondition: capturing
 	ActorStatValues:
-		Upgrades: upgrade.anthrax_gamma
+		Upgrades: upgrade.capture_building, upgrade.anthrax_beta
+		FactionUpgrades:
+			toxin: upgrade.capture_building, upgrade.anthrax_gamma
+			demo: upgrade.capture_building, upgrade.demolitions
 
 infantry.red_guard:
 	Inherits: ^default.mg_infantry
@@ -427,6 +436,8 @@ infantry.red_guard:
 		Prerequisites: generals_power.red_training
 	ActorStatValues:
 		Upgrades: upgrade.capture_building, upgrade.nationalism
+		FactionUpgrades:
+			inf: upgrade.capture_building, upgrade.patriotism
 
 infantry.minigunner:
 	Inherits: ^default.mg_infantry
@@ -503,7 +514,9 @@ infantry.minigunner:
 		Types: Veterancy-Elite
 		Prerequisites: generals_power.minigunner_training
 	ActorStatValues:
-		Upgrades: upgrade.capture_building, upgrade.patriotism
+		Upgrades: upgrade.capture_building, upgrade.nationalism
+		FactionUpgrades:
+			inf: upgrade.capture_building, upgrade.patriotism
 
 infantry.conscript:
 	Inherits: ^default.mg_infantry
@@ -657,6 +670,8 @@ infantry.rpg_trooper:
 		VoiceSet: RPGTrooperVoice
 	ActorStatValues:
 		Upgrades: upgrade.ap_rockets
+		FactionUpgrades:
+			demo: upgrade.demolitions, upgrade.ap_rockets
 
 infantry.stinger_soldier:
 	Inherits: ^default.rocket_infantry
@@ -667,8 +682,7 @@ infantry.stinger_soldier:
 		Priority: 3
 		-PriorityModifiers:
 	Mobile:
-		RequiresCondition: !disable_movement
-		TurnWhileDisabledCondition: disable_movement
+		PauseOnCondition: disable_movement
 	GrantConditionAfterDelay:
 		Condition: disable_movement
 		ShowSelectionBar: false
@@ -748,6 +762,8 @@ infantry.tank_hunter:
 		VoiceSet: TankHunterVoice
 	ActorStatValues:
 		Upgrades: upgrade.nationalism
+		FactionUpgrades:
+			boss: upgrade.chemical_suits, upgrade.nationalism
 
 infantry.grenadier:
 	Inherits: ^default.rocket_infantry
@@ -969,7 +985,9 @@ infantry.toxin_terrorist:
 		Condition: anthrax_beta
 		Factions: toxin
 	ActorStatValues:
-		Upgrades: upgrade.anthrax_gamma
+		Upgrades: upgrade.anthrax_beta
+		FactionUpgrades:
+			toxin: upgrade.anthrax_gamma
 
 infantry.flamethrower:
 	Inherits: ^Soldier
@@ -1118,7 +1136,6 @@ infantry.saboteur:
 		Class: angry_mob
 	Voiced:
 		VoiceSet: AngryMobVoice
-	-ActorStatValues:
 
 hack.angry_mob.male:
 	Inherits: ^default.angry_mob
@@ -1139,6 +1156,7 @@ hack.angry_mob.male:
 		-IdleSequences:
 		StandSequences: stand
 	-TakeCover:
+	-ActorStatValues:
 
 hack.angry_mob.female:
 	Inherits: ^default.angry_mob
@@ -1159,6 +1177,7 @@ hack.angry_mob.female:
 		-IdleSequences:
 		StandSequences: stand
 	-TakeCover:
+	-ActorStatValues:
 
 hack.angry_mob.molotov:
 	Inherits: ^default.angry_mob
@@ -1171,6 +1190,7 @@ hack.angry_mob.molotov:
 		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: throw
+	-ActorStatValues:
 
 infantry.angry_mob:
 	Inherits@1: ^ExistsInWorld
@@ -1411,6 +1431,8 @@ infantry.hacker.boss:
 		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
 	RenderSprites:
 		Image: infantry.hacker
+	ActorStatValues:
+		Upgrades: upgrade.chemical_suits
 
 infantry.super_hacker:
 	Inherits: infantry.hacker

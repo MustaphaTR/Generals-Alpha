@@ -29,36 +29,6 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 		"StatisticsArmyGraphKey")]
 	public class ObserverStatsGenLogic : ChromeLogic
 	{
-		readonly ContainerWidget minimalStatsHeaders;
-		readonly ContainerWidget basicStatsHeaders;
-		readonly ContainerWidget economyStatsHeaders;
-		readonly ContainerWidget productionStatsHeaders;
-		readonly ContainerWidget supportPowerStatsHeaders;
-		readonly ContainerWidget combatStatsHeaders;
-		readonly ContainerWidget armyHeaders;
-		readonly ContainerWidget upgradesHeaders;
-		readonly ScrollPanelWidget playerStatsPanel;
-		readonly ScrollItemWidget minimalPlayerTemplate;
-		readonly ScrollItemWidget basicPlayerTemplate;
-		readonly ScrollItemWidget economyPlayerTemplate;
-		readonly ScrollItemWidget productionPlayerTemplate;
-		readonly ScrollItemWidget supportPowersPlayerTemplate;
-		readonly ScrollItemWidget armyPlayerTemplate;
-		readonly ScrollItemWidget upgradesPlayerTemplate;
-		readonly ScrollItemWidget combatPlayerTemplate;
-		readonly ContainerWidget incomeGraphContainer;
-		readonly ContainerWidget armyValueGraphContainer;
-		readonly LineGraphWidget incomeGraph;
-		readonly LineGraphWidget armyValueGraph;
-		readonly ScrollItemWidget teamTemplate;
-		readonly IEnumerable<Player> players;
-		readonly IOrderedEnumerable<IGrouping<int, Player>> teams;
-		readonly bool hasTeams;
-		readonly World world;
-		readonly WorldRenderer worldRenderer;
-
-		readonly string clickSound = ChromeMetrics.Get<string>("ClickSound");
-		ObserverStatsGenPanel activePanel;
 
 		[TranslationReference]
 		const string Minimal = "options-observer-stats.minimal";
@@ -98,6 +68,37 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 
 		[TranslationReference]
 		const string NoTeam = "label-no-team";
+
+		readonly ContainerWidget minimalStatsHeaders;
+		readonly ContainerWidget basicStatsHeaders;
+		readonly ContainerWidget economyStatsHeaders;
+		readonly ContainerWidget productionStatsHeaders;
+		readonly ContainerWidget supportPowerStatsHeaders;
+		readonly ContainerWidget combatStatsHeaders;
+		readonly ContainerWidget armyHeaders;
+		readonly ContainerWidget upgradesHeaders;
+		readonly ScrollPanelWidget playerStatsPanel;
+		readonly ScrollItemWidget minimalPlayerTemplate;
+		readonly ScrollItemWidget basicPlayerTemplate;
+		readonly ScrollItemWidget economyPlayerTemplate;
+		readonly ScrollItemWidget productionPlayerTemplate;
+		readonly ScrollItemWidget supportPowersPlayerTemplate;
+		readonly ScrollItemWidget armyPlayerTemplate;
+		readonly ScrollItemWidget upgradesPlayerTemplate;
+		readonly ScrollItemWidget combatPlayerTemplate;
+		readonly ContainerWidget incomeGraphContainer;
+		readonly ContainerWidget armyValueGraphContainer;
+		readonly LineGraphWidget incomeGraph;
+		readonly LineGraphWidget armyValueGraph;
+		readonly ScrollItemWidget teamTemplate;
+		readonly IEnumerable<Player> players;
+		readonly IOrderedEnumerable<IGrouping<int, Player>> teams;
+		readonly bool hasTeams;
+		readonly World world;
+		readonly WorldRenderer worldRenderer;
+
+		readonly string clickSound = ChromeMetrics.Get<string>("ClickSound");
+		ObserverStatsGenPanel activePanel;
 
 		[ObjectCreator.UseCtor]
 		public ObserverStatsGenLogic(World world, ModData modData, WorldRenderer worldRenderer, Widget widget, Dictionary<string, MiniYaml> logicArgs)

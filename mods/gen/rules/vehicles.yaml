@@ -349,6 +349,8 @@ vehicle.technical:
 		VoiceSet: TechnicalVoice
 	ActorStatValues:
 		Upgrades: upgrade.ap_bullets, upgrade.junk_repair
+		FactionUpgrades:
+			demo: upgrade.demolitions, upgrade.ap_bullets, upgrade.junk_repair
 
 vehicle.technical.demo_reinforce:
 	Inherits: vehicle.technical
@@ -457,6 +459,8 @@ vehicle.radar_van:
 		VoiceSet: RadarVanVoice
 	ActorStatValues:
 		Upgrades: upgrade.radar_van_scan, upgrade.junk_repair
+		FactionUpgrades:
+			demo: upgrade.demolitions, upgrade.radar_van_scan, upgrade.junk_repair
 
 vehicle.scorpion_tank:
 	Inherits: ^Tank
@@ -635,6 +639,9 @@ vehicle.scorpion_tank:
 		VoiceSet: ScorpionTankVoice
 	ActorStatValues:
 		Upgrades: upgrade.sc_rocket, upgrade.toxin_shells, upgrade.ap_rockets, upgrade.junk_repair
+		FactionUpgrades:
+			toxin: upgrade.sc_rocket, upgrade.anthrax_gamma, upgrade.ap_rockets, upgrade.junk_repair
+			demo: upgrade.sc_rocket, upgrade.demolitions, upgrade.ap_rockets, upgrade.junk_repair
 
 vehicle.crusader_tank:
 	Inherits: ^Tank
@@ -850,7 +857,9 @@ vehicle.battlemaster_tank:
 		Types: Veterancy-Elite
 		Prerequisites: generals_power.battlemaster_training
 	ActorStatValues:
-		Upgrades: upgrade.nationalism, upgrade.autoloader, upgrade.nuclear_tanks, upgrade.uranium_shells
+		Upgrades: upgrade.nationalism, upgrade.nuclear_tanks, upgrade.uranium_shells
+		FactionUpgrades:
+			tank: upgrade.nationalism, upgrade.autoloader, upgrade.nuclear_tanks, upgrade.uranium_shells
 
 vehicle.nuclear_battlemaster_tank:
 	Inherits: vehicle.battlemaster_tank
@@ -1043,6 +1052,8 @@ vehicle.sentry_drone:
 		VoiceSet: SentryDroneVoice
 	ActorStatValues:
 		Upgrades: upgrade.sentry_gun, upgrade.drone_armor
+		FactionUpgrades:
+			boss: upgrade.sentry_gun
 
 vehicle.quad_cannon:
 	Inherits: ^Tank
@@ -1155,6 +1166,8 @@ vehicle.quad_cannon:
 		VoiceSet: QuadCannonVoice
 	ActorStatValues:
 		Upgrades: upgrade.ap_bullets, upgrade.junk_repair
+		FactionUpgrades:
+			demo: upgrade.demolitions, upgrade.ap_bullets, upgrade.junk_repair
 
 vehicle.gatling_tank:
 	Inherits: ^Tank
@@ -1270,6 +1283,9 @@ vehicle.gatling_tank:
 		Image: vehicle.gatling_tank
 	Voiced:
 		VoiceSet: GatlingTankVoice
+	ActorStatValues:
+		FactionUpgrades:
+			boss: upgrade.chain_gun, upgrade.composite_armor
 
 vehicle.toxin_tractor:
 	Inherits: ^Tank
@@ -1411,7 +1427,10 @@ vehicle.toxin_tractor:
 	Voiced:
 		VoiceSet: ToxinTractorVoice
 	ActorStatValues:
-		Upgrades: upgrade.anthrax_beta, upgrade.anthrax_gamma, upgrade.junk_repair
+		Upgrades: upgrade.anthrax_beta, upgrade.junk_repair
+		FactionUpgrades:
+			toxin: upgrade.anthrax_gamma, upgrade.junk_repair
+			demo: upgrade.demolitions, upgrade.junk_repair
 
 vehicle.dragon_tank:
 	Inherits: ^Tank
@@ -1512,6 +1531,8 @@ vehicle.dragon_tank:
 		VoiceSet: DragonTankVoice
 	ActorStatValues:
 		Upgrades: upgrade.black_napalm
+		FactionUpgrades:
+			boss: upgrade.black_napalm, upgrade.composite_armor
 
 vehicle.rocket_buggy:
 	Inherits: ^Vehicle
@@ -1647,6 +1668,8 @@ vehicle.rocket_buggy:
 		Image: vehicle.rocket_buggy
 	ActorStatValues:
 		Upgrades: upgrade.ap_rockets, upgrade.junk_repair, upgrade.buggy_ammo
+		FactionUpgrades:
+			demo: upgrade.demolitions, upgrade.ap_rockets, upgrade.junk_repair, upgrade.buggy_ammo
 
 vehicle.rocket_buggy.boss:
 	Inherits: vehicle.rocket_buggy
@@ -1876,6 +1899,9 @@ vehicle.battle_Bus:
 		Weight: 8
 	Voiced:
 		VoiceSet: BattleBusVoice
+	ActorStatValues:
+		FactionUpgrades:
+			demo: upgrade.demolitions, upgrade.junk_repair
 
 vehicle.troop_crawler:
 	Inherits: ^Tank
@@ -2565,7 +2591,10 @@ vehicle.scud_launcher:
 	Selectable:
 		DecorationBounds: 1194, 1194
 	ActorStatValues:
-		Upgrades: upgrade.anthrax_beta, upgrade.anthrax_gamma, upgrade.junk_repair
+		Upgrades: upgrade.anthrax_beta, upgrade.junk_repair
+		FactionUpgrades:
+			toxin: upgrade.anthrax_gamma, upgrade.junk_repair
+			demo: upgrade.demolitions, upgrade.junk_repair
 
 vehicle.inferno_cannon:
 	Inherits: ^Tank
@@ -3048,7 +3077,10 @@ vehicle.marauder_tank:
 	Voiced:
 		VoiceSet: MarauderTankVoice
 	ActorStatValues:
-		Upgrades: upgrade.toxin_shells, upgrade.junk_repair
+		Upgrades: upgrade.toxin_shells, upgrade.anthrax_beta, upgrade.junk_repair
+		FactionUpgrades:
+			toxin: upgrade.anthrax_gamma, upgrade.junk_repair
+			demo: upgrade.demolitions, upgrade.junk_repair
 
 vehicle.overlord_tank:
 	Inherits: ^Tank
@@ -3280,7 +3312,9 @@ vehicle.overlord_tank:
 		Class: vehicle.overlord_tank
 		DecorationBounds: 1877, 1621, 0, -170
 	ActorStatValues:
-		Upgrades: upgrade.isotope_stability, upgrade.nuclear_tanks, upgrade.uranium_shells
+		Upgrades: upgrade.nuclear_tanks, upgrade.uranium_shells
+		FactionUpgrades:
+			nuke: upgrade.isotope_stability
 
 vehicle.overlord_tank.boss:
 	Inherits: vehicle.overlord_tank
@@ -3290,8 +3324,6 @@ vehicle.overlord_tank.boss:
 		Prerequisites: !techlevel.notech
 	RenderSprites:
 		Image: vehicle.overlord_tank
-	ActorStatValues:
-		Upgrades: upgrade.nuclear_tanks, upgrade.uranium_shells
 
 vehicle.emparor_overlord:
 	Inherits: vehicle.overlord_tank
@@ -3534,7 +3566,10 @@ vehicle.bomb_truck:
 		Class: vehicle.bomb_truck
 		DecorationBounds: 1792, 1792
 	ActorStatValues:
-		Upgrades: upgrade.anthrax_beta, upgrade.anthrax_gamma, upgrade.junk_repair
+		Upgrades: upgrade.anthrax_beta, upgrade.junk_repair
+		FactionUpgrades:
+			toxin: upgrade.anthrax_gamma, upgrade.junk_repair
+			demo: upgrade.junk_repair
 
 vehicle.nuke_cannon:
 	Inherits: ^Tank
@@ -4002,6 +4037,9 @@ vehicle.combat_cycle:
 		Image: vehicle.combat_cycle
 	Voiced:
 		VoiceSet: CycleVoice
+	ActorStatValues:
+		FactionUpgrades:
+			demo: upgrade.demolitions, upgrade.junk_repair
 
 vehicle.combat_cycle.demo:
 	Inherits: vehicle.combat_cycle

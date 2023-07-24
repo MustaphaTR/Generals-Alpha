@@ -430,7 +430,8 @@
 
 ^AffectedByDemolitions:
 	ActorStatValues:
-		Upgrades: upgrade.demolitions
+		FactionUpgrades:
+			demo: upgrade.demolitions
 	Explodes@Demo:
 		Weapon: explosion.suicide
 		EmptyWeapon: explosion.suicide
