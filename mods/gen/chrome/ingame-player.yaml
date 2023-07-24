@@ -295,7 +295,7 @@ Container@PLAYER_WIDGETS:
 					Background: command-button
 					DisableKeySound: true
 					TooltipText: Force Move
-					TooltipDesc: Selected units will move to the desired location\n - Default activity for the target is suppressed\n - Vehicles will attempt to crush enemies at the target location\n - Units entering transports will consider nearby alternatives\n - Chrono Tanks will teleport towards the target location\n\nLeft-click icon then right-click on target.\nHold {(Alt)} to activate temporarily while commanding units.
+					TooltipDesc: Selected units will move to the desired location\n - Default activity for the target is suppressed\n - Vehicles will attempt to crush enemies at the target location\n\nLeft-click icon then right-click on target.\nHold {(Alt)} to activate temporarily while commanding units.
 					TooltipContainer: TOOLTIP_CONTAINER
 					TooltipTemplate: BUTTON_WITH_DESC_HIGHLIGHT_TOOLTIP
 					Children:
@@ -313,7 +313,7 @@ Container@PLAYER_WIDGETS:
 					Background: command-button
 					DisableKeySound: true
 					TooltipText: Force Attack
-					TooltipDesc: Selected units will attack the targeted unit or location\nignoring their default activity for the target.\n\nLeft-click icon then right-click on target.\nHold {(Ctrl)} to activate temporarily while commanding units.
+					TooltipDesc: Selected units will attack the targeted unit or location\n - Default activity for the target is suppressed\n - Allows targeting of own or ally forces\n\nLeft-click icon then right-click on target.\nHold {(Ctrl)} to activate temporarily while commanding units
 					TooltipContainer: TOOLTIP_CONTAINER
 					TooltipTemplate: BUTTON_WITH_DESC_HIGHLIGHT_TOOLTIP
 					Children:
@@ -370,7 +370,7 @@ Container@PLAYER_WIDGETS:
 					DisableKeyRepeat: true
 					DisableKeySound: true
 					TooltipText: Scatter
-					TooltipDesc: Selected units will stop their current activity\nand move to a nearby location.\n\nActs immediately on selected units.
+					TooltipDesc: Selected units will stop their current activity.\nSelected buildings will reset their rally point.\n\nActs immediately on selected targets.
 					TooltipContainer: TOOLTIP_CONTAINER
 					Children:
 						Image@ICON:
@@ -723,7 +723,7 @@ Container@PLAYER_WIDGETS:
 			X: WINDOW_RIGHT - 250
 			Y: 272
 			Width: 238
-			Height: 27
+			Height: 28
 			ImageCollection: sidebar
 			ImageName: background-moneybin
 			ClickThrough: false
