@@ -216,7 +216,7 @@ Player:
 		WaterChance: 0
 		SpawnInterval: 1500
 		InitialSpawnDelay: 0
-		RequiresCondition: creates_enabled && combatant_player && no_bases
+		RequiresCondition: crates_enabled && combatant_player && no_bases
 	GrantConditionOnPrerequisite@NoBases:
 		Prerequisites: hack.no_bases
 		Condition: no_bases

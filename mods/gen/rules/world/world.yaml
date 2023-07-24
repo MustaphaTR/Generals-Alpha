@@ -53,14 +53,14 @@ World:
 		WaterChance: 0
 		SpawnInterval: 3000
 		InitialSpawnDelay: 1500
-		RequiresCondition: creates_enabled
+		RequiresCondition: crates_enabled
 	LobbySystemActorConditionCheckbox@crates:
 		ID: crates
 		Label: checkbox-crates.label
 		Description: checkbox-crates.description
 		Enabled: true
 		Actors: World, Player
-		Condition: creates_enabled
+		Condition: crates_enabled
 	SmudgeLayer@SCORCH:
 		Type: Scorch
 		Sequence: scorches
