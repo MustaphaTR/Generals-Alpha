@@ -4358,6 +4358,13 @@ vehicle.mobile_reactor:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@REVEAL_DRIVER_KILL: ^DisableRevealOnDriverKill
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Buildable:
+		Queue: queue.laser_gen_vehicle
+		BuildPaletteOrder: 8
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~disabled
+		Description: Provides power for Laser Tanks.
 	Valued:
 		Cost: 800
 	Tooltip:
