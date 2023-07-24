@@ -514,6 +514,7 @@ infantry.minigunner:
 		Types: Veterancy-Elite
 		Prerequisites: generals_power.minigunner_training
 	ActorStatValues:
+		SplitRanges: true
 		Upgrades: upgrade.capture_building, upgrade.nationalism
 		FactionUpgrades:
 			inf: upgrade.capture_building, upgrade.patriotism
@@ -617,6 +618,8 @@ infantry.conscript:
 		DefaultAttackSequence: shoot
 	AutoTarget:
 		ScanRadius: 5
+	ActorStatValues:
+		SplitRanges: true
 
 infantry.missile_defender:
 	Inherits: ^default.rocket_infantry
@@ -795,6 +798,8 @@ infantry.grenadier:
 		EmptyWeapon: UnitExplodeSmall
 	Voiced:
 		VoiceSet: GenericVoice
+	ActorStatValues:
+		SplitRanges: false
 
 infantry.pathfinder:
 	Inherits: ^Soldier

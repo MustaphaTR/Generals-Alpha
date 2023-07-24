@@ -1165,6 +1165,7 @@ vehicle.quad_cannon:
 	Voiced:
 		VoiceSet: QuadCannonVoice
 	ActorStatValues:
+		SplitRanges: true
 		Upgrades: upgrade.ap_bullets, upgrade.junk_repair
 		FactionUpgrades:
 			demo: upgrade.demolitions, upgrade.ap_bullets, upgrade.junk_repair
@@ -1284,6 +1285,7 @@ vehicle.gatling_tank:
 	Voiced:
 		VoiceSet: GatlingTankVoice
 	ActorStatValues:
+		SplitRanges: true
 		FactionUpgrades:
 			boss: upgrade.chain_gun, upgrade.composite_armor
 
@@ -3225,6 +3227,7 @@ vehicle.overlord_tank:
 		Name: gatling
 		Turret: gatling
 		LocalOffset: 213,0,0
+		EnableSplitRanges: true
 		MuzzleSequence: muzzle2
 		RequiresCondition: gatling_upgrade
 	AttackTurreted:
@@ -3820,6 +3823,7 @@ vehicle.combat_cycle:
 	Armament@RPG_A:
 		Name: aa_rocket
 		Weapon: missile.rpg_trooper.air
+		EnableSplitRanges: true
 		RequiresCondition: rpg
 	Armament@Terrorist:
 		Name: terror

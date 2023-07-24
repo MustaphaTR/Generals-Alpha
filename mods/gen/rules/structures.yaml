@@ -1610,6 +1610,8 @@ building.patriot:
 	ClassicFacingBodyOrientation:
 	Voiced:
 		VoiceSet: PatriotVoice
+	ActorStatValues:
+		SplitRanges: true
 
 building.emp_patriot:
 	Inherits: building.patriot
@@ -1700,6 +1702,8 @@ building.laser_turret:
 	ClassicFacingBodyOrientation:
 	Voiced:
 		VoiceSet: PatriotVoice
+	ActorStatValues:
+		SplitRanges: true
 
 building.demo_trap:
 	Inherits: ^Defense
@@ -1918,6 +1922,8 @@ building.gatling_cannon:
 	ClassicFacingBodyOrientation:
 	Voiced:
 		VoiceSet: GatlingCannonVoice
+	ActorStatValues:
+		SplitRanges: true
 
 building.firebase:
 	Inherits: ^Defense
@@ -2629,6 +2635,7 @@ building.stinger_site:
 	Voiced:
 		VoiceSet: StingerSiteVoice
 	ActorStatValues:
+		SplitRanges: true
 		FactionUpgrades:
 			demo: upgrade.demolitions, upgrade.ap_rockets
 
