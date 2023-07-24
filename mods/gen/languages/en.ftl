@@ -50,4 +50,4 @@ label-armor-class =
     .aircraft-normal-countermeasures = Aircraft
     .aircraft-chinook = Chinook
     .aircraft-chinook-countermeasures = Chinook
-    .aircraft-commanche = Commanche
+    .aircraft-comanche = Comanche
