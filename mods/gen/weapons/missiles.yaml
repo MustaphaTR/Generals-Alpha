@@ -952,6 +952,8 @@ missile.destroyer.air:
 	Projectile: Missile
 		Speed: 384
 		CloseEnough: 298
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: AirborneActor
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion_air
 		ImpactSounds: kaboom25.aud
