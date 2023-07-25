@@ -919,6 +919,15 @@ building.cold_fusion_reactor:
 		RequiresCondition: control_rods && !emp && !hacked && !sabotaged
 	GrantConditionOnProduction:
 		Condition: control_rods
+	ConditionPrerequisite@CONTROL_RODS:
+		Queue: queue.cold_fusion_reactor
+		Actor: upgrade.control_rods
+		PauseOnCondition: control_rods
+	ConditionIconOverlay@CONTROL_RODS:
+		Image: iconstripes
+		Sequence: upgraded
+		Actor: upgrade.control_rods
+		RequiresCondition: control_rods
 	Voiced:
 		VoiceSet: ColdFusionReactorVoice
 
@@ -933,6 +942,11 @@ building.cold_fusion_reactor.laser:
 		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: queue.laser_gen_cold_fusion_reactor
+	ConditionPrerequisite@CONTROL_RODS:
+		Queue: queue.laser_gen_cold_fusion_reactor
+		Actor: upgrade.control_rods.laser
+	ConditionIconOverlay@CONTROL_RODS:
+		Actor: upgrade.control_rods.laser
 	Valued:
 		Cost: 700
 	Power:
@@ -954,6 +968,11 @@ building.advanced_cold_fusion_reactor:
 		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: queue.advanced_cold_fusion_reactor
+	ConditionPrerequisite@CONTROL_RODS:
+		Queue: queue.advanced_cold_fusion_reactor
+		Actor: upgrade.advanced_control_rods
+	ConditionIconOverlay@CONTROL_RODS:
+		Actor: upgrade.advanced_control_rods
 	Valued:
 		Cost: 900
 	Power@CONTROL_RODS:
@@ -975,13 +994,6 @@ building.cold_fusion_reactor.boss:
 		Actors: upgrade.control_rods
 	ConditionPrerequisite@CONTROL_RODS:
 		Queue: queue.boss_gen_cold_fusion_reactor
-		Actor: upgrade.control_rods
-		PauseOnCondition: control_rods
-	ConditionIconOverlay@CONTROL_RODS:
-		Image: iconstripes
-		Sequence: upgraded
-		Actor: upgrade.control_rods
-		RequiresCondition: control_rods
 	RenderSprites:
 		Image: building.cold_fusion_reactor
 
