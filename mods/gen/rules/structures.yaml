@@ -1792,6 +1792,10 @@ building.demo_trap.explode:
 		Color: FF7F0080
 	RenderSprites:
 		Image: building.demo_trap
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: building.demo_trap
 
 building.demo_trap.toxin:
 	Inherits: building.demo_trap
@@ -1829,6 +1833,10 @@ building.demo_trap.toxin.explode:
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: building.demo_trap.toxin
 
 building.advanced_demo_trap:
 	Inherits: building.demo_trap
@@ -1850,6 +1858,10 @@ building.advanced_demo_trap.explode:
 		Weapon: explosion.advanced_demo_trap
 	RenderSprites:
 		Image: building.advanced_demo_trap
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: building.advanced_demo_trap
 
 building.gatling_cannon:
 	Inherits: ^Defense
