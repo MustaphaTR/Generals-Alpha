@@ -725,10 +725,11 @@ sniper.jarmen_kell.vehicle:
 	-Warhead@1Dam:
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Vehicle, Tank, Ship
-	Warhead@2Dis: GrantExternalCondition
+	Warhead@2Dis: ChangeOwner
 		Range: 0c512
+		OwnerType: InternalName
 		ValidTargets: Vehicle, Tank
-		Condition: driver_killed
+		InvalidTargets: NoDriverKill
 	Warhead@3Dis: GrantExternalCondition
 		Range: 0c512
 		Duration: 500

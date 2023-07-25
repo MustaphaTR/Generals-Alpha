@@ -314,21 +314,12 @@
 		Condition: disabled
 
 ^AffectedByDriverKill:
-	WithColoredOverlay@DRIVER_KILLED:
-		Color: 80808080
-		RequiresCondition: driver_killed
-	# ExternalConditionThatRevokedOnCapture@DRIVER_KILLED: # This will be rewritten with ChangeOwnerWarhead.
-	#	Condition: driver_killed
-	#	TotalCap: 1
-	TimedConditionBar@DRIVER_KILLED:
+	GrantConditionOnInternalOwner@DRIVER_KILLED:
 		Condition: driver_killed
-		Color: AAAAAA
+		InternalOwners: Neutral
 	Capturable@DRIVER_KILLED:
 		Types: driverless_vehcile
 		RequiresCondition: driver_killed
-		ValidRelationships: Enemy, Neutral, Ally
-	MustBeDestroyed:
-		RequiresCondition: !driver_killed
 	CaptureManager:
 
 ^CanCaptureDriverlessVehicles:
@@ -1022,14 +1013,6 @@
 	RevealOnDeath:
 		Duration: 100
 		Radius: 7c512
-
-^DisableRevealOnDriverKill:
-	RevealsShroud:
-		RequiresCondition: !driver_killed
-	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
-		RequiresCondition: !driver_killed
-	RevealOnDeath:
-		RequiresCondition: !driver_killed
 
 ^AutoTargetGround:
 	AutoTarget:

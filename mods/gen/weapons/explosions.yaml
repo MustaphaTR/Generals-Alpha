@@ -577,11 +577,11 @@ explosion.mine.neutron:
 		AffectsParent: true
 		ValidTargets: Infantry
 		DamageTypes: TriggerProne, DefaultDeath
-	Warhead@2Dis: GrantExternalCondition
+	Warhead@2Dis: ChangeOwner
 		Range: 0c768
-		AffectsParent: true
+		OwnerType: InternalName
 		ValidTargets: Vehicle, Tank
-		Condition: driver_killed
+		InvalidTargets: NoDriverKill
 	Warhead@3Eff: CreateEffect
 		Explosions: large_explosion
 		ImpactSounds: mineblo1.aud

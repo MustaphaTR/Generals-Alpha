@@ -500,10 +500,16 @@ cannon.nuke_cannon.neutron:
 	TargetActorCenter: true
 	Projectile: Bullet
 		ContrailLength: 30
-	Warhead@1Dis: GrantExternalCondition
+	Warhead@1Dis: ChangeOwner
 		Range: 1c512
+		OwnerType: InternalName
 		ValidTargets: Vehicle, Tank
-		Condition: driver_killed
+		InvalidTargets: NoDriverKill
+	Warhead@2Dis: GrantExternalCondition
+		Range: 1c512
+		Duration: 500
+		ValidTargets: Ship
+		Condition: hacked
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c512
 		Damage: 100000
