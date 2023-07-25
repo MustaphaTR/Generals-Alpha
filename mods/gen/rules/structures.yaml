@@ -2553,6 +2553,9 @@ building.tunnel_network.boss.no_free_actor:
 
 building.tunnel_network.sneak_attack:
 	Inherits: ^default.tunnel_network
+	ActorStatValues:
+		Icon: sneak-icon
+		IconPalette: chrome
 
 building.stinger_site:
 	Inherits: ^Defense
