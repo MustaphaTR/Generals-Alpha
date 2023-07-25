@@ -1475,8 +1475,7 @@ building.gla_supply_stash:
 	ProvidesPrerequisite@ArmsDealer:
 		Prerequisite: building.arms_dealer
 		RequiresPrerequisites: techlevel.infonly
-	Power:
-		Amount: 0
+	-Power:
 	Voiced:
 		VoiceSet: GLASupplyVoice
 
@@ -2046,8 +2045,6 @@ building.firebase:
 		Color: DDDD0088
 	Targetable:
 		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Disable, BunkerBustable
-	Power:
-		Amount: 0
 	Voiced:
 		VoiceSet: FirebaseVoice
 
@@ -2113,8 +2110,6 @@ building.bunker:
 		RequiresCondition: loaded
 	Targetable:
 		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Disable, BunkerBustable
-	Power:
-		Amount: 0
 	Voiced:
 		VoiceSet: BunkerVoice
 
@@ -2318,8 +2313,7 @@ building.arms_dealer:
 	SpawnActorOnDeath:
 		Actor: hole.arms_dealer
 		SpawnAfterDefeat: false
-	Power:
-		Amount: 0
+	-Power:
 	Voiced:
 		VoiceSet: GLAArmsDealerVoice
 
@@ -2427,8 +2421,6 @@ building.prc_war_factory:
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
-	Power:
-		Amount: 0
 	-WithSpriteBody:
 	WithTerrainDependantSpriteBody:
 	RallyPoint:
@@ -2620,8 +2612,6 @@ building.stinger_site:
 		Weapon: hack.stinger_site.air
 	BodyOrientation:
 		QuantizedFacings: 8
-	Power:
-		Amount: 0
 	ProximityExternalCondition@Cloak:
 		Condition: stinger_cloak
 		Range: 1c0
@@ -2968,8 +2958,6 @@ building.internet_center:
 		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 50
 		PauseOnCondition: emp || hacked
-	Power:
-		Amount: 0
 	ProvidesPrerequisite@buildingname:
 	GivesIntelligence:
 		Types: SatelliteHack1
@@ -3166,8 +3154,6 @@ building.palace:
 	Armor:
 		Type: building.normal
 	WithBuildingBib:
-	Power:
-		Amount: 0
 	Turreted:
 		TurnSpeed: 1023
 	-CommandBarBlacklist:
@@ -3376,8 +3362,6 @@ building.detention_camp:
 	Armor:
 		Type: building.normal
 	WithBuildingBib:
-	Power:
-		Amount: 0
 	ProvidesPrerequisite@buildingname:
 	Production:
 		Produces: Intelligence
@@ -3521,8 +3505,6 @@ building.black_market:
 	Armor:
 		Type: building.normal
 	WithBuildingBib:
-	Power:
-		Amount: 0
 	ProvidesPrerequisite@buildingname:
 	SpawnActorOnDeath:
 		Actor: hole.black_market
