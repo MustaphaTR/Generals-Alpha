@@ -44,13 +44,13 @@ Container@PLAYER_WIDGETS:
 			Logic: CollapsableWidgetLogic
 			X: 19
 			Y: WINDOW_BOTTOM - HEIGHT - 43
-			Width: 240
+			Width: 260
 			Height: 148
 			Children:
 				Background@CLOSED_BACKGROUND:
 					Logic: AddFactionSuffixLogic
 					Y: 119
-					Width: 240
+					Width: 260
 					Height: 32
 					Visible: false
 					Background: actor-stats-background
@@ -60,9 +60,9 @@ Container@PLAYER_WIDGETS:
 						LargeIconSpacing: 14, 2
 						SmallIconCount: 15
 						SmallIconSpacing: 5, 5
-						UpgradeIconCount: 4
-						UpgradeIconSpacing: 8, 0
-					Width: 240
+						UpgradeIconCount: 5
+						UpgradeIconSpacing: 0, 0
+					Width: 260
 					Height: 153
 					Background: actor-stats-background
 					Children:
@@ -91,7 +91,7 @@ Container@PLAYER_WIDGETS:
 							NoIconSequence: emptyicon
 							TooltipContainer: TOOLTIP_CONTAINER
 						ActorIcon@STAT_ICON_UPGRADE:
-							X: 12
+							X: 10
 							Y: 98
 							Width: 48
 							Height: 36
@@ -123,6 +123,7 @@ Container@PLAYER_WIDGETS:
 							Width: 32
 							Height: 5
 							BarMargin: 1,1
+							Background: progressbar-bg-cameo
 						Label@STAT_MORE:
 							X: 228
 							Y: 123
@@ -168,7 +169,7 @@ Container@PLAYER_WIDGETS:
 									ImageCollection: actor-stats-bits
 									ImageName: actor-stats-speed
 						Label@STAT_LABEL_4:
-							X: 180
+							X: 190
 							Y: 31
 							Contrast: true
 							Text: :
@@ -181,7 +182,7 @@ Container@PLAYER_WIDGETS:
 									ImageCollection: actor-stats-bits
 									ImageName: actor-stats-damage
 						Label@STAT_LABEL_5:
-							X: 180
+							X: 190
 							Y: 49
 							Contrast: true
 							Text: :
@@ -194,7 +195,7 @@ Container@PLAYER_WIDGETS:
 									ImageCollection: actor-stats-bits
 									ImageName: actor-stats-rof
 						Label@STAT_LABEL_6:
-							X: 180
+							X: 190
 							Y: 67
 							Contrast: true
 							Text: :
@@ -220,7 +221,7 @@ Container@PLAYER_WIDGETS:
 									ImageCollection: actor-stats-bits
 									ImageName: actor-stats-resources
 						Label@STAT_LABEL_8:
-							X: 180
+							X: 190
 							Y: 85
 							Contrast: true
 							Text: :
@@ -235,24 +236,36 @@ Container@PLAYER_WIDGETS:
 				Button@CLOSE_BUTTON:
 					Logic: AddFactionSuffixLogic
 					X: 22
-					Y: 0 - 8
+					Y: 0 - 9
 					Width: 26
 					Height: 18
 					VisualHeight: 0
-					Background: sidebar-button # close-stats-buttons
+					Background: sidebar-button
 					TooltipText: Collapse
 					TooltipContainer: TOOLTIP_CONTAINER
+					Children:
+						Image@ICON:
+							X: 5
+							Y: 1
+							ImageCollection: scrollpanel-decorations
+							ImageName: down
 				Button@OPEN_BUTTON:
 					Logic: AddFactionSuffixLogic
 					X: 22
-					Y: PARENT_BOTTOM - 36
+					Y: PARENT_BOTTOM - 38
 					Width: 26
 					Height: 18
 					VisualHeight: 0
 					Visible: false
-					Background: sidebar-button # open-stats-buttons
+					Background: sidebar-button
 					TooltipText: Expand
 					TooltipContainer: TOOLTIP_CONTAINER
+					Children:
+						Image@ICON:
+							X: 5
+							Y: 1
+							ImageCollection: scrollpanel-decorations
+							ImageName: up
 		Image@COMMAND_BAR_BACKGROUND:
 			X: 5
 			Y: WINDOW_BOTTOM - HEIGHT - 5
