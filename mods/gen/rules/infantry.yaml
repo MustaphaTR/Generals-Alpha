@@ -638,19 +638,26 @@ infantry.missile_defender:
 		ReadyAudio: MissileDefenderCreated
 	Tooltip:
 		Name: Missile Defender
+	Armament@PRIMARY:
+		ForceTargetRelationships: None
+	Armament@SECONDARY:
+		ForceTargetRelationships: None
 	Armament@LaserLock_Normal:
 		Weapon: missile.missile_defender.locked.normal
 		LocalOffset: 0,0,555
+		TargetRelationships: None
 	Armament@LaserLock_Ground:
 		Weapon: missile.missile_defender.locked.ground
 		LocalOffset: 0,0,555
 		Cursor: ability
 		OutsideRangeCursor: ability
+		TargetRelationships: None
 	Armament@LaserLock_Air:
 		Weapon: missile.missile_defender.locked.air
 		LocalOffset: 0,0,555
 		Cursor: ability
 		OutsideRangeCursor: ability
+		TargetRelationships: None
 	Voiced:
 		VoiceSet: MissileDefenderVoice
 	ActorStatValues:
@@ -748,13 +755,16 @@ infantry.tank_hunter:
 		Name: Tank Hunter
 	Armament@PRIMARY:
 		Weapon: missile.tank_hunter.ground
+		ForceTargetRelationships: None
 	Armament@SECONDARY:
 		Weapon: missile.tank_hunter.air
+		ForceTargetRelationships: None
 	Armament@TNT:
 		Name: tnt_charge
 		Weapon: attach.tank_hunter
 		Cursor: tnt
 		OutsideRangeCursor: tnt
+		TargetRelationships: None
 	AttackFrontal:
 		Armaments: primary, tnt_charge
 		FacingTolerance: 0
@@ -1638,6 +1648,7 @@ infantry.colonel_burton:
 		ScanRadius: 8
 	Armament@PRIMARY_INF:
 		Weapon: mg.colonel_burton.ap
+		ForceTargetRelationships: None
 	Armament@PRIMARY_TANK:
 		Weapon: mg.colonel_burton.at
 	Armament@GARRISON:
@@ -1648,11 +1659,13 @@ infantry.colonel_burton:
 		Weapon: melee.colonel_burton
 		Cursor: ability
 		OutsideRangeCursor: ability
+		TargetRelationships: None
 	Armament@TIMED_DEMO_BOMB:
 		Name: timed_demo_bomb
 		Weapon: attach.colonel_burton.timed
 		Cursor: c4
 		OutsideRangeCursor: c4
+		TargetRelationships: None
 	AttackFrontal:
 		Armaments: primary, knife, timed_demo_bomb
 		Voice: Attack
@@ -1809,6 +1822,8 @@ infantry.jarmen_kell:
 		Damage: 180
 		Armaments: primary
 		Upgrades: upgrade.ap_bullets
+		FactionUpgrades:
+			demo: upgrade.ap_bullets, upgrade.demolitions
 
 infantry.jarmen_kell.demo:
 	Inherits: infantry.jarmen_kell
@@ -1826,8 +1841,6 @@ infantry.jarmen_kell.demo:
 		FacingTolerance: 0
 	Voiced:
 		VoiceSet: DemoJarmenVoice
-	ActorStatValues:
-		Upgrades: upgrade.ap_bullets, upgrade.demolitions
 
 infantry.jarmen_kell.boss:
 	Inherits: infantry.jarmen_kell
