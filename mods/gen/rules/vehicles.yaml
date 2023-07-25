@@ -638,7 +638,7 @@ vehicle.scorpion_tank:
 	Voiced:
 		VoiceSet: ScorpionTankVoice
 	ActorStatValues:
-		Upgrades: upgrade.sc_rocket, upgrade.toxin_shells, upgrade.ap_rockets, upgrade.junk_repair
+		Upgrades: upgrade.sc_rocket, upgrade.toxin_shells, upgrade.anthrax_beta, upgrade.ap_rockets, upgrade.junk_repair
 		FactionUpgrades:
 			toxin: upgrade.sc_rocket, upgrade.anthrax_gamma, upgrade.ap_rockets, upgrade.junk_repair
 			demo: upgrade.sc_rocket, upgrade.demolitions, upgrade.ap_rockets, upgrade.junk_repair
@@ -723,6 +723,7 @@ vehicle.crusader_tank:
 	Selectable:
 		DecorationBounds: 1194, 1194
 	ActorStatValues:
+		Damage: 60
 		Upgrades: upgrade.adv_training, upgrade.composite_armor
 
 vehicle.laser_tank:
@@ -754,6 +755,8 @@ vehicle.laser_tank:
 		PauseOnCondition: !hellfire_drone || hacked || emp || driver_killed || leaflet || lowpower
 	Voiced:
 		VoiceSet: LaserTankVoice
+	ActorStatValues:
+		Damage: 80
 
 vehicle.battlemaster_tank:
 	Inherits: ^Tank
@@ -818,6 +821,7 @@ vehicle.battlemaster_tank:
 		TurnSpeed: 20
 	Armament:
 		Weapon: cannon.battlemaster_tank
+		Damage: 60
 		Recoil: 128
 		RecoilRecovery: 38
 		LocalOffset: 720,0,80
@@ -825,6 +829,7 @@ vehicle.battlemaster_tank:
 		RequiresCondition: !autoloader
 	Armament@AUTOLOADER:
 		Weapon: cannon.battlemaster_tank.autoloader
+		Damage: 120
 		Recoil: 128
 		RecoilRecovery: 38
 		LocalOffset: 720,0,80
@@ -1500,10 +1505,12 @@ vehicle.dragon_tank:
 		Modifier: 74
 	Armament@Red:
 		Weapon: flamer.dragon_tank
+		Damage: 300
 		LocalOffset: 512,128,42, 512,-128,42
 		RequiresCondition: !black_napalm
 	Armament@Blue:
 		Weapon: flamer.dragon_tank.blue
+		Damage: 400
 		LocalOffset: 512,128,42, 512,-128,42
 		RequiresCondition: black_napalm
 	GrantConditionOnPrerequisite@BLACK_NAPALM:
@@ -1765,6 +1772,8 @@ vehicle.avenger:
 		Image: vehicle.avenger
 	Voiced:
 		VoiceSet: AvengerVoice
+	ActorStatValues:
+		Damage: 10
 
 vehicle.avenger.air:
 	Inherits: vehicle.avenger
@@ -1778,7 +1787,7 @@ vehicle.avenger.boss:
 		Queue: queue.boss_gen_vehicle
 		BuildPaletteOrder: 8
 
-vehicle.battle_Bus:
+vehicle.battle_bus:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CARGO: ^CargoPips
@@ -2406,6 +2415,8 @@ vehicle.tomahawk_launcher:
 		Image: vehicle.tomahawk_launcher
 	Voiced:
 		VoiceSet: TomahawkLauncherVoice
+	ActorStatValues:
+		Damage: 150
 
 vehicle.tomahawk_launcher.boss:
 	Inherits: vehicle.tomahawk_launcher
@@ -3569,6 +3580,7 @@ vehicle.bomb_truck:
 		Class: vehicle.bomb_truck
 		DecorationBounds: 1792, 1792
 	ActorStatValues:
+		ExplosionWeapon: true
 		Upgrades: upgrade.anthrax_beta, upgrade.junk_repair
 		FactionUpgrades:
 			toxin: upgrade.anthrax_gamma, upgrade.junk_repair

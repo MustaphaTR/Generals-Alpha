@@ -248,6 +248,7 @@ infantry.rebel:
 	RenderSprites:
 		Image: infantry.rebel
 	ActorStatValues:
+		Damage: 5
 		Upgrades: upgrade.capture_building, upgrade.ap_bullets
 		FactionUpgrades:
 			gla: upgrade.capture_building, upgrade.camouflage, upgrade.ap_bullets
@@ -435,6 +436,7 @@ infantry.red_guard:
 		Types: Veterancy
 		Prerequisites: generals_power.red_training
 	ActorStatValues:
+		Damage: 15
 		Upgrades: upgrade.capture_building, upgrade.nationalism
 		FactionUpgrades:
 			inf: upgrade.capture_building, upgrade.patriotism
@@ -514,6 +516,7 @@ infantry.minigunner:
 		Types: Veterancy-Elite
 		Prerequisites: generals_power.minigunner_training
 	ActorStatValues:
+		Damage: 10
 		SplitRanges: true
 		Upgrades: upgrade.capture_building, upgrade.nationalism
 		FactionUpgrades:
@@ -557,6 +560,8 @@ infantry.conscript:
 	Voiced:
 		VoiceSet: ConscriptVoice
 	CaptureManager:
+	ActorStatValues:
+		Damage: 5
 
 ^default.rocket_infantry:
 	Inherits: ^Soldier
@@ -618,7 +623,8 @@ infantry.conscript:
 		DefaultAttackSequence: shoot
 	AutoTarget:
 		ScanRadius: 5
-	ActorStatValues:
+	ActorStatValues
+		Damage: 40
 		SplitRanges: true
 
 infantry.missile_defender:
@@ -799,6 +805,7 @@ infantry.grenadier:
 	Voiced:
 		VoiceSet: GenericVoice
 	ActorStatValues:
+		Damage: 60
 		SplitRanges: false
 
 infantry.pathfinder:
@@ -878,6 +885,7 @@ infantry.pathfinder:
 	RenderSprites:
 		Image: infantry.pathfinder
 	ActorStatValues:
+		Damage: 100
 		Upgrades: upgrade.adv_training, upgrade.chemical_suits
 
 infantry.pathfinder.boss:
@@ -961,6 +969,10 @@ infantry.terrorist:
 	RenderSprites:
 		Image: infantry.terrorist
 	CaptureManager:
+	ActorStatValues:
+		Damage: 230
+		Spread: 1c256
+		ExplosionWeapon: true
 
 infantry.toxin_terrorist:
 	Inherits: infantry.terrorist
@@ -1794,6 +1806,8 @@ infantry.jarmen_kell:
 		Margin: 4, 3
 		RequiresSelection: true
 	ActorStatValues:
+		Damage: 180
+		Armaments: primary
 		Upgrades: upgrade.ap_bullets
 
 infantry.jarmen_kell.demo:

@@ -95,6 +95,8 @@ vessel.gunboat:
 		Weapons: debris.gunboat
 		Pieces: 1, 1
 		Range: 1c0, 1c0
+	ActorStatValues:
+		Damage: 25
 
 vessel.destroyer:
 	Inherits: ^Ship
@@ -160,6 +162,7 @@ vessel.destroyer:
 		Pieces: 1, 1
 		Range: 1c0, 1c0
 	ActorStatValues:
+		Damage: 60
 		SplitRanges: true
 
 vessel.cruiser:
