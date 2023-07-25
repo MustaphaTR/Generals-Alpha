@@ -3949,10 +3949,10 @@ building.scud_storm:
 		Delay: 100
 		Count: 4
 	ActorStatValues:
-		Upgrades: upgrade.anthrax_beta
+		Upgrades: upgrade.anthrax_beta, upgrade.fortified_structures
 		FactionUpgrades:
-			toxin: upgrade.anthrax_gamma
-			demo:
+			toxin: upgrade.anthrax_gamma, upgrade.fortified_structures
+			demo: upgrade.fortified_structures
 
 building.scud_storm.boss:
 	Inherits: building.scud_storm
