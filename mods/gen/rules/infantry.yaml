@@ -248,7 +248,7 @@ infantry.rebel:
 	RenderSprites:
 		Image: infantry.rebel
 	ActorStatValues:
-		Damage: 5
+		Damage: 15
 		Upgrades: upgrade.capture_building, upgrade.ap_bullets
 		FactionUpgrades:
 			gla: upgrade.capture_building, upgrade.camouflage, upgrade.ap_bullets
@@ -561,7 +561,7 @@ infantry.conscript:
 		VoiceSet: ConscriptVoice
 	CaptureManager:
 	ActorStatValues:
-		Damage: 5
+		Damage: 15
 
 ^default.rocket_infantry:
 	Inherits: ^Soldier

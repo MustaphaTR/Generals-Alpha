@@ -3796,10 +3796,12 @@ vehicle.combat_cycle:
 	Armament@Rebel:
 		Name: mg
 		Weapon: mg.rebel.bike
+		Damage: 48
 		RequiresCondition: rebel
 	Armament@RPG_G:
 		Name: ag_rocket
 		Weapon: missile.rpg_trooper.ground
+		Damage: 40
 		RequiresCondition: rpg
 	Armament@RPG_A:
 		Name: aa_rocket
@@ -3813,6 +3815,7 @@ vehicle.combat_cycle:
 	Armament@Jarmen:
 		Name: sniper_rifle
 		Weapon: sniper.jarmen_kell.bike
+		Damage: 180
 		RequiresCondition: jarmen
 	Armament@Jarmen_Snipe:
 		Name: driver_snipe

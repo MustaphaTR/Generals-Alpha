@@ -11,7 +11,6 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using OpenRA.Mods.Common.Pathfinder;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.GenSDK.Activities;
 using OpenRA.Mods.GenSDK.Orders;
@@ -77,13 +76,14 @@ namespace OpenRA.Mods.GenSDK.Traits
 		public override object Create(ActorInitializer init) { return new SupplyCollector(init.Self, this); }
 	}
 
-	public class SupplyCollector : IIssueOrder, IResolveOrder, IOrderVoice, ISync, INotifyCreated, INotifyIdle, INotifyBlockingMove
+	public class SupplyCollector : IIssueOrder, IResolveOrder, IOrderVoice, ISync, INotifyCreated, INotifyIdle, INotifyBlockingMove, ISupplyCollector
 	{
 		public readonly SupplyCollectorInfo Info;
 		readonly Mobile mobile;
 		readonly Actor self;
 
 		public int Amount;
+		int ISupplyCollector.Amount() { return Amount; }
 
 		bool idleSmart = true;
 		public bool Waiting = false;
