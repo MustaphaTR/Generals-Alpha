@@ -52,3 +52,4 @@ label-armor-class =
     .aircraft-chinook = Chinook
     .aircraft-chinook-countermeasures = Chinook
     .aircraft-comanche = Comanche
+    .aircraft-comanche-countermeasures = Comanche
