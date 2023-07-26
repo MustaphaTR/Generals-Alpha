@@ -1807,6 +1807,10 @@ aircraft.helix:
 		Condition: enable-smoke
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Cargo
+		Upgrades: upgrade.black_napalm, upgrade.helix_napalm, upgrade.helix_bunker, upgrade.helix_gatling, upgrade.helix_speaker
+		LocalUpgrades: upgrade.helix_napalm, upgrade.helix_nuke, upgrade.helix_bunker, upgrade.helix_gatling, upgrade.helix_speaker
+		FactionUpgrades:
+			nuke: upgrade.helix_nuke, upgrade.helix_bunker, upgrade.helix_gatling, upgrade.helix_speaker
 
 aircraft.assault_helix:
 	Inherits: aircraft.helix
@@ -1841,3 +1845,6 @@ aircraft.assault_helix:
 	WithCargoPipsDecoration:
 		Position: BottomLeft
 		RequiresSelection: true
+	ActorStatValues:
+		Upgrades: upgrade.black_napalm, upgrade.helix_napalm, upgrade.helix_bunker
+		-FactionUpgrades:

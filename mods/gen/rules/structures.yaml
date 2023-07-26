@@ -464,6 +464,9 @@ building.gla_command_center:
 		Type: Rectangle
 			TopLeft: -1536, -1536
 			BottomRight: 1536, 1536
+	ActorStatValues:
+		FactionUpgrades:
+			stealth: upgrade.fortified_structures, upgrade.camo_netting
 
 building.prc_command_center:
 	Inherits: ^default.command_center
@@ -839,12 +842,18 @@ building.prc_command_center:
 		Prerequisite: building.prc_command_center
 	RenderSprites:
 		Image: building.prc_command_center
+	ActorStatValues:
+		Upgrades: upgrade.radar, upgrade.land_mines, upgrade.neutron_mines
+		LocalUpgrades: upgrade.radar, upgrade.land_mines, upgrade.neutron_mines
 
 building.prc_command_center.radar:
 	Inherits: building.prc_command_center
 	-Buildable:
-	GrantCondition@RADAR:
-		Condition: radar
+	PeriodicProducer@RADAR: ## Hack, to trigger upgrade for selection UI.
+		Actors: upgrade.radar
+		ChargeDuration: 1
+		Type: queue.prc_command_center
+		RequiresCondition: !radar
 	GrantConditionOnBotOwner@BOT:
 		Bots: rush, normal, turtle
 		Condition: bot
@@ -932,6 +941,9 @@ building.cold_fusion_reactor:
 		RequiresCondition: control_rods
 	Voiced:
 		VoiceSet: ColdFusionReactorVoice
+	ActorStatValues:
+		Upgrades: upgrade.control_rods
+		LocalUpgrades: upgrade.control_rods
 
 building.cold_fusion_reactor.laser:
 	Inherits: building.cold_fusion_reactor
@@ -957,6 +969,9 @@ building.cold_fusion_reactor.laser:
 		Amount: 8
 	RenderSprites:
 		Image: building.cold_fusion_reactor
+	ActorStatValues:
+		Upgrades: upgrade.control_rods.laser
+		LocalUpgrades: upgrade.control_rods.laser
 
 building.advanced_cold_fusion_reactor:
 	Inherits: building.cold_fusion_reactor
@@ -979,6 +994,9 @@ building.advanced_cold_fusion_reactor:
 		Cost: 900
 	Power@CONTROL_RODS:
 		Amount: 15
+	ActorStatValues:
+		Upgrades: upgrade.advanced_control_rods
+		LocalUpgrades: upgrade.advanced_control_rods
 
 building.cold_fusion_reactor.boss:
 	Inherits: building.cold_fusion_reactor
@@ -998,6 +1016,9 @@ building.cold_fusion_reactor.boss:
 		Queue: queue.boss_gen_cold_fusion_reactor
 	RenderSprites:
 		Image: building.cold_fusion_reactor
+	ActorStatValues:
+		Upgrades: upgrade.control_rods, upgrade.land_mines, upgrade.neutron_mines
+		LocalUpgrades: upgrade.control_rods, upgrade.land_mines, upgrade.neutron_mines
 
 building.nuclear_reactor:
 	Inherits: ^default.reactor
@@ -1198,6 +1219,9 @@ building.gla_barracks:
 	WithTerrainDependantSpriteBody:
 	Voiced:
 		VoiceSet: GLABarracksVoice
+	ActorStatValues:
+		FactionUpgrades:
+			stealth: upgrade.fortified_structures, upgrade.camo_netting
 
 building.prc_barracks:
 	Inherits: ^default.barracks
@@ -1482,6 +1506,9 @@ building.gla_supply_stash:
 	-Power:
 	Voiced:
 		VoiceSet: GLASupplyVoice
+	ActorStatValues:
+		FactionUpgrades:
+			stealth: upgrade.fortified_structures, upgrade.camo_netting
 
 building.gla_supply_stash.no_free_actor:
 	Inherits: building.gla_supply_stash
@@ -2142,8 +2169,11 @@ building.fortified_bunker:
 		Type: building.tough
 	Cargo:
 		MaxWeight: 10
-	GrantCondition:
-		Condition: land_mines
+	PeriodicProducer@LAND_MINES: ## Hack, to trigger upgrade for selection UI.
+		Actors: upgrade.land_mines
+		ChargeDuration: 1
+		Type: queue.just_mine
+		RequiresCondition: !land_mines
 
 ^default.war_factory:
 	Inherits: ^Building
@@ -2331,6 +2361,9 @@ building.arms_dealer:
 	-Power:
 	Voiced:
 		VoiceSet: GLAArmsDealerVoice
+	ActorStatValues:
+		FactionUpgrades:
+			stealth: upgrade.fortified_structures, upgrade.camo_netting
 
 building.prc_war_factory:
 	Inherits: ^default.war_factory
@@ -2491,6 +2524,10 @@ building.tunnel_network:
 	ActorStatValues:
 		Damage: 10
 		Stats: Armor, Sight, Cargo, Damage, ReloadDelay, MaxRange
+		Upgrades: upgrade.camo_netting
+		FactionUpgrades:
+			demo: upgrade.demolitions
+			stealth:
 
 building.tunnel_network.no_free_actor:
 	Inherits: building.tunnel_network
@@ -2535,9 +2572,10 @@ building.toxin_tunnel_network:
 	RenderSprites:
 		Image: building.toxin_tunnel_network
 	ActorStatValues:
-		Upgrades: upgrade.anthrax_beta
+		Upgrades: upgrade.anthrax_beta, upgrade.camo_netting
 		FactionUpgrades:
 			toxin: upgrade.anthrax_gamma
+			demo: upgrade.demolitions
 
 building.toxin_tunnel_network.no_free_actor:
 	Inherits: building.toxin_tunnel_network
@@ -2675,8 +2713,11 @@ building.stinger_site:
 		VoiceSet: StingerSiteVoice
 	ActorStatValues:
 		Stats: Armor, Sight, Mob, Damage, ReloadDelay, MinRange, None, MaxRange
+		Upgrades: upgrade.ap_rockets, upgrade.camo_netting
 		FactionUpgrades:
+			toxin: upgrade.ap_rockets
 			demo: upgrade.demolitions, upgrade.ap_rockets
+			stealth: upgrade.ap_rockets
 
 ^default.airfield:
 	Inherits: ^Building
@@ -2998,6 +3039,8 @@ building.internet_center:
 		PlayerPalette: cncplayer
 	ActorStatValues:
 		Stats: Armor, Sight, Cargo
+		Upgrades: upgrade.satellite_hack1, upgrade.satellite_hack2, upgrade.land_mines, upgrade.neutron_mines
+		LocalUpgrades: upgrade.satellite_hack1, upgrade.satellite_hack2, upgrade.land_mines, upgrade.neutron_mines
 
 building.strategy_center:
 	Inherits: ^Building
@@ -3274,6 +3317,8 @@ building.palace:
 		VoiceSet: PalaceVoice
 	ActorStatValues:
 		Stats: Armor, Sight, Cargo
+		FactionUpgrades:
+			stealth: upgrade.fortified_structures, upgrade.camo_netting
 
 building.propaganda_center:
 	Inherits: ^Building
@@ -3549,6 +3594,9 @@ building.black_market:
 		SpawnAfterDefeat: false
 	Voiced:
 		VoiceSet: BlackMarketVoice
+	ActorStatValues:
+		FactionUpgrades:
+			stealth: upgrade.fortified_structures, upgrade.camo_netting
 
 building.speaker_tower:
 	Inherits: ^Building
@@ -3976,6 +4024,7 @@ building.scud_storm:
 		FactionUpgrades:
 			toxin: upgrade.anthrax_gamma, upgrade.fortified_structures
 			demo: upgrade.fortified_structures
+			stealth: upgrade.anthrax_beta, upgrade.fortified_structures, upgrade.camo_netting
 
 building.scud_storm.boss:
 	Inherits: building.scud_storm
@@ -3999,8 +4048,6 @@ building.scud_storm.boss:
 		DisplayOrder: 65
 	ProductionBar:
 		ProductionType: queue.boss_gen_scud_storm
-	ActorStatValues:
-		-Upgrades:
 
 building.missile_silo:
 	Inherits: ^Building

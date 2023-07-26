@@ -1127,6 +1127,9 @@
 		Condition: hellfire_drone
 		Actors: upgrade.hellfire_drone
 	ProvidesPrerequisite@unitname:
+	ActorStatValues:
+		Upgrades: upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
+		LocalUpgrades: upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
 
 ^CanHavePRCVehicleUpgrades:
 	Production:
@@ -1186,6 +1189,9 @@
 		IsPlayerPalette: true
 		RequiresCondition: camo_netted && !emp && !hacked
 	ProvidesPrerequisite@buildingname:
+	ActorStatValues:
+		Upgrades: upgrade.camo_netting
+		LocalUpgrades: upgrade.camo_netting
 
 ^CanHaveCamoNettingFreeForStealthGen:
 	Inherits@CAMO: ^CanHaveCamoNetting
@@ -1260,6 +1266,9 @@
 		Actor: upgrade.neutron_mines
 		RequiresCondition: neutron_mines
 	ProvidesPrerequisite@buildingname:
+	ActorStatValues:
+		Upgrades: upgrade.land_mines, upgrade.neutron_mines
+		LocalUpgrades: upgrade.land_mines, upgrade.neutron_mines
 
 ^FlatSelectionMode:
 	Selectable:

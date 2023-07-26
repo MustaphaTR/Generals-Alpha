@@ -212,7 +212,7 @@ vehicle.humvee:
 		VoiceSet: HumveeVoice
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Cargo
-		Upgrades: upgrade.tow_missile, upgrade.adv_training
+		Upgrades: upgrade.tow_missile, upgrade.adv_training, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
 	ActorStatOverride:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, Cargo, MaxRange
 		RequiresCondition: tow_missile
@@ -728,7 +728,7 @@ vehicle.crusader_tank:
 	ActorStatValues:
 		Damage: 60
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
-		Upgrades: upgrade.adv_training, upgrade.composite_armor
+		Upgrades: upgrade.adv_training, upgrade.composite_armor, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
 
 vehicle.laser_tank:
 	Inherits: vehicle.crusader_tank
@@ -1778,6 +1778,7 @@ vehicle.avenger:
 	ActorStatValues:
 		Damage: 10
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+		Upgrades: upgrade.adv_training, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
 
 vehicle.avenger.air:
 	Inherits: vehicle.avenger
@@ -1917,6 +1918,9 @@ vehicle.battle_bus:
 		Stats: Armor, Sight, Speed, None, None, None, Cargo
 		FactionUpgrades:
 			demo: upgrade.demolitions, upgrade.junk_repair
+	ActorStatOverride:
+		Stats: Armor, Sight, Cargo
+		RequiresCondition: husk
 
 vehicle.troop_crawler:
 	Inherits: ^Tank
@@ -2221,7 +2225,10 @@ vehicle.microwave_tank:
 		VoiceSet: MicrowaveTankVoice
 	ActorStatValues:
 		Stats: Armor, Sight, Speed
-		Upgrades: upgrade.adv_training, upgrade.composite_armor
+		Upgrades: upgrade.adv_training, upgrade.composite_armor, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
+		FactionUpgrades:
+			air: upgrade.adv_training, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
+			super: upgrade.adv_training, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
 
 vehicle.ecm_tank:
 	Inherits: ^Tank
@@ -2424,6 +2431,7 @@ vehicle.tomahawk_launcher:
 	ActorStatValues:
 		Damage: 150
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+		Upgrades: upgrade.adv_training, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
 
 vehicle.tomahawk_launcher.boss:
 	Inherits: vehicle.tomahawk_launcher
@@ -2611,7 +2619,8 @@ vehicle.scud_launcher:
 		DecorationBounds: 1194, 1194
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
-		Upgrades: upgrade.anthrax_beta, upgrade.junk_repair
+		Upgrades: upgrade.anthrax_beta, upgrade.junk_repair, upgrade.toxin_missiles, upgrade.hi_explosive_missiles
+		LocalUpgrades: upgrade.toxin_missiles, upgrade.hi_explosive_missiles
 		FactionUpgrades:
 			toxin: upgrade.anthrax_gamma, upgrade.junk_repair
 			demo: upgrade.demolitions, upgrade.junk_repair
@@ -2809,7 +2818,7 @@ vehicle.paladin_tank:
 		Image: vehicle.paladin_tank
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
-		Upgrades: upgrade.adv_training, upgrade.composite_armor
+		Upgrades: upgrade.adv_training, upgrade.composite_armor, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
 
 vehicle.paladin_tank.boss:
 	Inherits: vehicle.paladin_tank
@@ -3332,9 +3341,10 @@ vehicle.overlord_tank:
 		DecorationBounds: 1877, 1621, 0, -170
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
-		Upgrades: upgrade.nuclear_tanks, upgrade.uranium_shells
+		Upgrades: upgrade.nuclear_tanks, upgrade.uranium_shells, upgrade.overlord_bunker, upgrade.overlord_gatling, upgrade.overlord_speaker
+		LocalUpgrades: upgrade.overlord_bunker, upgrade.overlord_gatling, upgrade.overlord_speaker
 		FactionUpgrades:
-			nuke: upgrade.isotope_stability
+			nuke: upgrade.isotope_stability, upgrade.overlord_bunker, upgrade.overlord_gatling, upgrade.overlord_speaker
 	ActorStatOverride@Bunker:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Cargo
 		RequiresCondition: bunker_upgrade
@@ -3385,7 +3395,8 @@ vehicle.emparor_overlord:
 	Voiced:
 		VoiceSet: EmparorOverlordVoice
 	ActorStatValues:
-		Upgrades: upgrade.subliminal_messaging, upgrade.nuclear_tanks, upgrade.uranium_shells
+		Upgrades: upgrade.subliminal_messaging, upgrade.nuclear_tanks, upgrade.uranium_shells, upgrade.overlord_gatling
+		-FactionUpgrades:
 	-ActorStatOverride@Bunker:
 
 vehicle.bomb_truck:
@@ -3593,10 +3604,11 @@ vehicle.bomb_truck:
 		DecorationBounds: 1792, 1792
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, Spread
-		Upgrades: upgrade.anthrax_beta, upgrade.junk_repair
+		Upgrades: upgrade.anthrax_beta, upgrade.junk_repair, upgrade.bio_bombs, upgrade.hi_explosive_bombs
+		LocalUpgrades: upgrade.bio_bombs, upgrade.hi_explosive_bombs
 		FactionUpgrades:
-			toxin: upgrade.anthrax_gamma, upgrade.junk_repair
-			demo: upgrade.junk_repair
+			toxin: upgrade.anthrax_gamma, upgrade.junk_repair, upgrade.bio_bombs
+			demo: upgrade.junk_repair, upgrade.hi_explosive_bombs
 
 vehicle.nuke_cannon:
 	Inherits: ^Tank
