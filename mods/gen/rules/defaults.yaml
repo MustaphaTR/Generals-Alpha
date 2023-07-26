@@ -1323,10 +1323,10 @@
 		RequiresCondition: !parachute && !fullhealth
 		TargetTypes: Repair
 	Targetable:
-		TargetTypes: GroundActor, Vehicle, Vehicle-Disguise, DetonateAttack
+		TargetTypes: GroundActor, Vehicle, Disguise, DetonateAttack
 		RequiresCondition: !parachute && !driver_killed
 	Targetable@DRIVER_KILLED:
-		TargetTypes: GroundActor, Vehicle, Vehicle-Disguise, DetonateAttack, NoDriverKill, NoAutoTarget
+		TargetTypes: GroundActor, Vehicle, Disguise, DetonateAttack, NoDriverKill, NoAutoTarget
 		RequiresCondition: driver_killed
 	RepairableNear:
 		RepairActors: building.usa_war_factory, building.arms_dealer, building.prc_war_factory
@@ -1388,10 +1388,10 @@
 	Mobile:
 		Locomotor: locomotor.tracked
 	Targetable:
-		TargetTypes: GroundActor, C4, Tank, Vehicle-Disguise, DetonateAttack
+		TargetTypes: GroundActor, C4, Tank, Disguise, DetonateAttack
 		RequiresCondition: !parachute && !driver_killed
 	Targetable@DRIVER_KILLED:
-		TargetTypes: GroundActor, C4, Tank, Vehicle-Disguise, DetonateAttack, NoDriverKill, NoAutoTarget
+		TargetTypes: GroundActor, C4, Tank, Disguise, DetonateAttack, NoDriverKill, NoAutoTarget
 		RequiresCondition: driver_killed
 	ProximityCaptor:
 		Types: Tank
@@ -1497,7 +1497,7 @@
 	SpeedMultiplier@GENERIC:
 		Modifier: 200
 	Targetable:
-		TargetTypes: GroundActor, C4, Vehicle, Vehicle-Disguise, DetonateAttack
+		TargetTypes: GroundActor, C4, Vehicle, Disguise, DetonateAttack
 		RequiresCondition: !parachute
 	MapEditorData:
 		Categories: Civilian vehicle
@@ -1541,7 +1541,7 @@
 	Selectable:
 		Bounds: 512, 768, 0, -341
 	Targetable:
-		TargetTypes: GroundActor, Infantry, Infantry-Disguise, DetonateAttack
+		TargetTypes: GroundActor, Infantry, DetonateAttack
 		RequiresCondition: !parachute
 	RepairableNear:
 		RepairActors: building.usa_barracks, building.gla_barracks, building.prc_barracks, tech.soviet_barracks
