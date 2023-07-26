@@ -24,6 +24,7 @@ options-game-speed =
 
 ## ActorStatsValues, IngameActorStatsLogic
 label-armor-class =
+    .no-armor = No Armor
     .building-normal = Building
     .building-tough = Tough
     .building-internet_center = Int. Center

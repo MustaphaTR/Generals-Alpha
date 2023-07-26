@@ -32,6 +32,8 @@ tech.oil_derrick:
 	GivesCashOnCapture:
 		Amount: 1000
 	UpdatesDerrickCount:
+	ActorStatValues:
+		Stats: Armor, Sight, CashTrickler
 
 tech.oil_refinery:
 	Inherits: ^TechBuilding
@@ -235,6 +237,9 @@ tech.flame_tower:
 	Explodes:
 		Weapon: BuildingExplode
 		EmptyWeapon: BuildingExplode
+	ActorStatValues:
+		Damage: 300
+		Stats: Armor, Sight, None, Damage, ReloadDelay, MaxRange
 
 tech.power_plant:
 	Inherits: ^TechBuilding
@@ -270,6 +275,8 @@ tech.power_plant:
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.reactor
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 tech.repair_bay:
 	Inherits: ^TechBuilding

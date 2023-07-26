@@ -96,6 +96,7 @@ infantry.worker:
 	RenderSprites:
 		Image: hack.angry_mob.male
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, None, None, None, Collector
 		FactionUpgrades:
 			demo: upgrade.demolitions, upgrade.worker_shoes
 
@@ -151,6 +152,7 @@ infantry.worker:
 	CaptureManager:
 		CapturingCondition: capturing
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.capture_building
 
 infantry.ranger:
@@ -517,7 +519,7 @@ infantry.minigunner:
 		Prerequisites: generals_power.minigunner_training
 	ActorStatValues:
 		Damage: 10
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Upgrades: upgrade.capture_building, upgrade.nationalism
 		FactionUpgrades:
 			inf: upgrade.capture_building, upgrade.patriotism
@@ -625,7 +627,7 @@ infantry.conscript:
 		ScanRadius: 5
 	ActorStatValues
 		Damage: 40
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 
 infantry.missile_defender:
 	Inherits: ^default.rocket_infantry
@@ -816,7 +818,7 @@ infantry.grenadier:
 		VoiceSet: GenericVoice
 	ActorStatValues:
 		Damage: 60
-		SplitRanges: false
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 infantry.pathfinder:
 	Inherits: ^Soldier
@@ -896,6 +898,7 @@ infantry.pathfinder:
 		Image: infantry.pathfinder
 	ActorStatValues:
 		Damage: 100
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.adv_training, upgrade.chemical_suits
 
 infantry.pathfinder.boss:
@@ -982,7 +985,7 @@ infantry.terrorist:
 	ActorStatValues:
 		Damage: 230
 		Spread: 1c256
-		ExplosionWeapon: true
+		Stats: Armor, Sight, Speed, Damage, Spread
 
 infantry.toxin_terrorist:
 	Inherits: infantry.terrorist
@@ -1073,6 +1076,8 @@ infantry.flamethrower:
 		DefaultAttackSequence: shoot
 	Voiced:
 		VoiceSet: GenericVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 infantry.saboteur:
 	Inherits: ^Soldier
@@ -1124,6 +1129,8 @@ infantry.saboteur:
 		ValidDamageStates: Critical
 	Voiced:
 		VoiceSet: SaboteurVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
 
 ^default.angry_mob:
 	Inherits: ^Soldier
@@ -1287,8 +1294,9 @@ infantry.angry_mob:
 	RenderSprites:
 		Image: infantry.angry_mob
 	ActorStatValues:
-		Upgrades: upgrade.arm_the_mob, upgrade.ap_bullets
 		Sight: 3c768
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+		Upgrades: upgrade.arm_the_mob, upgrade.ap_bullets
 
 infantry.angry_mob.boss:
 	Inherits: infantry.angry_mob
@@ -1455,6 +1463,8 @@ infantry.hacker:
 	Voiced:
 		VoiceSet: HackerVoice
 	-MustBeDestroyed:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
 
 infantry.hacker.boss:
 	Inherits: infantry.hacker
@@ -1569,6 +1579,8 @@ infantry.hijacker:
 	RenderSprites:
 		Image: infantry.hijacker
 	CaptureManager:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
 
 infantry.hijacker.stealth:
 	Inherits: infantry.hijacker
@@ -1708,6 +1720,7 @@ infantry.colonel_burton:
 	Voiced:
 		VoiceSet: BurtonVoice
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.adv_training, upgrade.chemical_suits
 
 infantry.colonel_burton.boss:
@@ -1821,6 +1834,7 @@ infantry.jarmen_kell:
 	ActorStatValues:
 		Damage: 180
 		Armaments: primary
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.ap_bullets
 		FactionUpgrades:
 			demo: upgrade.ap_bullets, upgrade.demolitions
@@ -1995,6 +2009,8 @@ infantry.black_lotus:
 		Prerequisites: prerequisite.inf_gen_player
 	Voiced:
 		VoiceSet: LotusVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 infantry.super_lotus:
 	Inherits: infantry.black_lotus

@@ -877,6 +877,8 @@ building.prc_command_center.radar:
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 building.cold_fusion_reactor:
 	Inherits: ^default.reactor
@@ -1396,6 +1398,8 @@ building.usa_supply_center:
 		VoiceSet: USASupplyVoice
 	RenderSprites:
 		PlayerPalette: cncplayer
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 building.gla_supply_stash:
 	Inherits: ^default.supply_center
@@ -1556,6 +1560,8 @@ building.prc_supply_center:
 		RequiresPrerequisites: techlevel.infonly
 	Voiced:
 		VoiceSet: PRCSupplyVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 building.patriot:
 	Inherits: ^Defense
@@ -1622,7 +1628,7 @@ building.patriot:
 	Voiced:
 		VoiceSet: PatriotVoice
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MinRange, None, MaxRange
 
 building.emp_patriot:
 	Inherits: building.patriot
@@ -1714,7 +1720,7 @@ building.laser_turret:
 	Voiced:
 		VoiceSet: PatriotVoice
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MinRange, None, MaxRange
 
 building.demo_trap:
 	Inherits: ^Defense
@@ -1769,6 +1775,8 @@ building.demo_trap:
 		Actor: building.demo_trap.explode
 	GrantConditionOnDeploy:
 		DeployedCondition: self_destruct
+	ActorStatValues:
+		Stats: Armor, Sight, None, Damage, Spread
 
 building.demo_trap.explode:
 	Inherits: building.demo_trap
@@ -1946,7 +1954,7 @@ building.gatling_cannon:
 	Voiced:
 		VoiceSet: GatlingCannonVoice
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MinRange, None, MaxRange
 
 building.firebase:
 	Inherits: ^Defense
@@ -2047,6 +2055,9 @@ building.firebase:
 		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Disable, BunkerBustable
 	Voiced:
 		VoiceSet: FirebaseVoice
+	ActorStatValues:
+		Damage: 75
+		Stats: Armor, Sight, Cargo, Damage, ReloadDelay, MaxRange
 
 building.bunker:
 	Inherits: ^Defense
@@ -2112,6 +2123,8 @@ building.bunker:
 		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Disable, BunkerBustable
 	Voiced:
 		VoiceSet: BunkerVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Cargo
 
 building.fortified_bunker:
 	Inherits: building.bunker
@@ -2257,6 +2270,8 @@ building.usa_war_factory:
 		SequenceAlpha: 0.65
 	RenderSprites:
 		PlayerPalette: cncplayer
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 building.arms_dealer:
 	Inherits: ^default.war_factory
@@ -2387,6 +2402,8 @@ building.prc_war_factory:
 		Locations: 0,-1, 1,-1, 2,-1, -1,0, -1,1, -1,2, 0,3, 1,3, 2,3, 3,2, 3,1, 3,0
 	Voiced:
 		VoiceSet: PRCWarFactoryVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^default.tunnel_network:
 	Inherits: ^Defense
@@ -2428,6 +2445,8 @@ building.prc_war_factory:
 		VoiceSet: TunnelNetworkVoice
 	RenderSprites:
 		Image: building.tunnel_network
+	ActorStatValues:
+		Stats: Armor, Sight, Cargo
 
 building.tunnel_network:
 	Inherits: ^default.tunnel_network
@@ -2469,6 +2488,9 @@ building.tunnel_network:
 	SpawnActorOnDeath:
 		Actor: hole.tunnel_network
 		SpawnAfterDefeat: false
+	ActorStatValues:
+		Damage: 10
+		Stats: Armor, Sight, Cargo, Damage, ReloadDelay, MaxRange
 
 building.tunnel_network.no_free_actor:
 	Inherits: building.tunnel_network
@@ -2652,7 +2674,7 @@ building.stinger_site:
 	Voiced:
 		VoiceSet: StingerSiteVoice
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Mob, Damage, ReloadDelay, MinRange, None, MaxRange
 		FactionUpgrades:
 			demo: upgrade.demolitions, upgrade.ap_rockets
 
@@ -2694,6 +2716,8 @@ building.stinger_site:
 		Prerequisite: prerequisite.airfield
 	GrantConditionOnInfiltration:
 		Duration: 750
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 building.usa_airfield:
 	Inherits: ^default.airfield
@@ -2972,6 +2996,8 @@ building.internet_center:
 		VoiceSet: InternetCenterVoice
 	RenderSprites:
 		PlayerPalette: cncplayer
+	ActorStatValues:
+		Stats: Armor, Sight, Cargo
 
 building.strategy_center:
 	Inherits: ^Building
@@ -3116,6 +3142,12 @@ building.strategy_center:
 	SupportPowerChargeBar:
 	Voiced:
 		VoiceSet: StrategyCenterVoice
+	ActorStatValues:
+		Damage: 200
+		Stats: Armor, Sight, Power
+	ActorStatOverride:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
+		RequiresCondition: bombardment
 
 building.palace:
 	Inherits: ^Building
@@ -3240,6 +3272,8 @@ building.palace:
 		PlayerPalette: cncplayer
 	Voiced:
 		VoiceSet: PalaceVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Cargo
 
 building.propaganda_center:
 	Inherits: ^Building
@@ -3335,6 +3369,8 @@ building.propaganda_center:
 		Locations: 0,-1, 1,-1, 2,-1, -1,0, -1,1, 0,2, 1,2, 2,2, 3,1, 3,0
 	Voiced:
 		VoiceSet: PropagandaCenterVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 building.detention_camp:
 	Inherits: ^Building
@@ -3441,7 +3477,7 @@ building.supply_drop_zone:
 	Voiced:
 		VoiceSet: SupplyDropVoice
 	ActorStatValues:
-		ShowTricklerTimer: true
+		Stats: Armor, Sight, Power, None, None, None, CashTrickler
 
 building.black_market:
 	Inherits: ^Building
@@ -3573,6 +3609,7 @@ building.speaker_tower:
 	Voiced:
 		VoiceSet: SpeakerTowerVoice
 	ActorStatValues:
+		Stats: Armor, Sight, Power
 		Upgrades: upgrade.subliminal_messaging
 
 building.speaker_tower.boss:
@@ -3664,6 +3701,8 @@ building.particle_cannon:
 		VoiceSet: ParticleCannonVoice
 	RenderSprites:
 		PlayerPalette: cncplayer
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 building.particle_cannon.super:
 	Inherits: building.particle_cannon
@@ -4114,6 +4153,8 @@ building.missile_silo:
 		TerrainTypes: Sand, SandRoad
 	RenderSprites:
 		Image: building.missile_silo
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 building.missile_silo.boss:
 	Inherits: building.missile_silo

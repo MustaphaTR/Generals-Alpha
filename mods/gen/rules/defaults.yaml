@@ -1660,6 +1660,9 @@
 		FacingTolerance: 0
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+	ActorStatValues:
+		Damage: 1
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 ^Ship:
 	Inherits@1: ^ExistsInWorld

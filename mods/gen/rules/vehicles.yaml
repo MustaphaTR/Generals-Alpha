@@ -59,6 +59,8 @@ vehicle.supply_truck:
 		CrushClasses: vehicle
 	Voiced:
 		VoiceSet: SupplyTruckVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, None, None, None, Collector
 
 vehicle.humvee:
 	Inherits: ^Vehicle
@@ -209,7 +211,11 @@ vehicle.humvee:
 	Voiced:
 		VoiceSet: HumveeVoice
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Cargo
 		Upgrades: upgrade.tow_missile, upgrade.adv_training
+	ActorStatOverride:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, Cargo, MaxRange
+		RequiresCondition: tow_missile
 
 vehicle.technical:
 	Inherits: ^Vehicle
@@ -345,6 +351,7 @@ vehicle.technical:
 	Voiced:
 		VoiceSet: TechnicalVoice
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Cargo
 		Upgrades: upgrade.ap_bullets, upgrade.junk_repair
 		FactionUpgrades:
 			demo: upgrade.demolitions, upgrade.ap_bullets, upgrade.junk_repair
@@ -454,6 +461,7 @@ vehicle.radar_van:
 	Voiced:
 		VoiceSet: RadarVanVoice
 	ActorStatValues:
+		Stats: Armor, Sight, Speed
 		Upgrades: upgrade.radar_van_scan, upgrade.junk_repair
 		FactionUpgrades:
 			demo: upgrade.demolitions, upgrade.radar_van_scan, upgrade.junk_repair
@@ -633,6 +641,7 @@ vehicle.scorpion_tank:
 	Voiced:
 		VoiceSet: ScorpionTankVoice
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.sc_rocket, upgrade.toxin_shells, upgrade.anthrax_beta, upgrade.ap_rockets, upgrade.junk_repair
 		FactionUpgrades:
 			toxin: upgrade.sc_rocket, upgrade.anthrax_gamma, upgrade.ap_rockets, upgrade.junk_repair
@@ -718,6 +727,7 @@ vehicle.crusader_tank:
 		DecorationBounds: 1194, 1194
 	ActorStatValues:
 		Damage: 60
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.adv_training, upgrade.composite_armor
 
 vehicle.laser_tank:
@@ -750,6 +760,7 @@ vehicle.laser_tank:
 		VoiceSet: LaserTankVoice
 	ActorStatValues:
 		Damage: 80
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Power
 
 vehicle.battlemaster_tank:
 	Inherits: ^Tank
@@ -854,6 +865,7 @@ vehicle.battlemaster_tank:
 		Types: Veterancy-Elite
 		Prerequisites: generals_power.battlemaster_training
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.nationalism, upgrade.nuclear_tanks, upgrade.uranium_shells
 		FactionUpgrades:
 			tank: upgrade.nationalism, upgrade.autoloader, upgrade.nuclear_tanks, upgrade.uranium_shells
@@ -946,6 +958,8 @@ vehicle.ambulance:
 		Image: vehicle.ambulance
 	Voiced:
 		VoiceSet: AmbulanceVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
 
 vehicle.sentry_drone:
 	Inherits: ^Vehicle
@@ -1044,9 +1058,13 @@ vehicle.sentry_drone:
 	Voiced:
 		VoiceSet: SentryDroneVoice
 	ActorStatValues:
+		Stats: Armor, Sight, Speed
 		Upgrades: upgrade.sentry_gun, upgrade.drone_armor
 		FactionUpgrades:
 			boss: upgrade.sentry_gun
+	ActorStatOverride:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+		RequiresCondition: sentry_gun
 
 vehicle.quad_cannon:
 	Inherits: ^Tank
@@ -1157,7 +1175,7 @@ vehicle.quad_cannon:
 	Voiced:
 		VoiceSet: QuadCannonVoice
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Upgrades: upgrade.ap_bullets, upgrade.junk_repair
 		FactionUpgrades:
 			demo: upgrade.demolitions, upgrade.ap_bullets, upgrade.junk_repair
@@ -1276,7 +1294,7 @@ vehicle.gatling_tank:
 	Voiced:
 		VoiceSet: GatlingTankVoice
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		FactionUpgrades:
 			boss: upgrade.chain_gun, upgrade.composite_armor
 
@@ -1419,6 +1437,7 @@ vehicle.toxin_tractor:
 	Voiced:
 		VoiceSet: ToxinTractorVoice
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.anthrax_beta, upgrade.junk_repair
 		FactionUpgrades:
 			toxin: upgrade.anthrax_gamma, upgrade.junk_repair
@@ -1523,6 +1542,7 @@ vehicle.dragon_tank:
 	Voiced:
 		VoiceSet: DragonTankVoice
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.black_napalm
 		FactionUpgrades:
 			boss: upgrade.black_napalm, upgrade.composite_armor
@@ -1659,6 +1679,7 @@ vehicle.rocket_buggy:
 	RenderSprites:
 		Image: vehicle.rocket_buggy
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.ap_rockets, upgrade.junk_repair, upgrade.buggy_ammo
 		FactionUpgrades:
 			demo: upgrade.demolitions, upgrade.ap_rockets, upgrade.junk_repair, upgrade.buggy_ammo
@@ -1756,6 +1777,7 @@ vehicle.avenger:
 		VoiceSet: AvengerVoice
 	ActorStatValues:
 		Damage: 10
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 vehicle.avenger.air:
 	Inherits: vehicle.avenger
@@ -1892,6 +1914,7 @@ vehicle.battle_bus:
 	Voiced:
 		VoiceSet: BattleBusVoice
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, None, None, None, Cargo
 		FactionUpgrades:
 			demo: upgrade.demolitions, upgrade.junk_repair
 
@@ -1951,6 +1974,8 @@ vehicle.troop_crawler:
 		Range: 4c384
 	Voiced:
 		VoiceSet: TroopCrawlerVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, None, None, None, Cargo
 
 vehicle.assault_troop_crawler:
 	Inherits: vehicle.troop_crawler
@@ -2070,6 +2095,8 @@ vehicle.listening_outpost:
 		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: ListeningOutpostVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, None, None, None, Cargo
 
 vehicle.attack_outpost:
 	Inherits: vehicle.listening_outpost
@@ -2193,6 +2220,7 @@ vehicle.microwave_tank:
 	Voiced:
 		VoiceSet: MicrowaveTankVoice
 	ActorStatValues:
+		Stats: Armor, Sight, Speed
 		Upgrades: upgrade.adv_training, upgrade.composite_armor
 
 vehicle.ecm_tank:
@@ -2288,6 +2316,8 @@ vehicle.ecm_tank:
 		Range: 1c0, 1c0
 	Voiced:
 		VoiceSet: ECMTankVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
 
 vehicle.tomahawk_launcher:
 	Inherits: ^Tank
@@ -2393,6 +2423,7 @@ vehicle.tomahawk_launcher:
 		VoiceSet: TomahawkLauncherVoice
 	ActorStatValues:
 		Damage: 150
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 vehicle.tomahawk_launcher.boss:
 	Inherits: vehicle.tomahawk_launcher
@@ -2579,6 +2610,7 @@ vehicle.scud_launcher:
 	Selectable:
 		DecorationBounds: 1194, 1194
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.anthrax_beta, upgrade.junk_repair
 		FactionUpgrades:
 			toxin: upgrade.anthrax_gamma, upgrade.junk_repair
@@ -2677,6 +2709,7 @@ vehicle.inferno_cannon:
 	Voiced:
 		VoiceSet: InfernoCannonVoice
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.black_napalm
 
 vehicle.paladin_tank:
@@ -2775,6 +2808,7 @@ vehicle.paladin_tank:
 	RenderSprites:
 		Image: vehicle.paladin_tank
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.adv_training, upgrade.composite_armor
 
 vehicle.paladin_tank.boss:
@@ -3062,6 +3096,7 @@ vehicle.marauder_tank:
 	Voiced:
 		VoiceSet: MarauderTankVoice
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.toxin_shells, upgrade.anthrax_beta, upgrade.junk_repair
 		FactionUpgrades:
 			toxin: upgrade.anthrax_gamma, upgrade.junk_repair
@@ -3209,7 +3244,6 @@ vehicle.overlord_tank:
 		Name: gatling
 		Turret: gatling
 		LocalOffset: 213,0,0
-		EnableSplitRanges: true
 		MuzzleSequence: muzzle2
 		RequiresCondition: gatling_upgrade
 	AttackTurreted:
@@ -3297,9 +3331,16 @@ vehicle.overlord_tank:
 		Class: vehicle.overlord_tank
 		DecorationBounds: 1877, 1621, 0, -170
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.nuclear_tanks, upgrade.uranium_shells
 		FactionUpgrades:
 			nuke: upgrade.isotope_stability
+	ActorStatOverride@Bunker:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Cargo
+		RequiresCondition: bunker_upgrade
+	ActorStatOverride@Gatling:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
+		RequiresCondition: gatling_upgrade
 
 vehicle.overlord_tank.boss:
 	Inherits: vehicle.overlord_tank
@@ -3345,6 +3386,7 @@ vehicle.emparor_overlord:
 		VoiceSet: EmparorOverlordVoice
 	ActorStatValues:
 		Upgrades: upgrade.subliminal_messaging, upgrade.nuclear_tanks, upgrade.uranium_shells
+	-ActorStatOverride@Bunker:
 
 vehicle.bomb_truck:
 	Inherits: ^Vehicle
@@ -3550,7 +3592,7 @@ vehicle.bomb_truck:
 		Class: vehicle.bomb_truck
 		DecorationBounds: 1792, 1792
 	ActorStatValues:
-		ExplosionWeapon: true
+		Stats: Armor, Sight, Speed, Damage, Spread
 		Upgrades: upgrade.anthrax_beta, upgrade.junk_repair
 		FactionUpgrades:
 			toxin: upgrade.anthrax_gamma, upgrade.junk_repair
@@ -3700,6 +3742,7 @@ vehicle.nuke_cannon:
 	Voiced:
 		VoiceSet: NukeCannonVoice
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.neutron_shells
 
 vehicle.nuke_cannon.nuke:
@@ -3806,7 +3849,6 @@ vehicle.combat_cycle:
 	Armament@RPG_A:
 		Name: aa_rocket
 		Weapon: missile.rpg_trooper.air
-		EnableSplitRanges: true
 		RequiresCondition: rpg
 	Armament@Terrorist:
 		Name: terror
@@ -4024,8 +4066,18 @@ vehicle.combat_cycle:
 	Voiced:
 		VoiceSet: CycleVoice
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		FactionUpgrades:
 			demo: upgrade.demolitions, upgrade.junk_repair
+	ActorStatOverride@RPG:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
+		RequiresCondition: rpg
+	ActorStatOverride@Terrorist:
+		Stats: Armor, Sight, Speed, Damage, Spread
+		RequiresCondition: terrorist || toxin_terrorist
+	ActorStatOverride@NoWeapon:
+		Stats: Armor, Sight, Speed
+		RequiresCondition: saboteur || worker || hijacker
 
 vehicle.combat_cycle.demo:
 	Inherits: vehicle.combat_cycle
@@ -4111,6 +4163,8 @@ vehicle.combat_cycle.demo:
 	GrantConditionOnBotOwner@any:
 		Condition: any-ai
 		Bots: rush, normal, turtle
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
 
 vehicle.usa_mcc:
 	Inherits: ^default.mcc
@@ -4370,3 +4424,5 @@ vehicle.mobile_reactor:
 		Amount: 5
 	Voiced:
 		VoiceSet: VehicleVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, None, None, None, Power

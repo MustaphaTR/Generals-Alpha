@@ -457,7 +457,7 @@ aircraft.mig:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Upgrades: upgrade.mig_armor, upgrade.black_napalm
 		FactionUpgrades:
 			nuke: upgrade.mig_armor, upgrade.tactical_nuke_mig
@@ -584,7 +584,7 @@ aircraft.raptor:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Upgrades: upgrade.adv_training, upgrade.laser_guided_missiles, upgrade.countermeasures
 
 aircraft.king_raptor:
@@ -788,6 +788,7 @@ aircraft.stealth_fighter:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.adv_training, upgrade.laser_guided_missiles, upgrade.countermeasures, upgrade.bunker_busters
 
 aircraft.stealth_fighter.air:
@@ -948,6 +949,7 @@ aircraft.aurora:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.adv_training, upgrade.laser_guided_missiles, upgrade.countermeasures
 
 aircraft.aurora.boss:
@@ -1287,6 +1289,8 @@ aircraft.chinook:
 	SelectionDecorations:
 	Voiced:
 		VoiceSet: ChinookVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, None, None, None, Collector, Cargo
 
 # aircraft.chinook:
 #	Inherits: ^Helicopter
@@ -1383,6 +1387,8 @@ aircraft.chinook:
 #		Actor: husk.chinook
 #	Voiced:
 #		VoiceSet: ChinookVoice
+#	ActorStatValues:
+#		Stats: Armor, Sight, Speed, None, None, None, Collector, Cargo
 
 aircraft.combat_chinook:
 	Inherits: aircraft.chinook
@@ -1549,6 +1555,7 @@ aircraft.comanche:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.adv_training, upgrade.rocket_pods, upgrade.countermeasures
 		FactionUpgrades:
 			air: upgrade.adv_training, upgrade.rocket_pods, upgrade.countermeasures, upgrade.stealth_comanche
@@ -1798,6 +1805,8 @@ aircraft.helix:
 		RequiresSelection: true
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Cargo
 
 aircraft.assault_helix:
 	Inherits: aircraft.helix
