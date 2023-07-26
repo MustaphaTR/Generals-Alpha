@@ -2,7 +2,6 @@ attach.colonel_burton.timed:
 	ValidTargets: TimedDemoBomb
 	ReloadDelay: 250
 	TargetActorCenter: true
-	RequiresForceFire: true
 	Range: 1c512
 	Projectile: InstantHit
 	Warhead@1Att: AttachDelayedWeapon
@@ -14,7 +13,6 @@ attach.colonel_burton.timed:
 
 attach.demo_jarmen_kell.timed:
 	Inherits: attach.colonel_burton.timed
-	RequiresForceFire: false
 	Warhead@1Att: AttachDelayedWeapon
 		Weapon: explosion.demo_charge.demo_gen
 
