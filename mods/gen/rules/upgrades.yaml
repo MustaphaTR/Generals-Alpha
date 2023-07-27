@@ -154,7 +154,7 @@ upgrade.capture_building:
 	Tooltip:
 		Name: Capture Building
 	Buildable:
-		Queue: queue.usa_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
+		Queue: queue.usa_infantry, queue.super_gen_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 750
@@ -169,7 +169,7 @@ upgrade.flashbang_grenades:
 	Tooltip:
 		Name: Flashbang Grenades
 	Buildable:
-		Queue: queue.usa_infantry, queue.boss_gen_infantry
+		Queue: queue.usa_infantry, queue.super_gen_infantry, queue.boss_gen_infantry
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		BuildDuration: 750

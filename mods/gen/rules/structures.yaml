@@ -1132,17 +1132,28 @@ building.usa_barracks:
 	Tooltip:
 		Name: USA Barracks
 	Production:
-		Produces: queue.usa_infantry
+		Produces: queue.usa_infantry, queue.super_gen_infantry
 		PauseOnCondition: emp || hacked || sabotaged
-	ProductionQueue:
+	ProductionQueue@Vanilla:
 		Type: queue.usa_infantry
+		Factions: usa, air, laser, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
 		LowPowerModifier: 200
 		DisplayOrder: 19
-	ProductionBar:
+	ProductionQueue@Super:
+		Type: queue.super_gen_infantry
+		Factions: super
+		Group: Infantry
+		QueuedAudio: Training
+		InstantCashDrain: true
+		LowPowerModifier: 200
+		DisplayOrder: 20
+	ProductionBar@Vanilla:
 		ProductionType: queue.usa_infantry
+	ProductionBar@Super:
+		ProductionType: queue.super_gen_infantry
 	Exit@1:
 		SpawnOffset: -426,85,0
 		ExitCell: 0,1
@@ -1176,28 +1187,28 @@ building.gla_barracks:
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
-		DisplayOrder: 20
+		DisplayOrder: 21
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_infantry
 		Factions: toxin
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
-		DisplayOrder: 21
+		DisplayOrder: 22
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_infantry
 		Factions: demo
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
-		DisplayOrder: 22
+		DisplayOrder: 23
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_infantry
 		Factions: stealth
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
-		DisplayOrder: 23
+		DisplayOrder: 24
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_infantry
 	ProductionBar@Toxin:
@@ -1245,7 +1256,7 @@ building.prc_barracks:
 		QueuedAudio: Training
 		InstantCashDrain: true
 		LowPowerModifier: 200
-		DisplayOrder: 24
+		DisplayOrder: 25
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_infantry
 		Factions: inf
@@ -1253,7 +1264,7 @@ building.prc_barracks:
 		QueuedAudio: Training
 		InstantCashDrain: true
 		LowPowerModifier: 200
-		DisplayOrder: 25
+		DisplayOrder: 26
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_infantry
 		Factions: nuke
@@ -1261,7 +1272,7 @@ building.prc_barracks:
 		QueuedAudio: Training
 		InstantCashDrain: true
 		LowPowerModifier: 200
-		DisplayOrder: 26
+		DisplayOrder: 27
 	ProductionQueue@Tank:
 		Type: queue.tank_gen_infantry
 		Factions: tank
@@ -1269,7 +1280,7 @@ building.prc_barracks:
 		QueuedAudio: Training
 		InstantCashDrain: true
 		LowPowerModifier: 200
-		DisplayOrder: 27
+		DisplayOrder: 28
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_infantry
 		Factions: boss
@@ -1277,7 +1288,7 @@ building.prc_barracks:
 		QueuedAudio: Training
 		InstantCashDrain: true
 		LowPowerModifier: 200
-		DisplayOrder: 28
+		DisplayOrder: 29
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_infantry
 	ProductionBar@Infantry:

@@ -11,7 +11,7 @@ infantry.pilot:
 			2: rank-veteran
 			3: rank-veteran
 	Buildable:
-		Queue: queue.usa_infantry
+		Queue: queue.usa_infantry, queue.super_gen_infantry
 		BuildPaletteOrder: 6
 		ForceIconLocation: true
 		BuildDuration: 100
@@ -169,7 +169,7 @@ infantry.ranger:
 		Modifier: 200
 		RequiresCondition: rank-elite
 	Buildable:
-		Queue: queue.usa_infantry, queue.boss_gen_infantry
+		Queue: queue.usa_infantry, queue.super_gen_infantry, queue.boss_gen_infantry
 		ReadyAudio: RangerCreated
 	Valued:
 		Cost: 225
@@ -635,7 +635,7 @@ infantry.missile_defender:
 	Inherits@REVEAL: ^Reveal300Gen400ZH
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
-		Queue: queue.usa_infantry
+		Queue: queue.usa_infantry, queue.super_gen_infantry
 		Description: Anti-tank & anti-air infantry.\n\nCan laser lock to fire with double speed against\nvehicles and aircraft by force firing.
 		ReadyAudio: MissileDefenderCreated
 	Tooltip:
@@ -848,7 +848,7 @@ infantry.pathfinder:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		Queue: queue.usa_infantry
+		Queue: queue.usa_infantry, queue.super_gen_infantry
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -1621,12 +1621,15 @@ infantry.colonel_burton:
 	RadarIcon:
 	Valued:
 		Cost: 1500
+	ProductionCostMultiplier@Super:
+		Queue: queue.super_gen_infantry
+		Multiplier: 80 # 1200
 	Tooltip:
 		Name: Colonel Burton
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		Queue: queue.usa_infantry
+		Queue: queue.usa_infantry, queue.super_gen_infantry
 		BuildPaletteOrder: 4
 		BuildDuration: 500
 		BuildDurationModifier: 100
