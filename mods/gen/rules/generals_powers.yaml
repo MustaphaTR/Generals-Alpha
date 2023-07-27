@@ -496,7 +496,7 @@ generals_power.cash_hack1:
 	Tooltip:
 		Name: Cash Hack - Level 1
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power
+		Queue: queue.prc_generals_power, queue.nuke_gen_generals_power
 		BuildPaletteOrder: 15
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points
 		Description: Enables Cash Hack support power from Command Center.
@@ -508,7 +508,7 @@ generals_power.cash_hack2:
 	Tooltip:
 		Name: Cash Hack - Level 2
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power
+		Queue: queue.prc_generals_power, queue.nuke_gen_generals_power
 		BuildPaletteOrder: 16
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_hack1
 		Description: Upgrades Cash Hack support power to Level 2.
@@ -520,7 +520,7 @@ generals_power.cash_hack3:
 	Tooltip:
 		Name: Cash Hack - Level 3
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power
+		Queue: queue.prc_generals_power, queue.nuke_gen_generals_power
 		BuildPaletteOrder: 17
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_hack2
 		Description: Upgrades Cash Hack support power to Level 3.
