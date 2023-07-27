@@ -1788,6 +1788,7 @@ building.demo_trap:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled && !emp && !hacked
 	-Explodes:
 	-ShakeOnDeath:

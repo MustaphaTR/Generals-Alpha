@@ -381,6 +381,7 @@
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: gps_scrambler
 	ExternalCondition@GPS_SCRAMBLER:
 		Condition: gps_scrambler
@@ -1187,6 +1188,7 @@
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: camo_netted && !emp && !hacked
 	ProvidesPrerequisite@buildingname:
 	ActorStatValues:
@@ -2426,7 +2428,6 @@
 		Palette:
 		DetectionTypes: Mine
 		InitialDelay: 0
-		UncloakWhenAlone: false
 	Tooltip:
 		Name: Mine
 	Targetable:

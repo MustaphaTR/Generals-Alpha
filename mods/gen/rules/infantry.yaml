@@ -233,6 +233,7 @@ infantry.rebel:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled && !capturing && camouflage
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -350,6 +351,7 @@ infantry.toxin_rebel:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled && !capturing && camouflage
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -725,6 +727,7 @@ infantry.stinger_soldier:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: stinger_cloak && !leaflet
 	ExternalCondition@CAMO_NETTING:
 		Condition: stinger_cloak
@@ -1123,6 +1126,7 @@ infantry.saboteur:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -1513,6 +1517,7 @@ infantry.super_hacker:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -1572,6 +1577,7 @@ infantry.hijacker:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -1712,6 +1718,7 @@ infantry.colonel_burton:
 		UncloakOn: Unload, Infiltrate, Demolish
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -1810,6 +1817,7 @@ infantry.jarmen_kell:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -1940,6 +1948,7 @@ infantry.black_lotus:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled

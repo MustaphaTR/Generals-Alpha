@@ -457,6 +457,7 @@ fake.demo_trap:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled && !emp
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled

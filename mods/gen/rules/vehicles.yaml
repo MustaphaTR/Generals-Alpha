@@ -440,6 +440,7 @@ vehicle.radar_van:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled && scrap_create_bonus == 1
 	Cloak@CRATE-2:
 		InitialDelay: 50
@@ -447,6 +448,7 @@ vehicle.radar_van:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled && scrap_create_bonus == 2
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -1026,6 +1028,7 @@ vehicle.sentry_drone:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled
 	RenderDetectionCircle:
 	DetectCloaked:
@@ -2079,6 +2082,7 @@ vehicle.listening_outpost:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
@@ -4052,6 +4056,7 @@ vehicle.combat_cycle:
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
+		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled && ((camouflage && rebel) || jarmen || hijacker || saboteur)
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
