@@ -1856,6 +1856,11 @@ building.demo_trap.toxin:
 		Actor: building.demo_trap.toxin.explode
 	RenderSprites:
 		Image: building.demo_trap
+	ActorStatValues:
+		Upgrades: upgrade.anthrax_beta
+		FactionUpgrades:
+			toxin: upgrade.anthrax_gamma
+			demo:
 
 building.demo_trap.toxin.explode:
 	Inherits: building.demo_trap.explode
@@ -1883,6 +1888,10 @@ building.demo_trap.toxin.explode:
 		Icon: icon
 		IconPalette: chrome
 		TooltipActor: building.demo_trap.toxin
+		Upgrades: upgrade.anthrax_beta
+		FactionUpgrades:
+			toxin: upgrade.anthrax_gamma
+			demo:
 
 building.advanced_demo_trap:
 	Inherits: building.demo_trap

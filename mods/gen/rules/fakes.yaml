@@ -471,6 +471,8 @@ fake.demo_trap:
 		IntoActor: building.demo_trap
 	Valued:
 		Cost: 50
+	ActorStatValues:
+		Stats: Armor, Sight, None, Damage, Spread
 
 fake.demo_trap.toxin:
 	Inherits: fake.demo_trap
@@ -513,6 +515,7 @@ fake.advanced_demo_trap:
 
 fake.tunnel_network:
 	Inherits: ^FakeDefense
+	Inherits@CARGO: ^CargoPips
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
@@ -565,10 +568,16 @@ fake.tunnel_network:
 		IntoActor: building.tunnel_network
 	Valued:
 		Cost: 100
+	Cargo:
+		Types: fake
+		MaxWeight: 10
 	-WithSpriteBody:
 	WithTerrainDependantSpriteBody:
 	Voiced:
 		VoiceSet: TunnelNetworkVoice
+	ActorStatValues:
+		Damage: 10
+		Stats: Armor, Sight, Cargo, Damage, ReloadDelay, MaxRange
 
 fake.toxin_tunnel_network:
 	Inherits: fake.tunnel_network
@@ -655,6 +664,8 @@ fake.stinger_site:
 		SpawnIsGroundUnit: true
 	Voiced:
 		VoiceSet: StingerSiteVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Mob, Damage, ReloadDelay, MinRange, None, MaxRange
 
 fake.stinger_soldier:
 	Inherits: infantry.stinger_soldier
