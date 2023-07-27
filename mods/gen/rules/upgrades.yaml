@@ -180,6 +180,21 @@ upgrade.flashbang_grenades:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.flashbang_grenades
 
+upgrade.booby_traps:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Booby Traps
+	Buildable:
+		Queue: queue.gla_infantry
+		BuildPaletteOrder: 5
+		BuildDuration: 750
+		Prerequisites: ~disabled # ~prerequisite.zh_units
+		Description: Gives Rebels ability to place booby traps on structures.
+	Valued:
+		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.booby_traps
+
 upgrade.tow_missile:
 	Inherits: ^default.upgrade
 	Tooltip:

@@ -795,7 +795,7 @@ generals_power.fuel_air_bomb:
 		Name: Fuel Air Bomb
 	Buildable:
 		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
-		BuildPaletteOrder: 15
+		BuildPaletteOrder: 17
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points
 		Description: Enables Fuel Air Bomb support power from Command Center.
 	ProvidesPrerequisite@powername:
@@ -809,7 +809,7 @@ generals_power.leaflet_drop:
 		Name: Leaflet Drop
 	Buildable:
 		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power
-		BuildPaletteOrder: 16
+		BuildPaletteOrder: 18
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~prerequisite.zh_units
 		Description: Enables Leaflet Drop support power from Command Center.
 	ProvidesPrerequisite@powername:
@@ -824,6 +824,53 @@ generals_power.leaflet_drop.rank3:
 	Buildable:
 		Queue: queue.super_gen_generals_power
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~prerequisite.zh_units
+
+generals_power.spectre_gunship:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Spectre Gunship
+	Buildable:
+		Queue: queue.usa_generals_power, queue.laser_gen_generals_power, queue.boss_gen_generals_power
+		BuildPaletteOrder: 30
+		Prerequisites: ~disabled # prerequisite.5_stars, prerequisite.has_points, ~prerequisite.zh_units
+		Description: Enables Spectre Gunship support power from Command Center.
+	ProvidesPrerequisite@powername:
+		Prerequisite: prerequisite.spectre_gunship1
+	WithProductionIconOverlay:
+		Prerequisites: prerequisite.spectre_gunship1
+
+generals_power.spectre_gunship1:
+	Inherits: generals_power.spectre_gunship
+	Tooltip:
+		Name: Spectre Gunship - Level 1
+	Buildable:
+		Queue: queue.air_gen_generals_power, queue.super_gen_generals_power
+		BuildPaletteOrder: 14
+		Prerequisites: ~disabled # prerequisite.3_stars, prerequisite.has_points, ~prerequisite.zh_units
+
+generals_power.spectre_gunship2:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Spectre Gunship - Level 2
+	Buildable:
+		Queue: queue.air_gen_generals_power, queue.super_gen_generals_power
+		BuildPaletteOrder: 15
+		Prerequisites: ~disabled # prerequisite.3_stars, prerequisite.has_points, generals_power.spectre_gunship1, ~prerequisite.zh_units
+		Description: Upgrades Spectre Gunship support power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.spectre_gunship2
+
+generals_power.spectre_gunship3:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: Spectre Gunship - Level 3
+	Buildable:
+		Queue: queue.air_gen_generals_power, queue.super_gen_generals_power
+		BuildPaletteOrder: 16
+		Prerequisites: ~disabled # prerequisite.5_stars, prerequisite.has_points, generals_power.spectre_gunship2, ~prerequisite.zh_units
+		Description: Upgrades Spectre Gunship support power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.spectre_gunship3
 
 generals_power.sneak_attack:
 	Inherits: ^default.generals_power
