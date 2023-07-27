@@ -1055,7 +1055,7 @@ building.nuclear_reactor:
 		StartIfBelow: 101
 		RequiresCondition: overcharge && !emp && !hacked && !sabotaged
 	GrantConditionOnDeploy:
-		MakeAnimationDeployTypes:
+		SkipMakeAnimation: true
 		DeployedCondition: overcharge
 	WithDeathAnimation:
 		DeathSequencePalette: cncplayer
