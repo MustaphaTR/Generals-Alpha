@@ -500,6 +500,9 @@ tech.reinforcements_pad:
 	ProvidesPrerequisite@buildingname:
 	RenderSprites:
 		PlayerPalette: cncplayer
+	ActorStatOverride:
+		Stats: Armor, Sight, PeriodicProducer
+		RequiresCondition: enabled
 
 tech.shipyard:
 	Inherits: ^TechBuilding
