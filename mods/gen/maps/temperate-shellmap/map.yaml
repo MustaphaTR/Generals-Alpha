@@ -1,4 +1,4 @@
-MapFormat: 11
+MapFormat: 12
 
 RequiresMod: gen
 
@@ -7,8 +7,6 @@ Title: Temperate Shellmap
 Author: Westwood Studios
 
 Tileset: TEMPERAT
-
-SkyboxImage:
 
 MapSize: 128,128
 
@@ -1668,6 +1666,12 @@ Actors:
 		Owner: USA
 		Facing: 384
 		Location: 85,66
+	GLACommandTarget: waypoint
+		Owner: Neutral
+		Location: 91,87
+	USADropZoneTarget: waypoint
+		Owner: Neutral
+		Location: 100,53
 
 Rules: rules.yaml
 

@@ -1,4 +1,4 @@
-MapFormat: 11
+MapFormat: 12
 
 RequiresMod: gen
 
@@ -7,8 +7,6 @@ Title: Snow Shellmap
 Author: Westwood Studios
 
 Tileset: SNOW
-
-SkyboxImage:
 
 MapSize: 128,128
 
@@ -766,5 +764,17 @@ Actors:
 	Actor221: supply.dock.30000.4x6
 		Owner: Neutral
 		Location: 73,55
+	USASupplyTarget: waypoint
+		Owner: Neutral
+		Location: 77,51
+	USAStrategyTarget: waypoint
+		Owner: Neutral
+		Location: 68,35
+	GLATunnelTarget: waypoint
+		Owner: Neutral
+		Location: 59,71
+	GLAMarketTarget: waypoint
+		Owner: Neutral
+		Location: 83,84
 
 Rules: rules.yaml

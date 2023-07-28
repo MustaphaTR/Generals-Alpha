@@ -1,4 +1,4 @@
-MapFormat: 11
+MapFormat: 12
 
 RequiresMod: gen
 
@@ -7,8 +7,6 @@ Title: Desert Shellmap
 Author: Scott_NZ
 
 Tileset: DESERT
-
-SkyboxImage:
 
 MapSize: 128,128
 
@@ -2797,6 +2795,9 @@ Actors:
 	Actor864: tech.repair_bay
 		Owner: PRC
 		Location: 67,70
+	PRCNukeSiloTarget: waypoint
+		Owner: Neutral
+		Location: 83,73
 
 Rules: rules.yaml
 

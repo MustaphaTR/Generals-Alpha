@@ -55,7 +55,7 @@ BindActorTriggers = function(a)
 	if a.Type == "infantry.terrorist" or a.Type == "vehicle.bomb_truck" then
 		Trigger.OnIdle(a, function(a)
 			if a.IsInWorld then
-				a.AttackMove(USAStrategy.Location)
+				a.AttackMove(USAStrategyTarget.Location)
 			end
 		end)
 
@@ -69,13 +69,13 @@ BindActorTriggers = function(a)
 			if a.Type == "vehicle.quad_cannon" or a.Type == "vehicle.scorpion_tank" or a.Type == "vehicle.marauder_tank" then
 				Trigger.OnIdle(a, function(a)
 					if a.IsInWorld then
-						a.AttackMove(USAPatriot3.Location)
+						a.AttackMove(USASupplyTarget.Location)
 					end
 				end)
 			elseif a.Type == "vehicle.humvee" or a.Type == "vehicle.battlemaster_tank" or a.Type == "vehicle.crusader_tank" or a.Type == "vehicle.gatling_tank" or a.Type == "vehicle.dragon_tank" then
 				Trigger.OnIdle(a, function(a)
 					if a.IsInWorld then
-						a.AttackMove(GLABlackMarket.Location)
+						a.AttackMove(GLAMarketTarget.Location)
 					end
 				end)
 			elseif a.Type == "aircraft.raptor" or a.Type == "aircraft.stealth_fighter" then
@@ -85,13 +85,13 @@ BindActorTriggers = function(a)
 			elseif a.Type == "infantry.red_guard" or a.Type == "infantry.tank_hunter" then
 				Trigger.OnIdle(a, function(a)
 					if a.IsInWorld then
-						a.AttackMove(GLATunnelNetwork.Location)
+						a.AttackMove(GLATunnelTarget.Location)
 					end
 				end)
 			else
 				Trigger.OnIdle(a, function(a)
 					if a.IsInWorld then
-						a.AttackMove(USAStrategy.Location)
+						a.AttackMove(USAStrategyTarget.Location)
 					end
 				end)
 			end
@@ -197,10 +197,10 @@ WorldLoaded = function()
 	SelectUpgrade(SCUDLauncher1, SCUDUpgrades)
 	SelectUpgrade(OverlordTank1, OverlordUpgrades)
 
-	SendAttack(usa, BottomLeftTeams, BottomLeftTeamWP, USAStrategy, DateTime.Seconds(50))
-	SendAttack(gla, TopRightTeams, TopRightTeamWP, USAStrategy, DateTime.Seconds(60))
-	SendAttack(gla, TunnelTeams, TunnelTeamWP, USAStrategy, DateTime.Seconds(30))
-	SendAttack(gla, WarFactoryTeams, WarFactoryTeamWP, USAPatriot3, DateTime.Seconds(80))
+	SendAttack(usa, BottomLeftTeams, BottomLeftTeamWP, USAStrategyTarget, DateTime.Seconds(50))
+	SendAttack(gla, TopRightTeams, TopRightTeamWP, USAStrategyTarget, DateTime.Seconds(60))
+	SendAttack(gla, TunnelTeams, TunnelTeamWP, USAStrategyTarget, DateTime.Seconds(30))
+	SendAttack(gla, WarFactoryTeams, WarFactoryTeamWP, USASupplyTarget, DateTime.Seconds(80))
 
 	DeployMe(Hacker1)
 	DeployMe(Hacker2)

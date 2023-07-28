@@ -37,7 +37,7 @@ BindActorTriggers = function(a)
 	if a.Type == "infantry.terrorist" or a.Type == "vehicle.bomb_truck" then
 		Trigger.OnIdle(a, function(a)
 			if a.IsInWorld then
-				a.AttackMove(USASupplyDrop2.Location)
+				a.AttackMove(USADropZoneTarget.Location)
 			end
 		end)
 
@@ -51,13 +51,13 @@ BindActorTriggers = function(a)
 			if a.Owner == gla then
 				Trigger.OnIdle(a, function(a)
 					if a.IsInWorld then
-						a.AttackMove(USASupplyDrop2.Location)
+						a.AttackMove(USADropZoneTarget.Location)
 					end
 				end)
 			else
 				Trigger.OnIdle(a, function(a)
 					if a.IsInWorld then
-						a.AttackMove(GLACommand.Location)
+						a.AttackMove(GLACommandTarget.Location)
 					end
 				end)
 			end
@@ -65,13 +65,13 @@ BindActorTriggers = function(a)
 			if a.Owner == gla then
 				Trigger.OnIdle(a, function(a)
 					if a.IsInWorld then
-						a.Move(USASupplyDrop2.Location)
+						a.Move(USADropZoneTarget.Location)
 					end
 				end)
 			else
 				Trigger.OnIdle(a, function(a)
 					if a.IsInWorld then
-						a.Move(GLACommand.Location)
+						a.Move(GLACommandTarget.Location)
 					end
 				end)
 			end

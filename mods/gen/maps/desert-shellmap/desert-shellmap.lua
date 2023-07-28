@@ -54,7 +54,7 @@ BindActorTriggers = function(a)
 	if a.Type == "infantry.terrorist" or a.Type == "vehicle.bomb_truck" then
 		Trigger.OnIdle(a, function(a)
 			if a.IsInWorld then
-				a.AttackMove(NukeSilo.Location)
+				a.AttackMove(PRCNukeSiloTarget.Location)
 			end
 		end)
 
@@ -74,7 +74,7 @@ BindActorTriggers = function(a)
 			else
 				Trigger.OnIdle(a, function(a)
 					if a.IsInWorld then
-						a.AttackMove(NukeSilo.Location)
+						a.AttackMove(PRCNukeSiloTarget.Location)
 					end
 				end)
 			end
@@ -82,7 +82,7 @@ BindActorTriggers = function(a)
 			if a.Owner ~= prc then
 				Trigger.OnIdle(a, function(a)
 					if a.IsInWorld then
-						a.Move(NukeSilo.Location)
+						a.Move(PRCNukeSiloTarget.Location)
 					end
 				end)
 			end
