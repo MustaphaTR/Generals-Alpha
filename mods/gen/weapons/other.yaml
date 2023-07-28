@@ -611,7 +611,8 @@ melee.colonel_burton:
 		Speed: 10c0
 	Warhead@1Dam: TargetDamage
 	Warhead@2Spawner: SpawnActor
-		InvalidTargets: Water
+		ValidTargets: Ground, GroundActor
+		InvalidTargets: Water, WaterActor
 
 hack.spawn_4_rebels:
 	Inherits: ^default.spawner
@@ -662,6 +663,8 @@ hack.spawn_sneak_attack:
 	-Warhead@2Spawner:
 	Warhead@2Spawner: SpawnBuilding
 		Buildings: building.tunnel_network.sneak_attack
+		ValidTargets: Ground, GroundActor
+		InvalidTargets: Water, WaterActor
 
 hack.suicide_targeting:
 	ValidTargets: DetonateAttack
