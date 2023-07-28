@@ -2619,6 +2619,8 @@ building.tunnel_network.boss:
 		Queue: queue.boss_gen_building
 		BuildPaletteOrder: 9
 		Prerequisites: building.prc_barracks, !techlevel.nodefense
+	Production:
+		-RequiresCondition:
 	-ProductionQueue@CAMO_NETTING:
 	ProductionBar:
 		ProductionType: queue.just_mine
@@ -4063,6 +4065,7 @@ building.scud_storm.boss:
 	Production:
 		Produces: queue.boss_gen_scud_storm
 		PauseOnCondition: emp || hacked || sabotaged
+		-RequiresCondition:
 	-ProductionQueue@JUST_MINE:
 	-ProductionQueue@CAMO_NETTING:
 	ProductionQueue@Boss:
