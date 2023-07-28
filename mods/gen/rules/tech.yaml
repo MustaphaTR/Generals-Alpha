@@ -171,7 +171,8 @@ tech.soviet_barracks:
 	ProductionBar:
 		ProductionType: queue.soviet_infantry
 	RallyPoint:
-		Path: 0, 2
+	CommandBarBlacklist:
+		DisableStop: false
 	Exit@1:
 		SpawnOffset: -725,640,0
 		ExitCell: 1,2
@@ -346,6 +347,8 @@ tech.reinforcements_pad:
 	WithBuildingBib:
 		HasMinibib: true
 	RallyPoint:
+	CommandBarBlacklist:
+		DisableStop: false
 	Exit:
 		ExitCell: 1,1
 	GrantConditionOnCombatantOwner:
@@ -563,6 +566,8 @@ tech.shipyard:
 		FinishRepairingNotification: UnitRepaired
 		HpPerStep: 1000
 	RallyPoint:
+	CommandBarBlacklist:
+		DisableStop: false
 	ProvidesPrerequisite@buildingname:
 	MapEditorData:
 		ExcludeTilesets: INTERIOR

@@ -50,6 +50,8 @@
 		Duration: 250
 	RallyPoint:
 		Path: 3,3
+	CommandBarBlacklist:
+		DisableStop: false
 	WithTextDecoration@SIDE:
 		Text:
 		Position: Top
@@ -1106,6 +1108,8 @@ building.advanced_nuclear_reactor:
 		Type: building.normal
 	WithBuildingBib:
 	RallyPoint:
+	CommandBarBlacklist:
+		DisableStop: false
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.barracks
@@ -1367,6 +1371,8 @@ building.prc_barracks:
 		UseDeathTypeSuffix: false
 	DrawLineToTarget:
 	RallyPoint:
+	CommandBarBlacklist:
+		DisableStop: false
 
 building.usa_supply_center:
 	Inherits: ^default.supply_center
@@ -1485,8 +1491,6 @@ building.gla_supply_stash:
 		ExitCell: 1,1
 	SupplyCenter:
 		DeliveryOffsets: 1,1
-	RallyPoint:
-		Path: 2,1
 	-WithMakeAnimation:
 	WithMakeAnimation@RA_SILO:
 		Sequence: make
@@ -2223,6 +2227,8 @@ building.fortified_bunker:
 		Sequence: build-top
 		RequiresCondition: !build-incomplete
 	RallyPoint:
+	CommandBarBlacklist:
+		DisableStop: false
 	Selectable:
 		Bounds: 3072, 2048
 	Exit@1:
@@ -2252,8 +2258,6 @@ building.usa_war_factory:
 		Name: USA War Factory
 	Building:
 		Footprint: xxx === ===
-	RallyPoint:
-		Path: 0,2
 	Production:
 		Produces: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
 		PauseOnCondition: emp || hacked || sabotaged
@@ -2762,6 +2766,8 @@ building.stinger_site:
 		Facing: 768
 		SpawnOffset: -512,0,0
 	RallyPoint:
+	CommandBarBlacklist:
+		DisableStop: false
 	Reservable:
 	GrantExternalConditionToOwner:
 		Condition: airdock
