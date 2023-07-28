@@ -990,17 +990,20 @@ aircraft.spy_drone:
 		Type: aircraft.normal
 	RevealsShroud:
 		Type: CenterPosition
+		RequiresCondition: visible
 	RevealsShroud@SEARCH_AND_DESTROY:
 		Type: CenterPosition
+		RequiresCondition: visible
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
+		RequiresCondition: visible
 	Aircraft:
 		CruiseAltitude: 2560
 		InitialFacing: 768
 		TurnSpeed: 32
 		Speed: 65
 		RepulsionSpeed: 40
-		MaximumPitch: 56
+		MaximumPitch: 255
 		TakeOffOnCreation: false
 	SelectionDecorations:
 	Cloak:
@@ -1024,6 +1027,12 @@ aircraft.spy_drone:
 	-Selectable:
 	-SpawnActorOnDeath:
 	-MustBeDestroyed:
+	WithFacingSpriteBody:
+		RequiresCondition: visible
+	GrantConditionAfterDelay:
+		Delay: 1
+		Condition: visible
+		ShowSelectionBar: false
 	Explodes:
 		Weapon: UnitExplodeDrone
 		EmptyWeapon: UnitExplodeDrone
