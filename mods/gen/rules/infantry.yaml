@@ -702,7 +702,8 @@ infantry.stinger_soldier:
 		Priority: 3
 		-PriorityModifiers:
 	Mobile:
-		PauseOnCondition: disable_movement
+		CanTurnWhileDisabled: true
+		RequiresCondition: !disable_movement
 	GrantConditionAfterDelay:
 		Condition: disable_movement
 		ShowSelectionBar: false
