@@ -215,6 +215,9 @@
 	GrantConditionOnFaction@NATIONALISM:
 		Condition: nationalism
 		Factions: inf
+	GrantConditionOnFaction@Inf:
+		Condition: inf
+		Factions: inf
 
 ^TankHorde:
 	Inherits: ^InfantryHorde
@@ -411,19 +414,23 @@
 		Prerequisites: tech.repair_bay
 
 ^AffectedByFortifiedStructures:
-	ActorStatValues:
+	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.fortified_structures
+		RequiresCondition: zh_units
 	DamageMultiplier@FORTIFY:
 		RequiresCondition: fortified_structures
 		Modifier: 75
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	GrantConditionOnPrerequisite@FORTIFY:
 		Condition: fortified_structures
 		Prerequisites: upgrade.fortified_structures
 
 ^AffectedByDemolitions:
-	ActorStatValues:
-		FactionUpgrades:
-			demo: upgrade.demolitions
+	ActorStatOverride@Demo:
+		Upgrades: upgrade.demolitions
+		RequiresCondition: demo
 	Explodes@Demo:
 		Weapon: explosion.suicide
 		EmptyWeapon: explosion.suicide
@@ -446,34 +453,46 @@
 		Prerequisites: upgrade.chain_gun
 
 ^AffectedByWorkerShoes:
-	ActorStatValues:
+	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.worker_shoes
+		RequiresCondition: zh_units
 	SpeedMultiplier@WORKER_SHOES:
 		RequiresCondition: worker_shoes
 		Modifier: 110
 	ResourceValueMultiplier@WORKER_SHOES:
 		RequiresCondition: worker_shoes
 		Modifier: 110
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	GrantConditionOnPrerequisite@WORKER_SHOES:
 		Condition: worker_shoes
 		Prerequisites: upgrade.worker_shoes
 
 ^AffectedBySupplyLines:
-	ActorStatValues:
+	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.supply_lines
+		RequiresCondition: zh_units
 	CashTricklerMultiplier@SUPPLY_LINES:
 		RequiresCondition: supply_lines
 		Modifier: 110
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	GrantConditionOnPrerequisite@SUPPLY_LINES:
 		Condition: supply_lines
 		Prerequisites: upgrade.supply_lines
 
 ^AffectedBySupplyLinesChinook:
-	ActorStatValues:
+	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.supply_lines
+		RequiresCondition: zh_units
 	ResourceValueMultiplier@SUPPLY_LINES:
 		RequiresCondition: supply_lines
 		Modifier: 110
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	GrantConditionOnPrerequisite@SUPPLY_LINES:
 		Condition: supply_lines
 		Prerequisites: upgrade.supply_lines
@@ -559,8 +578,12 @@
 		Prerequisites: upgrade.drone_armor
 
 ^AffectedByChemicalSuits:
-	ActorStatValues:
+	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.chemical_suits
+		RequiresCondition: zh_units
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	Armor@CHEMICAL_SUITS:
 		Type: infantry.chem_suit
 		RequiresCondition: chemical_suits
@@ -602,8 +625,10 @@
 
 ^AffectedByChemicalSuitsBossOnly:
 	Inherits: ^AffectedByChemicalSuits
-	ActorStatValues:
-		-Upgrades:
+	-ActorStatOverride@ZH_UNITS:
+	ActorStatOverride@Boss_ZH_UNITS:
+		Upgrades: upgrade.chemical_suits
+		RequiresCondition: boss && zh_units
 	Armor@CHEMICAL_SUITS:
 		RequiresCondition: chemical_suits || !boss
 	DamagedByTintedCells@ANTHRAX_ALPHA:
@@ -1127,10 +1152,16 @@
 	GrantConditionOnProduction@HELLFIRE_DRONE:
 		Condition: hellfire_drone
 		Actors: upgrade.hellfire_drone
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	ProvidesPrerequisite@unitname:
 	ActorStatValues:
-		Upgrades: upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
+		Upgrades: upgrade.scout_drone, upgrade.battle_drone
 		LocalUpgrades: upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
+	ActorStatOverride@ZH_UNITS:
+		Upgrades: upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
+		RequiresCondition: zh_units
 
 ^CanHavePRCVehicleUpgrades:
 	Production:
@@ -1169,9 +1200,6 @@
 	GrantConditionOnProduction@CAMO_NETTING:
 		Condition: camo_netted
 		Actors: upgrade.camo_netting
-	GrantConditionOnPrerequisite@ZH_UNITS:
-		Condition: zh_units
-		Prerequisites: prerequisite.zh_units
 	ConditionPrerequisite@CAMO_NETTING:
 		Queue: queue.camo_netting, queue.stealth_gen_command_center, queue.stealth_gen_infantry, queue.stealth_gen_collector, queue.stealth_gen_vehicle, queue.stealth_gen_palace, queue.stealth_gen_black_market
 		Actor: upgrade.camo_netting
@@ -1182,6 +1210,18 @@
 		Sequence: upgraded
 		Actor: upgrade.camo_netting
 		RequiresCondition: camo_netted
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
+	GrantConditionOnFaction@Demo:
+		Condition: demo
+		Factions: demo
+	GrantConditionOnFaction@Stealth:
+		Condition: stealth
+		Factions: stealth
 	Cloak:
 		InitialDelay: 60
 		CloakDelay: 60
@@ -1192,8 +1232,10 @@
 		RequiresCondition: camo_netted && !emp && !hacked
 	ProvidesPrerequisite@buildingname:
 	ActorStatValues:
-		Upgrades: upgrade.camo_netting
 		LocalUpgrades: upgrade.camo_netting
+	ActorStatOverride@ZH_UNITS:
+		Upgrades: upgrade.camo_netting
+		RequiresCondition: !toxin && !demo && !stealth && zh_units
 
 ^CanHaveCamoNettingFreeForStealthGen:
 	Inherits@CAMO: ^CanHaveCamoNetting
@@ -1219,6 +1261,10 @@
 		Delay: 1
 		Condition: update_queue
 		ShowSelectionBar: false
+	-ActorStatOverride@ZH_UNITS:
+	ActorStatOverride@Stealth_ZH_UNITS:
+		Upgrades: upgrade.camo_netting
+		RequiresCondition: stealth && zh_units
 
 ^CanHaveMines:
 	Production:
@@ -1269,8 +1315,11 @@
 		RequiresCondition: neutron_mines
 	ProvidesPrerequisite@buildingname:
 	ActorStatValues:
-		Upgrades: upgrade.land_mines, upgrade.neutron_mines
+		Upgrades: upgrade.land_mines
 		LocalUpgrades: upgrade.land_mines, upgrade.neutron_mines
+	ActorStatOverride@ZH_UNITS:
+		Upgrades: upgrade.land_mines, upgrade.neutron_mines
+		RequiresCondition: zh_units
 
 ^FlatSelectionMode:
 	Selectable:

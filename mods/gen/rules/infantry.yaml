@@ -97,8 +97,13 @@ infantry.worker:
 		Image: hack.angry_mob.male
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, None, None, None, Collector
-		FactionUpgrades:
-			demo: upgrade.demolitions, upgrade.worker_shoes
+	ActorStatOverride@ZH_UNITS:
+		RequiresCondition: !demo && zh_units
+	ActorStatOverride@Demo:
+		RequiresCondition: demo && !zh_units
+	ActorStatOverride@Demo_ZH_UNITS:
+		Upgrades: upgrade.demolitions, upgrade.worker_shoes
+		RequiresCondition: demo && zh_units
 
 ^default.mg_infantry:
 	Inherits: ^Soldier
@@ -194,7 +199,10 @@ infantry.ranger:
 	Voiced:
 		VoiceSet: RangerVoice
 	ActorStatValues:
+		Upgrades: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.adv_training
+	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.adv_training, upgrade.chemical_suits
+		RequiresCondition: zh_units
 
 infantry.rebel:
 	Inherits: ^default.mg_infantry
@@ -238,12 +246,18 @@ infantry.rebel:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
-	GrantConditionOnFaction@CAMOUFLAGE:
-		Condition: camouflage
-		Factions: stealth
 	GrantConditionOnPrerequisite@CAMOUFLAGE:
 		Condition: camouflage
 		Prerequisites: upgrade.camouflage
+	GrantConditionOnFaction@CAMOUFLAGE:
+		Condition: camouflage
+		Factions: stealth
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
+	GrantConditionOnFaction@Stealth:
+		Condition: stealth
+		Factions: stealth
 	Passenger:
 		CargoType: GLAInfantry
 	Voiced:
@@ -252,10 +266,12 @@ infantry.rebel:
 		Image: infantry.rebel
 	ActorStatValues:
 		Damage: 15
+		Upgrades: capture_building, upgrade.camouflage, upgrade.ap_bullets
+	ActorStatOverride@Toxin:
 		Upgrades: upgrade.capture_building, upgrade.ap_bullets
-		FactionUpgrades:
-			gla: upgrade.capture_building, upgrade.camouflage, upgrade.ap_bullets
-			demo: upgrade.capture_building, upgrade.demolitions, upgrade.ap_bullets
+		RequiresCondition: toxin || stealth
+	ActorStatOverride@Demo:
+		Upgrades: upgrade.capture_building, upgrade.demolitions, upgrade.ap_bullets
 
 infantry.toxin_rebel:
 	Inherits: ^default.mg_infantry
@@ -368,6 +384,9 @@ infantry.toxin_rebel:
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
 	-DamagedByTintedCells@ANTHRAX_ALPHA:
 	-DamagedByTintedCells@ANTHRAX_BETA:
 	-DamagedByTintedCells@ANTHRAX_GAMMA:
@@ -377,9 +396,11 @@ infantry.toxin_rebel:
 		CapturingCondition: capturing
 	ActorStatValues:
 		Upgrades: upgrade.capture_building, upgrade.anthrax_beta
-		FactionUpgrades:
-			toxin: upgrade.capture_building, upgrade.anthrax_gamma
-			demo: upgrade.capture_building, upgrade.demolitions
+	ActorStatOverride@Toxin:
+		Upgrades: upgrade.capture_building, upgrade.anthrax_gamma
+		RequiresCondition: toxin
+	ActorStatOverride@Demo:
+		Upgrades: upgrade.capture_building, upgrade.demolitions
 
 infantry.red_guard:
 	Inherits: ^default.mg_infantry
@@ -442,8 +463,9 @@ infantry.red_guard:
 	ActorStatValues:
 		Damage: 15
 		Upgrades: upgrade.capture_building, upgrade.nationalism
-		FactionUpgrades:
-			inf: upgrade.capture_building, upgrade.patriotism
+	ActorStatOverride@Inf:
+		Upgrades: upgrade.capture_building, upgrade.patriotism
+		RequiresCondition: inf
 
 infantry.minigunner:
 	Inherits: ^default.mg_infantry
@@ -523,8 +545,9 @@ infantry.minigunner:
 		Damage: 10
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Upgrades: upgrade.capture_building, upgrade.nationalism
-		FactionUpgrades:
-			inf: upgrade.capture_building, upgrade.patriotism
+	ActorStatOverride@Inf:
+		Upgrades: upgrade.capture_building, upgrade.patriotism
+		RequiresCondition: inf
 
 infantry.conscript:
 	Inherits: ^default.mg_infantry
@@ -665,7 +688,10 @@ infantry.missile_defender:
 	Voiced:
 		VoiceSet: MissileDefenderVoice
 	ActorStatValues:
+		Upgrades: upgrade.adv_training
+	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.chemical_suits
+		RequiresCondition: zh_units
 
 infantry.rpg_trooper:
 	Inherits: ^default.rocket_infantry
@@ -690,8 +716,8 @@ infantry.rpg_trooper:
 		VoiceSet: RPGTrooperVoice
 	ActorStatValues:
 		Upgrades: upgrade.ap_rockets
-		FactionUpgrades:
-			demo: upgrade.demolitions, upgrade.ap_rockets
+	ActorStatOverride@Demo:
+		Upgrades: upgrade.demolitions, upgrade.ap_rockets
 
 infantry.stinger_soldier:
 	Inherits: ^default.rocket_infantry
@@ -714,6 +740,8 @@ infantry.stinger_soldier:
 		Weapon: missile.stinger_site.air
 	-Armament@PRIMARY_GARRISON:
 	-Armament@SECONDARY_GARRISON:
+	-Passenger:
+	-SharedPassenger:
 	Tooltip:
 		Name: Stinger Soldier
 	Targetable:
@@ -787,9 +815,11 @@ infantry.tank_hunter:
 		VoiceSet: TankHunterVoice
 	ActorStatValues:
 		Upgrades: upgrade.nationalism
-		FactionUpgrades:
-			inf: upgrade.patriotism
-			boss: upgrade.chemical_suits, upgrade.nationalism
+	ActorStatOverride@Inf:
+		Upgrades: upgrade.patriotism
+		RequiresCondition: inf
+	ActorStatOverride@Boss_ZH_UNITS:
+		Upgrades: upgrade.chemical_suits, upgrade.nationalism
 
 infantry.grenadier:
 	Inherits: ^default.rocket_infantry
@@ -903,7 +933,10 @@ infantry.pathfinder:
 	ActorStatValues:
 		Damage: 100
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+		Upgrades: upgrade.adv_training
+	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.chemical_suits
+		RequiresCondition: zh_units
 
 infantry.pathfinder.boss:
 	Inherits: infantry.pathfinder
@@ -1019,10 +1052,14 @@ infantry.toxin_terrorist:
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
 	ActorStatValues:
 		Upgrades: upgrade.anthrax_beta
-		FactionUpgrades:
-			toxin: upgrade.anthrax_gamma
+	ActorStatOverride@Toxin:
+		Upgrades: upgrade.anthrax_gamma
+		RequiresCondition: toxin
 
 infantry.flamethrower:
 	Inherits: ^Soldier
@@ -1479,8 +1516,6 @@ infantry.hacker.boss:
 		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
 	RenderSprites:
 		Image: infantry.hacker
-	ActorStatValues:
-		Upgrades: upgrade.chemical_suits
 
 infantry.super_hacker:
 	Inherits: infantry.hacker
@@ -1732,7 +1767,10 @@ infantry.colonel_burton:
 		VoiceSet: BurtonVoice
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+		Upgrades: upgrade.adv_training
+	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.chemical_suits
+		RequiresCondition: zh_units
 
 infantry.colonel_burton.boss:
 	Inherits: infantry.colonel_burton
@@ -1823,6 +1861,9 @@ infantry.jarmen_kell:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	GrantConditionOnFaction@Boss:
+		Condition: boss
+		Factions: boss
 	AmmoPool:
 		Ammo: 1
 		Armaments: driver_snipe
@@ -1848,8 +1889,11 @@ infantry.jarmen_kell:
 		Armaments: primary
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.ap_bullets
-		FactionUpgrades:
-			demo: upgrade.ap_bullets, upgrade.demolitions
+	ActorStatOverride@Demo:
+		Upgrades: upgrade.demolitions, upgrade.ap_bullets
+	ActorStatOverride@Boss:
+		Upgrades:
+		RequiresCondition: boss
 
 infantry.jarmen_kell.demo:
 	Inherits: infantry.jarmen_kell

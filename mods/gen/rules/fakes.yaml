@@ -321,6 +321,7 @@ fake.black_market:
 
 fake.scud_storm:
 	Inherits: ^FakeBuilding
+	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape

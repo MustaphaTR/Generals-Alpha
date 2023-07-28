@@ -466,9 +466,8 @@ building.gla_command_center:
 		Type: Rectangle
 			TopLeft: -1536, -1536
 			BottomRight: 1536, 1536
-	ActorStatValues:
-		FactionUpgrades:
-			stealth: upgrade.fortified_structures, upgrade.camo_netting
+	ActorStatOverride@Stealth_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
 
 building.prc_command_center:
 	Inherits: ^default.command_center
@@ -845,8 +844,10 @@ building.prc_command_center:
 	RenderSprites:
 		Image: building.prc_command_center
 	ActorStatValues:
-		Upgrades: upgrade.radar, upgrade.land_mines, upgrade.neutron_mines
+		Upgrades: upgrade.radar, upgrade.land_mines
 		LocalUpgrades: upgrade.radar, upgrade.land_mines, upgrade.neutron_mines
+	ActorStatOverride@ZH_UNITS:
+		Upgrades: upgrade.radar, upgrade.land_mines, upgrade.neutron_mines
 
 building.prc_command_center.radar:
 	Inherits: building.prc_command_center
@@ -1019,8 +1020,10 @@ building.cold_fusion_reactor.boss:
 	RenderSprites:
 		Image: building.cold_fusion_reactor
 	ActorStatValues:
-		Upgrades: upgrade.control_rods, upgrade.land_mines, upgrade.neutron_mines
+		Upgrades: upgrade.control_rods, upgrade.land_mines
 		LocalUpgrades: upgrade.control_rods, upgrade.land_mines, upgrade.neutron_mines
+	ActorStatOverride@ZH_UNITS:
+		Upgrades: upgrade.control_rods, upgrade.land_mines, upgrade.neutron_mines
 
 building.nuclear_reactor:
 	Inherits: ^default.reactor
@@ -1234,9 +1237,8 @@ building.gla_barracks:
 	WithTerrainDependantSpriteBody:
 	Voiced:
 		VoiceSet: GLABarracksVoice
-	ActorStatValues:
-		FactionUpgrades:
-			stealth: upgrade.fortified_structures, upgrade.camo_netting
+	ActorStatOverride@Stealth_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
 
 building.prc_barracks:
 	Inherits: ^default.barracks
@@ -1521,9 +1523,8 @@ building.gla_supply_stash:
 	-Power:
 	Voiced:
 		VoiceSet: GLASupplyVoice
-	ActorStatValues:
-		FactionUpgrades:
-			stealth: upgrade.fortified_structures, upgrade.camo_netting
+	ActorStatOverride@Stealth_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
 
 building.gla_supply_stash.no_free_actor:
 	Inherits: building.gla_supply_stash
@@ -1858,13 +1859,22 @@ building.demo_trap.toxin:
 		Name: Demo Trap
 	SpawnActorOnDeath:
 		Actor: building.demo_trap.toxin.explode
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
+	GrantConditionOnFaction@Demo:
+		Condition: demo
+		Factions: demo
 	RenderSprites:
 		Image: building.demo_trap
 	ActorStatValues:
 		Upgrades: upgrade.anthrax_beta
-		FactionUpgrades:
-			toxin: upgrade.anthrax_gamma
-			demo:
+	ActorStatOverride@Toxin:
+		Upgrades: upgrade.upgrade.anthrax_gamma
+		RequiresCondition: toxin
+	ActorStatOverride@Demo:
+		Upgrades:
+		RequiresCondition: demo
 
 building.demo_trap.toxin.explode:
 	Inherits: building.demo_trap.explode
@@ -1888,14 +1898,23 @@ building.demo_trap.toxin.explode:
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
+	GrantConditionOnFaction@Demo:
+		Condition: demo
+		Factions: demo
 	ActorStatValues:
 		Icon: icon
 		IconPalette: chrome
 		TooltipActor: building.demo_trap.toxin
 		Upgrades: upgrade.anthrax_beta
-		FactionUpgrades:
-			toxin: upgrade.anthrax_gamma
-			demo:
+	ActorStatOverride@Toxin:
+		Upgrades: upgrade.anthrax_gamma
+		RequiresCondition: toxin
+	ActorStatOverride@Demo:
+		Upgrades:
+		RequiresCondition: demo
 
 building.advanced_demo_trap:
 	Inherits: building.demo_trap
@@ -2386,9 +2405,8 @@ building.arms_dealer:
 	-Power:
 	Voiced:
 		VoiceSet: GLAArmsDealerVoice
-	ActorStatValues:
-		FactionUpgrades:
-			stealth: upgrade.fortified_structures, upgrade.camo_netting
+	ActorStatOverride@Stealth_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
 
 building.prc_war_factory:
 	Inherits: ^default.war_factory
@@ -2549,10 +2567,6 @@ building.tunnel_network:
 	ActorStatValues:
 		Damage: 10
 		Stats: Armor, Sight, Cargo, Damage, ReloadDelay, MaxRange
-		Upgrades: upgrade.camo_netting
-		FactionUpgrades:
-			demo: upgrade.demolitions
-			stealth:
 
 building.tunnel_network.no_free_actor:
 	Inherits: building.tunnel_network
@@ -2591,16 +2605,22 @@ building.toxin_tunnel_network:
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
 	-WithMuzzleOverlay:
 	SpawnActorOnDeath:
 		Actor: hole.toxin_tunnel_network
 	RenderSprites:
 		Image: building.toxin_tunnel_network
 	ActorStatValues:
+		Upgrades: upgrade.anthrax_beta
+	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.anthrax_beta, upgrade.camo_netting
-		FactionUpgrades:
-			toxin: upgrade.anthrax_gamma
-			demo: upgrade.demolitions
+		RequiresCondition: !toxin && !demo && !stealth && zh_units
+	ActorStatOverride@Toxin:
+		Upgrades: upgrade.anthrax_gamma
+		RequiresCondition: toxin
 
 building.toxin_tunnel_network.no_free_actor:
 	Inherits: building.toxin_tunnel_network
@@ -2733,6 +2753,9 @@ building.stinger_site:
 	Exit:
 	ProductionBar:
 		ProductionType: queue.camo_netting
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
 	SpawnActorOnDeath:
 		Actor: hole.stinger_site
 		SpawnAfterDefeat: false
@@ -2740,11 +2763,15 @@ building.stinger_site:
 		VoiceSet: StingerSiteVoice
 	ActorStatValues:
 		Stats: Armor, Sight, Mob, Damage, ReloadDelay, MinRange, None, MaxRange
+		Upgrades: upgrade.ap_rockets
+	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.ap_rockets, upgrade.camo_netting
-		FactionUpgrades:
-			toxin: upgrade.ap_rockets
-			demo: upgrade.demolitions, upgrade.ap_rockets
-			stealth: upgrade.ap_rockets
+		RequiresCondition: !toxin && !demo && !stealth && zh_units
+	ActorStatOverride@Toxin:
+		Upgrades: upgrade.ap_rockets
+		RequiresCondition: toxin || stealth
+	ActorStatOverride@Demo:
+		Upgrades: upgrade.demolitions, upgrade.ap_rockets
 
 ^default.airfield:
 	Inherits: ^Building
@@ -3068,8 +3095,10 @@ building.internet_center:
 		PlayerPalette: cncplayer
 	ActorStatValues:
 		Stats: Armor, Sight, Cargo
+		Upgrades: upgrade.satellite_hack1, upgrade.satellite_hack2, upgrade.land_mines
+		LocalUpgrades: upgrade.land_mines, upgrade.neutron_mines
+	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.satellite_hack1, upgrade.satellite_hack2, upgrade.land_mines, upgrade.neutron_mines
-		LocalUpgrades: upgrade.satellite_hack1, upgrade.satellite_hack2, upgrade.land_mines, upgrade.neutron_mines
 
 building.strategy_center:
 	Inherits: ^Building
@@ -3346,8 +3375,8 @@ building.palace:
 		VoiceSet: PalaceVoice
 	ActorStatValues:
 		Stats: Armor, Sight, Cargo
-		FactionUpgrades:
-			stealth: upgrade.fortified_structures, upgrade.camo_netting
+	ActorStatOverride@Stealth_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
 
 building.propaganda_center:
 	Inherits: ^Building
@@ -3623,9 +3652,8 @@ building.black_market:
 		SpawnAfterDefeat: false
 	Voiced:
 		VoiceSet: BlackMarketVoice
-	ActorStatValues:
-		FactionUpgrades:
-			stealth: upgrade.fortified_structures, upgrade.camo_netting
+	ActorStatOverride@Stealth_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
 
 building.speaker_tower:
 	Inherits: ^Building
@@ -4049,11 +4077,25 @@ building.scud_storm:
 		Delay: 100
 		Count: 4
 	ActorStatValues:
+		Upgrades: upgrade.anthrax_beta
+	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.anthrax_beta, upgrade.fortified_structures
-		FactionUpgrades:
-			toxin: upgrade.anthrax_gamma, upgrade.fortified_structures
-			demo: upgrade.fortified_structures
-			stealth: upgrade.anthrax_beta, upgrade.fortified_structures, upgrade.camo_netting
+		RequiresCondition: !toxin && !demo && !stealth && zh_units
+	ActorStatOverride@Toxin:
+		Upgrades: upgrade.anthrax_gamma
+		RequiresCondition: toxin && !zh_units
+	ActorStatOverride@Toxin_ZH_UNITS:
+		Upgrades: upgrade.anthrax_gamma, upgrade.fortified_structures
+		RequiresCondition: toxin && zh_units
+	ActorStatOverride@Demo:
+		Upgrades:
+		RequiresCondition: demo && !zh_units
+	ActorStatOverride@Demo_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures
+		RequiresCondition: demo && zh_units
+	ActorStatOverride@Stealth_ZH_UNITS:
+		Upgrades: upgrade.anthrax_beta, upgrade.fortified_structures, upgrade.camo_netting
+		RequiresCondition: stealth && zh_units
 
 building.scud_storm.boss:
 	Inherits: building.scud_storm
@@ -4078,6 +4120,11 @@ building.scud_storm.boss:
 		DisplayOrder: 65
 	ProductionBar:
 		ProductionType: queue.boss_gen_scud_storm
+	-ActorStatOverride@Toxin:
+	-ActorStatOverride@Toxin_ZH_UNITS:
+	-ActorStatOverride@Demo:
+	-ActorStatOverride@Demo_ZH_UNITS:
+	-ActorStatOverride@Stealth_ZH_UNITS:
 
 building.missile_silo:
 	Inherits: ^Building
