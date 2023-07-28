@@ -568,6 +568,17 @@ fake.tunnel_network:
 		IntoActor: building.tunnel_network
 	Valued:
 		Cost: 100
+	Cloak:
+		InitialDelay: 60
+		CloakDelay: 60
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		DetectionTypes: Cloak
+		IsPlayerPalette: true
+		CanBeForcedUncloak: true
+		RequiresCondition: camo_netted && !emp && !hacked
+	GrantConditionOnFaction@CAMO_NETTING:
+		Condition: camo_netted
+		Factions: stealth
 	Cargo:
 		Types: fake
 		MaxWeight: 10
@@ -641,6 +652,21 @@ fake.stinger_site:
 		IntoActor: building.stinger_site
 	Valued:
 		Cost: 100
+	ProximityExternalCondition@Cloak:
+		Condition: stinger_cloak
+		Range: 1c0
+		RequiresCondition: camo_netted
+	Cloak:
+		InitialDelay: 60
+		CloakDelay: 60
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		DetectionTypes: Cloak
+		IsPlayerPalette: true
+		CanBeForcedUncloak: true
+		RequiresCondition: camo_netted && !emp && !hacked
+	GrantConditionOnFaction@CAMO_NETTING:
+		Condition: camo_netted
+		Factions: stealth
 	MobSpawnerMaster@A:
 		Actors: fake.stinger_soldier
 		SpawnOffset: 511,511,0
