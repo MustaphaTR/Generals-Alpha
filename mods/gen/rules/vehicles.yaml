@@ -52,6 +52,9 @@ vehicle.supply_truck:
 		Speed: 40
 		TurnSpeed: 16
 		Voice: Move
+		CanMoveBackward: true
+		MaxBackwardCells: 2
+		BackwardDuration: -1
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Crushable:
@@ -137,6 +140,9 @@ vehicle.humvee:
 		TurnSpeed: 32
 		Speed: 60
 		Voice: Move
+		CanMoveBackward: true
+		MaxBackwardCells: 2
+		BackwardDuration: -1
 		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
@@ -277,6 +283,9 @@ vehicle.technical:
 		TurnSpeed: 32
 		Speed: 90
 		Voice: Move
+		CanMoveBackward: true
+		MaxBackwardCells: 2
+		BackwardDuration: -1
 		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 89
@@ -405,6 +414,9 @@ vehicle.radar_van:
 		Speed: 40
 		TurnSpeed: 32
 		Voice: Move
+		CanMoveBackward: true
+		MaxBackwardCells: 2
+		BackwardDuration: -1
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
 	Passenger:
@@ -955,6 +967,9 @@ vehicle.ambulance:
 		Speed: 60
 		TurnSpeed: 32
 		Voice: Move
+		CanMoveBackward: true
+		MaxBackwardCells: 2
+		BackwardDuration: -1
 		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
@@ -1155,6 +1170,9 @@ vehicle.quad_cannon:
 		Speed: 40
 		TurnSpeed: 32
 		Voice: Move
+		CanMoveBackward: true
+		MaxBackwardCells: 2
+		BackwardDuration: -1
 	SpeedMultiplier@DAMAGED:
 		Modifier: 63
 	Crushable:
@@ -1392,6 +1410,9 @@ vehicle.toxin_tractor:
 		TurnSpeed: 32
 		Speed: 30
 		Voice: Move
+		CanMoveBackward: true
+		MaxBackwardCells: 2
+		BackwardDuration: -1
 		PauseOnCondition: hacked || driver_killed || emp || leaflet || spray
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
@@ -1659,6 +1680,9 @@ vehicle.rocket_buggy:
 		TurnSpeed: 32
 		Speed: 90
 		Voice: Move
+		CanMoveBackward: true
+		MaxBackwardCells: 2
+		BackwardDuration: -1
 	SpeedMultiplier@DAMAGED:
 		Modifier: 89
 	Crushable:
@@ -1805,6 +1829,9 @@ vehicle.avenger:
 		Speed: 30
 		TurnSpeed: 32
 		Voice: Move
+		CanMoveBackward: true
+		MaxBackwardCells: 2
+		BackwardDuration: -1
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
 	Selectable:
@@ -1917,6 +1944,9 @@ vehicle.battle_bus:
 		Voice: Move
 		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
 		RequiresCondition: !husk
+		CanMoveBackward: true
+		MaxBackwardCells: 2
+		BackwardDuration: -1
 	SpeedMultiplier@DAMAGED:
 		Modifier: 71
 	Crushable:
@@ -2017,6 +2047,9 @@ vehicle.troop_crawler:
 		Speed: 40
 		TurnSpeed: 20
 		Voice: Move
+		CanMoveBackward: true
+		MaxBackwardCells: 2
+		BackwardDuration: -1
 		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
@@ -2116,6 +2149,9 @@ vehicle.listening_outpost:
 		Speed: 40
 		TurnSpeed: 16
 		Voice: Move
+		CanMoveBackward: true
+		MaxBackwardCells: 2
+		BackwardDuration: -1
 		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
@@ -4386,6 +4422,10 @@ vehicle.usa_mcc:
 		DisplayOrder: 5
 	Voiced:
 		VoiceSet: USAMCCVoice
+	Mobile:
+		CanMoveBackward: true
+		MaxBackwardCells: 2
+		BackwardDuration: -1
 	WithTextDecoration@SIDE:
 		Text: USA
 		Color: 0000FF
