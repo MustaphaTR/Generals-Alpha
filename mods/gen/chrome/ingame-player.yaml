@@ -42,27 +42,28 @@ Container@PLAYER_WIDGETS:
 			Order: Descending
 		Container@ACTOR_STATS:
 			Logic: CollapsableWidgetLogic
-			X: 19
+			X: 12
 			Y: WINDOW_BOTTOM - HEIGHT - 43
-			Width: 260
+			Width: 276
 			Height: 148
 			Children:
 				Background@CLOSED_BACKGROUND:
 					Logic: AddFactionSuffixLogic
 					Y: 119
-					Width: 260
+					Width: 276
 					Height: 32
 					Visible: false
 					Background: actor-stats-background
 				Background@OPENED_BACKGROUND:
 					Logic: IngameActorStatsLogic, AddFactionSuffixLogic
-						LargeIconCount: 3
-						LargeIconSpacing: 14, 2
-						SmallIconCount: 15
-						SmallIconSpacing: 5, 5
+						LargeIconCount: 4
+						LargeIconSpacing: 0, 2
+						SmallIconRows: 8
+						SmallIconCount: 20
+						SmallIconSpacing: 0, 5
 						UpgradeIconCount: 5
-						UpgradeIconSpacing: 0, 0
-					Width: 260
+						UpgradeIconSpacing: 1, 0
+					Width: 276
 					Height: 153
 					Background: actor-stats-background
 					Children:
@@ -91,12 +92,12 @@ Container@PLAYER_WIDGETS:
 							NoIconSequence: emptyicon
 							TooltipContainer: TOOLTIP_CONTAINER
 						ActorIcon@STAT_ICON_UPGRADE:
-							X: 10
+							X: 11
 							Y: 98
 							Width: 48
 							Height: 36
-							IconSize: 48, 36
-							IconScale: 0.75
+							IconSize: 50, 38
+							IconScale: 0.79
 							ClickSound:
 							ClickDisabledSound:
 							NoIconSequence: emptyicon
@@ -125,7 +126,7 @@ Container@PLAYER_WIDGETS:
 							BarMargin: 1,1
 							Background: progressbar-bg-cameo
 						Label@STAT_MORE:
-							X: 228
+							X: 262
 							Y: 123
 							Contrast: true
 							Align: Right
@@ -169,7 +170,7 @@ Container@PLAYER_WIDGETS:
 									ImageCollection: actor-stats-bits
 									ImageName: actor-stats-speed
 						Label@STAT_LABEL_4:
-							X: 190
+							X: 198
 							Y: 31
 							Contrast: true
 							Text: :
@@ -182,7 +183,7 @@ Container@PLAYER_WIDGETS:
 									ImageCollection: actor-stats-bits
 									ImageName: actor-stats-damage
 						Label@STAT_LABEL_5:
-							X: 190
+							X: 198
 							Y: 49
 							Contrast: true
 							Text: :
@@ -195,7 +196,7 @@ Container@PLAYER_WIDGETS:
 									ImageCollection: actor-stats-bits
 									ImageName: actor-stats-rof
 						Label@STAT_LABEL_6:
-							X: 190
+							X: 198
 							Y: 67
 							Contrast: true
 							Text: :
@@ -221,7 +222,7 @@ Container@PLAYER_WIDGETS:
 									ImageCollection: actor-stats-bits
 									ImageName: actor-stats-resources
 						Label@STAT_LABEL_8:
-							X: 190
+							X: 198
 							Y: 85
 							Contrast: true
 							Text: :
