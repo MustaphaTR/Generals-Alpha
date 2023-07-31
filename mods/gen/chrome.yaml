@@ -176,16 +176,7 @@ sidebar-gla:
 
 sidebar-button-gla:
 	Inherits: ^Sidebar
-	Regions:
-		background: 199, 31, 22, 22
-		border-r: 221, 31, 3, 22
-		border-l: 199, 31, 3, 22
-		border-b: 199, 53, 22, 3
-		border-t: 199, 28, 22, 3
-		corner-tl: 196, 28, 3, 3
-		corner-tr: 221, 28, 3, 3
-		corner-bl: 196, 53, 3, 3
-		corner-br: 221, 53, 3, 3
+	PanelRegion: 196, 28, 3, 3, 22, 22, 3, 3
 sidebar-button-gla-hover:
 	Inherits: ^Sidebar
 	PanelRegion: 196, 0, 3, 3, 22, 22, 3, 3
