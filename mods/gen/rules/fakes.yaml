@@ -595,6 +595,10 @@ fake.toxin_tunnel_network:
 	Inherits: fake.tunnel_network
 	Buildable:
 		Queue: queue.toxin_gen_building
+		Description: Looks like a Toxin Tunnel Network.
+	Tooltip:
+		Name: Fake Toxin Tunnel Network
+		GenericName: Toxin Tunnel Network
 	Production:
 		Produces: queue.toxin_tunnel_network.fake
 	ProductionQueue:
