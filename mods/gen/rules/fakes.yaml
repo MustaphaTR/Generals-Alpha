@@ -218,7 +218,7 @@ fake.palace:
 	Inherits@CARGO: ^CargoPips
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@INFILTRATE: ^SabotagableFake
-	Inherits@REVEAL: ^Reveal200
+	Inherits@REVEAL: ^Reveal300
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		BuildPaletteOrder: 20
@@ -425,7 +425,7 @@ fake.scud_storm:
 
 fake.demo_trap:
 	Inherits: ^FakeDefense
-	Inherits@REVEAL: ^Reveal200
+	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		BuildPaletteOrder: 16
 		BuildDuration: 25
@@ -609,7 +609,7 @@ fake.toxin_tunnel_network:
 
 fake.stinger_site:
 	Inherits: ^FakeDefense
-	Inherits@REVEAL: ^Reveal150
+	Inherits@REVEAL: ^Reveal400
 	Inherits@SHAPE: ^1x1Shape
 	Buildable:
 		BuildPaletteOrder: 19
