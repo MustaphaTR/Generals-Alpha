@@ -2004,6 +2004,9 @@
 		RequiresCondition: turn_real
 	MapEditorData:
 		Categories: Fake
+	ActorStatOverride@Enemy:
+		Icon: icon
+		ValidRelationships: Enemy, Neutral
 
 ^CanBeSabotaged:
 	Inherits@IDISABLE: ^WithDisabledOverlay

@@ -50,6 +50,22 @@ fake.command_center:
 		Cost: 500
 	Voiced:
 		VoiceSet: GLACommandCenterVoice
+	GrantConditionOnFaction@Stealth:
+		Condition: stealth
+		Factions: stealth
+	ActorStatOverride@ZH_UNITS:
+		ValidRelationships: Ally
+	ActorStatOverride@Enemy:
+		TooltipActor: building.gla_command_center
+		Health: 500000
+	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: !stealth && zh_units
+	ActorStatOverride@Enemy_UPGRADE_Stealth_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: stealth && zh_units
 
 fake.barracks:
 	Inherits: ^FakeBuilding
@@ -101,6 +117,22 @@ fake.barracks:
 		Cost: 125
 	Voiced:
 		VoiceSet: GLABarracksVoice
+	GrantConditionOnFaction@Stealth:
+		Condition: stealth
+		Factions: stealth
+	ActorStatOverride@ZH_UNITS:
+		ValidRelationships: Ally
+	ActorStatOverride@Enemy:
+		TooltipActor: building.gla_barracks
+		Health: 100000
+	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: !stealth && zh_units
+	ActorStatOverride@Enemy_UPGRADE_Stealth_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: stealth && zh_units
 
 fake.supply_stash:
 	Inherits: ^FakeBuilding
@@ -163,6 +195,22 @@ fake.supply_stash:
 		Cost: 375
 	Voiced:
 		VoiceSet: GLASupplyVoice
+	GrantConditionOnFaction@Stealth:
+		Condition: stealth
+		Factions: stealth
+	ActorStatOverride@ZH_UNITS:
+		ValidRelationships: Ally
+	ActorStatOverride@Enemy:
+		TooltipActor: building.gla_supply_stash
+		Health: 200000
+	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: !stealth && zh_units
+	ActorStatOverride@Enemy_UPGRADE_Stealth_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: stealth && zh_units
 
 fake.arms_dealer:
 	Inherits: ^FakeBuilding
@@ -212,6 +260,22 @@ fake.arms_dealer:
 		Cost: 625
 	Voiced:
 		VoiceSet: GLAArmsDealerVoice
+	GrantConditionOnFaction@Stealth:
+		Condition: stealth
+		Factions: stealth
+	ActorStatOverride@ZH_UNITS:
+		ValidRelationships: Ally
+	ActorStatOverride@Enemy:
+		TooltipActor: building.arms_dealer
+		Health: 200000
+	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: !stealth && zh_units
+	ActorStatOverride@Enemy_UPGRADE_Stealth_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: stealth && zh_units
 
 fake.palace:
 	Inherits: ^FakeBuilding
@@ -265,8 +329,23 @@ fake.palace:
 		Cost: 625
 	Voiced:
 		VoiceSet: PalaceVoice
-	ActorStatValues:
+	GrantConditionOnFaction@Stealth:
+		Condition: stealth
+		Factions: stealth
+	ActorStatOverride@ZH_UNITS:
+		ValidRelationships: Ally
+	ActorStatOverride@Enemy:
+		TooltipActor: building.palace
 		Stats: Armor, Sight, Cargo
+		Health: 300000
+	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: !stealth && zh_units
+	ActorStatOverride@Enemy_UPGRADE_Stealth_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: stealth && zh_units
 
 fake.black_market:
 	Inherits: ^FakeBuilding
@@ -318,6 +397,22 @@ fake.black_market:
 		PauseOnCondition: emp || hacked
 	Voiced:
 		VoiceSet: BlackMarketVoice
+	GrantConditionOnFaction@Stealth:
+		Condition: stealth
+		Factions: stealth
+	ActorStatOverride@ZH_UNITS:
+		ValidRelationships: Ally
+	ActorStatOverride@Enemy:
+		TooltipActor: building.black_market
+		Health: 100000
+	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: !stealth && zh_units
+	ActorStatOverride@Enemy_UPGRADE_Stealth_ZH_UNITS:
+		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: stealth && zh_units
 
 fake.scud_storm:
 	Inherits: ^FakeBuilding
@@ -422,6 +517,44 @@ fake.scud_storm:
 	ReloadAmmoPool@1:
 		Delay: 100
 		Count: 4
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
+	GrantConditionOnFaction@Demo:
+		Condition: demo
+		Factions: demo
+	GrantConditionOnFaction@Stealth:
+		Condition: stealth
+		Factions: stealth
+	ActorStatOverride@ZH_UNITS:
+		ValidRelationships: Ally
+	ActorStatOverride@Enemy:
+		TooltipActor: building.scud_storm
+		Health: 300000
+	ActorStatOverride@Enemy_UPGRADE:
+		Upgrades: upgrade.anthrax_beta
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: !toxin && !demo && !stealth && !zh_units
+	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
+		Upgrades: upgrade.anthrax_beta, upgrade.fortified_structures
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: !toxin && !demo && !stealth && zh_units
+	ActorStatOverride@Enemy_UPGRADE_Toxin:
+		Upgrades: upgrade.anthrax_gamma
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: toxin && !zh_units
+	ActorStatOverride@Enemy_UPGRADE_Toxin_ZH_UNITS:
+		Upgrades: upgrade.anthrax_gamma, upgrade.fortified_structures
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: toxin && zh_units
+	ActorStatOverride@Enemy_UPGRADE_Demo:
+		Upgrades: upgrade.fortified_structures
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: demo
+	ActorStatOverride@Enemy_UPGRADE_Stealth_ZH_UNITS:
+		Upgrades: upgrade.anthrax_beta, upgrade.fortified_structures, upgrade.camo_netting
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: stealth && zh_units
 
 fake.demo_trap:
 	Inherits: ^FakeDefense
@@ -472,8 +605,10 @@ fake.demo_trap:
 		IntoActor: building.demo_trap
 	Valued:
 		Cost: 50
-	ActorStatValues:
+	ActorStatOverride@Enemy:
+		TooltipActor: building.demo_trap
 		Stats: Armor, Sight, None, Damage, Spread
+		Health: 10000
 
 fake.demo_trap.toxin:
 	Inherits: fake.demo_trap
@@ -491,6 +626,22 @@ fake.demo_trap.toxin:
 		IntoActor: building.demo_trap.toxin
 	Valued:
 		Cost: 75
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
+	GrantConditionOnFaction@Demo:
+		Condition: demo
+		Factions: demo
+	ActorStatOverride@Enemy:
+		TooltipActor: building.demo_trap.toxin
+	ActorStatOverride@Enemy_UPGRADE:
+		Upgrades: upgrade.anthrax_beta
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: !demo && !toxin
+	ActorStatOverride@Enemy_UPGRADE_Toxin:
+		Upgrades: upgrade.anthrax_gamma
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: toxin
 
 fake.advanced_demo_trap:
 	Inherits: fake.demo_trap
@@ -513,6 +664,8 @@ fake.advanced_demo_trap:
 		IntoActor: building.advanced_demo_trap
 	Valued:
 		Cost: 25
+	ActorStatOverride@Enemy:
+		TooltipActor: building.advanced_demo_trap
 
 fake.tunnel_network:
 	Inherits: ^FakeDefense
@@ -580,6 +733,18 @@ fake.tunnel_network:
 	GrantConditionOnFaction@CAMO_NETTING:
 		Condition: camo_netted
 		Factions: stealth
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
+	GrantConditionOnFaction@Demo:
+		Condition: demo
+		Factions: demo
+	GrantConditionOnFaction@Stealth:
+		Condition: stealth
+		Factions: stealth
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	Cargo:
 		Types: fake
 		MaxWeight: 10
@@ -589,7 +754,20 @@ fake.tunnel_network:
 		VoiceSet: TunnelNetworkVoice
 	ActorStatValues:
 		Damage: 10
+		ReloadDelay: 6
+		Range: 4c384
+	ActorStatOverride@Enemy:
+		TooltipActor: building.tunnel_network
 		Stats: Armor, Sight, Cargo, Damage, ReloadDelay, MaxRange
+		Health: 100000
+	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
+		Upgrades: upgrade.camo_netting
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: !demo && !toxin && !stealth && zh_units
+	ActorStatOverride@Enemy_UPGRADE_Demo:
+		Upgrades: upgrade.demolitions
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: demo
 
 fake.toxin_tunnel_network:
 	Inherits: fake.tunnel_network
@@ -610,9 +788,24 @@ fake.toxin_tunnel_network:
 		IntoActor: building.toxin_tunnel_network
 	RenderSprites:
 		Image: building.toxin_tunnel_network
+	ActorStatValues:
+		Range: 4c0
+	ActorStatOverride@Enemy:
+		TooltipActor: building.toxin_tunnel_network
+	ActorStatOverride@Enemy_UPGRADE:
+		Upgrades: upgrade.anthrax_beta
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: stealth || (!demo && !toxin && !zh_units)
+	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
+		Upgrades: upgrade.anthrax_beta, upgrade.camo_netting
+	ActorStatOverride@Enemy_UPGRADE_Toxin:
+		Upgrades: upgrade.anthrax_gamma
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: toxin
 
 fake.stinger_site:
 	Inherits: ^FakeDefense
+	Inherits@AP_ROCKETS: ^AffectedByAPRockets
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SHAPE: ^1x1Shape
 	Buildable:
@@ -695,8 +888,40 @@ fake.stinger_site:
 		SpawnIsGroundUnit: true
 	Voiced:
 		VoiceSet: StingerSiteVoice
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
+	GrantConditionOnFaction@Demo:
+		Condition: demo
+		Factions: demo
+	GrantConditionOnFaction@Stealth:
+		Condition: stealth
+		Factions: stealth
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	ActorStatValues:
+		Damage: 20
+		ReloadDelay: 30
+		Range: 5c640, 10c0
+		Stats: Armor, Sight, Mob
+		-Upgrades:
+	ActorStatOverride@Enemy:
+		TooltipActor: building.stinger_site
 		Stats: Armor, Sight, Mob, Damage, ReloadDelay, MinRange, None, MaxRange
+		Health: 100000
+	ActorStatOverride@Enemy_UPGRADE:
+		Upgrades: upgrade.ap_rockets
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: stealth || toxin || (!demo && !zh_units)
+	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
+		Upgrades: upgrade.ap_rockets, upgrade.camo_netting
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: !toxin && !demo && !stealth && zh_units
+	ActorStatOverride@Enemy_UPGRADE_Demo:
+		Upgrades: upgrade.demolitions, upgrade.ap_rockets
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: demo
 
 fake.stinger_soldier:
 	Inherits: infantry.stinger_soldier

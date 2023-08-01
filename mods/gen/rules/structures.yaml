@@ -863,6 +863,10 @@ building.prc_command_center.radar:
 	ProvidesPrerequisite@botname:
 		Prerequisite: building.prc_command_center.radar
 		RequiresCondition: bot
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: building.prc_command_center
 
 ^default.reactor:
 	Inherits: ^Building
@@ -2762,14 +2766,12 @@ building.stinger_site:
 	Voiced:
 		VoiceSet: StingerSiteVoice
 	ActorStatValues:
+		Damage: 20
 		Stats: Armor, Sight, Mob, Damage, ReloadDelay, MinRange, None, MaxRange
 		Upgrades: upgrade.ap_rockets
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.ap_rockets, upgrade.camo_netting
 		RequiresCondition: !toxin && !demo && !stealth && zh_units
-	ActorStatOverride@Toxin:
-		Upgrades: upgrade.ap_rockets
-		RequiresCondition: toxin || stealth
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.demolitions, upgrade.ap_rockets
 
