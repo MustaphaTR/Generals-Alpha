@@ -906,7 +906,6 @@ building.cold_fusion_reactor:
 		Queue: queue.usa_building, queue.air_gen_building
 		BuildPaletteOrder: 1
 		Description: Provides power for other structures.
-		IconPalette: cnc
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -984,7 +983,6 @@ building.advanced_cold_fusion_reactor:
 	Inherits: building.cold_fusion_reactor
 	Buildable:
 		Queue: queue.super_gen_building
-		IconPalette: cameo
 	Production:
 		Produces: queue.advanced_cold_fusion_reactor
 	ProductionQueue:
