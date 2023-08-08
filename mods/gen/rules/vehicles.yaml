@@ -190,6 +190,9 @@ vehicle.humvee:
 		AfterUnloadDelay: 0
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
+	WithCargoSounds:
+		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
+		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
 	AcceptsDeliveredExperience:
 	AttackGarrisoned:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
@@ -322,6 +325,9 @@ vehicle.technical:
 		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
+	WithCargoSounds:
+		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
+		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
 	AcceptsDeliveredExperience:
 	ThrowsShrapnel@Mobile:
 		Weapons: debris.technical.body
@@ -962,6 +968,9 @@ vehicle.ambulance:
 		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
+	WithCargoSounds:
+		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
+		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
 	Targetable:
 		TargetTypes: GroundActor, Vehicle, Disguise, DetonateAttack, ImmueToToxin
 	Targetable@DRIVER_KILLED:
@@ -1905,6 +1914,9 @@ vehicle.battle_bus:
 		LoadedCondition: loaded
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
+	WithCargoSounds:
+		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
+		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
 	WithFacingSpriteBody:
 		RequiresCondition: !husk
 	WithFacingSpriteBody@HUSK:
@@ -2003,6 +2015,9 @@ vehicle.troop_crawler:
 		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
+	WithCargoSounds:
+		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
+		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
 	Passenger:
 		Weight: 8
 	AutoDeployer:
@@ -2099,6 +2114,9 @@ vehicle.listening_outpost:
 		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
+	WithCargoSounds:
+		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
+		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
 	Passenger:
 		Weight: 8
 	AttackGarrisoned:
@@ -3357,6 +3375,9 @@ vehicle.overlord_tank:
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 		LoadingCondition: notmobile
 		RequiresCondition: bunker_upgrade
+	WithCargoSounds:
+		EnterSounds: ggarenta.wav, ggarentb.wav, ggarentc.wav
+		ExitSounds: ggarexia.wav, ggarexib.wav, ggarexic.wav
 	WithCargoPipsDecoration:
 		RequiresCondition: bunker_upgrade
 	SelectionDecorations:
@@ -3437,6 +3458,7 @@ vehicle.emparor_overlord:
 	Mobile:
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	-Cargo@BUNKER_UPGRADE:
+	-WithCargoSounds:
 	-WithCargoPipsDecoration:
 	-Turreted@Bunker:
 	-AttackGarrisoned:
@@ -4013,6 +4035,8 @@ vehicle.combat_cycle:
 			infantry.jarmen_kell: jarmen
 			infantry.jarmen_kell.demo: jarmen
 			infantry.jarmen_kell.boss: jarmen
+	WithCargoSounds:
+		EnterSounds: vcycswia.wav
 	WithFacingSpriteBody:
 		Name: other
 		Sequence: idle-other

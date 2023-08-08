@@ -1293,6 +1293,9 @@ aircraft.chinook:
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
+	WithCargoSounds:
+		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
+		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
 	WithCargoPipsDecoration:
 		Margin: 4, 6
 	RepairableNear:
@@ -1405,6 +1408,9 @@ aircraft.chinook:
 #		AfterLoadDelay: 0
 #		BeforeUnloadDelay: 0
 #		AfterUnloadDelay: 0
+#	WithCargoSounds:
+#		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
+#		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
 #	RepairableNear:
 #		Buildings: building.usa_airfield, building.prc_airfield
 #		CloseEnough: 1c0
@@ -1758,6 +1764,9 @@ aircraft.helix:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		LoadedCondition: loaded
+	WithCargoSounds:
+		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
+		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
 	AttackGarrisoned:
 		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
 		PortYaws: 0, 176, 341, 512, 682, 853

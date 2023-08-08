@@ -2110,6 +2110,9 @@ building.firebase:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		PauseOnCondition: emp || hacked
+	WithCargoSounds:
+		EnterSounds: ggarenta.wav, ggarentb.wav, ggarentc.wav
+		ExitSounds: ggarexia.wav, ggarexib.wav, ggarexic.wav
 	AttackGarrisoned:
 		Armaments: garrison
 		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
@@ -2183,6 +2186,9 @@ building.bunker:
 		EjectOnDeathDamage: 0
 		LoadedCondition: loaded
 		PauseOnCondition: emp || hacked
+	WithCargoSounds:
+		EnterSounds: ggarenta.wav, ggarentb.wav, ggarentc.wav
+		ExitSounds: ggarexia.wav, ggarexib.wav, ggarexic.wav
 	AttackGarrisoned:
 		Armaments: garrison
 		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
@@ -2516,6 +2522,9 @@ building.prc_war_factory:
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
+	WithCargoSounds:
+		EnterSounds: ggarenta.wav, ggarentb.wav, ggarentc.wav
+		ExitSounds: ggarexia.wav, ggarexib.wav, ggarexic.wav
 	-WithSpriteBody:
 	WithTerrainDependantSpriteBody:
 	RallyPoint:
@@ -3301,6 +3310,9 @@ building.palace:
 		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 0
 		PauseOnCondition: emp || hacked
+	WithCargoSounds:
+		EnterSounds: ggarenta.wav, ggarentb.wav, ggarentc.wav
+		ExitSounds: ggarexia.wav, ggarexib.wav, ggarexic.wav
 	AttackGarrisoned:
 		Armaments: garrison
 		PortOffsets: 0,-896,128, 0,896,128, 840,0,128, -706,0,128, -706,-768,128, -706,640,128
