@@ -142,14 +142,15 @@ DOG:
 		IconPalette: chrome
 
 V01:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
+	Inherits@REVEAL: ^Reveal400
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
+	Garrisonable:
+		MaxWeight: 10
 	Tooltip:
 		Name: Church
-	RevealsShroud:
-		Range: 10c0
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: -490,-384,0, 0,0,0, 0,470,0
@@ -166,10 +167,12 @@ V25:
 		Palette: desert
 
 V02:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
+	Garrisonable:
+		MaxWeight: 10
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: -490,-512,0, 0,0,0, 0,512,0
@@ -191,10 +194,12 @@ V20:
 			BottomRight: 1024, 896
 
 V03:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
+	Garrisonable:
+		MaxWeight: 10
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: -490,-512,0, 0,0,0, 421,512,0, -210,512,0
@@ -221,10 +226,12 @@ V21:
 			BottomRight: 1024, 598
 
 V04:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
+	Garrisonable:
+		MaxWeight: 10
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, -421,-256,0, -421,256,0
@@ -246,11 +253,13 @@ V24:
 			BottomRight: 640, 853
 
 V05:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	Inherits@SHAPE: ^2x1Shape
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
+	Garrisonable:
+		MaxWeight: 8
 
 V05.SNOW:
 	Inherits: V05
@@ -261,29 +270,33 @@ V26:
 		Palette: desert
 
 V06:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	Inherits@SHAPE: ^2x1Shape
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
+	Garrisonable:
+		MaxWeight: 8
 
 V06.SNOW:
 	Inherits: V06
 
+V22:
+	Inherits: V06
+	RenderSprites:
+		Palette: desert
+
 V07:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	Inherits@SHAPE: ^2x1Shape
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
+	Garrisonable:
+		MaxWeight: 8
 
 V07.SNOW:
 	Inherits: V07
-
-V22:
-	Inherits: V05
-	RenderSprites:
-		Palette: desert
 
 V30:
 	Inherits: V07
@@ -291,43 +304,43 @@ V30:
 		Palette: desert
 
 V08:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 
 V08.SNOW:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 
 V29:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	RenderSprites:
 		Palette: desert
 
 V09:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 
 V09.SNOW:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 
 V28:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	RenderSprites:
 		Palette: desert
 
 V10:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 
 V10.SNOW:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 
 V27:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	RenderSprites:
 		Palette: desert
 
 V11:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 
 V11.SNOW:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 
 V23:
 	Inherits: ^CivBuilding
@@ -410,27 +423,29 @@ V33:
 		Palette: desert
 
 V34:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	RenderSprites:
 		Palette: desert
 
 V35:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	RenderSprites:
 		Palette: desert
 
 V36:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	RenderSprites:
 		Palette: desert
 
 V37:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	RenderSprites:
 		Palette: desert
 	Building:
 		Footprint: __xx_ ___xx
 		Dimensions: 5,2
+	Garrisonable:
+		MaxWeight: 15
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 0,1024,0
@@ -510,37 +525,41 @@ AMMOBOX3:
 RICE:
 	Inherits: ^CivField
 	MapEditorData:
-		RequireTilesets: TEMPERAT
+		RequireTilesets: TEMPERAT, MIXED
 
 RUSHOUSE:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	MapEditorData:
-		RequireTilesets: TEMPERAT
+		RequireTilesets: TEMPERAT, MIXED
 	Building:
 		Footprint: x x
 		Dimensions: 1,2
+	Garrisonable:
+		MaxWeight: 8
 	HitShape:
 		UseTargetableCellsOffsets: false
 
 ASIANHUT:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	MapEditorData:
-		RequireTilesets: TEMPERAT
+		RequireTilesets: TEMPERAT, MIXED
 
 SNOWHUT:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	MapEditorData:
-		RequireTilesets: SNOW
+		RequireTilesets: SNOW, MIXED
 	Building:
 		Footprint: x x
 		Dimensions: 1,2
+	Garrisonable:
+		MaxWeight: 8
 	HitShape:
 		UseTargetableCellsOffsets: false
 
 LHUS:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	MapEditorData:
-		RequireTilesets: TEMPERAT
+		RequireTilesets: TEMPERAT, MIXED
 	Selectable:
 		Bounds: 1024, 2048, 0, -682
 	Tooltip:
@@ -550,9 +569,9 @@ LHUS:
 		Dimensions: 1,1
 
 WINDMILL:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	MapEditorData:
-		RequireTilesets: TEMPERAT
+		RequireTilesets: TEMPERAT, MIXED
 	Selectable:
 		Bounds: 1024, 1024, 0, -597
 		DecorationBounds: 1536, 1536, 0, -597

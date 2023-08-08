@@ -2033,7 +2033,7 @@ building.firebase:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@CARGO: ^CargoPips
-	Inherits@GARRISON: ^WithGarrisonRangeCircle
+	Inherits@CIRCLE: ^WithCargoRangeCircle
 	Inherits@LEAFLET: ^AffectedByLeaflet
 	Inherits@REVEAL: ^Reveal360
 	Inherits@SHAPE: ^2x2Shape
@@ -2139,7 +2139,7 @@ building.bunker:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@CARGO: ^CargoPips
-	Inherits@GARRISON: ^WithGarrisonRangeCircle
+	Inherits@CIRCLE: ^WithCargoRangeCircle
 	Inherits@MINE: ^CanHaveMines
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
@@ -3264,10 +3264,10 @@ building.palace:
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@CAMO: ^CanHaveCamoNettingStealthGenOnly
 	Inherits@CARGO: ^CargoPips
-	Inherits@GARRISON: ^WithGarrisonRangeCircle
+	Inherits@CIRCLE: ^WithCargoRangeCircle
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
-	Inherits@SHAPE: ^3x2Shape
 	Inherits@REVEAL: ^Reveal300
+	Inherits@SHAPE: ^3x2Shape
 	GivesExperience:
 		Experience: 300
 	HitShape:

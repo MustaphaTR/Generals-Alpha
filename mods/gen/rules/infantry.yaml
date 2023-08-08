@@ -742,6 +742,7 @@ infantry.stinger_soldier:
 	-Armament@SECONDARY_GARRISON:
 	-Passenger:
 	-SharedPassenger:
+	-Garrisoner:
 	Tooltip:
 		Name: Stinger Soldier
 	Targetable:
@@ -1156,6 +1157,9 @@ infantry.saboteur:
 	SharedPassenger:
 		CustomPipType: yellow
 		Voice: Move
+	Garrisoner:
+		CustomPipType: yellow
+		Voice: Move
 	Infiltrates:
 		Types: Sabotage
 	Cloak:
@@ -1195,6 +1199,7 @@ infantry.saboteur:
 	-WithSpriteControlGroupDecoration:
 	-Passenger:
 	-SharedPassenger:
+	-Garrisoner:
 	-ChangesHealth@IN_AMBULANCE:
 	-ChangesHealth@IN_CRAWLER:
 	Health:
@@ -1412,6 +1417,8 @@ infantry.hacker:
 		CustomPipType: yellow
 		Voice: Move
 		RequireForceMoveCondition: deployed
+	Garrisoner:
+		RequireForceMoveCondition: deployed
 	ChangesHealth@IN_INTERNET_CENTER:
 		Step: 0
 		PercentageStep: 10
@@ -1597,6 +1604,8 @@ infantry.hijacker:
 		CustomPipType: yellow
 	SharedPassenger:
 		CustomPipType: yellow
+	Garrisoner:
+		CustomPipType: yellow
 	Captures:
 		CaptureTypes: vehicle, driverless_vehcile
 	Voiced:
@@ -1699,6 +1708,9 @@ infantry.colonel_burton:
 		CustomPipType: red
 		Voice: Move
 	SharedPassenger:
+		CustomPipType: red
+		Voice: Move
+	Garrisoner:
 		CustomPipType: red
 		Voice: Move
 	AutoTarget:
@@ -1982,6 +1994,8 @@ infantry.black_lotus:
 	Passenger:
 		Voice: Move
 	SharedPassenger:
+		Voice: Move
+	Garrisoner:
 		Voice: Move
 	WithInfantryBody:
 		DefaultAttackSequence: stand2

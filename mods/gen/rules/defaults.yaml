@@ -795,7 +795,7 @@
 		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: tnt_charge
 
-^WithGarrisonRangeCircle:
+^WithCargoRangeCircle:
 	Cargo:
 		PassengerConditions:
 			infantry.ranger: range_circle.133
@@ -850,6 +850,26 @@
 		Range: 11c682
 		Color: 00DDDD88
 		RequiresCondition: range_circle.minigunner
+
+^WithGarrisonRangeCircle:
+	Inherits: ^WithCargoRangeCircle
+	-Cargo:
+	Garrisonable:
+		GarrisonerConditions:
+			infantry.ranger: range_circle.133
+			infantry.rebel: range_circle.133
+			infantry.toxin_rebel: range_circle.133
+			infantry.red_guard: range_circle.133
+			infantry.minigunner: range_circle.minigunner
+			infantry.missile_defender: range_circle.rocket
+			infantry.rpg_trooper: range_circle.rocket
+			infantry.tank_hunter: range_circle.rocket
+			infantry.grenadier: range_circle.160
+			infantry.pathfinder: range_circle.400
+			infantry.flamethrower: range_circle.200
+			infantry.colonel_burton: range_circle.166
+			infantry.jarmen_kell: range_circle.330
+			infantry.jarmen_kell.demo: range_circle.330
 
 ^KilledWithoutAirfield:
 	ChangesHealth@PLANE:
@@ -1623,6 +1643,8 @@
 		CargoType: Infantry
 	SharedPassenger:
 		CargoType: Infantry
+	Garrisoner:
+		GarrisonType: Infantry
 	HiddenUnderFog:
 	ActorLostNotification:
 		TextNotification: Unit lost.
@@ -2208,6 +2230,7 @@
 
 ^CivBuilding:
 	Inherits: ^BasicBuilding
+	Inherits@REVEAL: ^Reveal80
 	Huntable:
 	Health:
 		HP: 40000
@@ -2232,6 +2255,63 @@
 	MapEditorData:
 		ExcludeTilesets: INTERIOR
 		Categories: Civilian building
+
+^GarrisonableBuilding:
+	Inherits: ^CivBuilding
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@CIRCLE: ^WithGarrisonRangeCircle
+	Inherits@REVEAL: ^Reveal300
+	Health:
+		HP: 200000
+	GrantConditionOnCombatantOwner:
+		Condition: owned
+	SpawnActorOnDeath@1:
+		RequiresCondition: !owned
+	SpawnActorOnDeath@2:
+		RequiresCondition: !owned
+	SpawnActorOnDeath@3:
+		RequiresCondition: !owned
+	ChangeOwnerOnGarrisoner:
+		EnterSounds: ggarenta.wav, ggarentb.wav, ggarentc.wav
+		ExitSounds: ggarexia.wav, ggarexib.wav, ggarexic.wav
+	Garrisonable:
+		Types: Infantry
+		MaxWeight: 6
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
+		EjectOnDeath: true
+		OwnerChangedAffectsGarrisoners: false
+		LoadedCondition: loaded
+		RequiresCondition: !damaged
+	WithGarrisonPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
+	AttackOpenTopped:
+		Armaments: garrison
+		PortOffsets: 768,0,1024, 448,-682,1024, -448,-682,1024, -768,0,1024, -448,682,1024, 448,682,1024
+	Targetable:
+		TargetTypes: GroundActor, Structure, C4, DetonateAttack
+	Targetable@GARRISONED:
+		TargetTypes: Defense, GarrisonedStructure
+		RequiresCondition: loaded
+	-CommandBarBlacklist:
+	WithIdleOverlay@flag:
+		Sequence: idle-flag
+		Palette: player
+		IsPlayerPalette: true
+		RequiresCondition: loaded
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Critical
+	ActorStatValues:
+		Stats: Armor, Sight, Cargo
 
 ^CivField:
 	Inherits: ^CivBuilding
