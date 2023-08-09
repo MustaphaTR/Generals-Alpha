@@ -78,11 +78,11 @@ vehicle.humvee:
 		RequiresCondition: (stance-attackanything || assault-move) && !tow_missile
 	AutoTargetPriority@DEFAULT_TOW:
 		RequiresCondition: !stance-attackanything && !assault-move && tow_missile
-		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Defense
+		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, AirborneActor, Defense
 		InvalidTargets: NoAutoTarget
 	AutoTargetPriority@ATTACKANYTHING_TOW:
 		RequiresCondition: (stance-attackanything || assault-move) && tow_missile
-		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
+		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, AirborneActor, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	OwnerLostAction:
 		Action: Kill
@@ -3210,11 +3210,11 @@ vehicle.overlord_tank:
 		RequiresCondition: (stance-attackanything || assault-move) && !gatling_upgrade
 	AutoTargetPriority@DEFAULT_GATLING:
 		RequiresCondition: !stance-attackanything && !assault-move && gatling_upgrade
-		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Defense
+		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, AirborneActor, Defense
 		InvalidTargets: NoAutoTarget
 	AutoTargetPriority@ATTACKANYTHING_GATLING:
 		RequiresCondition: (stance-attackanything || assault-move) && gatling_upgrade
-		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
+		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, AirborneActor, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	GivesExperience:
 		Experience: 200
@@ -3866,11 +3866,11 @@ vehicle.combat_cycle:
 		RequiresCondition: (stance-attackanything || assault-move) && !rpg
 	AutoTargetPriority@DEFAULT_GATLING:
 		RequiresCondition: !stance-attackanything && !assault-move && rpg
-		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Defense
+		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, AirborneActor, Defense
 		InvalidTargets: NoAutoTarget
 	AutoTargetPriority@ATTACKANYTHING_GATLING:
 		RequiresCondition: (stance-attackanything || assault-move) && rpg
-		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, Air, Structure, Defense
+		ValidTargets: Infantry, Vehicle, Tank, Water, Underwater, AirborneActor, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	GivesExperience:
 		Experience: 50
