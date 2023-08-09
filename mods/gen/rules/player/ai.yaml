@@ -1128,13 +1128,16 @@ Player:
 	BuildingRepairBotModule:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 	LoadCargoBotModule@Hacker:
+		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 		Transports: building.internet_center
 		Passengers: infantry.hacker, infantry.hacker.boss, infantry.super_hacker
-		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 	LoadCargoBotModule@Defense:
+		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 		Transports: building.firebase, building.bunker, building,fortified_bunker, building.palace
 		Passengers: infantry.ranger, infantry.rebel, infantry.red_guard, infantry.minigunner, infantry.conscript, infantry.missile_defender, infantry.rpg_trooper, infantry.tank_hunter, infantry.grenadier, infantry.pathfinder, infantry.flamethrower
+	LoadGarrisonerBotModule:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		GarrisonerUnit: infantry.ranger, infantry.rebel, infantry.red_guard, infantry.minigunner, infantry.conscript, infantry.missile_defender, infantry.rpg_trooper, infantry.tank_hunter, infantry.grenadier, infantry.pathfinder, infantry.flamethrower
 	SupportPowerBotModule:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 		Decisions:
