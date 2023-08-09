@@ -111,7 +111,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		{
 			ResourceMultipliers = self.TraitsImplementing<IResourceValueModifier>().ToArray();
 			if (Info.SearchOnCreation)
-				self.QueueActivity(new FindGoods(self, Color.Green));
+				self.World.AddFrameEndTask(w => self.QueueActivity(new FindGoods(self, Color.Green)));
 
 			CheckConditions(self);
 		}
