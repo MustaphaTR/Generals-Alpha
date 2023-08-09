@@ -22,7 +22,7 @@ tech.oil_derrick:
 	Health:
 		HP: 200000
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Capture, Disable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Capture, Disable
 	CashTrickler:
 		Interval: 300
 		Amount: 200
@@ -51,7 +51,7 @@ tech.oil_refinery:
 	Health:
 		HP: 200000
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Capture, Disable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Capture, Disable
 	Tooltip:
 		Name: Oil Refinery
 	TooltipDescription:
@@ -82,7 +82,7 @@ tech.hospital:
 	Health:
 		HP: 200000
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Capture, Disable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Capture, Disable
 	WithBuildingBib:
 		HasMinibib: true
 	WithDeathAnimation:
@@ -130,7 +130,7 @@ tech.communications_center:
 		RequiresCondition: !emp && !hacked
 	WithBuildingBib:
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Capture, Disable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Capture, Disable
 	ProvidesPrerequisite@buildingname:
 
 tech.soviet_barracks:
@@ -181,7 +181,7 @@ tech.soviet_barracks:
 		ExitCell: 0,2
 	WithBuildingBib:
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Capture, Disable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Capture, Disable
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 		HpPerStep: 1000
@@ -204,7 +204,7 @@ tech.flame_tower:
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		Prerequisites: !techlevel.nodefense
-		Description: Anti-infantry base defense.
+		Description: Anti-infantry base defense.\n\nCan damage infantry garrisoned in civilian structures.
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
 	RequiresBuildableArea:
@@ -269,7 +269,7 @@ tech.power_plant:
 		HP: 100000
 	WithBuildingBib:
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Capture, Disable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Capture, Disable
 	Power:
 		Amount: 10
 		RequiresCondition: !emp && !hacked
@@ -299,7 +299,7 @@ tech.repair_bay:
 	Health:
 		HP: 100000
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Capture, Disable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Capture, Disable
 	-WithMakeAnimation:
 	Capturable:
 		-RequiresCondition:
@@ -337,7 +337,7 @@ tech.reinforcements_pad:
 		Footprint: _X_ xxx _X_
 		Dimensions: 3,3
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Capture, Disable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Capture, Disable
 	Selectable:
 		Bounds: 2730, 1450, 0, 128
 		DecorationBounds: 3072, 2048
@@ -528,7 +528,7 @@ tech.shipyard:
 		Dimensions: 3,3
 		TerrainTypes: Water
 	Targetable:
-		TargetTypes: WaterActor, Structure, C4, DetonateAttack, Capture, Disable
+		TargetTypes: WaterActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Capture, Disable
 	Health:
 		HP: 200000
 	Exit@1:

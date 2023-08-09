@@ -1805,7 +1805,7 @@ building.demo_trap:
 	Sellable:
 		-RequiresCondition:
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, DemoTrap
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, DemoTrap
 	ExternalCondition@SELF_DESTRUCT:
 		Condition: self_destruct
 	GrantConditionOnDamageState@UNCLOAK:
@@ -2128,7 +2128,7 @@ building.firebase:
 		Range: 6c896
 		Color: DDDD0088
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Disable, BunkerBustable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable, BunkerBustable
 	Voiced:
 		VoiceSet: FirebaseVoice
 	ActorStatValues:
@@ -2199,7 +2199,7 @@ building.bunker:
 		Sequence: idle-flag
 		RequiresCondition: loaded
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Disable, BunkerBustable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable, BunkerBustable
 	Voiced:
 		VoiceSet: BunkerVoice
 	ActorStatValues:
@@ -2571,7 +2571,7 @@ building.tunnel_network:
 	ProductionBar:
 		ProductionType: queue.camo_netting
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Disable, BunkerBustable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable, BunkerBustable
 	SpawnActorOnDeath:
 		Actor: hole.tunnel_network
 		SpawnAfterDefeat: false
@@ -2593,7 +2593,7 @@ building.toxin_tunnel_network:
 	Inherits: building.tunnel_network
 	Buildable:
 		Queue: queue.toxin_gen_building
-		Description: Allows unit movement from one to another quickly.\n\nArmed with a toxin sprayer.\n\nComes with 2 RPG Troopers.\n\nLosing your last tunnel network kills units in them.
+		Description: Allows unit movement from one to another quickly.\n\nArmed with a toxin sprayer.\n\nCan damage infantry garrisoned in civilian structures.\n\nComes with 2 RPG Troopers.\n\nLosing your last tunnel network kills units in them.
 	Tooltip:
 		Name: Toxin Tunnel Network
 	Armament:
@@ -3709,7 +3709,7 @@ building.speaker_tower:
 			TopLeft: -512, -512
 			BottomRight: 512, 512
 	Targetable:
-		TargetTypes: GroundActor, C4, DetonateAttack, Structure, Disable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable
 	-Capturable:
 	-CapturableProgressBar:
 	-CapturableProgressBlink:

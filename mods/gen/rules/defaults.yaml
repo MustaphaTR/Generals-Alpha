@@ -1918,7 +1918,7 @@
 	Selectable:
 		Priority: 3
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack
 	Building:
 		Dimensions: 1,1
 		Footprint: x
@@ -1975,7 +1975,7 @@
 		Palette: player
 		IsPlayerPalette: True
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Capture, Disable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Capture, Disable
 	InstantlyRepairable:
 	AcceptsDeliveredCash:
 	WithMakeAnimation:
@@ -2049,7 +2049,7 @@
 ^Defense:
 	Inherits: ^Building
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Disable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable, Defense
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	-GivesBuildableArea:
@@ -2071,7 +2071,7 @@
 ^FakeDefense:
 	Inherits: ^FakeBuilding
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Disable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable, Defense
 	-AcceptsDeliveredCash:
 	-Capturable:
 	-CapturableProgressBar:
@@ -2095,7 +2095,7 @@
 	Armor:
 		Type: building.normal
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, Hole
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Hole
 	TransformOnCondition:
 		RequiresCondition: repaired
 	Sellable:
@@ -2298,8 +2298,11 @@
 		PortOffsets: 0,0,128
 	Targetable:
 		TargetTypes: GroundActor, Structure, C4, DetonateAttack
+	Targetable@NOTGARRISONED:
+		TargetTypes: NonGarrisonedStructure
+		RequiresCondition: !loaded
 	Targetable@GARRISONED:
-		TargetTypes: Defense, GarrisonedStructure
+		TargetTypes: Defense, GarrisonedStructure, BunkerBustable
 		RequiresCondition: loaded
 	-CommandBarBlacklist:
 	WithIdleOverlay@flag:
@@ -2339,7 +2342,7 @@
 	Tooltip:
 		Name: Ammo Box
 	Targetable:
-		TargetTypes: GroundActor, Structure, C4, DetonateAttack, NoAutoTarget
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, NoAutoTarget
 	Armor:
 		Type: building.normal
 	MapEditorData:

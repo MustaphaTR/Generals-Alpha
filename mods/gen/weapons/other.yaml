@@ -3,7 +3,7 @@
 	ReloadDelay: 65
 	Range: 3c768
 	Warhead@1Dam: SpreadDamage
-		Spread: 213
+		Spread: 0c213
 		Damage: 15000
 		ValidTargets: GroundActor, WaterActor, Trees
 		Versus:
@@ -53,6 +53,28 @@ flamer.dragon_tank:
 			building.tough: 50
 			building.defense: 50
 			building.stinger_site: 50
+	Warhead@2Dam: OpenToppedDamage
+		Spread: 0c213
+		Damage: 15000
+		ValidTargets: GarrisonedStructure
+		Versus:
+			infantry.normal: 150
+			vehicle.humvee: 50
+			vehicle.avenger: 50
+			vehicle.tank: 25
+			vehicle.assault_troop_crawler: 25
+			vehicle.dragon_tank: 0
+			vehicle.battle_bus: 50
+			vehicle.battle_bus.crate-1: 45
+			vehicle.battle_bus.crate-2: 40
+			husk.battle_bus: 50
+			husk.battle_bus.crate-1: 45
+			husk.battle_bus.crate-2: 40
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 
 flamer.dragon_tank.blue:
 	Inherits: flamer.dragon_tank
@@ -60,6 +82,8 @@ flamer.dragon_tank.blue:
 		TrailImage: blue_fb2
 		Image: blue_FB1
 	Warhead@1Dam: SpreadDamage
+		Damage: 20000
+	Warhead@2Dam: OpenToppedDamage
 		Damage: 20000
 	Warhead@3Eff: CreateEffect
 		Explosions: blue_napalm
@@ -90,6 +114,28 @@ flamer.flame_tower:
 			building.tough: 50
 			building.defense: 50
 			building.stinger_site: 50
+	Warhead@2Dam: OpenToppedDamage
+		Spread: 0c213
+		Damage: 15000
+		ValidTargets: GarrisonedStructure
+		Versus:
+			infantry.normal: 150
+			vehicle.humvee: 50
+			vehicle.avenger: 50
+			vehicle.tank: 25
+			vehicle.assault_troop_crawler: 25
+			vehicle.dragon_tank: 0
+			vehicle.battle_bus: 50
+			vehicle.battle_bus.crate-1: 45
+			vehicle.battle_bus.crate-2: 40
+			husk.battle_bus: 50
+			husk.battle_bus.crate-1: 45
+			husk.battle_bus.crate-2: 40
+			building.normal: 50
+			building.tough: 50
+			building.defense: 50
+			building.stinger_site: 50
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 
 flamer.flamethrower:
 	Inherits: ^FireWeapon
@@ -103,7 +149,7 @@ flamer.flamethrower:
 		LaunchAngle: 62
 		Inaccuracy: 853
 	Warhead@1Dam: SpreadDamage
-		Spread: 341
+		Spread: 0c341
 		Damage: 1000
 		Versus:
 			infantry.normal: 150
@@ -121,6 +167,27 @@ flamer.flamethrower:
 			building.tough: 80
 			building.defense: 50
 			building.stinger_site: 50
+	Warhead@2Dam: OpenToppedDamage
+		Spread: 0c341
+		Damage: 1000
+		ValidTargets: GarrisonedStructure
+		Versus:
+			infantry.normal: 150
+			vehicle.humvee: 50
+			vehicle.avenger: 50
+			vehicle.tank: 25
+			vehicle.assault_troop_crawler: 25
+			vehicle.dragon_tank: 0
+			vehicle.battle_bus: 50
+			vehicle.battle_bus.crate-1: 45
+			vehicle.battle_bus.crate-2: 40
+			husk.battle_bus: 50
+			husk.battle_bus.crate-1: 45
+			husk.battle_bus.crate-2: 40
+			building.tough: 80
+			building.defense: 50
+			building.stinger_site: 50
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@3Eff: CreateEffect
 		Explosions: small_napalm
 
@@ -128,6 +195,8 @@ flamer.flamethrower.garrison:
 	Inherits: flamer.flamethrower
 	Range: 5c0
 	Warhead@1Dam: SpreadDamage
+		Damage: 1300
+	Warhead@2Dam: OpenToppedDamage
 		Damage: 1300
 
 Napalm:
@@ -204,11 +273,11 @@ toxin.toxin_tractor:
 	Range: 2c512
 	ReloadDelay: 6
 	ValidTargets: Ground, Water, GroundActor, WaterActor
-	InvalidTargets: Structure, ImmueToToxin, Wall
+	InvalidTargets: NonGarrisonedStructure, ImmueToToxin, Wall
 	Projectile: RadBeam
 		ZOffset: 1024
 	Warhead@1Dam: SpreadDamage
-		Spread: 341
+		Spread: 0c341
 		Damage: 1000
 		ValidTargets: GroundActor, WaterActor
 		InvalidTargets: Structure, ImmueToToxin, Wall
@@ -232,6 +301,30 @@ toxin.toxin_tractor:
 			aircraft.comanche: 25
 			aircraft.chinook: 25
 		DamageTypes: FireDeath, DropCrate
+	Warhead@2Dam: OpenToppedDamage
+		Spread: 0c341
+		Damage: 1000
+		ValidTargets: GarrisonedStructure
+		Versus:
+			infantry.chem_suit: 20
+			vehicle.truck: 50
+			vehicle.humvee: 50
+			vehicle.avenger: 50
+			vehicle.anti-air: 50
+			vehicle.toxin_tractor: 0
+			vehicle.tank: 25
+			vehicle.assault_troop_crawler: 25
+			vehicle.dragon_tank: 25
+			vehicle.battle_bus: 25
+			vehicle.battle_bus.crate-1: 20
+			vehicle.battle_bus.crate-2: 15
+			husk.battle_bus: 0
+			husk.battle_bus.crate-1: 0
+			husk.battle_bus.crate-2: 0
+			aircraft.normal: 25
+			aircraft.comanche: 25
+			aircraft.chinook: 25
+		DamageTypes: FireDeath
 	Warhead@2Radio: CreateTintedCells
 		LayerName: anthrax_alpha
 		Range: 1
@@ -243,10 +336,14 @@ toxin.toxin_tractor.crate-1:
 	Inherits: toxin.toxin_tractor
 	Warhead@1Dam: SpreadDamage
 		Damage: 1250
+	Warhead@2Dam: OpenToppedDamage
+		Damage: 1250
 
 toxin.toxin_tractor.crate-2:
 	Inherits: toxin.toxin_tractor
 	Warhead@1Dam: SpreadDamage
+		Damage: 1500
+	Warhead@2Dam: OpenToppedDamage
 		Damage: 1500
 
 toxin.toxin_tractor.beta:
@@ -255,6 +352,8 @@ toxin.toxin_tractor.beta:
 		Color: 0000FF
 	Warhead@1Dam: SpreadDamage
 		Damage: 1250
+	Warhead@2Dam: OpenToppedDamage
+		Damage: 1250
 	Warhead@2Radio: CreateTintedCells
 		LayerName: anthrax_beta
 
@@ -262,10 +361,14 @@ toxin.toxin_tractor.beta.crate-1:
 	Inherits: toxin.toxin_tractor.beta
 	Warhead@1Dam: SpreadDamage
 		Damage: 1500
+	Warhead@2Dam: OpenToppedDamage
+		Damage: 1500
 
 toxin.toxin_tractor.beta.crate-2:
 	Inherits: toxin.toxin_tractor.beta
 	Warhead@1Dam: SpreadDamage
+		Damage: 2000
+	Warhead@2Dam: OpenToppedDamage
 		Damage: 2000
 
 toxin.toxin_tractor.gamma:
@@ -274,6 +377,8 @@ toxin.toxin_tractor.gamma:
 		Color: FF00FF
 	Warhead@1Dam: SpreadDamage
 		Damage: 2050
+	Warhead@2Dam: OpenToppedDamage
+		Damage: 2050
 	Warhead@2Radio: CreateTintedCells
 		LayerName: anthrax_gamma
 
@@ -281,25 +386,35 @@ toxin.toxin_tractor.gamma.crate-1:
 	Inherits: toxin.toxin_tractor.gamma
 	Warhead@1Dam: SpreadDamage
 		Damage: 2450
+	Warhead@2Dam: OpenToppedDamage
+		Damage: 2450
 
 toxin.toxin_tractor.gamma.crate-2:
 	Inherits: toxin.toxin_tractor.gamma
 	Warhead@1Dam: SpreadDamage
+		Damage: 2850
+	Warhead@2Dam: OpenToppedDamage
 		Damage: 2850
 
 toxin.toxin_rebel:
 	Inherits: toxin.toxin_tractor
 	Warhead@1Dam: SpreadDamage
 		Damage: 800
+	Warhead@2Dam: OpenToppedDamage
+		Damage: 800
 
 toxin.toxin_rebel.beta:
 	Inherits: toxin.toxin_tractor.beta
 	Warhead@1Dam: SpreadDamage
 		Damage: 1000
+	Warhead@2Dam: OpenToppedDamage
+		Damage: 1000
 
 toxin.toxin_rebel.gamma:
 	Inherits: toxin.toxin_tractor.gamma
 	Warhead@1Dam: SpreadDamage
+		Damage: 1300
+	Warhead@2Dam: OpenToppedDamage
 		Damage: 1300
 
 toxin.toxin_rebel.garrison:
@@ -307,17 +422,23 @@ toxin.toxin_rebel.garrison:
 	Range: 3c341
 	Warhead@1Dam: SpreadDamage
 		Damage: 1100
+	Warhead@2Dam: OpenToppedDamage
+		Damage: 1100
 
 toxin.toxin_rebel.garrison.beta:
 	Inherits: toxin.toxin_rebel.beta
 	Range: 3c341
 	Warhead@1Dam: SpreadDamage
 		Damage: 1300
+	Warhead@2Dam: OpenToppedDamage
+		Damage: 1300
 
 toxin.toxin_rebel.garrison.gamma:
 	Inherits: toxin.toxin_rebel.gamma
 	Range: 3c341
 	Warhead@1Dam: SpreadDamage
+		Damage: 1500
+	Warhead@2Dam: OpenToppedDamage
 		Damage: 1500
 
 toxin.toxin_tunnel_network:
@@ -592,6 +713,15 @@ aoe.microwave_tank:
 		DamageTypes: FireDeath
 		Versus:
 			infantry.chem_suit: 20
+	Warhead@2Dam: OpenToppedDamage
+		Falloff: 100, 100
+		Spread: 3c0
+		Damage: 800
+		ValidRelationships: Enemy, Neutral
+		ValidTargets: GarrisonedStructure
+		Versus:
+			infantry.chem_suit: 20
+		DamageTypes: FireDeath
 
 melee.colonel_burton:
 	ValidTargets: Infantry

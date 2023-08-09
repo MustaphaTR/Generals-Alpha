@@ -287,7 +287,7 @@ infantry.toxin_rebel:
 		RequiresCondition: rank-elite
 	Buildable:
 		Queue: queue.toxin_gen_infantry
-		Description: General-purpose infantry armed with toxins.
+		Description: General-purpose infantry armed with toxins.\n\nCan damage infantry garrisoned in civilian structures.
 		ReadyAudio: ToxinRebelCreated
 	Valued:
 		Cost: 200
@@ -1086,7 +1086,7 @@ infantry.flamethrower:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		Prerequisites: tech.flame_tower, !techlevel.vehicleonly
-		Description: Advanced anti-structure infantry.
+		Description: Advanced anti-structure infantry.\n\nCan damage infantry garrisoned in civilian structures.
 	Valued:
 		Cost: 300
 	Tooltip:

@@ -710,7 +710,7 @@ grenade.ranger:
 	ReloadDelay: 50
 	Range: 4c384
 	MinRange: 0c512
-	ValidTargets: Infantry
+	ValidTargets: Infantry, GarrisonedStructure
 	Report: grenade1.aud
 	Projectile: Bullet
 		Speed: 128
@@ -725,6 +725,11 @@ grenade.ranger:
 		Falloff: 100, 100
 		Damage: 1000
 		ValidTargets: Infantry
+		DamageTypes: TriggerProne, ExplosionDeath
+	Warhead@3Dam: OpenToppedDamage
+		Spread: 0c256
+		Damage: 3500
+		ValidTargets: GarrisonedStructure
 		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@3Eff: CreateEffect
 		Explosions: flashbang

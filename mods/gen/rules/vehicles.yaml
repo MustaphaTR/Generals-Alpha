@@ -1360,7 +1360,7 @@ vehicle.toxin_tractor:
 		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Description: Toxin-throwing vehicle.\n\nCan be deployed to speay toxins around it.\n\nGets better weapon from Scrap Crates.
+		Description: Toxin-throwing vehicle.\n\nCan be deployed to speay toxins around it.\n\nCan damage infantry garrisoned in civilian structures.\n\nGets better weapon from Scrap Crates.
 		ReadyAudio: ToxinTractorCreated
 	Valued:
 		Cost: 600
@@ -1508,7 +1508,7 @@ vehicle.dragon_tank:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Description: Flame-throwing vehicle.
+		Description: Flame-throwing vehicle.\n\nCan damage infantry garrisoned in civilian structures.
 		ReadyAudio: DragonTankCreated
 	Valued:
 		Cost: 800
@@ -2207,7 +2207,7 @@ vehicle.microwave_tank:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~prerequisite.zh_units
-		Description: Disables enemy structures.\n\nBurns enemy infantry around.
+		Description: Disables enemy structures.\n\nBurns enemy infantry around, even ones inside civilian structures.
 		ReadyAudio: MicrowaveTankCreated
 	Valued:
 		Cost: 800
