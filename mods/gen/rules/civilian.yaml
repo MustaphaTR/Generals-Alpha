@@ -149,6 +149,8 @@ V01:
 		Dimensions: 2,2
 	Garrisonable:
 		MaxWeight: 10
+	AttackOpenTopped:
+		PortOffsets: 0,0,128, -512,-512,128, -512,512,128, 512,512,128, 512,-512,128
 	Tooltip:
 		Name: Church
 	HitShape:
@@ -173,6 +175,8 @@ V02:
 		Dimensions: 2,2
 	Garrisonable:
 		MaxWeight: 10
+	AttackOpenTopped:
+		PortOffsets: 0,0,128, -512,-512,128, -512,512,128, 512,512,128, 512,-512,128
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: -490,-512,0, 0,0,0, 0,512,0
@@ -200,6 +204,8 @@ V03:
 		Dimensions: 2,2
 	Garrisonable:
 		MaxWeight: 10
+	AttackOpenTopped:
+		PortOffsets: 0,0,128, -512,-512,128, -512,512,128, 512,512,128, 512,-512,128
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: -490,-512,0, 0,0,0, 421,512,0, -210,512,0
@@ -232,6 +238,8 @@ V04:
 		Dimensions: 2,2
 	Garrisonable:
 		MaxWeight: 10
+	AttackOpenTopped:
+		PortOffsets: 0,0,128, -512,-512,128, -512,512,128, 512,512,128, 512,-512,128
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, -421,-256,0, -421,256,0
@@ -260,6 +268,8 @@ V05:
 		Dimensions: 2,1
 	Garrisonable:
 		MaxWeight: 8
+	AttackOpenTopped:
+		PortOffsets: 0,0,128, 0,-512,128, 0,512,128
 
 V05.SNOW:
 	Inherits: V05
@@ -277,6 +287,8 @@ V06:
 		Dimensions: 2,1
 	Garrisonable:
 		MaxWeight: 8
+	AttackOpenTopped:
+		PortOffsets: 0,0,128, 0,-512,128, 0,512,128
 
 V06.SNOW:
 	Inherits: V06
@@ -294,6 +306,8 @@ V07:
 		Dimensions: 2,1
 	Garrisonable:
 		MaxWeight: 8
+	AttackOpenTopped:
+		PortOffsets: 0,0,128, 0,-512,128, 0,512,128
 
 V07.SNOW:
 	Inherits: V07
@@ -446,6 +460,8 @@ V37:
 		Dimensions: 5,2
 	Garrisonable:
 		MaxWeight: 15
+	AttackOpenTopped:
+		PortOffsets: 0,0,128, -1536,-512,128, -1536,512,128, -1024,-512,128, -1024,512,128, 0,-512,128, 0,512,128, 1024,512,128, 1024,-512,128, 1536,512,128, 1536,-512,128
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 0,1024,0
@@ -536,6 +552,8 @@ RUSHOUSE:
 		Dimensions: 1,2
 	Garrisonable:
 		MaxWeight: 8
+	AttackOpenTopped:
+		PortOffsets: 0,0,128, 0,-512,128, 0,512,128
 	HitShape:
 		UseTargetableCellsOffsets: false
 
@@ -553,6 +571,8 @@ SNOWHUT:
 		Dimensions: 1,2
 	Garrisonable:
 		MaxWeight: 8
+	AttackOpenTopped:
+		PortOffsets: 0,0,128, 0,-512,128, 0,512,128
 	HitShape:
 		UseTargetableCellsOffsets: false
 
