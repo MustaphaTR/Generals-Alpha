@@ -83,6 +83,8 @@ infantry.worker:
 		PipCount: 2
 	Passenger:
 		CargoType: GLAInfantry
+	Garrisoner:
+		Voice: Garrison
 	DetectCloaked:
 		DetectionTypes: Mine
 		Range: 2c512
@@ -135,6 +137,8 @@ infantry.worker:
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
+	Garrisoner:
+		Voice: Garrison
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	Captures:
@@ -570,6 +574,8 @@ infantry.conscript:
 		Speed: 25
 	SpeedMultiplier@DAMAGED:
 		Modifier: 60
+	Garrisoner:
+		Voice: Move
 	Tooltip:
 		Name: Conscript
 	Armament@PRIMARY:
@@ -685,6 +691,8 @@ infantry.missile_defender:
 		Cursor: ability
 		OutsideRangeCursor: ability
 		TargetRelationships: None
+	Garrisoner:
+		Voice: Garrison
 	Voiced:
 		VoiceSet: MissileDefenderVoice
 	ActorStatValues:
@@ -712,6 +720,8 @@ infantry.rpg_trooper:
 		Name: RPG Trooper
 	Passenger:
 		CargoType: GLAInfantry
+	Garrisoner:
+		Voice: Garrison
 	Voiced:
 		VoiceSet: RPGTrooperVoice
 	ActorStatValues:
@@ -900,6 +910,8 @@ infantry.pathfinder:
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 67
+	Garrisoner:
+		Voice: Garrison
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Infantry
 		InvalidTargets: NoAutoTarget
@@ -1712,7 +1724,7 @@ infantry.colonel_burton:
 		Voice: Move
 	Garrisoner:
 		CustomPipType: red
-		Voice: Move
+		Voice: Garrison
 	AutoTarget:
 		ScanRadius: 8
 	Armament@PRIMARY_INF:
@@ -1888,6 +1900,8 @@ infantry.jarmen_kell:
 		Prerequisite: prerequisite.enough_jarmen_kell
 	Passenger:
 		CargoType: GLAInfantry
+	Garrisoner:
+		Voice: Garrison
 	Voiced:
 		VoiceSet: JarmenVoice
 	RenderSprites:
