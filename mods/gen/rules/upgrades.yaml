@@ -1067,8 +1067,6 @@ upgrade.overlord_speaker:
 
 upgrade.helix_bunker:
 	Inherits: upgrade.overlord_bunker
-	Tooltip:
-		Name: Bunker
 	Buildable:
 		Queue: queue.helix, queue.assault_helix, queue.nuke_gen_helix
 		Description: Allows infantry in helix to fire outside.
@@ -1077,8 +1075,6 @@ upgrade.helix_bunker:
 
 upgrade.helix_gatling:
 	Inherits: upgrade.overlord_gatling
-	Tooltip:
-		Name: Gatling
 	Buildable:
 		Queue: queue.helix, queue.nuke_gen_helix
 		Description: Gives helix a gatling cannon.\n\nAllows helix to detect stealth.
@@ -1087,8 +1083,6 @@ upgrade.helix_gatling:
 
 upgrade.helix_speaker:
 	Inherits: upgrade.overlord_speaker
-	Tooltip:
-		Name: Speaker
 	Buildable:
 		Queue: queue.helix, queue.nuke_gen_helix
 		Description: Gives helix a speaker tower.
