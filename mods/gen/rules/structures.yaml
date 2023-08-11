@@ -115,7 +115,7 @@ building.usa_command_center:
 		LifeTime: 300
 		ChargeInterval: 1500
 		Icons:
-			1: satellite
+			1: spy_satellite
 		Names:
 			1: Spy Satellite
 		Descriptions:
@@ -162,9 +162,9 @@ building.usa_command_center:
 		CameraActor: camera.paradrop
 		DisplayBeacon: true
 		BeaconPosters:
-			1: paradrop1bcon
-			2: paradrop2bcon
-			3: paradrop3bcon
+			1: paradrop1
+			2: paradrop2
+			3: paradrop3
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -202,9 +202,9 @@ building.usa_command_center:
 		CameraActor: camera.paradrop
 		DisplayBeacon: True
 		BeaconPosters:
-			1: a101bcon
-			2: a102bcon
-			3: a103bcon
+			1: a101
+			2: a102
+			3: a103
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -217,7 +217,7 @@ building.usa_command_center:
 			1: prerequisite.fuel_air_bomb
 			2: upgrade.moab
 		Icons:
-			1: fuel_air
+			1: fuel_air_bomb
 			2: moab
 		ChargeInterval: 9000
 		SquadSizes:
@@ -237,8 +237,8 @@ building.usa_command_center:
 		CameraActor: camera.paradrop
 		DisplayBeacon: True
 		BeaconPosters:
-			1: fuelbcon
-			2: moabbcon
+			1: fuel_air_bomb
+			2: moab
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -250,7 +250,7 @@ building.usa_command_center:
 		Prerequisites:
 			1: generals_power.leaflet_drop
 		Icons:
-			1: leaflet
+			1: leaflet_drop
 		ChargeInterval: 7500
 		SquadSizes:
 			1: 1
@@ -265,7 +265,7 @@ building.usa_command_center:
 		CameraActor: camera.paradrop
 		DisplayBeacon: True
 		BeaconPosters:
-			1: leafbcon
+			1: leaflet_drop
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -359,9 +359,9 @@ building.gla_command_center:
 		LifeTime: 2
 		ChargeInterval: 6000
 		Icons:
-			1: tambush1
-			2: tambush2
-			3: tambush3
+			1: ambush1_toxin
+			2: ambush2_toxin
+			3: ambush3_toxin
 		Names:
 			1: Toxin Rebel Ambush
 			2: Toxin Rebel Ambush
@@ -379,7 +379,7 @@ building.gla_command_center:
 		Prerequisites:
 			1: generals_power.anthrax_bomb
 		Icons:
-			1: thrax
+			1: anthrax_bomb
 		ChargeInterval: 9000
 		SquadSizes:
 			1: 1
@@ -394,7 +394,7 @@ building.gla_command_center:
 		CameraActor: camera.paradrop
 		DisplayBeacon: True
 		BeaconPosters:
-			1: thraxbcon
+			1: anthrax_bomb
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -408,9 +408,9 @@ building.gla_command_center:
 			2: generals_power.gps_scrambler2
 			3: generals_power.gps_scrambler3
 		Icons:
-			1: scrambler1
-			2: scrambler2
-			3: scrambler3
+			1: gps_scrambler1
+			2: gps_scrambler2
+			3: gps_scrambler3
 		ChargeInterval: 6000
 		Footprints:
 			1: x
@@ -447,7 +447,7 @@ building.gla_command_center:
 		LifeTime: -1
 		ChargeInterval: 3750
 		Icons:
-			1: sneak
+			1: sneak_attack
 		Names:
 			1: Sneak Attack
 		Descriptions:
@@ -567,9 +567,9 @@ building.prc_command_center:
 			2: 2000
 			3: 4000
 		Icons:
-			1: cash1
-			2: cash2
-			3: cash3
+			1: cash_hack1
+			2: cash_hack2
+			3: cash_hack3
 		Names:
 			1: Cash Hack
 			2: Cash Hack
@@ -620,9 +620,9 @@ building.prc_command_center:
 		CameraActor: camera.paradrop
 		DisplayBeacon: true
 		BeaconPosters:
-			1: paradrop1bcon
-			2: paradrop2bcon
-			3: paradrop3bcon
+			1: paradrop1
+			2: paradrop2
+			3: paradrop3
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -666,7 +666,7 @@ building.prc_command_center:
 		Icons:
 			1: tank_drop1
 			2: tank_drop2
-			3: tank_drop2
+			3: tank_drop3
 		ChargeInterval: 6000
 		Names:
 			1: Tank Drop
@@ -694,9 +694,9 @@ building.prc_command_center:
 		CameraActor: camera.paradrop
 		DisplayBeacon: true
 		BeaconPosters:
-			1: tank_drop1bcon
-			2: tank_drop2bcon
-			3: tank_drop3bcon
+			1: tank_drop1
+			2: tank_drop2
+			3: tank_drop3
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -707,7 +707,7 @@ building.prc_command_center:
 		Prerequisites:
 			1: generals_power.cluster_mines
 		Icons:
-			1: cluster
+			1: cluster_mines
 		ChargeInterval: 6000
 		SquadSizes:
 			1: 1
@@ -722,7 +722,7 @@ building.prc_command_center:
 		CameraActor: camera.paradrop
 		DisplayBeacon: True
 		BeaconPosters:
-			1: cminesbcon
+			1: cluster_mines
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -734,7 +734,7 @@ building.prc_command_center:
 		Prerequisites:
 			1: generals_power.carpet_bombing
 		Icons:
-			1: prccarpet
+			1: carpet_bombing
 		ChargeInterval: 3750
 		SquadSizes:
 			1: 1
@@ -749,7 +749,7 @@ building.prc_command_center:
 		CameraActor: camera.paradrop
 		DisplayBeacon: True
 		BeaconPosters:
-			1: chcpbcon
+			1: carpet_bombing
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -761,7 +761,7 @@ building.prc_command_center:
 		Prerequisites:
 			1: generals_power.carpet_bombing.nuke
 		Icons:
-			1: nkcarpet
+			1: carpet_bombing_nuke
 		ChargeInterval: 3750
 		SquadSizes:
 			1: 1
@@ -776,7 +776,7 @@ building.prc_command_center:
 		DisplayBeacon: True
 		CameraActor: camera.paradrop
 		BeaconPosters:
-			1: nkcpbcon
+			1: carpet_bombing_nuke
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -792,7 +792,7 @@ building.prc_command_center:
 		LifeTime: -1
 		ChargeInterval: 3750
 		Icons:
-			1: sneak
+			1: sneak_attack
 		Names:
 			1: Sneak Attack
 		Descriptions:
@@ -822,7 +822,7 @@ building.prc_command_center:
 		CameraActor: camera.paradrop
 		DisplayBeacon: True
 		BeaconPosters:
-			1: empbcon
+			1: emp
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -3141,7 +3141,7 @@ building.strategy_center:
 		Prerequisites:
 			1: generals_power.carpet_bombing.airforce
 		Icons:
-			1: uscarpet
+			1: carpet_bombing_airforce
 		ChargeInterval: 3750
 		SquadSizes:
 			1: 1
@@ -3156,7 +3156,7 @@ building.strategy_center:
 		CameraActor: camera.paradrop
 		DisplayBeacon: True
 		BeaconPosters:
-			1: uscpbcon
+			1: carpet_bombing_airforce
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -3550,7 +3550,7 @@ building.supply_drop_zone:
 	# ProduceActorPower@SUPPLY_DROP:
 	#	Description: Supply Drop
 	#	LongDesc: A Cargo Plane drops a money crate on the Supply Drop Zone.
-	#	Icon: supply
+	#	Icon: supply_drop
 	#	Actors: SUPPLYCRATE
 	#	Type: Crate
 	#	ChargeInterval: 120
@@ -3751,7 +3751,7 @@ building.particle_cannon:
 		LifeTime: -1
 		ChargeInterval: 6000
 		Icons:
-			1: particle
+			1: particle_cannon
 		Names:
 			1: Particle Cannon
 		Descriptions:
@@ -4022,7 +4022,7 @@ building.scud_storm:
 		DisplayTimerRelationships: Enemy, Neutral, Ally
 		DisplayBeacon: False
 		BeaconPosters:
-			1: scudswbcon
+			1: scud_storm
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
@@ -4193,7 +4193,7 @@ building.missile_silo:
 		Prerequisites:
 			1: building.missile_silo
 		Icons:
-			1: abomb
+			1: atom_bomb
 		ChargeInterval: 9000
 		Names:
 			1: Atom Bomb
@@ -4209,7 +4209,7 @@ building.missile_silo:
 		DisplayBeacon: True
 		DisplayRadarPing: True
 		BeaconPosters:
-			1: nukeswbcon
+			1: atom_bomb
 		CameraRange: 7c0
 		CameraSpawnAdvance: 0
 		CameraRemoveDelay: 50

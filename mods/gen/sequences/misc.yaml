@@ -273,114 +273,60 @@ rallypoint:
 beacon:
 	Defaults:
 		ZOffset: 2535
+		Length: *
+		Offset: 0,-42
 	arrow:
 		Filename: mouse.shp
 		Start: 5
+		Length: 1
 		Offset: 1,-12
 	circles:
 		Filename: fpls.shp
 		Length: *
+		Offset: 0,0
 		ZOffset: 2047
-	atomicon:
-		Filename: lores|atomicon.shp
-		Length: *
-		Offset: 0,-42
-	pbmbicon:
-		Filename: lores|pbmbicon.shp
-		Length: *
-		Offset: 0,-42
-	camicon:
-		Filename: lores|camicon.shp
-		Length: *
-		Offset: 0,-42
-	pinficon:
-		Filename: lores|pinficon.shp
-		Length: *
-		Offset: 0,-42
-	a101bcon:
-		Filename: a101bcon.png
-		Length: *
-		Offset: 0,-42
-	a102bcon:
-		Filename: a102bcon.png
-		Length: *
-		Offset: 0,-42
-	a103bcon:
-		Filename: a103bcon.png
-		Length: *
-		Offset: 0,-42
-	empbcon:
-		Filename: empbcon.png
-		Length: *
-		Offset: 0,-42
-	fuelbcon:
-		Filename: fuelbcon.png
-		Length: *
-		Offset: 0,-42
-	moabbcon:
-		Filename: moabbcon.png
-		Length: *
-		Offset: 0,-42
-	nukeswbcon:
-		Filename: nukeswbcon.png
-		Length: *
-		Offset: 0,-42
-	scudswbcon:
-		Filename: scudswbcon.png
-		Length: *
-		Offset: 0,-42
-	thraxbcon:
-		Filename: thraxbcon.png
-		Length: *
-		Offset: 0,-42
-	paradrop1bcon:
-		Filename: paradrop1bcon.png
-		Length: *
-		Offset: 0,-42
-	paradrop2bcon:
-		Filename: paradrop2bcon.png
-		Length: *
-		Offset: 0,-42
-	paradrop3bcon:
-		Filename: paradrop3bcon.png
-		Length: *
-		Offset: 0,-42
-	cminesbcon:
-		Filename: cminesbcon.png
-		Length: *
-		Offset: 0,-42
-	tank_drop1bcon:
-		Filename: tank_drop1bcon.png
-		Length: *
-		Offset: 0,-42
-	tank_drop2bcon:
-		Filename: tank_drop2bcon.png
-		Length: *
-		Offset: 0,-42
-	tank_drop3bcon:
-		Filename: tank_drop3bcon.png
-		Length: *
-		Offset: 0,-42
-	uscpbcon:
-		Filename: uscpbcon.png
-		Length: *
-		Offset: 0,-42
-	chcpbcon:
-		Filename: chcpbcon.png
-		Length: *
-		Offset: 0,-42
-	nkcpbcon:
-		Filename: nkcpbcon.png
-		Length: *
-		Offset: 0,-42
-	leafbcon:
-		Filename: leafbcon.png
-		Length: *
-		Offset: 0,-42
+	carpet_bombing_airforce:
+		Filename: carpet_bombing_airforce_beacon.png
+	paradrop1:
+		Filename: paradrop1_beacon.png
+	paradrop2:
+		Filename: paradrop2_beacon.png
+	paradrop3:
+		Filename: paradrop3_beacon.png
+	a101:
+		Filename: a101_beacon.png
+	a102:
+		Filename: a102_beacon.png
+	a103:
+		Filename: a103_beacon.png
+	leaflet_drop:
+		Filename: leaflet_drop_beacon.png
+	fuel_air_bomb:
+		Filename: fuel_air_bomb_beacon.png
+	moab:
+		Filename: moab_beacon.png
+	anthrax_bomb:
+		Filename: anthrax_bomb_beacon.png
+	emp:
+		Filename: emp_beacon.png
+	cluster_mines:
+		Filename: cluster_mines_beacon.png
+	carpet_bombing:
+		Filename: carpet_bombing_beacon.png
+	carpet_bombing_nuke:
+		Filename: carpet_bombing_nuke_beacon.png
+	tank_drop1:
+		Filename: tank_drop1_beacon.png
+	tank_drop2:
+		Filename: tank_drop2_beacon.png
+	tank_drop3:
+		Filename: tank_drop3_beacon.png
+	atom_bomb:
+		Filename: atom_bomb_beacon.png
+	scud_storm:
+		Filename: scud_storm_beacon.png
 	clock:
 		Filename: beaconclock.shp
-		Length: *
-		Offset: 0,-42
 
 smoke_m:
 	Defaults:
@@ -817,124 +763,110 @@ camera:
 		Filename: xxicon.shp
 
 icon:
-	abomb:
-		Filename: nukeswicon.png
-	invuln:
-		Filename: infxicon.shp
-	chrono:
-		Filename: warpicon.shp
-	spyplane:
-		Filename: smigicon.shp
-	paratroopers:
-		Filename: pinficon.shp
-	gps:
-		Filename: gpssicon.shp
-	parabombs:
-		Filename: pbmbicon.shp
-	sonar:
-		Filename: sonricon.shp
+	emergency_repair1:
+		Filename: emergency_repair1_icon.png
+	emergency_repair2:
+		Filename: emergency_repair2_icon.png
+	emergency_repair3:
+		Filename: emergency_repair3_icon.png
+	spy_satellite:
+		Filename: spy_satellite_icon.png
 	spy_drone:
-		Filename: sdrnicon.png
-	ambush1:
-		Filename: ambsh1icon.png
-	ambush2:
-		Filename: ambsh2icon.png
-	ambush3:
-		Filename: ambsh3icon.png
-	tambush1:
-		Filename: tambush1icon.png
-	tambush2:
-		Filename: tambush2icon.png
-	tambush3:
-		Filename: tambush3icon.png
-	radarscan:
-		Filename: scanicon.png
-	supply:
-		Filename: sdropicon.png
-	particle:
-		Filename: pcanswicon.png
-	a101:
-		Filename: a101icon.png
-	a102:
-		Filename: a102icon.png
-	a103:
-		Filename: a103icon.png
-	arty_barrage1:
-		Filename: artybar1icon.png
-	arty_barrage2:
-		Filename: artybar2icon.png
-	arty_barrage3:
-		Filename: artybar3icon.png
-	intelligence:
-		Filename: intelicon.png
-	scud_storm:
-		Filename: scudswicon.png
-	satellite:
-		Filename: sscanicon.png
-	repair1:
-		Filename: repair1icon.png
-	repair2:
-		Filename: repair2icon.png
-	repair3:
-		Filename: repair3icon.png
-	fuel_air:
-		Filename: fairicon.png
-	moab:
-		Filename: moabicon.png
-	thrax:
-		Filename: thraxbmbicon.png
-	emp:
-		Filename: empicon.png
-	cluster:
-		Filename: cminesicon.png
-	cash1:
-		Filename: chack1icon.png
-	cash2:
-		Filename: chack2icon.png
-	cash3:
-		Filename: chack3icon.png
+		Filename: spy_drone_icon.png
+	carpet_bombing_airforce:
+		Filename: carpet_bombing_airforce_icon.png
 	paradrop1:
-		Filename: paradrop1icon.png
+		Filename: paradrop1_icon.png
 	paradrop2:
-		Filename: paradrop2icon.png
+		Filename: paradrop2_icon.png
 	paradrop3:
-		Filename: paradrop3icon.png
+		Filename: paradrop3_icon.png
+	a101:
+		Filename: a101_icon.png
+	a102:
+		Filename: a102_icon.png
+	a103:
+		Filename: a103_icon.png
+	spectre_gunship:
+		Filename: spectre_gunship_icon.png
+	spectre_gunship1:
+		Filename: spectre_gunship1_icon.png
+	spectre_gunship2:
+		Filename: spectre_gunship2_icon.png
+	spectre_gunship3:
+		Filename: spectre_gunship3_icon.png
+	leaflet_drop:
+		Filename: leaflet_drop_icon.png
+	fuel_air_bomb:
+		Filename: fuel_air_bomb_icon.png
+	moab:
+		Filename: moab_icon.png
+	intelligence:
+		Filename: intelligence_icon.png
+	supply_drop:
+		Filename: supply_drop_zone_icon.png
+	ambush1:
+		Filename: ambush1_icon.png
+	ambush2:
+		Filename: ambush2_icon.png
+	ambush3:
+		Filename: ambush3_icon.png
+	ambush1_toxin:
+		Filename: ambush1_toxin_icon.png
+	ambush2_toxin:
+		Filename: ambush2_toxin_icon.png
+	ambush3_toxin:
+		Filename: ambush3_toxin_icon.png
+	gps_scrambler1:
+		Filename: gps_scrambler1_icon.png
+	gps_scrambler2:
+		Filename: gps_scrambler2_icon.png
+	gps_scrambler3:
+		Filename: gps_scrambler3_icon.png
+	anthrax_bomb:
+		Filename: anthrax_bomb_icon.png
+	radar_van_scan:
+		Filename: radar_van_scan_icon.png
+	sneak_attack:
+		Filename: sneak_attack_icon.png
 	frenzy1:
-		Filename: frenzy1icon.png
+		Filename: frenzy1_icon.png
 	frenzy2:
-		Filename: frenzy2icon.png
+		Filename: frenzy2_icon.png
 	frenzy3:
-		Filename: frenzy3icon.png
+		Filename: frenzy3_icon.png
+	cash_hack1:
+		Filename: cash_hack1_icon.png
+	cash_hack2:
+		Filename: cash_hack2_icon.png
+	cash_hack3:
+		Filename: cash_hack3_icon.png
+	arty_barrage1:
+		Filename: arty_barrage1_icon.png
+	arty_barrage2:
+		Filename: arty_barrage2_icon.png
+	arty_barrage3:
+		Filename: arty_barrage3_icon.png
 	tank_drop1:
-		Filename: tdrop1icon.png
+		Filename: tank_drop1_icon.png
 	tank_drop2:
-		Filename: tdrop2icon.png
+		Filename: tank_drop2_icon.png
 	tank_drop3:
-		Filename: tdrop3icon.png
-	scrambler1:
-		Filename: gpss1icon.png
-	scrambler2:
-		Filename: gpss2icon.png
-	scrambler3:
-		Filename: gpss3icon.png
-	uscarpet:
-		Filename: uscarpeticon.png
-	prccarpet:
-		Filename: prccarpeticon.png
-	nkcarpet:
-		Filename: nkcarpeticon.png
-	sneak:
-		Filename: sneakicon.png
-	leaflet:
-		Filename: leafleticon.png
-	spectre:
-		Filename: specicon.png
-	spectre1:
-		Filename: spec1icon.png
-	spectre2:
-		Filename: spec2icon.png
-	spectre3:
-		Filename: spec3icon.png
+		Filename: tank_drop3_icon.png
+	cluster_mines:
+		Filename: cluster_mines_icon.png
+	carpet_bombing:
+		Filename: carpet_bombing_icon.png
+	carpet_bombing_nuke:
+		Filename: carpet_bombing_nuke_icon.png
+	emp:
+		Filename: emp_icon.png
+	particle_cannon:
+		Filename: particle_cannon_ability_icon.png
+	scud_storm:
+		Filename: scud_storm_ability_icon.png
+	atom_bomb:
+		Filename: atom_bomb_icon.png
 	xxicon:
 		Filename: xxicon.shp
 	emptyicon:
@@ -968,14 +900,14 @@ minp:
 		Filename: minp.shp
 		ZOffset: -512
 	icon:
-		Filename: lminicon.png
+		Filename: land_mine_icon.png
 
 minv:
 	idle:
 		Filename: minv.shp
 		ZOffset: -512
 	icon:
-		Filename: lminicon.png
+		Filename: land_mine_icon.png
 
 overlay:
 	Defaults:

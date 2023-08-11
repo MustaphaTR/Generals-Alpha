@@ -3,7 +3,7 @@ aircraft.mig:
 		Filename: mig.shp
 		Facings: 16
 	icon:
-		Filename: migicon.png
+		Filename: mig_icon.png
 
 aircraft.raptor:
 	idle:
@@ -11,7 +11,7 @@ aircraft.raptor:
 		Facings: 32
 		Scale: 0.9
 	icon:
-		Filename: rapticon.png
+		Filename: raptor_icon.png
 
 aircraft.king_raptor:
 	idle:
@@ -19,7 +19,7 @@ aircraft.king_raptor:
 		Facings: 32
 		Scale: 0.9
 	icon:
-		Filename: kingraptoricon.png
+		Filename: king_raptor_icon.png
 
 aircraft.aurora:
 	idle:
@@ -27,15 +27,15 @@ aircraft.aurora:
 		Facings: 32
 		Scale: 0.9
 	icon:
-		Filename: auroraicon.png
+		Filename: aurora_icon.png
 
 aircraft.aurora_alpha:
 	idle:
 		Filename: aurora_alpha.shp
 		Facings: 32
 		Scale: 0.9
-	icon: # This is unused black one that fits better, auroraaicon is original one
-		Filename: aurorabicon.png #auroraaicon.png
+	icon: # This is unused black one that fits better, aurora_alpha_icon is original one
+		Filename: aurora_alpha_black_icon.png #aurora_alpha_icon.png
 
 aircraft.stealth_fighter:
 	idle:
@@ -43,7 +43,7 @@ aircraft.stealth_fighter:
 		Facings: 32
 		Scale: 0.9
 	icon:
-		Filename: stlhicon.png
+		Filename: stealth_fighter_icon.png
 
 aircraft.spy_drone:
 	idle:
@@ -51,7 +51,7 @@ aircraft.spy_drone:
 		Facings: 16
 		Scale: 0.5
 	icon:
-		Filename: sdrnicon.png
+		Filename: spy_drone_icon.png
 
 aircraft.scout_drone:
 	idle:
@@ -59,11 +59,11 @@ aircraft.scout_drone:
 		Facings: 16
 		Scale: 0.5
 	icon:
-		Filename: drscticon.png
+		Filename: scout_drone_icon.png
 
 aircraft.battle_drone:
 	idle:
-		Filename: bdrn.shp
+		Filename: battle_drone.shp
 		Facings: 32
 		Scale: 0.75
 		UseClassicFacings: True
@@ -73,15 +73,15 @@ aircraft.battle_drone:
 		Facings: 8
 		Scale: 0.75
 	icon:
-		Filename: drbaticon.png
+		Filename: battle_drone_icon.png
 
 aircraft.hellfire_drone:
 	idle:
-		Filename: hellfire.shp
+		Filename: hellfire_drone.shp
 		Facings: 32
 		Scale: 0.75
 	icon:
-		Filename: drhllicon.png
+		Filename: hellfire_drone_icon.png
 
 aircraft.comanche:
 	idle:
@@ -100,7 +100,7 @@ aircraft.comanche:
 		Length: 6
 		Facings: 8
 	icon:
-		Filename: cmchicon.png
+		Filename: comanche_icon.png
 
 aircraft.helix:
 	idle:
@@ -123,12 +123,12 @@ aircraft.helix:
 		Facings: 8
 		Scale: 1.3
 	icon:
-		Filename: helixicon.png
+		Filename: helix_icon.png
 
 aircraft.assault_helix:
 	Inherits: aircraft.helix
 	icon:
-		Filename: ahelixicon.png
+		Filename: assault_helix_icon.png
 
 aircraft.chinook:
 	idle:
@@ -174,23 +174,23 @@ aircraft.chinook:
 		UseClassicFacings: True
 		Offset: 0, -50
 	collect:
-		Filename: chinookcrane.shp
+		Filename: chinook_crane.shp
 		Length: *
 		Offset: 0, -18
 		ZOffset: -100
 	deliver:
-		Filename: chinookcrane.shp
+		Filename: chinook_crane.shp
 		Frames: 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0
 		Length: 36
 		Offset: 0, -18
 		ZOffset: -100
 	icon:
-		Filename: chinicon.png
+		Filename: chinook_icon.png
 
 aircraft.combat_chinook:
 	Inherits: aircraft.chinook
 	icon:
-		Filename: cchinicon.png
+		Filename: combat_chinook_icon.png
 
 tran1husk:
 	idle:
@@ -231,4 +231,4 @@ aircraft.a10:
 		Length: 6
 		Facings: 8
 	icon:
-		Filename: a10icon.png
+		Filename: a10_icon.png

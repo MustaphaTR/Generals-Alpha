@@ -23,12 +23,13 @@ tech.oil_derrick:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: oildicon.png
+		Filename: oil_derrick_icon.png
 		Offset: 0,0
 
 tech.oil_refinery:
 	Defaults:
 		Filename: oil_refinery.shp
+	idle:
 	damaged-idle:
 		Start: 1
 	dead:
@@ -38,7 +39,7 @@ tech.oil_refinery:
 		Filename: biomake.shp
 		Length: *
 	icon:
-		Filename: oreficon.png
+		Filename: oil_refinery_icon.png
 
 tech.hospital:
 	Defaults:
@@ -75,7 +76,7 @@ tech.hospital:
 		Length: *
 		Offset: 0,1
 	icon:
-		Filename: hospicon.png
+		Filename: hospital_icon.png
 
 tech.communications_center:
 	Defaults:
@@ -105,7 +106,7 @@ tech.communications_center:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: domeicon.shp
+		Filename: communications_center_icon.shp
 
 tech.soviet_barracks:
 	Defaults:
@@ -162,7 +163,7 @@ tech.flame_tower:
 		Filename: mbFTUR.des
 		Length: *
 	icon:
-		Filename: fturicon.shp
+		Filename: flame_tower_icon.shp
 
 tech.power_plant:
 	Defaults:
@@ -192,7 +193,7 @@ tech.power_plant:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: apwricon.shp
+		Filename: power_plant_icon.shp
 
 tech.repair_bay:
 	Defaults:
@@ -225,7 +226,7 @@ tech.repair_bay:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: rbayicon.png
+		Filename: repair_bay_icon.png
 
 tech.reinforcements_pad:
 	Defaults:
@@ -272,7 +273,7 @@ tech.reinforcements_pad:
 		ZOffset: -1c511
 		Offset: 0,-4
 	icon:
-		Filename: reinicon.png
+		Filename: reinforcements_pad_icon.png
 
 tech.shipyard:
 	Defaults:
@@ -298,5 +299,5 @@ tech.nuclear_bunker:
 		Start: 2
 		Tick: 800
 	make:
-		Filename: biomake.shp
+		Filename: shipyard_icon.shp
 		Length: *

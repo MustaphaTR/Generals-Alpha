@@ -1,69 +1,65 @@
 infantry.pilot:
-	stand:
+	Defaults:
 		Filename: gnrl.shp
+	stand:
 		Facings: 8
 	run:
-		Filename: gnrl.shp
 		Start: 8
 		Length: 6
 		Facings: 8
 		Tick: 100
 	shoot:
-		Filename: gnrl.shp
 		Start: 56
 		Length: 4
 		Facings: 8
 	prone-stand:
-		Filename: gnrl.shp
 		Start: 104
 		Stride: 4
 		Facings: 8
 	prone-run:
-		Filename: gnrl.shp
 		Start: 104
 		Length: 4
 		Facings: 8
 		Tick: 100
 	standup:
-		Filename: gnrl.shp
 		Start: 136
 		Length: 2
 		Facings: 8
 	prone-shoot:
-		Filename: gnrl.shp
 		Start: 152
 		Length: 4
 		Facings: 8
 	idle1:
-		Filename: gnrl.shp
 		Start: 184
 		Length: 26
 		Tick: 120
 	die1:
-		Filename: gnrl.shp
 		Start: 210
 		Length: 8
+		Tick: 80
 	die2:
-		Filename: gnrl.shp
 		Start: 218
 		Length: 8
+		Tick: 80
 	die3:
-		Filename: gnrl.shp
 		Start: 226
 		Length: 8
+		Tick: 80
 	die4:
-		Filename: gnrl.shp
 		Start: 234
 		Length: 12
+		Tick: 80
 	die5:
-		Filename: gnrl.shp
 		Start: 246
 		Length: 18
+		Tick: 80
 	die6:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: corpse1.tem
 		TilesetFilenames:
@@ -72,93 +68,87 @@ infantry.pilot:
 		Tick: 1600
 		ZOffset: -511
 	icon:
-		Filename: piloticon.png
+		Filename: pilot_icon.png
 
 ^default.mg_infantry:
-	stand:
+	Defaults:
 		Filename: e1.shp
+	stand:
 		Facings: 8
 	stand2:
-		Filename: e1.shp
 		Start: 8
 		Facings: 8
 	run:
-		Filename: e1.shp
 		Start: 16
 		Length: 6
 		Facings: 8
 		Tick: 100
 	shoot:
-		Filename: e1.shp
 		Start: 64
 		Length: 8
 		Facings: 8
 	prone-stand:
-		Filename: e1.shp
 		Start: 144
 		Stride: 4
 		Facings: 8
 	prone-stand2:
-		Filename: e1.shp
 		Start: 144
 		Stride: 4
 		Facings: 8
 	prone-run:
-		Filename: e1.shp
 		Start: 144
 		Length: 4
 		Facings: 8
 		Tick: 100
 	liedown:
-		Filename: e1.shp
 		Start: 128
 		Length: 2
 		Facings: 8
 	standup:
-		Filename: e1.shp
 		Start: 176
 		Length: 2
 		Facings: 8
 	prone-shoot:
-		Filename: e1.shp
 		Start: 192
 		Length: 8
 		Facings: 8
+	parachute:
+		Start: 377
 	idle1:
-		Filename: e1.shp
 		Start: 256
 		Length: 16
 		Tick: 120
 	idle2:
-		Filename: e1.shp
 		Start: 272
 		Length: 16
 		Tick: 120
 	die1:
-		Filename: e1.shp
 		Start: 288
 		Length: 8
+		Tick: 80
 	die2:
-		Filename: e1.shp
 		Start: 296
 		Length: 8
+		Tick: 80
 	die3:
-		Filename: e1.shp
 		Start: 304
 		Length: 8
+		Tick: 80
 	die4:
-		Filename: e1.shp
 		Start: 312
 		Length: 12
+		Tick: 80
 	die5:
-		Filename: e1.shp
 		Start: 324
 		Length: 18
+		Tick: 80
 	die6:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: corpse1.tem
 		TilesetFilenames:
@@ -166,90 +156,395 @@ infantry.pilot:
 		Length: *
 		Tick: 1600
 		ZOffset: -511
-	garrison-muzzle:
-		Filename: minigun.shp
-		Length: 6
+	garrison-muzzle: minigun
+		Filename:
+		Length: 12
 		Facings: 8
+		Combine:
+			0:
+				Filename: minigun.shp
+				Length: 12
+				Frames: 0,1,2,3,4,5,0,1,2,3,4,5
+			1:
+				Filename: minigun.shp
+				Length: 12
+				Frames: 6,7,8,9,10,11,6,7,8,9,10,11
+			2:
+				Filename: minigun.shp
+				Length: 12
+				Frames: 12,13,14,15,16,17,12,13,14,15,16,17
+			3:
+				Filename: minigun.shp
+				Length: 12
+				Frames: 18,19,20,21,22,23,18,19,20,21,22,23
+			4:
+				Filename: minigun.shp
+				Length: 12
+				Frames: 24,25,26,27,28,29,24,25,26,27,28,29
+			5:
+				Filename: minigun.shp
+				Length: 12
+				Frames: 30,31,32,33,34,35,30,31,32,33,34,35
+			6:
+				Filename: minigun.shp
+				Length: 12
+				Frames: 36,37,38,39,40,41,36,37,38,39,40,41
+			7:
+				Filename: minigun.shp
+				Length: 12
+				Frames: 42,43,44,45,46,47,42,43,44,45,46,47
 
 infantry.ranger:
 	Inherits: ^default.mg_infantry
 	icon:
-		Filename: rangericon.png
+		Filename: ranger_icon.png
 
 infantry.rebel:
 	Inherits: ^default.mg_infantry
 	icon:
-		Filename: rebelicon.png
+		Filename: rebel_icon.png
 
 infantry.red_guard:
 	Inherits: ^default.mg_infantry
 	icon:
-		Filename: rgrdicon.png
+		Filename: red_guard_icon.png
 
 infantry.minigunner:
 	Inherits: ^default.mg_infantry
 	icon:
-		Filename: minigunicon.png
+		Filename: minigunner_icon.png
 
 infantry.conscript:
 	Inherits: ^default.mg_infantry
 	icon:
-		Filename: e1icon.shp
+		Filename: conscript_icon.shp
+
+infantry.toxin_rebel:
+	Defaults:
+		Filename: e5.shp
+	stand:
+		Facings: 8
+	stand-beta:
+		Filename: e5_beta.shp
+		Facings: 8
+	stand-gamma:
+		Filename: e5_gamma.shp
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	stand2-beta:
+		Filename: e5_beta.shp
+		Start: 8
+		Facings: 8
+	stand2-gamma:
+		Filename: e5_gamma.shp
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	run-beta:
+		Filename: e5_beta.shp
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	run-gamma:
+		Filename: e5_gamma.shp
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 64
+		Length: 16
+		Facings: 8
+	shoot-beta:
+		Filename: e5_beta.shp
+		Start: 64
+		Length: 16
+		Facings: 8
+	shoot-gamma:
+		Filename: e5_gamma.shp
+		Start: 64
+		Length: 16
+		Facings: 8
+	liedown:
+		Start: 192
+		Length: 2
+		Facings: 8
+	liedown-beta:
+		Filename: e5_beta.shp
+		Start: 192
+		Length: 2
+		Facings: 8
+	liedown-gamma:
+		Filename: e5_gamma.shp
+		Start: 192
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 240
+		Length: 2
+		Facings: 8
+	standup-beta:
+		Filename: e5_beta.shp
+		Start: 240
+		Length: 2
+		Facings: 8
+	standup-gamma:
+		Filename: e5_gamma.shp
+		Start: 240
+		Length: 2
+		Facings: 8
+	prone-stand:
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-stand-beta:
+		Filename: e5_beta.shp
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-stand-gamma:
+		Filename: e5_gamma.shp
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-stand2-beta:
+		Filename: e5_beta.shp
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-stand2-gamma:
+		Filename: e5_gamma.shp
+		Start: 208
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 208
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-run-beta:
+		Filename: e5_beta.shp
+		Start: 208
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-run-gamma:
+		Filename: e5_gamma.shp
+		Start: 208
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-shoot:
+		Start: 256
+		Length: 16
+		Facings: 8
+	prone-shoot-beta:
+		Filename: e5_beta.shp
+		Start: 256
+		Length: 16
+		Facings: 8
+	prone-shoot-gamma:
+		Filename: e5_gamma.shp
+		Start: 256
+		Length: 16
+		Facings: 8
+	idle1:
+		Start: 384
+		Length: 16
+		Tick: 120
+	idle1-beta:
+		Filename: e5_beta.shp
+		Start: 384
+		Length: 16
+		Tick: 120
+	idle1-gamma:
+		Filename: e5_gamma.shp
+		Start: 384
+		Length: 16
+		Tick: 120
+	idle2:
+		Start: 400
+		Length: 16
+		Tick: 120
+	idle2-beta:
+		Filename: e5_beta.shp
+		Start: 400
+		Length: 16
+		Tick: 120
+	idle2-gamma:
+		Filename: e5_gamma.shp
+		Start: 400
+		Length: 16
+		Tick: 120
+	cheer:
+		Start: 588
+		Length: 3
+		Facings: 8
+		Tick: 120
+	cheer-beta:
+		Filename: e5_beta.shp
+		Start: 588
+		Length: 3
+		Facings: 8
+		Tick: 120
+	cheer-gamma:
+		Filename: e5_gamma.shp
+		Start: 588
+		Length: 3
+		Facings: 8
+		Tick: 120
+	die1:
+		Start: 509
+		Length: 9
+		Tick: 80
+	die-beta1:
+		Filename: e5_beta.shp
+		Start: 509
+		Length: 9
+		Tick: 80
+	die-gamma1:
+		Filename: e5_gamma.shp
+		Start: 509
+		Length: 9
+		Tick: 80
+	die2:
+		Start: 518
+		Length: 8
+		Tick: 80
+	die-beta2:
+		Filename: e5_beta.shp
+		Start: 518
+		Length: 8
+		Tick: 80
+	die-gamma2:
+		Filename: e5_gamma.shp
+		Start: 518
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 526
+		Length: 8
+		Tick: 80
+	die-beta3:
+		Filename: e5_beta.shp
+		Start: 526
+		Length: 8
+		Tick: 80
+	die-gamma3:
+		Filename: e5_gamma.shp
+		Start: 526
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 534
+		Length: 12
+		Tick: 80
+	die-beta4:
+		Filename: e5_beta.shp
+		Start: 534
+		Length: 12
+		Tick: 80
+	die-gamma4:
+		Filename: e5_gamma.shp
+		Start: 534
+		Length: 12
+		Tick: 80
+	die5:
+		Start: 546
+		Length: 18
+		Tick: 80
+	die-beta5:
+		Filename: e5_beta.shp
+		Start: 546
+		Length: 18
+		Tick: 80
+	die-gamma5:
+		Filename: e5_gamma.shp
+		Start: 546
+		Length: 18
+		Tick: 80
+	die6:
+		Filename: electro.tem
+		TilesetFilenames:
+			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+		Length: *
+		Tick: 80
+	die-crushed:
+		Filename: corpse1.tem
+		TilesetFilenames:
+			SNOW: corpse1.sno
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+	icon:
+		Filename: toxin_rebel_icon.png
 
 infantry.stinger_soldier:
-	stand:
+	Defaults:
 		Filename: e3.shp
+	stand:
 		Facings: 8
 	stand2:
-		Filename: e3.shp
 		Start: 8
 		Facings: 8
 	run:
-		Filename: e3.shp
 		Start: 16
 		Length: 6
 		Facings: 8
 		Tick: 120
 	shoot:
-		Filename: e3.shp
 		Start: 64
 		Length: 8
 		Facings: 8
+	parachute:
+		Start: 393
 	idle1:
-		Filename: e3.shp
 		Start: 272
 		Length: 14
 		Tick: 120
 	idle2:
-		Filename: e3.shp
 		Start: 287
 		Length: 16
 		Tick: 120
 	die1:
-		Filename: e3.shp
 		Start: 304
 		Length: 8
+		Tick: 80
 	die2:
-		Filename: e3.shp
 		Start: 312
 		Length: 8
+		Tick: 80
 	die3:
-		Filename: e3.shp
 		Start: 320
 		Length: 8
+		Tick: 80
 	die4:
-		Filename: e3.shp
 		Start: 328
 		Length: 12
+		Tick: 80
 	die5:
-		Filename: e3.shp
 		Start: 340
 		Length: 18
+		Tick: 80
 	die6:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: corpse1.tem
 		TilesetFilenames:
@@ -258,338 +553,100 @@ infantry.stinger_soldier:
 		Tick: 1600
 		ZOffset: -511
 	prone-stand:
-		Filename: e3.shp
 		Start: 144
 		Stride: 4
 		Facings: 8
 	prone-stand2:
-		Filename: e3.shp
 		Start: 144
 		Stride: 4
 		Facings: 8
 	prone-run:
-		Filename: e3.shp
 		Start: 144
 		Length: 4
 		Facings: 8
 		Tick: 120
 	prone-shoot:
-		Filename: e3.shp
 		Start: 192
 		Length: 10
 		Facings: 8
 	icon:
-		Filename: e3icon.png
+		Filename: e3icon.shp
 
 infantry.missile_defender:
-	stand:
+	Inherits: infantry.stinger_soldier
+	Defaults:
 		Filename: misdef.shp
-		Facings: 8
-	stand2:
-		Filename: misdef.shp
-		Start: 8
-		Facings: 8
-	run:
-		Filename: misdef.shp
-		Start: 16
-		Length: 6
-		Facings: 8
-		Tick: 120
-	shoot:
-		Filename: misdef.shp
-		Start: 64
-		Length: 8
-		Facings: 8
-	idle1:
-		Filename: misdef.shp
-		Start: 272
-		Length: 14
-		Tick: 120
-	idle2:
-		Filename: misdef.shp
-		Start: 287
-		Length: 16
-		Tick: 120
-	die1:
-		Filename: misdef.shp
-		Start: 304
-		Length: 8
-	die2:
-		Filename: misdef.shp
-		Start: 312
-		Length: 8
-	die3:
-		Filename: misdef.shp
-		Start: 320
-		Length: 8
-	die4:
-		Filename: misdef.shp
-		Start: 328
-		Length: 12
-	die5:
-		Filename: misdef.shp
-		Start: 340
-		Length: 18
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Length: *
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
-	prone-stand:
-		Filename: misdef.shp
-		Start: 144
-		Stride: 4
-		Facings: 8
-	prone-stand2:
-		Filename: misdef.shp
-		Start: 144
-		Stride: 4
-		Facings: 8
-	prone-run:
-		Filename: misdef.shp
-		Start: 144
-		Length: 4
-		Facings: 8
-		Tick: 120
-	prone-shoot:
-		Filename: misdef.shp
-		Start: 192
-		Length: 10
-		Facings: 8
 	icon:
-		Filename: e3icon.png
+		Filename: missile_defender_icon.png
 
 infantry.rpg_trooper:
-	stand:
+	Inherits: infantry.stinger_soldier
+	Defaults:
 		Filename: rpg.shp
-		Facings: 8
-	stand2:
-		Filename: rpg.shp
-		Start: 8
-		Facings: 8
-	run:
-		Filename: rpg.shp
-		Start: 16
-		Length: 6
-		Facings: 8
-		Tick: 120
-	shoot:
-		Filename: rpg.shp
-		Start: 64
-		Length: 8
-		Facings: 8
-	idle1:
-		Filename: rpg.shp
-		Start: 272
-		Length: 14
-		Tick: 120
-	idle2:
-		Filename: rpg.shp
-		Start: 287
-		Length: 16
-		Tick: 120
-	die1:
-		Filename: rpg.shp
-		Start: 304
-		Length: 8
-	die2:
-		Filename: rpg.shp
-		Start: 312
-		Length: 8
-	die3:
-		Filename: rpg.shp
-		Start: 320
-		Length: 8
-	die4:
-		Filename: rpg.shp
-		Start: 328
-		Length: 12
-	die5:
-		Filename: rpg.shp
-		Start: 340
-		Length: 18
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Length: *
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
-	prone-stand:
-		Filename: rpg.shp
-		Start: 144
-		Stride: 4
-		Facings: 8
-	prone-stand2:
-		Filename: rpg.shp
-		Start: 144
-		Stride: 4
-		Facings: 8
-	prone-run:
-		Filename: rpg.shp
-		Start: 144
-		Length: 4
-		Facings: 8
-		Tick: 120
-	prone-shoot:
-		Filename: rpg.shp
-		Start: 192
-		Length: 10
-		Facings: 8
 	icon:
-		Filename: rpgticon.png
+		Filename: rpg_trooper_icon.png
 
 infantry.tank_hunter:
-	stand:
+	Inherits: infantry.stinger_soldier
+	Defaults:
 		Filename: hunt.shp
-		Facings: 8
-	stand2:
-		Filename: hunt.shp
-		Start: 8
-		Facings: 8
-	run:
-		Filename: hunt.shp
-		Start: 16
-		Length: 6
-		Facings: 8
-		Tick: 120
-	shoot:
-		Filename: hunt.shp
-		Start: 64
-		Length: 8
-		Facings: 8
-	idle1:
-		Filename: hunt.shp
-		Start: 272
-		Length: 14
-		Tick: 120
-	idle2:
-		Filename: hunt.shp
-		Start: 287
-		Length: 16
-		Tick: 120
-	die1:
-		Filename: hunt.shp
-		Start: 304
-		Length: 8
-	die2:
-		Filename: hunt.shp
-		Start: 312
-		Length: 8
-	die3:
-		Filename: hunt.shp
-		Start: 320
-		Length: 8
-	die4:
-		Filename: hunt.shp
-		Start: 328
-		Length: 12
-	die5:
-		Filename: hunt.shp
-		Start: 340
-		Length: 18
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Length: *
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
-	prone-stand:
-		Filename: hunt.shp
-		Start: 144
-		Stride: 4
-		Facings: 8
-	prone-stand2:
-		Filename: hunt.shp
-		Start: 144
-		Stride: 4
-		Facings: 8
-	prone-run:
-		Filename: hunt.shp
-		Start: 144
-		Length: 4
-		Facings: 8
-		Tick: 120
-	prone-shoot:
-		Filename: hunt.shp
-		Start: 192
-		Length: 10
-		Facings: 8
 	icon:
-		Filename: hunticon.png
+		Filename: tank_hunter_icon.png
 
 infantry.grenadier:
-	stand:
+	Defaults:
 		Filename: e2.shp
+	stand:
 		Facings: 8
 	stand2:
-		Filename: e2.shp
 		Start: 8
 		Facings: 8
 	run:
-		Filename: e2.shp
 		Start: 16
 		Length: 6
 		Facings: 8
 		Tick: 80
 	throw:
-		Filename: e2.shp
 		Start: 64
 		Length: 20
 		Facings: 8
+	parachute:
+		Start: 505
 	idle1:
-		Filename: e2.shp
 		Start: 384
 		Length: 14
 		Tick: 120
 	idle2:
-		Filename: e2.shp
 		Start: 399
 		Length: 16
 		Tick: 120
 	die1:
-		Filename: e2.shp
 		Start: 416
 		Length: 8
+		Tick: 80
 	die2:
-		Filename: e2.shp
 		Start: 424
 		Length: 8
+		Tick: 80
 	die3:
-		Filename: e2.shp
 		Start: 432
 		Length: 8
+		Tick: 80
 	die4:
-		Filename: e2.shp
 		Start: 440
 		Length: 12
+		Tick: 80
 	die5:
-		Filename: e2.shp
 		Start: 452
 		Length: 18
+		Tick: 80
 	die6:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: corpse1.tem
 		TilesetFilenames:
@@ -598,114 +655,97 @@ infantry.grenadier:
 		Tick: 1600
 		ZOffset: -511
 	prone-stand:
-		Filename: e2.shp
 		Start: 240
 		Stride: 4
 		Facings: 8
 	prone-stand2:
-		Filename: e2.shp
 		Start: 240
 		Stride: 4
 		Facings: 8
 	prone-run:
-		Filename: e2.shp
 		Start: 240
 		Length: 4
 		Facings: 8
 		Tick: 80
 	prone-throw:
-		Filename: e2.shp
 		Start: 288
 		Length: 12
 		Facings: 8
 	icon:
-		Filename: e2icon.shp
+		Filename: grenadier_icon.shp
 
 infantry.pathfinder:
-	stand:
+	Defaults:
 		Filename: sniper.shp
+	stand:
 		Facings: 8
 	stand2:
-		Filename: sniper.shp
 		Start: 8
 		Facings: 8
 	run:
-		Filename: sniper.shp
 		Start: 16
 		Length: 6
 		Facings: 8
 		Tick: 100
 	shoot:
-		Filename: sniper.shp
 		Start: 64
 		Length: 16
 		Facings: 8
 	prone-stand:
-		Filename: sniper.shp
 		Start: 208
 		Stride: 4
 		Facings: 8
 	prone-stand2:
-		Filename: sniper.shp
 		Start: 208
 		Stride: 4
 		Facings: 8
 	prone-run:
-		Filename: sniper.shp
 		Start: 208
 		Length: 4
 		Facings: 8
 		Tick: 100
 	liedown:
-		Filename: sniper.shp
 		Start: 192
 		Length: 2
 		Facings: 8
 	standup:
-		Filename: sniper.shp
 		Start: 240
 		Length: 2
 		Facings: 8
 	prone-shoot:
-		Filename: sniper.shp
 		Start: 256
 		Length: 16
 		Facings: 8
 	idle1:
-		Filename: sniper.shp
 		Start: 384
 		Length: 14
 		Tick: 120
 	idle2:
-		Filename: sniper.shp
 		Start: 399
 		Length: 16
 		Tick: 120
 	die1:
-		Filename: sniper.shp
 		Start: 416
 		Length: 8
 	die2:
-		Filename: sniper.shp
 		Start: 424
 		Length: 8
 	die3:
-		Filename: sniper.shp
 		Start: 432
 		Length: 8
 	die4:
-		Filename: sniper.shp
 		Start: 440
 		Length: 12
 	die5:
-		Filename: sniper.shp
 		Start: 452
 		Length: 18
 	die6:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: corpse1.tem
 		TilesetFilenames:
@@ -719,52 +759,47 @@ infantry.pathfinder:
 		Stride: 6
 		Facings: 8
 	icon:
-		Filename: pathicon.png
+		Filename: pathfinder_icon.png
 
 infantry.terrorist:
-	stand:
+	Defaults:
 		Filename: terror.shp
+	stand:
 		Facings: 8
 	panic-stand:
-		Filename: terror.shp
 		Start: 8
 		Stride: 6
 		Facings: 8
 	panic-run:
-		Filename: terror.shp
 		Start: 8
 		Length: 6
 		Facings: 8
 	shoot:
-		Filename: terror.shp
 		Start: 120
 		Length: 4
 		Facings: 8
 	die1:
-		Filename: terror.shp
 		Start: 152
 		Length: 8
 	die2:
-		Filename: terror.shp
 		Start: 160
 		Length: 8
 	die3:
-		Filename: terror.shp
 		Start: 168
 		Length: 12
 	die4:
-		Filename: terror.shp
 		Start: 180
 		Length: 18
 	die5:
-		Filename: terror.shp
 		Start: 160
 		Length: 8
 	die6:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: corpse1.tem
 		TilesetFilenames:
@@ -773,68 +808,67 @@ infantry.terrorist:
 		Tick: 1600
 		ZOffset: -511
 	run:
-		Filename: terror.shp
 		Start: 56
 		Length: 6
 		Facings: 8
 		Tick: 80
 	icon:
-		Filename: terroricon.png
+		Filename: terrorist_icon.png
 
 infantry.flamethrower:
-	stand:
+	Defaults:
 		Filename: e4.shp
+	stand:
 		Facings: 8
 	stand2:
-		Filename: e4.shp
 		Start: 8
 		Facings: 8
 	run:
-		Filename: e4.shp
 		Start: 16
 		Length: 6
 		Facings: 8
 		Tick: 120
 	shoot:
-		Filename: e4.shp
 		Start: 64
 		Length: 16
 		Facings: 8
+	parachute:
+		Start: 528
 	idle1:
-		Filename: e4.shp
 		Start: 384
 		Length: 14
 		Tick: 120
 	idle2:
-		Filename: e4.shp
 		Start: 399
 		Length: 16
 		Tick: 120
 	die1:
-		Filename: e4.shp
 		Start: 416
 		Length: 8
+		Tick: 80
 	die2:
-		Filename: e4.shp
 		Start: 424
 		Length: 8
+		Tick: 80
 	die3:
-		Filename: e4.shp
 		Start: 432
 		Length: 8
+		Tick: 80
 	die4:
-		Filename: e4.shp
 		Start: 440
 		Length: 12
+		Tick: 80
 	die5:
-		Filename: e4.shp
 		Start: 452
 		Length: 18
+		Tick: 80
 	die6:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: corpse1.tem
 		TilesetFilenames:
@@ -843,76 +877,67 @@ infantry.flamethrower:
 		Tick: 1600
 		ZOffset: -511
 	prone-stand:
-		Filename: e4.shp
 		Start: 208
 		Stride: 4
 		Facings: 8
 	prone-stand2:
-		Filename: e4.shp
 		Start: 208
 		Stride: 4
 		Facings: 8
 	prone-run:
-		Filename: e4.shp
 		Start: 208
 		Length: 4
 		Facings: 8
 		Tick: 120
 	prone-shoot:
-		Filename: e4.shp
 		Start: 256
 		Length: 16
 		Facings: 8
 	icon:
-		Filename: e4icon.shp
+		Filename: flamethrower_icon.shp
 
 hack.angry_mob.male:
+	Defaults:
+		Filename: mob_male.shp
 	idle:
 		Filename: invis.shp
 		Facings: 1
 	stand:
-		Filename: mob_male.shp
 		Facings: 8
 	panic-stand:
-		Filename: mob_male.shp
 		Start: 8
 		Stride: 6
 		Facings: 8
 	panic-run:
-		Filename: mob_male.shp
 		Start: 8
 		Length: 6
 		Facings: 8
 	shoot:
-		Filename: mob_male.shp
 		Start: 120
 		Length: 4
 		Facings: 8
 	die1:
-		Filename: mob_male.shp
 		Start: 152
 		Length: 8
 	die2:
-		Filename: mob_male.shp
 		Start: 160
 		Length: 8
 	die3:
-		Filename: mob_male.shp
 		Start: 168
 		Length: 12
 	die4:
-		Filename: mob_male.shp
 		Start: 180
 		Length: 18
 	die5:
-		Filename: mob_male.shp
 		Start: 160
 		Length: 8
 	die6:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: corpse1.tem
 		TilesetFilenames:
@@ -921,7 +946,6 @@ hack.angry_mob.male:
 		Tick: 1600
 		ZOffset: -511
 	run:
-		Filename: mob_male.shp
 		Start: 56
 		Length: 6
 		Facings: 8
@@ -935,52 +959,47 @@ hack.angry_mob.male:
 		Start: 0
 		Length: 1
 	icon:
-		Filename: workicon.png
+		Filename: worker_icon.png
 
 hack.angry_mob.female:
-	stand:
+	Defaults:
 		Filename: mob_female.shp
+	stand:
 		Facings: 8
 	panic-stand:
-		Filename: mob_female.shp
 		Start: 8
 		Stride: 6
 		Facings: 8
 	panic-run:
-		Filename: mob_female.shp
 		Start: 8
 		Length: 6
 		Facings: 8
 	shoot:
-		Filename: mob_female.shp
 		Start: 120
 		Length: 4
 		Facings: 8
 	die1:
-		Filename: mob_female.shp
 		Start: 152
 		Length: 8
 	die2:
-		Filename: mob_female.shp
 		Start: 160
 		Length: 8
 	die3:
-		Filename: mob_female.shp
 		Start: 168
 		Length: 12
 	die4:
-		Filename: mob_female.shp
 		Start: 180
 		Length: 18
 	die5:
-		Filename: mob_female.shp
 		Start: 160
 		Length: 8
 	die6:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: corpse1.tem
 		TilesetFilenames:
@@ -989,156 +1008,73 @@ hack.angry_mob.female:
 		Tick: 1600
 		ZOffset: -511
 	run:
-		Filename: mob_female.shp
 		Start: 56
 		Length: 6
 		Facings: 8
 		Tick: 80
 
 hack.angry_mob.molotov:
-	stand:
-		Filename: e2.shp
-		Facings: 8
-	stand2:
-		Filename: e2.shp
-		Start: 8
-		Facings: 8
-	run:
-		Filename: e2.shp
-		Start: 16
-		Length: 6
-		Facings: 8
-		Tick: 80
-	throw:
-		Filename: e2.shp
-		Start: 64
-		Length: 20
-		Facings: 8
-	idle1:
-		Filename: e2.shp
-		Start: 384
-		Length: 14
-		Tick: 120
-	idle2:
-		Filename: e2.shp
-		Start: 399
-		Length: 16
-		Tick: 120
-	die1:
-		Filename: e2.shp
-		Start: 416
-		Length: 8
-	die2:
-		Filename: e2.shp
-		Start: 424
-		Length: 8
-	die3:
-		Filename: e2.shp
-		Start: 432
-		Length: 8
-	die4:
-		Filename: e2.shp
-		Start: 440
-		Length: 12
-	die5:
-		Filename: e2.shp
-		Start: 452
-		Length: 18
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Length: *
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
-	prone-stand:
-		Filename: e2.shp
-		Start: 240
-		Stride: 4
-		Facings: 8
-	prone-stand2:
-		Filename: e2.shp
-		Start: 240
-		Stride: 4
-		Facings: 8
-	prone-run:
-		Filename: e2.shp
-		Start: 240
-		Length: 4
-		Facings: 8
-		Tick: 80
-	prone-throw:
-		Filename: e2.shp
-		Start: 288
-		Length: 12
-		Facings: 8
+	Inherits: infantry.grenadier
 
 infantry.angry_mob:
 	idle:
 		Filename: invis.shp
 	icon:
-		Filename: amobicon.png
+		Filename: angry_mob_icon.png
 
 infantry.hacker:
-	stand:
+	Defaults:
 		Filename: mech.shp
+	stand:
 		Facings: 8
 	run:
-		Filename: mech.shp
 		Start: 8
 		Length: 6
 		Facings: 8
 		Tick: 100
 	hack:
-		Filename: mech.shp
 		Start: 56
 		Length: 58
 		Tick: 120
 	standup:
-		Filename: mech.shp
 		Start: 114
 		Length: 2
 		Facings: 8
 	idle1:
-		Filename: mech.shp
 		Start: 163
 		Length: 14
 		Tick: 120
 	idle2:
-		Filename: mech.shp
 		Start: 178
 		Length: 14
 		Tick: 120
 	die1:
-		Filename: mech.shp
 		Start: 193
-		Length: 7
+		Length: 8
+		Tick: 80
 	die2:
-		Filename: mech.shp
 		Start: 201
 		Length: 8
+		Tick: 80
 	die3:
-		Filename: mech.shp
 		Start: 209
 		Length: 8
+		Tick: 80
 	die4:
-		Filename: mech.shp
 		Start: 217
 		Length: 12
+		Tick: 80
 	die5:
-		Filename: mech.shp
 		Start: 229
 		Length: 18
+		Tick: 80
 	die6:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: corpse1.tem
 		TilesetFilenames:
@@ -1147,59 +1083,63 @@ infantry.hacker:
 		Tick: 1600
 		ZOffset: -511
 	prone-stand:
-		Filename: mech.shp
 		Start: 130
 		Stride: 4
 		Facings: 8
 	prone-run:
-		Filename: mech.shp
 		Start: 130
 		Length: 4
 		Facings: 8
 		Tick: 100
 	icon:
-		Filename: hackericon.png
+		Filename: hacker_icon.png
 
 infantry.super_hacker:
 	Inherits: infantry.hacker
 	icon:
-		Filename: shackericon.png
+		Filename: super_hacker_icon.png
 
 infantry.hijacker:
-	stand:
+	Defaults:
 		Filename: thf.shp
+	stand:
 		Facings: 8
 	run:
-		Filename: thf.shp
 		Start: 8
 		Length: 6
 		Facings: 8
 		Tick: 100
+	idle:
+		Start: 120
+		Length: 19
+		Tick: 120
 	die1:
-		Filename: thf.shp
 		Start: 139
 		Length: 8
+		Tick: 80
 	die2:
-		Filename: thf.shp
 		Start: 147
 		Length: 8
+		Tick: 80
 	die3:
-		Filename: thf.shp
 		Start: 155
 		Length: 8
+		Tick: 80
 	die4:
-		Filename: thf.shp
 		Start: 163
 		Length: 12
+		Tick: 80
 	die5:
-		Filename: thf.shp
 		Start: 175
 		Length: 18
+		Tick: 80
 	die6:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: corpse1.tem
 		TilesetFilenames:
@@ -1208,112 +1148,93 @@ infantry.hijacker:
 		Tick: 1600
 		ZOffset: -511
 	prone-stand:
-		Filename: thf.shp
 		Start: 72
 		Stride: 4
 		Facings: 8
 	prone-run:
-		Filename: thf.shp
 		Start: 72
 		Length: 4
 		Facings: 8
 		Tick: 80
 	icon:
-		Filename: hjckricon.png
+		Filename: hijacker_icon.png
 
 infantry.colonel_burton:
-	stand:
+	Defaults:
 		Filename: rmbo.shp
+	stand:
 		Facings: 8
 	stand2:
-		Filename: rmbo.shp
 		Start: 8
 		Facings: 8
 	run:
-		Filename: rmbo.shp
 		Start: 16
 		Length: 6
 		Facings: 8
 		Tick: 100
 	shoot:
-		Filename: rmbo.shp
 		Start: 64
 		Length: 4
 		Facings: 8
 	liedown:
-		Filename: rmbo.shp
 		Start: 96
 		Length: 2
 		Facings: 8
 	standup:
-		Filename: rmbo.shp
 		Start: 144
 		Length: 2
 		Facings: 8
 	prone-stand:
-		Filename: rmbo.shp
 		Start: 112
 		Stride: 4
 		Facings: 8
 	prone-stand2:
-		Filename: rmbo.shp
 		Start: 112
 		Stride: 4
 		Facings: 8
 	prone-run:
-		Filename: rmbo.shp
 		Start: 112
 		Length: 4
 		Facings: 8
 		Tick: 100
 	prone-shoot:
-		Filename: rmbo.shp
 		Start: 160
 		Length: 4
 		Facings: 8
 	idle1:
-		Filename: rmbo.shp
 		Start: 192
 		Length: 16
 		Tick: 120
 	idle2:
-		Filename: rmbo.shp
 		Start: 208
 		Length: 16
 		Tick: 120
 	idle3:
-		Filename: rmbo.shp
 		Start: 224
 		Length: 15
 		Tick: 120
 	cheer:
-		Filename: rmbo.shp
 		Start: 396
 		Length: 3
 		Facings: 8
 		Tick: 120
 	die1:
-		Filename: rmbo.shp
 		Start: 318
 		Length: 8
 		Tick: 80
 	die2:
-		Filename: rmbo.shp
 		Start: 326
 		Length: 8
 		Tick: 80
 	die3:
-		Filename: rmbo.shp
 		Start: 334
 		Length: 8
 		Tick: 80
 	die4:
-		Filename: rmbo.shp
 		Start: 342
 		Length: 12
 		Tick: 80
 	die5:
-		Filename: rmbo.shp
 		Start: 354
 		Length: 18
 		Tick: 80
@@ -1321,7 +1242,9 @@ infantry.colonel_burton:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: e1rot.shp
 		Start: 16
@@ -1329,93 +1252,80 @@ infantry.colonel_burton:
 		Tick: 1600
 		ZOffset: -511
 	icon:
-		Filename: colbicon.png
+		Filename: colonel_burton_icon.png
 
 infantry.jarmen_kell:
-	stand:
+	Defaults:
 		Filename: kell.shp
+	stand:
 		Facings: 8
 	stand2:
-		Filename: kell.shp
 		Start: 8
 		Facings: 8
 	run:
-		Filename: kell.shp
 		Start: 16
 		Length: 6
 		Facings: 8
 		Tick: 100
 	shoot:
-		Filename: kell.shp
 		Start: 64
 		Length: 16
 		Facings: 8
 	prone-stand:
-		Filename: kell.shp
 		Start: 208
 		Stride: 4
 		Facings: 8
 	prone-stand2:
-		Filename: kell.shp
 		Start: 208
 		Stride: 4
 		Facings: 8
 	prone-run:
-		Filename: kell.shp
 		Start: 208
 		Length: 4
 		Facings: 8
 		Tick: 100
 	liedown:
-		Filename: kell.shp
 		Start: 192
 		Length: 2
 		Facings: 8
 	standup:
-		Filename: kell.shp
 		Start: 240
 		Length: 2
 		Facings: 8
 	prone-shoot:
-		Filename: kell.shp
 		Start: 256
 		Length: 16
 		Facings: 8
 	idle1:
-		Filename: kell.shp
 		Start: 384
 		Length: 14
 		Tick: 120
 	idle2:
-		Filename: kell.shp
 		Start: 399
 		Length: 16
 		Tick: 120
 	die1:
-		Filename: kell.shp
 		Start: 416
 		Length: 8
 	die2:
-		Filename: kell.shp
 		Start: 424
 		Length: 8
 	die3:
-		Filename: kell.shp
 		Start: 432
 		Length: 8
 	die4:
-		Filename: kell.shp
 		Start: 440
 		Length: 12
 	die5:
-		Filename: kell.shp
 		Start: 452
 		Length: 18
 	die6:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: corpse1.tem
 		TilesetFilenames:
@@ -1429,57 +1339,56 @@ infantry.jarmen_kell:
 		Stride: 6
 		Facings: 8
 	icon:
-		Filename: kellicon.png
+		Filename: jarmen_kell_icon.png
 
 infantry.black_lotus:
-	stand:
+	Defaults:
 		Filename: e6.shp
+	stand:
 		Facings: 8
 	stand2:
-		Filename: e6.shp
 		Start: 8
 		Facings: 8
 	run:
-		Filename: e6.shp
 		Start: 16
 		Length: 6
 		Facings: 8
 		Tick: 100
 	idle1:
-		Filename: e6.shp
 		Start: 121
 		Length: 8
 		Tick: 120
 	idle2:
-		Filename: e6.shp
 		Start: 130
 		Length: 14
 		Tick: 120
 	die1:
-		Filename: e6.shp
 		Start: 146
 		Length: 8
+		Tick: 80
 	die2:
-		Filename: e6.shp
 		Start: 154
 		Length: 8
+		Tick: 80
 	die3:
-		Filename: e6.shp
 		Start: 162
 		Length: 8
+		Tick: 80
 	die4:
-		Filename: e6.shp
 		Start: 170
 		Length: 12
+		Tick: 80
 	die5:
-		Filename: e6.shp
 		Start: 182
 		Length: 18
+		Tick: 80
 	die6:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: corpse1.tem
 		TilesetFilenames:
@@ -1488,28 +1397,104 @@ infantry.black_lotus:
 		Tick: 1600
 		ZOffset: -511
 	prone-stand:
-		Filename: e6.shp
 		Start: 82
 		Stride: 4
 		Facings: 8
 	prone-stand2:
-		Filename: e6.shp
 		Start: 82
 		Stride: 4
 		Facings: 8
 	prone-run:
-		Filename: e6.shp
 		Start: 82
 		Length: 4
 		Facings: 8
 		Tick: 100
 	icon:
-		Filename: lotusicon.png
+		Filename: black_lotus_icon.png
 
 infantry.super_lotus:
 	Inherits: infantry.black_lotus
 	icon:
-		Filename: slotusicon.png
+		Filename: super_lotus_icon.png
+
+infantry.saboteur:
+	Defaults:
+		Filename: saboteur.shp
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Facings: 8
+	run:
+		Start: 16
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 256
+		Length: 14
+		Tick: 120
+	idle2:
+		Start: 271
+		Length: 16
+		Tick: 120
+	die1:
+		Start: 288
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 296
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 304
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 312
+		Length: 12
+		Tick: 80
+	die5:
+		Start: 324
+		Length: 18
+		Tick: 80
+	die6:
+		Filename: electro.tem
+		TilesetFilenames:
+			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+		Length: *
+		Tick: 80
+	die-crushed:
+		Filename: corpse1.tem
+		TilesetFilenames:
+			SNOW: corpse1.sno
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+	prone-stand:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-stand2:
+		Start: 144
+		Stride: 4
+		Facings: 8
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 8
+		Tick: 100
+	prone-shoot:
+		Start: 192
+		Length: 8
+		Facings: 8
+	icon:
+		Filename: saboteur_icon.png
 
 medi:
 	Defaults:
@@ -1556,7 +1541,9 @@ medi:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: corpse1.tem
 		TilesetFilenames:
@@ -1575,91 +1562,6 @@ medi:
 		Tick: 100
 	icon:
 		Filename: mediicon.shp
-
-infantry.saboteur:
-	stand:
-		Filename: saboteur.shp
-		Facings: 8
-	stand2:
-		Filename: saboteur.shp
-		Start: 8
-		Facings: 8
-	run:
-		Filename: saboteur.shp
-		Start: 16
-		Length: 6
-		Facings: 8
-		Tick: 100
-	shoot:
-		Filename: saboteur.shp
-		Start: 64
-		Length: 8
-		Facings: 8
-	idle1:
-		Filename: saboteur.shp
-		Start: 256
-		Length: 14
-		Tick: 120
-	idle2:
-		Filename: saboteur.shp
-		Start: 271
-		Length: 16
-		Tick: 120
-	die1:
-		Filename: saboteur.shp
-		Start: 288
-		Length: 8
-	die2:
-		Filename: saboteur.shp
-		Start: 296
-		Length: 8
-	die3:
-		Filename: saboteur.shp
-		Start: 304
-		Length: 8
-	die4:
-		Filename: saboteur.shp
-		Start: 312
-		Length: 12
-	die5:
-		Filename: saboteur.shp
-		Start: 324
-		Length: 18
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Length: *
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
-	prone-stand:
-		Filename: saboteur.shp
-		Start: 144
-		Stride: 4
-		Facings: 8
-	prone-stand2:
-		Filename: saboteur.shp
-		Start: 144
-		Stride: 4
-		Facings: 8
-	prone-run:
-		Filename: saboteur.shp
-		Start: 144
-		Length: 4
-		Facings: 8
-		Tick: 100
-	prone-shoot:
-		Filename: saboteur.shp
-		Start: 192
-		Length: 8
-		Facings: 8
-	icon:
-		Filename: saboticon.png
 
 e7:
 	Defaults:
@@ -1702,7 +1604,9 @@ e7:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: corpse1.tem
 		TilesetFilenames:
@@ -1730,292 +1634,6 @@ e7:
 		Facings: 8
 	icon:
 		Filename: e7icon.shp
-
-infantry.toxin_rebel:
-	stand:
-		Filename: e5.shp
-		Facings: 8
-	stand-beta:
-		Filename: e5_beta.shp
-		Facings: 8
-	stand-gamma:
-		Filename: e5_gamma.shp
-		Facings: 8
-	stand2:
-		Filename: e5.shp
-		Start: 8
-		Facings: 8
-	stand2-beta:
-		Filename: e5_beta.shp
-		Start: 8
-		Facings: 8
-	stand2-gamma:
-		Filename: e5_gamma.shp
-		Start: 8
-		Facings: 8
-	run:
-		Filename: e5.shp
-		Start: 16
-		Length: 6
-		Facings: 8
-		Tick: 100
-	run-beta:
-		Filename: e5_beta.shp
-		Start: 16
-		Length: 6
-		Facings: 8
-		Tick: 100
-	run-gamma:
-		Filename: e5_gamma.shp
-		Start: 16
-		Length: 6
-		Facings: 8
-		Tick: 100
-	shoot:
-		Filename: e5.shp
-		Start: 64
-		Length: 16
-		Facings: 8
-	shoot-beta:
-		Filename: e5_beta.shp
-		Start: 64
-		Length: 16
-		Facings: 8
-	shoot-gamma:
-		Filename: e5_gamma.shp
-		Start: 64
-		Length: 16
-		Facings: 8
-	liedown:
-		Filename: e5.shp
-		Start: 192
-		Length: 2
-		Facings: 8
-	liedown-beta:
-		Filename: e5_beta.shp
-		Start: 192
-		Length: 2
-		Facings: 8
-	liedown-gamma:
-		Filename: e5_gamma.shp
-		Start: 192
-		Length: 2
-		Facings: 8
-	standup:
-		Filename: e5.shp
-		Start: 240
-		Length: 2
-		Facings: 8
-	standup-beta:
-		Filename: e5_beta.shp
-		Start: 240
-		Length: 2
-		Facings: 8
-	standup-gamma:
-		Filename: e5_gamma.shp
-		Start: 240
-		Length: 2
-		Facings: 8
-	prone-stand:
-		Filename: e5.shp
-		Start: 208
-		Stride: 4
-		Facings: 8
-	prone-stand-beta:
-		Filename: e5_beta.shp
-		Start: 208
-		Stride: 4
-		Facings: 8
-	prone-stand-gamma:
-		Filename: e5_gamma.shp
-		Start: 208
-		Stride: 4
-		Facings: 8
-	prone-stand2:
-		Filename: e5.shp
-		Start: 208
-		Stride: 4
-		Facings: 8
-	prone-stand2-beta:
-		Filename: e5_beta.shp
-		Start: 208
-		Stride: 4
-		Facings: 8
-	prone-stand2-gamma:
-		Filename: e5_gamma.shp
-		Start: 208
-		Stride: 4
-		Facings: 8
-	prone-run:
-		Filename: e5.shp
-		Start: 208
-		Length: 4
-		Facings: 8
-		Tick: 100
-	prone-run-beta:
-		Filename: e5_beta.shp
-		Start: 208
-		Length: 4
-		Facings: 8
-		Tick: 100
-	prone-run-gamma:
-		Filename: e5_gamma.shp
-		Start: 208
-		Length: 4
-		Facings: 8
-		Tick: 100
-	prone-shoot:
-		Filename: e5.shp
-		Start: 256
-		Length: 16
-		Facings: 8
-	prone-shoot-beta:
-		Filename: e5_beta.shp
-		Start: 256
-		Length: 16
-		Facings: 8
-	prone-shoot-gamma:
-		Filename: e5_gamma.shp
-		Start: 256
-		Length: 16
-		Facings: 8
-	idle1:
-		Filename: e5.shp
-		Start: 384
-		Length: 16
-		Tick: 120
-	idle1-beta:
-		Filename: e5_beta.shp
-		Start: 384
-		Length: 16
-		Tick: 120
-	idle1-gamma:
-		Filename: e5_gamma.shp
-		Start: 384
-		Length: 16
-		Tick: 120
-	idle2:
-		Filename: e5.shp
-		Start: 400
-		Length: 16
-		Tick: 120
-	idle2-beta:
-		Filename: e5_beta.shp
-		Start: 400
-		Length: 16
-		Tick: 120
-	idle2-gamma:
-		Filename: e5_gamma.shp
-		Start: 400
-		Length: 16
-		Tick: 120
-	cheer:
-		Filename: e5.shp
-		Start: 588
-		Length: 3
-		Facings: 8
-		Tick: 120
-	cheer-beta:
-		Filename: e5_beta.shp
-		Start: 588
-		Length: 3
-		Facings: 8
-		Tick: 120
-	cheer-gamma:
-		Filename: e5_gamma.shp
-		Start: 588
-		Length: 3
-		Facings: 8
-		Tick: 120
-	die1:
-		Filename: e5.shp
-		Start: 509
-		Length: 9
-		Tick: 80
-	die-beta1:
-		Filename: e5_beta.shp
-		Start: 509
-		Length: 9
-		Tick: 80
-	die-gamma1:
-		Filename: e5_gamma.shp
-		Start: 509
-		Length: 9
-		Tick: 80
-	die2:
-		Filename: e5.shp
-		Start: 518
-		Length: 8
-		Tick: 80
-	die-beta2:
-		Filename: e5_beta.shp
-		Start: 518
-		Length: 8
-		Tick: 80
-	die-gamma2:
-		Filename: e5_gamma.shp
-		Start: 518
-		Length: 8
-		Tick: 80
-	die3:
-		Filename: e5.shp
-		Start: 526
-		Length: 8
-		Tick: 80
-	die-beta3:
-		Filename: e5_beta.shp
-		Start: 526
-		Length: 8
-		Tick: 80
-	die-gamma3:
-		Filename: e5_gamma.shp
-		Start: 526
-		Length: 8
-		Tick: 80
-	die4:
-		Filename: e5.shp
-		Start: 534
-		Length: 12
-		Tick: 80
-	die-beta4:
-		Filename: e5_beta.shp
-		Start: 534
-		Length: 12
-		Tick: 80
-	die-gamma4:
-		Filename: e5_gamma.shp
-		Start: 534
-		Length: 12
-		Tick: 80
-	die5:
-		Filename: e5.shp
-		Start: 546
-		Length: 18
-		Tick: 80
-	die-beta5:
-		Filename: e5_beta.shp
-		Start: 546
-		Length: 18
-		Tick: 80
-	die-gamma5:
-		Filename: e5_gamma.shp
-		Start: 546
-		Length: 18
-		Tick: 80
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Length: *
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
-	icon:
-		Filename: trebelicon.png
 
 shok:
 	Defaults:
@@ -2086,7 +1704,9 @@ shok:
 		Filename: electro.tem
 		TilesetFilenames:
 			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		Length: *
+		Tick: 80
 	die-crushed:
 		Filename: corpse1.tem
 		TilesetFilenames:

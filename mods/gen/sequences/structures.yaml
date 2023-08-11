@@ -39,7 +39,7 @@ building.usa_command_center:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: usfacticon.png
+		Filename: usa_command_center_icon.png
 
 building.gla_command_center:
 	Defaults:
@@ -77,9 +77,9 @@ building.gla_command_center:
 	active:
 		Filename: invis.shp
 	icon:
-		Filename: commicon.png
+		Filename: gla_command_center_icon.png
 	fake-icon:
-		Filename: fakecommicon.png
+		Filename: fake_command_center_icon.png
 
 building.prc_command_center:
 	Inherits: building.gla_command_center
@@ -93,7 +93,7 @@ building.prc_command_center:
 		Start: 16
 		Offset: 19, -20
 	icon:
-		Filename: facticon.png
+		Filename: prc_command_center_icon.png
 
 building.cold_fusion_reactor:
 	Defaults:
@@ -123,12 +123,12 @@ building.cold_fusion_reactor:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: powricon.png
+		Filename: cold_fusion_reactor_icon.png
 
 building.advanced_cold_fusion_reactor:
 	Inherits: building.cold_fusion_reactor
 	icon:
-		Filename: advpowricon.png
+		Filename: advanced_cold_fusion_reactor_icon.png
 
 building.nuclear_reactor:
 	Defaults:
@@ -163,7 +163,7 @@ building.nuclear_reactor:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: nkpwricon.png
+		Filename: nuclear_reactor_icon.png
 
 building.advanced_nuclear_reactor:
 	Defaults:
@@ -198,7 +198,7 @@ building.advanced_nuclear_reactor:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: advnukeicon.png
+		Filename: advanced_nuclear_reactor_icon.png
 
 building.usa_barracks:
 	Defaults:
@@ -233,7 +233,7 @@ building.usa_barracks:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: pyleicon.png
+		Filename: usa_barracks_icon.png
 
 building.gla_barracks:
 	idle:
@@ -302,9 +302,9 @@ building.gla_barracks:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: tenticon.png
+		Filename: gla_barracks_icon.png
 	fake-icon:
-		Filename: faketenticon.png
+		Filename: fake_barracks_icon.png
 
 building.prc_barracks:
 	Defaults:
@@ -336,7 +336,7 @@ building.prc_barracks:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: craxicon.png
+		Filename: prc_barracks_icon.png
 
 building.mine:
 	idle:
@@ -346,7 +346,7 @@ building.mine:
 		Filename: minn.shp
 		ZOffset: -512
 	icon:
-		Filename: lminicon.png
+		Filename: land_mine_icon.png
 
 building.usa_supply_center:
 	Defaults:
@@ -394,7 +394,7 @@ building.usa_supply_center:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: usprocicon.png
+		Filename: usa_supply_center_icon.png
 
 building.gla_supply_stash:
 	Defaults:
@@ -431,9 +431,9 @@ building.gla_supply_stash:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: siloicon.png
+		Filename: gla_supply_stash_icon.png
 	fake-icon:
-		Filename: fakesiloicon.png
+		Filename: fake_supply_stash_icon.png
 
 building.prc_supply_center:
 	Defaults:
@@ -471,7 +471,7 @@ building.prc_supply_center:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: procicon.png
+		Filename: prc_supply_center_icon.png
 
 building.patriot:
 	Defaults:
@@ -510,12 +510,12 @@ building.patriot:
 		Filename: mbSAM.des
 		Length: *
 	icon:
-		Filename: samicon.png
+		Filename: patriot_icon.png
 
 building.emp_patriot:
 	Inherits: building.patriot
 	icon:
-		Filename: empsamicon.png
+		Filename: emp_patriot_icon.png
 
 building.laser_turret:
 	Defaults:
@@ -557,25 +557,25 @@ building.laser_turret:
 		Filename: mbGUN.des
 		Length: *
 	icon:
-		Filename: lturicon.png
+		Filename: laser_turret_icon.png
 
 building.demo_trap:
 	idle:
 		Filename: demo_trap.shp
 		Offset: 2, 0
 	icon:
-		Filename: demoicon.png
+		Filename: demo_trap_icon.png
 	fake-icon:
-		Filename: fakedemoicon.png
+		Filename: fake_demo_trap_icon.png
 
 building.advanced_demo_trap:
 	idle:
 		Filename: advanced_demo_trap.shp
 		Offset: 2, 0
 	icon:
-		Filename: ademoicon.png
+		Filename: advanced_demo_trap_icon.png
 	fake-icon:
-		Filename: fakeademoicon.png
+		Filename: fake_advanced_demo_trap_icon.png
 
 building.gatling_cannon:
 	Defaults:
@@ -623,7 +623,7 @@ building.gatling_cannon:
 		Filename: mbAGUN.des
 		Length: *
 	icon:
-		Filename: gatcanicon.png
+		Filename: gatling_cannon_icon.png
 
 building.firebase:
 	Defaults:
@@ -674,7 +674,7 @@ building.firebase:
 		Filename: gunfire2.shp
 		Length: *
 	icon:
-		Filename: fbaseicon.png
+		Filename: firebase_icon.png
 
 building.bunker:
 	Defaults:
@@ -714,12 +714,12 @@ building.bunker:
 		Length: *
 		Offset: 0,-2
 	icon:
-		Filename: bunkericon.png
+		Filename: bunker_icon.png
 
 building.fortified_bunker:
 	Inherits: building.bunker
 	icon:
-		Filename: fortbicon.png
+		Filename: fortified_bunker_icon.png
 
 building.usa_war_factory:
 	Defaults:
@@ -770,7 +770,7 @@ building.usa_war_factory:
 		Length: *
 		Offset: 0,0
 	icon:
-		Filename: usweapicon.png
+		Filename: usa_war_factory_icon.png
 		Offset: 0,0
 
 building.arms_dealer:
@@ -808,14 +808,14 @@ building.arms_dealer:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: dealicon.png
+		Filename: arms_dealer_icon.png
 	fake-icon:
-		Filename: fakedealicon.png
+		Filename: fake_arms_dealer_icon.png
 
 building.prc_war_factory:
 	Inherits: building.arms_dealer
 	icon:
-		Filename: weapicon.png
+		Filename: prc_war_factory_icon.png
 
 building.tunnel_network:
 	idle:
@@ -854,18 +854,18 @@ building.tunnel_network:
 		Filename: gunfire2.shp
 		Length: 5
 	icon:
-		Filename: tunnelicon.png
+		Filename: tunnel_network_icon.png
 	fake-icon:
-		Filename: faketunnelicon.png
+		Filename: fake_tunnel_network_icon.png
 	sneak-icon:
-		Filename: snkticon.png
+		Filename: tunnel_network_sneak_attack_icon.png
 
 building.toxin_tunnel_network:
 	Inherits: building.tunnel_network
 	icon:
-		Filename: txtunnelicon.png
+		Filename: toxin_tunnel_network_icon.png
 	fake-icon:
-		Filename: faketxtunnelicon.png
+		Filename: fake_toxin_tunnel_network_icon.png
 
 building.stinger_site:
 	Defaults:
@@ -899,11 +899,11 @@ building.stinger_site:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: stngricon.png
+		Filename: stinger_site_icon.png
 	fake-icon:
-		Filename: fakestngricon.png
+		Filename: fake_stinger_site_icon.png
 	hole-icon:
-		Filename: holeicon.png
+		Filename: gla_hole_icon.png
 
 building.usa_airfield:
 	Defaults:
@@ -950,7 +950,7 @@ building.usa_airfield:
 		Tick: 80
 		Offset: 0,8
 	icon:
-		Filename: usafldicon.png
+		Filename: usa_airfield_icon.png
 
 building.prc_airfield:
 	Defaults:
@@ -986,7 +986,7 @@ building.prc_airfield:
 		Length: *
 		Offset: 0,-4
 	icon:
-		Filename: afldicon.png
+		Filename: prc_airfield_icon.png
 
 building.strategy_center:
 	Defaults:
@@ -1046,7 +1046,7 @@ building.strategy_center:
 		Length: *
 		Offset: 0,0
 	icon:
-		Filename: straicon.png
+		Filename: strategy_center_icon.png
 		Offset: 0,0
 
 building.palace:
@@ -1089,10 +1089,10 @@ building.palace:
 		Length: *
 		Offset: 0,0
 	icon:
-		Filename: palaceicon.png
+		Filename: palace_icon.png
 		Offset: 0,0
 	fake-icon:
-		Filename: fakepalaceicon.png
+		Filename: fake_palace_icon.png
 		Offset: 0,0
 
 building.propaganda_center:
@@ -1120,7 +1120,7 @@ building.propaganda_center:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: stekicon.png
+		Filename: propaganda_center_icon.png
 
 building.detention_camp:
 	Defaults:
@@ -1150,7 +1150,7 @@ building.detention_camp:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: deteicon.png
+		Filename: detention_camp_icon.png
 
 building.supply_drop_zone:
 	Defaults:
@@ -1183,7 +1183,7 @@ building.supply_drop_zone:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: sdropicon.png
+		Filename: supply_drop_zone_icon.png
 
 building.black_market:
 	Defaults:
@@ -1213,9 +1213,9 @@ building.black_market:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: bmrkticon.png
+		Filename: black_market_icon.png
 	fake-icon:
-		Filename: fakebmrkticon.png
+		Filename: fake_black_market_icon.png
 
 building.internet_center:
 	Defaults:
@@ -1250,7 +1250,7 @@ building.internet_center:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: intericon.png
+		Filename: internet_center_icon.png
 
 building.speaker_tower:
 	Defaults:
@@ -1282,7 +1282,7 @@ building.speaker_tower:
 		Filename: mbGAP.des
 		Length: *
 	icon:
-		Filename: speakicon.png
+		Filename: speaker_tower_icon.png
 
 building.particle_cannon:
 	Defaults:
@@ -1317,12 +1317,12 @@ building.particle_cannon:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: pcanicon.png
+		Filename: particle_cannon_icon.png
 
 building.particle_cannon.super:
 	Inherits: building.particle_cannon
 	icon:
-		Filename: pcansupericon.png
+		Filename: particle_cannon_super_icon.png
 
 building.scud_storm:
 	idle:
@@ -1352,9 +1352,9 @@ building.scud_storm:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: scudsicon.png
+		Filename: scud_storm_icon.png
 	fake-icon:
-		Filename: fakescudsicon.png
+		Filename: fake_scud_storm_icon.png
 
 building.missile_silo:
 	idle:
@@ -1440,7 +1440,7 @@ building.missile_silo:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: nukeicon.png
+		Filename: missile_silo_icon.png
 
 hole.supply_stash:
 	idle:
@@ -1461,7 +1461,7 @@ hole.supply_stash:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: holeicon.png
+		Filename: gla_hole_icon.png
 
 hole.2x2:
 	idle:
@@ -1482,7 +1482,7 @@ hole.2x2:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: holeicon.png
+		Filename: gla_hole_icon.png
 
 hole.3x2:
 	idle:
@@ -1503,7 +1503,7 @@ hole.3x2:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: holeicon.png
+		Filename: gla_hole_icon.png
 
 hole.3x3:
 	idle:
@@ -1524,7 +1524,7 @@ hole.3x3:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: holeicon.png
+		Filename: gla_hole_icon.png
 
 kenn:
 	Defaults:
