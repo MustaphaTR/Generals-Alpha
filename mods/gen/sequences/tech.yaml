@@ -3,12 +3,10 @@ tech.oil_derrick:
 		Filename: oilb.shp
 		Offset: 0,-6
 	idle:
-		Filename: oilb.shp
 	damaged-idle:
 		Start: 1
 		Length: *
 	make:
-		Filename: oilb.shp
 	bib:
 		Filename: bib3.tem
 		Length: *
@@ -29,13 +27,11 @@ tech.oil_derrick:
 		Offset: 0,0
 
 tech.oil_refinery:
-	idle:
-		Filename: oil.shp
+	Defaults:
+		Filename: oil_refinery.shp
 	damaged-idle:
-		Filename: oil.shp
 		Start: 1
 	dead:
-		Filename: oil.shp
 		Start: 2
 		Tick: 800
 	make:
@@ -45,15 +41,14 @@ tech.oil_refinery:
 		Filename: oreficon.png
 
 tech.hospital:
-	idle:
+	Defaults:
 		Filename: hosp.shp
+	idle:
 		Length: 4
 	damaged-idle:
-		Filename: hosp.shp
 		Start: 4
 		Length: 4
 	dead:
-		Filename: hosp.shp
 		Start: 8
 		Tick: 800
 	make:
@@ -83,11 +78,11 @@ tech.hospital:
 		Filename: hospicon.png
 
 tech.communications_center:
-	idle:
+	Defaults:
 		Filename: dome.shp
+	idle:
 		Offset: 0,-4
 	damaged-idle:
-		Filename: dome.shp
 		Start: 1
 		Offset: 0,-4
 	make:
@@ -113,10 +108,10 @@ tech.communications_center:
 		Filename: domeicon.shp
 
 tech.soviet_barracks:
+	Defaults:
+		Filename: fcom.shp
 	idle:
-		Filename: fcom.shp
 	damaged-idle:
-		Filename: fcom.shp
 		Start: 1
 	make:
 		Filename: fcommake.shp
@@ -140,11 +135,11 @@ tech.soviet_barracks:
 		Filename: barricon.shp
 
 tech.flame_tower:
-	idle:
+	Defaults:
 		Filename: ftur.shp
+	idle:
 		Offset: 0,-2
 	damaged-idle:
-		Filename: ftur.shp
 		Start: 1
 		Offset: 0,-2
 	make:
@@ -170,15 +165,15 @@ tech.flame_tower:
 		Filename: fturicon.shp
 
 tech.power_plant:
+	Defaults:
+		Filename: power_plant.shp
 	idle:
-		Filename: apwr.shp
 		Offset: 0,-10
 	damaged-idle:
-		Filename: apwr.shp
 		Start: 1
 		Offset: 0,-10
 	make:
-		Filename: apwrmake.shp
+		Filename: power_plant_make.shp
 		Length: *
 		Offset: 0,-10
 	bib:
@@ -200,18 +195,18 @@ tech.power_plant:
 		Filename: apwricon.shp
 
 tech.repair_bay:
+	Defaults:
+		Filename: repair_bay.shp
 	idle:
-		Filename: rbay.shp
 		Offset: 0, -6
 	idle-roof:
-		Filename: rbay2.shp
+		Filename: repair_bay_shadow.shp
 		Offset: 0, -6
 	damaged-idle:
-		Filename: rbay.shp
 		Start: 1
 		Offset: 0, -6
 	damaged-roof:
-		Filename: rbay2.shp
+		Filename: repair_bay_shadow.shp
 		Start: 1
 		Offset: 0, -6
 	bib:
@@ -233,24 +228,22 @@ tech.repair_bay:
 		Filename: rbayicon.png
 
 tech.reinforcements_pad:
+	Defaults:
+		Filename: reinforcements_pad.shp
 	idle:
-		Filename: tdfix.shp
 		ZOffset: -1c511
 	damaged-idle:
-		Filename: tdfix.shp
 		Start: 7
 		ZOffset: -1c511
 	active:
-		Filename: tdfix.shp
 		Length: 7
 		ZOffset: -1c511
 	damaged-active:
-		Filename: tdfix.shp
 		Start: 7
 		Length: 7
 		ZOffset: -1c511
 	make:
-		Filename: tdfixmake.shp
+		Filename: reinforcements_pad_make.shp
 		Length: 14
 		Tick: 60
 	bib:
@@ -282,10 +275,10 @@ tech.reinforcements_pad:
 		Filename: reinicon.png
 
 tech.shipyard:
+	Defaults:
+		Filename: syrd.shp
 	idle:
-		Filename: syrd.shp
 	damaged-idle:
-		Filename: syrd.shp
 		Start: 1
 	make:
 		Filename: syrdmake.shp
@@ -296,13 +289,12 @@ tech.shipyard:
 		Filename: syrficon.shp
 
 tech.nuclear_bunker:
+	Defaults:
+		Filename: bio.shp
 	idle:
-		Filename: bio.shp
 	damaged-idle:
-		Filename: bio.shp
 		Start: 1
 	dead:
-		Filename: bio.shp
 		Start: 2
 		Tick: 800
 	make:

@@ -1495,20 +1495,9 @@ building.gla_supply_stash:
 		ExitCell: 1,1
 	SupplyCenter:
 		DeliveryOffsets: 1,1
-	-WithMakeAnimation:
-	WithMakeAnimation@RA_SILO:
-		Sequence: make
-		BodyNames: rasilo
-		Condition: build-incomplete
-	WithMakeAnimation@TD_SILO:
-		Sequence: make2
-		BodyNames: tdsilo
-		Condition: build-incomplete
-	WithSpriteBody:
-		Name: rasilo
-	WithSpriteBody@TD_SILO:
-		Sequence: idle2
-		Name: tdsilo
+	WithIdleOverlay@RA_SILO:
+		Sequence: idle-ra
+		RequiresCondition: !build-incomplete
 	-WithDeathAnimation:
 	FreeActor:
 		Actor: infantry.worker
@@ -2064,42 +2053,20 @@ building.firebase:
 		TurnSpeed: 12
 		InitialFacing: 896
 		RealignDelay: -1
-	-WithMakeAnimation:
-	WithMakeAnimation@A:
-		Sequence: make-a
-		BodyNames: A
-		Condition: build-incomplete
-	WithMakeAnimation@B:
-		Sequence: make-b
-		BodyNames: B
-		Condition: build-incomplete
-	WithMakeAnimation@C:
-		Sequence: make-c
-		BodyNames: C
-		Condition: build-incomplete
-	WithMakeAnimation@D:
-		Sequence: make-d
-		BodyNames: D
-		Condition: build-incomplete
-	WithMakeAnimation@Turret:
-		Sequence: make-turret
-		BodyNames: turret
-		Condition: build-incomplete
-	WithSpriteBody:
-		Sequence: idle-a
-		Name: A
-	WithSpriteBody@B:
-		Sequence: idle-b
-		Name: B
-	WithSpriteBody@C:
-		Sequence: idle-c
-		Name: C
-	WithSpriteBody@D:
-		Sequence: idle-d
-		Name: D
+	-WithSpriteBody:
 	WithEmbeddedTurretSpriteBody:
-		Sequence: idle-turret
-		Name: turret
+	WithIdleOverlay@A:
+		Sequence: idle-a
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@B:
+		Sequence: idle-b
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@C:
+		Sequence: idle-c
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@D:
+		Sequence: idle-d
+		RequiresCondition: !build-incomplete
 	-QuantizeFacingsFromSequence:
 	BodyOrientation:
 		QuantizedFacings: 8

@@ -1,29 +1,26 @@
 building.usa_command_center:
+	Defaults:
+		Filename: usa_command_center.shp
 	build:
-		Filename: usfact.shp
 		Start: 4
 		Length: 20
 		Tick: 100
 	idle:
-		Filename: usfact.shp
 		Length: 4
 		Tick: 100
 	damaged-idle:
-		Filename: usfact.shp
 		Start: 24
 		Length: 4
 		Tick: 100
 	damaged-build:
-		Filename: usfact.shp
 		Start: 28
 		Length: 20
 		Tick: 100
 	dead:
-		Filename: usfact.shp
 		Start: 48
 		Tick: 800
 	make:
-		Filename: usfactmake.shp
+		Filename: usa_command_center_make.shp
 		Length: *
 		Tick: 80
 	bib:
@@ -45,20 +42,18 @@ building.usa_command_center:
 		Filename: usfacticon.png
 
 building.gla_command_center:
-	idle:
+	Defaults:
 		Filename: fact.shp
+	idle:
 	make:
 		Filename: factmake.shp
 		Length: *
 	build:
-		Filename: fact.shp
 		Start: 1
 		Length: 25
 	damaged-idle:
-		Filename: fact.shp
 		Start: 26
 	damaged-build:
-		Filename: fact.shp
 		Start: 27
 		Length: 25
 	dead:
@@ -87,59 +82,24 @@ building.gla_command_center:
 		Filename: fakecommicon.png
 
 building.prc_command_center:
-	idle:
-		Filename: fact.shp
-	make:
-		Filename: factmake.shp
-		Length: *
-	build:
-		Filename: fact.shp
-		Start: 1
-		Length: 25
-	damaged-idle:
-		Filename: fact.shp
-		Start: 26
-	damaged-build:
-		Filename: fact.shp
-		Start: 27
-		Length: 25
+	Inherits: building.gla_command_center
 	radar:
-		Filename: prcradar.shp
+		Filename: prc_radar.shp
 		Length: 16
 		Tick: 100
 		Offset: 19, -20
 	damaged-radar:
-		Filename: prcradar.shp
+		Filename: prc_radar.shp
 		Start: 16
 		Offset: 19, -20
-	dead:
-		Filename: factdead.shp
-		Tick: 800
-	bib:
-		Filename: bib2.tem
-		Length: *
-	bib-Snow:
-		Filename: bib2.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: bib2.sno
-		Length: *
-	bib-Sand:
-		Filename: bib2.des
-		Length: *
-	bib-SandRoad:
-		Filename: bib2.des
-		Length: *
-	active:
-		Filename: invis.shp
 	icon:
 		Filename: facticon.png
 
 building.cold_fusion_reactor:
+	Defaults:
+		Filename: powr.shp
 	idle:
-		Filename: powr.shp
 	damaged-idle:
-		Filename: powr.shp
 		Start: 1
 	make:
 		Filename: powrmake.shp
@@ -166,51 +126,25 @@ building.cold_fusion_reactor:
 		Filename: powricon.png
 
 building.advanced_cold_fusion_reactor:
-	idle:
-		Filename: powr.shp
-	damaged-idle:
-		Filename: powr.shp
-		Start: 1
-	make:
-		Filename: powrmake.shp
-		Length: *
-	dead:
-		Filename: powrdead.shp
-		Tick: 800
-	bib:
-		Filename: bib3.tem
-		Length: *
-	bib-Snow:
-		Filename: bib3.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: bib3.sno
-		Length: *
-	bib-Sand:
-		Filename: bib3.des
-		Length: *
-	bib-SandRoad:
-		Filename: bib3.des
-		Length: *
+	Inherits: building.cold_fusion_reactor
 	icon:
 		Filename: advpowricon.png
 
 building.nuclear_reactor:
+	Defaults:
+		Filename: nuclear_reactor.shp
 	idle:
-		Filename: nuke.shp
 		Length: 4
 		Tick: 1000
 	damaged-idle:
-		Filename: nuke.shp
 		Start: 4
 		Length: 4
 		Tick: 1000
 	dead:
-		Filename: nuke.shp
 		Start: 8
 		Tick: 800
 	make:
-		Filename: nukemake.shp
+		Filename: nuclear_reactor_make.shp
 		Length: *
 		Tick: 80
 	bib:
@@ -232,21 +166,20 @@ building.nuclear_reactor:
 		Filename: nkpwricon.png
 
 building.advanced_nuclear_reactor:
+	Defaults:
+		Filename: advanced_nuclear_reactor.shp
 	idle:
-		Filename: nuk2.shp
 		Length: 4
 		Tick: 1000
 	damaged-idle:
-		Filename: nuk2.shp
 		Start: 4
 		Length: 4
 		Tick: 1000
 	dead:
-		Filename: nuk2.shp
 		Start: 8
 		Tick: 800
 	make:
-		Filename: nuk2make.shp
+		Filename: advanced_nuclear_reactor_make.shp
 		Length: *
 		Tick: 80
 	bib:
@@ -268,21 +201,20 @@ building.advanced_nuclear_reactor:
 		Filename: advnukeicon.png
 
 building.usa_barracks:
+	Defaults:
+		Filename: usa_barracks.shp
 	idle:
-		Filename: pyle.shp
 		Length: 10
 		Tick: 100
 	damaged-idle:
-		Filename: pyle.shp
 		Start: 10
 		Length: 10
 		Tick: 100
 	dead:
-		Filename: pyle.shp
 		Start: 20
 		Tick: 800
 	make:
-		Filename: pylemake.shp
+		Filename: usa_barracks_make.shp
 		Length: *
 		Tick: 80
 	bib:
@@ -375,12 +307,12 @@ building.gla_barracks:
 		Filename: faketenticon.png
 
 building.prc_barracks:
-	idle:
+	Defaults:
 		Filename: barr.shp
+	idle:
 		Length: 10
 		Offset: 0,-6
 	damaged-idle:
-		Filename: barr.shp
 		Start: 10
 		Length: 10
 		Offset: 0,-6
@@ -417,33 +349,32 @@ building.mine:
 		Filename: lminicon.png
 
 building.usa_supply_center:
+	Defaults:
+		Filename: usa_supply_center.shp
 	idle:
-		Filename: usproc.shp
 		Length: 6
 		Tick: 120
 		Offset: 2,4
 	damaged-idle:
-		Filename: usproc.shp
 		Start: 30
 		Length: 6
 		Tick: 120
 		Offset: 2,4
 	dead:
-		Filename: usproc.shp
 		Start: 60
 		Tick: 800
 		Offset: 2,4
 	make:
-		Filename: usprocmake.shp
+		Filename: usa_supply_center_make.shp
 		Length: *
 		Tick: 80
 		Offset: 2,4
 	resources:
-		Filename: usproctwr.shp
+		Filename: usa_supply_center_tower.shp
 		Length: 6
 		Offset: -30,-17
 	damaged-resources:
-		Filename: usproctwr.shp
+		Filename: usa_supply_center_tower.shp
 		Start: 6
 		Length: 6
 		Offset: -30,-17
@@ -466,28 +397,24 @@ building.usa_supply_center:
 		Filename: usprocicon.png
 
 building.gla_supply_stash:
+	Defaults:
+		Filename: supply_stash.shp
 	idle:
+		Offset: 0,-1
+	damaged-idle:
+		Start: 5
+		Offset: 0,-1
+	idle-ra:
 		Filename: silo2.shp
 		Offset: -12,23
-	damaged-idle:
+	damaged-idle-ra:
 		Filename: silo2.shp
 		Start: 9
 		Offset: -12,23
-	idle2:
-		Filename: tdsilo.shp
-		Offset: 0,-1
-	damaged-idle2:
-		Filename: tdsilo.shp
-		Start: 5
-		Offset: 0,-1
 	make:
-		Filename: silomake.shp
+		Filename: supply_stash_make.shp
 		Length: *
-		Offset: -12,23
-	make2:
-		Filename: tdsilomake.shp
-		Length: *
-		Offset: 0,-1
+		Offset: 0,11
 	bib:
 		Filename: bib3.tem
 		Length: *
@@ -509,11 +436,11 @@ building.gla_supply_stash:
 		Filename: fakesiloicon.png
 
 building.prc_supply_center:
-	idle:
+	Defaults:
 		Filename: proc.shp
+	idle:
 		ZOffset: -1c511
 	damaged-idle:
-		Filename: proc.shp
 		ZOffset: -1c511
 	idle-top:
 		Filename: proctop.shp
@@ -547,13 +474,13 @@ building.prc_supply_center:
 		Filename: procicon.png
 
 building.patriot:
-	idle:
+	Defaults:
 		Filename: sam2.shp
+	idle:
 		Facings: 32
 		UseClassicFacings: True
 		Offset: -2,-2
 	damaged-idle:
-		Filename: sam2.shp
 		Start: 34
 		Facings: 32
 		UseClassicFacings: True
@@ -591,12 +518,12 @@ building.emp_patriot:
 		Filename: empsamicon.png
 
 building.laser_turret:
-	idle:
+	Defaults:
 		Filename: gun.shp
+	idle:
 		Facings: 32
 		UseClassicFacings: True
 	recoil:
-		Filename: gun.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
@@ -604,12 +531,10 @@ building.laser_turret:
 		Filename: gunmake.shp
 		Length: *
 	damaged-idle:
-		Filename: gun.shp
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True
 	damaged-recoil:
-		Filename: gun.shp
 		Start: 96
 		Facings: 32
 		UseClassicFacings: True
@@ -636,7 +561,7 @@ building.laser_turret:
 
 building.demo_trap:
 	idle:
-		Filename: dmtrp.shp
+		Filename: demo_trap.shp
 		Offset: 2, 0
 	icon:
 		Filename: demoicon.png
@@ -645,7 +570,7 @@ building.demo_trap:
 
 building.advanced_demo_trap:
 	idle:
-		Filename: dmtrp_adv.shp
+		Filename: advanced_demo_trap.shp
 		Offset: 2, 0
 	icon:
 		Filename: ademoicon.png
@@ -653,13 +578,13 @@ building.advanced_demo_trap:
 		Filename: fakeademoicon.png
 
 building.gatling_cannon:
-	idle:
+	Defaults:
 		Filename: agun.shp
+	idle:
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-13
 	recoil:
-		Filename: agun.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
@@ -669,13 +594,11 @@ building.gatling_cannon:
 		Length: *
 		Offset: 0,-13
 	damaged-idle:
-		Filename: agun.shp
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-13
 	damaged-recoil:
-		Filename: agun.shp
 		Start: 96
 		Facings: 32
 		UseClassicFacings: True
@@ -703,59 +626,50 @@ building.gatling_cannon:
 		Filename: gatcanicon.png
 
 building.firebase:
-	idle-a:
+	Defaults:
 		Filename: pbox.shp
-		Offset: -12,-12
-	damaged-idle-a:
-		Filename: pbox.shp
-		Start: 1
-		Offset: -12,-12
-	make-a:
-		Filename: pboxmake.shp
-		Length: *
-		Offset: -12,-12
-	idle-b:
-		Filename: pbox.shp
-		Offset: -12,12
-	damaged-idle-b:
-		Filename: pbox.shp
-		Start: 1
-		Offset: -12,12
-	make-b:
-		Filename: pboxmake.shp
-		Length: *
-		Offset: -12,12
-	idle-c:
-		Filename: pbox.shp
-		Offset: 12,-12
-	damaged-idle-c:
-		Filename: pbox.shp
-		Start: 1
-		Offset: 12,-12
-	make-c:
-		Filename: pboxmake.shp
-		Length: *
-		Offset: 12,-12
-	idle-d:
-		Filename: pbox.shp
-		Offset: 12,12
-	damaged-idle-d:
-		Filename: pbox.shp
-		Start: 1
-		Offset: 12,12
-	make-d:
-		Filename: pboxmake.shp
-		Length: *
-		Offset: 12,12
-	idle-turret:
+	idle:
 		Filename: agun.shp
 		Facings: 32
 		UseClassicFacings: True
 		Offset: 0,-18
-	make-turret:
-		Filename: agunmake.shp
-		Length: *
+	damaged-idle:
+		Filename: agun.shp
+		Start: 64
+		Facings: 32
+		UseClassicFacings: True
 		Offset: 0,-18
+	idle-a:
+		Offset: -12,-12
+		ZOffset: -512
+	damaged-idle-a:
+		Start: 1
+		Offset: -12,-12
+		ZOffset: -512
+	idle-b:
+		Offset: -12,12
+	damaged-idle-b:
+		Start: 1
+		Offset: -12,12
+		ZOffset: -512
+	idle-c:
+		Offset: 12,-12
+		ZOffset: -512
+	damaged-idle-c:
+		Start: 1
+		Offset: 12,-12
+		ZOffset: -512
+	idle-d:
+		Offset: 12,12
+		ZOffset: -512
+	damaged-idle-d:
+		Start: 1
+		Offset: 12,12
+		ZOffset: -512
+	make:
+		Filename: firebase_make.shp
+		Length: *
+		Offset: 0,-1
 	muzzle:
 		Filename: gunfire2.shp
 		Length: *
@@ -763,13 +677,13 @@ building.firebase:
 		Filename: fbaseicon.png
 
 building.bunker:
+	Defaults:
+		Filename: bunker.shp
 	idle:
-		Filename: bunker.shp
 	damaged-idle:
-		Filename: bunker.shp
 		Start: 1
 	make:
-		Filename: bunkermake.shp
+		Filename: bunker_make.shp
 		Length: *
 	idle-flag:
 		Filename: garflag.shp
@@ -809,32 +723,30 @@ building.fortified_bunker:
 
 building.usa_war_factory:
 	Defaults:
+		Filename: usa_war_factory.shp
 		Offset: 0,-12
 	idle:
-		Filename: usweap.shp
 		ZOffset: -511
 	damaged-idle:
-		Filename: usweap.shp
 		Start: 1
 		ZOffset: -511
 	dead:
-		Filename: usweap.shp
 		Start: 2
 		Tick: 800
 	build-top:
-		Filename: usweap2.shp
+		Filename: usa_war_factory_door.shp
 		Length: 10
 		ZOffset: -1024
 	damaged-build-top:
-		Filename: usweap2.shp
+		Filename: usa_war_factory_door.shp
 		Start: 10
 		Length: 10
 		ZOffset: -1024
 	place:
-		Filename: usweapmake.shp
+		Filename: usa_war_factory_make.shp
 		Start: 19
 	make:
-		Filename: usweapmake.shp
+		Filename: usa_war_factory_make.shp
 		Length: *
 		Tick: 80
 	bib:
@@ -862,10 +774,10 @@ building.usa_war_factory:
 		Offset: 0,0
 
 building.arms_dealer:
+	Defaults:
+		Filename: weap.shp
 	idle:
-		Filename: weap.shp
 	damaged-idle:
-		Filename: weap.shp
 		Start: 1
 	place:
 		Filename: weapmake.shp
@@ -901,39 +813,7 @@ building.arms_dealer:
 		Filename: fakedealicon.png
 
 building.prc_war_factory:
-	idle:
-		Filename: weap.shp
-	damaged-idle:
-		Filename: weap.shp
-		Start: 1
-	place:
-		Filename: weapmake.shp
-		Start: 14
-	make:
-		Filename: weapmake.shp
-		Length: *
-	build-top:
-		Filename: weap3.shp
-		Length: 10
-	damaged-build-top:
-		Filename: weap2.shp
-		Start: 4
-		Length: 4
-	bib:
-		Filename: bib2.tem
-		Length: *
-	bib-Snow:
-		Filename: bib2.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: bib2.sno
-		Length: *
-	bib-Sand:
-		Filename: bib2.des
-		Length: *
-	bib-SandRoad:
-		Filename: bib2.des
-		Length: *
+	Inherits: building.arms_dealer
 	icon:
 		Filename: weapicon.png
 
@@ -988,22 +868,19 @@ building.toxin_tunnel_network:
 		Filename: faketxtunnelicon.png
 
 building.stinger_site:
+	Defaults:
+		Filename: stinger_site.shp
 	idle:
-		Filename: stinger.shp
 	damaged-idle:
-		Filename: stinger.shp
 		Start: 2
 	idle-camo:
-		Filename: stinger.shp
 		Start: 1
 	damaged-idle-camo:
-		Filename: stinger.shp
 		Start: 3
 	hole:
-		Filename: stinger.shp
 		Start: 4
 	make:
-		Filename: stingermake.shp
+		Filename: stinger_site_make.shp
 		Length: *
 		Tick: 80
 	bib:
@@ -1029,49 +906,46 @@ building.stinger_site:
 		Filename: holeicon.png
 
 building.usa_airfield:
+	Defaults:
+		Filename: usa_airfield.shp
 	idle:
-		Filename: usafld.shp
 		Tick: 120
 		Offset: 0,8
 		ZOffset: -1023
 	damaged-idle:
-		Filename: usafld.shp
 		Start: 16
 		Tick: 120
 		Offset: 0,8
 		ZOffset: -1023
 	active:
-		Filename: usafld.shp
 		Length: 16
 		Tick: 120
 		Offset: 0,8
 		ZOffset: -1023
 	damaged-active:
-		Filename: usafld.shp
 		Start: 16
 		Length: 16
 		Tick: 120
 		Offset: 0,8
 		ZOffset: -1023
 	idle-dish:
-		Filename: usafld_d.shp
+		Filename: usa_airfield_dish.shp
 		Length: 16
 		Tick: 160
 		Offset: 0,8
 	damaged-idle-dish:
-		Filename: usafld_d.shp
+		Filename: usa_airfield_dish.shp
 		Start: 16
 		Length: 16
 		Tick: 160
 		Offset: 0,8
 	dead:
-		Filename: usafld.shp
 		Start: 32
 		Tick: 800
 		Offset: 0,8
 		ZOffset: -1023
 	make:
-		Filename: usafldmake.shp
+		Filename: usa_airfield_make.shp
 		Length: *
 		Tick: 80
 		Offset: 0,8
@@ -1079,36 +953,36 @@ building.usa_airfield:
 		Filename: usafldicon.png
 
 building.prc_airfield:
+	Defaults:
+		Filename: prc_airfield.shp
 	idle:
-		Filename: afld.shp
 		ZOffset: -1023
 		Offset: 0,-4
 	damaged-idle:
-		Filename: afld.shp
 		Start: 1
 		ZOffset: -1023
 		Offset: 0,-4
 	idle-flag:
-		Filename: afld_flag.shp
+		Filename: prc_airfield_flag.shp
 		Length: *
 		Tick: 160
 		ZOffset: -1023
 		Offset: 0,-4
 	active:
-		Filename: afld_light.shp
+		Filename: prc_airfield_light.shp
 		Length: 8
 		Tick: 160
 		ZOffset: -1023
 		Offset: 0,-4
 	damaged-active:
-		Filename: afld_light.shp
+		Filename: prc_airfield_light.shp
 		Start: 8
 		Length: 8
 		Tick: 160
 		ZOffset: -1023
 		Offset: 0,-4
 	make:
-		Filename: afldmake.shp
+		Filename: prc_airfield_make.shp
 		Length: *
 		Offset: 0,-4
 	icon:
@@ -1116,30 +990,29 @@ building.prc_airfield:
 
 building.strategy_center:
 	Defaults:
+		Filename: strategy_center.shp
 		Offset: 10,-12
 	idle:
-		Filename: atek.shp
 	damaged-idle:
-		Filename: atek.shp
 		Start: 1
 	make:
-		Filename: atekmake.shp
+		Filename: strategy_center_make.shp
 		Length: *
 	active:
 		Filename: sputdoor.shp
 		Length: *
 		Offset: -4,0
 	hold_the_line:
-		Filename: atek_htl.shp
+		Filename: strategy_center_hold_the_line.shp
 		Offset: 12,-12
 	damaged-hold_the_line:
-		Filename: atek_htl.shp
+		Filename: strategy_center_hold_the_line.shp
 		Start: 1
 		Offset: 12,-12
 	search_and_destroy:
-		Filename: atek_sad.shp
+		Filename: strategy_center_search_and_destroy.shp
 	damaged-search_and_destroy:
-		Filename: atek_sad.shp
+		Filename: strategy_center_search_and_destroy.shp
 		Start: 1
 	turret:
 		Filename: agun.shp
@@ -1178,25 +1051,21 @@ building.strategy_center:
 
 building.palace:
 	Defaults:
+		Filename: palace.shp
 		Offset: 0,-12
 	idle:
-		Filename: palace.shp
 	damaged-idle:
-		Filename: palace.shp
 		Start: 5
 	active:
-		Filename: palace.shp
 		Length: 5
 	damaged-active:
-		Filename: palace.shp
 		Start: 5
 		Length: 5
 	dead:
-		Filename: palace.shp
 		Start: 10
 		Tick: 800
 	make:
-		Filename: palacemake.shp
+		Filename: palace_make.shp
 		Length: *
 		Tick: 60
 	bib:
@@ -1227,10 +1096,10 @@ building.palace:
 		Offset: 0,0
 
 building.propaganda_center:
+	Defaults:
+		Filename: stek.shp
 	idle:
-		Filename: stek.shp
 	damaged-idle:
-		Filename: stek.shp
 		Start: 1
 	make:
 		Filename: stekmake.shp
@@ -1254,13 +1123,12 @@ building.propaganda_center:
 		Filename: stekicon.png
 
 building.detention_camp:
+	Defaults:
+		Filename: miss.shp
 	idle:
-		Filename: miss.shp
 	damaged-idle:
-		Filename: miss.shp
 		Start: 1
 	dead:
-		Filename: miss.shp
 		Start: 2
 		Tick: 800
 	make:
@@ -1285,17 +1153,15 @@ building.detention_camp:
 		Filename: deteicon.png
 
 building.supply_drop_zone:
+	Defaults:
+		Filename: hpad.shp
 	idle:
-		Filename: hpad.shp
 	damaged-idle:
-		Filename: hpad.shp
 		Start: 7
 	active:
-		Filename: hpad.shp
 		Start: 1
 		Length: 6
 	damaged-active:
-		Filename: hpad.shp
 		Start: 8
 		Length: 6
 	make:
@@ -1320,16 +1186,15 @@ building.supply_drop_zone:
 		Filename: sdropicon.png
 
 building.black_market:
+	Defaults:
+		Filename: black_market.shp
 	idle:
-		Filename: market.shp
 		Start: 30
 		Offset: 0, -8
 	damaged-idle:
-		Filename: market.shp
 		Start: 31
 		Offset: 0, -8
 	make:
-		Filename: market.shp
 		Length: 31
 		Offset: 0, -8
 	bib:
@@ -1353,21 +1218,20 @@ building.black_market:
 		Filename: fakebmrkticon.png
 
 building.internet_center:
+	Defaults:
+		Filename: internet_center.shp
 	idle:
-		Filename: bmrkt.shp
 		Length: 16
 		Tick: 100
 	damaged-idle:
-		Filename: bmrkt.shp
 		Start: 16
 		Length: 16
 		Tick: 100
 	dead:
-		Filename: bmrkt.shp
 		Start: 32
 		Tick: 800
 	make:
-		Filename: bmrktmake.shp
+		Filename: internet_center_make.shp
 		Length: *
 		Tick: 80
 	bib:
@@ -1389,12 +1253,12 @@ building.internet_center:
 		Filename: intericon.png
 
 building.speaker_tower:
-	idle:
+	Defaults:
 		Filename: gap.shp
+	idle:
 		Length: 32
 		Offset: 0,-14
 	damaged-idle:
-		Filename: gap.shp
 		Start: 32
 		Length: 32
 		Offset: 0,-14
@@ -1421,21 +1285,20 @@ building.speaker_tower:
 		Filename: speakicon.png
 
 building.particle_cannon:
+	Defaults:
+		Filename: particle_cannon.shp
 	idle:
-		Filename: pcan.shp
 		Length: 16
 		Tick: 100
 	damaged-idle:
-		Filename: pcan.shp
 		Start: 16
 		Length: 16
 		Tick: 100
 	dead:
-		Filename: pcan.shp
 		Start: 32
 		Tick: 800
 	make:
-		Filename: pcanmake.shp
+		Filename: particle_cannon_make.shp
 		Length: *
 		Tick: 80
 	bib:

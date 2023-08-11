@@ -7,7 +7,7 @@ Nolt:
 	- Battle Drone			(Custom Model)											vehicles/aircraft/bdrn.shp
 	- Battle Bus			(Custom Model)											vehicles/bbus.shp
 	- Combat Cycle			(Custom Model)											vehicles/bike*.shp
-	- Black Market			(Custom Model)											buildings/market.shp
+	- Black Market			(Custom Model)											buildings/black_market*.shp
 	- Ambulance				(Converted from VXL Model by Team Black)				vehicles/cars/ambu.shp
 	- Belair				(Converted from VXL Model by Graion Dilach)				vehicles/cars/belair.shp
 	- Black Cab				(Converted from VXL Model from Yuri's Revenge)			vehicles/cars/bcab.shp
@@ -31,14 +31,13 @@ V.Metalic:
 	- Aurora				(Converted from original W3D Model)						vehicles/aircraft/aurora.shp
 	- Aurora Alpha			(Converted from original W3D Model)						vehicles/aircraft/aurora_alpha.shp
 	- Hellfire Drone		(Converted from original W3D Model)						vehicles/aircraft/hellfire.shp
-	- Stinger Site			(Converted from original W3D Model)						buildings/stinger.shp
-	- Artillery Platform	(Converted from original W3D Model)						buildings/tech/arty_platform*.shp
+	- Stinger Site			(Converted from original W3D Model)						buildings/stinger_site.shp
 
 CombinE:
 	- GLA Holes																		buildings/hole*.shp
 
 ELoyros:
-	- Tech Repair Bay																buildings/tech/rbay*.shp
+	- Tech Repair Bay																buildings/repair_bay*.shp
 
 Nooze:
 	- Additional Bridges															terrain/snow/bridge*.sno, terrain/temperate/bridge*.tem
@@ -53,24 +52,26 @@ MustaphaTR:
 	- Nuke Cannon Icons																pip-nuke.shp
 	- Combat Cycle Icons															pip-cycle.shp
 	- Country Flags																	flags/*.shp, except ctflag.shp
-	- Strategy Center																buildings/atek*.shp
-	- Larger Airfields																buildings/afld*.shp, buildings/usafld*.shp
+	- Strategy Center																buildings/strategy_center*.shp
+	- Larger Airfields																buildings/prc_airfield*.shp, buildings/usa_airfield*.shp
 	- Overlord Tank			(RA1 Mammoth Tank with no Missile Pods)					vehicles/4tnk.shp
 	- Emperor Overlord		(TD Mammoth Tank with no Missile Pods)					vehicles/4tnkemp.shp
-	- RA1ified Cameos																cameos/*.shp
+	- RA1ified Cameos																cameos/*.png
 	- SW Beacons																	beacons/*.shp
 	- Civilians				(Recolored RA1 Civilians)								infantry/c*.shp, except infantry/c11.shp 
 	- Jarmen Kell			(Recolored OpenRA Sniper, which is by ?)				infantry/kell.shp
 	- Rocket Infantry		(Recolored RA1 Rocket Soldier)							infantry/e3.shp, infantry/rpg.shp, infantry/hunt.shp
-	- Tech Power Plant		(Recolored RA1 Advanced Power Plant)					buildings/tech/apwr*.shp
-	- Tech Oil Refinery		(RA1 Bio Lab with Oil logo instead of Nuke)				buildings/tech/oil.shp
-	- Demo Trap				(RA1 Barrel with Remaps)								buildings/dmtrp.shp
-	- Advanced Demo Trap	(RA1 Barrel with Remaps and Dynamites)					buildings/dmtrp_adv.shp
+	- Tech Power Plant		(Recolored RA1 Advanced Power Plant)					buildings/power_plant*.shp
+	- Tech Oil Refinery		(RA1 Bio Lab with Oil logo instead of Nuke)				buildings/oil_refinery.shp
+	- Demo Trap				(RA1 Barrel with Remaps)								buildings/demo_trap.shp
+	- Advanced Demo Trap	(RA1 Barrel with Remaps and Dynamites)					buildings/advanced_demo_trap.shp
+	- Supply Stash Make		(Combinisation of TD and RA1 Silos)						buildings/supply_stash_make.shp
+	- Firebase Make			(Combinisation of RA1 Pillbox and AA Gun)				buildings/firebase_make.shp
 	- Angry Mob				(RA1 Civilians with Remaps)								infantry/mob_*.shp
 	- Terrorist				(OpenRA Civilian with Remaps, which is by MicroBit)		infantry/terror.shp
 	- Saboteur				(RA1 Spy with Remaps)									infantry/saboteur.shp
 	- Toxin Rebels			(Recolored RA1 Chem Trooper)							infantry/e5_*.shp
-	- PRC CC Radar			(Cut from TD Communications Center)						buildings/prcradar.shp
+	- PRC CC Radar			(Cut from TD Communications Center)						buildings/prc_radar.shp
 	- Neutron Mine			(Recolored RA1 AP Mine)									buildings/minn.shp
 	- Supply Piles			(Based on RA1 Interior Boxes)							buildings/pile*.shp
 	- Supply Docks			(Based on RA1 Interior Boxes)							buildings/dock_*.shp

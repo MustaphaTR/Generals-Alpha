@@ -174,19 +174,9 @@ fake.supply_stash:
 	ProductionBar:
 		ProductionType: queue.supply_stash.fake
 	WithBuildingBib:
-	WithMakeAnimation@RA_SILO:
-		Sequence: make
-		BodyNames: rasilo
-		Condition: build-incomplete
-	WithMakeAnimation@TD_SILO:
-		Sequence: make2
-		BodyNames: tdsilo
-		Condition: build-incomplete
-	WithSpriteBody:
-		Name: rasilo
-	WithSpriteBody@TD_SILO:
-		Sequence: idle2
-		Name: tdsilo
+	WithIdleOverlay@RA_SILO:
+		Sequence: idle-ra
+		RequiresCondition: !build-incomplete
 	RenderSprites:
 		Image: building.gla_supply_stash
 	TransformOnCondition:
