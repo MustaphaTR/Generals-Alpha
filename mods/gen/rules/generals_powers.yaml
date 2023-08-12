@@ -135,22 +135,19 @@ generals_power.paladin_tank:
 	Tooltip:
 		Name: Paladin Tank
 	Buildable:
-		Queue: queue.usa_generals_power
+		Queue: queue.usa_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 3
 		Prerequisites: prerequisite.has_points, !techlevel.infonly
 		Description: Enables Paladin Tank.
+	BuildPaletteOrderModifier@Boss:
+		Queue: queue.boss_gen_generals_power
+		Modifier: -3 # 0
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.paladin_tank
 	WithProductionIconOverlay:
 		Prerequisites: prerequisite.paladin_tank
 	RenderSprites:
 		Image: generals_power.paladin_tank
-
-generals_power.paladin_tank.boss:
-	Inherits: generals_power.paladin_tank
-	Buildable:
-		Queue: queue.boss_gen_generals_power
-		BuildPaletteOrder: 0
 
 generals_power.stealth_fighter:
 	Inherits: ^default.generals_power

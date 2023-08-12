@@ -458,12 +458,15 @@ upgrade.chemical_suits:
 	Tooltip:
 		Name: Chemical Suits
 	Buildable:
-		Queue: queue.strategy_center, queue.air_gen_strategy_center
+		Queue: queue.strategy_center, queue.air_gen_strategy_center, queue.boss_gen_infantry
 		BuildPaletteOrder: 6
 		BuildDuration: 1500
 		Prerequisites: !upgrade.chemical_suits, ~prerequisite.zh_units, !techlevel.vehicleonly
 		Description: Decreases the damage dealt to infantry from Microwaves, Toxins and Radiation.
 		ReadyAudio: ChemicalSuits
+	BuildPaletteOrderModifier@Boss:
+		Queue: queue.boss_gen_infantry
+		Modifier: 2 # 8
 	ProvidesPrerequisite@upgradename:
 		Prerequisite: upgrade.chemical_suits
 	Valued:
@@ -472,12 +475,6 @@ upgrade.chemical_suits:
 		Prerequisites: upgrade.chemical_suits
 	RenderSprites:
 		Image: upgrade.chemical_suits
-
-upgrade.chemical_suits.boss:
-	Inherits: upgrade.chemical_suits
-	Buildable:
-		Queue: queue.boss_gen_infantry
-		BuildPaletteOrder: 8
 
 upgrade.supply_lines:
 	Inherits: ^default.upgrade

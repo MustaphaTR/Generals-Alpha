@@ -1757,7 +1757,7 @@ vehicle.avenger:
 			300: rank-veteran
 			600: rank-veteran
 	Buildable:
-		Queue: queue.usa_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
+		Queue: queue.usa_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.boss_gen_vehicle
 		BuildPaletteOrder: 6
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1769,6 +1769,9 @@ vehicle.avenger:
 	ProductionCostMultiplier@Laser:
 		Queue: queue.laser_gen_vehicle
 		Multiplier: 75 # 1500
+	BuildPaletteOrderModifier@Boss:
+		Queue: queue.boss_gen_vehicle
+		Modifier: 2 # 8
 	Tooltip:
 		Name: Avenger
 	UpdatesPlayerStatistics:
@@ -1828,12 +1831,6 @@ vehicle.avenger.air:
 	Buildable:
 		Queue: queue.air_gen_vehicle
 		Prerequisites: building.strategy_center, ~prerequisite.zh_units, !techlevel.notech
-
-vehicle.avenger.boss:
-	Inherits: vehicle.avenger
-	Buildable:
-		Queue: queue.boss_gen_vehicle
-		BuildPaletteOrder: 8
 
 vehicle.battle_bus:
 	Inherits: ^Tank
@@ -2816,13 +2813,16 @@ vehicle.paladin_tank:
 			300: rank-veteran
 			600: rank-veteran
 	Buildable:
-		Queue: queue.usa_vehicle
+		Queue: queue.usa_vehicle, queue.boss_gen_vehicle
 		BuildPaletteOrder: 9
 		BuildDuration: 300
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.paladin_tank
 		Description: Heavy tank.\n\nCan deflect enemy missiles with laser.
 		ReadyAudio: PaladinTankCreated
+	BuildPaletteOrderModifier@Boss:
+		Queue: queue.boss_gen_vehicle
+		Modifier: -9 # 0
 	Valued:
 		Cost: 1100
 	Tooltip:
@@ -2893,14 +2893,6 @@ vehicle.paladin_tank:
 		Upgrades: upgrade.adv_training, upgrade.composite_armor, upgrade.scout_drone, upgrade.battle_drone
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.composite_armor, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
-
-vehicle.paladin_tank.boss:
-	Inherits: vehicle.paladin_tank
-	Buildable:
-		Queue: queue.boss_gen_vehicle
-		BuildPaletteOrder: 0
-		ForceIconLocation: true
-		Prerequisites: prerequisite.paladin_tank
 
 vehicle.marauder_tank:
 	Inherits: ^Tank

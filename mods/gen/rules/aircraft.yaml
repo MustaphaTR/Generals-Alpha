@@ -603,9 +603,12 @@ aircraft.king_raptor:
 	GivesExperienceMultiplier@RANK-ELITE:
 		Modifier: 233
 	Buildable:
-		Queue: queue.air_gen_aircraft #, queue.boss_gen_aircraft
+		Queue: queue.air_gen_aircraft, queue.boss_gen_aircraft
 		Description: Multi-role fighter plane.\n\nCan deflect enemy missiles with laser.
 		ReadyAudio: KingRaptorCreated
+	BuildPaletteOrderModifier@Boss:
+		Queue: queue.boss_gen_aircraft
+		Modifier: 3 # 3
 	Valued:
 		Cost: 1100
 	Tooltip:
@@ -627,6 +630,9 @@ aircraft.king_raptor:
 		Ammo: 6
 		ReloadDelay: 6
 		AmmoCondition: ammo
+	GrantConditionOnFaction@Boss:
+		Condition: boss
+		Factions: boss
 	SpawnActorOnDeath:
 		Actor: husk.king_raptor
 	Selectable:
@@ -639,14 +645,11 @@ aircraft.king_raptor:
 		Position: BottomLeft
 		Margin: 4, 3
 		RequiresSelection: true
-
-aircraft.king_raptor.boss:
-	Inherits: aircraft.king_raptor
-	Buildable:
-		Queue: queue.boss_gen_aircraft
-		BuildPaletteOrder: 3
-	ActorStatValues:
+	ActorStatOverride@ZH_UNITS:
+		RequiresCondition: !boss && zh_units
+	ActorStatOverride@Boss:
 		Upgrades: upgrade.adv_training
+		RequiresCondition: boss
 
 aircraft.stealth_fighter:
 	Inherits: ^Plane

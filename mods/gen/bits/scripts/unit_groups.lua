@@ -97,7 +97,6 @@ Tank =
 {
 	"vehicle.crusader_tank",
 	"vehicle.paladin_tank",
-	"vehicle.paladin_tank.boss",
 	"vehicle.scorpion_tank",
 	"vehicle.marauder_tank",
 	"vehicle.battlemaster_tank",
@@ -110,7 +109,6 @@ Plane =
 {
 	"aircraft.raptor",
 	"aircraft.king_raptor",
-	"aircraft.king_raptor.boss",
 	"aircraft.stealth_fighter",
 	"aircraft.stealth_fighter.air",
 	"aircraft.aurora",
