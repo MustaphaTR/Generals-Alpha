@@ -535,8 +535,10 @@ hack.spawn_sneak_attack:
 hack.particle_beam:
 	Inherits: ^Vehicle
 	Inherits@REVEAL: ^Reveal150
+	Tooltip:
+		Name: Particle Beam
 	Health:
-		HP: 1000
+		HP: 400000
 	DamageMultiplier@UNKILLABLE:
 		Modifier: 0
 	Mobile:
@@ -555,6 +557,10 @@ hack.particle_beam:
 	KillsSelf:
 		RemoveInstead: true
 		Delay: 250
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		Stats: Sight
 
 hack.queue_updater:
 	AlwaysVisible:
