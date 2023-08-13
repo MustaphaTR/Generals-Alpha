@@ -68,7 +68,7 @@ upgrade.land_mines:
 	Tooltip:
 		Name: Land Mines
 	Buildable:
-		Queue: queue.prc_command_center, queue.boss_gen_cold_fusion_reactor, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.boss_gen_cold_fusion_reactor, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
 		BuildPaletteOrder: 14
 		ForceIconLocation: true
 		BuildDuration: 125
@@ -84,7 +84,7 @@ upgrade.neutron_mines:
 	Tooltip:
 		Name: Neutron Mines
 	Buildable:
-		Queue: queue.prc_command_center, queue.boss_gen_cold_fusion_reactor, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.boss_gen_cold_fusion_reactor, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.prc_aircraft_merged, queue.boss_gen_aircraft, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
 		BuildPaletteOrder: 14
 		ForceIconLocation: true
 		BuildDuration: 375
@@ -137,7 +137,7 @@ upgrade.camo_netting:
 	Tooltip:
 		Name: Camo Netting
 	Buildable:
-		Queue: queue.camo_netting, queue.stealth_gen_command_center, queue.stealth_gen_collector, queue.stealth_gen_infantry, queue.stealth_gen_vehicle, queue.stealth_gen_palace, queue.stealth_gen_black_market
+		Queue: queue.camo_netting, queue.stealth_gen_command_center, queue.stealth_gen_collector, queue.stealth_gen_infantry, queue.stealth_gen_vehicle, queue.stealth_gen_palace, queue.stealth_gen_black_market, queue.gla_infantry_merged, queue.palace_merged
 		BuildPaletteOrder: 14
 		ForceIconLocation: true
 		BuildDuration: 125
@@ -154,7 +154,7 @@ upgrade.capture_building:
 	Tooltip:
 		Name: Capture Building
 	Buildable:
-		Queue: queue.usa_infantry, queue.super_gen_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
+		Queue: queue.usa_infantry, queue.super_gen_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.gla_infantry_merged, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 750
@@ -200,7 +200,7 @@ upgrade.tow_missile:
 	Tooltip:
 		Name: TOW Missile
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.usa_vehicle_merged
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 750
@@ -216,7 +216,7 @@ upgrade.sentry_gun:
 	Tooltip:
 		Name: Sentry Drone Gun
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.boss_gen_particle_cannon
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.usa_vehicle_merged, queue.boss_gen_particle_cannon
 		BuildPaletteOrder: 5
 		BuildDuration: 250
 		Prerequisites: ~prerequisite.zh_units
@@ -247,7 +247,7 @@ upgrade.chain_gun:
 	Tooltip:
 		Name: Chain Gun
 	Buildable:
-		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1125
@@ -263,7 +263,7 @@ upgrade.black_napalm:
 	Tooltip:
 		Name: Black Napalm
 	Buildable:
-		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		BuildDuration: 1125
@@ -279,7 +279,7 @@ upgrade.rocket_pods:
 	Tooltip:
 		Name: Rocket Pods
 	Buildable:
-		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged
 		BuildAtProductionType: queue.usa_air_upgrade
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
@@ -296,7 +296,7 @@ upgrade.laser_guided_missiles:
 	Tooltip:
 		Name: Laser-Guided Missiles
 	Buildable:
-		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged
 		BuildAtProductionType: queue.usa_air_upgrade
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
@@ -313,7 +313,7 @@ upgrade.countermeasures:
 	Tooltip:
 		Name: Countermeasures
 	Buildable:
-		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged
 		BuildAtProductionType: queue.usa_air_upgrade
 		BuildPaletteOrder: 6
 		ForceIconLocation: true
@@ -331,7 +331,7 @@ upgrade.bunker_busters:
 	Tooltip:
 		Name: Bunker Busters
 	Buildable:
-		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged
 		BuildAtProductionType: queue.usa_air_upgrade
 		BuildPaletteOrder: 7
 		ForceIconLocation: true
@@ -349,7 +349,7 @@ upgrade.stealth_comanche:
 	Tooltip:
 		Name: Stealth Comanche
 	Buildable:
-		Queue: queue.air_gen_aircraft
+		Queue: queue.air_gen_aircraft, queue.usa_aircraft_merged
 		BuildAtProductionType: queue.usa_air_upgrade
 		BuildPaletteOrder: 8
 		ForceIconLocation: true
@@ -365,7 +365,7 @@ upgrade.mig_armor:
 	Tooltip:
 		Name: MiG Armor
 	Buildable:
-		Queue: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft
+		Queue: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.prc_aircraft_merged, queue.boss_gen_aircraft
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1000
@@ -529,7 +529,7 @@ upgrade.arm_the_mob:
 	Tooltip:
 		Name: Arm The Mob
 	Buildable:
-		Queue: queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.boss_gen_scud_storm
+		Queue: queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged, queue.boss_gen_scud_storm
 		BuildPaletteOrder: 1
 		BuildDuration: 750
 		Description: Replaces pistols of Angry Mobs with AK-47s.
@@ -576,7 +576,7 @@ upgrade.anthrax_gamma:
 	Tooltip:
 		Name: Anthrax Gamma
 	Buildable:
-		Queue: queue.toxin_gen_palace
+		Queue: queue.toxin_gen_palace, queue.palace_merged
 		BuildPaletteOrder: 3
 		BuildDuration: 1500
 		Description: Increases all toxin weapons' damage by 25%.
@@ -591,7 +591,7 @@ upgrade.fortified_structures:
 	Tooltip:
 		Name: Fortified Structures
 	Buildable:
-		Queue: queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace
+		Queue: queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged
 		BuildPaletteOrder: 4
 		BuildDuration: 750
 		Prerequisites: ~prerequisite.zh_units
@@ -606,7 +606,7 @@ upgrade.demolitions:
 	Tooltip:
 		Name: Demolitions
 	Buildable:
-		Queue: queue.demo_gen_palace
+		Queue: queue.demo_gen_palace, queue.palace_merged
 		BuildPaletteOrder: 5
 		BuildDuration: 750
 		Description: Makes units end defenses explode on dealth.
@@ -636,7 +636,7 @@ upgrade.patriotism:
 	Tooltip:
 		Name: Patriotism
 	Buildable:
-		Queue: queue.inf_gen_propaganda_center
+		Queue: queue.inf_gen_propaganda_center, queue.propaganda_center_merged
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1500
@@ -647,29 +647,12 @@ upgrade.patriotism:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.patriotism
 
-upgrade.autoloader:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Autoloader
-	Buildable:
-		Queue: queue.tank_gen_propaganda_center
-		BuildPaletteOrder: 1
-		ForceIconLocation: true
-		BuildDuration: 1500
-		Description: Makes Battlemaster Tanks to fire 3 cannon at once.
-		Prerequisites: !techlevel.infonly
-		ReadyAudio: Autoloader
-	Valued:
-		Cost: 2500
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.autoloader
-
 upgrade.isotope_stability:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Isotope Stability
 	Buildable:
-		Queue: queue.nuke_gen_propaganda_center
+		Queue: queue.nuke_gen_propaganda_center, queue.propaganda_center_merged
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 1500
@@ -680,12 +663,32 @@ upgrade.isotope_stability:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.isotope_stability
 
+upgrade.autoloader:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Autoloader
+	Buildable:
+		Queue: queue.tank_gen_propaganda_center, queue.propaganda_center_merged
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
+		BuildDuration: 1500
+		Description: Makes Battlemaster Tanks to fire 3 cannon at once.
+		Prerequisites: !techlevel.infonly
+		ReadyAudio: Autoloader
+	BuildPaletteOrderModifier@Merged:
+		Queue: queue.propaganda_center_merged
+		Modifier: 3 # 4
+	Valued:
+		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.autoloader
+
 upgrade.subliminal_messaging:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Subliminal Messaging
 	Buildable:
-		Queue: queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.boss_gen_missile_silo
+		Queue: queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_missile_silo
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1000
@@ -795,7 +798,7 @@ upgrade.nuclear_tanks:
 	Tooltip:
 		Name: Nuclear Tanks
 	Buildable:
-		Queue: queue.missile_silo
+		Queue: queue.missile_silo, queue.tank_gen_missile_silo
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1500
@@ -823,7 +826,7 @@ upgrade.uranium_shells:
 	Tooltip:
 		Name: Uranium Shells
 	Buildable:
-		Queue: queue.missile_silo
+		Queue: queue.missile_silo, queue.tank_gen_missile_silo
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1500
@@ -1016,8 +1019,8 @@ upgrade.overlord_bunker:
 	Tooltip:
 		Name: Bunker
 	Buildable:
-		Queue: queue.overlord_tank
-		BuildPaletteOrder: 1
+		Queue: queue.overlord_tank, queue.emparor_overlord_merged
+		BuildPaletteOrder: 0
 		BuildDuration: 375
 		Description: Gives overlord tank a bunker for 5 infantry.
 		QueuedAudio: OverlordBunkerBuilding
@@ -1033,8 +1036,9 @@ upgrade.overlord_gatling:
 	Tooltip:
 		Name: Gatling
 	Buildable:
-		Queue: queue.overlord_tank, queue.emparor_overlord
-		BuildPaletteOrder: 2
+		Queue: queue.overlord_tank, queue.emparor_overlord, queue.emparor_overlord_merged
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
 		BuildDuration: 500
 		Description: Gives overlord tank a gatling cannon.\n\nAllows overlord tank to detect stealth.
 		QueuedAudio: OverlordGatlingBuilding
@@ -1051,7 +1055,7 @@ upgrade.overlord_speaker:
 		Name: Speaker
 	Buildable:
 		Queue: queue.overlord_tank
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 2
 		BuildDuration: 250
 		Description: Gives overlord tank a speaker tower.
 		QueuedAudio: OverlordSpeakerBuilding
@@ -1065,7 +1069,7 @@ upgrade.overlord_speaker:
 upgrade.helix_bunker:
 	Inherits: upgrade.overlord_bunker
 	Buildable:
-		Queue: queue.helix, queue.assault_helix, queue.nuke_gen_helix
+		Queue: queue.helix, queue.inf_gen_helix, queue.nuke_gen_helix, queue.helix_merged
 		Description: Allows infantry in helix to fire outside.
 		QueuedAudio: HelixBunkerBuilding
 		ReadyAudio: HelixBunkerReady
@@ -1073,7 +1077,7 @@ upgrade.helix_bunker:
 upgrade.helix_gatling:
 	Inherits: upgrade.overlord_gatling
 	Buildable:
-		Queue: queue.helix, queue.nuke_gen_helix
+		Queue: queue.helix, queue.nuke_gen_helix, queue.helix_merged
 		Description: Gives helix a gatling cannon.\n\nAllows helix to detect stealth.
 		QueuedAudio: HelixGatlingBuilding
 		ReadyAudio: HelixGatlingReady
@@ -1081,7 +1085,7 @@ upgrade.helix_gatling:
 upgrade.helix_speaker:
 	Inherits: upgrade.overlord_speaker
 	Buildable:
-		Queue: queue.helix, queue.nuke_gen_helix
+		Queue: queue.helix, queue.nuke_gen_helix, queue.helix_merged
 		Description: Gives helix a speaker tower.
 		QueuedAudio: HelixSpeakerBuilding
 		ReadyAudio: HelixSpeakerReady
@@ -1091,13 +1095,16 @@ upgrade.helix_napalm:
 	Tooltip:
 		Name: Napalm
 	Buildable:
-		Queue: queue.helix, queue.assault_helix
+		Queue: queue.helix, queue.inf_gen_helix, queue.helix_merged
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 500
 		Description: Allows helix to drop napalm bombs by force firing.
 		QueuedAudio: HelixNapalmBuilding
 		ReadyAudio: HelixNapalmReady
+	BuildPaletteOrderModifier@Merged:
+		Queue: queue.helix_merged
+		Modifier: -1 # 3
 	Valued:
 		Cost: 800
 	KillsSelf:
@@ -1109,13 +1116,16 @@ upgrade.helix_nuke:
 	Tooltip:
 		Name: Nuke
 	Buildable:
-		Queue: queue.nuke_gen_helix
+		Queue: queue.nuke_gen_helix, queue.helix_merged
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 500
 		Description: Allows helix to drop nuclear bombs by force firing.
 		QueuedAudio: HelixNukeBuilding
 		ReadyAudio: HelixNukeReady
+	BuildPaletteOrderModifier@Merged:
+		Queue: queue.helix_merged
+		Modifier: 1 # 5
 	Valued:
 		Cost: 800
 	KillsSelf:

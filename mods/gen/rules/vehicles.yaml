@@ -102,7 +102,7 @@ vehicle.humvee:
 			150: rank-veteran
 			300: rank-veteran
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.usa_vehicle_merged
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -637,6 +637,12 @@ vehicle.scorpion_tank:
 	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
 		Condition: anthrax_gamma
 		Prerequisites: upgrade.anthrax_gamma
+	GrantConditionOnPrerequisite@TOXIN_SHELLS_MERGED:
+		Condition: toxin_shells
+		Prerequisites: prerequisite.mergegenerals
+	GrantConditionOnPrerequisite@ANTHRAX_BETA_MERGED:
+		Condition: anthrax_beta
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@TOXIN_SHELLS:
 		Condition: toxin_shells
 		Factions: toxin
@@ -685,7 +691,7 @@ vehicle.crusader_tank:
 			300: rank-veteran
 			600: rank-veteran
 	Buildable:
-		Queue: queue.usa_vehicle
+		Queue: queue.usa_vehicle, queue.usa_vehicle_merged
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -752,9 +758,12 @@ vehicle.laser_tank:
 	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		Queue: queue.laser_gen_vehicle
+		Queue: queue.laser_gen_vehicle, queue.usa_vehicle_merged
 		Description: Medium armored tank armed with lasers.\n\nRequires power to operate.
 		ReadyAudio: LaserTankCreated
+	BuildPaletteOrderModifier@Merged:
+		Queue: queue.usa_vehicle_merged
+		Modifier: 9 # 10
 	Tooltip:
 		Name: Laser Tank
 	Armament:
@@ -811,10 +820,10 @@ vehicle.battlemaster_tank:
 	Valued:
 		Cost: 800
 	ProductionCostMultiplier@Tank1:
-		Queue: queue.tank_gen_vehicle
+		Queue: queue.tank_gen_vehicle, queue.prc_vehicle_merged
 		Multiplier: 875 # 700
 	ProductionCostMultiplier@Tank2:
-		Queue: queue.tank_gen_vehicle
+		Queue: queue.tank_gen_vehicle, queue.prc_vehicle_merged
 		Multiplier: 10 # 700
 	ProductionTimeMultiplier@Tank:
 		Queue: queue.nuke_gen_vehicle, queue.tank_gen_vehicle
@@ -897,7 +906,7 @@ vehicle.battlemaster_tank:
 vehicle.nuclear_battlemaster_tank:
 	Inherits: vehicle.battlemaster_tank
 	Buildable:
-		Queue: queue.nuke_gen_vehicle
+		Queue: queue.nuke_gen_vehicle, queue.prc_vehicle_merged
 	Tooltip:
 		Name: Nuclear Battlemaster Tank
 	Armament:
@@ -919,7 +928,7 @@ vehicle.ambulance:
 	GivesExperience:
 		Experience: 50
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.usa_vehicle_merged
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -999,7 +1008,7 @@ vehicle.sentry_drone:
 	GivesExperience:
 		Experience: 50
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.boss_gen_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.boss_gen_vehicle, queue.usa_vehicle_merged
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -1234,7 +1243,7 @@ vehicle.gatling_tank:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle
+		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -1244,10 +1253,10 @@ vehicle.gatling_tank:
 	Valued:
 		Cost: 800
 	ProductionCostMultiplier@Tank1:
-		Queue: queue.tank_gen_vehicle
+		Queue: queue.tank_gen_vehicle, queue.prc_vehicle_merged
 		Multiplier: 875 # 700
 	ProductionCostMultiplier@Tank2:
-		Queue: queue.tank_gen_vehicle
+		Queue: queue.tank_gen_vehicle, queue.prc_vehicle_merged
 		Multiplier: 10 # 700
 	Mobile:
 		Speed: 40
@@ -1445,6 +1454,9 @@ vehicle.toxin_tractor:
 	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
 		Condition: anthrax_gamma
 		Prerequisites: upgrade.anthrax_gamma
+	GrantConditionOnPrerequisite@ANTHRAX_BETA_MERGED:
+		Condition: anthrax_beta
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
@@ -1503,7 +1515,7 @@ vehicle.dragon_tank:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -1519,10 +1531,10 @@ vehicle.dragon_tank:
 		Queue: queue.inf_gen_vehicle
 		Multiplier: 10 # 900
 	ProductionCostMultiplier@Tank1:
-		Queue: queue.tank_gen_vehicle
+		Queue: queue.tank_gen_vehicle, queue.prc_vehicle_merged
 		Multiplier: 875 # 700
 	ProductionCostMultiplier@Tank2:
-		Queue: queue.tank_gen_vehicle
+		Queue: queue.tank_gen_vehicle, queue.prc_vehicle_merged
 		Multiplier: 10 # 700
 	Mobile:
 		TurnSpeed: 32
@@ -1757,7 +1769,7 @@ vehicle.avenger:
 			300: rank-veteran
 			600: rank-veteran
 	Buildable:
-		Queue: queue.usa_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.boss_gen_vehicle
+		Queue: queue.usa_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.boss_gen_vehicle, queue.usa_vehicle_merged
 		BuildPaletteOrder: 6
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1767,7 +1779,7 @@ vehicle.avenger:
 	Valued:
 		Cost: 2000
 	ProductionCostMultiplier@Laser:
-		Queue: queue.laser_gen_vehicle
+		Queue: queue.laser_gen_vehicle, queue.usa_vehicle_merged
 		Multiplier: 75 # 1500
 	BuildPaletteOrderModifier@Boss:
 		Queue: queue.boss_gen_vehicle
@@ -2031,7 +2043,7 @@ vehicle.assault_troop_crawler:
 	Inherits: vehicle.troop_crawler
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
-		Queue: queue.inf_gen_vehicle
+		Queue: queue.inf_gen_vehicle, queue.prc_vehicle_merged
 		BuildDuration: 625
 		Description: Tough infantry transport.\n\nCan carry 8 infantry that can fire outside.\n\nComes with 8 minigunners.\n\nHeals damaged passengers.\n\nHas a speaker tower attached.\n\nPassengers can survive when it dies.
 		ReadyAudio: AssaultTroopCrawlerCreated
@@ -2155,7 +2167,7 @@ vehicle.listening_outpost:
 vehicle.attack_outpost:
 	Inherits: vehicle.listening_outpost
 	Buildable:
-		Queue: queue.inf_gen_vehicle
+		Queue: queue.inf_gen_vehicle, queue.prc_vehicle_merged
 		Description: Stealth detector unit.\n\nCan carry 8 infantry that can fire outside.\n\nComes with 3 tank hunters.\n\nHeals damaged passengers.\n\nPassengers can survive when it dies.\n\nCamouflaged while not moving.
 	Tooltip:
 		Name: Attack Outpost
@@ -2199,7 +2211,7 @@ vehicle.microwave_tank:
 			300: rank-veteran
 			600: rank-veteran
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.usa_vehicle_merged
 		BuildPaletteOrder: 7
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -2311,7 +2323,7 @@ vehicle.ecm_tank:
 			150: rank-veteran
 			300: rank-veteran
 	Buildable:
-		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged
 		BuildPaletteOrder: 8
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -2415,7 +2427,7 @@ vehicle.tomahawk_launcher:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle
+		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.super_gen_vehicle, queue.usa_vehicle_merged
 		BuildPaletteOrder: 8
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -2654,6 +2666,9 @@ vehicle.scud_launcher:
 	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
 		Condition: anthrax_gamma
 		Prerequisites: upgrade.anthrax_gamma
+	GrantConditionOnPrerequisite@ANTHRAX_BETA_MERGED:
+		Condition: anthrax_beta
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
@@ -2714,7 +2729,7 @@ vehicle.inferno_cannon:
 			200: rank-veteran
 			400: rank-veteran
 	Buildable:
-		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.prc_vehicle_merged
 		BuildPaletteOrder: 9
 		ForceIconLocation: true
 		BuildDuration: 375
@@ -2813,7 +2828,7 @@ vehicle.paladin_tank:
 			300: rank-veteran
 			600: rank-veteran
 	Buildable:
-		Queue: queue.usa_vehicle, queue.boss_gen_vehicle
+		Queue: queue.usa_vehicle, queue.usa_vehicle_merged, queue.boss_gen_vehicle
 		BuildPaletteOrder: 9
 		BuildDuration: 300
 		BuildDurationModifier: 100
@@ -3146,6 +3161,12 @@ vehicle.marauder_tank:
 	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
 		Condition: anthrax_gamma
 		Prerequisites: upgrade.anthrax_gamma
+	GrantConditionOnPrerequisite@TOXIN_SHELLS_MERGED:
+		Condition: toxin_shells
+		Prerequisites: prerequisite.mergegenerals
+	GrantConditionOnPrerequisite@ANTHRAX_BETA_MERGED:
+		Condition: anthrax_beta
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@TOXIN_SHELLS:
 		Condition: toxin_shells
 		Factions: toxin
@@ -3266,8 +3287,8 @@ vehicle.overlord_tank:
 		Type: vehicle.tank
 	Production:
 		Produces: queue.overlord_tank
-		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !speaker_upgrade && !driver_killed
 		PauseOnCondition: emp || hacked || leaflet
+		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !speaker_upgrade && !driver_killed
 	ProductionQueue:
 		Type: queue.overlord_tank
 		QueueLimit: 1
@@ -3436,25 +3457,30 @@ vehicle.overlord_tank.boss:
 vehicle.emparor_overlord:
 	Inherits: vehicle.overlord_tank
 	Buildable:
-		Queue: queue.tank_gen_vehicle
+		Queue: queue.tank_gen_vehicle, queue.prc_vehicle_merged
 		Description: Big and slow tank.\n\nComes with a speaker tower.\n\nCan be upgraded to have a gatling cannon.
 	Tooltip:
 		Name: Emperor Overlord
 	Production:
 		Produces: queue.emparor_overlord
+		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !speaker_upgrade && !driver_killed && !merged
+	Production@Merged:
+		Produces: queue.emparor_overlord_merged
+		PauseOnCondition: emp || hacked || leaflet
+		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !speaker_upgrade && !driver_killed && merged
 	ProductionQueue:
 		Type: queue.emparor_overlord
 		LowPowerModifier: 300
+	ProductionQueue@Merged:
+		Type: queue.emparor_overlord_merged
+		QueueLimit: 1
+		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: queue.emparor_overlord
+	ProductionBar@Merged:
+		ProductionType: queue.emparor_overlord_merged
 	Mobile:
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
-	-Cargo@BUNKER_UPGRADE:
-	-WithCargoSounds:
-	-WithCargoPipsDecoration:
-	-Turreted@Bunker:
-	-AttackGarrisoned:
-	-WithSpriteTurret@Bunker:
 	WithSpriteTurret@Speaker:
 		-RequiresCondition:
 	WithRangeCircle:
@@ -3469,7 +3495,6 @@ vehicle.emparor_overlord:
 		VoiceSet: EmparorOverlordVoice
 	ActorStatValues:
 		Upgrades: upgrade.subliminal_messaging, upgrade.nuclear_tanks, upgrade.uranium_shells, upgrade.overlord_gatling
-	-ActorStatOverride@Bunker:
 	-ActorStatOverride@Nuke:
 
 vehicle.bomb_truck:
@@ -3834,7 +3859,7 @@ vehicle.nuke_cannon:
 vehicle.nuke_cannon.nuke:
 	Inherits: vehicle.nuke_cannon
 	Buildable:
-		Queue: queue.nuke_gen_vehicle
+		Queue: queue.nuke_gen_vehicle, queue.prc_vehicle_merged
 		Prerequisites: building.propaganda_center
 
 vehicle.combat_cycle:
@@ -3984,6 +4009,9 @@ vehicle.combat_cycle:
 	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
 		Condition: anthrax_gamma
 		Prerequisites: upgrade.anthrax_gamma
+	GrantConditionOnPrerequisite@ANTHRAX_BETA_MERGED:
+		Condition: anthrax_beta
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
@@ -4256,6 +4284,9 @@ vehicle.combat_cycle.demo:
 	GrantConditionOnBotOwner@any:
 		Condition: any-ai
 		Bots: rush, normal, turtle
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	ActorStatValues:
 		Stats: Armor, Sight, Speed
 
@@ -4270,7 +4301,11 @@ vehicle.usa_mcc:
 	Production:
 		Produces: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
-		RequiresCondition: !driver_killed
+		RequiresCondition: !driver_killed && !merged
+	Production@Merged:
+		Produces: queue.usa_building_merged
+		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
+		RequiresCondition: !driver_killed && merged
 	ProductionBar@USA_BUILDING:
 		ProductionType: queue.usa_building
 	ProductionBar@AIR_BUILDING:
@@ -4279,6 +4314,8 @@ vehicle.usa_mcc:
 		ProductionType: queue.laser_gen_building
 	ProductionBar@SUPER_BUILDING:
 		ProductionType: queue.super_gen_building
+	ProductionBar@MERGED_BUILDING:
+		ProductionType: queue.usa_building_merged
 	ProductionQueue@USA_BUILDING:
 		Type: queue.usa_building
 		Factions: usa, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
@@ -4319,6 +4356,15 @@ vehicle.usa_mcc:
 		CannotPlaceAudio: USABuildingCannotPlaceAudio
 		ReadyAudio: USAConstructionComplete
 		DisplayOrder: 4
+	ProductionQueue@USA_BUILDING_MERGED:
+		Type: queue.usa_building_merged
+		Group: Building
+		InstantCashDrain: true
+		LowPowerModifier: 200
+		QueuedAudio: USABuilding
+		CannotPlaceAudio: USABuildingCannotPlaceAudio
+		ReadyAudio: USAConstructionComplete
+		DisplayOrder: 5
 	Voiced:
 		VoiceSet: USAMCCVoice
 	WithTextDecoration@SIDE:
@@ -4339,13 +4385,19 @@ vehicle.gla_mcc:
 	Production:
 		Produces: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
-		RequiresCondition: !driver_killed
+		RequiresCondition: !driver_killed && !merged
+	Production@Merged:
+		Produces: queue.gla_building_merged
+		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
+		RequiresCondition: !driver_killed && merged
 	ProductionBar@GLA_BUILDING:
 		ProductionType: queue.gla_building
 	ProductionBar@TOXIN_BUILDING:
 		ProductionType: queue.toxin_gen_building
 	ProductionBar@DEMO_BUILDING:
 		ProductionType: queue.demo_gen_building
+	ProductionBar@GLA_BUILDING_MERGED:
+		ProductionType: queue.gla_building_merged
 	ProductionQueue@GLA_BUILDING:
 		Type: queue.gla_building
 		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank, boss
@@ -4354,7 +4406,7 @@ vehicle.gla_mcc:
 		QueuedAudio: GLABuilding
 		CannotPlaceAudio: GLABuildingCannotPlaceAudio
 		ReadyAudio: GLAConstructionComplete
-		DisplayOrder: 5
+		DisplayOrder: 6
 	ProductionQueue@TOXIN_BUILDING:
 		Type: queue.toxin_gen_building
 		Factions: toxin
@@ -4363,7 +4415,7 @@ vehicle.gla_mcc:
 		QueuedAudio: GLABuilding
 		CannotPlaceAudio: GLABuildingCannotPlaceAudio
 		ReadyAudio: GLAConstructionComplete
-		DisplayOrder: 6
+		DisplayOrder: 7
 	ProductionQueue@DEMO_BUILDING:
 		Type: queue.demo_gen_building
 		Factions: demo
@@ -4372,7 +4424,15 @@ vehicle.gla_mcc:
 		QueuedAudio: GLABuilding
 		CannotPlaceAudio: GLABuildingCannotPlaceAudio
 		ReadyAudio: GLAConstructionComplete
-		DisplayOrder: 7
+		DisplayOrder: 8
+	ProductionQueue@GLA_BUILDING_MERGED:
+		Type: queue.gla_building_merged
+		Group: Building
+		InstantCashDrain: true
+		QueuedAudio: GLABuilding
+		CannotPlaceAudio: GLABuildingCannotPlaceAudio
+		ReadyAudio: GLAConstructionComplete
+		DisplayOrder: 9
 	Voiced:
 		VoiceSet: WorkerVoice
 	WithTextDecoration@SIDE:
@@ -4398,13 +4458,19 @@ vehicle.prc_mcc:
 	Production:
 		Produces: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
 		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
-		RequiresCondition: !driver_killed
+		RequiresCondition: !driver_killed && !merged
+	Production@Merged:
+		Produces: queue.prc_building_merged, queue.boss_gen_building
+		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
+		RequiresCondition: !driver_killed && merged
 	ProductionBar@PRC_BUILDING:
 		ProductionType: queue.prc_building
 	ProductionBar@INF_BUILDING:
 		ProductionType: queue.inf_gen_building
 	ProductionBar@NUKE_BUILDING:
 		ProductionType: queue.nuke_gen_building
+	ProductionBar@PRC_BUILDING_MERGED:
+		ProductionType: queue.prc_building_merged
 	ProductionBar@BOSS_BUILDING:
 		ProductionType: queue.boss_gen_building
 	ProductionQueue@PRC_BUILDING:
@@ -4416,7 +4482,7 @@ vehicle.prc_mcc:
 		QueuedAudio: PRCBuilding
 		CannotPlaceAudio: PRCBuildingCannotPlaceAudio
 		ReadyAudio: PRCConstructionComplete
-		DisplayOrder: 8
+		DisplayOrder: 9
 	ProductionQueue@INF_BUILDING:
 		Type: queue.inf_gen_building
 		Factions: inf
@@ -4426,7 +4492,7 @@ vehicle.prc_mcc:
 		QueuedAudio: PRCBuilding
 		CannotPlaceAudio: PRCBuildingCannotPlaceAudio
 		ReadyAudio: PRCConstructionComplete
-		DisplayOrder: 9
+		DisplayOrder: 10
 	ProductionQueue@NUKE_BUILDING:
 		Type: queue.nuke_gen_building
 		Factions: nuke
@@ -4436,7 +4502,17 @@ vehicle.prc_mcc:
 		QueuedAudio: PRCBuilding
 		CannotPlaceAudio: PRCBuildingCannotPlaceAudio
 		ReadyAudio: PRCConstructionComplete
-		DisplayOrder: 10
+		DisplayOrder: 11
+	ProductionQueue@PRC_BUILDING_MERGED:
+		Type: queue.prc_building_merged
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
+		Group: Building
+		InstantCashDrain: true
+		LowPowerModifier: 200
+		QueuedAudio: PRCBuilding
+		CannotPlaceAudio: PRCBuildingCannotPlaceAudio
+		ReadyAudio: PRCConstructionComplete
+		DisplayOrder: 12
 	ProductionQueue@BOSS_BUILDING:
 		Type: queue.boss_gen_building
 		Factions: boss
@@ -4446,7 +4522,7 @@ vehicle.prc_mcc:
 		QueuedAudio: PRCBuilding
 		CannotPlaceAudio: PRCBuildingCannotPlaceAudio
 		ReadyAudio: PRCConstructionComplete
-		DisplayOrder: 11
+		DisplayOrder: 13
 	Voiced:
 		VoiceSet: PRCMCCVoice
 	WithTextDecoration@SIDE:
@@ -4487,8 +4563,8 @@ vehicle.mobile_reactor:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
-		Queue: queue.laser_gen_vehicle
-		BuildPaletteOrder: 8
+		Queue: queue.laser_gen_vehicle, queue.usa_vehicle_merged
+		BuildPaletteOrder: 11
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~disabled

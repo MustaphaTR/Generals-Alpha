@@ -52,6 +52,15 @@ Player:
 		QueuedAudio:
 		ReadyAudio:
 		DisplayOrder: 0
+	ClassicProductionQueue@USA_Merged:
+		Type: queue.usa_generals_power_merged
+		Group: General
+		Factions: usa, air, laser, super
+		AlwaysShowForFactions: usa, air, laser, super
+		InstantCashDrain: true
+		QueuedAudio:
+		ReadyAudio:
+		DisplayOrder: 0
 	ClassicProductionQueue@GLA_Vanilla:
 		Type: queue.gla_generals_power
 		Group: General
@@ -84,6 +93,15 @@ Player:
 		Group: General
 		Factions: stealth
 		AlwaysShowForFactions: stealth
+		InstantCashDrain: true
+		QueuedAudio:
+		ReadyAudio:
+		DisplayOrder: 0
+	ClassicProductionQueue@GLA_Merged:
+		Type: queue.gla_generals_power_merged
+		Group: General
+		Factions: gla, toxin, demo, stealth
+		AlwaysShowForFactions: gla, toxin, demo, stealth
 		InstantCashDrain: true
 		QueuedAudio:
 		ReadyAudio:
@@ -124,6 +142,15 @@ Player:
 		QueuedAudio:
 		ReadyAudio:
 		DisplayOrder: 0
+	ClassicProductionQueue@PRC_Merged:
+		Type: queue.prc_generals_power_merged
+		Group: General
+		Factions: prc, inf, nuke, tank
+		AlwaysShowForFactions: prc, inf, nuke, tank
+		InstantCashDrain: true
+		QueuedAudio:
+		ReadyAudio:
+		DisplayOrder: 0
 	ClassicProductionQueue@Boss:
 		Type: queue.boss_gen_generals_power
 		Group: General
@@ -135,6 +162,10 @@ Player:
 		DisplayOrder: 0
 	Production:
 		Produces: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
+		RequiresCondition: !merged
+	Production@Merged:
+		Produces: queue.usa_generals_power_merged, queue.gla_generals_power_merged, queue.prc_generals_power_merged, queue.boss_gen_generals_power
+		RequiresCondition: merged
 	PlaceBuilding:
 	SupportPowerManager:
 	ScriptTriggers:
@@ -220,6 +251,9 @@ Player:
 	GrantConditionOnPrerequisite@NoBases:
 		Prerequisites: hack.no_bases
 		Condition: no_bases
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnCombatantOwner:
 		Condition: combatant_player
 	ExternalCondition@PadAircraft:

@@ -18,7 +18,7 @@
 	AlwaysVisible:
 	Buildable:
 		BuildDurationModifier: 100
-		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.gla_generals_power_merged, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.prc_generals_power_merged
 		BuildLimit: 1
 		IconPalette: cameo
 	RenderSprites:
@@ -34,9 +34,8 @@ generals_power.spy_drone:
 	Tooltip:
 		Name: Spy Drone
 	Buildable:
-		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
+		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged
 		BuildPaletteOrder: 0
-		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points
 		Description: Enables Spy Drone support power from Command Center.
 	WithProductionIconOverlay:
@@ -47,9 +46,8 @@ generals_power.tech_training:
 	Tooltip:
 		Name: Technical Training
 	Buildable:
-		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power
+		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.gla_generals_power_merged
 		BuildPaletteOrder: 0
-		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points, !techlevel.infonly
 		Description: Makes Technicals trained as veteran.
 	WithProductionIconOverlay:
@@ -62,7 +60,6 @@ generals_power.red_training:
 	Buildable:
 		Queue: queue.prc_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
 		BuildPaletteOrder: 0
-		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points
 		Description: Makes Red Guards trained as veteran.
 	WithProductionIconOverlay:
@@ -73,9 +70,8 @@ generals_power.minigunner_training:
 	Tooltip:
 		Name: Minigunner Elite Training
 	Buildable:
-		Queue: queue.inf_gen_generals_power
+		Queue: queue.inf_gen_generals_power, queue.prc_generals_power_merged
 		BuildPaletteOrder: 0
-		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points
 		Description: Makes Minigunners trained at Rank 2.
 	WithProductionIconOverlay:
@@ -86,9 +82,8 @@ generals_power.arty_training:
 	Tooltip:
 		Name: Artillery Training
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.prc_generals_power_merged
 		BuildPaletteOrder: 1
-		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points, !techlevel.infonly
 		Description: Makes Inferno and Nuke Cannons trained as veteran.
 	WithProductionIconOverlay:
@@ -99,9 +94,8 @@ generals_power.battlemaster_training:
 	Tooltip:
 		Name: Battlemaster Elite Training
 	Buildable:
-		Queue: queue.tank_gen_generals_power
+		Queue: queue.tank_gen_generals_power, queue.prc_generals_power_merged
 		BuildPaletteOrder: 1
-		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points, !techlevel.infonly
 		Description: Makes Battlemaster Tanks trained at Rank 2.
 	WithProductionIconOverlay:
@@ -114,7 +108,6 @@ generals_power.nuke_cannon:
 	Buildable:
 		Queue: queue.prc_generals_power, queue.inf_gen_generals_power
 		BuildPaletteOrder: 2
-		ForceIconLocation: true
 		Prerequisites: prerequisite.has_points, !techlevel.infonly, !techlevel.notech
 		Description: Enables Nuke Cannon.
 	ProvidesPrerequisite@powername:
@@ -125,7 +118,7 @@ generals_power.nuke_cannon:
 hack.cameo_filler.1:
 	Inherits: ^default.cameo_filler
 	Buildable:
-		Queue: queue.usa_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
+		Queue: queue.usa_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		Prerequisites: disabled
@@ -135,7 +128,7 @@ generals_power.paladin_tank:
 	Tooltip:
 		Name: Paladin Tank
 	Buildable:
-		Queue: queue.usa_generals_power, queue.boss_gen_generals_power
+		Queue: queue.usa_generals_power, queue.usa_generals_power_merged, queue.boss_gen_generals_power
 		BuildPaletteOrder: 3
 		Prerequisites: prerequisite.has_points, !techlevel.infonly
 		Description: Enables Paladin Tank.
@@ -168,7 +161,7 @@ generals_power.pathfinder:
 	Tooltip:
 		Name: Pathfinder
 	Buildable:
-		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
+		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged
 		BuildPaletteOrder: 4
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, !techlevel.vehicleonly, !techlevel.notech
 		Description: Enables Pathfinder.
@@ -191,7 +184,7 @@ generals_power.carpet_bombing.airforce:
 	Tooltip:
 		Name: Carpet Bombing
 	Buildable:
-		Queue: queue.air_gen_generals_power
+		Queue: queue.air_gen_generals_power, queue.usa_generals_power_merged
 		BuildPaletteOrder: 5
 		Prerequisites: prerequisite.has_points
 		Description: Enables Carpet Bombing support power from Strategy Center.
@@ -203,7 +196,7 @@ generals_power.scud_launcher:
 	Tooltip:
 		Name: SCUD Launcher
 	Buildable:
-		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power
+		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.gla_generals_power_merged
 		BuildPaletteOrder: 3
 		Prerequisites: prerequisite.has_points, !techlevel.infonly, !techlevel.notech
 		Description: Enables SCUD Launcher.
@@ -217,7 +210,7 @@ generals_power.marauder_tank:
 	Tooltip:
 		Name: Marauder Tank
 	Buildable:
-		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power
+		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.gla_generals_power_merged
 		BuildPaletteOrder: 4
 		Prerequisites: prerequisite.has_points, !techlevel.infonly, !techlevel.notech
 		Description: Enables Marauder Tank.
@@ -267,7 +260,7 @@ generals_power.emergency_repair1:
 generals_power.emergency_repair1.rank1:
 	Inherits: generals_power.emergency_repair1
 	Buildable:
-		Queue: queue.air_gen_generals_power, queue.stealth_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Queue: queue.air_gen_generals_power, queue.stealth_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.usa_generals_power_merged, queue.gla_generals_power_merged, queue.prc_generals_power_merged
 		Prerequisites: prerequisite.has_points
 
 generals_power.emergency_repair2:
@@ -297,7 +290,7 @@ generals_power.paradrop1:
 	Tooltip:
 		Name: Paradrop - Level 1
 	Buildable:
-		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
+		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged
 		BuildPaletteOrder: 9
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, !techlevel.vehicleonly
 		Description: Enables Paradrop support power from Command Center.
@@ -309,7 +302,7 @@ generals_power.paradrop2:
 	Tooltip:
 		Name: Paradrop - Level 2
 	Buildable:
-		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
+		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.paradrop1, !techlevel.vehicleonly
 		Description: Upgrades Paradrop support power to Level 2.
@@ -321,7 +314,7 @@ generals_power.paradrop3:
 	Tooltip:
 		Name: Paradrop - Level 3
 	Buildable:
-		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
+		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged
 		BuildPaletteOrder: 11
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.paradrop2, !techlevel.vehicleonly
 		Description: Upgrades Paradrop support power to Level 3.
@@ -333,7 +326,7 @@ generals_power.paradrop1.inf_gen:
 	Tooltip:
 		Name: Paradrop - Level 1
 	Buildable:
-		Queue: queue.inf_gen_generals_power
+		Queue: queue.inf_gen_generals_power, queue.prc_generals_power_merged
 		BuildPaletteOrder: 12
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, !techlevel.vehicleonly
 		Description: Enables Paradrop support power from Command Center.
@@ -347,7 +340,7 @@ generals_power.paradrop2.inf_gen:
 	Tooltip:
 		Name: Paradrop - Level 2
 	Buildable:
-		Queue: queue.inf_gen_generals_power
+		Queue: queue.inf_gen_generals_power, queue.prc_generals_power_merged
 		BuildPaletteOrder: 13
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.paradrop1.inf_gen, !techlevel.vehicleonly
 		Description: Upgrades Paradrop support power to Level 2.
@@ -361,7 +354,7 @@ generals_power.paradrop3.inf_gen:
 	Tooltip:
 		Name: Paradrop - Level 3
 	Buildable:
-		Queue: queue.inf_gen_generals_power
+		Queue: queue.inf_gen_generals_power, queue.prc_generals_power_merged
 		BuildPaletteOrder: 14
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.paradrop2.inf_gen, !techlevel.vehicleonly
 		Description: Upgrades Paradrop support power to Level 3.
@@ -375,7 +368,7 @@ generals_power.ambush1:
 	Tooltip:
 		Name: Rebel Ambush - Level 1
 	Buildable:
-		Queue: queue.gla_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power
+		Queue: queue.gla_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.gla_generals_power_merged
 		BuildPaletteOrder: 9
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, !techlevel.vehicleonly
 		Description: Enables Rebel Ambush support power from Command Center.
@@ -387,7 +380,7 @@ generals_power.ambush2:
 	Tooltip:
 		Name: Rebel Ambush - Level 2
 	Buildable:
-		Queue: queue.gla_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power
+		Queue: queue.gla_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.gla_generals_power_merged
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.ambush1, !techlevel.vehicleonly
 		Description: Upgrades Rebel Ambush support power to Level 2.
@@ -399,7 +392,7 @@ generals_power.ambush3:
 	Tooltip:
 		Name: Rebel Ambush - Level 3
 	Buildable:
-		Queue: queue.gla_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power
+		Queue: queue.gla_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.gla_generals_power_merged
 		BuildPaletteOrder: 11
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.ambush2, !techlevel.vehicleonly
 		Description: Upgrades Rebel Ambush support power to Level 3.
@@ -411,7 +404,7 @@ generals_power.ambush1.toxin:
 	Tooltip:
 		Name: Toxin Rebel Ambush - Level 1
 	Buildable:
-		Queue: queue.toxin_gen_generals_power
+		Queue: queue.toxin_gen_generals_power, queue.gla_generals_power_merged
 		BuildPaletteOrder: 9
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, !techlevel.vehicleonly
 		Description: Enables Toxin Rebel Ambush support power from Command Center.
@@ -423,7 +416,7 @@ generals_power.ambush2.toxin:
 	Tooltip:
 		Name: Toxin Rebel Ambush - Level 2
 	Buildable:
-		Queue: queue.toxin_gen_generals_power
+		Queue: queue.toxin_gen_generals_power, queue.gla_generals_power_merged
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.ambush1.toxin, !techlevel.vehicleonly
 		Description: Upgrades Toxin Rebel Ambush support power to Level 2.
@@ -435,7 +428,7 @@ generals_power.ambush3.toxin:
 	Tooltip:
 		Name: Toxin Rebel Ambush - Level 3
 	Buildable:
-		Queue: queue.toxin_gen_generals_power
+		Queue: queue.toxin_gen_generals_power, queue.gla_generals_power_merged
 		BuildPaletteOrder: 11
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.ambush2.toxin, !techlevel.vehicleonly
 		Description: Upgrades Toxin Rebel Ambush support power to Level 3.
@@ -461,7 +454,7 @@ generals_power.frenzy1:
 generals_power.frenzy1.rank1:
 	Inherits: generals_power.frenzy1
 	Buildable:
-		Queue: queue.inf_gen_generals_power
+		Queue: queue.inf_gen_generals_power, queue.prc_generals_power_merged
 		Prerequisites: prerequisite.has_points, ~prerequisite.zh_units
 
 generals_power.frenzy2:
@@ -469,7 +462,7 @@ generals_power.frenzy2:
 	Tooltip:
 		Name: Frenzy - Level 2
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.prc_generals_power_merged
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.frenzy1, ~prerequisite.zh_units
 		Description: Upgrades Frenzy support power to Level 2.
@@ -481,7 +474,7 @@ generals_power.frenzy3:
 	Tooltip:
 		Name: Frenzy - Level 3
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.prc_generals_power_merged
 		BuildPaletteOrder: 11
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.frenzy2, ~prerequisite.zh_units
 		Description: Upgrades Frenzy support power to Level 3.
@@ -493,7 +486,7 @@ generals_power.cash_hack1:
 	Tooltip:
 		Name: Cash Hack - Level 1
 	Buildable:
-		Queue: queue.prc_generals_power, queue.nuke_gen_generals_power
+		Queue: queue.prc_generals_power, queue.nuke_gen_generals_power, queue.prc_generals_power_merged
 		BuildPaletteOrder: 15
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points
 		Description: Enables Cash Hack support power from Command Center.
@@ -505,7 +498,7 @@ generals_power.cash_hack2:
 	Tooltip:
 		Name: Cash Hack - Level 2
 	Buildable:
-		Queue: queue.prc_generals_power, queue.nuke_gen_generals_power
+		Queue: queue.prc_generals_power, queue.nuke_gen_generals_power, queue.prc_generals_power_merged
 		BuildPaletteOrder: 16
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_hack1
 		Description: Upgrades Cash Hack support power to Level 2.
@@ -517,7 +510,7 @@ generals_power.cash_hack3:
 	Tooltip:
 		Name: Cash Hack - Level 3
 	Buildable:
-		Queue: queue.prc_generals_power, queue.nuke_gen_generals_power
+		Queue: queue.prc_generals_power, queue.nuke_gen_generals_power, queue.prc_generals_power_merged
 		BuildPaletteOrder: 17
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_hack2
 		Description: Upgrades Cash Hack support power to Level 3.
@@ -529,7 +522,7 @@ generals_power.a101:
 	Tooltip:
 		Name: A-10 Strike - Level 1
 	Buildable:
-		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
+		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged
 		BuildPaletteOrder: 12
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points
 		Description: Enables A-10 Strike support power from Command Center.
@@ -541,7 +534,7 @@ generals_power.a102:
 	Tooltip:
 		Name: A-10 Strike - Level 2
 	Buildable:
-		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
+		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged
 		BuildPaletteOrder: 13
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.a101
 		Description: Upgrades A-10 Strike support power to Level 2.
@@ -553,7 +546,7 @@ generals_power.a103:
 	Tooltip:
 		Name: A-10 Strike - Level 3
 	Buildable:
-		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
+		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged
 		BuildPaletteOrder: 14
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.a102
 		Description: Upgrades A-10 Strike support power to Level 3.
@@ -565,7 +558,7 @@ generals_power.cash_bounty1:
 	Tooltip:
 		Name: Cash Bounty - Level 1
 	Buildable:
-		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.boss_gen_generals_power
+		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.gla_generals_power_merged, queue.boss_gen_generals_power
 		BuildPaletteOrder: 12
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points
 		Description: Enemy units give 5% of their worth on death.
@@ -577,7 +570,7 @@ generals_power.cash_bounty2:
 	Tooltip:
 		Name: Cash Bounty - Level 2
 	Buildable:
-		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.boss_gen_generals_power
+		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.gla_generals_power_merged, queue.boss_gen_generals_power
 		BuildPaletteOrder: 13
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_bounty1
 		Description: Enemy units give 10% of their worth on death.
@@ -589,7 +582,7 @@ generals_power.cash_bounty3:
 	Tooltip:
 		Name: Cash Bounty - Level 3
 	Buildable:
-		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.boss_gen_generals_power
+		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.gla_generals_power_merged, queue.boss_gen_generals_power
 		BuildPaletteOrder: 14
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.cash_bounty2
 		Description: Enemy units give 20% of their worth on death.
@@ -615,7 +608,7 @@ generals_power.gps_scrambler1:
 generals_power.gps_scrambler1.rank3:
 	Inherits: generals_power.gps_scrambler1
 	Buildable:
-		Queue: queue.stealth_gen_generals_power
+		Queue: queue.stealth_gen_generals_power, queue.gla_generals_power_merged
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~prerequisite.zh_units
 
 generals_power.gps_scrambler2:
@@ -623,7 +616,7 @@ generals_power.gps_scrambler2:
 	Tooltip:
 		Name: GPS Scrambler - Level 2
 	-Buildable:
-	#	Queue: queue.stealth_gen_generals_power
+	#	Queue: queue.stealth_gen_generals_power, queue.gla_generals_power_merged
 	#	BuildPaletteOrder: 16
 	#	Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.gps_scrambler1, ~prerequisite.zh_units
 	#	Description: Upgrades GPS Scrambler support power to Level 2.
@@ -635,7 +628,7 @@ generals_power.gps_scrambler3:
 	Tooltip:
 		Name: GPS Scrambler - Level 3
 	-Buildable:
-	#	Queue: queue.stealth_gen_generals_power
+	#	Queue: queue.stealth_gen_generals_power, queue.gla_generals_power_merged
 	#	BuildPaletteOrder: 17
 	#	Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.gps_scrambler2, ~prerequisite.zh_units
 	#	Description: Upgrades GPS Scrambler support power to Level 3.
@@ -647,7 +640,7 @@ generals_power.arty_barrage1:
 	Tooltip:
 		Name: Artillery Barrage - Level 1
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.prc_generals_power_merged, queue.boss_gen_generals_power
 		BuildPaletteOrder: 18
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points
 		Description: Enables Artillery Barrage support power from Command Center.
@@ -659,7 +652,7 @@ generals_power.arty_barrage2:
 	Tooltip:
 		Name: Artillery Barrage - Level 2
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.prc_generals_power_merged, queue.boss_gen_generals_power
 		BuildPaletteOrder: 19
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.arty_barrage1
 		Description: Upgrades Artillery Barrage support power to Level 2.
@@ -671,7 +664,7 @@ generals_power.arty_barrage3:
 	Tooltip:
 		Name: Artillery Barrage - Level 3
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.prc_generals_power_merged, queue.boss_gen_generals_power
 		BuildPaletteOrder: 20
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.arty_barrage2
 		Description: Upgrades Artillery Barrage support power to Level 3.
@@ -683,7 +676,7 @@ generals_power.tank_drop1:
 	Tooltip:
 		Name: Tank Drop - Level 1
 	Buildable:
-		Queue: queue.tank_gen_generals_power
+		Queue: queue.tank_gen_generals_power, queue.prc_generals_power_merged
 		BuildPaletteOrder: 21
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, !techlevel.infonly
 		Description: Enables Tank Drop support power from Command Center.
@@ -695,7 +688,7 @@ generals_power.tank_drop2:
 	Tooltip:
 		Name: Tank Drop - Level 2
 	Buildable:
-		Queue: queue.tank_gen_generals_power
+		Queue: queue.tank_gen_generals_power, queue.prc_generals_power_merged
 		BuildPaletteOrder: 22
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.tank_drop1, !techlevel.infonly
 		Description: Upgrades Tank Drop support power to Level 2.
@@ -707,7 +700,7 @@ generals_power.tank_drop3:
 	Tooltip:
 		Name: Tank Drop - Level 3
 	Buildable:
-		Queue: queue.tank_gen_generals_power
+		Queue: queue.tank_gen_generals_power, queue.prc_generals_power_merged
 		BuildPaletteOrder: 23
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.tank_drop2, !techlevel.infonly
 		Description: Upgrades Tank Drop support power to Level 3.
@@ -719,7 +712,7 @@ generals_power.anthrax_bomb:
 	Tooltip:
 		Name: Anthrax Bomb
 	Buildable:
-		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power
+		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.gla_generals_power_merged
 		BuildPaletteOrder: 27
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points
 		Description: Enables Anthrax Bomb support power from Command Center.
@@ -738,7 +731,7 @@ generals_power.cluster_mines:
 	Tooltip:
 		Name: Cluster Mines
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.prc_generals_power_merged, queue.boss_gen_generals_power
 		BuildPaletteOrder: 24
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points
 		Description: Enables Cluster Mines support power from Command Center.
@@ -779,7 +772,7 @@ generals_power.carpet_bombing.nuke:
 	Tooltip:
 		Name: Nuclear Carpet Bombing
 	Buildable:
-		Queue: queue.nuke_gen_generals_power
+		Queue: queue.nuke_gen_generals_power, queue.prc_generals_power_merged
 		BuildPaletteOrder: 25
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~prerequisite.zh_units
 		Description: Enables Nuclear Carpet Bombing support power from Command Center.
@@ -791,7 +784,7 @@ generals_power.fuel_air_bomb:
 	Tooltip:
 		Name: Fuel Air Bomb
 	Buildable:
-		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power
+		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged
 		BuildPaletteOrder: 17
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points
 		Description: Enables Fuel Air Bomb support power from Command Center.
@@ -819,7 +812,7 @@ generals_power.leaflet_drop:
 generals_power.leaflet_drop.rank3:
 	Inherits: generals_power.leaflet_drop
 	Buildable:
-		Queue: queue.super_gen_generals_power
+		Queue: queue.super_gen_generals_power, queue.usa_generals_power_merged
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~prerequisite.zh_units
 
 generals_power.spectre_gunship:
@@ -841,7 +834,7 @@ generals_power.spectre_gunship1:
 	Tooltip:
 		Name: Spectre Gunship - Level 1
 	Buildable:
-		Queue: queue.air_gen_generals_power, queue.super_gen_generals_power
+		Queue: queue.air_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged
 		BuildPaletteOrder: 14
 		Prerequisites: ~disabled # prerequisite.3_stars, prerequisite.has_points, ~prerequisite.zh_units
 
@@ -850,7 +843,7 @@ generals_power.spectre_gunship2:
 	Tooltip:
 		Name: Spectre Gunship - Level 2
 	Buildable:
-		Queue: queue.air_gen_generals_power, queue.super_gen_generals_power
+		Queue: queue.air_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged
 		BuildPaletteOrder: 15
 		Prerequisites: ~disabled # prerequisite.3_stars, prerequisite.has_points, generals_power.spectre_gunship1, ~prerequisite.zh_units
 		Description: Upgrades Spectre Gunship support power to Level 2.
@@ -862,7 +855,7 @@ generals_power.spectre_gunship3:
 	Tooltip:
 		Name: Spectre Gunship - Level 3
 	Buildable:
-		Queue: queue.air_gen_generals_power, queue.super_gen_generals_power
+		Queue: queue.air_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged
 		BuildPaletteOrder: 16
 		Prerequisites: ~disabled # prerequisite.5_stars, prerequisite.has_points, generals_power.spectre_gunship2, ~prerequisite.zh_units
 		Description: Upgrades Spectre Gunship support power to Level 3.
@@ -874,7 +867,7 @@ generals_power.sneak_attack:
 	Tooltip:
 		Name: Sneak Attack
 	Buildable:
-		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.boss_gen_generals_power
+		Queue: queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.gla_generals_power_merged, queue.boss_gen_generals_power
 		BuildPaletteOrder: 29
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~prerequisite.zh_units
 		Description: Enables Sneak Attack support power from Command Center.
@@ -893,7 +886,7 @@ generals_power.emp:
 	Tooltip:
 		Name: E. M. Pulse
 	Buildable:
-		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
+		Queue: queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.prc_generals_power_merged, queue.boss_gen_generals_power
 		BuildPaletteOrder: 27
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points
 		Description: Enables E. M. Pulse support power from Command Center.

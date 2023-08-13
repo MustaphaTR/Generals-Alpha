@@ -29,6 +29,10 @@ checkbox-docksresupply =
     .label = Docks Resupply
     .description = Supply Docks fill back with time
 
+checkbox-mergegenerals =
+    .label = Merge Generals
+    .description = Regardless of chosen general, effects from all 3 generals are given
+
 ## World
 dropdown-restrictions =
     .label = Restrictions

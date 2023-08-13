@@ -296,7 +296,7 @@ aircraft.mig:
 			200: rank-veteran
 			400: rank-veteran
 	Buildable:
-		Queue: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft
+		Queue: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.prc_aircraft_merged, queue.boss_gen_aircraft
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -603,7 +603,7 @@ aircraft.king_raptor:
 	GivesExperienceMultiplier@RANK-ELITE:
 		Modifier: 233
 	Buildable:
-		Queue: queue.air_gen_aircraft, queue.boss_gen_aircraft
+		Queue: queue.air_gen_aircraft, queue.usa_aircraft_merged, queue.boss_gen_aircraft
 		Description: Multi-role fighter plane.\n\nCan deflect enemy missiles with laser.
 		ReadyAudio: KingRaptorCreated
 	BuildPaletteOrderModifier@Boss:
@@ -808,7 +808,7 @@ aircraft.stealth_fighter:
 aircraft.stealth_fighter.air:
 	Inherits: aircraft.stealth_fighter
 	Buildable:
-		Queue: queue.air_gen_aircraft
+		Queue: queue.air_gen_aircraft, queue.usa_aircraft_merged
 		Prerequisites: !prerequisite.enoughair
 	Valued:
 		Cost: 1250
@@ -988,7 +988,7 @@ aircraft.aurora.boss:
 aircraft.aurora_alpha:
 	Inherits: aircraft.aurora
 	Buildable:
-		Queue: queue.super_gen_aircraft
+		Queue: queue.super_gen_aircraft, queue.usa_aircraft_merged
 	Tooltip:
 		Name: Aurora Alpha
 	Armament:
@@ -1486,7 +1486,7 @@ aircraft.comanche:
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
 	Buildable:
-		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft
+		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged
 		BuildAtProductionType: queue.usa_helicopter
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
@@ -1498,7 +1498,7 @@ aircraft.comanche:
 	Valued:
 		Cost: 1500
 	ProductionCostMultiplier@Airforce:
-		Queue: queue.air_gen_aircraft
+		Queue: queue.air_gen_aircraft, queue.usa_aircraft_merged
 		Multiplier: 80 # 1200
 	ProductionCostMultiplier@Super:
 		Queue: queue.super_gen_aircraft
@@ -1642,8 +1642,8 @@ aircraft.helix:
 		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Prerequisites: ~building.prc_airfield, ~prerequisite.zh_units
-		Description: Helicopter gunship armed with machine gun.\n\nCan carry 5 infantry.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
+		Prerequisites: ~prerequisite.zh_units
+		Description: Helicopter gunship armed with machine gun.\n\nCan carry 5 units.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
 		ReadyAudio: HelixCreated
 	Valued:
 		Cost: 1500
@@ -1684,22 +1684,40 @@ aircraft.helix:
 	Armor:
 		Type: aircraft.chinook
 	Production:
-		Produces: queue.helix, queue.nuke_gen_helix
-		RequiresCondition: (!bunker_upgrade && !gatling_upgrade && !speaker_upgrade) || (!napalm_upgrade && !nuke_upgrade)
+		Produces: queue.helix, queue.inf_gen_helix, queue.nuke_gen_helix
+		RequiresCondition: ((!bunker_upgrade && !gatling_upgrade && !speaker_upgrade) || (!napalm_upgrade && !nuke_upgrade)) && !merged
+	Production@Merged:
+		Produces: queue.helix_merged
+		RequiresCondition: ((!bunker_upgrade && !gatling_upgrade && !speaker_upgrade) || (!napalm_upgrade && !nuke_upgrade)) && merged
 	ProductionQueue:
 		Type: queue.helix
-		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, tank, boss
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, tank, boss
 		LowPowerModifier: 300
+	ProductionQueue@Inf:
+		Type: queue.inf_gen_helix
+		Factions: inf
+		Group: Tech
+		ItemLimit: 1
+		InstantCashDrain: true
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_helix
 		Factions: nuke
 		Group: Tech
 		ItemLimit: 1
 		InstantCashDrain: true
+	ProductionQueue@Merged:
+		Type: queue.helix_merged
+		Group: Tech
+		ItemLimit: 1
+		InstantCashDrain: true
 	ProductionBar:
 		ProductionType: queue.helix
+	ProductionBar@Inf:
+		ProductionType: queue.inf_gen_helix
 	ProductionBar@Nuke:
 		ProductionType: queue.nuke_gen_helix
+	ProductionBar@Merged:
+		ProductionType: queue.helix_merged
 	Armament@MG:
 		Weapon: mg.helix
 		LocalOffset: 1024,0,-125
@@ -1784,25 +1802,25 @@ aircraft.helix:
 		RevokeAll: true
 		IsCyclic: false
 	ConditionPrerequisite@BUNKER:
-		Queue: queue.helix, queue.assault_helix, queue.nuke_gen_helix
+		Queue: queue.helix, queue.assault_helix, queue.nuke_gen_helix, queue.helix_merged
 		Actor: upgrade.helix_bunker
 		PauseOnCondition: bunker_upgrade || gatling_upgrade || speaker_upgrade
 	ConditionPrerequisite@GATLING:
-		Queue: queue.helix, queue.nuke_gen_helix
+		Queue: queue.helix, queue.nuke_gen_helix, queue.helix_merged
 		Actor: upgrade.helix_gatling
 		PauseOnCondition: bunker_upgrade || gatling_upgrade || speaker_upgrade
 	ConditionPrerequisite@SPEAKER:
-		Queue: queue.helix, queue.nuke_gen_helix
+		Queue: queue.helix, queue.nuke_gen_helix, queue.helix_merged
 		Actor: upgrade.helix_speaker
 		PauseOnCondition: bunker_upgrade || gatling_upgrade || speaker_upgrade
 	ConditionPrerequisite@NAPALM:
-		Queue: queue.helix, queue.assault_helix
+		Queue: queue.helix, queue.assault_helix, queue.helix_merged
 		Actor: upgrade.helix_napalm
-		PauseOnCondition: napalm_upgrade
+		PauseOnCondition: napalm_upgrade || nuke_upgrade
 	ConditionPrerequisite@NUKE:
-		Queue: queue.nuke_gen_helix
+		Queue: queue.nuke_gen_helix, queue.helix_merged
 		Actor: upgrade.helix_nuke
-		PauseOnCondition: nuke_upgrade
+		PauseOnCondition: napalm_upgrade || nuke_upgrade
 	ConditionIconOverlay@BUNKER:
 		Image: iconstripes
 		Sequence: upgraded
@@ -1837,9 +1855,15 @@ aircraft.helix:
 	GrantConditionOnPrerequisite@BLACK_NAPALM:
 		Condition: black_napalm
 		Prerequisites: upgrade.black_napalm
+	GrantConditionOnFaction@Inf:
+		Condition: inf
+		Factions: inf
 	GrantConditionOnFaction@Nuke:
 		Condition: nuke
 		Factions: nuke
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
@@ -1867,6 +1891,9 @@ aircraft.helix:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Cargo
 		Upgrades: upgrade.black_napalm, upgrade.helix_napalm, upgrade.helix_bunker, upgrade.helix_gatling, upgrade.helix_speaker
 		LocalUpgrades: upgrade.helix_napalm, upgrade.helix_nuke, upgrade.helix_bunker, upgrade.helix_gatling, upgrade.helix_speaker
+	ActorStatOverride@Inf:
+		Upgrades: upgrade.black_napalm, upgrade.helix_napalm, upgrade.helix_bunker
+		RequiresCondition: inf
 	ActorStatOverride@Nuke:
 		Upgrades: upgrade.helix_nuke, upgrade.helix_bunker, upgrade.helix_gatling, upgrade.helix_speaker
 		RequiresCondition: nuke
@@ -1874,36 +1901,10 @@ aircraft.helix:
 aircraft.assault_helix:
 	Inherits: aircraft.helix
 	Buildable:
-		Queue: queue.inf_gen_aircraft
+		Queue: queue.inf_gen_aircraft, queue.prc_aircraft_merged
 		Description: Helicopter gunship armed with machine gun.\n\nCan carry 8 infantry.\n\nCan be upgraded to have a bunker.
-	-FirepowerMultiplier@CHAIN_GUN:
-	-GrantConditionOnPrerequisite@CHAIN_GUN:
-	-ReloadDelayMultiplier@Gatling1:
-	-ReloadDelayMultiplier@Gatling2:
 	Tooltip:
 		Name: Assault Helix
-	Production:
-		Produces: queue.assault_helix
-	ProductionQueue:
-		Type: queue.assault_helix
-		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
-		LowPowerModifier: 300
-	ProductionBar:
-		ProductionType: queue.assault_helix
-	-ProductionQueue@Nuke:
-	-ProductionBar@Nuke:
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker
 		MaxWeight: 8
-	AttackAircraft:
-		Armaments: primary
-	-Armament@GATLING:
-	-GrantConditionOnAttack@GATLING:
-	-WithRangeCircle:
-	-ProximityExternalCondition@SPEAKER:
-	WithCargoPipsDecoration:
-		Position: BottomLeft
-		RequiresSelection: true
-	ActorStatValues:
-		Upgrades: upgrade.black_napalm, upgrade.helix_napalm, upgrade.helix_bunker
-	-ActorStatOverride@Nuke:

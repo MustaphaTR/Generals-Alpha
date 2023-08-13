@@ -212,6 +212,9 @@
 	GrantConditionOnPrerequisite@PATRIOTISM:
 		Condition: patriotism
 		Prerequisites: upgrade.patriotism
+	GrantConditionOnPrerequisite@NATIONALISM_MERGED:
+		Condition: nationalism
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@NATIONALISM:
 		Condition: nationalism
 		Factions: inf
@@ -434,10 +437,13 @@
 	Explodes@Demo:
 		Weapon: explosion.suicide
 		EmptyWeapon: explosion.suicide
-		RequiresCondition: demo && demolitions
+		RequiresCondition: (demo || merged) && demolitions
 	GrantConditionOnFaction@Demo:
 		Condition: demo
 		Factions: demo
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnPrerequisite@DEMOLITIONS:
 		Condition: demolitions
 		Prerequisites: upgrade.demolitions
@@ -501,10 +507,10 @@
 	ActorStatValues:
 		Upgrades: upgrade.nuclear_tanks, upgrade.isotope_stability
 	SpeedMultiplier@NUCLEAR_TANKS:
-		RequiresCondition: nuclear_tanks && !nuke
+		RequiresCondition: nuclear_tanks && !nuke && !merged
 		Modifier: 140
 	SpeedMultiplier@NUKE_GEN:
-		RequiresCondition: nuke
+		RequiresCondition: nuke || merged
 		Modifier: 180
 	GrantConditionOnPrerequisite@NUCLEAR_TANKS:
 		Condition: nuclear_tanks
@@ -512,17 +518,20 @@
 	GrantConditionOnPrerequisite@ISOTOPE_STABILITY:
 		Condition: isotope_stability
 		Prerequisites: upgrade.isotope_stability
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@Nuke:
 		Condition: nuke
 		Factions: nuke
 	Explodes@NuclearTanks:
 		Weapon: explosion.nuclear_tanks
 		EmptyWeapon: explosion.nuclear_tanks
-		RequiresCondition: !nuke && nuclear_tanks && !isotope_stability
+		RequiresCondition: !nuke && !merged && nuclear_tanks && !isotope_stability
 	Explodes@NUKE_GEN:
 		Weapon: explosion.nuclear_tanks.nuke
 		EmptyWeapon: explosion.nuclear_tanks.nuke
-		RequiresCondition: nuke && !isotope_stability
+		RequiresCondition: (nuke || merged) && !isotope_stability
 
 ^AffectedByUraniumShells:
 	ActorStatValues:
@@ -533,6 +542,9 @@
 	GrantConditionOnPrerequisite@URANIUM_SHELLS:
 		Condition: uranium_shells
 		Prerequisites: upgrade.uranium_shells
+	GrantConditionOnPrerequisite@URANIUM_SHELLS_MERGED:
+		Condition: uranium_shells
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@URANIUM_SHELLS:
 		Condition: uranium_shells
 		Factions: nuke
@@ -1221,7 +1233,7 @@
 		Condition: camo_netted
 		Actors: upgrade.camo_netting
 	ConditionPrerequisite@CAMO_NETTING:
-		Queue: queue.camo_netting, queue.stealth_gen_command_center, queue.stealth_gen_infantry, queue.stealth_gen_collector, queue.stealth_gen_vehicle, queue.stealth_gen_palace, queue.stealth_gen_black_market
+		Queue: queue.camo_netting, queue.stealth_gen_command_center, queue.stealth_gen_infantry, queue.stealth_gen_collector, queue.stealth_gen_vehicle, queue.stealth_gen_palace, queue.stealth_gen_black_market, queue.gla_infantry_merged, queue.palace_merged
 		Actor: upgrade.camo_netting
 		PauseOnCondition: camo_netted
 		RequiresCondition: zh_units
@@ -1233,6 +1245,9 @@
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@Toxin:
 		Condition: toxin
 		Factions: toxin

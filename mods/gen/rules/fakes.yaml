@@ -9,10 +9,10 @@ fake.command_center:
 			TopLeft: -1536, -1536
 			BottomRight: 1536, 1536
 	Buildable:
-		BuildPaletteOrder: 23
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged
+		BuildPaletteOrder: 22
 		BuildDuration: 750
 		BuildDurationModifier: 100
-		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		Prerequisites: ~prerequisite.zh_units, !techlevel.nocc
 		Description: Looks like a Command Center.
 		Icon: fake-icon
@@ -78,11 +78,11 @@ fake.barracks:
 	HitShape:
 		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
 	Buildable:
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged
 		BuildPaletteOrder: 12
 		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		Prerequisites: ~prerequisite.zh_units, !techlevel.vehicleonly
 		Description: Looks like a Barracks.
 		Icon: fake-icon
@@ -143,10 +143,10 @@ fake.supply_stash:
 	HitShape:
 		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
 	Buildable:
-		BuildPaletteOrder: 15
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged
+		BuildPaletteOrder: 13
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		Prerequisites: ~prerequisite.zh_units
 		Description: Looks like a Supply Stash.
 		Icon: fake-icon
@@ -209,10 +209,10 @@ fake.arms_dealer:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		BuildPaletteOrder: 17
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged
+		BuildPaletteOrder: 15
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		Prerequisites: prerequisite.supply_center, ~prerequisite.zh_units, !techlevel.infonly
 		Description: Looks like an Arms Dealer.
 		Icon: fake-icon
@@ -275,10 +275,10 @@ fake.palace:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		BuildPaletteOrder: 20
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged
+		BuildPaletteOrder: 18
 		BuildDuration: 625
 		BuildDurationModifier: 100
-		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		Prerequisites: building.arms_dealer, ~prerequisite.zh_units, !techlevel.notech
 		Description: Looks like a Palace.
 		Icon: fake-icon
@@ -344,10 +344,10 @@ fake.black_market:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		BuildPaletteOrder: 21
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged
+		BuildPaletteOrder: 19
 		BuildDuration: 500
 		BuildDurationModifier: 100
-		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		Prerequisites: building.palace, ~prerequisite.zh_units, !techlevel.notech
 		Description: Looks like a Black Market.
 		Icon: fake-icon
@@ -411,8 +411,8 @@ fake.scud_storm:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
-		BuildPaletteOrder: 22
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged
+		BuildPaletteOrder: 21
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~prerequisite.zh_units, !techlevel.nosw
@@ -550,10 +550,10 @@ fake.demo_trap:
 	Inherits: ^FakeDefense
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		BuildPaletteOrder: 16
+		Queue: queue.gla_building
+		BuildPaletteOrder: 14
 		BuildDuration: 25
 		BuildDurationModifier: 100
-		Queue: queue.gla_building
 		Prerequisites: ~prerequisite.zh_units, !techlevel.nodefense
 		Description: Looks like a Demo Trap.
 		Icon: fake-icon
@@ -636,7 +636,7 @@ fake.demo_trap.toxin:
 fake.advanced_demo_trap:
 	Inherits: fake.demo_trap
 	Buildable:
-		Queue: queue.demo_gen_building
+		Queue: queue.demo_gen_building, queue.gla_building_merged
 		Description: Looks like an Advanced Demo Trap.
 	Tooltip:
 		Name: Fake Advanced Demo Trap
@@ -663,10 +663,10 @@ fake.tunnel_network:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		BuildPaletteOrder: 18
+		BuildPaletteOrder: 16
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Queue: queue.gla_building, queue.demo_gen_building
+		Queue: queue.gla_building, queue.demo_gen_building, queue.gla_building_merged
 		Prerequisites: building.gla_barracks, ~prerequisite.zh_units, !techlevel.nodefense
 		Description: Looks like a Tunnel Network.
 		Icon: fake-icon
@@ -762,7 +762,7 @@ fake.tunnel_network:
 fake.toxin_tunnel_network:
 	Inherits: fake.tunnel_network
 	Buildable:
-		Queue: queue.toxin_gen_building
+		Queue: queue.toxin_gen_building, queue.gla_building_merged
 		Description: Looks like a Toxin Tunnel Network.
 	Tooltip:
 		Name: Fake Toxin Tunnel Network
@@ -799,13 +799,16 @@ fake.stinger_site:
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SHAPE: ^1x1Shape
 	Buildable:
-		BuildPaletteOrder: 19
+		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged
+		BuildPaletteOrder: 17
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		Prerequisites: building.gla_barracks, ~prerequisite.zh_units, !techlevel.nodefense
 		Description: Looks like a Stinger Site.
 		Icon: fake-icon
+	BuildPaletteOrderModifier@Merged:
+		Queue: queue.gla_building_merged
+		Modifier: 3 # 20
 	Tooltip:
 		Name: Fake Stinger Site
 		GenericName: Stinger Site

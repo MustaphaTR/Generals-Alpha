@@ -222,7 +222,7 @@ infantry.rebel:
 		Modifier: 267
 		RequiresCondition: rank-elite
 	Buildable:
-		Queue: queue.gla_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
+		Queue: queue.gla_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.gla_infantry_merged
 		ReadyAudio: RebelCreated
 	ProductionCostMultiplier@Stealth1:
 		Queue: queue.stealth_gen_infantry
@@ -253,6 +253,9 @@ infantry.rebel:
 	GrantConditionOnPrerequisite@CAMOUFLAGE:
 		Condition: camouflage
 		Prerequisites: upgrade.camouflage
+	GrantConditionOnPrerequisite@CAMOUFLAGE_MERGED:
+		Condition: camouflage
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@CAMOUFLAGE:
 		Condition: camouflage
 		Factions: stealth
@@ -290,9 +293,12 @@ infantry.toxin_rebel:
 		Modifier: 267
 		RequiresCondition: rank-elite
 	Buildable:
-		Queue: queue.toxin_gen_infantry
+		Queue: queue.toxin_gen_infantry, queue.gla_infantry_merged
 		Description: General-purpose infantry armed with toxins.\n\nCan damage infantry garrisoned in civilian structures.
 		ReadyAudio: ToxinRebelCreated
+	BuildPaletteOrderModifier@Merged:
+		Queue: queue.gla_infantry_merged
+		Modifier: 9 # 9
 	Valued:
 		Cost: 200
 	Tooltip:
@@ -379,12 +385,18 @@ infantry.toxin_rebel:
 	GrantConditionOnPrerequisite@CAMOUFLAGE:
 		Condition: camouflage
 		Prerequisites: upgrade.camouflage
+	GrantConditionOnPrerequisite@CAMOUFLAGE_MERGED:
+		Condition: camouflage
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
 	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
 		Condition: anthrax_gamma
 		Prerequisites: upgrade.anthrax_gamma
+	GrantConditionOnPrerequisite@ANTHRAX_BETA_MERGED:
+		Condition: anthrax_beta
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
@@ -424,7 +436,7 @@ infantry.red_guard:
 			40: rank-veteran
 			80: rank-veteran
 	Buildable:
-		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry
+		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged
 		BuildAmount: 2
 		BuildDuration: 250
 		Description: General-purpose infantry armed with a rifle.\n\nTrained in groups of 2.
@@ -490,10 +502,13 @@ infantry.minigunner:
 			40: rank-veteran
 			80: rank-veteran
 	Buildable:
-		Queue: queue.inf_gen_infantry
+		Queue: queue.inf_gen_infantry, queue.prc_infantry_merged
 		BuildDuration: 250
 		Description: General-purpose infantry armed with a minigun.
 		ReadyAudio: MinigunnerCreated
+	BuildPaletteOrderModifier@Merged:
+		Queue: queue.prc_infantry_merged
+		Modifier: 6 # 6
 	Valued:
 		Cost: 350
 	Mobile:
@@ -706,7 +721,7 @@ infantry.rpg_trooper:
 	Inherits@AP_ROCKETS: ^AffectedByAPRockets
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Buildable:
-		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
+		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.gla_infantry_merged
 		ReadyAudio: RPGTrooperCreated
 	Armament@PRIMARY:
 		Weapon: missile.rpg_trooper.ground
@@ -781,7 +796,7 @@ infantry.tank_hunter:
 	Inherits@CHEM: ^AffectedByChemicalSuitsBossOnly
 	Inherits@HORDE_BONUS: ^InfantryHorde
 	Buildable:
-		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
+		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry
 		Description: Anti-tank & anti-air infantry.\n\nCan place TNT charges on vehicles and\nbuildings by force firing.
 		ReadyAudio: TankHunterCreated
 	ProductionCostMultiplier@Nuke1:
@@ -1040,7 +1055,7 @@ infantry.terrorist:
 infantry.toxin_terrorist:
 	Inherits: infantry.terrorist
 	Buildable:
-		Queue: queue.toxin_gen_infantry
+		Queue: queue.toxin_gen_infantry, queue.gla_infantry_merged
 		Description: Explodes and leaves toxins.
 	Tooltip:
 		Name: Toxin Terrorist
@@ -1062,6 +1077,9 @@ infantry.toxin_terrorist:
 	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
 		Condition: anthrax_gamma
 		Prerequisites: upgrade.anthrax_gamma
+	GrantConditionOnPrerequisite@ANTHRAX_BETA_MERGED:
+		Condition: anthrax_beta
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
@@ -1141,8 +1159,8 @@ infantry.saboteur:
 	GivesExperience:
 		Experience: 15
 	Buildable:
-		Queue: queue.gla_infantry, queue.stealth_gen_infantry
-		BuildPaletteOrder: 9
+		Queue: queue.gla_infantry, queue.stealth_gen_infantry, queue.gla_infantry_merged
+		BuildPaletteOrder: 8
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.arms_dealer, ~prerequisite.zh_units, !techlevel.vehicleonly
@@ -1293,7 +1311,7 @@ infantry.angry_mob:
 	Inherits@LEAFLET: ^AffectedByLeaflet
 	-AppearsOnRadar:
 	Buildable:
-		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
+		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.gla_infantry_merged
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 375
@@ -1539,7 +1557,7 @@ infantry.hacker.boss:
 infantry.super_hacker:
 	Inherits: infantry.hacker
 	Buildable:
-		Queue: queue.inf_gen_infantry
+		Queue: queue.inf_gen_infantry, queue.prc_infantry_merged
 		Description: Hacks internet to gain money while deployed.\n\nCan disable enemy structures and vehicles.\n\nCamouflaged.
 		ReadyAudio: SuperHackerCreated
 	Tooltip:
@@ -1648,7 +1666,7 @@ infantry.hijacker:
 infantry.hijacker.stealth:
 	Inherits: infantry.hijacker
 	Buildable:
-		Queue: queue.stealth_gen_infantry
+		Queue: queue.stealth_gen_infantry, queue.gla_infantry_merged
 		BuildDuration: 375
 		Description: Hijacks enemy vehicles.\n\nCamouflaged.
 		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
@@ -1924,7 +1942,7 @@ infantry.jarmen_kell:
 infantry.jarmen_kell.demo:
 	Inherits: infantry.jarmen_kell
 	Buildable:
-		Queue: queue.demo_gen_infantry
+		Queue: queue.demo_gen_infantry, queue.gla_infantry_merged
 		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCamouflaged.\n\nCan place C4 charges on structures.
 		ReadyAudio: DemoJarmenCreated
 	Armament@TIMED_DEMO_BOMB:
@@ -2100,7 +2118,7 @@ infantry.black_lotus:
 infantry.super_lotus:
 	Inherits: infantry.black_lotus
 	Buildable:
-		Queue: queue.inf_gen_infantry
+		Queue: queue.inf_gen_infantry, queue.prc_infantry_merged
 	Tooltip:
 		Name: Super Lotus
 	Armament@DisableEnd:
