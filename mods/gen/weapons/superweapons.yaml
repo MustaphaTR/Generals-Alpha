@@ -181,9 +181,37 @@ parabomb.helix.nuke:
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c256
 		Damage: 25000
+		ValidTargets: GroundActor, WaterActor
+		Versus:
+			infantry.stinger_site: 10
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
+			aircraft.normal.countermeasures: 90
+			aircraft.comanche: 130
+			aircraft.comanche.countermeasures: 110
+			aircraft.chinook: 50
+			building.tough: 80
+			building.internet_center: 70
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c512
 		Damage: 5000
+		ValidTargets: GroundActor, WaterActor
+		Versus:
+			infantry.stinger_site: 10
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
+			aircraft.normal.countermeasures: 90
+			aircraft.comanche: 130
+			aircraft.comanche.countermeasures: 110
+			aircraft.chinook: 50
+			building.tough: 80
+			building.internet_center: 70
+		DamageTypes: TriggerProne, FireDeath, Incendiary
 	-Warhead@1Fire:
 	Warhead@4Eff_impact: CreateEffect
 		Explosions: mininuke
