@@ -1699,17 +1699,20 @@ aircraft.helix:
 		Group: Tech
 		ItemLimit: 1
 		InstantCashDrain: true
+		DisallowPaused: true
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_helix
 		Factions: nuke
 		Group: Tech
 		ItemLimit: 1
 		InstantCashDrain: true
+		DisallowPaused: true
 	ProductionQueue@Merged:
 		Type: queue.helix_merged
 		Group: Tech
 		ItemLimit: 1
 		InstantCashDrain: true
+		DisallowPaused: true
 	ProductionBar:
 		ProductionType: queue.helix
 	ProductionBar@Inf:

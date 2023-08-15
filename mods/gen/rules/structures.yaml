@@ -86,6 +86,7 @@ building.usa_command_center:
 		Group: Command
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 12
 	SpawnActorPower@SPY_DRONE:
@@ -309,12 +310,14 @@ building.gla_command_center:
 		Group: Command
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 13
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_command_center
 		Group: Command
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 14
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_command_center
@@ -511,6 +514,7 @@ building.prc_command_center:
 		Group: Command
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 14
 	ProductionBar@PRC_COMMAND_CENTER:
@@ -924,6 +928,7 @@ building.cold_fusion_reactor:
 		Group: Tech
 		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		InstantCashDrain: true
+		DisallowPaused: true
 		ItemLimit: 1
 		LowPowerModifier: 200
 		ReadyAudio: ConstructionComplete
@@ -1157,6 +1162,7 @@ building.usa_barracks:
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 19
 	ProductionQueue@Super:
@@ -1164,6 +1170,7 @@ building.usa_barracks:
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 20
 	ProductionBar@Vanilla:
@@ -1213,6 +1220,7 @@ building.gla_barracks:
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 21
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_infantry
@@ -1220,6 +1228,7 @@ building.gla_barracks:
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 22
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_infantry
@@ -1227,6 +1236,7 @@ building.gla_barracks:
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 23
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_infantry
@@ -1234,12 +1244,14 @@ building.gla_barracks:
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 24
 	ProductionQueue@Merged:
 		Type: queue.gla_infantry_merged
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 25
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_infantry
@@ -1292,6 +1304,7 @@ building.prc_barracks:
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 25
 	ProductionQueue@Infantry:
@@ -1300,6 +1313,7 @@ building.prc_barracks:
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 26
 	ProductionQueue@Nuke:
@@ -1308,6 +1322,7 @@ building.prc_barracks:
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 27
 	ProductionQueue@Tank:
@@ -1316,6 +1331,7 @@ building.prc_barracks:
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 28
 	ProductionQueue@Merged:
@@ -1324,6 +1340,7 @@ building.prc_barracks:
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 29
 	ProductionQueue@Boss:
@@ -1332,6 +1349,7 @@ building.prc_barracks:
 		Group: Infantry
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 30
 	ProductionBar@Vanilla:
@@ -1451,6 +1469,7 @@ building.usa_supply_center:
 		Group: Collector
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 15
 	ProductionQueue@Airforce:
@@ -1458,6 +1477,7 @@ building.usa_supply_center:
 		Group: Collector
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 16
 	ProductionBar@Vanilla:
@@ -1532,12 +1552,14 @@ building.gla_supply_stash:
 		Group: Collector
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 17
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_collector
 		Group: Collector
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 18
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_collector
@@ -1609,6 +1631,7 @@ building.prc_supply_center:
 		Group: Collector
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 18
 	ProductionBar:
@@ -2324,6 +2347,7 @@ building.usa_war_factory:
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 30
 	ProductionQueue@Airforce:
@@ -2332,6 +2356,7 @@ building.usa_war_factory:
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 31
 	ProductionQueue@Laser:
@@ -2340,6 +2365,7 @@ building.usa_war_factory:
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 32
 	ProductionQueue@Super:
@@ -2348,6 +2374,7 @@ building.usa_war_factory:
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 33
 	ProductionQueue@Merged:
@@ -2355,6 +2382,7 @@ building.usa_war_factory:
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 34
 	ProductionBar@Vanilla:
@@ -2419,6 +2447,7 @@ building.arms_dealer:
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 34
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_vehicle
@@ -2426,6 +2455,7 @@ building.arms_dealer:
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 35
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_vehicle
@@ -2433,6 +2463,7 @@ building.arms_dealer:
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 36
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_vehicle
@@ -2440,6 +2471,7 @@ building.arms_dealer:
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 37
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_vehicle
@@ -2481,6 +2513,7 @@ building.prc_war_factory:
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 38
 	ProductionQueue@Infantry:
@@ -2489,6 +2522,7 @@ building.prc_war_factory:
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 39
 	ProductionQueue@Nuclear:
@@ -2497,6 +2531,7 @@ building.prc_war_factory:
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 40
 	ProductionQueue@Tank:
@@ -2505,6 +2540,7 @@ building.prc_war_factory:
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 41
 	ProductionQueue@Merged:
@@ -2513,6 +2549,7 @@ building.prc_war_factory:
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 42
 	ProductionQueue@Boss:
@@ -2521,6 +2558,7 @@ building.prc_war_factory:
 		Group: Vehicle
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 43
 	ProductionBar@Vanilla:
@@ -2929,6 +2967,7 @@ building.usa_airfield:
 		Group: Aircraft
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 43
 	ProductionQueue@Airforce:
@@ -2937,6 +2976,7 @@ building.usa_airfield:
 		Group: Aircraft
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 44
 	ProductionQueue@Super:
@@ -2945,6 +2985,7 @@ building.usa_airfield:
 		Group: Aircraft
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 45
 	ProductionQueue@Merged:
@@ -2952,6 +2993,7 @@ building.usa_airfield:
 		Group: Aircraft
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 46
 	ProductionBar@Vanilla:
@@ -3027,6 +3069,7 @@ building.prc_airfield:
 		Group: Aircraft
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 47
 	ProductionQueue@Infantry:
@@ -3035,6 +3078,7 @@ building.prc_airfield:
 		Group: Aircraft
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 48
 	ProductionQueue@Nuke:
@@ -3043,6 +3087,7 @@ building.prc_airfield:
 		Group: Aircraft
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 49
 	ProductionQueue@Tank:
@@ -3051,6 +3096,7 @@ building.prc_airfield:
 		Group: Aircraft
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 50
 	ProductionQueue@Merged:
@@ -3059,6 +3105,7 @@ building.prc_airfield:
 		Group: Aircraft
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 50
 	ProductionQueue@Boss:
@@ -3067,6 +3114,7 @@ building.prc_airfield:
 		Group: Aircraft
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 51
 	ProductionBar@Vanilla:
@@ -3167,6 +3215,7 @@ building.internet_center:
 		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 52
 	ProductionBar:
@@ -3260,6 +3309,7 @@ building.strategy_center:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 53
 	ProductionQueue@Airforce:
@@ -3268,6 +3318,7 @@ building.strategy_center:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 54
 	ProductionBar@Vanilla:
@@ -3457,6 +3508,7 @@ building.palace:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 55
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_palace
@@ -3465,6 +3517,7 @@ building.palace:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 56
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_palace
@@ -3473,6 +3526,7 @@ building.palace:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 57
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_palace
@@ -3481,12 +3535,14 @@ building.palace:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 58
 	ProductionQueue@Merged:
 		Type: queue.palace_merged
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 59
 	ProductionBar@Vanilla:
 		ProductionType: queue.palace
@@ -3563,6 +3619,7 @@ building.propaganda_center:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 59
 	ProductionQueue@Infantry:
@@ -3572,6 +3629,7 @@ building.propaganda_center:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 60
 	ProductionQueue@Nuke:
@@ -3581,6 +3639,7 @@ building.propaganda_center:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 61
 	ProductionQueue@Tank:
@@ -3590,6 +3649,7 @@ building.propaganda_center:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 62
 	ProductionQueue@Merged:
@@ -3597,6 +3657,7 @@ building.propaganda_center:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 63
 	ProductionBar@Vanilla:
@@ -3782,6 +3843,7 @@ building.black_market:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 61
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_black_market
@@ -3789,6 +3851,7 @@ building.black_market:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 62
 	ProductionBar@Vanilla:
 		ProductionType: queue.black_market
@@ -3992,6 +4055,7 @@ building.particle_cannon.boss:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 65
 	ProductionBar:
@@ -4275,6 +4339,7 @@ building.scud_storm.boss:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		DisplayOrder: 65
 	ProductionBar:
 		ProductionType: queue.boss_gen_scud_storm
@@ -4335,6 +4400,7 @@ building.missile_silo:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 64
 	ProductionQueue@Infantry:
@@ -4344,6 +4410,7 @@ building.missile_silo:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 65
 	ProductionQueue@Nuke:
@@ -4353,6 +4420,7 @@ building.missile_silo:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 66
 	ProductionQueue@Tank:
@@ -4362,6 +4430,7 @@ building.missile_silo:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 67
 	ProductionQueue@Boss:
@@ -4371,6 +4440,7 @@ building.missile_silo:
 		Group: Tech
 		QueuedAudio: Training
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 68
 	ProductionBar@Vanilla:

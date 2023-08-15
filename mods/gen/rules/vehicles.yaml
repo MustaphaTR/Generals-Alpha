@@ -2569,6 +2569,7 @@ vehicle.scud_launcher:
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
+		DisallowPaused: true
 	Exit:
 	ProvidesPrerequisite@unitname:
 	Mobile:
@@ -3542,18 +3543,21 @@ vehicle.bomb_truck:
 		ItemLimit: 1
 		QueueLimit: 2
 		InstantCashDrain: true
+		DisallowPaused: true
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_bomb_truck
 		Factions: toxin
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
+		DisallowPaused: true
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_bomb_truck
 		Factions: demo
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
+		DisallowPaused: true
 	ProductionBar@Vanilla:
 		ProductionType: queue.bomb_truck
 	ProductionBar@Toxin:
@@ -4321,6 +4325,7 @@ vehicle.usa_mcc:
 		Factions: usa, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		Group: Building
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: USABuilding
 		CannotPlaceAudio: USABuildingCannotPlaceAudio
@@ -4331,6 +4336,7 @@ vehicle.usa_mcc:
 		Factions: air
 		Group: Building
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: USABuilding
 		CannotPlaceAudio: USABuildingCannotPlaceAudio
@@ -4341,6 +4347,7 @@ vehicle.usa_mcc:
 		Factions: laser
 		Group: Building
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: USABuilding
 		CannotPlaceAudio: USABuildingCannotPlaceAudio
@@ -4351,6 +4358,7 @@ vehicle.usa_mcc:
 		Factions: super
 		Group: Building
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: USABuilding
 		CannotPlaceAudio: USABuildingCannotPlaceAudio
@@ -4360,6 +4368,7 @@ vehicle.usa_mcc:
 		Type: queue.usa_building_merged
 		Group: Building
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: USABuilding
 		CannotPlaceAudio: USABuildingCannotPlaceAudio
@@ -4403,6 +4412,7 @@ vehicle.gla_mcc:
 		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank, boss
 		Group: Building
 		InstantCashDrain: true
+		DisallowPaused: true
 		QueuedAudio: GLABuilding
 		CannotPlaceAudio: GLABuildingCannotPlaceAudio
 		ReadyAudio: GLAConstructionComplete
@@ -4412,6 +4422,7 @@ vehicle.gla_mcc:
 		Factions: toxin
 		Group: Building
 		InstantCashDrain: true
+		DisallowPaused: true
 		QueuedAudio: GLABuilding
 		CannotPlaceAudio: GLABuildingCannotPlaceAudio
 		ReadyAudio: GLAConstructionComplete
@@ -4421,6 +4432,7 @@ vehicle.gla_mcc:
 		Factions: demo
 		Group: Building
 		InstantCashDrain: true
+		DisallowPaused: true
 		QueuedAudio: GLABuilding
 		CannotPlaceAudio: GLABuildingCannotPlaceAudio
 		ReadyAudio: GLAConstructionComplete
@@ -4429,6 +4441,7 @@ vehicle.gla_mcc:
 		Type: queue.gla_building_merged
 		Group: Building
 		InstantCashDrain: true
+		DisallowPaused: true
 		QueuedAudio: GLABuilding
 		CannotPlaceAudio: GLABuildingCannotPlaceAudio
 		ReadyAudio: GLAConstructionComplete
@@ -4478,6 +4491,7 @@ vehicle.prc_mcc:
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, tank
 		Group: Building
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
 		CannotPlaceAudio: PRCBuildingCannotPlaceAudio
@@ -4488,6 +4502,7 @@ vehicle.prc_mcc:
 		Factions: inf
 		Group: Building
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
 		CannotPlaceAudio: PRCBuildingCannotPlaceAudio
@@ -4498,6 +4513,7 @@ vehicle.prc_mcc:
 		Factions: nuke
 		Group: Building
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
 		CannotPlaceAudio: PRCBuildingCannotPlaceAudio
@@ -4508,6 +4524,7 @@ vehicle.prc_mcc:
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Building
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
 		CannotPlaceAudio: PRCBuildingCannotPlaceAudio
@@ -4518,6 +4535,7 @@ vehicle.prc_mcc:
 		Factions: boss
 		Group: Building
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
 		CannotPlaceAudio: PRCBuildingCannotPlaceAudio
@@ -4547,6 +4565,7 @@ vehicle.tech_mcc:
 		Type: queue.tech_building
 		Group: Building
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: Building
 		CannotPlaceAudio: BuildingCannotPlaceAudio

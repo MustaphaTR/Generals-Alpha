@@ -1172,6 +1172,7 @@
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
+		DisallowPaused: true
 	ProductionBar:
 		ProductionType: queue.drone
 	Exit:
@@ -1204,6 +1205,7 @@
 		Group: Tech
 		ItemLimit: 1
 		InstantCashDrain: true
+		DisallowPaused: true
 	ProductionBar:
 		ProductionType: queue.prc_vehicle_upgrade
 	Exit:
@@ -1229,6 +1231,7 @@
 		Group: Tech
 		ItemLimit: 1
 		InstantCashDrain: true
+		DisallowPaused: true
 	GrantConditionOnProduction@CAMO_NETTING:
 		Condition: camo_netted
 		Actors: upgrade.camo_netting
@@ -1310,6 +1313,7 @@
 		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		ItemLimit: 1
 		InstantCashDrain: true
+		DisallowPaused: true
 		LowPowerModifier: 200
 	GrantConditionOnProduction@LAND_MINES:
 		Condition: land_mines
@@ -2031,6 +2035,7 @@
 		Type: FakeToReal
 		Group: Vehicle
 		InstantCashDrain: true
+		DisallowPaused: true
 	ProductionBar:
 		ProductionType: FakeToReal
 	Exit:
