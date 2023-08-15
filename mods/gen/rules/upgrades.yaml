@@ -34,6 +34,12 @@
 	GrantConditionOnPrerequisite@STRATEGY_CENTER:
 		Condition: strategy_center
 		Prerequisites: building.strategy_center
+	ProvidesPrerequisite@STRATEGY:
+		Prerequisite: prerequisite.ai_strategy_chosen
+		RequiresCondition: bot
+	GrantConditionOnBotOwner@BOT:
+		Bots: rush, normal, turtle
+		Condition: bot
 
 ^default.fake_to_real:
 	Inherits: ^default.upgrade
@@ -1139,6 +1145,7 @@ strategy.bombardment:
 	Buildable:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
+		Prerequisites: !prerequisite.ai_strategy_chosen
 		Description: Increases all units' damage by 20%.\n\nGives Strategy Center an Artillery piece.
 		ReadyAudio: Bombardment
 
@@ -1149,6 +1156,7 @@ strategy.search_and_destroy:
 	Buildable:
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
+		Prerequisites: !prerequisite.ai_strategy_chosen
 		Description: Increases all units' fire range by 20%.\n\nGives Strategy Center ability to detect stealth units.
 		ReadyAudio: SearchAndDestroy
 
@@ -1159,6 +1167,7 @@ strategy.hold_the_line:
 	Buildable:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
+		Prerequisites: !prerequisite.ai_strategy_chosen
 		Description: Increases all units' armor by 10%.\n\nDoubles Strategy Center's armor.
 		ReadyAudio: HoldTheLine
 

@@ -32,7 +32,6 @@ Player:
 		ProductionTypes: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, usa_airfield, prc_airfield
 		FragileTypes: building.strategy_center, building.detention_camp, building.internet_center, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center
 		DefenseTypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.firebase, building.stinger_site, building.tunnel_network, building.tunnel_network.boss, building.toxin_tunnel_network, building.bunker, building.fortified_bunker, building.gatling_cannon, tech.flame_tower
-		StrategyTypes: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		CashGeneratorTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center, building.supply_drop_zone, building.black_market
 		BuildingLimits:
 			building.usa_command_center: 1
@@ -129,6 +128,9 @@ Player:
 			upgrade.uranium_shells: 1
 			upgrade.uranium_shells.boss: 1
 			upgrade.tactical_nuke_mig: 1
+			strategy.bombardment: 100
+			strategy.search_and_destroy: 80
+			strategy.hold_the_line: 60
 			generals_power.spy_drone: 1
 			generals_power.tech_training: 1
 			generals_power.red_training: 1
@@ -391,7 +393,6 @@ Player:
 		ProductionTypes: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, usa_airfield, prc_airfield
 		FragileTypes: building.strategy_center, building.detention_camp, building.internet_center, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, building.particle_cannon.boss, building.scud_storm, building.scud_storm.boss, building.missile_silo, building.missile_silo.boss
 		DefenseTypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.firebase, building.stinger_site, building.tunnel_network, building.tunnel_network.boss, building.toxin_tunnel_network, building.bunker, building.fortified_bunker, building.gatling_cannon, tech.flame_tower
-		StrategyTypes: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		CashGeneratorTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center, building.supply_drop_zone, building.black_market
 		BuildingLimits:
 			building.usa_command_center: 1
@@ -502,6 +503,9 @@ Player:
 			upgrade.uranium_shells: 1
 			upgrade.uranium_shells.boss: 1
 			upgrade.tactical_nuke_mig: 1
+			strategy.bombardment: 80
+			strategy.search_and_destroy: 80
+			strategy.hold_the_line: 80
 			generals_power.spy_drone: 1
 			generals_power.tech_training: 1
 			generals_power.red_training: 1
@@ -764,7 +768,6 @@ Player:
 		ProductionTypes: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, usa_airfield, prc_airfield
 		FragileTypes: building.strategy_center, building.detention_camp, building.internet_center, building.supply_drop_zone, building.palace, building.black_market, building.propaganda_center, building.particle_cannon, building.particle_cannon.boss, building.scud_storm, building.scud_storm.boss, building.missile_silo, building.missile_silo.boss
 		DefenseTypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.firebase, building.stinger_site, building.tunnel_network, building.tunnel_network.boss, building.toxin_tunnel_network, building.bunker, building.fortified_bunker, building.gatling_cannon, tech.flame_tower
-		StrategyTypes: strategy.bombardment, strategy.search_and_destroy, strategy.hold_the_line
 		CashGeneratorTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center, building.supply_drop_zone, building.black_market
 		BuildingLimits:
 			building.usa_command_center: 1
@@ -875,6 +878,9 @@ Player:
 			upgrade.uranium_shells: 1
 			upgrade.uranium_shells.boss: 1
 			upgrade.tactical_nuke_mig: 1
+			strategy.bombardment: 60
+			strategy.search_and_destroy: 80
+			strategy.hold_the_line: 100
 			generals_power.spy_drone: 1
 			generals_power.tech_training: 1
 			generals_power.red_training: 1
