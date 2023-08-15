@@ -296,7 +296,7 @@ aircraft.mig:
 			200: rank-veteran
 			400: rank-veteran
 	Buildable:
-		Queue: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.prc_aircraft_merged, queue.boss_gen_aircraft
+		Queue: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 250
@@ -603,11 +603,11 @@ aircraft.king_raptor:
 	GivesExperienceMultiplier@RANK-ELITE:
 		Modifier: 233
 	Buildable:
-		Queue: queue.air_gen_aircraft, queue.usa_aircraft_merged, queue.boss_gen_aircraft
+		Queue: queue.air_gen_aircraft, queue.usa_aircraft_merged, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged
 		Description: Multi-role fighter plane.\n\nCan deflect enemy missiles with laser.
 		ReadyAudio: KingRaptorCreated
 	BuildPaletteOrderModifier@Boss:
-		Queue: queue.boss_gen_aircraft
+		Queue: queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged
 		Modifier: 3 # 3
 	Valued:
 		Cost: 1100
@@ -997,6 +997,16 @@ aircraft.aurora_alpha:
 		Class: aircraft.aurora_alpha
 	SpawnActorOnDeath:
 		Actor: husk.aurora_alpha
+
+aircraft.aurora_alpha.boss:
+	Inherits: aircraft.aurora_alpha
+	Buildable:
+		Queue: queue.boss_gen_aircraft_merged
+		Prerequisites: !techlevel.notech
+	RenderSprites:
+		Image: aircraft.aurora_alpha
+	ActorStatValues:
+		Upgrades: upgrade.adv_training
 
 aircraft.spy_drone:
 	Inherits: ^Plane
@@ -1904,7 +1914,7 @@ aircraft.helix:
 aircraft.assault_helix:
 	Inherits: aircraft.helix
 	Buildable:
-		Queue: queue.inf_gen_aircraft, queue.prc_aircraft_merged
+		Queue: queue.inf_gen_aircraft, queue.boss_gen_aircraft_merged
 		Description: Helicopter gunship armed with machine gun.\n\nCan carry 8 infantry.\n\nCan be upgraded to have a bunker.
 	Tooltip:
 		Name: Assault Helix

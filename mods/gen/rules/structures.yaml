@@ -1294,7 +1294,7 @@ building.prc_barracks:
 		PauseOnCondition: emp || hacked || sabotaged
 		RequiresCondition: !merged
 	Production:
-		Produces: queue.prc_infantry_merged, queue.boss_gen_infantry
+		Produces: queue.prc_infantry_merged, queue.boss_gen_infantry_merged
 		PauseOnCondition: emp || hacked || sabotaged
 		RequiresCondition: merged
 	-ProductionQueue@JUST_MINE:
@@ -1352,6 +1352,15 @@ building.prc_barracks:
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 30
+	ProductionQueue@Boss_Merged:
+		Type: queue.boss_gen_infantry_merged
+		Factions: boss
+		Group: Infantry
+		QueuedAudio: Training
+		InstantCashDrain: true
+		DisallowPaused: true
+		LowPowerModifier: 200
+		DisplayOrder: 31
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_infantry
 	ProductionBar@Infantry:
@@ -1364,6 +1373,8 @@ building.prc_barracks:
 		ProductionType: queue.prc_infantry_merged
 	ProductionBar@Boss:
 		ProductionType: queue.boss_gen_infantry
+	ProductionBar@Boss_Merged:
+		ProductionType: queue.boss_gen_infantry_merged
 	Exit@1:
 		SpawnOffset: -170,810,0
 		ExitCell: 1,2
@@ -2439,7 +2450,11 @@ building.arms_dealer:
 	Production:
 		Produces: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		PauseOnCondition: emp || hacked || sabotaged
-		-RequiresCondition:
+		RequiresCondition: !merged
+	Production@Merged:
+		Produces: queue.gla_vehicle_merged
+		PauseOnCondition: emp || hacked || sabotaged
+		RequiresCondition: merged
 	-ProductionQueue@CAMO_NETTING:
 	ProductionQueue@Vanilla:
 		Type: queue.gla_vehicle
@@ -2473,6 +2488,13 @@ building.arms_dealer:
 		InstantCashDrain: true
 		DisallowPaused: true
 		DisplayOrder: 37
+	ProductionQueue@Merged:
+		Type: queue.gla_vehicle_merged
+		Group: Vehicle
+		QueuedAudio: Training
+		InstantCashDrain: true
+		DisallowPaused: true
+		DisplayOrder: 38
 	ProductionBar@Vanilla:
 		ProductionType: queue.gla_vehicle
 	ProductionBar@Toxin:
@@ -2481,6 +2503,8 @@ building.arms_dealer:
 		ProductionType: queue.demo_gen_vehicle
 	ProductionBar@Stealth:
 		ProductionType: queue.stealth_gen_vehicle
+	ProductionBar@Merged:
+		ProductionType: queue.gla_vehicle_merged
 	SpawnActorOnDeath:
 		Actor: hole.arms_dealer
 		SpawnAfterDefeat: false
@@ -2503,7 +2527,7 @@ building.prc_war_factory:
 		PauseOnCondition: emp || hacked || sabotaged
 		RequiresCondition: !merged
 	Production@Merged:
-		Produces: queue.prc_vehicle_merged, queue.boss_gen_vehicle
+		Produces: queue.prc_vehicle_merged, queue.boss_gen_vehicle_merged
 		PauseOnCondition: emp || hacked || sabotaged
 		RequiresCondition: merged
 	-ProductionQueue@JUST_MINE:
@@ -2561,6 +2585,15 @@ building.prc_war_factory:
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 43
+	ProductionQueue@Boss_Merged:
+		Type: queue.boss_gen_vehicle_merged
+		Factions: boss
+		Group: Vehicle
+		QueuedAudio: Training
+		InstantCashDrain: true
+		DisallowPaused: true
+		LowPowerModifier: 200
+		DisplayOrder: 44
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_vehicle
 	ProductionBar@Infantry:
@@ -2573,6 +2606,8 @@ building.prc_war_factory:
 		ProductionType: queue.prc_vehicle_merged
 	ProductionBar@Boss:
 		ProductionType: queue.boss_gen_vehicle
+	ProductionBar@Boss_Merged:
+		ProductionType: queue.boss_gen_vehicle_merged
 	GrantConditionOnPrerequisite@MERGE_GENERALS:
 		Condition: merged
 		Prerequisites: prerequisite.mergegenerals
@@ -3055,17 +3090,17 @@ building.prc_airfield:
 		Footprint: xxxx =x== xxxx
 		Dimensions: 4,3
 	Production:
-		Produces: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft
+		Produces: queue.prc_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft
 		PauseOnCondition: emp || hacked || sabotaged
-		RequiresCondition: !merged
-	Production@Merged:
-		Produces: queue.prc_aircraft_merged, queue.boss_gen_aircraft
+		RequiresCondition: !inf && !merged
+	Production@Inf_or_Merged:
+		Produces: queue.inf_gen_aircraft, queue.boss_gen_aircraft_merged
 		PauseOnCondition: emp || hacked || sabotaged
-		RequiresCondition: merged
+		RequiresCondition: inf || merged
 	-ProductionQueue@JUST_MINE:
 	ProductionQueue@Vanilla:
 		Type: queue.prc_aircraft
-		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf
 		Group: Aircraft
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3074,7 +3109,7 @@ building.prc_airfield:
 		DisplayOrder: 47
 	ProductionQueue@Infantry:
 		Type: queue.inf_gen_aircraft
-		Factions: inf
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Aircraft
 		QueuedAudio: Training
 		InstantCashDrain: true
@@ -3099,15 +3134,6 @@ building.prc_airfield:
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 50
-	ProductionQueue@Merged:
-		Type: queue.prc_aircraft_merged
-		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
-		Group: Aircraft
-		QueuedAudio: Training
-		InstantCashDrain: true
-		DisallowPaused: true
-		LowPowerModifier: 200
-		DisplayOrder: 50
 	ProductionQueue@Boss:
 		Type: queue.boss_gen_aircraft
 		Factions: boss
@@ -3117,6 +3143,15 @@ building.prc_airfield:
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 51
+	ProductionQueue@Boss_Merged:
+		Type: queue.boss_gen_aircraft_merged
+		Factions: boss
+		Group: Aircraft
+		QueuedAudio: Training
+		InstantCashDrain: true
+		DisallowPaused: true
+		LowPowerModifier: 200
+		DisplayOrder: 52
 	ProductionBar@Vanilla:
 		ProductionType: queue.prc_aircraft
 	ProductionBar@Infantry:
@@ -3125,10 +3160,10 @@ building.prc_airfield:
 		ProductionType: queue.nuke_gen_aircraft
 	ProductionBar@Tank:
 		ProductionType: queue.tank_gen_aircraft
-	ProductionBar@Merged:
-		ProductionType: queue.prc_aircraft_merged
 	ProductionBar@Boss:
 		ProductionType: queue.boss_gen_aircraft
+	ProductionBar@Boss_Merged:
+		ProductionType: queue.boss_gen_aircraft_merged
 	LaysMinefield@DOCK:
 		Mines: hack.dock
 		RecreationInterval: -1
@@ -3137,6 +3172,9 @@ building.prc_airfield:
 		Bounds: 4096, 2730, 0, -170
 	WithIdleOverlay@FLAG:
 		Sequence: idle-flag
+	GrantConditionOnFaction@Infantry:
+		Condition: inf
+		Factions: inf
 	GrantConditionOnPrerequisite@MERGE_GENERALS:
 		Condition: merged
 		Prerequisites: prerequisite.mergegenerals

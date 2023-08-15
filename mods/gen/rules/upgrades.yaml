@@ -74,7 +74,7 @@ upgrade.land_mines:
 	Tooltip:
 		Name: Land Mines
 	Buildable:
-		Queue: queue.prc_command_center, queue.boss_gen_cold_fusion_reactor, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.boss_gen_cold_fusion_reactor, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry, queue.boss_gen_infantry_merged, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
 		BuildPaletteOrder: 14
 		ForceIconLocation: true
 		BuildDuration: 125
@@ -90,7 +90,7 @@ upgrade.neutron_mines:
 	Tooltip:
 		Name: Neutron Mines
 	Buildable:
-		Queue: queue.prc_command_center, queue.boss_gen_cold_fusion_reactor, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.prc_aircraft_merged, queue.boss_gen_aircraft, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.boss_gen_cold_fusion_reactor, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry, queue.boss_gen_infantry_merged, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
 		BuildPaletteOrder: 14
 		ForceIconLocation: true
 		BuildDuration: 375
@@ -143,7 +143,7 @@ upgrade.camo_netting:
 	Tooltip:
 		Name: Camo Netting
 	Buildable:
-		Queue: queue.camo_netting, queue.stealth_gen_command_center, queue.stealth_gen_collector, queue.stealth_gen_infantry, queue.stealth_gen_vehicle, queue.stealth_gen_palace, queue.stealth_gen_black_market, queue.gla_infantry_merged, queue.palace_merged
+		Queue: queue.camo_netting, queue.stealth_gen_command_center, queue.stealth_gen_collector, queue.stealth_gen_infantry, queue.stealth_gen_vehicle, queue.stealth_gen_palace, queue.stealth_gen_black_market, queue.gla_infantry_merged, queue.gla_vehicle_merged, queue.palace_merged
 		BuildPaletteOrder: 14
 		ForceIconLocation: true
 		BuildDuration: 125
@@ -160,7 +160,7 @@ upgrade.capture_building:
 	Tooltip:
 		Name: Capture Building
 	Buildable:
-		Queue: queue.usa_infantry, queue.super_gen_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.gla_infantry_merged, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry
+		Queue: queue.usa_infantry, queue.super_gen_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.gla_infantry_merged, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry, queue.boss_gen_infantry_merged
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 750
@@ -175,7 +175,7 @@ upgrade.flashbang_grenades:
 	Tooltip:
 		Name: Flashbang Grenades
 	Buildable:
-		Queue: queue.usa_infantry, queue.super_gen_infantry, queue.boss_gen_infantry
+		Queue: queue.usa_infantry, queue.super_gen_infantry, queue.boss_gen_infantry, queue.boss_gen_infantry_merged
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		BuildDuration: 750
@@ -237,7 +237,7 @@ upgrade.sc_rocket:
 	Tooltip:
 		Name: Scorpion Rocket
 	Buildable:
-		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.gla_vehicle_merged
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 750
@@ -253,7 +253,7 @@ upgrade.chain_gun:
 	Tooltip:
 		Name: Chain Gun
 	Buildable:
-		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1125
@@ -269,7 +269,7 @@ upgrade.black_napalm:
 	Tooltip:
 		Name: Black Napalm
 	Buildable:
-		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle
+		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		BuildDuration: 1125
@@ -371,7 +371,7 @@ upgrade.mig_armor:
 	Tooltip:
 		Name: MiG Armor
 	Buildable:
-		Queue: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.prc_aircraft_merged, queue.boss_gen_aircraft
+		Queue: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1000
@@ -464,14 +464,14 @@ upgrade.chemical_suits:
 	Tooltip:
 		Name: Chemical Suits
 	Buildable:
-		Queue: queue.strategy_center, queue.air_gen_strategy_center, queue.boss_gen_infantry
+		Queue: queue.strategy_center, queue.air_gen_strategy_center, queue.boss_gen_infantry, queue.boss_gen_infantry_merged
 		BuildPaletteOrder: 6
 		BuildDuration: 1500
 		Prerequisites: !upgrade.chemical_suits, ~prerequisite.zh_units, !techlevel.vehicleonly
 		Description: Decreases the damage dealt to infantry from Microwaves, Toxins and Radiation.
 		ReadyAudio: ChemicalSuits
 	BuildPaletteOrderModifier@Boss:
-		Queue: queue.boss_gen_infantry
+		Queue: queue.boss_gen_infantry, queue.boss_gen_infantry_merged
 		Modifier: 2 # 8
 	ProvidesPrerequisite@upgradename:
 		Prerequisite: upgrade.chemical_suits

@@ -1236,7 +1236,7 @@
 		Condition: camo_netted
 		Actors: upgrade.camo_netting
 	ConditionPrerequisite@CAMO_NETTING:
-		Queue: queue.camo_netting, queue.stealth_gen_command_center, queue.stealth_gen_infantry, queue.stealth_gen_collector, queue.stealth_gen_vehicle, queue.stealth_gen_palace, queue.stealth_gen_black_market, queue.gla_infantry_merged, queue.palace_merged
+		Queue: queue.camo_netting, queue.stealth_gen_command_center, queue.stealth_gen_infantry, queue.stealth_gen_collector, queue.stealth_gen_vehicle, queue.stealth_gen_palace, queue.stealth_gen_black_market, queue.gla_infantry_merged, queue.gla_vehicle_merged, queue.palace_merged
 		Actor: upgrade.camo_netting
 		PauseOnCondition: camo_netted
 		RequiresCondition: zh_units
@@ -1333,12 +1333,12 @@
 		Mines: hack.mine.neutron
 		RequiresCondition: neutron_mines
 	ConditionPrerequisite@LAND_MINES:
-		Queue: queue.prc_command_center, queue.boss_gen_cold_fusion_reactor, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.boss_gen_cold_fusion_reactor, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry, queue.boss_gen_infantry_merged, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
 		Actor: upgrade.land_mines
 		PauseOnCondition: land_mines
 		RequiresCondition: (!land_mines && zh_units) || !zh_units
 	ConditionPrerequisite@NEUTRON_MINES:
-		Queue: queue.prc_command_center, queue.boss_gen_cold_fusion_reactor, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
+		Queue: queue.prc_command_center, queue.boss_gen_cold_fusion_reactor, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry, queue.boss_gen_infantry_merged, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
 		Actor: upgrade.neutron_mines
 		PauseOnCondition: neutron_mines
 		RequiresCondition: land_mines && zh_units
