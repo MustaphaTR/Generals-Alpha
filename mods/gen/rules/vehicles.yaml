@@ -885,11 +885,17 @@ vehicle.battlemaster_tank:
 		Factions: tank
 	ProducibleWithLevel@Tank:
 		Factions: tank
+		Prerequisites: !prerequisite.mergegenerals
+	ProducibleWithLevel@Merged:
+		Prerequisites: prerequisite.mergegenerals
 	ProducibleWithLevel@Training:
 		Prerequisites: generals_power.battlemaster_training
 	WithProductionIconOverlay@Tank:
 		Types: Veterancy
-		Prerequisites: prerequisite.tank_gen_player
+		Prerequisites: prerequisite.tank_gen_player, !prerequisite.mergegenerals
+	WithProductionIconOverlay@Merged:
+		Types: Veterancy2
+		Prerequisites: prerequisite.mergegenerals
 	WithProductionIconOverlay@Training:
 		Types: Veterancy-Elite
 		Prerequisites: generals_power.battlemaster_training
@@ -1325,9 +1331,15 @@ vehicle.gatling_tank:
 		Range: 1c0, 1c0
 	ProducibleWithLevel@Tank:
 		Factions: tank
+		Prerequisites: !prerequisite.mergegenerals
+	ProducibleWithLevel@Merged:
+		Prerequisites: prerequisite.mergegenerals
 	WithProductionIconOverlay@Tank:
 		Types: Veterancy
-		Prerequisites: prerequisite.tank_gen_player
+		Prerequisites: prerequisite.tank_gen_player, !prerequisite.mergegenerals
+	WithProductionIconOverlay@Merged:
+		Types: Veterancy2
+		Prerequisites: prerequisite.mergegenerals
 	RenderSprites:
 		Image: vehicle.gatling_tank
 	Voiced:
@@ -1584,9 +1596,15 @@ vehicle.dragon_tank:
 		Image: vehicle.dragon_tank
 	ProducibleWithLevel@Tank:
 		Factions: tank
+		Prerequisites: !prerequisite.mergegenerals
+	ProducibleWithLevel@Merged:
+		Prerequisites: prerequisite.mergegenerals
 	WithProductionIconOverlay@Tank:
 		Types: Veterancy
-		Prerequisites: prerequisite.tank_gen_player
+		Prerequisites: prerequisite.tank_gen_player, !prerequisite.mergegenerals
+	WithProductionIconOverlay@Merged:
+		Types: Veterancy2
+		Prerequisites: prerequisite.mergegenerals
 	Voiced:
 		VoiceSet: DragonTankVoice
 	ActorStatValues:
@@ -3424,9 +3442,15 @@ vehicle.overlord_tank:
 		RequiresCondition: gatling_upgrade
 	ProducibleWithLevel@Tank:
 		Factions: tank
+		Prerequisites: !prerequisite.mergegenerals
+	ProducibleWithLevel@Merged:
+		Prerequisites: prerequisite.mergegenerals
 	WithProductionIconOverlay@Tank:
 		Types: Veterancy
-		Prerequisites: prerequisite.tank_gen_player
+		Prerequisites: prerequisite.tank_gen_player, !prerequisite.mergegenerals
+	WithProductionIconOverlay@Merged:
+		Types: Veterancy2
+		Prerequisites: prerequisite.mergegenerals
 	Voiced:
 		VoiceSet: OverlordTankVoice
 	Selectable:

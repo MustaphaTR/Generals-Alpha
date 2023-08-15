@@ -471,11 +471,16 @@ infantry.red_guard:
 		Image: infantry.red_guard
 	Voiced:
 		VoiceSet: RedGuardVoice
-	ProducibleWithLevel:
+	ProducibleWithLevel@Training:
 		Prerequisites: generals_power.red_training
-	WithProductionIconOverlay:
+	ProducibleWithLevel@Training2:
+		Prerequisites: generals_power.minigunner_training
+	WithProductionIconOverlay@Training:
 		Types: Veterancy
 		Prerequisites: generals_power.red_training
+	WithProductionIconOverlay@Training2:
+		Types: Veterancy-Elite
+		Prerequisites: generals_power.minigunner_training
 	ActorStatValues:
 		Damage: 15
 		Upgrades: upgrade.capture_building, upgrade.nationalism
@@ -552,11 +557,17 @@ infantry.minigunner:
 		VoiceSet: MinigunnerVoice
 	ProducibleWithLevel@Infantry:
 		Factions: inf
+		Prerequisites: !prerequisite.mergegenerals
+	ProducibleWithLevel@Merged:
+		Prerequisites: prerequisite.mergegenerals
 	ProducibleWithLevel@Training:
 		Prerequisites: generals_power.minigunner_training
 	WithProductionIconOverlay@Infantry:
 		Types: Veterancy
-		Prerequisites: prerequisite.inf_gen_player
+		Prerequisites: prerequisite.inf_gen_player, !prerequisite.mergegenerals
+	WithProductionIconOverlay@Merged:
+		Types: Veterancy2
+		Prerequisites: prerequisite.mergegenerals
 	WithProductionIconOverlay@Training:
 		Types: Veterancy-Elite
 		Prerequisites: generals_power.minigunner_training
@@ -834,9 +845,15 @@ infantry.tank_hunter:
 		Image: infantry.tank_hunter
 	ProducibleWithLevel@Infantry:
 		Factions: inf
+		Prerequisites: !prerequisite.mergegenerals
+	ProducibleWithLevel@Merged:
+		Prerequisites: prerequisite.mergegenerals
 	WithProductionIconOverlay@Infantry:
 		Types: Veterancy
-		Prerequisites: prerequisite.inf_gen_player
+		Prerequisites: prerequisite.inf_gen_player, !prerequisite.mergegenerals
+	WithProductionIconOverlay@Merged:
+		Types: Veterancy2
+		Prerequisites: prerequisite.mergegenerals
 	Voiced:
 		VoiceSet: TankHunterVoice
 	ActorStatValues:
@@ -1533,9 +1550,15 @@ infantry.hacker:
 		RequiresCondition: in_internet_center && rank-elite
 	ProducibleWithLevel@Infantry:
 		Factions: inf
+		Prerequisites: !prerequisite.mergegenerals
+	ProducibleWithLevel@Merged:
+		Prerequisites: prerequisite.mergegenerals
 	WithProductionIconOverlay@Infantry:
 		Types: Veterancy
-		Prerequisites: prerequisite.inf_gen_player
+		Prerequisites: prerequisite.inf_gen_player, !prerequisite.mergegenerals
+	WithProductionIconOverlay@Merged:
+		Types: Veterancy2
+		Prerequisites: prerequisite.mergegenerals
 	AutoDeployer:
 		DeployTrigger: BecomingIdle
 		RequiresCondition: !deployed
@@ -2107,9 +2130,15 @@ infantry.black_lotus:
 		Prerequisites: prerequisite.zh_units
 	ProducibleWithLevel@Infantry:
 		Factions: inf
+		Prerequisites: !prerequisite.mergegenerals
+	ProducibleWithLevel@Merged:
+		Prerequisites: prerequisite.mergegenerals
 	WithProductionIconOverlay@Infantry:
 		Types: Veterancy
-		Prerequisites: prerequisite.inf_gen_player
+		Prerequisites: prerequisite.inf_gen_player, !prerequisite.mergegenerals
+	WithProductionIconOverlay@Merged:
+		Types: Veterancy2
+		Prerequisites: prerequisite.mergegenerals
 	Voiced:
 		VoiceSet: LotusVoice
 	ActorStatValues:
