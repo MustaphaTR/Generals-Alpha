@@ -95,6 +95,10 @@ infantry.worker:
 	-TakeCover:
 	Voiced:
 		VoiceSet: WorkerVoice
+		RequiresCondition: !worker_shoes
+	Voiced@WORKER_SHOES:
+		VoiceSet: WorkerWithShoesVoice
+		RequiresCondition: worker_shoes
 	RenderSprites:
 		Image: hack.angry_mob.male
 	ActorStatValues:
