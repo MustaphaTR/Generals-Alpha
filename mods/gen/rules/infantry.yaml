@@ -253,9 +253,6 @@ infantry.rebel:
 	GrantConditionOnPrerequisite@CAMOUFLAGE:
 		Condition: camouflage
 		Prerequisites: upgrade.camouflage
-	GrantConditionOnPrerequisite@CAMOUFLAGE_MERGED:
-		Condition: camouflage
-		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@CAMOUFLAGE:
 		Condition: camouflage
 		Factions: stealth
@@ -385,18 +382,12 @@ infantry.toxin_rebel:
 	GrantConditionOnPrerequisite@CAMOUFLAGE:
 		Condition: camouflage
 		Prerequisites: upgrade.camouflage
-	GrantConditionOnPrerequisite@CAMOUFLAGE_MERGED:
-		Condition: camouflage
-		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
 	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
 		Condition: anthrax_gamma
 		Prerequisites: upgrade.anthrax_gamma
-	GrantConditionOnPrerequisite@ANTHRAX_BETA_MERGED:
-		Condition: anthrax_beta
-		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
@@ -1094,9 +1085,6 @@ infantry.toxin_terrorist:
 	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
 		Condition: anthrax_gamma
 		Prerequisites: upgrade.anthrax_gamma
-	GrantConditionOnPrerequisite@ANTHRAX_BETA_MERGED:
-		Condition: anthrax_beta
-		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin

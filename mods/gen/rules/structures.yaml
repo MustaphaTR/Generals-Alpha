@@ -1421,6 +1421,8 @@ building.prc_barracks:
 		Type: building.normal
 	WithBuildingBib:
 	Refinery:
+	DockHost:
+		Type: Unload
 	SupplyCenter:
 		UseStorage: false
 		Facing: 256
@@ -2746,9 +2748,6 @@ building.toxin_tunnel_network:
 	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
 		Condition: anthrax_gamma
 		Prerequisites: upgrade.anthrax_gamma
-	GrantConditionOnPrerequisite@ANTHRAX_BETA_MERGED:
-		Condition: anthrax_beta
-		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin

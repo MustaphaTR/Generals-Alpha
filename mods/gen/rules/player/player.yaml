@@ -214,6 +214,27 @@ Player:
 	ProvidesPrerequisite@tank_gen_player:
 		Factions: tank
 		Prerequisite: prerequisite.tank_gen_player
+	FreeActor@anthrax_beta:
+		Actor: upgrade.anthrax_beta
+		RequiresCondition: merged
+	FreeActor@toxin_shells:
+		Actor: upgrade.toxin_shells
+		RequiresCondition: merged
+	FreeActor@camouflage:
+		Actor: upgrade.camouflage
+		RequiresCondition: merged
+	FreeActor@red_training:
+		Actor: generals_power.red_training
+		RequiresCondition: merged
+	FreeActor@nationalism:
+		Actor: upgrade.nationalism
+		RequiresCondition: merged
+	FreeActor@nuclear_tanks:
+		Actor: upgrade.nuclear_tanks
+		RequiresCondition: merged
+	FreeActor@uranium_shells:
+		Actor: upgrade.uranium_shells
+		RequiresCondition: merged
 	PlayerExperience:
 	GameSaveViewportManager:
 	Taunts:

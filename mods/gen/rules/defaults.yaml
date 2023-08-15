@@ -212,9 +212,6 @@
 	GrantConditionOnPrerequisite@PATRIOTISM:
 		Condition: patriotism
 		Prerequisites: upgrade.patriotism
-	GrantConditionOnPrerequisite@NATIONALISM_MERGED:
-		Condition: nationalism
-		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@NATIONALISM:
 		Condition: nationalism
 		Factions: inf
@@ -542,9 +539,6 @@
 	GrantConditionOnPrerequisite@URANIUM_SHELLS:
 		Condition: uranium_shells
 		Prerequisites: upgrade.uranium_shells
-	GrantConditionOnPrerequisite@URANIUM_SHELLS_MERGED:
-		Condition: uranium_shells
-		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@URANIUM_SHELLS:
 		Condition: uranium_shells
 		Factions: nuke

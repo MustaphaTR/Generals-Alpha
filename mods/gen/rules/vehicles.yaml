@@ -637,12 +637,6 @@ vehicle.scorpion_tank:
 	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
 		Condition: anthrax_gamma
 		Prerequisites: upgrade.anthrax_gamma
-	GrantConditionOnPrerequisite@TOXIN_SHELLS_MERGED:
-		Condition: toxin_shells
-		Prerequisites: prerequisite.mergegenerals
-	GrantConditionOnPrerequisite@ANTHRAX_BETA_MERGED:
-		Condition: anthrax_beta
-		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@TOXIN_SHELLS:
 		Condition: toxin_shells
 		Factions: toxin
@@ -1466,9 +1460,6 @@ vehicle.toxin_tractor:
 	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
 		Condition: anthrax_gamma
 		Prerequisites: upgrade.anthrax_gamma
-	GrantConditionOnPrerequisite@ANTHRAX_BETA_MERGED:
-		Condition: anthrax_beta
-		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
@@ -2685,9 +2676,6 @@ vehicle.scud_launcher:
 	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
 		Condition: anthrax_gamma
 		Prerequisites: upgrade.anthrax_gamma
-	GrantConditionOnPrerequisite@ANTHRAX_BETA_MERGED:
-		Condition: anthrax_beta
-		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
@@ -3180,12 +3168,6 @@ vehicle.marauder_tank:
 	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
 		Condition: anthrax_gamma
 		Prerequisites: upgrade.anthrax_gamma
-	GrantConditionOnPrerequisite@TOXIN_SHELLS_MERGED:
-		Condition: toxin_shells
-		Prerequisites: prerequisite.mergegenerals
-	GrantConditionOnPrerequisite@ANTHRAX_BETA_MERGED:
-		Condition: anthrax_beta
-		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@TOXIN_SHELLS:
 		Condition: toxin_shells
 		Factions: toxin
@@ -4047,9 +4029,6 @@ vehicle.combat_cycle:
 	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
 		Condition: anthrax_gamma
 		Prerequisites: upgrade.anthrax_gamma
-	GrantConditionOnPrerequisite@ANTHRAX_BETA_MERGED:
-		Condition: anthrax_beta
-		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
@@ -4242,8 +4221,6 @@ vehicle.combat_cycle:
 		Upgrades:
 		RequiresCondition: boss
 
-	Cargo:
-		InitialUnits: infantry.terrorist
 ^default.mcc:
 	Inherits: ^Vehicle
 	Inherits@REVEAL: ^Reveal200
