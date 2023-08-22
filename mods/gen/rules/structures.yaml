@@ -1300,7 +1300,7 @@ building.prc_barracks:
 		Produces: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
 		PauseOnCondition: emp || hacked || sabotaged
 		RequiresCondition: !merged
-	Production:
+	Production@Merged:
 		Produces: queue.prc_infantry_merged, queue.boss_gen_infantry_merged
 		PauseOnCondition: emp || hacked || sabotaged
 		RequiresCondition: merged
