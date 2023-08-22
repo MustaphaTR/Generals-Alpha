@@ -78,21 +78,9 @@ parabomb.anthrax:
 		DamageTypes: TriggerProne, DropCrate, FireDeath
 	Warhead@2Radio: CreateTintedCells
 		LayerName: anthrax_alpha
-		Range: 1
-		Level: 3000
-		Falloff: 100, 50, 0
-		MaxLevel: 6000
-	Warhead@3Radio: CreateTintedCells
-		LayerName: anthrax_alpha
-		Range: 3
-		Level: 2500
-		Falloff: 100, 50, 0
-		MaxLevel: 6000
-	Warhead@4Radio: CreateTintedCells
-		LayerName: anthrax_alpha
-		Range: 5
-		Level: 2000
-		Falloff: 100, 50, 0
+		Spread: 1024
+		Level: 6000
+		Falloff: 100, 80, 60, 40, 20, 0
 		MaxLevel: 6000
 	Warhead@5EffWater: CreateEffect
 		Explosions: small_splash
@@ -103,18 +91,10 @@ parabomb.anthrax.beta:
 	Inherits: parabomb.anthrax
 	Warhead@2Radio: CreateTintedCells
 		LayerName: anthrax_beta
-	Warhead@3Radio: CreateTintedCells
-		LayerName: anthrax_beta
-	Warhead@4Radio: CreateTintedCells
-		LayerName: anthrax_beta
 
 parabomb.anthrax.gamma:
 	Inherits: parabomb.anthrax
 	Warhead@2Radio: CreateTintedCells
-		LayerName: anthrax_gamma
-	Warhead@3Radio: CreateTintedCells
-		LayerName: anthrax_gamma
-	Warhead@4Radio: CreateTintedCells
 		LayerName: anthrax_gamma
 
 parabomb.emp:
@@ -227,9 +207,9 @@ parabomb.helix.nuke:
 		Size: 2
 	Warhead@5Radio: CreateTintedCells
 		LayerName: radioactivity
-		Range: 2
-		Level: 2500
-		Falloff: 100, 50, 0
+		Spread: 1024
+		Level: 2000
+		Falloff: 100, 60, 20, 0
 		MaxLevel: 2500
 
 Atomic:
@@ -265,9 +245,9 @@ Atomic:
 		ImpactActors: false
 	Warhead@5Radio: CreateTintedCells
 		LayerName: radioactivity
-		Range: 1
-		Level: 2250
-		Falloff: 100, 90, 80
+		Spread: 1024
+		Level: 6000
+		Falloff: 100, 80, 60, 40, 20, 0
 		MaxLevel: 6000
 	Warhead@6Dam_areanuke1: SpreadDamage
 		Spread: 1c512
@@ -289,12 +269,6 @@ Atomic:
 	Warhead@9Eff_areanuke1: CreateEffect
 		ImpactSounds: kaboom22.aud
 		ImpactActors: false
-	Warhead@10Radio: CreateTintedCells
-		LayerName: radioactivity
-		Range: 2
-		Level: 2500
-		Falloff: 100, 90, 80
-		MaxLevel: 6000
 	Warhead@11Dam_areanuke2: SpreadDamage
 		Spread: 2c256
 		Damage: 6000
@@ -312,12 +286,6 @@ Atomic:
 			building.tough: 80
 			building.internet_center: 70
 		DamageTypes: TriggerProne, FireDeath, Incendiary
-	Warhead@15Radio: CreateTintedCells
-		LayerName: radioactivity
-		Range: 3
-		Level: 2500
-		Falloff: 100, 90, 80
-		MaxLevel: 6000
 	Warhead@16Dam_areanuke3: SpreadDamage
 		Spread: 3c0
 		Damage: 6000
@@ -335,12 +303,6 @@ Atomic:
 			building.tough: 80
 			building.internet_center: 70
 		DamageTypes: TriggerProne, FireDeath, Incendiary
-	Warhead@20Radio: CreateTintedCells
-		LayerName: radioactivity
-		Range: 4
-		Level: 2500
-		Falloff: 100, 90, 80
-		MaxLevel: 6000
 	Warhead@21Dam_areanuke4: SpreadDamage
 		Spread: 3c768
 		Damage: 6000

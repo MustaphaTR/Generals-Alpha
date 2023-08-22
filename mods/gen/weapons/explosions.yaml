@@ -88,13 +88,7 @@ CrateExplosion:
 CrateToxin:
 	Warhead@1Radio: CreateTintedCells
 		LayerName: anthrax_alpha
-		Range: 1
-		Level: 1000
-		Falloff: 100, 90, 80
-		MaxLevel: 7500
-	Warhead@2Radio: CreateTintedCells
-		LayerName: anthrax_alpha
-		Range: 2
+		Spread: 1024
 		Level: 2000
 		Falloff: 100, 90, 80
 		MaxLevel: 7500
@@ -103,14 +97,10 @@ CrateToxin.beta:
 	Inherits: CrateToxin
 	Warhead@1Radio: CreateTintedCells
 		LayerName: anthrax_beta
-	Warhead@2Radio: CreateTintedCells
-		LayerName: anthrax_beta
 
 CrateToxin.gamma:
 	Inherits: CrateToxin
 	Warhead@1Radio: CreateTintedCells
-		LayerName: anthrax_gamma
-	Warhead@2Radio: CreateTintedCells
 		LayerName: anthrax_gamma
 
 UnitExplode:
@@ -275,9 +265,9 @@ explosion.nuclear_tanks:
 		ImpactSounds: kaboom1.aud
 	Warhead@4Radio: CreateTintedCells
 		LayerName: radioactivity
-		Range: 1
-		Level: 2500
-		Falloff: 100, 90, 80
+		Spread: 768
+		Level: 2000
+		Falloff: 100, 60, 20, 0
 		MaxLevel: 5000
 
 explosion.nuclear_tanks.nuke:
@@ -291,7 +281,7 @@ explosion.nuclear_tanks.nuke:
 	Warhead@2Eff: CreateEffect
 		Explosions: mininuke
 	Warhead@4Radio: CreateTintedCells
-		Level: 3500
+		Level: 3000
 
 explosion.demo_trap:
 	Inherits: ^Explosion
@@ -350,29 +340,19 @@ explosion.demo_trap.toxin:
 		Damage: 10000
 	Warhead@4Radio: CreateTintedCells
 		LayerName: anthrax_alpha
-		Range: 1
-		Level: 1000
-		Falloff: 100, 90, 80
-		MaxLevel: 7500
-	Warhead@5Radio: CreateTintedCells
-		LayerName: anthrax_alpha
-		Range: 2
+		Spread: 1024
 		Level: 2000
-		Falloff: 100, 90, 80
+		Falloff: 100, 60, 20, 0
 		MaxLevel: 7500
 
 explosion.demo_trap.toxin_beta:
 	Inherits: explosion.demo_trap.toxin
 	Warhead@4Radio: CreateTintedCells
 		LayerName: anthrax_beta
-	Warhead@5Radio: CreateTintedCells
-		LayerName: anthrax_beta
 
 explosion.demo_trap.toxin_gamma:
 	Inherits: explosion.demo_trap.toxin
 	Warhead@4Radio: CreateTintedCells
-		LayerName: anthrax_gamma
-	Warhead@5Radio: CreateTintedCells
 		LayerName: anthrax_gamma
 
 explosion.advanced_demo_trap:
@@ -478,8 +458,8 @@ explosion.terrorist:
 explosion.terrorist.toxin:
 	Warhead@5Radio: CreateTintedCells
 		LayerName: anthrax_alpha
-		Range: 1
-		Level: 2500
+		Spread: 768
+		Level: 2000
 		Falloff: 100, 50, 0
 		MaxLevel: 2500
 
@@ -717,29 +697,19 @@ BombTruckExplosion.hi_exp:
 BombTruckExplosion.toxin:
 	Warhead@10Radio: CreateTintedCells
 		LayerName: anthrax_alpha
-		Range: 1
+		Spread: 1024
 		Level: 3000
-		Falloff: 100, 90, 60, 0
-		MaxLevel: 6000
-	Warhead@11Radio: CreateTintedCells
-		LayerName: anthrax_alpha
-		Range: 2
-		Level: 3000
-		Falloff: 100, 90, 60, 0
+		Falloff: 100, 70, 40, 10, 0
 		MaxLevel: 6000
 
 BombTruckExplosion.toxin_beta:
 	Inherits: BombTruckExplosion.toxin
 	Warhead@10Radio: CreateTintedCells
 		LayerName: anthrax_beta
-	Warhead@11Radio: CreateTintedCells
-		LayerName: anthrax_beta
 
 BombTruckExplosion.toxin_gamma:
 	Inherits: BombTruckExplosion.toxin
 	Warhead@10Radio: CreateTintedCells
-		LayerName: anthrax_gamma
-	Warhead@11Radio: CreateTintedCells
 		LayerName: anthrax_gamma
 
 explosion.nuclear_reactor:
@@ -795,9 +765,9 @@ explosion.nuclear_reactor.radioactivity:
 		Size: 2
 	Warhead@4Radio: CreateTintedCells
 		LayerName: radioactivity
-		Range: 2
+		Spread: 1024
 		Level: 750
-		Falloff: 100, 90, 80
+		Falloff: 100, 60, 20, 0
 		MaxLevel: 7500
 
 explosion.nuke_cannon:
@@ -814,9 +784,9 @@ explosion.nuke_cannon:
 		ImpactSounds: kaboom1.aud
 	Warhead@4Radio: CreateTintedCells
 		LayerName: radioactivity
-		Range: 2
+		Spread: 1024
 		Level: 1500
-		Falloff: 100, 90, 80
+		Falloff: 100, 60, 20, 0
 		MaxLevel: 7500
 
 explosion.inferno_layer.flame:

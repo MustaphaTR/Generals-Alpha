@@ -327,9 +327,9 @@ toxin.toxin_tractor:
 		DamageTypes: FireDeath
 	Warhead@2Radio: CreateTintedCells
 		LayerName: anthrax_alpha
-		Range: 1
-		Level: 500
-		Falloff: 100, 90, 50, 0
+		Spread: 256
+		Level: 512
+		Falloff: 100, 50, 0
 		MaxLevel: 5000
 
 toxin.toxin_tractor.crate-1:
@@ -461,9 +461,9 @@ toxin.toxin_tractor.deploy:
 	Projectile: InstantHit
 	Warhead@1Radio: CreateTintedCells
 		LayerName: anthrax_alpha
-		Range: 3
+		Spread: 1024
 		Level: 500
-		Falloff: 100, 90, 50, 0
+		Falloff: 100, 60, 30, 5
 		MaxLevel: 5000
 
 toxin.toxin_tractor.deploy.beta:

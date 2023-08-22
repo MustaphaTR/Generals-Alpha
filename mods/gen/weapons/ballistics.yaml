@@ -58,7 +58,7 @@ cannon.scorpion_tank.toxin:
 	Inherits: cannon.scorpion_tank
 	Warhead@1Radio: CreateTintedCells
 		LayerName: anthrax_alpha
-		Range: 0
+		Spread: 256
 		Level: 1250
 		Falloff: 100, 90, 50, 0
 		MaxLevel: 2500
@@ -143,7 +143,7 @@ cannon.battlemaster_tank.nuke:
 	Inherits: cannon.battlemaster_tank
 	Warhead@1Radio: CreateTintedCells
 		LayerName: radioactivity
-		Range: 0
+		Spread: 256
 		Level: 1250
 		Falloff: 100, 90, 50, 0
 		MaxLevel: 2500
@@ -159,7 +159,7 @@ cannon.battlemaster_tank.nuke.autoloader:
 	Inherits: cannon.battlemaster_tank.autoloader
 	Warhead@1Radio: CreateTintedCells
 		LayerName: radioactivity
-		Range: 0
+		Spread: 256
 		Level: 1250
 		Falloff: 100, 90, 50, 0
 		MaxLevel: 2500
@@ -203,7 +203,7 @@ cannon.marauder_tank.toxin:
 	Inherits: cannon.marauder_tank
 	Warhead@1Radio: CreateTintedCells
 		LayerName: anthrax_alpha
-		Range: 0
+		Spread: 256
 		Level: 1250
 		Falloff: 100, 90, 50, 0
 		MaxLevel: 2500
@@ -323,9 +323,9 @@ cannon.overlord_tank.nuke:
 	Inherits: cannon.overlord_tank
 	Warhead@1Radio: CreateTintedCells
 		LayerName: radioactivity
-		Range: 0
-		Level: 1250
-		Falloff: 100, 90, 50, 0
+		Spread: 256
+		Level: 1000
+		Falloff: 100, 60, 20
 		MaxLevel: 2500
 
 TurretGun:
@@ -480,15 +480,9 @@ cannon.nuke_cannon:
 		ImpactSounds: kaboom1.aud
 	Warhead@4Radio: CreateTintedCells
 		LayerName: radioactivity
-		Range: 1
-		Level: 1000
-		Falloff: 100, 90, 80
-		MaxLevel: 7500
-	Warhead@5Radio: CreateTintedCells
-		LayerName: radioactivity
-		Range: 2
+		Spread: 1024
 		Level: 2000
-		Falloff: 100, 90, 80
+		Falloff: 100, 60, 25, 0
 		MaxLevel: 7500
 
 cannon.nuke_cannon.neutron:
@@ -676,9 +670,9 @@ bomb.carpet.nuke:
 		ImpactSounds: kaboom1.aud
 	Warhead@5Radio: CreateTintedCells
 		LayerName: radioactivity
-		Range: 2
-		Level: 2500
-		Falloff: 100, 90, 80
+		Spread: 1024
+		Level: 2000
+		Falloff: 100, 60, 25, 0
 		MaxLevel: 5000
 
 molotov.angry_mob:
