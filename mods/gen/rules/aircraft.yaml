@@ -59,6 +59,8 @@
 	Interactable:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
+	Targetable@IgnoredByAI:
+		TargetTypes: IgnoredByAI
 
 aircraft.badger:
 	Inherits: ^default.badger
@@ -1082,6 +1084,8 @@ aircraft.spy_drone:
 		DecorationBounds: 1280, 1194, 0, 85
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
+	Targetable@IgnoredByAI:
+		TargetTypes: IgnoredByAI
 
 aircraft.scout_drone:
 	Inherits: aircraft.spy_drone
