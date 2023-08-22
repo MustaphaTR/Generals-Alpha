@@ -402,7 +402,7 @@ aircraft.mig:
 		Condition: padaircraft
 	AutoTarget:
 		InitialStance: HoldFire
-		InitialStanceAI: HoldFire
+		InitialStanceAI: AttackAnything
 	AmmoPool:
 		Ammo: 2
 		ReloadDelay: 100
@@ -548,7 +548,7 @@ aircraft.raptor:
 		Modifier: 69
 	AutoTarget:
 		InitialStance: HoldFire
-		InitialStanceAI: HoldFire
+		InitialStanceAI: AttackAnything
 	AmmoPool:
 		Ammo: 4
 		ReloadDelay: 50
@@ -736,7 +736,7 @@ aircraft.stealth_fighter:
 		RequiresCondition: !zh_units
 	AutoTarget:
 		InitialStance: HoldFire
-		InitialStanceAI: HoldFire
+		InitialStanceAI: AttackAnything
 	AmmoPool:
 		Ammo: 2
 		ReloadDelay: 100
@@ -928,7 +928,7 @@ aircraft.aurora:
 		Modifier: 0
 	AutoTarget:
 		InitialStance: HoldFire
-		InitialStanceAI: HoldFire
+		InitialStanceAI: AttackAnything
 	AmmoPool:
 		Ammo: 1
 		ReloadDelay: 125
@@ -1222,6 +1222,8 @@ aircraft.a10:
 	RenderSprites:
 		PlayerPalette: cncplayer
 	Interactable:
+	Targetable@IgnoredByAI:
+		TargetTypes: IgnoredByAI
 
 aircraft.chinook:
 	Inherits: ^Vehicle
