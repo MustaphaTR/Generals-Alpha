@@ -198,8 +198,10 @@ Player:
 		SiegeUnitTypes: vehicle.tomahawk_launcher, vehicle.tomahawk_launcher.boss, vehicle.rocket_buggy, vehicle.rocket_buggy.boss, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 		FragileDeployerTypes: infantry.hacker, infantry.hacker.boss, infantry.super_hacker
 		DozerTypes: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.bomb_truck
-		AirUnitsTypes: aircraft.mig, aircraft.raptor, aircraft.king_raptor, aircraft.stealth_fighter, aircraft.stealth_fighter.air, aircraft.aurora, aircraft.aurora.boss, aircraft.aurora_alpha, aircraft.aurora_alpha.boss, aircraft.comanche, aircraft.helix, aircraft.assault_helix
+		AirUnitsTypes: aircraft.mig, aircraft.raptor, aircraft.king_raptor, aircraft.stealth_fighter, aircraft.stealth_fighter.air, aircraft.aurora, aircraft.aurora.boss, aircraft.aurora_alpha, aircraft.aurora_alpha.boss, aircraft.comanche, #aircraft.helix, aircraft.assault_helix
 		ProtectionTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.cold_fusion_reactor, building.cold_fusion_reactor.laser, building.advanced_cold_fusion_reactor, building.cold_fusion_reactor.boss, building.nuclear_reactor, building.advanced_nuclear_reactor, building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center, building.patriot, building.emp_patriot, building.patriot.boss, building.laser_turret, building.demo_trap, building.demo_trap.toxin, building.advanced_demo_trap, building.gatling_cannon, building.firebase, building.bunker, building.fortified_bunker, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, building.tunnel_network, building.toxin_tunnel_network, building.tunnel_network.boss, building.stinger_site, building.usa_airfield, building.prc_airfield, building.internet_center, building.strategy_center, building.palace, building.propaganda_center, building.detention_camp, building.supply_drop_zone, building.black_market, building.speaker_tower, building.speaker_tower.boss, building.particle_cannon, building.particle_cannon.super, building.particle_cannon.boss, building.scud_storm, building.scud_storm.boss, building.missile_silo, building.missile_silo.boss, tech.oil_derrick, tech.oil_refinery, tech.hospital, tech.communications_center, tech.soviet_barracks, tech.flame_tower, tech.power_plant, tech.repair_bay, tech.reinforcements_pad, tech.shipyard, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.tech_mcc, fake.command_center, fake.barracks, fake.supply_stash, fake.arms_dealer, fake.palace, fake.black_market, fake.scud_storm, fake.demo_trap, fake.demo_trap.toxin, fake.advanced_demo_trap, fake.tunnel_network, fake.toxin_tunnel_network, fake.stinger_site, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck
+		SuggestedGroundLeaderLocomotor: locomotor.infantry, locomotor.wheeled, locomotor.sentry_drone, locomotor.tracked, locomotor.overlord
+		SuggestedNavyLeaderLocomotor: locomotor.vessel
 	UnitBuilderBotModule@rush:
 		RequiresCondition: enable-rush-ai
 		ProductionMinimumCash: 2000
@@ -270,7 +272,8 @@ Player:
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
-			vehicle.bomb_truck: 100
+			vehicle.bomb_truck: 10
+			vehicle.battle_bus: 2
 			aircraft.chinook: 10
 			aircraft.mig: 2
 			aircraft.raptor: 2
@@ -300,8 +303,10 @@ Player:
 			upgrade.hi_explosive_missiles: 1
 			upgrade.overlord_gatling: 4
 			upgrade.overlord_speaker: 1
+			upgrade.overlord_bunker: 1
 			upgrade.helix_gatling: 4
 			upgrade.helix_speaker: 1
+			upgrade.helix_bunker: 1
 			upgrade.capture_building: 100
 			upgrade.flashbang_grenades: 50
 			upgrade.chemical_suits: 50
@@ -354,6 +359,7 @@ Player:
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
+			vehicle.battle_bus: 2
 		QueueLimits:
 			queue.cold_fusion_reactor: 1
 			queue.laser_gen_cold_fusion_reactor: 1
@@ -579,8 +585,10 @@ Player:
 		SiegeUnitTypes: vehicle.tomahawk_launcher, vehicle.tomahawk_launcher.boss, vehicle.rocket_buggy, vehicle.rocket_buggy.boss, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 		FragileDeployerTypes: infantry.hacker, infantry.hacker.boss, infantry.super_hacker
 		DozerTypes: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.bomb_truck
-		AirUnitsTypes: aircraft.mig, aircraft.raptor, aircraft.king_raptor, aircraft.stealth_fighter, aircraft.stealth_fighter.air, aircraft.aurora, aircraft.aurora.boss, aircraft.aurora_alpha, aircraft.aurora_alpha.boss, aircraft.comanche, aircraft.helix, aircraft.assault_helix
+		AirUnitsTypes: aircraft.mig, aircraft.raptor, aircraft.king_raptor, aircraft.stealth_fighter, aircraft.stealth_fighter.air, aircraft.aurora, aircraft.aurora.boss, aircraft.aurora_alpha, aircraft.aurora_alpha.boss, aircraft.comanche, #aircraft.helix, aircraft.assault_helix
 		ProtectionTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.cold_fusion_reactor, building.cold_fusion_reactor.laser, building.advanced_cold_fusion_reactor, building.cold_fusion_reactor.boss, building.nuclear_reactor, building.advanced_nuclear_reactor, building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center, building.patriot, building.emp_patriot, building.patriot.boss, building.laser_turret, building.demo_trap, building.demo_trap.toxin, building.advanced_demo_trap, building.gatling_cannon, building.firebase, building.bunker, building.fortified_bunker, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, building.tunnel_network, building.toxin_tunnel_network, building.tunnel_network.boss, building.stinger_site, building.usa_airfield, building.prc_airfield, building.internet_center, building.strategy_center, building.palace, building.propaganda_center, building.detention_camp, building.supply_drop_zone, building.black_market, building.speaker_tower, building.speaker_tower.boss, building.particle_cannon, building.particle_cannon.super, building.particle_cannon.boss, building.scud_storm, building.scud_storm.boss, building.missile_silo, building.missile_silo.boss, tech.oil_derrick, tech.oil_refinery, tech.hospital, tech.communications_center, tech.soviet_barracks, tech.flame_tower, tech.power_plant, tech.repair_bay, tech.reinforcements_pad, tech.shipyard, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.tech_mcc, fake.command_center, fake.barracks, fake.supply_stash, fake.arms_dealer, fake.palace, fake.black_market, fake.scud_storm, fake.demo_trap, fake.demo_trap.toxin, fake.advanced_demo_trap, fake.tunnel_network, fake.toxin_tunnel_network, fake.stinger_site, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck
+		SuggestedGroundLeaderLocomotor: locomotor.infantry, locomotor.wheeled, locomotor.sentry_drone, locomotor.tracked, locomotor.overlord
+		SuggestedNavyLeaderLocomotor: locomotor.vessel
 	UnitBuilderBotModule@normal:
 		RequiresCondition: enable-normal-ai
 		ProductionMinimumCash: 2000
@@ -651,7 +659,8 @@ Player:
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
-			vehicle.bomb_truck: 100
+			vehicle.bomb_truck: 10
+			vehicle.battle_bus: 2
 			aircraft.chinook: 10
 			aircraft.mig: 2
 			aircraft.raptor: 2
@@ -681,8 +690,10 @@ Player:
 			upgrade.hi_explosive_missiles: 1
 			upgrade.overlord_gatling: 3
 			upgrade.overlord_speaker: 1
+			upgrade.overlord_bunker: 1
 			upgrade.helix_gatling: 3
 			upgrade.helix_speaker: 1
+			upgrade.helix_bunker: 1
 			upgrade.capture_building: 90
 			upgrade.flashbang_grenades: 50
 			upgrade.chemical_suits: 50
@@ -735,6 +746,7 @@ Player:
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
+			vehicle.battle_bus: 2
 		QueueLimits:
 			queue.cold_fusion_reactor: 1
 			queue.laser_gen_cold_fusion_reactor: 1
@@ -960,8 +972,10 @@ Player:
 		SiegeUnitTypes: vehicle.tomahawk_launcher, vehicle.tomahawk_launcher.boss, vehicle.rocket_buggy, vehicle.rocket_buggy.boss, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
 		FragileDeployerTypes: infantry.hacker, infantry.hacker.boss, infantry.super_hacker
 		DozerTypes: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.bomb_truck
-		AirUnitsTypes: aircraft.mig, aircraft.raptor, aircraft.king_raptor, aircraft.stealth_fighter, aircraft.stealth_fighter.air, aircraft.aurora, aircraft.aurora.boss, aircraft.aurora_alpha, aircraft.aurora_alpha.boss, aircraft.comanche, aircraft.helix, aircraft.assault_helix
+		AirUnitsTypes: aircraft.mig, aircraft.raptor, aircraft.king_raptor, aircraft.stealth_fighter, aircraft.stealth_fighter.air, aircraft.aurora, aircraft.aurora.boss, aircraft.aurora_alpha, aircraft.aurora_alpha.boss, aircraft.comanche, #aircraft.helix, aircraft.assault_helix
 		ProtectionTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.cold_fusion_reactor, building.cold_fusion_reactor.laser, building.advanced_cold_fusion_reactor, building.cold_fusion_reactor.boss, building.nuclear_reactor, building.advanced_nuclear_reactor, building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center, building.patriot, building.emp_patriot, building.patriot.boss, building.laser_turret, building.demo_trap, building.demo_trap.toxin, building.advanced_demo_trap, building.gatling_cannon, building.firebase, building.bunker, building.fortified_bunker, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, building.tunnel_network, building.toxin_tunnel_network, building.tunnel_network.boss, building.stinger_site, building.usa_airfield, building.prc_airfield, building.internet_center, building.strategy_center, building.palace, building.propaganda_center, building.detention_camp, building.supply_drop_zone, building.black_market, building.speaker_tower, building.speaker_tower.boss, building.particle_cannon, building.particle_cannon.super, building.particle_cannon.boss, building.scud_storm, building.scud_storm.boss, building.missile_silo, building.missile_silo.boss, tech.oil_derrick, tech.oil_refinery, tech.hospital, tech.communications_center, tech.soviet_barracks, tech.flame_tower, tech.power_plant, tech.repair_bay, tech.reinforcements_pad, tech.shipyard, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.tech_mcc, fake.command_center, fake.barracks, fake.supply_stash, fake.arms_dealer, fake.palace, fake.black_market, fake.scud_storm, fake.demo_trap, fake.demo_trap.toxin, fake.advanced_demo_trap, fake.tunnel_network, fake.toxin_tunnel_network, fake.stinger_site, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck
+		SuggestedGroundLeaderLocomotor: locomotor.infantry, locomotor.wheeled, locomotor.sentry_drone, locomotor.tracked, locomotor.overlord
+		SuggestedNavyLeaderLocomotor: locomotor.vessel
 	UnitBuilderBotModule@turtle:
 		RequiresCondition: enable-turtle-ai
 		ProductionMinimumCash: 2000
@@ -1032,7 +1046,8 @@ Player:
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
-			vehicle.bomb_truck: 100
+			vehicle.bomb_truck: 10
+			vehicle.battle_bus: 2
 			aircraft.chinook: 10
 			aircraft.mig: 2
 			aircraft.raptor: 1
@@ -1062,8 +1077,10 @@ Player:
 			upgrade.hi_explosive_missiles: 1
 			upgrade.overlord_gatling: 5
 			upgrade.overlord_speaker: 1
+			upgrade.overlord_bunker: 1
 			upgrade.helix_gatling: 5
 			upgrade.helix_speaker: 1
+			upgrade.helix_bunker: 1
 			upgrade.capture_building: 100
 			upgrade.flashbang_grenades: 75
 			upgrade.chemical_suits: 75
@@ -1116,6 +1133,7 @@ Player:
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
+			vehicle.battle_bus: 2
 		QueueLimits:
 			queue.cold_fusion_reactor: 1
 			queue.laser_gen_cold_fusion_reactor: 1
@@ -1154,9 +1172,9 @@ Player:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 		Transports: building.internet_center
 		Passengers: infantry.hacker, infantry.hacker.boss, infantry.super_hacker
-	LoadCargoBotModule@Defense:
+	LoadCargoBotModule@DefenseAndTransport:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
-		Transports: building.firebase, building.bunker, building,fortified_bunker, building.palace
+		Transports: building.firebase, building.bunker, building,fortified_bunker, building.palace, vehicle.humvee, vehicle.technical, vehicle.ambulance, vehicle.battle_bus, vehicle.troop_crawler, vehicle.assault_troop_crawler, vehicle.listening_outpost, vehicle.attack_outpost, aircraft.assault_helix, vehicle.overlord_tank
 		Passengers: infantry.ranger, infantry.rebel, infantry.red_guard, infantry.minigunner, infantry.conscript, infantry.missile_defender, infantry.rpg_trooper, infantry.tank_hunter, infantry.grenadier, infantry.pathfinder, infantry.flamethrower
 	LoadGarrisonerBotModule:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai

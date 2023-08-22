@@ -60,6 +60,11 @@
 			TopLeft: -2048, -1536
 			BottomRight: 2048, 1536
 
+^AImicroManagable:
+	GrantConditionOnBotOwner@AImicroManage:
+		Condition: AImicroManage
+		Bots: rush, normal, turtle
+
 ^GainsExperience:
 	GainsExperience:
 		ExperienceModifier: 1

@@ -1624,12 +1624,13 @@ aircraft.comanche:
 
 aircraft.helix:
 	Inherits: ^Helicopter
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@UPGRADE: ^CanHavePRCVehicleUpgrades
+	Inherits@AImicroManagable: ^AImicroManagable
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-1:
@@ -1798,6 +1799,7 @@ aircraft.helix:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		LoadedCondition: loaded
+		RequiresCondition: !AImicroManage || bunker_upgrade
 	WithCargoSounds:
 		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
 		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
@@ -1910,6 +1912,15 @@ aircraft.helix:
 	ActorStatOverride@Nuke:
 		Upgrades: upgrade.helix_nuke, upgrade.helix_bunker, upgrade.helix_gatling, upgrade.helix_speaker
 		RequiresCondition: nuke
+	GrantConditionOnDamageState@AI-bunker_upgrade:
+		Condition: ShouldUnload
+		ValidDamageStates: Critical, Heavy
+	AutoDeployer@AI-bunker_upgrade:
+		RequiresCondition: AImicroManage && loaded && ShouldUnload && bunker_upgrade
+		DeployChance: 100
+		DeployTrigger: Periodically
+		DeployTicks: 100
+		UndeployTicks: 100
 
 aircraft.assault_helix:
 	Inherits: aircraft.helix
