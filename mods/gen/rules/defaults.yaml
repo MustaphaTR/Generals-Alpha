@@ -1942,6 +1942,7 @@
 		PreviewAlpha: 0.65
 	RequiresBuildableArea:
 		AreaTypes: building
+		Adjacent: 8
 	SoundOnDamageTransition:
 		DamagedSounds: kaboom1.aud
 		DestroyedSounds: kaboom22.aud
@@ -1973,12 +1974,6 @@
 	OwnerLostAction:
 		Action: Kill
 	UpdatesPlayerStatistics:
-	GivesBuildableArea:
-		AreaTypes: building, flame_tower
-		RequiresCondition: ccradius
-	GrantConditionOnPrerequisite@GLOBALCCRADIUS:
-		Prerequisites: prerequisite.ccradius
-		Condition: ccradius
 	RepairableBuilding:
 		RepairStep: 1500
 	WithBuildingRepairDecoration:
@@ -2012,8 +2007,6 @@
 	Inherits: ^Building
 	GivesExperience:
 		Experience: 50
-	-GivesBuildableArea:
-	-GrantConditionOnPrerequisite@GLOBALCCRADIUS:
 	Health:
 		HP: 12500
 	WithDecoration@fake:
@@ -2066,8 +2059,6 @@
 		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable, Defense
 	MustBeDestroyed:
 		RequiredForShortGame: false
-	-GivesBuildableArea:
-	-GrantConditionOnPrerequisite@GLOBALCCRADIUS:
 	-AcceptsDeliveredCash:
 	-Capturable:
 	-CapturableProgressBar:
@@ -2141,7 +2132,7 @@
 		LineBuildFootprintAlpha: 0.65
 	RequiresBuildableArea:
 		AreaTypes: building
-		Adjacent: 7
+		Adjacent: 8
 	SoundOnDamageTransition:
 		DamagedSounds: sandbag2.aud
 		DestroyedSounds: sandbag2.aud
@@ -2195,7 +2186,7 @@
 		ClosingSound: cashturn.aud
 		BlocksProjectilesHeight: 0
 	RequiresBuildableArea:
-		Adjacent: 4
+		Adjacent: 8
 	MapEditorData:
 		Categories: Wall
 
@@ -2228,8 +2219,6 @@
 	CaptureManager:
 		BeingCapturedNotification: BuildingBeingCaptured
 		BeingCapturedTextNotification: One of our buildings is being captured.
-	GivesBuildableArea:
-		AreaTypes: mine
 	InstantlyRepairable:
 	RepairableBuilding:
 		RepairStep: 1500
@@ -2586,9 +2575,6 @@
 	HitShape:
 	MapEditorData:
 		Categories: System
-	RequiresBuildableArea:
-		AreaTypes: mine
-		Adjacent: 1
 
 ^WithDisabledOverlay:
 	WithColoredOverlay@IDISABLE:

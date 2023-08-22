@@ -396,7 +396,6 @@ hack.no_bases:
 hack.mine:
 	Inherits: ^Mine
 	-Building:
-	-RequiresBuildableArea:
 	Mobile:
 		Locomotor: locomotor.mine
 		RequiresCondition: !keep_me_disabled
