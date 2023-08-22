@@ -45,9 +45,9 @@ Player:
 			building.usa_supply_center: 4
 			building.gla_supply_stash: 4
 			building.prc_supply_center: 4
-			building.usa_barracks: 1
-			building.gla_barracks: 1
-			building.prc_barracks: 1
+			building.usa_barracks: 2
+			building.gla_barracks: 2
+			building.prc_barracks: 2
 			building.usa_war_factory: 1
 			building.arms_dealer: 1
 			building.prc_war_factory: 1
@@ -69,9 +69,9 @@ Player:
 			building.usa_supply_center: 30
 			building.gla_supply_stash: 30
 			building.prc_supply_center: 30
-			building.usa_barracks: 1
-			building.gla_barracks: 1
-			building.prc_barracks: 1
+			building.usa_barracks: 20
+			building.gla_barracks: 20
+			building.prc_barracks: 20
 			building.usa_war_factory: 1
 			building.arms_dealer: 1
 			building.prc_war_factory: 1
@@ -421,9 +421,9 @@ Player:
 			building.usa_supply_center: 4
 			building.gla_supply_stash: 4
 			building.prc_supply_center: 4
-			building.usa_barracks: 1
-			building.gla_barracks: 1
-			building.prc_barracks: 1
+			building.usa_barracks: 2
+			building.gla_barracks: 2
+			building.prc_barracks: 2
 			building.usa_war_factory: 1
 			building.arms_dealer: 1
 			building.prc_war_factory: 1
@@ -452,9 +452,9 @@ Player:
 			building.usa_supply_center: 30
 			building.gla_supply_stash: 30
 			building.prc_supply_center: 30
-			building.usa_barracks: 1
-			building.gla_barracks: 1
-			building.prc_barracks: 1
+			building.usa_barracks: 20
+			building.gla_barracks: 20
+			building.prc_barracks: 20
 			building.usa_war_factory: 1
 			building.arms_dealer: 1
 			building.prc_war_factory: 1
@@ -811,9 +811,9 @@ Player:
 			building.usa_supply_center: 4
 			building.gla_supply_stash: 4
 			building.prc_supply_center: 4
-			building.usa_barracks: 1
-			building.gla_barracks: 1
-			building.prc_barracks: 1
+			building.usa_barracks: 2
+			building.gla_barracks: 2
+			building.prc_barracks: 2
 			building.usa_war_factory: 1
 			building.arms_dealer: 1
 			building.prc_war_factory: 1
@@ -842,9 +842,9 @@ Player:
 			building.usa_supply_center: 30
 			building.gla_supply_stash: 30
 			building.prc_supply_center: 30
-			building.usa_barracks: 1
-			building.gla_barracks: 1
-			building.prc_barracks: 1
+			building.usa_barracks: 20
+			building.gla_barracks: 20
+			building.prc_barracks: 20
 			building.usa_war_factory: 1
 			building.arms_dealer: 1
 			building.prc_war_factory: 1
@@ -1194,7 +1194,7 @@ Player:
 			vehicle.bomb_truck: 100
 		ValidTargets: Structure
 		InvalidTargets: WaterActor
-		AttackDistance: Furthest
+		AttackDistance: Random
 	SupportPowerBotModule:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 		Decisions:
