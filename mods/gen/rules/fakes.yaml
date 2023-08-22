@@ -595,6 +595,9 @@ fake.demo_trap:
 		IntoActor: building.demo_trap
 	Valued:
 		Cost: 50
+	ActorStatValues:
+		Damage: 600
+		Spread: 1c128
 	ActorStatOverride@Enemy:
 		TooltipActor: building.demo_trap
 		Stats: Armor, Sight, None, Damage, Spread
@@ -622,6 +625,8 @@ fake.demo_trap.toxin:
 	GrantConditionOnFaction@Demo:
 		Condition: demo
 		Factions: demo
+	ActorStatValues:
+		Damage: 350
 	ActorStatOverride@Enemy:
 		TooltipActor: building.demo_trap.toxin
 	ActorStatOverride@Enemy_UPGRADE:
@@ -654,6 +659,8 @@ fake.advanced_demo_trap:
 		IntoActor: building.advanced_demo_trap
 	Valued:
 		Cost: 25
+	ActorStatValues:
+		Damage: 700
 	ActorStatOverride@Enemy:
 		TooltipActor: building.advanced_demo_trap
 

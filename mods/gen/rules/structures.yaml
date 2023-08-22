@@ -1905,6 +1905,8 @@ building.demo_trap:
 	GrantConditionOnDeploy:
 		DeployedCondition: self_destruct
 	ActorStatValues:
+		Damage: 600
+		Spread: 1c128
 		Stats: Armor, Sight, None, Damage, Spread
 
 building.demo_trap.explode:
@@ -1953,6 +1955,7 @@ building.demo_trap.toxin:
 	RenderSprites:
 		Image: building.demo_trap
 	ActorStatValues:
+		Damage: 350
 		Upgrades: upgrade.anthrax_beta
 	ActorStatOverride@Toxin:
 		Upgrades: upgrade.anthrax_gamma
@@ -2012,6 +2015,8 @@ building.advanced_demo_trap:
 		Name: Advanced Demo Trap
 	SpawnActorOnDeath:
 		Actor: building.advanced_demo_trap.explode
+	ActorStatValues:
+		Damage: 700
 
 building.advanced_demo_trap.explode:
 	Inherits: building.demo_trap.explode

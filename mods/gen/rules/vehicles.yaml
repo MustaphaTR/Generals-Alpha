@@ -2628,62 +2628,77 @@ vehicle.scud_launcher:
 		CrushClasses: vehicle
 	Armament:
 		Weapon: missile.scud_launcher
+		Damage: 200
 		RequiresCondition: !toxin_missiles && !hi_explosive_missiles && !scrap_create_bonus
 		PauseOnCondition: !ammo
 	Armament@CRATE-1:
 		Weapon: missile.scud_launcher.crate-1
+		Damage: 200
 		RequiresCondition: !toxin_missiles && !hi_explosive_missiles && scrap_create_bonus == 1
 		PauseOnCondition: !ammo
 	Armament@CRATE-2:
 		Weapon: missile.scud_launcher.crate-2
+		Damage: 300
 		RequiresCondition: !toxin_missiles && !hi_explosive_missiles && scrap_create_bonus == 2
 		PauseOnCondition: !ammo
 	Armament@BIO:
 		Weapon: missile.scud_launcher.toxin
+		Damage: 200
 		RequiresCondition: toxin_missiles && !anthrax_beta && !anthrax_gamma && !scrap_create_bonus
 		PauseOnCondition: !ammo
 	Armament@BIO_CRATE-1:
 		Weapon: missile.scud_launcher.crate-1.toxin
+		Damage: 200
 		RequiresCondition: toxin_missiles && !anthrax_beta && !anthrax_gamma && scrap_create_bonus == 1
 		PauseOnCondition: !ammo
 	Armament@BIO_CRATE-2:
 		Weapon: missile.scud_launcher.crate-2.toxin
+		Damage: 300
 		RequiresCondition: toxin_missiles && !anthrax_beta && !anthrax_gamma && scrap_create_bonus == 2
 		PauseOnCondition: !ammo
 	Armament@BETA:
 		Weapon: missile.scud_launcher.toxin_beta
+		Damage: 200
 		RequiresCondition: toxin_missiles && anthrax_beta && !anthrax_gamma && !scrap_create_bonus
 		PauseOnCondition: !ammo
 	Armament@BETA_CRATE-1:
 		Weapon: missile.scud_launcher.crate-1.toxin_beta
+		Damage: 200
 		RequiresCondition: toxin_missiles && anthrax_beta && !anthrax_gamma && scrap_create_bonus == 1
 		PauseOnCondition: !ammo
 	Armament@BETA_CRATE-2:
 		Weapon: missile.scud_launcher.crate-2.toxin_beta
+		Damage: 300
 		RequiresCondition: toxin_missiles && anthrax_beta && !anthrax_gamma && scrap_create_bonus == 2
 		PauseOnCondition: !ammo
 	Armament@GAMMA:
 		Weapon: missile.scud_launcher.toxin_gamma
+		Damage: 200
 		RequiresCondition: toxin_missiles && anthrax_gamma && !scrap_create_bonus
 		PauseOnCondition: !ammo
 	Armament@GAMMA_CRATE-1:
 		Weapon: missile.scud_launcher.crate-1.toxin_gamma
+		Damage: 200
 		RequiresCondition: toxin_missiles && anthrax_gamma && scrap_create_bonus == 1
 		PauseOnCondition: !ammo
 	Armament@GAMMA_CRATE-2:
 		Weapon: missile.scud_launcher.crate-2.toxin_gamma
+		Damage: 300
 		RequiresCondition: toxin_missiles && anthrax_gamma && scrap_create_bonus == 2
 		PauseOnCondition: !ammo
 	Armament@EXP:
 		Weapon: missile.scud_launcher.explosive
+		Damage: 300
 		RequiresCondition: hi_explosive_missiles && !scrap_create_bonus
 		PauseOnCondition: !ammo
 	Armament@EXP_CRATE-1:
 		Weapon: missile.scud_launcher.crate-1.explosive
+		Damage: 300
 		RequiresCondition: hi_explosive_missiles && scrap_create_bonus == 1
 		PauseOnCondition: !ammo
 	Armament@EXP_CRATE-2:
 		Weapon: missile.scud_launcher.crate-2.explosive
+		Damage: 400
 		RequiresCondition: hi_explosive_missiles && scrap_create_bonus == 2
 		PauseOnCondition: !ammo
 	AttackFrontal:
@@ -2808,11 +2823,13 @@ vehicle.inferno_cannon:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Armament@Red:
+		Damage: 30
 		Weapon: cannon.inferno_cannon
 		LocalOffset: 624,0,208
 		MuzzleSequence: muzzle
 		RequiresCondition: !black_napalm
 	Armament@Blue:
+		Damage: 45
 		Weapon: cannon.inferno_cannon.blue
 		LocalOffset: 624,0,208
 		MuzzleSequence: muzzle
@@ -3658,7 +3675,15 @@ vehicle.bomb_truck:
 		FacingTolerance: 512
 		RequiresCondition: !driver_killed
 	Armament@PRIMARY:
+		Damage: 1000
+		Spread: 1c640
 		Weapon: hack.suicide_targeting
+		RequiresCondition: !hi_explosive_bombs
+	Armament@HI_EXPLOSIVE_BOMBS:
+		Damage: 2000
+		Spread: 2c128
+		Weapon: hack.suicide_targeting
+		RequiresCondition: hi_explosive_bombs
 	GrantConditionOnAttack:
 		Condition: triggered
 	GrantConditionOnDeploy:
@@ -4019,6 +4044,8 @@ vehicle.combat_cycle:
 		RequiresCondition: rpg
 	Armament@Terrorist:
 		Name: terror
+		Damage: 800
+		Spread: 1c256
 		Weapon: hack.suicide_targeting
 		RequiresCondition: terrorist || toxin_terrorist
 	Armament@Jarmen:
