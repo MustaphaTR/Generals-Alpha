@@ -4051,13 +4051,22 @@ vehicle.combat_cycle:
 	FirepowerMultiplier@AP_ROCKETS:
 		Types: ag_rocket, aa_rocket
 	Buildable:
-		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle, queue.gla_vehicle_merged, queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged
+		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.stealth_gen_vehicle, queue.gla_vehicle_merged, queue.boss_gen_vehicle_merged
 		BuildPaletteOrder: 10
 		ForceIconLocation: true
 		BuildDuration: 100
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units
 		Description: Fast scout vehicle with weapon depending on passenger.\n\nComes with a rebel.
+		ReadyAudio: CycleCreated
+	Buildable@Demo:
+		Queue: queue.demo_gen_vehicle, queue.boss_gen_vehicle
+		BuildPaletteOrder: 10
+		ForceIconLocation: true
+		BuildDuration: 100
+		BuildDurationModifier: 100
+		Prerequisites: ~prerequisite.zh_units
+		Description: Fast scout vehicle with weapon depending on passenger.\n\nComes with a terrorist.
 		ReadyAudio: CycleCreated
 	Valued:
 		Cost: 500
