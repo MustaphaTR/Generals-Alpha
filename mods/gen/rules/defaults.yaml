@@ -60,6 +60,11 @@
 			TopLeft: -2048, -1536
 			BottomRight: 2048, 1536
 
+^AImicroManagable:
+	GrantConditionOnBotOwner@AImicroManage:
+		Condition: AImicroManage
+		Bots: rush, normal, turtle
+
 ^GainsExperience:
 	GainsExperience:
 		ExperienceModifier: 1
@@ -1937,11 +1942,12 @@
 		Footprint: x
 		TerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
 		BuildSounds: placbldg.aud, build5.aud
-		RequiresBaseProvider: true
+		RequiresBaseProvider: false
 	ActorPreviewPlaceBuildingPreview:
 		PreviewAlpha: 0.65
 	RequiresBuildableArea:
 		AreaTypes: building
+		Adjacent: 2
 	SoundOnDamageTransition:
 		DamagedSounds: kaboom1.aud
 		DestroyedSounds: kaboom22.aud
@@ -1969,16 +1975,11 @@
 	Inherits: ^BasicBuilding
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
+	Inherits@AImicroManagable: ^AImicroManagable
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
 	UpdatesPlayerStatistics:
-	GivesBuildableArea:
-		AreaTypes: building, flame_tower
-		RequiresCondition: ccradius
-	GrantConditionOnPrerequisite@GLOBALCCRADIUS:
-		Prerequisites: prerequisite.ccradius
-		Condition: ccradius
 	RepairableBuilding:
 		RepairStep: 1500
 	WithBuildingRepairDecoration:
@@ -1996,6 +1997,10 @@
 	Capturable:
 		Types: building
 		RequiresCondition: !build-incomplete
+	## Tolerated buildable solution for AI
+	GivesBuildableArea:
+		AreaTypes: building
+		RequiresCondition: AImicroManage
 	CapturableProgressBar:
 	MustBeDestroyed:
 		RequiredForShortGame: true
@@ -2012,8 +2017,6 @@
 	Inherits: ^Building
 	GivesExperience:
 		Experience: 50
-	-GivesBuildableArea:
-	-GrantConditionOnPrerequisite@GLOBALCCRADIUS:
 	Health:
 		HP: 12500
 	WithDecoration@fake:
@@ -2066,8 +2069,6 @@
 		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable, Defense
 	MustBeDestroyed:
 		RequiredForShortGame: false
-	-GivesBuildableArea:
-	-GrantConditionOnPrerequisite@GLOBALCCRADIUS:
 	-AcceptsDeliveredCash:
 	-Capturable:
 	-CapturableProgressBar:
@@ -2195,7 +2196,7 @@
 		ClosingSound: cashturn.aud
 		BlocksProjectilesHeight: 0
 	RequiresBuildableArea:
-		Adjacent: 4
+		Adjacent: 5
 	MapEditorData:
 		Categories: Wall
 
@@ -2228,8 +2229,6 @@
 	CaptureManager:
 		BeingCapturedNotification: BuildingBeingCaptured
 		BeingCapturedTextNotification: One of our buildings is being captured.
-	GivesBuildableArea:
-		AreaTypes: mine
 	InstantlyRepairable:
 	RepairableBuilding:
 		RepairStep: 1500
@@ -2442,6 +2441,8 @@
 	HitShape:
 	MapEditorData:
 		Categories: Husk
+	Targetable@IgnoredByAI:
+		TargetTypes: IgnoredByAI
 
 ^Husk:
 	Inherits: ^BasicHusk
@@ -2586,9 +2587,6 @@
 	HitShape:
 	MapEditorData:
 		Categories: System
-	RequiresBuildableArea:
-		AreaTypes: mine
-		Adjacent: 1
 
 ^WithDisabledOverlay:
 	WithColoredOverlay@IDISABLE:

@@ -153,9 +153,8 @@ tech.soviet_barracks:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	GivesBuildableArea:
-		AreaTypes: mine, flame_tower
-	BaseProvider:
-		Range: 4c0
+		AreaTypes: building
+		OnlyAllowPlacementFromSelf: true
 	Health:
 		HP: 100000
 	Production:
@@ -208,8 +207,6 @@ tech.flame_tower:
 		Description: Anti-infantry base defense.\n\nCan damage infantry garrisoned in civilian structures.
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
-	RequiresBuildableArea:
-		AreaTypes: flame_tower
 	Valued:
 		Cost: 600
 	Tooltip:

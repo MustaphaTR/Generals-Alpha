@@ -15,7 +15,7 @@ checkbox-zhunits =
 
 checkbox-ccradius =
     .label = Build off Comm. Cent.
-    .description = Allow placing structures around Command Centers (Keep this enabled while playing against AI, it sucks without that)
+    .description = Allow placing structures around Command Centers
 
 checkbox-limitsw =
     .label = Limit Super Weapons

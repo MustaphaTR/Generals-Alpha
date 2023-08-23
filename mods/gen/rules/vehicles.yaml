@@ -75,6 +75,7 @@ vehicle.humvee:
 	Inherits@REVEAL: ^Reveal320
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	Inherits@AImicroManagable: ^AImicroManagable
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !tow_missile
 	AutoTargetPriority@ATTACKANYTHING:
@@ -195,6 +196,7 @@ vehicle.humvee:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		LoadingCondition: notmobile
+		LoadedCondition: loaded
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	WithCargoSounds:
 		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
@@ -227,6 +229,15 @@ vehicle.humvee:
 		RequiresCondition: tow_missile
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.tow_missile, upgrade.adv_training, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
+	GrantConditionOnDamageState@AI:
+		Condition: ShouldUnload
+		ValidDamageStates: Critical, Heavy
+	AutoDeployer@AI:
+		RequiresCondition: AImicroManage && loaded && ShouldUnload
+		DeployChance: 100
+		DeployTrigger: Periodically
+		DeployTicks: 10
+		UndeployTicks: 10
 
 vehicle.technical:
 	Inherits: ^Vehicle
@@ -239,6 +250,7 @@ vehicle.technical:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@AImicroManagable: ^AImicroManagable
 	OwnerLostAction:
 		Action: Kill
 		-RequiresCondition:
@@ -333,6 +345,7 @@ vehicle.technical:
 		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
+		LoadedCondition: loaded
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	WithCargoSounds:
 		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
@@ -372,6 +385,11 @@ vehicle.technical:
 		Upgrades: upgrade.ap_bullets, upgrade.junk_repair
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.demolitions, upgrade.ap_bullets, upgrade.junk_repair
+	AutoDeployer@AI:
+		RequiresCondition: AImicroManage && loaded
+		DeployChance: 100
+		DeployTicks: 40
+		UndeployTicks: 5
 
 vehicle.technical.demo_reinforce:
 	Inherits: vehicle.technical
@@ -933,6 +951,7 @@ vehicle.ambulance:
 	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@AImicroManagable: ^AImicroManagable
 	OwnerLostAction:
 		Action: Kill
 		-RequiresCondition:
@@ -991,6 +1010,7 @@ vehicle.ambulance:
 		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
+		LoadedCondition: loaded
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	WithCargoSounds:
 		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
@@ -1009,6 +1029,11 @@ vehicle.ambulance:
 		VoiceSet: AmbulanceVoice
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, None, None, None, Cargo
+	AutoDeployer@AI:
+		RequiresCondition: AImicroManage && loaded
+		DeployChance: 100
+		DeployTicks: 40
+		UndeployTicks: 5
 
 vehicle.sentry_drone:
 	Inherits: ^Vehicle
@@ -1889,6 +1914,7 @@ vehicle.battle_bus:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@AImicroManagable: ^AImicroManagable
 	OwnerLostAction:
 		Action: Kill
 		-RequiresCondition:
@@ -2015,12 +2041,22 @@ vehicle.battle_bus:
 		RequiresCondition: husk
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.demolitions, upgrade.junk_repair
+	GrantConditionOnDamageState@AI:
+		Condition: ShouldUnload
+		ValidDamageStates: Critical, Heavy
+	AutoDeployer@AI:
+		RequiresCondition: AImicroManage && loaded && ShouldUnload
+		DeployChance: 100
+		DeployTrigger: Periodically
+		DeployTicks: 10
+		UndeployTicks: 10
 
 vehicle.troop_crawler:
 	Inherits: ^Tank
 	Inherits@CARGO: ^CargoPips
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@AImicroManagable: ^AImicroManagable
 	OwnerLostAction:
 		Action: Kill
 		-RequiresCondition:
@@ -2065,6 +2101,7 @@ vehicle.troop_crawler:
 		InitialUnits: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard
 		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
+		LoadedCondition: loaded
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	WithCargoSounds:
 		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
@@ -2080,6 +2117,11 @@ vehicle.troop_crawler:
 		VoiceSet: TroopCrawlerVoice
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, None, None, None, Cargo
+	AutoDeployer@AI:
+		RequiresCondition: AImicroManage && loaded
+		DeployChance: 100
+		DeployTicks: 40
+		UndeployTicks: 5
 
 vehicle.assault_troop_crawler:
 	Inherits: vehicle.troop_crawler
@@ -2115,6 +2157,15 @@ vehicle.assault_troop_crawler:
 		VoiceSet: AssaultTroopCrawlerVoice
 	ActorStatValues:
 		Upgrades: upgrade.subliminal_messaging
+	GrantConditionOnDamageState@AI:
+		Condition: ShouldUnload
+		ValidDamageStates: Critical, Heavy
+	AutoDeployer@AI:
+		RequiresCondition: AImicroManage && loaded && ShouldUnload
+		DeployChance: 100
+		DeployTrigger: Periodically
+		DeployTicks: 10
+		UndeployTicks: 10
 
 vehicle.listening_outpost:
 	Inherits: ^Tank
@@ -2122,6 +2173,7 @@ vehicle.listening_outpost:
 	Inherits@CARGO: ^CargoPips
 	Inherits@REVEAL: ^Reveal500
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@AImicroManagable: ^AImicroManagable
 	OwnerLostAction:
 		Action: Kill
 		-RequiresCondition:
@@ -2167,6 +2219,7 @@ vehicle.listening_outpost:
 		InitialUnits: infantry.tank_hunter, infantry.tank_hunter
 		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
+		LoadedCondition: loaded
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	WithCargoSounds:
 		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
@@ -2208,6 +2261,15 @@ vehicle.listening_outpost:
 		VoiceSet: ListeningOutpostVoice
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, None, None, None, Cargo
+	GrantConditionOnDamageState@AI:
+		Condition: ShouldUnload
+		ValidDamageStates: Critical, Heavy
+	AutoDeployer@AI:
+		RequiresCondition: AImicroManage && loaded && ShouldUnload
+		DeployChance: 100
+		DeployTrigger: Periodically
+		DeployTicks: 10
+		UndeployTicks: 10
 
 vehicle.attack_outpost:
 	Inherits: vehicle.listening_outpost
@@ -4323,9 +4385,6 @@ vehicle.combat_cycle:
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	BaseBuilding:
-	BaseProvider:
-		Range: 8c0
-		# OnlyAllowPlacementFromSelf: true
 	GivesBuildableArea:
 		AreaTypes: building
 		OnlyAllowPlacementFromSelf: true

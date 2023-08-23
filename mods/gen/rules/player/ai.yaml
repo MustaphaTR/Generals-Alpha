@@ -13,6 +13,11 @@ Player:
 	GrantConditionOnBotOwner@rush:
 		Condition: enable-rush-ai
 		Bots: rush
+	CashTrickler@AICheat:
+		Interval: 3000
+		Amount: 4000
+		ShowTicks: false
+		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 	BaseBuilderBotModule@rush:
 		RequiresCondition: enable-rush-ai
 		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.boss_gen_building, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine, queue.soviet_infantry, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
@@ -21,7 +26,7 @@ Player:
 		MaximumExcessPower: 8
 		ExcessPowerIncrement: 2
 		ExcessPowerIncreaseThreshold: 4
-		ConstructionMinimumCash: 2000
+		ConstructionMinimumCash: 199
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		RefineryTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
 		SupplyDockTypes: supply.pile.a, supply.pile.b, supply.pile.c, supply.pile.d, supply.pile.e, supply.pile.f, supply.pile.g, supply.dock.30000.6x4, supply.dock.40000.6x4, supply.dock.20000.6x4, supply.dock.30000.4x6, supply.dock.40000.4x6, supply.dock.20000.4x6, supply.dock.30000.skewed_a, supply.dock.40000.skewed_a, supply.dock.20000.skewed_a, supply.dock.30000.skewed_b, supply.dock.40000.skewed_b, supply.dock.20000.skewed_b, supply.dock.2x2
@@ -40,9 +45,9 @@ Player:
 			building.usa_supply_center: 4
 			building.gla_supply_stash: 4
 			building.prc_supply_center: 4
-			building.usa_barracks: 1
-			building.gla_barracks: 1
-			building.prc_barracks: 1
+			building.usa_barracks: 2
+			building.gla_barracks: 2
+			building.prc_barracks: 2
 			building.usa_war_factory: 1
 			building.arms_dealer: 1
 			building.prc_war_factory: 1
@@ -64,21 +69,21 @@ Player:
 			building.usa_supply_center: 30
 			building.gla_supply_stash: 30
 			building.prc_supply_center: 30
-			building.usa_barracks: 1
-			building.gla_barracks: 1
-			building.prc_barracks: 1
+			building.usa_barracks: 20
+			building.gla_barracks: 20
+			building.prc_barracks: 20
 			building.usa_war_factory: 1
 			building.arms_dealer: 1
 			building.prc_war_factory: 1
-			building.patriot: 4
-			building.patriot.boss: 4
-			building.emp_patriot: 4
-			building.laser_turret: 4
+			building.patriot: 5
+			building.patriot.boss: 5
+			building.emp_patriot: 5
+			building.laser_turret: 5
 			building.firebase: 2
-			building.stinger_site: 3
-			building.bunker: 1
+			building.stinger_site: 5
+			building.bunker: 2
 			building.fortified_bunker: 1
-			building.gatling_cannon: 4
+			building.gatling_cannon: 5
 			building.tunnel_network: 2
 			building.tunnel_network.boss: 2
 			building.toxin_tunnel_network: 2
@@ -179,28 +184,32 @@ Player:
 			generals_power.emp: 1
 		BuildingDelays:
 			upgrade.radar: 1500
-			upgrade.land_mines: 1500
-			upgrade.neutron_mines: 1500
-			upgrade.camo_netting: 1500
+			upgrade.land_mines: 5000
+			upgrade.neutron_mines: 8000
+			upgrade.camo_netting: 6000
 	SquadManagerBotModule@rush:
 		RequiresCondition: enable-rush-ai
-		SquadSize: 20
+		SquadSize: 32
 		NavalUnitsTypes: vessel.gunboat, vessel.destroyer, vessel.cruiser
-		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, infantry.hacker, infantry.hacker.boss, infantry.super_hacker
+		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, vehicle.bomb_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, infantry.hacker, infantry.hacker.boss, infantry.super_hacker, infantry.black_lotus, infantry.black_lotus.boss
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		NavalProductionTypes: tech.shipyard
-		StaticAATypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.stinger_site, building.gatling_cannon
-		SiegeUnitTypes: vehicle.tomahawk_launcher, vehicle.tomahawk_launcher.boss, vehicle.rocket_buggy, vehicle.rocket_buggy.boss, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
-		FragileDeployerTypes: infantry.hacker, infantry.hacker.boss, infantry.super_hacker
-		DozerTypes: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
-		AirUnitsTypes: aircraft.mig, aircraft.raptor, aircraft.king_raptor, aircraft.stealth_fighter, aircraft.stealth_fighter.air, aircraft.aurora, aircraft.aurora.boss, aircraft.aurora_alpha, aircraft.aurora_alpha.boss, aircraft.comanche, aircraft.helix, aircraft.assault_helix
-		ProtectionTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.cold_fusion_reactor, building.cold_fusion_reactor.laser, building.advanced_cold_fusion_reactor, building.cold_fusion_reactor.boss, building.nuclear_reactor, building.advanced_nuclear_reactor, building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center, building.patriot, building.emp_patriot, building.patriot.boss, building.laser_turret, building.demo_trap, building.demo_trap.toxin, building.advanced_demo_trap, building.gatling_cannon, building.firebase, building.bunker, building.fortified_bunker, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, building.tunnel_network, building.toxin_tunnel_network, building.tunnel_network.boss, building.stinger_site, building.usa_airfield, building.prc_airfield, building.internet_center, building.strategy_center, building.palace, building.propaganda_center, building.detention_camp, building.supply_drop_zone, building.black_market, building.speaker_tower, building.speaker_tower.boss, building.particle_cannon, building.particle_cannon.super, building.particle_cannon.boss, building.scud_storm, building.scud_storm.boss, building.missile_silo, building.missile_silo.boss, tech.oil_derrick, tech.oil_refinery, tech.hospital, tech.communications_center, tech.soviet_barracks, tech.flame_tower, tech.power_plant, tech.repair_bay, tech.reinforcements_pad, tech.shipyard, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.tech_mcc, fake.command_center, fake.barracks, fake.supply_stash, fake.arms_dealer, fake.palace, fake.black_market, fake.scud_storm, fake.demo_trap, fake.demo_trap.toxin, fake.advanced_demo_trap, fake.tunnel_network, fake.toxin_tunnel_network, fake.stinger_site, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck
+		IgnoredEnemyTargetTypes: Mine, IgnoredByAI, NoAutoTarget
+		#StaticAATypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.stinger_site, building.gatling_cannon
+		#SiegeUnitTypes: vehicle.tomahawk_launcher, vehicle.tomahawk_launcher.boss, vehicle.rocket_buggy, vehicle.rocket_buggy.boss, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
+		DozerTypes: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.bomb_truck, infantry.hacker, infantry.hacker.boss, infantry.super_hacker
+		AirUnitsTypes: aircraft.mig, aircraft.raptor, aircraft.king_raptor, aircraft.stealth_fighter, aircraft.stealth_fighter.air, aircraft.aurora, aircraft.aurora.boss, aircraft.aurora_alpha, aircraft.aurora_alpha.boss, aircraft.comanche, #aircraft.helix, aircraft.assault_helix
+		GuerrillaTypes: infantry.pathfinder, infantry.pathfinder.boss, infantry.angry_mob. infantry.angry_mob.boss, infantry.jarmen_kell, infantry.jarmen_kell.boss, infantry.jarmen_kell.demo, vehicle.humvee, vehicle.technical, vehicle.gatling_tank, vehicle.troop_crawler, vehicle.assault_troop_crawler, vehicle.quad_cannon, vehicle.inferno_cannon, vehicle.tomahawk_launcher, vehicle.tomahawk_launcher.boss, vehicle.rocket_buggy, vehicle.rocket_buggy.boss, vehicle.dragon_tank, vehicle.toxin_tractor, vehicle.scorpion_tank, vehicle.nuclear_battlemaster_tank, vehicle.combat_cycle, vehicle.sentry_drone, vehicle.listening_outpost, vehicle.attack_outpost, aircraft.helix, aircraft.assault_helix, aircraft.comanche
+		ProtectionTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.cold_fusion_reactor, building.cold_fusion_reactor.laser, building.advanced_cold_fusion_reactor, building.cold_fusion_reactor.boss, building.nuclear_reactor, building.advanced_nuclear_reactor, building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center, building.patriot, building.emp_patriot, building.patriot.boss, building.laser_turret, building.demo_trap, building.demo_trap.toxin, building.advanced_demo_trap, building.gatling_cannon, building.firebase, building.bunker, building.fortified_bunker, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, building.tunnel_network, building.toxin_tunnel_network, building.tunnel_network.boss, building.stinger_site, building.usa_airfield, building.prc_airfield, building.internet_center, building.strategy_center, building.palace, building.propaganda_center, building.detention_camp, building.supply_drop_zone, building.black_market, building.speaker_tower, building.speaker_tower.boss, building.particle_cannon, building.particle_cannon.super, building.particle_cannon.boss, building.scud_storm, building.scud_storm.boss, building.missile_silo, building.missile_silo.boss, tech.oil_derrick, tech.oil_refinery, tech.hospital, tech.communications_center, tech.soviet_barracks, tech.flame_tower, tech.power_plant, tech.repair_bay, tech.reinforcements_pad, tech.shipyard, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.tech_mcc, fake.command_center, fake.barracks, fake.supply_stash, fake.arms_dealer, fake.palace, fake.black_market, fake.scud_storm, fake.demo_trap, fake.demo_trap.toxin, fake.advanced_demo_trap, fake.tunnel_network, fake.toxin_tunnel_network, fake.stinger_site, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, infantry.hacker, infantry.hacker.boss, infantry.super_hacker
+		SuggestedGroundLeaderLocomotor: locomotor.infantry, locomotor.wheeled, locomotor.sentry_drone, locomotor.tracked, locomotor.overlord
+		SuggestedNavyLeaderLocomotor: locomotor.vessel
 	UnitBuilderBotModule@rush:
 		RequiresCondition: enable-rush-ai
-		ProductionMinimumCash: 2000
+		ProductionMinimumCash: 200
+		IdleBaseUnitsMaximum: 42
 		CashGeneratorTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, infantry.hacker, infantry.hacker.boss, infantry.super_hacker
 		SupplyCollectorTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck
-		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.stealth_gen_collector, queue.prc_collector, queue.usa_infantry, queue.super_gen_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.gla_infantry_merged, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.boss_gen_infantry_merged, queue.soviet_infantry, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.usa_vehicle_merged, queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle, queue.gla_vehicle_merged, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.usa_command_center, queue.gla_command_center, queue.stealth_gen_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.emparor_overlord, queue.emparor_overlord_merged, queue.helix, queue.inf_gen_helix, queue.nuke_gen_helix, queue.helix_merged, queue.cold_fusion_reactor, queue.laser_gen_cold_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.boss_gen_cold_fusion_reactor, queue.camo_netting
+		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.stealth_gen_collector, queue.prc_collector, queue.usa_infantry, queue.super_gen_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.gla_infantry_merged, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.boss_gen_infantry_merged, queue.soviet_infantry, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.usa_vehicle_merged, queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle, queue.gla_vehicle_merged, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.usa_command_center, queue.gla_command_center, queue.stealth_gen_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.emparor_overlord, queue.emparor_overlord_merged, queue.helix, queue.inf_gen_helix, queue.nuke_gen_helix, queue.helix_merged, queue.cold_fusion_reactor, queue.laser_gen_cold_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.boss_gen_cold_fusion_reactor, queue.camo_netting, queue.bomb_truck, queue.toxin_gen_bomb_truck, queue.demo_gen_bomb_truck
 		UnitsToBuild:
 			infantry.ranger: 75
 			infantry.rebel: 75
@@ -214,11 +223,11 @@ Player:
 			infantry.grenadier: 15
 			infantry.pathfinder: 3
 			infantry.pathfinder.boss: 3
-			infantry.angry_mob: 3
-			infantry.angry_mob.boss: 3
-			infantry.hacker: 8
-			infantry.hacker.boss: 8
-			infantry.super_hacker: 8
+			infantry.angry_mob: 1
+			infantry.angry_mob.boss: 1
+			infantry.hacker: 100
+			infantry.hacker.boss: 100
+			infantry.super_hacker: 100
 			infantry.flamethrower: 3
 			infantry.colonel_burton: 1
 			infantry.colonel_burton.boss: 1
@@ -265,6 +274,8 @@ Player:
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
+			vehicle.bomb_truck: 10
+			vehicle.battle_bus: 2
 			aircraft.chinook: 10
 			aircraft.mig: 2
 			aircraft.raptor: 2
@@ -294,8 +305,10 @@ Player:
 			upgrade.hi_explosive_missiles: 1
 			upgrade.overlord_gatling: 4
 			upgrade.overlord_speaker: 1
+			upgrade.overlord_bunker: 1
 			upgrade.helix_gatling: 4
 			upgrade.helix_speaker: 1
+			upgrade.helix_bunker: 1
 			upgrade.capture_building: 100
 			upgrade.flashbang_grenades: 50
 			upgrade.chemical_suits: 50
@@ -310,6 +323,8 @@ Player:
 			upgrade.bunker_busters: 1
 			upgrade.stealth_comanche: 5
 			upgrade.mig_armor: 5
+			upgrade.bio_bombs: 1
+			upgrade.hi_explosive_bombs: 1
 		UnitLimits:
 			infantry.colonel_burton: 1
 			infantry.colonel_burton.boss: 1
@@ -322,6 +337,8 @@ Player:
 			infantry.hacker: 12
 			infantry.hacker.boss: 12
 			infantry.super_hacker: 12
+			infantry.angry_mob: 1
+			infantry.angry_mob.boss: 1
 			aircraft.mig: 4
 			aircraft.raptor: 2
 			aircraft.king_raptor: 2
@@ -346,6 +363,7 @@ Player:
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
+			vehicle.battle_bus: 2
 		QueueLimits:
 			queue.cold_fusion_reactor: 1
 			queue.laser_gen_cold_fusion_reactor: 1
@@ -371,9 +389,9 @@ Player:
 			vehicle.gla_mcc: 250
 			vehicle.prc_mcc: 250
 			upgrade.radar: 1500
-			upgrade.land_mines: 1500
-			upgrade.neutron_mines: 1500
-			upgrade.camo_netting: 1500
+			upgrade.land_mines: 5000
+			upgrade.neutron_mines: 8000
+			upgrade.camo_netting: 5000
 	GrantConditionOnBotOwner@normal:
 		Condition: enable-normal-ai
 		Bots: normal
@@ -385,7 +403,7 @@ Player:
 		MaximumExcessPower: 10
 		ExcessPowerIncrement: 2
 		ExcessPowerIncreaseThreshold: 4
-		ConstructionMinimumCash: 2000
+		ConstructionMinimumCash: 199
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		RefineryTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
 		SupplyDockTypes: supply.pile.a, supply.pile.b, supply.pile.c, supply.pile.d, supply.pile.e, supply.pile.f, supply.pile.g, supply.dock.30000.6x4, supply.dock.40000.6x4, supply.dock.20000.6x4, supply.dock.30000.4x6, supply.dock.40000.4x6, supply.dock.20000.4x6, supply.dock.30000.skewed_a, supply.dock.40000.skewed_a, supply.dock.20000.skewed_a, supply.dock.30000.skewed_b, supply.dock.40000.skewed_b, supply.dock.20000.skewed_b, supply.dock.2x2
@@ -404,9 +422,9 @@ Player:
 			building.usa_supply_center: 4
 			building.gla_supply_stash: 4
 			building.prc_supply_center: 4
-			building.usa_barracks: 1
-			building.gla_barracks: 1
-			building.prc_barracks: 1
+			building.usa_barracks: 2
+			building.gla_barracks: 2
+			building.prc_barracks: 2
 			building.usa_war_factory: 1
 			building.arms_dealer: 1
 			building.prc_war_factory: 1
@@ -435,24 +453,24 @@ Player:
 			building.usa_supply_center: 30
 			building.gla_supply_stash: 30
 			building.prc_supply_center: 30
-			building.usa_barracks: 1
-			building.gla_barracks: 1
-			building.prc_barracks: 1
+			building.usa_barracks: 20
+			building.gla_barracks: 20
+			building.prc_barracks: 20
 			building.usa_war_factory: 1
 			building.arms_dealer: 1
 			building.prc_war_factory: 1
-			building.patriot: 6
-			building.patriot.boss: 6
-			building.emp_patriot: 6
-			building.laser_turret: 6
+			building.patriot: 5
+			building.patriot.boss: 5
+			building.emp_patriot: 5
+			building.laser_turret: 5
 			building.firebase: 2
-			building.stinger_site: 4
-			building.bunker: 1
+			building.stinger_site: 5
+			building.bunker: 2
 			building.fortified_bunker: 1
-			building.gatling_cannon: 6
-			building.tunnel_network: 3
-			building.tunnel_network.boss: 3
-			building.toxin_tunnel_network: 3
+			building.gatling_cannon: 5
+			building.tunnel_network: 2
+			building.tunnel_network.boss: 2
+			building.toxin_tunnel_network: 2
 			building.speaker_tower: 2
 			building.speaker_tower.boss: 2
 			building.strategy_center: 1
@@ -557,28 +575,32 @@ Player:
 			generals_power.emp: 1
 		BuildingDelays:
 			upgrade.radar: 1500
-			upgrade.land_mines: 1500
-			upgrade.neutron_mines: 1500
-			upgrade.camo_netting: 1500
+			upgrade.land_mines: 5000
+			upgrade.neutron_mines: 8000
+			upgrade.camo_netting: 6000
 	SquadManagerBotModule@normal:
 		RequiresCondition: enable-normal-ai
-		SquadSize: 40
+		SquadSize: 18
 		NavalUnitsTypes: vessel.gunboat, vessel.destroyer, vessel.cruiser
-		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, infantry.hacker, infantry.hacker.boss, infantry.super_hacker
+		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, vehicle.bomb_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, infantry.hacker, infantry.hacker.boss, infantry.super_hacker, infantry.black_lotus, infantry.black_lotus.boss
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		NavalProductionTypes: tech.shipyard
-		StaticAATypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.stinger_site, building.gatling_cannon
-		SiegeUnitTypes: vehicle.tomahawk_launcher, vehicle.tomahawk_launcher.boss, vehicle.rocket_buggy, vehicle.rocket_buggy.boss, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
-		FragileDeployerTypes: infantry.hacker, infantry.hacker.boss, infantry.super_hacker
-		DozerTypes: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
-		AirUnitsTypes: aircraft.mig, aircraft.raptor, aircraft.king_raptor, aircraft.stealth_fighter, aircraft.stealth_fighter.air, aircraft.aurora, aircraft.aurora.boss, aircraft.aurora_alpha, aircraft.aurora_alpha.boss, aircraft.comanche, aircraft.helix, aircraft.assault_helix
-		ProtectionTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.cold_fusion_reactor, building.cold_fusion_reactor.laser, building.advanced_cold_fusion_reactor, building.cold_fusion_reactor.boss, building.nuclear_reactor, building.advanced_nuclear_reactor, building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center, building.patriot, building.emp_patriot, building.patriot.boss, building.laser_turret, building.demo_trap, building.demo_trap.toxin, building.advanced_demo_trap, building.gatling_cannon, building.firebase, building.bunker, building.fortified_bunker, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, building.tunnel_network, building.toxin_tunnel_network, building.tunnel_network.boss, building.stinger_site, building.usa_airfield, building.prc_airfield, building.internet_center, building.strategy_center, building.palace, building.propaganda_center, building.detention_camp, building.supply_drop_zone, building.black_market, building.speaker_tower, building.speaker_tower.boss, building.particle_cannon, building.particle_cannon.super, building.particle_cannon.boss, building.scud_storm, building.scud_storm.boss, building.missile_silo, building.missile_silo.boss, tech.oil_derrick, tech.oil_refinery, tech.hospital, tech.communications_center, tech.soviet_barracks, tech.flame_tower, tech.power_plant, tech.repair_bay, tech.reinforcements_pad, tech.shipyard, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.tech_mcc, fake.command_center, fake.barracks, fake.supply_stash, fake.arms_dealer, fake.palace, fake.black_market, fake.scud_storm, fake.demo_trap, fake.demo_trap.toxin, fake.advanced_demo_trap, fake.tunnel_network, fake.toxin_tunnel_network, fake.stinger_site, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck
+		IgnoredEnemyTargetTypes: Mine, IgnoredByAI, NoAutoTarget
+		#StaticAATypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.stinger_site, building.gatling_cannon
+		#SiegeUnitTypes: vehicle.tomahawk_launcher, vehicle.tomahawk_launcher.boss, vehicle.rocket_buggy, vehicle.rocket_buggy.boss, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
+		DozerTypes: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.bomb_truck, infantry.hacker, infantry.hacker.boss, infantry.super_hacker
+		AirUnitsTypes: aircraft.mig, aircraft.raptor, aircraft.king_raptor, aircraft.stealth_fighter, aircraft.stealth_fighter.air, aircraft.aurora, aircraft.aurora.boss, aircraft.aurora_alpha, aircraft.aurora_alpha.boss, aircraft.comanche, #aircraft.helix, aircraft.assault_helix
+		GuerrillaTypes: infantry.pathfinder, infantry.pathfinder.boss, infantry.angry_mob. infantry.angry_mob.boss, infantry.jarmen_kell, infantry.jarmen_kell.boss, infantry.jarmen_kell.demo, vehicle.humvee, vehicle.technical, vehicle.gatling_tank, vehicle.troop_crawler, vehicle.assault_troop_crawler, vehicle.quad_cannon, vehicle.inferno_cannon, vehicle.tomahawk_launcher, vehicle.tomahawk_launcher.boss, vehicle.rocket_buggy, vehicle.rocket_buggy.boss, vehicle.dragon_tank, vehicle.toxin_tractor, vehicle.scorpion_tank, vehicle.nuclear_battlemaster_tank, vehicle.combat_cycle, vehicle.sentry_drone, vehicle.listening_outpost, vehicle.attack_outpost, aircraft.helix, aircraft.assault_helix, aircraft.comanche
+		ProtectionTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.cold_fusion_reactor, building.cold_fusion_reactor.laser, building.advanced_cold_fusion_reactor, building.cold_fusion_reactor.boss, building.nuclear_reactor, building.advanced_nuclear_reactor, building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center, building.patriot, building.emp_patriot, building.patriot.boss, building.laser_turret, building.demo_trap, building.demo_trap.toxin, building.advanced_demo_trap, building.gatling_cannon, building.firebase, building.bunker, building.fortified_bunker, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, building.tunnel_network, building.toxin_tunnel_network, building.tunnel_network.boss, building.stinger_site, building.usa_airfield, building.prc_airfield, building.internet_center, building.strategy_center, building.palace, building.propaganda_center, building.detention_camp, building.supply_drop_zone, building.black_market, building.speaker_tower, building.speaker_tower.boss, building.particle_cannon, building.particle_cannon.super, building.particle_cannon.boss, building.scud_storm, building.scud_storm.boss, building.missile_silo, building.missile_silo.boss, tech.oil_derrick, tech.oil_refinery, tech.hospital, tech.communications_center, tech.soviet_barracks, tech.flame_tower, tech.power_plant, tech.repair_bay, tech.reinforcements_pad, tech.shipyard, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.tech_mcc, fake.command_center, fake.barracks, fake.supply_stash, fake.arms_dealer, fake.palace, fake.black_market, fake.scud_storm, fake.demo_trap, fake.demo_trap.toxin, fake.advanced_demo_trap, fake.tunnel_network, fake.toxin_tunnel_network, fake.stinger_site, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, infantry.hacker, infantry.hacker.boss, infantry.super_hacker
+		SuggestedGroundLeaderLocomotor: locomotor.infantry, locomotor.wheeled, locomotor.sentry_drone, locomotor.tracked, locomotor.overlord
+		SuggestedNavyLeaderLocomotor: locomotor.vessel
 	UnitBuilderBotModule@normal:
 		RequiresCondition: enable-normal-ai
-		ProductionMinimumCash: 2000
+		ProductionMinimumCash: 200
+		IdleBaseUnitsMaximum: 30
 		CashGeneratorTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, infantry.hacker, infantry.hacker.boss, infantry.super_hacker
 		SupplyCollectorTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck
-		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.stealth_gen_collector, queue.prc_collector, queue.usa_infantry, queue.super_gen_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.gla_infantry_merged, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.boss_gen_infantry_merged, queue.soviet_infantry, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.usa_vehicle_merged, queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle, queue.gla_vehicle_merged, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.usa_command_center, queue.gla_command_center, queue.stealth_gen_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.emparor_overlord, queue.emparor_overlord_merged, queue.helix, queue.inf_gen_helix, queue.nuke_gen_helix, queue.helix_merged, queue.cold_fusion_reactor, queue.laser_gen_cold_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.boss_gen_cold_fusion_reactor, queue.camo_netting
+		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.stealth_gen_collector, queue.prc_collector, queue.usa_infantry, queue.super_gen_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.gla_infantry_merged, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.boss_gen_infantry_merged, queue.soviet_infantry, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.usa_vehicle_merged, queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle, queue.gla_vehicle_merged, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.usa_command_center, queue.gla_command_center, queue.stealth_gen_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.emparor_overlord, queue.emparor_overlord_merged, queue.helix, queue.inf_gen_helix, queue.nuke_gen_helix, queue.helix_merged, queue.cold_fusion_reactor, queue.laser_gen_cold_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.boss_gen_cold_fusion_reactor, queue.camo_netting, queue.bomb_truck, queue.toxin_gen_bomb_truck, queue.demo_gen_bomb_truck
 		UnitsToBuild:
 			infantry.ranger: 60
 			infantry.rebel: 60
@@ -592,11 +614,11 @@ Player:
 			infantry.grenadier: 20
 			infantry.pathfinder: 4
 			infantry.pathfinder.boss: 4
-			infantry.angry_mob: 4
-			infantry.angry_mob.boss: 4
-			infantry.hacker: 12
-			infantry.hacker.boss: 12
-			infantry.super_hacker: 12
+			infantry.angry_mob: 1
+			infantry.angry_mob.boss: 1
+			infantry.hacker: 100
+			infantry.hacker.boss: 100
+			infantry.super_hacker: 100
 			infantry.flamethrower: 4
 			infantry.colonel_burton: 1
 			infantry.colonel_burton.boss: 1
@@ -643,6 +665,8 @@ Player:
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
+			vehicle.bomb_truck: 10
+			vehicle.battle_bus: 2
 			aircraft.chinook: 10
 			aircraft.mig: 2
 			aircraft.raptor: 2
@@ -672,8 +696,10 @@ Player:
 			upgrade.hi_explosive_missiles: 1
 			upgrade.overlord_gatling: 3
 			upgrade.overlord_speaker: 1
+			upgrade.overlord_bunker: 1
 			upgrade.helix_gatling: 3
 			upgrade.helix_speaker: 1
+			upgrade.helix_bunker: 1
 			upgrade.capture_building: 90
 			upgrade.flashbang_grenades: 50
 			upgrade.chemical_suits: 50
@@ -688,6 +714,8 @@ Player:
 			upgrade.bunker_busters: 1
 			upgrade.stealth_comanche: 5
 			upgrade.mig_armor: 5
+			upgrade.bio_bombs: 1
+			upgrade.hi_explosive_bombs: 1
 		UnitLimits:
 			infantry.colonel_burton: 1
 			infantry.colonel_burton.boss: 1
@@ -700,6 +728,8 @@ Player:
 			infantry.hacker: 12
 			infantry.hacker.boss: 12
 			infantry.super_hacker: 12
+			infantry.angry_mob: 1
+			infantry.angry_mob.boss: 1
 			aircraft.mig: 4
 			aircraft.raptor: 2
 			aircraft.king_raptor: 2
@@ -724,6 +754,7 @@ Player:
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
+			vehicle.battle_bus: 2
 		QueueLimits:
 			queue.cold_fusion_reactor: 1
 			queue.laser_gen_cold_fusion_reactor: 1
@@ -749,9 +780,9 @@ Player:
 			vehicle.gla_mcc: 250
 			vehicle.prc_mcc: 250
 			upgrade.radar: 1500
-			upgrade.land_mines: 1500
-			upgrade.neutron_mines: 1500
-			upgrade.camo_netting: 1500
+			upgrade.land_mines: 5000
+			upgrade.neutron_mines: 8000
+			upgrade.camo_netting: 6000
 	GrantConditionOnBotOwner@turtle:
 		Condition: enable-turtle-ai
 		Bots: turtle
@@ -763,7 +794,7 @@ Player:
 		MaximumExcessPower: 13
 		ExcessPowerIncrement: 2
 		ExcessPowerIncreaseThreshold: 3
-		ConstructionMinimumCash: 2000
+		ConstructionMinimumCash: 199
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		RefineryTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
 		SupplyDockTypes: supply.pile.a, supply.pile.b, supply.pile.c, supply.pile.d, supply.pile.e, supply.pile.f, supply.pile.g, supply.dock.30000.6x4, supply.dock.40000.6x4, supply.dock.20000.6x4, supply.dock.30000.4x6, supply.dock.40000.4x6, supply.dock.20000.4x6, supply.dock.30000.skewed_a, supply.dock.40000.skewed_a, supply.dock.20000.skewed_a, supply.dock.30000.skewed_b, supply.dock.40000.skewed_b, supply.dock.20000.skewed_b, supply.dock.2x2
@@ -782,9 +813,9 @@ Player:
 			building.usa_supply_center: 4
 			building.gla_supply_stash: 4
 			building.prc_supply_center: 4
-			building.usa_barracks: 1
-			building.gla_barracks: 1
-			building.prc_barracks: 1
+			building.usa_barracks: 2
+			building.gla_barracks: 2
+			building.prc_barracks: 2
 			building.usa_war_factory: 1
 			building.arms_dealer: 1
 			building.prc_war_factory: 1
@@ -813,24 +844,24 @@ Player:
 			building.usa_supply_center: 30
 			building.gla_supply_stash: 30
 			building.prc_supply_center: 30
-			building.usa_barracks: 1
-			building.gla_barracks: 1
-			building.prc_barracks: 1
+			building.usa_barracks: 20
+			building.gla_barracks: 20
+			building.prc_barracks: 20
 			building.usa_war_factory: 1
 			building.arms_dealer: 1
 			building.prc_war_factory: 1
-			building.patriot: 8
-			building.patriot.boss: 8
-			building.emp_patriot: 8
-			building.laser_turret: 8
-			building.firebase: 3
-			building.stinger_site: 5
-			building.bunker: 1
-			building.fortified_bunker: 1
-			building.gatling_cannon: 8
-			building.tunnel_network: 4
-			building.tunnel_network.boss: 4
-			building.toxin_tunnel_network: 4
+			building.patriot: 10
+			building.patriot.boss: 10
+			building.emp_patriot: 10
+			building.laser_turret: 10
+			building.firebase: 6
+			building.stinger_site: 10
+			building.bunker: 4
+			building.fortified_bunker: 4
+			building.gatling_cannon: 10
+			building.tunnel_network: 10
+			building.tunnel_network.boss: 10
+			building.toxin_tunnel_network: 10
 			building.speaker_tower: 3
 			building.speaker_tower.boss: 3
 			building.strategy_center: 1
@@ -935,28 +966,32 @@ Player:
 			generals_power.emp: 1
 		BuildingDelays:
 			upgrade.radar: 1500
-			upgrade.land_mines: 1500
-			upgrade.neutron_mines: 1500
-			upgrade.camo_netting: 1500
+			upgrade.land_mines: 5000
+			upgrade.neutron_mines: 8000
+			upgrade.camo_netting: 6000
 	SquadManagerBotModule@turtle:
 		RequiresCondition: enable-turtle-ai
 		SquadSize: 10
 		NavalUnitsTypes: vessel.gunboat, vessel.destroyer, vessel.cruiser
-		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, infantry.hacker, infantry.hacker.boss, infantry.super_hacker
+		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, vehicle.bomb_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, infantry.hacker, infantry.hacker.boss, infantry.super_hacker, infantry.black_lotus, infantry.black_lotus.boss
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		NavalProductionTypes: tech.shipyard
-		StaticAATypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.stinger_site, building.gatling_cannon
-		SiegeUnitTypes: vehicle.tomahawk_launcher, vehicle.tomahawk_launcher.boss, vehicle.rocket_buggy, vehicle.rocket_buggy.boss, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
-		FragileDeployerTypes: infantry.hacker, infantry.hacker.boss, infantry.super_hacker
-		DozerTypes: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
-		AirUnitsTypes: aircraft.mig, aircraft.raptor, aircraft.king_raptor, aircraft.stealth_fighter, aircraft.stealth_fighter.air, aircraft.aurora, aircraft.aurora.boss, aircraft.aurora_alpha, aircraft.aurora_alpha.boss, aircraft.comanche, aircraft.helix, aircraft.assault_helix
-		ProtectionTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.cold_fusion_reactor, building.cold_fusion_reactor.laser, building.advanced_cold_fusion_reactor, building.cold_fusion_reactor.boss, building.nuclear_reactor, building.advanced_nuclear_reactor, building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center, building.patriot, building.emp_patriot, building.patriot.boss, building.laser_turret, building.demo_trap, building.demo_trap.toxin, building.advanced_demo_trap, building.gatling_cannon, building.firebase, building.bunker, building.fortified_bunker, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, building.tunnel_network, building.toxin_tunnel_network, building.tunnel_network.boss, building.stinger_site, building.usa_airfield, building.prc_airfield, building.internet_center, building.strategy_center, building.palace, building.propaganda_center, building.detention_camp, building.supply_drop_zone, building.black_market, building.speaker_tower, building.speaker_tower.boss, building.particle_cannon, building.particle_cannon.super, building.particle_cannon.boss, building.scud_storm, building.scud_storm.boss, building.missile_silo, building.missile_silo.boss, tech.oil_derrick, tech.oil_refinery, tech.hospital, tech.communications_center, tech.soviet_barracks, tech.flame_tower, tech.power_plant, tech.repair_bay, tech.reinforcements_pad, tech.shipyard, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.tech_mcc, fake.command_center, fake.barracks, fake.supply_stash, fake.arms_dealer, fake.palace, fake.black_market, fake.scud_storm, fake.demo_trap, fake.demo_trap.toxin, fake.advanced_demo_trap, fake.tunnel_network, fake.toxin_tunnel_network, fake.stinger_site, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck
+		IgnoredEnemyTargetTypes: Mine, IgnoredByAI, NoAutoTarget
+		#StaticAATypes: building.patriot, building.patriot.boss, building.emp_patriot, building.laser_turret, building.stinger_site, building.gatling_cannon
+		#SiegeUnitTypes: vehicle.tomahawk_launcher, vehicle.tomahawk_launcher.boss, vehicle.rocket_buggy, vehicle.rocket_buggy.boss, vehicle.inferno_cannon, vehicle.scud_launcher #,vehicle.nuke_cannon
+		DozerTypes: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.bomb_truck, infantry.hacker, infantry.hacker.boss, infantry.super_hacker
+		AirUnitsTypes: aircraft.mig, aircraft.raptor, aircraft.king_raptor, aircraft.stealth_fighter, aircraft.stealth_fighter.air, aircraft.aurora, aircraft.aurora.boss, aircraft.aurora_alpha, aircraft.aurora_alpha.boss, aircraft.comanche, #aircraft.helix, aircraft.assault_helix
+		GuerrillaTypes: infantry.pathfinder, infantry.pathfinder.boss, infantry.angry_mob. infantry.angry_mob.boss, infantry.jarmen_kell, infantry.jarmen_kell.boss, infantry.jarmen_kell.demo, vehicle.humvee, vehicle.technical, vehicle.gatling_tank, vehicle.troop_crawler, vehicle.assault_troop_crawler, vehicle.quad_cannon, vehicle.inferno_cannon, vehicle.tomahawk_launcher, vehicle.tomahawk_launcher.boss, vehicle.rocket_buggy, vehicle.rocket_buggy.boss, vehicle.dragon_tank, vehicle.toxin_tractor, vehicle.scorpion_tank, vehicle.nuclear_battlemaster_tank, vehicle.combat_cycle, vehicle.sentry_drone, vehicle.listening_outpost, vehicle.attack_outpost, aircraft.helix, aircraft.assault_helix, aircraft.comanche
+		ProtectionTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.cold_fusion_reactor, building.cold_fusion_reactor.laser, building.advanced_cold_fusion_reactor, building.cold_fusion_reactor.boss, building.nuclear_reactor, building.advanced_nuclear_reactor, building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center, building.patriot, building.emp_patriot, building.patriot.boss, building.laser_turret, building.demo_trap, building.demo_trap.toxin, building.advanced_demo_trap, building.gatling_cannon, building.firebase, building.bunker, building.fortified_bunker, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, building.tunnel_network, building.toxin_tunnel_network, building.tunnel_network.boss, building.stinger_site, building.usa_airfield, building.prc_airfield, building.internet_center, building.strategy_center, building.palace, building.propaganda_center, building.detention_camp, building.supply_drop_zone, building.black_market, building.speaker_tower, building.speaker_tower.boss, building.particle_cannon, building.particle_cannon.super, building.particle_cannon.boss, building.scud_storm, building.scud_storm.boss, building.missile_silo, building.missile_silo.boss, tech.oil_derrick, tech.oil_refinery, tech.hospital, tech.communications_center, tech.soviet_barracks, tech.flame_tower, tech.power_plant, tech.repair_bay, tech.reinforcements_pad, tech.shipyard, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.tech_mcc, fake.command_center, fake.barracks, fake.supply_stash, fake.arms_dealer, fake.palace, fake.black_market, fake.scud_storm, fake.demo_trap, fake.demo_trap.toxin, fake.advanced_demo_trap, fake.tunnel_network, fake.toxin_tunnel_network, fake.stinger_site, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, infantry.hacker, infantry.hacker.boss, infantry.super_hacker
+		SuggestedGroundLeaderLocomotor: locomotor.infantry, locomotor.wheeled, locomotor.sentry_drone, locomotor.tracked, locomotor.overlord
+		SuggestedNavyLeaderLocomotor: locomotor.vessel
 	UnitBuilderBotModule@turtle:
 		RequiresCondition: enable-turtle-ai
-		ProductionMinimumCash: 2000
+		ProductionMinimumCash: 200
+		IdleBaseUnitsMaximum: 20
 		CashGeneratorTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, infantry.hacker, infantry.hacker.boss, infantry.super_hacker
 		SupplyCollectorTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck
-		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.stealth_gen_collector, queue.prc_collector, queue.usa_infantry, queue.super_gen_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.gla_infantry_merged, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.boss_gen_infantry_merged, queue.soviet_infantry, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.usa_vehicle_merged, queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle, queue.gla_vehicle_merged, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.usa_command_center, queue.gla_command_center, queue.stealth_gen_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.emparor_overlord, queue.emparor_overlord_merged, queue.helix, queue.inf_gen_helix, queue.nuke_gen_helix, queue.helix_merged, queue.cold_fusion_reactor, queue.laser_gen_cold_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.boss_gen_cold_fusion_reactor, queue.camo_netting
+		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.stealth_gen_collector, queue.prc_collector, queue.usa_infantry, queue.super_gen_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.gla_infantry_merged, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry, queue.boss_gen_infantry_merged, queue.soviet_infantry, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.usa_vehicle_merged, queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle, queue.gla_vehicle_merged, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.usa_command_center, queue.gla_command_center, queue.stealth_gen_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.emparor_overlord, queue.emparor_overlord_merged, queue.helix, queue.inf_gen_helix, queue.nuke_gen_helix, queue.helix_merged, queue.cold_fusion_reactor, queue.laser_gen_cold_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.boss_gen_cold_fusion_reactor, queue.camo_netting, queue.bomb_truck, queue.toxin_gen_bomb_truck, queue.demo_gen_bomb_truck
 		UnitsToBuild:
 			infantry.ranger: 40
 			infantry.rebel: 40
@@ -970,11 +1005,11 @@ Player:
 			infantry.grenadier: 15
 			infantry.pathfinder: 5
 			infantry.pathfinder.boss: 5
-			infantry.angry_mob: 5
-			infantry.angry_mob.boss: 5
-			infantry.hacker: 15
-			infantry.hacker.boss: 15
-			infantry.super_hacker: 15
+			infantry.angry_mob: 1
+			infantry.angry_mob.boss: 1
+			infantry.hacker: 100
+			infantry.hacker.boss: 100
+			infantry.super_hacker: 100
 			infantry.flamethrower: 5
 			infantry.colonel_burton: 1
 			infantry.colonel_burton.boss: 1
@@ -1021,6 +1056,8 @@ Player:
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
+			vehicle.bomb_truck: 10
+			vehicle.battle_bus: 2
 			aircraft.chinook: 10
 			aircraft.mig: 2
 			aircraft.raptor: 1
@@ -1050,8 +1087,10 @@ Player:
 			upgrade.hi_explosive_missiles: 1
 			upgrade.overlord_gatling: 5
 			upgrade.overlord_speaker: 1
+			upgrade.overlord_bunker: 1
 			upgrade.helix_gatling: 5
 			upgrade.helix_speaker: 1
+			upgrade.helix_bunker: 1
 			upgrade.capture_building: 100
 			upgrade.flashbang_grenades: 75
 			upgrade.chemical_suits: 75
@@ -1066,6 +1105,8 @@ Player:
 			upgrade.bunker_busters: 2
 			upgrade.stealth_comanche: 7
 			upgrade.mig_armor: 7
+			upgrade.bio_bombs: 1
+			upgrade.hi_explosive_bombs: 1
 		UnitLimits:
 			infantry.colonel_burton: 1
 			infantry.colonel_burton.boss: 1
@@ -1078,6 +1119,8 @@ Player:
 			infantry.hacker: 12
 			infantry.hacker.boss: 12
 			infantry.super_hacker: 12
+			infantry.angry_mob: 1
+			infantry.angry_mob.boss: 1
 			aircraft.mig: 4
 			aircraft.raptor: 2
 			aircraft.king_raptor: 2
@@ -1102,6 +1145,7 @@ Player:
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
 			vehicle.prc_mcc: 2
+			vehicle.battle_bus: 2
 		QueueLimits:
 			queue.cold_fusion_reactor: 1
 			queue.laser_gen_cold_fusion_reactor: 1
@@ -1127,9 +1171,9 @@ Player:
 			vehicle.gla_mcc: 250
 			vehicle.prc_mcc: 250
 			upgrade.radar: 1500
-			upgrade.land_mines: 1500
-			upgrade.neutron_mines: 1500
-			upgrade.camo_netting: 1500
+			upgrade.land_mines: 5000
+			upgrade.neutron_mines: 8000
+			upgrade.camo_netting: 6000
 	CaptureManagerBotModule:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner, infantry.conscript
@@ -1140,13 +1184,22 @@ Player:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 		Transports: building.internet_center
 		Passengers: infantry.hacker, infantry.hacker.boss, infantry.super_hacker
-	LoadCargoBotModule@Defense:
+	LoadCargoBotModule@DefenseAndTransport:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
-		Transports: building.firebase, building.bunker, building,fortified_bunker, building.palace
+		Transports: building.firebase, building.bunker, building,fortified_bunker, building.palace, vehicle.humvee, vehicle.technical, vehicle.ambulance, vehicle.battle_bus, vehicle.troop_crawler, vehicle.assault_troop_crawler, vehicle.listening_outpost, vehicle.attack_outpost, aircraft.assault_helix, vehicle.overlord_tank
 		Passengers: infantry.ranger, infantry.rebel, infantry.red_guard, infantry.minigunner, infantry.conscript, infantry.missile_defender, infantry.rpg_trooper, infantry.tank_hunter, infantry.grenadier, infantry.pathfinder, infantry.flamethrower
 	LoadGarrisonerBotModule:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 		GarrisonerUnit: infantry.ranger, infantry.rebel, infantry.red_guard, infantry.minigunner, infantry.conscript, infantry.missile_defender, infantry.rpg_trooper, infantry.tank_hunter, infantry.grenadier, infantry.pathfinder, infantry.flamethrower
+	SendUnitToAttackBotModule:
+		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		ActorTypesAndAttackDesire: 
+			vehicle.bomb_truck: 100
+			infantry.black_lotus: 100
+			infantry.black_lotus.boss: 100
+		ValidTargets: Structure
+		InvalidTargets: WaterActor
+		AttackDistance: Random
 	SupportPowerBotModule:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 		Decisions:

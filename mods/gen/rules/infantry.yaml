@@ -1397,6 +1397,7 @@ infantry.hacker:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@AImicroManagable: ^AImicroManagable
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-1:
@@ -1442,7 +1443,7 @@ infantry.hacker:
 		Speed: 20
 		Voice: Move
 		PauseOnCondition: deployed
-		RequireForceMoveCondition: deployed
+		RequireForceMoveCondition: !AImicroManage && deployed
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Passenger:
@@ -1451,7 +1452,7 @@ infantry.hacker:
 		Voice: Move
 		CargoConditions:
 			building.internet_center: in_internet_center
-		RequireForceMoveCondition: deployed
+		RequireForceMoveCondition: !AImicroManage && deployed
 	SharedPassenger:
 		CustomPipType: yellow
 		Voice: Move
@@ -1486,6 +1487,7 @@ infantry.hacker:
 		FacingTolerance: 0
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
+		UndeployedCondition: undeployed
 		Facing: 512
 		SmartDeploy: True
 		UndeployOnMove: true
@@ -1559,6 +1561,12 @@ infantry.hacker:
 	-MustBeDestroyed:
 	ActorStatValues:
 		Stats: Armor, Sight, Speed
+	AutoDeployer@AI:
+		RequiresCondition: AImicroManage && undeployed
+		DeployChance: 100
+		DeployTrigger: BecomingIdle
+		DeployTicks: 100
+		UndeployTicks: 5
 
 infantry.hacker.boss:
 	Inherits: infantry.hacker

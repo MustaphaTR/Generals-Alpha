@@ -59,6 +59,8 @@
 	Interactable:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
+	Targetable@IgnoredByAI:
+		TargetTypes: IgnoredByAI
 
 aircraft.badger:
 	Inherits: ^default.badger
@@ -400,7 +402,7 @@ aircraft.mig:
 		Condition: padaircraft
 	AutoTarget:
 		InitialStance: HoldFire
-		InitialStanceAI: HoldFire
+		InitialStanceAI: AttackAnything
 	AmmoPool:
 		Ammo: 2
 		ReloadDelay: 100
@@ -546,7 +548,7 @@ aircraft.raptor:
 		Modifier: 69
 	AutoTarget:
 		InitialStance: HoldFire
-		InitialStanceAI: HoldFire
+		InitialStanceAI: AttackAnything
 	AmmoPool:
 		Ammo: 4
 		ReloadDelay: 50
@@ -734,7 +736,7 @@ aircraft.stealth_fighter:
 		RequiresCondition: !zh_units
 	AutoTarget:
 		InitialStance: HoldFire
-		InitialStanceAI: HoldFire
+		InitialStanceAI: AttackAnything
 	AmmoPool:
 		Ammo: 2
 		ReloadDelay: 100
@@ -926,7 +928,7 @@ aircraft.aurora:
 		Modifier: 0
 	AutoTarget:
 		InitialStance: HoldFire
-		InitialStanceAI: HoldFire
+		InitialStanceAI: AttackAnything
 	AmmoPool:
 		Ammo: 1
 		ReloadDelay: 125
@@ -1082,6 +1084,8 @@ aircraft.spy_drone:
 		DecorationBounds: 1280, 1194, 0, 85
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
+	Targetable@IgnoredByAI:
+		TargetTypes: IgnoredByAI
 
 aircraft.scout_drone:
 	Inherits: aircraft.spy_drone
@@ -1218,6 +1222,8 @@ aircraft.a10:
 	RenderSprites:
 		PlayerPalette: cncplayer
 	Interactable:
+	Targetable@IgnoredByAI:
+		TargetTypes: IgnoredByAI
 
 aircraft.chinook:
 	Inherits: ^Vehicle
@@ -1624,12 +1630,13 @@ aircraft.comanche:
 
 aircraft.helix:
 	Inherits: ^Helicopter
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@UPGRADE: ^CanHavePRCVehicleUpgrades
+	Inherits@AImicroManagable: ^AImicroManagable
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-1:
@@ -1798,6 +1805,7 @@ aircraft.helix:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		LoadedCondition: loaded
+		RequiresCondition: !AImicroManage || bunker_upgrade
 	WithCargoSounds:
 		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
 		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
@@ -1815,7 +1823,7 @@ aircraft.helix:
 		RevokeAll: true
 		IsCyclic: false
 	ConditionPrerequisite@BUNKER:
-		Queue: queue.helix, queue.assault_helix, queue.nuke_gen_helix, queue.helix_merged
+		Queue: queue.helix, queue.inf_gen_helix, queue.nuke_gen_helix, queue.helix_merged
 		Actor: upgrade.helix_bunker
 		PauseOnCondition: bunker_upgrade || gatling_upgrade || speaker_upgrade
 	ConditionPrerequisite@GATLING:
@@ -1827,7 +1835,7 @@ aircraft.helix:
 		Actor: upgrade.helix_speaker
 		PauseOnCondition: bunker_upgrade || gatling_upgrade || speaker_upgrade
 	ConditionPrerequisite@NAPALM:
-		Queue: queue.helix, queue.assault_helix, queue.helix_merged
+		Queue: queue.helix, queue.inf_gen_helix, queue.helix_merged
 		Actor: upgrade.helix_napalm
 		PauseOnCondition: napalm_upgrade || nuke_upgrade
 	ConditionPrerequisite@NUKE:
@@ -1910,6 +1918,15 @@ aircraft.helix:
 	ActorStatOverride@Nuke:
 		Upgrades: upgrade.helix_nuke, upgrade.helix_bunker, upgrade.helix_gatling, upgrade.helix_speaker
 		RequiresCondition: nuke
+	GrantConditionOnDamageState@AI-bunker_upgrade:
+		Condition: ShouldUnload
+		ValidDamageStates: Critical, Heavy
+	AutoDeployer@AI-bunker_upgrade:
+		RequiresCondition: AImicroManage && loaded && ShouldUnload && bunker_upgrade
+		DeployChance: 100
+		DeployTrigger: Periodically
+		DeployTicks: 100
+		UndeployTicks: 100
 
 aircraft.assault_helix:
 	Inherits: aircraft.helix
