@@ -4158,6 +4158,9 @@ vehicle.combat_cycle:
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
 	KillsSelf@Triggered:
 		DamageTypes: Suicide
 		RequiresCondition: triggered
@@ -4197,7 +4200,10 @@ vehicle.combat_cycle:
 			infantry.jarmen_kell.demo: jarmen
 	FreePassenger@rebel:
 		Actors: infantry.rebel
-		RequiresCondition: !demo && !boss
+		RequiresCondition: !toxin && !demo && !boss
+	FreePassenger@toxin_rebel:
+		Actors: infantry.toxin_rebel
+		RequiresCondition: toxin
 	FreePassenger@terrorist:
 		Actors: infantry.terrorist
 		RequiresCondition: demo || boss
