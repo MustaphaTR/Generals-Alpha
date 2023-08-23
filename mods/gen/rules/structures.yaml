@@ -3,7 +3,6 @@
 	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SABOTAGE: ^CanBeSabotaged
-	Inherits@AImicroManagable: ^AImicroManagable
 	GivesExperience:
 		Experience: 200
 	RevealsShroudToIntelligenceOwner@SATELLITE_HACK1:
@@ -37,16 +36,7 @@
 		Cost: 2000
 	CustomSellValue:
 		Value: 2000
-	BaseProvider:
-		Range: 12c0
-		RequiresCondition: ccradius || AImicroManage
 	WithBuildingPlacedAnimation:
-	GivesBuildableArea:
-		AreaTypes: building
-		RequiresCondition: ccradius || AImicroManage
-	GrantConditionOnPrerequisite@GLOBALCCRADIUS:
-		Prerequisites: prerequisite.ccradius
-		Condition: ccradius
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false

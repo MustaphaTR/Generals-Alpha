@@ -1942,12 +1942,12 @@
 		Footprint: x
 		TerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
 		BuildSounds: placbldg.aud, build5.aud
-		RequiresBaseProvider: true
+		RequiresBaseProvider: false
 	ActorPreviewPlaceBuildingPreview:
 		PreviewAlpha: 0.65
 	RequiresBuildableArea:
 		AreaTypes: building
-		Adjacent: 8
+		Adjacent: 2
 	SoundOnDamageTransition:
 		DamagedSounds: kaboom1.aud
 		DestroyedSounds: kaboom22.aud
@@ -1975,6 +1975,7 @@
 	Inherits: ^BasicBuilding
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
+	Inherits@AImicroManagable: ^AImicroManagable
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -1996,6 +1997,10 @@
 	Capturable:
 		Types: building
 		RequiresCondition: !build-incomplete
+	## Tolerated buildable solution for AI
+	GivesBuildableArea:
+		AreaTypes: building
+		RequiresCondition: AImicroManage
 	CapturableProgressBar:
 	MustBeDestroyed:
 		RequiredForShortGame: true
@@ -2137,7 +2142,7 @@
 		LineBuildFootprintAlpha: 0.65
 	RequiresBuildableArea:
 		AreaTypes: building
-		Adjacent: 8
+		Adjacent: 7
 	SoundOnDamageTransition:
 		DamagedSounds: sandbag2.aud
 		DestroyedSounds: sandbag2.aud
@@ -2191,7 +2196,7 @@
 		ClosingSound: cashturn.aud
 		BlocksProjectilesHeight: 0
 	RequiresBuildableArea:
-		Adjacent: 8
+		Adjacent: 5
 	MapEditorData:
 		Categories: Wall
 
