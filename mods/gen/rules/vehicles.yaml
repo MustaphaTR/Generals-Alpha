@@ -3609,8 +3609,6 @@ vehicle.emparor_overlord:
 		ProductionType: queue.emparor_overlord
 	ProductionBar@Merged:
 		ProductionType: queue.emparor_overlord_merged
-	Mobile:
-		PauseOnCondition: hacked || driver_killed || emp || leaflet
 	WithSpriteTurret@Speaker:
 		-RequiresCondition:
 	WithRangeCircle:
