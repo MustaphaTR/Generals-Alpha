@@ -1687,6 +1687,15 @@ vehicle.rocket_buggy:
 		Prerequisites: building.palace, !techlevel.notech
 		Description: Rocket artillery.\n\nGets extra missiles per burst from Scrap Crates.
 		ReadyAudio: RocketBuggyCreated
+	Buildable@Boss:
+		Queue: queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged
+		BuildPaletteOrder: 6
+		ForceIconLocation: true
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: !techlevel.notech
+		Description: Rocket artillery.\n\nGets extra missiles per burst from Scrap Crates.
+		ReadyAudio: RocketBuggyCreated
 	Valued:
 		Cost: 900
 	ProductionCostMultiplier@Toxin1:
@@ -1797,13 +1806,6 @@ vehicle.rocket_buggy:
 		Upgrades: upgrade.ap_rockets, upgrade.buggy_ammo
 		RequiresCondition: boss
 
-vehicle.rocket_buggy.boss:
-	Inherits: vehicle.rocket_buggy
-	Buildable:
-		Queue: queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged
-		BuildPaletteOrder: 6
-		Prerequisites: !techlevel.notech
-
 vehicle.avenger:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
@@ -1832,6 +1834,14 @@ vehicle.avenger:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units, !techlevel.notech
+		Description: Advanced anti-air unit.\n\nCan deflect enemy missiles with laser.
+		ReadyAudio: AvengerCreated
+	Buildable@Air:
+		Queue: queue.air_gen_vehicle
+		BuildPaletteOrder: 6
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: building.strategy_center, ~prerequisite.zh_units, !techlevel.notech
 		Description: Advanced anti-air unit.\n\nCan deflect enemy missiles with laser.
 		ReadyAudio: AvengerCreated
 	Valued:
@@ -1898,12 +1908,6 @@ vehicle.avenger:
 		Upgrades: upgrade.adv_training, upgrade.scout_drone, upgrade.battle_drone
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
-
-vehicle.avenger.air:
-	Inherits: vehicle.avenger
-	Buildable:
-		Queue: queue.air_gen_vehicle
-		Prerequisites: building.strategy_center, ~prerequisite.zh_units, !techlevel.notech
 
 vehicle.battle_bus:
 	Inherits: ^Tank
@@ -2541,6 +2545,14 @@ vehicle.tomahawk_launcher:
 		Prerequisites: building.strategy_center, !techlevel.notech
 		Description: Long-range rocket artillery.
 		ReadyAudio: TomahawkCreated
+	Buildable@Boss:
+		Queue: queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged
+		BuildPaletteOrder: 7
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: !techlevel.notech
+		Description: Long-range rocket artillery.
+		ReadyAudio: TomahawkCreated
 	Valued:
 		Cost: 1200
 	ProductionCostMultiplier@Airforce1:
@@ -2615,13 +2627,6 @@ vehicle.tomahawk_launcher:
 		Upgrades: upgrade.adv_training, upgrade.scout_drone, upgrade.battle_drone
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
-
-vehicle.tomahawk_launcher.boss:
-	Inherits: vehicle.tomahawk_launcher
-	Buildable:
-		Queue: queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged
-		BuildPaletteOrder: 7
-		Prerequisites: !techlevel.notech
 
 vehicle.scud_launcher:
 	Inherits: ^Vehicle
@@ -3377,9 +3382,15 @@ vehicle.overlord_tank:
 		Prerequisites: building.propaganda_center, !techlevel.notech
 		Description: Big and slow tank.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
 		ReadyAudio: OverlordTankCreated
-	BuildPaletteOrderModifier@Boss:
-		Queue: queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged
-		Modifier: 3 # 9
+	Buildable@Boss:
+		Queue: queue.boss_gen_vehicle
+		BuildPaletteOrder: 9
+		ForceIconLocation: true
+		BuildDuration: 625
+		BuildDurationModifier: 100
+		Prerequisites: !techlevel.notech
+		Description: Big and slow tank.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
+		ReadyAudio: OverlordTankCreated
 	Valued:
 		Cost: 2000
 	ProductionCostMultiplier@Tank:
@@ -3570,18 +3581,13 @@ vehicle.overlord_tank:
 		Upgrades: upgrade.isotope_stability, upgrade.overlord_bunker, upgrade.overlord_gatling, upgrade.overlord_speaker
 		RequiresCondition: nuke
 
-vehicle.overlord_tank.boss:
-	Inherits: vehicle.overlord_tank
-	Buildable:
-		Queue: queue.boss_gen_vehicle
-		Prerequisites: !techlevel.notech
-	RenderSprites:
-		Image: vehicle.overlord_tank
-
 vehicle.emparor_overlord:
 	Inherits: vehicle.overlord_tank
 	Buildable:
 		Queue: queue.tank_gen_vehicle, queue.prc_vehicle_merged
+		Description: Big and slow tank.\n\nComes with a speaker tower.\n\nCan be upgraded to have a gatling cannon.
+	Buildable@Boss:
+		Queue: queue.boss_gen_vehicle_merged
 		Description: Big and slow tank.\n\nComes with a speaker tower.\n\nCan be upgraded to have a gatling cannon.
 	Tooltip:
 		Name: Emperor Overlord
@@ -3620,14 +3626,6 @@ vehicle.emparor_overlord:
 	ActorStatValues:
 		Upgrades: upgrade.subliminal_messaging, upgrade.nuclear_tanks, upgrade.uranium_shells, upgrade.overlord_gatling
 	-ActorStatOverride@Nuke:
-
-vehicle.emparor_overlord.boss:
-	Inherits: vehicle.emparor_overlord
-	Buildable:
-		Queue: queue.boss_gen_vehicle_merged
-		Prerequisites: !techlevel.notech
-	RenderSprites:
-		Image: vehicle.emparor_overlord
 
 vehicle.bomb_truck:
 	Inherits: ^Vehicle
@@ -3883,6 +3881,15 @@ vehicle.nuke_cannon:
 		Prerequisites: building.propaganda_center, prerequisite.nuke_cannon
 		Description: Heavy artillery unit armed with nuclear warheads.\n\nShould be not moving for 3 seconds to fire.\n\nCan not move for 3 seconds after firing.
 		ReadyAudio: NukeCannonCreated
+	Buildable@Nuke:
+		Queue: queue.nuke_gen_vehicle, queue.prc_vehicle_merged
+		BuildPaletteOrder: 10
+		ForceIconLocation: true
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: building.propaganda_center
+		Description: Heavy artillery unit armed with nuclear warheads.\n\nShould be not moving for 3 seconds to fire.\n\nCan not move for 3 seconds after firing.
+		ReadyAudio: NukeCannonCreated
 	Valued:
 		Cost: 1600
 	Tooltip:
@@ -3998,12 +4005,6 @@ vehicle.nuke_cannon:
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.neutron_shells
-
-vehicle.nuke_cannon.nuke:
-	Inherits: vehicle.nuke_cannon
-	Buildable:
-		Queue: queue.nuke_gen_vehicle, queue.prc_vehicle_merged
-		Prerequisites: building.propaganda_center
 
 vehicle.combat_cycle:
 	Inherits: ^Vehicle
@@ -4191,11 +4192,9 @@ vehicle.combat_cycle:
 			infantry.terrorist: terrorist
 			infantry.toxin_terrorist: toxin_terrorist
 			infantry.hijacker: hijacker
-			infantry.hijacker.stealth: hijacker
 			infantry.saboteur: saboteur
 			infantry.jarmen_kell: jarmen
 			infantry.jarmen_kell.demo: jarmen
-			infantry.jarmen_kell.boss: jarmen
 	FreePassenger@rebel:
 		Actors: infantry.rebel
 		RequiresCondition: !demo && !boss

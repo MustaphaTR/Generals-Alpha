@@ -798,6 +798,14 @@ upgrade.nuclear_tanks:
 		Prerequisites: !upgrade.nuclear_tanks, !techlevel.infonly
 		Description: Increases Battlemaster speed by 40% and Overlord speed by 50%.
 		ReadyAudio: NuclearTanks
+	Buildable@Boss:
+		Queue: queue.boss_gen_missile_silo
+		BuildPaletteOrder: 3
+		ForceIconLocation: true
+		BuildDuration: 1500
+		Prerequisites: !upgrade.nuclear_tanks, !techlevel.infonly
+		Description: Increases Overlord speed by 50%.
+		ReadyAudio: NuclearTanks
 	ProvidesPrerequisite@upgradename:
 		Prerequisite: upgrade.nuclear_tanks
 	Valued:
@@ -806,13 +814,6 @@ upgrade.nuclear_tanks:
 		Prerequisites: upgrade.nuclear_tanks
 	RenderSprites:
 		Image: upgrade.nuclear_tanks
-
-upgrade.nuclear_tanks.boss:
-	Inherits: upgrade.nuclear_tanks
-	Buildable:
-		Queue: queue.boss_gen_missile_silo
-		BuildPaletteOrder: 3
-		Description: Increases Overlord speed by 50%.
 
 upgrade.uranium_shells:
 	Inherits: ^default.upgrade
@@ -826,6 +827,14 @@ upgrade.uranium_shells:
 		Prerequisites: !upgrade.uranium_shells, !techlevel.infonly
 		Description: Increases Overlord and Battlemaster damage by 25%.
 		ReadyAudio: UraniumShells
+	Buildable@Boss:
+		Queue: queue.boss_gen_missile_silo
+		BuildPaletteOrder: 5
+		ForceIconLocation: true
+		BuildDuration: 1500
+		Prerequisites: !upgrade.uranium_shells, !techlevel.infonly
+		Description: Increases Overlord damage by 25%.
+		ReadyAudio: UraniumShells
 	ProvidesPrerequisite@upgradename:
 		Prerequisite: upgrade.uranium_shells
 	Valued:
@@ -834,13 +843,6 @@ upgrade.uranium_shells:
 		Prerequisites: upgrade.uranium_shells
 	RenderSprites:
 		Image: upgrade.uranium_shells
-
-upgrade.uranium_shells.boss:
-	Inherits: upgrade.uranium_shells
-	Buildable:
-		Queue: queue.boss_gen_missile_silo
-		BuildPaletteOrder: 5
-		Description: Increases Overlord damage by 25%.
 
 upgrade.neutron_shells:
 	Inherits: ^default.upgrade
@@ -853,6 +855,13 @@ upgrade.neutron_shells:
 		BuildDuration: 1500
 		Prerequisites: prerequisite.nuke_cannon, !upgrade.neutron_shells, ~prerequisite.zh_units, !techlevel.infonly
 		Description: Allows Nuke Cannons to be switched to fire Neutron Shells.
+	Buildable@Nuke:
+		Queue: queue.nuke_gen_missile_silo
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
+		BuildDuration: 1500
+		Prerequisites: !upgrade.neutron_shells, ~prerequisite.zh_units, !techlevel.infonly
+		Description: Allows Nuke Cannons to be switched to fire Neutron Shells.
 	ProvidesPrerequisite@upgradename:
 		Prerequisite: upgrade.neutron_shells
 	Valued:
@@ -861,12 +870,6 @@ upgrade.neutron_shells:
 		Prerequisites: upgrade.neutron_shells
 	RenderSprites:
 		Image: upgrade.neutron_shells
-
-upgrade.neutron_shells.nuke:
-	Inherits: upgrade.neutron_shells
-	Buildable:
-		Queue: queue.nuke_gen_missile_silo
-		Prerequisites: !upgrade.neutron_shells, ~prerequisite.zh_units, !techlevel.infonly
 
 upgrade.tactical_nuke_mig:
 	Inherits: ^default.upgrade

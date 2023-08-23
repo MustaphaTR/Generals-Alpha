@@ -928,6 +928,15 @@ infantry.pathfinder:
 		Prerequisites: building.strategy_center, prerequisite.pathfinder, !techlevel.vehicleonly, !techlevel.notech
 		Description: Elite sniper infantry.
 		ReadyAudio: PathfinderCreated
+	Buildable@Boss:
+		Queue: queue.boss_gen_infantry, queue.boss_gen_infantry_merged
+		BuildPaletteOrder: 6
+		ForceIconLocation: true
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: prerequisite.pathfinder, !techlevel.vehicleonly, !techlevel.notech
+		Description: Elite sniper infantry.
+		ReadyAudio: PathfinderCreated
 	Health:
 		HP: 12000
 	Armor:
@@ -977,13 +986,6 @@ infantry.pathfinder:
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.chemical_suits
 		RequiresCondition: zh_units
-
-infantry.pathfinder.boss:
-	Inherits: infantry.pathfinder
-	Buildable:
-		Queue: queue.boss_gen_infantry, queue.boss_gen_infantry_merged
-		BuildPaletteOrder: 6
-		Prerequisites: prerequisite.pathfinder, !techlevel.vehicleonly, !techlevel.notech
 
 infantry.terrorist:
 	Inherits: ^Soldier
@@ -1329,6 +1331,16 @@ infantry.angry_mob:
 		Description: Group of civilians armed with pistols and molotov coctails.
 		IconPalette: cameo
 		ReadyAudio: AngryMobCreated
+	Buildable@Boss:
+		Queue: queue.boss_gen_infantry, queue.boss_gen_infantry_merged
+		BuildPaletteOrder: 4
+		ForceIconLocation: true
+		BuildDuration: 375
+		BuildDurationModifier: 100
+		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
+		Description: Group of civilians armed with pistols and molotov coctails.
+		IconPalette: cameo
+		ReadyAudio: AngryMobCreated
 	Tooltip:
 		Name: Angry Mob
 		GenericName: Soldier
@@ -1377,23 +1389,22 @@ infantry.angry_mob:
 		Modifier: 200
 	DamageMultiplier@INVINCIBLE:
 		Modifier: 0
+	GrantConditionOnFaction@Boss:
+		Condition: boss
+		Factions: boss
 	RenderSprites:
 		Image: infantry.angry_mob
 	ActorStatValues:
 		Sight: 3c768
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Mob
 		Upgrades: upgrade.arm_the_mob, upgrade.ap_bullets
-
-infantry.angry_mob.boss:
-	Inherits: infantry.angry_mob
-	Buildable:
-		Queue: queue.boss_gen_infantry, queue.boss_gen_infantry_merged
-		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
-	ActorStatValues:
+	ActorStatOverride@Boss:
 		Upgrades: upgrade.arm_the_mob
+		RequiresCondition: boss
 
 infantry.hacker:
 	Inherits: ^Soldier
+	Inherits@CHEM: ^AffectedByChemicalSuitsBossOnly
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -1421,6 +1432,15 @@ infantry.hacker:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, !techlevel.vehicleonly, !techlevel.notech
+		Description: Hacks internet to gain money while deployed.\n\nCan disable enemy structures.
+		ReadyAudio: HackerCreated
+	Buildable@Boss:
+		Queue: queue.boss_gen_infantry
+		BuildPaletteOrder: 3
+		ForceIconLocation: true
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
 		Description: Hacks internet to gain money while deployed.\n\nCan disable enemy structures.
 		ReadyAudio: HackerCreated
 	Valued:
@@ -1568,21 +1588,15 @@ infantry.hacker:
 		DeployTicks: 100
 		UndeployTicks: 5
 
-infantry.hacker.boss:
-	Inherits: infantry.hacker
-	Inherits@CHEM: ^AffectedByChemicalSuits
-	Buildable:
-		Queue: queue.boss_gen_infantry, queue.boss_gen_infantry_merged
-		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
-	RenderSprites:
-		Image: infantry.hacker
-
 infantry.super_hacker:
 	Inherits: infantry.hacker
 	Buildable:
 		Queue: queue.inf_gen_infantry, queue.prc_infantry_merged
 		Description: Hacks internet to gain money while deployed.\n\nCan disable enemy structures and vehicles.\n\nCamouflaged.
 		ReadyAudio: SuperHackerCreated
+	Buildable@Boss:
+		Queue: queue.boss_gen_infantry_merged
+		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
 	Tooltip:
 		Name: Super Hacker
 	Armament@DisableAnim:
@@ -1628,7 +1642,16 @@ infantry.hijacker:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	GivesExperience:
 		Experience: 50
-	Buildable:
+	Buildable: # Stat UI doesn't know how to get correct desc, Stealth Gen's one is more generic so define it first.
+		Queue: queue.stealth_gen_infantry, queue.gla_infantry_merged
+		BuildPaletteOrder: 6
+		ForceIconLocation: true
+		BuildDuration: 375
+		BuildDurationModifier: 100
+		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
+		Description: Hijacks enemy vehicles.\n\nCamouflaged.
+		ReadyAudio: HijackerCreated
+	Buildable@GLA:
 		Queue: queue.gla_infantry
 		BuildPaletteOrder: 6
 		ForceIconLocation: true
@@ -1639,6 +1662,9 @@ infantry.hijacker:
 		ReadyAudio: HijackerCreated
 	Valued:
 		Cost: 400
+	ProductionCostMultiplier@Stealth:
+		Queue: queue.stealth_gen_infantry, queue.gla_infantry_merged
+		Multiplier: 150 # 600
 	Tooltip:
 		Name: Hijacker
 	Health:
@@ -1676,27 +1702,26 @@ infantry.hijacker:
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		CanBeForcedUncloak: true
-		RequiresCondition: !cloak-force-disabled
+		RequiresCondition: !cloak-force-disabled && !stealth
+	Cloak@Stealth:
+		InitialDelay: 250
+		CloakDelay: 120
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		DetectionTypes: Cloak
+		IsPlayerPalette: true
+		CanBeForcedUncloak: true
+		RequiresCondition: !cloak-force-disabled && stealth
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	GrantConditionOnFaction@Stealth:
+		Condition: stealth
+		Factions: stealth
 	RenderSprites:
 		Image: infantry.hijacker
 	CaptureManager:
 	ActorStatValues:
 		Stats: Armor, Sight, Speed
-
-infantry.hijacker.stealth:
-	Inherits: infantry.hijacker
-	Buildable:
-		Queue: queue.stealth_gen_infantry, queue.gla_infantry_merged
-		BuildDuration: 375
-		Description: Hijacks enemy vehicles.\n\nCamouflaged.
-		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
-	Valued:
-		Cost: 600
-	Cloak:
-		UncloakOn: Attack, Unload, Infiltrate, Demolish
 
 infantry.colonel_burton:
 	Inherits: ^Soldier
@@ -1738,6 +1763,16 @@ infantry.colonel_burton:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, !prerequisite.enough_colonel_burton, !techlevel.notech
+		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures by force firing.\n\nCan backstab infantry without getting detected by force firing.\n\nCamouflaged.
+		ReadyAudio: BurtonCreated
+		BuildLimit: 1
+	Buildable@Boss:
+		Queue: queue.boss_gen_infantry, queue.boss_gen_infantry_merged
+		BuildPaletteOrder: 7
+		ForceIconLocation: true
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: building.particle_cannon, !prerequisite.enough_colonel_burton, !techlevel.nosw
 		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures by force firing.\n\nCan backstab infantry without getting detected by force firing.\n\nCamouflaged.
 		ReadyAudio: BurtonCreated
 		BuildLimit: 1
@@ -1837,17 +1872,10 @@ infantry.colonel_burton:
 		Upgrades: upgrade.adv_training, upgrade.chemical_suits
 		RequiresCondition: zh_units
 
-infantry.colonel_burton.boss:
-	Inherits: infantry.colonel_burton
-	Buildable:
-		Queue: queue.boss_gen_infantry, queue.boss_gen_infantry_merged
-		BuildPaletteOrder: 7
-		ForceIconLocation: true
-		Prerequisites: building.particle_cannon, !prerequisite.enough_colonel_burton, !techlevel.nosw
-
 infantry.jarmen_kell:
 	Inherits: ^Soldier
 	Inherits@AP_BULLETS: ^AffectedByAPBullets
+	Inherits@CHEM: ^AffectedByChemicalSuitsBossOnly
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
@@ -1878,6 +1906,15 @@ infantry.jarmen_kell:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, !prerequisite.enough_jarmen_kell, !techlevel.notech
+		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCamouflaged.
+		ReadyAudio: JarmenCreated
+		BuildLimit: 1
+	Buildable@Boss:
+		Queue: queue.boss_gen_infantry
+		BuildPaletteOrder: 9
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: building.scud_storm, !prerequisite.enough_jarmen_kell, !techlevel.nosw
 		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCamouflaged.
 		ReadyAudio: JarmenCreated
 		BuildLimit: 1
@@ -1960,12 +1997,16 @@ infantry.jarmen_kell:
 		Upgrades: upgrade.demolitions, upgrade.ap_bullets
 	ActorStatOverride@Boss:
 		Upgrades:
-		RequiresCondition: boss
+		RequiresCondition: boss && !zh_units
 
 infantry.jarmen_kell.demo:
 	Inherits: infantry.jarmen_kell
 	Buildable:
 		Queue: queue.demo_gen_infantry, queue.gla_infantry_merged
+		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCamouflaged.\n\nCan place C4 charges on structures.
+		ReadyAudio: DemoJarmenCreated
+	Buildable@Boss:
+		Queue: queue.boss_gen_infantry_merged
 		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCamouflaged.\n\nCan place C4 charges on structures.
 		ReadyAudio: DemoJarmenCreated
 	Armament@TIMED_DEMO_BOMB:
@@ -1979,16 +2020,9 @@ infantry.jarmen_kell.demo:
 	Voiced:
 		VoiceSet: DemoJarmenVoice
 
-infantry.jarmen_kell.boss:
-	Inherits: infantry.jarmen_kell
-	Inherits@CHEM: ^AffectedByChemicalSuits
-	Buildable:
-		Queue: queue.boss_gen_infantry, queue.boss_gen_infantry_merged
-		BuildPaletteOrder: 9
-		Prerequisites: building.scud_storm, !prerequisite.enough_jarmen_kell, !techlevel.nosw
-
 infantry.black_lotus:
 	Inherits: ^Soldier
+	Inherits@CHEM: ^AffectedByChemicalSuitsBossOnly
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -2015,6 +2049,15 @@ infantry.black_lotus:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, !prerequisite.enough_black_lotus, !techlevel.notech
+		Description: Can capture enemy structures from a distance.\n\nCan disable enemy vehicles.\n\nCamouflaged.
+		ReadyAudio: LotusCreated
+		BuildLimit: 1
+	Buildable@Boss:
+		Queue: queue.boss_gen_infantry
+		BuildPaletteOrder: 10
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Prerequisites: building.missile_silo, !prerequisite.enough_black_lotus, !techlevel.nosw
 		Description: Can capture enemy structures from a distance.\n\nCan disable enemy vehicles.\n\nCamouflaged.
 		ReadyAudio: LotusCreated
 		BuildLimit: 1
@@ -2148,19 +2191,11 @@ infantry.super_lotus:
 	Inherits: infantry.black_lotus
 	Buildable:
 		Queue: queue.inf_gen_infantry, queue.prc_infantry_merged
+	Buildable@Boss:
+		Queue: queue.boss_gen_infantry_merged
 	Tooltip:
 		Name: Super Lotus
 	Armament@DisableEnd:
 		Weapon: disable.super_lotus.end
 	GrantConditionOnAttack@EndCapture:
 		RequiredShotsPerInstance: 12
-
-infantry.black_lotus.boss:
-	Inherits: infantry.black_lotus
-	Inherits@CHEM: ^AffectedByChemicalSuits
-	Buildable:
-		Queue: queue.boss_gen_infantry, queue.boss_gen_infantry_merged
-		BuildPaletteOrder: 10
-		Prerequisites: building.missile_silo, !prerequisite.enough_black_lotus, !techlevel.nosw
-	RenderSprites:
-		Image: infantry.black_lotus

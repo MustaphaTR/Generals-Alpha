@@ -71,23 +71,19 @@ Infantry =
 	"infantry.ranger",
 	"infantry.missile_defender",
 	"infantry.pathfinder",
-	"infantry.pathfinder.boss",
 	"infantry.rebel",
 	"infantry.toxin_rebel",
 	"infantry.rpg_trooper",
 	"infantry.terrorist",
 	"infantry.toxin_terrorist",
 	"infantry.angry_mob",
-	"infantry.angry_mob.boss",
 	"infantry.hijacker",
-	"infantry.hijacker.stealth",
 	"infantry.saboteur",
 	"infantry.red_guard",
 	"infantry.minigunner",
 	"infantry.tank_hunter",
 	"infantry.hacker",
 	"infantry.super_hacker",
-	"infantry.hacker.boss",
 	"infantry.conscript",
 	"infantry.grenadier",
 	"infantry.flamethrower"
@@ -113,7 +109,6 @@ Plane =
 	"aircraft.stealth_fighter.air",
 	"aircraft.aurora",
 	"aircraft.aurora_alpha",
-	"aircraft.aurora.boss",
 	"aircraft.mig"
 }
 
@@ -165,27 +160,23 @@ ScudStorm =
 MissileSilo =
 {
 	"building.missile_silo",
-	"building.missile_silo.boss"
 }
 
 Burton =
 {
 	"infantry.colonel_burton",
-	"infantry.colonel_burton.boss"
 }
 
 Jarmen =
 {
 	"infantry.jarmen_kell",
 	"infantry.jarmen_kell.demo",
-	"infantry.jarmen_kell.boss"
 }
 
 Lotus =
 {
 	"infantry.black_lotus",
 	"infantry.super_lotus",
-	"infantry.black_lotus.boss"
 }
 
 TechBuilding =

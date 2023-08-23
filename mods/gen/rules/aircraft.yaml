@@ -854,6 +854,15 @@ aircraft.aurora:
 		Prerequisites: building.strategy_center, !prerequisite.enoughair, !techlevel.notech
 		Description: Fast fighter plane.\n\nCan not be damaged while attacking.\n\nSlows down and becomes vulnerable after attacking.
 		ReadyAudio: AuroraCreated
+	Buildable@Boss:
+		Queue: queue.boss_gen_aircraft
+		BuildAtProductionType: queue.usa_plane
+		BuildPaletteOrder: 4
+		BuildDuration: 625
+		BuildDurationModifier: 100
+		Prerequisites: !prerequisite.enoughair, !techlevel.notech
+		Description: Fast fighter plane.\n\nCan not be damaged while attacking.\n\nSlows down and becomes vulnerable after attacking.
+		ReadyAudio: AuroraCreated
 	Valued:
 		Cost: 2500
 	ProductionCostMultiplier@Airforce:
@@ -977,20 +986,12 @@ aircraft.aurora:
 		Upgrades: upgrade.adv_training, upgrade.countermeasures
 		RequiresCondition: !boss && zh_units
 
-aircraft.aurora.boss:
-	Inherits: aircraft.aurora
-	Buildable:
-		Queue: queue.boss_gen_aircraft
-		Prerequisites: !techlevel.notech
-	RenderSprites:
-		Image: aircraft.aurora
-	ActorStatValues:
-		Upgrades: upgrade.adv_training
-
 aircraft.aurora_alpha:
 	Inherits: aircraft.aurora
 	Buildable:
 		Queue: queue.super_gen_aircraft, queue.usa_aircraft_merged
+	Buildable@Boss:
+		Queue: queue.boss_gen_aircraft_merged
 	Tooltip:
 		Name: Aurora Alpha
 	Armament:
@@ -999,16 +1000,6 @@ aircraft.aurora_alpha:
 		Class: aircraft.aurora_alpha
 	SpawnActorOnDeath:
 		Actor: husk.aurora_alpha
-
-aircraft.aurora_alpha.boss:
-	Inherits: aircraft.aurora_alpha
-	Buildable:
-		Queue: queue.boss_gen_aircraft_merged
-		Prerequisites: !techlevel.notech
-	RenderSprites:
-		Image: aircraft.aurora_alpha
-	ActorStatValues:
-		Upgrades: upgrade.adv_training
 
 aircraft.spy_drone:
 	Inherits: ^Plane
