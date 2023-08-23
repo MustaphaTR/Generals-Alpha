@@ -1823,7 +1823,7 @@ aircraft.helix:
 		RevokeAll: true
 		IsCyclic: false
 	ConditionPrerequisite@BUNKER:
-		Queue: queue.helix, queue.assault_helix, queue.nuke_gen_helix, queue.helix_merged
+		Queue: queue.helix, queue.inf_gen_helix, queue.nuke_gen_helix, queue.helix_merged
 		Actor: upgrade.helix_bunker
 		PauseOnCondition: bunker_upgrade || gatling_upgrade || speaker_upgrade
 	ConditionPrerequisite@GATLING:
@@ -1835,7 +1835,7 @@ aircraft.helix:
 		Actor: upgrade.helix_speaker
 		PauseOnCondition: bunker_upgrade || gatling_upgrade || speaker_upgrade
 	ConditionPrerequisite@NAPALM:
-		Queue: queue.helix, queue.assault_helix, queue.helix_merged
+		Queue: queue.helix, queue.inf_gen_helix, queue.helix_merged
 		Actor: upgrade.helix_napalm
 		PauseOnCondition: napalm_upgrade || nuke_upgrade
 	ConditionPrerequisite@NUKE:
