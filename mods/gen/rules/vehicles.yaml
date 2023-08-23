@@ -4197,10 +4197,10 @@ vehicle.combat_cycle:
 			infantry.jarmen_kell.demo: jarmen
 			infantry.jarmen_kell.boss: jarmen
 	FreePassenger@rebel:
-		Actor: infantry.rebel
+		Actors: infantry.rebel
 		RequiresCondition: !demo && !boss
 	FreePassenger@terrorist:
-		Actor: infantry.terrorist
+		Actors: infantry.terrorist
 		RequiresCondition: demo || boss
 	WithCargoSounds:
 		EnterSounds: vcycswia.wav

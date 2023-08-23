@@ -3278,6 +3278,46 @@ building.internet_center:
 		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 50
 		PauseOnCondition: emp || hacked
+	FreePassenger@AI_1:
+		Actors: infantry.hacker
+		RequiresCondition: AImicroManage && !inf && !merged && ai_1
+	FreePassenger@AI_2:
+		Actors: infantry.hacker
+		RequiresCondition: AImicroManage && !inf && !merged && ai_2
+	FreePassenger@AI_3:
+		Actors: infantry.hacker
+		RequiresCondition: AImicroManage && !inf && !merged && ai_3
+	FreePassenger@AI_4:
+		Actors: infantry.hacker
+		RequiresCondition: AImicroManage && !inf && !merged && ai_4
+	FreePassenger@AI_1_Infantry_or_Merged:
+		Actors: infantry.super_hacker
+		RequiresCondition: AImicroManage && (inf || merged) && ai_1
+	FreePassenger@AI_2_Infantry_or_Merged:
+		Actors: infantry.super_hacker
+		RequiresCondition: AImicroManage && (inf || merged) && ai_2
+	FreePassenger@AI_3_Infantry_or_Merged:
+		Actors: infantry.super_hacker
+		RequiresCondition: AImicroManage && (inf || merged) && ai_3
+	FreePassenger@AI_4_Infantry_or_Merged:
+		Actors: infantry.super_hacker
+		RequiresCondition: AImicroManage && (inf || merged) && ai_4
+	GrantConditionAfterDelay@AI_1:
+		Condition: ai_1
+		Delay: 1
+		ShowSelectionBar: false
+	GrantConditionAfterDelay@AI_2:
+		Condition: ai_2
+		Delay: 6
+		ShowSelectionBar: false
+	GrantConditionAfterDelay@AI_3:
+		Condition: ai_3
+		Delay: 11
+		ShowSelectionBar: false
+	GrantConditionAfterDelay@AI_4:
+		Condition: ai_4
+		Delay: 16
+		ShowSelectionBar: false
 	ProvidesPrerequisite@buildingname:
 	GivesIntelligence:
 		Types: SatelliteHack1
@@ -3288,6 +3328,12 @@ building.internet_center:
 	GrantConditionOnPrerequisite@SATELLITE_HACK2:
 		Condition: satellite_hack2
 		Prerequisites: upgrade.satellite_hack2
+	GrantConditionOnFaction@Infantry:
+		Condition: inf
+		Factions: inf
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	Voiced:
 		VoiceSet: InternetCenterVoice
 	RenderSprites:
@@ -3298,18 +3344,6 @@ building.internet_center:
 		LocalUpgrades: upgrade.land_mines, upgrade.neutron_mines
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.satellite_hack1, upgrade.satellite_hack2, upgrade.land_mines, upgrade.neutron_mines
-	FreePassenger@AI_1:
-		Actor: infantry.hacker
-		RequiresCondition: AImicroManage
-	FreePassenger@AI_2:
-		Actor: infantry.hacker
-		RequiresCondition: AImicroManage
-	FreePassenger@AI_3:
-		Actor: infantry.hacker
-		RequiresCondition: AImicroManage
-	FreePassenger@AI_4:
-		Actor: infantry.hacker
-		RequiresCondition: AImicroManage
 
 building.strategy_center:
 	Inherits: ^Building
