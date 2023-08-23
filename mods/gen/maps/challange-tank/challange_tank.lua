@@ -244,7 +244,7 @@ Tick = function()
 	randomTauntTimer = randomTauntTimer - 1
 	if randomTauntTimer == 0 then
 		randomTauntTimer = Utils.RandomInteger(DateTime.Seconds(45), DateTime.Seconds(120))
-		Media.PlayTauntNotification(enemy, RandomTaunts[randomTauntToPlay])
+		Taunts.PlayTauntNotification(enemy, RandomTaunts[randomTauntToPlay])
 
 		if (randomTauntToPlay == 14) then
 			randomTauntToPlay = 1
@@ -255,18 +255,18 @@ Tick = function()
 
 	if 301 > player.Cash and not lowCashTauntPlayed then
 		lowCashTauntPlayed = true
-		Media.PlayTauntNotification(enemy, "61")
+		Taunts.PlayTauntNotification(enemy, "61")
 	end
 
 	if player.PowerState == "Low" or player.PowerState == "Critical" then
 		if not lowPowerTaunt1Played then
 			lowPowerTaunt1Played = true
-			Media.PlayTauntNotification(enemy, "59")
+			Taunts.PlayTauntNotification(enemy, "59")
 		end
 
 		if not lowPowerTaunt2Played and playerRecoveredFromFirstLowPower then
 			lowPowerTaunt2Played = true
-			Media.PlayTauntNotification(enemy, "60")
+			Taunts.PlayTauntNotification(enemy, "60")
 		end
 	end
 
@@ -279,63 +279,63 @@ Tick = function()
 
 	if not barrBuildTauntPlayed and #player.GetActorsByTypes(Barracks) > 0 then
 		barrBuildTauntPlayed = true
-		Media.PlayTauntNotification(enemy, "80")
+		Taunts.PlayTauntNotification(enemy, "80")
 	end
 	if not wfacBuildTauntPlayed and #player.GetActorsByTypes(WarFactory) > 0 then
 		wfacBuildTauntPlayed = true
-		Media.PlayTauntNotification(enemy, "79")
+		Taunts.PlayTauntNotification(enemy, "79")
 	end
 	if not airfBuildTauntPlayed  and #player.GetActorsByTypes(Airfield) > 0 then
 		airfBuildTauntPlayed = true
-		Media.PlayTauntNotification(enemy, "78")
+		Taunts.PlayTauntNotification(enemy, "78")
 	end
 	if not oildBuildTauntPlayed  and #player.GetActorsByType("tech.oil_derrick") > 0 then
 		oildBuildTauntPlayed = true
-		Media.PlayTauntNotification(enemy, "48")
+		Taunts.PlayTauntNotification(enemy, "48")
 	end
 	if not pcanBuildTauntPlayed  and #player.GetActorsByTypes(ParticleCannon) > 0 then
 		pcanBuildTauntPlayed = true
-		Media.PlayTauntNotification(enemy, "65")
+		Taunts.PlayTauntNotification(enemy, "65")
 	end
 	if not scudBuildTauntPlayed  and #player.GetActorsByTypes(ScudStorm) > 0 then
 		scudBuildTauntPlayed = true
-		Media.PlayTauntNotification(enemy, "63")
+		Taunts.PlayTauntNotification(enemy, "63")
 	end
 	if not nukeBuildTauntPlayed  and #player.GetActorsByTypes(MissileSilo) > 0 then
 		nukeBuildTauntPlayed = true
-		Media.PlayTauntNotification(enemy, "64")
+		Taunts.PlayTauntNotification(enemy, "64")
 	end
 	if not brtnBuildTauntPlayed  and #player.GetActorsByTypes(Burton) > 0 then
 		brtnBuildTauntPlayed = true
-		Media.PlayTauntNotification(enemy, "75")
+		Taunts.PlayTauntNotification(enemy, "75")
 	end
 	if not jrmnBuildTauntPlayed  and #player.GetActorsByTypes(Jarmen) > 0 then
 		jrmnBuildTauntPlayed = true
-		Media.PlayTauntNotification(enemy, "77")
+		Taunts.PlayTauntNotification(enemy, "77")
 	end
 	if not lotsBuildTauntPlayed  and #player.GetActorsByTypes(Lotus) > 0 then
 		lotsBuildTauntPlayed = true
-		Media.PlayTauntNotification(enemy, "76")
+		Taunts.PlayTauntNotification(enemy, "76")
 	end
 	if not builBuildTauntPlayed  and #player.GetActorsByTypes(BaseBuilding) > 7 then
 		builBuildTauntPlayed = true
-		Media.PlayTauntNotification(enemy, "70")
+		Taunts.PlayTauntNotification(enemy, "70")
 	end
 	if not defeBuildTauntPlayed  and #player.GetActorsByTypes(BaseDefense) > 5 then
 		defeBuildTauntPlayed = true
-		Media.PlayTauntNotification(enemy, "66")
+		Taunts.PlayTauntNotification(enemy, "66")
 	end
 	if not infaBuildTauntPlayed  and #player.GetActorsByTypes(Infantry) > 11 then
 		infaBuildTauntPlayed = true
-		Media.PlayTauntNotification(enemy, "69")
+		Taunts.PlayTauntNotification(enemy, "69")
 	end
 	if not tankBuildTauntPlayed  and #player.GetActorsByTypes(Tank) > 5 then
 		tankBuildTauntPlayed = true
-		Media.PlayTauntNotification(enemy, "67")
+		Taunts.PlayTauntNotification(enemy, "67")
 	end
 	if not planBuildTauntPlayed  and #player.GetActorsByTypes(Plane) > 3 then
 		planBuildTauntPlayed = true
-		Media.PlayTauntNotification(enemy, "68")
+		Taunts.PlayTauntNotification(enemy, "68")
 	end
 
 	if #enemy.GetActorsByType("infantry.hacker") >= HackerCount[Difficulty] * 2 and not HackersBuilt then
@@ -389,15 +389,15 @@ WorldLoaded = function()
 	end)
 
 	Trigger.OnAnyKilled(enemy.GetActorsByTypes(CommandCenter), function()
-		Media.PlayTauntNotification(enemy, "44")
+		Taunts.PlayTauntNotification(enemy, "44")
 	end)
 	Trigger.OnAnyKilled(enemy.GetActorsByTypes(Barracks), function()
-		Media.PlayTauntNotification(enemy, "39")
+		Taunts.PlayTauntNotification(enemy, "39")
 	end)
 	Trigger.OnAnyKilled(enemy.GetActorsByTypes(WarFactory), function()
-		Media.PlayTauntNotification(enemy, "40")
+		Taunts.PlayTauntNotification(enemy, "40")
 	end)
 	Trigger.OnAnyKilled(enemy.GetActorsByTypes(Airfield), function()
-		Media.PlayTauntNotification(enemy, "41")
+		Taunts.PlayTauntNotification(enemy, "41")
 	end)
 end
