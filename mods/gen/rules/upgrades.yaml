@@ -17,6 +17,13 @@
 		Prerequisites: default.upgrade
 		Types: Stripe-Upgraded
 
+^default.local_upgrade:
+	Inherits: ^default.upgrade
+	KillsSelf:
+		RemoveInstead: true
+	-UpdatesPlayerStatistics:
+	-WithProductionIconOverlay:
+
 ^default.strategy:
 	Inherits: ^default.upgrade
 	Buildable:
@@ -42,18 +49,14 @@
 		Condition: bot
 
 ^default.fake_to_real:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Buildable:
 		Queue: FakeToReal
 		BuildPaletteOrder: 0
 		BuildLimit: 0
-	KillsSelf:
-		RemoveInstead: true
-	-UpdatesPlayerStatistics:
-	-WithProductionIconOverlay:
 
 upgrade.radar:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: Radar
 	Buildable:
@@ -64,13 +67,9 @@ upgrade.radar:
 		Description: Allows Commandand Center to provide Radar.
 	Valued:
 		Cost: 500
-	KillsSelf:
-		RemoveInstead: true
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.radar
 
 upgrade.land_mines:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: Land Mines
 	Buildable:
@@ -81,12 +80,9 @@ upgrade.land_mines:
 		Description: Creates minefields around the structure.
 	Valued:
 		Cost: 250
-	KillsSelf:
-		RemoveInstead: true
-	-WithProductionIconOverlay:
 
 upgrade.neutron_mines:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: Neutron Mines
 	Buildable:
@@ -97,12 +93,9 @@ upgrade.neutron_mines:
 		Description: Upgrades mines to neutron mines, which kills vehicle drivers.
 	Valued:
 		Cost: 500
-	KillsSelf:
-		RemoveInstead: true
-	-WithProductionIconOverlay:
 
 upgrade.control_rods:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: Control Rods
 	Buildable:
@@ -115,9 +108,6 @@ upgrade.control_rods:
 		Amount: 5
 	Valued:
 		Cost: 500
-	KillsSelf:
-		RemoveInstead: true
-	-WithProductionIconOverlay:
 
 upgrade.control_rods.laser:
 	Inherits: upgrade.control_rods
@@ -139,7 +129,7 @@ upgrade.advanced_control_rods:
 		Amount: 15
 
 upgrade.camo_netting:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: Camo Netting
 	Buildable:
@@ -151,9 +141,6 @@ upgrade.camo_netting:
 		ReadyAudio: CamoNetting
 	Valued:
 		Cost: 500
-	KillsSelf:
-		RemoveInstead: true
-	-WithProductionIconOverlay:
 
 upgrade.capture_building:
 	Inherits: ^default.upgrade
@@ -898,7 +885,7 @@ upgrade.tactical_nuke_mig:
 		Prerequisites: upgrade.tactical_nuke_mig
 
 upgrade.scout_drone:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: Scout Drone
 	Buildable:
@@ -909,12 +896,9 @@ upgrade.scout_drone:
 		BuildLimit: 0
 	Valued:
 		Cost: 100
-	KillsSelf:
-		RemoveInstead: true
-	-WithProductionIconOverlay:
 
 upgrade.battle_drone:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: Battle Drone
 	Buildable:
@@ -925,12 +909,9 @@ upgrade.battle_drone:
 		BuildLimit: 0
 	Valued:
 		Cost: 300
-	KillsSelf:
-		RemoveInstead: true
-	-WithProductionIconOverlay:
 
 upgrade.hellfire_drone:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: Hellfire Drone
 	Buildable:
@@ -942,12 +923,9 @@ upgrade.hellfire_drone:
 		BuildLimit: 0
 	Valued:
 		Cost: 500
-	KillsSelf:
-		RemoveInstead: true
-	-WithProductionIconOverlay:
 
 upgrade.bio_bombs:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: Bio Bombs
 	Buildable:
@@ -961,12 +939,9 @@ upgrade.bio_bombs:
 		ReadyAudio: BioBombsReady
 	Valued:
 		Cost: 500
-	KillsSelf:
-		RemoveInstead: true
-	-WithProductionIconOverlay:
 
 upgrade.hi_explosive_bombs:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: High Explosive Bombs
 	Buildable:
@@ -980,12 +955,9 @@ upgrade.hi_explosive_bombs:
 		ReadyAudio: HiExplosiveBombsReady
 	Valued:
 		Cost: 500
-	KillsSelf:
-		RemoveInstead: true
-	-WithProductionIconOverlay:
 
 upgrade.toxin_missiles:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: Toxin Missiles
 	Buildable:
@@ -998,12 +970,9 @@ upgrade.toxin_missiles:
 		ReadyAudio: NoAudio
 	Valued:
 		Cost: 0
-	KillsSelf:
-		RemoveInstead: true
-	-WithProductionIconOverlay:
 
 upgrade.hi_explosive_missiles:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: High Explosive Missiles
 	Buildable:
@@ -1016,12 +985,9 @@ upgrade.hi_explosive_missiles:
 		ReadyAudio: NoAudio
 	Valued:
 		Cost: 0
-	KillsSelf:
-		RemoveInstead: true
-	-WithProductionIconOverlay:
 
 upgrade.overlord_bunker:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: Bunker
 	Buildable:
@@ -1033,12 +999,9 @@ upgrade.overlord_bunker:
 		ReadyAudio: OverlordBunkerReady
 	Valued:
 		Cost: 400
-	KillsSelf:
-		RemoveInstead: true
-	-WithProductionIconOverlay:
 
 upgrade.overlord_gatling:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: Gatling
 	Buildable:
@@ -1051,12 +1014,9 @@ upgrade.overlord_gatling:
 		ReadyAudio: OverlordGatlingReady
 	Valued:
 		Cost: 1200
-	KillsSelf:
-		RemoveInstead: true
-	-WithProductionIconOverlay:
 
 upgrade.overlord_speaker:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: Speaker
 	Buildable:
@@ -1068,9 +1028,6 @@ upgrade.overlord_speaker:
 		ReadyAudio: OverlordSpeakerReady
 	Valued:
 		Cost: 500
-	KillsSelf:
-		RemoveInstead: true
-	-WithProductionIconOverlay:
 
 upgrade.helix_bunker:
 	Inherits: upgrade.overlord_bunker
@@ -1097,7 +1054,7 @@ upgrade.helix_speaker:
 		ReadyAudio: HelixSpeakerReady
 
 upgrade.helix_napalm:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: Napalm
 	Buildable:
@@ -1113,12 +1070,9 @@ upgrade.helix_napalm:
 		Modifier: -1 # 3
 	Valued:
 		Cost: 800
-	KillsSelf:
-		RemoveInstead: true
-	-WithProductionIconOverlay:
 
 upgrade.helix_nuke:
-	Inherits: ^default.upgrade
+	Inherits: ^default.local_upgrade
 	Tooltip:
 		Name: Nuke
 	Buildable:
@@ -1134,9 +1088,6 @@ upgrade.helix_nuke:
 		Modifier: 1 # 5
 	Valued:
 		Cost: 800
-	KillsSelf:
-		RemoveInstead: true
-	-WithProductionIconOverlay:
 
 strategy.bombardment:
 	Inherits: ^default.strategy
