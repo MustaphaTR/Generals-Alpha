@@ -3221,6 +3221,7 @@ building.internet_center:
 	Inherits@CARGO: ^CargoPips
 	Inherits@MINE: ^CanHaveMines
 	Inherits@REVEAL: ^Reveal200
+	Inherits@AImicroManagable: ^AImicroManagable
 	GivesExperience:
 		Experience: 200
 	HitShape:
@@ -3302,6 +3303,18 @@ building.internet_center:
 		LocalUpgrades: upgrade.land_mines, upgrade.neutron_mines
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.satellite_hack1, upgrade.satellite_hack2, upgrade.land_mines, upgrade.neutron_mines
+	FreePassenger@AI_1:
+		Actor: infantry.hacker
+		RequiresCondition: AImicroManage
+	FreePassenger@AI_2:
+		Actor: infantry.hacker
+		RequiresCondition: AImicroManage
+	FreePassenger@AI_3:
+		Actor: infantry.hacker
+		RequiresCondition: AImicroManage
+	FreePassenger@AI_4:
+		Actor: infantry.hacker
+		RequiresCondition: AImicroManage
 
 building.strategy_center:
 	Inherits: ^Building
