@@ -184,9 +184,9 @@ Player:
 			generals_power.emp: 1
 		BuildingDelays:
 			upgrade.radar: 1500
-			upgrade.land_mines: 1500
-			upgrade.neutron_mines: 1500
-			upgrade.camo_netting: 1500
+			upgrade.land_mines: 5000
+			upgrade.neutron_mines: 8000
+			upgrade.camo_netting: 6000
 	SquadManagerBotModule@rush:
 		RequiresCondition: enable-rush-ai
 		SquadSize: 32
@@ -389,9 +389,9 @@ Player:
 			vehicle.gla_mcc: 250
 			vehicle.prc_mcc: 250
 			upgrade.radar: 1500
-			upgrade.land_mines: 1500
-			upgrade.neutron_mines: 1500
-			upgrade.camo_netting: 1500
+			upgrade.land_mines: 5000
+			upgrade.neutron_mines: 8000
+			upgrade.camo_netting: 5000
 	GrantConditionOnBotOwner@normal:
 		Condition: enable-normal-ai
 		Bots: normal
@@ -575,9 +575,9 @@ Player:
 			generals_power.emp: 1
 		BuildingDelays:
 			upgrade.radar: 1500
-			upgrade.land_mines: 1500
-			upgrade.neutron_mines: 1500
-			upgrade.camo_netting: 1500
+			upgrade.land_mines: 5000
+			upgrade.neutron_mines: 8000
+			upgrade.camo_netting: 6000
 	SquadManagerBotModule@normal:
 		RequiresCondition: enable-normal-ai
 		SquadSize: 18
@@ -780,9 +780,9 @@ Player:
 			vehicle.gla_mcc: 250
 			vehicle.prc_mcc: 250
 			upgrade.radar: 1500
-			upgrade.land_mines: 1500
-			upgrade.neutron_mines: 1500
-			upgrade.camo_netting: 1500
+			upgrade.land_mines: 5000
+			upgrade.neutron_mines: 8000
+			upgrade.camo_netting: 6000
 	GrantConditionOnBotOwner@turtle:
 		Condition: enable-turtle-ai
 		Bots: turtle
@@ -966,9 +966,9 @@ Player:
 			generals_power.emp: 1
 		BuildingDelays:
 			upgrade.radar: 1500
-			upgrade.land_mines: 1500
-			upgrade.neutron_mines: 1500
-			upgrade.camo_netting: 1500
+			upgrade.land_mines: 5000
+			upgrade.neutron_mines: 8000
+			upgrade.camo_netting: 6000
 	SquadManagerBotModule@turtle:
 		RequiresCondition: enable-turtle-ai
 		SquadSize: 10
@@ -1171,9 +1171,9 @@ Player:
 			vehicle.gla_mcc: 250
 			vehicle.prc_mcc: 250
 			upgrade.radar: 1500
-			upgrade.land_mines: 1500
-			upgrade.neutron_mines: 1500
-			upgrade.camo_netting: 1500
+			upgrade.land_mines: 5000
+			upgrade.neutron_mines: 8000
+			upgrade.camo_netting: 6000
 	CaptureManagerBotModule:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner, infantry.conscript
