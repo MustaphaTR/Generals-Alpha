@@ -4608,7 +4608,7 @@ vehicle.prc_mcc:
 		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
 		RequiresCondition: !driver_killed && !merged
 	Production@Merged:
-		Produces: queue.prc_building_merged, queue.boss_gen_building
+		Produces: queue.prc_building_merged, queue.boss_gen_building_merged
 		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
 		RequiresCondition: !driver_killed && merged
 	ProductionBar@PRC_BUILDING:
@@ -4621,6 +4621,8 @@ vehicle.prc_mcc:
 		ProductionType: queue.prc_building_merged
 	ProductionBar@BOSS_BUILDING:
 		ProductionType: queue.boss_gen_building
+	ProductionBar@BOSS_BUILDING_MERGED:
+		ProductionType: queue.boss_gen_building_merged
 	ProductionQueue@PRC_BUILDING:
 		Type: queue.prc_building
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, tank
@@ -4676,6 +4678,17 @@ vehicle.prc_mcc:
 		CannotPlaceAudio: PRCBuildingCannotPlaceAudio
 		ReadyAudio: PRCConstructionComplete
 		DisplayOrder: 13
+	ProductionQueue@BOSS_BUILDING_MERGED:
+		Type: queue.boss_gen_building_merged
+		Factions: boss
+		Group: Building
+		InstantCashDrain: true
+		DisallowPaused: true
+		LowPowerModifier: 200
+		QueuedAudio: PRCBuilding
+		CannotPlaceAudio: PRCBuildingCannotPlaceAudio
+		ReadyAudio: PRCConstructionComplete
+		DisplayOrder: 14
 	Voiced:
 		VoiceSet: PRCMCCVoice
 	WithTextDecoration@SIDE:
