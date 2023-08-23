@@ -3978,7 +3978,7 @@ building.speaker_tower:
 		Prerequisites: building.propaganda_center, !techlevel.notech, !techlevel.nodefense
 		Description: Increases fire speed of nearby units and allows them to heal.
 	Buildable@Boss:
-		Queue: queue.boss_gen_building
+		Queue: queue.boss_gen_building, queue.boss_gen_building_merged
 		BuildPaletteOrder: 9
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -4454,7 +4454,7 @@ building.missile_silo:
 		Prerequisites: building.propaganda_center, !prerequisite.enough_nuke, !techlevel.notech, !techlevel.nosw
 		Description: Provides Atom Bomb support power.
 	Buildable@Boss:
-		Queue: queue.boss_gen_building
+		Queue: queue.boss_gen_building, queue.boss_gen_building_merged
 		BuildPaletteOrder: 13
 		BuildDuration: 1500
 		BuildDurationModifier: 100
