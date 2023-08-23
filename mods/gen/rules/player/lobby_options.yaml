@@ -6,6 +6,20 @@
 		Enabled: True
 		DisplayOrder: 5
 		Prerequisites: prerequisite.zh_units
+	LobbyPrerequisiteCheckbox@DOCKSRESUPPLY:
+		ID: docksresupply
+		Label: checkbox-docksresupply.label
+		Description: checkbox-docksresupply.description
+		Enabled: False
+		DisplayOrder: 7
+		Prerequisites: prerequisite.docksresupply
+	LobbyPrerequisiteCheckbox@WALLS:
+		ID: walls
+		Label: checkbox-walls.label
+		Description: checkbox-walls.description
+		Enabled: False
+		DisplayOrder: 8
+		Prerequisites: prerequisite.walls
 	LobbyPrerequisiteCheckbox@LIMITSW:
 		ID: limitsw
 		Label: checkbox-limitsw.label
@@ -13,24 +27,10 @@
 		Enabled: False
 		DisplayOrder: 9
 		Prerequisites: prerequisite.limited_sw
-	LobbyPrerequisiteCheckbox@WALLS:
-		ID: walls
-		Label: checkbox-walls.label
-		Description: checkbox-walls.description
-		Enabled: False
-		DisplayOrder: 10
-		Prerequisites: prerequisite.walls
-	LobbyPrerequisiteCheckbox@DOCKSRESUPPLY:
-		ID: docksresupply
-		Label: checkbox-docksresupply.label
-		Description: checkbox-docksresupply.description
-		Enabled: False
-		DisplayOrder: 12
-		Prerequisites: prerequisite.docksresupply
 	LobbyPrerequisiteCheckbox@MERGEGENERALS:
 		ID: mergegenerals
 		Label: checkbox-mergegenerals.label
 		Description: checkbox-mergegenerals.description
 		Enabled: False
-		DisplayOrder: 13
+		DisplayOrder: 10
 		Prerequisites: prerequisite.mergegenerals
