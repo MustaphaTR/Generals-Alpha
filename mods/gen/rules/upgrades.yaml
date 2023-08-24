@@ -76,10 +76,10 @@ upgrade.land_mines:
 		Queue: queue.prc_command_center, queue.boss_gen_cold_fusion_reactor, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry, queue.boss_gen_infantry_merged, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
 		BuildPaletteOrder: 14
 		ForceIconLocation: true
-		BuildDuration: 125
+		BuildDuration: 500
 		Description: Creates minefields around the structure.
 	Valued:
-		Cost: 250
+		Cost: 600
 
 upgrade.neutron_mines:
 	Inherits: ^default.local_upgrade
@@ -89,8 +89,8 @@ upgrade.neutron_mines:
 		Queue: queue.prc_command_center, queue.boss_gen_cold_fusion_reactor, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry, queue.boss_gen_infantry_merged, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
 		BuildPaletteOrder: 14
 		ForceIconLocation: true
-		BuildDuration: 375
-		Description: Upgrades mines to neutron mines, which kills vehicle drivers.
+		BuildDuration: 625
+		Description: Upgrades mines to neutron mines, which kill vehicle drivers.
 	Valued:
 		Cost: 500
 
