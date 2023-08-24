@@ -118,7 +118,7 @@ namespace OpenRA.Mods.GenSDK.Activities
 			collector.DeliveryAnimPlayed = false;
 			var cash = Math.Min(collectorInfo.Capacity - collector.Amount, dockTrait.Amount);
 			collector.Amount = cash;
-			dockTrait.Amount = dockTrait.Amount - cash;
+			dockTrait.Amount -= cash;
 			collector.CheckConditions(self);
 			dockTrait.CheckConditions(dock);
 

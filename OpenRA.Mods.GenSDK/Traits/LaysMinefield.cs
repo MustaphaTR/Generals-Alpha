@@ -46,7 +46,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		int ticks;
 
 		bool spawned;
-		readonly List<Actor> mines = new List<Actor>();
+		readonly List<Actor> mines = new();
 
 		public LaysMinefield(LaysMinefieldInfo info)
 			: base(info)

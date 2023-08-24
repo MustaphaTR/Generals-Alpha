@@ -23,7 +23,7 @@ namespace OpenRA.Mods.Common.GenSDK
 
 	public class WithTerrainDependantSpriteBody : WithSpriteBody, INotifyCreated
 	{
-		WithTerrainDependantSpriteBodyInfo info;
+		readonly WithTerrainDependantSpriteBodyInfo info;
 		string terrain;
 		string sequence;
 		string startSequence;
