@@ -27,6 +27,11 @@
 		AircraftCollectionOffsets: 0,0
 		FullnessConditions:
 			1: not_empty
+	WithIdleOverlay@100_preview:
+		Sequence: idle-100
+		RequiresCondition: !preview
+	GrantCondition@preview:
+		Condition: preview
 	KillsSelf:
 		RemoveInstead: true
 		RequiresCondition: !not_empty
@@ -40,7 +45,6 @@ supply.pile.a:
 	WithSpriteBody@100:
 		Name: 100
 		Sequence: idle-100
-		RenderInPreview: true
 		RequiresCondition: two_thirds
 	WithSpriteBody@66:
 		Name: 66
@@ -64,7 +68,6 @@ supply.pile.c:
 	WithSpriteBody@100:
 		Name: 100
 		Sequence: idle-100
-		RenderInPreview: true
 		RequiresCondition: three_quarters
 	WithSpriteBody@75:
 		Name: 75
@@ -99,7 +102,6 @@ supply.pile.g:
 	WithSpriteBody@100:
 		Name: 100
 		Sequence: idle-100
-		RenderInPreview: true
 		RequiresCondition: four_fifths
 	WithSpriteBody@80:
 		Name: 80
@@ -128,10 +130,14 @@ supply.pile.g:
 			7501: quarter
 			15001: half
 			22501: three_quarters
+	WithIdleOverlay@100_preview:
+		Sequence: idle-100
+		RequiresCondition: !preview
+	GrantCondition@preview:
+		Condition: preview
 	WithSpriteBody@100:
 		Name: 100
 		Sequence: idle-100
-		RenderInPreview: true
 		RequiresCondition: three_quarters
 	WithSpriteBody@75:
 		Name: 75
