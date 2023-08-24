@@ -26,6 +26,10 @@ building.bunker.filled:
 		InitialUnits: infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter, infantry.tank_hunter
 	RenderSprites:
 		Image: building.bunker
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: building.bunker
 
 infantry.hacker:
 	ExternalCondition@deployed:
