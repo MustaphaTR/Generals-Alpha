@@ -932,6 +932,12 @@ building.cold_fusion_reactor:
 	ProductionBar:
 		ProductionType: queue.cold_fusion_reactor
 	Exit:
+	WithIdleOverlay@NO_RODS:
+		Sequence: idle-no-rods
+		RequiresCondition: !build-incomplete && !control_rods
+	WithIdleOverlay@CONTROL_RODS:
+		Sequence: idle-rods
+		RequiresCondition: !build-incomplete && control_rods
 	Power:
 		Amount: 5
 		RequiresCondition: !emp && !hacked && !sabotaged
@@ -997,6 +1003,8 @@ building.advanced_cold_fusion_reactor:
 		LowPowerModifier: 300
 	ProductionBar:
 		ProductionType: queue.advanced_cold_fusion_reactor
+	WithIdleOverlay@CONTROL_RODS:
+		Sequence: idle-adv-rods
 	ConditionPrerequisite@CONTROL_RODS:
 		Queue: queue.advanced_cold_fusion_reactor
 		Actor: upgrade.advanced_control_rods

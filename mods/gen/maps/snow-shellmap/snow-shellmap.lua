@@ -51,6 +51,8 @@ BottomLeftTeams =
 	{ "vehicle.usa_mcc", "vehicle.humvee", "vehicle.humvee" }
 }
 
+FusionReactors = { USAReactor1, USAReactor2 }
+
 BindActorTriggers = function(a)
 	if a.Type == "infantry.terrorist" or a.Type == "vehicle.bomb_truck" then
 		Trigger.OnIdle(a, function(a)
@@ -192,6 +194,10 @@ WorldLoaded = function()
 	SelectUpgrade(CrusaderTank1, DroneUpgrades)
 	SelectUpgrade(SCUDLauncher1, SCUDUpgrades)
 	SelectUpgrade(OverlordTank1, OverlordUpgrades)
+
+	Utils.Do(FusionReactors, function(a)
+		SelectUpgrade(a, { "upgrade.control_rods" } )
+	end)
 
 	SendAttack(usa, BottomLeftTeams, BottomLeftTeamWP, USAStrategyTarget, DateTime.Seconds(50))
 	SendAttack(gla, TopRightTeams, TopRightTeamWP, USAStrategyTarget, DateTime.Seconds(60))

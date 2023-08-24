@@ -50,6 +50,8 @@ OverlordUpgrades = { "upgrade.overlord_gatling", "upgrade.overlord_speaker" }
 
 ParadropWaypoints = { Paradrop1, Paradrop2, Paradrop3, Paradrop4 }
 
+FusionReactors = { USAReactor1, USAReactor2, USAReactor3, USAReactor4, USAReactor5, USAReactor6, USAReactor7, USAReactor8, USAReactor9, USAReactor10 }
+
 BindActorTriggers = function(a)
 	if a.Type == "infantry.terrorist" or a.Type == "vehicle.bomb_truck" then
 		Trigger.OnIdle(a, function(a)
@@ -233,6 +235,9 @@ WorldLoaded = function()
 	SelectUpgrade(ScudLauncher1, SCUDUpgrades)
 	SelectUpgrade(ScudLauncher2, SCUDUpgrades)
 
+	Utils.Do(FusionReactors, function(a)
+		SelectUpgrade(a, { "upgrade.control_rods" } )
+	end)
 
 	GiveMeMines(PRCWarFactory)
 	GiveMeMines(PRCPower5)

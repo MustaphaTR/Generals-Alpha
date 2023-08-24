@@ -101,6 +101,23 @@ building.cold_fusion_reactor:
 	idle:
 	damaged-idle:
 		Start: 1
+	idle-no-rods:
+		Filename: control_rods.shp
+	damaged-idle-no-rods:
+		Filename: control_rods.shp
+		Start: 1
+	idle-rods:
+		Filename: control_rods.shp
+		Start: 2
+	damaged-idle-rods:
+		Filename: control_rods.shp
+		Start: 3
+	idle-adv-rods:
+		Filename: control_rods.shp
+		Start: 4
+	damaged-adv-idle-rods:
+		Filename: control_rods.shp
+		Start: 5
 	make:
 		Filename: powrmake.shp
 		Length: *
