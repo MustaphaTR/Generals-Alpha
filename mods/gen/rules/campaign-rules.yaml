@@ -17,6 +17,10 @@ World:
 	-MapStartingLocations:
 	ObjectivesPanel:
 		PanelName: MISSION_OBJECTIVES
+	LobbySystemActorConditionCheckbox@crates:
+		Locked: true
+		Enabled: false
+		Visible: false
 	MapBuildRadius:
 		AllyBuildRadiusCheckboxLocked: True
 		AllyBuildRadiusCheckboxEnabled: False
@@ -25,9 +29,6 @@ World:
 		BuildRadiusCheckboxEnabled: True
 		BuildRadiusCheckboxVisible: False
 	MapOptions:
-		CratesCheckboxEnabled: False
-		CratesCheckboxLocked: True
-		CratesCheckboxVisible: False
 		ShortGameCheckboxLocked: True
 		ShortGameCheckboxEnabled: False
 		ShortGameCheckboxVisible: False
