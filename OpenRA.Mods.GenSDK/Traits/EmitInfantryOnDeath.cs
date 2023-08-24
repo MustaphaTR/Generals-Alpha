@@ -28,7 +28,7 @@ namespace OpenRA.Mods.Yupgi_alert.Traits
 
 		[Desc("Spawns actors only if the owner player's faction is in this list. " +
 			"Leave empty to allow all factions by default.")]
-		public readonly HashSet<string> Factions = new HashSet<string>();
+		public readonly HashSet<string> Factions = new();
 
 		[Desc("Should an actor spawn after the player has been defeated (e.g. after surrendering)?")]
 		public readonly bool SpawnAfterDefeat = false;

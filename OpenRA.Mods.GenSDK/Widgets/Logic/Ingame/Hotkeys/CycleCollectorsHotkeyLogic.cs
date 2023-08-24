@@ -52,8 +52,7 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic.Ingame
 				.Skip(1)
 				.FirstOrDefault();
 
-			if (next == null)
-				next = collectors.First();
+			next ??= collectors.First();
 
 			selection.Combine(world, new Actor[] { next }, false, true);
 			viewport.Center(selection.Actors);

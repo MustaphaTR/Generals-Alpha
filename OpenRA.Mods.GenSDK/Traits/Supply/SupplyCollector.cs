@@ -21,7 +21,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 {
 	public class SupplyCollectorInfo : TraitInfo
 	{
-		public readonly HashSet<string> SupplyTypes = new HashSet<string> { "supply" };
+		public readonly HashSet<string> SupplyTypes = new() { "supply" };
 
 		public readonly PlayerRelationship DeliveryRelationships = PlayerRelationship.Ally;
 		public readonly PlayerRelationship CollectionRelationships = PlayerRelationship.Ally | PlayerRelationship.Neutral;
@@ -62,7 +62,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 		[Desc("Conditions to grant when collector has more than specified amount of supplies.",
 			"A dictionary of [integer]: [condition].")]
-		public readonly Dictionary<int, string> FullnessConditions = new Dictionary<int, string>();
+		public readonly Dictionary<int, string> FullnessConditions = new();
 
 		[GrantedConditionReference]
 		public IEnumerable<string> LinterFullnessConditions { get { return FullnessConditions.Values; } }
@@ -96,7 +96,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		[Sync]
 		public Actor CollectionBuilding = null;
 
-		readonly Dictionary<int, int> fullnessTokens = new Dictionary<int, int>();
+		readonly Dictionary<int, int> fullnessTokens = new();
 
 		public SupplyCollector(Actor self, SupplyCollectorInfo info)
 		{
@@ -283,7 +283,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 					Trait = a.Trait,
 					Occupancy = self.World.ActorsHavingTrait<SupplyCollector>(c => c.CollectionBuilding == a.Actor && (c.Info.IsAircraft == Info.IsAircraft || !c.CollectionBuilding.Trait<SupplyDock>().Info.AircraftCollectionOffsets.Any())).Count()
 				})
-				.Where(a => a.Occupancy < (Info.IsAircraft ? a.Trait.Info.AircraftCollectionOffsets.Count() : a.Trait.Info.CollectionOffsets.Count()) * Info.CollectionQueueMultiplier)
+				.Where(a => a.Occupancy < (Info.IsAircraft ? a.Trait.Info.AircraftCollectionOffsets.Length : a.Trait.Info.CollectionOffsets.Length) * Info.CollectionQueueMultiplier)
 				.ToDictionary(a => a.Location);
 
 			if (mobile == null)

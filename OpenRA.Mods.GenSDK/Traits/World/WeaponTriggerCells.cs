@@ -42,7 +42,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		readonly World world;
 		public readonly WeaponTriggerCellsInfo Info;
 
-		readonly Dictionary<CPos, TriggerCell> tiles = new Dictionary<CPos, TriggerCell>();
+		readonly Dictionary<CPos, TriggerCell> tiles = new();
 
 		public WeaponTriggerCells(Actor self, WeaponTriggerCellsInfo info)
 		{

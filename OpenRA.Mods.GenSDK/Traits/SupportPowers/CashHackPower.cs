@@ -30,7 +30,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		public readonly int Minimum = 0;
 
 		[Desc("Maximum amount of funds which will be stolen.")]
-		public readonly Dictionary<int, int> Maximums = new Dictionary<int, int>();
+		public readonly Dictionary<int, int> Maximums = new();
 
 		[Desc("Type of support power. Used for targerting along with 'CashHackable' trait on actors.")]
 		public readonly string Type = "Cash-Hack";
@@ -61,7 +61,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 			Game.Sound.PlayToPlayer(SoundType.UI, manager.Self.Owner, Info.SelectTargetSound);
 			Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech",
 				Info.SelectTargetSpeechNotification, self.Owner.Faction.InternalName);
-			self.World.OrderGenerator = new SelectHackTarget(Self.World, order, manager, this);
+			self.World.OrderGenerator = new SelectHackTarget(order, manager, this);
 		}
 
 		public override void Activate(Actor self, Order order, SupportPowerManager manager)
@@ -109,7 +109,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 			readonly SupportPowerManager manager;
 			readonly string order;
 
-			public SelectHackTarget(World world, string order, SupportPowerManager manager, CashHackPower power)
+			public SelectHackTarget(string order, SupportPowerManager manager, CashHackPower power)
 			{
 				// Clear selection if using Left-Click Orders
 				if (Game.Settings.Game.UseClassicMouseStyle)

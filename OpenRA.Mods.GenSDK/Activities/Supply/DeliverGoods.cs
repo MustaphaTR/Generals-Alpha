@@ -14,12 +14,10 @@ using System.Linq;
 using OpenRA.Activities;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Activities;
-using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Mods.GenSDK.Traits;
 using OpenRA.Primitives;
-using OpenRA.Support;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.GenSDK.Activities

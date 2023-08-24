@@ -19,7 +19,6 @@ using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Mods.GenSDK.Traits;
 using OpenRA.Primitives;
-using OpenRA.Support;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.GenSDK.Activities
@@ -64,7 +63,7 @@ namespace OpenRA.Mods.GenSDK.Activities
 			var dockTrait = dock.Trait<SupplyDock>();
 			var centerTrait = center == null || !center.IsInWorld ? null : center.Trait<SupplyCenter>();
 			var offsets = (mobile == null || collectorInfo.IsAircraft) && dockTrait.Info.AircraftCollectionOffsets.Any() ? dockTrait.Info.AircraftCollectionOffsets : dockTrait.Info.CollectionOffsets;
-			var deliveryOffsets = centerTrait != null ? centerTrait.Info.DeliveryOffsets : null;
+			var deliveryOffsets = centerTrait?.Info.DeliveryOffsets;
 			if (mobile != null)
 				cell = self.ClosestCell(offsets.Select(c => dock.Location + c).Where(c => mobile.CanEnterCell(c) && (centerTrait == null || !deliveryOffsets.Select(d => center.Location + d).Contains(c))));
 			else

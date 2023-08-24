@@ -21,7 +21,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 {
 	public class SupplyCenterInfo : TraitInfo
 	{
-		public readonly HashSet<string> SupplyTypes = new HashSet<string> { "supply" };
+		public readonly HashSet<string> SupplyTypes = new() { "supply" };
 
 		[Desc("Store resources in silos. Adds cash directly without storing if set to false.")]
 		public readonly bool UseStorage = true;
@@ -31,7 +31,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 		[FieldLoader.Require]
 		[Desc("Where can the supply collectors can place the supplies.")]
-		public readonly CVec[] DeliveryOffsets = new CVec[] { };
+		public readonly CVec[] DeliveryOffsets = Array.Empty<CVec>();
 
 		[Desc("Collector faces this way before dropping the supplies; if undefined, faces towards the center of the actor.")]
 		public readonly WAngle? Facing = null;
@@ -46,7 +46,6 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 	public class SupplyCenter : ITick, IResourceExchange, INotifyCreated, INotifyOwnerChanged
 	{
-		readonly Actor self;
 		public readonly SupplyCenterInfo Info;
 		PlayerResources playerResources;
 		IResourceValueModifier[] resourceMultipliers;
@@ -56,7 +55,6 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 		public SupplyCenter(Actor self, SupplyCenterInfo info)
 		{
-			this.self = self;
 			Info = info;
 			playerResources = self.Owner.PlayerActor.Trait<PlayerResources>();
 			currentDisplayTick = info.TickRate;

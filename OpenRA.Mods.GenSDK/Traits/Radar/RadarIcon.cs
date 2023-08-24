@@ -19,7 +19,7 @@ namespace OpenRA.Mods.GenSDK.Traits.Radar
 {
 	public class RadarIconInfo : ConditionalTraitInfo
 	{
-		public readonly HashSet<CVec> Locations = new HashSet<CVec>
+		public readonly HashSet<CVec> Locations = new()
 		{
 			new CVec(-1, 0),
 			new CVec(-2, 0),
@@ -52,7 +52,7 @@ namespace OpenRA.Mods.GenSDK.Traits.Radar
 			modifier = self.TraitsImplementing<IRadarColorModifier>().FirstOrDefault();
 		}
 
-		public void PopulateRadarSignatureCells(Actor self, List<(CPos, Color)> destinationBuffer)
+		public void PopulateRadarSignatureCells(Actor self, List<(CPos Cell, Color Color)> destinationBuffer)
 		{
 			var viewer = self.World.RenderPlayer ?? self.World.LocalPlayer;
 			if (IsTraitDisabled || (viewer != null && !Info.ValidRelationships.HasRelationship(self.Owner.RelationshipWith(viewer))))

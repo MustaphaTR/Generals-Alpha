@@ -9,6 +9,7 @@
  */
 #endregion
 
+using System;
 using System.Collections.Generic;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
@@ -21,11 +22,11 @@ namespace OpenRA.Mods.GenSDK.Traits
 	{
 		[FieldLoader.Require]
 		[Desc("Types of mines to place, if multipile is defined, a random one will be selected.")]
-		public readonly HashSet<string> Mines = new HashSet<string>();
+		public readonly HashSet<string> Mines = new();
 
 		[FieldLoader.Require]
 		[Desc("Locations to place the mines, from top-left of the building.")]
-		public readonly CVec[] Locations = { };
+		public readonly CVec[] Locations = Array.Empty<CVec>();
 
 		[Desc("Initial delay to create the mines.")]
 		public readonly int InitialDelay = 1;
@@ -45,7 +46,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		int ticks;
 
 		bool spawned;
-		List<Actor> mines = new List<Actor>();
+		readonly List<Actor> mines = new List<Actor>();
 
 		public LaysMinefield(LaysMinefieldInfo info)
 			: base(info)

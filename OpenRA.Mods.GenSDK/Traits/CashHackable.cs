@@ -18,7 +18,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 	public class CashHackableInfo : TraitInfo
 	{
 		[Desc("Accepted `CashHack` types. Leave empty to accept all types.")]
-		public readonly HashSet<string> ValidTypes = new HashSet<string>() { "Cash-Hack" };
+		public readonly HashSet<string> ValidTypes = new() { "Cash-Hack" };
 
 		public override object Create(ActorInitializer init) { return new CashHackable(this); }
 	}

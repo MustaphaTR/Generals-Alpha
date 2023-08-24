@@ -11,6 +11,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.Lint;
@@ -196,14 +197,14 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 						activePanel = ObserverStatsGenPanel.None;
 					}
 				},
-				createStatsOption(Minimal, ObserverStatsGenPanel.Minimal, minimalPlayerTemplate, () => DisplayStats(MinimalStats, modData)),
-				createStatsOption(Basic, ObserverStatsGenPanel.Basic, basicPlayerTemplate, () => DisplayStats(BasicStats, modData)),
-				createStatsOption(Economy, ObserverStatsGenPanel.Economy, economyPlayerTemplate, () => DisplayStats(EconomyStats, modData)),
-				createStatsOption(Production, ObserverStatsGenPanel.Production, productionPlayerTemplate, () => DisplayStats(ProductionStats, modData)),
-				createStatsOption(SupportPowers, ObserverStatsGenPanel.SupportPowers, supportPowersPlayerTemplate, () => DisplayStats(SupportPowerStats, modData)),
-				createStatsOption(Combat, ObserverStatsGenPanel.Combat, combatPlayerTemplate, () => DisplayStats(CombatStats, modData)),
-				createStatsOption(Army, ObserverStatsGenPanel.Army, armyPlayerTemplate, () => DisplayStats(ArmyStats, modData)),
-				createStatsOption(GPsAndUpgrades, ObserverStatsGenPanel.Upgrades, upgradesPlayerTemplate, () => DisplayStats(UpgradesStats, modData)),
+				createStatsOption(Minimal, ObserverStatsGenPanel.Minimal, minimalPlayerTemplate, () => DisplayStats(MinimalStats)),
+				createStatsOption(Basic, ObserverStatsGenPanel.Basic, basicPlayerTemplate, () => DisplayStats(BasicStats)),
+				createStatsOption(Economy, ObserverStatsGenPanel.Economy, economyPlayerTemplate, () => DisplayStats(EconomyStats)),
+				createStatsOption(Production, ObserverStatsGenPanel.Production, productionPlayerTemplate, () => DisplayStats(ProductionStats)),
+				createStatsOption(SupportPowers, ObserverStatsGenPanel.SupportPowers, supportPowersPlayerTemplate, () => DisplayStats(SupportPowerStats)),
+				createStatsOption(Combat, ObserverStatsGenPanel.Combat, combatPlayerTemplate, () => DisplayStats(CombatStats)),
+				createStatsOption(Army, ObserverStatsGenPanel.Army, armyPlayerTemplate, () => DisplayStats(ArmyStats)),
+				createStatsOption(GPsAndUpgrades, ObserverStatsGenPanel.Upgrades, upgradesPlayerTemplate, () => DisplayStats(UpgradesStats)),
 				createStatsOption(EarningsGraph, ObserverStatsGenPanel.Graph, null, () => IncomeGraph()),
 				createStatsOption(ArmyGraph, ObserverStatsGenPanel.ArmyGraph, null, () => ArmyValueGraph()),
 			};
@@ -286,7 +287,7 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 					(p.PlayerActor.TraitOrDefault<PlayerStatistics>() ?? new PlayerStatistics(p.PlayerActor)).ArmySamples.Select(s => (float)s)));
 		}
 
-		void DisplayStats(Func<Player, ScrollItemWidget> createItem, ModData modData)
+		void DisplayStats(Func<Player, ScrollItemWidget> createItem)
 		{
 			foreach (var team in teams)
 			{
@@ -341,25 +342,25 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 			if (stats == null)
 				return template;
 
-			var destroyedText = new CachedTransform<int, string>(i => "$" + i);
+			var destroyedText = new CachedTransform<int, string>(i => "$" + i.ToString(NumberFormatInfo.CurrentInfo));
 			template.Get<LabelWidget>("ASSETS_DESTROYED").GetText = () => destroyedText.Update(stats.KillsCost);
 
-			var lostText = new CachedTransform<int, string>(i => "$" + i);
+			var lostText = new CachedTransform<int, string>(i => "$" + i.ToString(NumberFormatInfo.CurrentInfo));
 			template.Get<LabelWidget>("ASSETS_LOST").GetText = () => lostText.Update(stats.DeathsCost);
 
-			var unitsKilledText = new CachedTransform<int, string>(i => i.ToString());
+			var unitsKilledText = new CachedTransform<int, string>(i => i.ToString(NumberFormatInfo.CurrentInfo));
 			template.Get<LabelWidget>("UNITS_KILLED").GetText = () => unitsKilledText.Update(stats.UnitsKilled);
 
-			var unitsDeadText = new CachedTransform<int, string>(i => i.ToString());
+			var unitsDeadText = new CachedTransform<int, string>(i => i.ToString(NumberFormatInfo.CurrentInfo));
 			template.Get<LabelWidget>("UNITS_DEAD").GetText = () => unitsDeadText.Update(stats.UnitsDead);
 
-			var buildingsKilledText = new CachedTransform<int, string>(i => i.ToString());
+			var buildingsKilledText = new CachedTransform<int, string>(i => i.ToString(NumberFormatInfo.CurrentInfo));
 			template.Get<LabelWidget>("BUILDINGS_KILLED").GetText = () => buildingsKilledText.Update(stats.BuildingsKilled);
 
-			var buildingsDeadText = new CachedTransform<int, string>(i => i.ToString());
+			var buildingsDeadText = new CachedTransform<int, string>(i => i.ToString(NumberFormatInfo.CurrentInfo));
 			template.Get<LabelWidget>("BUILDINGS_DEAD").GetText = () => buildingsDeadText.Update(stats.BuildingsDead);
 
-			var armyText = new CachedTransform<int, string>(i => "$" + i);
+			var armyText = new CachedTransform<int, string>(i => "$" + i.ToString(NumberFormatInfo.CurrentInfo));
 			template.Get<LabelWidget>("ARMY_VALUE").GetText = () => armyText.Update(stats.ArmyValue);
 
 			var visionText = new CachedTransform<int, string>(i => Vision(i));
@@ -488,11 +489,11 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 			template.Get<LabelWidget>("ASSETS").GetText = () => assetsText.Update(stats.AssetsValue);
 
 			var collectors = template.Get<LabelWidget>("COLLECTORS");
-			collectors.GetText = () => world.ActorsWithTrait<SupplyCollector>().Count(a => a.Actor.Owner == player && !a.Actor.IsDead).ToString();
+			collectors.GetText = () => world.ActorsWithTrait<SupplyCollector>().Count(a => a.Actor.Owner == player && !a.Actor.IsDead).ToString(NumberFormatInfo.CurrentInfo);
 
 			var derricks = template.GetOrNull<LabelWidget>("DERRICKS");
 			if (derricks != null)
-				derricks.GetText = () => world.ActorsHavingTrait<UpdatesDerrickCount>().Count(a => a.Owner == player && !a.IsDead).ToString();
+				derricks.GetText = () => world.ActorsHavingTrait<UpdatesDerrickCount>().Count(a => a.Owner == player && !a.IsDead).ToString(NumberFormatInfo.CurrentInfo);
 
 			return template;
 		}
@@ -526,7 +527,7 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 			}
 
 			var collectors = template.Get<LabelWidget>("COLLECTORS");
-			collectors.GetText = () => world.ActorsWithTrait<SupplyCollector>().Count(a => a.Actor.Owner == player && !a.Actor.IsDead).ToString();
+			collectors.GetText = () => world.ActorsWithTrait<SupplyCollector>().Count(a => a.Actor.Owner == player && !a.Actor.IsDead).ToString(NumberFormatInfo.CurrentInfo);
 
 			return template;
 		}
@@ -563,19 +564,19 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 			if (stats == null)
 				return template;
 
-			var killsText = new CachedTransform<int, string>(i => i.ToString());
+			var killsText = new CachedTransform<int, string>(i => i.ToString(NumberFormatInfo.CurrentInfo));
 			template.Get<LabelWidget>("KILLS").GetText = () => killsText.Update(stats.UnitsKilled + stats.BuildingsKilled);
 
-			var deathsText = new CachedTransform<int, string>(i => i.ToString());
+			var deathsText = new CachedTransform<int, string>(i => i.ToString(NumberFormatInfo.CurrentInfo));
 			template.Get<LabelWidget>("DEATHS").GetText = () => deathsText.Update(stats.UnitsDead + stats.BuildingsDead);
 
-			var destroyedText = new CachedTransform<int, string>(i => "$" + i);
+			var destroyedText = new CachedTransform<int, string>(i => "$" + i.ToString(NumberFormatInfo.CurrentInfo));
 			template.Get<LabelWidget>("ASSETS_DESTROYED").GetText = () => destroyedText.Update(stats.KillsCost);
 
-			var lostText = new CachedTransform<int, string>(i => "$" + i);
+			var lostText = new CachedTransform<int, string>(i => "$" + i.ToString(NumberFormatInfo.CurrentInfo));
 			template.Get<LabelWidget>("ASSETS_LOST").GetText = () => lostText.Update(stats.DeathsCost);
 
-			var experienceText = new CachedTransform<int, string>(i => i.ToString());
+			var experienceText = new CachedTransform<int, string>(i => i.ToString(NumberFormatInfo.CurrentInfo));
 			template.Get<LabelWidget>("EXPERIENCE").GetText = () => experienceText.Update(stats.Experience);
 
 			var actionsText = new CachedTransform<double, string>(d => AverageOrdersPerMinute(d));
@@ -645,12 +646,12 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 
 		string AverageOrdersPerMinute(double orders)
 		{
-			return (world.WorldTick == 0 ? 0 : orders / (world.WorldTick / 1500.0)).ToString("F1");
+			return (world.WorldTick == 0 ? 0 : orders / (world.WorldTick / 1500.0)).ToString("F1", NumberFormatInfo.CurrentInfo);
 		}
 
 		string Vision(int revealedCells)
 		{
-			return Math.Ceiling(revealedCells / (float)world.Map.ProjectedCells.Length * 100).ToString("F0") + "%";
+			return (Math.Ceiling(revealedCells * 100d / world.Map.ProjectedCells.Length) / 100).ToString("P0", NumberFormatInfo.CurrentInfo);
 		}
 
 		static Color GetPowerColor(PowerState state)
