@@ -164,10 +164,6 @@ SendAttack = function(owner, teams, waypoint, target, interval)
 	end)
 end
 
-DeployMe = function(unit)
-	unit.GrantCondition("deployed")
-end
-
 GiveMeMines = function(unit)
 	unit.GrantCondition("land_mines")
 end
@@ -201,15 +197,6 @@ WorldLoaded = function()
 	SendAttack(gla, TopRightTeams, TopRightTeamWP, USAStrategyTarget, DateTime.Seconds(60))
 	SendAttack(gla, TunnelTeams, TunnelTeamWP, USAStrategyTarget, DateTime.Seconds(30))
 	SendAttack(gla, WarFactoryTeams, WarFactoryTeamWP, USASupplyTarget, DateTime.Seconds(80))
-
-	DeployMe(Hacker1)
-	DeployMe(Hacker2)
-	DeployMe(Hacker3)
-	DeployMe(Hacker4)
-	DeployMe(Hacker5)
-	DeployMe(Hacker6)
-	DeployMe(Hacker7)
-	DeployMe(Hacker8)
 
 	GiveMeMines(GatlingCannon1)
 	GiveMeMines(GatlingCannon2)

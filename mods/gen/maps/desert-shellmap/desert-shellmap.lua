@@ -202,10 +202,6 @@ SummonActor = function(actor, owner, location, date_time)
 	end)
 end
 
-DeployMe = function(unit)
-	unit.GrantCondition("deployed")
-end
-
 GiveMeMines = function(unit)
 	unit.GrantCondition("land_mines")
 end
@@ -237,12 +233,6 @@ WorldLoaded = function()
 	SelectUpgrade(ScudLauncher1, SCUDUpgrades)
 	SelectUpgrade(ScudLauncher2, SCUDUpgrades)
 
-	DeployMe(Hacker1)
-	DeployMe(Hacker2)
-	DeployMe(Hacker3)
-	DeployMe(Hacker4)
-	DeployMe(Hacker5)
-	DeployMe(Hacker6)
 
 	GiveMeMines(PRCWarFactory)
 	GiveMeMines(PRCPower5)
