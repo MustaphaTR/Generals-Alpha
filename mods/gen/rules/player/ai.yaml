@@ -1107,7 +1107,7 @@ Player:
 		Passengers: infantry.hacker, infantry.super_hacker
 	LoadCargoBotModule@DefenseAndTransport:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
-		Transports: building.firebase, building.bunker, building,fortified_bunker, building.palace, vehicle.humvee, vehicle.technical, vehicle.ambulance, vehicle.battle_bus, vehicle.troop_crawler, vehicle.assault_troop_crawler, vehicle.listening_outpost, vehicle.attack_outpost, aircraft.assault_helix, vehicle.overlord_tank
+		Transports: building.firebase, building.bunker, building,fortified_bunker, building.palace, vehicle.humvee, vehicle.technical, vehicle.ambulance, vehicle.battle_bus, vehicle.assault_troop_crawler, vehicle.listening_outpost, vehicle.attack_outpost, aircraft.assault_helix, aircraft.helix, vehicle.overlord_tank
 		Passengers: infantry.ranger, infantry.rebel, infantry.red_guard, infantry.minigunner, infantry.conscript, infantry.missile_defender, infantry.rpg_trooper, infantry.tank_hunter, infantry.grenadier, infantry.pathfinder, infantry.flamethrower
 	LoadGarrisonerBotModule:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai

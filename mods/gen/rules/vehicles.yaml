@@ -2128,6 +2128,7 @@ vehicle.troop_crawler:
 	AutoDeployer@AI:
 		RequiresCondition: AImicroManage && loaded
 		DeployChance: 100
+		DeployTrigger: BecomingIdle, Damage
 		DeployTicks: 40
 		UndeployTicks: 5
 
@@ -2168,6 +2169,7 @@ vehicle.assault_troop_crawler:
 	GrantConditionOnDamageState@AI:
 		Condition: ShouldUnload
 		ValidDamageStates: Critical, Heavy
+	-AutoDeployer@AI:
 	AutoDeployer@AI:
 		RequiresCondition: AImicroManage && loaded && ShouldUnload
 		DeployChance: 100
