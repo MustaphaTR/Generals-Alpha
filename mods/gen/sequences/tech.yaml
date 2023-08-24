@@ -78,6 +78,49 @@ tech.hospital:
 	icon:
 		Filename: hospital_icon.png
 
+tech.artillery_platform:
+	Defaults:
+		Filename: bunker.shp
+	idle:
+		Filename: agun.shp
+		Facings: 32
+		UseClassicFacings: True
+		Offset: 0,-20
+	damaged-idle:
+		Filename: agun.shp
+		Start: 64
+		Facings: 32
+		UseClassicFacings: True
+		Offset: 0,-20
+	idle-base:
+		ZOffset: -512
+	damaged-idle-base:
+		Start: 1
+		ZOffset: -512
+	make:
+		Filename: bunker_make.shp
+		Length: *
+	muzzle:
+		Filename: gunfire2.shp
+		Length: *
+	bib:
+		Filename: bib3.tem
+		Length: *
+	bib-Snow:
+		Filename: bib3.sno
+		Length: *
+	bib-SnowRoad:
+		Filename: bib3.sno
+		Length: *
+	bib-Sand:
+		Filename: bib3.des
+		Length: *
+	bib-SandRoad:
+		Filename: bib3.des
+		Length: *
+	icon:
+		Filename: artillery_platform_icon.png
+
 tech.communications_center:
 	Defaults:
 		Filename: dome.shp

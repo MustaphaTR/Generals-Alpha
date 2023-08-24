@@ -9,7 +9,7 @@ tech.oil_derrick:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 630,-300,0, 420,512,0, -420,-512,0, -630,300,0
 	Buildable:
-		BuildPaletteOrder: 3
+		BuildPaletteOrder: 2
 		BuildDuration: 250
 		Description: Gives cash periodically.
 	Tooltip:
@@ -91,6 +91,51 @@ tech.hospital:
 	ProvidesPrerequisite@buildingname:
 		RequiresCondition: !emp && !hacked
 
+tech.artillery_platform:
+	Inherits: ^TechBuilding
+	Inherits@EMP: ^AffectedByEMP
+	Inherits@HACK: ^AffectedByHacking
+	Inherits@REVEAL: ^Reveal360
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		BuildPaletteOrder: 3
+		BuildDuration: 625
+		Description: Fires artillery shell in a long area.
+	Tooltip:
+		Name: Artillery Platform
+	TooltipDescription:
+		Description: Fires artillery shell in a long area.
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 200000
+	Selectable:
+		Bounds: 2048, 2048
+	Turreted:
+		TurnSpeed: 20
+		InitialFacing: 896
+		RealignDelay: -1
+	-WithSpriteBody:
+	WithEmbeddedTurretSpriteBody:
+	WithIdleOverlay@Base:
+		Sequence: idle-base
+		RequiresCondition: !build-incomplete
+	Armament:
+		Weapon: cannon.artillery_platform
+		LocalOffset: 520,0,720
+	AttackTurreted:
+		PauseOnCondition: build-incomplete || emp || hacked
+	WithRangeCircle@ARTY:
+		Range: 8c768
+		Color: DDDD0088
+	Targetable:
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Capture, Disable, Defense
+	WithBuildingBib:
+	ActorStatValues:
+		Damage: 100
+		Stats: Armor, Sight, Cargo, Damage, ReloadDelay, MaxRange
+
 tech.communications_center:
 	Inherits: ^TechBuilding
 	Inherits@EMP: ^AffectedByEMP
@@ -141,7 +186,7 @@ tech.soviet_barracks:
 	Inherits@SABOTAGE: ^CanBeSabotaged
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		BuildPaletteOrder: 2
+		BuildPaletteOrder: 1
 		BuildDuration: 250
 		Description: Produces old Soviet era units.
 	Tooltip:
@@ -249,7 +294,7 @@ tech.power_plant:
 	HitShape:
 		TargetableOffsets: -355,-1024,0
 	Buildable:
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 0
 		BuildDuration: 250
 		Description: Provides power.
 	Tooltip:
@@ -324,7 +369,7 @@ tech.reinforcements_pad:
 			TopLeft: -640, -980
 			BottomRight: 640, 1110
 	Buildable:
-		BuildPaletteOrder: 4
+		BuildPaletteOrder: 5
 		BuildDuration: 375
 		Description: Delivers vehicles every 2 minutes.
 	Tooltip:
@@ -514,7 +559,7 @@ tech.shipyard:
 	Valued:
 		Cost: 1000
 	Buildable:
-		BuildPaletteOrder: 5
+		BuildPaletteOrder: 6
 		BuildDuration: 375
 		Description: Produces ships.
 	Tooltip:

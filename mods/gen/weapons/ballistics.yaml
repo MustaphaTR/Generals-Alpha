@@ -576,6 +576,35 @@ cannon.firebase:
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
 
+cannon.artillery_platform:
+	Inherits: ^Artillery
+	ReloadDelay: 175
+	Range: 8c768
+	MinRange: 1c256
+	Report: turret1.aud
+	Projectile: Bullet
+		Speed: 200
+		Inaccuracy: 0c384
+		ContrailLength: 30
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c256
+		Damage: 10000
+		Versus:
+			infantry.stinger_site: 10
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
+			aircraft.normal.countermeasures: 90
+			aircraft.comanche: 130
+			aircraft.comanche.countermeasures: 110
+			aircraft.chinook: 50
+			building.tough: 80
+			building.internet_center: 70
+		DamageTypes: TriggerProne, ExplosionDeath
+	Warhead@4EffWater: CreateEffect
+		Explosions: large_splash
+
 cannon.cruiser:
 	Inherits: ^Artillery
 	MinRange: 3c768

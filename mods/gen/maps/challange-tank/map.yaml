@@ -1,14 +1,23 @@
-MapFormat: 11
+MapFormat: 12
+
 RequiresMod: gen
+
 Title: Challange - Kwai (WIP)
+
 Author: Mustafa Alperen SEKİ
+
 Tileset: TEMPERAT
-SkyboxImage:
+
 MapSize: 180,120
+
 Bounds: 23,1,156,79
+
 Visibility: Lobby
+
 Categories: Challange
+
 LockPreview: True
+
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
@@ -31,6 +40,7 @@ Players:
 		Faction: tank
 		Color: FF0000
 		Enemies: Creeps, Multi0
+
 Actors:
 	Actor34: supply.dock.30000.6x4
 		Owner: Neutral
@@ -386,9 +396,6 @@ Actors:
 	Actor139: v02
 		Owner: Neutral
 		Location: 163,64
-	Actor140: tech.soviet_barracks
-		Owner: Neutral
-		Location: 160,65
 	Actor141: supply.pile.b
 		Owner: Neutral
 		Location: 166,67
@@ -859,4 +866,9 @@ Actors:
 	FlankEnd2: waypoint
 		Owner: Neutral
 		Location: 34,54
+	Actor271: tech.artillery_platform
+		Owner: Neutral
+		Location: 160,65
+		TurretFacing: 896
+
 Rules: rules.yaml
