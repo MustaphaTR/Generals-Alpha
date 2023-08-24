@@ -926,6 +926,9 @@ vehicle.battlemaster_tank:
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.nationalism, upgrade.nuclear_tanks, upgrade.uranium_shells
+	ActorStatOverride@Inf:
+		Upgrades: upgrade.patriotism
+		RequiresCondition: inf
 	ActorStatOverride@Tank:
 		Upgrades: upgrade.nationalism, upgrade.autoloader, upgrade.nuclear_tanks, upgrade.uranium_shells
 		RequiresCondition: tank
@@ -948,7 +951,7 @@ vehicle.ambulance:
 	Inherits: ^Vehicle
 	Inherits@CARGO: ^CargoPips
 	Inherits@DRONE: ^CanHaveDrones
-	Inherits@PILOT: ^EjectsPilotOnGround
+	# Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@AImicroManagable: ^AImicroManagable
@@ -1090,6 +1093,7 @@ vehicle.sentry_drone:
 	Targetable:
 		TargetTypes: GroundActor, Vehicle, Disguise, DetonateAttack, NoDriverKill
 		RequiresCondition: !parachute
+	-Targetable@DRIVER_KILLED:
 	-Capturable:
 	-CaptureNotification:
 	-Capturable@DRIVER_KILLED:
@@ -4440,7 +4444,7 @@ vehicle.combat_cycle:
 
 vehicle.usa_mcc:
 	Inherits: ^default.mcc
-	Inherits@PILOT: ^EjectsPilotOnGround
+	# Inherits@PILOT: ^EjectsPilotOnGround
 	Buildable:
 		Queue: queue.usa_command_center
 		ReadyAudio: USAMCCCreated

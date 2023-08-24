@@ -20,7 +20,7 @@ Player:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 	BaseBuilderBotModule@rush:
 		RequiresCondition: enable-rush-ai
-		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine, queue.soviet_infantry, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
+		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine, queue.soviet_infantry, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power, queue.boss_gen_generals_power_merged
 		DefenseQueues: # queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged
 		MinimumExcessPower: 3
 		MaximumExcessPower: 8
@@ -134,6 +134,7 @@ Player:
 			strategy.search_and_destroy: 80
 			strategy.hold_the_line: 60
 			generals_power.spy_drone: 1
+			generals_power.carpet_bombing.airforce: 1
 			generals_power.tech_training: 1
 			generals_power.red_training: 1
 			generals_power.minigunner_training: 1
@@ -142,8 +143,6 @@ Player:
 			generals_power.paladin_tank: 1
 			generals_power.stealth_fighter: 1
 			generals_power.pathfinder: 1
-			generals_power.pathfinder.rank1: 1
-			generals_power.carpet_bombing.airforce: 1
 			generals_power.marauder_tank: 1
 			generals_power.scud_launcher: 1
 			generals_power.paradrop1: 1
@@ -172,11 +171,9 @@ Player:
 			generals_power.tank_drop3: 1
 			generals_power.cluster_mines: 1
 			generals_power.carpet_bombing: 1
-			generals_power.carpet_bombing.rank5: 1
 			generals_power.carpet_bombing.nuke: 1
 			generals_power.fuel_air_bomb: 1
 			generals_power.leaflet_drop: 1
-			generals_power.leaflet_drop.rank3: 1
 			generals_power.anthrax_bomb: 1
 			generals_power.emp: 1
 		BuildingDelays:
@@ -375,7 +372,7 @@ Player:
 		Bots: normal
 	BaseBuilderBotModule@normal:
 		RequiresCondition: enable-normal-ai
-		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine, queue.soviet_infantry, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
+		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine, queue.soviet_infantry, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power, queue.boss_gen_generals_power_merged
 		DefenseQueues: # queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged
 		MinimumExcessPower: 3
 		MaximumExcessPower: 10
@@ -501,6 +498,7 @@ Player:
 			strategy.search_and_destroy: 80
 			strategy.hold_the_line: 80
 			generals_power.spy_drone: 1
+			generals_power.carpet_bombing.airforce: 1
 			generals_power.tech_training: 1
 			generals_power.red_training: 1
 			generals_power.minigunner_training: 1
@@ -509,8 +507,6 @@ Player:
 			generals_power.paladin_tank: 1
 			generals_power.stealth_fighter: 1
 			generals_power.pathfinder: 1
-			generals_power.pathfinder.rank1: 1
-			generals_power.carpet_bombing.airforce: 1
 			generals_power.marauder_tank: 1
 			generals_power.scud_launcher: 1
 			generals_power.paradrop1: 1
@@ -539,11 +535,9 @@ Player:
 			generals_power.tank_drop3: 1
 			generals_power.cluster_mines: 1
 			generals_power.carpet_bombing: 1
-			generals_power.carpet_bombing.rank5: 1
 			generals_power.carpet_bombing.nuke: 1
 			generals_power.fuel_air_bomb: 1
 			generals_power.leaflet_drop: 1
-			generals_power.leaflet_drop.rank3: 1
 			generals_power.anthrax_bomb: 1
 			generals_power.emp: 1
 		BuildingDelays:
@@ -742,7 +736,7 @@ Player:
 		Bots: turtle
 	BaseBuilderBotModule@turtle:
 		RequiresCondition: enable-turtle-ai
-		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine, queue.soviet_infantry, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
+		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine, queue.soviet_infantry, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power, queue.boss_gen_generals_power_merged
 		DefenseQueues: # queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged
 		MinimumExcessPower: 3
 		MaximumExcessPower: 13
@@ -868,6 +862,7 @@ Player:
 			strategy.search_and_destroy: 80
 			strategy.hold_the_line: 100
 			generals_power.spy_drone: 1
+			generals_power.carpet_bombing.airforce: 1
 			generals_power.tech_training: 1
 			generals_power.red_training: 1
 			generals_power.minigunner_training: 1
@@ -876,8 +871,6 @@ Player:
 			generals_power.paladin_tank: 1
 			generals_power.stealth_fighter: 1
 			generals_power.pathfinder: 1
-			generals_power.pathfinder.rank1: 1
-			generals_power.carpet_bombing.airforce: 1
 			generals_power.marauder_tank: 1
 			generals_power.scud_launcher: 1
 			generals_power.paradrop1: 1
@@ -906,11 +899,9 @@ Player:
 			generals_power.tank_drop3: 1
 			generals_power.cluster_mines: 1
 			generals_power.carpet_bombing: 1
-			generals_power.carpet_bombing.rank5: 1
 			generals_power.carpet_bombing.nuke: 1
 			generals_power.fuel_air_bomb: 1
 			generals_power.leaflet_drop: 1
-			generals_power.leaflet_drop.rank3: 1
 			generals_power.anthrax_bomb: 1
 			generals_power.emp: 1
 		BuildingDelays:

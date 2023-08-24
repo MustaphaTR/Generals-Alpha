@@ -160,11 +160,20 @@ Player:
 		QueuedAudio:
 		ReadyAudio:
 		DisplayOrder: 0
+	ClassicProductionQueue@Boss_Merged:
+		Type: queue.boss_gen_generals_power_merged
+		Group: General
+		Factions: boss
+		AlwaysShowForFactions: boss
+		InstantCashDrain: true
+		QueuedAudio:
+		ReadyAudio:
+		DisplayOrder: 0
 	Production:
 		Produces: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power
 		RequiresCondition: !merged
 	Production@Merged:
-		Produces: queue.usa_generals_power_merged, queue.gla_generals_power_merged, queue.prc_generals_power_merged, queue.boss_gen_generals_power
+		Produces: queue.usa_generals_power_merged, queue.gla_generals_power_merged, queue.prc_generals_power_merged, queue.boss_gen_generals_power_merged
 		RequiresCondition: merged
 	PlaceBuilding:
 	SupportPowerManager:
@@ -273,6 +282,8 @@ Player:
 		SpawnInterval: 1500
 		InitialSpawnDelay: 0
 		RequiresCondition: crates_enabled && combatant_player && no_bases
+	ExternalCondition@Crates: # Not actually needed, putting it so lint won't complain.
+		Condition: crates_enabled
 	GrantConditionOnPrerequisite@NoBases:
 		Prerequisites: hack.no_bases
 		Condition: no_bases
