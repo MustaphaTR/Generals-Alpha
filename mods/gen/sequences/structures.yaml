@@ -1221,6 +1221,7 @@ building.detention_camp:
 building.supply_drop_zone:
 	Defaults:
 		Filename: hpad.shp
+		ZRamp: 1
 	idle:
 	damaged-idle:
 		Start: 7
@@ -1230,6 +1231,15 @@ building.supply_drop_zone:
 	damaged-active:
 		Start: 8
 		Length: 6
+	smoke:
+		Filename: playersmoke.shp
+		Start: 60
+		Length: 32
+		Tick: 60
+		ZOffset: 1
+		Offset: 12, -20, 0
+		ZRamp: 0
+		Scale: 0.75
 	make:
 		Filename: hpadmake.shp
 		Length: *
