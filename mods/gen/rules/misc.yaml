@@ -221,6 +221,29 @@ SCRATE:
 	Tooltip:
 		Name: Steel Crate
 
+USACRATE:
+	Inherits: ^Crate
+	Inherits@SUPPLY_LINES: ^AffectedBySupplyLines
+	Tooltip:
+		Name: Money Crate
+	Buildable:
+		Queue: DropSupply
+	Mobile:
+		Speed: 1
+		AlwaysTurnInPlace: true
+		Locomotor: locomotor.infantry
+	CashTrickler:
+		Interval: 10
+		InitialDelay: 200
+		Amount: 1500
+		RequiresCondition: !parachute
+	KillsSelf:
+		RemoveInstead: true
+		Delay: 13
+		RequiresCondition: !parachute
+	-Crate:
+	-ActorStatOverride@ZH_UNITS:
+
 crate.scrap:
 	Inherits: ^Crate
 	Tooltip:

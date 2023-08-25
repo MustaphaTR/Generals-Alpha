@@ -3851,10 +3851,6 @@ building.supply_drop_zone:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	# ProductionParadrop:
-	#	Produces: Crate
-	#	ActorType: aircraft.cargo_plane
-	# Exit:
 	Health:
 		HP: 100000
 	Armor:
@@ -3862,28 +3858,31 @@ building.supply_drop_zone:
 	Selectable:
 		Bounds: 2048, 2048
 	WithBuildingBib:
+	WithIdleOverlay@Smoke:
+		Sequence: smoke
+		Palette: player
+		IsDecoration: true
+		IsPlayerPalette: true
 	Power:
 		Amount: -4
 	ProvidesPrerequisite@buildingname:
-	CashTrickler:
-		Interval: 3000
-		InitialDelay: 3000
-		Amount: 1500
+	ProductionParadrop@DropSupply:
+		Produces: DropSupply
+		ActorType: aircraft.cargo_plane
+		ChuteSound: sparadra.wav
+	PeriodicProducer@Allies:
+		Actors: usacrate
+		ChargeDuration: 3000
+		Type: DropSupply
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
 		PauseOnCondition: emp || hacked
-	CashTricklerBar:
-	# ProduceActorPower@SUPPLY_DROP:
-	#	Description: Supply Drop
-	#	LongDesc: A Cargo Plane drops a money crate on the Supply Drop Zone.
-	#	Icon: supply_drop
-	#	Actors: SUPPLYCRATE
-	#	Type: Crate
-	#	ChargeInterval: 120
-	#	OrderName: SupplyDropPowerInfoOrder
-	# SupportPowerChargeBar:
+	Exit:
+	-CashTricklerMultiplier@SUPPLY_LINES:
 	Voiced:
 		VoiceSet: SupplyDropVoice
 	ActorStatValues:
-		Stats: Armor, Sight, Power, None, None, None, CashTrickler
+		Stats: Armor, Sight, Power, None, None, None, PeriodicProducer
 
 building.black_market:
 	Inherits: ^Building
