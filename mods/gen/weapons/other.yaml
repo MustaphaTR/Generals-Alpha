@@ -511,7 +511,7 @@ hack.stinger_site.air:
 
 capture.black_lotus.anim:
 	ReloadDelay: 15
-	Range: 8c128
+	Range: 3c768
 	ValidTargets: Capture
 	TargetActorCenter: true
 	Report: ucapture.aud
@@ -527,7 +527,7 @@ capture.black_lotus.anim:
 
 capture.black_lotus.end:
 	ReloadDelay: 25
-	Range: 8c128
+	Range: 3c768
 	ValidTargets: Capture
 	TargetActorCenter: true
 	Report: ucapture.aud
@@ -583,8 +583,13 @@ disable.black_lotus.end:
 		Condition: hacked
 		ValidTargets: Vehicle, Tank, Ship
 
+disable.super_lotus.anim:
+	Inherits: disable.black_lotus.anim
+	Range: 7c512
+
 disable.super_lotus.end:
 	Inherits: disable.black_lotus.end
+	Range: 7c512
 	Warhead@2Dis: GrantExternalCondition
 		Duration: 500
 
