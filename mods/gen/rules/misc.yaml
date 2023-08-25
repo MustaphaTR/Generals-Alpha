@@ -221,13 +221,14 @@ SCRATE:
 	Tooltip:
 		Name: Steel Crate
 
-USACRATE:
+crate.supply_drop:
 	Inherits: ^Crate
 	Inherits@SUPPLY_LINES: ^AffectedBySupplyLines
 	Tooltip:
 		Name: Money Crate
 	Buildable:
-		Queue: DropSupply
+		Queue: SupplyDrop
+		Icon: idle
 	Mobile:
 		Speed: 1
 		AlwaysTurnInPlace: true

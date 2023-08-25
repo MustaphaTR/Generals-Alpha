@@ -3959,14 +3959,14 @@ building.supply_drop_zone:
 	Power:
 		Amount: -4
 	ProvidesPrerequisite@buildingname:
-	ProductionParadrop@DropSupply:
-		Produces: DropSupply
+	ProductionParadrop@SupplyDrop:
+		Produces: SupplyDrop
 		ActorType: aircraft.cargo_plane
 		ChuteSound: sparadra.wav
-	PeriodicProducer@Allies:
-		Actors: usacrate
+	PeriodicProducer@SupplyDrop:
+		Actors: crate.supply_drop
 		ChargeDuration: 3000
-		Type: DropSupply
+		Type: SupplyDrop
 		ShowSelectionBar: true
 		ChargeColor: FF00FF
 		PauseOnCondition: emp || hacked
