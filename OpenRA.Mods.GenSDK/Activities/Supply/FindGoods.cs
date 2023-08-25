@@ -93,9 +93,9 @@ namespace OpenRA.Mods.GenSDK.Activities
 				}
 			}
 
-			if (!collector.Waiting)
+			if (!collector.WorkingOnSupply)
 			{
-				collector.Waiting = true;
+				collector.WorkingOnSupply = true;
 				QueueChild(new Wait(collectorInfo.CollectionDelay));
 				return false;
 			}
@@ -114,7 +114,7 @@ namespace OpenRA.Mods.GenSDK.Activities
 				}
 			}
 
-			collector.Waiting = false;
+			collector.WorkingOnSupply = false;
 			collector.DeliveryAnimPlayed = false;
 			var cash = Math.Min(collectorInfo.Capacity - collector.Amount, dockTrait.Amount);
 			collector.Amount = cash;

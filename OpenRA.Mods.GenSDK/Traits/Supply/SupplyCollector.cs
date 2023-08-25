@@ -38,6 +38,9 @@ namespace OpenRA.Mods.GenSDK.Traits
 		[Desc("How long (in ticks) does it take to deliver supplies.")]
 		public readonly int DeliveryDelay = 25;
 
+		[Desc("How long (in ticks) to wait if DockCenter is occupied.")]
+		public readonly int WaitDuration = 25;
+
 		[Desc("Automatically scan for trade building when created.")]
 		public readonly bool SearchOnCreation = true;
 
@@ -86,7 +89,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		int ISupplyCollector.Amount() { return Amount; }
 
 		bool idleSmart = true;
-		public bool Waiting = false;
+		public bool WorkingOnSupply = false;
 		public bool DeliveryAnimPlayed = false;
 		public IResourceValueModifier[] ResourceMultipliers;
 
@@ -213,7 +216,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 					CollectionBuilding = targetActor;
 
 				idleSmart = true;
-				Waiting = false;
+				WorkingOnSupply = false;
 				DeliveryAnimPlayed = false;
 
 				var next = new FindGoods(self, Color.Green);
@@ -233,7 +236,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 					DeliveryBuilding = targetActor;
 
 				idleSmart = true;
-				Waiting = false;
+				WorkingOnSupply = false;
 				DeliveryAnimPlayed = false;
 
 				var next = new DeliverGoods(self, Color.Green);
@@ -244,7 +247,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 			{
 				// Turn off idle smarts to obey the stop/move:
 				idleSmart = false;
-				Waiting = false;
+				WorkingOnSupply = false;
 				DeliveryAnimPlayed = false;
 			}
 		}
