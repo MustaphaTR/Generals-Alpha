@@ -516,34 +516,24 @@ capture.black_lotus.anim:
 	InvalidTargets: CashHackable, FakeCashHackable
 	TargetActorCenter: true
 	Report: ucapture.aud
-	Projectile: LaserZap
+	Projectile: ArcLaserZap
 		Width: 60
 		Color: 00FF0070
-		SecondaryBeam: true
-		SecondaryBeamWidth: 90
-		SecondaryBeamColor: FF000035
-	Warhead@1Dam: TargetDamage
+		Duration: 20
+	Warhead@1: FlashTarget
+		UsePlayerColor: true
 		ValidTargets: Capture
-		InvalidTargets: CashHackable, FakeCashHackable
-		ValidRelationships: Enemy, Neutral
 
 capture.black_lotus.end:
-	ReloadDelay: 25
+	ReloadDelay: 200 ## 200 * 0.2 by GatlingReloadDelayMultiplier
 	Range: 3c768
 	ValidTargets: Capture
 	InvalidTargets: CashHackable, FakeCashHackable
 	TargetActorCenter: true
-	Report: ucapture.aud
-	Projectile: LaserZap
+	Projectile: ArcLaserZap
 		Width: 60
 		Color: 00FF0070
-		SecondaryBeam: true
-		SecondaryBeamWidth: 90
-		SecondaryBeamColor: FF000035
-	Warhead@1Dam: TargetDamage
-		ValidTargets: Capture
-		InvalidTargets: CashHackable, FakeCashHackable
-		ValidRelationships: Enemy, Neutral
+		Duration: 20
 	Warhead@2Cap: CaptureActor
 		CaptureTypes: building
 		Experience: 20
@@ -554,17 +544,11 @@ capture.black_lotus.cash_hackable.anim:
 	Inherits: capture.black_lotus.anim
 	ValidTargets: CashHackable, FakeCashHackable
 	-InvalidTargets:
-	Warhead@1Dam: TargetDamage
-		ValidTargets: CashHackable, FakeCashHackable
-		-InvalidTargets:
 
 capture.black_lotus.cash_hackable.end:
 	Inherits: capture.black_lotus.end
 	ValidTargets: CashHackable, FakeCashHackable
 	-InvalidTargets:
-	Warhead@1Dam: TargetDamage
-		ValidTargets: CashHackable, FakeCashHackable
-		-InvalidTargets:
 
 cash_hack.black_lotus.anim:
 	ReloadDelay: 15
@@ -572,31 +556,29 @@ cash_hack.black_lotus.anim:
 	ValidTargets: CashHackable, FakeCashHackable
 	TargetActorCenter: true
 	Report: ucapture.aud
-	Projectile: LaserZap
+	Projectile: ArcLaserZap
 		Width: 60
 		Color: 00FF0070
-		SecondaryBeam: true
-		SecondaryBeamWidth: 90
-		SecondaryBeamColor: FF000035
-	Warhead@1Dam: TargetDamage
+		Duration: 20
+	Warhead@1: FlashTarget
+		FlashColor: 00ff0070
+		UsePlayerColor: false
 		ValidTargets: CashHackable, FakeCashHackable
-		ValidRelationships: Enemy, Neutral
 
 cash_hack.black_lotus.end:
-	ReloadDelay: 25
+	ReloadDelay: 200 ## 200 * 0.2 by GatlingReloadDelayMultiplier
 	Range: 3c768
 	ValidTargets: CashHackable, FakeCashHackable
 	TargetActorCenter: true
 	Report: ucapture.aud
-	Projectile: LaserZap
+	Projectile: ArcLaserZap
 		Width: 60
 		Color: 00FF0070
-		SecondaryBeam: true
-		SecondaryBeamWidth: 90
-		SecondaryBeamColor: FF000035
-	Warhead@1Dam: TargetDamage
+		Duration: 20
+	Warhead@1: FlashTarget
+		FlashColor: 00ff0070
+		UsePlayerColor: false
 		ValidTargets: CashHackable, FakeCashHackable
-		ValidRelationships: Enemy, Neutral
 	Warhead@2Cas: CashHack
 		Range: 0c512
 		ValidTargets: CashHackable
@@ -607,36 +589,29 @@ cash_hack.super_lotus.end:
 		Maximum: 1500
 
 disable.black_lotus.anim:
-	ReloadDelay: 15
+	ReloadDelay: 10
 	Range: 3c768
 	ValidTargets: Vehicle, Tank, Ship
 	TargetActorCenter: true
 	Report: ucapture.aud
-	Projectile: LaserZap
+	Projectile: ArcLaserZap
 		Width: 60
 		Color: 00FF0070
-		SecondaryBeam: true
-		SecondaryBeamWidth: 90
-		SecondaryBeamColor: FF000035
-	Warhead@1Dam: TargetDamage
+		Duration: 20
+	Warhead@1: FlashTarget
+		FlashColor: 00ff0070
+		UsePlayerColor: false
 		ValidTargets: Vehicle, Tank, Ship
-		ValidRelationships: Enemy, Neutral
 
 disable.black_lotus.end:
-	ReloadDelay: 25
+	ReloadDelay: 100 ## 100 * 0.2 by GatlingReloadDelayMultiplier
 	Range: 3c768
 	ValidTargets: Vehicle, Tank, Ship
 	TargetActorCenter: true
-	Report: ucapture.aud
-	Projectile: LaserZap
+	Projectile: ArcLaserZap
 		Width: 60
 		Color: 00FF0070
-		SecondaryBeam: true
-		SecondaryBeamWidth: 90
-		SecondaryBeamColor: FF000035
-	Warhead@1Dam: TargetDamage
-		ValidTargets: Vehicle, Tank, Ship
-		ValidRelationships: Enemy, Neutral
+		Duration: 20
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c512
 		Duration: 375
@@ -659,31 +634,25 @@ disable.hacker.anim:
 	ValidTargets: Disable
 	TargetActorCenter: true
 	Report: ucapture.aud
-	Projectile: LaserZap
+	Projectile: ArcLaserZap
 		Width: 60
 		Color: 00FF0070
-		SecondaryBeam: true
-		SecondaryBeamWidth: 90
-		SecondaryBeamColor: FF000035
-	Warhead@1Dam: TargetDamage
+		Duration: 20
+	Warhead@1: FlashTarget
+		FlashColor: 00ff0070
+		UsePlayerColor: false
 		ValidTargets: Disable
-		ValidRelationships: Enemy, Neutral
 
 disable.hacker.end:
-	ReloadDelay: 25
+	ReloadDelay: 15
 	Range: 3c768
 	ValidTargets: Disable
 	TargetActorCenter: true
 	Report: ucapture.aud
-	Projectile: LaserZap
+	Projectile: ArcLaserZap
 		Width: 60
 		Color: 00FF0070
-		SecondaryBeam: true
-		SecondaryBeamWidth: 90
-		SecondaryBeamColor: FF000035
-	Warhead@1Dam: TargetDamage
-		ValidTargets: Disable
-		ValidRelationships: Enemy, Neutral
+		Duration: 20
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c512
 		Duration: 50
