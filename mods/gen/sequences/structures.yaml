@@ -157,6 +157,12 @@ building.nuclear_reactor:
 		Start: 4
 		Length: 4
 		Tick: 1000
+	idle-overcharge:
+		Filename: nuclear_reactor_overcharge.shp
+		Frames: 0, 1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1
+		Length: *
+		Offset: 18,18
+		Scale: 0.6
 	dead:
 		Start: 8
 		Tick: 800
@@ -192,6 +198,12 @@ building.advanced_nuclear_reactor:
 		Start: 4
 		Length: 4
 		Tick: 1000
+	idle-overcharge:
+		Filename: nuclear_reactor_overcharge.shp
+		Frames: 0, 1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1
+		Length: *
+		Offset: -22,18
+		Scale: 0.6
 	dead:
 		Start: 8
 		Tick: 800

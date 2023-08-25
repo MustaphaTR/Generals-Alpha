@@ -1070,6 +1070,10 @@ building.nuclear_reactor:
 	Power@overcharged:
 		Amount: 15
 		RequiresCondition: overcharge && !emp && !hacked && !sabotaged
+	WithIdleOverlay@overcharge:
+		Sequence: idle-overcharge
+		Palette: player
+		RequiresCondition: overcharge
 	ChangesHealth@overcharge:
 		Step: -4500 # there seems to be a calulation error with PercentageStep, -3 gives -4495 damage.
 		Delay: 25
