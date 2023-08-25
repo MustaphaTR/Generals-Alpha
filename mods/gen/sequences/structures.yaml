@@ -1,12 +1,12 @@
 building.usa_command_center:
 	Defaults:
 		Filename: usa_command_center.shp
+	idle:
+		Length: 4
+		Tick: 100
 	build:
 		Start: 4
 		Length: 20
-		Tick: 100
-	idle:
-		Length: 4
 		Tick: 100
 	damaged-idle:
 		Start: 24
@@ -16,6 +16,17 @@ building.usa_command_center:
 		Start: 28
 		Length: 20
 		Tick: 100
+	idle-usa:
+		Filename: usa_command_center_symbols.shp
+	idle-air:
+		Filename: usa_command_center_symbols.shp
+		Start: 1
+	idle-laser:
+		Filename: usa_command_center_symbols.shp
+		Start: 2
+	idle-super:
+		Filename: usa_command_center_symbols.shp
+		Start: 3
 	dead:
 		Start: 48
 		Tick: 800
@@ -45,9 +56,6 @@ building.gla_command_center:
 	Defaults:
 		Filename: fact.shp
 	idle:
-	make:
-		Filename: factmake.shp
-		Length: *
 	build:
 		Start: 1
 		Length: 25
@@ -56,9 +64,23 @@ building.gla_command_center:
 	damaged-build:
 		Start: 27
 		Length: 25
+	idle-gla:
+		Filename: gla_prc_command_center_symbols.shp
+	idle-toxin:
+		Filename: gla_prc_command_center_symbols.shp
+		Start: 1
+	idle-demo:
+		Filename: gla_prc_command_center_symbols.shp
+		Start: 2
+	idle-stealth:
+		Filename: gla_prc_command_center_symbols.shp
+		Start: 3
 	dead:
 		Filename: factdead.shp
 		Tick: 800
+	make:
+		Filename: factmake.shp
+		Length: *
 	bib:
 		Filename: bib2.tem
 		Length: *
@@ -92,6 +114,21 @@ building.prc_command_center:
 		Filename: prc_radar.shp
 		Start: 16
 		Offset: 19, -20
+	idle-prc:
+		Filename: gla_prc_command_center_symbols.shp
+		Start: 4
+	idle-inf:
+		Filename: gla_prc_command_center_symbols.shp
+		Start: 5
+	idle-nuke:
+		Filename: gla_prc_command_center_symbols.shp
+		Start: 6
+	idle-tank:
+		Filename: gla_prc_command_center_symbols.shp
+		Start: 7
+	idle-boss:
+		Filename: gla_prc_command_center_symbols.shp
+		Start: 8
 	icon:
 		Filename: prc_command_center_icon.png
 

@@ -275,6 +275,34 @@ building.usa_command_center:
 	WithTextDecoration@SIDE:
 		Text: USA
 		Color: 0000FF
+	WithIdleOverlay@USA:
+		Sequence: idle-usa
+		Palette: player
+		RequiresCondition: !air && !laser && !super
+	WithIdleOverlay@Air:
+		Sequence: idle-air
+		Palette: player
+		IsPlayerPalette: true
+		RequiresCondition: air
+	WithIdleOverlay@Laser:
+		Sequence: idle-laser
+		Palette: player
+		IsPlayerPalette: true
+		RequiresCondition: laser
+	WithIdleOverlay@Super:
+		Sequence: idle-super
+		Palette: player
+		IsPlayerPalette: true
+		RequiresCondition: super
+	GrantConditionOnFaction@Air:
+		Condition: air
+		Factions: air
+	GrantConditionOnFaction@Laser:
+		Condition: laser
+		Factions: laser
+	GrantConditionOnFaction@Super:
+		Condition: super
+		Factions: super
 	ProvidesRadar:
 		RequiresCondition: !emp && !hacked && !lowpower && !sabotaged
 	RenderSprites:
@@ -461,6 +489,34 @@ building.gla_command_center:
 	WithTextDecoration@SIDE:
 		Text: GLA
 		Color: 00FF00
+	WithIdleOverlay@GLA:
+		Sequence: idle-gla
+		Palette: player
+		RequiresCondition: !toxin && !demo && !stealth
+	WithIdleOverlay@Toxin:
+		Sequence: idle-toxin
+		Palette: player
+		IsPlayerPalette: true
+		RequiresCondition: toxin
+	WithIdleOverlay@Demo:
+		Sequence: idle-demo
+		Palette: player
+		IsPlayerPalette: true
+		RequiresCondition: demo
+	WithIdleOverlay@Stealth:
+		Sequence: idle-stealth
+		Palette: player
+		IsPlayerPalette: true
+		RequiresCondition: stealth
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
+	GrantConditionOnFaction@Demo:
+		Condition: demo
+		Factions: demo
+	GrantConditionOnFaction@Stealth:
+		Condition: stealth
+		Factions: stealth
 	SpawnActorOnDeath:
 		Actor: hole.command_center
 		SpawnAfterDefeat: false
@@ -835,13 +891,46 @@ building.prc_command_center:
 	WithTextDecoration@SIDE:
 		Text: PRC
 		Color: FF0000
+	WithIdleOverlay@PRC:
+		Sequence: idle-prc
+		Palette: player
+		RequiresCondition: !inf && !nuke && !tank && !boss
+	WithIdleOverlay@Inf:
+		Sequence: idle-inf
+		Palette: player
+		IsPlayerPalette: true
+		RequiresCondition: inf
+	WithIdleOverlay@Nuke:
+		Sequence: idle-nuke
+		Palette: player
+		IsPlayerPalette: true
+		RequiresCondition: nuke
+	WithIdleOverlay@Tank:
+		Sequence: idle-tank
+		Palette: player
+		IsPlayerPalette: true
+		RequiresCondition: tank
+	WithIdleOverlay@Boss:
+		Sequence: idle-boss
+		Palette: player
+		IsPlayerPalette: true
+		RequiresCondition: boss
+	GrantConditionOnFaction@Inf:
+		Condition: inf
+		Factions: inf
+	GrantConditionOnFaction@Nuke:
+		Condition: nuke
+		Factions: nuke
+	GrantConditionOnFaction@Tank:
+		Condition: tank
+		Factions: tank
+	GrantConditionOnFaction@Boss:
+		Condition: boss
+		Factions: boss
 	HitShape:
 		Type: Rectangle
 			TopLeft: -1536, -1536
 			BottomRight: 1536, 1536
-	GrantConditionOnFaction@Boss:
-		Condition: boss
-		Factions: boss
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: building.prc_command_center
 	RenderSprites:
