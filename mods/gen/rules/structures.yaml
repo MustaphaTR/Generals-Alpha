@@ -3951,11 +3951,14 @@ building.supply_drop_zone:
 	Selectable:
 		Bounds: 2048, 2048
 	WithBuildingBib:
+	WithDeliveryAnimation:
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@Smoke:
 		Sequence: smoke
 		Palette: player
 		IsDecoration: true
 		IsPlayerPalette: true
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -4
 	ProvidesPrerequisite@buildingname:
