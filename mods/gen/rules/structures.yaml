@@ -278,22 +278,22 @@ building.usa_command_center:
 	WithIdleOverlay@USA:
 		Sequence: idle-usa
 		Palette: player
-		RequiresCondition: !air && !laser && !super
+		RequiresCondition: !build-incomplete && !air && !laser && !super
 	WithIdleOverlay@Air:
 		Sequence: idle-air
 		Palette: player
 		IsPlayerPalette: true
-		RequiresCondition: air
+		RequiresCondition: !build-incomplete && air
 	WithIdleOverlay@Laser:
 		Sequence: idle-laser
 		Palette: player
 		IsPlayerPalette: true
-		RequiresCondition: laser
+		RequiresCondition: !build-incomplete && laser
 	WithIdleOverlay@Super:
 		Sequence: idle-super
 		Palette: player
 		IsPlayerPalette: true
-		RequiresCondition: super
+		RequiresCondition: !build-incomplete && super
 	GrantConditionOnFaction@Air:
 		Condition: air
 		Factions: air
@@ -492,22 +492,22 @@ building.gla_command_center:
 	WithIdleOverlay@GLA:
 		Sequence: idle-gla
 		Palette: player
-		RequiresCondition: !toxin && !demo && !stealth
+		RequiresCondition: !build-incomplete && !toxin && !demo && !stealth
 	WithIdleOverlay@Toxin:
 		Sequence: idle-toxin
 		Palette: player
 		IsPlayerPalette: true
-		RequiresCondition: toxin
+		RequiresCondition: !build-incomplete && toxin
 	WithIdleOverlay@Demo:
 		Sequence: idle-demo
 		Palette: player
 		IsPlayerPalette: true
-		RequiresCondition: demo
+		RequiresCondition: !build-incomplete && demo
 	WithIdleOverlay@Stealth:
 		Sequence: idle-stealth
 		Palette: player
 		IsPlayerPalette: true
-		RequiresCondition: stealth
+		RequiresCondition: !build-incomplete && stealth
 	GrantConditionOnFaction@Toxin:
 		Condition: toxin
 		Factions: toxin
@@ -894,27 +894,27 @@ building.prc_command_center:
 	WithIdleOverlay@PRC:
 		Sequence: idle-prc
 		Palette: player
-		RequiresCondition: !inf && !nuke && !tank && !boss
+		RequiresCondition: !build-incomplete && !inf && !nuke && !tank && !boss
 	WithIdleOverlay@Inf:
 		Sequence: idle-inf
 		Palette: player
 		IsPlayerPalette: true
-		RequiresCondition: inf
+		RequiresCondition: !build-incomplete && inf
 	WithIdleOverlay@Nuke:
 		Sequence: idle-nuke
 		Palette: player
 		IsPlayerPalette: true
-		RequiresCondition: nuke
+		RequiresCondition: !build-incomplete && nuke
 	WithIdleOverlay@Tank:
 		Sequence: idle-tank
 		Palette: player
 		IsPlayerPalette: true
-		RequiresCondition: tank
+		RequiresCondition: !build-incomplete && tank
 	WithIdleOverlay@Boss:
 		Sequence: idle-boss
 		Palette: player
 		IsPlayerPalette: true
-		RequiresCondition: boss
+		RequiresCondition: !build-incomplete && boss
 	GrantConditionOnFaction@Inf:
 		Condition: inf
 		Factions: inf
