@@ -29,6 +29,7 @@ namespace OpenRA.Mods.GenSDK.Activities
 		readonly IMove move;
 		readonly Mobile mobile;
 		readonly Color? targetLineColor;
+		bool hasWaitInLine;
 
 		public DeliverGoods(Actor self, Color? targetLineColor = null)
 		{
@@ -56,17 +57,45 @@ namespace OpenRA.Mods.GenSDK.Activities
 			}
 
 			var center = collector.DeliveryBuilding;
-
-			CPos cell;
 			var centerTrait = center.Trait<SupplyCenter>();
-			if (mobile != null)
-				cell = self.ClosestCell(centerTrait.Info.DeliveryOffsets.Where(c => mobile.CanEnterCell(center.Location + c)).Select(c => center.Location + c));
-			else
-				cell = self.ClosestCell(centerTrait.Info.DeliveryOffsets.Select(c => center.Location + c));
+			CPos? cell = null;
+			var dist = int.MaxValue;
 
-			if (!centerTrait.Info.DeliveryOffsets.Select(c => center.Location + c).Contains(self.Location))
+			// Find the nearst cell to center
+			foreach (var c in centerTrait.Info.DeliveryOffsets.Select(c => center.Location + c))
 			{
-				QueueChild(move.MoveTo(cell, 2));
+				if (cell == null || (c - self.Location).LengthSquared < dist)
+				{
+					if (c == self.Location || mobile == null || mobile.CanEnterCell(c))
+					{
+						cell = c;
+						dist = (c - self.Location).LengthSquared;
+					}
+				}
+			}
+
+			// Enter the nearst cell
+			if (cell != null && cell != self.Location)
+			{
+				QueueChild(move.MoveTo(cell.Value, 2));
+				return false;
+			}
+
+			// "cell == null" means all dockable cell is occupied, we wait for a moment
+			// then try to get closer
+			if (cell == null)
+			{
+				if (!hasWaitInLine)
+				{
+					hasWaitInLine = true;
+					QueueChild(new Wait(collectorInfo.WaitDuration));
+				}
+				else
+				{
+					hasWaitInLine = false;
+					QueueChild(move.MoveTo(center.Location, 5));
+				}
+
 				return false;
 			}
 
@@ -88,9 +117,9 @@ namespace OpenRA.Mods.GenSDK.Activities
 				}
 			}
 
-			if (!collector.Waiting)
+			if (!collector.WorkingOnSupply)
 			{
-				collector.Waiting = true;
+				collector.WorkingOnSupply = true;
 				QueueChild(new Wait(collectorInfo.DeliveryDelay));
 				return false;
 			}
@@ -129,7 +158,7 @@ namespace OpenRA.Mods.GenSDK.Activities
 				}
 
 				var amountToGive = Util.ApplyPercentageModifiers(amount, collector.ResourceMultipliers.Select(m => m.GetResourceValueModifier()));
-				collector.Waiting = false;
+				collector.WorkingOnSupply = false;
 				collector.DeliveryAnimPlayed = false;
 				centerTrait.GiveResource(amountToGive, self.Info.Name);
 
