@@ -181,8 +181,9 @@ upgrade.booby_traps:
 		Queue: queue.gla_infantry
 		BuildPaletteOrder: 5
 		BuildDuration: 750
-		Prerequisites: ~disabled # ~prerequisite.zh_units
-		Description: Gives Rebels ability to place booby traps on structures.
+		Prerequisites: ~prerequisite.zh_units
+		Description: Gives Rebels ability to place booby traps on friendly or neutral structures which explode when garrisoned or captured.
+		ReadyAudio: BoobyTraps
 	Valued:
 		Cost: 1000
 	WithProductionIconOverlay:

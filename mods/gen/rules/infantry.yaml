@@ -240,9 +240,22 @@ infantry.rebel:
 		Name: Rebel
 	Armament@PRIMARY:
 		Weapon: mg.rebel
+	Armament@PRIMARY_BOOBY_TRAP_DEFAULT:
+		Weapon: mg.rebel.booby_trap
+		RequiresCondition: !booby_traps
+	Armament@PRIMARY_BOOBY_TRAP:
+		Weapon: mg.rebel.booby_trap
+		ForceTargetRelationships: None
+		RequiresCondition: booby_traps
 	Armament@GARRISON:
 		Name: garrison
 		Weapon: mg.rebel.garrison
+	Armament@BOOBY_TRAP:
+		Weapon: attach.rebel
+		Cursor: c4
+		OutsideRangeCursor: c4
+		TargetRelationships: None
+		RequiresCondition: booby_traps
 	Cloak:
 		InitialDelay: 200
 		CloakDelay: 100
@@ -254,6 +267,12 @@ infantry.rebel:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	GrantConditionOnPrerequisite@BOOBY_TRAPS:
+		Condition: booby_traps
+		Prerequisites: upgrade.booby_traps
+	GrantConditionOnFaction@BOOBY_TRAPS:
+		Condition: booby_traps
+		Factions: demo
 	GrantConditionOnPrerequisite@CAMOUFLAGE:
 		Condition: camouflage
 		Prerequisites: upgrade.camouflage

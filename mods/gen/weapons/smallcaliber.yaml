@@ -195,9 +195,19 @@ mg.ranger.garrison:
 
 mg.rebel:
 	Inherits: mg.ranger
+	InvalidTargets: BoobyTrap
 	Report: irebweaa.wav, irebweab.wav, irebweac.wav, irebwead.wav, irebweae.wav, irebweaf.wav, irebweag.wav
 	Warhead@1Dam: SpreadDamage
+		InvalidTargets: BoobyTrap
 		DamageTypes: TriggerProne, DropCrate, BulletDeath
+
+mg.rebel.booby_trap:
+	Inherits: mg.rebel
+	ValidTargets: BoobyTrap
+	-InvalidTargets:
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: BoobyTrap
+		-InvalidTargets:
 
 mg.rebel.garrison:
 	Inherits: mg.ranger.garrison

@@ -16,6 +16,15 @@ attach.demo_jarmen_kell.timed:
 	Warhead@1Att: AttachDelayedWeapon
 		Weapon: explosion.demo_charge.demo_gen
 
+attach.rebel:
+	Inherits: attach.colonel_burton.timed
+	ValidTargets: BoobyTrap
+	Warhead@1Att: AttachDelayedWeapon
+		Weapon: explosion.booby_trap
+		Type: booby_trap
+		TriggerTime: -1
+		ValidTargets: BoobyTrap
+
 attach.tank_hunter:
 	Inherits: attach.colonel_burton.timed
 	ValidTargets: TNTCharge

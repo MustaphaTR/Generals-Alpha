@@ -790,6 +790,24 @@
 		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: timed_demo_bomb
 
+^AcceptsBoobyTrap:
+	DelayedWeaponAttachable@BOOBY_TRAP:
+		Type: booby_trap
+		ShowProgressBar: false
+		Condition: booby_trap
+	TriggersDelayedWeapon@BOOBY_TRAP:
+		Type: booby_trap
+	Targetable@BOOBY_TRAP:
+		TargetTypes: BoobyTrap
+		RequiresCondition: !booby_trap
+	WithDecoration@BOOBY_TRAP:
+		RequiresSelection: false
+		Image: booby_trap
+		Sequence: idle
+		Position: Center
+		ValidRelationships: Ally
+		RequiresCondition: booby_trap
+
 ^AcceptsTNTCharges:
 	DelayedWeaponAttachable@TNT:
 		Type: tnt_charge
@@ -1973,6 +1991,7 @@
 
 ^Building:
 	Inherits: ^BasicBuilding
+	Inherits@BOOBY_TRAP: ^AcceptsBoobyTrap
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
 	Inherits@AImicroManagable: ^AImicroManagable
@@ -1994,24 +2013,27 @@
 	AcceptsDeliveredCash:
 	WithMakeAnimation:
 		Condition: build-incomplete
-	Capturable:
-		Types: building
-		RequiresCondition: !build-incomplete
 	## Tolerated buildable solution for AI
 	GivesBuildableArea:
 		AreaTypes: building
 		RequiresCondition: AImicroManage
+	Capturable:
+		Types: building
+		RequiresCondition: !build-incomplete
 	CapturableProgressBar:
+	CapturableProgressBlink:
+		Sound: ucapture.aud
+	CaptureManager:
+		BeingCapturedCondition: being_captured
+		BeingCapturedNotification: BuildingBeingCaptured
+		BeingCapturedTextNotification: One of our buildings is being captured.
+	TriggersDelayedWeapon@BOOBY_TRAP:
+		RequiresCondition: being_captured
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	Sellable:
 		SellSounds: cashturn.aud
 		RequiresCondition: !build-incomplete
-	CapturableProgressBlink:
-		Sound: ucapture.aud
-	CaptureManager:
-		BeingCapturedNotification: BuildingBeingCaptured
-		BeingCapturedTextNotification: One of our buildings is being captured.
 
 ^FakeBuilding:
 	Inherits: ^Building
@@ -2073,6 +2095,10 @@
 	-Capturable:
 	-CapturableProgressBar:
 	-CapturableProgressBlink:
+	-DelayedWeaponAttachable@BOOBY_TRAP:
+	-TriggersDelayedWeapon@BOOBY_TRAP:
+	-Targetable@BOOBY_TRAP:
+	-WithDecoration@BOOBY_TRAP:
 	DrawLineToTarget:
 	WithRangeCircle:
 		Color: DDDD0088
@@ -2091,6 +2117,10 @@
 	-Capturable:
 	-CapturableProgressBar:
 	-CapturableProgressBlink:
+	-DelayedWeaponAttachable@BOOBY_TRAP:
+	-TriggersDelayedWeapon@BOOBY_TRAP:
+	-Targetable@BOOBY_TRAP:
+	-WithDecoration@BOOBY_TRAP:
 	Explodes:
 		Weapon: SmallBuildingExplode
 		EmptyWeapon: SmallBuildingExplode
@@ -2202,6 +2232,7 @@
 
 ^TechBuilding:
 	Inherits: ^BasicBuilding
+	Inherits@BOOBY_TRAP: ^AcceptsBoobyTrap
 	Huntable:
 	OwnerLostAction:
 		Action: ChangeOwner
@@ -2272,6 +2303,7 @@
 ^GarrisonableBuilding:
 	Inherits: ^CivBuilding
 	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@BOOBY_TRAP: ^AcceptsBoobyTrap
 	Inherits@CIRCLE: ^WithGarrisonRangeCircle
 	Inherits@REVEAL: ^Reveal300
 	Health:
@@ -2297,6 +2329,10 @@
 		OwnerChangedAffectsGarrisoners: false
 		LoadedCondition: loaded
 		RequiresCondition: !damaged
+	TriggersDelayedWeapon@BOOBY_TRAP:
+		RequiresCondition: loaded
+	Targetable@BOOBY_TRAP:
+		RequiresCondition: !booby_trap && !loaded
 	WithGarrisonPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3
