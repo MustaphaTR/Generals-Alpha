@@ -272,6 +272,13 @@
 		Condition: damaged
 		ValidDamageStates: Critical
 
+^MarkedByPatriot:
+	ExternalCondition@MarkedByPatriot:
+		Condition: patriot-mark
+	Targetable@MarkedByPatriot:
+		TargetTypes: PatriotMark
+		RequiresCondition: patriot-mark
+
 ^AffectsDemoTrap:
 	ProximityExternalCondition@SELF_DESTRUCT:
 		Condition: self_destruct
@@ -1417,6 +1424,7 @@
 	Inherits@20: ^AffectedByLeaflet
 	Inherits@21: ^AcceptsTNTCharges
 	Inherits@22: ^AffectedByOilRefinery
+	Inherits@23: ^MarkedByPatriot
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
@@ -1528,6 +1536,7 @@
 	Inherits@7: ^AffectedByGPSScambler
 	Inherits@8: ^TakesBounty
 	Inherits@9: ^AffectedByLeaflet
+	Inherits@23: ^MarkedByPatriot
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@REVEAL: ^Reveal200
 	Huntable:
@@ -1641,6 +1650,7 @@
 	Inherits@12: ^TakesBounty
 	Inherits@13: ^AffectedByLeaflet
 	Inherits@14: ^HealedInTransports
+	Inherits@23: ^MarkedByPatriot
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
@@ -1805,6 +1815,7 @@
 	Inherits@16: ^TakesBounty
 	Inherits@17: ^AffectedByLeaflet
 	Inherits@18: ^AffectedByOilRefinery
+	Inherits@23: ^MarkedByPatriot
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
@@ -1866,6 +1877,7 @@
 	Inherits@6: ^AffectedByHoldTheLine
 	Inherits@7: ^TakesBounty
 	Inherits@8: ^AffectedByOilRefinery
+	Inherits@23: ^MarkedByPatriot
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
@@ -1951,6 +1963,7 @@
 	Inherits@7: ^AcceptsTimedDemoBomb
 	Inherits@8: ^AcceptsTNTCharges
 	Inherits@9: ^TakesBounty
+	Inherits@23: ^MarkedByPatriot
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SHAPE: ^1x1Shape
 	SelectionDecorations:
@@ -2162,6 +2175,7 @@
 ^Wall:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
+	Inherits@23: ^MarkedByPatriot
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SHAPE: ^1x1Shape
 	Interactable:

@@ -49,6 +49,7 @@
 	ValidTargets: AirborneActor
 	Projectile: Missile
 		Speed: 384
+		RangeLimit: 14c0
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: AirborneActor
 	Warhead@3Eff: CreateEffect
@@ -790,6 +791,7 @@ missile.patriot.ground:
 	BurstDelays: 6
 	Range: 5c640
 	Report: bpatweaa.wav, bpatweab.wav, bpatweac.wav
+	TargetActorCenter: true
 	Projectile: Missile
 		Arm: 3
 		Inaccuracy: 0
@@ -821,6 +823,7 @@ missile.patriot.air:
 	BurstDelays: 6
 	Range: 8c768
 	Report: bpatweaa.wav, bpatweab.wav, bpatweac.wav
+	TargetActorCenter: true
 	Projectile: Missile
 		Arm: 3
 		Inaccuracy: 0
@@ -848,6 +851,15 @@ missile.patriot.air:
 		Explosions: med_explosion_air
 		ImpactSounds: kaboom25.aud
 
+missile.patriot.super:
+	Inherits: missile.patriot.ground
+	ValidTargets: PatriotMark
+	Range: 12c0
+	Projectile: Missile
+		RangeLimit: 14c0
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Ground, Water, GroundActor, WaterActor, AirborneActor
+
 missile.emp_patriot.ground:
 	Inherits: missile.patriot.ground
 	Warhead@1Dam: SpreadDamage
@@ -866,6 +878,28 @@ missile.emp_patriot.air:
 		Damage: 1000000
 	Warhead@3Eff: CreateEffect
 		Explosions: emp_small
+
+missile.emp_patriot.super:
+	Inherits: missile.emp_patriot.ground
+	ValidTargets: PatriotMark
+	Range: 12c0
+	Projectile: Missile
+		RangeLimit: 14c0
+	Warhead@2DamAA: SpreadDamage
+		ValidTargets: AirborneActor
+		Versus:
+			infantry.stinger_site: 10
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
+			aircraft.normal.countermeasures: 90
+			aircraft.comanche: 130
+			aircraft.comanche.countermeasures: 110
+			aircraft.chinook: 50
+			building.tough: 80
+			building.internet_center: 70
+		Damage: 1000000
 
 NikeAA:
 	Inherits: ^AntiAirMissile
