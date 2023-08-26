@@ -183,6 +183,8 @@ fake.supply_stash:
 		IntoActor: building.gla_supply_stash
 	Valued:
 		Cost: 375
+	Targetable@CashHack:
+		TargetTypes: FakeCashHackable
 	Voiced:
 		VoiceSet: GLASupplyVoice
 	GrantConditionOnFaction@Stealth:

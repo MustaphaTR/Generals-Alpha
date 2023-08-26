@@ -14,7 +14,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.GenSDK.Traits
 {
-	[Desc("Tag trait for Cash Hack support power.")]
+	[Desc("Tag trait for Cash Hack support power and warhead.")]
 	public class CashHackableInfo : TraitInfo
 	{
 		[Desc("Accepted `CashHack` types. Leave empty to accept all types.")]

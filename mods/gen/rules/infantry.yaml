@@ -2053,7 +2053,7 @@ infantry.black_lotus:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, !prerequisite.enough_black_lotus, !techlevel.notech
-		Description: Can capture enemy structures from a distance.\n\nCan disable enemy vehicles.\n\nCamouflaged.
+		Description: Can capture enemy structures from a distance.\n\nCan steal cash from enemy Supply Centers.\n\nCan disable enemy vehicles.\n\nCamouflaged.
 		ReadyAudio: LotusCreated
 		BuildLimit: 1
 	Buildable@Boss:
@@ -2062,7 +2062,7 @@ infantry.black_lotus:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.missile_silo, !prerequisite.enough_black_lotus, !techlevel.nosw
-		Description: Can capture enemy structures from a distance.\n\nCan disable enemy vehicles.\n\nCamouflaged.
+		Description: Can capture enemy structures from a distance.\n\nCan steal cash from enemy Supply Centers.\n\nCan disable enemy vehicles.\n\nCamouflaged.
 		ReadyAudio: LotusCreated
 		BuildLimit: 1
 	Valued:
@@ -2123,6 +2123,7 @@ infantry.black_lotus:
 		OutsideRangeCursor: ability
 		Weapon: capture.black_lotus.anim
 		TargetRelationships: Enemy, Neutral
+		ForceTargetRelationships: Enemy, Neutral
 		LocalOffset: 0,0,196
 		RequiresCondition: end_capture == 0
 	Armament@CaptureEnd:
@@ -2131,8 +2132,45 @@ infantry.black_lotus:
 		OutsideRangeCursor: ability
 		Weapon: capture.black_lotus.end
 		TargetRelationships: Enemy, Neutral
+		ForceTargetRelationships: Enemy, Neutral
 		LocalOffset: 0,0,196
 		RequiresCondition: end_capture == 1
+	Armament@CaptureCashHackableAnim:
+		Name: capture
+		Cursor: ability
+		OutsideRangeCursor: ability
+		Weapon: capture.black_lotus.cash_hackable.anim
+		TargetRelationships: Enemy, Neutral
+		ForceTargetRelationships: None
+		LocalOffset: 0,0,196
+		RequiresCondition: end_capture == 0
+	Armament@CaptureCashHackableEnd:
+		Name: capture
+		Cursor: ability
+		OutsideRangeCursor: ability
+		Weapon: capture.black_lotus.cash_hackable.end
+		TargetRelationships: Enemy, Neutral
+		ForceTargetRelationships: None
+		LocalOffset: 0,0,196
+		RequiresCondition: end_capture == 1
+	Armament@CashHackAnim:
+		Name: cash_hack
+		Cursor: sell
+		OutsideRangeCursor: sell
+		Weapon: cash_hack.black_lotus.anim
+		TargetRelationships: None
+		ForceTargetRelationships: Enemy, Neutral
+		LocalOffset: 0,0,196
+		RequiresCondition: end_cash_hack == 0
+	Armament@CashHackEnd:
+		Name: cash_hack
+		Cursor: sell
+		OutsideRangeCursor: sell
+		Weapon: cash_hack.black_lotus.end
+		TargetRelationships: None
+		ForceTargetRelationships: Enemy, Neutral
+		LocalOffset: 0,0,196
+		RequiresCondition: end_cash_hack == 1
 	Armament@DisableAnim:
 		Name: disable
 		Weapon: disable.black_lotus.anim
@@ -2151,6 +2189,14 @@ infantry.black_lotus:
 		RevokeDelay: 20
 		RevokeAll: true
 		IsCyclic: false
+	GrantConditionOnAttack@EndCashHack:
+		Condition: end_cash_hack
+		ArmamentNames: cash_hack
+		RequiredShotsPerInstance: 15
+		MaximumInstances: 2
+		RevokeDelay: 20
+		RevokeAll: true
+		IsCyclic: false
 	GrantConditionOnAttack@EndDisable:
 		Condition: end_disable
 		ArmamentNames: disable
@@ -2162,6 +2208,11 @@ infantry.black_lotus:
 	AttackFrontal@Capture:
 		Armaments: capture
 		Voice: Capture
+		PauseOnCondition: leaflet
+		FacingTolerance: 0
+	AttackFrontal@CashHack:
+		Armaments: cash_hack
+		Voice: CashHack
 		PauseOnCondition: leaflet
 		FacingTolerance: 0
 	AttackFrontal@Disable:
@@ -2203,5 +2254,7 @@ infantry.super_lotus:
 		Weapon: disable.super_lotus.anim
 	Armament@DisableEnd:
 		Weapon: disable.super_lotus.end
+	Armament@CashHackEnd:
+		Weapon: cash_hack.super_lotus.end
 	GrantConditionOnAttack@EndCapture:
 		RequiredShotsPerInstance: 12

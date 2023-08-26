@@ -1525,6 +1525,8 @@ building.prc_barracks:
 	Power:
 		Amount: -1
 	CashHackable:
+	Targetable@CashHack:
+		TargetTypes: CashHackable
 	InfiltrateForCash:
 		Types: Sabotage
 		Minimum: 0

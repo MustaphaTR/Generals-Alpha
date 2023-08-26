@@ -513,6 +513,7 @@ capture.black_lotus.anim:
 	ReloadDelay: 15
 	Range: 3c768
 	ValidTargets: Capture
+	InvalidTargets: CashHackable, FakeCashHackable
 	TargetActorCenter: true
 	Report: ucapture.aud
 	Projectile: LaserZap
@@ -523,12 +524,14 @@ capture.black_lotus.anim:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Capture
+		InvalidTargets: CashHackable, FakeCashHackable
 		ValidRelationships: Enemy, Neutral
 
 capture.black_lotus.end:
 	ReloadDelay: 25
 	Range: 3c768
 	ValidTargets: Capture
+	InvalidTargets: CashHackable, FakeCashHackable
 	TargetActorCenter: true
 	Report: ucapture.aud
 	Projectile: LaserZap
@@ -539,12 +542,69 @@ capture.black_lotus.end:
 		SecondaryBeamColor: FF000035
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Capture
+		InvalidTargets: CashHackable, FakeCashHackable
 		ValidRelationships: Enemy, Neutral
 	Warhead@2Cap: CaptureActor
 		CaptureTypes: building
 		Experience: 20
 		PlayerExperience: 20
 		ValidTargets: Capture
+
+capture.black_lotus.cash_hackable.anim:
+	Inherits: capture.black_lotus.anim
+	ValidTargets: CashHackable, FakeCashHackable
+	-InvalidTargets:
+	Warhead@1Dam: TargetDamage
+		ValidTargets: CashHackable, FakeCashHackable
+		-InvalidTargets:
+
+capture.black_lotus.cash_hackable.end:
+	Inherits: capture.black_lotus.end
+	ValidTargets: CashHackable, FakeCashHackable
+	-InvalidTargets:
+	Warhead@1Dam: TargetDamage
+		ValidTargets: CashHackable, FakeCashHackable
+		-InvalidTargets:
+
+cash_hack.black_lotus.anim:
+	ReloadDelay: 15
+	Range: 3c768
+	ValidTargets: CashHackable, FakeCashHackable
+	TargetActorCenter: true
+	Report: ucapture.aud
+	Projectile: LaserZap
+		Width: 60
+		Color: 00FF0070
+		SecondaryBeam: true
+		SecondaryBeamWidth: 90
+		SecondaryBeamColor: FF000035
+	Warhead@1Dam: TargetDamage
+		ValidTargets: CashHackable, FakeCashHackable
+		ValidRelationships: Enemy, Neutral
+
+cash_hack.black_lotus.end:
+	ReloadDelay: 25
+	Range: 3c768
+	ValidTargets: CashHackable, FakeCashHackable
+	TargetActorCenter: true
+	Report: ucapture.aud
+	Projectile: LaserZap
+		Width: 60
+		Color: 00FF0070
+		SecondaryBeam: true
+		SecondaryBeamWidth: 90
+		SecondaryBeamColor: FF000035
+	Warhead@1Dam: TargetDamage
+		ValidTargets: CashHackable, FakeCashHackable
+		ValidRelationships: Enemy, Neutral
+	Warhead@2Cas: CashHack
+		Range: 0c512
+		ValidTargets: CashHackable
+
+cash_hack.super_lotus.end:
+	Inherits: cash_hack.black_lotus.end
+	Warhead@2Cas: CashHack
+		Maximum: 1500
 
 disable.black_lotus.anim:
 	ReloadDelay: 15
