@@ -70,6 +70,13 @@ laser.laser_turret.air:
 			building.tough: 80
 			building.internet_center: 70
 
+laser.laser_turret.super:
+	Inherits: laser.laser_turret.ground
+	ValidTargets: PatriotMark
+	Range: 12c0
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Ground, Water, GroundActor, WaterActor, AirborneActor
+
 laser.avenger.air:
 	Inherits: ^AntiAirMissile
 	ReloadDelay: 4

@@ -23,6 +23,7 @@
 	Selectable:
 		Bounds: 3072, 3072
 	WithBuildingBib:
+	BaseBuilding:
 	Exit@1:
 		SpawnOffset: 768,768,0
 		ExitCell: 2,3
@@ -1831,6 +1832,51 @@ building.patriot:
 		Weapon: missile.patriot.air
 		LocalOffset: 0,0,320
 		MuzzleSequence: muzzle
+	### Share target
+	GrantConditionOnAttack@share-target:
+		Condition: share-target
+		RevokeDelay: 30
+	ProximityExternalCondition@share-target:
+		RequiresCondition: share-target && !target-shared
+		Condition: target-shared 
+		Range: 5c640
+	Armament@Share:
+		Name: secondary
+		Weapon: hack.patriot_share
+		RequiresCondition: share-target && !target-shared
+		ForceTargetRelationships: Enemy
+	Armament@Super:
+		Weapon: missile.patriot.super
+		LocalOffset: 0,0,320
+		MuzzleSequence: muzzle
+		RequiresCondition: target-shared
+		ForceTargetRelationships: Enemy
+	Armament@SuperTargeting:
+		Name: secondary
+		Weapon: targeting.patriot.super
+		RequiresCondition: target-shared && target-shared
+	AutoTargetPriority@share-target:
+		RequiresCondition: target-shared
+		ValidTargets: PatriotMark
+		Priority: 999
+	ExternalCondition@target-shared:
+		Condition: target-shared
+	WithDecoration@target-shared:
+		Image: pips
+		Sequence: pip-targeting
+		Margin: 2, -3
+		Palette: cnc
+		Position: Top
+		RequiresCondition: target-shared
+		ValidRelationships: Ally, Neutral, Enemy
+	AmmoPool:
+		Ammo: 4
+		Armaments: primary
+		AmmoCondition: has-ammo
+	ReloadAmmoPool:
+		Count: 4
+		ReloadDelay: 50
+	### Share target --end
 	WithRangeCircle:
 		Range: 5c640
 	WithRangeCircle@AA:
@@ -1838,7 +1884,7 @@ building.patriot:
 		Range: 8c768
 		Color: 00DDDD88
 	AttackTurreted:
-		PauseOnCondition: build-incomplete || emp || hacked || lowpower
+		PauseOnCondition: build-incomplete || emp || hacked || lowpower || !has-ammo
 	WithMuzzleOverlay:
 	Power:
 		Amount: -3
@@ -1864,6 +1910,8 @@ building.emp_patriot:
 		Weapon: missile.emp_patriot.ground
 	Armament@AA:
 		Weapon: missile.emp_patriot.air
+	Armament@Super:
+		Weapon: missile.emp_patriot.super
 
 building.patriot.boss:
 	Inherits: building.patriot
@@ -1926,6 +1974,51 @@ building.laser_turret:
 		Weapon: laser.laser_turret.air
 		LocalOffset: 512,0,112
 		MuzzleSequence: muzzle
+	### Share target
+	GrantConditionOnAttack@share-target:
+		Condition: share-target
+		RevokeDelay: 30
+	ProximityExternalCondition@share-target: 
+		RequiresCondition: share-target && !target-shared
+		Condition: target-shared 
+		Range: 5c640
+	Armament@Share:
+		Name: secondary
+		Weapon: hack.patriot_share
+		RequiresCondition: share-target && !target-shared
+		ForceTargetRelationships: Enemy
+	Armament@Super:
+		Weapon: laser.laser_turret.super
+		LocalOffset: 512,0,112
+		MuzzleSequence: muzzle
+		RequiresCondition: target-shared
+		ForceTargetRelationships: Enemy
+	Armament@SuperTargeting:
+		Name: secondary
+		Weapon: targeting.patriot.super
+		RequiresCondition: target-shared && target-shared
+	AutoTargetPriority@share-target:
+		RequiresCondition: target-shared
+		ValidTargets: PatriotMark
+		Priority: 999
+	ExternalCondition@target-shared:
+		Condition: target-shared
+	WithDecoration@target-shared:
+		Image: pips
+		Sequence: pip-targeting
+		Margin: 2, -3
+		Palette: cnc
+		Position: Top
+		RequiresCondition: target-shared
+		ValidRelationships: Ally, Neutral, Enemy
+	AmmoPool:
+		Ammo: 4
+		Armaments: primary
+		AmmoCondition: has-ammo
+	ReloadAmmoPool:
+		Count: 4
+		ReloadDelay: 50
+	### Share target --end
 	WithRangeCircle:
 		Range: 5c640
 	WithRangeCircle@AA:
@@ -1933,7 +2026,7 @@ building.laser_turret:
 		Range: 8c768
 		Color: 00DDDD88
 	AttackTurreted:
-		PauseOnCondition: build-incomplete || emp || hacked || lowpower
+		PauseOnCondition: build-incomplete || emp || hacked || lowpower || !has-ammo
 	WithMuzzleOverlay:
 	Power:
 		Amount: -5
@@ -2272,6 +2365,7 @@ building.firebase:
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
+		OwnerChangedAffectsPassengers: false
 		PauseOnCondition: emp || hacked
 	WithCargoSounds:
 		EnterSounds: ggarenta.wav, ggarentb.wav, ggarentc.wav
@@ -2345,6 +2439,7 @@ building.bunker:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 0
+		OwnerChangedAffectsPassengers: false
 		LoadedCondition: loaded
 		PauseOnCondition: emp || hacked
 	WithCargoSounds:
@@ -2382,6 +2477,7 @@ building.fortified_bunker:
 		Type: building.tough
 	Cargo:
 		MaxWeight: 10
+		OwnerChangedAffectsPassengers: false
 	PeriodicProducer@LAND_MINES: ## Hack, to trigger upgrade for selection UI.
 		Actors: upgrade.land_mines
 		ChargeDuration: 1
@@ -3376,6 +3472,7 @@ building.internet_center:
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
+		OwnerChangedAffectsPassengers: false
 		EjectOnDeathDamage: 50
 		PauseOnCondition: emp || hacked
 	FreePassenger@AI_1:
@@ -3657,6 +3754,7 @@ building.palace:
 		MaxWeight: 5
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
+		OwnerChangedAffectsPassengers: false
 		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 0
 		PauseOnCondition: emp || hacked

@@ -310,6 +310,7 @@ fake.palace:
 	Cargo:
 		Types: fake
 		MaxWeight: 5
+		OwnerChangedAffectsPassengers: false
 	WithBuildingBib:
 	ActorPreviewPlaceBuildingPreview:
 	RenderSprites:
@@ -747,6 +748,7 @@ fake.tunnel_network:
 	Cargo:
 		Types: fake
 		MaxWeight: 10
+		OwnerChangedAffectsPassengers: false
 	-WithSpriteBody:
 	WithTerrainDependantSpriteBody:
 	Voiced:

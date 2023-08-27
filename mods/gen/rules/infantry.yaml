@@ -1207,6 +1207,12 @@ infantry.saboteur:
 		Prerequisites: building.arms_dealer, ~prerequisite.zh_units, !techlevel.vehicleonly
 		Description: Infiltrates enemy structures to disable them for a while.\n\nCan climb cliffs.
 		ReadyAudio: SaboteurCreated
+	ProductionCostMultiplier@AI: ## AI cannot use it well
+		Multiplier: 20
+		Prerequisites: AIDiscount
+	ProductionTimeMultiplier@AI: ## AI cannot use it well
+		Multiplier: 25
+		Prerequisites: AIDiscount
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -1672,6 +1678,7 @@ infantry.hijacker:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@AImicroManagable: ^AImicroManagable
 	GivesExperience:
 		Experience: 50
 	Buildable: # Stat UI doesn't know how to get correct desc, Stealth Gen's one is more generic so define it first.
@@ -1692,6 +1699,12 @@ infantry.hijacker:
 		Prerequisites: building.palace, prerequisite.hijacker, !techlevel.vehicleonly, !techlevel.notech
 		Description: Hijacks enemy vehicles.\n\nCamouflaged while not moving.
 		ReadyAudio: HijackerCreated
+	ProductionCostMultiplier@AI: ## AI cannot use it well
+		Multiplier: 30
+		Prerequisites: AIDiscount
+	ProductionTimeMultiplier@AI: ## AI cannot use it well
+		Multiplier: 40
+		Prerequisites: AIDiscount
 	Valued:
 		Cost: 400
 	ProductionCostMultiplier@Stealth:
@@ -1727,6 +1740,7 @@ infantry.hijacker:
 		StandSequences: stand
 	Crushable:
 		WarnProbability: 95
+		RequiresCondition:  !AImicroManage
 	Cloak:
 		InitialDelay: 250
 		CloakDelay: 120
