@@ -403,10 +403,6 @@ Actors:
 		Owner: USA
 		Location: 101,64
 		TurretFacing: 512
-	Actor246: building.patriot
-		Owner: USA
-		Location: 95,64
-		TurretFacing: 512
 	Actor247: building.patriot
 		Owner: USA
 		Location: 78,59
@@ -844,13 +840,6 @@ Actors:
 	Actor359: t02
 		Owner: Neutral
 		Location: 89,65
-	Actor360: building.patriot
-		Owner: USA
-		Location: 104,52
-	Actor361: building.patriot
-		Owner: USA
-		Location: 104,53
-		TurretFacing: 512
 	Actor362: flag.american
 		Owner: USA
 		Location: 95,52
@@ -1678,6 +1667,24 @@ Actors:
 	USADropZoneTarget: waypoint
 		Owner: Neutral
 		Location: 100,53
+	Actor621: building.patriot
+		Owner: USA
+		TurretFacing: 512
+		Location: 96,64
+	Actor622: building.patriot
+		Owner: USA
+		Location: 105,52
+	Actor623: building.patriot
+		Owner: USA
+		TurretFacing: 512
+		Location: 105,53
+	Actor624: building.patriot
+		Owner: USA
+		Location: 95,50
+	Actor625: building.patriot
+		Owner: USA
+		TurretFacing: 512
+		Location: 95,55
 
 Rules: rules.yaml
 

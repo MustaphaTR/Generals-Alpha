@@ -541,39 +541,39 @@ building.prc_supply_center:
 
 building.patriot:
 	Defaults:
-		Filename: sam2.shp
+		Filename: patriot_missile.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
-		Offset: -2,-2
+		Offset: -1,-2
 	damaged-idle:
 		Start: 34
 		Facings: 32
 		UseClassicFacings: True
-		Offset: -2,-2
+		Offset: -1,-2
 	make:
-		Filename: sammake.shp
+		Filename: patriot_missile_make.shp
 		Length: *
-		Offset: -2,-2
+		Offset: -1,-2
 	muzzle:
 		Filename: samfire.shp
 		Length: 18
 		Facings: 8
-		Offset: -2,6
+		Offset: -1,6
 	bib:
-		Filename: mbSAM.tem
+		Filename: mbGUN.tem
 		Length: *
 	bib-Snow:
-		Filename: mbSAM.sno
+		Filename: mbGUN.sno
 		Length: *
 	bib-SnowRoad:
-		Filename: mbSAM.sno
+		Filename: mbGUN.sno
 		Length: *
 	bib-Sand:
-		Filename: mbSAM.des
+		Filename: mbGUN.des
 		Length: *
 	bib-SandRoad:
-		Filename: mbSAM.des
+		Filename: mbGUN.des
 		Length: *
 	icon:
 		Filename: patriot_icon.png

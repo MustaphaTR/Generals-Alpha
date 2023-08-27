@@ -1788,7 +1788,7 @@ building.patriot:
 	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Inherits@REVEAL: ^Reveal360
-	Inherits@SHAPE: ^2x1Shape
+	Inherits@SHAPE: ^1x1Shape
 	GivesExperience:
 		Experience: 200
 	Buildable:
@@ -1806,14 +1806,14 @@ building.patriot:
 	Tooltip:
 		Name: Patriot Missile System
 	Building:
-		Footprint: xx
-		Dimensions: 2,1
+		Footprint: x
+		Dimensions: 1,1
 	Health:
 		HP: 100000
 	Armor:
 		Type: building.defense
 	Selectable:
-		Bounds: 2048, 1024
+		Bounds: 1024, 1024
 		Class: building.patriot
 	WithBuildingBib:
 		HasMinibib: true
@@ -1875,9 +1875,9 @@ building.patriot.boss:
 	ProductionBar:
 		ProductionType: queue.just_mine
 	LaysMinefield@LAND_MINES:
-		Locations: 0,-1, 1,-1, -1,0, 0,1, 1,1, 2,0
+		Locations: 0,-1, -1,0, 0,1, 1,0
 	LaysMinefield@NEUTRON_MINES:
-		Locations: 0,-1, 1,-1, -1,0, 0,1, 1,1, 2,0
+		Locations: 0,-1, -1,0, 0,1, 1,0
 	RenderSprites:
 		Image: building.patriot
 
