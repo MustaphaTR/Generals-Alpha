@@ -144,7 +144,7 @@ vehicle.humvee:
 		CanMoveBackward: true
 		MaxBackwardCells: 2
 		BackwardDuration: -1
-		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
+		PauseOnCondition: notmobile || hacked || (driver_killed && !loaded) || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Crushable:
@@ -198,10 +198,12 @@ vehicle.humvee:
 		OwnerChangedAffectsPassengers: false
 		LoadingCondition: notmobile
 		LoadedCondition: loaded
-		PauseOnCondition: hacked || driver_killed || emp || leaflet
+		PauseOnCondition: hacked || emp || leaflet
 	WithCargoSounds:
 		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
 		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
+	UnloadOnCondition@No_driver:
+		RequiresCondition: driver_killed
 	AcceptsDeliveredExperience:
 	AttackGarrisoned:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
@@ -299,7 +301,7 @@ vehicle.technical:
 		CanMoveBackward: true
 		MaxBackwardCells: 2
 		BackwardDuration: -1
-		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
+		PauseOnCondition: notmobile || hacked || (driver_killed && !loaded) || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 89
 	Crushable:
@@ -348,10 +350,12 @@ vehicle.technical:
 		OwnerChangedAffectsPassengers: false
 		LoadingCondition: notmobile
 		LoadedCondition: loaded
-		PauseOnCondition: hacked || driver_killed || emp || leaflet
+		PauseOnCondition: hacked || emp || leaflet
 	WithCargoSounds:
 		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
 		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
+	UnloadOnCondition@No_driver:
+		RequiresCondition: driver_killed
 	AcceptsDeliveredExperience:
 	ThrowsShrapnel@Mobile:
 		Weapons: debris.technical.body
@@ -994,7 +998,7 @@ vehicle.ambulance:
 		CanMoveBackward: true
 		MaxBackwardCells: 2
 		BackwardDuration: -1
-		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
+		PauseOnCondition: notmobile || hacked || (driver_killed && !loaded) || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Crushable:
@@ -1017,10 +1021,12 @@ vehicle.ambulance:
 		OwnerChangedAffectsPassengers: false
 		LoadingCondition: notmobile
 		LoadedCondition: loaded
-		PauseOnCondition: hacked || driver_killed || emp || leaflet
+		PauseOnCondition: hacked || emp || leaflet
 	WithCargoSounds:
 		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
 		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
+	UnloadOnCondition@No_driver:
+		RequiresCondition: driver_killed
 	Targetable:
 		TargetTypes: GroundActor, Vehicle, Disguise, DetonateAttack, ImmueToToxin
 	Targetable@DRIVER_KILLED:
@@ -1979,7 +1985,7 @@ vehicle.battle_bus:
 		Speed: 70
 		TurnSpeed: 16
 		Voice: Move
-		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
+		PauseOnCondition: notmobile || hacked || (driver_killed && !loaded) || emp || leaflet
 		RequiresCondition: !husk
 		CanMoveBackward: true
 		MaxBackwardCells: 2
@@ -1999,10 +2005,12 @@ vehicle.battle_bus:
 		OwnerChangedAffectsPassengers: false
 		LoadedCondition: loaded
 		LoadingCondition: notmobile
-		PauseOnCondition: hacked || driver_killed || emp || leaflet
+		PauseOnCondition: hacked || emp || leaflet
 	WithCargoSounds:
 		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
 		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
+	UnloadOnCondition@No_driver:
+		RequiresCondition: driver_killed
 	WithFacingSpriteBody:
 		RequiresCondition: !husk
 	WithFacingSpriteBody@HUSK:
@@ -2098,7 +2106,7 @@ vehicle.troop_crawler:
 		CanMoveBackward: true
 		MaxBackwardCells: 2
 		BackwardDuration: -1
-		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
+		PauseOnCondition: notmobile || hacked || (driver_killed && !loaded) || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
 	Crushable:
@@ -2115,10 +2123,12 @@ vehicle.troop_crawler:
 		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
 		LoadedCondition: loaded
-		PauseOnCondition: hacked || driver_killed || emp || leaflet
+		PauseOnCondition: hacked || emp || leaflet
 	WithCargoSounds:
 		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
 		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
+	UnloadOnCondition@No_driver:
+		RequiresCondition: driver_killed
 	Passenger:
 		Weight: 8
 	AutoDeployer:
@@ -2219,7 +2229,7 @@ vehicle.listening_outpost:
 		CanMoveBackward: true
 		MaxBackwardCells: 2
 		BackwardDuration: -1
-		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
+		PauseOnCondition: notmobile || hacked || (driver_killed && !loaded) || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
 	Crushable:
@@ -2236,10 +2246,12 @@ vehicle.listening_outpost:
 		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
 		LoadedCondition: loaded
-		PauseOnCondition: hacked || driver_killed || emp || leaflet
+		PauseOnCondition: hacked || emp || leaflet
 	WithCargoSounds:
 		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
 		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
+	UnloadOnCondition@No_driver:
+		RequiresCondition: driver_killed
 	Passenger:
 		Weight: 8
 	AttackGarrisoned:
@@ -3442,7 +3454,7 @@ vehicle.overlord_tank:
 		TurnSpeed: 12
 		Voice: Move
 		Locomotor: locomotor.overlord
-		PauseOnCondition: notmobile || hacked || driver_killed || emp || leaflet
+		PauseOnCondition: notmobile || hacked || (driver_killed && !loaded) || emp || leaflet
 	SpeedMultiplier@NUCLEAR_TANKS:
 		Modifier: 150
 	SpeedMultiplier@NUKE_GEN:
@@ -3528,12 +3540,15 @@ vehicle.overlord_tank:
 		MaxWeight: 5
 		EjectOnDeathDamage: 50
 		OwnerChangedAffectsPassengers: false
-		PauseOnCondition: hacked || driver_killed || emp || leaflet
+		PauseOnCondition: hacked || emp || leaflet
 		LoadingCondition: notmobile
+		LoadedCondition: loaded
 		RequiresCondition: bunker_upgrade
 	WithCargoSounds:
 		EnterSounds: ggarenta.wav, ggarentb.wav, ggarentc.wav
 		ExitSounds: ggarexia.wav, ggarexib.wav, ggarexic.wav
+	UnloadOnCondition@No_driver:
+		RequiresCondition: driver_killed
 	WithCargoPipsDecoration:
 		RequiresCondition: bunker_upgrade
 	SelectionDecorations:
