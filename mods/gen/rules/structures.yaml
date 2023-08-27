@@ -1877,7 +1877,7 @@ building.patriot:
 		AmmoCondition: has-ammo
 	ReloadAmmoPool:
 		Count: 4
-		ReloadDelay: 50
+		Delay: 50
 	### Share target --end
 	WithRangeCircle:
 		Range: 5c640
@@ -2019,7 +2019,7 @@ building.laser_turret:
 		AmmoCondition: has-ammo
 	ReloadAmmoPool:
 		Count: 4
-		ReloadDelay: 50
+		Delay: 50
 	### Share target --end
 	WithRangeCircle:
 		Range: 5c640
@@ -4586,8 +4586,8 @@ building.scud_storm:
 	RenderSprites:
 		Image: building.scud_storm
 	ReloadAmmoPool:
-		Delay: 100
 		Count: 4
+		Delay: 100
 	ActorStatValues:
 		Upgrades: upgrade.anthrax_beta
 	ActorStatOverride@ZH_UNITS:
