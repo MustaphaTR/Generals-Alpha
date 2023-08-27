@@ -553,10 +553,10 @@ fake.demo_trap:
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.gla_building
-		BuildPaletteOrder: 14
+		BuildPaletteOrder: 16
 		BuildDuration: 25
 		BuildDurationModifier: 100
-		Prerequisites: ~prerequisite.zh_units, !techlevel.nodefense
+		Prerequisites: building.arms_dealer, ~prerequisite.zh_units, !techlevel.nodefense
 		Description: Looks like a Demo Trap.
 		Icon: fake-icon
 	Tooltip:
@@ -672,7 +672,7 @@ fake.tunnel_network:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		BuildPaletteOrder: 16
+		BuildPaletteOrder: 14
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Queue: queue.gla_building, queue.demo_gen_building, queue.gla_building_merged
@@ -773,6 +773,9 @@ fake.toxin_tunnel_network:
 	Buildable:
 		Queue: queue.toxin_gen_building, queue.gla_building_merged
 		Description: Looks like a Toxin Tunnel Network.
+	BuildPaletteOrderModifier@Merged:
+		Queue: queue.gla_building_merged
+		Modifier: 3 # 17
 	Tooltip:
 		Name: Fake Toxin Tunnel Network
 		GenericName: Toxin Tunnel Network

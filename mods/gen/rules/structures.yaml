@@ -1954,10 +1954,10 @@ building.demo_trap:
 		Experience: 50
 	Buildable:
 		Queue: queue.gla_building
-		BuildPaletteOrder: 2
+		BuildPaletteOrder: 4
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Prerequisites: !techlevel.nodefense
+		Prerequisites: building.arms_dealer, !techlevel.nodefense
 		Description: Stealth trap with explosives.
 	Valued:
 		Cost: 400
@@ -2777,7 +2777,7 @@ building.tunnel_network:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Buildable:
 		Queue: queue.gla_building, queue.demo_gen_building, queue.gla_building_merged
-		BuildPaletteOrder: 4
+		BuildPaletteOrder: 2
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.gla_barracks, !techlevel.nodefense
@@ -2829,6 +2829,9 @@ building.toxin_tunnel_network:
 	Buildable:
 		Queue: queue.toxin_gen_building, queue.gla_building_merged
 		Description: Allows unit movement from one to another quickly.\n\nArmed with a toxin sprayer.\n\nCan damage infantry garrisoned in civilian structures.\n\nComes with 2 RPG Troopers.\n\nLosing your last tunnel network kills units in them.
+	BuildPaletteOrderModifier@Merged:
+		Queue: queue.gla_building_merged
+		Modifier: 3 # 5
 	Tooltip:
 		Name: Toxin Tunnel Network
 	Armament:
