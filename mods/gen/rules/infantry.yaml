@@ -1046,12 +1046,12 @@ infantry.terrorist:
 		Weapon: explosion.terrorist
 		EmptyWeapon: explosion.terrorist
 		DeathTypes: Suicide
-		RequiresCondition: !demo
+		RequiresCondition: !demo && !merged
 	Explodes@Demo:
 		Weapon: explosion.suicide
 		EmptyWeapon: explosion.suicide
 		DeathTypes: Suicide
-		RequiresCondition: demo
+		RequiresCondition: demo || merged
 	AttackFrontal:
 		FacingTolerance: 512
 		PauseOnCondition: leaflet
@@ -1065,6 +1065,9 @@ infantry.terrorist:
 	KillsSelf@Triggered:
 		DamageTypes: Suicide
 		RequiresCondition: triggered
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@Demo:
 		Condition: demo
 		Factions: demo

@@ -1304,8 +1304,12 @@
 
 ^CanHaveCamoNettingStealthGenOnly:
 	Inherits@CAMO: ^CanHaveCamoNetting
+	Production:
+		Produces: queue.camo_netting
+		RequiresCondition: (stealth || merged) && zh_units
 	ProductionQueue@CAMO_NETTING:
-		Factions: stealth
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
+		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		LowPowerModifier: 300
     # Without this other actors in the queue appear unbuildable until something else updates the queue.
     # Not sure why only Camo Netting has this issue, Mines work fine.
