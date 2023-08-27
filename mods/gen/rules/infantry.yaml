@@ -267,6 +267,9 @@ infantry.rebel:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	GrantConditionOnPrerequisite@BOOBY_TRAPS:
 		Condition: booby_traps
 		Prerequisites: upgrade.booby_traps
@@ -294,6 +297,9 @@ infantry.rebel:
 	ActorStatValues:
 		Damage: 15
 		Upgrades: upgrade.capture_building, upgrade.camouflage, upgrade.ap_bullets
+	ActorStatOverride@ZH_UNITS:
+		Upgrades: upgrade.capture_building, upgrade.booby_traps, upgrade.camouflage, upgrade.ap_bullets
+		RequiresCondition: zh_units && !toxin && !demo && !stealth
 	ActorStatOverride@Toxin:
 		Upgrades: upgrade.capture_building, upgrade.ap_bullets
 		RequiresCondition: toxin || stealth
