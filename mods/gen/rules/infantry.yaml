@@ -1210,6 +1210,9 @@ infantry.saboteur:
 	ProductionCostMultiplier@AI: ## AI cannot use it well
 		Multiplier: 20
 		Prerequisites: AIDiscount
+	ProductionTimeMultiplier@AI: ## AI cannot use it well
+		Multiplier: 25
+		Prerequisites: AIDiscount
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -1698,6 +1701,9 @@ infantry.hijacker:
 		ReadyAudio: HijackerCreated
 	ProductionCostMultiplier@AI: ## AI cannot use it well
 		Multiplier: 30
+		Prerequisites: AIDiscount
+	ProductionTimeMultiplier@AI: ## AI cannot use it well
+		Multiplier: 40
 		Prerequisites: AIDiscount
 	Valued:
 		Cost: 400

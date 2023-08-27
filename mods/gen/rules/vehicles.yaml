@@ -3650,6 +3650,9 @@ vehicle.bomb_truck:
 	ProductionCostMultiplier@AI: ## AI cannot use it well
 		Multiplier: 20
 		Prerequisites: AIDiscount
+	ProductionTimeMultiplier@AI: ## AI cannot use it well
+		Multiplier: 40
+		Prerequisites: AIDiscount
 	Valued:
 		Cost: 1200
 	ProductionCostMultiplier@Demo1:
