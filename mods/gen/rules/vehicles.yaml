@@ -4369,6 +4369,7 @@ vehicle.combat_cycle:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@AImicroManagable: ^AImicroManagable
 	Buildable:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
@@ -4403,9 +4404,13 @@ vehicle.combat_cycle:
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	BaseBuilding:
-	GivesBuildableArea:
+	GivesBuildableArea@player:
 		AreaTypes: building
 		OnlyAllowPlacementFromSelf: true
+		RequiresCondition: !AImicroManage
+	GivesBuildableArea@AI: ## Avoid AI building blocked
+		AreaTypes: building
+		RequiresCondition: AImicroManage
 	ProvidesPrerequisite@vehiclename:
 	WithTextDecoration@SIDE:
 		Text:
