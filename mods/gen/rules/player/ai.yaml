@@ -181,7 +181,7 @@ Player:
 		RequiresCondition: enable-rush-ai
 		SquadSize: 32
 		NavalUnitsTypes: vessel.gunboat, vessel.destroyer, vessel.cruiser
-		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, vehicle.bomb_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, infantry.hacker, infantry.super_hacker, infantry.black_lotus
+		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, vehicle.bomb_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, infantry.hacker, infantry.super_hacker, infantry.black_lotus, infantry.hijacker
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		NavalProductionTypes: tech.shipyard
 		IgnoredEnemyTargetTypes: Mine, IgnoredByAI, NoAutoTarget
@@ -221,8 +221,10 @@ Player:
 			infantry.jarmen_kell.demo: 1
 			infantry.black_lotus: 1
 			infantry.worker: 150
+			infantry.hijacker: 1
 			vehicle.supply_truck: 10
 			vehicle.humvee: 50
+			vehicle.ambulance: 1
 			vehicle.technical: 50
 			vehicle.gatling_tank: 50
 			vehicle.troop_crawler: 50
@@ -251,6 +253,7 @@ Player:
 			vehicle.listening_outpost: 1
 			vehicle.attack_outpost: 1
 			vehicle.ecm_tank: 1
+			vehicle.microwave_tank: 1
 			vehicle.nuke_cannon: 1
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
@@ -329,7 +332,9 @@ Player:
 			vehicle.sentry_drone: 2
 			vehicle.listening_outpost: 2
 			vehicle.attack_outpost: 2
+			vehicle.ambulance: 1
 			vehicle.ecm_tank: 1
+			vehicle.microwave_tank: 1
 			vehicle.avenger: 2
 			vehicle.avenger.air: 2
 			vehicle.usa_mcc: 2
@@ -549,7 +554,7 @@ Player:
 		RequiresCondition: enable-normal-ai
 		SquadSize: 18
 		NavalUnitsTypes: vessel.gunboat, vessel.destroyer, vessel.cruiser
-		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, vehicle.bomb_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, infantry.hacker, infantry.super_hacker, infantry.black_lotus
+		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, vehicle.bomb_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, infantry.hacker, infantry.super_hacker, infantry.black_lotus, infantry.hijacker
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		NavalProductionTypes: tech.shipyard
 		IgnoredEnemyTargetTypes: Mine, IgnoredByAI, NoAutoTarget
@@ -589,7 +594,9 @@ Player:
 			infantry.jarmen_kell.demo: 1
 			infantry.black_lotus: 1
 			infantry.worker: 150
+			infantry.hijacker: 1
 			vehicle.supply_truck: 10
+			vehicle.ambulance: 1
 			vehicle.humvee: 35
 			vehicle.technical: 35
 			vehicle.gatling_tank: 35
@@ -619,6 +626,7 @@ Player:
 			vehicle.listening_outpost: 1
 			vehicle.attack_outpost: 1
 			vehicle.ecm_tank: 1
+			vehicle.microwave_tank: 1
 			vehicle.nuke_cannon: 1
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
@@ -698,6 +706,8 @@ Player:
 			vehicle.listening_outpost: 2
 			vehicle.attack_outpost: 2
 			vehicle.ecm_tank: 1
+			vehicle.microwave_tank: 1
+			vehicle.ambulance: 1
 			vehicle.avenger: 2
 			vehicle.avenger.air: 2
 			vehicle.usa_mcc: 2
@@ -917,7 +927,7 @@ Player:
 		RequiresCondition: enable-turtle-ai
 		SquadSize: 10
 		NavalUnitsTypes: vessel.gunboat, vessel.destroyer, vessel.cruiser
-		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, vehicle.bomb_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, infantry.hacker, infantry.super_hacker, infantry.black_lotus
+		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, vehicle.bomb_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, infantry.hacker, infantry.super_hacker, infantry.black_lotus, infantry.hijacker
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		NavalProductionTypes: tech.shipyard
 		IgnoredEnemyTargetTypes: Mine, IgnoredByAI, NoAutoTarget
@@ -957,8 +967,10 @@ Player:
 			infantry.jarmen_kell.demo: 1
 			infantry.black_lotus: 1
 			infantry.worker: 150
+			infantry.hijacker: 1
 			vehicle.supply_truck: 10
 			vehicle.humvee: 25
+			vehicle.ambulance: 1
 			vehicle.technical: 25
 			vehicle.gatling_tank: 25
 			vehicle.troop_crawler: 25
@@ -987,6 +999,7 @@ Player:
 			vehicle.listening_outpost: 1
 			vehicle.attack_outpost: 1
 			vehicle.ecm_tank: 1
+			vehicle.microwave_tank: 1
 			vehicle.nuke_cannon: 1
 			vehicle.usa_mcc: 2
 			vehicle.gla_mcc: 2
@@ -1066,6 +1079,8 @@ Player:
 			vehicle.listening_outpost: 2
 			vehicle.attack_outpost: 2
 			vehicle.ecm_tank: 1
+			vehicle.microwave_tank: 1
+			vehicle.ambulance: 1
 			vehicle.avenger: 2
 			vehicle.avenger.air: 2
 			vehicle.usa_mcc: 2
@@ -1133,7 +1148,7 @@ Player:
 	LoadGarrisonerBotModule:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 		GarrisonerUnit: infantry.ranger, infantry.rebel, infantry.red_guard, infantry.minigunner, infantry.conscript, infantry.missile_defender, infantry.rpg_trooper, infantry.tank_hunter, infantry.grenadier, infantry.pathfinder, infantry.flamethrower
-	SendUnitToAttackBotModule:
+	SendUnitToAttackBotModule@AttackBuilding:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 		ActorTypesAndAttackDesire: 
 			vehicle.bomb_truck: 100
@@ -1141,6 +1156,14 @@ Player:
 		ValidTargets: Structure
 		InvalidTargets: WaterActor
 		AttackDistance: Random
+	SendUnitToAttackBotModule@CaptureVehicle:
+		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		ActorTypesAndAttackDesire: 
+			infantry.hijacker: 100
+		ValidTargets: Vehicle, Tank
+		AttackOrderName: CaptureActor
+		InvalidTargets: WaterActor, Air, AirborneActor, NoDriverKill
+		AttackDistance: Closest
 	SupportPowerBotModule:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 		Decisions:

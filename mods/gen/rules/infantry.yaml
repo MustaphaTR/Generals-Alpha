@@ -1672,6 +1672,7 @@ infantry.hijacker:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@AImicroManagable: ^AImicroManagable
 	GivesExperience:
 		Experience: 50
 	Buildable: # Stat UI doesn't know how to get correct desc, Stealth Gen's one is more generic so define it first.
@@ -1727,6 +1728,7 @@ infantry.hijacker:
 		StandSequences: stand
 	Crushable:
 		WarnProbability: 95
+		RequiresCondition:  !AImicroManage
 	Cloak:
 		InitialDelay: 250
 		CloakDelay: 120
