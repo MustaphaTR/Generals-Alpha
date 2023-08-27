@@ -93,6 +93,7 @@ tech.hospital:
 
 tech.artillery_platform:
 	Inherits: ^TechBuilding
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
 	Inherits@REVEAL: ^Reveal360
