@@ -195,6 +195,7 @@ vehicle.humvee:
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
+		OwnerChangedAffectsPassengers: false
 		LoadingCondition: notmobile
 		LoadedCondition: loaded
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
@@ -344,6 +345,7 @@ vehicle.technical:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 10
+		OwnerChangedAffectsPassengers: false
 		LoadingCondition: notmobile
 		LoadedCondition: loaded
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
@@ -1012,6 +1014,7 @@ vehicle.ambulance:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 10
+		OwnerChangedAffectsPassengers: false
 		LoadingCondition: notmobile
 		LoadedCondition: loaded
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
@@ -1993,6 +1996,7 @@ vehicle.battle_bus:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 50
+		OwnerChangedAffectsPassengers: false
 		LoadedCondition: loaded
 		LoadingCondition: notmobile
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
@@ -2106,6 +2110,7 @@ vehicle.troop_crawler:
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
+		OwnerChangedAffectsPassengers: false
 		InitialUnits: infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard, infantry.red_guard
 		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
@@ -2226,6 +2231,7 @@ vehicle.listening_outpost:
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
+		OwnerChangedAffectsPassengers: false
 		InitialUnits: infantry.tank_hunter, infantry.tank_hunter
 		EjectOnDeathDamage: 10
 		LoadingCondition: notmobile
@@ -3521,6 +3527,7 @@ vehicle.overlord_tank:
 		Types: Infantry, GLAInfantry, Hacker
 		MaxWeight: 5
 		EjectOnDeathDamage: 50
+		OwnerChangedAffectsPassengers: false
 		PauseOnCondition: hacked || driver_killed || emp || leaflet
 		LoadingCondition: notmobile
 		RequiresCondition: bunker_upgrade

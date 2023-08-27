@@ -2365,6 +2365,7 @@ building.firebase:
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
+		OwnerChangedAffectsPassengers: false
 		PauseOnCondition: emp || hacked
 	WithCargoSounds:
 		EnterSounds: ggarenta.wav, ggarentb.wav, ggarentc.wav
@@ -2438,6 +2439,7 @@ building.bunker:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 0
+		OwnerChangedAffectsPassengers: false
 		LoadedCondition: loaded
 		PauseOnCondition: emp || hacked
 	WithCargoSounds:
@@ -2475,6 +2477,7 @@ building.fortified_bunker:
 		Type: building.tough
 	Cargo:
 		MaxWeight: 10
+		OwnerChangedAffectsPassengers: false
 	PeriodicProducer@LAND_MINES: ## Hack, to trigger upgrade for selection UI.
 		Actors: upgrade.land_mines
 		ChargeDuration: 1
@@ -3469,6 +3472,7 @@ building.internet_center:
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
+		OwnerChangedAffectsPassengers: false
 		EjectOnDeathDamage: 50
 		PauseOnCondition: emp || hacked
 	FreePassenger@AI_1:
@@ -3750,6 +3754,7 @@ building.palace:
 		MaxWeight: 5
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
+		OwnerChangedAffectsPassengers: false
 		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 0
 		PauseOnCondition: emp || hacked
