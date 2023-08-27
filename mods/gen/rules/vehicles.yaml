@@ -485,7 +485,7 @@ vehicle.radar_van:
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		CanBeForcedUncloak: true
-		RequiresCondition: !cloak-force-disabled && scrap_create_bonus == 1
+		RequiresCondition: !cloak-force-disabled && !driver_killed && scrap_create_bonus == 1
 	Cloak@CRATE-2:
 		InitialDelay: 50
 		CloakDelay: 50
@@ -493,7 +493,7 @@ vehicle.radar_van:
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		CanBeForcedUncloak: true
-		RequiresCondition: !cloak-force-disabled && scrap_create_bonus == 2
+		RequiresCondition: !cloak-force-disabled && !driver_killed && scrap_create_bonus == 2
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
