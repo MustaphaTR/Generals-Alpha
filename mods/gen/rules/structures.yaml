@@ -1024,9 +1024,11 @@ building.cold_fusion_reactor:
 	Exit:
 	WithIdleOverlay@NO_RODS:
 		Sequence: idle-no-rods
+		Palette: control_rods
 		RequiresCondition: !build-incomplete && !control_rods
 	WithIdleOverlay@CONTROL_RODS:
 		Sequence: idle-rods
+		Palette: control_rods
 		RequiresCondition: !build-incomplete && control_rods
 	Power:
 		Amount: 5
