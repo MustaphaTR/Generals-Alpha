@@ -1107,6 +1107,8 @@ vehicle.sentry_drone:
 	-CaptureNotification:
 	-Capturable@DRIVER_KILLED:
 	-GrantConditionOnInternalOwner@DRIVER_KILLED:
+	Cloak@GPS_SCRAMBLER:
+		RequiresCondition: gps_scrambler
 	Cloak:
 		InitialDelay: 100
 		CloakDelay: 50
