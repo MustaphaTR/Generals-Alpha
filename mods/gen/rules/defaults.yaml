@@ -1504,6 +1504,8 @@
 		Offset: 0,0,200
 		RequiresCondition: parachute
 	HitShape:
+	Cloak@GPS_SCRAMBLER:
+		RequiresCondition: gps_scrambler && !driver_killed
 	SpeedMultiplier@GENERIC:
 		Modifier: 200
 	MapEditorData:

@@ -2249,7 +2249,7 @@ vehicle.listening_outpost:
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		CanBeForcedUncloak: true
-		RequiresCondition: !cloak-force-disabled
+		RequiresCondition: !cloak-force-disabled && !driver_killed 
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
