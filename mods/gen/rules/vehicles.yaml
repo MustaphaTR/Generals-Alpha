@@ -3647,6 +3647,9 @@ vehicle.bomb_truck:
 		Prerequisites: building.palace
 		Description: Suicide vehicle.\n\nCan be armed with toxin or high explosive bombs.\n\nGets speed from Scrap Crates.
 		ReadyAudio: BombTruckCreated
+	ProductionCostMultiplier@AI: ## AI cannot use it well
+		Multiplier: 20
+		Prerequisites: AIDiscount
 	Valued:
 		Cost: 1200
 	ProductionCostMultiplier@Demo1:

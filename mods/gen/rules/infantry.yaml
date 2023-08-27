@@ -1207,6 +1207,9 @@ infantry.saboteur:
 		Prerequisites: building.arms_dealer, ~prerequisite.zh_units, !techlevel.vehicleonly
 		Description: Infiltrates enemy structures to disable them for a while.\n\nCan climb cliffs.
 		ReadyAudio: SaboteurCreated
+	ProductionCostMultiplier@AI: ## AI cannot use it well
+		Multiplier: 20
+		Prerequisites: AIDiscount
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -1693,6 +1696,9 @@ infantry.hijacker:
 		Prerequisites: building.palace, prerequisite.hijacker, !techlevel.vehicleonly, !techlevel.notech
 		Description: Hijacks enemy vehicles.\n\nCamouflaged while not moving.
 		ReadyAudio: HijackerCreated
+	ProductionCostMultiplier@AI: ## AI cannot use it well
+		Multiplier: 30
+		Prerequisites: AIDiscount
 	Valued:
 		Cost: 400
 	ProductionCostMultiplier@Stealth:

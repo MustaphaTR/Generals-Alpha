@@ -1115,6 +1115,10 @@ Player:
 			upgrade.land_mines: 5000
 			upgrade.neutron_mines: 8000
 			upgrade.camo_netting: 6000
+
+	ProvidesPrerequisite@AIDiscount:
+		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		Prerequisite: AIDiscount
 	CaptureManagerBotModule:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
 		CapturingActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner, infantry.conscript
