@@ -75,7 +75,7 @@ vehicle.humvee:
 	Inherits@REVEAL: ^Reveal320
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
-	Inherits@AImicroManagable: ^AImicroManagable
+	Inherits@BotOwner: ^BotOwner
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !tow_missile
 	AutoTargetPriority@ATTACKANYTHING:
@@ -236,11 +236,10 @@ vehicle.humvee:
 		Condition: ShouldUnload
 		ValidDamageStates: Critical, Heavy
 	AutoDeployer@AI:
-		RequiresCondition: AImicroManage && loaded && ShouldUnload
+		RequiresCondition: bot_owner && loaded && ShouldUnload
 		DeployChance: 100
 		DeployTrigger: Periodically
-		DeployTicks: 10
-		UndeployTicks: 10
+		DeployTicks: 20
 
 vehicle.technical:
 	Inherits: ^Vehicle
@@ -253,7 +252,7 @@ vehicle.technical:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@AImicroManagable: ^AImicroManagable
+	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
 		-RequiresCondition:
@@ -392,10 +391,9 @@ vehicle.technical:
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.demolitions, upgrade.ap_bullets, upgrade.junk_repair
 	AutoDeployer@AI:
-		RequiresCondition: AImicroManage && loaded
+		RequiresCondition: bot_owner && loaded
 		DeployChance: 100
-		DeployTicks: 40
-		UndeployTicks: 5
+		DeployTicks: 45
 
 vehicle.technical.demo_reinforce:
 	Inherits: vehicle.technical
@@ -960,7 +958,7 @@ vehicle.ambulance:
 	# Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@AImicroManagable: ^AImicroManagable
+	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
 		-RequiresCondition:
@@ -1042,10 +1040,9 @@ vehicle.ambulance:
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, None, None, None, Cargo
 	AutoDeployer@AI:
-		RequiresCondition: AImicroManage && loaded
+		RequiresCondition: bot_owner && loaded
 		DeployChance: 100
-		DeployTicks: 40
-		UndeployTicks: 5
+		DeployTicks: 45
 
 vehicle.sentry_drone:
 	Inherits: ^Vehicle
@@ -1933,7 +1930,7 @@ vehicle.battle_bus:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@AImicroManagable: ^AImicroManagable
+	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
 		-RequiresCondition:
@@ -2067,18 +2064,17 @@ vehicle.battle_bus:
 		Condition: ShouldUnload
 		ValidDamageStates: Critical, Heavy
 	AutoDeployer@AI:
-		RequiresCondition: AImicroManage && loaded && ShouldUnload
+		RequiresCondition: bot_owner && loaded && ShouldUnload
 		DeployChance: 100
 		DeployTrigger: Periodically
-		DeployTicks: 10
-		UndeployTicks: 10
+		DeployTicks: 20
 
 vehicle.troop_crawler:
 	Inherits: ^Tank
 	Inherits@CARGO: ^CargoPips
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@AImicroManagable: ^AImicroManagable
+	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
 		-RequiresCondition:
@@ -2143,11 +2139,10 @@ vehicle.troop_crawler:
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, None, None, None, Cargo
 	AutoDeployer@AI:
-		RequiresCondition: AImicroManage && loaded
+		RequiresCondition: bot_owner && loaded
 		DeployChance: 100
 		DeployTrigger: BecomingIdle, Damage
-		DeployTicks: 40
-		UndeployTicks: 5
+		DeployTicks: 45
 
 vehicle.assault_troop_crawler:
 	Inherits: vehicle.troop_crawler
@@ -2188,11 +2183,10 @@ vehicle.assault_troop_crawler:
 		ValidDamageStates: Critical, Heavy
 	-AutoDeployer@AI:
 	AutoDeployer@AI:
-		RequiresCondition: AImicroManage && loaded && ShouldUnload
+		RequiresCondition: bot_owner && loaded && ShouldUnload
 		DeployChance: 100
 		DeployTrigger: Periodically
-		DeployTicks: 10
-		UndeployTicks: 10
+		DeployTicks: 20
 
 vehicle.listening_outpost:
 	Inherits: ^Tank
@@ -2200,7 +2194,7 @@ vehicle.listening_outpost:
 	Inherits@CARGO: ^CargoPips
 	Inherits@REVEAL: ^Reveal500
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@AImicroManagable: ^AImicroManagable
+	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
 		-RequiresCondition:
@@ -2295,11 +2289,10 @@ vehicle.listening_outpost:
 		Condition: ShouldUnload
 		ValidDamageStates: Critical, Heavy
 	AutoDeployer@AI:
-		RequiresCondition: AImicroManage && loaded && ShouldUnload
+		RequiresCondition: bot_owner && loaded && ShouldUnload
 		DeployChance: 100
 		DeployTrigger: Periodically
-		DeployTicks: 10
-		UndeployTicks: 10
+		DeployTicks: 20
 
 vehicle.attack_outpost:
 	Inherits: vehicle.listening_outpost
@@ -3890,6 +3883,7 @@ vehicle.nuke_cannon:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@BotOwner: ^BotOwner
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-1:
@@ -4039,6 +4033,12 @@ vehicle.nuke_cannon:
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.neutron_shells
+	AutoDeployer@AI:
+		RequiresCondition: bot_owner && neutron_shells
+		DeployChance: 100
+		DeployTrigger: Periodically
+		DeployTicks: 500
+		UndeployTicks: 500
 
 vehicle.combat_cycle:
 	Inherits: ^Vehicle
@@ -4399,7 +4399,7 @@ vehicle.combat_cycle:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@AImicroManagable: ^AImicroManagable
+	Inherits@BotOwner: ^BotOwner
 	Buildable:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
@@ -4437,10 +4437,10 @@ vehicle.combat_cycle:
 	GivesBuildableArea@player:
 		AreaTypes: building
 		OnlyAllowPlacementFromSelf: true
-		RequiresCondition: !AImicroManage
+		RequiresCondition: !bot_owner
 	GivesBuildableArea@AI: ## Avoid AI building blocked
 		AreaTypes: building
-		RequiresCondition: AImicroManage
+		RequiresCondition: bot_owner
 	ProvidesPrerequisite@vehiclename:
 	WithTextDecoration@SIDE:
 		Text:
@@ -4465,14 +4465,11 @@ vehicle.combat_cycle:
 	WithRangeCircle@DISARM:
 		Range: 4c0
 		Color: CC550066
-	Wanders:
+	Wanders@AI:
 		WanderMoveRadius: 4
 		MinMoveDelay: 1000
 		MaxMoveDelay: 1750
-		RequiresCondition: any-ai
-	GrantConditionOnBotOwner@any:
-		Condition: any-ai
-		Bots: rush, normal, turtle
+		RequiresCondition: bot_owner
 	GrantConditionOnPrerequisite@MERGE_GENERALS:
 		Condition: merged
 		Prerequisites: prerequisite.mergegenerals

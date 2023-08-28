@@ -1444,7 +1444,7 @@ infantry.hacker:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@AImicroManagable: ^AImicroManagable
+	Inherits@BotOwner: ^BotOwner
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-1:
@@ -1499,7 +1499,7 @@ infantry.hacker:
 		Speed: 20
 		Voice: Move
 		PauseOnCondition: deployed
-		RequireForceMoveCondition: !AImicroManage && deployed
+		RequireForceMoveCondition: !bot_owner && deployed
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Passenger:
@@ -1508,7 +1508,7 @@ infantry.hacker:
 		Voice: Move
 		CargoConditions:
 			building.internet_center: in_internet_center
-		RequireForceMoveCondition: !AImicroManage && deployed
+		RequireForceMoveCondition: !bot_owner && deployed
 	SharedPassenger:
 		CustomPipType: yellow
 		Voice: Move
@@ -1525,11 +1525,11 @@ infantry.hacker:
 	Armament@Anim:
 		Weapon: disable.hacker.anim
 		LocalOffset: 0,0,196
-		RequiresCondition: end_disable == 0 && !deployed
+		RequiresCondition: !end_disable && !deployed
 	Armament@End:
 		Weapon: disable.hacker.end
 		LocalOffset: 0,0,196
-		RequiresCondition: end_disable == 1 && !deployed
+		RequiresCondition: end_disable && !deployed
 	GrantConditionOnAttack@End:
 		Condition: end_disable
 		RequiredShotsPerInstance: 13
@@ -1620,7 +1620,7 @@ infantry.hacker:
 	ActorStatValues:
 		Stats: Armor, Sight, Speed
 	AutoDeployer@AI:
-		RequiresCondition: AImicroManage && undeployed
+		RequiresCondition: bot_owner && undeployed
 		DeployChance: 100
 		DeployTrigger: BecomingIdle
 		DeployTicks: 100
@@ -1641,24 +1641,26 @@ infantry.super_hacker:
 		Name: disable
 		Weapon: disable.black_lotus.anim
 		LocalOffset: 0,0,196
-		RequiresCondition: end_vehicle == 0
+		RequiresCondition: !end_vehicle
 	Armament@DisableEnd:
 		Name: disable
 		Weapon: disable.black_lotus.end
 		LocalOffset: 0,0,196
-		RequiresCondition: end_vehicle == 1
+		RequiresCondition: end_vehicle
+		ReloadingCondition: stop-hack
 	GrantConditionOnAttack@EndVehicle:
 		Condition: end_vehicle
 		ArmamentNames: disable
 		RequiredShotsPerInstance: 10
-		MaximumInstances: 2
 		RevokeDelay: 20
 		RevokeAll: true
+		RevokeOnNewTarget: true
 		IsCyclic: false
 	AttackFrontal:
 		Armaments: primary, disable
 		PauseOnCondition: leaflet
 		FacingTolerance: 0
+		RequiresCondition: !stop-hack
 	Cloak:
 		InitialDelay: 0
 		CloakDelay: 125
@@ -1678,7 +1680,7 @@ infantry.hijacker:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@AImicroManagable: ^AImicroManagable
+	Inherits@BotOwner: ^BotOwner
 	GivesExperience:
 		Experience: 50
 	Buildable: # Stat UI doesn't know how to get correct desc, Stealth Gen's one is more generic so define it first.
@@ -1740,7 +1742,7 @@ infantry.hijacker:
 		StandSequences: stand
 	Crushable:
 		WarnProbability: 95
-		RequiresCondition:  !AImicroManage
+		RequiresCondition:  !bot_owner
 	Cloak:
 		InitialDelay: 250
 		CloakDelay: 120
@@ -2166,8 +2168,8 @@ infantry.black_lotus:
 		Weapon: capture.black_lotus.anim
 		TargetRelationships: Enemy, Neutral
 		ForceTargetRelationships: Enemy, Neutral
+		PauseOnCondition: stop-hack1 || stop-hack2 || stop-hack3 || stop-hack4
 		LocalOffset: 0,0,196
-		RequiresCondition: end_capture == 0
 	Armament@CaptureEnd:
 		Name: capture
 		Cursor: ability
@@ -2176,7 +2178,8 @@ infantry.black_lotus:
 		TargetRelationships: Enemy, Neutral
 		ForceTargetRelationships: Enemy, Neutral
 		LocalOffset: 0,0,196
-		RequiresCondition: end_capture == 1
+		ReloadingCondition: stop-hack1
+		PauseOnCondition: !end_hack
 	Armament@CaptureCashHackableAnim:
 		Name: capture
 		Cursor: ability
@@ -2184,8 +2187,8 @@ infantry.black_lotus:
 		Weapon: capture.black_lotus.cash_hackable.anim
 		TargetRelationships: Enemy, Neutral
 		ForceTargetRelationships: None
+		PauseOnCondition: stop-hack1 || stop-hack2 || stop-hack3 || stop-hack4
 		LocalOffset: 0,0,196
-		RequiresCondition: end_capture == 0
 	Armament@CaptureCashHackableEnd:
 		Name: capture
 		Cursor: ability
@@ -2193,8 +2196,9 @@ infantry.black_lotus:
 		Weapon: capture.black_lotus.cash_hackable.end
 		TargetRelationships: Enemy, Neutral
 		ForceTargetRelationships: None
+		ReloadingCondition: stop-hack2
 		LocalOffset: 0,0,196
-		RequiresCondition: end_capture == 1
+		PauseOnCondition: !end_hack
 	Armament@CashHackAnim:
 		Name: cash_hack
 		Cursor: sell
@@ -2202,8 +2206,8 @@ infantry.black_lotus:
 		Weapon: cash_hack.black_lotus.anim
 		TargetRelationships: None
 		ForceTargetRelationships: Enemy, Neutral
+		PauseOnCondition: stop-hack1 || stop-hack2 || stop-hack3 || stop-hack4
 		LocalOffset: 0,0,196
-		RequiresCondition: end_cash_hack == 0
 	Armament@CashHackEnd:
 		Name: cash_hack
 		Cursor: sell
@@ -2211,40 +2215,31 @@ infantry.black_lotus:
 		Weapon: cash_hack.black_lotus.end
 		TargetRelationships: None
 		ForceTargetRelationships: Enemy, Neutral
+		ReloadingCondition: stop-hack3
 		LocalOffset: 0,0,196
-		RequiresCondition: end_cash_hack == 1
+		PauseOnCondition: !end_hack
 	Armament@DisableAnim:
 		Name: disable
 		Weapon: disable.black_lotus.anim
 		LocalOffset: 0,0,196
-		RequiresCondition: end_disable == 0
+		PauseOnCondition: stop-hack1 || stop-hack2 || stop-hack3 || stop-hack4
 	Armament@DisableEnd:
 		Name: disable
 		Weapon: disable.black_lotus.end
 		LocalOffset: 0,0,196
-		RequiresCondition: end_disable == 1
-	GrantConditionOnAttack@EndCapture:
-		Condition: end_capture
-		ArmamentNames: capture
-		RequiredShotsPerInstance: 15
-		MaximumInstances: 2
-		RevokeDelay: 20
-		RevokeAll: true
-		IsCyclic: false
-	GrantConditionOnAttack@EndCashHack:
-		Condition: end_cash_hack
-		ArmamentNames: cash_hack
-		RequiredShotsPerInstance: 15
-		MaximumInstances: 2
-		RevokeDelay: 20
-		RevokeAll: true
-		IsCyclic: false
-	GrantConditionOnAttack@EndDisable:
-		Condition: end_disable
-		ArmamentNames: disable
-		RequiredShotsPerInstance: 5
-		MaximumInstances: 2
-		RevokeDelay: 20
+		ReloadingCondition: stop-hack4
+		PauseOnCondition: !end_hack
+	GatlingReloadDelayMultiplier@Hack:
+		MinModifier: 20
+		CoolDownDelay: 16
+		CoolDownChange: 100
+		RevokeOnNewTarget: true
+	GrantConditionOnAttack@EndHack:
+		Condition: end_hack
+		ArmamentNames: capture, disable, cash_hack
+		RevokeDelay: 4
+		RequiredShotsPerInstance: 3
+		RevokeOnNewTarget: true
 		RevokeAll: true
 		IsCyclic: false
 	AttackFrontal@Capture:
@@ -2252,16 +2247,19 @@ infantry.black_lotus:
 		Voice: Capture
 		PauseOnCondition: leaflet
 		FacingTolerance: 0
+		RequiresCondition: !stop-hack1 && !stop-hack2 && !stop-hack3 && !stop-hack4
 	AttackFrontal@CashHack:
 		Armaments: cash_hack
 		Voice: CashHack
 		PauseOnCondition: leaflet
 		FacingTolerance: 0
+		RequiresCondition: !stop-hack1 && !stop-hack2 && !stop-hack3 && !stop-hack4
 	AttackFrontal@Disable:
 		Armaments: disable
 		Voice: Disable
 		PauseOnCondition: leaflet
 		FacingTolerance: 0
+		RequiresCondition: !stop-hack1 && !stop-hack2 && !stop-hack3 && !stop-hack4
 	DamageMultiplier@ZH_UNITS:
 		Modifier: 75
 		RequiresCondition: zh_units
@@ -2298,5 +2296,5 @@ infantry.super_lotus:
 		Weapon: disable.super_lotus.end
 	Armament@CashHackEnd:
 		Weapon: cash_hack.super_lotus.end
-	GrantConditionOnAttack@EndCapture:
-		RequiredShotsPerInstance: 12
+	GrantConditionOnAttack@EndHack:
+		RequiredShotsPerInstance: 2

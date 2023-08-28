@@ -944,18 +944,16 @@ building.prc_command_center:
 
 building.prc_command_center.radar:
 	Inherits: building.prc_command_center
+	Inherits@BotOwner: ^BotOwner
 	-Buildable:
 	PeriodicProducer@RADAR: ## Hack, to trigger upgrade for selection UI.
 		Actors: upgrade.radar
 		ChargeDuration: 1
 		Type: queue.prc_command_center
 		RequiresCondition: !radar
-	GrantConditionOnBotOwner@BOT:
-		Bots: rush, normal, turtle
-		Condition: bot
-	ProvidesPrerequisite@botname:
+	ProvidesPrerequisite@bot_owner:
 		Prerequisite: building.prc_command_center.radar
-		RequiresCondition: bot
+		RequiresCondition: bot_owner
 	ActorStatValues:
 		Icon: icon
 		IconPalette: chrome
@@ -3414,7 +3412,7 @@ building.internet_center:
 	Inherits@CARGO: ^CargoPips
 	Inherits@MINE: ^CanHaveMines
 	Inherits@REVEAL: ^Reveal200
-	Inherits@AImicroManagable: ^AImicroManagable
+	Inherits@BotOwner: ^BotOwner
 	GivesExperience:
 		Experience: 200
 	HitShape:
@@ -3479,28 +3477,28 @@ building.internet_center:
 		PauseOnCondition: emp || hacked
 	FreePassenger@AI_1:
 		Actors: infantry.hacker
-		RequiresCondition: AImicroManage && !inf && !merged && ai_1
+		RequiresCondition: bot_owner && !inf && !merged && ai_1
 	FreePassenger@AI_2:
 		Actors: infantry.hacker
-		RequiresCondition: AImicroManage && !inf && !merged && ai_2
+		RequiresCondition: bot_owner && !inf && !merged && ai_2
 	FreePassenger@AI_3:
 		Actors: infantry.hacker
-		RequiresCondition: AImicroManage && !inf && !merged && ai_3
+		RequiresCondition: bot_owner && !inf && !merged && ai_3
 	FreePassenger@AI_4:
 		Actors: infantry.hacker
-		RequiresCondition: AImicroManage && !inf && !merged && ai_4
+		RequiresCondition: bot_owner && !inf && !merged && ai_4
 	FreePassenger@AI_1_Infantry_or_Merged:
 		Actors: infantry.super_hacker
-		RequiresCondition: AImicroManage && (inf || merged) && ai_1
+		RequiresCondition: bot_owner && (inf || merged) && ai_1
 	FreePassenger@AI_2_Infantry_or_Merged:
 		Actors: infantry.super_hacker
-		RequiresCondition: AImicroManage && (inf || merged) && ai_2
+		RequiresCondition: bot_owner && (inf || merged) && ai_2
 	FreePassenger@AI_3_Infantry_or_Merged:
 		Actors: infantry.super_hacker
-		RequiresCondition: AImicroManage && (inf || merged) && ai_3
+		RequiresCondition: bot_owner && (inf || merged) && ai_3
 	FreePassenger@AI_4_Infantry_or_Merged:
 		Actors: infantry.super_hacker
-		RequiresCondition: AImicroManage && (inf || merged) && ai_4
+		RequiresCondition: bot_owner && (inf || merged) && ai_4
 	GrantConditionAfterDelay@AI_1:
 		Condition: ai_1
 		Delay: 1
