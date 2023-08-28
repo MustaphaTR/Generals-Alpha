@@ -672,9 +672,6 @@ disable.ecm_tank.anim:
 		SecondaryBeam: true
 		SecondaryBeamWidth: 100
 		SecondaryBeamColor: FF000035
-	Warhead@1Dam: TargetDamage
-		ValidTargets: Vehicle, Tank, Ship
-		ValidRelationships: Enemy, Neutral
 
 disable.ecm_tank.end:
 	ReloadDelay: 3
@@ -688,9 +685,6 @@ disable.ecm_tank.end:
 		SecondaryBeam: true
 		SecondaryBeamWidth: 100
 		SecondaryBeamColor: FF000035
-	Warhead@1Dam: TargetDamage
-		ValidTargets: Vehicle, Tank, Ship
-		ValidRelationships: Enemy, Neutral
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c512
 		Duration: 55
@@ -709,9 +703,6 @@ disable.microwave_tank.anim:
 		SecondaryBeam: true
 		SecondaryBeamWidth: 100
 		SecondaryBeamColor: FF000035
-	Warhead@1Dam: TargetDamage
-		ValidTargets: Disable
-		ValidRelationships: Enemy, Neutral
 
 disable.microwave_tank.end:
 	ReloadDelay: 3
@@ -725,9 +716,6 @@ disable.microwave_tank.end:
 		SecondaryBeam: true
 		SecondaryBeamWidth: 100
 		SecondaryBeamColor: FF000035
-	Warhead@1Dam: TargetDamage
-		ValidTargets: Disable
-		ValidRelationships: Enemy, Neutral
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c512
 		Duration: 135
@@ -773,7 +761,6 @@ melee.colonel_burton:
 	Range: 1c0
 	Projectile: Bullet
 		Speed: 10c0
-	Warhead@1Dam: TargetDamage
 	Warhead@2Spawner: SpawnActor
 		ValidTargets: Ground, GroundActor
 		InvalidTargets: Water, WaterActor
