@@ -26,6 +26,7 @@
 
 ^default.strategy:
 	Inherits: ^default.upgrade
+	Inherits@BotOwner: ^BotOwner
 	Buildable:
 		Queue: queue.strategy_center, queue.air_gen_strategy_center
 		BuildDuration: 175
@@ -43,10 +44,7 @@
 		Prerequisites: building.strategy_center
 	ProvidesPrerequisite@STRATEGY:
 		Prerequisite: prerequisite.ai_strategy_chosen
-		RequiresCondition: bot
-	GrantConditionOnBotOwner@BOT:
-		Bots: rush, normal, turtle
-		Condition: bot
+		RequiresCondition: bot_owner
 
 ^default.fake_to_real:
 	Inherits: ^default.local_upgrade

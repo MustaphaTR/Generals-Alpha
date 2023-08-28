@@ -1444,7 +1444,7 @@ infantry.hacker:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@AImicroManagable: ^AImicroManagable
+	Inherits@BotOwner: ^BotOwner
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-1:
@@ -1499,7 +1499,7 @@ infantry.hacker:
 		Speed: 20
 		Voice: Move
 		PauseOnCondition: deployed
-		RequireForceMoveCondition: !AImicroManage && deployed
+		RequireForceMoveCondition: !bot_owner && deployed
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Passenger:
@@ -1508,7 +1508,7 @@ infantry.hacker:
 		Voice: Move
 		CargoConditions:
 			building.internet_center: in_internet_center
-		RequireForceMoveCondition: !AImicroManage && deployed
+		RequireForceMoveCondition: !bot_owner && deployed
 	SharedPassenger:
 		CustomPipType: yellow
 		Voice: Move
@@ -1620,7 +1620,7 @@ infantry.hacker:
 	ActorStatValues:
 		Stats: Armor, Sight, Speed
 	AutoDeployer@AI:
-		RequiresCondition: AImicroManage && undeployed
+		RequiresCondition: bot_owner && undeployed
 		DeployChance: 100
 		DeployTrigger: BecomingIdle
 		DeployTicks: 100
@@ -1680,7 +1680,7 @@ infantry.hijacker:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@AImicroManagable: ^AImicroManagable
+	Inherits@BotOwner: ^BotOwner
 	GivesExperience:
 		Experience: 50
 	Buildable: # Stat UI doesn't know how to get correct desc, Stealth Gen's one is more generic so define it first.
@@ -1742,7 +1742,7 @@ infantry.hijacker:
 		StandSequences: stand
 	Crushable:
 		WarnProbability: 95
-		RequiresCondition:  !AImicroManage
+		RequiresCondition:  !bot_owner
 	Cloak:
 		InitialDelay: 250
 		CloakDelay: 120

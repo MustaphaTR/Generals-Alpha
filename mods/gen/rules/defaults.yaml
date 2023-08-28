@@ -60,9 +60,9 @@
 			TopLeft: -2048, -1536
 			BottomRight: 2048, 1536
 
-^AImicroManagable:
-	GrantConditionOnBotOwner@AImicroManage:
-		Condition: AImicroManage
+^BotOwner:
+	GrantConditionOnBotOwner@bot_owner:
+		Condition: bot_owner
 		Bots: rush, normal, turtle
 
 ^GainsExperience:
@@ -2013,7 +2013,7 @@
 	Inherits@BOOBY_TRAP: ^AcceptsBoobyTrap
 	Inherits@EMP: ^AffectedByEMP
 	Inherits@HACK: ^AffectedByHacking
-	Inherits@AImicroManagable: ^AImicroManagable
+	Inherits@BotOwner: ^BotOwner
 	Huntable:
 	OwnerLostAction:
 		Action: Kill
@@ -2035,7 +2035,7 @@
 	## Tolerated buildable solution for AI
 	GivesBuildableArea:
 		AreaTypes: building
-		RequiresCondition: AImicroManage
+		RequiresCondition: bot_owner
 	Capturable:
 		Types: building
 		RequiresCondition: !build-incomplete

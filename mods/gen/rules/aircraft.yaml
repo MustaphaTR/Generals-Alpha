@@ -1631,7 +1631,7 @@ aircraft.helix:
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@UPGRADE: ^CanHavePRCVehicleUpgrades
-	Inherits@AImicroManagable: ^AImicroManagable
+	Inherits@BotOwner: ^BotOwner
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-1:
@@ -1801,7 +1801,7 @@ aircraft.helix:
 		AfterUnloadDelay: 0
 		LoadedCondition: loaded
 		OwnerChangedAffectsPassengers: false
-		RequiresCondition: !AImicroManage || bunker_upgrade
+		RequiresCondition: !bot_owner || bunker_upgrade
 	WithCargoSounds:
 		EnterSounds: vhumenta.wav, vhumentb.wav, vhumentc.wav
 		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
@@ -1918,7 +1918,7 @@ aircraft.helix:
 		Condition: ShouldUnload
 		ValidDamageStates: Critical, Heavy
 	AutoDeployer@AI-bunker_upgrade:
-		RequiresCondition: AImicroManage && loaded && ShouldUnload && bunker_upgrade
+		RequiresCondition: bot_owner && loaded && ShouldUnload && bunker_upgrade
 		DeployChance: 100
 		DeployTrigger: Periodically
 		DeployTicks: 200
