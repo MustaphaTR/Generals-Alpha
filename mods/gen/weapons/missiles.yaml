@@ -14,7 +14,7 @@
 		TrailInterval: 1
 		Image: DRAGON
 		Shadow: True
-		HorizontalRateOfTurn: 20
+		HorizontalRateOfTurn: 60
 		RangeLimit: 6c0
 		PointDefenseTypes: missilepd
 		Jammable: true
@@ -188,7 +188,7 @@ missile.mig.air:
 	Projectile: MissileTA
 		Speed: 384
 		CruiseAltitude: 2c0
-		RangeLimit: 12c0
+		RangeLimit: 16c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 7500
 		ValidTargets: AirborneActor
@@ -298,7 +298,7 @@ missile.raptor.air:
 	Projectile: MissileTA
 		Speed: 384
 		CruiseAltitude: 2c0
-		RangeLimit: 12c410
+		RangeLimit: 16c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 10000
 		ValidTargets: AirborneActor
@@ -557,7 +557,7 @@ missile.missile_defender.air:
 	Report: imisweaa.wav, imisweab.wav, imisweac.wav
 	Projectile: MissileTA
 		TrailImage: smokey
-		RangeLimit: 7c0
+		RangeLimit: 12c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 4000
 		Versus:
@@ -596,7 +596,7 @@ missile.missile_defender.garrison.air:
 	Inherits: missile.missile_defender.air
 	Range: 8c0
 	Projectile: MissileTA
-		RangeLimit: 9c0
+		RangeLimit: 12c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
 
@@ -723,10 +723,10 @@ missile.stinger_site.ground:
 missile.stinger_site.air:
 	Inherits: NikeAA
 	ReloadDelay: 50
-	Range: 10c0
+	Range: 9c0
 	Projectile: MissileTA
 		TrailImage: smokey
-		RangeLimit: 10c512
+		RangeLimit: 16c0
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c256
 		Damage: 3000
@@ -833,7 +833,7 @@ missile.patriot.air:
 		Inaccuracy: 0
 		Image: MISSILE
 		HorizontalRateOfTurn: 100
-		RangeLimit: 9c0
+		RangeLimit: 16c512
 		MinimumLaunchAngle: 62
 		MaximumLaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
@@ -860,7 +860,7 @@ missile.patriot.super:
 	ValidTargets: PatriotMark
 	Range: 12c0
 	Projectile: MissileTA
-		RangeLimit: 14c0
+		RangeLimit: 16c0
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Ground, Water, GroundActor, WaterActor, AirborneActor
 
@@ -888,7 +888,7 @@ missile.emp_patriot.super:
 	ValidTargets: PatriotMark
 	Range: 12c0
 	Projectile: MissileTA
-		RangeLimit: 14c0
+		RangeLimit: 16c0
 	Warhead@2DamAA: SpreadDamage
 		ValidTargets: AirborneActor
 		Versus:
@@ -915,7 +915,7 @@ NikeAA:
 		Inaccuracy: 0
 		Image: MISSILE
 		HorizontalRateOfTurn: 100
-		RangeLimit: 9c0
+		RangeLimit: 13c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
 		ValidTargets: AirborneActor
@@ -1086,7 +1086,7 @@ missile.humvee.air:
 	Projectile: MissileTA
 		TrailImage: smokey
 		HorizontalRateOfTurn: 40
-		RangeLimit: 8c512
+		RangeLimit: 12c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
 		Versus:
@@ -1300,7 +1300,7 @@ missile.tomahawk_launcher:
 		Blockable: false
 		Inaccuracy: 196
 		Image: MISSILE
-		RangeLimit: 11c0
+		RangeLimit: 900c0 ## in gen it can chase you anywhere
 		Shadow: True
 		MinimumLaunchAngle: 62
 		MaximumLaunchAngle: 62
