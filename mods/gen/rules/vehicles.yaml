@@ -239,8 +239,7 @@ vehicle.humvee:
 		RequiresCondition: AImicroManage && loaded && ShouldUnload
 		DeployChance: 100
 		DeployTrigger: Periodically
-		DeployTicks: 10
-		UndeployTicks: 10
+		DeployTicks: 20
 
 vehicle.technical:
 	Inherits: ^Vehicle
@@ -394,8 +393,7 @@ vehicle.technical:
 	AutoDeployer@AI:
 		RequiresCondition: AImicroManage && loaded
 		DeployChance: 100
-		DeployTicks: 40
-		UndeployTicks: 5
+		DeployTicks: 45
 
 vehicle.technical.demo_reinforce:
 	Inherits: vehicle.technical
@@ -1044,8 +1042,7 @@ vehicle.ambulance:
 	AutoDeployer@AI:
 		RequiresCondition: AImicroManage && loaded
 		DeployChance: 100
-		DeployTicks: 40
-		UndeployTicks: 5
+		DeployTicks: 45
 
 vehicle.sentry_drone:
 	Inherits: ^Vehicle
@@ -2070,8 +2067,7 @@ vehicle.battle_bus:
 		RequiresCondition: AImicroManage && loaded && ShouldUnload
 		DeployChance: 100
 		DeployTrigger: Periodically
-		DeployTicks: 10
-		UndeployTicks: 10
+		DeployTicks: 20
 
 vehicle.troop_crawler:
 	Inherits: ^Tank
@@ -2146,8 +2142,7 @@ vehicle.troop_crawler:
 		RequiresCondition: AImicroManage && loaded
 		DeployChance: 100
 		DeployTrigger: BecomingIdle, Damage
-		DeployTicks: 40
-		UndeployTicks: 5
+		DeployTicks: 45
 
 vehicle.assault_troop_crawler:
 	Inherits: vehicle.troop_crawler
@@ -2191,8 +2186,7 @@ vehicle.assault_troop_crawler:
 		RequiresCondition: AImicroManage && loaded && ShouldUnload
 		DeployChance: 100
 		DeployTrigger: Periodically
-		DeployTicks: 10
-		UndeployTicks: 10
+		DeployTicks: 20
 
 vehicle.listening_outpost:
 	Inherits: ^Tank
@@ -2298,8 +2292,7 @@ vehicle.listening_outpost:
 		RequiresCondition: AImicroManage && loaded && ShouldUnload
 		DeployChance: 100
 		DeployTrigger: Periodically
-		DeployTicks: 10
-		UndeployTicks: 10
+		DeployTicks: 20
 
 vehicle.attack_outpost:
 	Inherits: vehicle.listening_outpost
@@ -3890,6 +3883,7 @@ vehicle.nuke_cannon:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@AImicroManagable: ^AImicroManagable
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-1:
@@ -4039,6 +4033,12 @@ vehicle.nuke_cannon:
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.neutron_shells
+	AutoDeployer@AI:
+		RequiresCondition: AImicroManage && neutron_shells
+		DeployChance: 100
+		DeployTrigger: Periodically
+		DeployTicks: 500
+		UndeployTicks: 500
 
 vehicle.combat_cycle:
 	Inherits: ^Vehicle

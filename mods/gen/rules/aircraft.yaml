@@ -1921,8 +1921,7 @@ aircraft.helix:
 		RequiresCondition: AImicroManage && loaded && ShouldUnload && bunker_upgrade
 		DeployChance: 100
 		DeployTrigger: Periodically
-		DeployTicks: 100
-		UndeployTicks: 100
+		DeployTicks: 200
 
 aircraft.assault_helix:
 	Inherits: aircraft.helix
