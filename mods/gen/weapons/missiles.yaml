@@ -4,7 +4,8 @@
 	MinRange: 0c512
 	Report: missile6.aud
 	ValidTargets: Ground, Water, GroundActor, WaterActor
-	Projectile: Missile
+	Projectile: MissileTA
+		LockOnTargets: Vehicle, Tank, AirborneActor, Ship, Structure
 		Speed: 213
 		Arm: 2
 		Blockable: false
@@ -16,6 +17,8 @@
 		HorizontalRateOfTurn: 20
 		RangeLimit: 6c0
 		PointDefenseTypes: missilepd
+		Jammable: true
+		Gravity: 30
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 100
@@ -47,9 +50,10 @@
 ^AntiAirMissile:
 	Inherits: ^AntiGroundMissile
 	ValidTargets: AirborneActor
-	Projectile: Missile
+	Projectile: MissileTA
 		Speed: 384
 		RangeLimit: 14c0
+		Gravity: 256
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: AirborneActor
 	Warhead@3Eff: CreateEffect
@@ -64,7 +68,7 @@ missile.mig.ground:
 	Range: 8c0
 	MinRange: 2c0
 	Report: vmigweaa.wav, vmigweab.wav
-	Projectile: Missile
+	Projectile: MissileTA
 		Speed: 256
 		Inaccuracy: 128
 		CruiseAltitude: 2c0
@@ -181,7 +185,7 @@ missile.mig.air:
 	Range: 8c0
 	MinRange: 2c0
 	Report: vmigweaa.wav, vmigweab.wav
-	Projectile: Missile
+	Projectile: MissileTA
 		Speed: 384
 		CruiseAltitude: 2c0
 		RangeLimit: 12c0
@@ -261,7 +265,7 @@ missile.raptor.ground:
 	MinRange: 2c512
 	Report: vmigweaa.wav, vmigweab.wav
 	InvalidTargets: StingerSoldier
-	Projectile: Missile
+	Projectile: MissileTA
 		Speed: 256
 		Inaccuracy: 128
 		CruiseAltitude: 2c0
@@ -291,7 +295,7 @@ missile.raptor.air:
 	MinRange: 2c512
 	Report: vmigweaa.wav, vmigweab.wav
 	InvalidTargets: StingerSoldier
-	Projectile: Missile
+	Projectile: MissileTA
 		Speed: 384
 		CruiseAltitude: 2c0
 		RangeLimit: 12c410
@@ -334,7 +338,7 @@ missile.stealth_fighter:
 	Range: 5c512
 	MinRange: 1c512
 	Report: vmigweaa.wav, vmigweab.wav
-	Projectile: Missile
+	Projectile: MissileTA
 		Speed: 256
 		Inaccuracy: 128
 		CruiseAltitude: 2c0
@@ -445,7 +449,7 @@ missile.a10:
 	ReloadDelay: 12
 	Range: 8c768
 	Report: vmigweaa.wav, vmigweab.wav
-	Projectile: Missile
+	Projectile: MissileTA
 		Speed: 256
 		Inaccuracy: 128
 		CruiseAltitude: 2c0
@@ -468,7 +472,7 @@ missile.a10:
 
 Dragon:
 	Inherits: ^AntiGroundMissile
-	Projectile: Missile
+	Projectile: MissileTA
 		TrailImage: smokey
 
 missile.scorpion_tank:
@@ -477,7 +481,7 @@ missile.scorpion_tank:
 	Range: 3c768
 	MinRange: 1c0
 	Report: vscowe2a.wav, vscowe2b.wav
-	Projectile: Missile
+	Projectile: MissileTA
 		TrailImage: smokey
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
@@ -518,7 +522,7 @@ missile.missile_defender.ground:
 	ReloadDelay: 25
 	Range: 4c384
 	Report: imisweaa.wav, imisweab.wav, imisweac.wav
-	Projectile: Missile
+	Projectile: MissileTA
 		TrailImage: smokey
 	Warhead@1Dam: SpreadDamage
 		Damage: 4000
@@ -551,7 +555,7 @@ missile.missile_defender.air:
 	ReloadDelay: 25
 	Range: 6c0
 	Report: imisweaa.wav, imisweab.wav, imisweac.wav
-	Projectile: Missile
+	Projectile: MissileTA
 		TrailImage: smokey
 		RangeLimit: 7c0
 	Warhead@1Dam: SpreadDamage
@@ -583,7 +587,7 @@ missile.missile_defender.air:
 missile.missile_defender.garrison.ground:
 	Inherits: missile.missile_defender.ground
 	Range: 5c853
-	Projectile: Missile
+	Projectile: MissileTA
 		RangeLimit: 7c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
@@ -591,7 +595,7 @@ missile.missile_defender.garrison.ground:
 missile.missile_defender.garrison.air:
 	Inherits: missile.missile_defender.air
 	Range: 8c0
-	Projectile: Missile
+	Projectile: MissileTA
 		RangeLimit: 9c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
@@ -676,7 +680,7 @@ missile.hellfire_drone:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 25
 	Range: 3c768
-	Projectile: Missile
+	Projectile: MissileTA
 		TrailImage: smokey
 	Warhead@1Dam: SpreadDamage
 		Damage: 4000
@@ -697,7 +701,7 @@ missile.stinger_site.ground:
 	Inherits: ^AntiGroundMissile
 	ReloadDelay: 50
 	Range: 5c640
-	Projectile: Missile
+	Projectile: MissileTA
 		TrailImage: smokey
 		RangeLimit: 6c640
 	Warhead@1Dam: SpreadDamage
@@ -720,7 +724,7 @@ missile.stinger_site.air:
 	Inherits: NikeAA
 	ReloadDelay: 50
 	Range: 10c0
-	Projectile: Missile
+	Projectile: MissileTA
 		TrailImage: smokey
 		RangeLimit: 10c512
 	Warhead@1Dam: SpreadDamage
@@ -745,7 +749,7 @@ missile.comanche:
 	ReloadDelay: 5
 	Range: 5c0
 	Report: vcomweaa.wav, vcomweab.wav, vcomweac.wav
-	Projectile: Missile
+	Projectile: MissileTA
 		Speed: 256
 		HorizontalRateOfTurn: 40
 		RangeLimit: 8c512
@@ -792,7 +796,7 @@ missile.patriot.ground:
 	Range: 5c640
 	Report: bpatweaa.wav, bpatweab.wav, bpatweac.wav
 	TargetActorCenter: true
-	Projectile: Missile
+	Projectile: MissileTA
 		Arm: 3
 		Inaccuracy: 0
 		Image: MISSILE
@@ -824,7 +828,7 @@ missile.patriot.air:
 	Range: 8c768
 	Report: bpatweaa.wav, bpatweab.wav, bpatweac.wav
 	TargetActorCenter: true
-	Projectile: Missile
+	Projectile: MissileTA
 		Arm: 3
 		Inaccuracy: 0
 		Image: MISSILE
@@ -855,7 +859,7 @@ missile.patriot.super:
 	Inherits: missile.patriot.ground
 	ValidTargets: PatriotMark
 	Range: 12c0
-	Projectile: Missile
+	Projectile: MissileTA
 		RangeLimit: 14c0
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Ground, Water, GroundActor, WaterActor, AirborneActor
@@ -883,7 +887,7 @@ missile.emp_patriot.super:
 	Inherits: missile.emp_patriot.ground
 	ValidTargets: PatriotMark
 	Range: 12c0
-	Projectile: Missile
+	Projectile: MissileTA
 		RangeLimit: 14c0
 	Warhead@2DamAA: SpreadDamage
 		ValidTargets: AirborneActor
@@ -906,7 +910,7 @@ NikeAA:
 	ReloadDelay: 15
 	Range: 6c512
 	Report: missile1.aud
-	Projectile: Missile
+	Projectile: MissileTA
 		Arm: 3
 		Inaccuracy: 0
 		Image: MISSILE
@@ -926,7 +930,7 @@ NikeAA:
 RedEye:
 	Inherits: NikeAA
 	ReloadDelay: 50
-	Projectile: Missile
+	Projectile: MissileTA
 		Inaccuracy: 0
 		HorizontalRateOfTurn: 80
 		Speed: 384
@@ -945,7 +949,7 @@ missile.destroyer.ground:
 	Burst: 2
 	BurstDelays: 0
 	InvalidTargets: Underwater
-	Projectile: Missile
+	Projectile: MissileTA
 		Arm: 3
 		Inaccuracy: 0
 		HorizontalRateOfTurn: 80
@@ -970,7 +974,7 @@ missile.destroyer.ground:
 missile.destroyer.air:
 	Inherits: missile.destroyer.ground
 	ValidTargets: AirborneActor
-	Projectile: Missile
+	Projectile: MissileTA
 		Speed: 384
 		CloseEnough: 298
 	Warhead@1Dam: SpreadDamage
@@ -989,7 +993,7 @@ missile.rocket_buggy:
 	Report: vrocweaa.wav, vrocweab.wav, vrocweac.wav, vrocwead.wav, vrocweae.wav, vrocweaf.wav
 	ValidTargets: Ground, GroundActor
 	TargetActorCenter: true
-	Projectile: Missile
+	Projectile: MissileTA
 		MinimumLaunchAngle: 62
 		MaximumLaunchAngle: 62
 		RangeLimit: 8c512
@@ -1054,7 +1058,7 @@ missile.humvee.ground:
 	ReloadDelay: 50
 	Range: 3c768
 	Report: vhumwe2a.wav, vhumwe2b.wav, vhumwe2c.wav, vhumwe2d.wav
-	Projectile: Missile
+	Projectile: MissileTA
 		Speed: 298
 		TrailImage: smokey
 		HorizontalRateOfTurn: 40
@@ -1079,7 +1083,7 @@ missile.humvee.air:
 	ReloadDelay: 50
 	Range: 8c0
 	Report: vhumwe2a.wav, vhumwe2b.wav, vhumwe2c.wav, vhumwe2d.wav
-	Projectile: Missile
+	Projectile: MissileTA
 		TrailImage: smokey
 		HorizontalRateOfTurn: 40
 		RangeLimit: 8c512
@@ -1291,7 +1295,7 @@ missile.tomahawk_launcher:
 	Range: 8c768
 	MinRange: 2c512
 	Report: vtomweaa.wav
-	Projectile: Missile
+	Projectile: MissileTA
 		Speed: 170
 		Blockable: false
 		Inaccuracy: 196
