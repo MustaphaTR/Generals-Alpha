@@ -1468,7 +1468,7 @@
 	AttackMove:
 	HiddenUnderFog:
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	ProximityCaptor:
 		Types: Vehicle
 	GivesBounty:
@@ -1699,7 +1699,7 @@
 		GarrisonType: Infantry
 	HiddenUnderFog:
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	GivesBounty:
 	Crushable:
 		WarnProbability: 0
@@ -1843,7 +1843,7 @@
 	HiddenUnderFog:
 	AttackMove:
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	ProximityCaptor:
 		Types: Ship
 	GivesBounty:
@@ -1913,7 +1913,7 @@
 	Guard:
 	Guardable:
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	ProximityCaptor:
 		Types: Plane
 	GivesBounty:
@@ -2045,7 +2045,7 @@
 	CaptureManager:
 		BeingCapturedCondition: being_captured
 		BeingCapturedNotification: BuildingBeingCaptured
-		BeingCapturedTextNotification: One of our buildings is being captured.
+		BeingCapturedTextNotification: notification-building-being-captured
 	TriggersDelayedWeapon@BOOBY_TRAP:
 		RequiresCondition: being_captured
 	MustBeDestroyed:
@@ -2279,7 +2279,7 @@
 		Sound: ucapture.aud
 	CaptureManager:
 		BeingCapturedNotification: BuildingBeingCaptured
-		BeingCapturedTextNotification: One of our buildings is being captured.
+		BeingCapturedTextNotification: notification-building-being-captured
 	InstantlyRepairable:
 	RepairableBuilding:
 		RepairStep: 1500
