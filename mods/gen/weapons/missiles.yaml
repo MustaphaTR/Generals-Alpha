@@ -69,6 +69,7 @@ missile.mig.ground:
 	MinRange: 2c0
 	Report: vmigweaa.wav, vmigweab.wav
 	Projectile: MissileTA
+		-LockOnTargets:
 		Speed: 256
 		Inaccuracy: 128
 		CruiseAltitude: 2c0
@@ -266,6 +267,7 @@ missile.raptor.ground:
 	Report: vmigweaa.wav, vmigweab.wav
 	InvalidTargets: StingerSoldier
 	Projectile: MissileTA
+		-LockOnTargets:
 		Speed: 256
 		Inaccuracy: 128
 		CruiseAltitude: 2c0
@@ -339,6 +341,7 @@ missile.stealth_fighter:
 	MinRange: 1c512
 	Report: vmigweaa.wav, vmigweab.wav
 	Projectile: MissileTA
+		-LockOnTargets:
 		Speed: 256
 		Inaccuracy: 128
 		CruiseAltitude: 2c0
