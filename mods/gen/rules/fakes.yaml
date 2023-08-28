@@ -553,7 +553,7 @@ fake.demo_trap:
 	Inherits: ^FakeDefense
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
-		Queue: queue.gla_building
+		Queue: queue.gla_building, queue.toxin_gen_building
 		BuildPaletteOrder: 16
 		BuildDuration: 25
 		BuildDurationModifier: 100
@@ -589,6 +589,12 @@ fake.demo_trap:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
 	-WithMakeAnimation:
 	Sellable:
 		-RequiresCondition:
@@ -605,41 +611,13 @@ fake.demo_trap:
 		TooltipActor: building.demo_trap
 		Stats: Armor, Sight, None, Damage, Spread
 		Health: 10000
-
-fake.demo_trap.toxin:
-	Inherits: fake.demo_trap
-	Buildable:
-		BuildDuration: 50
-		Queue: queue.toxin_gen_building
-	Production:
-		Produces: queue.demo_trap.toxin.fake
-	ProductionQueue:
-		Type: queue.demo_trap.toxin.fake
-		LowPowerModifier: 300
-	ProductionBar:
-		ProductionType: queue.demo_trap.toxin.fake
-	TransformOnCondition:
-		IntoActor: building.demo_trap.toxin
-	Valued:
-		Cost: 75
-	GrantConditionOnFaction@Toxin:
-		Condition: toxin
-		Factions: toxin
-	GrantConditionOnFaction@Demo:
-		Condition: demo
-		Factions: demo
-	ActorStatValues:
+	ActorStatOverride@Enemy_Toxin:
 		Damage: 350
-	ActorStatOverride@Enemy:
-		TooltipActor: building.demo_trap.toxin
-	ActorStatOverride@Enemy_UPGRADE:
-		Upgrades: upgrade.anthrax_beta
-		ValidRelationships: Enemy, Neutral
-		RequiresCondition: !demo && !toxin
-	ActorStatOverride@Enemy_UPGRADE_Toxin:
 		Upgrades: upgrade.anthrax_gamma
-		ValidRelationships: Enemy, Neutral
-		RequiresCondition: toxin
+		RequiresCondition: toxin && !merged
+	ActorStatOverride@Enemy_Merged:
+		Upgrades: upgrade.anthrax_gamma
+		RequiresCondition: merged
 
 fake.advanced_demo_trap:
 	Inherits: fake.demo_trap
@@ -666,6 +644,7 @@ fake.advanced_demo_trap:
 		Damage: 700
 	ActorStatOverride@Enemy:
 		TooltipActor: building.advanced_demo_trap
+	-ActorStatOverride@Enemy_Toxin:
 
 fake.tunnel_network:
 	Inherits: ^FakeDefense

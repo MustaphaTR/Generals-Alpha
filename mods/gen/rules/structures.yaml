@@ -2050,12 +2050,18 @@ building.demo_trap:
 	GivesExperience:
 		Experience: 50
 	Buildable:
-		Queue: queue.gla_building
+		Queue: queue.gla_building, queue.toxin_gen_building
 		BuildPaletteOrder: 4
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: building.arms_dealer, !techlevel.nodefense
 		Description: Stealth trap with explosives.
+	ProductionCostMultiplier@Toxin:
+		Queue: queue.toxin_gen_building
+		Multiplier: 150 # 600
+	ProductionTimeMultiplier@Toxin:
+		Queue: queue.toxin_gen_building
+		Multiplier: 160 # 200
 	Valued:
 		Cost: 400
 	Health:
@@ -2074,6 +2080,15 @@ building.demo_trap:
 		IsPlayerPalette: true
 		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled && !emp && !hacked
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
 	-Explodes:
 	-ShakeOnDeath:
 	-SoundOnDamageTransition:
@@ -2085,9 +2100,6 @@ building.demo_trap:
 		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, DemoTrap
 	ExternalCondition@SELF_DESTRUCT:
 		Condition: self_destruct
-	GrantConditionOnDamageState@UNCLOAK:
-		Condition: cloak-force-disabled
-		ValidDamageStates: Critical
 	WithRangeCircle:
 		Type: demo
 		Range: 1c512
@@ -2102,6 +2114,13 @@ building.demo_trap:
 		Damage: 600
 		Spread: 1c128
 		Stats: Armor, Sight, None, Damage, Spread
+	ActorStatOverride@Toxin:
+		Damage: 350
+		Upgrades: upgrade.anthrax_gamma
+		RequiresCondition: toxin && !merged
+	ActorStatOverride@Merged:
+		Upgrades: upgrade.anthrax_gamma
+		RequiresCondition: merged
 
 building.demo_trap.explode:
 	Inherits: building.demo_trap
@@ -2114,6 +2133,28 @@ building.demo_trap.explode:
 	-GrantConditionOnDeploy:
 	Explodes:
 		Weapon: explosion.demo_trap
+		RequiresCondition: !toxin || merged
+	Explodes@Toxin:
+		Weapon: explosion.demo_trap.toxin
+		RequiresCondition: toxin && !merged
+	Explodes@Toxin_Alpha:
+		Weapon: explosion.demo_trap.toxin_alpha
+		RequiresCondition: (toxin || merged) && !anthrax_beta && !anthrax_gamma
+	Explodes@Toxin_Beta:
+		Weapon: explosion.demo_trap.toxin_beta
+		RequiresCondition: (toxin || merged) && anthrax_beta && !anthrax_gamma
+	Explodes@Toxin_Gamma:
+		Weapon: explosion.demo_trap.toxin_gamma
+		RequiresCondition: (toxin || merged) && anthrax_gamma
+	GrantConditionOnPrerequisite@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Prerequisites: upgrade.anthrax_beta
+	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
+		Condition: anthrax_gamma
+		Prerequisites: upgrade.anthrax_gamma
+	GrantConditionOnFaction@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Factions: toxin
 	KillsSelf:
 		-RequiresCondition:
 		Delay: 20
@@ -2129,75 +2170,6 @@ building.demo_trap.explode:
 		IconPalette: chrome
 		TooltipActor: building.demo_trap
 
-building.demo_trap.toxin:
-	Inherits: building.demo_trap
-	Buildable:
-		Queue: queue.toxin_gen_building
-		BuildDuration: 200
-	Valued:
-		Cost: 600
-	Tooltip:
-		Name: Demo Trap
-	SpawnActorOnDeath:
-		Actor: building.demo_trap.toxin.explode
-	GrantConditionOnFaction@Toxin:
-		Condition: toxin
-		Factions: toxin
-	GrantConditionOnFaction@Demo:
-		Condition: demo
-		Factions: demo
-	RenderSprites:
-		Image: building.demo_trap
-	ActorStatValues:
-		Damage: 350
-		Upgrades: upgrade.anthrax_beta
-	ActorStatOverride@Toxin:
-		Upgrades: upgrade.anthrax_gamma
-		RequiresCondition: toxin
-	ActorStatOverride@Demo:
-		Upgrades:
-		RequiresCondition: demo
-
-building.demo_trap.toxin.explode:
-	Inherits: building.demo_trap.explode
-	Tooltip:
-		Name: Demo Trap
-	Explodes:
-		Weapon: explosion.demo_trap.toxin
-		RequiresCondition: !anthrax_beta && !anthrax_gamma
-	Explodes@Beta:
-		Weapon: explosion.demo_trap.toxin_beta
-		RequiresCondition: anthrax_beta && !anthrax_gamma
-	Explodes@Gamma:
-		Weapon: explosion.demo_trap.toxin_gamma
-		RequiresCondition: anthrax_gamma
-	GrantConditionOnPrerequisite@ANTHRAX_BETA:
-		Condition: anthrax_beta
-		Prerequisites: upgrade.anthrax_beta
-	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
-		Condition: anthrax_gamma
-		Prerequisites: upgrade.anthrax_gamma
-	GrantConditionOnFaction@ANTHRAX_BETA:
-		Condition: anthrax_beta
-		Factions: toxin
-	GrantConditionOnFaction@Toxin:
-		Condition: toxin
-		Factions: toxin
-	GrantConditionOnFaction@Demo:
-		Condition: demo
-		Factions: demo
-	ActorStatValues:
-		Icon: icon
-		IconPalette: chrome
-		TooltipActor: building.demo_trap.toxin
-		Upgrades: upgrade.anthrax_beta
-	ActorStatOverride@Toxin:
-		Upgrades: upgrade.anthrax_gamma
-		RequiresCondition: toxin
-	ActorStatOverride@Demo:
-		Upgrades:
-		RequiresCondition: demo
-
 building.advanced_demo_trap:
 	Inherits: building.demo_trap
 	Buildable:
@@ -2211,6 +2183,7 @@ building.advanced_demo_trap:
 		Actor: building.advanced_demo_trap.explode
 	ActorStatValues:
 		Damage: 700
+	-ActorStatOverride@Toxin:
 
 building.advanced_demo_trap.explode:
 	Inherits: building.demo_trap.explode
@@ -2218,6 +2191,8 @@ building.advanced_demo_trap.explode:
 		Name: Advanced Demo Trap
 	Explodes:
 		Weapon: explosion.advanced_demo_trap
+		-RequiresCondition:
+	-Explodes@Toxin:
 	RenderSprites:
 		Image: building.advanced_demo_trap
 	ActorStatValues:

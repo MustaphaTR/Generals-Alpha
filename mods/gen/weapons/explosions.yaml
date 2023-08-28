@@ -338,6 +338,8 @@ explosion.demo_trap.toxin:
 		Damage: 15000
 	Warhead@2Dam: SpreadDamage
 		Damage: 10000
+
+explosion.demo_trap.toxin_alpha:
 	Warhead@4Radio: CreateTintedCells
 		LayerName: anthrax_alpha
 		Spread: 1024
@@ -346,12 +348,12 @@ explosion.demo_trap.toxin:
 		MaxLevel: 7500
 
 explosion.demo_trap.toxin_beta:
-	Inherits: explosion.demo_trap.toxin
+	Inherits: explosion.demo_trap.toxin_alpha
 	Warhead@4Radio: CreateTintedCells
 		LayerName: anthrax_beta
 
 explosion.demo_trap.toxin_gamma:
-	Inherits: explosion.demo_trap.toxin
+	Inherits: explosion.demo_trap.toxin_alpha
 	Warhead@4Radio: CreateTintedCells
 		LayerName: anthrax_gamma
 
