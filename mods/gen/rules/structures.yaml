@@ -1896,6 +1896,7 @@ building.patriot:
 	Voiced:
 		VoiceSet: PatriotVoice
 	ActorStatValues:
+		Damage: 120
 		Stats: Armor, Sight, Power, Damage, ReloadDelay, MinRange, None, MaxRange
 
 building.emp_patriot:
@@ -1912,6 +1913,8 @@ building.emp_patriot:
 		Weapon: missile.emp_patriot.air
 	Armament@Super:
 		Weapon: missile.emp_patriot.super
+	ActorStatValues:
+		Damage: 60
 
 building.patriot.boss:
 	Inherits: building.patriot
@@ -2038,6 +2041,7 @@ building.laser_turret:
 	Voiced:
 		VoiceSet: PatriotVoice
 	ActorStatValues:
+		Damage: 120
 		Stats: Armor, Sight, Power, Damage, ReloadDelay, MinRange, None, MaxRange
 
 building.demo_trap:
@@ -2305,6 +2309,7 @@ building.gatling_cannon:
 	Voiced:
 		VoiceSet: GatlingCannonVoice
 	ActorStatValues:
+		Damage: 10
 		Stats: Armor, Sight, Power, Damage, ReloadDelay, MinRange, None, MaxRange
 
 building.firebase:

@@ -158,10 +158,12 @@ vehicle.humvee:
 		TurnSpeed: 32
 		Offset: -160,0,85
 	Armament@MG:
+		Damage: 8
 		Weapon: mg.humvee
 		MuzzleSequence: muzzle
 		RequiresCondition: !zh_units
 	Armament@MG_ZH:
+		Damage: 10
 		Weapon: mg.humvee.zh
 		MuzzleSequence: muzzle
 		RequiresCondition: zh_units
@@ -310,26 +312,31 @@ vehicle.technical:
 		TurnSpeed: 40
 		Offset: 0,0,128
 	Armament:
+		Damage: 8
 		Weapon: mg.technical
 		MuzzleSequence: muzzle
 		LocalOffset: 128,0,43
 		RequiresCondition: !zh_units && !scrap_create_bonus
 	Armament@CRATE-1:
+		Damage: 45
 		Weapon: cannon.technical
 		MuzzleSequence: muzzle
 		LocalOffset: 128,0,43
 		RequiresCondition: !zh_units && scrap_create_bonus == 1
 	Armament@CRATE-2:
+		Damage: 50
 		Weapon: missile.technical
 		MuzzleSequence: muzzle
 		LocalOffset: 128,0,43
 		RequiresCondition: scrap_create_bonus == 2
 	Armament@ZH:
+		Damage: 10
 		Weapon: mg.technical.zh
 		MuzzleSequence: muzzle
 		LocalOffset: 128,0,43
 		RequiresCondition: zh_units && !scrap_create_bonus
 	Armament@ZH_CRATE-1:
+		Damage: 45
 		Weapon: cannon.technical.zh
 		MuzzleSequence: muzzle
 		LocalOffset: 128,0,43
@@ -1339,11 +1346,13 @@ vehicle.gatling_tank:
 		RequiresCondition: gatling >= 2
 		Modifier: 50
 	Armament@GatlingAG:
+		Damage: 20
 		Weapon: gatling.gatling_tank.ground
 		LocalOffset: 213,0,0
 		MuzzleSequence: muzzle
 		RequiresCondition: !zh_units
 	Armament@GatlingAG_ZH:
+		Damage: 15
 		Weapon: gatling.gatling_tank.ground.zh
 		LocalOffset: 213,0,0
 		MuzzleSequence: muzzle
@@ -4031,6 +4040,7 @@ vehicle.nuke_cannon:
 	Voiced:
 		VoiceSet: NukeCannonVoice
 	ActorStatValues:
+		Damage: 400
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.neutron_shells
 	AutoDeployer@AI:
