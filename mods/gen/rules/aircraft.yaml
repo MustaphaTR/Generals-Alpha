@@ -77,6 +77,7 @@ aircraft.badger:
 
 aircraft.badger.paradrop:
 	Inherits: ^default.badger
+	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
 	Armor:
 		Type: aircraft.normal
 		RequiresCondition: !countermeasures
@@ -91,9 +92,6 @@ aircraft.badger.paradrop:
 		OwnerChangedAffectsPassengers: false
 	Tooltip:
 		Name: B-52
-	GrantConditionOnPrerequisite@COUNTERMEASURES:
-		Condition: countermeasures
-		Prerequisites: upgrade.countermeasures
 
 aircraft.badger.prc_paradrop:
 	Inherits: ^default.badger
@@ -113,6 +111,7 @@ aircraft.badger.tank_drop:
 
 aircraft.badger.fuel_air_bomb:
 	Inherits: ^default.badger
+	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
 	Armor:
 		Type: aircraft.normal
 		RequiresCondition: !countermeasures
@@ -130,12 +129,10 @@ aircraft.badger.fuel_air_bomb:
 		AmmoCondition: ammo
 	Tooltip:
 		Name: B-52
-	GrantConditionOnPrerequisite@COUNTERMEASURES:
-		Condition: countermeasures
-		Prerequisites: upgrade.countermeasures
 
 aircraft.badger.leaflet:
 	Inherits: ^default.badger
+	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
 	Armor:
 		Type: aircraft.normal
 		RequiresCondition: !countermeasures
@@ -153,9 +150,6 @@ aircraft.badger.leaflet:
 		AmmoCondition: ammo
 	Tooltip:
 		Name: B-52
-	GrantConditionOnPrerequisite@COUNTERMEASURES:
-		Condition: countermeasures
-		Prerequisites: upgrade.countermeasures
 
 aircraft.b2:
 	Inherits: aircraft.badger.fuel_air_bomb
@@ -477,6 +471,7 @@ aircraft.raptor:
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -513,9 +508,6 @@ aircraft.raptor:
 	Armor@COUNTERMEASURES:
 		Type: aircraft.normal.countermeasures
 		RequiresCondition: countermeasures
-	GrantConditionOnPrerequisite@COUNTERMEASURES:
-		Condition: countermeasures
-		Prerequisites: upgrade.countermeasures
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
@@ -665,6 +657,7 @@ aircraft.stealth_fighter:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
 	GivesExperience:
 		Experience: 100
 	GivesExperienceMultiplier@RANK-2:
@@ -778,9 +771,6 @@ aircraft.stealth_fighter:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
-	GrantConditionOnPrerequisite@COUNTERMEASURES:
-		Condition: countermeasures
-		Prerequisites: upgrade.countermeasures
 	GrantConditionOnPrerequisite@BUNKER_BUSTERS:
 		Condition: bunker_busters
 		Prerequisites: upgrade.bunker_busters
@@ -835,6 +825,7 @@ aircraft.aurora:
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
 	GivesExperience:
 		Experience: 200
 	GivesExperienceMultiplier@RANK-2:
@@ -904,9 +895,6 @@ aircraft.aurora:
 	GrantConditionOnFaction@Boss:
 		Condition: boss
 		Factions: boss
-	GrantConditionOnPrerequisite@COUNTERMEASURES:
-		Condition: countermeasures
-		Prerequisites: upgrade.countermeasures
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
@@ -1158,6 +1146,7 @@ aircraft.hellfire_drone:
 
 aircraft.a10:
 	Inherits: ^Plane
+	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
 	Tooltip:
 		Name: A-10 Thunderbolt
 	Health:
@@ -1168,9 +1157,6 @@ aircraft.a10:
 	Armor@COUNTERMEASURES:
 		Type: aircraft.normal.countermeasures
 		RequiresCondition: countermeasures
-	GrantConditionOnPrerequisite@COUNTERMEASURES:
-		Condition: countermeasures
-		Prerequisites: upgrade.countermeasures
 	Valued:
 		Cost: 2000
 	Aircraft:
@@ -1477,6 +1463,7 @@ aircraft.comanche:
 	Inherits@PILOT: ^EjectsPilotOnAir
 	Inherits@REVEAL: ^Reveal600
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -1540,9 +1527,6 @@ aircraft.comanche:
 	GrantConditionOnPrerequisite@ROCKET_PODS:
 		Condition: rocket_pods
 		Prerequisites: upgrade.rocket_pods
-	GrantConditionOnPrerequisite@COUNTERMEASURES:
-		Condition: countermeasures
-		Prerequisites: upgrade.countermeasures
 	AmmoPool:
 		Name: secondary
 		Armaments: secondary

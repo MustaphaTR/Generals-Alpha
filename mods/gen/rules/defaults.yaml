@@ -295,6 +295,45 @@
 		Condition: adv_training
 		Prerequisites: upgrade.adv_training
 
+^AffectedByCounterMeasures:
+	GrantConditionOnPrerequisite@COUNTERMEASURES:
+		Condition: countermeasures
+		Prerequisites: upgrade.countermeasures
+	Shielded@COUNTERMEASURES:
+		ShieldsUpCondition: cm-inactived
+		ShowSelectionBar: false
+		MaxStrength: 1
+		BlockExcessDamage: true
+		RegenInterval: 200
+		RegenAmount: 1
+		RequiresCondition: countermeasures && airborne
+	GrantPeriodicCondition@COUNTERMEASURES:
+		Condition: jamm-missile
+		CooldownDuration: 20
+		ActiveDuration: 10
+		StartsGranted: true
+		RequiresCondition: countermeasures && !cm-inactived && airborne
+	GrantPeriodicCondition@COUNTERMEASURES-Flare:
+		Condition: drop-flare
+		CooldownDuration: 29
+		ActiveDuration: 1
+		StartsGranted: true
+		RequiresCondition: countermeasures && !cm-inactived && airborne
+	FloatingSpriteEmitter@COUNTERMEASURES-Flare:
+		Lifetime: 60
+		Duration: -1
+		SpawnFrequency: 0
+		Image: explosion
+		Sequences: counter-flare
+		Palette: effect
+		Gravity: -20
+		RequiresCondition: drop-flare
+	JamsMissiles:
+		Range: 1c0
+		Chance: 100
+		DeflectionRelationships: Neutral, Enemy
+		RequiresCondition: jamm-missile
+
 ^AffectedByLeaflet:
 	Inherits@DISABLED: ^WithDisabledOverlay
 	TimedConditionBar@LEAFLET:
