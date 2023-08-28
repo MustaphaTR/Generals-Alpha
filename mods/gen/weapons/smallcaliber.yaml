@@ -325,7 +325,7 @@ mg.humvee:
 	Report: vhumweaa.wav, vhumweab.wav, vhumweac.wav, vhumwead.wav
 	InvalidTargets: StingerSoldier
 	Warhead@1Dam: SpreadDamage
-		Damage: 1000
+		Damage: 800
 		InvalidTargets: StingerSoldier
 		Versus:
 			vehicle.truck: 50
@@ -353,11 +353,14 @@ mg.humvee:
 			building.stinger_site: 50
 			building.wall: 6
 
+mg.humvee.zh:
+	Inherits: mg.humvee
+	Warhead@1Dam: SpreadDamage
+		Damage: 1000
+
 mg.sentry_drone:
 	Inherits: mg.humvee
 	Report: vsenweaa.wav, vsenweab.wav, vsenweac.wav, vsenwead.wav
-	Warhead@1Dam: SpreadDamage
-		Damage: 800
 
 mg.battle_drone:
 	Inherits: mg.humvee
