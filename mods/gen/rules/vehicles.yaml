@@ -1909,6 +1909,7 @@ vehicle.avenger:
 	PointDefense:
 		Armament: pdlaser
 		PointDefenseTypes: missilepd
+		RequiresCondition: !hacked && !emp && !leaflet && !driver_killed
 	AttackTurreted:
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
@@ -3038,6 +3039,7 @@ vehicle.paladin_tank:
 	PointDefense:
 		Armament: pdlaser
 		PointDefenseTypes: missilepd
+		RequiresCondition: !hacked && !emp && !leaflet && !driver_killed
 	AttackTurreted:
 		Armaments: primary, pdlaser
 		PauseOnCondition: hacked || emp || leaflet
