@@ -1371,10 +1371,18 @@ ctflag:
 		Length: *
 
 hack.particle_beam:
+	Defaults:
+		Length: *
+		ZOffset: 1023
+		IgnoreWorldTint: true
+		Offset: 0, -50
 	idle:
 		Filename: particlebeam.shp
-		Length: *
-		Offset: 0, -60
+	make:
+		Filename: particlebeamake.shp
+	die:
+		Filename: particlebeamake.shp
+		Frames: 8, 7, 6, 5, 4, 3, 2, 1, 0
 	icon:
 		Filename: particle_cannon_ability_icon.png
 
