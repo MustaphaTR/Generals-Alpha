@@ -18,8 +18,7 @@
 		RangeLimit: 6c0
 		PointDefenseTypes: missilepd
 		Jammable: true
-		Gravity: 30
-		ExplodeUnderThisAltitude: 0
+		Gravity: 256
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 100
@@ -54,7 +53,6 @@
 	Projectile: MissileTA
 		Speed: 384
 		RangeLimit: 14c0
-		Gravity: 256
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: AirborneActor
 	Warhead@3Eff: CreateEffect
