@@ -116,7 +116,7 @@ parabomb.emp:
 			building.internet_center: 70
 		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@2Dam: SpreadDamage
-		Spread: 2c512
+		Spread: 2c0
 		Damage: 1000000
 		ValidTargets: AirborneActor
 		DamageTypes: TriggerProne, ExplosionDeath
@@ -129,6 +129,8 @@ parabomb.emp:
 	Warhead@5EffWater: CreateEffect
 		Explosions: emp
 		ImpactSounds: sempexpl.wav
+		ImpactActors: false
+		AirThreshold: 8c0
 
 parabomb.leaflet:
 	Inherits: ^ParaBomb

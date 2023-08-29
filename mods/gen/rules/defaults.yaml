@@ -350,6 +350,13 @@
 	TimedConditionBar@EMP:
 		Condition: emp
 		Color: 333333
+	WithIdleOverlay@EMP:
+		Image: disabled_fx
+		Sequence: idle1
+		Palette: effect
+		RequiresCondition: emp
+		Offset: 0,0,0
+		IsDecoration: true ## so this doesn't affect by cloak palette
 	ExternalCondition@EMP:
 		Condition: emp
 	GrantCondition@DISABLED-EMP:
@@ -363,6 +370,13 @@
 		Color: 333333
 	ExternalCondition@HACKED:
 		Condition: hacked
+	WithIdleOverlay@HACKED:
+		Image: disabled_fx
+		Sequence: idle3
+		Palette: effect
+		RequiresCondition: hacked
+		Offset: 0,0,0
+		IsDecoration: true ## so this doesn't affect by cloak palette
 	GrantCondition@DISABLED-HACK:
 		RequiresCondition: hacked
 		Condition: disabled

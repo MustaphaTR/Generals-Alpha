@@ -9,6 +9,21 @@ powerdown:
 		Start: 3
 		ZOffset: 2047
 
+disabled_fx:
+	Defaults:
+		Length: *
+		ZOffset: 1023
+		IgnoreWorldTint: true
+	idle1:
+		Filename: emp_fx01.shp
+	idle2:
+		Filename: emp_fx02.shp
+	idle3:
+		Filename: hack-tiny.shp
+		Length: *
+		#AlphaFade: true
+		Offset: 0, -15, 15
+
 120mm:
 	idle:
 		Filename: 120mm.shp
@@ -23,6 +38,7 @@ explosion:
 	Defaults:
 		Length: *
 		ZOffset: 2047
+		IgnoreWorldTint: true
 	counter-flare:
 		Filename: counter-flare.shp
 	piff:
