@@ -57,6 +57,8 @@
 		ValidRelationships: Ally, Neutral, Enemy
 	HitShape:
 		TargetableOffsets: 1273,939,0, -980,-640,0, -980,640,0
+	InfiltrateForSupportPowerReset:
+		Types: Sabotage
 
 building.usa_command_center:
 	Inherits: ^default.command_center
@@ -4275,6 +4277,8 @@ building.particle_cannon:
 		OrderName: ParticleCannonPowerInfoOrder
 		EffectSequence: idle
 	SupportPowerChargeBar:
+	InfiltrateForSupportPowerReset:
+		Types: Sabotage
 	Power:
 		Amount: -10
 	ProvidesPrerequisite@buildingname:
@@ -4497,6 +4501,8 @@ building.scud_storm:
 		Turret: D
 		Sequence: turret-empty
 		RequiresCondition: !ammo
+	InfiltrateForSupportPowerReset:
+		Types: Sabotage
 	SupportPowerChargeBar:
 	WithBuildingBib:
 	-WithMakeAnimation:
@@ -4762,6 +4768,8 @@ building.missile_silo:
 		CircleSequence: circles
 		MissileImage: atomic
 	SupportPowerChargeBar:
+	InfiltrateForSupportPowerReset:
+		Types: Sabotage
 	Power:
 		Amount: -10
 	ProvidesPrerequisite@buildingname:
