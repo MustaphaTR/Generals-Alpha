@@ -564,6 +564,12 @@ hack.particle_beam:
 	Health:
 		HP: 400000
 	HitShape:
+	RevealsShroud:
+		Type: CenterPosition
+	RevealsShroud@SEARCH_AND_DESTROY:
+		Type: CenterPosition
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Type: CenterPosition
 	Aircraft:
 		CruiseAltitude: 1
 		TurnSpeed: 1023
