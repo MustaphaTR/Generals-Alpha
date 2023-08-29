@@ -155,7 +155,7 @@ V01:
 		Name: Church
 	HitShape:
 		UseTargetableCellsOffsets: false
-		TargetableOffsets: -490,-384,0, 0,0,0, 0,470,0
+		TargetableOffsets: -490,-384,0, 0,0,0, 64,0,0, 0,470,0
 		Type: Rectangle
 			TopLeft: -768, -597
 			BottomRight: 896, 683
@@ -179,7 +179,7 @@ V02:
 		PortOffsets: 0,0,128, -512,-512,128, -512,512,128, 512,512,128, 512,-512,128
 	HitShape:
 		UseTargetableCellsOffsets: false
-		TargetableOffsets: -490,-512,0, 0,0,0, 0,512,0
+		TargetableOffsets: -490,-512,0, 0,0,0, 64,0,0, 0,512,0
 		Type: Rectangle
 			TopLeft: -1024, -512
 			BottomRight: 1024, 597
@@ -192,7 +192,7 @@ V20:
 	RenderSprites:
 		Palette: desert
 	HitShape:
-		TargetableOffsets: -840,-512,0, 0,0,0, -840,512,0
+		TargetableOffsets: -840,-512,0, 0,0,0, 64,0,0, -840,512,0
 		Type: Rectangle
 			TopLeft: -1024, -512
 			BottomRight: 1024, 896
@@ -242,7 +242,7 @@ V04:
 		PortOffsets: 0,0,128, -512,-512,128, -512,512,128, 512,512,128, 512,-512,128
 	HitShape:
 		UseTargetableCellsOffsets: false
-		TargetableOffsets: 0,0,0, -421,-256,0, -421,256,0
+		TargetableOffsets: 0,0,0, 32,0,0, -421,-256,0, -421,256,0
 		Type: Rectangle
 			TopLeft: -683, -432
 			BottomRight: 683, 683
