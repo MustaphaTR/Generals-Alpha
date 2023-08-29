@@ -1522,21 +1522,26 @@ infantry.hacker:
 		StartIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: in_internet_center
+	## HACK HACK HACK: it just works, don't ask me.
+	## Weapons like this need setting similar below to
+	## avoid end effect on newly switched target. 
 	Armament@Anim:
 		Weapon: disable.hacker.anim
 		LocalOffset: 0,0,196
-		RequiresCondition: !end_disable && !deployed
-	Armament@End:
+		PauseOnCondition: has_disable
+		ReloadingCondition: has_animed
+	Armament@DisableEnabled:
 		Weapon: disable.hacker.end
 		LocalOffset: 0,0,196
-		RequiresCondition: end_disable && !deployed
-	GrantConditionOnAttack@End:
-		Condition: end_disable
+		PauseOnCondition: !enable_disable || !has_animed
+		ReloadingCondition: has_disable
+	GrantConditionOnAttack@EnableDisable:
+		Condition: enable_disable
 		RequiredShotsPerInstance: 13
-		MaximumInstances: 2
 		RevokeDelay: 20
 		RevokeAll: true
 		IsCyclic: false
+		RevokeOnNewTarget: true
 	AttackFrontal:
 		PauseOnCondition: leaflet
 		RequiresCondition: !deployed
@@ -1639,14 +1644,14 @@ infantry.super_hacker:
 		Name: Super Hacker
 	Armament@DisableAnim:
 		Name: disable
-		Weapon: disable.black_lotus.anim
+		Weapon: disable_vechicle.superhacker.anim
 		LocalOffset: 0,0,196
-		RequiresCondition: !end_vehicle
+		PauseOnCondition: end_vehicle && deployed
 	Armament@DisableEnd:
 		Name: disable
 		Weapon: disable.black_lotus.end
 		LocalOffset: 0,0,196
-		RequiresCondition: end_vehicle
+		PauseOnCondition: !end_vehicle && deployed
 		ReloadingCondition: stop-hack
 	GrantConditionOnAttack@EndVehicle:
 		Condition: end_vehicle
@@ -1660,7 +1665,7 @@ infantry.super_hacker:
 		Armaments: primary, disable
 		PauseOnCondition: leaflet
 		FacingTolerance: 0
-		RequiresCondition: !stop-hack
+		RequiresCondition: !stop-hack && !deployed
 	Cloak:
 		InitialDelay: 0
 		CloakDelay: 125

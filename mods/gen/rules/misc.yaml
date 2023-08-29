@@ -556,29 +556,49 @@ hack.spawn_sneak_attack:
 		Delay: 1
 
 hack.particle_beam:
-	Inherits: ^Vehicle
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
 	Inherits@REVEAL: ^Reveal150
 	Tooltip:
 		Name: Particle Beam
 	Health:
 		HP: 400000
-	DamageMultiplier@UNKILLABLE:
-		Modifier: 0
-	Mobile:
-		Locomotor: locomotor.particle_beam
-		Speed: 30
+	HitShape:
+	Aircraft:
+		CruiseAltitude: 1
 		TurnSpeed: 1023
-	-Targetable:
+		Repulsable: false
+		AltitudeVelocity: 4000
+		Speed: 30
+		MoveIntoShroud: true
+		TakeOffOnResupply: true
+		CanHover: true
+		VTOL: true
+		CanSlide: true
+		LandableTerrainTypes: Clear, Sand, SandRoad, Beach, Bridge, Brush, Gems, Ore, River, Rock, Rough, Tree, Wall, Water, Concrete, Black, Grass, GrassRoad, Snow, SnowRoad
+	WithSpriteBody:
+	WithMakeAnimation:
+	WithDeathAnimation:
+		DeathPaletteIsPlayerPalette: false
+		DeathSequencePalette: effect
+		DeathSequence: die
+		UseDeathTypeSuffix: false
+		FallbackSequence: die
 	PeriodicExplosion:
 		Weapon: aoe.particle_beam
 	Selectable:
 		Priority: 5
 		Bounds: 1024, 5120, 0, -2560
+	SelectionDecorations:
+	WithSpriteControlGroupDecoration:
+	HiddenUnderFog:
+	Explodes:
+		Weapon: aoe.particle_beam
+		EmptyWeapon: aoe.particle_beam
 	AmbientSound:
 		SoundFiles: sparlo2a.aud, sparlo2b.aud, sparlo2c.aud, sparlo3a.aud, sparlo3b.aud, sparlo3c.aud, sparlo4a.aud, sparlo4b.aud, sparlo4c.aud
 		Interval: 2
 	KillsSelf:
-		RemoveInstead: true
 		Delay: 250
 	ActorStatValues:
 		Icon: icon

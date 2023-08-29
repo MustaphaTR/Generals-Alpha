@@ -9,6 +9,28 @@ powerdown:
 		Start: 3
 		ZOffset: 2047
 
+disabled_fx:
+	Defaults:
+		Length: *
+		ZOffset: 1023
+		IgnoreWorldTint: true
+	idle1:
+		Filename: emp_fx01.shp
+	idle2:
+		Filename: emp_fx02.shp
+	idle3:
+		Filename: hack-tiny.shp
+		Length: *
+		#AlphaFade: true
+		Offset: 0, -15, 15
+	idle4:
+		Filename: nopower.shp
+		Length: 1
+	idle5:
+		Filename: unplug.shp
+		Tick: 300
+		ZOffset: 1536
+
 120mm:
 	idle:
 		Filename: 120mm.shp
@@ -23,6 +45,9 @@ explosion:
 	Defaults:
 		Length: *
 		ZOffset: 2047
+		IgnoreWorldTint: true
+	counter-flare:
+		Filename: counter-flare.shp
 	piff:
 		Filename: piff.shp
 	piffs:
@@ -90,8 +115,18 @@ explosion:
 		Filename: napalm1.shp
 	large_napalm:
 		Filename: napalm3.shp
+	tiny_twlt:
+		Filename: twlt-tiny.shp
+	small_twlt:
+		Filename: twlt-small.shp
+	large_twlt:
+		Filename: twlt-large.shp
 	smallspark:
 		Filename: smallspark.shp
+	fuel_air:
+		Filename: fuel-air.shp
+		Tick: 20
+		AlphaFade: true
 	flashbang:
 		Filename: flash.shp
 	emp:
@@ -637,6 +672,12 @@ parabomb:
 	idle:
 		Start: 8
 		Length: 5
+		ZOffset: 1023
+
+orcabomb:
+	idle:
+		Filename: orcabomb.shp
+		Facings: -32
 		ZOffset: 1023
 
 smokland:
@@ -1337,10 +1378,18 @@ ctflag:
 		Length: *
 
 hack.particle_beam:
+	Defaults:
+		Length: *
+		ZOffset: 1023
+		IgnoreWorldTint: true
+		Offset: 0, -50
 	idle:
 		Filename: particlebeam.shp
-		Length: *
-		Offset: 0, -60
+	make:
+		Filename: particlebeamake.shp
+	die:
+		Filename: particlebeamake.shp
+		Frames: 8, 7, 6, 5, 4, 3, 2, 1, 0
 	icon:
 		Filename: particle_cannon_ability_icon.png
 

@@ -1909,6 +1909,7 @@ vehicle.avenger:
 	PointDefense:
 		Armament: pdlaser
 		PointDefenseTypes: missilepd
+		RequiresCondition: !hacked && !emp && !leaflet && !driver_killed
 	AttackTurreted:
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
@@ -2379,23 +2380,27 @@ vehicle.microwave_tank:
 	Turreted:
 		TurnSpeed: 16
 		Offset: -256,0,256
+	## HACK HACK HACK: it just works, don't ask me.
+	## Weapons like this need setting similar below to
+	## avoid end effect on newly switched target. 
 	Armament@Anim:
 		Weapon: disable.microwave_tank.anim
 		LocalOffset: 24,0,0
-		RequiresCondition: end_disable == 0
+		PauseOnCondition: has_disable
+		ReloadingCondition: has_animed
 	Armament@End:
 		Weapon: disable.microwave_tank.end
 		LocalOffset: 24,0,0
-		RequiresCondition: end_disable >= 1
-	PeriodicExplosion@AoE:
-		Weapon: aoe.microwave_tank
-		RequiresCondition: !firing && !hacked && !driver_killed && !emp && !leaflet
-	GrantConditionOnAttack@End:
-		Condition: end_disable
+		PauseOnCondition: !enable_disable || !has_animed
+		ReloadingCondition: has_disable
+	GrantConditionOnAttack@EnableDisable:
+		Condition: enable_disable
 		RequiredShotsPerInstance: 65
 		MaximumInstances: 1
-		RevokeDelay: 4
+		RevokeDelay: 80
 		RevokeAll: true
+		RevokeOnNewTarget: true
+		IsCyclic: false
 	GrantConditionOnAttack@Fire:
 		Condition: firing
 		RequiredShotsPerInstance: 1
@@ -2403,6 +2408,9 @@ vehicle.microwave_tank:
 		RevokeDelay: 4
 		RevokeAll: true
 		IsCyclic: false
+	PeriodicExplosion@AoE:
+		Weapon: aoe.microwave_tank
+		RequiresCondition: !firing && !hacked && !driver_killed && !emp && !leaflet
 	AttackTurreted:
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
@@ -2499,18 +2507,21 @@ vehicle.ecm_tank:
 	Armament@Anim:
 		Weapon: disable.ecm_tank.anim
 		LocalOffset: 24,0,0
-		RequiresCondition: end_disable == 0
+		PauseOnCondition: has_disable
+		ReloadingCondition: has_animed
 	Armament@End:
 		Weapon: disable.ecm_tank.end
 		LocalOffset: 24,0,0
-		RequiresCondition: end_disable >= 1
-	GrantConditionOnAttack@End:
-		Condition: end_disable
+		PauseOnCondition: !enable_disable || !has_animed
+		ReloadingCondition: has_disable
+	GrantConditionOnAttack@EnableDisable:
+		Condition: enable_disable
 		RequiredShotsPerInstance: 25
 		MaximumInstances: 1
-		RevokeDelay: 4
+		RevokeDelay: 35
 		RevokeAll: true
 		IsCyclic: false
+		RevokeOnNewTarget: true
 	GrantConditionOnAttack@Fire:
 		Condition: firing
 		RequiredShotsPerInstance: 1
@@ -2518,10 +2529,6 @@ vehicle.ecm_tank:
 		RevokeDelay: 4
 		RevokeAll: true
 		IsCyclic: false
-	AttackTurreted:
-		PauseOnCondition: hacked || emp || leaflet
-		RequiresCondition: !driver_killed
-	WithSpriteTurret:
 	JamsMissiles:
 		Range: 3c0
 		DeflectionRelationships: Neutral, Enemy
@@ -2530,6 +2537,10 @@ vehicle.ecm_tank:
 		Range: 3c0
 		Color: DDDD0088
 		RequiresCondition: !firing
+	AttackTurreted:
+		PauseOnCondition: hacked || emp || leaflet
+		RequiresCondition: !driver_killed
+	WithSpriteTurret:
 	ThrowsShrapnel:
 		Weapons: debris.radar_van
 		Pieces: 1, 1
@@ -3028,6 +3039,7 @@ vehicle.paladin_tank:
 	PointDefense:
 		Armament: pdlaser
 		PointDefenseTypes: missilepd
+		RequiresCondition: !hacked && !emp && !leaflet && !driver_killed
 	AttackTurreted:
 		Armaments: primary, pdlaser
 		PauseOnCondition: hacked || emp || leaflet

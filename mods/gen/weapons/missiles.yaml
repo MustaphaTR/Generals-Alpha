@@ -14,11 +14,12 @@
 		TrailInterval: 1
 		Image: DRAGON
 		Shadow: True
-		HorizontalRateOfTurn: 20
+		HorizontalRateOfTurn: 60
 		RangeLimit: 6c0
 		PointDefenseTypes: missilepd
 		Jammable: true
 		Gravity: 30
+		ExplodeUnderThisAltitude: 0
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 100
@@ -69,6 +70,7 @@ missile.mig.ground:
 	MinRange: 2c0
 	Report: vmigweaa.wav, vmigweab.wav
 	Projectile: MissileTA
+		-LockOnTargets:
 		Speed: 256
 		Inaccuracy: 128
 		CruiseAltitude: 2c0
@@ -188,7 +190,7 @@ missile.mig.air:
 	Projectile: MissileTA
 		Speed: 384
 		CruiseAltitude: 2c0
-		RangeLimit: 12c0
+		RangeLimit: 16c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 7500
 		ValidTargets: AirborneActor
@@ -266,6 +268,7 @@ missile.raptor.ground:
 	Report: vmigweaa.wav, vmigweab.wav
 	InvalidTargets: StingerSoldier
 	Projectile: MissileTA
+		-LockOnTargets:
 		Speed: 256
 		Inaccuracy: 128
 		CruiseAltitude: 2c0
@@ -298,7 +301,7 @@ missile.raptor.air:
 	Projectile: MissileTA
 		Speed: 384
 		CruiseAltitude: 2c0
-		RangeLimit: 12c410
+		RangeLimit: 16c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 10000
 		ValidTargets: AirborneActor
@@ -339,6 +342,7 @@ missile.stealth_fighter:
 	MinRange: 1c512
 	Report: vmigweaa.wav, vmigweab.wav
 	Projectile: MissileTA
+		-LockOnTargets:
 		Speed: 256
 		Inaccuracy: 128
 		CruiseAltitude: 2c0
@@ -391,10 +395,8 @@ missile.aurora:
 	Projectile: Bullet
 		Speed: 256
 		Inaccuracy: 512
-		TrailImage: smokey
-		TrailInterval: 1
 		Blockable: false
-		Image: DRAGON
+		Image: orcabomb
 		Shadow: True
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
@@ -408,7 +410,7 @@ missile.aurora:
 			building.stinger_site: 200
 			building.wall: 300
 	Warhead@3Eff: CreateEffect
-		Explosions: mininuke
+		Explosions: tiny_twlt
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
 
@@ -434,7 +436,7 @@ missile.aurora_alpha:
 		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@5Eff: CreateEffect
 		Delay: 10
-		Explosions: nuke
+		Explosions: small_twlt
 		ImpactSounds: kaboom1.aud
 		ValidTargets: Ground, Air, GroundActor, AirborneActor, WaterActor, Trees
 	Warhead@6EffWater: CreateEffect
@@ -557,7 +559,7 @@ missile.missile_defender.air:
 	Report: imisweaa.wav, imisweab.wav, imisweac.wav
 	Projectile: MissileTA
 		TrailImage: smokey
-		RangeLimit: 7c0
+		RangeLimit: 12c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 4000
 		Versus:
@@ -596,7 +598,7 @@ missile.missile_defender.garrison.air:
 	Inherits: missile.missile_defender.air
 	Range: 8c0
 	Projectile: MissileTA
-		RangeLimit: 9c0
+		RangeLimit: 12c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
 
@@ -723,10 +725,10 @@ missile.stinger_site.ground:
 missile.stinger_site.air:
 	Inherits: NikeAA
 	ReloadDelay: 50
-	Range: 10c0
+	Range: 9c0
 	Projectile: MissileTA
 		TrailImage: smokey
-		RangeLimit: 10c512
+		RangeLimit: 16c0
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c256
 		Damage: 3000
@@ -833,7 +835,7 @@ missile.patriot.air:
 		Inaccuracy: 0
 		Image: MISSILE
 		HorizontalRateOfTurn: 100
-		RangeLimit: 9c0
+		RangeLimit: 16c512
 		MinimumLaunchAngle: 62
 		MaximumLaunchAngle: 62
 	Warhead@1Dam: SpreadDamage
@@ -860,7 +862,7 @@ missile.patriot.super:
 	ValidTargets: PatriotMark
 	Range: 12c0
 	Projectile: MissileTA
-		RangeLimit: 14c0
+		RangeLimit: 16c0
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Ground, Water, GroundActor, WaterActor, AirborneActor
 
@@ -882,13 +884,19 @@ missile.emp_patriot.air:
 		Damage: 1000000
 	Warhead@3Eff: CreateEffect
 		Explosions: emp_small
+	Warhead@4Dis: GrantExternalCondition
+		Delay: 1 ##Enable AirborneActor husk emp overlay
+		Range: 2c0
+		Duration: 250
+		Condition: emp
+		ValidTargets: AirborneActor, EmpableHusk
 
 missile.emp_patriot.super:
 	Inherits: missile.emp_patriot.ground
 	ValidTargets: PatriotMark
 	Range: 12c0
 	Projectile: MissileTA
-		RangeLimit: 14c0
+		RangeLimit: 16c0
 	Warhead@2DamAA: SpreadDamage
 		ValidTargets: AirborneActor
 		Versus:
@@ -915,7 +923,7 @@ NikeAA:
 		Inaccuracy: 0
 		Image: MISSILE
 		HorizontalRateOfTurn: 100
-		RangeLimit: 9c0
+		RangeLimit: 13c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
 		ValidTargets: AirborneActor
@@ -1086,7 +1094,7 @@ missile.humvee.air:
 	Projectile: MissileTA
 		TrailImage: smokey
 		HorizontalRateOfTurn: 40
-		RangeLimit: 8c512
+		RangeLimit: 12c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
 		Versus:
@@ -1300,7 +1308,7 @@ missile.tomahawk_launcher:
 		Blockable: false
 		Inaccuracy: 196
 		Image: MISSILE
-		RangeLimit: 11c0
+		RangeLimit: 900c0 ## in gen it can chase you anywhere
 		Shadow: True
 		MinimumLaunchAngle: 62
 		MaximumLaunchAngle: 62

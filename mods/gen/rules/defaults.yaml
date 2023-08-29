@@ -295,6 +295,45 @@
 		Condition: adv_training
 		Prerequisites: upgrade.adv_training
 
+^AffectedByCounterMeasures:
+	GrantConditionOnPrerequisite@COUNTERMEASURES:
+		Condition: countermeasures
+		Prerequisites: upgrade.countermeasures
+	Shielded@COUNTERMEASURES:
+		ShieldsUpCondition: cm-inactived
+		ShowSelectionBar: false
+		MaxStrength: 1
+		BlockExcessDamage: true
+		RegenInterval: 200
+		RegenAmount: 1
+		RequiresCondition: countermeasures && airborne
+	GrantPeriodicCondition@COUNTERMEASURES:
+		Condition: jamm-missile
+		CooldownDuration: 20
+		ActiveDuration: 10
+		StartsGranted: true
+		RequiresCondition: countermeasures && !cm-inactived && airborne
+	GrantPeriodicCondition@COUNTERMEASURES-Flare:
+		Condition: drop-flare
+		CooldownDuration: 29
+		ActiveDuration: 1
+		StartsGranted: true
+		RequiresCondition: countermeasures && !cm-inactived && airborne
+	FloatingSpriteEmitter@COUNTERMEASURES-Flare:
+		Lifetime: 60
+		Duration: -1
+		SpawnFrequency: 0
+		Image: explosion
+		Sequences: counter-flare
+		Palette: effect
+		Gravity: -20
+		RequiresCondition: drop-flare
+	JamsMissiles:
+		Range: 1c0
+		Chance: 100
+		DeflectionRelationships: Neutral, Enemy
+		RequiresCondition: jamm-missile
+
 ^AffectedByLeaflet:
 	Inherits@DISABLED: ^WithDisabledOverlay
 	TimedConditionBar@LEAFLET:
@@ -311,6 +350,13 @@
 	TimedConditionBar@EMP:
 		Condition: emp
 		Color: 333333
+	WithIdleOverlay@EMP:
+		Image: disabled_fx
+		Sequence: idle1
+		Palette: effect
+		RequiresCondition: emp
+		Offset: 0,0,0
+		IsDecoration: true ## so this doesn't affect by cloak palette
 	ExternalCondition@EMP:
 		Condition: emp
 	GrantCondition@DISABLED-EMP:
@@ -324,6 +370,13 @@
 		Color: 333333
 	ExternalCondition@HACKED:
 		Condition: hacked
+	WithIdleOverlay@HACKED:
+		Image: disabled_fx
+		Sequence: idle3
+		Palette: effect
+		RequiresCondition: hacked
+		Offset: 0,0,0
+		IsDecoration: true ## so this doesn't affect by cloak palette
 	GrantCondition@DISABLED-HACK:
 		RequiresCondition: hacked
 		Condition: disabled
@@ -2098,6 +2151,13 @@
 		Condition: sabotaged
 	Targetable@SABOTAGE:
 		TargetTypes: Sabotage
+	WithIdleOverlay@SABOTAGE:
+		Image: disabled_fx
+		Sequence: idle5
+		Palette: effect
+		RequiresCondition: sabotaged
+		Offset: -512,0,0
+		IsDecoration: true ## so this doesn't affect by cloak palette
 
 ^SabotagableFake:
 	Inherits@SABOTAGE: ^CanBeSabotaged
@@ -2497,8 +2557,6 @@
 	HitShape:
 	MapEditorData:
 		Categories: Husk
-	Targetable@IgnoredByAI:
-		TargetTypes: IgnoredByAI
 
 ^Husk:
 	Inherits: ^BasicHusk
@@ -2506,7 +2564,7 @@
 	Husk:
 		AllowedTerrain: Grass, Snow, Sand, Concrete, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Gems, Beach
 	Targetable:
-		TargetTypes: GroundActor, Husk, NoAutoTarget
+		TargetTypes: GroundActor, Husk, NoAutoTarget, IgnoredByAI
 		RequiresForceFire: true
 	Tooltip:
 		GenericName: Destroyed Vehicle
@@ -2514,6 +2572,7 @@
 ^PlaneHusk:
 	Inherits: ^BasicHusk
 	Inherits@2: ^SpriteActor
+	Inherits@emp: ^AffectedByEMP
 	WithShadow:
 		Offset: 43, 128, 0
 		ZOffset: -129
@@ -2530,10 +2589,13 @@
 	RevealOnDeath:
 		Duration: 60
 		Radius: 3c0
+	Targetable:
+		TargetTypes: NoAutoTarget, IgnoredByAI, EmpableHusk
 
 ^HelicopterHusk:
 	Inherits: ^BasicHusk
 	Inherits@2: ^ClassicFacingSpriteActor
+	Inherits@emp: ^AffectedByEMP
 	WithShadow:
 		Offset: 43, 128, 0
 		ZOffset: -129
@@ -2545,6 +2607,8 @@
 		CanSlide: True
 	FallsToEarth:
 		Explosion: UnitExplodeHeli
+	Targetable:
+		TargetTypes: NoAutoTarget, IgnoredByAI, EmpableHusk
 	RevealOnDeath:
 		Duration: 60
 		Radius: 3c0
@@ -2663,11 +2727,19 @@
 	AffectedByPowerOutage:
 		Condition: power-outage
 	InfiltrateForPowerOutage:
+		Types: Sabotage
 	Power:
 		RequiresCondition: !power-outage
 	GrantCondition@DISABLED-PO:
 		RequiresCondition: power-outage
 		Condition: disabled
+	WithIdleOverlay@DISABLED-PO:
+		Image: disabled_fx
+		Sequence: idle4
+		Palette: effect
+		RequiresCondition: power-outage && disabled
+		Offset: 388,0,0
+		IsDecoration: true ## so this doesn't affect by cloak palette
 
 ^CargoPips:
 	WithCargoPipsDecoration:

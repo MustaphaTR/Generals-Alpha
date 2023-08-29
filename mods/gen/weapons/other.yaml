@@ -555,7 +555,6 @@ cash_hack.black_lotus.anim:
 	Range: 3c768
 	ValidTargets: CashHackable, FakeCashHackable
 	TargetActorCenter: true
-	Report: ucapture.aud
 	Projectile: ArcLaserZap
 		Width: 60
 		Color: 00FF0070
@@ -570,7 +569,7 @@ cash_hack.black_lotus.end:
 	Range: 3c768
 	ValidTargets: CashHackable, FakeCashHackable
 	TargetActorCenter: true
-	Report: ucapture.aud
+	Report: scashhac.aud
 	Projectile: ArcLaserZap
 		Width: 60
 		Color: 00FF0070
@@ -593,7 +592,6 @@ disable.black_lotus.anim:
 	Range: 3c768
 	ValidTargets: Vehicle, Tank, Ship
 	TargetActorCenter: true
-	Report: ucapture.aud
 	Projectile: ArcLaserZap
 		Width: 60
 		Color: 00FF0070
@@ -608,6 +606,7 @@ disable.black_lotus.end:
 	Range: 3c768
 	ValidTargets: Vehicle, Tank, Ship
 	TargetActorCenter: true
+	Report: scashhac.aud
 	Projectile: ArcLaserZap
 		Width: 60
 		Color: 00FF0070
@@ -633,13 +632,12 @@ disable.hacker.anim:
 	Range: 3c768
 	ValidTargets: Disable
 	TargetActorCenter: true
-	Report: ucapture.aud
 	Projectile: ArcLaserZap
 		Width: 60
 		Color: 00FF0070
 		Duration: 20
 	Warhead@1: FlashTarget
-		FlashColor: 00ff0070
+		FlashColor: 00ff0040
 		UsePlayerColor: false
 		ValidTargets: Disable
 
@@ -648,16 +646,19 @@ disable.hacker.end:
 	Range: 3c768
 	ValidTargets: Disable
 	TargetActorCenter: true
-	Report: ucapture.aud
-	Projectile: ArcLaserZap
-		Width: 60
-		Color: 00FF0070
-		Duration: 20
+	Report: scashhac.aud
+	Projectile: InstantHit
 	Warhead@2Dis: GrantExternalCondition
-		Range: 0c512
 		Duration: 50
 		Condition: hacked
 		ValidTargets: Disable
+
+disable_vechicle.superhacker.anim:
+	Inherits: disable.hacker.anim
+	ReloadDelay: 10
+	ValidTargets: Vehicle, Tank, Ship
+	Warhead@1: FlashTarget
+		ValidTargets: Vehicle, Tank, Ship
 
 disable.ecm_tank.anim:
 	ReloadDelay: 2
@@ -671,9 +672,6 @@ disable.ecm_tank.anim:
 		SecondaryBeam: true
 		SecondaryBeamWidth: 100
 		SecondaryBeamColor: FF000035
-	Warhead@1Dam: TargetDamage
-		ValidTargets: Vehicle, Tank, Ship
-		ValidRelationships: Enemy, Neutral
 
 disable.ecm_tank.end:
 	ReloadDelay: 3
@@ -687,13 +685,10 @@ disable.ecm_tank.end:
 		SecondaryBeam: true
 		SecondaryBeamWidth: 100
 		SecondaryBeamColor: FF000035
-	Warhead@1Dam: TargetDamage
-		ValidTargets: Vehicle, Tank, Ship
-		ValidRelationships: Enemy, Neutral
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c512
 		Duration: 55
-		Condition: hacked
+		Condition: emp
 		ValidTargets: Vehicle, Tank, Ship
 
 disable.microwave_tank.anim:
@@ -708,9 +703,6 @@ disable.microwave_tank.anim:
 		SecondaryBeam: true
 		SecondaryBeamWidth: 100
 		SecondaryBeamColor: FF000035
-	Warhead@1Dam: TargetDamage
-		ValidTargets: Disable
-		ValidRelationships: Enemy, Neutral
 
 disable.microwave_tank.end:
 	ReloadDelay: 3
@@ -724,13 +716,10 @@ disable.microwave_tank.end:
 		SecondaryBeam: true
 		SecondaryBeamWidth: 100
 		SecondaryBeamColor: FF000035
-	Warhead@1Dam: TargetDamage
-		ValidTargets: Disable
-		ValidRelationships: Enemy, Neutral
 	Warhead@2Dis: GrantExternalCondition
 		Range: 0c512
 		Duration: 135
-		Condition: hacked
+		Condition: emp
 		ValidTargets: Disable
 
 aoe.microwave_tank:
@@ -772,7 +761,6 @@ melee.colonel_burton:
 	Range: 1c0
 	Projectile: Bullet
 		Speed: 10c0
-	Warhead@1Dam: TargetDamage
 	Warhead@2Spawner: SpawnActor
 		ValidTargets: Ground, GroundActor
 		InvalidTargets: Water, WaterActor
