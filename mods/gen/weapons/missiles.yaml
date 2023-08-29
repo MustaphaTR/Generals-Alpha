@@ -410,7 +410,7 @@ missile.aurora:
 			building.stinger_site: 200
 			building.wall: 300
 	Warhead@3Eff: CreateEffect
-		Explosions: mininuke
+		Explosions: tiny_twlt
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
 
@@ -436,7 +436,7 @@ missile.aurora_alpha:
 		DamageTypes: TriggerProne, ExplosionDeath
 	Warhead@5Eff: CreateEffect
 		Delay: 10
-		Explosions: nuke
+		Explosions: small_twlt
 		ImpactSounds: kaboom1.aud
 		ValidTargets: Ground, Air, GroundActor, AirborneActor, WaterActor, Trees
 	Warhead@6EffWater: CreateEffect

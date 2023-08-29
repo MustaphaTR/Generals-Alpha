@@ -14,7 +14,7 @@ parabomb.fuel_air_bomb:
 	Inherits: ^ParaBomb
 	Warhead@1Dam: SpreadDamage
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		Spread: 4c0
+		Spread: 2c0
 		Damage: 15000
 		Delay: 15
 		ValidTargets: GroundActor, WaterActor
@@ -30,11 +30,16 @@ parabomb.fuel_air_bomb:
 			building.tough: 80
 			building.internet_center: 70
 		DamageTypes: TriggerProne, FireDeath, Incendiary
+	Warhead@1Eff_impact: CreateEffect
+		Explosions: fuel_air
+		ImpactActors: false
+		AirThreshold: 8c0
 	Warhead@2Eff_impact: CreateEffect
 		Delay: 15
-		Explosions: nuke
+		Explosions: large_twlt
 		ImpactSounds: kaboom1.aud
 		ImpactActors: false
+		AirThreshold: 8c0
 	Warhead@3Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
 		ValidTargets: Ground, Infantry
@@ -51,6 +56,8 @@ parabomb.moab:
 	Warhead@1Dam: SpreadDamage
 		Delay: 0
 		Damage: 20000
+	Warhead@1Eff_impact: CreateEffect
+		Explosions: mininuke
 	Warhead@2Eff_impact: CreateEffect
 		Delay: 0
 	Warhead@3Smu_impact: LeaveSmudge
