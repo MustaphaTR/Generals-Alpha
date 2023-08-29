@@ -54,5 +54,3 @@ label-armor-class =
     .aircraft-comanche = Comanche
     .aircraft-comanche-countermeasures = Comanche
 
-## Defaults
-notification-building-being-captured = One of our buildings is being captured.

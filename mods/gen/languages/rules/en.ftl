@@ -29,6 +29,8 @@ checkbox-mergegenerals =
     .label = Merge Generals
     .description = Regardless of chosen general, effects from all 3 generals are given
 
+notification-all-units-revealed = All of our units has been revealed!
+
 ## World
 dropdown-restrictions =
     .label = Restrictions
@@ -57,3 +59,7 @@ options-gpmodifier =
     .three = 3, 3, 3, 3, 3
     .triple = 3, 3, 3, 3, 9
     .all = 5, 0, 15, 0, 5
+
+## Defaults
+notification-unit-lost = Unit lost.
+notification-building-being-captured = One of our buildings is being captured.
