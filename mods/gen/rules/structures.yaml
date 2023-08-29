@@ -977,6 +977,8 @@ building.prc_command_center.radar:
 	Armor:
 		Type: building.normal
 	WithBuildingBib:
+	WithIdleOverlay@SABOTAGE:
+		Offset: -1024,0,0
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.reactor

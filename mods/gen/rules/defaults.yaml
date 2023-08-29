@@ -2151,6 +2151,13 @@
 		Condition: sabotaged
 	Targetable@SABOTAGE:
 		TargetTypes: Sabotage
+	WithIdleOverlay@SABOTAGE:
+		Image: disabled_fx
+		Sequence: idle5
+		Palette: effect
+		RequiresCondition: sabotaged
+		Offset: -512,0,0
+		IsDecoration: true ## so this doesn't affect by cloak palette
 
 ^SabotagableFake:
 	Inherits@SABOTAGE: ^CanBeSabotaged
@@ -2731,7 +2738,7 @@
 		Sequence: idle4
 		Palette: effect
 		RequiresCondition: power-outage && disabled
-		Offset: 0,0,0
+		Offset: 388,0,0
 		IsDecoration: true ## so this doesn't affect by cloak palette
 
 ^CargoPips:
