@@ -72,12 +72,17 @@ infantry.worker:
 	Selectable:
 		Priority: 7
 	SupplyCollector:
-		CollectionDelay: 50 # 37 # 4
-		DeliveryDelay: 50 # 38 # 4
+		CollectionDelay: 40 # 37 # 4
+		DeliveryDelay: 5 # 38 # 4
 		Capacity: 75
-		MaxDeliveryQueue: 20
+		StuckRoadPowerPower: 1
+		StuckRoadPowerAir: 1
+		OccupancyPower: 1
+		ToleratedOccupied: 13
 		CollectionQueueMultiplier: 5
 		CollectionQueueCostModifier: 2
+		FacingWhenDockAtSupplyCenter: TowardsTarget
+		FacingWhenDockAtSupplyPile: TowardsTarget
 		CollectVoice: Action
 	WithSupplyCollectorPipsDecoration:
 		PipCount: 2
