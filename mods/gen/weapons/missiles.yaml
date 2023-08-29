@@ -884,6 +884,12 @@ missile.emp_patriot.air:
 		Damage: 1000000
 	Warhead@3Eff: CreateEffect
 		Explosions: emp_small
+	Warhead@4Dis: GrantExternalCondition
+		Delay: 1 ##Enable AirborneActor husk emp overlay
+		Range: 2c0
+		Duration: 250
+		Condition: emp
+		ValidTargets: AirborneActor, EmpableHusk
 
 missile.emp_patriot.super:
 	Inherits: missile.emp_patriot.ground

@@ -2536,8 +2536,6 @@
 	HitShape:
 	MapEditorData:
 		Categories: Husk
-	Targetable@IgnoredByAI:
-		TargetTypes: IgnoredByAI
 
 ^Husk:
 	Inherits: ^BasicHusk
@@ -2545,7 +2543,7 @@
 	Husk:
 		AllowedTerrain: Grass, Snow, Sand, Concrete, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Gems, Beach
 	Targetable:
-		TargetTypes: GroundActor, Husk, NoAutoTarget
+		TargetTypes: GroundActor, Husk, NoAutoTarget, IgnoredByAI
 		RequiresForceFire: true
 	Tooltip:
 		GenericName: Destroyed Vehicle
@@ -2553,6 +2551,7 @@
 ^PlaneHusk:
 	Inherits: ^BasicHusk
 	Inherits@2: ^SpriteActor
+	Inherits@emp: ^AffectedByEMP
 	WithShadow:
 		Offset: 43, 128, 0
 		ZOffset: -129
@@ -2569,10 +2568,13 @@
 	RevealOnDeath:
 		Duration: 60
 		Radius: 3c0
+	Targetable:
+		TargetTypes: NoAutoTarget, IgnoredByAI, EmpableHusk
 
 ^HelicopterHusk:
 	Inherits: ^BasicHusk
 	Inherits@2: ^ClassicFacingSpriteActor
+	Inherits@emp: ^AffectedByEMP
 	WithShadow:
 		Offset: 43, 128, 0
 		ZOffset: -129
@@ -2584,6 +2586,8 @@
 		CanSlide: True
 	FallsToEarth:
 		Explosion: UnitExplodeHeli
+	Targetable:
+		TargetTypes: NoAutoTarget, IgnoredByAI, EmpableHusk
 	RevealOnDeath:
 		Duration: 60
 		Radius: 3c0
