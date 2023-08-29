@@ -2720,11 +2720,19 @@
 	AffectedByPowerOutage:
 		Condition: power-outage
 	InfiltrateForPowerOutage:
+		Types: Sabotage
 	Power:
 		RequiresCondition: !power-outage
 	GrantCondition@DISABLED-PO:
 		RequiresCondition: power-outage
 		Condition: disabled
+	WithIdleOverlay@DISABLED-PO:
+		Image: disabled_fx
+		Sequence: idle4
+		Palette: effect
+		RequiresCondition: power-outage && disabled
+		Offset: 0,0,0
+		IsDecoration: true ## so this doesn't affect by cloak palette
 
 ^CargoPips:
 	WithCargoPipsDecoration:
