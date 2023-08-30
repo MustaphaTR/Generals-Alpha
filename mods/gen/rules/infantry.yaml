@@ -683,16 +683,16 @@ infantry.conscript:
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
-	Armament@PRIMARY:
+	Armament@AG:
 		Weapon: missile.missile_defender.ground
 		LocalOffset: 0,0,555
-	Armament@SECONDARY:
+	Armament@AA:
 		Weapon: missile.missile_defender.air
 		LocalOffset: 0,0,555
-	Armament@PRIMARY_GARRISON:
+	Armament@AG_GARRISON:
 		Name: garrison
 		Weapon: missile.missile_defender.garrison.ground
-	Armament@SECONDARY_GARRISON:
+	Armament@AA_GARRISON:
 		Name: garrison
 		Weapon: missile.missile_defender.garrison.air
 	TakeCover:
@@ -704,7 +704,7 @@ infantry.conscript:
 		DefaultAttackSequence: shoot
 	AutoTarget:
 		ScanRadius: 5
-	ActorStatValues
+	ActorStatValues:
 		Damage: 40
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 
@@ -719,28 +719,54 @@ infantry.missile_defender:
 		ReadyAudio: MissileDefenderCreated
 	Tooltip:
 		Name: Missile Defender
-	Armament@PRIMARY:
+	Armament@AG:
 		ForceTargetRelationships: None
-	Armament@SECONDARY:
+	Armament@AA:
 		ForceTargetRelationships: None
-	Armament@LaserLock_Normal:
-		Weapon: missile.missile_defender.locked.normal
+	Armament@LaserLock_AG:
+		Name: secondary
+		Weapon: laser.missile_defender.locked.ground
 		LocalOffset: 0,0,555
 		TargetRelationships: None
-	Armament@LaserLock_Ground:
+		Cursor: ability
+		OutsideRangeCursor: ability
+	Armament@LaserLock_AA:
+		Name: secondary
+		Weapon: laser.missile_defender.locked.air
+		LocalOffset: 0,0,555
+		Cursor: ability
+		OutsideRangeCursor: ability
+		TargetRelationships: None
+	Armament@LaserLock_MissileAG:
 		Weapon: missile.missile_defender.locked.ground
 		LocalOffset: 0,0,555
 		Cursor: ability
 		OutsideRangeCursor: ability
 		TargetRelationships: None
-	Armament@LaserLock_Air:
+		RequiresCondition: enable_lockattack
+	Armament@LaserLock_MissileAA:
 		Weapon: missile.missile_defender.locked.air
 		LocalOffset: 0,0,555
+		TargetRelationships: None
 		Cursor: ability
 		OutsideRangeCursor: ability
-		TargetRelationships: None
+		RequiresCondition: enable_lockattack
+	GrantConditionOnAttack@EnableDisable:
+		Condition: enable_lockattack
+		ArmamentNames: primary, secondary
+		RequiredShotsPerInstance: 15
+		MaximumInstances: 1
+		RevokeDelay: 5
+		RevokeAll: true
+		IsCyclic: false
+		RevokeOnNewTarget: true
 	Garrisoner:
 		Voice: Garrison
+	WithInfantryBody:
+		-DefaultAttackSequence:
+		AttackSequences:
+			primary: shoot
+			secondary: aim
 	Voiced:
 		VoiceSet: MissileDefenderVoice
 	ActorStatValues:
@@ -756,13 +782,13 @@ infantry.rpg_trooper:
 	Buildable:
 		Queue: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.gla_infantry_merged
 		ReadyAudio: RPGTrooperCreated
-	Armament@PRIMARY:
+	Armament@AG:
 		Weapon: missile.rpg_trooper.ground
-	Armament@SECONDARY:
+	Armament@AA:
 		Weapon: missile.rpg_trooper.air
-	Armament@PRIMARY_GARRISON:
+	Armament@AG_GARRISON:
 		Weapon: missile.rpg_trooper.garrison.ground
-	Armament@SECONDARY_GARRISON:
+	Armament@AA_GARRISON:
 		Weapon: missile.rpg_trooper.garrison.air
 	Tooltip:
 		Name: RPG Trooper
@@ -792,12 +818,12 @@ infantry.stinger_soldier:
 		Condition: disable_movement
 		ShowSelectionBar: false
 		Delay: 5
-	Armament@PRIMARY:
+	Armament@AG:
 		Weapon: missile.stinger_site.ground
-	Armament@SECONDARY:
+	Armament@AA:
 		Weapon: missile.stinger_site.air
-	-Armament@PRIMARY_GARRISON:
-	-Armament@SECONDARY_GARRISON:
+	-Armament@AG_GARRISON:
+	-Armament@AA_GARRISON:
 	-ChangesHealth@IN_AMBULANCE:
 	-ChangesHealth@IN_CRAWLER:
 	-Passenger:
@@ -848,10 +874,10 @@ infantry.tank_hunter:
 		Multiplier: 140 # 175
 	Tooltip:
 		Name: Tank Hunter
-	Armament@PRIMARY:
+	Armament@AG:
 		Weapon: missile.tank_hunter.ground
 		ForceTargetRelationships: None
-	Armament@SECONDARY:
+	Armament@AA:
 		Weapon: missile.tank_hunter.air
 		ForceTargetRelationships: None
 	Armament@TNT:
@@ -900,14 +926,14 @@ infantry.grenadier:
 		Speed: 25
 	SpeedMultiplier@DAMAGED:
 		Modifier: 60
-	Armament@PRIMARY:
+	Armament@AG:
 		Weapon: grenade.grenadier
 		LocalOffset: 0,0,555
 		FireDelay: 15
-	-Armament@SECONDARY:
-	Armament@PRIMARY_GARRISON:
+	-Armament@AA:
+	Armament@AG_GARRISON:
 		Weapon: grenade.grenadier.garrison
-	-Armament@SECONDARY_GARRISON:
+	-Armament@AA_GARRISON:
 	TakeCover:
 		ProneOffset: 256,64,-331
 	WithInfantryBody:
