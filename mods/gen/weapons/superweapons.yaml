@@ -165,7 +165,8 @@ parabomb.leaflet:
 		Range: 2c768
 		Duration: 500
 		Condition: leaflet
-		ValidTargets: GroundActor, WaterActor
+		ValidTargets: GroundActor, WaterActor, AirborneActor
+		ValidRelationships: Neutral, Enemy
 
 Leaflet:
 	Range: 5c0

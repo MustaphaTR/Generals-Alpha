@@ -319,7 +319,7 @@ aircraft.cargo_plane:
 		PlayerPalette: cncplayer
 
 aircraft.mig:
-	Inherits: ^Plane
+	Inherits: ^Fighter
 	Inherits@AIRFIELD: ^KilledWithoutAirfield
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -424,6 +424,7 @@ aircraft.mig:
 		PauseOnCondition: !ammo
 	AttackAircraft:
 		FacingTolerance: 80
+		PauseOnCondition:  leaflet
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
@@ -506,7 +507,7 @@ aircraft.mig:
 		RequiresCondition: nuke
 
 aircraft.raptor:
-	Inherits: ^Plane
+	Inherits: ^Fighter
 	Inherits@AIRFIELD: ^KilledWithoutAirfield
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -566,6 +567,7 @@ aircraft.raptor:
 		PauseOnCondition: !ammo
 	AttackAircraft:
 		FacingTolerance: 80
+		PauseOnCondition:  leaflet
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
@@ -692,7 +694,7 @@ aircraft.king_raptor:
 		RequiresCondition: boss
 
 aircraft.stealth_fighter:
-	Inherits: ^Plane
+	Inherits: ^Fighter
 	Inherits@AIRFIELD: ^KilledWithoutAirfield
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -752,6 +754,7 @@ aircraft.stealth_fighter:
 		RequiresCondition: bunker_busters
 	AttackAircraft:
 		FacingTolerance: 80
+		PauseOnCondition:  leaflet
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
@@ -861,7 +864,7 @@ aircraft.stealth_fighter.air:
 		PointDefenseTypes: missilepd
 
 aircraft.aurora:
-	Inherits: ^Plane
+	Inherits: ^Fighter
 	Inherits@AIRFIELD: ^KilledWithoutAirfield
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -943,6 +946,7 @@ aircraft.aurora:
 		Prerequisites: prerequisite.zh_units
 	AttackAircraft:
 		FacingTolerance: 80
+		PauseOnCondition:  leaflet
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
@@ -1581,6 +1585,7 @@ aircraft.comanche:
 		Count: 12
 	AttackAircraft:
 		AttackType: Hover
+		PauseOnCondition:  leaflet
 		FacingTolerance: 80
 	Aircraft:
 		CruiseAltitude: 1928
@@ -1784,6 +1789,7 @@ aircraft.helix:
 		AttackType: Hover
 		Armaments: primary, gatling
 		FacingTolerance: 80
+		PauseOnCondition:  leaflet
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroud@SEARCH_AND_DESTROY:
@@ -1837,6 +1843,7 @@ aircraft.helix:
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
 		RequiresCondition: bunker_upgrade && loaded
+		PauseOnCondition:  leaflet
 	GrantConditionOnAttack@GATLING:
 		Condition: gatling
 		ArmamentNames: gatling

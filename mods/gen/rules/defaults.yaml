@@ -341,9 +341,18 @@
 		Color: 333333
 	ExternalCondition@LEAFLET:
 		Condition: leaflet
+	RejectsOrders@LEAFLET:
+		RequiresCondition: leaflet
 	GrantCondition@DISABLED-LEAFLET:
 		RequiresCondition: leaflet
 		Condition: disabled
+	WithIdleOverlay@DISABLED-LEAFLET:
+		Image: disabled_fx
+		Sequence: idle6
+		Palette: effect
+		RequiresCondition: leaflet
+		Offset: 0,0,0
+		IsDecoration: true ## so this doesn't affect by cloak palette
 
 ^AffectedByEMP:
 	Inherits@DISABLED: ^WithDisabledOverlay
@@ -1989,8 +1998,13 @@
 		RequiresCondition: !airborne
 	ActorStatValues:
 
+^Fighter:
+	Inherits: ^Plane
+	Inherits@AffectedByLeaflet: ^AffectedByLeaflet
+
 ^Helicopter:
 	Inherits: ^Plane
+	Inherits@AffectedByLeaflet: ^AffectedByLeaflet
 	Tooltip:
 		GenericName: Helicopter
 	Aircraft:
@@ -2154,7 +2168,8 @@
 	WithIdleOverlay@SABOTAGE:
 		Image: disabled_fx
 		Sequence: idle5
-		Palette: effect
+		Palette: player
+		IsPlayerPalette: true
 		RequiresCondition: sabotaged
 		Offset: -512,0,0
 		IsDecoration: true ## so this doesn't affect by cloak palette
