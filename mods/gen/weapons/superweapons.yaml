@@ -1,14 +1,13 @@
 ^ParaBomb:
 	ReloadDelay: 10
-	Range: 1c0
+	Range: 1c768
 	Report: sparadra.wav
 	ValidTargets: Ground, Water, GroundActor, WaterActor
 	Projectile: GravityBomb
-		Image: PARABOMB
-		OpenSequence: open
-		Velocity: 0, 0, -86
-		Acceleration: 0, 0, 0
-		Shadow: False
+		Image: bomberbomb
+		Velocity: 64, 0, 0
+		Acceleration: 0, 0, -7
+		Shadow: true
 
 parabomb.fuel_air_bomb:
 	Inherits: ^ParaBomb
@@ -139,23 +138,121 @@ parabomb.emp:
 		ImpactActors: false
 		AirThreshold: 8c0
 
+
 parabomb.leaflet:
-	Inherits: ^ParaBomb
+	ReloadDelay: 50
+	Range: 0c384
+	Projectile: InstantExplode
+		ValidTargets: GroundActor, WaterActor
+	Warhead@1Clu: FireCluster
+		Weapon: Leaflet
+		Dimensions: 7,7
+		Footprint: __XXX__ _XXXXX_ _XXXXX_ XXXXXXX _XXXXX_ _XXXXX_ __XXX__
+		ValidTargets: Ground, Water, Air
+	Warhead@2Clu: FireCluster
+		Weapon: Leaflet
+		Dimensions: 7,7
+		Footprint: __XXX__ _XXXXX_ _XXXXX_ XXXXXXX _XXXXX_ _XXXXX_ __XXX__
+		ValidTargets: Ground, Water, Air
+		Delay: 2
+	Warhead@3Clu: FireCluster
+		Weapon: Leaflet
+		Dimensions: 7,7
+		Footprint: __XXX__ _XXXXX_ _XXXXX_ XXXXXXX _XXXXX_ _XXXXX_ __XXX__
+		ValidTargets: Ground, Water, Air
+		Delay: 4
 	Warhead@2Dis: GrantExternalCondition
 		Range: 2c768
 		Duration: 500
 		Condition: leaflet
 		ValidTargets: GroundActor, WaterActor
 
+Leaflet:
+	Range: 5c0
+	Projectile: Bullet
+		Image: leaflet
+		Sequences: idle, 1, 2, 3, 4, 5
+		Blockable: false
+		Speed: 128
+		Inaccuracy: 512
+		Palette: effect
+	Warhead@5EffWater: CreateEffect
+		Image: leaflet
+		Explosions: 00, 01, 02, 03, 04, 05
+		ImpactActors: false
+		AirThreshold: 8c0
+
+bomb.carpet:
+	Inherits: ^ParaBomb
+	ReloadDelay: 4
+	Range: 5c768
+	Report: cannon2.aud
+	Projectile: GravityBomb
+		Image: orcabomb
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c0
+		Damage: 30000
+		Versus:
+			infantry.stinger_site: 10
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
+			aircraft.normal.countermeasures: 90
+			aircraft.comanche: 130
+			aircraft.comanche.countermeasures: 110
+			aircraft.chinook: 50
+			building.tough: 80
+			building.internet_center: 70
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		ValidTargets: Ground, Infantry
+	Warhead@2SmuSnow: LeaveSmudge
+		SmudgeType: SnowCrater
+		ValidTargets: Ground, Infantry
+	Warhead@3Eff: CreateEffect
+		Explosions: building
+		ImpactSounds: kaboom12.aud
+		ValidTargets: Ground, GroundActor, WaterActor, Trees
+	Warhead@4EffWater: CreateEffect
+		Explosions: large_splash
+		ImpactSounds: splash9.aud
+		ValidTargets: Water, Underwater
+		InvalidTargets: Bridge
+
+bomb.carpet.prc:
+	Inherits: bomb.carpet
+	ReloadDelay: 5
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c896
+
+bomb.carpet.nuke:
+	Inherits: bomb.carpet.prc
+	Warhead@3Eff: CreateEffect
+		Explosions: mininuke
+		ImpactSounds: kaboom1.aud
+	Warhead@5Radio: CreateTintedCells
+		LayerName: radioactivity
+		Spread: 1024
+		Level: 2000
+		Falloff: 100, 60, 25, 0
+		MaxLevel: 5000
+
 parabomb.cluster_mines:
 	Inherits: ^ParaBomb
-	Warhead@1Dam: TargetDamage
 	Warhead@2Spawner: SpawnActor
 		Actors: hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine
 
 parabomb.helix:
 	Inherits: ^ParaBomb
 	ReloadDelay: 250
+	Range: 1c0
+	Projectile: GravityBomb
+		Image: PARABOMB
+		OpenSequence: open
+		Velocity: 0, 0, -86
+		Acceleration: 0, 0, 0
 	Warhead@1Fire: TriggerLayerWeapon
 		LayerName: InfernoLayer
 		TriggerWeapon: explosion.inferno_layer.firestorm

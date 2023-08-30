@@ -676,11 +676,60 @@ parabomb:
 		Length: 5
 		ZOffset: 1023
 
+bomberbomb:
+	idle:
+		Filename: bomberbomb.shp
+		Facings: -32
+		ZOffset: 1023
+
 orcabomb:
 	idle:
 		Filename: orcabomb.shp
 		Facings: -32
 		ZOffset: 1023
+
+leaflet:
+	Defaults:
+		Filename: leaflet.shp
+	idle:
+		Length: *
+		ZOffset: 1023
+	0:
+		Strat: 0
+		ZOffset: 1023
+	1:
+		Strat: 1
+		ZOffset: 1023
+	2:
+		Strat: 2
+		ZOffset: 1023
+	3:
+		Strat: 3
+		ZOffset: 1023
+	4:
+		Strat: 4
+		ZOffset: 1023
+	5:
+		Strat: 5
+		ZOffset: 1023
+	00:
+		Strat: 0
+		Tick: 5000
+	01:
+		Strat: 1
+		Tick: 5000
+	02:
+		Strat: 2
+		Tick: 5000
+	03:
+		Strat: 3
+		Tick: 5000
+	04:
+		Strat: 4
+		Tick: 5000
+	05:
+		Strat: 5
+		Tick: 5000
 
 smokland:
 	open:
