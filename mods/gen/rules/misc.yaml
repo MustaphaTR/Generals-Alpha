@@ -524,6 +524,7 @@ hack.particle_beam:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
 	Inherits@REVEAL: ^Reveal150
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Tooltip:
 		Name: Particle Beam
 	Health:
@@ -563,6 +564,13 @@ hack.particle_beam:
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
 	HiddenUnderFog:
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: AttackAnything
+		ScanRadius: 7
+	AttackFrontal:
+	Armament:
+		Weapon: hack.particle_beam.follow
 	Explodes:
 		Weapon: aoe.particle_beam
 		EmptyWeapon: aoe.particle_beam
