@@ -770,6 +770,7 @@ infantry.missile_defender:
 	Voiced:
 		VoiceSet: MissileDefenderVoice
 	ActorStatValues:
+		Armaments: primary
 		Upgrades: upgrade.adv_training
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.chemical_suits
@@ -907,6 +908,7 @@ infantry.tank_hunter:
 	Voiced:
 		VoiceSet: TankHunterVoice
 	ActorStatValues:
+		Armaments: primary
 		Upgrades: upgrade.nationalism
 	ActorStatOverride@Inf:
 		Upgrades: upgrade.patriotism
