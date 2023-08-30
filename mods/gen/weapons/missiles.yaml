@@ -18,8 +18,9 @@
 		RangeLimit: 6c0
 		PointDefenseTypes: missilepd
 		Jammable: true
-		Gravity: 30
-		ExplodeUnderThisAltitude: 0
+		JammedEffectImage: disabled_fx
+		JammedEffectSequence: idle2
+		Gravity: 256
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 100
@@ -54,7 +55,6 @@
 	Projectile: MissileTA
 		Speed: 384
 		RangeLimit: 14c0
-		Gravity: 256
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: AirborneActor
 	Warhead@3Eff: CreateEffect
@@ -602,9 +602,25 @@ missile.missile_defender.garrison.air:
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
 
-missile.missile_defender.locked.normal:
-	Inherits: missile.missile_defender.ground
-	InvalidTargets: Vehicle, Tank, Ship
+laser.missile_defender.locked.ground:
+	ReloadDelay: 4
+	Range: 4c384
+	ValidTargets: Vehicle, Tank, Ship
+	Projectile: LaserZap
+		Width: 30
+		ZOffset: 2047
+		Color: FF0000
+		Duration: 3
+
+laser.missile_defender.locked.air:
+	ReloadDelay: 4
+	Range: 6c0
+	ValidTargets: AirborneActor
+	Projectile: LaserZap
+		Width: 30
+		ZOffset: 2047
+		Color: FF0000
+		Duration: 3
 
 missile.missile_defender.locked.ground:
 	Inherits: missile.missile_defender.ground

@@ -576,6 +576,18 @@ infantry.missile_defender:
 	Inherits: infantry.stinger_soldier
 	Defaults:
 		Filename: misdef.shp
+	aim:
+		Start: 64
+		Length: 1
+		Stride: 8
+		Facings: 8
+		Tick: 200
+	prone-aim:
+		Start: 192
+		Length: 1
+		Stride: 10
+		Facings: 8
+		Tick: 200
 	icon:
 		Filename: missile_defender_icon.png
 

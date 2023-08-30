@@ -655,52 +655,6 @@ cannon.gunboat:
 			building.tough: 80
 			building.internet_center: 70
 
-bomb.carpet:
-	Inherits: ^Cannon
-	ReloadDelay: 4
-	Range: 5c0
-	Report: cannon2.aud
-	-Projectile:
-	Projectile: GravityBomb
-		Image: BOMBLET
-		Shadow: true
-	Warhead@1Dam: SpreadDamage
-		Spread: 1c0
-		Damage: 30000
-		Versus:
-			infantry.stinger_site: 10
-			vehicle.battle_bus.crate-1: 90
-			vehicle.battle_bus.crate-2: 80
-			husk.battle_bus.crate-1: 80
-			husk.battle_bus.crate-2: 70
-			aircraft.normal.countermeasures: 90
-			aircraft.comanche: 130
-			aircraft.comanche.countermeasures: 110
-			aircraft.chinook: 50
-			building.tough: 80
-			building.internet_center: 70
-	Warhead@3Eff: CreateEffect
-		Explosions: building
-	Warhead@4EffWater: CreateEffect
-		Explosions: large_splash
-
-bomb.carpet.prc:
-	Inherits: bomb.carpet
-	ReloadDelay: 5
-	Warhead@1Dam: SpreadDamage
-		Spread: 1c896
-
-bomb.carpet.nuke:
-	Inherits: bomb.carpet.prc
-	Warhead@3Eff: CreateEffect
-		Explosions: mininuke
-		ImpactSounds: kaboom1.aud
-	Warhead@5Radio: CreateTintedCells
-		LayerName: radioactivity
-		Spread: 1024
-		Level: 2000
-		Falloff: 100, 60, 25, 0
-		MaxLevel: 5000
 
 molotov.angry_mob:
 	Inherits: ^Artillery
@@ -794,24 +748,19 @@ grenade.grenadier.garrison:
 	Warhead@1Dam: SpreadDamage
 		Damage: 7500
 
-ArtyBarrageSpawner:
-	ReloadDelay: 10
-	TargetActorCenter: true
-	Projectile: Bullet
-	Warhead@1Clu: FireCluster
-		Weapon: ArtyBarrageWeapon
-		Dimensions: 1,1
-		Footprint: x
-		Delay: 1
-
-ArtyBarrageWeapon:
+ArtyBarrageWeapon1:
 	Inherits: ^Artillery
-	ReloadDelay: 10
-	Report: turret1.aud
-	TargetActorCenter: true
+	Range: 14c0
+	ReloadDelay: 9999
+	BurstDelay: 3
+	Burst: 4
+	FirstBurstTargetOffset: -1512,0,0
+	FollowingBurstTargetOffset: 768,0,0
 	Projectile: Bullet
 		Speed: 1024
 		Inaccuracy: 3c0
+		InaccuracyType: Absolute
+		ContrailLength: 30
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c256
 		Damage: 10500
@@ -827,3 +776,15 @@ ArtyBarrageWeapon:
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
+
+ArtyBarrageWeapon2:
+	Inherits: ArtyBarrageWeapon1
+	BurstDelay: 2
+	Burst: 8
+	FollowingBurstTargetOffset: 384,0,0
+
+ArtyBarrageWeapon3:
+	Inherits: ArtyBarrageWeapon1
+	BurstDelay: 1
+	Burst: 12
+	FollowingBurstTargetOffset: 256,0,0

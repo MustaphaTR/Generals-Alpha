@@ -18,6 +18,7 @@ disabled_fx:
 		Filename: emp_fx01.shp
 	idle2:
 		Filename: emp_fx02.shp
+		Tick: 20
 	idle3:
 		Filename: hack-tiny.shp
 		Length: *
@@ -29,7 +30,11 @@ disabled_fx:
 	idle5:
 		Filename: unplug.shp
 		Tick: 300
-		ZOffset: 1536
+		ZOffset: 1536 ## Higher than warfactory gate
+	idle6:
+		Filename: doubt.shp
+		Tick: 200
+		Offset: 0,-20, 0
 
 120mm:
 	idle:
@@ -361,6 +366,12 @@ beacon:
 		Filename: tank_drop2_beacon.png
 	tank_drop3:
 		Filename: tank_drop3_beacon.png
+	arty_barrage1:
+		Filename: arty_barrage1_beacon.png
+	arty_barrage2:
+		Filename: arty_barrage2_beacon.png
+	arty_barrage3:
+		Filename: arty_barrage3_beacon.png
 	atom_bomb:
 		Filename: atom_bomb_beacon.png
 	scud_storm:
@@ -396,6 +407,7 @@ smokey:
 		Filename: smokey.shp
 		Length: *
 		ZOffset: 1023
+		AlphaFade: true
 
 bomb:
 	idle:
@@ -674,11 +686,60 @@ parabomb:
 		Length: 5
 		ZOffset: 1023
 
+bomberbomb:
+	idle:
+		Filename: bomberbomb.shp
+		Facings: -32
+		ZOffset: 1023
+
 orcabomb:
 	idle:
 		Filename: orcabomb.shp
 		Facings: -32
 		ZOffset: 1023
+
+leaflet:
+	Defaults:
+		Filename: leaflet.shp
+	idle:
+		Length: *
+		ZOffset: 1023
+	0:
+		Strat: 0
+		ZOffset: 1023
+	1:
+		Strat: 1
+		ZOffset: 1023
+	2:
+		Strat: 2
+		ZOffset: 1023
+	3:
+		Strat: 3
+		ZOffset: 1023
+	4:
+		Strat: 4
+		ZOffset: 1023
+	5:
+		Strat: 5
+		ZOffset: 1023
+	00:
+		Strat: 0
+		Tick: 5000
+	01:
+		Strat: 1
+		Tick: 5000
+	02:
+		Strat: 2
+		Tick: 5000
+	03:
+		Strat: 3
+		Tick: 5000
+	04:
+		Strat: 4
+		Tick: 5000
+	05:
+		Strat: 5
+		Tick: 5000
 
 smokland:
 	open:
