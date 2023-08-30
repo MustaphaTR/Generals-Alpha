@@ -2000,11 +2000,11 @@
 
 ^Fighter:
 	Inherits: ^Plane
-	Inherits@AffectedByLeaflet: ^AffectedByLeaflet
+	Inherits@LEAFLET: ^AffectedByLeaflet
 
 ^Helicopter:
 	Inherits: ^Plane
-	Inherits@AffectedByLeaflet: ^AffectedByLeaflet
+	Inherits@LEAFLET: ^AffectedByLeaflet
 	Tooltip:
 		GenericName: Helicopter
 	Aircraft:
@@ -2587,7 +2587,7 @@
 ^PlaneHusk:
 	Inherits: ^BasicHusk
 	Inherits@2: ^SpriteActor
-	Inherits@emp: ^AffectedByEMP
+	Inherits@3: ^AffectedByEMP
 	WithShadow:
 		Offset: 43, 128, 0
 		ZOffset: -129
@@ -2605,12 +2605,12 @@
 		Duration: 60
 		Radius: 3c0
 	Targetable:
-		TargetTypes: NoAutoTarget, IgnoredByAI, EmpableHusk
+		TargetTypes: NoAutoTarget, IgnoredByAI, EMPableHusk
 
 ^HelicopterHusk:
 	Inherits: ^BasicHusk
 	Inherits@2: ^ClassicFacingSpriteActor
-	Inherits@emp: ^AffectedByEMP
+	Inherits@3: ^AffectedByEMP
 	WithShadow:
 		Offset: 43, 128, 0
 		ZOffset: -129
@@ -2623,7 +2623,7 @@
 	FallsToEarth:
 		Explosion: UnitExplodeHeli
 	Targetable:
-		TargetTypes: NoAutoTarget, IgnoredByAI, EmpableHusk
+		TargetTypes: NoAutoTarget, IgnoredByAI, EMPableHusk
 	RevealOnDeath:
 		Duration: 60
 		Radius: 3c0
