@@ -466,41 +466,6 @@ FLARE:
 		Categories: Decoration
 	Interactable:
 
-hack.artillery_barrager.1:
-	Inherits: CAMERA
-	RevealsShroud:
-		Range: 5c0
-	PeriodicExplosion@1:
-		Weapon: ArtyBarrageSpawner
-		AmmoPoolName: 1
-		LocalOffset: 0,0,20000
-	AmmoPool@1:
-		Name: 1
-		Ammo: 12
-	AmbientSound:
-		SoundFiles: sartweaa.wav
-		Interval: 125
-
-hack.artillery_barrager.2:
-	Inherits: hack.artillery_barrager.1
-	PeriodicExplosion@2:
-		Weapon: ArtyBarrageSpawner
-		AmmoPoolName: 2
-		LocalOffset: 0,0,20000
-	AmmoPool@2:
-		Name: 2
-		Ammo: 12
-
-hack.artillery_barrager.3:
-	Inherits: hack.artillery_barrager.2
-	PeriodicExplosion@3:
-		Weapon: ArtyBarrageSpawner
-		AmmoPoolName: 3
-		LocalOffset: 0,0,20000
-	AmmoPool@3:
-		Name: 3
-		Ammo: 12
-
 hack.rebel_spawner.4:
 	Inherits: CAMERA
 	-RevealsShroud:

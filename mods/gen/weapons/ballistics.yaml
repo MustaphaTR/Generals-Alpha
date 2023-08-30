@@ -748,24 +748,19 @@ grenade.grenadier.garrison:
 	Warhead@1Dam: SpreadDamage
 		Damage: 7500
 
-ArtyBarrageSpawner:
-	ReloadDelay: 10
-	TargetActorCenter: true
-	Projectile: Bullet
-	Warhead@1Clu: FireCluster
-		Weapon: ArtyBarrageWeapon
-		Dimensions: 1,1
-		Footprint: x
-		Delay: 1
-
-ArtyBarrageWeapon:
+ArtyBarrageWeapon1:
 	Inherits: ^Artillery
-	ReloadDelay: 10
-	Report: turret1.aud
-	TargetActorCenter: true
+	Range: 14c0
+	ReloadDelay: 9999
+	BurstDelay: 3
+	Burst: 4
+	FirstBurstTargetOffset: -1512,0,0
+	FollowingBurstTargetOffset: 768,0,0
 	Projectile: Bullet
 		Speed: 1024
 		Inaccuracy: 3c0
+		InaccuracyType: Absolute
+		ContrailLength: 30
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c256
 		Damage: 10500
@@ -781,3 +776,15 @@ ArtyBarrageWeapon:
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
+
+ArtyBarrageWeapon2:
+	Inherits: ArtyBarrageWeapon1
+	BurstDelay: 2
+	Burst: 8
+	FollowingBurstTargetOffset: 384,0,0
+
+ArtyBarrageWeapon3:
+	Inherits: ArtyBarrageWeapon1
+	BurstDelay: 1
+	Burst: 12
+	FollowingBurstTargetOffset: 256,0,0

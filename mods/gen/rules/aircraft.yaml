@@ -248,6 +248,49 @@ aircraft.badger.carpet.nuke:
 	Armament:
 		Weapon: bomb.carpet.nuke
 
+hack.artillery_barrager.1:
+	Aircraft:
+		CruiseAltitude: 10000
+		TurnSpeed: 1023
+		Repulsable: false
+		AltitudeVelocity: 4000
+		Speed: 200
+		MoveIntoShroud: true
+		TakeOffOnResupply: true
+		CanHover: true
+		VTOL: true
+		CanSlide: true
+	AttackBomber:
+		FacingTolerance: 8
+	Armament:
+		Weapon: ArtyBarrageWeapon1
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Ammo: 4
+		AmmoCondition: ammo
+	AlwaysVisible:
+	BodyOrientation:
+		QuantizedFacings: 1
+	Voiced:
+		VoiceSet: ArtyBarrageSound
+	VoiceAnnouncement:
+		Voice: Action
+		OneShot: true
+
+hack.artillery_barrager.2:
+	Inherits: hack.artillery_barrager.1
+	Armament:
+		Weapon: ArtyBarrageWeapon2
+	AmmoPool:
+		Ammo: 8
+
+hack.artillery_barrager.3:
+	Inherits: hack.artillery_barrager.1
+	Armament:
+		Weapon: ArtyBarrageWeapon3
+	AmmoPool:
+		Ammo: 12
+
 aircraft.cargo_plane:
 	Inherits: ^default.badger
 	Tooltip:
