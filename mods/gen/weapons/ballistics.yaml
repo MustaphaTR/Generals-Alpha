@@ -752,7 +752,7 @@ ArtyBarrageWeapon1:
 	Inherits: ^Artillery
 	Range: 14c0
 	ReloadDelay: 9999
-	BurstDelay: 3
+	BurstDelays: 3
 	Burst: 4
 	FirstBurstTargetOffset: -1512,0,0
 	FollowingBurstTargetOffset: 768,0,0
@@ -779,12 +779,12 @@ ArtyBarrageWeapon1:
 
 ArtyBarrageWeapon2:
 	Inherits: ArtyBarrageWeapon1
-	BurstDelay: 2
+	BurstDelays: 2
 	Burst: 8
 	FollowingBurstTargetOffset: 384,0,0
 
 ArtyBarrageWeapon3:
 	Inherits: ArtyBarrageWeapon1
-	BurstDelay: 1
+	BurstDelays: 1
 	Burst: 12
 	FollowingBurstTargetOffset: 256,0,0

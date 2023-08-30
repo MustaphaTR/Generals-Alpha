@@ -138,12 +138,11 @@ parabomb.emp:
 		ImpactActors: false
 		AirThreshold: 8c0
 
-
 parabomb.leaflet:
 	ReloadDelay: 50
 	Range: 0c384
+	ValidTargets: GroundActor, WaterActor
 	Projectile: InstantExplode
-		ValidTargets: GroundActor, WaterActor
 	Warhead@1Clu: FireCluster
 		Weapon: Leaflet
 		Dimensions: 7,7
