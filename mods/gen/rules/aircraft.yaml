@@ -375,24 +375,28 @@ aircraft.mig:
 	Armor:
 		Type: aircraft.normal
 	Armament@Red:
+		Damage: 115
 		Weapon: missile.mig.ground
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
 		RequiresCondition: !black_napalm && !nuke
 		PauseOnCondition: !ammo
 	Armament@Blue:
+		Damage: 125
 		Weapon: missile.mig.ground.blue
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
 		RequiresCondition: black_napalm && !nuke
 		PauseOnCondition: !ammo
 	Armament@Nuke:
+		Damage: 140
 		Weapon: missile.mig.ground.nuke
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
 		RequiresCondition: !tactical_nuke_mig && nuke
 		PauseOnCondition: !ammo
 	Armament@TacticalNuke:
+		Damage: 200
 		Weapon: missile.mig.ground.tactical_nuke
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
@@ -630,6 +634,7 @@ aircraft.raptor:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	ActorStatValues:
+		Damage: 100
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Upgrades: upgrade.adv_training, upgrade.laser_guided_missiles
 	ActorStatOverride@ZH_UNITS:
@@ -687,6 +692,8 @@ aircraft.king_raptor:
 		Position: BottomLeft
 		Margin: 4, 3
 		RequiresSelection: true
+	ActorStatValues:
+		Damage: 125
 	ActorStatOverride@ZH_UNITS:
 		RequiresCondition: !boss && zh_units
 	ActorStatOverride@Boss:
@@ -840,6 +847,7 @@ aircraft.stealth_fighter:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	ActorStatValues:
+		Damage: 100
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.adv_training, upgrade.laser_guided_missiles
 	ActorStatOverride@ZH_UNITS:
@@ -1018,6 +1026,7 @@ aircraft.aurora:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	ActorStatValues:
+		Damage: 400
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.adv_training
 	ActorStatOverride@ZH_UNITS:
@@ -1038,6 +1047,8 @@ aircraft.aurora_alpha:
 		Class: aircraft.aurora_alpha
 	SpawnActorOnDeath:
 		Actor: husk.aurora_alpha
+	ActorStatValues:
+		Damage: 1300
 
 aircraft.spy_drone:
 	Inherits: ^Plane
@@ -1561,6 +1572,7 @@ aircraft.comanche:
 		Type: aircraft.comanche.countermeasures
 		RequiresCondition: countermeasures
 	Armament@MG:
+		Damage: 6
 		Weapon: mg.comanche
 		LocalOffset: 512,0,-85
 		MuzzleSequence: muzzle
@@ -1643,6 +1655,7 @@ aircraft.comanche:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	ActorStatValues:
+		Armaments: primary
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.adv_training, upgrade.rocket_pods
 	ActorStatOverride@ZH_UNITS:
@@ -1766,28 +1779,33 @@ aircraft.helix:
 	ProductionBar@Merged:
 		ProductionType: queue.helix_merged
 	Armament@MG:
+		Damage: 6
 		Weapon: mg.helix
 		LocalOffset: 1024,0,-125
 		MuzzleSequence: muzzle
 	Armament@GATLING:
+		Damage: 10
 		Weapon: gatling.gatling_cannon.ground
 		Name: gatling
 		LocalOffset: 95,-256,-85, 95,256,-85
 		MuzzleSequence: muzzle
 		RequiresCondition: gatling_upgrade
 	Armament@NAPALM:
+		Name: secondary
 		Weapon: parabomb.helix
 		RequiresCondition: napalm_upgrade && !black_napalm
 	Armament@NAPALM_BLUE:
+		Name: secondary
 		Weapon: parabomb.helix.blue
 		RequiresCondition: napalm_upgrade && black_napalm
 	Armament@NUKE:
+		Name: secondary
 		Weapon: parabomb.helix.nuke
 		RequiresCondition: nuke_upgrade
 	WithMuzzleOverlay:
 	AttackAircraft:
 		AttackType: Hover
-		Armaments: primary, gatling
+		Armaments: primary, secondary, gatling
 		FacingTolerance: 80
 		PauseOnCondition:  leaflet
 	RevealsShroud:
@@ -1939,6 +1957,7 @@ aircraft.helix:
 	GrantConditionOnDamageState@SmokeTrail:
 		Condition: enable-smoke
 	ActorStatValues:
+		Armaments: primary, gatling
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Cargo
 		Upgrades: upgrade.black_napalm, upgrade.helix_napalm, upgrade.helix_bunker, upgrade.helix_gatling, upgrade.helix_speaker
 		LocalUpgrades: upgrade.helix_napalm, upgrade.helix_nuke, upgrade.helix_bunker, upgrade.helix_gatling, upgrade.helix_speaker

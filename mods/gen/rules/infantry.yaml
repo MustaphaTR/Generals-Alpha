@@ -207,6 +207,7 @@ infantry.ranger:
 	Voiced:
 		VoiceSet: RangerVoice
 	ActorStatValues:
+		Damage: 15
 		Upgrades: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.adv_training
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.capture_building, upgrade.flashbang_grenades, upgrade.adv_training, upgrade.chemical_suits
@@ -1221,6 +1222,7 @@ infantry.flamethrower:
 	Voiced:
 		VoiceSet: GenericVoice
 	ActorStatValues:
+		Damage: 150
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 infantry.saboteur:
@@ -1310,6 +1312,7 @@ infantry.saboteur:
 	-Garrisoner:
 	-ChangesHealth@IN_AMBULANCE:
 	-ChangesHealth@IN_CRAWLER:
+	-Captures@DRIVER_KILL:
 	Health:
 		HP: 5000
 	Armor:
@@ -1385,6 +1388,7 @@ hack.angry_mob.molotov:
 infantry.angry_mob:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^ClassicFacingSpriteActor
+	Inherits@AP_BULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@LEAFLET: ^AffectedByLeaflet
 	-AppearsOnRadar:
@@ -1426,7 +1430,20 @@ infantry.angry_mob:
 	AttackOmni:
 		RequiresCondition: !leaflet
 	Armament@PRIMARY:
+		Damage: 10
+		Range: 2c512
+		ReloadDelay: 9
 		Weapon: hack.angry_mob.weapon
+		RequiresCondition: !arm_the_mob
+	Armament@ARM_THE_MOB:
+		Damage: 20
+		Range: 3c0
+		ReloadDelay: 6
+		Weapon: hack.angry_mob.weapon
+		RequiresCondition: arm_the_mob
+	GrantConditionOnPrerequisite@ARM_THE_MOB:
+		Condition: arm_the_mob
+		Prerequisites: upgrade.arm_the_mob
 	Mobile:
 		Speed: 18
 		Voice: Move
@@ -1950,6 +1967,7 @@ infantry.colonel_burton:
 	Voiced:
 		VoiceSet: BurtonVoice
 	ActorStatValues:
+		Damage: 40
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.adv_training
 	ActorStatOverride@ZH_UNITS:
@@ -2316,7 +2334,7 @@ infantry.black_lotus:
 	Voiced:
 		VoiceSet: LotusVoice
 	ActorStatValues:
-		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+		Stats: Armor, Sight, Speed
 
 infantry.super_lotus:
 	Inherits: infantry.black_lotus
