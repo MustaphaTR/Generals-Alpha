@@ -1,42 +1,75 @@
 Player:
-	ModularBot@RushAI:
-		Name: Rush AI
-		Type: rush
+	ModularBot@EasyAI:
+		Name: Easy AI
+		Type: easy
 	ModularBot@NormalAI:
 		Name: Normal AI
 		Type: normal
-	ModularBot@TurtleAI:
-		Name: Turtle AI
-		Type: turtle
-	GrantConditionOnBotOwner@rush:
-		Condition: enable-rush-ai
-		Bots: rush
+	ModularBot@HardAI:
+		Name: Hard AI
+		Type: hard
+	GrantConditionOnBotOwner@easy:
+		Condition: enable-easy-ai
+		Bots: easy
 	GrantConditionOnBotOwner@normal:
 		Condition: enable-normal-ai
 		Bots: normal
-	GrantConditionOnBotOwner@turtle:
-		Condition: enable-turtle-ai
-		Bots: turtle
+	GrantConditionOnBotOwner@hard:
+		Condition: enable-hard-ai
+		Bots: hard
+	GrantConditionOnBotOwner@base:
+		Condition: enable-any-ai
+		Bots: easy, normal, hard
+
+	InitialBaseAndWorkerBotModule@EasyAI:
+		MinimumDozerCount: 1
+		DozerTypes: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+		CommandCenterTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar
+		RequiresCondition: enable-easy-ai
+	InitialBaseAndWorkerBotModule@NormalAI:
+		MinimumDozerCount: 2
+		DozerTypes: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+		CommandCenterTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar
+		RequiresCondition: enable-normal-ai
+	InitialBaseAndWorkerBotModule@HardAI:
+		MinimumDozerCount: 3
+		ProduceDozerAtStart: true
+		DozerTypes: vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+		CommandCenterTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar
+		RequiresCondition: enable-hard-ai
+
+ 	## Give AI huge amount of cash to allow it build expensive unit
+	CashTrickler@EasyAI:
+		Interval: 3000
+		Amount: 1000
+		ShowTicks: false
+		RequiresCondition: enable-easy-ai
+	CashTrickler@NormalAI: ## Give AI huge amount of cash to allow it build expensive unit
+		Interval: 3000
+		Amount: 3000
+		ShowTicks: false
+		RequiresCondition: enable-normal-ai
+	CashTrickler@HardAI: ## Give AI huge amount of cash to allow it build expensive unit
+		Interval: 3000
+		Amount: 5000
+		ShowTicks: false
+		RequiresCondition: enable-hard-ai
+
+ 	## Common AI modules
 	ProvidesPrerequisite@AIDiscount:
-		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		RequiresCondition: enable-any-ai
 		Prerequisite: AIDiscount
 	AutoDeployManager@AI:
-		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
-	BaseBotModule:
-		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
-	CashTrickler@AICheat: ## Give AI huge amount of cash to allow it build expensive unit
-		Interval: 3000
-		Amount: 4000
-		ShowTicks: false
-		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		RequiresCondition: enable-any-ai
 	BaseBuilderBotModule@AIBase:
-		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		RequiresCondition: enable-any-ai
 		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine, queue.soviet_infantry, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power, queue.boss_gen_generals_power_merged
 		# DefenseQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged
 		MinimumExcessPower: 3
 		MaximumExcessPower: 10
 		ExcessPowerIncrement: 2
 		ExcessPowerIncreaseThreshold: 4
+		MaxBaseRadius: 44
 		# ConstructionMinimumCash: 199
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		RefineryTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -209,7 +242,7 @@ Player:
 			upgrade.neutron_mines: 9000
 			upgrade.camo_netting: 6000
 	SquadManagerBotModule@normal:
-		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		RequiresCondition: enable-any-ai
 		SquadSize: 18
 		NavalUnitsTypes: vessel.gunboat, vessel.destroyer, vessel.cruiser
 		ExcludeFromSquadsTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, vehicle.bomb_truck, aircraft.spy_drone, aircraft.scout_drone, aircraft.battle_drone, aircraft.hellfire_drone, infantry.hacker, infantry.super_hacker, infantry.black_lotus, infantry.super_lotus, infantry.hijacker, infantry.saboteur, infantry.pilot, hack.artillery_barrager.1, hack.artillery_barrager.2, hack.artillery_barrager.3, aircraft.cargo_plane, aircraft.badger, aircraft.badger.paradrop, aircraft.badger.prc_paradrop, aircraft.badger.tank_drop, aircraft.badger.fuel_air_bomb, aircraft.badger.leaflet, aircraft.b2, aircraft.b2.carpet, aircraft.badger.anthrax_bomb, aircraft.badger.emp, aircraft.badger.cluster_mines, aircraft.badger.carpet, aircraft.badger.carpet.nuke
@@ -225,7 +258,7 @@ Player:
 		SuggestedGroundLeaderLocomotor: locomotor.infantry, locomotor.wheeled, locomotor.sentry_drone, locomotor.tracked, locomotor.overlord
 		SuggestedNavyLeaderLocomotor: locomotor.vessel
 	UnitBuilderBotModule@normal:
-		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		RequiresCondition: enable-any-ai
 		# ProductionMinimumCash: 200
 		IdleBaseUnitsMaximum: 32
 		# CashGeneratorTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, infantry.hacker, infantry.super_hacker
@@ -288,9 +321,6 @@ Player:
 			vehicle.ecm_tank: 1
 			vehicle.microwave_tank: 1
 			vehicle.nuke_cannon: 1
-			vehicle.usa_mcc: 2
-			vehicle.gla_mcc: 2
-			vehicle.prc_mcc: 2
 			vehicle.bomb_truck: 10
 			vehicle.battle_bus: 2
 			aircraft.chinook: 10
@@ -373,9 +403,6 @@ Player:
 			vehicle.ambulance: 1
 			vehicle.avenger: 2
 			vehicle.avenger.air: 2
-			vehicle.usa_mcc: 3
-			vehicle.gla_mcc: 3
-			vehicle.prc_mcc: 3
 			vehicle.battle_bus: 2
 			vehicle.bomb_truck: 1
 		QueueLimits:
@@ -399,27 +426,24 @@ Player:
 			queue.nuke_gen_helix: 4
 			queue.helix_merged: 4
 		UnitDelays:
-			vehicle.usa_mcc: 250
-			vehicle.gla_mcc: 250
-			vehicle.prc_mcc: 250
 			upgrade.radar: 1500
 			upgrade.land_mines: 5000
 			upgrade.neutron_mines: 8000
 			upgrade.camo_netting: 6000
 	CncEngineerBotModule:
-		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		RequiresCondition: enable-any-ai
 		AssignRoleDelay: 151
 		EngineerActorTypes: infantry.ranger, infantry.rebel, infantry.toxin_rebel, infantry.red_guard, infantry.minigunner, infantry.conscript, infantry.hijacker, infantry.pilot
 		CapturableActorTypes: tech.oil_derrick, tech.oil_refinery, tech.hospital, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.reinforcements_pad, tech.repair_bay, vehicle.supply_truck, vehicle.ambulance, vehicle.humvee, vehicle.technical, vehicle.gatling_tank, vehicle.troop_crawler, vehicle.assault_troop_crawler, vehicle.quad_cannon, vehicle.tomahawk_launcher, vehicle.inferno_cannon, vehicle.scud_launcher, vehicle.dragon_tank, vehicle.rocket_buggy, vehicle.toxin_tractor, vehicle.scorpion_tank, vehicle.crusader_tank, vehicle.laser_tank, vehicle.battlemaster_tank, vehicle.nuclear_battlemaster_tank, vehicle.overlord_tank, vehicle.emparor_overlord, vehicle.paladin_tank, vehicle.marauder_tank, vehicle.combat_cycle, vehicle.avenge, vehicle.avenger.air, vehicle.radar_van, vehicle.sentry_drone, vehicle.listening_outpost, vehicle.attack_outpost, vehicle.ecm_tank, vehicle.microwave_tank, vehicle.nuke_cannon, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.bomb_truck, vehicle.battle_bus, aircraft.mig, aircraft.raptor, aircraft.king_raptor, aircraft.stealth_fighter, aircraft.stealth_fighter.air, aircraft.aurora, aircraft.aurora_alpha, aircraft.comanche, aircraft.helix, aircraft.assault_helix
 	BuildingRepairBotModule:
-		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		RequiresCondition: enable-any-ai
 	LoadCargoBotModule@Hacker:
-		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		RequiresCondition: enable-any-ai
 		TransportTypesAndLoadRequirement: 
 			building.internet_center: All
 		PassengerTypes: infantry.hacker, infantry.super_hacker
 	LoadCargoBotModule@DefenseAndTransport:
-		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		RequiresCondition: enable-any-ai
 		TransportTypesAndLoadRequirement: 
 			building.firebase: All
 			building.bunker: All
@@ -438,10 +462,10 @@ Player:
 		PassengerTypes: infantry.ranger, infantry.rebel, infantry.red_guard, infantry.minigunner, infantry.conscript, infantry.missile_defender, infantry.rpg_trooper, infantry.tank_hunter, infantry.grenadier, infantry.pathfinder, infantry.flamethrower
 		ValidTransportOwner: AlliedBot
 	LoadGarrisonerBotModule:
-		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		RequiresCondition: enable-any-ai
 		GarrisonerUnit: infantry.ranger, infantry.rebel, infantry.red_guard, infantry.minigunner, infantry.conscript, infantry.missile_defender, infantry.rpg_trooper, infantry.tank_hunter, infantry.grenadier, infantry.pathfinder, infantry.flamethrower
 	SendUnitToAttackBotModule@AttackBuilding:
-		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		RequiresCondition: enable-any-ai
 		ActorTypesAndAttackDesire: 
 			vehicle.bomb_truck: 100
 			infantry.black_lotus: 100
@@ -451,7 +475,7 @@ Player:
 		InvalidTargets: WaterActor
 		AttackDistance: Random
 	SendUnitToAttackBotModule@Saboteur:
-		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		RequiresCondition: enable-any-ai
 		ActorTypesAndAttackDesire: 
 			infantry.saboteur: 100
 		AttackOrderName: Infiltrate
@@ -459,7 +483,7 @@ Player:
 		InvalidTargets: WaterActor
 		AttackDistance: Random
 	SupportPowerBotModule:
-		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai
+		RequiresCondition: enable-any-ai
 		Decisions:
 			spydrone:
 				OrderName: SpyDronePowerInfoOrder
