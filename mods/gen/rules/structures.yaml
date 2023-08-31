@@ -1250,6 +1250,8 @@ building.advanced_nuclear_reactor:
 		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
 		HpPerStep: 1000
+	WithIdleOverlay@SABOTAGE:
+		Offset: -100,0,0
 
 building.usa_barracks:
 	Inherits: ^default.barracks
@@ -2630,6 +2632,8 @@ building.usa_war_factory:
 		PlayerPalette: cncplayer
 	ActorStatValues:
 		Stats: Armor, Sight, Power
+	WithIdleOverlay@SABOTAGE:
+		Offset: 0,0,0
 
 building.arms_dealer:
 	Inherits: ^default.war_factory
