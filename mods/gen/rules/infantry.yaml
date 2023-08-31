@@ -330,14 +330,17 @@ infantry.toxin_rebel:
 	Tooltip:
 		Name: Toxin Rebel
 	Armament@ALPHA:
+		Damage: 8
 		Weapon: toxin.toxin_rebel
 		LocalOffset: 350,0,375
 		RequiresCondition: !anthrax_beta && !anthrax_gamma
 	Armament@BETA:
+		Damage: 10
 		Weapon: toxin.toxin_rebel.beta
 		LocalOffset: 350,0,375
 		RequiresCondition: anthrax_beta && !anthrax_gamma
 	Armament@GAMMA:
+		Damage: 13
 		Weapon: toxin.toxin_rebel.gamma
 		LocalOffset: 350,0,375
 		RequiresCondition: anthrax_gamma

@@ -1232,16 +1232,19 @@ vehicle.quad_cannon:
 		TurnSpeed: 60
 		Offset: -304,0,96
 	Armament@PRIMARY:
+		Damage: 10
 		Weapon: mg.quad_cannon.ground
 		LocalOffset: 512,160,160, 512,-160,160
 		MuzzleSequence: muzzle
 		RequiresCondition: !scrap_create_bonus
 	Armament@PRIMARY_CRATE-1:
+		Damage: 8
 		Weapon: mg.quad_cannon.ground.crate-1
 		LocalOffset: 512,160,160, 512,-160,160
 		MuzzleSequence: muzzle
 		RequiresCondition: scrap_create_bonus == 1
 	Armament@PRIMARY_CRATE-2:
+		Damage: 8
 		Weapon: mg.quad_cannon.ground.crate-2
 		LocalOffset: 512,160,160, 512,-160,160
 		MuzzleSequence: muzzle
@@ -1470,38 +1473,47 @@ vehicle.toxin_tractor:
 	Armor:
 		Type: vehicle.toxin_tractor
 	Armament@ALPHA:
+		Damage: 10
 		Weapon: toxin.toxin_tractor
 		LocalOffset: 600,0,90
 		RequiresCondition: !anthrax_beta && !anthrax_gamma && !scrap_create_bonus
 	Armament@ALPHA_CRATE-1:
+		Damage: 12
 		Weapon: toxin.toxin_tractor.crate-1
 		LocalOffset: 600,0,90
 		RequiresCondition: !anthrax_beta && !anthrax_gamma && scrap_create_bonus == 1
 	Armament@ALPHA_CRATE-2:
+		Damage: 15
 		Weapon: toxin.toxin_tractor.crate-2
 		LocalOffset: 600,0,90
 		RequiresCondition: !anthrax_beta && !anthrax_gamma && scrap_create_bonus == 2
 	Armament@BETA:
+		Damage: 12
 		Weapon: toxin.toxin_tractor.beta
 		LocalOffset: 600,0,90
 		RequiresCondition: anthrax_beta && !anthrax_gamma && !scrap_create_bonus
 	Armament@BETA_CRATE-1:
+		Damage: 15
 		Weapon: toxin.toxin_tractor.beta.crate-1
 		LocalOffset: 600,0,90
 		RequiresCondition: anthrax_beta && !anthrax_gamma && scrap_create_bonus == 1
 	Armament@BETA_CRATE-2:
+		Damage: 20
 		Weapon: toxin.toxin_tractor.beta.crate-2
 		LocalOffset: 600,0,90
 		RequiresCondition: anthrax_beta && !anthrax_gamma && scrap_create_bonus == 2
 	Armament@GAMMA:
+		Damage: 20
 		Weapon: toxin.toxin_tractor.gamma
 		LocalOffset: 600,0,90
 		RequiresCondition: anthrax_gamma && !scrap_create_bonus
 	Armament@GAMMA_CRATE-1:
+		Damage: 24
 		Weapon: toxin.toxin_tractor.gamma.crate-1
 		LocalOffset: 600,0,90
 		RequiresCondition: anthrax_gamma && scrap_create_bonus == 1
 	Armament@GAMMA_CRATE-2:
+		Damage: 28
 		Weapon: toxin.toxin_tractor.gamma.crate-2
 		LocalOffset: 600,0,90
 		RequiresCondition: anthrax_gamma && scrap_create_bonus == 2
@@ -1750,31 +1762,37 @@ vehicle.rocket_buggy:
 	Selectable:
 		Class: vehicle.rocket_buggy
 	Armament@6:
+		Damage: 120
 		Weapon: missile.rocket_buggy
 		LocalOffset: -128, -170, 170, -128, 170, 170
 		LocalYaw: 100, -100
 		RequiresCondition: !buggy_ammo && !scrap_create_bonus
 	Armament@7:
+		Damage: 140
 		Weapon: missile.rocket_buggy.crate-1
 		LocalOffset: -128, -170, 170, -128, 170, 170
 		LocalYaw: 100, -100
 		RequiresCondition: !buggy_ammo && scrap_create_bonus == 1
 	Armament@8:
+		Damage: 160
 		Weapon: missile.rocket_buggy.crate-2
 		LocalOffset: -128, -170, 170, -128, 170, 170
 		LocalYaw: 100, -100
 		RequiresCondition: !buggy_ammo && scrap_create_bonus == 2
 	Armament@12:
+		Damage: 240
 		Weapon: missile.rocket_buggy.upgraded
 		LocalOffset: -128, -170, 170, -128, 170, 170, -128, 0, 170
 		LocalYaw: 100, -100
 		RequiresCondition: buggy_ammo && !scrap_create_bonus
 	Armament@14:
+		Damage: 280
 		Weapon: missile.rocket_buggy.crate-1.upgraded
 		LocalOffset: -128, -170, 170, -128, 170, 170, -128, 0, 170
 		LocalYaw: 100, -100
 		RequiresCondition: buggy_ammo && scrap_create_bonus == 1
 	Armament@16:
+		Damage: 320
 		Weapon: missile.rocket_buggy.crate-1.upgraded
 		LocalOffset: -128, -170, 170, -128, 170, 170, -128, 0, 170
 		LocalYaw: 100, -100
@@ -3071,6 +3089,7 @@ vehicle.paladin_tank:
 	RenderSprites:
 		Image: vehicle.paladin_tank
 	ActorStatValues:
+		Damage: 60
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.adv_training, upgrade.composite_armor, upgrade.scout_drone, upgrade.battle_drone
 	ActorStatOverride@ZH_UNITS:
@@ -3136,6 +3155,7 @@ vehicle.marauder_tank:
 		TurnSpeed: 32
 		Offset: 128,0,0
 	Armament@Cannon:
+		Damage: 60
 		Weapon: cannon.marauder_tank
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3143,6 +3163,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: !toxin_shells && !zh_units && !scrap_create_bonus
 	Armament@Cannon_CRATE-1:
+		Damage: 60
 		Weapon: cannon.marauder_tank.crate-1
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3150,6 +3171,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: !toxin_shells && !zh_units && scrap_create_bonus == 1
 	Armament@Cannon_CRATE-2:
+		Damage: 120
 		Weapon: cannon.marauder_tank.crate-2
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3157,6 +3179,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: !toxin_shells && !zh_units && scrap_create_bonus == 2
 	Armament@Cannon_ZH:
+		Damage: 60
 		Weapon: cannon.marauder_tank.zh
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3164,6 +3187,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: !toxin_shells && zh_units && !scrap_create_bonus
 	Armament@Cannon_ZH_CRATE-1:
+		Damage: 60
 		Weapon: cannon.marauder_tank.crate-1.zh
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3171,6 +3195,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: !toxin_shells && zh_units && scrap_create_bonus == 1
 	Armament@Cannon_ZH_CRATE-2:
+		Damage: 120
 		Weapon: cannon.marauder_tank.crate-2.zh
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3178,6 +3203,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: !toxin_shells && zh_units && scrap_create_bonus == 2
 	Armament@TOXIN_SHELLS:
+		Damage: 60
 		Weapon: cannon.marauder_tank.toxin
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3185,6 +3211,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma && !zh_units && !scrap_create_bonus
 	Armament@TOXIN_SHELLS_CRATE-1:
+		Damage: 60
 		Weapon: cannon.marauder_tank.crate-1.toxin
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3192,6 +3219,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma && !zh_units && scrap_create_bonus == 1
 	Armament@TOXIN_SHELLS_CRATE-2:
+		Damage: 120
 		Weapon: cannon.marauder_tank.crate-2.toxin
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3199,6 +3227,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma && !zh_units && scrap_create_bonus == 2
 	Armament@TOXIN_SHELLS_ZH:
+		Damage: 60
 		Weapon: cannon.marauder_tank.toxin.zh
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3206,6 +3235,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma && zh_units && !scrap_create_bonus
 	Armament@TOXIN_SHELLS_ZH_CRATE-1:
+		Damage: 60
 		Weapon: cannon.marauder_tank.crate-1.toxin.zh
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3213,6 +3243,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma && zh_units && scrap_create_bonus == 1
 	Armament@TOXIN_SHELLS_ZH_CRATE-2:
+		Damage: 120
 		Weapon: cannon.marauder_tank.crate-2.toxin.zh
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3220,6 +3251,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && !anthrax_beta && !anthrax_gamma && zh_units && scrap_create_bonus == 2
 	Armament@ANTHRAX_BETA:
+		Damage: 60
 		Weapon: cannon.marauder_tank.toxin_beta
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3227,6 +3259,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma && !zh_units && !scrap_create_bonus
 	Armament@ANTHRAX_BETA_CRATE-1:
+		Damage: 60
 		Weapon: cannon.marauder_tank.crate-1.toxin_beta
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3234,6 +3267,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma && !zh_units && scrap_create_bonus == 1
 	Armament@ANTHRAX_BETA_CRATE-2:
+		Damage: 120
 		Weapon: cannon.marauder_tank.crate-2.toxin_beta
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3241,6 +3275,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma && !zh_units && scrap_create_bonus == 2
 	Armament@ANTHRAX_BETA_ZH:
+		Damage: 60
 		Weapon: cannon.marauder_tank.toxin_beta.zh
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3248,6 +3283,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma && zh_units && !scrap_create_bonus
 	Armament@ANTHRAX_BETA_ZH_CRATE-1:
+		Damage: 60
 		Weapon: cannon.marauder_tank.crate-1.toxin_beta.zh
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3255,6 +3291,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma && zh_units && scrap_create_bonus == 1
 	Armament@ANTHRAX_BETA_ZH_CRATE-2:
+		Damage: 120
 		Weapon: cannon.marauder_tank.crate-2.toxin_beta.zh
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3262,6 +3299,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && anthrax_beta && !anthrax_gamma && zh_units && scrap_create_bonus == 2
 	Armament@ANTHRAX_GAMMA:
+		Damage: 60
 		Weapon: cannon.marauder_tank.toxin_gamma
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3269,6 +3307,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && anthrax_gamma && !zh_units && !scrap_create_bonus
 	Armament@ANTHRAX_GAMMA_CRATE-1:
+		Damage: 60
 		Weapon: cannon.marauder_tank.crate-1.toxin_gamma
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3276,6 +3315,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && anthrax_gamma && !zh_units && scrap_create_bonus == 1
 	Armament@ANTHRAX_GAMMA_CRATE-2:
+		Damage: 120
 		Weapon: cannon.marauder_tank.crate-2.toxin_gamma
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3283,6 +3323,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && anthrax_gamma && !zh_units && scrap_create_bonus == 2
 	Armament@ANTHRAX_GAMMA_ZH:
+		Damage: 60
 		Weapon: cannon.marauder_tank.toxin_gamma.zh
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3290,6 +3331,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && anthrax_gamma && zh_units && !scrap_create_bonus
 	Armament@ANTHRAX_GAMMA_ZH_CRATE-1:
+		Damage: 60
 		Weapon: cannon.marauder_tank.crate-1.toxin_gamma.zh
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3297,6 +3339,7 @@ vehicle.marauder_tank:
 		MuzzleSequence: muzzle
 		RequiresCondition: toxin_shells && anthrax_gamma && zh_units && scrap_create_bonus == 1
 	Armament@ANTHRAX_GAMMA_ZH_CRATE-2:
+		Damage: 120
 		Weapon: cannon.marauder_tank.crate-2.toxin_gamma.zh
 		Recoil: 128
 		RecoilRecovery: 38
@@ -3612,11 +3655,14 @@ vehicle.overlord_tank:
 		Class: vehicle.overlord_tank
 		DecorationBounds: 1877, 1621, 0, -170
 	ActorStatValues:
-		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+		Damage: 160
+		Range: 4c384, 8c768
+		Armaments: primary
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange
 		Upgrades: upgrade.nuclear_tanks, upgrade.uranium_shells, upgrade.overlord_bunker, upgrade.overlord_gatling, upgrade.overlord_speaker
 		LocalUpgrades: upgrade.overlord_bunker, upgrade.overlord_gatling, upgrade.overlord_speaker
 	ActorStatOverride@Bunker:
-		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Cargo
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, Cargo
 		RequiresCondition: bunker_upgrade
 	ActorStatOverride@Gatling:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange

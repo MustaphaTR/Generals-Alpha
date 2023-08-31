@@ -771,8 +771,24 @@ fake.toxin_tunnel_network:
 		IntoActor: building.toxin_tunnel_network
 	RenderSprites:
 		Image: building.toxin_tunnel_network
+	GrantConditionOnPrerequisite@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Prerequisites: upgrade.anthrax_beta
+	GrantConditionOnPrerequisite@ANTHRAX_GAMMA:
+		Condition: anthrax_gamma
+		Prerequisites: upgrade.anthrax_gamma
+	GrantConditionOnFaction@ANTHRAX_BETA:
+		Condition: anthrax_beta
+		Factions: toxin
 	ActorStatValues:
+		Damage: 8
 		Range: 4c0
+	ActorStatOverride@Damage_Anthrax_Beta:
+		Damage: 10
+		RequiresCondition: anthrax_beta && !anthrax_gamma
+	ActorStatOverride@Damage_Anthrax_Gamma:
+		Damage: 13
+		RequiresCondition: anthrax_gamma
 	ActorStatOverride@Enemy:
 		TooltipActor: building.toxin_tunnel_network
 	ActorStatOverride@Enemy_UPGRADE:

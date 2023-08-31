@@ -2928,13 +2928,16 @@ building.toxin_tunnel_network:
 	Tooltip:
 		Name: Toxin Tunnel Network
 	Armament:
+		Damage: 8
 		Weapon: toxin.toxin_tunnel_network
 		RequiresCondition: !anthrax_beta && !anthrax_gamma
 	Armament@Beta:
+		Damage: 10
 		Weapon: toxin.toxin_tunnel_network.beta
 		LocalOffset: 512,0,112
 		RequiresCondition: anthrax_beta && !anthrax_gamma
 	Armament@Gamma:
+		Damage: 13
 		Weapon: toxin.toxin_tunnel_network.gamma
 		LocalOffset: 512,0,112
 		RequiresCondition: anthrax_gamma
@@ -2956,6 +2959,7 @@ building.toxin_tunnel_network:
 	RenderSprites:
 		Image: building.toxin_tunnel_network
 	ActorStatValues:
+		-Damage:
 		Upgrades: upgrade.anthrax_beta
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.anthrax_beta, upgrade.camo_netting
