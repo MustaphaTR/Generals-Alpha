@@ -4,6 +4,7 @@ vehicle.supply_truck:
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@SUPPLY_PIPS: ^SupplyCollectorPips
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	Buildable:
@@ -71,10 +72,10 @@ vehicle.humvee:
 	Inherits@CARGO: ^CargoPips
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal320
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	Inherits@PILOT: ^Pilot-USVehicle
 	Inherits@BotOwner: ^BotOwner
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !tow_missile
@@ -254,6 +255,7 @@ vehicle.technical:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
@@ -416,6 +418,7 @@ vehicle.radar_van:
 	Inherits@REVEAL: ^Reveal500
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 20
 	Tooltip:
@@ -448,10 +451,6 @@ vehicle.radar_van:
 		BackwardDuration: -1
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
-	Passenger:
-		CargoCondition: in_transport
-	SharedPassenger:
-		CargoCondition: in_transport
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
@@ -461,11 +460,11 @@ vehicle.radar_van:
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !as_cargo && !in_tunnel
 	ProvidesRadar:
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !in_transport
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet  && !as_cargo && !in_tunnel
 	SpawnActorPower@RADAR_VAN_SCAN:
-		PauseOnCondition: hacked || emp || leaflet || in_transport
+		PauseOnCondition: hacked || emp || leaflet || as_cargo || in_tunnel
 		RequiresCondition: !driver_killed
 		Actors:
 			1: camera.radar_van_scan
@@ -527,6 +526,7 @@ vehicle.scorpion_tank:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 60
 	GivesExperienceMultiplier@RANK-2:
@@ -708,10 +708,10 @@ vehicle.crusader_tank:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	Inherits@PILOT: ^Pilot-USVehicle
 	GivesExperience:
 		Experience: 100
 	GivesExperienceMultiplier@RANK-2:
@@ -812,11 +812,11 @@ vehicle.laser_tank:
 		PauseOnCondition: hacked || emp || leaflet || lowpower
 		RequiresCondition: !driver_killed
 	DroneSpawnerMaster@SCOUT_DRONE:
-		PauseOnCondition: !scout_drone || hacked || emp || driver_killed || leaflet || lowpower
+		PauseOnCondition: !scout_drone || hacked || emp || driver_killed || leaflet || lowpower || as_cargo || in_tunnel
 	DroneSpawnerMaster@BATTLE_DRONE:
-		PauseOnCondition: !battle_drone || hacked || emp || driver_killed || leaflet || lowpower
+		PauseOnCondition: !battle_drone || hacked || emp || driver_killed || leaflet || lowpower || as_cargo || in_tunnel
 	DroneSpawnerMaster@HELLFIRE_DRONE:
-		PauseOnCondition: !hellfire_drone || hacked || emp || driver_killed || leaflet || lowpower
+		PauseOnCondition: !hellfire_drone || hacked || emp || driver_killed || leaflet || lowpower || as_cargo || in_tunnel
 	Voiced:
 		VoiceSet: LaserTankVoice
 	ActorStatValues:
@@ -831,6 +831,7 @@ vehicle.battlemaster_tank:
 	Inherits@NUCLEAR_TANKS: ^AffectedByNuclearTanks
 	Inherits@REVEAL: ^Reveal300
 	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 100
 	GivesExperienceMultiplier@RANK-2:
@@ -962,9 +963,9 @@ vehicle.ambulance:
 	Inherits: ^Vehicle
 	Inherits@CARGO: ^CargoPips
 	Inherits@DRONE: ^CanHaveDrones
-	# Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
@@ -1174,6 +1175,7 @@ vehicle.quad_cannon:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -1287,6 +1289,7 @@ vehicle.gatling_tank:
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal360
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -1416,6 +1419,7 @@ vehicle.toxin_tractor:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -1514,13 +1518,13 @@ vehicle.toxin_tractor:
 		Offset: -192,0,160
 	PeriodicExplosion@ALPHA:
 		Weapon: toxin.toxin_tractor.deploy
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !anthrax_beta && !anthrax_gamma && spray
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && !anthrax_beta && !anthrax_gamma && spray && !as_cargo && !in_tunnel
 	PeriodicExplosion@BETA:
 		Weapon: toxin.toxin_tractor.deploy.beta
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && anthrax_beta && !anthrax_gamma && spray
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && anthrax_beta && !anthrax_gamma && spray && !as_cargo && !in_tunnel
 	PeriodicExplosion@GAMMA:
 		Weapon: toxin.toxin_tractor.deploy.gamma
-		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && anthrax_gamma && spray
+		RequiresCondition: !hacked && !driver_killed && !emp && !leaflet && anthrax_gamma && spray && !as_cargo && !in_tunnel
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Prerequisites: upgrade.anthrax_beta
@@ -1567,6 +1571,7 @@ vehicle.dragon_tank:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -1682,6 +1687,7 @@ vehicle.rocket_buggy:
 	Inherits@REVEAL: ^Reveal360
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -1832,10 +1838,10 @@ vehicle.avenger:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	Inherits@PILOT: ^Pilot-USVehicle
 	GivesExperience:
 		Experience: 100
 	GivesExperienceMultiplier@RANK-2:
@@ -1909,7 +1915,7 @@ vehicle.avenger:
 	PointDefense:
 		Armament: pdlaser
 		PointDefenseTypes: missilepd
-		RequiresCondition: !hacked && !emp && !leaflet && !driver_killed
+		RequiresCondition: !hacked && !emp && !leaflet && !driver_killed && !as_cargo && !in_tunnel
 	AttackTurreted:
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
@@ -1940,6 +1946,7 @@ vehicle.battle_bus:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
@@ -2084,6 +2091,7 @@ vehicle.troop_crawler:
 	Inherits@CARGO: ^CargoPips
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
@@ -2204,6 +2212,7 @@ vehicle.listening_outpost:
 	Inherits@CARGO: ^CargoPips
 	Inherits@REVEAL: ^Reveal500
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
@@ -2334,7 +2343,6 @@ vehicle.microwave_tank:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	GivesExperience:
@@ -2410,7 +2418,7 @@ vehicle.microwave_tank:
 		IsCyclic: false
 	PeriodicExplosion@AoE:
 		Weapon: aoe.microwave_tank
-		RequiresCondition: !firing && !hacked && !driver_killed && !emp && !leaflet
+		RequiresCondition: !firing && !hacked && !driver_killed && !emp && !leaflet && !as_cargo && !in_tunnel
 	AttackTurreted:
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
@@ -2456,6 +2464,7 @@ vehicle.ecm_tank:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal360
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -2532,7 +2541,7 @@ vehicle.ecm_tank:
 	JamsMissiles:
 		Range: 3c0
 		DeflectionRelationships: Neutral, Enemy
-		RequiresCondition: !firing && !hacked && !driver_killed && !emp && !leaflet
+		RequiresCondition: !firing && !hacked && !driver_killed && !emp && !leaflet && !as_cargo && !in_tunnel
 	WithRangeCircle:
 		Range: 3c0
 		Color: DDDD0088
@@ -2555,10 +2564,10 @@ vehicle.tomahawk_launcher:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -2676,6 +2685,7 @@ vehicle.scud_launcher:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -2714,7 +2724,7 @@ vehicle.scud_launcher:
 	Production:
 		Produces: queue.scud_launcher
 		PauseOnCondition: emp || hacked || leaflet
-		RequiresCondition: !toxin_missiles && !hi_explosive_missiles && !driver_killed
+		RequiresCondition: !toxin_missiles && !hi_explosive_missiles && !driver_killed && !as_cargo && !in_tunnel
 	ProductionQueue:
 		Type: queue.scud_launcher
 		Group: Tech
@@ -2879,6 +2889,7 @@ vehicle.inferno_cannon:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -2976,10 +2987,10 @@ vehicle.paladin_tank:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@PILOT: ^EjectsPilotOnGround
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	Inherits@PILOT: ^Pilot-USVehicle
 	GivesExperience:
 		Experience: 100
 	GivesExperienceMultiplier@RANK-2:
@@ -3039,7 +3050,7 @@ vehicle.paladin_tank:
 	PointDefense:
 		Armament: pdlaser
 		PointDefenseTypes: missilepd
-		RequiresCondition: !hacked && !emp && !leaflet && !driver_killed
+		RequiresCondition: !hacked && !emp && !leaflet && !driver_killed && !as_cargo && !in_tunnel
 	AttackTurreted:
 		Armaments: primary, pdlaser
 		PauseOnCondition: hacked || emp || leaflet
@@ -3085,6 +3096,7 @@ vehicle.marauder_tank:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 100
 	GivesExperienceMultiplier@RANK-2:
@@ -3374,6 +3386,7 @@ vehicle.overlord_tank:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@UPGRADE: ^CanHavePRCVehicleUpgrades
 	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	OwnerLostAction:
 		Action: Kill
 		RequiresCondition: !driver_killed || bunker_upgrade
@@ -3458,7 +3471,7 @@ vehicle.overlord_tank:
 	Production:
 		Produces: queue.overlord_tank
 		PauseOnCondition: emp || hacked || leaflet
-		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !speaker_upgrade && !driver_killed
+		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !speaker_upgrade && !driver_killed && !as_cargo && !in_tunnel
 	ProductionQueue:
 		Type: queue.overlord_tank
 		QueueLimit: 1
@@ -3637,11 +3650,11 @@ vehicle.emparor_overlord:
 		Name: Emperor Overlord
 	Production:
 		Produces: queue.emparor_overlord
-		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !speaker_upgrade && !driver_killed && !merged
+		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !speaker_upgrade && !driver_killed && !merged && !as_cargo && !in_tunnel
 	Production@Merged:
 		Produces: queue.emparor_overlord_merged
 		PauseOnCondition: emp || hacked || leaflet
-		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !speaker_upgrade && !driver_killed && merged
+		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !speaker_upgrade && !driver_killed && merged && !as_cargo && !in_tunnel
 	ProductionQueue:
 		Type: queue.emparor_overlord
 		LowPowerModifier: 300
@@ -3674,6 +3687,7 @@ vehicle.bomb_truck:
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	Buildable:
@@ -3712,7 +3726,7 @@ vehicle.bomb_truck:
 	Production:
 		Produces: queue.bomb_truck, queue.toxin_gen_bomb_truck, queue.demo_gen_bomb_truck
 		PauseOnCondition: emp || hacked || leaflet
-		RequiresCondition: !(bio_bombs && hi_explosive_bombs) && !(bio_bombs && toxin) && !(hi_explosive_bombs && demo) && !driver_killed
+		RequiresCondition: !(bio_bombs && hi_explosive_bombs) && !(bio_bombs && toxin) && !(hi_explosive_bombs && demo) && !driver_killed && !as_cargo && !in_tunnel
 	ProductionQueue@Vanilla:
 		Type: queue.bomb_truck
 		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank
@@ -3905,6 +3919,7 @@ vehicle.nuke_cannon:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@BotOwner: ^BotOwner
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-1:
@@ -4448,11 +4463,6 @@ vehicle.combat_cycle:
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
-	Passenger:
-		Weight: 5
-		CargoCondition: in_transport
-	SharedPassenger:
-		CargoCondition: in_transport
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	BaseBuilding:
@@ -4500,7 +4510,7 @@ vehicle.combat_cycle:
 
 vehicle.usa_mcc:
 	Inherits: ^default.mcc
-	# Inherits@PILOT: ^EjectsPilotOnGround
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Buildable:
 		Queue: queue.usa_command_center
 		ReadyAudio: USAMCCCreated
@@ -4508,12 +4518,12 @@ vehicle.usa_mcc:
 		Name: USA Construction Vehicle
 	Production:
 		Produces: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
-		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
-		RequiresCondition: !driver_killed && !merged
+		PauseOnCondition: emp || leaflet || hacked || moving || deployed
+		RequiresCondition: !driver_killed && !merged && !as_cargo && !in_tunnel
 	Production@Merged:
 		Produces: queue.usa_building_merged
-		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
-		RequiresCondition: !driver_killed && merged
+		PauseOnCondition: emp || leaflet || hacked || moving || deployed
+		RequiresCondition: !driver_killed && merged && !as_cargo && !in_tunnel
 	ProductionBar@USA_BUILDING:
 		ProductionType: queue.usa_building
 	ProductionBar@AIR_BUILDING:
@@ -4593,6 +4603,7 @@ vehicle.gla_mcc:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Buildable:
 		Queue: queue.gla_command_center, queue.stealth_gen_command_center
 		ReadyAudio: WorkerCreated
@@ -4601,12 +4612,12 @@ vehicle.gla_mcc:
 		Name: GLA Construction Vehicle
 	Production:
 		Produces: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
-		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
-		RequiresCondition: !driver_killed && !merged
+		PauseOnCondition: emp || leaflet || hacked || moving || deployed
+		RequiresCondition: !driver_killed && !merged && !as_cargo && !in_tunnel
 	Production@Merged:
 		Produces: queue.gla_building_merged
-		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
-		RequiresCondition: !driver_killed && merged
+		PauseOnCondition: emp || leaflet || hacked || moving || deployed
+		RequiresCondition: !driver_killed && merged && !as_cargo && !in_tunnel
 	ProductionBar@GLA_BUILDING:
 		ProductionType: queue.gla_building
 	ProductionBar@TOXIN_BUILDING:
@@ -4671,6 +4682,7 @@ vehicle.gla_mcc:
 vehicle.prc_mcc:
 	Inherits: ^default.mcc
 	Inherits@REVEAL: ^Reveal300
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Buildable:
 		Queue: queue.prc_command_center
 		ReadyAudio: PRCMCCCreated
@@ -4678,12 +4690,12 @@ vehicle.prc_mcc:
 		Name: PRC Construction Vehicle
 	Production:
 		Produces: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
-		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
-		RequiresCondition: !driver_killed && !merged
+		PauseOnCondition: emp || leaflet || hacked || moving || deployed
+		RequiresCondition: !driver_killed && !merged && !as_cargo && !in_tunnel
 	Production@Merged:
 		Produces: queue.prc_building_merged, queue.boss_gen_building_merged
-		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
-		RequiresCondition: !driver_killed && merged
+		PauseOnCondition: emp || leaflet || hacked || moving || deployed
+		RequiresCondition: !driver_killed && merged && !as_cargo && !in_tunnel
 	ProductionBar@PRC_BUILDING:
 		ProductionType: queue.prc_building
 	ProductionBar@INF_BUILDING:
@@ -4772,14 +4784,15 @@ vehicle.prc_mcc:
 vehicle.tech_mcc:
 	Inherits: ^default.mcc
 	Inherits@REVEAL: ^Reveal300
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Buildable:
 		Queue: queue.disabled
 	Tooltip:
 		Name: Tech Construction Vehicle
 	Production:
 		Produces: queue.tech_building
-		PauseOnCondition: emp || leaflet || hacked || moving || in_transport || deployed
-		RequiresCondition: !driver_killed
+		PauseOnCondition: emp || leaflet || hacked || moving || as_cargo || in_tunnel || deployed
+		RequiresCondition: !driver_killed && !as_cargo && !in_tunnel
 	ProductionBar@TECH_BUILDING:
 		ProductionType: queue.tech_building
 	ProductionQueue@TECH_BUILDING:
@@ -4802,6 +4815,7 @@ vehicle.mobile_reactor:
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Buildable:
 		Queue: queue.laser_gen_vehicle, queue.usa_vehicle_merged
 		BuildPaletteOrder: 11
