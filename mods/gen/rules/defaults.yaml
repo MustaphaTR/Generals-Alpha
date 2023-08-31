@@ -160,6 +160,13 @@
 	DamagedByTintedCells@RADIOACTIVITY:
 		RequiresCondition: !invulnerability
 
+^AffectedByAvengerMark:
+	ExternalCondition@AVENGERMARK:
+		Condition: avenger_mark
+	DamageMultiplier@AVENGERMARK:
+		RequiresCondition: avenger_mark
+		Modifier: 140
+
 ^AffectedByFrenzy:
 	WithColoredOverlay@FRENZY:
 		Color: C4000080
@@ -397,6 +404,61 @@
 	Capturable@DRIVER_KILLED:
 		Types: driverless_vehcile
 		RequiresCondition: driver_killed
+	CaptureManager:
+
+^Pilot-USAircraft:
+	PilotChamber:
+		DefaultPilotActor: infantry.pilot
+		PilotActorTypesOverrideWhenCapture:
+			infantry.hijacker: false
+			infantry.pilot: true
+		GiveExperiencePilotActorTypes: infantry.hijacker, infantry.pilot
+		ChuteSound: sparadra.wav
+		EjectOnGround: false
+		EjectInAir: true
+		AllowUnsuitableCell: true
+	Capturable:
+		Types: Hijackable
+		CancelActivity: True
+		RequiresCondition: !airborne
+	CaptureNotification:
+		Notification: UnitStolen
+	CaptureManager:
+
+^Pilot-USVehicle:
+	PilotChamber:
+		DefaultPilotActor: infantry.pilot
+		PilotActorTypesOverrideWhenCapture:
+			infantry.hijacker: false
+			infantry.pilot: true
+		GiveExperiencePilotActorTypes: infantry.hijacker, infantry.pilot
+		EjectOnGround: true
+		EjectInAir: false
+		AllowUnsuitableCell: true
+		RequiresCondition: !driver_killed
+		PauseOnCondition: as_cargo || in_tunnel
+
+^Pilot-NoUSVehicle:
+	PilotChamber:
+		PilotActorTypesOverrideWhenCapture:
+			infantry.hijacker: false
+		GiveExperiencePilotActorTypes: infantry.hijacker, infantry.pilot
+		EjectOnGround: true
+		EjectInAir: false
+		AllowUnsuitableCell: true
+		RequiresCondition: !driver_killed
+		PauseOnCondition: as_cargo || in_tunnel
+
+^Pilot-NoUSAircraft:
+	PilotChamber:
+		GiveExperiencePilotActorTypes: infantry.hijacker, infantry.pilot
+		EjectSuccessRate: 0
+	Capturable:
+		Types: Hijackable
+		CancelActivity: True
+		RequiresCondition: !airborne
+	CaptureNotification:
+		Notification: UnitStolen
 	CaptureManager:
 
 ^CanCaptureDriverlessVehicles:
@@ -819,22 +881,22 @@
 ^AffectedByRadiationAndToxins:
 	DamagedByTintedCells@ANTHRAX_ALPHA:
 		LayerName: anthrax_alpha
-		Damage: 200
+		Damage: 60
 		DamageInterval: 10
-		DamageTypes: FireDeath
+		DamageTypes: AnthraxADeath
 	DamagedByTintedCells@ANTHRAX_BETA:
 		LayerName: anthrax_beta
-		Damage: 250
+		Damage: 110
 		DamageInterval: 10
-		DamageTypes: FireDeath
+		DamageTypes: AnthraxBDeath
 	DamagedByTintedCells@ANTHRAX_GAMMA:
 		LayerName: anthrax_gamma
-		Damage: 300
+		Damage: 160
 		DamageInterval: 10
-		DamageTypes: FireDeath
+		DamageTypes: AnthraxGDeath
 	DamagedByTintedCells@RADIOACTIVITY:
 		LayerName: radioactivity
-		Damage: 200
+		Damage: 90
 		DamageInterval: 10
 		DamageTypes: FireDeath
 
@@ -1206,23 +1268,6 @@
 	AttackMove:
 		AssaultMoveCondition: assault-move
 
-^EjectsPilotOnAir:
-	EjectOnDeath:
-		PilotActor: infantry.pilot
-		ChuteSound: sparadra.wav
-		EjectOnGround: false
-		EjectInAir: true
-		AllowUnsuitableCell: true
-		RequiresCondition: rank-veteran
-
-^EjectsPilotOnGround:
-	EjectOnDeath:
-		PilotActor: infantry.pilot
-		EjectOnGround: true
-		EjectInAir: false
-		AllowUnsuitableCell: true
-		RequiresCondition: rank-veteran
-
 ^DropsScrapCrate:
 	SpawnActorOnDeath@CRATE:
 		Actor: crate.scrap
@@ -1236,23 +1281,23 @@
 		RespawnTicks: 1500
 		ShouldSpawnInitialLoad: false
 		FollowAfterAttackDelay: 21 ## bigger than general reload time
-		PauseOnCondition: !scout_drone || hacked || emp || driver_killed || leaflet
+		PauseOnCondition: !scout_drone || hacked || emp || driver_killed || leaflet || as_cargo || in_tunnel
 	DroneSpawnerMaster@BATTLE_DRONE:
 		Actors: aircraft.battle_drone
 		RespawnTicks: 1500
 		ShouldSpawnInitialLoad: false
 		FollowAfterAttackDelay: 21 ## bigger than general reload time
-		PauseOnCondition: !battle_drone || hacked || emp || driver_killed || leaflet
+		PauseOnCondition: !battle_drone || hacked || emp || driver_killed || leaflet || as_cargo || in_tunnel
 	DroneSpawnerMaster@HELLFIRE_DRONE:
 		Actors: aircraft.hellfire_drone
 		RespawnTicks: 1500
 		ShouldSpawnInitialLoad: false
 		FollowAfterAttackDelay: 21 ## bigger than general reload time
-		PauseOnCondition: !hellfire_drone || hacked || emp || driver_killed || leaflet
+		PauseOnCondition: !hellfire_drone || hacked || emp || driver_killed || leaflet || as_cargo || in_tunnel
 	Production:
 		Produces: queue.drone
 		PauseOnCondition: emp || hacked
-		RequiresCondition: !scout_drone && !battle_drone && !hellfire_drone && !driver_killed
+		RequiresCondition: !scout_drone && !battle_drone && !hellfire_drone && !driver_killed && !as_cargo && !in_tunnel
 	ProductionQueue:
 		Type: queue.drone
 		Group: Tech
@@ -1487,6 +1532,7 @@
 	Inherits@21: ^AcceptsTNTCharges
 	Inherits@22: ^AffectedByOilRefinery
 	Inherits@23: ^MarkedByPatriot
+	Inherits@24: ^AffectedByAvengerMark
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
@@ -1524,9 +1570,11 @@
 	Passenger:
 		Weight: 3
 		CargoType: Vehicle
+		CargoCondition: as_cargo
 	SharedPassenger:
 		Weight: 1
 		CargoType: Vehicle
+		CargoCondition: in_tunnel
 	AttackMove:
 	HiddenUnderFog:
 	ActorLostNotification:
@@ -1540,7 +1588,7 @@
 	Tooltip:
 		GenericName: Vehicle
 	Capturable:
-		Types: vehicle
+		Types: Hijackable
 		CancelActivity: True
 	CaptureNotification:
 		Notification: UnitStolen
@@ -1601,6 +1649,7 @@
 	Inherits@8: ^TakesBounty
 	Inherits@9: ^AffectedByLeaflet
 	Inherits@23: ^MarkedByPatriot
+	Inherits@24: ^AffectedByAvengerMark
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@REVEAL: ^Reveal200
 	Huntable:
@@ -1715,6 +1764,7 @@
 	Inherits@13: ^AffectedByLeaflet
 	Inherits@14: ^HealedInTransports
 	Inherits@23: ^MarkedByPatriot
+	Inherits@24: ^AffectedByAvengerMark
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
@@ -1752,6 +1802,13 @@
 			FireDeath: 5
 			ElectricityDeath: 6
 		CrushedSequence: die-crushed
+	WithDeathAnimation@Anthrax:
+		DeathSequencePalette: cnc
+		DeathPaletteIsPlayerPalette: false
+		DeathTypes:
+			AnthraxADeath: 7
+			AnthraxBDeath: 8
+			AnthraxGDeath: 9
 	AttackMove:
 	Passenger:
 		CargoType: Infantry
@@ -1766,6 +1823,13 @@
 	Crushable:
 		WarnProbability: 0
 		CrushSound: squishy2.aud
+	## Infantry takes more damage from Anthrax
+	DamagedByTintedCells@ANTHRAX_ALPHA:
+		Damage: 100
+	DamagedByTintedCells@ANTHRAX_BETA:
+		Damage: 150
+	DamagedByTintedCells@ANTHRAX_GAMMA:
+		Damage: 200
 	Guard:
 	Guardable:
 	Tooltip:
@@ -1880,6 +1944,7 @@
 	Inherits@17: ^AffectedByLeaflet
 	Inherits@18: ^AffectedByOilRefinery
 	Inherits@23: ^MarkedByPatriot
+	Inherits@24: ^AffectedByAvengerMark
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
@@ -1942,6 +2007,7 @@
 	Inherits@7: ^TakesBounty
 	Inherits@8: ^AffectedByOilRefinery
 	Inherits@23: ^MarkedByPatriot
+	Inherits@24: ^AffectedByAvengerMark
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
@@ -2014,6 +2080,7 @@
 		Crushes: crate, mine
 		VTOL: true
 		CanSlide: True
+		LandableTerrainTypes: Grass, Snow, Sand, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Beach, Gems
 	RepairableNear:
 		RepairActors: building.usa_airfield, building.prc_airfield
 		CloseEnough: 1c0
@@ -2033,6 +2100,7 @@
 	Inherits@8: ^AcceptsTNTCharges
 	Inherits@9: ^TakesBounty
 	Inherits@23: ^MarkedByPatriot
+	Inherits@24: ^AffectedByAvengerMark
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SHAPE: ^1x1Shape
 	SelectionDecorations:
@@ -2253,6 +2321,7 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
 	Inherits@23: ^MarkedByPatriot
+	Inherits@24: ^AffectedByAvengerMark
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SHAPE: ^1x1Shape
 	Interactable:

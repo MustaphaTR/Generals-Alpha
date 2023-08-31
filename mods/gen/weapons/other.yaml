@@ -300,7 +300,7 @@ toxin.toxin_tractor:
 			aircraft.normal: 25
 			aircraft.comanche: 25
 			aircraft.chinook: 25
-		DamageTypes: FireDeath, DropCrate
+		DamageTypes: AnthraxADeath, DropCrate
 	Warhead@2Dam: OpenToppedDamage
 		Spread: 0c341
 		Damage: 1000
@@ -324,7 +324,7 @@ toxin.toxin_tractor:
 			aircraft.normal: 25
 			aircraft.comanche: 25
 			aircraft.chinook: 25
-		DamageTypes: FireDeath
+		DamageTypes: AnthraxADeath
 	Warhead@2Radio: CreateTintedCells
 		LayerName: anthrax_alpha
 		Spread: 256
@@ -352,8 +352,10 @@ toxin.toxin_tractor.beta:
 		Color: 0000FF
 	Warhead@1Dam: SpreadDamage
 		Damage: 1250
+		DamageTypes: AnthraxBDeath, DropCrate
 	Warhead@2Dam: OpenToppedDamage
 		Damage: 1250
+		DamageTypes: AnthraxBDeath
 	Warhead@2Radio: CreateTintedCells
 		LayerName: anthrax_beta
 
@@ -377,8 +379,10 @@ toxin.toxin_tractor.gamma:
 		Color: FF00FF
 	Warhead@1Dam: SpreadDamage
 		Damage: 2050
+		DamageTypes: AnthraxGDeath, DropCrate
 	Warhead@2Dam: OpenToppedDamage
 		Damage: 2050
+		DamageTypes: AnthraxGDeath
 	Warhead@2Radio: CreateTintedCells
 		LayerName: anthrax_gamma
 
@@ -458,13 +462,14 @@ toxin.toxin_tractor.deploy:
 	ReloadDelay: 6
 	ValidTargets: Ground, Water, GroundActor, WaterActor
 	InvalidTargets: Structure, ImmueToToxin, Wall
-	Projectile: InstantHit
+	Projectile: InstantExplode
 	Warhead@1Radio: CreateTintedCells
 		LayerName: anthrax_alpha
 		Spread: 1024
 		Level: 500
 		Falloff: 100, 60, 30, 5
 		MaxLevel: 5000
+		AirThreshold: 8c0
 
 toxin.toxin_tractor.deploy.beta:
 	Inherits: toxin.toxin_tractor.deploy

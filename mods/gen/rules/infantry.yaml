@@ -1734,8 +1734,20 @@ infantry.hijacker:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@BotOwner: ^BotOwner
+	Inherits@EXPERIENCE: ^GainsExperience
 	GivesExperience:
 		Experience: 50
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 150
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 200
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			50: rank-veteran
+			100: rank-veteran
+			200: rank-veteran
 	Buildable: # Stat UI doesn't know how to get correct desc, Stealth Gen's one is more generic so define it first.
 		Queue: queue.stealth_gen_infantry, queue.gla_infantry_merged
 		BuildPaletteOrder: 6
@@ -1786,7 +1798,7 @@ infantry.hijacker:
 	Garrisoner:
 		CustomPipType: yellow
 	Captures:
-		CaptureTypes: vehicle, driverless_vehcile
+		CaptureTypes: Hijackable, driverless_vehcile
 	Voiced:
 		VoiceSet: HijackerVoice
 	-TakeCover:
@@ -1796,8 +1808,8 @@ infantry.hijacker:
 	Crushable:
 		WarnProbability: 95
 		RequiresCondition:  !bot_owner
-	Cloak:
-		InitialDelay: 250
+	Cloak: ## In General, when vehicle is destroyed the ejected hijacker will remain cloak
+		InitialDelay: 0
 		CloakDelay: 120
 		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
 		DetectionTypes: Cloak
@@ -1805,7 +1817,7 @@ infantry.hijacker:
 		CanBeForcedUncloak: true
 		RequiresCondition: !cloak-force-disabled && !stealth
 	Cloak@Stealth:
-		InitialDelay: 250
+		InitialDelay: 0
 		CloakDelay: 120
 		UncloakOn: Attack, Unload, Infiltrate, Demolish
 		DetectionTypes: Cloak

@@ -324,6 +324,7 @@ aircraft.mig:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@REVEAL: ^Reveal300
+	Inherits@PILOT: ^Pilot-NoUSAircraft
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -440,6 +441,8 @@ aircraft.mig:
 		InitialFacing: 768
 		TurnSpeed: 20
 		Speed: 160
+		IdleTurnSpeed: 15
+		IdleSpeed: 120
 		RepulsionSpeed: 40
 		MaximumPitch: 56
 		Voice: Move
@@ -520,6 +523,7 @@ aircraft.raptor:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
+	Inherits@PILOT: ^Pilot-USAircraft
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -583,6 +587,8 @@ aircraft.raptor:
 		InitialFacing: 768
 		TurnSpeed: 20
 		Speed: 175
+		IdleTurnSpeed: 15
+		IdleSpeed: 120
 		RepulsionSpeed: 40
 		MaximumPitch: 56
 		Voice: Move
@@ -710,6 +716,7 @@ aircraft.stealth_fighter:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
+	Inherits@PILOT: ^Pilot-USAircraft
 	GivesExperience:
 		Experience: 100
 	GivesExperienceMultiplier@RANK-2:
@@ -773,6 +780,8 @@ aircraft.stealth_fighter:
 		InitialFacing: 768
 		TurnSpeed: 32
 		Speed: 175
+		IdleTurnSpeed: 15
+		IdleSpeed: 120
 		RepulsionSpeed: 40
 		MaximumPitch: 56
 		Voice: Move
@@ -880,6 +889,7 @@ aircraft.aurora:
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
+	Inherits@PILOT: ^Pilot-USAircraft
 	GivesExperience:
 		Experience: 200
 	GivesExperienceMultiplier@RANK-2:
@@ -966,6 +976,8 @@ aircraft.aurora:
 		InitialFacing: 768
 		TurnSpeed: 32
 		Speed: 180
+		IdleTurnSpeed: 15
+		IdleSpeed: 120
 		RepulsionSpeed: 40
 		MaximumPitch: 56
 		Voice: Move
@@ -1076,6 +1088,8 @@ aircraft.spy_drone:
 		InitialFacing: 768
 		TurnSpeed: 32
 		Speed: 65
+		IdleTurnSpeed: 24
+		IdleSpeed: 48
 		RepulsionSpeed: 40
 		MaximumPitch: 255
 		TakeOffOnCreation: false
@@ -1518,10 +1532,10 @@ aircraft.comanche:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@PILOT: ^EjectsPilotOnAir
 	Inherits@REVEAL: ^Reveal600
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
+	Inherits@PILOT: ^Pilot-USAircraft
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -1676,6 +1690,7 @@ aircraft.helix:
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@UPGRADE: ^CanHavePRCVehicleUpgrades
+	Inherits@PILOT: ^Pilot-NoUSAircraft
 	Inherits@BotOwner: ^BotOwner
 	GivesExperience:
 		Experience: 50

@@ -12,7 +12,9 @@
 		Inaccuracy: 128
 		TrailImage: smokey
 		TrailInterval: 1
-		Image: DRAGON
+		Image: DRAGONBIG
+		Palette: player
+		IsPlayerPalette: true
 		Shadow: True
 		HorizontalRateOfTurn: 60
 		RangeLimit: 6c0
@@ -1200,7 +1202,7 @@ missile.scud_launcher.toxin:
 	Warhead@5Radio: CreateTintedCells
 		LayerName: anthrax_alpha
 		Spread: 1024
-		Level: 2000
+		Level: 1600
 		Falloff: 100, 60, 20, 0
 		MaxLevel: 7500
 
@@ -1269,17 +1271,22 @@ missile.scud_launcher.crate-2.explosive:
 
 missile.scud_storm:
 	Inherits: missile.scud_launcher.toxin
-	ReloadDelay: 15
+	FirstBurstTargetOffset: -2048,0,0
+	FollowingBurstTargetOffset: 1024,0,0
+	ReloadDelay: 90
+	Burst: 4
 	MinRange: 0c0
-	Range: 1000c0
+	Range: 9000c0
 	Projectile: Bullet
 		Speed: 384
-		Inaccuracy: 5000c0
+		Inaccuracy: 3c0
+		InaccuracyType: Absolute
 	Warhead@1Dam: SpreadDamage
-		Damage: 35000
+		Damage: 19000
 	Warhead@2Dam: SpreadDamage
-		Spread: 5c0
-		Damage: 15000
+		ValidTargets: GroundActor, WaterActor, AirborneActor
+		Damage: 9000
+		Spread: 3c0
 	Warhead@7Rev: RevealShroud
 		Radius: 3c512
 		Duration: 50
@@ -1297,8 +1304,8 @@ missile.scud_storm.gamma:
 missile.scud_storm.demo:
 	Inherits: missile.scud_storm
 	Warhead@1Dam: SpreadDamage
-		Spread: 1c896
-		Damage: 45000
+		Spread: 1c0
+		Damage: 27000
 	-Warhead@5Radio:
 	Warhead@7Rev: RevealShroud
 		Radius: 3c512
