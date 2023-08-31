@@ -160,6 +160,13 @@
 	DamagedByTintedCells@RADIOACTIVITY:
 		RequiresCondition: !invulnerability
 
+^AffectedByAvengerMark:
+	ExternalCondition@AVENGERMARK:
+		Condition: avenger_mark
+	DamageMultiplier@AVENGERMARK:
+		RequiresCondition: avenger_mark
+		Modifier: 140
+
 ^AffectedByFrenzy:
 	WithColoredOverlay@FRENZY:
 		Color: C4000080
@@ -1525,6 +1532,7 @@
 	Inherits@21: ^AcceptsTNTCharges
 	Inherits@22: ^AffectedByOilRefinery
 	Inherits@23: ^MarkedByPatriot
+	Inherits@24: ^AffectedByAvengerMark
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
@@ -1641,6 +1649,7 @@
 	Inherits@8: ^TakesBounty
 	Inherits@9: ^AffectedByLeaflet
 	Inherits@23: ^MarkedByPatriot
+	Inherits@24: ^AffectedByAvengerMark
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@REVEAL: ^Reveal200
 	Huntable:
@@ -1755,6 +1764,7 @@
 	Inherits@13: ^AffectedByLeaflet
 	Inherits@14: ^HealedInTransports
 	Inherits@23: ^MarkedByPatriot
+	Inherits@24: ^AffectedByAvengerMark
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
@@ -1920,6 +1930,7 @@
 	Inherits@17: ^AffectedByLeaflet
 	Inherits@18: ^AffectedByOilRefinery
 	Inherits@23: ^MarkedByPatriot
+	Inherits@24: ^AffectedByAvengerMark
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
@@ -1982,6 +1993,7 @@
 	Inherits@7: ^TakesBounty
 	Inherits@8: ^AffectedByOilRefinery
 	Inherits@23: ^MarkedByPatriot
+	Inherits@24: ^AffectedByAvengerMark
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Huntable:
@@ -2074,6 +2086,7 @@
 	Inherits@8: ^AcceptsTNTCharges
 	Inherits@9: ^TakesBounty
 	Inherits@23: ^MarkedByPatriot
+	Inherits@24: ^AffectedByAvengerMark
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SHAPE: ^1x1Shape
 	SelectionDecorations:
@@ -2294,6 +2307,7 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
 	Inherits@23: ^MarkedByPatriot
+	Inherits@24: ^AffectedByAvengerMark
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SHAPE: ^1x1Shape
 	Interactable:

@@ -1861,7 +1861,7 @@ vehicle.avenger:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units, !techlevel.notech
-		Description: Advanced anti-air unit.\n\nCan deflect enemy missiles with laser.
+		Description: Advanced anti-air unit.\n\nCan deflect enemy missiles with laser\nCan mark enemy to make it recieve 140% damage.
 		ReadyAudio: AvengerCreated
 	Buildable@Air:
 		Queue: queue.air_gen_vehicle
@@ -1908,6 +1908,8 @@ vehicle.avenger:
 		Weapon: laser.avenger.air
 		LocalOffset: 512,0,192
 		MuzzleSequence: muzzle
+	Armament@MARK:
+		Weapon: laser.avenger.mark
 	Armament@PDLASER:
 		Weapon: laser.avenger.point_defense
 		LocalOffset: 0,213,0

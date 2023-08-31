@@ -115,6 +115,22 @@ laser.avenger.air:
 			building.stinger_site: 50
 			building.wall: 6
 
+laser.avenger.mark:
+	ReloadDelay: 5
+	Range: 4c0
+	TargetActorCenter: true
+	ValidTargets: GroundActor, WaterActor, Ground, Water
+	Projectile: LaserZap
+		Width: 38
+		ZOffset: 2047
+		Color: 4433FF
+		Duration: 7
+	Warhead@2Mark: GrantExternalCondition
+		Range: 0c100
+		Duration: 8
+		Condition: avenger_mark
+		ValidTargets: GroundActor, WaterActor
+
 laser.paladin_tank:
 	ReloadDelay: 25
 	Range: 3c0
