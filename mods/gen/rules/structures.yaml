@@ -3164,7 +3164,7 @@ building.usa_airfield:
 	Inherits: ^default.airfield
 	Inherits@RANGER: ^EmitRangersOnDeath
 	HitShape:
-		TargetableOffsets: 0,0,0, 0,-256,384, 0,-1451,512
+		TargetableOffsets: 0,0,0, -1536,512,0, 0,1536,0, -1536,1536,0, 0,-256,384, 0,-1451,512
 		Type: Rectangle
 			TopLeft: -2048, -1280
 			BottomRight: 2048, 1536
