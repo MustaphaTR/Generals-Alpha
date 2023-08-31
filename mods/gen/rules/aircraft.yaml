@@ -323,8 +323,8 @@ aircraft.mig:
 	Inherits@AIRFIELD: ^KilledWithoutAirfield
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^Pilot-NonUSAircraft
 	Inherits@REVEAL: ^Reveal300
-	Inherits@PILOT: ^Pilot-NoUSAircraft
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -517,13 +517,13 @@ aircraft.raptor:
 	Inherits: ^Fighter
 	Inherits@AIRFIELD: ^KilledWithoutAirfield
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@LASER_MISSILES: ^AffectedByLaserGuidedMissiles
+	Inherits@PILOT: ^Pilot-USAircraft
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
-	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
-	Inherits@PILOT: ^Pilot-USAircraft
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -710,13 +710,13 @@ aircraft.stealth_fighter:
 	Inherits: ^Fighter
 	Inherits@AIRFIELD: ^KilledWithoutAirfield
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@LASER_MISSILES: ^AffectedByLaserGuidedMissiles
+	Inherits@PILOT: ^Pilot-USAircraft
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
-	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
-	Inherits@PILOT: ^Pilot-USAircraft
 	GivesExperience:
 		Experience: 100
 	GivesExperienceMultiplier@RANK-2:
@@ -884,12 +884,12 @@ aircraft.aurora:
 	Inherits: ^Fighter
 	Inherits@AIRFIELD: ^KilledWithoutAirfield
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^Pilot-USAircraft
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
-	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
-	Inherits@PILOT: ^Pilot-USAircraft
 	GivesExperience:
 		Experience: 200
 	GivesExperienceMultiplier@RANK-2:
@@ -1169,8 +1169,8 @@ aircraft.scout_drone:
 
 aircraft.battle_drone:
 	Inherits: aircraft.scout_drone
-	Inherits@REVEAL: ^Reveal150
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@REVEAL: ^Reveal150
 	Tooltip:
 		Name: Battle Drone
 	Health:
@@ -1531,11 +1531,11 @@ aircraft.combat_chinook:
 aircraft.comanche:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^Pilot-USAircraft
 	Inherits@REVEAL: ^Reveal600
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
-	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
-	Inherits@PILOT: ^Pilot-USAircraft
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -1687,10 +1687,10 @@ aircraft.helix:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^Pilot-NonUSAircraft
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@UPGRADE: ^CanHavePRCVehicleUpgrades
-	Inherits@PILOT: ^Pilot-NoUSAircraft
 	Inherits@BotOwner: ^BotOwner
 	GivesExperience:
 		Experience: 50

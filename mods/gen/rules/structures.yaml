@@ -2626,14 +2626,14 @@ building.usa_war_factory:
 		VoiceSet: USAWarFactoryVoice
 	ProvidesPrerequisite:
 		Prerequisite: prerequisite.usa_airfield_or_war_factory
+	WithIdleOverlay@SABOTAGE:
+		Offset: 0,0,0
 	SequencePlaceBuildingPreview:
 		SequenceAlpha: 0.65
 	RenderSprites:
 		PlayerPalette: cncplayer
 	ActorStatValues:
 		Stats: Armor, Sight, Power
-	WithIdleOverlay@SABOTAGE:
-		Offset: 0,0,0
 
 building.arms_dealer:
 	Inherits: ^default.war_factory

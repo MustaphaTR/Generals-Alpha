@@ -418,7 +418,7 @@
 		EjectInAir: true
 		AllowUnsuitableCell: true
 	Capturable:
-		Types: Hijackable
+		Types: hijackable
 		CancelActivity: True
 		RequiresCondition: !airborne
 	CaptureNotification:
@@ -438,7 +438,19 @@
 		RequiresCondition: !driver_killed
 		PauseOnCondition: as_cargo || in_tunnel
 
-^Pilot-NoUSVehicle:
+^Pilot-NonUSAircraft:
+	PilotChamber:
+		GiveExperiencePilotActorTypes: infantry.hijacker, infantry.pilot
+		EjectSuccessRate: 0
+	Capturable:
+		Types: hijackable
+		CancelActivity: True
+		RequiresCondition: !airborne
+	CaptureNotification:
+		Notification: UnitStolen
+	CaptureManager:
+
+^Pilot-NonUSVehicle:
 	PilotChamber:
 		PilotActorTypesOverrideWhenCapture:
 			infantry.hijacker: false
@@ -448,18 +460,6 @@
 		AllowUnsuitableCell: true
 		RequiresCondition: !driver_killed
 		PauseOnCondition: as_cargo || in_tunnel
-
-^Pilot-NoUSAircraft:
-	PilotChamber:
-		GiveExperiencePilotActorTypes: infantry.hijacker, infantry.pilot
-		EjectSuccessRate: 0
-	Capturable:
-		Types: Hijackable
-		CancelActivity: True
-		RequiresCondition: !airborne
-	CaptureNotification:
-		Notification: UnitStolen
-	CaptureManager:
 
 ^CanCaptureDriverlessVehicles:
 	Captures@DRIVER_KILL:
@@ -1588,7 +1588,7 @@
 	Tooltip:
 		GenericName: Vehicle
 	Capturable:
-		Types: Hijackable
+		Types: hijackable
 		CancelActivity: True
 	CaptureNotification:
 		Notification: UnitStolen

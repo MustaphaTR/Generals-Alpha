@@ -1,10 +1,10 @@
 vehicle.supply_truck:
 	Inherits: ^Vehicle
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@SUPPLY_PIPS: ^SupplyCollectorPips
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	Buildable:
@@ -72,10 +72,10 @@ vehicle.humvee:
 	Inherits@CARGO: ^CargoPips
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^Pilot-USVehicle
 	Inherits@REVEAL: ^Reveal320
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
-	Inherits@PILOT: ^Pilot-USVehicle
 	Inherits@BotOwner: ^BotOwner
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !tow_missile
@@ -252,10 +252,10 @@ vehicle.technical:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
@@ -415,10 +415,10 @@ vehicle.radar_van:
 	Inherits: ^Vehicle
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal500
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 20
 	Tooltip:
@@ -523,10 +523,10 @@ vehicle.scorpion_tank:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 60
 	GivesExperienceMultiplier@RANK-2:
@@ -710,10 +710,10 @@ vehicle.crusader_tank:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^Pilot-USVehicle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
-	Inherits@PILOT: ^Pilot-USVehicle
 	GivesExperience:
 		Experience: 100
 	GivesExperienceMultiplier@RANK-2:
@@ -831,9 +831,9 @@ vehicle.battlemaster_tank:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@HORDE_BONUS: ^TankHorde
 	Inherits@NUCLEAR_TANKS: ^AffectedByNuclearTanks
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 100
 	GivesExperienceMultiplier@RANK-2:
@@ -965,9 +965,9 @@ vehicle.ambulance:
 	Inherits: ^Vehicle
 	Inherits@CARGO: ^CargoPips
 	Inherits@DRONE: ^CanHaveDrones
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
@@ -1178,10 +1178,10 @@ vehicle.quad_cannon:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -1297,8 +1297,8 @@ vehicle.gatling_tank:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal360
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -1425,10 +1425,10 @@ vehicle.toxin_tractor:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -1587,9 +1587,9 @@ vehicle.dragon_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -1702,10 +1702,10 @@ vehicle.rocket_buggy:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal360
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -1862,10 +1862,10 @@ vehicle.avenger:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^Pilot-USVehicle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
-	Inherits@PILOT: ^Pilot-USVehicle
 	GivesExperience:
 		Experience: 100
 	GivesExperienceMultiplier@RANK-2:
@@ -1885,7 +1885,7 @@ vehicle.avenger:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units, !techlevel.notech
-		Description: Advanced anti-air unit.\n\nCan deflect enemy missiles with laser\nCan mark enemy to make it recieve 140% damage.
+		Description: Advanced anti-air unit.\n\nCan deflect enemy missiles with laser.\n\nCan mark enemy to make it recieve 40% more damage.
 		ReadyAudio: AvengerCreated
 	Buildable@Air:
 		Queue: queue.air_gen_vehicle
@@ -1893,7 +1893,7 @@ vehicle.avenger:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~prerequisite.zh_units, !techlevel.notech
-		Description: Advanced anti-air unit.\n\nCan deflect enemy missiles with laser.
+		Description: Advanced anti-air unit.\n\nCan deflect enemy missiles with laser.\n\nCan mark enemy to make it recieve 40% more damage.
 		ReadyAudio: AvengerCreated
 	Valued:
 		Cost: 2000
@@ -1969,10 +1969,10 @@ vehicle.battle_bus:
 	Inherits@CARGO: ^CargoPips
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
@@ -2115,9 +2115,9 @@ vehicle.battle_bus:
 vehicle.troop_crawler:
 	Inherits: ^Tank
 	Inherits@CARGO: ^CargoPips
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
@@ -2236,9 +2236,9 @@ vehicle.listening_outpost:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CARGO: ^CargoPips
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal500
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
@@ -2489,8 +2489,8 @@ vehicle.ecm_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal360
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -2590,10 +2590,10 @@ vehicle.tomahawk_launcher:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^Pilot-USVehicle
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -2708,10 +2708,10 @@ vehicle.scud_launcher:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -2913,9 +2913,9 @@ vehicle.inferno_cannon:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-2:
@@ -3013,10 +3013,10 @@ vehicle.paladin_tank:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^Pilot-USVehicle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
-	Inherits@PILOT: ^Pilot-USVehicle
 	GivesExperience:
 		Experience: 100
 	GivesExperienceMultiplier@RANK-2:
@@ -3120,10 +3120,10 @@ vehicle.marauder_tank:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 100
 	GivesExperienceMultiplier@RANK-2:
@@ -3434,10 +3434,10 @@ vehicle.overlord_tank:
 	Inherits@CARGO: ^CargoPips
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@NUCLEAR_TANKS: ^AffectedByNuclearTanks
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal200
 	Inherits@UPGRADE: ^CanHavePRCVehicleUpgrades
 	Inherits@URANIUM_SHELLS: ^AffectedByUraniumShells
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	OwnerLostAction:
 		Action: Kill
 		RequiresCondition: !driver_killed || bunker_upgrade
@@ -3739,9 +3739,9 @@ vehicle.emparor_overlord:
 vehicle.bomb_truck:
 	Inherits: ^Vehicle
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	Buildable:
@@ -3970,10 +3970,10 @@ vehicle.nuke_cannon:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@BotOwner: ^BotOwner
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-1:
@@ -4487,6 +4487,7 @@ vehicle.combat_cycle:
 
 ^default.mcc:
 	Inherits: ^Vehicle
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -4564,7 +4565,6 @@ vehicle.combat_cycle:
 
 vehicle.usa_mcc:
 	Inherits: ^default.mcc
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Buildable:
 		Queue: queue.usa_command_center
 		ReadyAudio: USAMCCCreated
@@ -4657,7 +4657,6 @@ vehicle.gla_mcc:
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Buildable:
 		Queue: queue.gla_command_center, queue.stealth_gen_command_center
 		ReadyAudio: WorkerCreated
@@ -4736,7 +4735,6 @@ vehicle.gla_mcc:
 vehicle.prc_mcc:
 	Inherits: ^default.mcc
 	Inherits@REVEAL: ^Reveal300
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Buildable:
 		Queue: queue.prc_command_center
 		ReadyAudio: PRCMCCCreated
@@ -4838,14 +4836,13 @@ vehicle.prc_mcc:
 vehicle.tech_mcc:
 	Inherits: ^default.mcc
 	Inherits@REVEAL: ^Reveal300
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Buildable:
 		Queue: queue.disabled
 	Tooltip:
 		Name: Tech Construction Vehicle
 	Production:
 		Produces: queue.tech_building
-		PauseOnCondition: emp || leaflet || hacked || moving || as_cargo || in_tunnel || deployed
+		PauseOnCondition: emp || leaflet || hacked || moving || deployed
 		RequiresCondition: !driver_killed && !as_cargo && !in_tunnel
 	ProductionBar@TECH_BUILDING:
 		ProductionType: queue.tech_building
@@ -4867,9 +4864,9 @@ vehicle.tech_mcc:
 vehicle.mobile_reactor:
 	Inherits: ^Vehicle
 	Inherits@DRONE: ^CanHaveDrones
+	Inherits@PILOT: ^Pilot-USVehicle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@PILOT: ^Pilot-NoUSVehicle
 	Buildable:
 		Queue: queue.laser_gen_vehicle, queue.usa_vehicle_merged
 		BuildPaletteOrder: 11
