@@ -4383,86 +4383,72 @@ building.scud_storm:
 	AttackTurreted:
 		Turrets: A, B, C, D
 		Armaments: disabled
+		OpportunityFire: false
+		PersistentTargeting: false
 	Armament@NORMAL_A:
 		Turret: A
 		Weapon: missile.scud_storm
 		RequiresCondition: !anthrax_beta && !anthrax_gamma && !demo
-		PauseOnCondition: !ammo
 	Armament@BETA_A:
 		Turret: A
 		Weapon: missile.scud_storm.beta
 		RequiresCondition: anthrax_beta && !anthrax_gamma && !demo
-		PauseOnCondition: !ammo
 	Armament@GAMMA_A:
 		Turret: A
 		Weapon: missile.scud_storm.gamma
 		RequiresCondition: anthrax_gamma && !demo
-		PauseOnCondition: !ammo
 	Armament@DEMO_A:
 		Turret: A
 		Weapon: missile.scud_storm.demo
 		RequiresCondition: demo
-		PauseOnCondition: !ammo
 	Armament@NORMAL_B:
 		Turret: B
 		Weapon: missile.scud_storm
 		RequiresCondition: !anthrax_beta && !anthrax_gamma && !demo
-		PauseOnCondition: !ammo
 	Armament@BETA_B:
 		Turret: B
 		Weapon: missile.scud_storm.beta
 		RequiresCondition: anthrax_beta && !anthrax_gamma && !demo
-		PauseOnCondition: !ammo
 	Armament@GAMMA_B:
 		Turret: B
 		Weapon: missile.scud_storm.gamma
 		RequiresCondition: anthrax_gamma && !demo
-		PauseOnCondition: !ammo
 	Armament@DEMO_B:
 		Turret: B
 		Weapon: missile.scud_storm.demo
 		RequiresCondition: demo
-		PauseOnCondition: !ammo
 	Armament@NORMAL_C:
 		Turret: C
 		Weapon: missile.scud_storm
 		RequiresCondition: !anthrax_beta && !anthrax_gamma && !demo
-		PauseOnCondition: !ammo
 	Armament@BETA_C:
 		Turret: C
 		Weapon: missile.scud_storm.beta
 		RequiresCondition: anthrax_beta && !anthrax_gamma && !demo
-		PauseOnCondition: !ammo
 	Armament@GAMMA_C:
 		Turret: C
 		Weapon: missile.scud_storm.gamma
 		RequiresCondition: anthrax_gamma && !demo
-		PauseOnCondition: !ammo
 	Armament@DEMO_C:
 		Turret: C
 		Weapon: missile.scud_storm.demo
 		RequiresCondition: demo
-		PauseOnCondition: !ammo
 	Armament@NORMAL_D:
 		Turret: D
 		Weapon: missile.scud_storm
 		RequiresCondition: !anthrax_beta && !anthrax_gamma && !demo
-		PauseOnCondition: !ammo
 	Armament@BETA_D:
 		Turret: D
 		Weapon: missile.scud_storm.beta
 		RequiresCondition: anthrax_beta && !anthrax_gamma && !demo
-		PauseOnCondition: !ammo
 	Armament@GAMMA_D:
 		Turret: D
 		Weapon: missile.scud_storm.gamma
 		RequiresCondition: anthrax_gamma && !demo
-		PauseOnCondition: !ammo
 	Armament@DEMO_D:
 		Turret: D
 		Weapon: missile.scud_storm.demo
 		RequiresCondition: demo
-		PauseOnCondition: !ammo
 	Turreted@A:
 		Turret: A
 		TurnSpeed: 8
@@ -4480,7 +4466,7 @@ building.scud_storm:
 		TurnSpeed: 8
 		Offset: 512, 512, 0
 	AmmoPool:
-		Ammo: 4
+		Ammo: 16
 		AmmoCondition: ammo
 	WithSpriteTurret@A_Full:
 		Turret: A

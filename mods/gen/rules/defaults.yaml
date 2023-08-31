@@ -881,22 +881,22 @@
 ^AffectedByRadiationAndToxins:
 	DamagedByTintedCells@ANTHRAX_ALPHA:
 		LayerName: anthrax_alpha
-		Damage: 200
+		Damage: 60
 		DamageInterval: 10
-		DamageTypes: FireDeath
+		DamageTypes: AnthraxADeath
 	DamagedByTintedCells@ANTHRAX_BETA:
 		LayerName: anthrax_beta
-		Damage: 250
+		Damage: 110
 		DamageInterval: 10
-		DamageTypes: FireDeath
+		DamageTypes: AnthraxBDeath
 	DamagedByTintedCells@ANTHRAX_GAMMA:
 		LayerName: anthrax_gamma
-		Damage: 300
+		Damage: 160
 		DamageInterval: 10
-		DamageTypes: FireDeath
+		DamageTypes: AnthraxGDeath
 	DamagedByTintedCells@RADIOACTIVITY:
 		LayerName: radioactivity
-		Damage: 200
+		Damage: 90
 		DamageInterval: 10
 		DamageTypes: FireDeath
 
@@ -1802,6 +1802,13 @@
 			FireDeath: 5
 			ElectricityDeath: 6
 		CrushedSequence: die-crushed
+	WithDeathAnimation@Anthrax:
+		DeathSequencePalette: cnc
+		DeathPaletteIsPlayerPalette: false
+		DeathTypes:
+			AnthraxADeath: 7
+			AnthraxBDeath: 8
+			AnthraxGDeath: 9
 	AttackMove:
 	Passenger:
 		CargoType: Infantry
@@ -1816,6 +1823,13 @@
 	Crushable:
 		WarnProbability: 0
 		CrushSound: squishy2.aud
+	## Infantry takes more damage from Anthrax
+	DamagedByTintedCells@ANTHRAX_ALPHA:
+		Damage: 100
+	DamagedByTintedCells@ANTHRAX_BETA:
+		Damage: 150
+	DamagedByTintedCells@ANTHRAX_GAMMA:
+		Damage: 200
 	Guard:
 	Guardable:
 	Tooltip:

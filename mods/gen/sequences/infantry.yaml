@@ -1,4 +1,19 @@
+^infantry.posion.death:
+	die7: 
+		Filename: poison-green.shp
+		Length: *
+		Tick: 60
+	die8: 
+		Filename: poison-blue.shp
+		Length: *
+		Tick: 60
+	die9: 
+		Filename: poison-purp.shp
+		Length: *
+		Tick: 60
+
 infantry.pilot:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: gnrl.shp
 	stand:
@@ -71,6 +86,7 @@ infantry.pilot:
 		Filename: pilot_icon.png
 
 ^default.mg_infantry:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: e1.shp
 	stand:
@@ -220,6 +236,7 @@ infantry.conscript:
 		Filename: conscript_icon.shp
 
 infantry.toxin_rebel:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: e5.shp
 	stand:
@@ -492,6 +509,7 @@ infantry.toxin_rebel:
 		Filename: toxin_rebel_icon.png
 
 infantry.stinger_soldier:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: e3.shp
 	stand:
@@ -606,6 +624,7 @@ infantry.tank_hunter:
 		Filename: tank_hunter_icon.png
 
 infantry.grenadier:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: e2.shp
 	stand:
@@ -687,6 +706,7 @@ infantry.grenadier:
 		Filename: grenadier_icon.shp
 
 infantry.pathfinder:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: sniper.shp
 	stand:
@@ -774,6 +794,7 @@ infantry.pathfinder:
 		Filename: pathfinder_icon.png
 
 infantry.terrorist:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: terror.shp
 	stand:
@@ -833,6 +854,7 @@ infantry.toxin_terrorist:
 		Filename: toxin_terrorist_icon.png
 
 infantry.flamethrower:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: e4.shp
 	stand:
@@ -914,6 +936,7 @@ infantry.flamethrower:
 		Filename: flamethrower_icon.shp
 
 hack.angry_mob.male:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: mob_male.shp
 	idle:
@@ -979,6 +1002,7 @@ hack.angry_mob.male:
 		Filename: worker_icon.png
 
 hack.angry_mob.female:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: mob_female.shp
 	stand:
@@ -1034,12 +1058,14 @@ hack.angry_mob.molotov:
 	Inherits: infantry.grenadier
 
 infantry.angry_mob:
+	Inherits@posion: ^infantry.posion.death
 	idle:
 		Filename: invis.shp
 	icon:
 		Filename: angry_mob_icon.png
 
 infantry.hacker:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: mech.shp
 	stand:
@@ -1117,6 +1143,7 @@ infantry.super_hacker:
 		Filename: super_hacker_icon.png
 
 infantry.hijacker:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: thf.shp
 	stand:
@@ -1177,6 +1204,7 @@ infantry.hijacker:
 		Filename: hijacker_icon.png
 
 infantry.colonel_burton:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: rmbo.shp
 	stand:
@@ -1272,6 +1300,7 @@ infantry.colonel_burton:
 		Filename: colonel_burton_icon.png
 
 infantry.jarmen_kell:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: kell.shp
 	stand:
@@ -1359,6 +1388,7 @@ infantry.jarmen_kell:
 		Filename: jarmen_kell_icon.png
 
 infantry.black_lotus:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: e6.shp
 	stand:
@@ -1435,6 +1465,7 @@ infantry.super_lotus:
 		Filename: super_lotus_icon.png
 
 infantry.saboteur:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: saboteur.shp
 	stand:
@@ -1514,6 +1545,7 @@ infantry.saboteur:
 		Filename: saboteur_icon.png
 
 medi:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: medi.shp
 	stand:
@@ -1581,6 +1613,7 @@ medi:
 		Filename: mediicon.shp
 
 e7:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: e7.shp
 	stand:
@@ -1653,6 +1686,7 @@ e7:
 		Filename: e7icon.shp
 
 shok:
+	Inherits@posion: ^infantry.posion.death
 	Defaults:
 		Filename: shok.shp
 	stand:
