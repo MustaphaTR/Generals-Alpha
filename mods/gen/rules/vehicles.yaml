@@ -4863,7 +4863,7 @@ vehicle.tech_mcc:
 vehicle.mobile_reactor:
 	Inherits: ^Vehicle
 	Inherits@DRONE: ^CanHaveDrones
-	Inherits@PILOT: ^Pilot-USVehicle
+	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Buildable:
