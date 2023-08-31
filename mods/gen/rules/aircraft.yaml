@@ -1687,7 +1687,7 @@ aircraft.helix:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units
-		Description: Helicopter gunship armed with machine gun.\n\nCan carry 5 units.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
+		Description: Helicopter gunship armed with a machine gun.\n\nCan carry 5 units.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
 		ReadyAudio: HelixCreated
 	Valued:
 		Cost: 1500
@@ -1770,7 +1770,7 @@ aircraft.helix:
 		LocalOffset: 1024,0,-125
 		MuzzleSequence: muzzle
 	Armament@GATLING:
-		Weapon: gatling.gatling_tank.ground
+		Weapon: gatling.gatling_cannon.ground
 		Name: gatling
 		LocalOffset: 95,-256,-85, 95,256,-85
 		MuzzleSequence: muzzle
