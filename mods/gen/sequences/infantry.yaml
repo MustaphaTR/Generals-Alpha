@@ -1,19 +1,33 @@
-^infantry.posion.death:
+^default.infantry_death:
+	die6:
+		Filename: electro.tem
+		TilesetFilenames:
+			SNOW: electro.sno
+		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+		Length: *
+		Tick: 80
 	die7: 
-		Filename: poison-green.shp
+		Filename: toxin_death_green.shp
 		Length: *
 		Tick: 60
 	die8: 
-		Filename: poison-blue.shp
+		Filename: toxin_death_blue.shp
 		Length: *
 		Tick: 60
 	die9: 
-		Filename: poison-purp.shp
+		Filename: toxin_death_purple.shp
 		Length: *
 		Tick: 60
+	die-crushed:
+		Filename: corpse1.tem
+		TilesetFilenames:
+			SNOW: corpse1.sno
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
 
 infantry.pilot:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: gnrl.shp
 	stand:
@@ -68,25 +82,11 @@ infantry.pilot:
 		Start: 246
 		Length: 18
 		Tick: 80
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	icon:
 		Filename: pilot_icon.png
 
 ^default.mg_infantry:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: e1.shp
 	stand:
@@ -158,20 +158,6 @@ infantry.pilot:
 		Start: 324
 		Length: 18
 		Tick: 80
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: *
-		Tick: 1600
-		ZOffset: -511
 	garrison-muzzle: minigun
 		Filename:
 		Length: 12
@@ -236,7 +222,7 @@ infantry.conscript:
 		Filename: conscript_icon.shp
 
 infantry.toxin_rebel:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: e5.shp
 	stand:
@@ -491,25 +477,11 @@ infantry.toxin_rebel:
 		Start: 546
 		Length: 18
 		Tick: 80
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	icon:
 		Filename: toxin_rebel_icon.png
 
 infantry.stinger_soldier:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: e3.shp
 	stand:
@@ -556,20 +528,6 @@ infantry.stinger_soldier:
 		Start: 340
 		Length: 18
 		Tick: 80
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	prone-stand:
 		Start: 144
 		Stride: 4
@@ -624,7 +582,7 @@ infantry.tank_hunter:
 		Filename: tank_hunter_icon.png
 
 infantry.grenadier:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: e2.shp
 	stand:
@@ -671,20 +629,6 @@ infantry.grenadier:
 		Start: 452
 		Length: 18
 		Tick: 80
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	prone-stand:
 		Start: 240
 		Stride: 4
@@ -706,7 +650,7 @@ infantry.grenadier:
 		Filename: grenadier_icon.shp
 
 infantry.pathfinder:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: sniper.shp
 	stand:
@@ -771,20 +715,6 @@ infantry.pathfinder:
 	die5:
 		Start: 452
 		Length: 18
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	garrison-muzzle:
 		Filename: minigun.shp
 		Length: 3
@@ -794,7 +724,7 @@ infantry.pathfinder:
 		Filename: pathfinder_icon.png
 
 infantry.terrorist:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: terror.shp
 	stand:
@@ -826,20 +756,6 @@ infantry.terrorist:
 	die5:
 		Start: 160
 		Length: 8
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	run:
 		Start: 56
 		Length: 6
@@ -854,7 +770,7 @@ infantry.toxin_terrorist:
 		Filename: toxin_terrorist_icon.png
 
 infantry.flamethrower:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: e4.shp
 	stand:
@@ -901,20 +817,6 @@ infantry.flamethrower:
 		Start: 452
 		Length: 18
 		Tick: 80
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	prone-stand:
 		Start: 208
 		Stride: 4
@@ -936,7 +838,7 @@ infantry.flamethrower:
 		Filename: flamethrower_icon.shp
 
 hack.angry_mob.male:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: mob_male.shp
 	idle:
@@ -971,20 +873,6 @@ hack.angry_mob.male:
 	die5:
 		Start: 160
 		Length: 8
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	run:
 		Start: 56
 		Length: 6
@@ -1002,7 +890,7 @@ hack.angry_mob.male:
 		Filename: worker_icon.png
 
 hack.angry_mob.female:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: mob_female.shp
 	stand:
@@ -1034,20 +922,6 @@ hack.angry_mob.female:
 	die5:
 		Start: 160
 		Length: 8
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	run:
 		Start: 56
 		Length: 6
@@ -1058,14 +932,14 @@ hack.angry_mob.molotov:
 	Inherits: infantry.grenadier
 
 infantry.angry_mob:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	idle:
 		Filename: invis.shp
 	icon:
 		Filename: angry_mob_icon.png
 
 infantry.hacker:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: mech.shp
 	stand:
@@ -1111,20 +985,6 @@ infantry.hacker:
 		Start: 229
 		Length: 18
 		Tick: 80
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	prone-stand:
 		Start: 130
 		Stride: 4
@@ -1143,7 +1003,7 @@ infantry.super_hacker:
 		Filename: super_hacker_icon.png
 
 infantry.hijacker:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: thf.shp
 	stand:
@@ -1177,20 +1037,6 @@ infantry.hijacker:
 		Start: 175
 		Length: 18
 		Tick: 80
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	prone-stand:
 		Start: 72
 		Stride: 4
@@ -1204,7 +1050,7 @@ infantry.hijacker:
 		Filename: hijacker_icon.png
 
 infantry.colonel_burton:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: rmbo.shp
 	stand:
@@ -1283,24 +1129,16 @@ infantry.colonel_burton:
 		Start: 354
 		Length: 18
 		Tick: 80
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
 	die-crushed:
 		Filename: e1rot.shp
+		-TilesetFilenames:
 		Start: 16
 		Length: 4
-		Tick: 1600
-		ZOffset: -511
 	icon:
 		Filename: colonel_burton_icon.png
 
 infantry.jarmen_kell:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: kell.shp
 	stand:
@@ -1365,20 +1203,6 @@ infantry.jarmen_kell:
 	die5:
 		Start: 452
 		Length: 18
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	garrison-muzzle:
 		Filename: minigun.shp
 		Length: 3
@@ -1388,7 +1212,7 @@ infantry.jarmen_kell:
 		Filename: jarmen_kell_icon.png
 
 infantry.black_lotus:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: e6.shp
 	stand:
@@ -1429,20 +1253,6 @@ infantry.black_lotus:
 		Start: 182
 		Length: 18
 		Tick: 80
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	prone-stand:
 		Start: 82
 		Stride: 4
@@ -1465,7 +1275,7 @@ infantry.super_lotus:
 		Filename: super_lotus_icon.png
 
 infantry.saboteur:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: saboteur.shp
 	stand:
@@ -1510,20 +1320,6 @@ infantry.saboteur:
 		Start: 324
 		Length: 18
 		Tick: 80
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	prone-stand:
 		Start: 144
 		Stride: 4
@@ -1545,7 +1341,7 @@ infantry.saboteur:
 		Filename: saboteur_icon.png
 
 medi:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: medi.shp
 	stand:
@@ -1586,20 +1382,6 @@ medi:
 	die5:
 		Start: 229
 		Length: 18
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	prone-stand:
 		Start: 130
 		Stride: 4
@@ -1613,7 +1395,7 @@ medi:
 		Filename: mediicon.shp
 
 e7:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: e7.shp
 	stand:
@@ -1650,20 +1432,6 @@ e7:
 	die5:
 		Start: 298
 		Length: 18
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	prone-stand:
 		Start: 128
 		Stride: 4
@@ -1686,7 +1454,7 @@ e7:
 		Filename: e7icon.shp
 
 shok:
-	Inherits@posion: ^infantry.posion.death
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: shok.shp
 	stand:
@@ -1751,19 +1519,5 @@ shok:
 	die5:
 		Start: 452
 		Length: 18
-	die6:
-		Filename: electro.tem
-		TilesetFilenames:
-			SNOW: electro.sno
-		Frames: 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
-		Length: *
-		Tick: 80
-	die-crushed:
-		Filename: corpse1.tem
-		TilesetFilenames:
-			SNOW: corpse1.sno
-		Length: 6
-		Tick: 1600
-		ZOffset: -511
 	icon:
 		Filename: shokicon.shp
