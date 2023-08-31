@@ -141,7 +141,7 @@ parabomb.emp:
 parabomb.leaflet:
 	ReloadDelay: 50
 	Range: 0c384
-	ValidTargets: GroundActor, WaterActor
+	ValidTargets: Ground, Water, Air
 	Projectile: InstantExplode
 	Warhead@1Clu: FireCluster
 		Weapon: Leaflet
@@ -171,14 +171,14 @@ Leaflet:
 	Range: 5c0
 	Projectile: Bullet
 		Image: leaflet
-		Sequences: idle, 1, 2, 3, 4, 5
+		Sequences: idle, 0, 1, 2, 3, 4, 5
 		Blockable: false
 		Speed: 128
 		Inaccuracy: 512
 		Palette: effect
 	Warhead@5EffWater: CreateEffect
 		Image: leaflet
-		Explosions: 00, 01, 02, 03, 04, 05
+		Explosions: 0, 1, 2, 3, 4, 5
 		ImpactActors: false
 		AirThreshold: 8c0
 

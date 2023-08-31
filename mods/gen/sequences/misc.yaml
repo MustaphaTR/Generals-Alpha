@@ -701,9 +701,11 @@ orcabomb:
 leaflet:
 	Defaults:
 		Filename: leaflet.shp
+		Tick: 5000
 	idle:
 		Length: *
 		ZOffset: 1023
+		Tick: 40
 	0:
 		Strat: 0
 		ZOffset: 1023
@@ -722,24 +724,6 @@ leaflet:
 	5:
 		Strat: 5
 		ZOffset: 1023
-	00:
-		Strat: 0
-		Tick: 5000
-	01:
-		Strat: 1
-		Tick: 5000
-	02:
-		Strat: 2
-		Tick: 5000
-	03:
-		Strat: 3
-		Tick: 5000
-	04:
-		Strat: 4
-		Tick: 5000
-	05:
-		Strat: 5
-		Tick: 5000
 
 smokland:
 	open:
