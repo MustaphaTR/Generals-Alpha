@@ -1417,6 +1417,9 @@
 	GrantConditionOnFaction@CAMO_NETTING:
 		Condition: camo_netted
 		Factions: stealth
+	GrantConditionOnPrerequisite@MERGE_GENERALS_CAMO_NETTING:
+		Condition: camo_netted
+		Prerequisites: prerequisite.mergegenerals
 
 ^CanHaveCamoNettingStealthGenOnly:
 	Inherits@CAMO: ^CanHaveCamoNetting
@@ -1496,6 +1499,24 @@
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.land_mines, upgrade.neutron_mines
 		RequiresCondition: zh_units
+
+^CanHaveMinesBossOnly:
+	Inherits: ^CanHaveMines
+	ProductionQueue@JUST_MINE:
+		Factions: boss
+		AlwaysShowForFactions: boss
+	GrantConditionOnFaction@Boss:
+		Condition: boss
+		Factions: boss
+	ActorStatValues:
+		-Upgrades:
+	ActorStatOverride@Boss:
+		Upgrades: upgrade.land_mines
+		RequiresCondition: boss && !zh_units
+	-ActorStatOverride@ZH_UNITS:
+	ActorStatOverride@Boss_ZH_UNITS:
+		Upgrades: upgrade.land_mines, upgrade.neutron_mines
+		RequiresCondition: boss && zh_units
 
 ^FlatSelectionMode:
 	Selectable:

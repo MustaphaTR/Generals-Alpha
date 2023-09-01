@@ -628,7 +628,7 @@ upgrade.patriotism:
 	Tooltip:
 		Name: Patriotism
 	Buildable:
-		Queue: queue.inf_gen_propaganda_center, queue.propaganda_center_merged
+		Queue: queue.inf_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_missile_silo_merged
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1500
@@ -680,7 +680,7 @@ upgrade.subliminal_messaging:
 	Tooltip:
 		Name: Subliminal Messaging
 	Buildable:
-		Queue: queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_missile_silo
+		Queue: queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_missile_silo, queue.boss_gen_missile_silo_merged
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1000
@@ -875,7 +875,7 @@ upgrade.tactical_nuke_mig:
 	Tooltip:
 		Name: Tactical Nuke MiG
 	Buildable:
-		Queue: queue.nuke_gen_missile_silo
+		Queue: queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo_merged
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 1000
