@@ -58,6 +58,8 @@ vehicle.supply_truck:
 		BackwardDuration: -1
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
+	Passenger:
+		Weight: 2
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
@@ -1102,6 +1104,8 @@ vehicle.sentry_drone:
 		PauseOnCondition: hacked || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
+	Passenger:
+		Weight: 1
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
@@ -2033,6 +2037,8 @@ vehicle.battle_bus:
 		BackwardDuration: -1
 	SpeedMultiplier@DAMAGED:
 		Modifier: 71
+	Passenger:
+		Weight: 8
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
@@ -2091,8 +2097,6 @@ vehicle.battle_bus:
 	Targetable@HUSK:
 		TargetTypes: GroundActor, Vehicle, DetonateAttack, NoDriverKill
 		RequiresCondition: !parachute && husk
-	Passenger:
-		Weight: 8
 	Voiced:
 		VoiceSet: BattleBusVoice
 	ActorStatValues:
@@ -2150,6 +2154,8 @@ vehicle.troop_crawler:
 		PauseOnCondition: notmobile || hacked || (driver_killed && !loaded) || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
+	Passenger:
+		Weight: 8
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
@@ -2170,8 +2176,6 @@ vehicle.troop_crawler:
 		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
 	UnloadOnCondition@No_driver:
 		RequiresCondition: driver_killed
-	Passenger:
-		Weight: 8
 	AutoDeployer:
 		DeployChance: 100
 	RenderDetectionCircle:
@@ -2272,6 +2276,8 @@ vehicle.listening_outpost:
 		PauseOnCondition: notmobile || hacked || (driver_killed && !loaded) || emp || leaflet
 	SpeedMultiplier@DAMAGED:
 		Modifier: 75
+	Passenger:
+		Weight: 8
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
@@ -2292,8 +2298,6 @@ vehicle.listening_outpost:
 		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
 	UnloadOnCondition@No_driver:
 		RequiresCondition: driver_killed
-	Passenger:
-		Weight: 8
 	AttackGarrisoned:
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
@@ -4070,7 +4074,8 @@ vehicle.nuke_cannon:
 		Count: 1
 	AutoTarget:
 		ScanRadius: 8
-	-Passenger:
+	Passenger:
+		Weight: 10
 	AttackTurreted:
 		TargetFrozenActors: true
 		PauseOnCondition: hacked || emp || leaflet
@@ -4221,6 +4226,8 @@ vehicle.combat_cycle:
 		PauseOnCondition: notmobile || hacked || emp || leaflet || !loaded
 	SpeedMultiplier@DAMAGED:
 		Modifier: 89
+	Passenger:
+		Weight: 1
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
@@ -4514,6 +4521,8 @@ vehicle.combat_cycle:
 		PauseOnCondition: hacked || driver_killed || emp || leaflet || deployed
 	SpeedMultiplier@DAMAGED:
 		Modifier: 83
+	Passenger:
+		Weight: 5
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
