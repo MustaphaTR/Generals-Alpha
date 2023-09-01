@@ -167,6 +167,8 @@ namespace OpenRA.Mods.GenSDK.Traits
 				td.Add(new CenterPositionInit(spawnPos));
 
 				var pilotActor = self.World.CreateActor(true, pilot, td);
+				if (pilotActor == null)
+					return;
 
 				// Give experience to pilot
 				if (pilotLevel > 0)
