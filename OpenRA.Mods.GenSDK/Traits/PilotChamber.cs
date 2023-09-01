@@ -21,7 +21,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 {
 	[Desc("This trait provide a similar driver & hijacker system like that in TS/General.",
 		"Disable this trait will set to no pilot. Pause this trait will not eject pilot when actor killed.")]
-	public class PilotChamberInfo : PausableConditionalTraitInfo
+	public class PilotChamberInfo : PausableConditionalTraitInfo, Requires<CapturableInfo>
 	{
 		[ActorReference]
 		[Desc("Default pilot of this vehicle.")]
