@@ -2831,6 +2831,7 @@ building.prc_war_factory:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Inherits@SHARED_CARGO: ^SharedCargoPips
+	Inherits@BotOwner: ^BotOwner
 	GivesExperience:
 		Experience: 100
 	Tooltip:
@@ -2869,6 +2870,12 @@ building.prc_war_factory:
 		VoiceSet: TunnelNetworkVoice
 	RenderSprites:
 		Image: building.tunnel_network
+	ProvidesPrerequisite@HasTunnel: ## For AI Perf. 
+		Prerequisite: HasTunnel
+	AutoDeployer@AI:
+		RequiresCondition: bot_owner
+		DeployChance: 100
+		DeployTicks: 35
 	ActorStatValues:
 		Stats: Armor, Sight, Cargo
 
@@ -2894,6 +2901,7 @@ building.tunnel_network:
 		Weapon: mg.tunnel_network
 		LocalOffset: 512,0,112
 		MuzzleSequence: muzzle
+		ReloadingCondition: reload
 	RenderDetectionCircle:
 	WithRangeCircle:
 		Range: 4c384
@@ -2901,6 +2909,7 @@ building.tunnel_network:
 		Range: 3c768
 	AttackTurreted:
 		PauseOnCondition: build-incomplete || emp || hacked
+		RequiresCondition: !(reload && bot_owner) ## AI pauses attack to release the unit
 	WithSpriteTurret:
 		RequiresCondition: !build-incomplete
 	WithMuzzleOverlay:
@@ -2944,11 +2953,13 @@ building.toxin_tunnel_network:
 		Damage: 10
 		Weapon: toxin.toxin_tunnel_network.beta
 		LocalOffset: 512,0,112
+		ReloadingCondition: reload
 		RequiresCondition: anthrax_beta && !anthrax_gamma
 	Armament@Gamma:
 		Damage: 13
 		Weapon: toxin.toxin_tunnel_network.gamma
 		LocalOffset: 512,0,112
+		ReloadingCondition: reload
 		RequiresCondition: anthrax_gamma
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
 		Condition: anthrax_beta
@@ -3019,6 +3030,14 @@ building.tunnel_network.boss.no_free_actor:
 
 building.tunnel_network.sneak_attack:
 	Inherits: ^default.tunnel_network
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Armament:
+		Weapon: hack.sneak_attack.unload
+		LocalOffset: 512,0,112
+		MuzzleSequence: muzzle
+		ReloadingCondition: reload
+	AttackOmni@AIAimOnly:
+		RequiresCondition: bot_owner && !build-incomplete && !reload
 	ActorStatValues:
 		Icon: sneak-icon
 		IconPalette: chrome

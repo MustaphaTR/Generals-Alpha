@@ -1222,6 +1222,8 @@
 
 ^AutoTargetGround:
 	AutoTarget:
+		MinimumScanTimeInterval: 19
+		MaximumScanTimeInterval: 19
 		AttackAnythingCondition: stance-attackanything
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything

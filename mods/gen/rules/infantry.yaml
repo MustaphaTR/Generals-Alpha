@@ -1285,6 +1285,8 @@ infantry.saboteur:
 		ValidDamageStates: Critical
 	Voiced:
 		VoiceSet: SaboteurVoice
+	ProvidesPrerequisite@HasSaboteur: ## For AI Perf. 
+		Prerequisite: HasSaboteur
 	ActorStatValues:
 		Stats: Armor, Sight, Speed
 
