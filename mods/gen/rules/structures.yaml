@@ -1,6 +1,5 @@
 ^default.command_center:
 	Inherits: ^Building
-	Inherits@LOWPOWER: ^DisableOnLowPower
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SABOTAGE: ^CanBeSabotaged
 	GivesExperience:
@@ -306,6 +305,9 @@ building.usa_command_center:
 	GrantConditionOnFaction@Super:
 		Condition: super
 		Factions: super
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
 	ProvidesRadar:
 		RequiresCondition: !emp && !hacked && !lowpower && !sabotaged
 	RenderSprites:
@@ -540,6 +542,9 @@ building.prc_command_center:
 		Prerequisites: !building.prc_command_center.radar, !techlevel.nocc
 	Tooltip:
 		Name: PRC Command Center
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
 	ProvidesRadar:
 		RequiresCondition: radar && !emp && !hacked && !lowpower && !sabotaged
 	GrantConditionOnProduction@RADAR:
