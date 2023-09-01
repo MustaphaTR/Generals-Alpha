@@ -822,13 +822,16 @@ hack.spawn_sneak_attack:
 		ValidTargets: Ground, GroundActor
 		InvalidTargets: Water, WaterActor
 
+hack.sneak_attack.unload:
+	ValidTargets: GroundActor, WaterActor, AirborneActor
+	Range: 4c768
+	ReloadDelay: 100
+	Projectile: InstantExplode
+
 hack.suicide_targeting:
 	ValidTargets: DetonateAttack
 	Range: 1c768
-	Projectile: InstantHit
-	Warhead@1Dam: TargetDamage
-		ValidTargets: DetonateAttack
-
+	Projectile: InstantExplode
 
 hack.patriot_share:
 	ValidTargets: Ground, Water, GroundActor, WaterActor, AirborneActor

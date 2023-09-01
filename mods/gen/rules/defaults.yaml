@@ -63,7 +63,7 @@
 ^BotOwner:
 	GrantConditionOnBotOwner@bot_owner:
 		Condition: bot_owner
-		Bots: rush, normal, turtle
+		Bots: easy, normal, hard
 
 ^GainsExperience:
 	GainsExperience:
@@ -1222,6 +1222,8 @@
 
 ^AutoTargetGround:
 	AutoTarget:
+		MinimumScanTimeInterval: 19
+		MaximumScanTimeInterval: 19
 		AttackAnythingCondition: stance-attackanything
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything

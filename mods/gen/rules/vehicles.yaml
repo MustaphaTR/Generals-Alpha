@@ -4519,7 +4519,6 @@ vehicle.combat_cycle:
 		CrushClasses: vehicle
 	MustBeDestroyed:
 		RequiredForShortGame: true
-	BaseBuilding:
 	GivesBuildableArea@player:
 		AreaTypes: building
 		OnlyAllowPlacementFromSelf: true
@@ -4552,7 +4551,7 @@ vehicle.combat_cycle:
 		Range: 4c0
 		Color: CC550066
 	Wanders@AI:
-		WanderMoveRadius: 4
+		WanderMoveRadius: 3
 		MinMoveDelay: 1000
 		MaxMoveDelay: 1750
 		RequiresCondition: bot_owner

@@ -21,7 +21,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 {
 	[Desc("This trait provide a similar driver & hijacker system like that in TS/General.",
 		"Disable this trait will set to no pilot. Pause this trait will not eject pilot when actor killed.")]
-	public class PilotChamberInfo : PausableConditionalTraitInfo
+	public class PilotChamberInfo : PausableConditionalTraitInfo, Requires<CapturableInfo>
 	{
 		[ActorReference]
 		[Desc("Default pilot of this vehicle.")]
@@ -60,8 +60,8 @@ namespace OpenRA.Mods.GenSDK.Traits
 	{
 		GainsExperience selfExp;
 		string currentPilot;
-		int currentPilotLevel = 0;
-		Player currentPilotOwner = null;
+		int currentPilotLevel;
+		Player currentPilotOwner;
 
 		public PilotChamber(PilotChamberInfo info)
 			: base(info) {	}
@@ -71,6 +71,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 			selfExp = self.TraitsImplementing<GainsExperience>().Where(t => t.IsTraitEnabled()).FirstOrDefault();
 			currentPilot = Info.DefaultPilotActor;
 			currentPilotOwner = self.Owner;
+			currentPilotLevel = 0;
 			base.Created(self);
 		}
 
@@ -125,13 +126,21 @@ namespace OpenRA.Mods.GenSDK.Traits
 			if ((inAir && !Info.EjectInAir) || (!inAir && !Info.EjectOnGround))
 				return;
 
-			var pilotOwner = currentPilotOwner.WinState != WinState.Lost ? currentPilotOwner : self.World.Players.First(p => p.InternalName == Info.FallBackOwner);
+			var pilotOwner = (currentPilotOwner != null && currentPilotOwner.WinState != WinState.Lost) ? currentPilotOwner : self.World.Players.First(p => p.InternalName == Info.FallBackOwner);
 
 			self.World.AddFrameEndTask(w =>
 			{
+				// `currentPilot` can be null before FrameEndTask running
+				// we need to cache and check it
+				var pilot = currentPilot;
+				if (pilot == null)
+					return;
+				else
+					pilot = pilot.ToLowerInvariant();
+
 				if (!Info.AllowUnsuitableCell)
 				{
-					var pilotInfo = self.World.Map.Rules.Actors[currentPilot.ToLowerInvariant()];
+					var pilotInfo = self.World.Map.Rules.Actors[pilot];
 					var pilotPositionable = pilotInfo.TraitInfo<IPositionableInfo>();
 					if (!pilotPositionable.CanEnterCell(self.World, null, self.Location))
 						return;
@@ -157,14 +166,16 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 				td.Add(new CenterPositionInit(spawnPos));
 
-				var pilot = self.World.CreateActor(true, currentPilot.ToLowerInvariant(), td);
+				var pilotActor = self.World.CreateActor(true, pilot, td);
+				if (pilotActor == null)
+					return;
 
 				// Give experience to pilot
 				if (pilotLevel > 0)
-					pilot.TraitsImplementing<GainsExperience>().Where(t => t.IsTraitEnabled()).FirstOrDefault()?.GiveLevels(pilotLevel);
+					pilotActor.TraitsImplementing<GainsExperience>().Where(t => t.IsTraitEnabled()).FirstOrDefault()?.GiveLevels(pilotLevel);
 
 				if (!inAir)
-					pilot.QueueActivity(false, new Nudge(pilot));
+					pilotActor.QueueActivity(false, new Nudge(pilotActor));
 				else
 					Game.Sound.Play(SoundType.World, Info.ChuteSound, cp);
 			});
