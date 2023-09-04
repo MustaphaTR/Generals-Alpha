@@ -650,6 +650,13 @@ upgrade.isotope_stability:
 		BuildDuration: 1500
 		Description: Makes Battlemaster and Overlord Tank not explode on death.
 		Prerequisites: !techlevel.infonly
+	Buildable@Boss:
+		Queue: queue.boss_gen_missile_silo_merged
+		BuildPaletteOrder: 1
+		ForceIconLocation: true
+		BuildDuration: 1500
+		Description: Makes Overlord Tank not explode on death.
+		Prerequisites: !techlevel.infonly
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
