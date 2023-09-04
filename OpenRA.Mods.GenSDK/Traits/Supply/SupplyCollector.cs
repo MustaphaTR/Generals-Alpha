@@ -27,7 +27,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 	{
 		public readonly HashSet<string> SupplyTypes = new() { "supply" };
 
-		public readonly bool AutomaticDeliverOnOnwerActor = true;
+		public readonly bool AutoDeliverOnlyActorOwner = true;
 		public readonly PlayerRelationship DeliveryRelationships = PlayerRelationship.Ally;
 		public readonly PlayerRelationship CollectionRelationships = PlayerRelationship.Ally | PlayerRelationship.Neutral;
 
@@ -405,7 +405,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		bool IsAcceptableDeliveryBuilding(Actor supplyCenter, bool isAutomatic = false)
 		{
 			return Info.SupplyTypes.Overlaps(supplyCenter.Trait<SupplyCenter>().Info.SupplyTypes) &&
-				isAutomatic && Info.AutomaticDeliverOnOnwerActor ? self.Owner == supplyCenter.Owner :
+				isAutomatic && Info.AutoDeliverOnlyActorOwner ? self.Owner == supplyCenter.Owner :
 				Info.DeliveryRelationships.HasRelationship(self.Owner.RelationshipWith(supplyCenter.Owner));
 		}
 
