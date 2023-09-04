@@ -25,6 +25,9 @@
 		Capacity: 2500
 		CollectionOffsets: 0,-1, -1,0, 1,0, 0,1
 		AircraftCollectionOffsets: 0,0
+		StuckRoadCheckRange: 2c0
+		ToleratedStuckRoad: 6
+		ToleratedOccupancy: 3
 		FullnessConditions:
 			1: not_empty
 	WithIdleOverlay@100_preview:
@@ -125,6 +128,8 @@ supply.pile.g:
 	Tooltip:
 		Name: Supply Dock
 	SupplyDock:
+		MaxAircraftCollectorAllow: 2
+		MaxCollectorAllow: 4
 		FullnessConditions:
 			1: not_empty
 			7501: quarter
@@ -166,7 +171,9 @@ supply.dock.30000.6x4:
 		Dimensions: 6,4
 	SupplyDock:
 		CollectionOffsets: 0,-1, 1,-1, 2,-1, 3,-1, 4,-1, 5,-1, -1,0, -1,1, -1,2, -1,3, 6,0, 6,1, 6,2, 6,3, 0,4, 1,4, 2,4, 3,4, 4,4, 5,4
-		AircraftCollectionOffsets: 0,0, 1,0, 2,0, 3,0, 4,0, 5,0, 0,1, 0,2, 0,3, 5,1, 5,2, 5,3, 1,3, 2,3, 3,3, 4,3
+		StuckRoadCheckRange: 5c0
+		ToleratedStuckRoad: 18
+		AircraftCollectionOffsets:  1,1, 1,2, 2,1, 3,1, 4,1, 2,2, 3,2, 4,2, 4,1
 	RenderSprites:
 		Image: supply.dock.6x4
 	WithIdleOverlay@Bib-Tem:
@@ -211,7 +218,8 @@ supply.dock.30000.4x6:
 		Dimensions: 4,6
 	SupplyDock:
 		CollectionOffsets: 0,-1, 1,-1, 2,-1, 3,-1, -1,0, -1,1, -1,2, -1,3, -1,4, -1,5, 4,0, 4,1, 4,2, 4,3, 4,4, 4,5, 0,6, 1,6, 2,6, 3,6
-		AircraftCollectionOffsets: 0,0, 1,0, 2,0, 3,0, 0,1, 0,2, 0,3, 0,4, 0,5, 3,1, 3,2, 3,3, 3,4, 3,5, 1,5, 2,5
+		#AircraftCollectionOffsets: 0,0, 1,0, 2,0, 3,0, 0,1, 0,2, 0,3, 0,4, 0,5, 3,1, 3,2, 3,3, 3,4, 3,5, 1,5, 2,5
+		AircraftCollectionOffsets: 1,1, 1,2, 2,1, 1,3, 1,4, 2,2, 2,3, 2,4, 1,4
 	RenderSprites:
 		Image: supply.dock.4x6
 	WithIdleOverlay@Bib-Tem:
@@ -256,7 +264,10 @@ supply.dock.30000.skewed_a:
 		Dimensions: 6,5
 	SupplyDock:
 		CollectionOffsets: 0,-1, 1,-1, 2,-1, 3,0, 4,0, 5,0, -1,0, -1,1, -1,2, -1,3, 6,1, 6,2, 6,3, 6,4, 0,4, 1,4, 2,4, 3,5, 4,5, 5,5
-		AircraftCollectionOffsets: 0,0, 1,0, 2,0, 3,1, 4,1, 5,1, 0,1, 0,2, 0,3, 5,2, 5,3, 5,4, 1,3, 2,3, 3,4, 4,4
+		#AircraftCollectionOffsets: 0,0, 1,0, 2,0, 3,1, 4,1, 5,1, 0,1, 0,2, 0,3, 5,2, 5,3, 5,4, 1,3, 2,3, 3,4, 4,4
+		AircraftCollectionOffsets: 3,1, 4,1, 5,1, 5,2, 5,3, 5,4, 1,3, 2,3, 3,4, 4,4
+		ToleratedStuckRoad: 20
+		StuckRoadCheckRange: 5c512
 	RenderSprites:
 		Image: supply.dock.skewed_a
 	WithIdleOverlay@Bib-Tem:
@@ -301,7 +312,7 @@ supply.dock.30000.skewed_b:
 		Dimensions: 6,5
 	SupplyDock:
 		CollectionOffsets: 0,0, 1,0, 2,0, 3,-1, 4,-1, 5,-1, -1,1, -1,2, -1,3, -1,4, 6,0, 6,1, 6,2, 6,3, 0,5, 1,5, 2,5, 3,4, 4,4, 5,4
-		AircraftCollectionOffsets: 0,1, 1,1, 2,1, 3,0, 4,0, 5,0, 0,2, 0,3, 0,4, 5,1, 5,2, 5,3, 1,4, 2,4, 3,3, 4,3
+		AircraftCollectionOffsets: 1,1, 1,2, 1,3, 2,1, 3,1, 4,1, 2,3, 3,3, 4,3, 4,2
 	RenderSprites:
 		Image: supply.dock.skewed_b
 	WithIdleOverlay@Bib-Tem:
@@ -350,6 +361,9 @@ supply.dock.2x2:
 		Capacity: 10000
 		CollectionOffsets: 0,-1, 1,-1, -1,0, -1,1, 2,0, 2,1, 0,2, 1,2
 		AircraftCollectionOffsets: 0,0, 1,0, 0,1, 1,1
+		ToleratedStuckRoad: 9
+		ToleratedOccupancy: 3
+		StuckRoadCheckRange: 3c0
 		FullnessConditions:
 			2501: quarter
 			5001: half

@@ -9,11 +9,17 @@
  */
 #endregion
 
-namespace OpenRA.Mods.GenSDK.Traits
+using OpenRA.Mods.Common.Activities;
+
+// This class is for debugging on actor tag
+namespace OpenRA.Mods.GenSDK.Activities
 {
-	public interface IResourceExchange
+	public class HandleGoods : Wait
 	{
-		void GiveResource(int amount, string harvester);
-		bool CanGiveResource(int amount);
+		public HandleGoods(int period)
+			: base(period) { }
+
+		public HandleGoods(int period, bool interruptible)
+			: base(period, interruptible) { }
 	}
 }

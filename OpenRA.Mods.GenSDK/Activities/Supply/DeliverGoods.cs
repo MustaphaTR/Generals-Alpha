@@ -28,8 +28,17 @@ namespace OpenRA.Mods.GenSDK.Activities
 		readonly SupplyCollectorInfo collectorInfo;
 		readonly IMove move;
 		readonly Mobile mobile;
+		readonly Aircraft aircraft;
 		readonly Color? targetLineColor;
-		bool hasWaitInLine;
+		CPos? targetcell = null;
+
+		void WaitAtParkingZone(Actor self, int waitDuration, Actor center, SupplyCenter centerTriat)
+		{
+			if (centerTriat == null || !centerTriat.AtNoParkingZone(center, self.Location))
+				QueueChild(new Wait(waitDuration));
+			else
+				QueueChild(new Nudge(self));
+		}
 
 		public DeliverGoods(Actor self, Color? targetLineColor = null)
 		{
@@ -37,148 +46,250 @@ namespace OpenRA.Mods.GenSDK.Activities
 			collectorInfo = self.Info.TraitInfo<SupplyCollectorInfo>();
 			move = self.Trait<IMove>();
 			mobile = self.TraitOrDefault<Mobile>();
+			aircraft = self.TraitOrDefault<Aircraft>();
 			this.targetLineColor = targetLineColor;
 		}
 
 		public override bool Tick(Actor self)
 		{
-			if (IsCanceling)
-				return true;
-
-			if (collector.DeliveryBuilding == null || !collector.DeliveryBuilding.IsInWorld || !collectorInfo.DeliveryRelationships.HasRelationship(self.Owner.RelationshipWith(collector.DeliveryBuilding.Owner)))
-			{
-				collector.DeliveryBuilding = collector.ClosestDeliveryBuilding(self, null);
-			}
-
-			if (collector.DeliveryBuilding == null || !collector.DeliveryBuilding.IsInWorld)
-			{
-				QueueChild(new Wait(collectorInfo.SearchForDeliveryBuildingDelay));
-				return false;
-			}
+			var isAir = aircraft != null;
+			if (isAir)
+				aircraft.EnableRepulse();
 
 			var center = collector.DeliveryBuilding;
-			var centerTrait = center.Trait<SupplyCenter>();
-			CPos? cell = null;
-			var dist = int.MaxValue;
+			var centerTrait = center != null && !center.IsDead ? center.Trait<SupplyCenter>() : null;
 
-			// Find the nearst cell to center
-			foreach (var c in centerTrait.Info.DeliveryOffsets.Select(c => center.Location + c))
+			if (IsCanceling)
 			{
-				if (cell == null || (c - self.Location).LengthSquared < dist)
-				{
-					if (c == self.Location || mobile == null || mobile.CanEnterCell(c))
-					{
-						cell = c;
-						dist = (c - self.Location).LengthSquared;
-					}
-				}
+				centerTrait?.UnregisterTrade(center, self);
+				collector.WorkingAtPortState = WorkingAtPortState.None;
+				return true;
 			}
 
-			// Enter the nearst cell
-			if (cell != null && cell != self.Location)
-			{
-				QueueChild(move.MoveTo(cell.Value, 2));
-				return false;
-			}
-
-			// "cell == null" means all dockable cell is occupied, we wait for a moment
-			// then try to get closer
-			if (cell == null)
-			{
-				if (!hasWaitInLine)
-				{
-					hasWaitInLine = true;
-					QueueChild(new Wait(collectorInfo.WaitDuration));
-				}
-				else
-				{
-					hasWaitInLine = false;
-					QueueChild(move.MoveTo(center.Location, 5));
-				}
-
-				return false;
-			}
-
-			if (self.Trait<IFacing>() != null)
-			{
-				if (centerTrait.Info.Facing != null && self.Trait<IFacing>().Facing != centerTrait.Info.Facing.Value)
-				{
-					QueueChild(new Turn(self, centerTrait.Info.Facing.Value));
-					return false;
-				}
-				else if (centerTrait.Info.Facing == null)
-				{
-					var facing = (center.CenterPosition - self.CenterPosition).Yaw;
-					if (self.Trait<IFacing>().Facing != facing)
-					{
-						QueueChild(new Turn(self, facing));
-						return false;
-					}
-				}
-			}
-
-			if (!collector.WorkingOnSupply)
-			{
-				collector.WorkingOnSupply = true;
-				QueueChild(new Wait(collectorInfo.DeliveryDelay));
-				return false;
-			}
-
+			// No goods? then we go find some.
 			var amount = collector.Amount;
-			if (amount < 0)
+			if (amount <= 0)
 			{
+				centerTrait?.UnregisterTrade(center, self);
+				collector.WorkingAtPortState = WorkingAtPortState.None;
 				self.QueueActivity(new FindGoods(self));
 				return true;
 			}
 
-			if (centerTrait.CanGiveResource(amount))
+			// Check if supply center is valid. If not we try find new one
+			if (centerTrait == null)
 			{
-				var wsb = self.TraitsImplementing<WithSpriteBody>().Where(t => !t.IsTraitDisabled).FirstOrDefault();
-				var wsda = self.Info.TraitInfoOrDefault<WithSupplyDeliveryAnimationInfo>();
-				var rs = self.TraitOrDefault<RenderSprites>();
-				if (rs != null && wsb != null && wsda != null && !collector.DeliveryAnimPlayed)
+				targetcell = null;
+				collector.WorkingAtPortState = WorkingAtPortState.None;
+
+				center = collector.ClosestDeliveryBuilding(self, null);
+				collector.FindOtherDeliveryBuildingAdvisor = null;
+
+				if (center == null)
 				{
-					wsb.PlayCustomAnimation(self, wsda.DeliverySequence);
-					collector.DeliveryAnimPlayed = true;
-					QueueChild(new Wait(wsda.WaitDelay));
+					collector.DeliveryBuilding = null;
+					QueueChild(new Wait(collectorInfo.SearchForDeliveryBuildingDelay));
 					return false;
 				}
+				else
+					collector.DeliveryBuilding = center;
 
-				var wsdo = self.TraitOrDefault<WithSupplyDeliveryOverlay>();
-				if (wsb != null && wsdo != null && !collector.DeliveryAnimPlayed)
-				{
-					if (!wsdo.Visible)
-					{
-						wsdo.Visible = true;
-						wsdo.Anim.PlayThen(wsdo.Info.Sequence, () => wsdo.Visible = false);
-						collector.DeliveryAnimPlayed = true;
-						QueueChild(new Wait(wsdo.Info.WaitDelay));
-						return false;
-					}
-				}
-
-				var amountToGive = Util.ApplyPercentageModifiers(amount, collector.ResourceMultipliers.Select(m => m.GetResourceValueModifier()));
-				collector.WorkingOnSupply = false;
-				collector.DeliveryAnimPlayed = false;
-				centerTrait.GiveResource(amountToGive, self.Info.Name);
-
-				collector.Amount = 0;
-				collector.CheckConditions(self);
-			}
-			else
-			{
-				QueueChild(new Wait(collectorInfo.DeliveryDelay));
 				return false;
 			}
+			else if (!center.IsInWorld || collector.FindOtherDeliveryBuildingAdvisor == center || !collectorInfo.DeliveryRelationships.HasRelationship(self.Owner.RelationshipWith(center.Owner)))
+			{
+				targetcell = null;
+				centerTrait.UnregisterTrade(center, self);
+				collector.WorkingAtPortState = WorkingAtPortState.None;
 
-			self.QueueActivity(new FindGoods(self));
-			return true;
+				center = collector.ClosestDeliveryBuilding(self, null);
+				collector.FindOtherDeliveryBuildingAdvisor = null;
+
+				if (center == null)
+				{
+					collector.DeliveryBuilding = null;
+					QueueChild(new Wait(collectorInfo.SearchForDeliveryBuildingDelay));
+					return false;
+				}
+				else
+				{
+					// For Perf: leave rest of work next tick.
+					collector.DeliveryBuilding = center;
+					return false;
+				}
+			}
+
+			switch (collector.WorkingAtPortState)
+			{
+				case WorkingAtPortState.None:
+					if (self.Location == targetcell)
+					{
+						collector.WorkingAtPortState = WorkingAtPortState.Registering;
+						return false;
+					}
+
+					var dockableCells = centerTrait.Info.DeliveryOffsets.Select(c => center.Location + c);
+
+					// Move to supply center (collector is non-aircraft)
+					if (mobile != null)
+					{
+						// Find nearest unblocked port.
+						var bestdist = int.MaxValue;
+						foreach (var c in dockableCells)
+						{
+							if (c == self.Location)
+							{
+								targetcell = c;
+								break;
+							}
+
+							if (!targetcell.HasValue || ((c - self.Location).LengthSquared < bestdist && mobile.CanEnterCell(c)))
+							{
+								targetcell = c;
+								bestdist = (c - self.Location).LengthSquared;
+							}
+						}
+
+						if (targetcell != null && targetcell != self.Location)
+							QueueChild(move.MoveTo(targetcell.Value, 2));
+						else if (!targetcell.HasValue)
+							WaitAtParkingZone(self, collectorInfo.WaitInlineDuration, center, centerTrait);
+
+						return false;
+					}
+
+					// Move to supply center (collector is aircraft)
+					if (isAir)
+					{
+						targetcell = self.ClosestCell(dockableCells);
+
+						if (targetcell != null)
+						{
+							aircraft.DisableRepulse();
+							QueueChild(move.MoveTo(targetcell.Value, 2));
+						}
+						else
+							QueueChild(new Wait(collectorInfo.WaitInlineDuration));
+
+						return false;
+					}
+
+					return false;
+
+				case WorkingAtPortState.Registering:
+					// aircraft collector ignore repulsing force in this stage
+					if (isAir)
+						aircraft.DisableRepulse();
+
+					// Fallback to moving stage if get teleported
+					if (self.Location != targetcell)
+					{
+						collector.WorkingAtPortState = WorkingAtPortState.None;
+						return false;
+					}
+
+					// Turns to dock facing
+					if (self.Trait<IFacing>() != null)
+					{
+						switch (collectorInfo.FacingWhenDockAtSupplyCenter)
+						{
+							case FacingWhenDock.Any:
+								break;
+							case FacingWhenDock.TowardsTarget:
+								var facing = (center.CenterPosition - self.CenterPosition).Yaw;
+								if (self.Trait<IFacing>().Facing != facing)
+								{
+									QueueChild(new Turn(self, facing));
+									return false;
+								}
+
+								break;
+							case FacingWhenDock.Specific:
+								if (self.Trait<IFacing>().Facing != collectorInfo.SpecificFacingOnCenter)
+								{
+									QueueChild(new Turn(self, collectorInfo.SpecificFacingOnCenter));
+									return false;
+								}
+
+								break;
+						}
+					}
+
+					if (!centerTrait.RegisterTrade(center, self))
+					{
+						QueueChild(new Wait(collectorInfo.WaitForTradeDuration));
+						return false;
+					}
+
+					collector.WorkingAtPortState = WorkingAtPortState.Working;
+					QueueChild(new PrepareDelivery(collectorInfo.DeliveryDelay));
+					return false;
+
+				case WorkingAtPortState.Working:
+					// aircraft collector ignore repulsing force in this stage
+					if (isAir)
+						aircraft.DisableRepulse();
+					if (centerTrait.CanGiveResource(amount))
+					{
+						collector.WorkingAtPortState = WorkingAtPortState.Done;
+
+						// Perform delivery effect, if we have
+						var wsb = self.TraitsImplementing<WithSpriteBody>().Where(t => !t.IsTraitDisabled).FirstOrDefault();
+						var wsda = self.Info.TraitInfoOrDefault<WithSupplyDeliveryAnimationInfo>();
+						var rs = self.TraitOrDefault<RenderSprites>();
+						if (rs != null && wsb != null && wsda != null)
+						{
+							wsb.PlayCustomAnimation(self, wsda.DeliverySequence);
+							QueueChild(new HandleGoods(wsda.WaitDelay));
+						}
+
+						var wsdo = self.TraitOrDefault<WithSupplyDeliveryOverlay>();
+						if (wsb != null && wsdo != null)
+						{
+							if (!wsdo.Visible)
+							{
+								wsdo.Visible = true;
+								wsdo.Anim.PlayThen(wsdo.Info.Sequence, () => wsdo.Visible = false);
+								QueueChild(new HandleGoods(wsdo.Info.WaitDelay));
+							}
+						}
+					}
+					else
+						QueueChild(new Wait(collectorInfo.DeliveryDelay));
+
+					return false;
+
+				case WorkingAtPortState.Done:
+					var amountToGive = Util.ApplyPercentageModifiers(amount, collector.ResourceMultipliers.Select(m => m.GetResourceValueModifier()));
+					centerTrait.GiveResource(amountToGive, self.Info.Name);
+
+					collector.Amount = 0;
+					collector.CheckConditions(self);
+
+					// Rest the working status of collector
+					collector.WorkingAtPortState = WorkingAtPortState.None;
+					centerTrait.UnregisterTrade(center, self);
+					if (isAir)
+						aircraft.EnableRepulse();
+
+					centerTrait.ShouldChangeCenter(center, self);
+					self.QueueActivity(new FindGoods(self));
+					return true;
+			}
+
+			// Note: Unless there is a bug, we should not reach here.
+			return false;
 		}
 
 		public override IEnumerable<TargetLineNode> TargetLineNodes(Actor self)
 		{
-			if (targetLineColor != null && collector.DeliveryBuilding != null)
-				yield return new TargetLineNode(Target.FromActor(collector.DeliveryBuilding), targetLineColor.Value);
+			if (targetLineColor != null)
+			{
+				if (targetcell.HasValue)
+					yield return new TargetLineNode(Target.FromCell(self.World, targetcell.Value), targetLineColor.Value);
+				else if (collector.DeliveryBuilding != null)
+					yield return new TargetLineNode(Target.FromActor(collector.DeliveryBuilding), targetLineColor.Value);
+			}
 		}
 	}
 }

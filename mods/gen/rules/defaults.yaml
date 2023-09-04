@@ -1800,8 +1800,10 @@
 		Type: infantry.normal
 	Mobile:
 		Speed: 20
+		TurnSpeed: 64
 		AlwaysTurnInPlace: true
 		Locomotor: locomotor.infantry
+		TurnsWhileMoving: true
 		PauseOnCondition: leaflet
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:

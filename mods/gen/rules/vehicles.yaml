@@ -24,10 +24,16 @@ vehicle.supply_truck:
 		DecorationBounds: 1792, 1792
 	SelectionDecorations:
 	SupplyCollector:
-		CollectionDelay: 100
+		CollectionDelay: 80
 		DeliveryDelay: 0
 		MaxDeliveryQueue: 4
+		StuckRoadPower: 3
+		StuckRoadPowerAir: 1
+		OccupancyPower: 3
+		ToleratedOccupied: 13
 		CollectVoice: Action
+		FacingWhenDockAtSupplyCenter: Specific
+		SpecificFacingOnCenter: 256
 		FullnessConditions:
 			150: half
 			300: full

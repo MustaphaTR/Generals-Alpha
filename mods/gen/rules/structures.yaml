@@ -1610,8 +1610,10 @@ building.prc_barracks:
 	WithBuildingBib:
 	SupplyCenter:
 		UseStorage: false
-		Facing: 256
 		DeliveryOffsets: 1,2
+		ToleratedStuckRoad: 12
+		ToleratedOccupancy: 6
+		StuckRoadCheckRange: 4c128
 	Power:
 		Amount: -1
 	CashHackable:
