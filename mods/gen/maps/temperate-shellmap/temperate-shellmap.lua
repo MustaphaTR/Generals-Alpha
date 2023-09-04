@@ -140,15 +140,15 @@ SendMiGs = function(waypoints)
 	Trigger.AfterDelay(DateTime.Seconds(40), function() SendMiGs(waypoints) end)
 end
 
-SendA10s = function()
-	powerproxyA10.TargetAirstrike(A10Waypoint.CenterPosition, Angle.West)
+SendAirstrike = function(proxy, target, direction, timer)
+	proxy.TargetAirstrike(target.CenterPosition, direction)
 
-	Trigger.AfterDelay(DateTime.Minutes(4), SendA10s)
+	Trigger.AfterDelay(timer, function() SendAirstrike(proxy, target, direction, timer) end)
 end
 
 SendParadrop = function()
 	local lz = Utils.Random(ParadropWaypoints)
-	local units = powerproxyPara.TargetParatroopers(lz.CenterPosition)
+	local units = PowerproxyPara.TargetParatroopers(lz.CenterPosition)
 
 	Utils.Do(units, function(a)
 		BindActorTriggers(a)
@@ -215,14 +215,15 @@ WorldLoaded = function()
 	GLAShipyard.RallyPoint = GLAShipyardRally.Location
 	PRCShipyard.RallyPoint = PRCShipyardRally.Location
 
-	powerproxyPara = Actor.Create("powerproxy.paradrop", false, { Owner = usa })
-	powerproxyA10 = Actor.Create("powerproxy.a10", false, { Owner = usa })
+	PowerproxyPara = Actor.Create("powerproxy.paradrop", false, { Owner = usa })
+	PowerproxyA10 = Actor.Create("powerproxy.a10", false, { Owner = usa })
+	PowerproxyArty = Actor.Create("powerproxy.artillery_barrage", false, { Owner = prc })
 
 	Trigger.AfterDelay(DateTime.Seconds(40), function() SendMiGs(MiG1Waypoints) end)
 	Trigger.AfterDelay(DateTime.Seconds(40), function() SendMiGs(MiG2Waypoints) end)
 
 	Trigger.AfterDelay(DateTime.Minutes(4) + DateTime.Seconds(15), function() SendParadrop() end)
-	Trigger.AfterDelay(DateTime.Minutes(4) + DateTime.Seconds(25), function() SendA10s() end)
+	Trigger.AfterDelay(DateTime.Minutes(4) + DateTime.Seconds(25), function() SendAirstrike(PowerproxyA10, A10Waypoint, Angle.West, DateTime.Minutes(4)) end)
+	Trigger.AfterDelay(DateTime.Minutes(5), function() SendAirstrike(PowerproxyArty, ArtyBarrWaypoint, Angle.West, DateTime.Minutes(5)) end)
 	SummonActor("hack.rebel_spawner.8", gla, AmbushLocation1.Location, DateTime.Minutes(4))
-	SummonActor("hack.artillery_barrager.3", prc, ArtyBarrWaypoint.Location, DateTime.Minutes(5))
 end
