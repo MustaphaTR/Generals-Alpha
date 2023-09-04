@@ -709,9 +709,13 @@ vehicle.scorpion_tank:
 		Upgrades: upgrade.sc_rocket, upgrade.toxin_shells, upgrade.anthrax_beta, upgrade.ap_rockets, upgrade.junk_repair
 	ActorStatOverride@Toxin:
 		Upgrades: upgrade.sc_rocket, upgrade.anthrax_gamma, upgrade.ap_rockets, upgrade.junk_repair
-		RequiresCondition: toxin
+		RequiresCondition: toxin && !merged
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.sc_rocket, upgrade.demolitions, upgrade.ap_rockets, upgrade.junk_repair
+		RequiresCondition: demo && !merged
+	ActorStatOverride@Merged:
+		Upgrades: upgrade.sc_rocket, upgrade.anthrax_gamma, upgrade.demolitions, upgrade.ap_rockets, upgrade.junk_repair
+		RequiresCondition: merged
 
 vehicle.crusader_tank:
 	Inherits: ^Tank
@@ -949,13 +953,16 @@ vehicle.battlemaster_tank:
 		Upgrades: upgrade.nationalism, upgrade.nuclear_tanks, upgrade.uranium_shells
 	ActorStatOverride@Inf:
 		Upgrades: upgrade.patriotism
-		RequiresCondition: inf
+		RequiresCondition: inf && !merged
 	ActorStatOverride@Tank:
 		Upgrades: upgrade.nationalism, upgrade.autoloader, upgrade.nuclear_tanks, upgrade.uranium_shells
-		RequiresCondition: tank
+		RequiresCondition: tank && !merged
 	ActorStatOverride@Nuke:
 		Upgrades: upgrade.nationalism, upgrade.isotope_stability
-		RequiresCondition: nuke
+		RequiresCondition: nuke && !merged
+	ActorStatOverride@Merged:
+		Upgrades: upgrade.patriotism, upgrade.isotope_stability, upgrade.autoloader
+		RequiresCondition: merged
 
 vehicle.nuclear_battlemaster_tank:
 	Inherits: vehicle.battlemaster_tank
@@ -1588,9 +1595,13 @@ vehicle.toxin_tractor:
 		Upgrades: upgrade.anthrax_beta, upgrade.junk_repair
 	ActorStatOverride@Toxin:
 		Upgrades: upgrade.anthrax_gamma, upgrade.junk_repair
-		RequiresCondition: toxin
+		RequiresCondition: toxin && !merged
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.demolitions, upgrade.junk_repair
+		RequiresCondition: demo && !merged
+	ActorStatOverride@Merged:
+		Upgrades: upgrade.anthrax_gamma, upgrade.demolitions, upgrade.junk_repair
+		RequiresCondition: merged
 
 vehicle.dragon_tank:
 	Inherits: ^Tank
@@ -1862,6 +1873,7 @@ vehicle.rocket_buggy:
 		Upgrades: upgrade.ap_rockets, upgrade.junk_repair, upgrade.buggy_ammo
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.demolitions, upgrade.ap_rockets, upgrade.junk_repair, upgrade.buggy_ammo
+		RequiresCondition: (demo || merged) && !boss
 	ActorStatOverride@Boss:
 		Upgrades: upgrade.ap_rockets, upgrade.buggy_ammo
 		RequiresCondition: boss
@@ -2470,6 +2482,9 @@ vehicle.microwave_tank:
 	GrantConditionOnFaction@Super:
 		Condition: super
 		Factions: super
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	WithRangeCircle:
 		Range: 3c0
 		Color: DDDD0088
@@ -2486,13 +2501,13 @@ vehicle.microwave_tank:
 		Upgrades: upgrade.adv_training, upgrade.composite_armor, upgrade.scout_drone, upgrade.battle_drone
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.composite_armor, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
-		RequiresCondition: !air && !super && zh_units
+		RequiresCondition: ((!air && !super) || merged) && zh_units
 	ActorStatOverride@Air:
 		Upgrades: upgrade.adv_training, upgrade.scout_drone, upgrade.battle_drone
-		RequiresCondition: (air || super) && !zh_units
+		RequiresCondition: (air || super) && !merged && !zh_units
 	ActorStatOverride@Air_ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
-		RequiresCondition: (air || super) && zh_units
+		RequiresCondition: (air || super) && !merged && zh_units
 
 vehicle.ecm_tank:
 	Inherits: ^Tank
@@ -2884,9 +2899,11 @@ vehicle.scud_launcher:
 	GrantConditionOnFaction@TOXIN_MISSILES:
 		Condition: toxin_missiles
 		Factions: toxin
+		RequiresCondition: !merged
 	GrantConditionOnFaction@HI_EXPLOSIVE_MISSILES:
 		Condition: hi_explosive_missiles
 		Factions: demo
+		RequiresCondition: !merged
 	GrantConditionOnFaction@Toxin:
 		Condition: toxin
 		Factions: toxin
@@ -2914,9 +2931,13 @@ vehicle.scud_launcher:
 		LocalUpgrades: upgrade.toxin_missiles, upgrade.hi_explosive_missiles
 	ActorStatOverride@Toxin:
 		Upgrades: upgrade.anthrax_gamma, upgrade.junk_repair
-		RequiresCondition: toxin
+		RequiresCondition: toxin && !merged
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.demolitions, upgrade.junk_repair
+		RequiresCondition: demo && !merged
+	ActorStatOverride@Merged:
+		Upgrades: upgrade.anthrax_gamma, upgrade.demolitions, upgrade.junk_repair, upgrade.toxin_missiles, upgrade.hi_explosive_missiles
+		RequiresCondition: merged
 
 vehicle.inferno_cannon:
 	Inherits: ^Tank
@@ -3432,9 +3453,13 @@ vehicle.marauder_tank:
 		Upgrades: upgrade.toxin_shells, upgrade.anthrax_beta, upgrade.junk_repair
 	ActorStatOverride@Toxin:
 		Upgrades: upgrade.anthrax_gamma, upgrade.junk_repair
-		RequiresCondition: toxin
+		RequiresCondition: toxin && !merged
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.demolitions, upgrade.junk_repair
+		RequiresCondition: demo && !merged
+	ActorStatOverride@Merged:
+		Upgrades: upgrade.anthrax_gamma, upgrade.demolitions, upgrade.junk_repair
+		RequiresCondition: merged
 
 vehicle.overlord_tank:
 	Inherits: ^Tank
@@ -3744,6 +3769,9 @@ vehicle.emparor_overlord:
 	ActorStatValues:
 		Upgrades: upgrade.subliminal_messaging, upgrade.nuclear_tanks, upgrade.uranium_shells, upgrade.overlord_gatling
 	-ActorStatOverride@Nuke:
+	ActorStatOverride@Merged:
+		Upgrades: upgrade.isotope_stability, upgrade.subliminal_messaging, upgrade.overlord_bunker, upgrade.overlord_gatling
+		RequiresCondition: merged
 
 vehicle.bomb_truck:
 	Inherits: ^Vehicle
@@ -3792,7 +3820,7 @@ vehicle.bomb_truck:
 		RequiresCondition: !(bio_bombs && hi_explosive_bombs) && !(bio_bombs && toxin) && !(hi_explosive_bombs && demo) && !driver_killed && !as_cargo && !in_tunnel
 	ProductionQueue@Vanilla:
 		Type: queue.bomb_truck
-		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank
+		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank, boss
 		Group: Tech
 		ItemLimit: 1
 		QueueLimit: 2
@@ -3905,6 +3933,9 @@ vehicle.bomb_truck:
 	GrantConditionOnFaction@Demo:
 		Condition: demo
 		Factions: demo
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	-WithFacingSpriteBody:
 	WithDisguisingFacingSpriteBody:
 	WithDisguisingSpriteTurret:
@@ -3970,10 +4001,13 @@ vehicle.bomb_truck:
 		LocalUpgrades: upgrade.bio_bombs, upgrade.hi_explosive_bombs
 	ActorStatOverride@Toxin:
 		Upgrades: upgrade.anthrax_gamma, upgrade.junk_repair, upgrade.bio_bombs
-		RequiresCondition: toxin
+		RequiresCondition: toxin && !merged
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.junk_repair, upgrade.hi_explosive_bombs
-		RequiresCondition: demo
+		RequiresCondition: demo && !merged
+	ActorStatOverride@Merged:
+		Upgrades: upgrade.anthrax_gamma, upgrade.junk_repair, upgrade.bio_bombs, upgrade.hi_explosive_bombs
+		RequiresCondition: merged
 
 vehicle.nuke_cannon:
 	Inherits: ^Tank
@@ -4493,6 +4527,7 @@ vehicle.combat_cycle:
 		RequiresCondition: saboteur || worker || hijacker
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.demolitions, upgrade.junk_repair
+		RequiresCondition: (demo || merged) && !boss
 	ActorStatOverride@Boss:
 		Upgrades:
 		RequiresCondition: boss

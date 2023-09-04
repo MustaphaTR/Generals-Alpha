@@ -218,6 +218,9 @@
 		Margin: 5, 5
 		RequiresCondition: horde_bonus
 		ValidRelationships: Ally, Neutral, Enemy
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnPrerequisite@NATIONALISM:
 		Condition: nationalism
 		Prerequisites: upgrade.nationalism
@@ -566,7 +569,7 @@
 ^AffectedByDemolitions:
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.demolitions
-		RequiresCondition: demo
+		RequiresCondition: demo || merged
 	Explodes@Demo:
 		Weapon: explosion.suicide
 		EmptyWeapon: explosion.suicide

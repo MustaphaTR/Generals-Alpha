@@ -109,12 +109,12 @@ infantry.worker:
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, None, None, None, Collector
 	ActorStatOverride@ZH_UNITS:
-		RequiresCondition: !demo && zh_units
+		RequiresCondition: !demo && !merged && zh_units
 	ActorStatOverride@Demo:
-		RequiresCondition: demo && !zh_units
+		RequiresCondition: (demo || merged) && !zh_units
 	ActorStatOverride@Demo_ZH_UNITS:
 		Upgrades: upgrade.demolitions, upgrade.worker_shoes
-		RequiresCondition: demo && zh_units
+		RequiresCondition: (demo || merged) && zh_units
 
 ^default.mg_infantry:
 	Inherits: ^Soldier
@@ -305,10 +305,10 @@ infantry.rebel:
 		Upgrades: upgrade.capture_building, upgrade.camouflage, upgrade.ap_bullets
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.capture_building, upgrade.booby_traps, upgrade.camouflage, upgrade.ap_bullets
-		RequiresCondition: zh_units && !toxin && !demo && !stealth
+		RequiresCondition: !toxin && !demo && !stealth && !merged && zh_units
 	ActorStatOverride@Toxin:
 		Upgrades: upgrade.capture_building, upgrade.ap_bullets
-		RequiresCondition: toxin || stealth
+		RequiresCondition: (toxin || stealth) && !merged
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.capture_building, upgrade.demolitions, upgrade.ap_bullets
 
@@ -445,9 +445,13 @@ infantry.toxin_rebel:
 		Upgrades: upgrade.capture_building, upgrade.anthrax_beta
 	ActorStatOverride@Toxin:
 		Upgrades: upgrade.capture_building, upgrade.anthrax_gamma
-		RequiresCondition: toxin
+		RequiresCondition: toxin && !merged
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.capture_building, upgrade.demolitions
+		RequiresCondition: demo && !merged
+	ActorStatOverride@Merged:
+		Upgrades: upgrade.capture_building, upgrade.anthrax_gamma, upgrade.demolitions
+		RequiresCondition: merged
 
 infantry.red_guard:
 	Inherits: ^default.mg_infantry
@@ -517,7 +521,7 @@ infantry.red_guard:
 		Upgrades: upgrade.capture_building, upgrade.nationalism
 	ActorStatOverride@Inf:
 		Upgrades: upgrade.capture_building, upgrade.patriotism
-		RequiresCondition: inf
+		RequiresCondition: inf || merged
 
 infantry.minigunner:
 	Inherits: ^default.mg_infantry
@@ -608,7 +612,7 @@ infantry.minigunner:
 		Upgrades: upgrade.capture_building, upgrade.nationalism
 	ActorStatOverride@Inf:
 		Upgrades: upgrade.capture_building, upgrade.patriotism
-		RequiresCondition: inf
+		RequiresCondition: inf || merged
 
 infantry.conscript:
 	Inherits: ^default.mg_infantry
@@ -808,10 +812,14 @@ infantry.rpg_trooper:
 		Voice: Garrison
 	Voiced:
 		VoiceSet: RPGTrooperVoice
+	GrantConditionOnFaction@Boss:
+		Condition: boss
+		Factions: boss
 	ActorStatValues:
 		Upgrades: upgrade.ap_rockets
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.demolitions, upgrade.ap_rockets
+		RequiresCondition: (demo || merged) && !boss
 
 infantry.stinger_soldier:
 	Inherits: ^default.rocket_infantry
@@ -921,9 +929,13 @@ infantry.tank_hunter:
 		Upgrades: upgrade.nationalism
 	ActorStatOverride@Inf:
 		Upgrades: upgrade.patriotism
-		RequiresCondition: inf
+		RequiresCondition: inf || merged
 	ActorStatOverride@Boss_ZH_UNITS:
 		Upgrades: upgrade.chemical_suits, upgrade.nationalism
+		RequiresCondition: boss && !merged && zh_units
+	ActorStatOverride@Boss_Merged_ZH_UNITS:
+		Upgrades: upgrade.chemical_suits, upgrade.patriotism
+		RequiresCondition: boss && merged && zh_units
 
 infantry.grenadier:
 	Inherits: ^default.rocket_infantry
@@ -1168,7 +1180,7 @@ infantry.toxin_terrorist:
 		Upgrades: upgrade.anthrax_beta
 	ActorStatOverride@Toxin:
 		Upgrades: upgrade.anthrax_gamma
-		RequiresCondition: toxin
+		RequiresCondition: toxin || merged
 
 infantry.flamethrower:
 	Inherits: ^Soldier
@@ -2116,6 +2128,7 @@ infantry.jarmen_kell:
 		Upgrades: upgrade.ap_bullets
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.demolitions, upgrade.ap_bullets
+		RequiresCondition: (demo || merged) && !boss
 	ActorStatOverride@Boss:
 		Upgrades:
 		RequiresCondition: boss && !zh_units

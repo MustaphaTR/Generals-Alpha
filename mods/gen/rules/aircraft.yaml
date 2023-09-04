@@ -1545,6 +1545,9 @@ aircraft.comanche:
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@Air:
 		Condition: air
 		Factions: air
@@ -1564,13 +1567,13 @@ aircraft.comanche:
 		Upgrades: upgrade.adv_training, upgrade.rocket_pods
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.rocket_pods, upgrade.countermeasures
-		RequiresCondition: !air && zh_units
+		RequiresCondition: !air && !merged && zh_units
 	ActorStatOverride@Air:
 		Upgrades: upgrade.adv_training, upgrade.rocket_pods, upgrade.stealth_comanche
-		RequiresCondition: air && !zh_units
+		RequiresCondition: (air || merged) && !zh_units
 	ActorStatOverride@Air_ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.rocket_pods, upgrade.countermeasures, upgrade.stealth_comanche
-		RequiresCondition: air && zh_units
+		RequiresCondition: (air || merged) && zh_units
 
 aircraft.helix:
 	Inherits: ^Helicopter
