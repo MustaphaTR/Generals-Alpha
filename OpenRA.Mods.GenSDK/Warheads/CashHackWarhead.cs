@@ -14,10 +14,9 @@ using System.Linq;
 using OpenRA.GameRules;
 using OpenRA.Mods.AS.Warheads;
 using OpenRA.Mods.Common;
-using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Effects;
+using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.GenSDK.Traits;
-using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.GenSDK.Warheads
