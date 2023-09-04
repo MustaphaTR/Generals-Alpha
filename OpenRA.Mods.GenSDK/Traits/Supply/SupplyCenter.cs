@@ -222,7 +222,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 					var collectors = self.World.ActorMap.GetActorsAt(loc).ToList();
 					foreach (var c in collectors)
 					{
-						var colletorTrait = (c == null || c.IsDead || !c.IsInWorld) ? null : c.Trait<SupplyCollector>();
+						var colletorTrait = (c == null || c.IsDead || !c.IsInWorld) ? null : c.TraitOrDefault<SupplyCollector>();
 						if (colletorTrait != null && !colletorTrait.IsEmpty &&
 							colletorTrait.WorkingAtPortState == WorkingAtPortState.None &&
 							colletorTrait.Info.DeliveryRelationships.HasRelationship(c.Owner.RelationshipWith(self.Owner)))
