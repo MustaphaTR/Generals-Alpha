@@ -673,7 +673,19 @@ vehicle.combat_cycle:
 	icon:
 		Filename: combat_cycle_icon.png
 
+mcc.build:
+	dig:
+		Filename:  dig.shp
+		TilesetFilenames:
+			DESERT: dig-desert.shp
+		Length: *
+		Start: 0
+		Tick: 30
+		AlphaFade: true
+		ZOffset: -512
+
 vehicle.usa_mcc:
+	Inherits: mcc.build
 	idle:
 		Filename: mcv.shp
 		Facings: 32
@@ -684,6 +696,7 @@ vehicle.usa_mcc:
 		Filename: usa_mcc_icon.png
 
 vehicle.gla_mcc:
+	Inherits: mcc.build
 	idle:
 		Filename: mcv.shp
 		Facings: 32
@@ -694,6 +707,7 @@ vehicle.gla_mcc:
 		Filename: gla_mcc_icon.png
 
 vehicle.prc_mcc:
+	Inherits: mcc.build
 	idle:
 		Filename: mcv.shp
 		Facings: 32

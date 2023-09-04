@@ -1284,6 +1284,7 @@ aircraft.a10:
 aircraft.chinook:
 	Inherits: ^Helicopter
 	Inherits@CARGO: ^CargoPips
+	Inherits@PILOT: ^Pilot-NonUSAircraft
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@SUPPLY_PIPS: ^SupplyCollectorPips
@@ -1393,6 +1394,7 @@ aircraft.chinook:
 aircraft.combat_chinook:
 	Inherits: aircraft.chinook
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BotOwner: ^BotOwner
 	GivesExperience:
 		Experience: 60
 	Buildable:
@@ -1417,6 +1419,18 @@ aircraft.combat_chinook:
 		Voice: Attack
 	Voiced:
 		VoiceSet: CombatChinookVoice
+	Cargo:
+		LoadedCondition: loaded
+	ProvidesPrerequisite@HasCombatChinook: ## For AI Perf. 
+		Prerequisite: HasCombatChinook
+	GrantConditionOnDamageState@AI-bunker_upgrade:
+		Condition: ShouldUnload
+		ValidDamageStates: Critical, Heavy
+	AutoDeployer@AI-bunker_upgrade:
+		RequiresCondition: bot_owner && loaded && ShouldUnload
+		DeployChance: 100
+		DeployTrigger: Periodically
+		DeployTicks: 200
 
 aircraft.comanche:
 	Inherits: ^Helicopter

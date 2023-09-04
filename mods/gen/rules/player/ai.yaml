@@ -327,6 +327,7 @@ Player:
 			vehicle.bomb_truck: 10
 			vehicle.battle_bus: 2
 			aircraft.chinook: 10
+			aircraft.combat_chinook: 1
 			aircraft.mig: 2
 			aircraft.raptor: 2
 			aircraft.king_raptor: 2
@@ -396,6 +397,7 @@ Player:
 			aircraft.helix: 2
 			aircraft.assault_helix: 1
 			aircraft.chinook: 8
+			aircraft.combat_chinook: 1
 			vehicle.supply_truck: 8
 			vehicle.radar_van: 2
 			vehicle.sentry_drone: 2
@@ -442,11 +444,6 @@ Player:
 		CapturableActorTypes: tech.oil_derrick, tech.oil_refinery, tech.hospital, tech.communications_center, tech.soviet_barracks, tech.power_plant, tech.shipyard, tech.reinforcements_pad, tech.repair_bay, vehicle.supply_truck, vehicle.ambulance, vehicle.humvee, vehicle.technical, vehicle.gatling_tank, vehicle.troop_crawler, vehicle.assault_troop_crawler, vehicle.quad_cannon, vehicle.tomahawk_launcher, vehicle.inferno_cannon, vehicle.scud_launcher, vehicle.dragon_tank, vehicle.rocket_buggy, vehicle.toxin_tractor, vehicle.scorpion_tank, vehicle.crusader_tank, vehicle.laser_tank, vehicle.battlemaster_tank, vehicle.nuclear_battlemaster_tank, vehicle.overlord_tank, vehicle.emparor_overlord, vehicle.paladin_tank, vehicle.marauder_tank, vehicle.combat_cycle, vehicle.avenge, vehicle.avenger.air, vehicle.radar_van, vehicle.sentry_drone, vehicle.listening_outpost, vehicle.attack_outpost, vehicle.ecm_tank, vehicle.microwave_tank, vehicle.nuke_cannon, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc, vehicle.bomb_truck, vehicle.battle_bus, aircraft.mig, aircraft.raptor, aircraft.king_raptor, aircraft.stealth_fighter, aircraft.stealth_fighter.air, aircraft.aurora, aircraft.aurora_alpha, aircraft.comanche, aircraft.helix, aircraft.assault_helix
 	BuildingRepairBotModule:
 		RequiresCondition: enable-any-ai
-	LoadCargoBotModule@Hacker:
-		RequiresCondition: enable-any-ai
-		TransportTypesAndLoadRequirement: 
-			building.internet_center: All
-		PassengerTypes: infantry.hacker, infantry.super_hacker
 	LoadCargoBotModule@DefenseAndTransport:
 		RequiresCondition: enable-any-ai
 		TransportTypesAndLoadRequirement: 
@@ -460,17 +457,34 @@ Player:
 			vehicle.battle_bus: All
 			vehicle.assault_troop_crawler: All
 			vehicle.listening_outpost: All
+			vehicle.overlord_tank: All
 			vehicle.attack_outpost: All
 			aircraft.assault_helix: All
 			aircraft.helix: All
-			vehicle.overlord_tank: All
+			aircraft.combat_chinook: All
 		PassengerTypes: infantry.ranger, infantry.rebel, infantry.red_guard, infantry.minigunner, infantry.conscript, infantry.missile_defender, infantry.rpg_trooper, infantry.tank_hunter, infantry.grenadier, infantry.pathfinder, infantry.flamethrower
 		ValidTransportOwner: AlliedBot
 	LoadGarrisonerBotModule:
 		RequiresCondition: enable-any-ai
 		GarrisonerUnit: infantry.ranger, infantry.rebel, infantry.red_guard, infantry.minigunner, infantry.conscript, infantry.missile_defender, infantry.rpg_trooper, infantry.tank_hunter, infantry.grenadier, infantry.pathfinder, infantry.flamethrower
+
+	GrantConditionOnPrerequisite@HasBombtruck:
+		Condition: has-bombtruck
+		Prerequisites: vehicle.bomb_truck
+	SendUnitToAttackBotModule@DisguiseBombTruck:
+		RequiresCondition: enable-hard-ai && has-bombtruck
+		ActorTypesAndAttackDesire: 
+			vehicle.bomb_truck: 100
+		AttackOrderName: Disguise
+		ValidTargets: Disguise
+		InvalidTargets: WaterActor
+		AttackDistance: Random
+
+	GrantConditionOnPrerequisite@HasLotus:
+		Condition: has-lotus
+		Prerequisites: prerequisite.enough_black_lotus
 	SendUnitToAttackBotModule@AttackBuilding:
-		RequiresCondition: enable-any-ai
+		RequiresCondition: has-lotus || has-bombtruck
 		ActorTypesAndAttackDesire: 
 			vehicle.bomb_truck: 100
 			infantry.black_lotus: 100
@@ -480,6 +494,15 @@ Player:
 		InvalidTargets: WaterActor
 		AttackDistance: Random
 
+	GrantConditionOnPrerequisite@HasCombatChinook:
+		Condition: has-cchinook
+		Prerequisites: HasCombatChinook
+	SendUnitToAttackBotModule@CombatChinook:
+		RequiresCondition: has-cchinook
+		ActorTypesAndAttackDesire: 
+			aircraft.combat_chinook: 100
+		ValidTargets: WaterActor, GroundActor
+		AttackRequires: CargoLoadedIfPossible
 
 	GrantConditionOnPrerequisite@HasSaboteur:
 		Condition: has-saboteur
@@ -500,6 +523,16 @@ Player:
 		RequiresCondition: enable-any-ai && has-tunnel
 		Transports: building.tunnel_network.sneak_attack, building.tunnel_network, building.tunnel_network.no_free_actor, building.toxin_tunnel_network, building.toxin_tunnel_network.no_free_actor
 		Passengers: vehicle.humvee, vehicle.technical, vehicle.gatling_tank, vehicle.assault_troop_crawler, vehicle.quad_cannon, vehicle.tomahawk_launcher, vehicle.inferno_cannon, vehicle.scud_launcher, vehicle.dragon_tank, vehicle.rocket_buggy, vehicle.toxin_tractor, vehicle.scorpion_tank, vehicle.crusader_tank, vehicle.battlemaster_tank, vehicle.nuclear_battlemaster_tank, vehicle.overlord_tank, vehicle.emparor_overlord, vehicle.paladin_tank, vehicle.marauder_tank, vehicle.combat_cycle, vehicle.avenge, vehicle.avenger.air, vehicle.listening_outpost, vehicle.attack_outpost, vehicle.ecm_tank, vehicle.microwave_tank, vehicle.nuke_cannon, vehicle.battle_bus 
+
+	GrantConditionOnPrerequisite@HasInternet:
+		Condition: has-internetcenter
+		Prerequisites: building.internet_center
+	LoadCargoBotModule@Hacker:
+		RequiresCondition: has-internetcenter
+		ScanTick: 757
+		TransportTypesAndLoadRequirement: 
+			building.internet_center: All
+		PassengerTypes: infantry.hacker, infantry.super_hacker
 
 	SupportPowerBotASModule:
 		RequiresCondition: enable-any-ai
