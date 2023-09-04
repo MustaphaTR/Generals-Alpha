@@ -225,7 +225,8 @@ namespace OpenRA.Mods.GenSDK.Traits
 						var colletorTrait = (c == null || c.IsDead || !c.IsInWorld) ? null : c.TraitOrDefault<SupplyCollector>();
 						if (colletorTrait != null && !colletorTrait.IsEmpty &&
 							colletorTrait.WorkingAtPortState == WorkingAtPortState.None &&
-							colletorTrait.Info.DeliveryRelationships.HasRelationship(c.Owner.RelationshipWith(self.Owner)))
+							(colletorTrait.Info.AutoDeliverOnlyActorOwner ? c.Owner == self.Owner :
+							colletorTrait.Info.DeliveryRelationships.HasRelationship(c.Owner.RelationshipWith(self.Owner))))
 						{
 							c.CancelActivity();
 							colletorTrait.DeliveryBuilding = self;
