@@ -733,14 +733,14 @@ infantry.missile_defender:
 	Armament@AA:
 		ForceTargetRelationships: None
 	Armament@LaserLock_AG:
-		Name: secondary
+		Name: laser_lock
 		Weapon: laser.missile_defender.locked.ground
 		LocalOffset: 0,0,555
 		TargetRelationships: None
 		Cursor: ability
 		OutsideRangeCursor: ability
 	Armament@LaserLock_AA:
-		Name: secondary
+		Name: laser_lock
 		Weapon: laser.missile_defender.locked.air
 		LocalOffset: 0,0,555
 		Cursor: ability
@@ -762,7 +762,7 @@ infantry.missile_defender:
 		RequiresCondition: enable_lockattack
 	GrantConditionOnAttack@EnableDisable:
 		Condition: enable_lockattack
-		ArmamentNames: primary, secondary
+		ArmamentNames: primary, laser_lock
 		RequiredShotsPerInstance: 15
 		MaximumInstances: 1
 		RevokeDelay: 5
@@ -771,11 +771,13 @@ infantry.missile_defender:
 		RevokeOnNewTarget: true
 	Garrisoner:
 		Voice: Garrison
+	AttackFrontal:
+		Armaments: primary, laser_lock
 	WithInfantryBody:
 		-DefaultAttackSequence:
 		AttackSequences:
 			primary: shoot
-			secondary: aim
+			laser_lock: aim
 	Voiced:
 		VoiceSet: MissileDefenderVoice
 	ActorStatValues:
