@@ -1013,14 +1013,14 @@ building.prc_command_center.radar:
 	ActorStatValues:
 		Stats: Armor, Sight, Power
 
-building.cold_fusion_reactor:
+^default.cold_fusion_reactor:
 	Inherits: ^default.reactor
 	Inherits@RANGER: ^EmitRangersOnDeath
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
 	Buildable:
-		Queue: queue.usa_building, queue.air_gen_building
+		Queue: queue.usa_building, queue.air_gen_building, queue.boss_gen_building
 		Description: Provides power for other structures.
 	Valued:
 		Cost: 800
@@ -1062,7 +1062,7 @@ building.cold_fusion_reactor:
 	GrantConditionOnProduction:
 		Condition: control_rods
 	ConditionPrerequisite@CONTROL_RODS:
-		Queue: queue.cold_fusion_reactor
+		Queue: queue.cold_fusion_reactor, queue.boss_gen_cold_fusion_reactor
 		Actor: upgrade.control_rods
 		PauseOnCondition: control_rods
 	ConditionIconOverlay@CONTROL_RODS:
@@ -1076,41 +1076,129 @@ building.cold_fusion_reactor:
 		Upgrades: upgrade.control_rods
 		LocalUpgrades: upgrade.control_rods
 
+building.cold_fusion_reactor:
+	Inherits: ^default.cold_fusion_reactor
+	Inherits@MINE: ^CanHaveMinesBossOnly
+	Production:
+		Produces: queue.cold_fusion_reactor, queue.boss_gen_cold_fusion_reactor
+	-ProductionQueue@JUST_MINE:
+	ProductionQueue:
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
+		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
+	ProductionQueue@Boss:
+		Type: queue.boss_gen_cold_fusion_reactor
+		Group: Tech
+		Factions: boss
+		AlwaysShowForFactions: boss
+		InstantCashDrain: true
+		DisallowPaused: true
+		ItemLimit: 1
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+	ProductionBar@Boss:
+		ProductionType: queue.boss_gen_cold_fusion_reactor
+	ActorStatValues:
+		LocalUpgrades: upgrade.control_rods, upgrade.land_mines, upgrade.neutron_mines
+	ActorStatOverride@Boss:
+		Upgrades: upgrade.control_rods, upgrade.land_mines
+	ActorStatOverride@Boss_ZH_UNITS:
+		Upgrades: upgrade.control_rods, upgrade.land_mines, upgrade.neutron_mines
+
 building.cold_fusion_reactor.laser:
 	Inherits: building.cold_fusion_reactor
 	Buildable:
-		Queue: queue.laser_gen_building, queue.usa_building_merged
+		Queue: queue.laser_gen_building, queue.usa_building_merged, queue.boss_gen_building_merged
+	Valued:
+		Cost: 700
 	Production:
 		Produces: queue.laser_gen_cold_fusion_reactor
+		RequiresCondition: !merged
+	Production@Merged:
+		Produces: queue.cold_fusion_reactor_merged, queue.boss_gen_cold_fusion_reactor_merged
+		PauseOnCondition: emp || hacked || sabotaged
+		RequiresCondition: merged
 	ProductionQueue:
 		Type: queue.laser_gen_cold_fusion_reactor
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
+		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		LowPowerModifier: 300
+	ProductionQueue@Merged:
+		Type: queue.cold_fusion_reactor_merged
+		Group: Tech
+		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
+		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
+		InstantCashDrain: true
+		DisallowPaused: true
+		ItemLimit: 1
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+	ProductionQueue@Boss:
+		Type: queue.boss_gen_cold_fusion_reactor_merged
 	ProductionBar:
 		ProductionType: queue.laser_gen_cold_fusion_reactor
+	ProductionBar@Merged:
+		ProductionType: queue.cold_fusion_reactor_merged
+	ProductionBar@Boss:
+		ProductionType: queue.boss_gen_cold_fusion_reactor_merged
+	GrantConditionOnProduction:
+		Actors: upgrade.control_rods.laser
+	GrantConditionOnProduction@ADV_CONTROL_RODS:
+		Condition: adv_control_rods
+		Actors: upgrade.advanced_control_rods
 	ConditionPrerequisite@CONTROL_RODS:
 		Queue: queue.laser_gen_cold_fusion_reactor
 		Actor: upgrade.control_rods.laser
+	ConditionPrerequisite@ADV_CONTROL_RODS:
+		Queue: queue.cold_fusion_reactor_merged, queue.boss_gen_cold_fusion_reactor_merged
+		Actor: upgrade.advanced_control_rods
+		PauseOnCondition: adv_control_rods
 	ConditionIconOverlay@CONTROL_RODS:
 		Actor: upgrade.control_rods.laser
-	Valued:
-		Cost: 700
+	ConditionIconOverlay@ADV_CONTROL_RODS:
+		Image: iconstripes
+		Sequence: upgraded
+		Actor: upgrade.advanced_control_rods
+		RequiresCondition: adv_control_rods
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
+	WithIdleOverlay@NO_RODS:
+		RequiresCondition: !build-incomplete && !control_rods && !adv_control_rods
+	WithIdleOverlay@CONTROL_RODS:
+		RequiresCondition: !build-incomplete && control_rods && !adv_control_rods
+	WithIdleOverlay@ADV_CONTROL_RODS:
+		Sequence: idle-adv-rods
+		Palette: control_rods
+		RequiresCondition: !build-incomplete && adv_control_rods
 	Power:
 		Amount: 8
 	Power@CONTROL_RODS:
 		Amount: 8
+		RequiresCondition: control_rods && !adv_control_rods && !emp && !hacked && !sabotaged
+	Power@ADV_CONTROL_RODS:
+		Amount: 15
+		RequiresCondition: adv_control_rods && !emp && !hacked && !sabotaged
 	RenderSprites:
 		Image: building.cold_fusion_reactor
 	ActorStatValues:
 		Upgrades: upgrade.control_rods.laser
-		LocalUpgrades: upgrade.control_rods.laser
+		LocalUpgrades: upgrade.control_rods.laser, upgrade.advanced_control_rods, upgrade.land_mines, upgrade.neutron_mines
+	ActorStatOverride@Merged:
+		Upgrades: upgrade.advanced_control_rods
+		RequiresCondition: merged && !boss
+	ActorStatOverride@Boss:
+		Upgrades: upgrade.advanced_control_rods, upgrade.land_mines
+		RequiresCondition: merged && boss && !zh_units
+	ActorStatOverride@Boss_ZH_UNITS:
+		Upgrades: upgrade.advanced_control_rods, upgrade.land_mines, upgrade.neutron_mines
+		RequiresCondition: merged && boss && zh_units
 
 building.advanced_cold_fusion_reactor:
-	Inherits: building.cold_fusion_reactor
+	Inherits: ^default.cold_fusion_reactor
 	Buildable:
-		Queue: queue.super_gen_building, queue.usa_building_merged
-	BuildPaletteOrderModifier@Merged:
-		Queue: queue.usa_building_merged
-		Modifier: 3 # 3
+		Queue: queue.super_gen_building
+	Valued:
+		Cost: 900
 	Production:
 		Produces: queue.advanced_cold_fusion_reactor
 	ProductionQueue:
@@ -1125,37 +1213,11 @@ building.advanced_cold_fusion_reactor:
 		Actor: upgrade.advanced_control_rods
 	ConditionIconOverlay@CONTROL_RODS:
 		Actor: upgrade.advanced_control_rods
-	Valued:
-		Cost: 900
 	Power@CONTROL_RODS:
 		Amount: 15
 	ActorStatValues:
 		Upgrades: upgrade.advanced_control_rods
 		LocalUpgrades: upgrade.advanced_control_rods
-
-building.cold_fusion_reactor.boss:
-	Inherits: building.cold_fusion_reactor
-	Inherits@MINE: ^CanHaveMines
-	Buildable:
-		Queue: queue.boss_gen_building, queue.boss_gen_building_merged
-	Production:
-		Produces: queue.boss_gen_cold_fusion_reactor
-	-ProductionQueue@JUST_MINE:
-	ProductionQueue:
-		Type: queue.boss_gen_cold_fusion_reactor
-	ProductionBar:
-		ProductionType: queue.boss_gen_cold_fusion_reactor
-	GrantConditionOnProduction:
-		Actors: upgrade.control_rods
-	ConditionPrerequisite@CONTROL_RODS:
-		Queue: queue.boss_gen_cold_fusion_reactor
-	RenderSprites:
-		Image: building.cold_fusion_reactor
-	ActorStatValues:
-		Upgrades: upgrade.control_rods, upgrade.land_mines
-		LocalUpgrades: upgrade.control_rods, upgrade.land_mines, upgrade.neutron_mines
-	ActorStatOverride@ZH_UNITS:
-		Upgrades: upgrade.control_rods, upgrade.land_mines, upgrade.neutron_mines
 
 building.nuclear_reactor:
 	Inherits: ^default.reactor
@@ -1827,10 +1889,7 @@ building.patriot:
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.reactor, !techlevel.nodefense
 		Description: Anti-tank & anti-air base defense.
-	BuildPaletteOrderModifier@Merged:
-		Queue: queue.usa_building_merged
-		Modifier: 3 # 6
-	BuildPaletteOrderModifier@Boss_Merged:
+	BuildPaletteOrderModifier@Boss:
 		Queue: queue.boss_gen_building, queue.boss_gen_building_merged
 		Modifier: 3 # 6
 	Valued:
@@ -1941,7 +2000,10 @@ building.emp_patriot:
 	Inherits: building.patriot
 	Buildable:
 		Queue: queue.super_gen_building, queue.usa_building_merged, queue.boss_gen_building_merged
-	BuildPaletteOrderModifier@Boss_Merged:
+	BuildPaletteOrderModifier@Merged:
+		Queue: queue.usa_building_merged
+		Modifier: 3 # 6
+	BuildPaletteOrderModifier@Boss:
 		Queue: queue.boss_gen_building_merged
 		Modifier: 6 # 9
 	Valued:
@@ -1971,9 +2033,9 @@ building.laser_turret:
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.reactor, !techlevel.nodefense
 		Description: Anti-tank & anti-air base defense.
-	BuildPaletteOrderModifier@Merged:
+	BuildPaletteOrderModifier@Boss:
 		Queue: queue.usa_building_merged
-		Modifier: 3 # 6
+		Modifier: 6 # 9
 	BuildPaletteOrderModifier@Boss_Merged:
 		Queue: queue.boss_gen_building_merged
 		Modifier: 9 # 12
@@ -4024,6 +4086,9 @@ building.detention_camp:
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~!prerequisite.zh_units, !techlevel.notech
 		Description: Provides support power to reveal all enemy units for a while.
+	BuildPaletteOrderModifier@Merged:
+		Queue: queue.usa_building_merged
+		Modifier: -1 # 8
 	Valued:
 		Cost: 1000
 	Tooltip:

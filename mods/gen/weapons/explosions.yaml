@@ -527,8 +527,8 @@ explosion.booby_trap:
 	Inherits: explosion.demo_charge
 	-Warhead@1Dam:
 	# Warhead@1Dam: SpreadDamage # This should be foundation based or something to ensure it kills the capturer. For now the whole damage is given to the larger area.
-		# Damage: 20000
-		# Spread: 0c128
+	#	Damage: 20000
+	#	Spread: 0c128
 	Warhead@2Dam: SpreadDamage
 		Damage: 25000
 		Spread: 2c256 # 0c384
