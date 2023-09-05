@@ -340,6 +340,9 @@ explosion.demo_trap.toxin:
 		Damage: 10000
 
 explosion.demo_trap.toxin_alpha:
+	Warhead@3Eff_impact: CreateEffect
+		ImpactActors: false
+		Explosions: anth_alpha_explo
 	Warhead@4Radio: CreateTintedCells
 		LayerName: anthrax_alpha
 		Spread: 1024
@@ -349,16 +352,24 @@ explosion.demo_trap.toxin_alpha:
 
 explosion.demo_trap.toxin_beta:
 	Inherits: explosion.demo_trap.toxin_alpha
+	Warhead@3Eff_impact: CreateEffect
+		ImpactActors: false
+		Explosions: anth_beta_explo
 	Warhead@4Radio: CreateTintedCells
 		LayerName: anthrax_beta
 
 explosion.demo_trap.toxin_gamma:
 	Inherits: explosion.demo_trap.toxin_alpha
+	Warhead@3Eff_impact: CreateEffect
+		Explosions: anth_gamma_explo
+		ExplosionPalette: cnc
 	Warhead@4Radio: CreateTintedCells
 		LayerName: anthrax_gamma
 
 explosion.advanced_demo_trap:
 	Inherits: explosion.demo_trap
+	Warhead@2Eff: CreateEffect
+		Explosions: small_clsn_fx, small_clsn
 	Warhead@2Dam: SpreadDamage
 		Damage: 50000
 
