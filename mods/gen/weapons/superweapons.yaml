@@ -90,18 +90,22 @@ parabomb.anthrax:
 		Level: 6000
 		Falloff: 100, 80, 60, 40, 20, 0
 		MaxLevel: 6000
-	Warhead@5EffWater: CreateEffect
-		Explosions: small_splash
-		ImpactSounds: splash9.aud
-		ValidTargets: Water, Underwater
+	Warhead@5Eff: CreateEffect
+		Explosions: dust_green
+		ImpactActors: false
 
 parabomb.anthrax.beta:
 	Inherits: parabomb.anthrax
+	Warhead@5Eff: CreateEffect
+		Explosions: dust_blue
 	Warhead@2Radio: CreateTintedCells
 		LayerName: anthrax_beta
 
 parabomb.anthrax.gamma:
 	Inherits: parabomb.anthrax
+	Warhead@5Eff: CreateEffect
+		Explosions: dust_purp
+		ExplosionPalette: cnc
 	Warhead@2Radio: CreateTintedCells
 		LayerName: anthrax_gamma
 
