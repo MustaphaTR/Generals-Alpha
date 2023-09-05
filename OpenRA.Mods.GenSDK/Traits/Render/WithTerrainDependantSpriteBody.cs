@@ -61,8 +61,7 @@ namespace OpenRA.Mods.Common.GenSDK
 			DefaultAnimation.PlayThen(NormalizeSequence(self, anim), () =>
 			{
 				CancelCustomAnimation(self);
-				if (after != null)
-					after();
+				after?.Invoke();
 			});
 		}
 
@@ -79,8 +78,7 @@ namespace OpenRA.Mods.Common.GenSDK
 			DefaultAnimation.PlayBackwardsThen(NormalizeSequence(self, anim), () =>
 			{
 				CancelCustomAnimation(self);
-				if (after != null)
-					after();
+				after?.Invoke();
 			});
 		}
 

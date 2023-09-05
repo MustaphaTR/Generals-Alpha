@@ -48,8 +48,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 			var rs = self.Trait<RenderSprites>();
 			var body = self.Trait<BodyOrientation>();
 
-			Anim = new Animation(self.World, rs.GetImage(self), RenderSprites.MakeFacingFunc(self));
-			Anim.IsDecoration = true;
+			Anim = new Animation(self.World, rs.GetImage(self), RenderSprites.MakeFacingFunc(self)) { IsDecoration = true };
 			Anim.Play(info.Sequence);
 			rs.Add(new AnimationWithOffset(Anim,
 				() => body.LocalToWorld(info.LocalOffset.Rotate(body.QuantizeOrientation(self.Orientation))),
