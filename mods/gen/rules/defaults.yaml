@@ -600,7 +600,7 @@
 		RequiresCondition: zh_units
 	SpeedMultiplier@WORKER_SHOES:
 		RequiresCondition: worker_shoes
-		Modifier: 110
+		Modifier: 120
 	ResourceValueMultiplier@WORKER_SHOES:
 		RequiresCondition: worker_shoes
 		Modifier: 110
@@ -2105,6 +2105,7 @@
 		CanHover: True
 		CruisingCondition: cruising
 		WaitDistanceFromResupplyBase: 4c0
+		AltitudeVelocity: 120 # Should be 80 when damaged.
 		Crushes: crate, mine
 		VTOL: true
 		CanSlide: True

@@ -68,7 +68,11 @@ infantry.worker:
 		Speed: 25
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
+		RequiresCondition: damaged && !worker_shoes
 		Modifier: 60
+	SpeedMultiplier@DAMAGED_WORKER_SHORES:
+		RequiresCondition: damaged && worker_shoes
+		Modifier: 67
 	Selectable:
 		Priority: 7
 	SupplyCollector:

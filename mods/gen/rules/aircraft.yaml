@@ -1318,8 +1318,6 @@ aircraft.chinook:
 		HP: 30000
 	Armor:
 		Type: aircraft.chinook
-	SpeedMultiplier@DAMAGED:
-		Modifier: 40
 	SupplyCollector:
 		CollectionDelay: 200
 		DeliveryDelay: 73
@@ -1355,10 +1353,11 @@ aircraft.chinook:
 		IdealSeparation: 1280
 		InitialFacing: 64
 		TurnSpeed: 24
-		Speed: 60
+		Speed: 150
 		LandableTerrainTypes: Grass, Snow, Sand, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Beach, Gems
-		AltitudeVelocity: 0c58
 		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 40
 	GrantConditionOnFaction@Airforce:
 		Condition: airforce
 		Factions: air
@@ -1743,7 +1742,6 @@ aircraft.helix:
 		Speed: 75
 		Voice: Move
 		LandableTerrainTypes: Grass, Snow, Sand, Rough, GrassRoad, SnowRoad, SandRoad, Ore, Beach, Gems
-		AltitudeVelocity: 0c58
 	SpeedMultiplier@DAMAGED:
 		Modifier: 80
 	WithIdleOverlay@ROTORAIR:

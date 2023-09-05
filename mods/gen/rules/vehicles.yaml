@@ -762,7 +762,7 @@ vehicle.crusader_tank:
 		TurnSpeed: 32
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
-		Modifier: 83
+		Modifier: 84
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
@@ -1116,7 +1116,7 @@ vehicle.sentry_drone:
 		Locomotor: locomotor.sentry_drone
 		PauseOnCondition: hacked || emp || leaflet
 	SpeedMultiplier@DAMAGED:
-		Modifier: 83
+		Modifier: 84
 	Passenger:
 		Weight: 1
 	Crushable:
@@ -1654,7 +1654,7 @@ vehicle.dragon_tank:
 		Speed: 30
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
-		Modifier: 63
+		Modifier: 84
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
@@ -2054,7 +2054,7 @@ vehicle.battle_bus:
 		MaxBackwardCells: 2
 		BackwardDuration: -1
 	SpeedMultiplier@DAMAGED:
-		Modifier: 71
+		Modifier: 72
 	Passenger:
 		Weight: 8
 	Crushable:
@@ -2428,7 +2428,7 @@ vehicle.microwave_tank:
 		TurnSpeed: 32
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
-		Modifier: 83
+		Modifier: 84
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
@@ -2673,7 +2673,7 @@ vehicle.tomahawk_launcher:
 		TurnSpeed: 32
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
-		Modifier: 83
+		Modifier: 84
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
@@ -3086,7 +3086,7 @@ vehicle.paladin_tank:
 		TurnSpeed: 32
 		Voice: Move
 	SpeedMultiplier@DAMAGED:
-		Modifier: 83
+		Modifier: 84
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
@@ -4265,7 +4265,7 @@ vehicle.combat_cycle:
 		Locomotor: locomotor.sentry_drone
 		PauseOnCondition: notmobile || hacked || emp || leaflet || !loaded
 	SpeedMultiplier@DAMAGED:
-		Modifier: 89
+		Modifier: 75
 	Passenger:
 		Weight: 1
 	Crushable:
@@ -4556,12 +4556,12 @@ vehicle.combat_cycle:
 	Armor:
 		Type: vehicle.tank
 	Mobile:
-		Speed: 25
+		Speed: 30
 		TurnSpeed: 16
 		Voice: Move
 		PauseOnCondition: hacked || driver_killed || emp || leaflet || deployed
 	SpeedMultiplier@DAMAGED:
-		Modifier: 83
+		Modifier: 84
 	Passenger:
 		Weight: 5
 	Crushable:
@@ -4937,7 +4937,7 @@ vehicle.mobile_reactor:
 		Speed: 30
 		TurnSpeed: 32
 	SpeedMultiplier@DAMAGED:
-		Modifier: 83
+		Modifier: 84
 	WithIdleOverlay@SPINNER:
 		Offset: -299,0,171
 		Sequence: spinner
