@@ -94,7 +94,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		bool ISupplyDock.IsEmpty() { return IsEmpty; }
 		int ISupplyDock.Fullness() { return Fullness; }
 
-		public void Tick(Actor self)
+		void ITick.Tick(Actor self)
 		{
 			if (--ticks > 0)
 				return;
