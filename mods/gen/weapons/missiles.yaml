@@ -1199,6 +1199,9 @@ missile.scud_launcher.crate-2:
 
 missile.scud_launcher.toxin:
 	Inherits: missile.scud_launcher
+	Warhead@3Eff_impact: CreateEffect
+		ImpactActors: false
+		Explosions: anth_alpha_explo
 	Warhead@5Radio: CreateTintedCells
 		LayerName: anthrax_alpha
 		Spread: 1024
@@ -1219,6 +1222,9 @@ missile.scud_launcher.crate-2.toxin:
 
 missile.scud_launcher.toxin_beta:
 	Inherits: missile.scud_launcher.toxin
+	Warhead@3Eff_impact: CreateEffect
+		ImpactActors: false
+		Explosions: anth_beta_explo
 	Warhead@5Radio: CreateTintedCells
 		LayerName: anthrax_beta
 
@@ -1235,6 +1241,9 @@ missile.scud_launcher.crate-2.toxin_beta:
 
 missile.scud_launcher.toxin_gamma:
 	Inherits: missile.scud_launcher.toxin
+	Warhead@3Eff_impact: CreateEffect
+		Explosions: anth_gamma_explo
+		ExplosionPalette: cnc
 	Warhead@5Radio: CreateTintedCells
 		LayerName: anthrax_gamma
 
@@ -1251,6 +1260,8 @@ missile.scud_launcher.crate-2.toxin_gamma:
 
 missile.scud_launcher.explosive:
 	Inherits: missile.scud_launcher
+	Warhead@3Eff: CreateEffect
+		Explosions: small_clsn_fx, small_clsn
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c256
 		Damage: 25000
@@ -1287,17 +1298,25 @@ missile.scud_storm:
 		ValidTargets: GroundActor, WaterActor, AirborneActor
 		Damage: 9000
 		Spread: 3c0
+	Warhead@3Eff: CreateEffect
+		Explosions: small_clsn_fx, small_clsn
 	Warhead@7Rev: RevealShroud
 		Radius: 3c512
 		Duration: 50
 
 missile.scud_storm.beta:
 	Inherits: missile.scud_storm
+	Warhead@3Eff_impact: CreateEffect
+		ImpactActors: false
+		Explosions: anth_beta_explo
 	Warhead@5Radio: CreateTintedCells
 		LayerName: anthrax_beta
 
 missile.scud_storm.gamma:
 	Inherits: missile.scud_storm
+	Warhead@3Eff_impact: CreateEffect
+		Explosions: anth_gamma_explo
+		ExplosionPalette: cnc
 	Warhead@5Radio: CreateTintedCells
 		LayerName: anthrax_gamma
 
@@ -1306,20 +1325,13 @@ missile.scud_storm.demo:
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
 		Damage: 27000
+	Warhead@3Eff: CreateEffect
+		Explosions: big_clsn, big_clsn_fx
+	-Warhead@3Eff_impact:
 	-Warhead@5Radio:
 	Warhead@7Rev: RevealShroud
 		Radius: 3c512
 		Duration: 50
-
-missile.scud_storm.beta:
-	Inherits: missile.scud_storm
-	Warhead@5Radio: CreateTintedCells
-		LayerName: anthrax_beta
-
-missile.scud_storm.gamma:
-	Inherits: missile.scud_storm
-	Warhead@5Radio: CreateTintedCells
-		LayerName: anthrax_gamma
 
 missile.tomahawk_launcher:
 	Inherits: ^AntiGroundMissile
