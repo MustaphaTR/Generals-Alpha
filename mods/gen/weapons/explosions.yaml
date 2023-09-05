@@ -686,7 +686,7 @@ BombTruckExplosion:
 		AffectsParent: true
 		DamageTypes: TriggerProne, FireDeath, Incendiary
 	Warhead@3Eff_impact: CreateEffect
-		Explosions: mininuke
+		Explosions: small_clsn_fx, small_clsn
 		ImpactSounds: kaboom1.aud
 		ImpactActors: false
 	Warhead@13Smu_areanuke3: LeaveSmudge
@@ -703,6 +703,8 @@ BombTruckExplosion.hi_exp:
 	Warhead@1Dam_impact: SpreadDamage
 		Spread: 1c256
 		Damage: 180000
+	Warhead@3Eff_impact: CreateEffect
+		Explosions: big_clsn, big_clsn_fx
 	Warhead@4Dam: SpreadDamage
 		Spread: 2c128
 		Damage: 20000
@@ -712,6 +714,9 @@ BombTruckExplosion.hi_exp:
 		Size: 3
 
 BombTruckExplosion.toxin:
+	Warhead@3Eff_impact: CreateEffect
+		ImpactActors: false
+		Explosions: anth_alpha_explo
 	Warhead@10Radio: CreateTintedCells
 		LayerName: anthrax_alpha
 		Spread: 1024
@@ -721,11 +726,16 @@ BombTruckExplosion.toxin:
 
 BombTruckExplosion.toxin_beta:
 	Inherits: BombTruckExplosion.toxin
+	Warhead@3Eff_impact: CreateEffect
+		Explosions: anth_beta_explo
 	Warhead@10Radio: CreateTintedCells
 		LayerName: anthrax_beta
 
 BombTruckExplosion.toxin_gamma:
 	Inherits: BombTruckExplosion.toxin
+	Warhead@3Eff_impact: CreateEffect
+		Explosions: anth_gamma_explo
+		ExplosionPalette: cnc
 	Warhead@10Radio: CreateTintedCells
 		LayerName: anthrax_gamma
 

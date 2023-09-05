@@ -73,6 +73,15 @@ explosion:
 	med_explosion_air:
 		Filename: veh-hit1.shp
 		ZOffset: 511 # only used by AA weapons, so a high ZOffset to overlay buildings isn't needed
+	anth_alpha_explo:
+		Filename: anth_alpha_explo.shp
+		AlphaFade: true
+	anth_beta_explo:
+		Filename: anth_beta_explo.shp
+		AlphaFade: true
+	anth_gamma_explo: ## use td-pal
+		Filename: anth_gamma_explo.shp
+		AlphaFade: true
 	large_splash:
 		Filename: h2o_exp1.shp
 	napalm:
@@ -126,6 +135,16 @@ explosion:
 		Filename: twlt-small.shp
 	large_twlt:
 		Filename: twlt-large.shp
+	small_clsn:
+		Filename: clsn-small.shp
+	small_clsn_fx:
+		Filename: clsn-small.shp
+		FlipX: true
+	big_clsn:
+		Filename: clsn-big.shp
+	big_clsn_fx:
+		Filename: clsn-big.shp
+		FlipX: true
 	smallspark:
 		Filename: smallspark.shp
 	fuel_air:
