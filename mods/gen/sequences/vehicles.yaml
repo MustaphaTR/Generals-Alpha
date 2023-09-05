@@ -673,7 +673,13 @@ vehicle.combat_cycle:
 	icon:
 		Filename: combat_cycle_icon.png
 
-mcc.build:
+^default.mcc:
+	idle:
+		Filename: mcv.shp
+		Facings: 32
+		UseClassicFacings: True
+	turret:
+		Filename: invis.shp
 	dig:
 		Filename:  dig.shp
 		TilesetFilenames:
@@ -685,45 +691,22 @@ mcc.build:
 		ZOffset: -512
 
 vehicle.usa_mcc:
-	Inherits: mcc.build
-	idle:
-		Filename: mcv.shp
-		Facings: 32
-		UseClassicFacings: True
-	turret:
-		Filename: invis.shp
+	Inherits: ^default.mcc
 	icon:
 		Filename: usa_mcc_icon.png
 
 vehicle.gla_mcc:
-	Inherits: mcc.build
-	idle:
-		Filename: mcv.shp
-		Facings: 32
-		UseClassicFacings: True
-	turret:
-		Filename: invis.shp
+	Inherits: ^default.mcc
 	icon:
 		Filename: gla_mcc_icon.png
 
 vehicle.prc_mcc:
-	Inherits: mcc.build
-	idle:
-		Filename: mcv.shp
-		Facings: 32
-		UseClassicFacings: True
-	turret:
-		Filename: invis.shp
+	Inherits: ^default.mcc
 	icon:
 		Filename: prc_mcc_icon.png
 
 vehicle.tech_mcc:
-	idle:
-		Filename: mcv.shp
-		Facings: 32
-		UseClassicFacings: True
-	turret:
-		Filename: invis.shp
+	Inherits: ^default.mcc
 	icon:
 		Filename: mcvicon.shp
 
