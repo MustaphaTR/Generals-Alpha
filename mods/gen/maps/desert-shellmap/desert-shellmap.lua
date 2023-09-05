@@ -248,9 +248,10 @@ WorldLoaded = function()
 	GiveMeMines(PRCBunker1)
 
 	powerproxy = Actor.Create("powerproxy.paradrop", false, { Owner = usa })
+	Actor.Create("upgrade.countermeasures", true, { Owner = usa})
 
-	Trigger.AfterDelay(DateTime.Seconds(25), function() SendRaptors(Raptor1Waypoints) end)
-	Trigger.AfterDelay(DateTime.Seconds(25), function() SendRaptors(Raptor2Waypoints) end)
+	Trigger.AfterDelay(DateTime.Seconds(30), function() SendRaptors(Raptor1Waypoints) end)
+	Trigger.AfterDelay(DateTime.Seconds(30), function() SendRaptors(Raptor2Waypoints) end)
 
 	Trigger.AfterDelay(DateTime.Minutes(4), function() SendParadrop() end)
 	SummonActor("hack.rebel_spawner.8", gla, AmbushLocation1.Location, DateTime.Minutes(4))
