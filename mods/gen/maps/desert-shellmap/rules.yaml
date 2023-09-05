@@ -172,11 +172,6 @@ crate.scrap:
 	GiveCashCrateAction@3:
 		UseCashTick: false
 
-hack.artillery_barrager.3:
-	ScriptTriggers:
-	KillsSelf:
-		Delay: 120
-
 hack.rebel_spawner.8:
 	KillsSelf:
 		Delay: 2
@@ -214,3 +209,28 @@ powerproxy.paradrop:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+
+powerproxy.artillery_barrage:
+	AlwaysVisible:
+	AirstrikePower:
+		Icons:
+			1: arty_barrage3
+		Prerequisites:
+			1: prerequisite.reactor
+		Names:
+			1: Artillery Barrage
+		Descriptions:
+			1: Fires 36 Artillery Shells anywhere on the map.
+		SquadSizes:
+			1: 3
+		QuantizedFacings: 8
+		SelectTargetSpeechNotification: SelectTarget
+		UnitTypes:
+			1: hack.artillery_barrager.3
+		DisplayBeacon: false
+		BeaconPosters:
+			1: arty_barrage3
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		OrderName: ArtilleryBarragePowerInfoOrder

@@ -178,9 +178,15 @@ SendRaptors = function(waypoints)
 	Trigger.AfterDelay(DateTime.Seconds(40), function() SendRaptors(waypoints) end)
 end
 
+SendAirstrike = function(proxy, target, direction, timer)
+	proxy.TargetAirstrike(target.CenterPosition, direction)
+
+	Trigger.AfterDelay(timer, function() SendAirstrike(proxy, target, direction, timer) end)
+end
+
 SendParadrop = function()
 	local lz = Utils.Random(ParadropWaypoints)
-	local units = powerproxy.TargetParatroopers(lz.CenterPosition)
+	local units = PowerproxyPara.TargetParatroopers(lz.CenterPosition)
 
 	Utils.Do(units, function(a)
 		BindActorTriggers(a)
@@ -191,7 +197,7 @@ end
 
 SummonActor = function(actor, owner, location, date_time)
 	Trigger.AfterDelay(date_time, function()
-		local a = Actor.Create(actor, true, { Owner = owner, Facing = Angle.North, Location = location})
+		local a = Actor.Create(actor, true, { Owner = owner, Facing = Angle.North, Location = location })
 		if a.HasProperty("Hunt") then
 			Trigger.OnIdle(a, function(a)
 				if a.IsInWorld then
@@ -247,13 +253,14 @@ WorldLoaded = function()
 	GiveMeMines(PRCGatling3)
 	GiveMeMines(PRCBunker1)
 
-	powerproxy = Actor.Create("powerproxy.paradrop", false, { Owner = usa })
-	Actor.Create("upgrade.countermeasures", true, { Owner = usa})
+	PowerproxyPara = Actor.Create("powerproxy.paradrop", false, { Owner = usa })
+	PowerproxyArty = Actor.Create("powerproxy.artillery_barrage", false, { Owner = prc })
+	Actor.Create("upgrade.countermeasures", true, { Owner = usa })
 
 	Trigger.AfterDelay(DateTime.Seconds(30), function() SendRaptors(Raptor1Waypoints) end)
 	Trigger.AfterDelay(DateTime.Seconds(30), function() SendRaptors(Raptor2Waypoints) end)
 
 	Trigger.AfterDelay(DateTime.Minutes(4), function() SendParadrop() end)
+	Trigger.AfterDelay(DateTime.Minutes(5), function() SendAirstrike(PowerproxyArty, ArtyBarrWaypoint, Angle.South, DateTime.Minutes(5)) end)
 	SummonActor("hack.rebel_spawner.8", gla, AmbushLocation1.Location, DateTime.Minutes(4))
-	SummonActor("hack.artillery_barrager.3", prc, ArtyBarrWaypoint.Location, DateTime.Minutes(5))
 end

@@ -224,6 +224,6 @@ WorldLoaded = function()
 
 	Trigger.AfterDelay(DateTime.Minutes(4) + DateTime.Seconds(15), function() SendParadrop() end)
 	Trigger.AfterDelay(DateTime.Minutes(4) + DateTime.Seconds(25), function() SendAirstrike(PowerproxyA10, A10Waypoint, Angle.West, DateTime.Minutes(4)) end)
-	Trigger.AfterDelay(DateTime.Minutes(5), function() SendAirstrike(PowerproxyArty, ArtyBarrWaypoint, Angle.West, DateTime.Minutes(5)) end)
+	Trigger.AfterDelay(DateTime.Minutes(5), function() SendAirstrike(PowerproxyArty, ArtyBarrWaypoint, Angle.East, DateTime.Minutes(5)) end)
 	SummonActor("hack.rebel_spawner.8", gla, AmbushLocation1.Location, DateTime.Minutes(4))
 end
