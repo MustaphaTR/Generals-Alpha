@@ -90,6 +90,7 @@ building.usa_command_center:
 		DisplayOrder: 12
 	SpawnActorPower@SPY_DRONE:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Actors:
 			1: aircraft.spy_drone
 		Prerequisites:
@@ -108,6 +109,7 @@ building.usa_command_center:
 		EffectSequence: idle
 	SpawnActorPower@SPY_SATELLITE:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Actors:
 			1: camera.spy_satellite
 		Prerequisites:
@@ -126,6 +128,7 @@ building.usa_command_center:
 		EffectSequence: idle
 	ParatroopersPower@PARADROP:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		OrderName: ParadropPowerInfoOrder
 		Prerequisites:
 			1: generals_power.paradrop1
@@ -172,6 +175,7 @@ building.usa_command_center:
 		DirectionArrowAnimation: paradirection
 	AirstrikePower@A10:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Prerequisites:
 			1: generals_power.a101
 			2: generals_power.a102
@@ -213,6 +217,7 @@ building.usa_command_center:
 		OrderName: A10PowerInfoOrder
 	AirstrikePower@FUEL_AIR_BOMB:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Prerequisites:
 			1: prerequisite.fuel_air_bomb
 			2: upgrade.moab
@@ -247,6 +252,7 @@ building.usa_command_center:
 		OrderName: FuelAirBombPowerInfoOrder
 	AirstrikePower@LEAFLET_DROP:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Prerequisites:
 			1: generals_power.leaflet_drop
 		Icons:
@@ -355,6 +361,7 @@ building.gla_command_center:
 		ProductionType: queue.stealth_gen_command_center
 	SpawnActorPower@AMBUSH:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Actors:
 			1: hack.rebel_spawner.4
 			2: hack.rebel_spawner.8
@@ -383,6 +390,7 @@ building.gla_command_center:
 		EffectSequence: idle
 	SpawnActorPower@TOXIN_AMBUSH:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Actors:
 			1: hack.toxin_rebel_spawner.4
 			2: hack.toxin_rebel_spawner.8
@@ -411,6 +419,7 @@ building.gla_command_center:
 		EffectSequence: idle
 	AirstrikePower@ANTHRAX_BOMB:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Prerequisites:
 			1: generals_power.anthrax_bomb
 		Icons:
@@ -438,6 +447,7 @@ building.gla_command_center:
 		OrderName: AnthraxBombPowerInfoOrder
 	GrantExternalConditionPower@GPS_SCRAMBLER:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Prerequisites:
 			1: generals_power.gps_scrambler1
 			2: generals_power.gps_scrambler2
@@ -475,6 +485,7 @@ building.gla_command_center:
 		OrderName: GPSScramblerPowerInfoOrder
 	SpawnActorPower@SNEAK_ATTACK:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Actors:
 			1: hack.spawn_sneak_attack
 		Prerequisites:
@@ -589,6 +600,7 @@ building.prc_command_center:
 		Locations: 0,-1, 1,-1, 2,-1, -1,0, -1,1, -1,2, 0,3, 1,3, 2,3, 3,2, 3,1, 3,0
 	GrantExternalConditionPower@FRENZY:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Prerequisites:
 			1: generals_power.frenzy1
 			2: generals_power.frenzy2
@@ -627,6 +639,7 @@ building.prc_command_center:
 		OrderName: FrenzyPowerInfoOrder
 	CashHackPower@CASH_HACK:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Prerequisites:
 			1: generals_power.cash_hack1
 			2: generals_power.cash_hack2
@@ -654,6 +667,7 @@ building.prc_command_center:
 		OrderName: CashHackPowerInfoOrder
 	ParatroopersPower@PRC_PARADROP:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		OrderName: PRCParadropPowerInfoOrder
 		Prerequisites:
 			1: generals_power.paradrop1.inf_gen
@@ -700,6 +714,7 @@ building.prc_command_center:
 		DirectionArrowAnimation: paradirection
 	AirstrikePower@ARTY_BARRAGE:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		UnitTypes:
 			1: hack.artillery_barrager.1
 			2: hack.artillery_barrager.2
@@ -741,6 +756,7 @@ building.prc_command_center:
 		OrderName: ArtilleryBarragePowerInfoOrder
 	ParatroopersPower@TANK_DROP:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		OrderName: TankDropPowerInfoOrder
 		Prerequisites:
 			1: generals_power.tank_drop1
@@ -787,6 +803,7 @@ building.prc_command_center:
 		DirectionArrowAnimation: paradirection
 	AirstrikePower@CLUSTER_MINES:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Prerequisites:
 			1: generals_power.cluster_mines
 		Icons:
@@ -814,6 +831,7 @@ building.prc_command_center:
 		OrderName: ClusterMinesPowerInfoOrder
 	AirstrikePower@CARPET_BOMB:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Prerequisites:
 			1: generals_power.carpet_bombing
 		Icons:
@@ -841,6 +859,7 @@ building.prc_command_center:
 		OrderName: CarpetBombingPRCPowerInfoOrder
 	AirstrikePower@NUKE_BOMB:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Prerequisites:
 			1: generals_power.carpet_bombing.nuke
 		Icons:
@@ -868,6 +887,7 @@ building.prc_command_center:
 		OrderName: CarpetBombingNukePowerInfoOrder
 	SpawnActorPower@SNEAK_ATTACK:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Actors:
 			1: hack.spawn_sneak_attack
 		Prerequisites:
@@ -887,6 +907,7 @@ building.prc_command_center:
 		EffectSequence: idle
 	AirstrikePower@EMP:
 		PauseOnCondition: emp || hacked || sabotaged
+		StartFullyChargedForTheFirstTime: true
 		Prerequisites:
 			1: generals_power.emp
 		Icons:
