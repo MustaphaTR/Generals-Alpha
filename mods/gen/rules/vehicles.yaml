@@ -3815,12 +3815,19 @@ vehicle.bomb_truck:
 	Armor:
 		Type: vehicle.truck
 	Production:
-		Produces: queue.bomb_truck, queue.toxin_gen_bomb_truck, queue.demo_gen_bomb_truck
+		Produces: queue.bomb_truck
 		PauseOnCondition: emp || hacked || leaflet
-		RequiresCondition: !(bio_bombs && hi_explosive_bombs) && !(bio_bombs && toxin) && !(hi_explosive_bombs && demo) && !driver_killed && !as_cargo && !in_tunnel
+		RequiresCondition: (merged || (!toxin && !demo)) && !(bio_bombs && hi_explosive_bombs) && !driver_killed && !as_cargo && !in_tunnel
+	Production@Toxin:
+		Produces: queue.toxin_gen_bomb_truck
+		PauseOnCondition: emp || hacked || leaflet
+		RequiresCondition: toxin && !bio_bombs && !merged && !driver_killed && !as_cargo && !in_tunnel
+	Production@Demo:
+		Produces: queue.demo_gen_bomb_truck
+		PauseOnCondition: emp || hacked || leaflet
+		RequiresCondition: demo && !hi_explosive_bombs && !merged && !driver_killed && !as_cargo && !in_tunnel
 	ProductionQueue@Vanilla:
 		Type: queue.bomb_truck
-		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank, boss
 		Group: Tech
 		ItemLimit: 1
 		QueueLimit: 2
@@ -3828,14 +3835,12 @@ vehicle.bomb_truck:
 		DisallowPaused: true
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_bomb_truck
-		Factions: toxin
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
 		DisallowPaused: true
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_bomb_truck
-		Factions: demo
 		Group: Tech
 		QueueLimit: 1
 		InstantCashDrain: true
