@@ -3917,6 +3917,16 @@ vehicle.bomb_truck:
 		Queue: queue.bomb_truck, queue.demo_gen_bomb_truck
 		Actor: upgrade.hi_explosive_bombs
 		PauseOnCondition: hi_explosive_bombs
+	ConditionIconOverlay@BIO_BOMBS:
+		Image: iconstripes
+		Sequence: upgraded
+		Actor: upgrade.bio_bombs
+		RequiresCondition: bio_bombs
+	ConditionIconOverlay@HI_EXPLOSIVE_BOMBS:
+		Image: iconstripes
+		Sequence: upgraded
+		Actor: upgrade.hi_explosive_bombs
+		RequiresCondition: hi_explosive_bombs
 	GrantConditionOnProduction@BIO_BOMBS:
 		Condition: bio_bombs
 		Actors: upgrade.bio_bombs
