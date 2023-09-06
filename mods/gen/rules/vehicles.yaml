@@ -4589,9 +4589,6 @@ vehicle.combat_cycle:
 	GivesBuildableArea@AI: ## Avoid AI building blocked
 		AreaTypes: building
 		RequiresCondition: bot_owner
-	WithBuildingPlacedOverlay:
-		Sequence: dig
-		Palette: effect
 	ProvidesPrerequisite@vehiclename:
 	WithTextDecoration@SIDE:
 		Text:
