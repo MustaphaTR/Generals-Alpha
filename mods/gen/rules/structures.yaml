@@ -3040,7 +3040,7 @@ building.tunnel_network:
 		Stats: Armor, Sight, Cargo, Damage, ReloadDelay, MaxRange
 		LocalUpgrades: upgrade.camo_netting, upgrade.land_mines, upgrade.neutron_mines
 	ActorStatOverride@ZH_UNITS:
-		RequiresCondition: !toxin && !demo && !stealth && !boss && zh_units
+		RequiresCondition: !toxin && !demo && !stealth && !boss && !merged && zh_units
 
 building.tunnel_network.no_free_actor:
 	Inherits: building.tunnel_network
@@ -3104,10 +3104,15 @@ building.toxin_tunnel_network:
 		Upgrades: upgrade.anthrax_beta
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.anthrax_beta, upgrade.camo_netting
-		RequiresCondition: !toxin && !demo && !stealth && !boss && zh_units
+		RequiresCondition: !toxin && !demo && !stealth && !boss && !merged && zh_units
 	ActorStatOverride@Toxin:
 		Upgrades: upgrade.anthrax_gamma
-		RequiresCondition: toxin
+		RequiresCondition: toxin && !merged
+	ActorStatOverride@Demo:
+		RequiresCondition: demo && !merged
+	ActorStatOverride@Merged:
+		Upgrades: upgrade.anthrax_gamma, upgrade.demolitions
+		RequiresCondition: merged
 
 building.toxin_tunnel_network.no_free_actor:
 	Inherits: building.toxin_tunnel_network
@@ -3233,7 +3238,7 @@ building.stinger_site:
 		Upgrades: upgrade.ap_rockets
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.ap_rockets, upgrade.camo_netting
-		RequiresCondition: !toxin && !demo && !stealth && zh_units
+		RequiresCondition: !toxin && !demo && !stealth && !merged && zh_units
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.demolitions, upgrade.ap_rockets
 
@@ -4710,22 +4715,25 @@ building.scud_storm:
 		Upgrades: upgrade.anthrax_beta
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.anthrax_beta, upgrade.fortified_structures
-		RequiresCondition: !toxin && !demo && !stealth && zh_units
+		RequiresCondition: !toxin && !demo && !stealth && !merged && zh_units
 	ActorStatOverride@Toxin:
 		Upgrades: upgrade.anthrax_gamma
-		RequiresCondition: toxin && !zh_units
+		RequiresCondition: (toxin || merged) && !zh_units
 	ActorStatOverride@Toxin_ZH_UNITS:
 		Upgrades: upgrade.anthrax_gamma, upgrade.fortified_structures
-		RequiresCondition: toxin && zh_units
+		RequiresCondition: toxin && !merged && zh_units
 	ActorStatOverride@Demo:
 		Upgrades:
-		RequiresCondition: demo && !zh_units
+		RequiresCondition: demo && !merged && !zh_units
 	ActorStatOverride@Demo_ZH_UNITS:
 		Upgrades: upgrade.fortified_structures
-		RequiresCondition: demo && zh_units
+		RequiresCondition: demo && !merged && zh_units
 	ActorStatOverride@Stealth_ZH_UNITS:
 		Upgrades: upgrade.anthrax_beta, upgrade.fortified_structures, upgrade.camo_netting
-		RequiresCondition: stealth && zh_units
+		RequiresCondition: stealth && !merged && zh_units
+	ActorStatOverride@Merged_ZH_UNITS:
+		Upgrades: upgrade.anthrax_gamma, upgrade.fortified_structures, upgrade.camo_netting
+		RequiresCondition: merged && zh_units
 
 building.scud_storm.boss:
 	Inherits: building.scud_storm
@@ -4759,6 +4767,7 @@ building.scud_storm.boss:
 	-ActorStatOverride@Demo:
 	-ActorStatOverride@Demo_ZH_UNITS:
 	-ActorStatOverride@Stealth_ZH_UNITS:
+	-ActorStatOverride@Merged_ZH_UNITS:
 
 building.missile_silo:
 	Inherits: ^Building

@@ -1445,7 +1445,7 @@
 	-ActorStatOverride@ZH_UNITS:
 	ActorStatOverride@Stealth_ZH_UNITS:
 		Upgrades: upgrade.camo_netting
-		RequiresCondition: stealth && zh_units
+		RequiresCondition: (stealth || merged) && zh_units
 
 ^CanHaveMines:
 	Production:

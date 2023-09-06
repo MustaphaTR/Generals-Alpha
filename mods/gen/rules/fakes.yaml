@@ -53,6 +53,9 @@ fake.command_center:
 	GrantConditionOnFaction@Stealth:
 		Condition: stealth
 		Factions: stealth
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	ActorStatOverride@ZH_UNITS:
 		ValidRelationships: Ally
 	ActorStatOverride@Enemy:
@@ -61,11 +64,11 @@ fake.command_center:
 	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
 		Upgrades: upgrade.fortified_structures
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: !stealth && zh_units
+		RequiresCondition: !stealth && !merged && zh_units
 	ActorStatOverride@Enemy_UPGRADE_Stealth_ZH_UNITS:
 		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: stealth && zh_units
+		RequiresCondition: (stealth || merged) && zh_units
 
 fake.barracks:
 	Inherits: ^FakeBuilding
@@ -117,6 +120,9 @@ fake.barracks:
 		Cost: 125
 	Voiced:
 		VoiceSet: GLABarracksVoice
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@Stealth:
 		Condition: stealth
 		Factions: stealth
@@ -128,11 +134,11 @@ fake.barracks:
 	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
 		Upgrades: upgrade.fortified_structures
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: !stealth && zh_units
+		RequiresCondition: !stealth && !merged && zh_units
 	ActorStatOverride@Enemy_UPGRADE_Stealth_ZH_UNITS:
 		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: stealth && zh_units
+		RequiresCondition: (stealth || merged) && zh_units
 
 fake.supply_stash:
 	Inherits: ^FakeBuilding
@@ -187,6 +193,9 @@ fake.supply_stash:
 		TargetTypes: FakeCashHackable
 	Voiced:
 		VoiceSet: GLASupplyVoice
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@Stealth:
 		Condition: stealth
 		Factions: stealth
@@ -198,11 +207,11 @@ fake.supply_stash:
 	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
 		Upgrades: upgrade.fortified_structures
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: !stealth && zh_units
+		RequiresCondition: !stealth && !merged && zh_units
 	ActorStatOverride@Enemy_UPGRADE_Stealth_ZH_UNITS:
 		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: stealth && zh_units
+		RequiresCondition: (stealth || merged) && zh_units
 
 fake.arms_dealer:
 	Inherits: ^FakeBuilding
@@ -252,6 +261,9 @@ fake.arms_dealer:
 		Cost: 625
 	Voiced:
 		VoiceSet: GLAArmsDealerVoice
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@Stealth:
 		Condition: stealth
 		Factions: stealth
@@ -263,11 +275,11 @@ fake.arms_dealer:
 	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
 		Upgrades: upgrade.fortified_structures
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: !stealth && zh_units
+		RequiresCondition: !stealth && !merged && zh_units
 	ActorStatOverride@Enemy_UPGRADE_Stealth_ZH_UNITS:
 		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: stealth && zh_units
+		RequiresCondition: (stealth || merged) && zh_units
 
 fake.palace:
 	Inherits: ^FakeBuilding
@@ -322,6 +334,9 @@ fake.palace:
 		Cost: 625
 	Voiced:
 		VoiceSet: PalaceVoice
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@Stealth:
 		Condition: stealth
 		Factions: stealth
@@ -334,11 +349,11 @@ fake.palace:
 	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
 		Upgrades: upgrade.fortified_structures
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: !stealth && zh_units
+		RequiresCondition: !stealth && !merged && zh_units
 	ActorStatOverride@Enemy_UPGRADE_Stealth_ZH_UNITS:
 		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: stealth && zh_units
+		RequiresCondition: (stealth || merged) && zh_units
 
 fake.black_market:
 	Inherits: ^FakeBuilding
@@ -390,6 +405,9 @@ fake.black_market:
 		PauseOnCondition: emp || hacked
 	Voiced:
 		VoiceSet: BlackMarketVoice
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@Stealth:
 		Condition: stealth
 		Factions: stealth
@@ -401,11 +419,11 @@ fake.black_market:
 	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
 		Upgrades: upgrade.fortified_structures
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: !stealth && zh_units
+		RequiresCondition: !stealth && !merged && zh_units
 	ActorStatOverride@Enemy_UPGRADE_Stealth_ZH_UNITS:
 		Upgrades: upgrade.fortified_structures, upgrade.camo_netting
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: stealth && zh_units
+		RequiresCondition: (stealth || merged) && zh_units
 
 fake.scud_storm:
 	Inherits: ^FakeBuilding
@@ -510,6 +528,9 @@ fake.scud_storm:
 	ReloadAmmoPool@1:
 		Delay: 100
 		Count: 4
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	GrantConditionOnFaction@Toxin:
 		Condition: toxin
 		Factions: toxin
@@ -527,27 +548,31 @@ fake.scud_storm:
 	ActorStatOverride@Enemy_UPGRADE:
 		Upgrades: upgrade.anthrax_beta
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: !toxin && !demo && !stealth && !zh_units
+		RequiresCondition: !toxin && !demo && !stealth && !merged && !zh_units
 	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
 		Upgrades: upgrade.anthrax_beta, upgrade.fortified_structures
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: !toxin && !demo && !stealth && zh_units
+		RequiresCondition: !toxin && !demo && !stealth && !merged && zh_units
 	ActorStatOverride@Enemy_UPGRADE_Toxin:
 		Upgrades: upgrade.anthrax_gamma
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: toxin && !zh_units
+		RequiresCondition: (toxin || merged) && !zh_units
 	ActorStatOverride@Enemy_UPGRADE_Toxin_ZH_UNITS:
 		Upgrades: upgrade.anthrax_gamma, upgrade.fortified_structures
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: toxin && zh_units
+		RequiresCondition: toxin && !merged && zh_units
 	ActorStatOverride@Enemy_UPGRADE_Demo:
 		Upgrades: upgrade.fortified_structures
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: demo
+		RequiresCondition: demo && !merged && zh_units
 	ActorStatOverride@Enemy_UPGRADE_Stealth_ZH_UNITS:
 		Upgrades: upgrade.anthrax_beta, upgrade.fortified_structures, upgrade.camo_netting
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: stealth && zh_units
+		RequiresCondition: stealth && !merged && zh_units
+	ActorStatOverride@Enemy_UPGRADE_Merged_ZH_UNITS:
+		Upgrades: upgrade.anthrax_gamma, upgrade.fortified_structures, upgrade.camo_netting
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: merged && zh_units
 
 fake.demo_trap:
 	Inherits: ^FakeDefense
@@ -614,9 +639,11 @@ fake.demo_trap:
 	ActorStatOverride@Enemy_Toxin:
 		Damage: 350
 		Upgrades: upgrade.anthrax_gamma
+		ValidRelationships: Enemy, Neutral
 		RequiresCondition: toxin && !merged
 	ActorStatOverride@Enemy_Merged:
 		Upgrades: upgrade.anthrax_gamma
+		ValidRelationships: Enemy, Neutral
 		RequiresCondition: merged
 
 fake.advanced_demo_trap:
@@ -724,6 +751,9 @@ fake.tunnel_network:
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	Cargo:
 		Types: fake
 		MaxWeight: 10
@@ -743,11 +773,11 @@ fake.tunnel_network:
 	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
 		Upgrades: upgrade.camo_netting
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: !demo && !toxin && !stealth && zh_units
+		RequiresCondition: !demo && !toxin && !stealth && !merged && zh_units
 	ActorStatOverride@Enemy_UPGRADE_Demo:
 		Upgrades: upgrade.demolitions
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: demo
+		RequiresCondition: demo || merged
 
 fake.toxin_tunnel_network:
 	Inherits: fake.tunnel_network
@@ -794,13 +824,19 @@ fake.toxin_tunnel_network:
 	ActorStatOverride@Enemy_UPGRADE:
 		Upgrades: upgrade.anthrax_beta
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: stealth || (!demo && !toxin && !zh_units)
+		RequiresCondition: (stealth || (!demo && !toxin && !zh_units)) && !merged
 	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
 		Upgrades: upgrade.anthrax_beta, upgrade.camo_netting
 	ActorStatOverride@Enemy_UPGRADE_Toxin:
 		Upgrades: upgrade.anthrax_gamma
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: toxin
+		RequiresCondition: toxin && !merged
+	ActorStatOverride@Enemy_UPGRADE_Demo:
+		RequiresCondition: demo && !merged
+	ActorStatOverride@Enemy_UPGRADE_Merged:
+		Upgrades: upgrade.anthrax_gamma, upgrade.demolitions
+		ValidRelationships: Enemy, Neutral
+		RequiresCondition: merged
 
 fake.stinger_site:
 	Inherits: ^FakeDefense
@@ -899,6 +935,9 @@ fake.stinger_site:
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	ActorStatValues:
 		Damage: 20
 		ReloadDelay: 30
@@ -912,15 +951,15 @@ fake.stinger_site:
 	ActorStatOverride@Enemy_UPGRADE:
 		Upgrades: upgrade.ap_rockets
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: stealth || toxin || (!demo && !zh_units)
+		RequiresCondition: (stealth || toxin || (!demo && !zh_units)) && !merged
 	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
 		Upgrades: upgrade.ap_rockets, upgrade.camo_netting
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: !toxin && !demo && !stealth && zh_units
+		RequiresCondition: !toxin && !demo && !stealth && !merged && zh_units
 	ActorStatOverride@Enemy_UPGRADE_Demo:
 		Upgrades: upgrade.demolitions, upgrade.ap_rockets
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: demo
+		RequiresCondition: demo || merged
 
 fake.stinger_soldier:
 	Inherits: infantry.stinger_soldier

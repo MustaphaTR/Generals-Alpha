@@ -1882,10 +1882,13 @@ aircraft.helix:
 		LocalUpgrades: upgrade.helix_napalm, upgrade.helix_nuke, upgrade.helix_bunker, upgrade.helix_gatling, upgrade.helix_speaker
 	ActorStatOverride@Inf:
 		Upgrades: upgrade.black_napalm, upgrade.helix_napalm, upgrade.helix_bunker
-		RequiresCondition: inf
+		RequiresCondition: inf && !merged
 	ActorStatOverride@Nuke:
 		Upgrades: upgrade.helix_nuke, upgrade.helix_bunker, upgrade.helix_gatling, upgrade.helix_speaker
-		RequiresCondition: nuke
+		RequiresCondition: nuke && !merged
+	ActorStatOverride@Merged:
+		Upgrades: upgrade.helix_napalm, upgrade.helix_nuke, upgrade.helix_bunker, upgrade.helix_gatling, upgrade.helix_speaker
+		RequiresCondition: merged
 	GrantConditionOnDamageState@AI-bunker_upgrade:
 		Condition: ShouldUnload
 		ValidDamageStates: Critical, Heavy
