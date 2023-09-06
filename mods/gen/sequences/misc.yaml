@@ -443,6 +443,17 @@ smokey:
 		ZOffset: 1023
 		AlphaFade: true
 
+dig:
+	idle:
+		Filename:  dig.shp
+		TilesetFilenames:
+			DESERT: dig-desert.shp
+		Length: *
+		Start: 0
+		Tick: 30
+		AlphaFade: true
+		ZOffset: -512
+
 bomb:
 	idle:
 		Filename: bomb.shp

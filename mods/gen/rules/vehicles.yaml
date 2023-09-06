@@ -26,11 +26,9 @@ vehicle.supply_truck:
 	SupplyCollector:
 		CollectionDelay: 80
 		DeliveryDelay: 0
-		MaxDeliveryQueue: 4
 		StuckRoadPower: 3
 		StuckRoadPowerAir: 1
 		OccupancyPower: 3
-		ToleratedOccupied: 13
 		CollectVoice: Action
 		FacingWhenDockAtSupplyCenter: Specific
 		SpecificFacingOnCenter: 256
@@ -4591,9 +4589,6 @@ vehicle.combat_cycle:
 	GivesBuildableArea@AI: ## Avoid AI building blocked
 		AreaTypes: building
 		RequiresCondition: bot_owner
-	WithBuildingPlacedOverlay:
-		Sequence: dig
-		Palette: effect
 	ProvidesPrerequisite@vehiclename:
 	WithTextDecoration@SIDE:
 		Text:

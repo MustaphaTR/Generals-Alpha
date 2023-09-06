@@ -680,15 +680,6 @@ vehicle.combat_cycle:
 		UseClassicFacings: True
 	turret:
 		Filename: invis.shp
-	dig:
-		Filename:  dig.shp
-		TilesetFilenames:
-			DESERT: dig-desert.shp
-		Length: *
-		Start: 0
-		Tick: 30
-		AlphaFade: true
-		ZOffset: -512
 
 vehicle.usa_mcc:
 	Inherits: ^default.mcc
