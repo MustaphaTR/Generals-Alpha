@@ -111,27 +111,11 @@ parabomb.anthrax.gamma:
 
 parabomb.emp:
 	Inherits: ^ParaBomb
-	Warhead@1Dam: SpreadDamage
-		Spread: 2c512
-		Damage: 10000
-		ValidTargets: GroundActor, WaterActor
-		Versus:
-			vehicle.battle_bus.crate-1: 90
-			vehicle.battle_bus.crate-2: 80
-			husk.battle_bus.crate-1: 80
-			husk.battle_bus.crate-2: 70
-			aircraft.normal.countermeasures: 90
-			aircraft.comanche: 130
-			aircraft.comanche.countermeasures: 110
-			aircraft.chinook: 50
-			building.tough: 80
-			building.internet_center: 70
-		DamageTypes: TriggerProne, ExplosionDeath
-	Warhead@2Dam: SpreadDamage
-		Spread: 2c0
+	Warhead@1Dam: IgnoreHeightDamage
+		Spread: 5c256
 		Damage: 1000000
 		ValidTargets: AirborneActor
-		DamageTypes: TriggerProne, ExplosionDeath
+		DamageTypes: IgnoreCM
 	Warhead@2Dis: GrantExternalCondition
 		Delay: 1 ##Enable AirborneActor husk emp overlay
 		Range: 6c0
@@ -451,8 +435,7 @@ aoe.particle_beam:
 	Range: 1c0
 	ReloadDelay: 2
 	Projectile: InstantHit
-	Warhead@1Dam: SpreadDamage
-		Falloff: 100, 100
+	Warhead@1Dam: IgnoreHeightDamage
 		Spread: 1c512
 		Damage: 3200
 		ValidTargets: GroundActor, WaterActor, Underwater, AirborneActor, Trees
@@ -467,7 +450,7 @@ aoe.particle_beam:
 			building.internet_center: 20
 			building.tough: 25
 			building.defense: 200
-		DamageTypes: FireDeath
+		DamageTypes: FireDeath, IgnoreCM
 	Warhead@2Eff: CreateEffect
 		Explosions: particle_ring
 		ValidTargets: Ground, Water, Air, Trees

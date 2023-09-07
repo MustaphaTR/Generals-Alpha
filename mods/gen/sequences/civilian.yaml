@@ -1,4 +1,5 @@
 ^default.civilian:
+	Inherits@DEATH: ^default.infantry_death
 	stand:
 		Facings: 8
 	panic-stand:
@@ -102,6 +103,7 @@ c11:
 		Filename: c11.shp
 
 dog:
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: dog.shp
 	stand:
@@ -152,6 +154,7 @@ dog:
 		Filename: dog_icon.shp
 
 einstein:
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: einstein.shp
 	stand:
@@ -198,6 +201,7 @@ einstein:
 		ZOffset: -511
 
 delphi:
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: delphi.shp
 	stand:
@@ -244,6 +248,7 @@ delphi:
 		ZOffset: -511
 
 chan:
+	Inherits@DEATH: ^default.infantry_death
 	Defaults:
 		Filename: chan.shp
 	stand:

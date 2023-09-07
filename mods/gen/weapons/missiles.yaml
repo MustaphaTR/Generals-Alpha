@@ -773,8 +773,11 @@ missile.comanche:
 	Projectile: MissileTA
 		Speed: 256
 		HorizontalRateOfTurn: 40
-		RangeLimit: 8c512
-		Inaccuracy: 1c256
+		RangeLimit: 7c0
+		LockOnInaccuracy: 2c0
+		Inaccuracy: 2c0
+		ExplodeUnderThisAltitude: 0
+		AllowSnapping: true
 	Warhead@1Dam: SpreadDamage
 		Damage: 2000
 		ValidTargets: GroundActor, WaterActor
@@ -1161,7 +1164,7 @@ missile.scud_launcher:
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
-		DamageTypes: TriggerProne, DropCrate, SmallExplosionDeath, Incendiary
+		DamageTypes: TriggerProne, DropCrate, SmallExplosionDeath, Incendiary, IgnoreCM
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c512
 		Falloff: 100, 100
@@ -1179,7 +1182,7 @@ missile.scud_launcher:
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
-		DamageTypes: TriggerProne, DropCrate, SmallExplosionDeath, Incendiary
+		DamageTypes: TriggerProne, DropCrate, SmallExplosionDeath, Incendiary, IgnoreCM
 	Warhead@3Eff: CreateEffect
 		Explosions: artillery_explosion
 		ImpactSounds: kaboom15.aud

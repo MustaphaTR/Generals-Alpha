@@ -506,6 +506,7 @@ mg.quad_cannon.air:
 	Warhead@1Dam: SpreadDamage
 		Damage: 500
 		ValidTargets: AirborneActor
+		DamageTypes: BulletDeath, IgnoreCM
 
 mg.quad_cannon.air.crate-1:
 	Inherits: mg.quad_cannon.air
@@ -565,6 +566,7 @@ gatling.minigunner.air:
 			building.tough: 50
 			building.defense: 50
 			building.stinger_site: 50
+		DamageTypes: BulletDeath, IgnoreCM
 
 gatling.minigunner.garrison.ground:
 	Inherits: gatling.minigunner.ground
@@ -634,6 +636,7 @@ gatling.gatling_tank.air:
 			building.tough: 50
 			building.defense: 50
 			building.stinger_site: 50
+		DamageTypes: BulletDeath, IgnoreCM
 
 gatling.gatling_cannon.ground:
 	Inherits: ^LightMG
@@ -685,6 +688,7 @@ gatling.gatling_cannon.air:
 			building.tough: 50
 			building.defense: 50
 			building.stinger_site: 50
+		DamageTypes: BulletDeath, IgnoreCM
 
 ^SnipeWeapon:
 	ReloadDelay: 80
