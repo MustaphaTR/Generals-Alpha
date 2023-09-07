@@ -773,8 +773,11 @@ missile.comanche:
 	Projectile: MissileTA
 		Speed: 256
 		HorizontalRateOfTurn: 40
-		RangeLimit: 8c512
-		Inaccuracy: 1c256
+		RangeLimit: 7c0
+		LockOnInaccuracy: 2c0
+		Inaccuracy: 2c0
+		ExplodeUnderThisAltitude: 0
+		AllowSnapping: true
 	Warhead@1Dam: SpreadDamage
 		Damage: 2000
 		ValidTargets: GroundActor, WaterActor
