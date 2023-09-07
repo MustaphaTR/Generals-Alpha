@@ -132,7 +132,7 @@ laser.avenger.mark:
 		ValidTargets: GroundActor, WaterActor
 
 laser.paladin_tank:
-	ReloadDelay: 25
+	ReloadDelay: 40
 	Range: 3c0
 	Report: vpalwe2d.aud
 	ValidTargets: Infantry, Air
@@ -148,8 +148,12 @@ laser.paladin_tank:
 		ValidTargets: Infantry, Air
 		DamageTypes: TriggerProne, FireDeath
 
-laser.king_raptor:
-	Inherits: laser.paladin_tank
 
 laser.avenger.point_defense:
 	Inherits: laser.paladin_tank
+	ReloadDelay: 15
+	-Warhead@1Dam: 
+
+laser.king_raptor.point_defense:
+	Inherits: laser.avenger.point_defense
+	ReloadDelay: 25

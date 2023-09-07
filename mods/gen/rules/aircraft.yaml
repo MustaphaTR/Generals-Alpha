@@ -41,7 +41,7 @@
 	AttackFrontal:
 		FacingTolerance: 0
 	Armament@PDLASER:
-		Weapon: laser.king_raptor
+		Weapon: laser.king_raptor.point_defense
 		LocalOffset: 0,213,-85
 		Name: pdlaser
 	PointDefense:
@@ -677,7 +677,7 @@ aircraft.king_raptor:
 	Armament@AA:
 		Weapon: missile.king_raptor.air
 	Armament@PDLASER:
-		Weapon: laser.king_raptor
+		Weapon: laser.king_raptor.point_defense
 		LocalOffset: 0,213,-85
 		Name: pdlaser
 	PointDefense:
@@ -877,7 +877,7 @@ aircraft.stealth_fighter.air:
 	Health:
 		HP: 18000
 	Armament@PDLASER:
-		Weapon: laser.king_raptor
+		Weapon: laser.king_raptor.point_defense
 		LocalOffset: 0,213,-85
 		Name: pdlaser
 	PointDefense:
@@ -950,7 +950,7 @@ aircraft.aurora:
 		LocalYaw: -40, 24
 		PauseOnCondition: !ammo
 	Armament@PDLASER:
-		Weapon: laser.king_raptor
+		Weapon: laser.king_raptor.point_defense
 		LocalOffset: 0,213,-85
 		Name: pdlaser
 	PointDefense:
@@ -1334,19 +1334,19 @@ aircraft.chinook:
 	WithIdleOverlay@ROTOR2AIR:
 		Offset: -597,0,341
 		Sequence: rotor2
-	PointDefense:
-		Armament: pdlaser
-		PointDefenseTypes: missilepd
-		RequiresCondition: airforce
 	WithSupplyCollectionOverlay:
 		WaitDelay: 40
 	WithSupplyDeliveryOverlay:
 	AttackFrontal:
 		FacingTolerance: 0
 	Armament@PDLASER:
-		Weapon: laser.paladin_tank
+		Weapon: laser.king_raptor.point_defense
 		LocalOffset: 0,213,20
 		Name: pdlaser
+	PointDefense:
+		Armament: pdlaser
+		PointDefenseTypes: missilepd
+		RequiresCondition: airforce
 	Aircraft:
 		CruiseAltitude: 1928
 		IdealSeparation: 1280
