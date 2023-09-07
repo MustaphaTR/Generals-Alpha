@@ -9,6 +9,7 @@ laser.laser_tank:
 		Color: FF0000
 	Warhead@1Dam: SpreadDamage
 		Damage: 8000
+		DamageTypes: TriggerProne, FireDeath
 
 laser.laser_turret.ground:
 	Inherits: ^AntiGroundMissile
@@ -39,6 +40,7 @@ laser.laser_turret.ground:
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
+		DamageTypes: TriggerProne, FireDeath, IgnoreCM
 
 laser.laser_turret.air:
 	Inherits: ^AntiAirMissile
@@ -69,6 +71,7 @@ laser.laser_turret.air:
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
+		DamageTypes: FireDeath, IgnoreCM
 
 laser.laser_turret.super:
 	Inherits: laser.laser_turret.ground
@@ -114,6 +117,7 @@ laser.avenger.air:
 			building.defense: 50
 			building.stinger_site: 50
 			building.wall: 6
+		DamageTypes: FireDeath, IgnoreCM
 
 laser.avenger.mark:
 	ReloadDelay: 5

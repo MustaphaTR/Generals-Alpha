@@ -316,16 +316,17 @@
 		BlockExcessDamage: true
 		RegenInterval: 200
 		RegenAmount: 1
+		IgnoreShieldDamageTypes: IgnoreCM
 		RequiresCondition: countermeasures && airborne
 	GrantPeriodicCondition@COUNTERMEASURES:
 		Condition: jamm-missile
-		CooldownDuration: 20
-		ActiveDuration: 10
+		CooldownDuration: 18 # 12 + 18 = 30
+		ActiveDuration: 12
 		StartsGranted: true
 		RequiresCondition: countermeasures && !cm-inactived && airborne
 	GrantPeriodicCondition@COUNTERMEASURES-Flare:
 		Condition: drop-flare
-		CooldownDuration: 29
+		CooldownDuration: 29 # 29 + 1 = 30
 		ActiveDuration: 1
 		StartsGranted: true
 		RequiresCondition: countermeasures && !cm-inactived && airborne

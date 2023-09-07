@@ -1164,7 +1164,7 @@ missile.scud_launcher:
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
-		DamageTypes: TriggerProne, DropCrate, SmallExplosionDeath, Incendiary
+		DamageTypes: TriggerProne, DropCrate, SmallExplosionDeath, Incendiary, IgnoreCM
 	Warhead@2Dam: SpreadDamage
 		Spread: 1c512
 		Falloff: 100, 100
@@ -1182,7 +1182,7 @@ missile.scud_launcher:
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
-		DamageTypes: TriggerProne, DropCrate, SmallExplosionDeath, Incendiary
+		DamageTypes: TriggerProne, DropCrate, SmallExplosionDeath, Incendiary, IgnoreCM
 	Warhead@3Eff: CreateEffect
 		Explosions: artillery_explosion
 		ImpactSounds: kaboom15.aud
