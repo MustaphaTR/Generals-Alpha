@@ -135,7 +135,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 			ResourceMultipliers = self.TraitsImplementing<IResourceValueModifier>().ToArray();
 
 			// Avoid stuck on production
-			DeliveryBuilding = self.World.ActorsHavingTrait<SupplyCenter>().ClosestTo(self);
+			DeliveryBuilding = self.World.ActorsHavingTrait<SupplyCenter>().ClosestToIgnoringPath(self);
 
 			if (Info.SearchOnCreation)
 				self.World.AddFrameEndTask(w => self.QueueActivity(new FindGoods(self, Color.Green)));
