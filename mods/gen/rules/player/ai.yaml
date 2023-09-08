@@ -535,158 +535,165 @@ Player:
 		PassengerTypes: infantry.hacker, infantry.super_hacker
 
 	SupportPowerBotASModule:
-		RequiresCondition: enable-any-ai
+		RequiresCondition: enable-normal-ai || enable-hard-ai
 		Decisions:
 			spydrone:
 				OrderName: SpyDronePowerInfoOrder
 				MinimumAttractiveness: 1
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: WaterActor, GroundActor
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 5c0
 			radar_van_scan:
 				OrderName: RadarScanPowerInfoOrder
 				MinimumAttractiveness: 1
+				Against: Enemy
+				IgnoreVisibility: true
+				Types: WaterActor, GroundActor, AirborneActor
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: WaterActor, GroundActor
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 5c0
 			spy_satellite:
 				OrderName: SpySatellitePowerInfoOrder
 				MinimumAttractiveness: 1
+				IgnoreVisibility: true
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: WaterActor, GroundActor
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 5c0
 			a10:
 				OrderName: A10PowerInfoOrder
-				MinimumAttractiveness: 2000
+				MinimumAttractiveness: 2400
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
 				Consideration@1:
 					Against: Enemy
-					Types: Vehicle, Infantry
+					Types: WaterActor, GroundActor
 					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 2c0
 				Consideration@2:
 					Against: Ally
-					Types: Ground, Water
+					Types: WaterActor, GroundActor
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 2c0
 			arty_barrage:
 				OrderName: ArtilleryBarragePowerInfoOrder
-				MinimumAttractiveness: 2000
+				MinimumAttractiveness: 2400
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
 				Consideration@1:
 					Against: Enemy
-					Types: Vehicle, Infantry
+					Types: WaterActor, GroundActor
 					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 2c0
 				Consideration@2:
 					Against: Ally
-					Types: Ground, Water
+					Types: WaterActor, GroundActor
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 2c0
 			cluster_mines:
 				OrderName: ClusterMinesPowerInfoOrder
 				MinimumAttractiveness: 2000
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
 				Consideration@1:
 					Against: Enemy
-					Types: Vehicle, Infantry
+					Types: GroundActor
 					Attractiveness: 1
-					TargetMetric: Value
-					CheckRadius: 2c0
-				Consideration@2:
-					Against: Ally
-					Types: Ground, Water
-					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 2c0
 			tankdrop:
 				OrderName: TankDropPowerInfoOrder
 				MinimumAttractiveness: 5
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
+				IgnoreVisibility: true
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: GroundActor
 					Attractiveness: 1
-					TargetMetric: None
-					CheckRadius: 8c0
-				Consideration@2:
-					Against: Enemy
-					Types: Water
-					Attractiveness: -5
-					TargetMetric: None
+					TargetMetric: Value
 					CheckRadius: 8c0
 			paradrop:
 				OrderName: ParadropPowerInfoOrder
 				MinimumAttractiveness: 5
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
+				IgnoreVisibility: true
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: GroundActor
 					Attractiveness: 1
-					TargetMetric: None
-					CheckRadius: 8c0
-				Consideration@2:
-					Against: Enemy
-					Types: Water
-					Attractiveness: -5
-					TargetMetric: None
+					TargetMetric: Value
 					CheckRadius: 8c0
 			paradrop.inf_gen:
 				OrderName: PRCParadropPowerInfoOrder
 				MinimumAttractiveness: 5
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
+				IgnoreVisibility: true
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Vehicle, Tank, Infantry
 					Attractiveness: 1
-					TargetMetric: None
-					CheckRadius: 8c0
-				Consideration@2:
-					Against: Enemy
-					Types: Water
-					Attractiveness: -5
-					TargetMetric: None
+					TargetMetric: Value
 					CheckRadius: 8c0
 			ambush:
 				OrderName: AmbushPowerInfoOrder
 				MinimumAttractiveness: 5
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
+				IgnoreVisibility: true
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: GroundActor
 					Attractiveness: 1
-					TargetMetric: None
+					TargetMetric: Value
 					CheckRadius: 8c0
 				Consideration@2:
 					Against: Enemy
 					Types: Water
 					Attractiveness: -5
-					TargetMetric: None
+					TargetMetric: Value
 					CheckRadius: 8c0
 			toxin_ambush:
 				OrderName: ToxinAmbushPowerInfoOrder
 				MinimumAttractiveness: 5
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
+				IgnoreVisibility: true
 				Consideration@1:
 					Against: Enemy
-					Types: Infantry
+					Types: Vehicle, Tank, Infantry
 					Attractiveness: 1
-					TargetMetric: None
+					TargetMetric: Value
 					CheckRadius: 8c0
 				Consideration@2:
 					Against: Enemy
 					Types: Water
 					Attractiveness: -5
-					TargetMetric: None
+					TargetMetric: Value
 					CheckRadius: 8c0
 			fuel_air_bomb:
 				OrderName: FuelAirBombPowerInfoOrder
-				MinimumAttractiveness: 3000
+				MinimumAttractiveness: 2400
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
 				Consideration@1:
 					Against: Enemy
 					Types: Structure
@@ -695,13 +702,15 @@ Player:
 					CheckRadius: 5c0
 				Consideration@2:
 					Against: Ally
-					Types: Air, Ground, Water
+					Types: AirborneActor, WaterActor, GroundActor
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0
 			usa_carpet_bombing:
 				OrderName: CarpetBombingUSAPowerInfoOrder
-				MinimumAttractiveness: 3000
+				MinimumAttractiveness: 2400
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
 				Consideration@1:
 					Against: Enemy
 					Types: Structure
@@ -710,183 +719,210 @@ Player:
 					CheckRadius: 5c0
 				Consideration@2:
 					Against: Ally
-					Types: Air, Ground, Water
+					Types: AirborneActor, WaterActor, GroundActor
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0
 			prc_carpet_bombing:
 				OrderName: CarpetBombingPRCPowerInfoOrder
-				MinimumAttractiveness: 3000
+				MinimumAttractiveness: 2400
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: WaterActor, GroundActor
 					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 5c0
 				Consideration@2:
 					Against: Ally
-					Types: Air, Ground, Water
+					Types: AirborneActor, WaterActor, GroundActor
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0
 			nuke_carpet_bombing:
 				OrderName: CarpetBombingNukePowerInfoOrder
-				MinimumAttractiveness: 3000
+				MinimumAttractiveness: 2400
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: WaterActor, GroundActor
 					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 5c0
 				Consideration@2:
 					Against: Ally
-					Types: Air, Ground, Water
+					Types: AirborneActor, WaterActor, GroundActor
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0
 			anthrax_bomb:
 				OrderName: AnthraxBombPowerInfoOrder
-				MinimumAttractiveness: 3000
+				MinimumAttractiveness: 2400
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
 				Consideration@1:
 					Against: Enemy
-					Types: Infantry, Vehicle
+					Types: Vehicle, Tank, Infantry, Ship
 					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 5c0
 				Consideration@2:
 					Against: Ally
-					Types: Infantry, Vehicle
+					Types: Vehicle, Tank, Infantry, Ship
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0
 			leaflet_drop:
 				OrderName: LeafletDropPowerInfoOrder
-				MinimumAttractiveness: 3000
+				MinimumAttractiveness: 2000
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
 				Consideration@1:
 					Against: Enemy
-					Types: Infantry, Vehicle
+					Types: Vehicle, Tank, Infantry, Ship
 					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 5c0
-				Consideration@2:
-					Against: Ally
-					Types: Infantry, Vehicle
-					Attractiveness: -10
-					TargetMetric: Value
-					CheckRadius: 7c0
 			emp:
 				OrderName: EMPPowerInfoOrder
-				MinimumAttractiveness: 3000
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
+				MinimumAttractiveness: 2400
 				Consideration@1:
 					Against: Enemy
-					Types: Structure, Vehicle
+					Types: Vehicle, Tank, Ship, Structure
 					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 5c0
 				Consideration@2:
 					Against: Ally
-					Types: Air, Ground, Water
+					Types: Vehicle, Tank, Ship, Structure
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0
 			particle_cannon:
 				OrderName: ParticleCannonPowerInfoOrder
 				MinimumAttractiveness: 1000
-				FineScanRadius: 2
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
 				Consideration@1:
 					Against: Enemy
-					Types: Air, Tank, Vehicle, Infantry, Water
+					Types: WaterActor, GroundActor
 					Attractiveness: 2
-					TargetMetric: Value
-					CheckRadius: 2c0
-				Consideration@2:
-					Against: Enemy
-					Types: Structure
-					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 2c0
 				Consideration@3:
 					Against: Ally
-					Types: Ground, Water
+					Types: WaterActor, GroundActor
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 3c0
 			scud_storm:
 				OrderName: SCUDStormPowerInfoOrder
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
 				MinimumAttractiveness: 3000
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: WaterActor, GroundActor
 					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 5c0
 				Consideration@2:
 					Against: Ally
-					Types: Air, Ground, Water
+					Types: AirborneActor, WaterActor, GroundActor
 					Attractiveness: -10
 					TargetMetric: Value
-					CheckRadius: 7c0
+					CheckRadius: 6c0
 			nukepower:
 				OrderName: NukePowerInfoOrder
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
 				MinimumAttractiveness: 3000
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: WaterActor, GroundActor
 					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 5c0
 				Consideration@2:
 					Against: Ally
-					Types: Air, Ground, Water
+					Types: AirborneActor, WaterActor, GroundActor
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0
 			tunnel:
 				OrderName: SneakAttackPowerInfoOrder
-				MinimumAttractiveness: 3000
+				MinimumAttractiveness: 2200
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
+				IgnoreVisibility: true
 				Consideration@3:
 					Against: Enemy
 					Types: Defense
-					Attractiveness: -200000
+					Attractiveness: -2000
 					TargetMetric: None
 					CheckRadius: 7c0
 				Consideration@4:
 					Against: Enemy
-					Types: Ground
+					Types: GroundActor
 					Attractiveness: 1
-					TargetMetric: None
+					TargetMetric: Value
 					CheckRadius: 5c0
 			frenzy:
 				OrderName: FrenzyPowerInfoOrder
-				MinimumAttractiveness: 7000
-				MinimumScanTimeInterval: 83
-				MaximumScanTimeInterval: 100
-				Consideration@1:
-					Against: Ally
-					Types: Tank, Vehicle, Infantry, Water
-					Attractiveness: 2
+				MinimumAttractiveness: 2200
+				IgnoreVisibility: true
+				Against: Ally
+				Types: WaterActor, GroundActor
+				Consideration@2:
+					Against: Enemy
+					Types: GroundActor
+					Attractiveness: 1
 					TargetMetric: Value
-					CheckRadius: 7c0
+					CheckRadius: 8c0
 			GPS_scrambler:
 				OrderName: GPSScramblerPowerInfoOrder
-				MinimumAttractiveness: 7000
-				MinimumScanTimeInterval: 83
-				MaximumScanTimeInterval: 100
+				MinimumAttractiveness: 1000
+				IgnoreVisibility: true
+				Against: Ally
+				Types: WaterActor, GroundActor
 				Consideration@1:
 					Against: Ally
 					Types: Tank, Vehicle, Infantry, Water
-					Attractiveness: 2
+					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 7c0
 			Intelligence:
 				OrderName: IntelligencePowerInfoOrder
+				Against: Ally
+				IgnoreVisibility: true
+				MinimumAttractiveness: 1
+				Types: WaterActor, GroundActor, AirborneActor
 				Consideration@1:
 					Against: Ally
+					Types: Tank, Vehicle, Infantry, Water
+					Attractiveness: 2
+					TargetMetric: Value
+					CheckRadius: 1c0
 			IntelligenceZH:
 				OrderName: IntelligenceZHPowerInfoOrder
+				Against: Ally
+				Types: WaterActor, GroundActor, AirborneActor
+				IgnoreVisibility: true
+				MinimumAttractiveness: 1
 				Consideration@1:
 					Against: Ally
+					Types: Tank, Vehicle, Infantry, Water
+					Attractiveness: 2
+					TargetMetric: Value
+					CheckRadius: 1c0
 			SupplyDrop:
 				OrderName: SupplyDropPowerInfoOrder
+				Against: Ally
+				IgnoreVisibility: true
+				MinimumAttractiveness: 1
 				Consideration@1:
 					Against: Ally
