@@ -70,6 +70,7 @@ Player:
 		ExcessPowerIncrement: 2
 		ExcessPowerIncreaseThreshold: 4
 		MaxBaseRadius: 44
+		PlaceDefenseTowardsEnemyChance: 67
 		# ConstructionMinimumCash: 199
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
 		RefineryTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
@@ -125,17 +126,17 @@ Player:
 			building.usa_war_factory: 1
 			building.arms_dealer: 1
 			building.prc_war_factory: 1
-			building.patriot: 5
-			building.emp_patriot: 5
-			building.laser_turret: 5
-			building.firebase: 2
-			building.stinger_site: 5
-			building.bunker: 2
-			building.fortified_bunker: 1
-			building.gatling_cannon: 5
-			building.tunnel_network: 2
-			building.toxin_tunnel_network: 2
-			building.speaker_tower: 3
+			building.patriot: 30
+			building.emp_patriot: 30
+			building.laser_turret: 30
+			building.firebase: 8
+			building.stinger_site: 30
+			building.bunker: 8
+			building.fortified_bunker: 8
+			building.gatling_cannon: 30
+			building.tunnel_network: 8
+			building.toxin_tunnel_network: 8
+			building.speaker_tower: 5
 			building.strategy_center: 1
 			building.palace: 1
 			fake.palace: 1
@@ -239,8 +240,10 @@ Player:
 			generals_power.gps_scrambler3: 1
 		BuildingDelays:
 			upgrade.radar: 1500
-			building.bunker: 6000
+			building.bunker: 6500
 			building.fortified_bunker: 7000
+			building.tunnel_network: 7000
+			building.toxin_tunnel_network: 7000
 			upgrade.land_mines: 8000
 			upgrade.neutron_mines: 9000
 			upgrade.camo_netting: 6000
@@ -262,7 +265,7 @@ Player:
 		SuggestedNavyLeaderLocomotor: locomotor.vessel
 	UnitBuilderBotModule@normal:
 		RequiresCondition: enable-any-ai
-		# ProductionMinimumCash: 200
+		ProductionMinimumCash: 600
 		IdleBaseUnitsMaximum: 32
 		# CashGeneratorTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, infantry.hacker, infantry.super_hacker
 		SupplyCollectorTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck

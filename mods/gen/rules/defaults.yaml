@@ -2203,7 +2203,7 @@
 	WithMakeAnimation:
 		Condition: build-incomplete
 	## Tolerated buildable solution for AI
-	GivesBuildableArea:
+	GivesBuildableArea@AI:
 		AreaTypes: building
 		RequiresCondition: bot_owner
 	Capturable:
@@ -2288,6 +2288,7 @@
 		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable, Defense
 	MustBeDestroyed:
 		RequiredForShortGame: false
+	-GivesBuildableArea@AI:
 	-AcceptsDeliveredCash:
 	-Capturable:
 	-CapturableProgressBar:

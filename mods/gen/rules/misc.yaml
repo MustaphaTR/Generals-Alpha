@@ -420,11 +420,8 @@ hack.no_bases:
 hack.mine:
 	Inherits: ^Mine
 	-Building:
-	Mobile:
-		Locomotor: locomotor.mine
-		RequiresCondition: !keep_me_disabled
-	GrantCondition:
-		Condition: keep_me_disabled
+	Immobile:
+		OccupiesSpace: true
 	-Sellable:
 	Tooltip:
 		Name: Land Mine
