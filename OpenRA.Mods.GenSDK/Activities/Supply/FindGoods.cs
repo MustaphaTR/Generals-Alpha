@@ -110,7 +110,8 @@ namespace OpenRA.Mods.GenSDK.Activities
 				if (dock == null)
 				{
 					collector.CollectionBuilding = null;
-					WaitAtParkingZone(self, collectorInfo.SearchForCollectionBuildingDelay, center, centerTrait);
+					var delay = collector.AllColletionDepleted ? collectorInfo.SearchDelayWhenAllCollectionBuildingIsDepleted : collectorInfo.SearchForCollectionBuildingDelay;
+					WaitAtParkingZone(self, delay, center, centerTrait);
 				}
 				else
 					collector.CollectionBuilding = dock;
@@ -132,7 +133,8 @@ namespace OpenRA.Mods.GenSDK.Activities
 				if (dock == null)
 				{
 					collector.CollectionBuilding = null;
-					WaitAtParkingZone(self, collectorInfo.SearchForCollectionBuildingDelay, center, centerTrait);
+					var delay = collector.AllColletionDepleted ? collectorInfo.SearchDelayWhenAllCollectionBuildingIsDepleted : collectorInfo.SearchForCollectionBuildingDelay;
+					WaitAtParkingZone(self, delay, center, centerTrait);
 					return false;
 				}
 				else
