@@ -40,18 +40,18 @@ Player:
 
  	## Give AI huge amount of cash to allow it build expensive unit
 	CashTrickler@EasyAI:
-		Interval: 3000
+		Interval: 5000
 		Amount: 1000
 		ShowTicks: false
 		RequiresCondition: enable-easy-ai
 	CashTrickler@NormalAI: ## Give AI huge amount of cash to allow it build expensive unit
-		Interval: 3000
-		Amount: 3000
+		Interval: 4000
+		Amount: 2000
 		ShowTicks: false
 		RequiresCondition: enable-normal-ai
 	CashTrickler@HardAI: ## Give AI huge amount of cash to allow it build expensive unit
 		Interval: 3000
-		Amount: 5000
+		Amount: 3000
 		ShowTicks: false
 		RequiresCondition: enable-hard-ai
 
