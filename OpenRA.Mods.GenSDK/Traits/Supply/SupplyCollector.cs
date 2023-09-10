@@ -37,9 +37,6 @@ namespace OpenRA.Mods.GenSDK.Traits
 		[Desc("How long (in ticks) to wait until (re-)checking for a nearby available DeliveryBuilding if not yet linked to one.")]
 		public readonly int SearchForDeliveryBuildingDelay = 125;
 
-		[Desc("How long (in ticks) to wait when the when all the CollectionBuilding is Depleted.")]
-		public readonly int SearchDelayWhenAllCollectionBuildingIsDepleted = 1250;
-
 		[Desc("How long (in ticks) does it take to collect supplies.")]
 		public readonly int CollectionDelay = 25;
 
