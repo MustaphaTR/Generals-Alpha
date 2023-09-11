@@ -155,11 +155,11 @@ infantry.worker:
 		CaptureTypes: building
 		Voice: Capture
 		CaptureCompleteVoice: CaptureComplete
-		RequiresCondition: capture_building
 		CaptureDelay: 375
 		ConsumedByCapture: False
 		EnterCursor: ability
 		EnterBlockedCursor: move-blocked
+		RequiresCondition: capture_building
 	AttackFrontal:
 		PauseOnCondition: leaflet
 		FacingTolerance: 0
@@ -252,7 +252,7 @@ infantry.rebel:
 		RequiresCondition: !booby_traps
 	Armament@PRIMARY_BOOBY_TRAP:
 		Weapon: mg.rebel.booby_trap
-		ForceTargetRelationships: None
+		ForceTargetRelationships: Enemy
 		RequiresCondition: booby_traps
 	Armament@GARRISON:
 		Name: garrison
@@ -262,7 +262,20 @@ infantry.rebel:
 		Cursor: c4
 		OutsideRangeCursor: c4
 		TargetRelationships: None
+		ForceTargetRelationShips: Neutral, Ally
 		RequiresCondition: booby_traps
+	Captures:
+		RequiresCondition: capture_building && !booby_traps
+	Captures@BOOBY_TRAP:
+		CaptureTypes: building
+		Voice: Capture
+		CaptureCompleteVoice: CaptureComplete
+		CaptureDelay: 375
+		ConsumedByCapture: False
+		ForceTargetRelationships: Enemy
+		EnterCursor: ability
+		EnterBlockedCursor: move-blocked
+		RequiresCondition: capture_building && booby_traps
 	Cloak:
 		InitialDelay: 200
 		CloakDelay: 100
@@ -363,12 +376,6 @@ infantry.toxin_rebel:
 		Name: garrison
 		Weapon: toxin.toxin_rebel.garrison.gamma
 		RequiresCondition: anthrax_gamma
-	Captures:
-		CaptureDelay: 375
-		ConsumedByCapture: False
-		EnterCursor: ability
-		EnterBlockedCursor: move-blocked
-		CaptureTypes: building
 	WithInfantryBody:
 		RequiresCondition: !anthrax_beta  && !anthrax_gamma
 	WithInfantryBody@BETA:
@@ -647,11 +654,6 @@ infantry.conscript:
 		Weapon: mg.ranger.garrison
 	Captures:
 		-CaptureCompleteVoice:
-		CaptureDelay: 375
-		ConsumedByCapture: False
-		EnterCursor: ability
-		EnterBlockedCursor: move-blocked
-		CaptureTypes: building
 	Voiced:
 		VoiceSet: ConscriptVoice
 	CaptureManager:
