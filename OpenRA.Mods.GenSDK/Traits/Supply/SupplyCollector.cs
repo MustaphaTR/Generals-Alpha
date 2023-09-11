@@ -120,6 +120,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		public Actor FindOtherDeliveryBuildingAdvisor = null;
 
 		public readonly bool IsAircraft;
+		public bool AllColletionDepleted { get; private set; }
 
 		public SupplyCollector(Actor self, SupplyCollectorInfo info)
 		{
@@ -135,7 +136,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 			ResourceMultipliers = self.TraitsImplementing<IResourceValueModifier>().ToArray();
 
 			// Avoid stuck on production
-			DeliveryBuilding = self.World.ActorsHavingTrait<SupplyCenter>().ClosestTo(self);
+			DeliveryBuilding = self.World.ActorsHavingTrait<SupplyCenter>().ClosestToIgnoringPath(self);
 
 			if (Info.SearchOnCreation)
 				self.World.AddFrameEndTask(w => self.QueueActivity(new FindGoods(self, Color.Green)));
@@ -342,6 +343,8 @@ namespace OpenRA.Mods.GenSDK.Traits
 				IsAcceptableTradeBuilding(d.Actor, d.Trait));
 
 			var collectors = self.World.ActorsWithTrait<SupplyCollector>().ToArray();
+			AllColletionDepleted = true;
+
 			if (IsAircraft)
 			{
 				Actor bestdock = null;
@@ -361,6 +364,8 @@ namespace OpenRA.Mods.GenSDK.Traits
 					if (stuckroad < dock.Trait.Info.ToleratedStuckRoad ||
 						occupancy < dock.Trait.Info.ToleratedOccupancy || bestdock == null)
 						bestdock = dock.Actor;
+
+					AllColletionDepleted = false;
 				}
 
 				return bestdock;
@@ -386,6 +391,8 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 					if (stuckroad < dock.Trait.Info.ToleratedStuckRoad || occupancy < dock.Trait.Info.ToleratedOccupancy)
 						accessibleDocks[dock.Actor.World.Map.CellContaining(dock.Actor.CenterPosition)] = (dock.Actor, stuckroad);
+
+					AllColletionDepleted = false;
 				}
 
 				// Start a search from each supply center's collect location:

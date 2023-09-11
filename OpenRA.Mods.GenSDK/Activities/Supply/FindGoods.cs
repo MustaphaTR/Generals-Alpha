@@ -110,6 +110,12 @@ namespace OpenRA.Mods.GenSDK.Activities
 				if (dock == null)
 				{
 					collector.CollectionBuilding = null;
+					if (collector.AllColletionDepleted)
+					{
+						Cancel(self, true);
+						return false;
+					}
+
 					WaitAtParkingZone(self, collectorInfo.SearchForCollectionBuildingDelay, center, centerTrait);
 				}
 				else
@@ -132,6 +138,12 @@ namespace OpenRA.Mods.GenSDK.Activities
 				if (dock == null)
 				{
 					collector.CollectionBuilding = null;
+					if (collector.AllColletionDepleted)
+					{
+						Cancel(self, true);
+						return false;
+					}
+
 					WaitAtParkingZone(self, collectorInfo.SearchForCollectionBuildingDelay, center, centerTrait);
 					return false;
 				}

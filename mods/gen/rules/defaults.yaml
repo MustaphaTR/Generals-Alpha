@@ -745,19 +745,19 @@
 		LayerName: anthrax_alpha
 		Damage: 40
 		DamageInterval: 10
-		DamageTypes: FireDeath
+		DamageTypes: AnthraxADeath
 		RequiresCondition: chemical_suits
 	DamagedByTintedCells@ANTHRAX_BETA_CHEM:
 		LayerName: anthrax_beta
 		Damage: 50
 		DamageInterval: 10
-		DamageTypes: FireDeath
+		DamageTypes: AnthraxBDeath
 		RequiresCondition: chemical_suits
 	DamagedByTintedCells@ANTHRAX_GAMMA_CHEM:
 		LayerName: anthrax_gamma
 		Damage: 60
 		DamageInterval: 10
-		DamageTypes: FireDeath
+		DamageTypes: AnthraxGDeath
 		RequiresCondition: chemical_suits
 	DamagedByTintedCells@RADIOACTIVITY_CHEM:
 		LayerName: radioactivity
@@ -1609,6 +1609,7 @@
 	ProximityCaptor:
 		Types: Vehicle
 	GivesBounty:
+		ShowPassengerBounties: false ## In most of the cases Passenger won't be killed in Gen
 	WithDamageOverlay:
 	Guard:
 	Guardable:
@@ -1849,6 +1850,7 @@
 	ActorLostNotification:
 		TextNotification: notification-unit-lost
 	GivesBounty:
+		ShowPassengerBounties: false ## In most of the cases Passenger won't be killed in Gen
 	Crushable:
 		WarnProbability: 0
 		CrushSound: squishy2.aud
@@ -2003,6 +2005,7 @@
 	ProximityCaptor:
 		Types: Ship
 	GivesBounty:
+		ShowPassengerBounties: false ## In most of the cases Passenger won't be killed in Gen
 	RepairableNear:
 		RepairActors: tech.shipyard
 		CloseEnough: 3c0
@@ -2074,6 +2077,7 @@
 	ProximityCaptor:
 		Types: Plane
 	GivesBounty:
+		ShowPassengerBounties: false ## In most of the cases Passenger won't be killed in Gen
 	Tooltip:
 		GenericName: Plane
 	WithShadow:
@@ -2162,6 +2166,7 @@
 	ProximityCaptor:
 		Types: Building
 	GivesBounty:
+		ShowPassengerBounties: false ## In most of the cases Passenger won't be killed in Gen
 	Guardable:
 		Range: 3c0
 	FrozenUnderFog:
@@ -2198,7 +2203,7 @@
 	WithMakeAnimation:
 		Condition: build-incomplete
 	## Tolerated buildable solution for AI
-	GivesBuildableArea:
+	GivesBuildableArea@AI:
 		AreaTypes: building
 		RequiresCondition: bot_owner
 	Capturable:
@@ -2283,6 +2288,7 @@
 		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable, Defense
 	MustBeDestroyed:
 		RequiredForShortGame: false
+	-GivesBuildableArea@AI:
 	-AcceptsDeliveredCash:
 	-Capturable:
 	-CapturableProgressBar:

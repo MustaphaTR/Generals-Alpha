@@ -266,7 +266,7 @@ explosion.nuclear_tanks:
 	Warhead@4Radio: CreateTintedCells
 		LayerName: radioactivity
 		Spread: 768
-		Level: 2000
+		Level: 700
 		Falloff: 100, 60, 20, 0
 		MaxLevel: 5000
 
@@ -281,7 +281,7 @@ explosion.nuclear_tanks.nuke:
 	Warhead@2Eff: CreateEffect
 		Explosions: mininuke
 	Warhead@4Radio: CreateTintedCells
-		Level: 3000
+		Level: 1400
 
 explosion.demo_trap:
 	Inherits: ^Explosion

@@ -332,7 +332,7 @@ Atomic:
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
-		DamageTypes: TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary, IgnoreCM
 	Warhead@3Smu_impact: LeaveSmudge
 		SmudgeType: Scorch
 		ValidTargets: Ground, Infantry
@@ -367,7 +367,7 @@ Atomic:
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
-		DamageTypes: TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary, IgnoreCM
 	Warhead@9Eff_areanuke1: CreateEffect
 		ImpactSounds: kaboom22.aud
 		ImpactActors: false
@@ -387,7 +387,7 @@ Atomic:
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
-		DamageTypes: TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary, IgnoreCM
 	Warhead@16Dam_areanuke3: SpreadDamage
 		Spread: 3c0
 		Damage: 6000
@@ -404,7 +404,7 @@ Atomic:
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
-		DamageTypes: TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary, IgnoreCM
 	Warhead@21Dam_areanuke4: SpreadDamage
 		Spread: 3c768
 		Damage: 6000
@@ -421,7 +421,7 @@ Atomic:
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
-		DamageTypes: TriggerProne, FireDeath, Incendiary
+		DamageTypes: TriggerProne, FireDeath, Incendiary, IgnoreCM
 	Warhead@21Shake: ShakeScreen
 		Duration: 20
 		Intensity: 5
