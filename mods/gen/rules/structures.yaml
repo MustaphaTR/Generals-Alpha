@@ -2993,10 +2993,10 @@ building.prc_war_factory:
 		Image: building.tunnel_network
 	ProvidesPrerequisite@HasTunnel: ## For AI Perf. 
 		Prerequisite: HasTunnel
-	AutoDeployer@AI:
-		RequiresCondition: bot_owner
-		DeployChance: 100
-		DeployTicks: 35
+	IssueOrderToBot@AI:
+		OrderName: UnloadShared
+		OrderChance: 100
+		OrderInterval: 35
 	ActorStatValues:
 		Stats: Armor, Sight, Cargo
 

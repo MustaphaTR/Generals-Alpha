@@ -871,6 +871,7 @@ infantry.stinger_soldier:
 	ExternalCondition@CAMO_NETTING:
 		Condition: stinger_cloak
 	MobSpawnerSlave:
+	RejectsOrders:
 	RenderSprites:
 		Image: infantry.stinger_soldier
 	-ActorStatValues:
@@ -1689,20 +1690,17 @@ infantry.hacker:
 	WithProductionIconOverlay@Merged:
 		Types: Veterancy2
 		Prerequisites: prerequisite.mergegenerals
-	AutoDeployer:
-		DeployTrigger: BecomingIdle
+	IssueOrderToBot@AI:
+		OrderName: GrantConditionOnDeploy
+		OrderTrigger: BecomingIdle
+		OrderChance: 100
+		OrderInterval: 100
 		RequiresCondition: !deployed
 	Voiced:
 		VoiceSet: HackerVoice
 	-MustBeDestroyed:
 	ActorStatValues:
 		Stats: Armor, Sight, Speed
-	AutoDeployer@AI:
-		RequiresCondition: bot_owner && undeployed
-		DeployChance: 100
-		DeployTrigger: BecomingIdle
-		DeployTicks: 100
-		UndeployTicks: 5
 
 infantry.super_hacker:
 	Inherits: infantry.hacker
