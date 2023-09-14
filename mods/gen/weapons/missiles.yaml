@@ -7,7 +7,7 @@
 	Projectile: MissileTA
 		LockOnTargets: Vehicle, Tank, AirborneActor, Ship, Structure
 		Speed: 213
-		Arm: 2
+		# Arm: 2
 		Blockable: false
 		Inaccuracy: 128
 		TrailImage: smokey
@@ -821,7 +821,7 @@ missile.patriot.ground:
 	Report: bpatweaa.wav, bpatweab.wav, bpatweac.wav
 	TargetActorCenter: true
 	Projectile: MissileTA
-		Arm: 3
+		# Arm: 3
 		Inaccuracy: 0
 		Image: MISSILE
 		HorizontalRateOfTurn: 100
@@ -853,7 +853,7 @@ missile.patriot.air:
 	Report: bpatweaa.wav, bpatweab.wav, bpatweac.wav
 	TargetActorCenter: true
 	Projectile: MissileTA
-		Arm: 3
+		# Arm: 3
 		Inaccuracy: 0
 		Image: MISSILE
 		HorizontalRateOfTurn: 100
@@ -941,7 +941,7 @@ NikeAA:
 	Range: 6c512
 	Report: missile1.aud
 	Projectile: MissileTA
-		Arm: 3
+		# Arm: 3
 		Inaccuracy: 0
 		Image: MISSILE
 		HorizontalRateOfTurn: 100
@@ -980,7 +980,7 @@ missile.destroyer.ground:
 	BurstDelays: 0
 	InvalidTargets: Underwater
 	Projectile: MissileTA
-		Arm: 3
+		# Arm: 3
 		Inaccuracy: 0
 		HorizontalRateOfTurn: 80
 		RangeLimit: 9c512

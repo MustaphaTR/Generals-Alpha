@@ -262,7 +262,7 @@ infantry.rebel:
 		Cursor: c4
 		OutsideRangeCursor: c4
 		TargetRelationships: None
-		ForceTargetRelationShips: Neutral, Ally
+		ForceTargetRelationships: Neutral, Ally
 		RequiresCondition: booby_traps
 	Captures:
 		RequiresCondition: capture_building && !booby_traps
@@ -1131,8 +1131,9 @@ infantry.terrorist:
 	GrantConditionOnFaction@Demo:
 		Condition: demo
 		Factions: demo
-	Captures:
-		CaptureTypes: car, driverless_vehcile
+	Captures@CAR_BOMB:
+		CaptureTypes: car
+		ValidRelationships: Ally, Neutral
 		Voice: Capture
 	Targetable:
 		TargetTypes: GroundActor, Infantry, DetonateAttack, Terrorist
