@@ -831,22 +831,31 @@ infantry.stinger_soldier:
 	Inherits@AP_ROCKETS: ^AffectedByAPRockets
 	-Buildable:
 	-SelectionDecorations:
-	Selectable:
-		Priority: 3
-		-PriorityModifiers:
+	-Selectable:
+	Interactable:
 	Mobile:
 		CanTurnWhileDisabled: true
 		RequiresCondition: !disable_movement
 	GrantConditionAfterDelay:
 		Condition: disable_movement
 		ShowSelectionBar: false
-		Delay: 5
+		Delay: 10
+	AttackFrontal:
+		PauseOnCondition: leaflet || !disable_movement || stop
+		FacingTolerance: 0
 	Armament@AG:
 		Weapon: missile.stinger_site.ground
 	Armament@AA:
 		Weapon: missile.stinger_site.air
+	GrantConditionOnAttack:
+		Condition: stop
+		RevokeDelay: 5
 	-Armament@AG_GARRISON:
 	-Armament@AA_GARRISON:
+	-AutoTarget:
+	-AutoTargetPriority@DEFAULT:
+	-AutoTargetPriority@ATTACKANYTHING:
+	-AttackMove:
 	-ChangesHealth@IN_AMBULANCE:
 	-ChangesHealth@IN_CRAWLER:
 	-Passenger:
@@ -870,7 +879,9 @@ infantry.stinger_soldier:
 		RequiresCondition: stinger_cloak && !leaflet
 	ExternalCondition@CAMO_NETTING:
 		Condition: stinger_cloak
-	MobSpawnerSlave:
+	DroneSpawnerSlave:
+		MovingCallBackCellDistance: 90
+		AttackCallBackDistance: 20280
 	RejectsOrders:
 	RenderSprites:
 		Image: infantry.stinger_soldier

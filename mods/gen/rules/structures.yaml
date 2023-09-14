@@ -3202,8 +3202,6 @@ building.stinger_site:
 	Selectable:
 		Bounds: 2048, 2048
 	WithBuildingBib:
-	Turreted:
-		TurnSpeed: 900
 	-WithMakeAnimation:
 	Sellable:
 		-RequiresCondition:
@@ -3214,8 +3212,12 @@ building.stinger_site:
 		Type: aa
 		Range: 10c0
 		Color: 00DDDD88
-	AttackTurreted:
-		PauseOnCondition: emp || hacked || leaflet
+	GrantConditionAfterDelay@enable_weapon:
+		Condition: enable_weapon
+		ShowSelectionBar: false
+		Delay: 11
+	AttackOmni:
+		PauseOnCondition: emp || hacked || leaflet || !enable_weapon
 	Armament@PRIMARY:
 		Weapon: hack.stinger_site.ground
 	Armament@SECONDARY:
@@ -3229,24 +3231,10 @@ building.stinger_site:
 	WithIdleOverlay@CAMO:
 		Sequence: idle-camo
 		Palette: cloak
-	MobSpawnerMaster@A:
-		Actors: infantry.stinger_soldier
-		SpawnOffset: 511,511,0
-		RespawnTicks: 750
-		ExitByBudding: false
-		AggregateHealth: false
-	MobSpawnerMaster@B:
-		Actors: infantry.stinger_soldier
-		SpawnOffset: -511,-511,0
-		RespawnTicks: 750
-		ExitByBudding: false
-		AggregateHealth: false
-	MobSpawnerMaster@C:
-		Actors: infantry.stinger_soldier
-		SpawnOffset: -511,511,0
-		RespawnTicks: 750
-		ExitByBudding: false
-		AggregateHealth: false
+	DroneSpawnerMaster:
+		SpawnOffset: 511,511,0, -511,-511,0, -511,511,0
+		Actors: infantry.stinger_soldier, infantry.stinger_soldier, infantry.stinger_soldier
+		RespawnTicks: 400
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 5c0

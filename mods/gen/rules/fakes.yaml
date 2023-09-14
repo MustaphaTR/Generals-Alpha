@@ -915,24 +915,10 @@ fake.stinger_site:
 	GrantConditionOnFaction@CAMO_NETTING:
 		Condition: camo_netted
 		Factions: stealth
-	MobSpawnerMaster@A:
-		Actors: fake.stinger_soldier
-		SpawnOffset: 511,511,0
-		RespawnTicks: 750
-		ExitByBudding: false
-		AggregateHealth: false
-	MobSpawnerMaster@B:
-		Actors: fake.stinger_soldier
-		SpawnOffset: -511,-511,0
-		RespawnTicks: 750
-		ExitByBudding: false
-		AggregateHealth: false
-	MobSpawnerMaster@C:
-		Actors: fake.stinger_soldier
-		SpawnOffset: -511,511,0
-		RespawnTicks: 750
-		ExitByBudding: false
-		AggregateHealth: false
+	DroneSpawnerMaster:
+		SpawnOffset: 511,511,0, -511,-511,0, -511,511,0
+		Actors: fake.stinger_soldier, fake.stinger_soldier, fake.stinger_soldier
+		RespawnTicks: 400
 	Voiced:
 		VoiceSet: StingerSiteVoice
 	GrantConditionOnFaction@Toxin:
