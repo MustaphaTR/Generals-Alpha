@@ -15,6 +15,7 @@ fake.command_center:
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units, !techlevel.nocc
 		Description: Looks like a Command Center.
+		ReadyTextNotification: Construction Complete: Fake Command Center
 		Icon: fake-icon
 	Tooltip:
 		Name: Fake Command Center
@@ -88,6 +89,7 @@ fake.barracks:
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units, !techlevel.vehicleonly
 		Description: Looks like a Barracks.
+		ReadyTextNotification: Construction Complete: Fake Barracks
 		Icon: fake-icon
 	Tooltip:
 		Name: Fake Barracks
@@ -155,6 +157,7 @@ fake.supply_stash:
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units
 		Description: Looks like a Supply Stash.
+		ReadyTextNotification: Construction Complete: Fake Supply Stash
 		Icon: fake-icon
 	Tooltip:
 		Name: Fake Supply Stash
@@ -226,6 +229,7 @@ fake.arms_dealer:
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.supply_center, ~prerequisite.zh_units, !techlevel.infonly
 		Description: Looks like an Arms Dealer.
+		ReadyTextNotification: Construction Complete: Fake Arms Dealer
 		Icon: fake-icon
 	Tooltip:
 		Name: Fake Arms Dealer
@@ -295,6 +299,7 @@ fake.palace:
 		BuildDurationModifier: 100
 		Prerequisites: building.arms_dealer, ~prerequisite.zh_units, !techlevel.notech
 		Description: Looks like a Palace.
+		ReadyTextNotification: Construction Complete: Fake Palace
 		Icon: fake-icon
 	Tooltip:
 		Name: Fake Palace
@@ -368,6 +373,7 @@ fake.black_market:
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~prerequisite.zh_units, !techlevel.notech
 		Description: Looks like a Black Market.
+		ReadyTextNotification: Construction Complete: Fake Black Market
 		Icon: fake-icon
 	Tooltip:
 		Name: Fake Black Market
@@ -438,6 +444,7 @@ fake.scud_storm:
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~prerequisite.zh_units, !techlevel.nosw
 		Description: Looks like a SCUD Storm.
+		ReadyTextNotification: Construction Complete: Fake SCUD Storm
 		Icon: fake-icon
 	Tooltip:
 		Name: Fake SCUD Storm
@@ -584,6 +591,7 @@ fake.demo_trap:
 		BuildDurationModifier: 100
 		Prerequisites: building.arms_dealer, ~prerequisite.zh_units, !techlevel.nodefense
 		Description: Looks like a Demo Trap.
+		ReadyTextNotification: Construction Complete: Fake Demo Trap
 		Icon: fake-icon
 	Tooltip:
 		Name: Fake Demo Trap
@@ -651,6 +659,7 @@ fake.advanced_demo_trap:
 	Buildable:
 		Queue: queue.demo_gen_building, queue.gla_building_merged
 		Description: Looks like an Advanced Demo Trap.
+		ReadyTextNotification: Construction Complete: Fake Advanced Demo Trap
 	Tooltip:
 		Name: Fake Advanced Demo Trap
 		GenericName: Advanced Demo Trap
@@ -685,6 +694,7 @@ fake.tunnel_network:
 		Queue: queue.gla_building, queue.demo_gen_building, queue.gla_building_merged
 		Prerequisites: building.gla_barracks, ~prerequisite.zh_units, !techlevel.nodefense
 		Description: Looks like a Tunnel Network.
+		ReadyTextNotification: Construction Complete: Fake Tunnel Network
 		Icon: fake-icon
 	Tooltip:
 		Name: Fake Tunnel Network
@@ -784,6 +794,7 @@ fake.toxin_tunnel_network:
 	Buildable:
 		Queue: queue.toxin_gen_building, queue.gla_building_merged
 		Description: Looks like a Toxin Tunnel Network.
+		ReadyTextNotification: Construction Complete: Fake Toxin Tunnel Network
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.gla_building_merged
 		Modifier: 3 # 17
@@ -850,6 +861,7 @@ fake.stinger_site:
 		BuildDurationModifier: 100
 		Prerequisites: building.gla_barracks, ~prerequisite.zh_units, !techlevel.nodefense
 		Description: Looks like a Stinger Site.
+		ReadyTextNotification: Construction Complete: Fake Stinger Site
 		Icon: fake-icon
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.gla_building_merged

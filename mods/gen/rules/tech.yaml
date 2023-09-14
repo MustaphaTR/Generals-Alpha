@@ -12,6 +12,7 @@ tech.oil_derrick:
 		BuildPaletteOrder: 2
 		BuildDuration: 250
 		Description: Gives cash periodically.
+		ReadyTextNotification: Construction Complete: Oil Derrick
 	Tooltip:
 		Name: Oil Derrick
 	TooltipDescription:
@@ -45,6 +46,7 @@ tech.oil_refinery:
 		BuildPaletteOrder: 9
 		BuildDuration: 375
 		Description: Reduces vehicle and aircraft cost by 10%.
+		ReadyTextNotification: Construction Complete: Oil Refinery
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -72,6 +74,7 @@ tech.hospital:
 		BuildPaletteOrder: 7
 		BuildDuration: 250
 		Description: Makes infantry self-heal.
+		ReadyTextNotification: Construction Complete: Hospital
 	Tooltip:
 		Name: Hospital
 	TooltipDescription:
@@ -102,6 +105,7 @@ tech.artillery_platform:
 		BuildPaletteOrder: 3
 		BuildDuration: 625
 		Description: Fires artillery shell in a long area.
+		ReadyTextNotification: Construction Complete: Artillery Platform
 	Tooltip:
 		Name: Artillery Platform
 	TooltipDescription:
@@ -151,6 +155,7 @@ tech.communications_center:
 		BuildPaletteOrder: 6
 		BuildDuration: 750
 		Description: Provides radar and reveals a big area around it.
+		ReadyTextNotification: Construction Complete: Communications Center
 	Tooltip:
 		Name: Communications Center
 	TooltipDescription:
@@ -191,6 +196,7 @@ tech.soviet_barracks:
 		BuildPaletteOrder: 1
 		BuildDuration: 250
 		Description: Produces old Soviet era units.
+		ReadyTextNotification: Construction Complete: Soviet Barracks
 	Tooltip:
 		Name: Soviet Barracks
 	TooltipDescription:
@@ -254,6 +260,7 @@ tech.flame_tower:
 		Description: Anti-infantry base defense.\n\nCan damage infantry garrisoned in civilian structures.
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction Complete: Flame Tower
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -299,6 +306,7 @@ tech.power_plant:
 		BuildPaletteOrder: 0
 		BuildDuration: 250
 		Description: Provides power.
+		ReadyTextNotification: Construction Complete: Power Plant
 	Tooltip:
 		Name: Power Plant
 	TooltipDescription:
@@ -334,6 +342,7 @@ tech.repair_bay:
 		BuildPaletteOrder: 8
 		BuildDuration: 375
 		Description: Makes vehicles auto-repair.
+		ReadyTextNotification: Construction Complete: Repair Bay
 	Tooltip:
 		Name: Repair Bay
 	TooltipDescription:
@@ -374,6 +383,7 @@ tech.reinforcements_pad:
 		BuildPaletteOrder: 4
 		BuildDuration: 375
 		Description: Delivers vehicles every 2 minutes.
+		ReadyTextNotification: Construction Complete: Reinforcements Pad
 	Tooltip:
 		Name: Reinforcements Pad
 	TooltipDescription:
@@ -564,6 +574,7 @@ tech.shipyard:
 		BuildPaletteOrder: 5
 		BuildDuration: 375
 		Description: Produces ships.
+		ReadyTextNotification: Construction Complete: Shipyard
 	Tooltip:
 		Name: Shipyard
 	TooltipDescription:

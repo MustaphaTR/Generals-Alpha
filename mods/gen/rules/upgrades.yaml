@@ -63,6 +63,7 @@ upgrade.radar:
 		ForceIconLocation: true
 		BuildDuration: 500
 		Description: Allows Commandand Center to provide Radar.
+		ReadyTextNotification: Upgrade Complete: Radar
 	Valued:
 		Cost: 500
 
@@ -76,6 +77,7 @@ upgrade.land_mines:
 		ForceIconLocation: true
 		BuildDuration: 500
 		Description: Creates minefields around the structure.
+		ReadyTextNotification: Upgrade Complete: Land Mines
 	Valued:
 		Cost: 600
 
@@ -89,6 +91,7 @@ upgrade.neutron_mines:
 		ForceIconLocation: true
 		BuildDuration: 625
 		Description: Upgrades mines to neutron mines, which kill vehicle drivers.
+		ReadyTextNotification: Upgrade Complete: Neutron Mines
 	Valued:
 		Cost: 500
 
@@ -102,6 +105,7 @@ upgrade.control_rods:
 		ForceIconLocation: true
 		BuildDuration: 375
 		Description: Doubles power output of the Cold Fusion Reactor.
+		ReadyTextNotification: Upgrade Complete: Control Rods
 	Power:
 		Amount: 5
 	Valued:
@@ -123,6 +127,7 @@ upgrade.advanced_control_rods:
 	Buildable:
 		Queue: queue.advanced_cold_fusion_reactor, queue.cold_fusion_reactor_merged, queue.boss_gen_cold_fusion_reactor_merged
 		Description: Quadruples power output of the Cold Fusion Reactor.
+		ReadyTextNotification: Upgrade Complete: Advanced Control Rods
 	Power:
 		Amount: 15
 
@@ -137,6 +142,7 @@ upgrade.camo_netting:
 		BuildDuration: 125
 		Description: Allows structure to cloak.
 		ReadyAudio: CamoNetting
+		ReadyTextNotification: Upgrade Complete: Camo Netting
 	Valued:
 		Cost: 500
 
@@ -150,6 +156,7 @@ upgrade.capture_building:
 		ForceIconLocation: true
 		BuildDuration: 750
 		Description: Allows AP Infantry to capture enemy and neutral structures.
+		ReadyTextNotification: Upgrade Complete: Capture Building
 	Valued:
 		Cost: 1000
 	WithProductionIconOverlay:
@@ -166,6 +173,7 @@ upgrade.flashbang_grenades:
 		BuildDuration: 750
 		Description: Gives Rangers ability to use flashbang grenades against infantry, both inside and outside buildings.
 		ReadyAudio: Flashbang
+		ReadyTextNotification: Upgrade Complete: Flashbang Grenades
 	Valued:
 		Cost: 800
 	WithProductionIconOverlay:
@@ -182,6 +190,7 @@ upgrade.booby_traps:
 		Prerequisites: ~prerequisite.zh_units
 		Description: Gives Rebels ability to place booby traps on friendly or neutral structures which explode when garrisoned or captured.
 		ReadyAudio: BoobyTraps
+		ReadyTextNotification: Upgrade Complete: Booby Traps
 	Valued:
 		Cost: 1000
 	WithProductionIconOverlay:
@@ -198,6 +207,7 @@ upgrade.tow_missile:
 		BuildDuration: 750
 		Description: Allows Humvees to fire Missiles.
 		ReadyAudio: TOW
+		ReadyTextNotification: Upgrade Complete: TOW Missile
 	Valued:
 		Cost: 1200
 	WithProductionIconOverlay:
@@ -213,6 +223,7 @@ upgrade.sentry_gun:
 		BuildDuration: 250
 		Prerequisites: ~prerequisite.zh_units
 		Description: Allows Senrty Drones to fire.
+		ReadyTextNotification: Upgrade Complete: Sentry Drone Gun
 	Valued:
 		Cost: 1000
 	WithProductionIconOverlay:
@@ -229,6 +240,7 @@ upgrade.sc_rocket:
 		BuildDuration: 750
 		Description: Gives Scorpion Tanks a rocket.
 		ReadyAudio: ScorpionRocket
+		ReadyTextNotification: Upgrade Complete: Scorpion Rocket
 	Valued:
 		Cost: 1000
 	WithProductionIconOverlay:
@@ -237,7 +249,7 @@ upgrade.sc_rocket:
 upgrade.chain_gun:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Chain Gun
+		Name: Chain Guns
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged
 		BuildPaletteOrder: 2
@@ -245,6 +257,7 @@ upgrade.chain_gun:
 		BuildDuration: 1125
 		Description: Increases damage of gatling weapons by 25%.
 		ReadyAudio: ChainGun
+		ReadyTextNotification: Upgrade Complete: Chain Guns
 	Valued:
 		Cost: 1500
 	WithProductionIconOverlay:
@@ -261,6 +274,7 @@ upgrade.black_napalm:
 		BuildDuration: 1125
 		Description: Increases damage of fire based weapons.
 		ReadyAudio: BlackNapalm
+		ReadyTextNotification: Upgrade Complete: Black Napalm
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -278,6 +292,7 @@ upgrade.rocket_pods:
 		BuildDuration: 1500
 		Description: Allows Comanches to fire Missiles.
 		ReadyAudio: RocketPods
+		ReadyTextNotification: Upgrade Complete: Rocket Pods
 	Valued:
 		Cost: 800
 	WithProductionIconOverlay:
@@ -295,6 +310,7 @@ upgrade.laser_guided_missiles:
 		BuildDuration: 1000
 		Description: Increases the damage output of Raptor and Stealth Bomber by 25%.
 		ReadyAudio: LaserGuide
+		ReadyTextNotification: Upgrade Complete: Laser-Guided Missiles
 	Valued:
 		Cost: 1500
 	WithProductionIconOverlay:
@@ -313,6 +329,7 @@ upgrade.countermeasures:
 		Prerequisites: ~prerequisite.zh_units
 		Description: Increases aircraft armor and gives them 50% chance to evade missiles fired at them.\nEffective armor change depends on weapon and aircraft.
 		ReadyAudio: Countermeasures
+		ReadyTextNotification: Upgrade Complete: Countermeasures
 	Valued:
 		Cost: 1000
 	WithProductionIconOverlay:
@@ -331,6 +348,7 @@ upgrade.bunker_busters:
 		Prerequisites: ~prerequisite.zh_units
 		Description: Enables Stealth Bombers to kill garrisoned units in Civilian Strucutres, Bunkers, Firebases and Tunnels.
 		ReadyAudio: BunkerBusters
+		ReadyTextNotification: Upgrade Complete: Bunker Busters
 	Valued:
 		Cost: 1500
 	WithProductionIconOverlay:
@@ -347,6 +365,7 @@ upgrade.stealth_comanche:
 		ForceIconLocation: true
 		BuildDuration: 750
 		Description: Allows Comanches to stealth when not firing.
+		ReadyTextNotification: Upgrade Complete: Stealth Comanche
 	Valued:
 		Cost: 1500
 	WithProductionIconOverlay:
@@ -363,6 +382,7 @@ upgrade.mig_armor:
 		BuildDuration: 1000
 		Description: Increases MiGs' armor.
 		ReadyAudio: MiGArmor
+		ReadyTextNotification: Upgrade Complete: MiG Armor
 	Valued:
 		Cost: 1200
 	WithProductionIconOverlay:
@@ -378,6 +398,7 @@ upgrade.satellite_hack1:
 		BuildDuration: 500
 		Prerequisites: ~!upgrade.satellite_hack1
 		Description: Allows seeing around the enemy Command Centers.
+		ReadyTextNotification: Upgrade Complete: Satellite Hack 1
 	Valued:
 		Cost: 1000
 	WithProductionIconOverlay:
@@ -393,6 +414,7 @@ upgrade.satellite_hack2:
 		BuildDuration: 500
 		Prerequisites: ~upgrade.satellite_hack1
 		Description: Reveals all enemy units and buildings every 4 minutes for 20 seconds.
+		ReadyTextNotification: Upgrade Complete: Satellite Hack 2
 	Valued:
 		Cost: 2500
 	WithProductionIconOverlay:
@@ -409,6 +431,7 @@ upgrade.adv_training:
 		Description: Doubles the rate units gain veterancy.
 		QueuedAudio: NoAudio
 		ReadyAudio: AdvancedTraining
+		ReadyTextNotification: Upgrade Complete: Advanced Training
 	Valued:
 		Cost: 1500
 	WithProductionIconOverlay:
@@ -424,6 +447,7 @@ upgrade.drone_armor:
 		BuildDuration: 1000
 		Description: Increases Drones' armor by 50%.
 		ReadyAudio: DroneArmor
+		ReadyTextNotification: Upgrade Complete: Drone Armor
 	Valued:
 		Cost: 500
 	WithProductionIconOverlay:
@@ -440,6 +464,7 @@ upgrade.composite_armor:
 		Description: Increases Crusader Tank armor by 40%.\n\nIncreases Paladin and Microwave Tank armor by 20%.
 		Prerequisites: !techlevel.infonly
 		ReadyAudio: CompositeArmor
+		ReadyTextNotification: Upgrade Complete: Composite Armor
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -456,6 +481,7 @@ upgrade.chemical_suits:
 		Prerequisites: !upgrade.chemical_suits, ~prerequisite.zh_units, !techlevel.vehicleonly
 		Description: Decreases the damage dealt to infantry from Microwaves, Toxins and Radiation.
 		ReadyAudio: ChemicalSuits
+		ReadyTextNotification: Upgrade Complete: Chemical Suits
 	BuildPaletteOrderModifier@Boss:
 		Queue: queue.boss_gen_infantry, queue.boss_gen_infantry_merged
 		Modifier: 2 # 8
@@ -479,6 +505,7 @@ upgrade.supply_lines:
 		Prerequisites: ~prerequisite.zh_units
 		Description: Increases output from Supply Centers, Supply Drop Zones and Oil Derricks by 10%.
 		ReadyAudio: SupplyLines
+		ReadyTextNotification: Upgrade Complete: Supply Lines
 	Valued:
 		Cost: 800
 	WithProductionIconOverlay:
@@ -495,6 +522,7 @@ upgrade.moab:
 		BuildDuration: 1500
 		Prerequisites: prerequisite.fuel_air_bomb, ~prerequisite.zh_units
 		Description: Upgrades Fuel Air Bomb to Mother of All Bombs.
+		ReadyTextNotification: Upgrade Complete: Mother of All Bombs
 	Valued:
 		Cost: 4000
 	WithProductionIconOverlay:
@@ -508,9 +536,10 @@ upgrade.camouflage:
 		Queue: queue.palace
 		BuildPaletteOrder: 0
 		BuildDuration: 1500
-		Description: Allows Rebels to cloak while not firing.
 		Prerequisites: !techlevel.vehicleonly
+		Description: Allows Rebels to cloak while not firing.
 		ReadyAudio: Camouflage
+		ReadyTextNotification: Upgrade Complete: Camouflage
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -524,9 +553,10 @@ upgrade.arm_the_mob:
 		Queue: queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged, queue.boss_gen_scud_storm
 		BuildPaletteOrder: 1
 		BuildDuration: 750
-		Description: Replaces pistols of Angry Mobs with AK-47s.
 		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
+		Description: Replaces pistols of Angry Mobs with AK-47s.
 		ReadyAudio: ArmTheMob
+		ReadyTextNotification: Upgrade Complete: Arm The Mob
 	Valued:
 		Cost: 1000
 	WithProductionIconOverlay:
@@ -540,9 +570,10 @@ upgrade.toxin_shells:
 		Queue: queue.palace
 		BuildPaletteOrder: 2
 		BuildDuration: 750
+		Prerequisites: !techlevel.infonly
 		Description: Makes Scorpion and Marauder tank shells leave toxin.
 		ReadyAudio: ToxinShells
-		Prerequisites: !techlevel.infonly
+		ReadyTextNotification: Upgrade Complete: Toxin Shells
 	Valued:
 		Cost: 1000
 	WithProductionIconOverlay:
@@ -558,6 +589,7 @@ upgrade.anthrax_beta:
 		BuildDuration: 750
 		Description: Increases all toxin weapons' damage by 25%.
 		ReadyAudio: AnthraxBeta
+		ReadyTextNotification: Upgrade Complete: Anthrax Beta
 	Valued:
 		Cost: 2500
 	WithProductionIconOverlay:
@@ -573,6 +605,7 @@ upgrade.anthrax_gamma:
 		BuildDuration: 1500
 		Description: Increases all toxin weapons' damage by 25%.
 		ReadyAudio: AnthraxGamma
+		ReadyTextNotification: Upgrade Complete: Anthrax Gamma
 	Valued:
 		Cost: 1500
 	WithProductionIconOverlay:
@@ -588,6 +621,7 @@ upgrade.fortified_structures:
 		BuildDuration: 750
 		Prerequisites: ~prerequisite.zh_units
 		Description: Increases structure armor by 33%.
+		ReadyTextNotification: Upgrade Complete: Fortified Structures
 	Valued:
 		Cost: 1000
 	WithProductionIconOverlay:
@@ -602,6 +636,7 @@ upgrade.demolitions:
 		BuildPaletteOrder: 5
 		BuildDuration: 750
 		Description: Makes units end defenses explode on dealth.
+		ReadyTextNotification: Upgrade Complete: Demolitions
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -618,6 +653,7 @@ upgrade.nationalism:
 		BuildDuration: 1500
 		Description: Makes Horde Bonus give an additional 25% firing speed.
 		ReadyAudio: Nationalism
+		ReadyTextNotification: Upgrade Complete: Nationalism
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -634,6 +670,7 @@ upgrade.patriotism:
 		BuildDuration: 1500
 		Description: Makes Horde Bonus give an additional 25% firing speed.
 		ReadyAudio: Patriotism
+		ReadyTextNotification: Upgrade Complete: Patriotism
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -648,15 +685,17 @@ upgrade.isotope_stability:
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Description: Makes Battlemaster and Overlord Tank not explode on death.
 		Prerequisites: !techlevel.infonly
+		Description: Makes Battlemaster and Overlord Tank not explode on death.
+		ReadyTextNotification: Upgrade Complete: Isotope Stability
 	Buildable@Boss:
 		Queue: queue.boss_gen_missile_silo_merged
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Description: Makes Overlord Tank not explode on death.
 		Prerequisites: !techlevel.infonly
+		Description: Makes Overlord Tank not explode on death.
+		ReadyTextNotification: Upgrade Complete: Isotope Stability
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -674,6 +713,7 @@ upgrade.autoloader:
 		Description: Makes Battlemaster Tanks to fire 3 cannon at once.
 		Prerequisites: !techlevel.infonly
 		ReadyAudio: Autoloader
+		ReadyTextNotification: Upgrade Complete: Autoloader
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.propaganda_center_merged
 		Modifier: 3 # 4
@@ -693,6 +733,7 @@ upgrade.subliminal_messaging:
 		BuildDuration: 1000
 		Description: Doubles the efficency of Speaker Towers.
 		ReadyAudio: Subliminal
+		ReadyTextNotification: Upgrade Complete: Subliminal Messaging
 	Valued:
 		Cost: 500
 	WithProductionIconOverlay:
@@ -708,6 +749,7 @@ upgrade.ap_bullets:
 		BuildDuration: 1500
 		Description: Increases bullet weapons' damage by 25%.
 		ReadyAudio: APBullets
+		ReadyTextNotification: Upgrade Complete: Armor-Piercing Bullets
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -723,6 +765,7 @@ upgrade.ap_rockets:
 		BuildDuration: 1500
 		Description: Increases rocket weapons' damage by 25%.
 		ReadyAudio: APRockets
+		ReadyTextNotification: Upgrade Complete: Armor-Piercing Rockets
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -736,9 +779,10 @@ upgrade.radar_van_scan:
 		Queue: queue.black_market, queue.stealth_gen_black_market
 		BuildPaletteOrder: 2
 		BuildDuration: 500
+		Prerequisites: !techlevel.infonly
 		Description: Gives you a Radar Van Scan support power for each Radar Van you have.
 		ReadyAudio: RadarVanScan
-		Prerequisites: !techlevel.infonly
+		ReadyTextNotification: Upgrade Complete: Radar Van Scan
 	Valued:
 		Cost: 500
 	WithProductionIconOverlay:
@@ -752,9 +796,10 @@ upgrade.junk_repair:
 		Queue: queue.black_market, queue.stealth_gen_black_market
 		BuildPaletteOrder: 3
 		BuildDuration: 1500
+		Prerequisites: !techlevel.infonly
 		Description: Allows vehicles to repair themselves on field.
 		ReadyAudio: JunkRepair
-		Prerequisites: !techlevel.infonly
+		ReadyTextNotification: Upgrade Complete: Junk Repair
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -768,9 +813,10 @@ upgrade.buggy_ammo:
 		Queue: queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_scud_storm
 		BuildPaletteOrder: 4
 		BuildDuration: 750
+		Prerequisites: !techlevel.infonly
 		Description: Doubles the rockets fired from Rocket Buggies.
 		ReadyAudio: BuggyAmmo
-		Prerequisites: !techlevel.infonly
+		ReadyTextNotification: Upgrade Complete: Buggy Ammo
 	Valued:
 		Cost: 1200
 	WithProductionIconOverlay:
@@ -787,6 +833,7 @@ upgrade.worker_shoes:
 		Prerequisites: ~prerequisite.zh_units
 		Description: Increases worker speed by 20% and resource output by 10%.
 		ReadyAudio: WorkerShoes
+		ReadyTextNotification: Upgrade Complete: Worker Shoes
 	Valued:
 		Cost: 1000
 	WithProductionIconOverlay:
@@ -804,6 +851,7 @@ upgrade.nuclear_tanks:
 		Prerequisites: !upgrade.nuclear_tanks, !techlevel.infonly
 		Description: Increases Battlemaster speed by 40% and Overlord speed by 50%.
 		ReadyAudio: NuclearTanks
+		ReadyTextNotification: Upgrade Complete: Nuclear Tanks
 	Buildable@Boss:
 		Queue: queue.boss_gen_missile_silo
 		BuildPaletteOrder: 3
@@ -812,6 +860,7 @@ upgrade.nuclear_tanks:
 		Prerequisites: !upgrade.nuclear_tanks, !techlevel.infonly
 		Description: Increases Overlord speed by 50%.
 		ReadyAudio: NuclearTanks
+		ReadyTextNotification: Upgrade Complete: Nuclear Tanks
 	ProvidesPrerequisite@upgradename:
 		Prerequisite: upgrade.nuclear_tanks
 	Valued:
@@ -833,6 +882,7 @@ upgrade.uranium_shells:
 		Prerequisites: !upgrade.uranium_shells, !techlevel.infonly
 		Description: Increases Overlord and Battlemaster damage by 25%.
 		ReadyAudio: UraniumShells
+		ReadyTextNotification: Upgrade Complete: Uranium Shells
 	Buildable@Boss:
 		Queue: queue.boss_gen_missile_silo
 		BuildPaletteOrder: 5
@@ -841,6 +891,7 @@ upgrade.uranium_shells:
 		Prerequisites: !upgrade.uranium_shells, !techlevel.infonly
 		Description: Increases Overlord damage by 25%.
 		ReadyAudio: UraniumShells
+		ReadyTextNotification: Upgrade Complete: Uranium Shells
 	ProvidesPrerequisite@upgradename:
 		Prerequisite: upgrade.uranium_shells
 	Valued:
@@ -861,6 +912,7 @@ upgrade.neutron_shells:
 		BuildDuration: 1500
 		Prerequisites: prerequisite.nuke_cannon, !upgrade.neutron_shells, ~prerequisite.zh_units, !techlevel.infonly
 		Description: Allows Nuke Cannons to be switched to fire Neutron Shells.
+		ReadyTextNotification: Upgrade Complete: Neutron Shells
 	Buildable@Nuke:
 		Queue: queue.nuke_gen_missile_silo
 		BuildPaletteOrder: 1
@@ -868,6 +920,7 @@ upgrade.neutron_shells:
 		BuildDuration: 1500
 		Prerequisites: !upgrade.neutron_shells, ~prerequisite.zh_units, !techlevel.infonly
 		Description: Allows Nuke Cannons to be switched to fire Neutron Shells.
+		ReadyTextNotification: Upgrade Complete: Neutron Shells
 	ProvidesPrerequisite@upgradename:
 		Prerequisite: upgrade.neutron_shells
 	Valued:
@@ -888,6 +941,7 @@ upgrade.tactical_nuke_mig:
 		BuildDuration: 1000
 		Prerequisites: !techlevel.infonly, !techlevel.noair
 		Description: Arms MiGs with a Tactical Nukes.
+		ReadyTextNotification: Upgrade Complete: Tactical Nuke MiG
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -903,6 +957,7 @@ upgrade.scout_drone:
 		BuildDuration: 125
 		Description: Gives vehicle a scout drone that can detect steath.
 		BuildLimit: 0
+		ReadyTextNotification: Upgrade Complete: Scout Drone
 	Valued:
 		Cost: 100
 
@@ -916,6 +971,7 @@ upgrade.battle_drone:
 		BuildDuration: 125
 		Description: Gives vehicle a battle drone that armed with a machine gun and can repair vehicle.
 		BuildLimit: 0
+		ReadyTextNotification: Upgrade Complete: Battle Drone
 	Valued:
 		Cost: 300
 
@@ -930,6 +986,7 @@ upgrade.hellfire_drone:
 		Prerequisites: ~prerequisite.zh_units
 		Description: Gives vehicle a hellfire drone that armed with a rocket launcher.
 		BuildLimit: 0
+		ReadyTextNotification: Upgrade Complete: Hellfire Drone
 	Valued:
 		Cost: 500
 
@@ -946,6 +1003,7 @@ upgrade.bio_bombs:
 		BuildLimit: 0
 		QueuedAudio: BioBombsBuilding
 		ReadyAudio: BioBombsReady
+		ReadyTextNotification: Upgrade Complete: Bio Bombs
 	Valued:
 		Cost: 500
 
@@ -962,6 +1020,7 @@ upgrade.hi_explosive_bombs:
 		BuildLimit: 0
 		QueuedAudio: HiExplosiveBombsBuilding
 		ReadyAudio: HiExplosiveBombsReady
+		ReadyTextNotification: Upgrade Complete: High Explosive Bombs
 	Valued:
 		Cost: 500
 
@@ -1006,13 +1065,14 @@ upgrade.overlord_bunker:
 		Description: Gives overlord tank a bunker for 5 infantry.
 		QueuedAudio: OverlordBunkerBuilding
 		ReadyAudio: OverlordBunkerReady
+		ReadyTextNotification: Upgrade Complete: Overlord Bunker
 	Valued:
 		Cost: 400
 
 upgrade.overlord_gatling:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Gatling
+		Name: Gatling Cannon
 	Buildable:
 		Queue: queue.overlord_tank, queue.emparor_overlord, queue.emparor_overlord_merged
 		BuildPaletteOrder: 1
@@ -1021,13 +1081,14 @@ upgrade.overlord_gatling:
 		Description: Gives overlord tank a gatling cannon.\n\nAllows overlord tank to detect stealth.
 		QueuedAudio: OverlordGatlingBuilding
 		ReadyAudio: OverlordGatlingReady
+		ReadyTextNotification: Upgrade Complete: Overlord Gatling Cannon
 	Valued:
 		Cost: 1200
 
 upgrade.overlord_speaker:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Speaker
+		Name: Speaker Tower
 	Buildable:
 		Queue: queue.overlord_tank
 		BuildPaletteOrder: 2
@@ -1035,6 +1096,7 @@ upgrade.overlord_speaker:
 		Description: Gives overlord tank a speaker tower.
 		QueuedAudio: OverlordSpeakerBuilding
 		ReadyAudio: OverlordSpeakerReady
+		ReadyTextNotification: Upgrade Complete: Overlord Speaker Tower
 	Valued:
 		Cost: 500
 
@@ -1045,6 +1107,7 @@ upgrade.helix_bunker:
 		Description: Allows infantry in helix to fire outside.
 		QueuedAudio: HelixBunkerBuilding
 		ReadyAudio: HelixBunkerReady
+		ReadyTextNotification: Upgrade Complete: Helix Bunker
 
 upgrade.helix_gatling:
 	Inherits: upgrade.overlord_gatling
@@ -1053,6 +1116,7 @@ upgrade.helix_gatling:
 		Description: Gives helix a gatling cannon.\n\nAllows helix to detect stealth.
 		QueuedAudio: HelixGatlingBuilding
 		ReadyAudio: HelixGatlingReady
+		ReadyTextNotification: Upgrade Complete: Helix Gatling Cannon
 
 upgrade.helix_speaker:
 	Inherits: upgrade.overlord_speaker
@@ -1061,11 +1125,12 @@ upgrade.helix_speaker:
 		Description: Gives helix a speaker tower.
 		QueuedAudio: HelixSpeakerBuilding
 		ReadyAudio: HelixSpeakerReady
+		ReadyTextNotification: Upgrade Complete: Helix Speaker Tower
 
 upgrade.helix_napalm:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Napalm
+		Name: Napalm Bomb
 	Buildable:
 		Queue: queue.helix, queue.inf_gen_helix, queue.helix_merged
 		BuildPaletteOrder: 4
@@ -1074,6 +1139,7 @@ upgrade.helix_napalm:
 		Description: Allows helix to drop napalm bombs by force firing.
 		QueuedAudio: HelixNapalmBuilding
 		ReadyAudio: HelixNapalmReady
+		ReadyTextNotification: Upgrade Complete: Napalm Bomb
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.helix_merged
 		Modifier: -1 # 3
@@ -1083,7 +1149,7 @@ upgrade.helix_napalm:
 upgrade.helix_nuke:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Nuke
+		Name: Nuclear Bomb
 	Buildable:
 		Queue: queue.nuke_gen_helix, queue.helix_merged
 		BuildPaletteOrder: 4
@@ -1092,6 +1158,7 @@ upgrade.helix_nuke:
 		Description: Allows helix to drop nuclear bombs by force firing.
 		QueuedAudio: HelixNukeBuilding
 		ReadyAudio: HelixNukeReady
+		ReadyTextNotification: Upgrade Complete: Nuclear Bomb
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.helix_merged
 		Modifier: 1 # 5
@@ -1108,28 +1175,31 @@ strategy.bombardment:
 		Prerequisites: !prerequisite.ai_strategy_chosen
 		Description: Increases all units' damage by 20%.\n\nGives Strategy Center an Artillery piece.
 		ReadyAudio: Bombardment
-
-strategy.search_and_destroy:
-	Inherits: ^default.strategy
-	Tooltip:
-		Name: Search and Destroy
-	Buildable:
-		BuildPaletteOrder: 1
-		ForceIconLocation: true
-		Prerequisites: !prerequisite.ai_strategy_chosen
-		Description: Increases all units' fire range by 20%.\n\nGives Strategy Center ability to detect stealth units.
-		ReadyAudio: SearchAndDestroy
+		ReadyTextNotification: Bombardment strategy has been initiated
 
 strategy.hold_the_line:
 	Inherits: ^default.strategy
 	Tooltip:
 		Name: Hold the Line
 	Buildable:
-		BuildPaletteOrder: 2
+		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		Prerequisites: !prerequisite.ai_strategy_chosen
 		Description: Increases all units' armor by 10%.\n\nDoubles Strategy Center's armor.
 		ReadyAudio: HoldTheLine
+		ReadyTextNotification: Hold the Line strategy has been initiated
+
+strategy.search_and_destroy:
+	Inherits: ^default.strategy
+	Tooltip:
+		Name: Search and Destroy
+	Buildable:
+		BuildPaletteOrder: 2
+		ForceIconLocation: true
+		Prerequisites: !prerequisite.ai_strategy_chosen
+		Description: Increases all units' fire range by 20%.\n\nGives Strategy Center ability to detect stealth units.
+		ReadyAudio: SearchAndDestroy
+		ReadyTextNotification: Search and Destroy strategy has been initiated
 
 fake_to_real.command_center:
 	Inherits: ^default.fake_to_real
