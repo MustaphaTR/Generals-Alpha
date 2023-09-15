@@ -1394,7 +1394,6 @@ aircraft.chinook:
 aircraft.combat_chinook:
 	Inherits: aircraft.chinook
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@BotOwner: ^BotOwner
 	GivesExperience:
 		Experience: 60
 	Buildable:
@@ -1426,11 +1425,12 @@ aircraft.combat_chinook:
 	GrantConditionOnDamageState@AI-bunker_upgrade:
 		Condition: ShouldUnload
 		ValidDamageStates: Critical, Heavy
-	AutoDeployer@AI-bunker_upgrade:
-		RequiresCondition: bot_owner && loaded && ShouldUnload
-		DeployChance: 100
-		DeployTrigger: Periodically
-		DeployTicks: 200
+	IssueOrderToBot@AI:
+		RequiresCondition: loaded && ShouldUnload
+		OrderName: Unload
+		OrderChance: 100
+		OrderTrigger: Periodically
+		OrderInterval: 200
 
 aircraft.comanche:
 	Inherits: ^Helicopter
@@ -1894,11 +1894,12 @@ aircraft.helix:
 	GrantConditionOnDamageState@AI-bunker_upgrade:
 		Condition: ShouldUnload
 		ValidDamageStates: Critical, Heavy
-	AutoDeployer@AI-bunker_upgrade:
-		RequiresCondition: bot_owner && loaded && ShouldUnload && bunker_upgrade
-		DeployChance: 100
-		DeployTrigger: Periodically
-		DeployTicks: 200
+	IssueOrderToBot@AI-bunker_upgrade:
+		RequiresCondition: loaded && ShouldUnload && bunker_upgrade
+		OrderName: Unload
+		OrderChance: 100
+		OrderTrigger: Periodically
+		OrderInterval: 200
 
 aircraft.assault_helix:
 	Inherits: aircraft.helix

@@ -82,7 +82,6 @@ vehicle.humvee:
 	Inherits@REVEAL: ^Reveal320
 	Inherits@SLOW: ^SlowsWhenDamaged
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
-	Inherits@BotOwner: ^BotOwner
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !tow_missile
 	AutoTargetPriority@ATTACKANYTHING:
@@ -239,11 +238,12 @@ vehicle.humvee:
 	GrantConditionOnDamageState@AI:
 		Condition: ShouldUnload
 		ValidDamageStates: Critical, Heavy
-	AutoDeployer@AI:
-		RequiresCondition: bot_owner && loaded && ShouldUnload
-		DeployChance: 100
-		DeployTrigger: Periodically
-		DeployTicks: 20
+	IssueOrderToBot@AI:
+		OrderName: Unload
+		RequiresCondition: ShouldUnload
+		OrderChance: 100
+		OrderTrigger: Periodically
+		OrderInterval: 20
 
 vehicle.technical:
 	Inherits: ^Vehicle
@@ -257,7 +257,6 @@ vehicle.technical:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
 		-RequiresCondition:
@@ -400,10 +399,11 @@ vehicle.technical:
 		Upgrades: upgrade.ap_bullets, upgrade.junk_repair
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.demolitions, upgrade.ap_bullets, upgrade.junk_repair
-	AutoDeployer@AI:
-		RequiresCondition: bot_owner && loaded
-		DeployChance: 100
-		DeployTicks: 45
+	IssueOrderToBot@AI:
+		RequiresCondition: loaded
+		OrderName: Unload
+		OrderChance: 100
+		OrderInterval: 45
 
 vehicle.technical.demo_reinforce:
 	Inherits: vehicle.technical
@@ -975,7 +975,6 @@ vehicle.ambulance:
 	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
 		-RequiresCondition:
@@ -1056,10 +1055,11 @@ vehicle.ambulance:
 		VoiceSet: AmbulanceVoice
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, None, None, None, Cargo
-	AutoDeployer@AI:
-		RequiresCondition: bot_owner && loaded
-		DeployChance: 100
-		DeployTicks: 45
+	IssueOrderToBot@AI:
+		OrderName: Unload
+		RequiresCondition: loaded
+		OrderChance: 100
+		OrderInterval: 45
 
 vehicle.sentry_drone:
 	Inherits: ^Vehicle
@@ -1986,7 +1986,6 @@ vehicle.battle_bus:
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SCRAP: ^AffectedByScrapCratePowerups
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
 		-RequiresCondition:
@@ -2119,11 +2118,12 @@ vehicle.battle_bus:
 	GrantConditionOnDamageState@AI:
 		Condition: ShouldUnload
 		ValidDamageStates: Critical, Heavy
-	AutoDeployer@AI:
-		RequiresCondition: bot_owner && loaded && ShouldUnload
-		DeployChance: 100
-		DeployTrigger: Periodically
-		DeployTicks: 20
+	IssueOrderToBot@AI:
+		OrderName: Unload
+		RequiresCondition: loaded && ShouldUnload
+		OrderChance: 100
+		OrderTrigger: Periodically
+		OrderInterval: 20
 
 vehicle.troop_crawler:
 	Inherits: ^Tank
@@ -2186,8 +2186,6 @@ vehicle.troop_crawler:
 		ExitSounds: vhumexia.wav, vhumexib.wav, vhumexic.wav
 	UnloadOnCondition@No_driver:
 		RequiresCondition: driver_killed
-	AutoDeployer:
-		DeployChance: 100
 	RenderDetectionCircle:
 	DetectCloaked:
 		Range: 4c384
@@ -2195,11 +2193,12 @@ vehicle.troop_crawler:
 		VoiceSet: TroopCrawlerVoice
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, None, None, None, Cargo
-	AutoDeployer@AI:
+	IssueOrderToBot@AI:
+		OrderName: Unload
 		RequiresCondition: bot_owner && loaded
-		DeployChance: 100
-		DeployTrigger: BecomingIdle, Damage
-		DeployTicks: 45
+		OrderChance: 100
+		OrderTrigger: BecomingIdle, Damage
+		OrderInterval: 45
 
 vehicle.assault_troop_crawler:
 	Inherits: vehicle.troop_crawler
@@ -2238,12 +2237,12 @@ vehicle.assault_troop_crawler:
 	GrantConditionOnDamageState@AI:
 		Condition: ShouldUnload
 		ValidDamageStates: Critical, Heavy
-	-AutoDeployer@AI:
-	AutoDeployer@AI:
-		RequiresCondition: bot_owner && loaded && ShouldUnload
-		DeployChance: 100
-		DeployTrigger: Periodically
-		DeployTicks: 20
+	IssueOrderToBot@AI:
+		RequiresCondition: loaded && ShouldUnload
+		OrderName: Unload
+		OrderChance: 100
+		OrderTrigger: Periodically
+		OrderInterval: 20
 
 vehicle.listening_outpost:
 	Inherits: ^Tank
@@ -2252,7 +2251,6 @@ vehicle.listening_outpost:
 	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal500
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@BotOwner: ^BotOwner
 	OwnerLostAction:
 		Action: Kill
 		-RequiresCondition:
@@ -2346,11 +2344,12 @@ vehicle.listening_outpost:
 	GrantConditionOnDamageState@AI:
 		Condition: ShouldUnload
 		ValidDamageStates: Critical, Heavy
-	AutoDeployer@AI:
-		RequiresCondition: bot_owner && loaded && ShouldUnload
-		DeployChance: 100
-		DeployTrigger: Periodically
-		DeployTicks: 20
+	IssueOrderToBot@AI:
+		RequiresCondition: loaded && ShouldUnload
+		OrderName: Unload
+		OrderChance: 100
+		OrderTrigger: Periodically
+		OrderInterval: 20
 
 vehicle.attack_outpost:
 	Inherits: vehicle.listening_outpost
@@ -3455,7 +3454,7 @@ vehicle.marauder_tank:
 
 vehicle.overlord_tank:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CARGO: ^CargoPips
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
@@ -3767,6 +3766,7 @@ vehicle.emparor_overlord:
 
 vehicle.bomb_truck:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal200
@@ -3884,6 +3884,10 @@ vehicle.bomb_truck:
 	AttackFrontal:
 		FacingTolerance: 512
 		RequiresCondition: !driver_killed
+	AutoTarget:
+		ScanRadius: 5
+		InitialStance: HoldFire
+		InitialStanceAI: AttackAnything
 	Armament@PRIMARY:
 		Damage: 1000
 		Spread: 1c640
@@ -4023,7 +4027,6 @@ vehicle.nuke_cannon:
 	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
-	Inherits@BotOwner: ^BotOwner
 	GivesExperience:
 		Experience: 50
 	GivesExperienceMultiplier@RANK-1:
@@ -4175,12 +4178,12 @@ vehicle.nuke_cannon:
 		Damage: 400
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.neutron_shells
-	AutoDeployer@AI:
-		RequiresCondition: bot_owner && neutron_shells
-		DeployChance: 100
-		DeployTrigger: Periodically
-		DeployTicks: 500
-		UndeployTicks: 500
+	IssueOrderToBot@AI:
+		RequiresCondition: neutron_shells
+		OrderName: GrantConditionOnDeploy
+		OrderChance: 100
+		OrderTrigger: Periodically
+		OrderInterval: 500
 
 vehicle.combat_cycle:
 	Inherits: ^Vehicle
