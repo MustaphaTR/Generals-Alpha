@@ -940,11 +940,11 @@ fake.stinger_site:
 		Damage: 20
 		ReloadDelay: 30
 		Range: 5c640, 10c0
-		Stats: Armor, Sight, Mob
+		Stats: Armor, Sight, Drones
 		-Upgrades:
 	ActorStatOverride@Enemy:
 		TooltipActor: building.stinger_site
-		Stats: Armor, Sight, Mob, Damage, ReloadDelay, MinRange, None, MaxRange
+		Stats: Armor, Sight, Drones, Damage, ReloadDelay, MinRange, None, MaxRange
 		Health: 100000
 	ActorStatOverride@Enemy_UPGRADE:
 		Upgrades: upgrade.ap_rockets
