@@ -506,6 +506,7 @@ generals_power.frenzy1:
 	Buildable@Rank_1:
 		Queue: queue.inf_gen_generals_power, queue.prc_generals_power_merged
 		BuildPaletteOrder: 6
+		BuildLimit: 1
 		Prerequisites: prerequisite.has_points, ~prerequisite.zh_units
 		Description: Enables Frenzy support power from Command Center.
 	ProvidesPrerequisite@powername:
@@ -634,6 +635,7 @@ generals_power.cash_bounty1:
 		Queue: queue.boss_gen_generals_power, queue.boss_gen_generals_power_merged
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
+		BuildLimit: 1
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points
 		Description: Enemy units give 5% of their worth on death.
 	BuildPaletteOrderModifier@Stealth:
@@ -699,6 +701,7 @@ generals_power.gps_scrambler1:
 	Buildable@Rank_3:
 		Queue: queue.stealth_gen_generals_power, queue.gla_generals_power_merged
 		BuildPaletteOrder: 13
+		BuildLimit: 1
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~prerequisite.zh_units
 		Description: Enables GPS Scrambler support power from Command Center.
 	BuildPaletteOrderModifier@GLA_Merged:
