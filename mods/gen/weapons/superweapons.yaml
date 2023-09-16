@@ -177,12 +177,14 @@ bomb.carpet:
 	ReloadDelay: 4
 	Range: 5c768
 	Report: cannon2.aud
+	ValidTargets: Ground, Water, GroundActor, WaterActor
 	Projectile: GravityBomb
 		Image: orcabomb
 		Shadow: true
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
 		Damage: 30000
+		ValidTargets: GroundActor, WaterActor
 		Versus:
 			infantry.stinger_site: 10
 			vehicle.battle_bus.crate-1: 90
