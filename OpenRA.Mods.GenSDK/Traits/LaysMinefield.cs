@@ -20,6 +20,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 	[Desc("This actor places mines around itself, and replenishes them after a while.")]
 	public class LaysMinefieldInfo : PausableConditionalTraitInfo
 	{
+		[ActorReference]
 		[FieldLoader.Require]
 		[Desc("Types of mines to place, if multipile is defined, a random one will be selected.")]
 		public readonly HashSet<string> Mines = new();
@@ -29,10 +30,10 @@ namespace OpenRA.Mods.GenSDK.Traits
 		public readonly CVec[] Locations = Array.Empty<CVec>();
 
 		[Desc("Initial delay to create the mines.")]
-		public readonly int InitialDelay = 1;
+		public readonly int InitialDelay = 0;
 
-		[Desc("Recreate the mines, if they are destroyed after this much of time. Use -1 to disable respawn.")]
-		public readonly int RecreationInterval = 2500;
+		[Desc("Recreate the mines, if they are destroyed after this much of time.")]
+		public readonly int RecreationInterval = 500;
 
 		[Desc("Remove the mines if the trait gets disabled.")]
 		public readonly bool RemoveOnDisable = true;
@@ -40,18 +41,19 @@ namespace OpenRA.Mods.GenSDK.Traits
 		public override object Create(ActorInitializer init) { return new LaysMinefield(this); }
 	}
 
-	public class LaysMinefield : PausableConditionalTrait<LaysMinefieldInfo>, INotifyKilled, INotifyOwnerChanged, INotifyActorDisposing, ITick, ISync
+	public class LaysMinefield : PausableConditionalTrait<LaysMinefieldInfo>, INotifyKilled, INotifyOwnerChanged, INotifyActorDisposing, ITick
 	{
-		[Sync]
-		int ticks;
-
-		bool spawned;
 		readonly List<Actor> mines = new();
+		readonly List<int> ticks = new();
 
 		public LaysMinefield(LaysMinefieldInfo info)
 			: base(info)
 		{
-			ticks = Info.InitialDelay;
+			for (var i = 0; i < Info.Locations.Length; i++)
+			{
+				mines.Add(null);
+				ticks.Add(Info.InitialDelay);
+			}
 		}
 
 		void ITick.Tick(Actor self)
@@ -59,59 +61,58 @@ namespace OpenRA.Mods.GenSDK.Traits
 			if (IsTraitPaused || IsTraitDisabled)
 				return;
 
-			if (spawned && Info.RecreationInterval < 0)
-				return;
-
-			if (--ticks < 0)
+			for (var i = 0; i < mines.Count; i++)
 			{
-				spawned = true;
-				ticks = Info.RecreationInterval;
-				SpawnMines(self);
+				if (mines[i] != null && !mines[i].IsDead)
+					continue;
+
+				if (--ticks[i] < 0)
+					SpawnMine(self, i);
 			}
 		}
 
-		public void SpawnMines(Actor self)
+		public void SpawnMine(Actor self, int index)
 		{
-			foreach (var offset in Info.Locations)
+			var cell = self.Location + Info.Locations[index];
+			var actor = Info.Mines.Random(self.World.SharedRandom).ToLowerInvariant();
+			var ai = self.World.Map.Rules.Actors[actor];
+			var ip = ai.TraitInfoOrDefault<IPositionableInfo>();
+
+			ticks[index] = Info.RecreationInterval;
+			if (ip != null && !ip.CanEnterCell(self.World, null, cell))
+				return;
+
+			self.World.AddFrameEndTask(w =>
 			{
-				var cell = self.Location + offset;
-				var actor = Info.Mines.Random(self.World.SharedRandom).ToLowerInvariant();
-				var ai = self.World.Map.Rules.Actors[actor];
-				var ip = ai.TraitInfoOrDefault<IPositionableInfo>();
-
-				if (ip != null && !ip.CanEnterCell(self.World, null, cell))
-					continue;
-
-				self.World.AddFrameEndTask(w =>
+				var mine = w.CreateActor(actor.ToLowerInvariant(), new TypeDictionary
 				{
-					var mine = w.CreateActor(actor.ToLowerInvariant(), new TypeDictionary
-					{
-						new OwnerInit(self.Owner),
-						new LocationInit(cell)
-					});
-
-					mines.Add(mine);
+					new OwnerInit(self.Owner),
+					new LocationInit(cell)
 				});
-			}
+
+				mines[index] = mine;
+			});
 		}
 
 		public void RemoveMines()
 		{
-			foreach (var mine in mines)
-				mine.Dispose();
-
-			mines.Clear();
+			for (var i = 0; i < mines.Count; i++)
+			{
+				mines[i]?.Dispose();
+				mines[i] = null;
+			}
 		}
 
 		void INotifyOwnerChanged.OnOwnerChanged(Actor self, Player oldOwner, Player newOwner)
 		{
 			foreach (var mine in mines)
-				mine.ChangeOwnerSync(newOwner);
+				mine?.ChangeOwnerSync(newOwner);
 		}
 
 		protected override void TraitDisabled(Actor self)
 		{
-			ticks = Info.InitialDelay;
+			for (var i = 0; i < mines.Count; i++)
+				ticks[i] = Info.InitialDelay;
 
 			if (Info.RemoveOnDisable)
 				RemoveMines();
