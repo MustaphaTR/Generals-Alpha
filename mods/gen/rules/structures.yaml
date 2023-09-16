@@ -3378,9 +3378,8 @@ building.usa_airfield:
 		ProductionType: queue.super_gen_aircraft
 	ProductionBar@Merged:
 		ProductionType: queue.usa_aircraft_merged
-	LaysMinefield@DOCK:
-		Mines: hack.dock
-		RecreationInterval: -1
+	SpawnNeighboringActors@DOCK:
+		ActorTypes: hack.dock
 		Locations: 2,2, 3,1, 3,2
 	WithIdleOverlay@DISH:
 		Sequence: idle-dish
@@ -3504,9 +3503,8 @@ building.prc_airfield:
 		ProductionType: queue.boss_gen_aircraft
 	ProductionBar@Boss_Merged:
 		ProductionType: queue.boss_gen_aircraft_merged
-	LaysMinefield@DOCK:
-		Mines: hack.dock
-		RecreationInterval: -1
+	SpawnNeighboringActors@DOCK:
+		ActorTypes: hack.dock
 		Locations: 0,1, 2,1, 3,1
 	Selectable:
 		Bounds: 4096, 2730, 0, -170
