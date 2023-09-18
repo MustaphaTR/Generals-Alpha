@@ -693,9 +693,11 @@ upgrade.isotope_stability:
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 1500
+		BuildDurationModifier: 100
 		BuildLimit: 1
 		Prerequisites: !techlevel.infonly
 		Description: Makes Overlord Tank not explode on death.
+		ReadyAudio: UpgradeComplete
 		ReadyTextNotification: Upgrade Complete: Isotope Stability
 	Valued:
 		Cost: 2000
@@ -858,6 +860,7 @@ upgrade.nuclear_tanks:
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 1500
+		BuildDurationModifier: 100
 		BuildLimit: 1
 		Prerequisites: !upgrade.nuclear_tanks, !techlevel.infonly
 		Description: Increases Overlord speed by 50%.
@@ -890,6 +893,7 @@ upgrade.uranium_shells:
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		BuildDuration: 1500
+		BuildDurationModifier: 100
 		BuildLimit: 1
 		Prerequisites: !upgrade.uranium_shells, !techlevel.infonly
 		Description: Increases Overlord damage by 25%.
@@ -921,9 +925,11 @@ upgrade.neutron_shells:
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 1500
+		BuildDurationModifier: 100
 		BuildLimit: 1
 		Prerequisites: !upgrade.neutron_shells, ~prerequisite.zh_units, !techlevel.infonly
 		Description: Allows Nuke Cannons to be switched to fire Neutron Shells.
+		ReadyAudio: UpgradeComplete
 		ReadyTextNotification: Upgrade Complete: Neutron Shells
 	ProvidesPrerequisite@upgradename:
 		Prerequisite: upgrade.neutron_shells
