@@ -569,6 +569,7 @@ explosion.mine:
 	Warhead@2Eff: CreateEffect
 		Explosions: large_explosion
 		ImpactSounds: gexpmina.wav, gexpminb.wav
+		ImpactActors: false
 	Warhead@Smu: LeaveSmudge
 		SmudgeType: Crater
 		ValidTargets: Ground, GroundActor
@@ -593,6 +594,7 @@ explosion.mine.neutron:
 	Warhead@3Eff: CreateEffect
 		Explosions: large_explosion
 		ImpactSounds: mineblo1.aud
+		ImpactActors: false
 
 OreExplosion:
 	Warhead@1Dam: SpreadDamage
