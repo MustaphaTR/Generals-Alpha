@@ -647,6 +647,7 @@ aircraft.raptor:
 		Condition: enable-smoke
 	ActorStatValues:
 		Damage: 100
+		ShowShield: false
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Upgrades: upgrade.adv_training, upgrade.laser_guided_missiles
 	ActorStatOverride@ZH_UNITS:
@@ -863,6 +864,7 @@ aircraft.stealth_fighter:
 		Condition: enable-smoke
 	ActorStatValues:
 		Damage: 100
+		ShowShield: false
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.adv_training, upgrade.laser_guided_missiles
 	ActorStatOverride@ZH_UNITS:
@@ -1045,6 +1047,7 @@ aircraft.aurora:
 		Condition: enable-smoke
 	ActorStatValues:
 		Damage: 400
+		ShowShield: false
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.adv_training
 	ActorStatOverride@ZH_UNITS:
@@ -1577,6 +1580,7 @@ aircraft.comanche:
 		Condition: enable-smoke
 	ActorStatValues:
 		Armaments: primary
+		ShowShield: false
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.adv_training, upgrade.rocket_pods
 	ActorStatOverride@ZH_UNITS:
