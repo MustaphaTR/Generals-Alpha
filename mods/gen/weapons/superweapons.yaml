@@ -319,9 +319,9 @@ parabomb.helix.nuke:
 Atomic:
 	ValidTargets: Ground, Water, GroundActor, WaterActor, Underwater, AirborneActor, Trees
 	Warhead@1Dam_impact: SpreadDamage
-		Spread: 0c768
-		Damage: 15000
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Spread: 5c256
+		Damage: 350000
+		Falloff: 100, 100
 		ValidTargets: GroundActor, WaterActor, Underwater, AirborneActor, Trees
 		Versus:
 			vehicle.battle_bus.crate-1: 90
@@ -349,81 +349,13 @@ Atomic:
 		ImpactActors: false
 	Warhead@5Radio: CreateTintedCells
 		LayerName: radioactivity
-		Spread: 1024
+		Spread: 1152
 		Level: 6000
 		Falloff: 100, 80, 60, 40, 20, 0
 		MaxLevel: 6000
-	Warhead@6Dam_areanuke1: SpreadDamage
-		Spread: 1c512
-		Damage: 6000
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: GroundActor, WaterActor, Underwater, AirborneActor, Trees
-		Versus:
-			vehicle.battle_bus.crate-1: 90
-			vehicle.battle_bus.crate-2: 80
-			husk.battle_bus.crate-1: 80
-			husk.battle_bus.crate-2: 70
-			aircraft.normal.countermeasures: 90
-			aircraft.comanche: 130
-			aircraft.comanche.countermeasures: 110
-			aircraft.chinook: 50
-			building.tough: 80
-			building.internet_center: 70
-		DamageTypes: TriggerProne, FireDeath, Incendiary, IgnoreCM
 	Warhead@9Eff_areanuke1: CreateEffect
 		ImpactSounds: kaboom22.aud
 		ImpactActors: false
-	Warhead@11Dam_areanuke2: SpreadDamage
-		Spread: 2c256
-		Damage: 6000
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: GroundActor, WaterActor, Underwater, AirborneActor, Trees
-		Versus:
-			vehicle.battle_bus.crate-1: 90
-			vehicle.battle_bus.crate-2: 80
-			husk.battle_bus.crate-1: 80
-			husk.battle_bus.crate-2: 70
-			aircraft.normal.countermeasures: 90
-			aircraft.comanche: 130
-			aircraft.comanche.countermeasures: 110
-			aircraft.chinook: 50
-			building.tough: 80
-			building.internet_center: 70
-		DamageTypes: TriggerProne, FireDeath, Incendiary, IgnoreCM
-	Warhead@16Dam_areanuke3: SpreadDamage
-		Spread: 3c0
-		Damage: 6000
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: GroundActor, WaterActor, Underwater, AirborneActor, Trees
-		Versus:
-			vehicle.battle_bus.crate-1: 90
-			vehicle.battle_bus.crate-2: 80
-			husk.battle_bus.crate-1: 80
-			husk.battle_bus.crate-2: 70
-			aircraft.normal.countermeasures: 90
-			aircraft.comanche: 130
-			aircraft.comanche.countermeasures: 110
-			aircraft.chinook: 50
-			building.tough: 80
-			building.internet_center: 70
-		DamageTypes: TriggerProne, FireDeath, Incendiary, IgnoreCM
-	Warhead@21Dam_areanuke4: SpreadDamage
-		Spread: 3c768
-		Damage: 6000
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		ValidTargets: GroundActor, WaterActor, Underwater, AirborneActor, Trees
-		Versus:
-			vehicle.battle_bus.crate-1: 90
-			vehicle.battle_bus.crate-2: 80
-			husk.battle_bus.crate-1: 80
-			husk.battle_bus.crate-2: 70
-			aircraft.normal.countermeasures: 90
-			aircraft.comanche: 130
-			aircraft.comanche.countermeasures: 110
-			aircraft.chinook: 50
-			building.tough: 80
-			building.internet_center: 70
-		DamageTypes: TriggerProne, FireDeath, Incendiary, IgnoreCM
 	Warhead@21Shake: ShakeScreen
 		Duration: 20
 		Intensity: 5
@@ -435,11 +367,11 @@ Atomic:
 aoe.particle_beam:
 	ValidTargets: Ground, Water, GroundActor, WaterActor, Underwater, AirborneActor, Trees
 	Range: 1c0
-	ReloadDelay: 2
+	ReloadDelay: 6
 	Projectile: InstantHit
 	Warhead@1Dam: IgnoreHeightDamage
-		Spread: 1c512
-		Damage: 3200
+		Spread: 1c256
+		Damage: 40000
 		ValidTargets: GroundActor, WaterActor, Underwater, AirborneActor, Trees
 		Versus:
 			infantry.normal: 150

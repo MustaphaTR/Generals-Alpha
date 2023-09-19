@@ -1285,10 +1285,10 @@ missile.scud_launcher.crate-2.explosive:
 
 missile.scud_storm:
 	Inherits: missile.scud_launcher.toxin
-	FirstBurstTargetOffset: -2048,0,0
-	FollowingBurstTargetOffset: 1024,0,0
+	FirstBurstTargetOffset: -1024,0,0
+	FollowingBurstTargetOffset: 2048,0,0
 	ReloadDelay: 90
-	Burst: 4
+	Burst: 2
 	MinRange: 0c0
 	Range: 9000c0
 	Projectile: Bullet
@@ -1296,11 +1296,15 @@ missile.scud_storm:
 		Inaccuracy: 3c0
 		InaccuracyType: Absolute
 	Warhead@1Dam: SpreadDamage
-		Damage: 19000
+		ValidTargets: GroundActor, WaterActor, AirborneActor
+		Damage: 39375 # 35000
+		Spread: 1c256
+		AffectsParent: true
 	Warhead@2Dam: SpreadDamage
 		ValidTargets: GroundActor, WaterActor, AirborneActor
-		Damage: 9000
-		Spread: 3c0
+		Damage: 16875 # 15000
+		Spread: 5c0
+		AffectsParent: true
 	Warhead@3Eff: CreateEffect
 		Explosions: small_clsn_fx, small_clsn
 	Warhead@7Rev: RevealShroud
@@ -1317,6 +1321,8 @@ missile.scud_storm.beta:
 
 missile.scud_storm.gamma:
 	Inherits: missile.scud_storm
+	Warhead@1Dam: SpreadDamage
+		Damage: 45000 # 40000
 	Warhead@3Eff_impact: CreateEffect
 		Explosions: anth_gamma_explo
 		ExplosionPalette: cnc
@@ -1326,8 +1332,8 @@ missile.scud_storm.gamma:
 missile.scud_storm.demo:
 	Inherits: missile.scud_storm
 	Warhead@1Dam: SpreadDamage
-		Spread: 1c0
-		Damage: 27000
+		Spread: 1c896
+		Damage: 50625 # 45000
 	Warhead@3Eff: CreateEffect
 		Explosions: big_clsn, big_clsn_fx
 	-Warhead@3Eff_impact:
