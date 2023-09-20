@@ -835,7 +835,9 @@ infantry.stinger_soldier:
 	Interactable:
 	Mobile:
 		CanTurnWhileDisabled: true
-		RequiresCondition: !disable_movement
+		ImmovableCondition: disable_movement
+		RequireForceMoveCondition: disable_movement
+	RejectsMoveToAttack:
 	GrantConditionAfterDelay:
 		Condition: disable_movement
 		ShowSelectionBar: false
@@ -1583,8 +1585,8 @@ infantry.hacker:
 	Mobile:
 		Speed: 20
 		Voice: Move
-		PauseOnCondition: deployed
-		RequireForceMoveCondition: !bot_owner && deployed
+		ImmovableCondition: !undeployed
+		RequireForceMoveCondition: !bot_owner && !undeployed
 	SpeedMultiplier@DAMAGED:
 		Modifier: 50
 	Passenger:
