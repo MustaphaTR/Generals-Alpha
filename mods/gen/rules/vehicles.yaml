@@ -4139,6 +4139,9 @@ vehicle.nuke_cannon:
 		Types: Veterancy
 		Prerequisites: generals_power.arty_training
 	AcceptsDeliveredExperience:
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	GrantConditionOnPrerequisite@NEUTRON_SHELLS:
 		Condition: neutron_shells
 		Prerequisites: upgrade.neutron_shells
@@ -4177,7 +4180,9 @@ vehicle.nuke_cannon:
 	ActorStatValues:
 		Damage: 400
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.neutron_shells
+		RequiresCondition: zh_units
 	IssueOrderToBot@AI:
 		RequiresCondition: neutron_shells
 		OrderName: GrantConditionOnDeploy
