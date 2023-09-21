@@ -235,6 +235,7 @@ parabomb.cluster_mines:
 	Inherits: ^ParaBomb
 	Warhead@2Spawner: SpawnActor
 		Actors: hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine, hack.mine
+		ValidTargets: Ground, GroundActor, Water, WaterActor
 
 parabomb.helix:
 	Inherits: ^ParaBomb
