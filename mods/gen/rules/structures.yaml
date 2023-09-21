@@ -2425,6 +2425,9 @@ building.gatling_cannon:
 	ActorStatValues:
 		Damage: 10
 		Stats: Armor, Sight, Power, Damage, ReloadDelay, MinRange, None, MaxRange
+		Upgrades: upgrade.chain_gun, upgrade.land_mines
+	ActorStatOverride@ZH_UNITS:
+		Upgrades: upgrade.chain_gun, upgrade.land_mines, upgrade.neutron_mines
 
 building.firebase:
 	Inherits: ^Defense
