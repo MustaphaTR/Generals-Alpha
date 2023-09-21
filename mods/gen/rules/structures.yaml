@@ -3754,6 +3754,7 @@ building.strategy_center:
 	Exit:
 	AirstrikePower@CARPET_BOMB:
 		PauseOnCondition: emp || hacked || lowpower
+		StartFullyChargedForTheFirstTime: true
 		Prerequisites:
 			1: generals_power.carpet_bombing.airforce
 		Icons:
@@ -3781,6 +3782,7 @@ building.strategy_center:
 		OrderName: CarpetBombingUSAPowerInfoOrder
 	ProduceActorPower@INTELLIGENCE:
 		PauseOnCondition: emp || hacked
+		StartFullyChargedForTheFirstTime: true
 		Prerequisites:
 			1: prerequisite.zh_units
 		Names:
@@ -4157,6 +4159,7 @@ building.detention_camp:
 	Exit:
 	ProduceActorPower@INTELLIGENCE:
 		PauseOnCondition: emp || hacked
+		StartFullyChargedForTheFirstTime: true
 		Prerequisites:
 			1: !prerequisite.zh_units
 		Names:
