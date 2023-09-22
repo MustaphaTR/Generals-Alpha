@@ -2062,6 +2062,7 @@ infantry.jarmen_kell:
 	Buildable@Boss:
 		Queue: queue.boss_gen_infantry
 		BuildPaletteOrder: 9
+		ForceIconLocation: true
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.scud_storm, !prerequisite.enough_jarmen_kell, !techlevel.nosw
