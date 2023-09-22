@@ -380,7 +380,7 @@ upgrade.mig_armor:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1000
-		Description: Increases MiGs' armor.
+		Description: Increases MiGs' health by 25%.
 		ReadyAudio: MiGArmor
 		ReadyTextNotification: Upgrade Complete: MiG Armor
 	Valued:
@@ -445,7 +445,7 @@ upgrade.drone_armor:
 		Queue: queue.strategy_center, queue.air_gen_strategy_center
 		BuildPaletteOrder: 4
 		BuildDuration: 1000
-		Description: Increases Drones' armor by 50%.
+		Description: Increases Drones' health by 25%.
 		ReadyAudio: DroneArmor
 		ReadyTextNotification: Upgrade Complete: Drone Armor
 	Valued:
@@ -461,7 +461,7 @@ upgrade.composite_armor:
 		Queue: queue.strategy_center
 		BuildPaletteOrder: 5
 		BuildDuration: 1500
-		Description: Increases Crusader Tank armor by 40%.\n\nIncreases Paladin and Microwave Tank armor by 20%.
+		Description: Increases Crusader Tank health by 40%.\n\nIncreases Paladin and Microwave Tank health by 20%.
 		Prerequisites: !techlevel.infonly
 		ReadyAudio: CompositeArmor
 		ReadyTextNotification: Upgrade Complete: Composite Armor
@@ -472,7 +472,7 @@ upgrade.composite_armor:
 		BuildDurationModifier: 100
 		BuildLimit: 1
 		Prerequisites: !techlevel.infonly
-		Description: Increases Paladin Tank armor by 20%.\n\nIncreases Gatling and Dragon Tank armor by 33%.
+		Description: Increases Paladin Tank health by 20%.\n\nIncreases Gatling and Dragon Tank health by 33%.
 		ReadyAudio: CompositeArmor
 		ReadyTextNotification: Upgrade Complete: Composite Armor
 	Valued:
