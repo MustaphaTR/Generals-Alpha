@@ -518,6 +518,9 @@ aircraft.mig:
 	ActorStatOverride@Nuke:
 		Upgrades: upgrade.mig_armor, upgrade.tactical_nuke_mig
 		RequiresCondition: nuke || merged
+	ActorStatOverride@MIG_ARMOR:
+		Health: 20000
+		RequiresCondition: mig_armor
 
 aircraft.raptor:
 	Inherits: ^Fighter

@@ -794,6 +794,9 @@ vehicle.crusader_tank:
 		Upgrades: upgrade.adv_training, upgrade.composite_armor, upgrade.scout_drone, upgrade.battle_drone
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.composite_armor, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
+	ActorStatOverride@COMPOSITE_ARMOR:
+		Health: 68000
+		RequiresCondition: composite_armor
 
 vehicle.laser_tank:
 	Inherits: vehicle.crusader_tank
@@ -1179,6 +1182,9 @@ vehicle.sentry_drone:
 	ActorStatOverride@Boss:
 		Upgrades: upgrade.sentry_gun
 		RequiresCondition: boss
+	ActorStatOverride@DRONE_ARMOR:
+		Health: 37500
+		RequiresCondition: drone_armor
 
 vehicle.quad_cannon:
 	Inherits: ^Tank
@@ -1356,7 +1362,7 @@ vehicle.gatling_tank:
 		Class: vehicle.gatling_tank
 	DamageMultiplier@COMPOSITE_ARMOR:
 		RequiresCondition: composite_armor && boss
-		Modifier: 74
+		Modifier: 75
 	Turreted:
 		TurnSpeed: 32
 		Offset: 0,0,160
@@ -1428,6 +1434,9 @@ vehicle.gatling_tank:
 	ActorStatOverride@Boss:
 		Upgrades: upgrade.chain_gun, upgrade.composite_armor
 		RequiresCondition: boss
+	ActorStatOverride@COMPOSITE_ARMOR:
+		Health: 40000
+		RequiresCondition: composite_armor && boss
 
 vehicle.toxin_tractor:
 	Inherits: ^Tank
@@ -1706,6 +1715,9 @@ vehicle.dragon_tank:
 	ActorStatOverride@Boss:
 		Upgrades: upgrade.black_napalm, upgrade.composite_armor
 		RequiresCondition: boss
+	ActorStatOverride@COMPOSITE_ARMOR:
+		Health: 38000
+		RequiresCondition: composite_armor && boss
 
 vehicle.rocket_buggy:
 	Inherits: ^Vehicle
@@ -2499,6 +2511,9 @@ vehicle.microwave_tank:
 	ActorStatOverride@Air_ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
 		RequiresCondition: (air || super) && !merged && zh_units
+	ActorStatOverride@COMPOSITE_ARMOR:
+		Health: 58000
+		RequiresCondition: composite_armor
 
 vehicle.ecm_tank:
 	Inherits: ^Tank
@@ -3134,6 +3149,9 @@ vehicle.paladin_tank:
 		Upgrades: upgrade.adv_training, upgrade.composite_armor, upgrade.scout_drone, upgrade.battle_drone
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.composite_armor, upgrade.scout_drone, upgrade.battle_drone, upgrade.hellfire_drone
+	ActorStatOverride@COMPOSITE_ARMOR:
+		Health: 60000
+		RequiresCondition: composite_armor
 
 vehicle.marauder_tank:
 	Inherits: ^Tank
