@@ -1954,10 +1954,14 @@ building.patriot:
 		Weapon: missile.patriot.ground
 		LocalOffset: 0,0,320
 		MuzzleSequence: muzzle
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
 	Armament@AA:
 		Weapon: missile.patriot.air
 		LocalOffset: 0,0,320
 		MuzzleSequence: muzzle
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
 	### Share target
 	GrantConditionOnAttack@share-target:
 		Condition: share-target
@@ -2102,10 +2106,14 @@ building.laser_turret:
 		Weapon: laser.laser_turret.ground
 		LocalOffset: 512,0,112
 		MuzzleSequence: muzzle
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
 	Armament@AA:
 		Weapon: laser.laser_turret.air
 		LocalOffset: 512,0,112
 		MuzzleSequence: muzzle
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
 	### Share target
 	GrantConditionOnAttack@share-target:
 		Condition: share-target
@@ -2390,10 +2398,14 @@ building.gatling_cannon:
 		Weapon: gatling.gatling_cannon.ground
 		LocalOffset: 520,100,450, 520,-150,450
 		MuzzleSequence: muzzle
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
 	Armament@GatlingAA:
 		Weapon: gatling.gatling_cannon.air
 		LocalOffset: 520,100,450, 520,-150,450
 		MuzzleSequence: muzzle
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
 	WithRangeCircle:
 		Range: 5c640
 	WithRangeCircle@AA:
@@ -3223,8 +3235,12 @@ building.stinger_site:
 		PauseOnCondition: emp || hacked || leaflet || !enable_weapon
 	Armament@PRIMARY:
 		Weapon: hack.stinger_site.ground
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
 	Armament@SECONDARY:
 		Weapon: hack.stinger_site.air
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
 	BodyOrientation:
 		QuantizedFacings: 8
 	ProximityExternalCondition@Cloak:

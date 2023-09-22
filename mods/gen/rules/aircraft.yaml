@@ -383,53 +383,61 @@ aircraft.mig:
 		Weapon: missile.mig.ground
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
+		ReloadingCondition: reload-ground
+		PauseOnCondition: !ammo || reload-air
 		RequiresCondition: !black_napalm && !nuke && !merged
-		PauseOnCondition: !ammo
 	Armament@Blue:
 		Damage: 125
 		Weapon: missile.mig.ground.blue
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
+		ReloadingCondition: reload-ground
+		PauseOnCondition: !ammo || reload-air
 		RequiresCondition: black_napalm && !nuke && !merged
-		PauseOnCondition: !ammo
 	Armament@Nuke:
 		Damage: 140
 		Weapon: missile.mig.ground.nuke
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
+		ReloadingCondition: reload-ground
+		PauseOnCondition: !ammo || reload-air
 		RequiresCondition: !tactical_nuke_mig && (nuke || merged)
-		PauseOnCondition: !ammo
 	Armament@TacticalNuke:
 		Damage: 200
 		Weapon: missile.mig.ground.tactical_nuke
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
+		ReloadingCondition: reload-ground
+		PauseOnCondition: !ammo || reload-air
 		RequiresCondition: tactical_nuke_mig && (nuke || merged)
-		PauseOnCondition: !ammo
 	Armament@Red_AA:
 		Weapon: missile.mig.air
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
+		ReloadingCondition: reload-air
+		PauseOnCondition: !ammo || reload-ground
 		RequiresCondition: !black_napalm && !nuke && !merged
-		PauseOnCondition: !ammo
 	Armament@Blue_AA:
 		Weapon: missile.mig.air.blue
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
+		ReloadingCondition: reload-air
+		PauseOnCondition: !ammo || reload-ground
 		RequiresCondition: black_napalm && !nuke && !merged
-		PauseOnCondition: !ammo
 	Armament@Nuke_AA:
 		Weapon: missile.mig.air.nuke
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
+		ReloadingCondition: reload-air
+		PauseOnCondition: !ammo || reload-ground
 		RequiresCondition: !tactical_nuke_mig && (nuke || merged)
-		PauseOnCondition: !ammo
 	Armament@TacticalNuke_AA:
 		Weapon: missile.mig.air.tactical_nuke
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
+		ReloadingCondition: reload-air
+		PauseOnCondition: !ammo || reload-ground
 		RequiresCondition: tactical_nuke_mig && (nuke || merged)
-		PauseOnCondition: !ammo
 	AttackAircraft:
 		FacingTolerance: 80
 		PauseOnCondition:  leaflet
@@ -576,12 +584,14 @@ aircraft.raptor:
 		Weapon: missile.raptor.ground
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
-		PauseOnCondition: !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: !ammo || reload-air
 	Armament@AA:
 		Weapon: missile.raptor.air
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
-		PauseOnCondition: !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: !ammo || reload-ground
 	AttackAircraft:
 		FacingTolerance: 80
 		PauseOnCondition:  leaflet

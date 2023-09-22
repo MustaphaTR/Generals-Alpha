@@ -147,10 +147,14 @@ vessel.destroyer:
 		Weapon: missile.destroyer.ground
 		LocalOffset: 0,-100,0, 0,100,0
 		LocalYaw: 64, -64
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
 	Armament@AA:
 		Weapon: missile.destroyer.air
 		LocalOffset: 0,-100,0, 0,100,0
 		LocalYaw: 64, -64
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
 	AttackTurreted:
 		PauseOnCondition: hacked || emp
 	SelectionDecorations:

@@ -702,15 +702,23 @@ infantry.conscript:
 	Armament@AG:
 		Weapon: missile.missile_defender.ground
 		LocalOffset: 0,0,555
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
 	Armament@AA:
 		Weapon: missile.missile_defender.air
 		LocalOffset: 0,0,555
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
 	Armament@AG_GARRISON:
 		Name: garrison
 		Weapon: missile.missile_defender.garrison.ground
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
 	Armament@AA_GARRISON:
 		Name: garrison
 		Weapon: missile.missile_defender.garrison.air
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
 	TakeCover:
 		ProneOffset: 384,0,-395
 	AttackFrontal:
@@ -759,6 +767,8 @@ infantry.missile_defender:
 		Cursor: ability
 		OutsideRangeCursor: ability
 		TargetRelationships: None
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
 		RequiresCondition: enable_lockattack
 	Armament@LaserLock_MissileAA:
 		Weapon: missile.missile_defender.locked.air
@@ -766,6 +776,8 @@ infantry.missile_defender:
 		TargetRelationships: None
 		Cursor: ability
 		OutsideRangeCursor: ability
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
 		RequiresCondition: enable_lockattack
 	GrantConditionOnAttack@EnableDisable:
 		Condition: enable_lockattack
@@ -972,9 +984,13 @@ infantry.grenadier:
 		Weapon: grenade.grenadier
 		LocalOffset: 0,0,555
 		FireDelay: 15
+		-ReloadingCondition:
+		-PauseOnCondition:
 	-Armament@AA:
 	Armament@AG_GARRISON:
 		Weapon: grenade.grenadier.garrison
+		-ReloadingCondition:
+		-PauseOnCondition:
 	-Armament@AA_GARRISON:
 	TakeCover:
 		ProneOffset: 256,64,-331
