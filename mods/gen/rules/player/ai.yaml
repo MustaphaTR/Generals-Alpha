@@ -38,20 +38,28 @@ Player:
 		CommandCenterTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar
 		RequiresCondition: enable-hard-ai
 
- 	## Give AI huge amount of cash to allow it build expensive unit
-	CashTrickler@EasyAI:
+ 	## Hack: give AI huge amount of cash at game start to allow it build expensive unit
+	GrantConditionAfterDelay@GiveStartCash:
+		Condition: given-start-cash
+	CashTrickler@EasyStart:
 		Interval: 5000
-		Amount: 1000
+		Amount: 8000
 		ShowTicks: false
-		RequiresCondition: enable-easy-ai
-	CashTrickler@NormalAI: ## Give AI huge amount of cash to allow it build expensive unit
-		Interval: 4000
-		Amount: 2000
+		RequiresCondition: enable-easy-ai && !given-start-cash
+	CashTrickler@NormalStart:
+		Interval: 5000
+		Amount: 16000
 		ShowTicks: false
-		RequiresCondition: enable-normal-ai
-	CashTrickler@HardAI: ## Give AI huge amount of cash to allow it build expensive unit
-		Interval: 3000
-		Amount: 3000
+		RequiresCondition: enable-normal-ai && !given-start-cash
+	CashTrickler@HardStart:
+		Interval: 5000
+		Amount: 32000
+		ShowTicks: false
+		RequiresCondition: enable-hard-ai && !given-start-cash
+
+	CashTrickler@HardAI:
+		Interval: 8000
+		Amount: 5000
 		ShowTicks: false
 		RequiresCondition: enable-hard-ai
 
@@ -70,6 +78,7 @@ Player:
 		ExcessPowerIncrement: 2
 		ExcessPowerIncreaseThreshold: 4
 		MaxBaseRadius: 44
+		ProductionMinCashRequirement: 5000
 		PlaceDefenseTowardsEnemyChance: 67
 		# ConstructionMinimumCash: 199
 		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
@@ -266,17 +275,17 @@ Player:
 		SuggestedNavyLeaderLocomotor: locomotor.vessel
 	UnitBuilderBotModule@normal:
 		RequiresCondition: enable-any-ai
-		ProductionMinCashRequirement: 600
+		ProductionMinCashRequirement: 5001
 		# CashGeneratorTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck, infantry.hacker, infantry.super_hacker
 		SupplyCollectorTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck
 		UnitQueues: queue.usa_collector, queue.air_gen_collector, queue.gla_collector, queue.stealth_gen_collector, queue.prc_collector, queue.usa_infantry, queue.super_gen_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.gla_infantry_merged, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry, queue.boss_gen_infantry_merged, queue.soviet_infantry, queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.usa_vehicle_merged, queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle, queue.gla_vehicle_merged, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.usa_command_center, queue.gla_command_center, queue.stealth_gen_command_center, queue.prc_command_center, queue.vessel, queue.drone, queue.scud_launcher, queue.overlord_tank, queue.emparor_overlord, queue.emparor_overlord_merged, queue.helix, queue.inf_gen_helix, queue.nuke_gen_helix, queue.helix_merged, queue.cold_fusion_reactor, queue.laser_gen_cold_fusion_reactor, queue.advanced_cold_fusion_reactor, queue.cold_fusion_reactor_merged, queue.boss_gen_cold_fusion_reactor, queue.boss_gen_cold_fusion_reactor_merged, queue.camo_netting, queue.bomb_truck, queue.toxin_gen_bomb_truck, queue.demo_gen_bomb_truck
 		UnitsToBuild:
-			infantry.ranger: 60
-			infantry.rebel: 60
-			infantry.toxin_rebel: 40
-			infantry.red_guard: 60
-			infantry.minigunner: 60
-			infantry.conscript: 60
+			infantry.ranger: 35
+			infantry.rebel: 35
+			infantry.toxin_rebel: 35
+			infantry.red_guard: 35
+			infantry.minigunner: 35
+			infantry.conscript: 35
 			infantry.missile_defender: 35
 			infantry.rpg_trooper: 35
 			infantry.tank_hunter: 35
@@ -291,30 +300,30 @@ Player:
 			infantry.jarmen_kell.demo: 1
 			infantry.black_lotus: 1
 			infantry.super_lotus: 1
-			infantry.worker: 150
+			infantry.worker: 100
 			infantry.hijacker: 1
 			infantry.saboteur: 1
 			vehicle.supply_truck: 10
 			vehicle.ambulance: 1
 			vehicle.humvee: 35
-			vehicle.technical: 35
-			vehicle.gatling_tank: 35
-			vehicle.troop_crawler: 35
-			vehicle.assault_troop_crawler: 35
+			vehicle.technical: 10
+			vehicle.gatling_tank: 5
+			vehicle.troop_crawler: 1
+			vehicle.assault_troop_crawler: 10
 			vehicle.quad_cannon: 40
 			vehicle.tomahawk_launcher: 20
-			vehicle.inferno_cannon: 20
+			vehicle.inferno_cannon: 15
 			vehicle.scud_launcher: 20
-			vehicle.dragon_tank: 25
+			vehicle.dragon_tank: 10
 			vehicle.rocket_buggy: 25
-			vehicle.toxin_tractor: 15
-			vehicle.scorpion_tank: 35
-			vehicle.crusader_tank: 35
+			vehicle.toxin_tractor: 10
+			vehicle.scorpion_tank: 20
+			vehicle.crusader_tank: 20
 			vehicle.laser_tank: 35
-			vehicle.battlemaster_tank: 35
-			vehicle.nuclear_battlemaster_tank: 35
-			vehicle.overlord_tank: 12
-			vehicle.emparor_overlord: 12
+			vehicle.battlemaster_tank: 10
+			vehicle.nuclear_battlemaster_tank: 12
+			vehicle.overlord_tank: 60
+			vehicle.emparor_overlord: 60
 			vehicle.paladin_tank: 12
 			vehicle.marauder_tank: 12
 			vehicle.combat_cycle: 3
@@ -326,20 +335,20 @@ Player:
 			vehicle.attack_outpost: 1
 			vehicle.ecm_tank: 1
 			vehicle.microwave_tank: 1
-			vehicle.nuke_cannon: 1
+			vehicle.nuke_cannon: 10
 			vehicle.bomb_truck: 10
 			vehicle.battle_bus: 2
 			aircraft.chinook: 10
 			aircraft.combat_chinook: 1
-			aircraft.mig: 2
-			aircraft.raptor: 2
-			aircraft.king_raptor: 2
-			aircraft.stealth_fighter: 2
-			aircraft.stealth_fighter.air: 2
-			aircraft.aurora: 1
-			aircraft.aurora_alpha: 1
-			aircraft.comanche: 2
-			aircraft.helix: 2
+			aircraft.mig: 100
+			aircraft.raptor: 25
+			aircraft.king_raptor: 25
+			aircraft.stealth_fighter: 25
+			aircraft.stealth_fighter.air: 25
+			aircraft.aurora: 25
+			aircraft.aurora_alpha: 25
+			aircraft.comanche: 1
+			aircraft.helix: 1
 			aircraft.assault_helix: 1
 			vessel.gunboat: 1
 			vessel.destroyer: 1
