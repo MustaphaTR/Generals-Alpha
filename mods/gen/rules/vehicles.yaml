@@ -3620,14 +3620,14 @@ vehicle.overlord_tank:
 		Recoil: 171
 		RecoilRecovery: 30
 		MuzzleSequence: muzzle
-		RequiresCondition: !nuke
+		RequiresCondition: !nuke && !merged
 	Armament@NukeCannon:
 		Weapon: cannon.overlord_tank.nuke
 		LocalOffset: 900,180,340, 900,-180,340
 		Recoil: 171
 		RecoilRecovery: 30
 		MuzzleSequence: muzzle
-		RequiresCondition: nuke
+		RequiresCondition: nuke || merged
 	Armament@GatlingAG:
 		Weapon: gatling.gatling_cannon.ground
 		Name: gatling
