@@ -260,15 +260,18 @@ namespace OpenRA.Mods.GenSDK.Traits
 					return;
 
 				if (IsFull)
+				{
+					self.QueueActivity(order.Queued, new DeliverGoods(self, Color.Green));
+					self.ShowTargetLines();
 					return;
+				}
 
 				if (targetActor != CollectionBuilding)
 					CollectionBuilding = targetActor;
 
 				WorkingAtPortState = WorkingAtPortState.None;
 
-				var next = new FindGoods(self, Color.Green);
-				self.QueueActivity(order.Queued, next);
+				self.QueueActivity(order.Queued, new FindGoods(self, Color.Green));
 				self.ShowTargetLines();
 			}
 			else if (order.OrderString == "Deliver")
@@ -278,15 +281,18 @@ namespace OpenRA.Mods.GenSDK.Traits
 					return;
 
 				if (IsEmpty)
+				{
+					self.QueueActivity(order.Queued, new FindGoods(self, Color.Green));
+					self.ShowTargetLines();
 					return;
+				}
 
 				if (targetActor != DeliveryBuilding)
 					DeliveryBuilding = targetActor;
 
 				WorkingAtPortState = WorkingAtPortState.None;
 
-				var next = new DeliverGoods(self, Color.Green);
-				self.QueueActivity(order.Queued, next);
+				self.QueueActivity(order.Queued, new DeliverGoods(self, Color.Green));
 				self.ShowTargetLines();
 			}
 		}
@@ -322,7 +328,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 				c.Trait.WorkingAtPortState > WorkingAtPortState.None);
 		}
 
-		bool IsAcceptableTradeBuilding(Actor supplyDock, SupplyDock dock)
+		public bool IsAcceptableTradeBuilding(Actor supplyDock, SupplyDock dock)
 		{
 			return Info.SupplyTypes.Overlaps(dock.Info.SupplyTypes) && !dock.IsEmpty &&
 				Info.CollectionRelationships.HasRelationship(self.Owner.RelationshipWith(supplyDock.Owner));
