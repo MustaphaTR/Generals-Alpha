@@ -1,14 +1,12 @@
-MapFormat: 11
+MapFormat: 12
 
 RequiresMod: gen
 
-Title: 01: The Dragon Awakes (WIP)
+Title: 01: The Dragon Awakes
 
 Author: MustaphaTR
 
 Tileset: TEMPERAT
-
-SkyboxImage:
 
 MapSize: 98,98
 
@@ -2157,10 +2155,6 @@ Actors:
 	Actor690: brl3
 		Owner: Neutral
 		Location: 24,45
-	Actor691: building.bunker.filled.gla
-		Owner: GLA
-		Location: 89,50
-		TurretFacing: 368
 	car3: car.automobile_7
 		Owner: Neutral
 		Location: 33,42
@@ -2461,6 +2455,34 @@ Actors:
 		Owner: GLA
 		Location: 90,52
 		Facing: 256
+	GLAGarrisonedBuilding: v03
+		Owner: GLA
+		Location: 89,50
+	GLAGarrisonRebel1: infantry.rebel
+		Owner: GLA
+		Location: 89,49
+		SubCell: 3
+		Facing: 384
+	GLAGarrisonRebel2: infantry.rebel
+		Owner: GLA
+		Location: 88,50
+		SubCell: 3
+		Facing: 384
+	GLAGarrisonRebel3: infantry.rebel
+		Owner: GLA
+		Location: 88,51
+		SubCell: 3
+		Facing: 384
+	GLAGarrisonRebel4: infantry.rebel
+		Owner: GLA
+		Location: 89,52
+		SubCell: 3
+		Facing: 384
+	GLAGarrisonRebel5: infantry.rebel
+		Owner: GLA
+		Location: 88,52
+		SubCell: 3
+		Facing: 384
 
 Rules: gen|rules/campaign-rules.yaml, rules.yaml
 

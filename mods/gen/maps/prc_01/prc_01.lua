@@ -27,6 +27,8 @@ MiG = { "aircraft.mig" }
 MiGTargets = { MiGCutsceneST1, MiGCutsceneST2, MiGCutsceneTech1, MiGCutsceneTech2, MiGCutsceneTech3, MiGCutsceneTech4, MiGCutsceneInf1, MiGCutsceneInf2, MiGCutsceneInf3, MiGCutsceneInf4, MiGCutsceneInf5 }
 MiGTrigger = { CPos.New(53, 47), CPos.New(53, 48), CPos.New(53, 49) }
 
+Garrisoners = { GLAGarrisonRebel1, GLAGarrisonRebel2, GLAGarrisonRebel3, GLAGarrisonRebel4, GLAGarrisonRebel5 }
+
 StartingCash =
 {
 	easy = 20000,
@@ -163,6 +165,10 @@ WorldLoaded = function()
 
 	Camera.Position = PRCCommand.CenterPosition
 	InitObjectives()
+
+	Utils.Do(Garrisoners, function(a)
+		a.EnterGarrisonable(GLAGarrisonedBuilding);
+	end)
 
 	Trigger.OnEnteredFootprint(MiGTrigger, function(a, id)
 		if a.Owner == prc then
