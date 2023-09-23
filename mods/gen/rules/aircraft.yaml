@@ -1423,8 +1423,6 @@ aircraft.combat_chinook:
 		VoiceSet: CombatChinookVoice
 	Cargo:
 		LoadedCondition: loaded
-	ProvidesPrerequisite@HasCombatChinook: ## For AI Perf. 
-		Prerequisite: HasCombatChinook
 	GrantConditionOnDamageState@AI-bunker_upgrade:
 		Condition: ShouldUnload
 		ValidDamageStates: Critical, Heavy

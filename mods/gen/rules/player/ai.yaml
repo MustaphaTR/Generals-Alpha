@@ -67,6 +67,8 @@ Player:
 	ProvidesPrerequisite@AIDiscount:
 		RequiresCondition: enable-any-ai
 		Prerequisite: AIDiscount
+	GeneralCollectorBotModule@AI:
+		RequiresCondition: enable-any-ai
 	ExternalBotOrdersManager@AI:
 		RequiresCondition: enable-any-ai
 	BaseBuilderBotModule@AIBase:
@@ -505,20 +507,6 @@ Player:
 		ValidTargets: Capture
 		InvalidTargets: WaterActor
 		TargetDistances: Random
-
-	GrantConditionOnPrerequisite@HasCombatChinook:
-		Condition: has-cchinook
-		Prerequisites: HasCombatChinook
-	SendUnitToAttackBotModule@CombatChinook:
-		RequiresCondition: has-cchinook
-		ActorTypesAndAttackOptions: 
-			aircraft.combat_chinook:
-				AttackDesireOfEach: 100
-				AttackOrderName: Collect
-				AttackRequires: CargoLoaded
-		ValidTargets: SupplyDock
-		TargetDistances: Random
-		ValidRelationships: Neutral
 
 	GrantConditionOnPrerequisite@HasSaboteur:
 		Condition: has-saboteur
