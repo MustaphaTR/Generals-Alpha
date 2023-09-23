@@ -443,8 +443,6 @@ aircraft.mig:
 		PauseOnCondition:  leaflet
 	RevealsShroud:
 		Type: CenterPosition
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Type: CenterPosition
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
 	Aircraft:
@@ -596,8 +594,6 @@ aircraft.raptor:
 		FacingTolerance: 80
 		PauseOnCondition:  leaflet
 	RevealsShroud:
-		Type: CenterPosition
-	RevealsShroud@SEARCH_AND_DESTROY:
 		Type: CenterPosition
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
@@ -790,8 +786,6 @@ aircraft.stealth_fighter:
 		FacingTolerance: 80
 		PauseOnCondition:  leaflet
 	RevealsShroud:
-		Type: CenterPosition
-	RevealsShroud@SEARCH_AND_DESTROY:
 		Type: CenterPosition
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
@@ -988,8 +982,6 @@ aircraft.aurora:
 		PauseOnCondition:  leaflet
 	RevealsShroud:
 		Type: CenterPosition
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Type: CenterPosition
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
 	Aircraft:
@@ -1097,9 +1089,6 @@ aircraft.spy_drone:
 	Armor:
 		Type: aircraft.normal
 	RevealsShroud:
-		Type: CenterPosition
-		RequiresCondition: visible
-	RevealsShroud@SEARCH_AND_DESTROY:
 		Type: CenterPosition
 		RequiresCondition: visible
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
@@ -1309,8 +1298,6 @@ aircraft.chinook:
 	Inherits@SUPPLY_LINES: ^AffectedBySupplyLinesChinook
 	RevealsShroud:
 		Type: CenterPosition
-	RevealsShroud@SEARCH_AND_DESTROY:
-		Type: CenterPosition
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
 	Buildable:
@@ -1470,8 +1457,6 @@ aircraft.comanche:
 			200: rank-veteran
 			400: rank-veteran
 	RevealsShroud:
-		Type: CenterPosition
-	RevealsShroud@SEARCH_AND_DESTROY:
 		Type: CenterPosition
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
@@ -1748,8 +1733,6 @@ aircraft.helix:
 		FacingTolerance: 80
 		PauseOnCondition:  leaflet
 	RevealsShroud:
-		Type: CenterPosition
-	RevealsShroud@SEARCH_AND_DESTROY:
 		Type: CenterPosition
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
 		Type: CenterPosition
