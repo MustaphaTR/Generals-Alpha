@@ -51,6 +51,30 @@ generals_power.cash_hack3:
 	Buildable:
 		Prerequisites: ~disabled
 
+generals_power.paradrop1.inf_gen:
+	Buildable:
+		Prerequisites: ~disabled
+
+generals_power.paradrop2.inf_gen:
+	Buildable:
+		Prerequisites: ~disabled
+
+generals_power.paradrop3.inf_gen:
+	Buildable:
+		Prerequisites: ~disabled
+
+generals_power.tank_drop1:
+	Buildable:
+		Prerequisites: ~disabled
+
+generals_power.tank_drop2:
+	Buildable:
+		Prerequisites: ~disabled
+
+generals_power.tank_drop3:
+	Buildable:
+		Prerequisites: ~disabled
+
 generals_power.arty_barrage1:
 	Buildable:
 		Prerequisites: ~disabled
@@ -101,6 +125,8 @@ vehicle.overlord_tank:
 vehicle.nuke_cannon:
 	Buildable:
 		Prerequisites: ~disabled
+	Buildable@Nuke:
+		Prerequisites: ~disabled
 
 upgrade.radar:
 	Buildable:
@@ -150,10 +176,16 @@ building.bunker.filled:
 aircraft.mig:
 	-Selectable:
 	-RevealsShroud:
+	-ChangesHealth@PLANE:
+	-GrantConditionOnPrerequisite@AIRFIELD:
 	Interactable:
 	Aircraft:
 		Speed: 200
 		IdleBehavior: LeaveMap
+
+husk.mig:
+	-RevealsShroud:
+	-RevealOnDeath:
 
 ^Car:
 	ExternalCondition@lua:
