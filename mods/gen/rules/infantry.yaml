@@ -160,6 +160,8 @@ infantry.worker:
 		EnterCursor: ability
 		EnterBlockedCursor: move-blocked
 		RequiresCondition: capture_building
+	Captures@DRIVER_KILL:
+		Voice: Capture
 	AttackFrontal:
 		PauseOnCondition: leaflet
 		FacingTolerance: 0
