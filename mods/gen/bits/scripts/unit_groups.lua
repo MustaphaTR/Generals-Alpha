@@ -143,7 +143,6 @@ ParticleCannon =
 {
 	"building.particle_cannon",
 	"building.particle_cannon.super",
-	"building.particle_cannon.boss"
 }
 
 ScudStorm =
