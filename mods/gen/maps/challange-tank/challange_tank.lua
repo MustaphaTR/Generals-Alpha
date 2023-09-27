@@ -169,7 +169,7 @@ Attack = function(units, paths)
 end
 
 BuildAttackForce = function(unit_list, factory, paths)
-	if factory.IsDead then
+	if factory.IsDead or factory.Owner ~= enemy then
 		return
 	end
 

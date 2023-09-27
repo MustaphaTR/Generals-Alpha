@@ -27,19 +27,21 @@ ResearchUpgrade = function(building, upgrade)
 end
 
 TrainHackers = function(owner, hacker, amount, rally_point, internet)
-	local barrackes = owner.GetActorsByType("building.prc_barracks")
-	if #barrackes > 0 then
-		local built = barrackes[1].Build( { hacker }, function(a)
-			a[1].Move(rally_point)
-			if internet then
-				a[1].EnterTransport(owner.GetActorsByType("building.internet_center")[1])
-			else
-				Trigger.OnEnteredFootprint({ rally_point }, function(enterer)
-					if enterer == a[1] then
-						a[1].GrantCondition("deployed")
-					end
-				end)
-			end
+	local barrackses = owner.GetActorsByType("building.prc_barracks")
+	if #barrackses > 0 then
+		local built = barrackses[1].Build( { hacker }, function(a)
+			Trigger.AfterDelay(DateTime.Seconds(1), function()
+				a[1].Move(rally_point)
+				if internet then
+					a[1].EnterTransport(owner.GetActorsByType("building.internet_center")[1])
+				else
+					Trigger.OnEnteredFootprint({ rally_point }, function(enterer)
+						if enterer == a[1] then
+							a[1].Deploy()
+						end
+					end)
+				end
+			end)
 		end)
 		if built and amount > 1 then
 			TrainHackers(owner, hacker, amount - 1, rally_point, internet)
