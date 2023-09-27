@@ -4416,6 +4416,7 @@ building.speaker_tower:
 building.particle_cannon:
 	Inherits: ^Building
 	Inherits@LOWPOWER: ^DisableOnLowPower
+	Inherits@MINE: ^CanHaveMinesBossOnly
 	Inherits@RANGER: ^EmitRangersOnDeath
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SABOTAGE: ^CanBeSabotaged
@@ -4438,6 +4439,14 @@ building.particle_cannon:
 		Prerequisites: building.strategy_center, !prerequisite.enough_particle, !techlevel.notech, !techlevel.nosw
 		Description: Provides Particle Cannon support power.
 		ReadyTextNotification: Construction Complete: Particle Uplink Cannon
+	Buildable@Boss:
+		Queue: queue.boss_gen_building
+		BuildPaletteOrder: 11
+		BuildDuration: 1500
+		BuildDurationModifier: 100
+		Prerequisites: building.prc_war_factory, building.prc_airfield, !prerequisite.enough_particle, !techlevel.notech, !techlevel.nosw
+		Description: Provides Particle Cannon support power.
+		ReadyTextNotification: Construction Complete: Particle Uplink Cannon
 	Building:
 		Footprint: XX xx
 		Dimensions: 2,2
@@ -4453,6 +4462,23 @@ building.particle_cannon:
 	Armor:
 		Type: building.tough
 	WithBuildingBib:
+	Production:
+		Produces: queue.boss_gen_particle_cannon
+		PauseOnCondition: emp || hacked || sabotaged
+	-ProductionQueue@JUST_MINE:
+	ProductionQueue@Boss:
+		Type: queue.boss_gen_particle_cannon
+		Factions: boss
+		AlwaysShowForFactions: boss
+		Group: Tech
+		QueuedAudio: Training
+		InstantCashDrain: true
+		DisallowPaused: true
+		LowPowerModifier: 200
+		DisplayOrder: 65
+	ProductionBar:
+		ProductionType: queue.boss_gen_particle_cannon
+	Exit:
 	SpawnActorPower@PARTICLE_CANNON:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Actors:
@@ -4505,37 +4531,11 @@ building.particle_cannon.super:
 	Inherits: building.particle_cannon
 	Buildable:
 		Queue: queue.super_gen_building, queue.usa_building_merged
+	Buildable@Boss:
+		Queue: queue.boss_gen_building_merged
+		BuildPaletteOrder: 12
 	Valued:
 		Cost: 2500
-
-building.particle_cannon.boss:
-	Inherits: building.particle_cannon
-	Inherits@MINE: ^CanHaveMines
-	Buildable:
-		Queue: queue.boss_gen_building, queue.boss_gen_building_merged
-		Prerequisites: building.prc_war_factory, building.prc_airfield, !prerequisite.enough_particle, !techlevel.notech, !techlevel.nosw
-	BuildPaletteOrderModifier@Merged:
-		Queue: queue.boss_gen_building_merged
-		Modifier: 1 # 12
-	Exit:
-	Production:
-		Produces: queue.boss_gen_particle_cannon
-		PauseOnCondition: emp || hacked || sabotaged
-	-ProductionQueue@JUST_MINE:
-	ProductionQueue@Boss:
-		Type: queue.boss_gen_particle_cannon
-		Factions: boss
-		AlwaysShowForFactions: boss
-		Group: Tech
-		QueuedAudio: Training
-		InstantCashDrain: true
-		DisallowPaused: true
-		LowPowerModifier: 200
-		DisplayOrder: 65
-	ProductionBar:
-		ProductionType: queue.boss_gen_particle_cannon
-	RenderSprites:
-		Image: building.particle_cannon
 
 building.scud_storm:
 	Inherits: ^Building
