@@ -79,7 +79,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 			// Find idle harvesters and give them orders:
 			foreach (var c in collectors)
 			{
-				if (!c.Actor.IsIdle && !(c.Actor.CurrentActivity is FlyIdle))
+				if (!c.Actor.IsIdle && c.Actor.CurrentActivity is not FlyIdle)
 				{
 					if (c.Actor.CurrentActivity is not FindAndDeliverResources act || !act.LastSearchFailed)
 						continue;
