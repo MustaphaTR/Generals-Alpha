@@ -40,8 +40,8 @@ namespace OpenRA.Mods.GenSDK.Orders
 			IsQueued = modifiers.HasModifier(TargetModifiers.ForceQueue);
 
 			var actor = type == TargetType.FrozenActor ? target.FrozenActor.Actor : target.Actor;
-			// var owner = actor.Owner;
-			// var playerRelationship = self.Owner.RelationshipWith(owner);
+			/* var owner = actor.Owner;
+			var playerRelationship = self.Owner.RelationshipWith(owner); */
 
 			return CanTargetActor(self, actor, modifiers, ref cursor);
 		}
