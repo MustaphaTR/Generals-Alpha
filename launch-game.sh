@@ -1,7 +1,10 @@
 #!/bin/sh
 
 set -e
-command -v mono >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK requires mono."; exit 1; }
+if ! command -v mono >/dev/null 2>&1; then
+	command -v dotnet >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK requires dotnet or mono."; exit 1; }
+fi
+
 if command -v python3 >/dev/null 2>&1; then
 	PYTHON="python3"
 else
@@ -49,4 +52,4 @@ else
 fi
 
 cd "${ENGINE_DIRECTORY}"
-${RUNTIME_LAUNCHER} bin/OpenRA.dll Engine.EngineDir=".." Engine.LaunchPath="${TEMPLATE_LAUNCHER}" "Engine.ModSearchPaths=${MOD_SEARCH_PATHS}" Game.Mod="${MOD_ID}" "$@"
+${RUNTIME_LAUNCHER} bin/OpenRA.dll Game.Mod="${MOD_ID}" Engine.EngineDir=".." Engine.LaunchPath="${TEMPLATE_LAUNCHER}" Engine.ModSearchPaths="${MOD_SEARCH_PATHS}" "$@"
