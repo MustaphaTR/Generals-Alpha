@@ -2520,7 +2520,7 @@ building.firebase:
 		Range: 6c896
 		Color: DDDD0088
 	Targetable:
-		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable, BunkerBustable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable, Defense, BunkerBustable
 	Voiced:
 		VoiceSet: FirebaseVoice
 	ActorStatValues:
@@ -2591,7 +2591,7 @@ building.bunker:
 		Sequence: idle-flag
 		RequiresCondition: loaded
 	Targetable:
-		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable, BunkerBustable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable, Defense, BunkerBustable
 	Voiced:
 		VoiceSet: BunkerVoice
 	ActorStatValues:
@@ -3072,7 +3072,7 @@ building.tunnel_network:
 	ProductionBar@JUST_MINE:
 		ProductionType: queue.just_mine
 	Targetable:
-		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable, BunkerBustable
+		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable, Defense, BunkerBustable
 	SpawnActorOnDeath:
 		Actor: hole.tunnel_network
 		SpawnAfterDefeat: false
