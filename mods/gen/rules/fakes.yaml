@@ -51,6 +51,34 @@ fake.command_center:
 		Cost: 500
 	Voiced:
 		VoiceSet: GLACommandCenterVoice
+	WithTextDecoration@SIDE:
+		Text: GLA
+		Color: 00FF00
+	WithIdleOverlay@GLA:
+		Sequence: idle-gla
+		Palette: player
+		RequiresCondition: !build-incomplete && !toxin && !demo && !stealth
+	WithIdleOverlay@Toxin:
+		Sequence: idle-toxin
+		Palette: player
+		IsPlayerPalette: true
+		RequiresCondition: !build-incomplete && toxin
+	WithIdleOverlay@Demo:
+		Sequence: idle-demo
+		Palette: player
+		IsPlayerPalette: true
+		RequiresCondition: !build-incomplete && demo
+	WithIdleOverlay@Stealth:
+		Sequence: idle-stealth
+		Palette: player
+		IsPlayerPalette: true
+		RequiresCondition: !build-incomplete && stealth
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
+	GrantConditionOnFaction@Demo:
+		Condition: demo
+		Factions: demo
 	GrantConditionOnFaction@Stealth:
 		Condition: stealth
 		Factions: stealth
