@@ -14,7 +14,7 @@ Background@COLOR_CHOOSER:
 			Width: 76
 			Height: 25
 			VisualHeight: 0
-			Text: Random
+			Text: button-color-chooser-random
 			Font: Bold
 		Button@STORE_BUTTON:
 			X: 245
@@ -22,7 +22,7 @@ Background@COLOR_CHOOSER:
 			Width: 76
 			Height: 25
 			VisualHeight: 0
-			Text: Store
+			Text: button-color-chooser-store
 			Font: Bold
 		ActorPreview@PREVIEW:
 			X: 245
@@ -35,7 +35,7 @@ Background@COLOR_CHOOSER:
 			Height: 25
 			Width: 80
 			VisualHeight: 0
-			Text: Mixer
+			Text: button-color-chooser-mixer-tab
 			Font: Bold
 		Button@PALETTE_TAB_BUTTON:
 			X: 85
@@ -43,7 +43,7 @@ Background@COLOR_CHOOSER:
 			Height: 25
 			Width: 80
 			VisualHeight: 0
-			Text: Palette
+			Text: button-color-chooser-palette-tab
 			Font: Bold
 		Container@MIXER_TAB:
 			X: 5
@@ -102,7 +102,7 @@ Background@COLOR_CHOOSER:
 									Width: PARENT_RIGHT
 									Height: 13
 									Align: Center
-									Text: Preset Colors
+									Text: label-preset-header
 						Container@PRESET_AREA:
 							Width: PARENT_RIGHT - 4
 							Height: 58
@@ -128,7 +128,7 @@ Background@COLOR_CHOOSER:
 									Width: PARENT_RIGHT
 									Height: 13
 									Align: Center
-									Text: Custom Colors
+									Text: label-custom-header
 						Container@CUSTOM_AREA:
 							Width: PARENT_RIGHT - 4
 							Height: 31

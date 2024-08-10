@@ -1,12 +1,12 @@
 Player:
 	ModularBot@EasyAI:
-		Name: Easy AI
+		Name: bot-easy-ai-name
 		Type: easy
 	ModularBot@NormalAI:
-		Name: Normal AI
+		Name: bot-normal-ai-name
 		Type: normal
 	ModularBot@HardAI:
-		Name: Hard AI
+		Name: bot-hard-ai-name
 		Type: hard
 	GrantConditionOnBotOwner@easy:
 		Condition: enable-easy-ai
@@ -38,7 +38,7 @@ Player:
 		CommandCenterTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar
 		RequiresCondition: enable-hard-ai
 
- 	## Hack: give AI huge amount of cash at game start to allow it build expensive unit
+	## Hack: give AI huge amount of cash at game start to allow it build expensive unit
 	GrantConditionAfterDelay@GiveStartCash:
 		Condition: given-start-cash
 	CashTrickler@EasyStart:
@@ -63,7 +63,7 @@ Player:
 		ShowTicks: false
 		RequiresCondition: enable-hard-ai
 
- 	## Common AI modules
+	## Common AI modules
 	ProvidesPrerequisite@AIDiscount:
 		RequiresCondition: enable-any-ai
 		Prerequisite: AIDiscount
@@ -460,7 +460,7 @@ Player:
 		RequiresCondition: enable-any-ai
 	LoadCargoBotModule@DefenseAndTransport:
 		RequiresCondition: enable-any-ai
-		TransportTypesAndLoadRequirement: 
+		TransportTypesAndLoadRequirement:
 			building.firebase: All
 			building.bunker: All
 			building.fortified_bunker: All
@@ -490,7 +490,7 @@ Player:
 		Prerequisites: prerequisite.enough_black_lotus
 	SendUnitToAttackBotModule@AttackBuilding:
 		RequiresCondition: has-lotus || has-bombtruck
-		ActorTypesAndAttackOptions: 
+		ActorTypesAndAttackOptions:
 			vehicle.bomb_truck:
 				AttackDesireOfEach: 100
 				TryDisguise: true
@@ -528,7 +528,7 @@ Player:
 	SharedCargoBotModule:
 		RequiresCondition: enable-any-ai && has-tunnel
 		Transports: building.tunnel_network.sneak_attack, building.tunnel_network, building.tunnel_network.no_free_actor, building.toxin_tunnel_network, building.toxin_tunnel_network.no_free_actor
-		Passengers: vehicle.humvee, vehicle.technical, vehicle.gatling_tank, vehicle.assault_troop_crawler, vehicle.quad_cannon, vehicle.tomahawk_launcher, vehicle.inferno_cannon, vehicle.scud_launcher, vehicle.dragon_tank, vehicle.rocket_buggy, vehicle.toxin_tractor, vehicle.scorpion_tank, vehicle.crusader_tank, vehicle.battlemaster_tank, vehicle.nuclear_battlemaster_tank, vehicle.overlord_tank, vehicle.emparor_overlord, vehicle.paladin_tank, vehicle.marauder_tank, vehicle.combat_cycle, vehicle.avenge, vehicle.avenger.air, vehicle.listening_outpost, vehicle.attack_outpost, vehicle.ecm_tank, vehicle.microwave_tank, vehicle.nuke_cannon, vehicle.battle_bus 
+		Passengers: vehicle.humvee, vehicle.technical, vehicle.gatling_tank, vehicle.assault_troop_crawler, vehicle.quad_cannon, vehicle.tomahawk_launcher, vehicle.inferno_cannon, vehicle.scud_launcher, vehicle.dragon_tank, vehicle.rocket_buggy, vehicle.toxin_tractor, vehicle.scorpion_tank, vehicle.crusader_tank, vehicle.battlemaster_tank, vehicle.nuclear_battlemaster_tank, vehicle.overlord_tank, vehicle.emparor_overlord, vehicle.paladin_tank, vehicle.marauder_tank, vehicle.combat_cycle, vehicle.avenge, vehicle.avenger.air, vehicle.listening_outpost, vehicle.attack_outpost, vehicle.ecm_tank, vehicle.microwave_tank, vehicle.nuke_cannon, vehicle.battle_bus
 
 	GrantConditionOnPrerequisite@HasInternet:
 		Condition: has-internetcenter
@@ -536,7 +536,7 @@ Player:
 	LoadCargoBotModule@Hacker:
 		RequiresCondition: has-internetcenter
 		ScanTick: 757
-		TransportTypesAndLoadRequirement: 
+		TransportTypesAndLoadRequirement:
 			building.internet_center: All
 		PassengerTypes: infantry.hacker, infantry.super_hacker
 

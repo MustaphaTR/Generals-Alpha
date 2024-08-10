@@ -27,7 +27,7 @@ Container@LOCAL_PROFILE_PANEL:
 					Height: 20
 					VisualHeight: 0
 					Font: TinyBold
-					Text: Logout
+					Text: button-profile-header-logout
 		Background@BADGES_CONTAINER:
 			Width: PARENT_RIGHT
 			Y: 48
@@ -44,21 +44,21 @@ Container@LOCAL_PROFILE_PANEL:
 					Height: 25
 					Font: Small
 					Align: Center
-					Text: Connect to a forum account to identify
+					Text: label-generate-keys-desc-a
 				Label@DESC_B:
 					Y: 21
 					Width: PARENT_RIGHT
 					Height: 25
 					Font: Small
 					Align: Center
-					Text: yourself to other players, join private
+					Text: label-generate-keys-desc-b
 				Label@DESC_C:
 					Y: 37
 					Width: PARENT_RIGHT
 					Height: 25
 					Font: Small
 					Align: Center
-					Text: servers, and display badges.
+					Text: label-generate-keys-desc-c
 				Button@GENERATE_KEY:
 					X: (PARENT_RIGHT - WIDTH) / 2
 					Y: 70
@@ -66,7 +66,7 @@ Container@LOCAL_PROFILE_PANEL:
 					Height: 20
 					VisualHeight: 0
 					Font: TinyBold
-					Text: Connect to an OpenRA forum account
+					Text: button-generate-keys-key
 		Background@GENERATING_KEYS:
 			Width: PARENT_RIGHT
 			Height: PARENT_BOTTOM
@@ -78,14 +78,14 @@ Container@LOCAL_PROFILE_PANEL:
 					Height: 25
 					Font: Small
 					Align: Center
-					Text: Generating authentication key pair.
+					Text: label-generating-keys-desc-a
 				Label@DESC_B:
 					Y: 29
 					Width: PARENT_RIGHT
 					Height: 25
 					Font: Small
 					Align: Center
-					Text: This will take several seconds...
+					Text: label-generating-keys-desc-b
 				ProgressBar:
 					X: (PARENT_RIGHT - WIDTH) / 2
 					Y: 70
@@ -103,21 +103,21 @@ Container@LOCAL_PROFILE_PANEL:
 					Height: 25
 					Font: Small
 					Align: Center
-					Text: An authentication key has been copied to your
+					Text: label-register-fingerprint-desc-a
 				Label@DESC_B:
 					Y: 18
 					Width: PARENT_RIGHT
 					Height: 25
 					Font: Small
 					Align: Center
-					Text: clipboard. Add this to your User Control Panel
+					Text: label-register-fingerprint-desc-b
 				Label@DESC_C:
 					Y: 34
 					Width: PARENT_RIGHT
 					Height: 25
 					Font: Small
 					Align: Center
-					Text: on the OpenRA forum then press Continue.
+					Text: label-register-fingerprint-desc-c
 				Button@DELETE_KEY:
 					X: 15
 					Y: 70
@@ -125,7 +125,7 @@ Container@LOCAL_PROFILE_PANEL:
 					Height: 20
 					VisualHeight: 0
 					Font: TinyBold
-					Text: Cancel
+					Text: button-cancel
 				Button@CHECK_KEY:
 					X: 185
 					Y: 70
@@ -133,7 +133,7 @@ Container@LOCAL_PROFILE_PANEL:
 					Height: 20
 					VisualHeight: 0
 					Font: TinyBold
-					Text: Continue
+					Text: button-continue
 		Background@CHECKING_FINGERPRINT:
 			Width: PARENT_RIGHT
 			Height: PARENT_BOTTOM
@@ -145,14 +145,14 @@ Container@LOCAL_PROFILE_PANEL:
 					Height: 25
 					Font: Small
 					Align: Center
-					Text: Querying account details from
+					Text: label-checking-fingerprint-desc-a
 				Label@DESC_B:
 					Y: 29
 					Width: PARENT_RIGHT
 					Height: 25
 					Font: Small
 					Align: Center
-					Text: the OpenRA forum...
+					Text: label-checking-fingerprint-desc-b
 				ProgressBar:
 					X: (PARENT_RIGHT - WIDTH) / 2
 					Y: 70
@@ -170,14 +170,14 @@ Container@LOCAL_PROFILE_PANEL:
 					Height: 25
 					Font: Small
 					Align: Center
-					Text: Your authentication key is not connected
+					Text: label-fingerprint-not-found-desc-a
 				Label@DESC_B:
 					Y: 29
 					Width: PARENT_RIGHT
 					Height: 25
 					Font: Small
 					Align: Center
-					Text: to an OpenRA forum account.
+					Text: label-fingerprint-not-found-desc-b
 				Button@FINGERPRINT_NOT_FOUND_CONTINUE:
 					X: 185
 					Y: 70
@@ -185,7 +185,7 @@ Container@LOCAL_PROFILE_PANEL:
 					Height: 20
 					VisualHeight: 0
 					Font: TinyBold
-					Text: Back
+					Text: button-back
 		Background@CONNECTION_ERROR:
 			Width: PARENT_RIGHT
 			Height: PARENT_BOTTOM
@@ -197,14 +197,14 @@ Container@LOCAL_PROFILE_PANEL:
 					Height: 25
 					Font: Small
 					Align: Center
-					Text: Failed to connect to the OpenRA forum.
+					Text: label-connection-error-desc-a
 				Label@DESC_B:
 					Y: 29
 					Width: PARENT_RIGHT
 					Height: 25
 					Font: Small
 					Align: Center
-					Text: Please check your internet connection.
+					Text: label-connection-error-desc-b
 				Button@CONNECTION_ERROR_RETRY:
 					X: 185
 					Y: 70
@@ -212,7 +212,7 @@ Container@LOCAL_PROFILE_PANEL:
 					Height: 20
 					VisualHeight: 0
 					Font: TinyBold
-					Text: Retry
+					Text: button-retry
 
 Container@PLAYER_PROFILE_BADGES_INSERT:
 	Logic: PlayerProfileBadgesLogic

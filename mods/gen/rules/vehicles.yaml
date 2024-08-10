@@ -12,13 +12,13 @@ vehicle.supply_truck:
 		BuildPaletteOrder: 1
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Description: Collects supplies.
+		Description: actor-vehicle-supply-truck.description
 		ReadyAudio: SupplyTruckCreated
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Supply Truck
-		GenericName: Collector
+		Name: actor-vehicle-supply-truck.name
+		GenericName: meta-collector-generic-name
 	Selectable:
 		Priority: 7
 		DecorationBounds: 1792, 1792
@@ -117,7 +117,7 @@ vehicle.humvee:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Description: Fast scout & anti-infantry vehicle.\n\nCan carry 5 infantry that can fire outside.
+		Description: actor-vehicle-humvee.description
 		ReadyAudio: HumveeCreated
 	Valued:
 		Cost: 700
@@ -134,7 +134,7 @@ vehicle.humvee:
 		Queue: queue.super_gen_vehicle
 		Multiplier: 98 # 850
 	Tooltip:
-		Name: Humvee
+		Name: actor-vehicle-humvee.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -280,7 +280,7 @@ vehicle.technical:
 		ForceIconLocation: true
 		BuildDuration: 75
 		BuildDurationModifier: 100
-		Description: Fast scout & anti-infantry vehicle.\n\nCan carry 5 infantry.\n\nPassengers can survive when it dies.\n\nGets different weapons from Scrap Crates.
+		Description: actor-vehicle-technical.description
 		ReadyAudio: TechnicalCreated
 	Valued:
 		Cost: 500
@@ -288,7 +288,7 @@ vehicle.technical:
 		Queue: queue.demo_gen_vehicle
 		Multiplier: 120 # 600
 	Tooltip:
-		Name: Technical
+		Name: actor-vehicle-technical.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -423,14 +423,14 @@ vehicle.radar_van:
 	GivesExperience:
 		Experience: 20
 	Tooltip:
-		Name: Radar Van
+		Name: actor-vehicle-radar-van.name
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle, queue.gla_vehicle_merged
 		BuildPaletteOrder: 3
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Description: Provides radar.\n\nGets cloak from Scrap Crates.
+		Description: actor-vehicle-radar-van.description
 		ReadyAudio: RadarVanCreated
 	Valued:
 		Cost: 500
@@ -547,7 +547,7 @@ vehicle.scorpion_tank:
 		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Description: Lightly armored main battle tank.\n\nGets better weapon from Scrap Crates.
+		Description: actor-vehicle-scorpion-tank.description
 		ReadyAudio: ScorpionTankCreated
 	Valued:
 		Cost: 600
@@ -567,7 +567,7 @@ vehicle.scorpion_tank:
 		Types: primary
 		RequiresCondition: scrap_create_bonus >= 1
 	Tooltip:
-		Name: Scorpion Tank
+		Name: actor-vehicle-scorpion-tank.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -738,12 +738,12 @@ vehicle.crusader_tank:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Description: Medium armored main battle tank.
+		Description: actor-vehicle-crusader-tank.description
 		ReadyAudio: CrusaderTankCreated
 	Valued:
 		Cost: 900
 	Tooltip:
-		Name: Crusader Tank
+		Name: actor-vehicle-crusader-tank.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -804,13 +804,13 @@ vehicle.laser_tank:
 	Inherits@REVEAL: ^Reveal150
 	Buildable:
 		Queue: queue.laser_gen_vehicle, queue.usa_vehicle_merged
-		Description: Medium armored tank armed with lasers.\n\nRequires power to operate.
+		Description: actor-vehicle-laser-tank.description
 		ReadyAudio: LaserTankCreated
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.usa_vehicle_merged
 		Modifier: 9 # 10
 	Tooltip:
-		Name: Laser Tank
+		Name: actor-vehicle-laser-tank.name
 	Armament:
 		Weapon: laser.laser_tank
 	Power:
@@ -860,7 +860,7 @@ vehicle.battlemaster_tank:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Description: Medium armored main battle tank.
+		Description: actor-vehicle-battlemaster-tank.description
 		ReadyAudio: BattlemasterTankCreated
 	Valued:
 		Cost: 800
@@ -874,7 +874,7 @@ vehicle.battlemaster_tank:
 		Queue: queue.nuke_gen_vehicle, queue.tank_gen_vehicle
 		Multiplier: 120 # 300
 	Tooltip:
-		Name: Battlemaster Tank
+		Name: actor-vehicle-battlemaster-tank.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -965,7 +965,7 @@ vehicle.nuclear_battlemaster_tank:
 	Buildable:
 		Queue: queue.nuke_gen_vehicle, queue.prc_vehicle_merged
 	Tooltip:
-		Name: Nuclear Battlemaster Tank
+		Name: actor-vehicle-nuclear-battlemaster-tank-name
 	Armament:
 		Weapon: cannon.battlemaster_tank.nuke
 	Armament@AUTOLOADER:
@@ -990,7 +990,7 @@ vehicle.ambulance:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Description: Heals nearby infantry.\n\nCan carry 3 infantry.\n\nHeals damaged passengers.\n\nPassengers can survive when it dies.
+		Description: actor-vehicle-ambulance.description
 		ReadyAudio: AmbulanceCreated
 	Valued:
 		Cost: 600
@@ -1001,7 +1001,7 @@ vehicle.ambulance:
 		Queue: queue.air_gen_vehicle, queue.super_gen_vehicle
 		Multiplier: 99 # 700
 	Tooltip:
-		Name: Ambulance
+		Name: actor-vehicle-ambulance.name
 	Health:
 		HP: 24000
 	Armor:
@@ -1083,7 +1083,7 @@ vehicle.sentry_drone:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units
-		Description: Detection vehicle.\n\nCamouflaged while not moving.
+		Description: actor-vehicle-sentry-drone.description
 	Valued:
 		Cost: 800
 	ProductionCostMultiplier@Airforce1:
@@ -1096,7 +1096,7 @@ vehicle.sentry_drone:
 		Queue: queue.super_gen_vehicle
 		Multiplier: 125 # 1000
 	Tooltip:
-		Name: Sentry Drone
+		Name: actor-vehicle-sentry-drone.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -1212,7 +1212,7 @@ vehicle.quad_cannon:
 			150: rank-veteran
 			300: rank-veteran
 	Tooltip:
-		Name: Quad Cannon
+		Name: actor-vehicle-quad-cannon.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -1221,7 +1221,7 @@ vehicle.quad_cannon:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Description: Anti-infantry & anti-air vehicle.\n\nGets better weapon from Scrap Crates.
+		Description: actor-vehicle-quad-cannon.description
 		ReadyAudio: QuadCannonCreated
 	Valued:
 		Cost: 700
@@ -1341,7 +1341,7 @@ vehicle.gatling_tank:
 			200: rank-veteran
 			300: rank-veteran
 	Tooltip:
-		Name: Gatling Tank
+		Name: actor-vehicle-gatling-tank.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -1350,7 +1350,7 @@ vehicle.gatling_tank:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Description: Anti-infantry & anti-air vehicle.
+		Description: actor-vehicle-gatling-tank.description
 		ReadyAudio: GatlingTankCreated
 	Valued:
 		Cost: 800
@@ -1480,7 +1480,7 @@ vehicle.toxin_tractor:
 			150: rank-veteran
 			300: rank-veteran
 	Tooltip:
-		Name: Toxin Tractor
+		Name: actor-vehicle-toxin-tractor.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -1489,7 +1489,7 @@ vehicle.toxin_tractor:
 		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Description: Toxin-throwing vehicle.\n\nCan be deployed to speay toxins around it.\n\nCan damage infantry garrisoned in civilian structures.\n\nGets better weapon from Scrap Crates.
+		Description: actor-vehicle-toxin-tractor.description
 		ReadyAudio: ToxinTractorCreated
 	Valued:
 		Cost: 600
@@ -1644,7 +1644,7 @@ vehicle.dragon_tank:
 			150: rank-veteran
 			300: rank-veteran
 	Tooltip:
-		Name: Dragon Tank
+		Name: actor-vehicle-dragon-tank.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -1653,7 +1653,7 @@ vehicle.dragon_tank:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Description: Flame-throwing vehicle.\n\nCan damage infantry garrisoned in civilian structures.
+		Description: actor-vehicle-dragon-tank.description
 		ReadyAudio: DragonTankCreated
 	Valued:
 		Cost: 800
@@ -1763,7 +1763,7 @@ vehicle.rocket_buggy:
 			400: rank-veteran
 			800: rank-veteran
 	Tooltip:
-		Name: Rocket Buggy
+		Name: actor-vehicle-rocket-buggy.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -1773,7 +1773,7 @@ vehicle.rocket_buggy:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, !techlevel.notech
-		Description: Rocket artillery.\n\nGets extra missiles per burst from Scrap Crates.
+		Description: actor-vehicle-rocket-buggy.description
 		ReadyAudio: RocketBuggyCreated
 	Buildable@Boss:
 		Queue: queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged
@@ -1782,7 +1782,7 @@ vehicle.rocket_buggy:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: !techlevel.notech
-		Description: Rocket artillery.\n\nGets extra missiles per burst from Scrap Crates.
+		Description: actor-vehicle-rocket-buggy.description
 		ReadyAudio: RocketBuggyCreated
 	Valued:
 		Cost: 900
@@ -1929,7 +1929,7 @@ vehicle.avenger:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units, !techlevel.notech
-		Description: Advanced anti-air unit.\n\nCan deflect enemy missiles with laser.\n\nCan mark enemy to make it recieve 40% more damage.
+		Description: actor-vehicle-avenger.description
 		ReadyAudio: AvengerCreated
 	Buildable@Air:
 		Queue: queue.air_gen_vehicle
@@ -1937,7 +1937,7 @@ vehicle.avenger:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~prerequisite.zh_units, !techlevel.notech
-		Description: Advanced anti-air unit.\n\nCan deflect enemy missiles with laser.\n\nCan mark enemy to make it recieve 40% more damage.
+		Description: actor-vehicle-avenger.description
 		ReadyAudio: AvengerCreated
 	Valued:
 		Cost: 2000
@@ -1948,7 +1948,7 @@ vehicle.avenger:
 		Queue: queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged
 		Modifier: 2 # 8
 	Tooltip:
-		Name: Avenger
+		Name: actor-vehicle-avenger.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -2030,7 +2030,7 @@ vehicle.battle_bus:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~prerequisite.zh_units, !techlevel.notech
-		Description: Tough infantry transport.\n\nCan carry 8 infantry that can fire outside.\n\nTurns into a static bunker when damaged.\n\nGets better armor from Scrap Crates.
+		Description: actor-vehicle-battle-bus.description
 		ReadyAudio: BattleBusCreated
 	Valued:
 		Cost: 1000
@@ -2041,7 +2041,7 @@ vehicle.battle_bus:
 		Queue: queue.demo_gen_vehicle
 		Multiplier: 120 # 1200
 	Tooltip:
-		Name: Battle Bus
+		Name: actor-vehicle-battle-bus.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -2173,12 +2173,12 @@ vehicle.troop_crawler:
 		ForceIconLocation: true
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Description: Tough infantry transport.\n\nCan carry 8 infantry.\n\nComes with 8 red guards.\n\nHeals damaged passengers.\n\nPassengers can survive when it dies.
+		Description: actor-vehicle-troop-crawler.description
 		ReadyAudio: TroopCrawlerCreated
 	Valued:
 		Cost: 1400
 	Tooltip:
-		Name: Troop Crawler
+		Name: actor-vehicle-troop-crawler.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -2237,12 +2237,12 @@ vehicle.assault_troop_crawler:
 	Buildable:
 		Queue: queue.inf_gen_vehicle, queue.prc_vehicle_merged
 		BuildDuration: 625
-		Description: Tough infantry transport.\n\nCan carry 8 infantry that can fire outside.\n\nComes with 8 minigunners.\n\nHeals damaged passengers.\n\nHas a speaker tower attached.\n\nPassengers can survive when it dies.
+		Description: actor-vehicle-assault-troop-crawler.description
 		ReadyAudio: AssaultTroopCrawlerCreated
 	Valued:
 		Cost: 2400
 	Tooltip:
-		Name: Assault Troop Crawler
+		Name: actor-vehicle-assault-troop-crawler.name
 	Armor:
 		Type: vehicle.assault_troop_crawler
 	Cargo:
@@ -2293,12 +2293,12 @@ vehicle.listening_outpost:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units
-		Description: Stealth detector unit.\n\nCan carry 2 infantry that can fire outside.\n\nComes with 2 tank hunters.\n\nHeals damaged passengers.\n\nPassengers can survive when it dies.\n\nCamouflaged while not moving.
+		Description: actor-vehicle-listening-outpost.description
 		ReadyAudio: ListeningOutpostCreated
 	Valued:
 		Cost: 800
 	Tooltip:
-		Name: Listening Outpost
+		Name: actor-vehicle-listening-outpost.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -2350,7 +2350,7 @@ vehicle.listening_outpost:
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		CanBeForcedUncloak: true
-		RequiresCondition: !cloak-force-disabled && !driver_killed 
+		RequiresCondition: !cloak-force-disabled && !driver_killed
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
@@ -2386,9 +2386,9 @@ vehicle.attack_outpost:
 	Inherits: vehicle.listening_outpost
 	Buildable:
 		Queue: queue.inf_gen_vehicle, queue.prc_vehicle_merged
-		Description: Stealth detector unit.\n\nCan carry 8 infantry that can fire outside.\n\nComes with 3 tank hunters.\n\nHeals damaged passengers.\n\nHas a speaker tower attached.\n\nPassengers can survive when it dies.\n\nCamouflaged while not moving.
+		Description: actor-vehicle-attack-outpost.description
 	Tooltip:
-		Name: Attack Outpost
+		Name: actor-vehicle-attack-outpost.name
 	Valued:
 		Cost: 1000
 	Health:
@@ -2433,12 +2433,12 @@ vehicle.microwave_tank:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~prerequisite.zh_units
-		Description: Disables enemy structures.\n\nBurns enemy infantry around, even ones inside civilian structures.
+		Description: actor-vehicle-microwave-tank.description
 		ReadyAudio: MicrowaveTankCreated
 	Valued:
 		Cost: 800
 	Tooltip:
-		Name: Microwave Tank
+		Name: actor-vehicle-microwave-tank.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -2560,7 +2560,7 @@ vehicle.ecm_tank:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, ~prerequisite.zh_units
-		Description: Disables enemy vehicles.\n\nJams enemy missiles.
+		Description: actor-vehicle-ecm-tank.description
 		ReadyAudio: ECMTankCreated
 	Valued:
 		Cost: 800
@@ -2571,7 +2571,7 @@ vehicle.ecm_tank:
 		Queue: queue.inf_gen_vehicle
 		Multiplier: 10 # 900
 	Tooltip:
-		Name: ECM Tank
+		Name: actor-vehicle-ecm-tank.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -2657,7 +2657,7 @@ vehicle.tomahawk_launcher:
 			400: rank-veteran
 			800: rank-veteran
 	Tooltip:
-		Name: Tomahawk Launcher
+		Name: actor-vehicle-tomahawk-launcher.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -2666,7 +2666,7 @@ vehicle.tomahawk_launcher:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, !techlevel.notech
-		Description: Long-range rocket artillery.
+		Description: actor-vehicle-tomahawk-launcher.description
 		ReadyAudio: TomahawkCreated
 	Buildable@Boss:
 		Queue: queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged
@@ -2674,7 +2674,7 @@ vehicle.tomahawk_launcher:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: !techlevel.notech
-		Description: Long-range rocket artillery.
+		Description: actor-vehicle-tomahawk-launcher.description
 		ReadyAudio: TomahawkCreated
 	Valued:
 		Cost: 1200
@@ -2781,7 +2781,7 @@ vehicle.scud_launcher:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, prerequisite.scud_launcher
-		Description: Long-range rocket artillery.\n\nCan be armed with either toxin or high explosive missiles.\n\nGets better weapon from Scrap Crates.
+		Description: actor-vehicle-scud-launcher.description
 		ReadyAudio: ScudLauncherCreated
 	Valued:
 		Cost: 1200
@@ -2789,7 +2789,7 @@ vehicle.scud_launcher:
 		Prerequisites: prerequisite.zh_units
 		Multiplier: 75 # 375
 	Tooltip:
-		Name: SCUD Launcher
+		Name: actor-vehicle-scud-launcher.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -2804,7 +2804,7 @@ vehicle.scud_launcher:
 		Type: queue.scud_launcher
 		Group: Tech
 		QueueLimit: 1
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 	Exit:
 	ProvidesPrerequisite@unitname:
@@ -2991,7 +2991,7 @@ vehicle.inferno_cannon:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center
-		Description: Long-range artillery.\n\nMultiple can generate firestorms at the target\nfor additional damage.
+		Description: actor-vehicle-inferno-cannon.description
 		ReadyAudio: InfernoCannonCreated
 	Valued:
 		Cost: 900
@@ -3002,7 +3002,7 @@ vehicle.inferno_cannon:
 		Queue: queue.inf_gen_vehicle
 		Multiplier: 88 # 1100
 	Tooltip:
-		Name: Inferno Cannon
+		Name: actor-vehicle-inferno-cannon.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -3091,7 +3091,7 @@ vehicle.paladin_tank:
 		BuildDuration: 300
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.paladin_tank
-		Description: Heavy tank.\n\nCan deflect enemy missiles with laser.
+		Description: actor-vehicle-paladin-tank.description
 		ReadyAudio: PaladinTankCreated
 	BuildPaletteOrderModifier@Boss:
 		Queue: queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged
@@ -3099,7 +3099,7 @@ vehicle.paladin_tank:
 	Valued:
 		Cost: 1100
 	Tooltip:
-		Name: Paladin Tank
+		Name: actor-vehicle-paladin-tank.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -3202,7 +3202,7 @@ vehicle.marauder_tank:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~building.arms_dealer, building.palace, prerequisite.marauder_tank
-		Description: Medium tank.\n\nGets better weapon from Scrap Crates.
+		Description: actor-vehicle-marauder-tank.description
 		ReadyAudio: MarauderTankCreated
 	Valued:
 		Cost: 800
@@ -3213,7 +3213,7 @@ vehicle.marauder_tank:
 		Queue: queue.toxin_gen_vehicle, queue.demo_gen_vehicle
 		Multiplier: 10 # 900
 	Tooltip:
-		Name: Marauder Tank
+		Name: actor-vehicle-marauder-tank.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -3546,7 +3546,7 @@ vehicle.overlord_tank:
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, !techlevel.notech
-		Description: Big and slow tank.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
+		Description: actor-vehicle-overlord-tank.description
 		ReadyAudio: OverlordTankCreated
 	Buildable@Boss:
 		Queue: queue.boss_gen_vehicle
@@ -3555,7 +3555,7 @@ vehicle.overlord_tank:
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: !techlevel.notech
-		Description: Big and slow tank.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
+		Description: actor-vehicle-overlord-tank.description
 		ReadyAudio: OverlordTankCreated
 	Valued:
 		Cost: 2000
@@ -3574,7 +3574,7 @@ vehicle.overlord_tank:
 		Queue: queue.prc_vehicle, queue.tank_gen_vehicle
 		Multiplier: 80 # 500
 	Tooltip:
-		Name: Overlord Tank
+		Name: actor-vehicle-overlord-tank.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -3762,12 +3762,12 @@ vehicle.emparor_overlord:
 	Inherits: vehicle.overlord_tank
 	Buildable:
 		Queue: queue.tank_gen_vehicle, queue.prc_vehicle_merged
-		Description: Big and slow tank.\n\nComes with a speaker tower.\n\nCan be upgraded to have a gatling cannon.
+		Description: actor-vehicle-emparor-overlord.description
 	Buildable@Boss:
 		Queue: queue.boss_gen_vehicle_merged
-		Description: Big and slow tank.\n\nComes with a speaker tower.\n\nCan be upgraded to have a gatling cannon.
+		Description: actor-vehicle-emparor-overlord.description
 	Tooltip:
-		Name: Emperor Overlord
+		Name: actor-vehicle-emparor-overlord.name
 	Production:
 		Produces: queue.emparor_overlord
 		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !speaker_upgrade && !driver_killed && !merged && !as_cargo && !in_tunnel
@@ -3821,7 +3821,7 @@ vehicle.bomb_truck:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.palace
-		Description: Suicide vehicle.\n\nCan be armed with toxin or high explosive bombs.\n\nGets speed from Scrap Crates.
+		Description: actor-vehicle-bomb-truck.description
 		ReadyAudio: BombTruckCreated
 	ProductionCostMultiplier@AI: ## AI cannot use it well
 		Multiplier: 20
@@ -3839,8 +3839,8 @@ vehicle.bomb_truck:
 		Multiplier: 139 # 1000
 	-Tooltip:
 	DisguiseTooltip:
-		Name: Bomb Truck
-		GenericName: Vehicle
+		Name: actor-vehicle-bomb-truck.name
+		GenericName: meta-vehicle-generic-name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -3864,19 +3864,19 @@ vehicle.bomb_truck:
 		Group: Tech
 		ItemLimit: 1
 		QueueLimit: 2
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 	ProductionQueue@Toxin:
 		Type: queue.toxin_gen_bomb_truck
 		Group: Tech
 		QueueLimit: 1
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 	ProductionQueue@Demo:
 		Type: queue.demo_gen_bomb_truck
 		Group: Tech
 		QueueLimit: 1
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 	ProductionBar@Vanilla:
 		ProductionType: queue.bomb_truck
@@ -4091,7 +4091,7 @@ vehicle.nuke_cannon:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, prerequisite.nuke_cannon
-		Description: Heavy artillery unit armed with nuclear warheads.\n\nShould be not moving for 3 seconds to fire.\n\nCan not move for 3 seconds after firing.
+		Description: actor-vehicle-nuke-cannon.description
 		ReadyAudio: NukeCannonCreated
 	Buildable@Nuke:
 		Queue: queue.nuke_gen_vehicle, queue.prc_vehicle_merged
@@ -4100,12 +4100,12 @@ vehicle.nuke_cannon:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center
-		Description: Heavy artillery unit armed with nuclear warheads.\n\nShould be not moving for 3 seconds to fire.\n\nCan not move for 3 seconds after firing.
+		Description: actor-vehicle-nuke-cannon.description
 		ReadyAudio: NukeCannonCreated
 	Valued:
 		Cost: 1600
 	Tooltip:
-		Name: Nuke Cannon
+		Name: actor-vehicle-nuke-cannon.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -4282,7 +4282,7 @@ vehicle.combat_cycle:
 		BuildDuration: 100
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units
-		Description: Fast scout vehicle with weapon depending on passenger.\n\nComes with a rebel.
+		Description: actor-vehicle-combat-cycle.description
 		ReadyAudio: CycleCreated
 	Buildable@Demo:
 		Queue: queue.demo_gen_vehicle, queue.boss_gen_vehicle
@@ -4291,7 +4291,7 @@ vehicle.combat_cycle:
 		BuildDuration: 100
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units
-		Description: Fast scout vehicle with weapon depending on passenger.\n\nComes with a terrorist.
+		Description: actor-vehicle-combat-cycle.demo-description
 		ReadyAudio: CycleCreated
 	Valued:
 		Cost: 500
@@ -4305,7 +4305,7 @@ vehicle.combat_cycle:
 		Queue: queue.boss_gen_vehicle
 		Multiplier: 200 # 200
 	Tooltip:
-		Name: Combat Cycle
+		Name: actor-vehicle-combat-cycle.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -4600,7 +4600,7 @@ vehicle.combat_cycle:
 		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Description: Builds structures.\n\nCan be deployed to disarm enemy bombs, demo traps or mines.
+		Description: meta-default-mcc-description
 	Valued:
 		Cost: 1000
 	Selectable:
@@ -4673,7 +4673,7 @@ vehicle.usa_mcc:
 		Queue: queue.usa_command_center
 		ReadyAudio: USAMCCCreated
 	Tooltip:
-		Name: USA Construction Vehicle
+		Name: actor-vehicle-usa-mcc-name
 	Production:
 		Produces: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building
 		PauseOnCondition: emp || leaflet || hacked || moving || deployed
@@ -4696,7 +4696,7 @@ vehicle.usa_mcc:
 		Type: queue.usa_building
 		Factions: usa, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		Group: Building
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: USABuilding
@@ -4707,7 +4707,7 @@ vehicle.usa_mcc:
 		Type: queue.air_gen_building
 		Factions: air
 		Group: Building
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: USABuilding
@@ -4718,7 +4718,7 @@ vehicle.usa_mcc:
 		Type: queue.laser_gen_building
 		Factions: laser
 		Group: Building
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: USABuilding
@@ -4729,7 +4729,7 @@ vehicle.usa_mcc:
 		Type: queue.super_gen_building
 		Factions: super
 		Group: Building
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: USABuilding
@@ -4739,7 +4739,7 @@ vehicle.usa_mcc:
 	ProductionQueue@USA_BUILDING_MERGED:
 		Type: queue.usa_building_merged
 		Group: Building
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: USABuilding
@@ -4764,9 +4764,9 @@ vehicle.gla_mcc:
 	Buildable:
 		Queue: queue.gla_command_center, queue.stealth_gen_command_center
 		ReadyAudio: WorkerCreated
-		Description: Builds structures.\n\nCan be deployed to disarm enemy bombs, demo traps or mines.\n\nGets better armor from Scrap Crates.
+		Description: actor-vehicle-gla-mcc.description
 	Tooltip:
-		Name: GLA Construction Vehicle
+		Name: actor-vehicle-gla-mcc.name
 	Production:
 		Produces: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building
 		PauseOnCondition: emp || leaflet || hacked || moving || deployed
@@ -4787,7 +4787,7 @@ vehicle.gla_mcc:
 		Type: queue.gla_building
 		Factions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank, boss
 		Group: Building
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		QueuedAudio: GLABuilding
 		CannotPlaceAudio: GLABuildingCannotPlaceAudio
@@ -4797,7 +4797,7 @@ vehicle.gla_mcc:
 		Type: queue.toxin_gen_building
 		Factions: toxin
 		Group: Building
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		QueuedAudio: GLABuilding
 		CannotPlaceAudio: GLABuildingCannotPlaceAudio
@@ -4807,7 +4807,7 @@ vehicle.gla_mcc:
 		Type: queue.demo_gen_building
 		Factions: demo
 		Group: Building
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		QueuedAudio: GLABuilding
 		CannotPlaceAudio: GLABuildingCannotPlaceAudio
@@ -4816,7 +4816,7 @@ vehicle.gla_mcc:
 	ProductionQueue@GLA_BUILDING_MERGED:
 		Type: queue.gla_building_merged
 		Group: Building
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		QueuedAudio: GLABuilding
 		CannotPlaceAudio: GLABuildingCannotPlaceAudio
@@ -4843,7 +4843,7 @@ vehicle.prc_mcc:
 		Queue: queue.prc_command_center
 		ReadyAudio: PRCMCCCreated
 	Tooltip:
-		Name: PRC Construction Vehicle
+		Name: actor-vehicle-prc-mcc-name
 	Production:
 		Produces: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.boss_gen_building
 		PauseOnCondition: emp || leaflet || hacked || moving || deployed
@@ -4868,7 +4868,7 @@ vehicle.prc_mcc:
 		Type: queue.prc_building
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, tank
 		Group: Building
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
@@ -4879,7 +4879,7 @@ vehicle.prc_mcc:
 		Type: queue.inf_gen_building
 		Factions: inf
 		Group: Building
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
@@ -4890,7 +4890,7 @@ vehicle.prc_mcc:
 		Type: queue.nuke_gen_building
 		Factions: nuke
 		Group: Building
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
@@ -4901,7 +4901,7 @@ vehicle.prc_mcc:
 		Type: queue.prc_building_merged
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Building
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
@@ -4912,7 +4912,7 @@ vehicle.prc_mcc:
 		Type: queue.boss_gen_building
 		Factions: boss
 		Group: Building
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
@@ -4923,7 +4923,7 @@ vehicle.prc_mcc:
 		Type: queue.boss_gen_building_merged
 		Factions: boss
 		Group: Building
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: PRCBuilding
@@ -4943,7 +4943,7 @@ vehicle.tech_mcc:
 	Buildable:
 		Queue: queue.disabled
 	Tooltip:
-		Name: Tech Construction Vehicle
+		Name: actor-vehicle-tech-mcc-name
 	Production:
 		Produces: queue.tech_building
 		PauseOnCondition: emp || leaflet || hacked || moving || deployed
@@ -4953,7 +4953,7 @@ vehicle.tech_mcc:
 	ProductionQueue@TECH_BUILDING:
 		Type: queue.tech_building
 		Group: Building
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		QueuedAudio: Building
@@ -4977,11 +4977,11 @@ vehicle.mobile_reactor:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: ~disabled
-		Description: Provides power for Laser Tanks.
+		Description: actor-vehicle-mobile-reactor.description
 	Valued:
 		Cost: 800
 	Tooltip:
-		Name: Mobile Reactor
+		Name: actor-vehicle-mobile-reactor.name
 	Health:
 		HP: 22000
 	Armor:

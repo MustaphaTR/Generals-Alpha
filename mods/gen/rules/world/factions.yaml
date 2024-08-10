@@ -1,90 +1,90 @@
 ^Factions:
 	Faction@random:
-		Name: Any
+		Name: faction-random.name
 		InternalName: Random
 		Side: Random
 		RandomFactionMembers: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
-		Description: A random faction will be chosen when the game starts.
+		Description: faction-random.description
 	Faction@randomUSA:
-		Name: Any USA
+		Name: faction-randomusa.name
 		InternalName: RandomUSA
 		Side: Random
 		RandomFactionMembers: usa, air, laser, super
-		Description: A random USA General will be chosen when the game starts.
+		Description: faction-randomusa.description
 	Faction@randomGLA:
-		Name: Any GLA
+		Name: faction-randomgla.name
 		InternalName: RandomGLA
 		Side: Random
 		RandomFactionMembers: gla, toxin, demo, stealth
-		Description: A random GLA General will be chosen when the game starts.
+		Description: faction-randomgla.description
 	Faction@randomPRC:
-		Name: Any PRC
+		Name: faction-randomprc.name
 		InternalName: RandomPRC
 		Side: Random
 		RandomFactionMembers: prc, inf, nuke, tank
-		Description: A random PRC General will be chosen when the game starts.
+		Description: faction-randomprc.description
 	Faction@USA:
-		Name: USA
+		Name: faction-usa.name
 		InternalName: usa
 		Side: USA
-		Description: United States of America\nThis is the default USA faction with no pros or cons.
+		Description: faction-usa.description
 	Faction@air:
-		Name: Airforce General
+		Name: faction-air.name
 		InternalName: air
 		Side: USA
-		Description: General Granger:\n+ Emergency Repair - Level 1 at 1 Star\n+ Carpet Bombing\n+ Chinook has Point Defense Lasers\n+ Planes have Point Defense Lasers\n+ Combat Chinook\n+ King Raptor\n+ Stealth Comanche\n+ Planes have more Health\n+ Starts with Stealth Fighter\n+ Cheaper Airfield\n+ Airfield has more HP\n+ Cheaper Aircraft\n\n- No Crusader Tank\n- No Paladin Tank\n- Avenger requires Strategy Center\n- More Expensive Vehicles
+		Description: faction-air.description
 	Faction@laser:
-		Name: Laser General
+		Name: faction-laser.name
 		InternalName: laser
 		Side: USA
-		Description: General Townes:\n+ Laser Turret\n+ Laser Tank\n+ Better and Cheaper Cold Fusion Reactor\n+ Cheaper Avenger\n\n- No Paladin Tank\n- No Tomahawk Launcher
+		Description: faction-laser.description
 	Faction@super:
-		Name: Superweapon General
+		Name: faction-super.name
 		InternalName: super
 		Side: USA
-		Description: General Alexander:\n+ Leaflet Drop at 3 Stars\n+ EMP Patriot Missile System\n+ Advanced Control Rods\n+ Cheaper Particle Cannon\n+ Cheaper Colonel Burton\n+ Aurora Alpha\n\n- More Expensive Cold Fusion Reactor\n- No Crusader Tank\n- No Paladin Tank\n- More Expensive Vehicles\n- More Expensive Comanche
+		Description: faction-super.description
 	Faction@GLA:
-		Name: GLA
+		Name: faction-gla.name
 		InternalName: gla
 		Side: GLA
-		Description: Global Liberation Army\nThis is the default GLA faction with no pros or cons.
+		Description: faction-gla.description
 	Faction@toxin:
-		Name: Toxin General
+		Name: faction-toxin.name
 		InternalName: toxin
 		Side: GLA
-		Description: Dr. Thrax:\n+ Demo Traps leave Toxins\n+ Toxin Tunnel Network\n+ Toxin Rebel\n+ Toxin Terrorist\n+ Anthrax Gamma\n+ Starts with Anthrax Beta\n+ Starts with Toxin Shells\n\n- No GPS Scrambler\n- No Saboteur\n- No Hijacker\n- No Camouflage\n- No Camo Netting\n- No Hi-Explosive Bombs\n- No Hi-Explosive Missiles\n- Demo Traps deal less damage\n- More Expensive Demo Traps\n- More Expensive Vehicles
+		Description: faction-toxin.description
 	Faction@demo:
-		Name: Demolition General
+		Name: faction-demo.name
 		InternalName: demo
 		Side: GLA
-		Description: General Juhziz:\n+ Advanced Demo Trap\n+ Scud Storms deal more Damage\n+ Terrorists deal more Damage\n+ Terrorists don't do Friendly Fire\n+ Demo Jarmen Kell\n+ Cheaper Bomb Truck\n+ Demolitions\n+ Starts with Booby Traps\n\n- No GPS Scrambler\n- Scud Storms don't leave Toxins\n- No Saboteur\n- No Hijacker\n- No Camouflage\n- No Camo Netting\n- No Toxin Shells\n- No Anthrax Beta\n- No Bio Bombs\n- No Toxin Missiles\n- More Expensive Vehicles
+		Description: faction-demo.description
 	Faction@stealth:
-		Name: Stealth General
+		Name: faction-stealth.name
 		InternalName: stealth
 		Side: GLA
-		Description: Prince Kassad:\n+ Emergency Repair - Level 1 at 1 Star\n+ GPS Scrambler at 3 Stars\n+ Better Hijacker\n+ Defenses start with Camo Netting\n+ Can camo net Buildings\n+ Starts with Hijacker\n+ Starts with Camouflage\n\n- No Scorpion Tank\n- No Marauder Tank\n- No Scud Launcher
+		Description: faction-stealth.description
 	Faction@PRC:
-		Name: PRC
+		Name: faction-prc.name
 		InternalName: prc
 		Side: PRC
-		Description: People's Republic of China\nThis is the default PRC faction with no pros or cons.
+		Description: faction-prc.description
 	Faction@inf:
-		Name: Infantry General
+		Name: faction-inf.name
 		InternalName: inf
 		Side: PRC
-		Description: General Fai:\n+ Frenzy - Level 1 at 1 Star\n+ Paradrop\n+ Fortified Bunker\n+ Infantry start as Veteran\n+ Minigunner\n+ Super Hacker\n+ Super Lotus\n+ Assault Troop Crawler\n+ Attack Outpost\n+ Assault Helix\n+ Patriotism\n+ Starts with Nationalism\n+ Barracks has more HP\n\n- No Cash Hack\n- No Battlemaster Tank\n- No Gatling Tank\n- No Overlord Tank\n- More Expensive Vehicles
+		Description: faction-inf.description
 	Faction@nuke:
-		Name: Nuke General
+		Name: faction-nuke.name
 		InternalName: nuke
 		Side: PRC
-		Description: General Tao:\n+ Emergency Repair - Level 1 at 1 Star\n+ Nuclear Carpet Bombing\n+ Advanced Nuclear Reactor\n+ Cheaper Nuclear Missile Silo\n+ Nuclear Battlemaster Tank\n+ Overlord Tank leaves Radiation\n+ Battlemaster and Overlord move faster\n+ MiG has Nuclear Warheads\n+ Isotope Stability\n+ Helix Nuke\n+ Tactical Nuke MiG\n+ Starts with Nuke Cannon\n+ Starts with Uranium Shells\n\n- More Expensive Infantry\n- More Expensive Aircraft
+		Description: faction-nuke.description
 	Faction@tank:
-		Name: Tank General
+		Name: faction-tank.name
 		InternalName: tank
 		Side: PRC
-		Description: General Kwai:\n+ Emergency Repair - Level 1 at 1 Star\n+ Battlemaster Elite Training\n+ Tank Drop\n+ Tanks start as Veteran\n+ Emperor Overlord\n+ Autoloader\n+ Cheaper Tanks\n\n- Carpet Bombing at 5 Stars\n- No Cash Hack\n- No Inferno Cannon\n- No Nuke Cannon\n- More Expensive Infantry\n- More Expensive and Longer To Build Aircraft
+		Description: faction-tank.description
 	Faction@boss:
-		Name: Boss General
+		Name: faction-boss.name
 		InternalName: boss
 		Side: PRC
-		Description: General Leang:\n+ Has a mixed arsenal from all 3 factions\n+ Has no tech center, most units that require them are directly available\n+ Can build all 3 super weapons\n+ Can train all 3 heroes\n+ Can minefield all structures\n+ Chemical Suits at Barracks\n+ All Infantry but Angry Mob are affected by Chemical Suits\n+ Dragon and Gatling Tank are affected by Composite Armor\n\n- No Emergency Repair\n- Main battle tank is locked behind General's Power\n- Heroes require super weapon of the faction\n- Most upgrades require super weapon of the faction\n- Due to mixed arsenal, some upgrades effect less units than as they do in original faction\n\nNote: Excluded from random selectors due to balance reasons.\nShe isn't designed for skirmish/MP but General's Challange in original.
+		Description: faction-boss.description

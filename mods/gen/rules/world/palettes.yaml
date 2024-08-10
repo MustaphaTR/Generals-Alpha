@@ -118,7 +118,7 @@
 		BaseName: cnccloak
 		BasePalette: cncplayer
 		Alpha: 0.55
-	MenuPaletteEffect:
+	MenuPostProcessEffect:
 	RotationPaletteEffect@defaultwater:
 		Palettes: terrain
 		ExcludeTilesets: DESERT
@@ -134,8 +134,8 @@
 		RotationBase: 32
 	LightPaletteRotator:
 		ExcludePalettes: terrain, desert, effect
-	ChronoshiftPaletteEffect:
-	FlashPaletteEffect@NUKE:
+	ChronoshiftPostProcessEffect:
+	FlashPostProcessEffect@NUKE:
 		Type: Nuke
 	PaletteFromPaletteWithAlpha@placelinesegment:
 		Name: placelinesegment

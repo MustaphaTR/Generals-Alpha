@@ -1309,7 +1309,7 @@
 		Type: queue.drone
 		Group: Tech
 		QueueLimit: 1
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 	ProductionBar:
 		ProductionType: queue.drone
@@ -1342,7 +1342,7 @@
 		Type: queue.prc_vehicle_upgrade
 		Group: Tech
 		ItemLimit: 1
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 	ProductionBar:
 		ProductionType: queue.prc_vehicle_upgrade
@@ -1368,7 +1368,7 @@
 		AlwaysShowForFactions: usa, air, laser, super, gla, stealth, prc, inf, nuke, tank, boss
 		Group: Tech
 		ItemLimit: 1
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 	GrantConditionOnProduction@CAMO_NETTING:
 		Condition: camo_netted
@@ -1435,8 +1435,8 @@
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		LowPowerModifier: 300
-    # Without this other actors in the queue appear unbuildable until something else updates the queue.
-    # Not sure why only Camo Netting has this issue, Mines work fine.
+	# Without this other actors in the queue appear unbuildable until something else updates the queue.
+	# Not sure why only Camo Netting has this issue, Mines work fine.
 	FreeActor@queue_updater:
 		Actor: hack.queue_updater
 		RequiresCondition: update_queue
@@ -1457,7 +1457,7 @@
 		Group: Tech
 		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		ItemLimit: 1
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 	GrantConditionOnProduction@LAND_MINES:
@@ -1615,7 +1615,7 @@
 	Guard:
 	Guardable:
 	Tooltip:
-		GenericName: Vehicle
+		GenericName: meta-vehicle-generic-name
 	Capturable:
 		Types: hijackable
 		CancelActivity: True
@@ -1665,7 +1665,7 @@
 	ProximityCaptor:
 		Types: Tank
 	Tooltip:
-		GenericName: Tank
+		GenericName: meta-tank-generic-name
 
 ^Car:
 	Inherits@1: ^ExistsInWorld
@@ -1712,8 +1712,8 @@
 		Condition: car_bomb
 		CaptureTypes: car
 	Tooltip:
-		Name: Automobile
-		GenericName: Automobile
+		Name: meta-car-generic-name
+		GenericName: meta-car.generic-name
 	Health:
 		HP: 10000
 	Armor:
@@ -1864,7 +1864,7 @@
 	Guard:
 	Guardable:
 	Tooltip:
-		GenericName: Soldier
+		GenericName: meta-infantry-generic-name
 	ChangesHealth@HOSPITAL:
 		Step: 500
 		Delay: 100
@@ -1930,7 +1930,7 @@
 	Valued:
 		Cost: 10
 	Tooltip:
-		Name: Civilian
+		Name: meta-civinfantry-name
 		GenericVisibility: None
 	ProximityCaptor:
 		Types: CivilianInfantry
@@ -2016,7 +2016,7 @@
 	Guard:
 	Guardable:
 	Tooltip:
-		GenericName: Ship
+		GenericName: meta-ship-generic-name
 	MustBeDestroyed:
 	MapEditorData:
 		ExcludeTilesets: INTERIOR
@@ -2079,7 +2079,7 @@
 	GivesBounty:
 		ShowPassengerBounties: false ## In most of the cases Passenger won't be killed in Gen
 	Tooltip:
-		GenericName: Plane
+		GenericName: meta-plane-generic-name
 	WithShadow:
 		Offset: 43, 128, 0
 		ZOffset: -129
@@ -2105,7 +2105,7 @@
 	Inherits: ^Plane
 	Inherits@LEAFLET: ^AffectedByLeaflet
 	Tooltip:
-		GenericName: Helicopter
+		GenericName: meta-helicopter-generic-name
 	Aircraft:
 		CanHover: True
 		CruisingCondition: cruising
@@ -2171,7 +2171,7 @@
 		Range: 3c0
 	FrozenUnderFog:
 	Tooltip:
-		GenericName: Structure
+		GenericName: meta-basicbuilding-generic-name
 	Demolishable:
 	MapEditorData:
 		Categories: Building
@@ -2242,7 +2242,7 @@
 	ProductionQueue:
 		Type: FakeToReal
 		Group: Vehicle
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 	ProductionBar:
 		ProductionType: FakeToReal
@@ -2331,8 +2331,8 @@
 	GrantConditionAfterDelay:
 		Condition: repaired
 	Tooltip:
-		Name: GLA Hole
-		GenericName: Hole
+		Name: meta-hole.name
+		GenericName: meta-hole.generic-name
 	Health:
 		HP: 50000
 	Armor:
@@ -2417,7 +2417,7 @@
 	-WithSpriteBody:
 	WithGateSpriteBody:
 	Tooltip:
-		Name: Gate
+		Name: meta-gate-name
 	Building:
 		BuildSounds: place2.aud
 		TerrainTypes: Grass, Snow, Sand, Concrete, GrassRoad, SnowRoad, SandRoad
@@ -2449,7 +2449,7 @@
 	Armor:
 		Type: building.normal
 	Tooltip:
-		Name: Tech Building
+		Name: meta-techbuilding-name
 		GenericVisibility: None
 	Capturable:
 		Types: building
@@ -2481,7 +2481,7 @@
 	Armor:
 		Type: building.normal
 	Tooltip:
-		Name: Civilian Building
+		Name: meta-civbuilding-name
 		GenericVisibility: None
 	SpawnActorOnDeath@1:
 		Actor: c1
@@ -2570,7 +2570,7 @@
 	-Selectable:
 	-SelectionDecorations:
 	Tooltip:
-		Name: Field
+		Name: meta-civfield-name
 	-Targetable:
 	-Demolishable:
 	-HitShape:
@@ -2589,7 +2589,7 @@
 	Explodes:
 		Weapon: UnitExplode
 	Tooltip:
-		Name: Ammo Box
+		Name: meta-ammobox-name
 	Targetable:
 		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, NoAutoTarget
 	Armor:
@@ -2604,7 +2604,7 @@
 	Inherits@SHAPE: ^1x1Shape
 	Interactable:
 	Tooltip:
-		Name: Tree
+		Name: meta-tree-name
 		ShowOwnerRow: false
 	RenderSprites:
 		Palette: player
@@ -2657,7 +2657,7 @@
 		Dimensions: 1,1
 	WithSpriteBody:
 	Tooltip:
-		Name: Tree (Burnt)
+		Name: meta-treehusk-name
 		ShowOwnerRow: false
 	FrozenUnderFog:
 	ScriptTriggers:
@@ -2687,7 +2687,7 @@
 		TargetTypes: GroundActor, Husk, NoAutoTarget, IgnoredByAI
 		RequiresForceFire: true
 	Tooltip:
-		GenericName: Destroyed Vehicle
+		GenericName: meta-husk-generic-name
 
 ^PlaneHusk:
 	Inherits: ^BasicHusk
@@ -2697,7 +2697,7 @@
 		Offset: 43, 128, 0
 		ZOffset: -129
 	Tooltip:
-		GenericName: Destroyed Plane
+		GenericName: meta-planehusk-generic-name
 	Aircraft:
 	FallsToEarth:
 		Moves: True
@@ -2720,7 +2720,7 @@
 		Offset: 43, 128, 0
 		ZOffset: -129
 	Tooltip:
-		GenericName: Destroyed Helicopter
+		GenericName: meta-helicopterhusk-generic-name
 	Aircraft:
 		CanHover: True
 		VTOL: true
@@ -2737,7 +2737,7 @@
 	Inherits@1: ^SpriteActor
 	Interactable:
 	Tooltip:
-		Name: Rock
+		Name: meta-rock-name
 		ShowOwnerRow: false
 	RenderSprites:
 		Palette: desert
@@ -2760,8 +2760,8 @@
 	Interactable:
 	HiddenUnderFog:
 	Tooltip:
-		Name: Crate
-		GenericName: Crate
+		Name: meta-crate-name
+		GenericName: meta-crate-name
 		ShowOwnerRow: false
 	Crate:
 		Duration: 4500
@@ -2821,7 +2821,7 @@
 		DetectionTypes: Mine
 		InitialDelay: 0
 	Tooltip:
-		Name: Mine
+		Name: meta-mine-name
 	Targetable:
 		TargetTypes: GroundActor, Mine
 	HitShape:

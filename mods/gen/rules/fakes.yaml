@@ -14,12 +14,12 @@ fake.command_center:
 		BuildDuration: 750
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units, !techlevel.nocc
-		Description: Looks like a Command Center.
+		Description: actor-building-gla-command-center.fake-description
 		ReadyTextNotification: Construction Complete: Fake Command Center
 		Icon: fake-icon
 	Tooltip:
-		Name: Fake Command Center
-		GenericName: GLA Command Center
+		Name: actor-building-gla-command-center.fake-name
+		GenericName: actor-building-gla-command-center.name
 		GenericVisibility: Enemy
 		GenericStancePrefix: False
 	Building:
@@ -88,12 +88,12 @@ fake.barracks:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units, !techlevel.vehicleonly
-		Description: Looks like a Barracks.
+		Description: actor-building-gla-barracks.fake-description
 		ReadyTextNotification: Construction Complete: Fake Barracks
 		Icon: fake-icon
 	Tooltip:
-		Name: Fake Barracks
-		GenericName: GLA Barracks
+		Name: actor-building-gla-barracks.fake-name
+		GenericName: actor-building-gla-barracks.name
 		GenericVisibility: Enemy
 		GenericStancePrefix: False
 	Building:
@@ -156,12 +156,12 @@ fake.supply_stash:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units
-		Description: Looks like a Supply Stash.
+		Description: actor-building-gla-supply-stash.fake-description
 		ReadyTextNotification: Construction Complete: Fake Supply Stash
 		Icon: fake-icon
 	Tooltip:
-		Name: Fake Supply Stash
-		GenericName: GLA Supply Stash
+		Name: actor-building-gla-supply-stash.fake-name
+		GenericName: actor-building-gla-supply-stash.name
 		GenericVisibility: Enemy
 		GenericStancePrefix: False
 	Building:
@@ -228,12 +228,12 @@ fake.arms_dealer:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.supply_center, ~prerequisite.zh_units, !techlevel.infonly
-		Description: Looks like an Arms Dealer.
+		Description: actor-building-arms-dealer.fake-description
 		ReadyTextNotification: Construction Complete: Fake Arms Dealer
 		Icon: fake-icon
 	Tooltip:
-		Name: Fake Arms Dealer
-		GenericName: GLA Arms Dealer
+		Name: actor-building-arms-dealer.fake-name
+		GenericName: actor-building-arms-dealer.name
 		GenericVisibility: Enemy
 		GenericStancePrefix: False
 	Building:
@@ -298,12 +298,12 @@ fake.palace:
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: building.arms_dealer, ~prerequisite.zh_units, !techlevel.notech
-		Description: Looks like a Palace.
+		Description: actor-building-palace.fake-description
 		ReadyTextNotification: Construction Complete: Fake Palace
 		Icon: fake-icon
 	Tooltip:
-		Name: Fake Palace
-		GenericName: Palace
+		Name: actor-building-palace.fake-name
+		GenericName: actor-building-palace.name
 		GenericVisibility: Enemy
 		GenericStancePrefix: False
 	Building:
@@ -372,12 +372,12 @@ fake.black_market:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~prerequisite.zh_units, !techlevel.notech
-		Description: Looks like a Black Market.
+		Description: actor-building-black-market.fake-description
 		ReadyTextNotification: Construction Complete: Fake Black Market
 		Icon: fake-icon
 	Tooltip:
-		Name: Fake Black Market
-		GenericName: Black Market
+		Name: actor-building-black-market.fake-name
+		GenericName: actor-building-black-market.name
 		GenericVisibility: Enemy
 		GenericStancePrefix: False
 	Building:
@@ -443,12 +443,12 @@ fake.scud_storm:
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, ~prerequisite.zh_units, !techlevel.nosw
-		Description: Looks like a SCUD Storm.
+		Description: actor-building-scud-storm.fake-description
 		ReadyTextNotification: Construction Complete: Fake SCUD Storm
 		Icon: fake-icon
 	Tooltip:
-		Name: Fake SCUD Storm
-		GenericName: SCUD Storm
+		Name: actor-building-scud-storm.fake-name
+		GenericName: actor-building-scud-storm.name
 		GenericVisibility: Enemy
 		GenericStancePrefix: False
 	Building:
@@ -590,12 +590,12 @@ fake.demo_trap:
 		BuildDuration: 25
 		BuildDurationModifier: 100
 		Prerequisites: building.arms_dealer, ~prerequisite.zh_units, !techlevel.nodefense
-		Description: Looks like a Demo Trap.
+		Description: actor-building-demo-trap.fake-description
 		ReadyTextNotification: Construction Complete: Fake Demo Trap
 		Icon: fake-icon
 	Tooltip:
-		Name: Fake Demo Trap
-		GenericName: Demo Trap
+		Name: actor-building-demo-trap.fake-name
+		GenericName: actor-building-demo-trap.name
 		GenericVisibility: Enemy
 		GenericStancePrefix: False
 	Health:
@@ -658,11 +658,11 @@ fake.advanced_demo_trap:
 	Inherits: fake.demo_trap
 	Buildable:
 		Queue: queue.demo_gen_building, queue.gla_building_merged
-		Description: Looks like an Advanced Demo Trap.
+		Description: actor-building-advanced-demo-trap.fake-description
 		ReadyTextNotification: Construction Complete: Fake Advanced Demo Trap
 	Tooltip:
-		Name: Fake Advanced Demo Trap
-		GenericName: Advanced Demo Trap
+		Name: actor-building-advanced-demo-trap.fake-name
+		GenericName: actor-building-advanced-demo-trap.name
 	Production:
 		Produces: queue.advanced_demo_trap.fake
 	ProductionQueue:
@@ -693,12 +693,12 @@ fake.tunnel_network:
 		BuildDurationModifier: 100
 		Queue: queue.gla_building, queue.demo_gen_building, queue.gla_building_merged
 		Prerequisites: building.gla_barracks, ~prerequisite.zh_units, !techlevel.nodefense
-		Description: Looks like a Tunnel Network.
+		Description: actor-building-tunnel-network.fake-description
 		ReadyTextNotification: Construction Complete: Fake Tunnel Network
 		Icon: fake-icon
 	Tooltip:
-		Name: Fake Tunnel Network
-		GenericName: Tunnel Network
+		Name: actor-building-tunnel-network.fake-name
+		GenericName: actor-building-tunnel-network.name
 		GenericVisibility: Enemy
 		GenericStancePrefix: False
 	Building:
@@ -793,14 +793,14 @@ fake.toxin_tunnel_network:
 	Inherits: fake.tunnel_network
 	Buildable:
 		Queue: queue.toxin_gen_building, queue.gla_building_merged
-		Description: Looks like a Toxin Tunnel Network.
+		Description: actor-building-toxin-tunnel-network.fake-description
 		ReadyTextNotification: Construction Complete: Fake Toxin Tunnel Network
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.gla_building_merged
 		Modifier: 3 # 17
 	Tooltip:
-		Name: Fake Toxin Tunnel Network
-		GenericName: Toxin Tunnel Network
+		Name: actor-building-toxin-tunnel-network.fake-name
+		GenericName: actor-building-toxin-tunnel-network.name
 	Production:
 		Produces: queue.toxin_tunnel_network.fake
 	ProductionQueue:
@@ -860,15 +860,15 @@ fake.stinger_site:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: building.gla_barracks, ~prerequisite.zh_units, !techlevel.nodefense
-		Description: Looks like a Stinger Site.
+		Description: actor-building-stinger-site.fake-description
 		ReadyTextNotification: Construction Complete: Fake Stinger Site
 		Icon: fake-icon
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.gla_building_merged
 		Modifier: 3 # 20
 	Tooltip:
-		Name: Fake Stinger Site
-		GenericName: Stinger Site
+		Name: actor-building-stinger-site.fake-name
+		GenericName: actor-building-stinger-site.name
 		GenericVisibility: Enemy
 		GenericStancePrefix: False
 	Building:
@@ -962,8 +962,8 @@ fake.stinger_site:
 fake.stinger_soldier:
 	Inherits: infantry.stinger_soldier
 	Tooltip:
-		Name: Fake Stinger Soldier
-		GenericName: Stinger Soldier
+		Name: actor-infantry-stinger-soldier.fake-name
+		GenericName: actor-infantry-stinger-soldier-name
 		GenericVisibility: Enemy
 		GenericStancePrefix: False
 	-Armament@AG:

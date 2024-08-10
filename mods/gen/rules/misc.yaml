@@ -170,7 +170,7 @@ CRATE:
 MONEYCRATE:
 	Inherits: ^Crate
 	Tooltip:
-		Name: Money Crate
+		Name: actor-moneycrate-name
 	GiveCashCrateAction:
 		Amount: 500
 		SelectionShares: 1
@@ -181,7 +181,7 @@ MONEYCRATE:
 UNCRATE:
 	Inherits: ^Crate
 	Tooltip:
-		Name: UN Crate
+		Name: actor-uncrate-name
 	GiveCashCrateAction:
 		Amount: 2000
 		SelectionShares: 1
@@ -190,7 +190,7 @@ UNCRATE:
 SUPPLYCRATE:
 	Inherits: ^Crate
 	Tooltip:
-		Name: Supply Crate
+		Name: actor-supplycrate-name
 	GiveCashCrateAction:
 		Amount: 1500
 		SelectionShares: 1
@@ -203,7 +203,7 @@ SUPPLYCRATE:
 HEALCRATE:
 	Inherits: ^Crate
 	Tooltip:
-		Name: Heal Crate
+		Name: actor-healcrate-name
 	HealActorsCrateAction:
 		Sound: heal2.aud
 		SelectionShares: 1
@@ -212,20 +212,20 @@ HEALCRATE:
 WCRATE:
 	Inherits: ^Crate
 	Tooltip:
-		Name: Wooden Crate
+		Name: actor-wcrate-name
 	RenderSprites:
 		Image: wcrate
 
 SCRATE:
 	Inherits: ^Crate
 	Tooltip:
-		Name: Steel Crate
+		Name: actor-scrate-name
 
 crate.supply_drop:
 	Inherits: ^Crate
 	Inherits@SUPPLY_LINES: ^AffectedBySupplyLines
 	Tooltip:
-		Name: Money Crate
+		Name: actor-crate-supply-drop-name
 	Buildable:
 		Queue: SupplyDrop
 		Icon: idle
@@ -248,7 +248,7 @@ crate.supply_drop:
 crate.scrap:
 	Inherits: ^Crate
 	Tooltip:
-		Name: Scrap Crate
+		Name: actor-crate-scrap-name
 	GiveCashCrateAction@1:
 		Amount: 25
 		SelectionShares: 1
@@ -273,7 +273,7 @@ crate.scrap:
 CAMERA:
 	Interactable:
 	EditorOnlyTooltip:
-		Name: (reveals area to owner)
+		Name: actor-camera-name
 	AlwaysVisible:
 	Immobile:
 		OccupiesSpace: false
@@ -291,21 +291,21 @@ CAMERA:
 camera.paradrop:
 	Inherits: CAMERA
 	EditorOnlyTooltip:
-		Name: (support power proxy camera)
+		Name: actor-camera-paradrop-name
 	RevealsShroud:
 		Range: 6c0
 
 camera.particle_cannon:
 	Inherits: CAMERA
 	EditorOnlyTooltip:
-		Name: (support power proxy camera)
+		Name: actor-camera-particle-cannon-name
 	RevealsShroud:
 		Range: 3c512
 
 camera.spyplane:
 	Inherits: CAMERA
 	EditorOnlyTooltip:
-		Name: (support power proxy camera)
+		Name: actor-camera-spyplane-name
 	DetectCloaked:
 		Range: 10c0
 		DetectionTypes: Cloak, Hijacker
@@ -313,7 +313,7 @@ camera.spyplane:
 camera.radar_van_scan:
 	Inherits: CAMERA
 	EditorOnlyTooltip:
-		Name: (support power proxy camera)
+		Name: actor-camera-radar-van-scan-name
 	RevealsShroud:
 		Range: 3c768
 	DetectCloaked:
@@ -325,7 +325,7 @@ camera.radar_van_scan:
 camera.spy_satellite:
 	Inherits: CAMERA
 	EditorOnlyTooltip:
-		Name: (support power proxy camera)
+		Name: actor-camera-spy-satellite-name
 	RevealsShroud:
 		Range: 7c512
 	DetectCloaked:
@@ -340,7 +340,7 @@ camera.intelligence:
 	Buildable:
 		Queue: Intelligence
 	Tooltip:
-		Name: Intelligence
+		Name: actor-camera-intelligence-name
 	GivesIntelligence:
 		Types: Intelligence
 		RequiresCondition: (strategy_center && zh_units) || (detention_camp && !zh_units)
@@ -362,7 +362,7 @@ camera.satellite_hack2:
 	Buildable:
 		Queue: SatelliteHack2
 	Tooltip:
-		Name: Satellite Hack 2
+		Name: actor-camera-satellite-hack2-name
 	GivesIntelligence:
 		RequiresCondition: internet_center
 	KillsSelf:
@@ -427,7 +427,7 @@ hack.mine:
 		Condition: keep_me_disabled
 	-Sellable:
 	Tooltip:
-		Name: Land Mine
+		Name: actor-hack-mine-name
 	RejectsOrders:
 	Explodes:
 		Weapon: explosion.mine
@@ -438,7 +438,7 @@ hack.mine:
 hack.mine.neutron:
 	Inherits: hack.mine
 	Tooltip:
-		Name: Neutron Mine
+		Name: actor-hack-mine-neutron-name
 	WithSpriteBody:
 		Sequence: idle-neutron
 	Explodes:
@@ -460,7 +460,7 @@ FLARE:
 	HiddenUnderFog:
 		Type: CenterPosition
 	Tooltip:
-		Name: Flare
+		Name: actor-flare-name
 		ShowOwnerRow: false
 	MapEditorData:
 		Categories: Decoration
@@ -526,7 +526,7 @@ hack.particle_beam:
 	Inherits@REVEAL: ^Reveal150
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Tooltip:
-		Name: Particle Beam
+		Name: actor-hack-particle-beam-name
 	Health:
 		HP: 400000
 	HitShape:
@@ -595,7 +595,7 @@ RAILMINE:
 	Interactable:
 	HiddenUnderShroud:
 	Tooltip:
-		Name: Abandoned Mine
+		Name: actor-railmine-name
 	RenderSprites:
 		Palette: player
 	WithSpriteBody:
@@ -612,7 +612,7 @@ QUEE:
 	Interactable:
 	HiddenUnderShroud:
 	Tooltip:
-		Name: Queen Ant
+		Name: actor-quee-name
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -628,7 +628,7 @@ LAR1:
 	Interactable:
 	HiddenUnderShroud:
 	Tooltip:
-		Name: Ant Larva
+		Name: actor-lar1-name
 	Building:
 		Footprint: x
 		Dimensions: 1,1
@@ -643,12 +643,12 @@ LAR1:
 LAR2:
 	Inherits@1: LAR1
 	Tooltip:
-		Name: Ant Larvae
+		Name: actor-lar2-name
 
 mpspawn:
 	Interactable:
 	EditorOnlyTooltip:
-		Name: (multiplayer player starting point)
+		Name: actor-mpspawn-name
 	AlwaysVisible:
 	Immobile:
 		OccupiesSpace: false
@@ -662,7 +662,7 @@ mpspawn:
 waypoint:
 	Interactable:
 	EditorOnlyTooltip:
-		Name: (waypoint for scripted behavior)
+		Name: actor-waypoint-name
 	AlwaysVisible:
 	Immobile:
 		OccupiesSpace: false
@@ -687,7 +687,7 @@ CTFLAG:
 		Footprint: x
 		Dimensions: 1,1
 	Tooltip:
-		Name: Flag
+		Name: actor-ctflag-name
 	WithBuildingBib:
 		HasMinibib: true
 	-HitShape:

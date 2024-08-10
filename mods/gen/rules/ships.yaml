@@ -9,11 +9,11 @@ vessel.transport:
 		BuildPaletteOrder: 1
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Description: General-purpose naval transport.\n\nCan carry infantry and vehicles.
+		Description: actor-vessel-transport.description
 	Valued:
 		Cost: 700
 	Tooltip:
-		Name: Transport Boat
+		Name: actor-vessel-transport.name
 	Health:
 		HP: 30000
 	Armor:
@@ -62,11 +62,11 @@ vessel.gunboat:
 		BuildDuration: 200
 		BuildDurationModifier: 100
 		Prerequisites: ~tech.shipyard, !techlevel.infonly
-		Description: Light scout & support ship.
+		Description: actor-vessel-gunboat.description
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Gunboat
+		Name: actor-vessel-gunboat.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -126,11 +126,11 @@ vessel.destroyer:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.tech_center_or_boss_airfield, !techlevel.infonly
-		Description: Fast multi-role ship.
+		Description: actor-vessel-destroyer.description
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: Destroyer
+		Name: actor-vessel-destroyer.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -197,11 +197,11 @@ vessel.cruiser:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.tech_center_or_boss_sw, !techlevel.infonly
-		Description: Very slow long-range ship.
+		Description: actor-vessel-cruiser.description
 	Valued:
 		Cost: 2400
 	Tooltip:
-		Name: Cruiser
+		Name: actor-vessel-cruiser.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:

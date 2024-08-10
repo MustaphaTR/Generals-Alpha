@@ -56,13 +56,13 @@
 upgrade.radar:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Radar
+		Name: actor-upgrade-radar.name
 	Buildable:
 		Queue: queue.prc_command_center
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 500
-		Description: Allows Commandand Center to provide Radar.
+		Description: actor-upgrade-radar.description
 		ReadyTextNotification: Upgrade Complete: Radar
 	Valued:
 		Cost: 500
@@ -70,13 +70,13 @@ upgrade.radar:
 upgrade.land_mines:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Land Mines
+		Name: actor-upgrade-land-mines.name
 	Buildable:
 		Queue: queue.prc_command_center, queue.boss_gen_cold_fusion_reactor, queue.boss_gen_cold_fusion_reactor_merged, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry, queue.boss_gen_infantry_merged, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
 		BuildPaletteOrder: 14
 		ForceIconLocation: true
 		BuildDuration: 500
-		Description: Creates minefields around the structure.
+		Description: actor-upgrade-land-mines.description
 		ReadyTextNotification: Upgrade Complete: Land Mines
 	Valued:
 		Cost: 600
@@ -84,13 +84,13 @@ upgrade.land_mines:
 upgrade.neutron_mines:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Neutron Mines
+		Name: actor-upgrade-neutron-mines.name
 	Buildable:
 		Queue: queue.prc_command_center, queue.boss_gen_cold_fusion_reactor, queue.boss_gen_cold_fusion_reactor_merged, queue.prc_collector, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry, queue.boss_gen_infantry_merged, queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged, queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged, queue.internet_center, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.just_mine
 		BuildPaletteOrder: 14
 		ForceIconLocation: true
 		BuildDuration: 625
-		Description: Upgrades mines to neutron mines, which kill vehicle drivers.
+		Description: actor-upgrade-neutron-mines.description
 		ReadyTextNotification: Upgrade Complete: Neutron Mines
 	Valued:
 		Cost: 500
@@ -98,13 +98,13 @@ upgrade.neutron_mines:
 upgrade.control_rods:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Control Rods
+		Name: actor-upgrade-control-rods.name
 	Buildable:
 		Queue: queue.cold_fusion_reactor, queue.boss_gen_cold_fusion_reactor
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 375
-		Description: Doubles power output of the Cold Fusion Reactor.
+		Description: actor-upgrade-control-rods.description
 		ReadyTextNotification: Upgrade Complete: Control Rods
 	Power:
 		Amount: 5
@@ -123,10 +123,10 @@ upgrade.control_rods.laser:
 upgrade.advanced_control_rods:
 	Inherits: upgrade.control_rods
 	Tooltip:
-		Name: Advanced Control Rods
+		Name: actor-upgrade-advanced-control-rods.name
 	Buildable:
 		Queue: queue.advanced_cold_fusion_reactor, queue.cold_fusion_reactor_merged, queue.boss_gen_cold_fusion_reactor_merged
-		Description: Quadruples power output of the Cold Fusion Reactor.
+		Description: actor-upgrade-advanced-control-rods.description
 		ReadyTextNotification: Upgrade Complete: Advanced Control Rods
 	Power:
 		Amount: 15
@@ -134,13 +134,13 @@ upgrade.advanced_control_rods:
 upgrade.camo_netting:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Camo Netting
+		Name: actor-upgrade-camo-netting.name
 	Buildable:
 		Queue: queue.camo_netting, queue.stealth_gen_command_center, queue.stealth_gen_collector, queue.stealth_gen_infantry, queue.stealth_gen_vehicle, queue.stealth_gen_palace, queue.stealth_gen_black_market, queue.gla_infantry_merged, queue.gla_vehicle_merged, queue.palace_merged
 		BuildPaletteOrder: 14
 		ForceIconLocation: true
 		BuildDuration: 125
-		Description: Allows structure to cloak.
+		Description: actor-upgrade-camo-netting.description
 		ReadyAudio: CamoNetting
 		ReadyTextNotification: Upgrade Complete: Camo Netting
 	Valued:
@@ -149,13 +149,13 @@ upgrade.camo_netting:
 upgrade.capture_building:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Capture Building
+		Name: actor-upgrade-capture-building.name
 	Buildable:
 		Queue: queue.usa_infantry, queue.super_gen_infantry, queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry, queue.gla_infantry_merged, queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry, queue.boss_gen_infantry_merged
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 750
-		Description: Allows AP Infantry to capture enemy and neutral structures.
+		Description: actor-upgrade-capture-building.description
 		ReadyTextNotification: Upgrade Complete: Capture Building
 	Valued:
 		Cost: 1000
@@ -165,13 +165,13 @@ upgrade.capture_building:
 upgrade.flashbang_grenades:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Flashbang Grenades
+		Name: actor-upgrade-flashbang-grenades.name
 	Buildable:
 		Queue: queue.usa_infantry, queue.super_gen_infantry, queue.boss_gen_infantry, queue.boss_gen_infantry_merged
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		BuildDuration: 750
-		Description: Gives Rangers ability to use flashbang grenades against infantry, both inside and outside buildings.
+		Description: actor-upgrade-flashbang-grenades.description
 		ReadyAudio: Flashbang
 		ReadyTextNotification: Upgrade Complete: Flashbang Grenades
 	Valued:
@@ -182,13 +182,13 @@ upgrade.flashbang_grenades:
 upgrade.booby_traps:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Booby Traps
+		Name: actor-upgrade-booby-traps.name
 	Buildable:
 		Queue: queue.gla_infantry
 		BuildPaletteOrder: 5
 		BuildDuration: 750
 		Prerequisites: ~prerequisite.zh_units
-		Description: Gives Rebels ability to place booby traps on friendly or neutral structures which explode when garrisoned or captured.
+		Description: actor-upgrade-booby-traps.description
 		ReadyAudio: BoobyTraps
 		ReadyTextNotification: Upgrade Complete: Booby Traps
 	Valued:
@@ -199,13 +199,13 @@ upgrade.booby_traps:
 upgrade.tow_missile:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: TOW Missile
+		Name: actor-upgrade-tow-missile.name
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.usa_vehicle_merged
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 750
-		Description: Allows Humvees to fire Missiles.
+		Description: actor-upgrade-tow-missile.description
 		ReadyAudio: TOW
 		ReadyTextNotification: Upgrade Complete: TOW Missile
 	Valued:
@@ -216,13 +216,13 @@ upgrade.tow_missile:
 upgrade.sentry_gun:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Sentry Drone Gun
+		Name: actor-upgrade-sentry-gun.name
 	Buildable:
 		Queue: queue.usa_vehicle, queue.air_gen_vehicle, queue.laser_gen_vehicle, queue.super_gen_vehicle, queue.usa_vehicle_merged, queue.boss_gen_particle_cannon
 		BuildPaletteOrder: 5
 		BuildDuration: 250
 		Prerequisites: ~prerequisite.zh_units
-		Description: Allows Senrty Drones to fire.
+		Description: actor-upgrade-sentry-gun.description
 		ReadyTextNotification: Upgrade Complete: Sentry Drone Gun
 	Valued:
 		Cost: 1000
@@ -232,13 +232,13 @@ upgrade.sentry_gun:
 upgrade.sc_rocket:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Scorpion Rocket
+		Name: actor-upgrade-sc-rocket.name
 	Buildable:
 		Queue: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.gla_vehicle_merged
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 750
-		Description: Gives Scorpion Tanks a rocket.
+		Description: actor-upgrade-sc-rocket.description
 		ReadyAudio: ScorpionRocket
 		ReadyTextNotification: Upgrade Complete: Scorpion Rocket
 	Valued:
@@ -249,13 +249,13 @@ upgrade.sc_rocket:
 upgrade.chain_gun:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Chain Guns
+		Name: actor-upgrade-chain-gun.name
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1125
-		Description: Increases damage of gatling weapons by 25%.
+		Description: actor-upgrade-chain-gun.description
 		ReadyAudio: ChainGun
 		ReadyTextNotification: Upgrade Complete: Chain Guns
 	Valued:
@@ -266,13 +266,13 @@ upgrade.chain_gun:
 upgrade.black_napalm:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Black Napalm
+		Name: actor-upgrade-black-napalm.name
 	Buildable:
 		Queue: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.prc_vehicle_merged, queue.boss_gen_vehicle, queue.boss_gen_vehicle_merged
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		BuildDuration: 1125
-		Description: Increases damage of fire based weapons.
+		Description: actor-upgrade-black-napalm.description
 		ReadyAudio: BlackNapalm
 		ReadyTextNotification: Upgrade Complete: Black Napalm
 	Valued:
@@ -283,14 +283,14 @@ upgrade.black_napalm:
 upgrade.rocket_pods:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Rocket Pods
+		Name: actor-upgrade-rocket-pods.name
 	Buildable:
 		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged
 		BuildAtProductionType: queue.usa_air_upgrade
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Description: Allows Comanches to fire Missiles.
+		Description: actor-upgrade-rocket-pods.description
 		ReadyAudio: RocketPods
 		ReadyTextNotification: Upgrade Complete: Rocket Pods
 	Valued:
@@ -301,14 +301,14 @@ upgrade.rocket_pods:
 upgrade.laser_guided_missiles:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Laser-Guided Missiles
+		Name: actor-upgrade-laser-guided-missiles.name
 	Buildable:
 		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged
 		BuildAtProductionType: queue.usa_air_upgrade
 		BuildPaletteOrder: 5
 		ForceIconLocation: true
 		BuildDuration: 1000
-		Description: Increases the damage output of Raptor and Stealth Bomber by 25%.
+		Description: actor-upgrade-laser-guided-missiles.description
 		ReadyAudio: LaserGuide
 		ReadyTextNotification: Upgrade Complete: Laser-Guided Missiles
 	Valued:
@@ -319,7 +319,7 @@ upgrade.laser_guided_missiles:
 upgrade.countermeasures:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Countermeasures
+		Name: actor-upgrade-countermeasures.name
 	Buildable:
 		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged
 		BuildAtProductionType: queue.usa_air_upgrade
@@ -327,7 +327,7 @@ upgrade.countermeasures:
 		ForceIconLocation: true
 		BuildDuration: 1000
 		Prerequisites: ~prerequisite.zh_units
-		Description: Increases aircraft armor and gives them 50% chance to evade missiles fired at them.\nEffective armor change depends on weapon and aircraft.
+		Description: actor-upgrade-countermeasures.description
 		ReadyAudio: Countermeasures
 		ReadyTextNotification: Upgrade Complete: Countermeasures
 	Valued:
@@ -338,7 +338,7 @@ upgrade.countermeasures:
 upgrade.bunker_busters:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Bunker Busters
+		Name: actor-upgrade-bunker-busters.name
 	Buildable:
 		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged
 		BuildAtProductionType: queue.usa_air_upgrade
@@ -346,7 +346,7 @@ upgrade.bunker_busters:
 		ForceIconLocation: true
 		BuildDuration: 1000
 		Prerequisites: ~prerequisite.zh_units
-		Description: Enables Stealth Bombers to kill garrisoned units in Civilian Strucutres, Bunkers, Firebases and Tunnels.
+		Description: actor-upgrade-bunker-busters.description
 		ReadyAudio: BunkerBusters
 		ReadyTextNotification: Upgrade Complete: Bunker Busters
 	Valued:
@@ -357,14 +357,14 @@ upgrade.bunker_busters:
 upgrade.stealth_comanche:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Stealth Comanche
+		Name: actor-upgrade-stealth-comanche.name
 	Buildable:
 		Queue: queue.air_gen_aircraft, queue.usa_aircraft_merged
 		BuildAtProductionType: queue.usa_air_upgrade
 		BuildPaletteOrder: 8
 		ForceIconLocation: true
 		BuildDuration: 750
-		Description: Allows Comanches to stealth when not firing.
+		Description: actor-upgrade-stealth-comanche.description
 		ReadyTextNotification: Upgrade Complete: Stealth Comanche
 	Valued:
 		Cost: 1500
@@ -374,13 +374,13 @@ upgrade.stealth_comanche:
 upgrade.mig_armor:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: MiG Armor
+		Name: actor-upgrade-mig-armor.name
 	Buildable:
 		Queue: queue.prc_aircraft, queue.inf_gen_aircraft, queue.nuke_gen_aircraft, queue.tank_gen_aircraft, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1000
-		Description: Increases MiGs' health by 25%.
+		Description: actor-upgrade-mig-armor.description
 		ReadyAudio: MiGArmor
 		ReadyTextNotification: Upgrade Complete: MiG Armor
 	Valued:
@@ -391,13 +391,13 @@ upgrade.mig_armor:
 upgrade.satellite_hack1:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Satellite Hack 1
+		Name: actor-upgrade-satellite-hack1.name
 	Buildable:
 		Queue: queue.internet_center
 		BuildPaletteOrder: 0
 		BuildDuration: 500
 		Prerequisites: ~!upgrade.satellite_hack1
-		Description: Allows seeing around the enemy Command Centers.
+		Description: actor-upgrade-satellite-hack1.description
 		ReadyTextNotification: Upgrade Complete: Satellite Hack 1
 	Valued:
 		Cost: 1000
@@ -407,13 +407,13 @@ upgrade.satellite_hack1:
 upgrade.satellite_hack2:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Satellite Hack 2
+		Name: actor-upgrade-satellite-hack2.name
 	Buildable:
 		Queue: queue.internet_center
 		BuildPaletteOrder: 1
 		BuildDuration: 500
 		Prerequisites: ~upgrade.satellite_hack1
-		Description: Reveals all enemy units and buildings every 4 minutes for 20 seconds.
+		Description: actor-upgrade-satellite-hack2.description
 		ReadyTextNotification: Upgrade Complete: Satellite Hack 2
 	Valued:
 		Cost: 2500
@@ -423,12 +423,12 @@ upgrade.satellite_hack2:
 upgrade.adv_training:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Advanced Training
+		Name: actor-upgrade-adv-training.name
 	Buildable:
 		Queue: queue.strategy_center, queue.air_gen_strategy_center, queue.boss_gen_particle_cannon
 		BuildPaletteOrder: 3
 		BuildDuration: 1500
-		Description: Doubles the rate units gain veterancy.
+		Description: actor-upgrade-adv-training.description
 		QueuedAudio: NoAudio
 		ReadyAudio: AdvancedTraining
 		ReadyTextNotification: Upgrade Complete: Advanced Training
@@ -440,12 +440,12 @@ upgrade.adv_training:
 upgrade.drone_armor:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Drone Armor
+		Name: actor-upgrade-drone-armor.name
 	Buildable:
 		Queue: queue.strategy_center, queue.air_gen_strategy_center
 		BuildPaletteOrder: 4
 		BuildDuration: 1000
-		Description: Increases Drones' health by 25%.
+		Description: actor-upgrade-drone-armor.description
 		ReadyAudio: DroneArmor
 		ReadyTextNotification: Upgrade Complete: Drone Armor
 	Valued:
@@ -456,12 +456,12 @@ upgrade.drone_armor:
 upgrade.composite_armor:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Composite Armor
+		Name: actor-upgrade-composite-armor.name
 	Buildable:
 		Queue: queue.strategy_center
 		BuildPaletteOrder: 5
 		BuildDuration: 1500
-		Description: Increases Crusader Tank health by 40%.\n\nIncreases Paladin and Microwave Tank health by 20%.
+		Description: actor-upgrade-composite-armor.description
 		Prerequisites: !techlevel.infonly
 		ReadyAudio: CompositeArmor
 		ReadyTextNotification: Upgrade Complete: Composite Armor
@@ -472,7 +472,7 @@ upgrade.composite_armor:
 		BuildDurationModifier: 100
 		BuildLimit: 1
 		Prerequisites: !techlevel.infonly
-		Description: Increases Paladin Tank health by 20%.\n\nIncreases Gatling and Dragon Tank health by 33%.
+		Description: actor-upgrade-composite-armor.boss-description
 		ReadyAudio: CompositeArmor
 		ReadyTextNotification: Upgrade Complete: Composite Armor
 	Valued:
@@ -483,13 +483,13 @@ upgrade.composite_armor:
 upgrade.chemical_suits:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Chemical Suits
+		Name: actor-upgrade-chemical-suits.name
 	Buildable:
 		Queue: queue.strategy_center, queue.air_gen_strategy_center, queue.boss_gen_infantry, queue.boss_gen_infantry_merged
 		BuildPaletteOrder: 6
 		BuildDuration: 1500
 		Prerequisites: !upgrade.chemical_suits, ~prerequisite.zh_units, !techlevel.vehicleonly
-		Description: Decreases the damage dealt to infantry from Microwaves, Toxins and Radiation.
+		Description: actor-upgrade-chemical-suits.description
 		ReadyAudio: ChemicalSuits
 		ReadyTextNotification: Upgrade Complete: Chemical Suits
 	BuildPaletteOrderModifier@Boss:
@@ -507,13 +507,13 @@ upgrade.chemical_suits:
 upgrade.supply_lines:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Supply Lines
+		Name: actor-upgrade-supply-lines.name
 	Buildable:
 		Queue: queue.strategy_center, queue.air_gen_strategy_center
 		BuildPaletteOrder: 7
 		BuildDuration: 1500
 		Prerequisites: ~prerequisite.zh_units
-		Description: Increases output from Supply Centers, Supply Drop Zones and Oil Derricks by 10%.
+		Description: actor-upgrade-supply-lines.description
 		ReadyAudio: SupplyLines
 		ReadyTextNotification: Upgrade Complete: Supply Lines
 	Valued:
@@ -524,14 +524,14 @@ upgrade.supply_lines:
 upgrade.moab:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Mother of All Bombs
+		Name: actor-upgrade-moab.name
 	Buildable:
 		Queue: queue.strategy_center, queue.air_gen_strategy_center
 		BuildPaletteOrder: 8
 		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: prerequisite.fuel_air_bomb, ~prerequisite.zh_units
-		Description: Upgrades Fuel Air Bomb to Mother of All Bombs.
+		Description: actor-upgrade-moab.description
 		ReadyTextNotification: Upgrade Complete: Mother of All Bombs
 	Valued:
 		Cost: 4000
@@ -541,13 +541,13 @@ upgrade.moab:
 upgrade.camouflage:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Camouflage
+		Name: actor-upgrade-camouflage.name
 	Buildable:
 		Queue: queue.palace
 		BuildPaletteOrder: 0
 		BuildDuration: 1500
 		Prerequisites: !techlevel.vehicleonly
-		Description: Allows Rebels to cloak while not firing.
+		Description: actor-upgrade-camouflage.description
 		ReadyAudio: Camouflage
 		ReadyTextNotification: Upgrade Complete: Camouflage
 	Valued:
@@ -558,13 +558,13 @@ upgrade.camouflage:
 upgrade.arm_the_mob:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Arm The Mob
+		Name: actor-upgrade-arm-the-mob.name
 	Buildable:
 		Queue: queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged, queue.boss_gen_scud_storm
 		BuildPaletteOrder: 1
 		BuildDuration: 750
 		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
-		Description: Replaces pistols of Angry Mobs with AK-47s.
+		Description: actor-upgrade-arm-the-mob.description
 		ReadyAudio: ArmTheMob
 		ReadyTextNotification: Upgrade Complete: Arm The Mob
 	BuildPaletteOrderModifier@Boss:
@@ -578,13 +578,13 @@ upgrade.arm_the_mob:
 upgrade.toxin_shells:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Toxin Shells
+		Name: actor-upgrade-toxin-shells.name
 	Buildable:
 		Queue: queue.palace
 		BuildPaletteOrder: 2
 		BuildDuration: 750
 		Prerequisites: !techlevel.infonly
-		Description: Makes Scorpion and Marauder tank shells leave toxin.
+		Description: actor-upgrade-toxin-shells.description
 		ReadyAudio: ToxinShells
 		ReadyTextNotification: Upgrade Complete: Toxin Shells
 	Valued:
@@ -595,12 +595,12 @@ upgrade.toxin_shells:
 upgrade.anthrax_beta:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Anthrax Beta
+		Name: actor-upgrade-anthrax-beta.name
 	Buildable:
 		Queue: queue.palace, queue.stealth_gen_palace
 		BuildPaletteOrder: 3
 		BuildDuration: 750
-		Description: Increases all toxin weapons' damage by 25%.
+		Description: actor-upgrade-anthrax-beta.description
 		ReadyAudio: AnthraxBeta
 		ReadyTextNotification: Upgrade Complete: Anthrax Beta
 	Valued:
@@ -611,12 +611,12 @@ upgrade.anthrax_beta:
 upgrade.anthrax_gamma:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Anthrax Gamma
+		Name: actor-upgrade-anthrax-gamma.name
 	Buildable:
 		Queue: queue.toxin_gen_palace, queue.palace_merged
 		BuildPaletteOrder: 3
 		BuildDuration: 1500
-		Description: Increases all toxin weapons' damage by 25%.
+		Description: actor-upgrade-anthrax-gamma.description
 		ReadyAudio: AnthraxGamma
 		ReadyTextNotification: Upgrade Complete: Anthrax Gamma
 	Valued:
@@ -627,13 +627,13 @@ upgrade.anthrax_gamma:
 upgrade.fortified_structures:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Fortified Structures
+		Name: actor-upgrade-fortified-structures.name
 	Buildable:
 		Queue: queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged
 		BuildPaletteOrder: 4
 		BuildDuration: 750
 		Prerequisites: ~prerequisite.zh_units
-		Description: Increases structure armor by 33%.
+		Description: actor-upgrade-fortified-structures.description
 		ReadyTextNotification: Upgrade Complete: Fortified Structures
 	Valued:
 		Cost: 1000
@@ -643,12 +643,12 @@ upgrade.fortified_structures:
 upgrade.demolitions:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Demolitions
+		Name: actor-upgrade-demolitions.name
 	Buildable:
 		Queue: queue.demo_gen_palace, queue.palace_merged
 		BuildPaletteOrder: 5
 		BuildDuration: 750
-		Description: Makes units end defenses explode on dealth.
+		Description: actor-upgrade-demolitions.description
 		ReadyTextNotification: Upgrade Complete: Demolitions
 	Valued:
 		Cost: 2000
@@ -658,13 +658,13 @@ upgrade.demolitions:
 upgrade.nationalism:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Nationalism
+		Name: actor-upgrade-nationalism.name
 	Buildable:
 		Queue: queue.propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.boss_gen_missile_silo
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Description: Makes Horde Bonus give an additional 25% firing speed.
+		Description: actor-upgrade-nationalism.description
 		ReadyAudio: Nationalism
 		ReadyTextNotification: Upgrade Complete: Nationalism
 	Valued:
@@ -675,13 +675,13 @@ upgrade.nationalism:
 upgrade.patriotism:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Patriotism
+		Name: actor-upgrade-patriotism.name
 	Buildable:
 		Queue: queue.inf_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_missile_silo_merged
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Description: Makes Horde Bonus give an additional 25% firing speed.
+		Description: actor-upgrade-patriotism.description
 		ReadyAudio: Patriotism
 		ReadyTextNotification: Upgrade Complete: Patriotism
 	Valued:
@@ -692,14 +692,14 @@ upgrade.patriotism:
 upgrade.isotope_stability:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Isotope Stability
+		Name: actor-upgrade-isotope-stability.name
 	Buildable:
 		Queue: queue.nuke_gen_propaganda_center, queue.propaganda_center_merged
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: !techlevel.infonly
-		Description: Makes Battlemaster and Overlord Tank not explode on death.
+		Description: actor-upgrade-isotope-stability.description
 		ReadyTextNotification: Upgrade Complete: Isotope Stability
 	Buildable@Boss:
 		Queue: queue.boss_gen_missile_silo_merged
@@ -709,7 +709,7 @@ upgrade.isotope_stability:
 		BuildDurationModifier: 100
 		BuildLimit: 1
 		Prerequisites: !techlevel.infonly
-		Description: Makes Overlord Tank not explode on death.
+		Description: actor-upgrade-isotope-stability.boss-description
 		ReadyAudio: UpgradeComplete
 		ReadyTextNotification: Upgrade Complete: Isotope Stability
 	Valued:
@@ -720,13 +720,13 @@ upgrade.isotope_stability:
 upgrade.autoloader:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Autoloader
+		Name: actor-upgrade-autoloader.name
 	Buildable:
 		Queue: queue.tank_gen_propaganda_center, queue.propaganda_center_merged
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 1500
-		Description: Makes Battlemaster Tanks to fire 3 cannon at once.
+		Description: actor-upgrade-autoloader.description
 		Prerequisites: !techlevel.infonly
 		ReadyAudio: Autoloader
 		ReadyTextNotification: Upgrade Complete: Autoloader
@@ -741,13 +741,13 @@ upgrade.autoloader:
 upgrade.subliminal_messaging:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Subliminal Messaging
+		Name: actor-upgrade-subliminal-messaging.name
 	Buildable:
 		Queue: queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.boss_gen_missile_silo, queue.boss_gen_missile_silo_merged
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1000
-		Description: Doubles the efficency of Speaker Towers.
+		Description: actor-upgrade-subliminal-messaging.description
 		ReadyAudio: Subliminal
 		ReadyTextNotification: Upgrade Complete: Subliminal Messaging
 	Valued:
@@ -758,12 +758,12 @@ upgrade.subliminal_messaging:
 upgrade.ap_bullets:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Armor-Piercing Bullets
+		Name: actor-upgrade-ap-bullets.name
 	Buildable:
 		Queue: queue.black_market, queue.stealth_gen_black_market
 		BuildPaletteOrder: 0
 		BuildDuration: 1500
-		Description: Increases bullet weapons' damage by 25%.
+		Description: actor-upgrade-ap-bullets.description
 		ReadyAudio: APBullets
 		ReadyTextNotification: Upgrade Complete: Armor-Piercing Bullets
 	Valued:
@@ -774,12 +774,12 @@ upgrade.ap_bullets:
 upgrade.ap_rockets:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Armor-Piercing Rockets
+		Name: actor-upgrade-ap-rockets.name
 	Buildable:
 		Queue: queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_scud_storm
 		BuildPaletteOrder: 1
 		BuildDuration: 1500
-		Description: Increases rocket weapons' damage by 25%.
+		Description: actor-upgrade-ap-rockets.description
 		ReadyAudio: APRockets
 		ReadyTextNotification: Upgrade Complete: Armor-Piercing Rockets
 	Valued:
@@ -790,13 +790,13 @@ upgrade.ap_rockets:
 upgrade.radar_van_scan:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Radar Van Scan
+		Name: actor-upgrade-radar-van-scan.name
 	Buildable:
 		Queue: queue.black_market, queue.stealth_gen_black_market
 		BuildPaletteOrder: 2
 		BuildDuration: 500
 		Prerequisites: !techlevel.infonly
-		Description: Gives you a Radar Van Scan support power for each Radar Van you have.
+		Description: actor-upgrade-radar-van-scan.description
 		ReadyAudio: RadarVanScan
 		ReadyTextNotification: Upgrade Complete: Radar Van Scan
 	Valued:
@@ -807,13 +807,13 @@ upgrade.radar_van_scan:
 upgrade.junk_repair:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Junk Repair
+		Name: actor-upgrade-junk-repair.name
 	Buildable:
 		Queue: queue.black_market, queue.stealth_gen_black_market
 		BuildPaletteOrder: 3
 		BuildDuration: 1500
 		Prerequisites: !techlevel.infonly
-		Description: Allows vehicles to repair themselves on field.
+		Description: actor-upgrade-junk-repair.description
 		ReadyAudio: JunkRepair
 		ReadyTextNotification: Upgrade Complete: Junk Repair
 	Valued:
@@ -824,13 +824,13 @@ upgrade.junk_repair:
 upgrade.buggy_ammo:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Buggy Ammo
+		Name: actor-upgrade-buggy-ammo.name
 	Buildable:
 		Queue: queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_scud_storm
 		BuildPaletteOrder: 4
 		BuildDuration: 750
 		Prerequisites: !techlevel.infonly
-		Description: Doubles the rockets fired from Rocket Buggies.
+		Description: actor-upgrade-buggy-ammo.description
 		ReadyAudio: BuggyAmmo
 		ReadyTextNotification: Upgrade Complete: Buggy Ammo
 	Valued:
@@ -841,13 +841,13 @@ upgrade.buggy_ammo:
 upgrade.worker_shoes:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Worker Shoes
+		Name: actor-upgrade-worker-shoes.name
 	Buildable:
 		Queue: queue.black_market, queue.stealth_gen_black_market
 		BuildPaletteOrder: 5
 		BuildDuration: 250
 		Prerequisites: ~prerequisite.zh_units
-		Description: Increases worker speed by 20% and resource output by 10%.
+		Description: actor-upgrade-worker-shoes.description
 		ReadyAudio: WorkerShoes
 		ReadyTextNotification: Upgrade Complete: Worker Shoes
 	Valued:
@@ -858,14 +858,14 @@ upgrade.worker_shoes:
 upgrade.nuclear_tanks:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Nuclear Tanks
+		Name: actor-upgrade-nuclear-tanks.name
 	Buildable:
 		Queue: queue.missile_silo, queue.tank_gen_missile_silo
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: !upgrade.nuclear_tanks, !techlevel.infonly
-		Description: Increases Battlemaster speed by 40% and Overlord speed by 50%.
+		Description: actor-upgrade-nuclear-tanks.description
 		ReadyAudio: NuclearTanks
 		ReadyTextNotification: Upgrade Complete: Nuclear Tanks
 	Buildable@Boss:
@@ -876,7 +876,7 @@ upgrade.nuclear_tanks:
 		BuildDurationModifier: 100
 		BuildLimit: 1
 		Prerequisites: !upgrade.nuclear_tanks, !techlevel.infonly
-		Description: Increases Overlord speed by 50%.
+		Description: actor-upgrade-nuclear-tanks.boss-description
 		ReadyAudio: NuclearTanks
 		ReadyTextNotification: Upgrade Complete: Nuclear Tanks
 	ProvidesPrerequisite@upgradename:
@@ -891,14 +891,14 @@ upgrade.nuclear_tanks:
 upgrade.uranium_shells:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Uranium Shells
+		Name: actor-upgrade-uranium-shells.name
 	Buildable:
 		Queue: queue.missile_silo, queue.tank_gen_missile_silo
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: !upgrade.uranium_shells, !techlevel.infonly
-		Description: Increases Overlord and Battlemaster damage by 25%.
+		Description: actor-upgrade-uranium-shells.description
 		ReadyAudio: UraniumShells
 		ReadyTextNotification: Upgrade Complete: Uranium Shells
 	Buildable@Boss:
@@ -909,7 +909,7 @@ upgrade.uranium_shells:
 		BuildDurationModifier: 100
 		BuildLimit: 1
 		Prerequisites: !upgrade.uranium_shells, !techlevel.infonly
-		Description: Increases Overlord damage by 25%.
+		Description: actor-upgrade-uranium-shells.boss-description
 		ReadyAudio: UraniumShells
 		ReadyTextNotification: Upgrade Complete: Uranium Shells
 	ProvidesPrerequisite@upgradename:
@@ -924,14 +924,14 @@ upgrade.uranium_shells:
 upgrade.neutron_shells:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Neutron Shells
+		Name: actor-upgrade-neutron-shells.name
 	Buildable:
 		Queue: queue.missile_silo, queue.inf_gen_missile_silo
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 1500
 		Prerequisites: prerequisite.nuke_cannon, !upgrade.neutron_shells, ~prerequisite.zh_units, !techlevel.infonly
-		Description: Allows Nuke Cannons to be switched to fire Neutron Shells.
+		Description: actor-upgrade-neutron-shells.description
 		ReadyTextNotification: Upgrade Complete: Neutron Shells
 	Buildable@Nuke:
 		Queue: queue.nuke_gen_missile_silo
@@ -941,7 +941,7 @@ upgrade.neutron_shells:
 		BuildDurationModifier: 100
 		BuildLimit: 1
 		Prerequisites: !upgrade.neutron_shells, ~prerequisite.zh_units, !techlevel.infonly
-		Description: Allows Nuke Cannons to be switched to fire Neutron Shells.
+		Description: actor-upgrade-neutron-shells.description
 		ReadyAudio: UpgradeComplete
 		ReadyTextNotification: Upgrade Complete: Neutron Shells
 	ProvidesPrerequisite@upgradename:
@@ -956,14 +956,14 @@ upgrade.neutron_shells:
 upgrade.tactical_nuke_mig:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Tactical Nuke MiG
+		Name: actor-upgrade-tactical-nuke-mig.name
 	Buildable:
 		Queue: queue.nuke_gen_missile_silo, queue.boss_gen_missile_silo_merged
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 1000
 		Prerequisites: !techlevel.infonly, !techlevel.noair
-		Description: Arms MiGs with a Tactical Nukes.
+		Description: actor-upgrade-tactical-nuke-mig.description
 		ReadyTextNotification: Upgrade Complete: Tactical Nuke MiG
 	Valued:
 		Cost: 2000
@@ -973,12 +973,12 @@ upgrade.tactical_nuke_mig:
 upgrade.scout_drone:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Scout Drone
+		Name: actor-upgrade-scout-drone.name
 	Buildable:
 		Queue: queue.drone
 		BuildPaletteOrder: 1
 		BuildDuration: 125
-		Description: Gives vehicle a scout drone that can detect steath.
+		Description: actor-upgrade-scout-drone.description
 		BuildLimit: 0
 		ReadyTextNotification: Upgrade Complete: Scout Drone
 	Valued:
@@ -987,12 +987,12 @@ upgrade.scout_drone:
 upgrade.battle_drone:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Battle Drone
+		Name: actor-upgrade-battle-drone.name
 	Buildable:
 		Queue: queue.drone
 		BuildPaletteOrder: 2
 		BuildDuration: 125
-		Description: Gives vehicle a battle drone that armed with a machine gun and can repair vehicle.
+		Description: actor-upgrade-battle-drone.description
 		BuildLimit: 0
 		ReadyTextNotification: Upgrade Complete: Battle Drone
 	Valued:
@@ -1001,13 +1001,13 @@ upgrade.battle_drone:
 upgrade.hellfire_drone:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Hellfire Drone
+		Name: actor-upgrade-hellfire-drone.name
 	Buildable:
 		Queue: queue.drone
 		BuildPaletteOrder: 3
 		BuildDuration: 125
 		Prerequisites: ~prerequisite.zh_units
-		Description: Gives vehicle a hellfire drone that armed with a rocket launcher.
+		Description: actor-upgrade-hellfire-drone.description
 		BuildLimit: 0
 		ReadyTextNotification: Upgrade Complete: Hellfire Drone
 	Valued:
@@ -1016,13 +1016,13 @@ upgrade.hellfire_drone:
 upgrade.bio_bombs:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Bio Bombs
+		Name: actor-upgrade-bio-bombs.name
 	Buildable:
 		Queue: queue.bomb_truck, queue.toxin_gen_bomb_truck
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 125
-		Description: Makes bomb truck leave toxins when it explodes.
+		Description: actor-upgrade-bio-bombs.description
 		BuildLimit: 0
 		QueuedAudio: BioBombsBuilding
 		ReadyAudio: BioBombsReady
@@ -1033,13 +1033,13 @@ upgrade.bio_bombs:
 upgrade.hi_explosive_bombs:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: High Explosive Bombs
+		Name: actor-upgrade-hi-explosive-bombs.name
 	Buildable:
 		Queue: queue.bomb_truck, queue.demo_gen_bomb_truck
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 125
-		Description: Makes bomb truck deal more damage to a larger area.
+		Description: actor-upgrade-hi-explosive-bombs.description
 		BuildLimit: 0
 		QueuedAudio: HiExplosiveBombsBuilding
 		ReadyAudio: HiExplosiveBombsReady
@@ -1050,13 +1050,13 @@ upgrade.hi_explosive_bombs:
 upgrade.toxin_missiles:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Toxin Missiles
+		Name: actor-upgrade-toxin-missiles.name
 	Buildable:
 		Queue: queue.scud_launcher
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		BuildDuration: 0
-		Description: Makes scud missiles leave toxins.
+		Description: actor-upgrade-toxin-missiles.description
 		BuildLimit: 0
 		ReadyAudio: NoAudio
 	Valued:
@@ -1065,13 +1065,13 @@ upgrade.toxin_missiles:
 upgrade.hi_explosive_missiles:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: High Explosive Missiles
+		Name: actor-upgrade-hi-explosive-missiles.name
 	Buildable:
 		Queue: queue.scud_launcher
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		BuildDuration: 0
-		Description: Makes scud missiles deal more damage to a larger area.
+		Description: actor-upgrade-hi-explosive-missiles.description
 		BuildLimit: 0
 		ReadyAudio: NoAudio
 	Valued:
@@ -1080,12 +1080,12 @@ upgrade.hi_explosive_missiles:
 upgrade.overlord_bunker:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Bunker
+		Name: actor-upgrade-overlord-bunker.name
 	Buildable:
 		Queue: queue.overlord_tank, queue.emparor_overlord_merged
 		BuildPaletteOrder: 0
 		BuildDuration: 375
-		Description: Gives overlord tank a bunker for 5 infantry.
+		Description: actor-upgrade-overlord-bunker.description
 		QueuedAudio: OverlordBunkerBuilding
 		ReadyAudio: OverlordBunkerReady
 		ReadyTextNotification: Upgrade Complete: Overlord Bunker
@@ -1095,13 +1095,13 @@ upgrade.overlord_bunker:
 upgrade.overlord_gatling:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Gatling Cannon
+		Name: actor-upgrade-overlord-gatling.name
 	Buildable:
 		Queue: queue.overlord_tank, queue.emparor_overlord, queue.emparor_overlord_merged
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		BuildDuration: 500
-		Description: Gives overlord tank a gatling cannon.\n\nAllows overlord tank to detect stealth.
+		Description: actor-upgrade-overlord-gatling.description
 		QueuedAudio: OverlordGatlingBuilding
 		ReadyAudio: OverlordGatlingReady
 		ReadyTextNotification: Upgrade Complete: Overlord Gatling Cannon
@@ -1111,12 +1111,12 @@ upgrade.overlord_gatling:
 upgrade.overlord_speaker:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Speaker Tower
+		Name: actor-upgrade-overlord-speaker.name
 	Buildable:
 		Queue: queue.overlord_tank
 		BuildPaletteOrder: 2
 		BuildDuration: 250
-		Description: Gives overlord tank a speaker tower.
+		Description: actor-upgrade-overlord-speaker.description
 		QueuedAudio: OverlordSpeakerBuilding
 		ReadyAudio: OverlordSpeakerReady
 		ReadyTextNotification: Upgrade Complete: Overlord Speaker Tower
@@ -1127,7 +1127,7 @@ upgrade.helix_bunker:
 	Inherits: upgrade.overlord_bunker
 	Buildable:
 		Queue: queue.helix, queue.inf_gen_helix, queue.nuke_gen_helix, queue.helix_merged
-		Description: Allows infantry in helix to fire outside.
+		Description: actor-upgrade-helix-bunker-description
 		QueuedAudio: HelixBunkerBuilding
 		ReadyAudio: HelixBunkerReady
 		ReadyTextNotification: Upgrade Complete: Helix Bunker
@@ -1136,7 +1136,7 @@ upgrade.helix_gatling:
 	Inherits: upgrade.overlord_gatling
 	Buildable:
 		Queue: queue.helix, queue.nuke_gen_helix, queue.helix_merged
-		Description: Gives helix a gatling cannon.\n\nAllows helix to detect stealth.
+		Description: actor-upgrade-helix-gatling-description
 		QueuedAudio: HelixGatlingBuilding
 		ReadyAudio: HelixGatlingReady
 		ReadyTextNotification: Upgrade Complete: Helix Gatling Cannon
@@ -1145,7 +1145,7 @@ upgrade.helix_speaker:
 	Inherits: upgrade.overlord_speaker
 	Buildable:
 		Queue: queue.helix, queue.nuke_gen_helix, queue.helix_merged
-		Description: Gives helix a speaker tower.
+		Description: actor-upgrade-helix-speaker-description
 		QueuedAudio: HelixSpeakerBuilding
 		ReadyAudio: HelixSpeakerReady
 		ReadyTextNotification: Upgrade Complete: Helix Speaker Tower
@@ -1153,13 +1153,13 @@ upgrade.helix_speaker:
 upgrade.helix_napalm:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Napalm Bomb
+		Name: actor-upgrade-helix-napalm.name
 	Buildable:
 		Queue: queue.helix, queue.inf_gen_helix, queue.helix_merged
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 500
-		Description: Allows helix to drop napalm bombs by force firing.
+		Description: actor-upgrade-helix-napalm.description
 		QueuedAudio: HelixNapalmBuilding
 		ReadyAudio: HelixNapalmReady
 		ReadyTextNotification: Upgrade Complete: Napalm Bomb
@@ -1172,13 +1172,13 @@ upgrade.helix_napalm:
 upgrade.helix_nuke:
 	Inherits: ^default.local_upgrade
 	Tooltip:
-		Name: Nuclear Bomb
+		Name: actor-upgrade-helix-nuke.name
 	Buildable:
 		Queue: queue.nuke_gen_helix, queue.helix_merged
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		BuildDuration: 500
-		Description: Allows helix to drop nuclear bombs by force firing.
+		Description: actor-upgrade-helix-nuke.description
 		QueuedAudio: HelixNukeBuilding
 		ReadyAudio: HelixNukeReady
 		ReadyTextNotification: Upgrade Complete: Nuclear Bomb
@@ -1191,47 +1191,47 @@ upgrade.helix_nuke:
 strategy.bombardment:
 	Inherits: ^default.strategy
 	Tooltip:
-		Name: Bombardment
+		Name: actor-strategy-bombardment.name
 	Buildable:
 		BuildPaletteOrder: 0
 		ForceIconLocation: true
 		Prerequisites: !prerequisite.ai_strategy_chosen
-		Description: Increases all units' damage by 20%.\n\nGives Strategy Center an Artillery piece.
+		Description: actor-strategy-bombardment.description
 		ReadyAudio: Bombardment
 		ReadyTextNotification: Bombardment strategy has been initiated
 
 strategy.hold_the_line:
 	Inherits: ^default.strategy
 	Tooltip:
-		Name: Hold the Line
+		Name: actor-strategy-hold-the-line.name
 	Buildable:
 		BuildPaletteOrder: 1
 		ForceIconLocation: true
 		Prerequisites: !prerequisite.ai_strategy_chosen
-		Description: Increases all units' armor by 10%.\n\nDoubles Strategy Center's armor.
+		Description: actor-strategy-hold-the-line.description
 		ReadyAudio: HoldTheLine
 		ReadyTextNotification: Hold the Line strategy has been initiated
 
 strategy.search_and_destroy:
 	Inherits: ^default.strategy
 	Tooltip:
-		Name: Search and Destroy
+		Name: actor-strategy-search-and-destroy.name
 	Buildable:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		Prerequisites: !prerequisite.ai_strategy_chosen
-		Description: Increases all units' fire range by 20%.\n\nGives Strategy Center ability to detect stealth units.
+		Description: actor-strategy-search-and-destroy.description
 		ReadyAudio: SearchAndDestroy
 		ReadyTextNotification: Search and Destroy strategy has been initiated
 
 fake_to_real.command_center:
 	Inherits: ^default.fake_to_real
 	Tooltip:
-		Name: Turn To Real Command Center
+		Name: actor-fake-to-real-command-center.name
 	Buildable:
 		Queue: queue.command_center.fake
 		BuildDuration: 750
-		Description: Turns the building to a functional Command Center.
+		Description: actor-fake-to-real-command-center.description
 	Valued:
 		Cost: 1500
 	RenderSprites:
@@ -1240,11 +1240,11 @@ fake_to_real.command_center:
 fake_to_real.barracks:
 	Inherits: ^default.fake_to_real
 	Tooltip:
-		Name: Turn To Real Barracks
+		Name: actor-fake-to-real-barracks.name
 	Buildable:
 		Queue: queue.barracks.fake
 		BuildDuration: 250
-		Description: Turns the building to a functional Barracks.
+		Description: actor-fake-to-real-barracks.description
 	Valued:
 		Cost: 375
 	RenderSprites:
@@ -1253,11 +1253,11 @@ fake_to_real.barracks:
 fake_to_real.supply_stash:
 	Inherits: ^default.fake_to_real
 	Tooltip:
-		Name: Turn To Real Supply Stash
+		Name: actor-fake-to-real-supply-stash.name
 	Buildable:
 		Queue: queue.supply_stash.fake
 		BuildDuration: 250
-		Description: Turns the building to a functional Supply Stash.
+		Description: actor-fake-to-real-supply-stash.description
 	Valued:
 		Cost: 1125
 	RenderSprites:
@@ -1266,11 +1266,11 @@ fake_to_real.supply_stash:
 fake_to_real.arms_dealer:
 	Inherits: ^default.fake_to_real
 	Tooltip:
-		Name: Turn To Real Arms Dealer
+		Name: actor-fake-to-real-arms-dealer.name
 	Buildable:
 		Queue: queue.arms_dealer.fake
 		BuildDuration: 250
-		Description: Turns the building to a functional Arms Dealer.
+		Description: actor-fake-to-real-arms-dealer.description
 	Valued:
 		Cost: 1875
 	RenderSprites:
@@ -1279,11 +1279,11 @@ fake_to_real.arms_dealer:
 fake_to_real.palace:
 	Inherits: ^default.fake_to_real
 	Tooltip:
-		Name: Turn To Real Palace
+		Name: actor-fake-to-real-palace.name
 	Buildable:
 		Queue: queue.palace.fake
 		BuildDuration: 625
-		Description: Turns the building to a functional Palace.
+		Description: actor-fake-to-real-palace.description
 	Valued:
 		Cost: 1875
 	RenderSprites:
@@ -1292,11 +1292,11 @@ fake_to_real.palace:
 fake_to_real.black_market:
 	Inherits: ^default.fake_to_real
 	Tooltip:
-		Name: Turn To Real Black Market
+		Name: actor-fake-to-real-black-market.name
 	Buildable:
 		Queue: queue.black_market.fake
 		BuildDuration: 500
-		Description: Turns the building to a functional Black Market.
+		Description: actor-fake-to-real-black-market.description
 	Valued:
 		Cost: 1875
 	RenderSprites:
@@ -1305,11 +1305,11 @@ fake_to_real.black_market:
 fake_to_real.scud_storm:
 	Inherits: ^default.fake_to_real
 	Tooltip:
-		Name: Turn To Real SCUD Storm
+		Name: actor-fake-to-real-scud-storm.name
 	Buildable:
 		Queue: queue.scud_storm.fake
 		BuildDuration: 1000
-		Description: Turns the building to a functional SCUD Storm.
+		Description: actor-fake-to-real-scud-storm.description
 		Prerequisites: !prerequisite.enough_scud
 	Valued:
 		Cost: 4000
@@ -1319,11 +1319,11 @@ fake_to_real.scud_storm:
 fake_to_real.demo_trap:
 	Inherits: ^default.fake_to_real
 	Tooltip:
-		Name: Turn To Real Demo Trap
+		Name: actor-fake-to-real-demo-trap.name
 	Buildable:
 		Queue: queue.demo_trap.fake
 		BuildDuration: 100
-		Description: Turns the building to a functional Demo Trap.
+		Description: actor-fake-to-real-demo-trap.description
 	Valued:
 		Cost: 350
 	RenderSprites:
@@ -1332,11 +1332,11 @@ fake_to_real.demo_trap:
 fake_to_real.demo_trap.toxin:
 	Inherits: ^default.fake_to_real
 	Tooltip:
-		Name: Turn To Real Demo Trap
+		Name: actor-fake-to-real-demo-trap-toxin.name
 	Buildable:
 		Queue: queue.demo_trap.toxin.fake
 		BuildDuration: 150
-		Description: Turns the building to a functional Demo Trap.
+		Description: actor-fake-to-real-demo-trap-toxin.description
 	Valued:
 		Cost: 725
 	RenderSprites:
@@ -1345,11 +1345,11 @@ fake_to_real.demo_trap.toxin:
 fake_to_real.advanced_demo_trap:
 	Inherits: ^default.fake_to_real
 	Tooltip:
-		Name: Turn To Real Advanced Demo Trap
+		Name: actor-fake-to-real-advanced-demo-trap.name
 	Buildable:
 		Queue: queue.advanced_demo_trap.fake
 		BuildDuration: 50
-		Description: Turns the building to a functional Advanced Demo Trap.
+		Description: actor-fake-to-real-advanced-demo-trap.description
 	Valued:
 		Cost: 175
 	RenderSprites:
@@ -1358,11 +1358,11 @@ fake_to_real.advanced_demo_trap:
 fake_to_real.tunnel_network:
 	Inherits: ^default.fake_to_real
 	Tooltip:
-		Name: Turn To Real Tunnel Network
+		Name: actor-fake-to-real-tunnel-network.name
 	Buildable:
 		Queue: queue.tunnel_network.fake
 		BuildDuration: 250
-		Description: Turns the building to a functional Tunnel Network.
+		Description: actor-fake-to-real-tunnel-network.description
 	Valued:
 		Cost: 700
 	RenderSprites:
@@ -1371,11 +1371,11 @@ fake_to_real.tunnel_network:
 fake_to_real.toxin_tunnel_network:
 	Inherits: ^default.fake_to_real
 	Tooltip:
-		Name: Turn To Real Toxin Tunnel Network
+		Name: actor-fake-to-real-toxin-tunnel-network.name
 	Buildable:
 		Queue: queue.toxin_tunnel_network.fake
 		BuildDuration: 250
-		Description: Turns the building to a functional Toxin Tunnel Network.
+		Description: actor-fake-to-real-toxin-tunnel-network.description
 	Valued:
 		Cost: 700
 	RenderSprites:
@@ -1384,11 +1384,11 @@ fake_to_real.toxin_tunnel_network:
 fake_to_real.stinger_site:
 	Inherits: ^default.fake_to_real
 	Tooltip:
-		Name: Turn To Real Stinger Site
+		Name: actor-fake-to-real-stinger-site.name
 	Buildable:
 		Queue: queue.stinger_site.fake
 		BuildDuration: 250
-		Description: Turns the building to a functional Stinger Site.
+		Description: actor-fake-to-real-stinger-site.description
 	Valued:
 		Cost: 800
 	RenderSprites:

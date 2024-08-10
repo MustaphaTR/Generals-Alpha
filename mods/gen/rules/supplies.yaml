@@ -17,7 +17,7 @@
 ^default.supply_pile:
 	Inherits@1: ^default.supply
 	Tooltip:
-		Name: Supply Pile
+		Name: meta-default-supply-pile-name
 	Building:
 		Footprint: x
 		Dimensions: 1,1
@@ -126,7 +126,7 @@ supply.pile.g:
 ^default.supply_dock:
 	Inherits@1: ^default.supply
 	Tooltip:
-		Name: Supply Dock
+		Name: meta-default-supply-dock-name
 	SupplyDock:
 		FullnessConditions:
 			1: not_empty
@@ -171,7 +171,7 @@ supply.dock.30000.6x4:
 		CollectionOffsets: 0,-1, 1,-1, 2,-1, 3,-1, 4,-1, 5,-1, -1,0, -1,1, -1,2, -1,3, 6,0, 6,1, 6,2, 6,3, 0,4, 1,4, 2,4, 3,4, 4,4, 5,4
 		StuckRoadCheckRange: 5c0
 		ToleratedStuckRoad: 18
-		AircraftCollectionOffsets:  1,1, 1,2, 2,1, 3,1, 4,1, 2,2, 3,2, 4,2, 4,1
+		AircraftCollectionOffsets: 1,1, 1,2, 2,1, 3,1, 4,1, 2,2, 3,2, 4,2, 4,1
 	RenderSprites:
 		Image: supply.dock.6x4
 	WithIdleOverlay@Bib-Tem:
@@ -351,7 +351,7 @@ supply.dock.20000.skewed_b:
 supply.dock.2x2:
 	Inherits@1: ^default.supply_dock
 	Tooltip:
-		Name: Small Supply Dock
+		Name: actor-supply-dock-2x2-name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2

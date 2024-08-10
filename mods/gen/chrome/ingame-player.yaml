@@ -21,8 +21,8 @@ Container@PLAYER_WIDGETS:
 					IconSize: 62, 46
 					IconSpriteOffset: -1, -1
 					TooltipContainer: TOOLTIP_CONTAINER
-					ReadyText: READY
-					HoldText: ON HOLD
+					ReadyText: supportpowers-support-powers-palette.ready
+					HoldText: supportpowers-support-powers-palette.hold
 					HotkeyPrefix: SupportPower
 					HotkeyCount: 6
 				Container@PALETTE_FOREGROUND:
@@ -134,7 +134,7 @@ Container@PLAYER_WIDGETS:
 							X: 91
 							Y: 31
 							Contrast: true
-							Text: :
+							Text: label-colon
 							Children:
 								Image@STAT_ICON_1:
 									X: 0 - 16
@@ -147,7 +147,7 @@ Container@PLAYER_WIDGETS:
 							X: 91
 							Y: 49
 							Contrast: true
-							Text: :
+							Text: label-colon
 							Children:
 								Image@STAT_ICON_2:
 									X: 0 - 16
@@ -160,7 +160,7 @@ Container@PLAYER_WIDGETS:
 							X: 91
 							Y: 67
 							Contrast: true
-							Text: :
+							Text: label-colon
 							Children:
 								Image@STAT_ICON_3:
 									X: 0 - 16
@@ -173,7 +173,7 @@ Container@PLAYER_WIDGETS:
 							X: 198
 							Y: 31
 							Contrast: true
-							Text: :
+							Text: label-colon
 							Children:
 								Image@STAT_ICON_4:
 									X: 0 - 16
@@ -186,7 +186,7 @@ Container@PLAYER_WIDGETS:
 							X: 198
 							Y: 49
 							Contrast: true
-							Text: :
+							Text: label-colon
 							Children:
 								Image@STAT_ICON_5:
 									X: 0 - 16
@@ -199,7 +199,7 @@ Container@PLAYER_WIDGETS:
 							X: 198
 							Y: 67
 							Contrast: true
-							Text: :
+							Text: label-colon
 							Children:
 								Image@STAT_ICON_6:
 									X: 0 - 16
@@ -212,7 +212,7 @@ Container@PLAYER_WIDGETS:
 							X: 91
 							Y: 85
 							Contrast: true
-							Text: :
+							Text: label-colon
 							Children:
 								Image@STAT_ICON_7:
 									X: 0 - 16
@@ -225,7 +225,7 @@ Container@PLAYER_WIDGETS:
 							X: 198
 							Y: 85
 							Contrast: true
-							Text: :
+							Text: label-colon
 							Children:
 								Image@STAT_ICON_8:
 									X: 0 - 16
@@ -242,7 +242,7 @@ Container@PLAYER_WIDGETS:
 					Height: 18
 					VisualHeight: 0
 					Background: sidebar-button
-					TooltipText: Collapse
+					TooltipText: button-collapse-tooltip
 					TooltipContainer: TOOLTIP_CONTAINER
 					Children:
 						Image@ICON:
@@ -259,7 +259,7 @@ Container@PLAYER_WIDGETS:
 					VisualHeight: 0
 					Visible: false
 					Background: sidebar-button
-					TooltipText: Expand
+					TooltipText: button-expand-tooltip
 					TooltipContainer: TOOLTIP_CONTAINER
 					Children:
 						Image@ICON:
@@ -290,8 +290,8 @@ Container@PLAYER_WIDGETS:
 					Background: command-button
 					Key: AttackMove
 					DisableKeySound: true
-					TooltipText: Attack Move
-					TooltipDesc: Selected units will move to the desired location\nand attack any enemies they encounter en route.\n\nHold {(Ctrl)} while targeting to order an Assault Move\nthat attacks any units or structures encountered en route.\n\nLeft-click icon then right-click on target location.
+					TooltipText: button-command-bar-attack-move.tooltip
+					TooltipDesc: button-command-bar-attack-move.tooltipdesc
 					TooltipContainer: TOOLTIP_CONTAINER
 					TooltipTemplate: BUTTON_WITH_DESC_HIGHLIGHT_TOOLTIP
 					Children:
@@ -308,8 +308,8 @@ Container@PLAYER_WIDGETS:
 					VisualHeight: 0
 					Background: command-button
 					DisableKeySound: true
-					TooltipText: Force Move
-					TooltipDesc: Selected units will move to the desired location\n - Default activity for the target is suppressed\n - Vehicles will attempt to crush enemies at the target location\n\nLeft-click icon then right-click on target.\nHold {(Alt)} to activate temporarily while commanding units.
+					TooltipText: button-command-bar-force-move.tooltip
+					TooltipDesc: button-command-bar-force-move.tooltipdesc
 					TooltipContainer: TOOLTIP_CONTAINER
 					TooltipTemplate: BUTTON_WITH_DESC_HIGHLIGHT_TOOLTIP
 					Children:
@@ -326,8 +326,8 @@ Container@PLAYER_WIDGETS:
 					VisualHeight: 0
 					Background: command-button
 					DisableKeySound: true
-					TooltipText: Force Attack
-					TooltipDesc: Selected units will attack the targeted unit or location\n - Default activity for the target is suppressed\n - Allows targeting of own or ally forces\n\nLeft-click icon then right-click on target.\nHold {(Ctrl)} to activate temporarily while commanding units
+					TooltipText: button-command-bar-force-attack.tooltip
+					TooltipDesc: button-command-bar-force-attack.tooltipdesc
 					TooltipContainer: TOOLTIP_CONTAINER
 					TooltipTemplate: BUTTON_WITH_DESC_HIGHLIGHT_TOOLTIP
 					Children:
@@ -345,8 +345,8 @@ Container@PLAYER_WIDGETS:
 					Background: command-button
 					Key: Guard
 					DisableKeySound: true
-					TooltipText: Guard
-					TooltipDesc: Selected units will follow the targeted unit.\n\nLeft-click icon then right-click on target unit.
+					TooltipText: button-command-bar-guard.tooltip
+					TooltipDesc: button-command-bar-guard.tooltipdesc
 					TooltipContainer: TOOLTIP_CONTAINER
 					Children:
 						Image@ICON:
@@ -364,8 +364,8 @@ Container@PLAYER_WIDGETS:
 					Key: Deploy
 					DisableKeyRepeat: true
 					DisableKeySound: true
-					TooltipText: Deploy
-					TooltipDesc: Selected units will perform their default deploy activity\n - Transports will unload their passengers\n - Construction vehicles will clear mines.\n - Bomb Trucks and Terrorists will self-destruct.\n - Hackers will start/stop hacking internet.\n - Nuke Cannons will switch modes.\n - Planes will return to base\n\nActs immediately on selected units.
+					TooltipText: button-command-bar-deploy.tooltip
+					TooltipDesc: button-command-bar-deploy.tooltipdesc
 					TooltipContainer: TOOLTIP_CONTAINER
 					Children:
 						Image@ICON:
@@ -383,8 +383,8 @@ Container@PLAYER_WIDGETS:
 					Key: Scatter
 					DisableKeyRepeat: true
 					DisableKeySound: true
-					TooltipText: Scatter
-					TooltipDesc: Selected units will stop their current activity.\nSelected buildings will reset their rally point.\n\nActs immediately on selected targets.
+					TooltipText: button-command-bar-scatter.tooltip
+					TooltipDesc: button-command-bar-scatter.tooltipdesc
 					TooltipContainer: TOOLTIP_CONTAINER
 					Children:
 						Image@ICON:
@@ -402,8 +402,8 @@ Container@PLAYER_WIDGETS:
 					Key: Stop
 					DisableKeyRepeat: true
 					DisableKeySound: true
-					TooltipText: Stop
-					TooltipDesc: Selected units will stop their current activity.\nSelected buildings will reset their rally point.\n\nActs immediately on selected targets.
+					TooltipText: button-command-bar-stop.tooltip
+					TooltipDesc: button-command-bar-stop.tooltipdesc
 					TooltipContainer: TOOLTIP_CONTAINER
 					Children:
 						Image@ICON:
@@ -419,8 +419,8 @@ Container@PLAYER_WIDGETS:
 					VisualHeight: 0
 					Background: command-button
 					DisableKeySound: true
-					TooltipText: Waypoint Mode
-					TooltipDesc: Use Waypoint Mode to give multiple linking commands\nto the selected units. Units will execute the commands\nimmediately upon receiving them.\n\nLeft-click icon then give commands in the game world.\nHold {(Shift)} to activate temporarily while commanding units.
+					TooltipText: button-command-bar-queue-orders.tooltip
+					TooltipDesc: button-command-bar-queue-orders.tooltipdesc
 					TooltipContainer: TOOLTIP_CONTAINER
 					TooltipTemplate: BUTTON_WITH_DESC_HIGHLIGHT_TOOLTIP
 					Children:
@@ -445,8 +445,8 @@ Container@PLAYER_WIDGETS:
 					Key: StanceAttackAnything
 					DisableKeyRepeat: true
 					DisableKeySound: true
-					TooltipText: Attack Anything Stance
-					TooltipDesc: Set the selected units to Attack Anything stance:\n - Units will attack enemy units and structures on sight\n - Units will pursue attackers across the battlefield
+					TooltipText: button-stance-bar-attackanything.tooltip
+					TooltipDesc: button-stance-bar-attackanything.tooltipdesc
 					TooltipContainer: TOOLTIP_CONTAINER
 					Children:
 						Image@ICON:
@@ -464,8 +464,8 @@ Container@PLAYER_WIDGETS:
 					Key: StanceDefend
 					DisableKeyRepeat: true
 					DisableKeySound: true
-					TooltipText: Defend Stance
-					TooltipDesc: Set the selected units to Defend stance:\n - Units will attack enemy units on sight\n - Units will not move or pursue enemies
+					TooltipText: button-stance-bar-defend.tooltip
+					TooltipDesc: button-stance-bar-defend.tooltipdesc
 					TooltipContainer: TOOLTIP_CONTAINER
 					Children:
 						Image@ICON:
@@ -483,8 +483,8 @@ Container@PLAYER_WIDGETS:
 					Key: StanceReturnFire
 					DisableKeyRepeat: true
 					DisableKeySound: true
-					TooltipText: Return Fire Stance
-					TooltipDesc: Set the selected units to Return Fire stance:\n - Units will retaliate against enemies that attack them\n - Units will not move or pursue enemies
+					TooltipText: button-stance-bar-returnfire.tooltip
+					TooltipDesc: button-stance-bar-returnfire.tooltipdesc
 					TooltipContainer: TOOLTIP_CONTAINER
 					Children:
 						Image@ICON:
@@ -502,8 +502,8 @@ Container@PLAYER_WIDGETS:
 					Key: StanceHoldFire
 					DisableKeyRepeat: true
 					DisableKeySound: true
-					TooltipText: Hold Fire Stance
-					TooltipDesc: Set the selected units to Hold Fire stance:\n - Units will not fire upon enemies\n - Units will not move or pursue enemies
+					TooltipText: button-stance-bar-holdfire.tooltip
+					TooltipDesc: button-stance-bar-holdfire.tooltipdesc
 					TooltipContainer: TOOLTIP_CONTAINER
 					Children:
 						Image@ICON:
@@ -529,7 +529,7 @@ Container@PLAYER_WIDGETS:
 					Width: PARENT_RIGHT - 30
 					Height: 25
 					Align: Right
-					Text: Audio Muted
+					Text: label-mute-indicator
 					Contrast: true
 		Image@SIDEBAR_BACKGROUND_TOP:
 			Logic: AddFactionSuffixLogic
@@ -552,7 +552,7 @@ Container@PLAYER_WIDGETS:
 							Width: 28
 							Height: 28
 							Background: sidebar-button
-							TooltipText: Options
+							TooltipText: button-top-buttons-options-tooltip
 							TooltipContainer: TOOLTIP_CONTAINER
 							DisableWorldSounds: true
 							VisualHeight: 0
@@ -617,8 +617,8 @@ Container@PLAYER_WIDGETS:
 					X: 42
 					Y: 1
 					TooltipContainer: TOOLTIP_CONTAINER
-					ReadyText: READY
-					HoldText: ON HOLD
+					ReadyText: productionpalette-sidebar-production-palette.ready
+					HoldText: productionpalette-sidebar-production-palette.hold
 					IconSize: 62, 46
 					IconMargin: 1, 1
 					IconSpriteOffset: -1, -1
@@ -646,7 +646,7 @@ Container@PLAYER_WIDGETS:
 							Height: 28
 							Background: sidebar-button
 							Key: Repair
-							TooltipText: Repair
+							TooltipText: button-top-buttons-repair-tooltip
 							TooltipContainer: TOOLTIP_CONTAINER
 							VisualHeight: 0
 							Children:
@@ -661,7 +661,7 @@ Container@PLAYER_WIDGETS:
 							Height: 28
 							Background: sidebar-button
 							Key: Sell
-							TooltipText: Sell
+							TooltipText: button-top-buttons-sell-tooltip
 							TooltipContainer: TOOLTIP_CONTAINER
 							VisualHeight: 0
 							Children:
@@ -676,7 +676,7 @@ Container@PLAYER_WIDGETS:
 							Height: 28
 							Background: sidebar-button
 							Key: PlaceBeacon
-							TooltipText: Place Beacon
+							TooltipText: button-top-buttons-beacon-tooltip
 							TooltipContainer: TOOLTIP_CONTAINER
 							VisualHeight: 0
 							Children:
@@ -692,7 +692,7 @@ Container@PLAYER_WIDGETS:
 							VisualHeight: 0
 							Background: sidebar-button
 							Key: ProductionTypeGeneralsPower
-							TooltipText: General's Powers
+							TooltipText: button-production-types-generals-powers-tooltip
 							TooltipContainer: TOOLTIP_CONTAINER
 							ProductionGroup: General
 							Children:
@@ -708,7 +708,7 @@ Container@PLAYER_WIDGETS:
 							VisualHeight: 0
 							Background: sidebar-button
 							Key: ProductionScrollUp
-							TooltipText: Scroll Up
+							TooltipText: button-production-types-scroll-up-tooltip
 							TooltipContainer: TOOLTIP_CONTAINER
 							Children:
 								Image@ICON:
@@ -724,7 +724,7 @@ Container@PLAYER_WIDGETS:
 							VisualHeight: 0
 							Background: sidebar-button
 							Key: ProductionScrollDown
-							TooltipText: Scroll Down
+							TooltipText: button-production-types-scroll-down-tooltip
 							TooltipContainer: TOOLTIP_CONTAINER
 							Children:
 								Image@ICON:

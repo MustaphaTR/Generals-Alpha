@@ -52,7 +52,7 @@ TECN:
 	Inherits@1: ^CivInfantry
 	Inherits@2: ^ArmedCivilian
 	Tooltip:
-		Name: Technician
+		Name: actor-tecn-name
 	RenderSprites:
 		Image: C1
 
@@ -60,7 +60,7 @@ EINSTEIN:
 	Inherits: ^CivInfantry
 	-Wanders:
 	Tooltip:
-		Name: Prof. Einstein
+		Name: actor-einstein-name
 	Mobile:
 		Speed: 71
 	Voiced:
@@ -70,7 +70,7 @@ DELPHI:
 	Inherits: ^CivInfantry
 	-Wanders:
 	Tooltip:
-		Name: Agent Delphi
+		Name: actor-delphi-name
 	Mobile:
 		Speed: 71
 
@@ -81,14 +81,14 @@ CHAN:
 	Selectable:
 		Class: CHAN
 	Tooltip:
-		Name: Agent Chan
+		Name: actor-chan-name
 
 GNRL:
 	Inherits@1: ^CivInfantry
 	Inherits@2: ^ArmedCivilian
 	-Wanders:
 	Tooltip:
-		Name: General
+		Name: actor-gnrl-name
 	Selectable:
 		Class: GNRL
 	Mobile:
@@ -113,8 +113,8 @@ GNRL:
 DOG:
 	Inherits: ^CivInfantry
 	Tooltip:
-		Name: Dog
-		GenericName: Dog
+		Name: actor-dog-name
+		GenericName: actor-dog-name
 	Selectable:
 		Bounds: 512, 725, -42, -170
 		DecorationBounds: 512, 725, -42, -170
@@ -152,7 +152,7 @@ V01:
 	AttackOpenTopped:
 		PortOffsets: 0,0,128, -512,-512,128, -512,512,128, 512,512,128, 512,-512,128
 	Tooltip:
-		Name: Church
+		Name: actor-v01-name
 	HitShape:
 		UseTargetableCellsOffsets: false
 		TargetableOffsets: -490,-384,0, 0,0,0, 64,0,0, 0,470,0
@@ -364,22 +364,22 @@ V23:
 V12:
 	Inherits: ^CivBuilding
 	Tooltip:
-		Name: Haystack
+		Name: actor-v12-name
 
 V12.SNOW:
 	Inherits: ^CivBuilding
 	Tooltip:
-		Name: Igloo
+		Name: actor-v12-snow-name
 
 V13:
 	Inherits: ^CivBuilding
 	Tooltip:
-		Name: Haystacks
+		Name: actor-v13-name
 
 V13.SNOW:
 	Inherits: ^CivBuilding
 	Tooltip:
-		Name: Igloo
+		Name: actor-v13-snow-name
 
 V14:
 	Inherits: ^CivField
@@ -474,7 +474,7 @@ V19:
 	RenderSprites:
 		Palette: player
 	Tooltip:
-		Name: Oil Pump
+		Name: actor-v19-name
 	-SpawnActorOnDeath@1:
 	-SpawnActorOnDeath@2:
 	-SpawnActorOnDeath@3:
@@ -488,7 +488,7 @@ V19.Husk:
 	RenderSprites:
 		Palette: player
 	Tooltip:
-		Name: Husk (Oil Pump)
+		Name: actor-v19-husk-name
 	RenderSprites:
 	WithSpriteBody:
 	WithIdleOverlay:
@@ -508,7 +508,7 @@ BARL:
 	Explodes:
 		Weapon: BarrelExplode
 	Tooltip:
-		Name: Explosive Barrel
+		Name: actor-barl-name
 		ShowOwnerRow: False
 	Targetable:
 		TargetTypes: GroundActor, DemoTruck, Barrel, NoAutoTarget
@@ -521,7 +521,7 @@ BRL3:
 	Explodes:
 		Weapon: BarrelExplode
 	Tooltip:
-		Name: Explosive Barrel
+		Name: actor-brl3-name
 		ShowOwnerRow: False
 	Targetable:
 		TargetTypes: GroundActor, DemoTruck, Barrel, NoAutoTarget
@@ -583,7 +583,7 @@ LHUS:
 	Selectable:
 		Bounds: 1024, 2048, 0, -682
 	Tooltip:
-		Name: Lighthouse
+		Name: actor-lhus-name
 	Building:
 		Footprint: x
 		Dimensions: 1,1
@@ -597,7 +597,7 @@ WINDMILL:
 		DecorationBounds: 1536, 1536, 0, -597
 	SelectionDecorations:
 	Tooltip:
-		Name: Windmill
+		Name: actor-windmill-name
 	Building:
 		Footprint: x
 		Dimensions: 1,1
@@ -626,49 +626,49 @@ car.automobile_7:
 car.ambulance:
 	Inherits: ^Car
 	Tooltip:
-		Name: Ambulance
+		Name: actor-car-ambulance-name
 	Mobile:
 		Speed: 80
 
 car.cement_mixer:
 	Inherits: ^Car
 	Tooltip:
-		Name: Cement Mixer
+		Name: actor-car-cement-mixer-name
 	Mobile:
 		Speed: 75
 
 car.taxi:
 	Inherits: ^Car
 	Tooltip:
-		Name: Taxi
+		Name: actor-car-taxi-name
 
 car.limousine:
 	Inherits: ^Car
 	Tooltip:
-		Name: Limousine
+		Name: actor-car-limousine-name
 
 car.police_car:
 	Inherits: ^Car
 	Tooltip:
-		Name: Police Car
+		Name: actor-car-police-car-name
 
 car.fire_truck:
 	Inherits: ^Car
 	Tooltip:
-		Name: Fire Truck
+		Name: actor-car-fire-truck-name
 	Mobile:
 		Speed: 75
 
 car.pickup_truck:
 	Inherits: ^Car
 	Tooltip:
-		Name: Pickup Truck
+		Name: actor-car-pickup-truck-name
 	Mobile:
 		Speed: 80
 
 car.school_bus:
 	Inherits: ^Car
 	Tooltip:
-		Name: School Bus
+		Name: actor-car-school-bus-name
 	Mobile:
 		Speed: 75

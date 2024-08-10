@@ -64,7 +64,7 @@ T04:
 		Footprint: __ x_
 		Dimensions: 2,2
 	Tooltip:
-		Name: Cactus
+		Name: actor-t04-name
 	RenderSprites:
 		Palette: desert
 	MapEditorData:
@@ -167,7 +167,7 @@ T08.DESERT:
 T09:
 	Inherits: ^Tree
 	Tooltip:
-		Name: Cactus
+		Name: actor-t09-name
 	RenderSprites:
 		Palette: desert
 	MapEditorData:
@@ -450,7 +450,7 @@ BOXES01:
 	RenderSprites:
 		Palette: player
 	Tooltip:
-		Name: Boxes
+		Name: actor-boxes-name
 	MapEditorData:
 		Categories: Decoration
 
@@ -459,7 +459,7 @@ BOXES02:
 	RenderSprites:
 		Palette: player
 	Tooltip:
-		Name: Boxes
+		Name: actor-boxes-name
 	MapEditorData:
 		Categories: Decoration
 
@@ -468,7 +468,7 @@ BOXES03:
 	RenderSprites:
 		Palette: player
 	Tooltip:
-		Name: Boxes
+		Name: actor-boxes-name
 	MapEditorData:
 		Categories: Decoration
 
@@ -477,7 +477,7 @@ BOXES04:
 	RenderSprites:
 		Palette: player
 	Tooltip:
-		Name: Boxes
+		Name: actor-boxes-name
 	MapEditorData:
 		Categories: Decoration
 
@@ -486,7 +486,7 @@ BOXES05:
 	RenderSprites:
 		Palette: player
 	Tooltip:
-		Name: Boxes
+		Name: actor-boxes-name
 	MapEditorData:
 		Categories: Decoration
 
@@ -495,7 +495,7 @@ BOXES06:
 	RenderSprites:
 		Palette: player
 	Tooltip:
-		Name: Boxes
+		Name: actor-boxes-name
 	MapEditorData:
 		Categories: Decoration
 
@@ -504,7 +504,7 @@ BOXES07:
 	RenderSprites:
 		Palette: player
 	Tooltip:
-		Name: Boxes
+		Name: actor-boxes-name
 	MapEditorData:
 		Categories: Decoration
 
@@ -513,7 +513,7 @@ BOXES08:
 	RenderSprites:
 		Palette: player
 	Tooltip:
-		Name: Boxes
+		Name: actor-boxes-name
 	MapEditorData:
 		Categories: Decoration
 
@@ -522,7 +522,7 @@ BOXES09:
 	RenderSprites:
 		Palette: player
 	Tooltip:
-		Name: Boxes
+		Name: actor-boxes-name
 	MapEditorData:
 		Categories: Decoration
 
@@ -534,7 +534,7 @@ ICE01:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Tooltip:
-		Name: Ice Floe
+		Name: actor-ice-name
 	MapEditorData:
 		ExcludeTilesets: INTERIOR
 		Categories: Decoration
@@ -547,7 +547,7 @@ ICE02:
 		Footprint: x x
 		Dimensions: 1,2
 	Tooltip:
-		Name: Ice Floe
+		Name: actor-ice-name
 	MapEditorData:
 		ExcludeTilesets: INTERIOR
 		Categories: Decoration
@@ -560,7 +560,7 @@ ICE03:
 		Footprint: xx
 		Dimensions: 2,1
 	Tooltip:
-		Name: Ice Floe
+		Name: actor-ice-name
 	MapEditorData:
 		ExcludeTilesets: INTERIOR
 		Categories: Decoration
@@ -570,7 +570,7 @@ ICE04:
 	RenderSprites:
 		Palette: player
 	Tooltip:
-		Name: Ice Floe
+		Name: actor-ice-name
 	MapEditorData:
 		ExcludeTilesets: INTERIOR
 		Categories: Decoration
@@ -580,7 +580,7 @@ ICE05:
 	RenderSprites:
 		Palette: player
 	Tooltip:
-		Name: Ice Floe
+		Name: actor-ice-name
 	MapEditorData:
 		ExcludeTilesets: INTERIOR
 		Categories: Decoration
@@ -632,7 +632,7 @@ UTILPOL1:
 	RenderSprites:
 		Palette: player
 	Tooltip:
-		Name: Utility Pole
+		Name: actor-utilpol-name
 	MapEditorData:
 		Categories: Decoration
 
@@ -641,7 +641,7 @@ UTILPOL2:
 	RenderSprites:
 		Palette: player
 	Tooltip:
-		Name: Utility Pole
+		Name: actor-utilpol-name
 	MapEditorData:
 		Categories: Decoration
 
@@ -653,7 +653,7 @@ TANKTRAP1:
 		Footprint: x
 		Dimensions: 1,1
 	Tooltip:
-		Name: Tank Trap
+		Name: actor-tanktrap-name
 
 TANKTRAP2:
 	Inherits: ^Rock
@@ -663,7 +663,7 @@ TANKTRAP2:
 		Footprint: x
 		Dimensions: 1,1
 	Tooltip:
-		Name: Tank Trap
+		Name: actor-tanktrap-name
 
 ^default.flag:
 	Inherits: ^BasicBuilding
@@ -674,8 +674,8 @@ TANKTRAP2:
 		Footprint: x
 		Dimensions: 1,1
 	Tooltip:
-		Name: Flag
-		GenericName: Flag
+		Name: meta-default-flag-name
+		GenericName: meta-default-flag-name
 	Armor:
 		Type: building.normal
 	WithBuildingBib:
@@ -690,209 +690,209 @@ TANKTRAP2:
 flag.british:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: British Flag
+		Name: actor-flag-british-name
 
 flag.french:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: French Flag
+		Name: actor-flag-french-name
 
 flag.french.2:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: French Flag
+		Name: actor-flag-french-2-name
 
 flag.german:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: German Flag
+		Name: actor-flag-german-name
 
 flag.greek:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Greek Flag
+		Name: actor-flag-greek-name
 
 flag.spanish:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Spanish Flag
+		Name: actor-flag-spanish-name
 
 flag.turkish:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Turkish Flag
+		Name: actor-flag-turkish-name
 
 flag.belgian:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Belgian Flag
+		Name: actor-flag-belgian-name
 
 flag.dutch:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Dutch Flag
+		Name: actor-flag-dutch-name
 
 flag.luxembourgish:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Luxembourgish Flag
+		Name: actor-flag-luxembourgish-name
 
 flag.american:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: American Flag
+		Name: actor-flag-american-name
 
 flag.italian:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Italian Flag
+		Name: actor-flag-italian-name
 
 flag.austrian:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Austrian Flag
+		Name: actor-flag-austrian-name
 
 flag.hungarian:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Hungarian Flag
+		Name: actor-flag-hungarian-name
 
 flag.bulgarian:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Bulgarian Flag
+		Name: actor-flag-bulgarian-name
 
 flag.irish:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Irish Flag
+		Name: actor-flag-irish-name
 
 flag.danish:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Danish Flag
+		Name: actor-flag-danish-name
 
 flag.finnish:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Finnish Flag
+		Name: actor-flag-finnish-name
 
 flag.swedish:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Swedish Flag
+		Name: actor-flag-swedish-name
 
 flag.polish:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Polish Flag
+		Name: actor-flag-polish-name
 
 flag.nigerian:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Nigerian Flag
+		Name: actor-flag-nigerian-name
 
 flag.chilean:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Chilean Flag
+		Name: actor-flag-chilean-name
 
 flag.peruvian:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Peruvian Flag
+		Name: actor-flag-peruvian-name
 
 flag.japanese:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Japanese Flag
+		Name: actor-flag-japanese-name
 
 flag.indonesian:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Indonesian Flag
+		Name: actor-flag-indonesian-name
 
 flag.chinese:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Chinese Flag
+		Name: actor-flag-chinese-name
 
 flag.ussr:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Soviet Flag
+		Name: actor-flag-ussr-name
 
 flag.russian:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Russian Flag
+		Name: actor-flag-russian-name
 
 flag.russian_sfsr:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Russian SFSR Flag
+		Name: actor-flag-russian-sfsr-name
 
 flag.ukrainian_ssr:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Ukrainian SSR Flag
+		Name: actor-flag-ukrainian-ssr-name
 
 flag.moldovan_ssr:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Moldovan SSR Flag
+		Name: actor-flag-moldovan-ssr-name
 
 flag.azerbaijani_ssr:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Azerbaijani SSR Flag
+		Name: actor-flag-azerbaijani-ssr-name
 
 flag.armenian_ssr:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Armenian SSR Flag
+		Name: actor-flag-armenian-ssr-name
 
 flag.kazakh_ssr:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Kazakh SSR Flag
+		Name: actor-flag-kazakh-ssr-name
 
 flag.uzbek_ssr:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Uzbek SSR Flag
+		Name: actor-flag-uzbek-ssr-name
 
 flag.vietnamese:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Vietnamese Flag
+		Name: actor-flag-vietnamese-name
 
 flag.yemeni:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Yemeni Flag
+		Name: actor-flag-yemeni-name
 
 flag.syrian:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Syrian Flag
+		Name: actor-flag-syrian-name
 
 flag.bangladeshi:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Bangladeshi Flag
+		Name: actor-flag-bangladeshi-name
 
 flag.libyan_green:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Libyan Flag
+		Name: actor-flag-libyan-green-name
 
 flag.saudi:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: Saudi Flag
+		Name: actor-flag-saudi-name
 
 flag.gla:
 	Inherits: ^default.flag
 	Tooltip:
-		Name: GLA Flag
+		Name: actor-flag-gla-name

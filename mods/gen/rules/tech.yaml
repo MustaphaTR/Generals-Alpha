@@ -11,12 +11,12 @@ tech.oil_derrick:
 	Buildable:
 		BuildPaletteOrder: 2
 		BuildDuration: 250
-		Description: Gives cash periodically.
+		Description: actor-tech-oil-derrick.description
 		ReadyTextNotification: Construction Complete: Oil Derrick
 	Tooltip:
-		Name: Oil Derrick
+		Name: actor-tech-oil-derrick.name
 	TooltipDescription:
-		Description: Gives cash periodically.
+		Description: actor-tech-oil-derrick.description
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -45,7 +45,7 @@ tech.oil_refinery:
 	Buildable:
 		BuildPaletteOrder: 9
 		BuildDuration: 375
-		Description: Reduces vehicle and aircraft cost by 10%.
+		Description: actor-tech-oil-refinery.description
 		ReadyTextNotification: Construction Complete: Oil Refinery
 	Building:
 		Footprint: xx xx
@@ -55,9 +55,9 @@ tech.oil_refinery:
 	Targetable:
 		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Capture, Disable
 	Tooltip:
-		Name: Oil Refinery
+		Name: actor-tech-oil-refinery.name
 	TooltipDescription:
-		Description: Reduces vehicle and aircraft cost by 10%.
+		Description: actor-tech-oil-refinery.description
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
@@ -73,12 +73,12 @@ tech.hospital:
 	Buildable:
 		BuildPaletteOrder: 7
 		BuildDuration: 250
-		Description: Makes infantry self-heal.
+		Description: actor-tech-hospital.description
 		ReadyTextNotification: Construction Complete: Hospital
 	Tooltip:
-		Name: Hospital
+		Name: actor-tech-hospital.name
 	TooltipDescription:
-		Description: Makes infantry self-heal.
+		Description: actor-tech-hospital.description
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -104,12 +104,12 @@ tech.artillery_platform:
 	Buildable:
 		BuildPaletteOrder: 3
 		BuildDuration: 625
-		Description: Fires artillery shell in a long area.
+		Description: actor-tech-artillery-platform.description
 		ReadyTextNotification: Construction Complete: Artillery Platform
 	Tooltip:
-		Name: Artillery Platform
+		Name: actor-tech-artillery-platform.name
 	TooltipDescription:
-		Description: Fires artillery shell in a long area.
+		Description: actor-tech-artillery-platform.description
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -154,12 +154,12 @@ tech.communications_center:
 	Buildable:
 		BuildPaletteOrder: 6
 		BuildDuration: 750
-		Description: Provides radar and reveals a big area around it.
+		Description: actor-tech-communications-center.description
 		ReadyTextNotification: Construction Complete: Communications Center
 	Tooltip:
-		Name: Communications Center
+		Name: actor-tech-communications-center.name
 	TooltipDescription:
-		Description: Provides radar and reveals a big area around it.
+		Description: actor-tech-communications-center.description
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -193,12 +193,12 @@ tech.soviet_barracks:
 	Buildable:
 		BuildPaletteOrder: 1
 		BuildDuration: 250
-		Description: Produces old Soviet era units.
+		Description: actor-tech-soviet-barracks.description
 		ReadyTextNotification: Construction Complete: Soviet Barracks
 	Tooltip:
-		Name: Soviet Barracks
+		Name: actor-tech-soviet-barracks.name
 	TooltipDescription:
-		Description: Produces old Soviet era units.
+		Description: actor-tech-soviet-barracks.description
 	Building:
 		Footprint: xx xx ==
 		Dimensions: 2,3
@@ -215,7 +215,7 @@ tech.soviet_barracks:
 		Type: queue.soviet_infantry
 		Group: Infantry
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 29
@@ -255,14 +255,14 @@ tech.flame_tower:
 		BuildPaletteOrder: 4
 		ForceIconLocation: true
 		Prerequisites: !techlevel.nodefense
-		Description: Anti-infantry base defense.\n\nCan damage infantry garrisoned in civilian structures.
+		Description: actor-tech-flame-tower.description
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
 		ReadyTextNotification: Construction Complete: Flame Tower
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Flame Tower
+		Name: actor-tech-flame-tower.name
 	Health:
 		HP: 75000
 	Armor:
@@ -303,12 +303,12 @@ tech.power_plant:
 	Buildable:
 		BuildPaletteOrder: 0
 		BuildDuration: 250
-		Description: Provides power.
+		Description: actor-tech-power-plant.description
 		ReadyTextNotification: Construction Complete: Power Plant
 	Tooltip:
-		Name: Power Plant
+		Name: actor-tech-power-plant.name
 	TooltipDescription:
-		Description: Provides power.
+		Description: actor-tech-power-plant.description
 	Building:
 		Footprint: xxx Xxx ===
 		Dimensions: 3,3
@@ -339,12 +339,12 @@ tech.repair_bay:
 	Buildable:
 		BuildPaletteOrder: 8
 		BuildDuration: 375
-		Description: Makes vehicles auto-repair.
+		Description: actor-tech-repair-bay.description
 		ReadyTextNotification: Construction Complete: Repair Bay
 	Tooltip:
-		Name: Repair Bay
+		Name: actor-tech-repair-bay.name
 	TooltipDescription:
-		Description: Makes vehicles auto-repair.
+		Description: actor-tech-repair-bay.description
 	Building:
 		Footprint: __x xxx x__
 		Dimensions: 3,3
@@ -380,12 +380,12 @@ tech.reinforcements_pad:
 	Buildable:
 		BuildPaletteOrder: 4
 		BuildDuration: 375
-		Description: Delivers vehicles every 2 minutes.
+		Description: actor-tech-reinforcements-pad.description
 		ReadyTextNotification: Construction Complete: Reinforcements Pad
 	Tooltip:
-		Name: Reinforcements Pad
+		Name: actor-tech-reinforcements-pad.name
 	TooltipDescription:
-		Description: Delivers vehicles every 2 minutes.
+		Description: actor-tech-reinforcements-pad.description
 	Building:
 		Footprint: _X_ xxx _X_
 		Dimensions: 3,3
@@ -571,12 +571,12 @@ tech.shipyard:
 	Buildable:
 		BuildPaletteOrder: 5
 		BuildDuration: 375
-		Description: Produces ships.
+		Description: actor-tech-shipyard.description
 		ReadyTextNotification: Construction Complete: Shipyard
 	Tooltip:
-		Name: Shipyard
+		Name: actor-tech-shipyard.name
 	TooltipDescription:
-		Description: Produces ships.
+		Description: actor-tech-shipyard.description
 	Building:
 		Footprint: XXX xxx XXX
 		Dimensions: 3,3
@@ -608,7 +608,7 @@ tech.shipyard:
 		Type: queue.vessel
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 51
@@ -654,7 +654,7 @@ tech.nuclear_bunker:
 	Armor:
 		Type: building.normal
 	Tooltip:
-		Name: Bunker
+		Name: actor-tech-nuclear-bunker-name
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false

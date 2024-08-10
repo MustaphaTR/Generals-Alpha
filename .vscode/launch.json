@@ -2,12 +2,12 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Launch (Example)",
+			"name": "Launch (Generals Alpha)",
 			"type": "coreclr",
 			"request": "launch",
 			"program": "${workspaceRoot}/engine/bin/OpenRA.dll",
 			"args": [
-				"Game.Mod=example",
+				"Game.Mod=gen",
 				"Engine.EngineDir=${workspaceRoot}/engine",
 				"Engine.ModSearchPaths=${workspaceRoot}/mods, ${workspaceRoot}/engine/mods",
 				"Debug.DisplayDeveloperSettings=true",

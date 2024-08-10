@@ -66,10 +66,10 @@ building.usa_command_center:
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged
 		BuildPaletteOrder: 12
-		Description: Produces construction vehicles.\n\nResearches and Provides General's Powers\n\nProvides Radar.\n\nProvides Spy Satellite support power.
+		Description: actor-building-usa-command-center.description
 		ReadyTextNotification: Construction Complete: USA Command Center
 	Tooltip:
-		Name: USA Command Center
+		Name: actor-building-usa-command-center.name
 	Voiced:
 		VoiceSet: USACommandCenterVoice
 	Building:
@@ -85,7 +85,7 @@ building.usa_command_center:
 		Type: queue.usa_command_center
 		Group: Command
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 12
@@ -329,10 +329,10 @@ building.gla_command_center:
 	Buildable:
 		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged
 		BuildPaletteOrder: 10
-		Description: Produces construction vehicles.\n\nResearches and Provides General's Powers
+		Description: actor-building-gla-command-center.description
 		ReadyTextNotification: Construction Complete: GLA Command Center
 	Tooltip:
-		Name: GLA Command Center
+		Name: actor-building-gla-command-center.name
 	Voiced:
 		VoiceSet: GLACommandCenterVoice
 	Production:
@@ -347,14 +347,14 @@ building.gla_command_center:
 		Type: queue.gla_command_center
 		Group: Command
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 13
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_command_center
 		Group: Command
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 14
 	ProductionBar@Vanilla:
@@ -551,14 +551,14 @@ building.prc_command_center:
 	Buildable:
 		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged
 		BuildPaletteOrder: 14
-		Description: Produces construction vehicles.\n\nResearches and Provides General's Powers
+		Description: actor-building-prc-command-center.description
 		Prerequisites: !building.prc_command_center.radar, !techlevel.nocc
 		ReadyTextNotification: Construction Complete: PRC Command Center
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.boss_gen_building_merged
 		Modifier: 1 # 15
 	Tooltip:
-		Name: PRC Command Center
+		Name: actor-building-prc-command-center.name
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
@@ -591,7 +591,7 @@ building.prc_command_center:
 		Type: queue.prc_command_center
 		Group: Command
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 14
@@ -1046,11 +1046,11 @@ building.prc_command_center.radar:
 		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building, queue.boss_gen_building
-		Description: Provides power for other structures.
+		Description: meta-default-cold-fusion-reactor.description
 	Valued:
 		Cost: 800
 	Tooltip:
-		Name: Cold Fusion Reactor
+		Name: meta-default-cold-fusion-reactor.name
 	Health:
 		HP: 80000
 	Selectable:
@@ -1062,7 +1062,7 @@ building.prc_command_center.radar:
 		Type: queue.cold_fusion_reactor
 		Group: Tech
 		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		ItemLimit: 1
 		LowPowerModifier: 200
@@ -1115,7 +1115,7 @@ building.cold_fusion_reactor:
 		Group: Tech
 		Factions: boss
 		AlwaysShowForFactions: boss
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		ItemLimit: 1
 		LowPowerModifier: 200
@@ -1152,7 +1152,7 @@ building.cold_fusion_reactor.laser:
 		Group: Tech
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		ItemLimit: 1
 		LowPowerModifier: 200
@@ -1251,12 +1251,12 @@ building.nuclear_reactor:
 		TargetableOffsets: 630,299,0
 	Buildable:
 		Queue: queue.prc_building, queue.inf_gen_building
-		Description: Provides power for other structures.\n\nCan be Overcharged to incrase power output, but damages the building by doing so.\n\nExplodes when destroyed.
+		Description: actor-building-nuclear-reactor.description
 		ReadyTextNotification: Construction Complete: Nuclear Reactor
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: Nuclear Reactor
+		Name: actor-building-nuclear-reactor.name
 	Health:
 		HP: 150000
 	Explodes:
@@ -1303,7 +1303,7 @@ building.advanced_nuclear_reactor:
 	Valued:
 		Cost: 1200
 	Tooltip:
-		Name: Advanced Nuclear Reactor
+		Name: actor-building-advanced-nuclear-reactor-name
 	Power@notovercharged:
 		Amount: 18
 	Power@overcharged:
@@ -1322,7 +1322,7 @@ building.advanced_nuclear_reactor:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 1
-		Description: Trains infantry.
+		Description: meta-default-barracks-description
 		Prerequisites: !techlevel.vehicleonly
 	Valued:
 		Cost: 500
@@ -1364,7 +1364,7 @@ building.usa_barracks:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: USA Barracks
+		Name: actor-building-usa-barracks-name
 	Production:
 		Produces: queue.usa_infantry
 		PauseOnCondition: emp || hacked || sabotaged
@@ -1377,7 +1377,7 @@ building.usa_barracks:
 		Type: queue.usa_infantry
 		Group: Infantry
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 19
@@ -1385,7 +1385,7 @@ building.usa_barracks:
 		Type: queue.super_gen_infantry
 		Group: Infantry
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 20
@@ -1421,7 +1421,7 @@ building.gla_barracks:
 		BuildPaletteOrder: 0
 		ReadyTextNotification: Construction Complete: GLA Barracks
 	Tooltip:
-		Name: GLA Barracks
+		Name: actor-building-gla-barracks.name
 	Production:
 		Produces: queue.gla_infantry, queue.toxin_gen_infantry, queue.demo_gen_infantry, queue.stealth_gen_infantry
 		PauseOnCondition: emp || hacked || sabotaged
@@ -1436,7 +1436,7 @@ building.gla_barracks:
 		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank, boss
 		Group: Infantry
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 21
 	ProductionQueue@Toxin:
@@ -1444,7 +1444,7 @@ building.gla_barracks:
 		Factions: toxin
 		Group: Infantry
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 22
 	ProductionQueue@Demo:
@@ -1452,7 +1452,7 @@ building.gla_barracks:
 		Factions: demo
 		Group: Infantry
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 23
 	ProductionQueue@Stealth:
@@ -1460,14 +1460,14 @@ building.gla_barracks:
 		Factions: stealth
 		Group: Infantry
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 24
 	ProductionQueue@Merged:
 		Type: queue.gla_infantry_merged
 		Group: Infantry
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 25
 	ProductionBar@Vanilla:
@@ -1506,7 +1506,7 @@ building.prc_barracks:
 		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged
 		ReadyTextNotification: Construction Complete: PRC Barracks
 	Tooltip:
-		Name: PRC Barracks
+		Name: actor-building-prc-barracks-name
 	Production:
 		Produces: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.boss_gen_infantry
 		PauseOnCondition: emp || hacked || sabotaged
@@ -1521,7 +1521,7 @@ building.prc_barracks:
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
 		Group: Infantry
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 25
@@ -1530,7 +1530,7 @@ building.prc_barracks:
 		Factions: inf
 		Group: Infantry
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 26
@@ -1539,7 +1539,7 @@ building.prc_barracks:
 		Factions: nuke
 		Group: Infantry
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 27
@@ -1548,7 +1548,7 @@ building.prc_barracks:
 		Factions: tank
 		Group: Infantry
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 28
@@ -1557,7 +1557,7 @@ building.prc_barracks:
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Infantry
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 29
@@ -1566,7 +1566,7 @@ building.prc_barracks:
 		Factions: boss
 		Group: Infantry
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 30
@@ -1575,7 +1575,7 @@ building.prc_barracks:
 		Factions: boss
 		Group: Infantry
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 31
@@ -1624,7 +1624,7 @@ building.prc_barracks:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		BuildPaletteOrder: 2
-		Description: Deposit for the collected supplies.
+		Description: meta-default-supply-center-description
 	Valued:
 		Cost: 1500
 	CustomSellValue:
@@ -1677,14 +1677,14 @@ building.usa_supply_center:
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged
 		Prerequisites: prerequisite.reactor
-		Description: Deposit for the collected supplies.\n\nProduces chinooks.
+		Description: actor-building-usa-supply-center.description
 		ReadyTextNotification: Construction Complete: USA Supply Center
 	Valued:
 		Cost: 2000
 	CustomSellValue:
 		Value: 1000
 	Tooltip:
-		Name: USA Supply Center
+		Name: actor-building-usa-supply-center.name
 	Selectable:
 		Bounds: 3072, 2389, 0, 512
 		DecorationBounds: 3072, 2986, 0, -85
@@ -1701,7 +1701,7 @@ building.usa_supply_center:
 		Type: queue.usa_collector
 		Group: Collector
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 15
@@ -1709,7 +1709,7 @@ building.usa_supply_center:
 		Type: queue.air_gen_collector
 		Group: Collector
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 16
@@ -1762,10 +1762,10 @@ building.gla_supply_stash:
 	Buildable:
 		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged
 		BuildPaletteOrder: 1
-		Description: Deposit for the collected supplies.\n\nTrains workers.
+		Description: actor-building-gla-supply-stash.description
 		ReadyTextNotification: Construction Complete: GLA Supply Stash
 	Tooltip:
-		Name: GLA Supply Stash
+		Name: actor-building-gla-supply-stash.name
 	Building:
 		Footprint: xx x=
 		Dimensions: 2,2
@@ -1785,14 +1785,14 @@ building.gla_supply_stash:
 		Type: queue.gla_collector
 		Group: Collector
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 17
 	ProductionQueue@Stealth:
 		Type: queue.stealth_gen_collector
 		Group: Collector
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 18
 	ProductionBar@Vanilla:
@@ -1843,10 +1843,10 @@ building.prc_supply_center:
 	Buildable:
 		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged
 		Prerequisites: prerequisite.reactor
-		Description: Deposit for the collected supplies.\n\nProduces supply trucks.
+		Description: actor-building-prc-supply-center.description
 		ReadyTextNotification: Construction Complete: PRC Supply Center
 	Tooltip:
-		Name: PRC Supply Center
+		Name: actor-building-prc-supply-center.name
 	Building:
 		Footprint: _X_ xxx X== ===
 	LaysMinefield@LAND_MINES:
@@ -1865,7 +1865,7 @@ building.prc_supply_center:
 		Type: queue.prc_collector
 		Group: Collector
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 18
@@ -1923,7 +1923,7 @@ building.patriot:
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.reactor, !techlevel.nodefense
-		Description: Anti-tank & anti-air base defense.
+		Description: actor-building-patriot.description
 		ReadyTextNotification: Construction Complete: Patriot Missile System
 	BuildPaletteOrderModifier@Boss:
 		Queue: queue.boss_gen_building, queue.boss_gen_building_merged
@@ -1931,7 +1931,7 @@ building.patriot:
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: Patriot Missile System
+		Name: actor-building-patriot.name
 	Building:
 		Footprint: x
 		Dimensions: 1,1
@@ -1968,7 +1968,7 @@ building.patriot:
 		RevokeDelay: 30
 	ProximityExternalCondition@share-target:
 		RequiresCondition: share-target && !target-shared
-		Condition: target-shared 
+		Condition: target-shared
 		Range: 5c640
 	Armament@Share:
 		Name: secondary
@@ -2050,7 +2050,7 @@ building.emp_patriot:
 	Valued:
 		Cost: 900
 	Tooltip:
-		Name: EMP Patriot Missile System
+		Name: actor-building-emp-patriot-name
 	Armament@AG:
 		Weapon: missile.emp_patriot.ground
 	Armament@AA:
@@ -2073,7 +2073,7 @@ building.laser_turret:
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.reactor, !techlevel.nodefense
-		Description: Anti-tank & anti-air base defense.
+		Description: actor-building-laser-turret.description
 		ReadyTextNotification: Construction Complete: Laser Turret
 	BuildPaletteOrderModifier@Boss:
 		Queue: queue.usa_building_merged
@@ -2084,7 +2084,7 @@ building.laser_turret:
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: Laser Turret
+		Name: actor-building-laser-turret.name
 	Building:
 		Footprint: x
 		Dimensions: 1,1
@@ -2118,9 +2118,9 @@ building.laser_turret:
 	GrantConditionOnAttack@share-target:
 		Condition: share-target
 		RevokeDelay: 30
-	ProximityExternalCondition@share-target: 
+	ProximityExternalCondition@share-target:
 		RequiresCondition: share-target && !target-shared
-		Condition: target-shared 
+		Condition: target-shared
 		Range: 5c640
 	Armament@Share:
 		Name: secondary
@@ -2199,7 +2199,7 @@ building.demo_trap:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: building.arms_dealer, !techlevel.nodefense
-		Description: Stealth trap with explosives.
+		Description: actor-building-demo-trap.description
 		ReadyTextNotification: Construction Complete: Demo Trap
 	ProductionCostMultiplier@Toxin:
 		Queue: queue.toxin_gen_building
@@ -2212,7 +2212,7 @@ building.demo_trap:
 	Health:
 		HP: 10000
 	Tooltip:
-		Name: Demo Trap
+		Name: actor-building-demo-trap.name
 	Armor:
 		Type: building.normal
 	Selectable:
@@ -2324,7 +2324,7 @@ building.advanced_demo_trap:
 	Valued:
 		Cost: 200
 	Tooltip:
-		Name: Advanced Demo Trap
+		Name: actor-building-advanced-demo-trap.name
 	SpawnActorOnDeath:
 		Actor: building.advanced_demo_trap.explode
 	ActorStatValues:
@@ -2334,7 +2334,7 @@ building.advanced_demo_trap:
 building.advanced_demo_trap.explode:
 	Inherits: building.demo_trap.explode
 	Tooltip:
-		Name: Advanced Demo Trap
+		Name: actor-building-advanced-demo-trap.name
 	Explodes:
 		Weapon: explosion.advanced_demo_trap
 		-RequiresCondition:
@@ -2361,7 +2361,7 @@ building.gatling_cannon:
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.reactor, !techlevel.nodefense
-		Description: Anti-infantry & anti-air base defense.
+		Description: actor-building-gatling-cannon.description
 		ReadyTextNotification: Construction Complete: Gatling Cannon
 	LaysMinefield@LAND_MINES:
 		Locations: 0,-1, -1,0, 0,1, 1,0
@@ -2370,7 +2370,7 @@ building.gatling_cannon:
 	Valued:
 		Cost: 1200
 	Tooltip:
-		Name: Gatling Cannon
+		Name: actor-building-gatling-cannon.name
 	Selectable:
 		Bounds: 1024, 1024
 		DecorationBounds: 1024, 1365, 0, -170
@@ -2452,7 +2452,7 @@ building.firebase:
 	GivesExperience:
 		Experience: 200
 	Tooltip:
-		Name: Firebase
+		Name: actor-building-firebase.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -2462,7 +2462,7 @@ building.firebase:
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.reactor, ~prerequisite.zh_units, !techlevel.nodefense
-		Description: Static long range defense with fireports\nfor 4 garrisoned soldiers.
+		Description: actor-building-firebase.description
 		ReadyTextNotification: Construction Complete: Firebase
 	Valued:
 		Cost: 1000
@@ -2538,7 +2538,7 @@ building.bunker:
 	GivesExperience:
 		Experience: 20
 	Tooltip:
-		Name: Bunker
+		Name: actor-building-bunker.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -2548,7 +2548,7 @@ building.bunker:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: building.prc_barracks, !techlevel.vehicleonly, !techlevel.nodefense
-		Description: Static defense with fireports for 5\ngarrisoned soldiers.
+		Description: actor-building-bunker.description
 		ReadyTextNotification: Construction Complete: Bunker
 	Valued:
 		Cost: 500
@@ -2602,10 +2602,10 @@ building.fortified_bunker:
 	Buildable:
 		Queue: queue.inf_gen_building, queue.prc_building_merged, queue.boss_gen_building_merged
 		BuildDuration: 200
-		Description: Static defense with fireports for 10\ngarrisoned soldiers.\n\nComes with some mines around.
+		Description: actor-building-fortified-bunker.description
 		ReadyTextNotification: Construction Complete: Fortified Bunker
 	Tooltip:
-		Name: Fortified Bunker
+		Name: actor-building-fortified-bunker.name
 	Valued:
 		Cost: 700
 	Selectable:
@@ -2631,7 +2631,7 @@ building.fortified_bunker:
 	Buildable:
 		BuildDuration: 375
 		BuildDurationModifier: 100
-		Description: Produces vehicles.
+		Description: meta-default-war-factory-description
 		Prerequisites: prerequisite.supply_center, !techlevel.infonly
 	Valued:
 		Cost: 2000
@@ -2677,7 +2677,7 @@ building.usa_war_factory:
 		BuildPaletteOrder: 4
 		ReadyTextNotification: Construction Complete: USA War Factory
 	Tooltip:
-		Name: USA War Factory
+		Name: actor-building-usa-war-factory-name
 	Building:
 		Footprint: xxx === ===
 	Production:
@@ -2693,7 +2693,7 @@ building.usa_war_factory:
 		Factions: usa, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 30
@@ -2702,7 +2702,7 @@ building.usa_war_factory:
 		Factions: air
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 31
@@ -2711,7 +2711,7 @@ building.usa_war_factory:
 		Factions: laser
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 32
@@ -2720,7 +2720,7 @@ building.usa_war_factory:
 		Factions: super
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 33
@@ -2728,7 +2728,7 @@ building.usa_war_factory:
 		Type: queue.usa_vehicle_merged
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 34
@@ -2785,7 +2785,7 @@ building.arms_dealer:
 	Valued:
 		Cost: 2500
 	Tooltip:
-		Name: GLA Arms Dealer
+		Name: actor-building-arms-dealer.name
 	Production:
 		Produces: queue.gla_vehicle, queue.toxin_gen_vehicle, queue.demo_gen_vehicle, queue.stealth_gen_vehicle
 		PauseOnCondition: emp || hacked || sabotaged
@@ -2800,7 +2800,7 @@ building.arms_dealer:
 		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank, boss
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 34
 	ProductionQueue@Toxin:
@@ -2808,7 +2808,7 @@ building.arms_dealer:
 		Factions: toxin
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 35
 	ProductionQueue@Demo:
@@ -2816,7 +2816,7 @@ building.arms_dealer:
 		Factions: demo
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 36
 	ProductionQueue@Stealth:
@@ -2824,14 +2824,14 @@ building.arms_dealer:
 		Factions: stealth
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 37
 	ProductionQueue@Merged:
 		Type: queue.gla_vehicle_merged
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 38
 	ProductionBar@Vanilla:
@@ -2861,7 +2861,7 @@ building.prc_war_factory:
 		BuildPaletteOrder: 5
 		ReadyTextNotification: Construction Complete: PRC War Factory
 	Tooltip:
-		Name: PRC War Factory
+		Name: actor-building-prc-war-factory-name
 	Production:
 		Produces: queue.prc_vehicle, queue.inf_gen_vehicle, queue.nuke_gen_vehicle, queue.tank_gen_vehicle, queue.boss_gen_vehicle
 		PauseOnCondition: emp || hacked || sabotaged
@@ -2876,7 +2876,7 @@ building.prc_war_factory:
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 38
@@ -2885,7 +2885,7 @@ building.prc_war_factory:
 		Factions: inf
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 39
@@ -2894,7 +2894,7 @@ building.prc_war_factory:
 		Factions: nuke
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 40
@@ -2903,7 +2903,7 @@ building.prc_war_factory:
 		Factions: tank
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 41
@@ -2912,7 +2912,7 @@ building.prc_war_factory:
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 42
@@ -2921,7 +2921,7 @@ building.prc_war_factory:
 		Factions: boss
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 43
@@ -2930,7 +2930,7 @@ building.prc_war_factory:
 		Factions: boss
 		Group: Vehicle
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 44
@@ -2971,7 +2971,7 @@ building.prc_war_factory:
 	GivesExperience:
 		Experience: 100
 	Tooltip:
-		Name: Tunnel Network
+		Name: actor-building-tunnel-network.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -3027,7 +3027,7 @@ building.tunnel_network:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.gla_barracks, !techlevel.nodefense
-		Description: Allows unit movement from one to another quickly.\n\nArmed with a machine gun.\n\nComes with 2 RPG Troopers.\n\nLosing your last tunnel network kills units in them.
+		Description: actor-building-tunnel-network.description
 		ReadyTextNotification: Construction Complete: Tunnel Network
 	Buildable@Boss:
 		Queue: queue.boss_gen_building, queue.boss_gen_building_merged
@@ -3035,7 +3035,7 @@ building.tunnel_network:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.prc_barracks, !techlevel.nodefense
-		Description: Allows unit movement from one to another quickly.\n\nArmed with a machine gun.\n\nComes with 2 RPG Troopers.\n\nLosing your last tunnel network kills units in them.
+		Description: actor-building-tunnel-network.description
 		ReadyTextNotification: Construction Complete: Tunnel Network
 	FreeActor@1:
 		Actor: hack.rpg_trooper_spawner.1
@@ -3098,17 +3098,17 @@ building.toxin_tunnel_network:
 	Inherits: building.tunnel_network
 	Buildable:
 		Queue: queue.toxin_gen_building, queue.gla_building_merged
-		Description: Allows unit movement from one to another quickly.\n\nArmed with a toxin sprayer.\n\nCan damage infantry garrisoned in civilian structures.\n\nComes with 2 RPG Troopers.\n\nLosing your last tunnel network kills units in them.
+		Description: actor-building-toxin-tunnel-network.description
 		ReadyTextNotification: Construction Complete: Toxin Tunnel Network
 	Buildable@Boss:
 		Queue: queue.boss_gen_building_merged
-		Description: Allows unit movement from one to another quickly.\n\nArmed with a toxin sprayer.\n\nCan damage infantry garrisoned in civilian structures.\n\nComes with 2 RPG Troopers.\n\nLosing your last tunnel network kills units in them.
+		Description: actor-building-toxin-tunnel-network.description
 		ReadyTextNotification: Construction Complete: Toxin Tunnel Network
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.gla_building_merged, queue.boss_gen_building_merged
 		Modifier: 3 # 5, 10
 	Tooltip:
-		Name: Toxin Tunnel Network
+		Name: actor-building-toxin-tunnel-network.name
 	Armament:
 		Damage: 8
 		Weapon: toxin.toxin_tunnel_network
@@ -3198,7 +3198,7 @@ building.stinger_site:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.gla_barracks, !techlevel.nodefense
-		Description: Anti-tank & anti-air base defense.\n\nInfantry is vulnerable to damage by some weapons.
+		Description: actor-building-stinger-site.description
 		ReadyTextNotification: Construction Complete: Stinger Site
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.gla_building_merged
@@ -3206,7 +3206,7 @@ building.stinger_site:
 	Valued:
 		Cost: 900
 	Tooltip:
-		Name: Stinger Site
+		Name: actor-building-stinger-site.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -3287,7 +3287,7 @@ building.stinger_site:
 	Buildable:
 		BuildDuration: 750
 		BuildDurationModifier: 100
-		Description: Produces and reloads aircraft.
+		Description: meta-default-airfield-description
 		Prerequisites: prerequisite.supply_center, !techlevel.infonly, !techlevel.noair
 	Valued:
 		Cost: 1000
@@ -3340,7 +3340,7 @@ building.usa_airfield:
 		RequiresCondition: air || merged
 		Modifier: 60
 	Tooltip:
-		Name: USA Airfield
+		Name: actor-building-usa-airfield-name
 	Building:
 		Footprint: XXXX xxx= xx==
 		Dimensions: 4,3
@@ -3359,7 +3359,7 @@ building.usa_airfield:
 		Factions: usa, laser, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		Group: Aircraft
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 43
@@ -3368,7 +3368,7 @@ building.usa_airfield:
 		Factions: air
 		Group: Aircraft
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 44
@@ -3377,7 +3377,7 @@ building.usa_airfield:
 		Factions: super
 		Group: Aircraft
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 45
@@ -3385,7 +3385,7 @@ building.usa_airfield:
 		Type: queue.usa_aircraft_merged
 		Group: Aircraft
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 46
@@ -3443,7 +3443,7 @@ building.prc_airfield:
 		BuildPaletteOrder: 8
 		ReadyTextNotification: Construction Complete: PRC Airfield
 	Tooltip:
-		Name: PRC Airfield
+		Name: actor-building-prc-airfield-name
 	Building:
 		Footprint: xxxx =x== xxxx
 		Dimensions: 4,3
@@ -3461,7 +3461,7 @@ building.prc_airfield:
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf
 		Group: Aircraft
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 47
@@ -3470,7 +3470,7 @@ building.prc_airfield:
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Aircraft
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 48
@@ -3479,7 +3479,7 @@ building.prc_airfield:
 		Factions: nuke
 		Group: Aircraft
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 49
@@ -3488,7 +3488,7 @@ building.prc_airfield:
 		Factions: tank
 		Group: Aircraft
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 50
@@ -3497,7 +3497,7 @@ building.prc_airfield:
 		Factions: boss
 		Group: Aircraft
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 51
@@ -3506,7 +3506,7 @@ building.prc_airfield:
 		Factions: boss
 		Group: Aircraft
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 52
@@ -3554,7 +3554,7 @@ hack.dock:
 	GrantExternalConditionToOwner:
 		Condition: airdock
 	Tooltip:
-		Name: Dummy Dock
+		Name: actor-hack-dock-name
 	RepairsUnits:
 		Interval: 14
 		HpPerStep: 500
@@ -3585,14 +3585,14 @@ building.internet_center:
 	Valued:
 		Cost: 2500
 	Tooltip:
-		Name: Internet Center
+		Name: actor-building-internet-center.name
 	Buildable:
 		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.tank_gen_building
 		BuildPaletteOrder: 9
 		BuildDuration: 750
 		BuildDurationModifier: 100
 		Prerequisites: building.prc_war_factory, ~prerequisite.zh_units
-		Description: Can be garrissoned by hackers to allow them give cash safely.\n\nCan be upgraded with Satellite Hack to get intel from enemy.\n\nMaximum 1 can be built.
+		Description: actor-building-internet-center.description
 		BuildLimit: 1
 		ReadyTextNotification: Construction Complete: Internet Center
 	Building:
@@ -3611,7 +3611,7 @@ building.internet_center:
 		Group: Tech
 		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 52
@@ -3720,12 +3720,12 @@ building.strategy_center:
 		BuildDuration: 1500
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.usa_airfield_or_war_factory, !techlevel.notech
-		Description: Provides USA advanced technologies.
+		Description: actor-building-strategy-center.description
 		ReadyTextNotification: Construction Complete: Strategy Center
 	Valued:
 		Cost: 2500
 	Tooltip:
-		Name: Strategy Center
+		Name: actor-building-strategy-center.name
 	Building:
 		Footprint: Xxx xxX
 		Dimensions: 3,2
@@ -3753,7 +3753,7 @@ building.strategy_center:
 		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 53
@@ -3762,7 +3762,7 @@ building.strategy_center:
 		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 54
@@ -3892,12 +3892,12 @@ building.palace:
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 		Prerequisites: building.arms_dealer, !techlevel.notech
-		Description: Provides GLA advanced technologies.\n\nCan be garrisoned by 5 infantry.
+		Description: actor-building-palace.description
 		ReadyTextNotification: Construction Complete: Palace
 	Valued:
 		Cost: 2500
 	Tooltip:
-		Name: Palace
+		Name: actor-building-palace.name
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
@@ -3956,7 +3956,7 @@ building.palace:
 		AlwaysShowForFactions: usa, air, laser, super, gla, prc, inf, nuke, tank, boss
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 55
 	ProductionQueue@Toxin:
@@ -3965,7 +3965,7 @@ building.palace:
 		AlwaysShowForFactions: toxin
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 56
 	ProductionQueue@Demo:
@@ -3974,7 +3974,7 @@ building.palace:
 		AlwaysShowForFactions: demo
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 57
 	ProductionQueue@Stealth:
@@ -3983,14 +3983,14 @@ building.palace:
 		AlwaysShowForFactions: stealth
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 58
 	ProductionQueue@Merged:
 		Type: queue.palace_merged
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 59
 	ProductionBar@Vanilla:
@@ -4037,12 +4037,12 @@ building.propaganda_center:
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.prc_airfield_or_war_factory, !techlevel.notech
-		Description: Provides PRC advanced technologies.
+		Description: actor-building-propaganda-center.description
 		ReadyTextNotification: Construction Complete: Propaganda Center
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: Propaganda Center
+		Name: actor-building-propaganda-center.name
 	Building:
 		Footprint: XxX XxX
 		Dimensions: 3,2
@@ -4068,7 +4068,7 @@ building.propaganda_center:
 		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, boss
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 59
@@ -4078,7 +4078,7 @@ building.propaganda_center:
 		AlwaysShowForFactions: inf
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 60
@@ -4088,7 +4088,7 @@ building.propaganda_center:
 		AlwaysShowForFactions: nuke
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 61
@@ -4098,7 +4098,7 @@ building.propaganda_center:
 		AlwaysShowForFactions: tank
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 62
@@ -4106,7 +4106,7 @@ building.propaganda_center:
 		Type: queue.propaganda_center_merged
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 63
@@ -4155,7 +4155,7 @@ building.detention_camp:
 		BuildDuration: 750
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, ~!prerequisite.zh_units, !techlevel.notech
-		Description: Provides support power to reveal all enemy units for a while.
+		Description: actor-building-detention-camp.description
 		ReadyTextNotification: Construction Complete: Detention Camp
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.usa_building_merged
@@ -4163,7 +4163,7 @@ building.detention_camp:
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: Detention Camp
+		Name: actor-building-detention-camp.name
 	Building:
 		Footprint: XxX XxX
 		Dimensions: 3,2
@@ -4212,12 +4212,12 @@ building.supply_drop_zone:
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, !techlevel.notech
-		Description: A Cargo Plane drops money crates here every 2 minutes.
+		Description: actor-building-supply-drop-zone.description
 		ReadyTextNotification: Construction Complete: Supply Drop Zone
 	Valued:
 		Cost: 2500
 	Tooltip:
-		Name: Supply Drop Zone
+		Name: actor-building-supply-drop-zone.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -4272,14 +4272,14 @@ building.black_market:
 	Valued:
 		Cost: 2500
 	Tooltip:
-		Name: Black Market
+		Name: actor-building-black-market.name
 	Buildable:
 		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged
 		BuildPaletteOrder: 7
 		BuildDuration: 750
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, !techlevel.notech
-		Description: Enables some upgrades.\n\nGives cash periodically.
+		Description: actor-building-black-market.description
 		ReadyTextNotification: Construction Complete: Black Market
 	Building:
 		Footprint: XX xx
@@ -4301,7 +4301,7 @@ building.black_market:
 		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 61
 	ProductionQueue@Stealth:
@@ -4309,7 +4309,7 @@ building.black_market:
 		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 62
 	ProductionBar@Vanilla:
@@ -4344,14 +4344,14 @@ building.speaker_tower:
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Speaker Tower
+		Name: actor-building-speaker-tower.name
 	Buildable:
 		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged
 		BuildPaletteOrder: 11
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, !techlevel.notech, !techlevel.nodefense
-		Description: Increases fire speed of nearby units and allows them to heal.
+		Description: actor-building-speaker-tower.description
 		ReadyTextNotification: Construction Complete: Speaker Tower
 	Buildable@Boss:
 		Queue: queue.boss_gen_building, queue.boss_gen_building_merged
@@ -4359,7 +4359,7 @@ building.speaker_tower:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: building.prc_airfield, !techlevel.notech, !techlevel.nodefense
-		Description: Increases fire speed of nearby units and allows them to heal.
+		Description: actor-building-speaker-tower.description
 		ReadyTextNotification: Construction Complete: Speaker Tower
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.boss_gen_building_merged
@@ -4430,14 +4430,14 @@ building.particle_cannon:
 	Valued:
 		Cost: 5000
 	Tooltip:
-		Name: Particle Uplink Cannon
+		Name: actor-building-particle-cannon.name
 	Buildable:
 		Queue: queue.usa_building, queue.air_gen_building, queue.laser_gen_building
 		BuildPaletteOrder: 11
 		BuildDuration: 1500
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, !prerequisite.enough_particle, !techlevel.notech, !techlevel.nosw
-		Description: Provides Particle Cannon support power.
+		Description: actor-building-particle-cannon.description
 		ReadyTextNotification: Construction Complete: Particle Uplink Cannon
 	Buildable@Boss:
 		Queue: queue.boss_gen_building
@@ -4445,7 +4445,7 @@ building.particle_cannon:
 		BuildDuration: 1500
 		BuildDurationModifier: 100
 		Prerequisites: building.prc_war_factory, building.prc_airfield, !prerequisite.enough_particle, !techlevel.notech, !techlevel.nosw
-		Description: Provides Particle Cannon support power.
+		Description: actor-building-particle-cannon.description
 		ReadyTextNotification: Construction Complete: Particle Uplink Cannon
 	Building:
 		Footprint: XX xx
@@ -4472,7 +4472,7 @@ building.particle_cannon:
 		AlwaysShowForFactions: boss
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 65
@@ -4549,14 +4549,14 @@ building.scud_storm:
 	Valued:
 		Cost: 5000
 	Tooltip:
-		Name: SCUD Storm
+		Name: actor-building-scud-storm.name
 	Buildable:
 		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged
 		BuildPaletteOrder: 9
 		BuildDuration: 1500
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, !prerequisite.enough_scud, !techlevel.notech, !techlevel.nosw
-		Description: Provides SCUD Storm support power.
+		Description: actor-building-scud-storm.description
 		ReadyTextNotification: Construction Complete: SCUD Storm
 	Building:
 		Footprint: xx xx
@@ -4807,7 +4807,7 @@ building.scud_storm.boss:
 		AlwaysShowForFactions: boss
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 65
 	ProductionBar:
@@ -4831,14 +4831,14 @@ building.missile_silo:
 	Valued:
 		Cost: 5000
 	Tooltip:
-		Name: Nuclear Missile Silo
+		Name: actor-building-missile-silo.name
 	Buildable:
 		Queue: queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged
 		BuildPaletteOrder: 13
 		BuildDuration: 1500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, !prerequisite.enough_nuke, !techlevel.notech, !techlevel.nosw
-		Description: Provides Atom Bomb support power.
+		Description: actor-building-missile-silo.description
 		ReadyTextNotification: Construction Complete: Nuclear Missile Silo
 	Buildable@Boss:
 		Queue: queue.boss_gen_building, queue.boss_gen_building_merged
@@ -4846,7 +4846,7 @@ building.missile_silo:
 		BuildDuration: 1500
 		BuildDurationModifier: 100
 		Prerequisites: building.prc_war_factory, building.prc_airfield, !prerequisite.enough_nuke, !techlevel.notech, !techlevel.nosw
-		Description: Provides Atom Bomb support power.
+		Description: actor-building-missile-silo.description
 		ReadyTextNotification: Construction Complete: Nuclear Missile Silo
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.boss_gen_building_merged
@@ -4881,7 +4881,7 @@ building.missile_silo:
 		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, nuke
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 64
@@ -4891,7 +4891,7 @@ building.missile_silo:
 		AlwaysShowForFactions: inf
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 65
@@ -4901,7 +4901,7 @@ building.missile_silo:
 		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, inf, prc, nuke, tank
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 66
@@ -4911,7 +4911,7 @@ building.missile_silo:
 		AlwaysShowForFactions: tank
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 67
@@ -4921,7 +4921,7 @@ building.missile_silo:
 		AlwaysShowForFactions: boss
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 68
@@ -4931,7 +4931,7 @@ building.missile_silo:
 		AlwaysShowForFactions: boss
 		Group: Tech
 		QueuedAudio: Training
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 		LowPowerModifier: 200
 		DisplayOrder: 69
@@ -5037,7 +5037,7 @@ SBAG:
 		BuildDuration: 75
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.walls
-		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
+		Description: actor-sbag.description
 		ReadyTextNotification: Construction Complete: Sandbag Wall
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.usa_building_merged
@@ -5047,7 +5047,7 @@ SBAG:
 	CustomSellValue:
 		Value: 0
 	Tooltip:
-		Name: Sandbag Wall
+		Name: actor-sbag.name
 	Health:
 		HP: 30000
 	Armor:
@@ -5069,14 +5069,14 @@ FENC:
 		BuildDuration: 75
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.walls
-		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
+		Description: actor-fenc.description
 		ReadyTextNotification: Construction Complete: Wire Fence
 	Valued:
 		Cost: 50
 	CustomSellValue:
 		Value: 0
 	Tooltip:
-		Name: Wire Fence
+		Name: actor-fenc.name
 	Health:
 		HP: 30000
 	Armor:
@@ -5098,7 +5098,7 @@ CYCL:
 		BuildDuration: 75
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.walls
-		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
+		Description: actor-cycl.description
 		ReadyTextNotification: Construction Complete: Chain-Link Barrier
 	BuildPaletteOrderModifier@Boss_Merged:
 		Queue: queue.boss_gen_building_merged
@@ -5108,7 +5108,7 @@ CYCL:
 	CustomSellValue:
 		Value: 0
 	Tooltip:
-		Name: Chain-Link Barrier
+		Name: actor-cycl.name
 	Health:
 		HP: 30000
 	Armor:
@@ -5129,14 +5129,14 @@ BRIK:
 		BuildDuration: 150
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.walls
-		Description: Stop units and blocks enemy fire.
+		Description: actor-brik.description
 		ReadyTextNotification: Construction Complete: Concrete Wall
 	Valued:
 		Cost: 200
 	CustomSellValue:
 		Value: 0
 	Tooltip:
-		Name: Concrete Wall
+		Name: actor-brik.name
 	SoundOnDamageTransition:
 		DamagedSounds: crmble2.aud
 		DestroyedSounds: kaboom30.aud
@@ -5170,7 +5170,7 @@ VGATE:
 	LineBuildNode:
 		Connections: 0,-1, 0,1
 	Tooltip:
-		Name: Vertical Gate
+		Name: actor-vgate-name
 	Gate:
 
 HGATE:
@@ -5188,7 +5188,7 @@ HGATE:
 	LineBuildNode:
 		Connections: -1,0, 1,0
 	Tooltip:
-		Name: Horizontal Gate
+		Name: actor-hgate-name
 	RenderSprites:
 		Image: agate
 		FactionImages:
@@ -5200,7 +5200,7 @@ HGATE:
 BARB:
 	Inherits: ^Wall
 	Tooltip:
-		Name: Barbed-Wire Fence
+		Name: actor-barb-name
 	Armor:
 		Type: building.normal
 	LineBuild:
@@ -5213,7 +5213,7 @@ BARB:
 WOOD:
 	Inherits: ^Wall
 	Tooltip:
-		Name: Wooden Fence
+		Name: actor-wood-name
 	Armor:
 		Type: building.normal
 	LineBuild:
@@ -5227,52 +5227,52 @@ prerequisite.command_center:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Command Center
+		Name: actor-prerequisite-command-center-name
 
 prerequisite.reactor:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Reactor
+		Name: actor-prerequisite-reactor-name
 
 prerequisite.barracks:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Barracks
+		Name: actor-prerequisite-barracks-name
 
 prerequisite.supply_center:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Supply Center
+		Name: actor-prerequisite-supply-center-name
 
 prerequisite.tech_center:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Tech Center
+		Name: actor-prerequisite-tech-center-name
 
 prerequisite.tech_center_or_boss_airfield:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Tech Center
+		Name: actor-prerequisite-tech-center-or-boss-airfield-name
 
 prerequisite.tech_center_or_boss_sw:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Tech Center
+		Name: actor-prerequisite-tech-center-or-boss-sw-name
 
 prerequisite.usa_airfield_or_war_factory:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: USA Airfield or War Factory
+		Name: actor-prerequisite-usa-airfield-or-war-factory-name
 
 prerequisite.prc_airfield_or_war_factory:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: PRC Airfield or War Factory
+		Name: actor-prerequisite-prc-airfield-or-war-factory-name

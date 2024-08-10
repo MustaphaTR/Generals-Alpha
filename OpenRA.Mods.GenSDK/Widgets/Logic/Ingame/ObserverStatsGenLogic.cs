@@ -26,7 +26,16 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 {
 	public enum ObserverStatsGenPanel { None, Minimal, Basic, Economy, Production, SupportPowers, Combat, Army, Upgrades, Graph, ArmyGraph }
 
-	[ChromeLogicArgsHotkeys("StatisticsMinimalKey", "StatisticsBasicKey", "StatisticsEconomyKey", "StatisticsProductionKey", "StatisticsSupportPowersKey", "StatisticsCombatKey", "StatisticsArmyKey", "StatisticsUpgradesKey", "StatisticsGraphKey",
+	[ChromeLogicArgsHotkeys(
+		"StatisticsMinimalKey",
+		"StatisticsBasicKey",
+		"StatisticsEconomyKey",
+		"StatisticsProductionKey",
+		"StatisticsSupportPowersKey",
+		"StatisticsCombatKey",
+		"StatisticsArmyKey",
+		"StatisticsUpgradesKey",
+		"StatisticsGraphKey",
 		"StatisticsArmyGraphKey")]
 	public class ObserverStatsGenLogic : ChromeLogic
 	{
@@ -91,8 +100,8 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 		readonly LineGraphWidget incomeGraph;
 		readonly LineGraphWidget armyValueGraph;
 		readonly ScrollItemWidget teamTemplate;
-		readonly IEnumerable<Player> players;
-		readonly IOrderedEnumerable<IGrouping<int, Player>> teams;
+		readonly Player[] players;
+		readonly IGrouping<int, Player>[] teams;
 		readonly bool hasTeams;
 		readonly World world;
 		readonly WorldRenderer worldRenderer;
@@ -112,9 +121,12 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 			for (var i = 0; i < keyNames.Length; i++)
 				statsHotkeys[i] = logicArgs.TryGetValue("Statistics" + keyNames[i] + "Key", out yaml) ? modData.Hotkeys[yaml.Value] : new HotkeyReference();
 
-			players = world.Players.Where(p => !p.NonCombatant && p.Playable);
-			teams = players.GroupBy(p => (world.LobbyInfo.ClientWithIndex(p.ClientIndex) ?? new Session.Client()).Team).OrderBy(g => g.Key);
-			hasTeams = !(teams.Count() == 1 && teams.First().Key == 0);
+			players = world.Players.Where(p => !p.NonCombatant && p.Playable).ToArray();
+			teams = players
+				.GroupBy(p => (world.LobbyInfo.ClientWithIndex(p.ClientIndex) ?? new Session.Client()).Team)
+				.OrderBy(g => g.Key)
+				.ToArray();
+			hasTeams = !(teams.Length == 1 && teams[0].Key == 0);
 
 			minimalStatsHeaders = widget.Get<ContainerWidget>("MINIMAL_STATS_HEADERS");
 			basicStatsHeaders = widget.Get<ContainerWidget>("BASIC_STATS_HEADERS");
@@ -185,13 +197,14 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 
 			var statsDropDownOptions = new StatsDropDownOption[]
 			{
-				new StatsDropDownOption
+				new()
 				{
 					Title = TranslationProvider.GetString(InformationNone),
 					IsSelected = () => activePanel == ObserverStatsGenPanel.None,
 					OnClick = () =>
 					{
 						var informationNone = TranslationProvider.GetString(InformationNone);
+						statsDropDown.GetText = () => informationNone;
 						playerStatsPanel.Visible = false;
 						ClearStats();
 						activePanel = ObserverStatsGenPanel.None;
@@ -585,7 +598,7 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 			return template;
 		}
 
-		void SetupPlayerColor(Player player, ScrollItemWidget template, ColorBlockWidget colorBlockWidget, GradientColorBlockWidget gradientColorBlockWidget)
+		static void SetupPlayerColor(Player player, ScrollItemWidget template, ColorBlockWidget colorBlockWidget, GradientColorBlockWidget gradientColorBlockWidget)
 		{
 			var color = Color.FromArgb(128, player.Color.R, player.Color.G, player.Color.B);
 			var hoverColor = Color.FromArgb(192, player.Color.R, player.Color.G, player.Color.B);
@@ -666,7 +679,7 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 		}
 
 		// HACK The height of the templates and the scrollpanel needs to be kept in synch
-		bool ShowScrollBar => players.Count() + (hasTeams ? teams.Count() : 0) > 10;
+		bool ShowScrollBar => players.Length + (hasTeams ? teams.Length : 0) > 10;
 
 		class StatsDropDownOption
 		{

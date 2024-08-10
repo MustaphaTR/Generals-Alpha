@@ -1,7 +1,7 @@
 husk.scorpion_tank:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Scorpion Tank (Destroyed)
+		Name: actor-husk-scorpion-tank-name
 	ThrowsParticle@turret:
 		Anim: turret
 	TransformOnCapture:
@@ -10,7 +10,7 @@ husk.scorpion_tank:
 husk.crusader_tank:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Crusader Tank (Destroyed)
+		Name: actor-husk-crusader-tank-name
 	ThrowsParticle@turret:
 		Anim: turret
 	TransformOnCapture:
@@ -19,7 +19,7 @@ husk.crusader_tank:
 husk.battlemaster_tank:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Battlemaster Tank (Destroyed)
+		Name: actor-husk-battlemaster-tank-name
 	ThrowsParticle@turret:
 		Anim: turret
 	TransformOnCapture:
@@ -28,7 +28,7 @@ husk.battlemaster_tank:
 husk.overlord_tank:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Overlord Tank (Destroyed)
+		Name: actor-husk-overlord-tank-name
 	ThrowsParticle@turret:
 		Anim: turret
 	TransformOnCapture:
@@ -37,7 +37,7 @@ husk.overlord_tank:
 husk.emperor_overlord:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Emperor Overlord (Destroyed)
+		Name: actor-husk-emperor-overlord-name
 	ThrowsParticle@turret:
 		Anim: turret
 	TransformOnCapture:
@@ -46,7 +46,7 @@ husk.emperor_overlord:
 husk.paladin_tank:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Paladin Tank (Destroyed)
+		Name: actor-husk-paladin-tank-name
 	ThrowsParticle@turret:
 		Anim: turret
 	TransformOnCapture:
@@ -55,7 +55,7 @@ husk.paladin_tank:
 husk.marauder_tank:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Marauder Tank (Destroyed)
+		Name: actor-husk-marauder-tank-name
 	ThrowsParticle@turret:
 		Anim: turret
 	TransformOnCapture:
@@ -64,7 +64,7 @@ husk.marauder_tank:
 husk.nuke_cannon:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Nuke Cannon (Destroyed)
+		Name: actor-husk-nuke-cannon-name
 	ThrowsParticle@turret:
 		Anim: turret
 	TransformOnCapture:
@@ -73,21 +73,21 @@ husk.nuke_cannon:
 husk.supply_truck.full:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Supply Truck (Destroyed)
+		Name: actor-husk-supply-truck-full-name
 	TransformOnCapture:
 		IntoActor: vehicle.supply_truck
 
 husk.supply_truck.empty:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Supply Truck (Destroyed)
+		Name: actor-husk-supply-truck-empty-name
 	TransformOnCapture:
 		IntoActor: vehicle.supply_truck
 
 husk.usa_mcc:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Construction Vehicle (Destroyed)
+		Name: actor-husk-usa-mcc-name
 	TransformOnCapture:
 		IntoActor: vehicle.usa_mcc
 	RenderSprites:
@@ -96,7 +96,7 @@ husk.usa_mcc:
 husk.gla_mcc:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Construction Vehicle (Destroyed)
+		Name: actor-husk-gla-mcc-name
 	TransformOnCapture:
 		IntoActor: vehicle.gla_mcc
 	RenderSprites:
@@ -105,7 +105,7 @@ husk.gla_mcc:
 husk.prc_mcc:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Construction Vehicle (Destroyed)
+		Name: actor-husk-prc-mcc-name
 	TransformOnCapture:
 		IntoActor: vehicle.prc_mcc
 	RenderSprites:
@@ -114,21 +114,21 @@ husk.prc_mcc:
 TRAN.Husk1:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Chinook (Destroyed)
+		Name: actor-tran-husk1-name
 	RenderSprites:
 		Image: tran1husk
 
 TRAN.Husk2:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Chinook (Destroyed)
+		Name: actor-tran-husk2-name
 	RenderSprites:
 		Image: tran2husk
 
 husk.chinook:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Chinook
+		Name: actor-husk-chinook-name
 	Aircraft:
 		TurnSpeed: 16
 		Speed: 60
@@ -147,7 +147,7 @@ husk.chinook:
 husk.badger:
 	Inherits: ^PlaneHusk
 	Tooltip:
-		Name: Badger
+		Name: actor-husk-badger-name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 149
@@ -174,7 +174,7 @@ husk.badger:
 husk.a10:
 	Inherits: ^PlaneHusk
 	Tooltip:
-		Name: A-10 Thunderbolt
+		Name: actor-husk-a10-name
 	Contrail@1:
 		Offset: -640,171,0
 		TrailLength: 15
@@ -192,7 +192,7 @@ husk.mig:
 	Inherits: ^PlaneHusk
 	Inherits@REVEAL: ^Reveal300
 	Tooltip:
-		Name: MiG
+		Name: actor-husk-mig-name
 	Contrail@1:
 		Offset: -598,-683,0
 	Contrail@2:
@@ -219,7 +219,7 @@ husk.raptor:
 	Inherits: ^PlaneHusk
 	Inherits@REVEAL: ^Reveal400
 	Tooltip:
-		Name: Raptor
+		Name: actor-husk-raptor-name
 	Contrail@1:
 		Offset: -598,-683,0
 	Contrail@2:
@@ -246,7 +246,7 @@ husk.king_raptor:
 	Inherits: ^PlaneHusk
 	Inherits@REVEAL: ^Reveal400
 	Tooltip:
-		Name: King Raptor
+		Name: actor-husk-king-raptor-name
 	Contrail@1:
 		Offset: -598,-683,0
 	Contrail@2:
@@ -273,7 +273,7 @@ husk.stealth_fighter:
 	Inherits: ^PlaneHusk
 	Inherits@REVEAL: ^Reveal300
 	Tooltip:
-		Name: Stealth Fighter
+		Name: actor-husk-stealth-fighter-name
 	Contrail@1:
 		Offset: -598,-683,0
 	Contrail@2:
@@ -300,7 +300,7 @@ husk.aurora:
 	Inherits: ^PlaneHusk
 	Inherits@REVEAL: ^Reveal600
 	Tooltip:
-		Name: Aurora
+		Name: actor-husk-aurora-name
 	Contrail@1:
 		Offset: -598,-683,0
 	Contrail@2:
@@ -327,7 +327,7 @@ husk.aurora_alpha:
 	Inherits: ^PlaneHusk
 	Inherits@REVEAL: ^Reveal600
 	Tooltip:
-		Name: Aurora Alpha
+		Name: actor-husk-aurora-alpha-name
 	Contrail@1:
 		Offset: -598,-683,0
 	Contrail@2:
@@ -354,7 +354,7 @@ husk.comanche:
 	Inherits: ^HelicopterHusk
 	Inherits@REVEAL: ^Reveal600
 	Tooltip:
-		Name: Comanche
+		Name: actor-husk-comanche-name
 	Aircraft:
 		TurnSpeed: 16
 		Speed: 120
@@ -380,7 +380,7 @@ husk.helix:
 	Inherits: ^HelicopterHusk
 	Inherits@REVEAL: ^Reveal600
 	Tooltip:
-		Name: Helix
+		Name: actor-husk-helix-name
 	Aircraft:
 		TurnSpeed: 12
 		Speed: 75
@@ -440,7 +440,7 @@ T03.SNOW.Husk:
 T04.Husk:
 	Inherits: ^TreeHusk
 	Tooltip:
-		Name: Cactus (Burnt)
+		Name: actor-t04-husk-name
 	Building:
 		Footprint: __ x_
 		Dimensions: 2,2
@@ -501,7 +501,7 @@ T08.DESERT.Husk:
 T09.Husk:
 	Inherits: ^TreeHusk
 	Tooltip:
-		Name: Cactus (Burnt)
+		Name: actor-t09-husk-name
 	RenderSprites:
 		Palette: desert
 	MapEditorData:

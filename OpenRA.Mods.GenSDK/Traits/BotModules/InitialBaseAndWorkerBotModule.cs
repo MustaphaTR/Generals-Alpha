@@ -38,7 +38,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		public override object Create(ActorInitializer init) { return new InitialBaseAndWorkerBotModule(init.Self, this); }
 	}
 
-	public class InitialBaseAndWorkerBotModule : ConditionalTrait<InitialBaseAndWorkerBotModuleInfo>, IBotTick, IBotPositionsUpdated, IGameSaveTraitData
+	public class InitialBaseAndWorkerBotModule : ConditionalTrait<InitialBaseAndWorkerBotModuleInfo>, IBotTick, IBotPositionsUpdated, INotifyActorDisposing, IGameSaveTraitData
 	{
 		readonly World world;
 		readonly Player player;
@@ -50,11 +50,17 @@ namespace OpenRA.Mods.GenSDK.Traits
 		bool initialized;
 		int scanInterval;
 
+		readonly ActorIndex.OwnerAndNamesAndTrait<Mobile> dozers;
+		readonly ActorIndex.OwnerAndNamesAndTrait<Building> commandCenters;
+
 		public InitialBaseAndWorkerBotModule(Actor self, InitialBaseAndWorkerBotModuleInfo info)
 			: base(info)
 		{
 			world = self.World;
 			player = self.Owner;
+
+			dozers = new ActorIndex.OwnerAndNamesAndTrait<Mobile>(world, Info.DozerTypes, player);
+			commandCenters = new ActorIndex.OwnerAndNamesAndTrait<Building>(world, Info.CommandCenterTypes, player);
 		}
 
 		protected override void Created(Actor self)
@@ -108,21 +114,21 @@ namespace OpenRA.Mods.GenSDK.Traits
 			var unitBuilder = requestUnitProduction.FirstOrDefault(Exts.IsTraitEnabled);
 			if (unitBuilder != null)
 			{
-				var dozerInfo = AIUtils.GetInfoByCommonName(Info.DozerTypes, player);
-				if (unitBuilder.RequestedProductionCount(bot, dozerInfo.Name) == 0)
-					unitBuilder.RequestUnitProduction(bot, dozerInfo.Name);
+				var dozerType = Info.DozerTypes.Random(world.LocalRandom);
+				if (unitBuilder.RequestedProductionCount(bot, dozerType) == 0)
+					unitBuilder.RequestUnitProduction(bot, dozerType);
 			}
 		}
 
 		bool ShouldBuildDozer()
 		{
 			// Only build Dozer if we don't already have one in the field.
-			var allowedToBuildDozer = AIUtils.CountActorByCommonName(Info.DozerTypes, player) < Info.MinimumDozerCount;
+			var allowedToBuildDozer = AIUtils.CountActorByCommonName(dozers) < Info.MinimumDozerCount;
 			if (!allowedToBuildDozer)
 				return false;
 
-			// Build Dozer if we don't have the desired number of construction yards, unless we have no factory (can't build it).
-			return AIUtils.CountBuildingByCommonName(Info.CommandCenterTypes, player) > 0;
+			// Build Dozer if we don't have the desired number of them, unless we have no factory (can't build it).
+			return AIUtils.CountActorByCommonName(commandCenters) > 0;
 		}
 
 		void IBotPositionsUpdated.UpdatedBaseCenter(CPos newLocation)
@@ -139,7 +145,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 			return new List<MiniYamlNode>()
 			{
-				new MiniYamlNode("InitialBaseCenter", FieldSaver.FormatValue(initialBaseCenter))
+				new("InitialBaseCenter", FieldSaver.FormatValue(initialBaseCenter))
 			};
 		}
 
@@ -152,6 +158,12 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 			if (nodes.TryGetValue("InitialBaseCenter", out var initialBaseCenterNode))
 				initialBaseCenter = FieldLoader.GetValue<CPos>("InitialBaseCenter", initialBaseCenterNode.Value);
+		}
+
+		void INotifyActorDisposing.Disposing(Actor self)
+		{
+			dozers.Dispose();
+			commandCenters.Dispose();
 		}
 	}
 }

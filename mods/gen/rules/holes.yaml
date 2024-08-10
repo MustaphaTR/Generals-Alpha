@@ -5,7 +5,7 @@ hole.command_center:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
 	Tooltip:
-		Name: GLA Hole (Command Center)
+		Name: actor-building-gla-command-center.hole-name
 	GrantConditionAfterDelay:
 		Delay: 1625
 	TransformOnCondition:
@@ -24,7 +24,7 @@ hole.barracks:
 		Dimensions: 2,3
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
-		Name: GLA Hole (Barracks)
+		Name: actor-building-gla-barracks.hole-name
 	GrantConditionAfterDelay:
 		Delay: 750
 	TransformOnCondition:
@@ -42,7 +42,7 @@ hole.supply_stash:
 		Footprint: xx x=
 		Dimensions: 2,2
 	Tooltip:
-		Name: GLA Hole (Supply Stash)
+		Name: actor-building-gla-supply-stash.hole-name
 	GrantConditionAfterDelay:
 		Delay: 750
 	TransformOnCondition:
@@ -61,7 +61,7 @@ hole.arms_dealer:
 		Dimensions: 3,3
 		LocalCenterOffset: 0,-512,0
 	Tooltip:
-		Name: GLA Hole (Arms Dealer)
+		Name: actor-building-arms-dealer.hole-name
 	GrantConditionAfterDelay:
 		Delay: 875
 	TransformOnCondition:
@@ -79,7 +79,7 @@ hole.palace:
 		Footprint: xxx xxx
 		Dimensions: 3,2
 	Tooltip:
-		Name: GLA Hole (Palace)
+		Name: actor-building-palace.hole-name
 	GrantConditionAfterDelay:
 		Delay: 1625
 	TransformOnCondition:
@@ -100,7 +100,7 @@ hole.black_market:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Tooltip:
-		Name: GLA Hole (Black Market)
+		Name: actor-building-black-market.hole-name
 	GrantConditionAfterDelay:
 		Delay: 1250
 	TransformOnCondition:
@@ -118,7 +118,7 @@ hole.scud_storm:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Tooltip:
-		Name: GLA Hole (Scud Storm)
+		Name: actor-building-scud-storm.hole-name
 	GrantConditionAfterDelay:
 		Delay: 2000
 	TransformOnCondition:
@@ -142,7 +142,7 @@ hole.tunnel_network:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Tooltip:
-		Name: GLA Hole (Tunnel Network)
+		Name: actor-building-tunnel-network.hole-name
 	GrantConditionAfterDelay:
 		Delay: 875
 	TransformOnCondition:
@@ -157,7 +157,7 @@ hole.tunnel_network:
 hole.toxin_tunnel_network:
 	Inherits: hole.tunnel_network
 	Tooltip:
-		Name: GLA Hole (Toxin Tunnel Network)
+		Name: actor-building-toxin-tunnel-network.hole-name
 	TransformOnCondition:
 		IntoActor: building.toxin_tunnel_network.no_free_actor
 
@@ -168,7 +168,7 @@ hole.stinger_site:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Tooltip:
-		Name: GLA Hole (Stinger Site)
+		Name: actor-building-stinger-site.hole-name
 	GrantConditionAfterDelay:
 		Delay: 875
 	TransformOnCondition:

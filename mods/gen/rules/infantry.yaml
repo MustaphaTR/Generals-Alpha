@@ -17,11 +17,11 @@ infantry.pilot:
 		BuildDuration: 100
 		BuildDurationModifier: 100
 		Prerequisites: ~disabled
-		Description: Veteran vehicle pilot.
+		Description: actor-infantry-pilot.description
 	Valued:
 		Cost: 100
 	Tooltip:
-		Name: Pilot
+		Name: actor-infantry-pilot.name
 	DeliversExperience:
 	Health:
 		HP: 10000
@@ -53,13 +53,13 @@ infantry.worker:
 		BuildPaletteOrder: 1
 		BuildDuration: 75
 		BuildDurationModifier: 100
-		Description: Collects supplies.
+		Description: actor-infantry-worker.description
 		ReadyAudio: WorkerCreated
 	Valued:
 		Cost: 200
 	Tooltip:
-		Name: Worker
-		GenericName: Collector
+		Name: actor-infantry-worker.name
+		GenericName: meta-collector-generic-name
 	Health:
 		HP: 10000
 	Armor:
@@ -133,7 +133,7 @@ infantry.worker:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: !techlevel.vehicleonly
-		Description: General-purpose infantry armed with a automatic rifle.
+		Description: meta-default-mg-infantry-description
 	Valued:
 		Cost: 150
 	UpdatesPlayerStatistics:
@@ -195,7 +195,7 @@ infantry.ranger:
 	Valued:
 		Cost: 225
 	Tooltip:
-		Name: Ranger
+		Name: actor-infantry-ranger-name
 	Health:
 		HP: 18000
 	Armament@PRIMARY:
@@ -246,7 +246,7 @@ infantry.rebel:
 	Selectable:
 		Class: infantry.rebel
 	Tooltip:
-		Name: Rebel
+		Name: actor-infantry-rebel-name
 	Armament@PRIMARY:
 		Weapon: mg.rebel
 	Armament@PRIMARY_BOOBY_TRAP_DEFAULT:
@@ -342,7 +342,7 @@ infantry.toxin_rebel:
 		RequiresCondition: rank-elite
 	Buildable:
 		Queue: queue.toxin_gen_infantry, queue.gla_infantry_merged
-		Description: General-purpose infantry armed with toxins.\n\nCan damage infantry garrisoned in civilian structures.
+		Description: actor-infantry-toxin-rebel.description
 		ReadyAudio: ToxinRebelCreated
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.gla_infantry_merged
@@ -350,7 +350,7 @@ infantry.toxin_rebel:
 	Valued:
 		Cost: 200
 	Tooltip:
-		Name: Toxin Rebel
+		Name: actor-infantry-toxin-rebel.name
 	Armament@ALPHA:
 		Damage: 8
 		Weapon: toxin.toxin_rebel
@@ -484,7 +484,7 @@ infantry.red_guard:
 		Queue: queue.prc_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged
 		BuildAmount: 2
 		BuildDuration: 250
-		Description: General-purpose infantry armed with a rifle.\n\nTrained in groups of 2.
+		Description: actor-infantry-red-guard.description
 		ReadyAudio: RedGuardCreated
 	Valued:
 		Cost: 150
@@ -504,7 +504,7 @@ infantry.red_guard:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 60
 	Tooltip:
-		Name: Red Guard
+		Name: actor-infantry-red-guard.name
 	Selectable:
 		Class: infantry.red_guard
 	Armament@PRIMARY:
@@ -554,7 +554,7 @@ infantry.minigunner:
 	Buildable:
 		Queue: queue.inf_gen_infantry, queue.prc_infantry_merged
 		BuildDuration: 250
-		Description: General-purpose infantry armed with a minigun.
+		Description: actor-infantry-minigunner.description
 		ReadyAudio: MinigunnerCreated
 	BuildPaletteOrderModifier@Merged:
 		Queue: queue.prc_infantry_merged
@@ -566,7 +566,7 @@ infantry.minigunner:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 60
 	Tooltip:
-		Name: Minigunner
+		Name: actor-infantry-minigunner.name
 	ReloadDelayMultiplier@Gatling1:
 		RequiresCondition: gatling >= 1
 		Modifier: 50
@@ -648,7 +648,7 @@ infantry.conscript:
 	Garrisoner:
 		Voice: Move
 	Tooltip:
-		Name: Conscript
+		Name: actor-infantry-conscript-name
 	Armament@PRIMARY:
 		Weapon: mg.ranger
 	Armament@GARRISON:
@@ -687,7 +687,7 @@ infantry.conscript:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 		Prerequisites: !techlevel.vehicleonly
-		Description: Anti-tank & anti-air infantry.
+		Description: meta-default-rocket-infantry-description
 	Valued:
 		Cost: 300
 	UpdatesPlayerStatistics:
@@ -741,10 +741,10 @@ infantry.missile_defender:
 	Inherits@TRAINING: ^AffectedByAdvancedTraining
 	Buildable:
 		Queue: queue.usa_infantry, queue.super_gen_infantry
-		Description: Anti-tank & anti-air infantry.\n\nCan laser lock to fire with double speed against\nvehicles and aircraft by force firing.
+		Description: actor-infantry-missile-defender.description
 		ReadyAudio: MissileDefenderCreated
 	Tooltip:
-		Name: Missile Defender
+		Name: actor-infantry-missile-defender.name
 	Armament@AG:
 		ForceTargetRelationships: None
 	Armament@AA:
@@ -824,7 +824,7 @@ infantry.rpg_trooper:
 	Armament@AA_GARRISON:
 		Weapon: missile.rpg_trooper.garrison.air
 	Tooltip:
-		Name: RPG Trooper
+		Name: actor-infantry-rpg-trooper-name
 	Passenger:
 		CargoType: GLAInfantry
 	Garrisoner:
@@ -878,7 +878,7 @@ infantry.stinger_soldier:
 	-SharedPassenger:
 	-Garrisoner:
 	Tooltip:
-		Name: Stinger Soldier
+		Name: actor-infantry-stinger-soldier-name
 	Targetable:
 		TargetTypes: GroundActor, Infantry, StingerSoldier
 	Valued:
@@ -909,7 +909,7 @@ infantry.tank_hunter:
 	Inherits@HORDE_BONUS: ^InfantryHorde
 	Buildable:
 		Queue: queue.prc_infantry, queue.inf_gen_infantry, queue.nuke_gen_infantry, queue.tank_gen_infantry, queue.prc_infantry_merged, queue.boss_gen_infantry, queue.boss_gen_infantry_merged
-		Description: Anti-tank & anti-air infantry.\n\nCan place TNT charges on vehicles and\nbuildings by force firing.
+		Description: actor-infantry-tank-hunter.description
 		ReadyAudio: TankHunterCreated
 	ProductionCostMultiplier@Nuke1:
 		Queue: queue.nuke_gen_infantry
@@ -924,7 +924,7 @@ infantry.tank_hunter:
 		Queue: queue.nuke_gen_infantry, queue.tank_gen_infantry
 		Multiplier: 140 # 175
 	Tooltip:
-		Name: Tank Hunter
+		Name: actor-infantry-tank-hunter.name
 	Armament@AG:
 		Weapon: missile.tank_hunter.ground
 		ForceTargetRelationships: None
@@ -975,9 +975,9 @@ infantry.grenadier:
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
 		Queue: queue.soviet_infantry
-		Description: Anti-tank infantry.
+		Description: actor-infantry-grenadier.description
 	Tooltip:
-		Name: Grendier
+		Name: actor-infantry-grenadier.name
 	Mobile:
 		Speed: 25
 	SpeedMultiplier@DAMAGED:
@@ -1031,7 +1031,7 @@ infantry.pathfinder:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Pathfinder
+		Name: actor-infantry-pathfinder.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -1041,7 +1041,7 @@ infantry.pathfinder:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, prerequisite.pathfinder, !techlevel.vehicleonly, !techlevel.notech
-		Description: Elite sniper infantry.
+		Description: actor-infantry-pathfinder.description
 		ReadyAudio: PathfinderCreated
 	Buildable@Boss:
 		Queue: queue.boss_gen_infantry, queue.boss_gen_infantry_merged
@@ -1050,7 +1050,7 @@ infantry.pathfinder:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.pathfinder, !techlevel.vehicleonly, !techlevel.notech
-		Description: Elite sniper infantry.
+		Description: actor-infantry-pathfinder.description
 		ReadyAudio: PathfinderCreated
 	Health:
 		HP: 12000
@@ -1114,13 +1114,13 @@ infantry.terrorist:
 		ForceIconLocation: true
 		BuildDuration: 125
 		BuildDurationModifier: 100
-		Description: Explodes.
+		Description: actor-infantry-terrorist.description
 		Prerequisites: !techlevel.vehicleonly
 		ReadyAudio: TerroristCreated
 	Valued:
 		Cost: 200
 	Tooltip:
-		Name: Terrorist
+		Name: actor-infantry-terrorist.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -1187,9 +1187,9 @@ infantry.toxin_terrorist:
 	Inherits: infantry.terrorist
 	Buildable:
 		Queue: queue.toxin_gen_infantry, queue.gla_infantry_merged
-		Description: Explodes and leaves toxins.
+		Description: actor-infantry-toxin-terrorist.description
 	Tooltip:
-		Name: Toxin Terrorist
+		Name: actor-infantry-toxin-terrorist.name
 	Explodes@Toxin:
 		Weapon: explosion.terrorist.toxin
 		EmptyWeapon: explosion.terrorist.toxin
@@ -1244,11 +1244,11 @@ infantry.flamethrower:
 		BuildPaletteOrder: 2
 		ForceIconLocation: true
 		Prerequisites: tech.flame_tower, !techlevel.vehicleonly
-		Description: Advanced anti-structure infantry.\n\nCan damage infantry garrisoned in civilian structures.
+		Description: actor-infantry-flamethrower.description
 	Valued:
 		Cost: 300
 	Tooltip:
-		Name: Flamethrower
+		Name: actor-infantry-flamethrower.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -1293,7 +1293,7 @@ infantry.saboteur:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.arms_dealer, ~prerequisite.zh_units, !techlevel.vehicleonly
-		Description: Infiltrates enemy structures to disable them for a while.\n\nCan climb cliffs.
+		Description: actor-infantry-saboteur.description
 		ReadyAudio: SaboteurCreated
 	ProductionCostMultiplier@AI: ## AI cannot use it well
 		Multiplier: 20
@@ -1304,7 +1304,7 @@ infantry.saboteur:
 	Valued:
 		Cost: 800
 	Tooltip:
-		Name: Saboteur
+		Name: actor-infantry-saboteur.name
 	Health:
 		HP: 12000
 	Armor:
@@ -1361,7 +1361,7 @@ infantry.saboteur:
 	Valued:
 		Cost: 160
 	Tooltip:
-		Name: Angry Mob
+		Name: actor-infantry-angry-mob.name
 	-SelectionDecorations:
 	-WithSpriteControlGroupDecoration:
 	-Passenger:
@@ -1456,7 +1456,7 @@ infantry.angry_mob:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, !techlevel.vehicleonly, !techlevel.notech
-		Description: Group of civilians armed with pistols and molotov coctails.
+		Description: actor-infantry-angry-mob.description
 		IconPalette: cameo
 		ReadyAudio: AngryMobCreated
 	Buildable@Boss:
@@ -1466,12 +1466,12 @@ infantry.angry_mob:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
-		Description: Group of civilians armed with pistols and molotov coctails.
+		Description: actor-infantry-angry-mob.description
 		IconPalette: cameo
 		ReadyAudio: AngryMobCreated
 	Tooltip:
-		Name: Angry Mob
-		GenericName: Soldier
+		Name: actor-infantry-angry-mob.name
+		GenericName: meta-infantry-generic-name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -1571,7 +1571,7 @@ infantry.hacker:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, !techlevel.vehicleonly, !techlevel.notech
-		Description: Hacks internet to gain money while deployed.\n\nCan disable enemy structures.
+		Description: actor-infantry-hacker.description
 		ReadyAudio: HackerCreated
 	Buildable@Boss:
 		Queue: queue.boss_gen_infantry
@@ -1580,7 +1580,7 @@ infantry.hacker:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
-		Description: Hacks internet to gain money while deployed.\n\nCan disable enemy structures.
+		Description: actor-infantry-hacker.description
 		ReadyAudio: HackerCreated
 	Valued:
 		Cost: 625
@@ -1591,7 +1591,7 @@ infantry.hacker:
 		Queue: queue.tank_gen_infantry
 		Multiplier: 10 # 780
 	Tooltip:
-		Name: Hacker
+		Name: actor-infantry-hacker.name
 	Health:
 		HP: 10000
 	Armor:
@@ -1735,13 +1735,13 @@ infantry.super_hacker:
 	Inherits: infantry.hacker
 	Buildable:
 		Queue: queue.inf_gen_infantry, queue.prc_infantry_merged
-		Description: Hacks internet to gain money while deployed.\n\nCan disable enemy structures and vehicles.\n\nCamouflaged.
+		Description: actor-infantry-super-hacker.description
 		ReadyAudio: SuperHackerCreated
 	Buildable@Boss:
 		Queue: queue.boss_gen_infantry_merged
 		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
 	Tooltip:
-		Name: Super Hacker
+		Name: actor-infantry-super-hacker.name
 	Armament@DisableAnim:
 		Name: disable
 		Weapon: disable_vechicle.superhacker.anim
@@ -1807,7 +1807,7 @@ infantry.hijacker:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: !techlevel.vehicleonly, !techlevel.notech
-		Description: Hijacks enemy vehicles.\n\nCamouflaged.
+		Description: actor-infantry-hijacker.stealth-description
 		ReadyAudio: HijackerCreated
 	Buildable@GLA:
 		Queue: queue.gla_infantry
@@ -1816,7 +1816,7 @@ infantry.hijacker:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, prerequisite.hijacker, !techlevel.vehicleonly, !techlevel.notech
-		Description: Hijacks enemy vehicles.\n\nCamouflaged while not moving.
+		Description: actor-infantry-hijacker.description
 		ReadyAudio: HijackerCreated
 	ProductionCostMultiplier@AI: ## AI cannot use it well
 		Multiplier: 30
@@ -1830,7 +1830,7 @@ infantry.hijacker:
 		Queue: queue.stealth_gen_infantry, queue.gla_infantry_merged
 		Multiplier: 150 # 600
 	Tooltip:
-		Name: Hijacker
+		Name: actor-infantry-hijacker.name
 	Health:
 		HP: 10000
 	Armor:
@@ -1859,7 +1859,7 @@ infantry.hijacker:
 		StandSequences: stand
 	Crushable:
 		WarnProbability: 95
-		RequiresCondition:  !bot_owner
+		RequiresCondition: !bot_owner
 	Cloak: ## In General, when vehicle is destroyed the ejected hijacker will remain cloak
 		InitialDelay: 0
 		CloakDelay: 120
@@ -1919,7 +1919,7 @@ infantry.colonel_burton:
 		Queue: queue.super_gen_infantry, queue.boss_gen_infantry_merged
 		Multiplier: 80 # 1200
 	Tooltip:
-		Name: Colonel Burton
+		Name: actor-infantry-colonel-burton.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -1928,7 +1928,7 @@ infantry.colonel_burton:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, !prerequisite.enough_colonel_burton, !techlevel.notech
-		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures by force firing.\n\nCan backstab infantry without getting detected by force firing.\n\nCamouflaged.
+		Description: actor-infantry-colonel-burton.description
 		ReadyAudio: BurtonCreated
 		BuildLimit: 1
 	Buildable@Boss:
@@ -1938,7 +1938,7 @@ infantry.colonel_burton:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.particle_cannon, !prerequisite.enough_colonel_burton, !techlevel.nosw
-		Description: Elite commando infantry.\n\nCan climb cliffs.\n\nCan place C4 charges on structures by force firing.\n\nCan backstab infantry without getting detected by force firing.\n\nCamouflaged.
+		Description: actor-infantry-colonel-burton.description
 		ReadyAudio: BurtonCreated
 		BuildLimit: 1
 	Mobile:
@@ -2063,7 +2063,7 @@ infantry.jarmen_kell:
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Jarmen Kell
+		Name: actor-infantry-jarmen-kell.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -2072,7 +2072,7 @@ infantry.jarmen_kell:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.palace, !prerequisite.enough_jarmen_kell, !techlevel.notech
-		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCamouflaged.
+		Description: actor-infantry-jarmen-kell.description
 		ReadyAudio: JarmenCreated
 		BuildLimit: 1
 	Buildable@Boss:
@@ -2082,7 +2082,7 @@ infantry.jarmen_kell:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.scud_storm, !prerequisite.enough_jarmen_kell, !techlevel.nosw
-		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCamouflaged.
+		Description: actor-infantry-jarmen-kell.description
 		ReadyAudio: JarmenCreated
 		BuildLimit: 1
 	Health:
@@ -2171,11 +2171,11 @@ infantry.jarmen_kell.demo:
 	Inherits: infantry.jarmen_kell
 	Buildable:
 		Queue: queue.demo_gen_infantry, queue.gla_infantry_merged
-		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCamouflaged.\n\nCan place C4 charges on structures.
+		Description: actor-infantry-jarmen-kell.demo-description
 		ReadyAudio: DemoJarmenCreated
 	Buildable@Boss:
 		Queue: queue.boss_gen_infantry_merged
-		Description: Elite sniper infantry.\n\nCan kill enemy vehicle drivers, allowing other infantry to capture them.\n\nCamouflaged.\n\nCan place C4 charges on structures.
+		Description: actor-infantry-jarmen-kell.demo-description
 		ReadyAudio: DemoJarmenCreated
 	Armament@TIMED_DEMO_BOMB:
 		Name: timed_demo_bomb
@@ -2217,7 +2217,7 @@ infantry.black_lotus:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.propaganda_center, !prerequisite.enough_black_lotus, !techlevel.notech
-		Description: Can capture enemy structures from a distance.\n\nCan steal cash from enemy Supply Centers.\n\nCan disable enemy vehicles.\n\nCamouflaged.
+		Description: actor-infantry-black-lotus.description
 		ReadyAudio: LotusCreated
 		BuildLimit: 1
 	Buildable@Boss:
@@ -2226,7 +2226,7 @@ infantry.black_lotus:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: building.missile_silo, !prerequisite.enough_black_lotus, !techlevel.nosw
-		Description: Can capture enemy structures from a distance.\n\nCan steal cash from enemy Supply Centers.\n\nCan disable enemy vehicles.\n\nCamouflaged.
+		Description: actor-infantry-black-lotus.description
 		ReadyAudio: LotusCreated
 		BuildLimit: 1
 	Valued:
@@ -2241,7 +2241,7 @@ infantry.black_lotus:
 		Queue: queue.tank_gen_infantry
 		Multiplier: 125 # 1875
 	Tooltip:
-		Name: Black Lotus
+		Name: actor-infantry-black-lotus.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -2409,7 +2409,7 @@ infantry.super_lotus:
 	Buildable@Boss:
 		Queue: queue.boss_gen_infantry_merged
 	Tooltip:
-		Name: Super Lotus
+		Name: actor-infantry-super-lotus-name
 	Armament@DisableAnim:
 		Weapon: disable.super_lotus.anim
 	Armament@DisableEnd:

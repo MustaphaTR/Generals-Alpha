@@ -71,7 +71,7 @@ aircraft.badger:
 		MaxWeight: 10
 		OwnerChangedAffectsPassengers: false
 	Tooltip:
-		Name: Cargo Plane
+		Name: actor-aircraft-cargo-plane-name
 	-Targetable@GROUND:
 	-Targetable@AIRBORNE:
 
@@ -91,7 +91,7 @@ aircraft.badger.paradrop:
 		MaxWeight: 20
 		OwnerChangedAffectsPassengers: false
 	Tooltip:
-		Name: B-52
+		Name: actor-aircraft-b52-name
 
 aircraft.badger.prc_paradrop:
 	Inherits: ^default.badger
@@ -102,12 +102,12 @@ aircraft.badger.prc_paradrop:
 		MaxWeight: 20
 		OwnerChangedAffectsPassengers: false
 	Tooltip:
-		Name: Badger
+		Name: actor-aircraft-badger-name
 
 aircraft.badger.tank_drop:
 	Inherits: aircraft.badger
 	Tooltip:
-		Name: Badger
+		Name: actor-aircraft-badger-name
 
 aircraft.badger.fuel_air_bomb:
 	Inherits: ^default.badger
@@ -128,7 +128,7 @@ aircraft.badger.fuel_air_bomb:
 		Ammo: 1
 		AmmoCondition: ammo
 	Tooltip:
-		Name: B-52
+		Name: actor-aircraft-b52-name
 
 aircraft.badger.leaflet:
 	Inherits: ^default.badger
@@ -149,14 +149,14 @@ aircraft.badger.leaflet:
 		Ammo: 1
 		AmmoCondition: ammo
 	Tooltip:
-		Name: B-52
+		Name: actor-aircraft-b52-name
 
 aircraft.b2:
 	Inherits: aircraft.badger.fuel_air_bomb
 	Armament:
 		Weapon: parabomb.moab
 	Tooltip:
-		Name: B-2
+		Name: actor-aircraft-b2-name
 	Aircraft:
 		Speed: 200
 	RenderSprites:
@@ -199,7 +199,7 @@ aircraft.badger.anthrax_bomb:
 		Ammo: 1
 		AmmoCondition: ammo
 	Tooltip:
-		Name: B-52
+		Name: actor-aircraft-b52-name
 
 aircraft.badger.emp:
 	Inherits: ^default.badger
@@ -213,7 +213,7 @@ aircraft.badger.emp:
 		Ammo: 1
 		AmmoCondition: ammo
 	Tooltip:
-		Name: Badger
+		Name: actor-aircraft-badger-name
 
 aircraft.badger.cluster_mines:
 	Inherits: ^default.badger
@@ -227,7 +227,7 @@ aircraft.badger.cluster_mines:
 		Ammo: 1
 		AmmoCondition: ammo
 	Tooltip:
-		Name: Badger
+		Name: actor-aircraft-badger-name
 
 aircraft.badger.carpet:
 	Inherits: ^default.badger
@@ -241,7 +241,7 @@ aircraft.badger.carpet:
 		Ammo: 9
 		AmmoCondition: ammo
 	Tooltip:
-		Name: Badger
+		Name: actor-aircraft-badger-name
 
 aircraft.badger.carpet.nuke:
 	Inherits: aircraft.badger.carpet
@@ -295,7 +295,7 @@ hack.artillery_barrager.3:
 aircraft.cargo_plane:
 	Inherits: ^default.badger
 	Tooltip:
-		Name: Cargo Plane
+		Name: actor-aircraft-cargo-plane-name
 	Contrail@1:
 		Offset: -261,-650,0
 		TrailLength: 15
@@ -348,7 +348,7 @@ aircraft.mig:
 		BuildDuration: 250
 		BuildDurationModifier: 100
 		Prerequisites: !prerequisite.enoughair
-		Description: Multi-role fighter plane.\n\nCan attack both ground and air targets.\n\nMultiple can generate firestorms at the target\nfor additional damage.
+		Description: actor-aircraft-mig.description
 		ReadyAudio: MiGCreated
 	Valued:
 		Cost: 1200
@@ -371,7 +371,7 @@ aircraft.mig:
 		Queue: queue.tank_gen_aircraft
 		Multiplier: 120 # 300
 	Tooltip:
-		Name: MiG
+		Name: actor-aircraft-mig.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -440,7 +440,7 @@ aircraft.mig:
 		RequiresCondition: tactical_nuke_mig && (nuke || merged)
 	AttackAircraft:
 		FacingTolerance: 80
-		PauseOnCondition:  leaflet
+		PauseOnCondition: leaflet
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
@@ -559,12 +559,12 @@ aircraft.raptor:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: !prerequisite.enoughair
-		Description: Multi-role fighter plane.\n\nCan attack both ground and air targets.
+		Description: actor-aircraft-raptor.description
 		ReadyAudio: RaptorCreated
 	Valued:
 		Cost: 1400
 	Tooltip:
-		Name: Raptor
+		Name: actor-aircraft-raptor.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -592,7 +592,7 @@ aircraft.raptor:
 		PauseOnCondition: !ammo || reload-ground
 	AttackAircraft:
 		FacingTolerance: 80
-		PauseOnCondition:  leaflet
+		PauseOnCondition: leaflet
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
@@ -673,7 +673,7 @@ aircraft.king_raptor:
 		Modifier: 233
 	Buildable:
 		Queue: queue.air_gen_aircraft, queue.usa_aircraft_merged, queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged
-		Description: Multi-role fighter plane.\n\nCan deflect enemy missiles with laser.
+		Description: actor-aircraft-king-raptor.description
 		ReadyAudio: KingRaptorCreated
 	BuildPaletteOrderModifier@Boss:
 		Queue: queue.boss_gen_aircraft, queue.boss_gen_aircraft_merged
@@ -681,7 +681,7 @@ aircraft.king_raptor:
 	Valued:
 		Cost: 1100
 	Tooltip:
-		Name: King Raptor
+		Name: actor-aircraft-king-raptor.name
 	Health:
 		HP: 24000
 	Armament@AG:
@@ -754,12 +754,12 @@ aircraft.stealth_fighter:
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: prerequisite.stealth_fighter, !prerequisite.enoughair
-		Description: Stealth fighter plane.
+		Description: actor-aircraft-stealth-fighter.description
 		ReadyAudio: StealthFighterCreated
 	Valued:
 		Cost: 1600
 	Tooltip:
-		Name: Stealth Fighter
+		Name: actor-aircraft-stealth-fighter.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -784,7 +784,7 @@ aircraft.stealth_fighter:
 		RequiresCondition: bunker_busters
 	AttackAircraft:
 		FacingTolerance: 80
-		PauseOnCondition:  leaflet
+		PauseOnCondition: leaflet
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
@@ -925,7 +925,7 @@ aircraft.aurora:
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: building.strategy_center, !prerequisite.enoughair, !techlevel.notech
-		Description: Fast fighter plane.\n\nCan not be damaged while attacking.\n\nSlows down and becomes vulnerable after attacking.
+		Description: actor-aircraft-aurora.description
 		ReadyAudio: AuroraCreated
 	Buildable@Boss:
 		Queue: queue.boss_gen_aircraft
@@ -934,7 +934,7 @@ aircraft.aurora:
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Prerequisites: !prerequisite.enoughair, !techlevel.notech
-		Description: Fast fighter plane.\n\nCan not be damaged while attacking.\n\nSlows down and becomes vulnerable after attacking.
+		Description: actor-aircraft-aurora.description
 		ReadyAudio: AuroraCreated
 	Valued:
 		Cost: 2500
@@ -942,7 +942,7 @@ aircraft.aurora:
 		Queue: queue.air_gen_aircraft, queue.super_gen_aircraft
 		Multiplier: 80 # 2000
 	Tooltip:
-		Name: Aurora
+		Name: actor-aircraft-aurora.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -979,7 +979,7 @@ aircraft.aurora:
 		Prerequisites: prerequisite.zh_units
 	AttackAircraft:
 		FacingTolerance: 80
-		PauseOnCondition:  leaflet
+		PauseOnCondition: leaflet
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
@@ -1066,7 +1066,7 @@ aircraft.aurora_alpha:
 	Buildable@Boss:
 		Queue: queue.boss_gen_aircraft_merged
 	Tooltip:
-		Name: Aurora Alpha
+		Name: actor-aircraft-aurora-alpha-name
 	Armament:
 		Weapon: missile.aurora_alpha
 	Selectable:
@@ -1083,7 +1083,7 @@ aircraft.spy_drone:
 	Valued:
 		Cost: 250
 	Tooltip:
-		Name: Spy Drone
+		Name: actor-aircraft-spy-drone-name
 	Health:
 		HP: 20000
 	Armor:
@@ -1158,7 +1158,7 @@ aircraft.scout_drone:
 	GivesExperience:
 		Experience: 10
 	Tooltip:
-		Name: Scout Drone
+		Name: actor-aircraft-scout-drone-name
 	Health:
 		HP: 10000
 	Armor:
@@ -1183,7 +1183,7 @@ aircraft.battle_drone:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@REVEAL: ^Reveal150
 	Tooltip:
-		Name: Battle Drone
+		Name: actor-aircraft-battle-drone-name
 	Health:
 		HP: 10000
 	-Contrail:
@@ -1215,7 +1215,7 @@ aircraft.hellfire_drone:
 	Inherits: aircraft.scout_drone
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Tooltip:
-		Name: Hellfire Drone
+		Name: actor-aircraft-hellfire-drone-name
 	-DetectCloaked:
 	-RenderDetectionCircle:
 	-Contrail:
@@ -1231,7 +1231,7 @@ aircraft.a10:
 	Inherits: ^Plane
 	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
 	Tooltip:
-		Name: A-10 Thunderbolt
+		Name: actor-aircraft-a10-name
 	Health:
 		HP: 60000
 	Armor:
@@ -1306,7 +1306,7 @@ aircraft.chinook:
 		ForceIconLocation: true
 		BuildDuration: 250
 		BuildDurationModifier: 100
-		Description: Collects supplies.\n\nCan carry infantry and vehicles.
+		Description: actor-aircraft-chinook.description
 		ReadyAudio: ChinookCreated
 	Valued:
 		Cost: 1200
@@ -1317,8 +1317,8 @@ aircraft.chinook:
 		Queue: queue.air_gen_collector
 		Multiplier: 107 # 950
 	Tooltip:
-		Name: Chinook
-		GenericName: Collector
+		Name: actor-aircraft-chinook.name
+		GenericName: meta-collector-generic-name
 	Health:
 		HP: 30000
 	Armor:
@@ -1365,8 +1365,6 @@ aircraft.chinook:
 	GrantConditionOnFaction@Airforce:
 		Condition: airforce
 		Factions: air
-	Hovers:
-		RequiresCondition: airborne
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker, Pilot, Vehicle
 		MaxWeight: 8
@@ -1405,10 +1403,10 @@ aircraft.combat_chinook:
 		ForceIconLocation: true
 		BuildDuration: 625
 		Prerequisites: building.usa_war_factory
-		Description: Collects supplies.\n\nCan carry infantry and vehicles.\n\nInfantry can fire outside.\n\nCan deflect enemy missiles with laser.
+		Description: actor-aircraft-combat-chinook.description
 		ReadyAudio: CombatChinookCreated
 	Tooltip:
-		Name: Combat Chinook
+		Name: actor-aircraft-combat-chinook.name
 	-ProductionCostMultiplier@Airforce1:
 	-ProductionCostMultiplier@Airforce2:
 	Health:
@@ -1466,7 +1464,7 @@ aircraft.comanche:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~building.usa_airfield
-		Description: Helicopter gunship armed with machine gun.
+		Description: actor-aircraft-comanche.description
 		ReadyAudio: ComancheCreated
 	Valued:
 		Cost: 1500
@@ -1477,7 +1475,7 @@ aircraft.comanche:
 		Queue: queue.super_gen_aircraft
 		Multiplier: 120 # 1800
 	Tooltip:
-		Name: Comanche
+		Name: actor-aircraft-comanche.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -1514,7 +1512,7 @@ aircraft.comanche:
 		Count: 12
 	AttackAircraft:
 		AttackType: Hover
-		PauseOnCondition:  leaflet
+		PauseOnCondition: leaflet
 		FacingTolerance: 80
 	Aircraft:
 		CruiseAltitude: 1928
@@ -1622,7 +1620,7 @@ aircraft.helix:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 		Prerequisites: ~prerequisite.zh_units
-		Description: Helicopter gunship armed with a machine gun.\n\nCan carry 5 units.\n\nCan be upgraded to have either a bunker, a gatling cannon or a speaker tower.
+		Description: actor-aircraft-helix.description
 		ReadyAudio: HelixCreated
 	Valued:
 		Cost: 1500
@@ -1655,7 +1653,7 @@ aircraft.helix:
 		Types: gatling
 		Modifier: 50
 	Tooltip:
-		Name: Helix
+		Name: actor-aircraft-helix.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
@@ -1677,20 +1675,20 @@ aircraft.helix:
 		Factions: inf
 		Group: Tech
 		ItemLimit: 1
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_helix
 		Factions: nuke
 		Group: Tech
 		ItemLimit: 1
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 	ProductionQueue@Merged:
 		Type: queue.helix_merged
 		Group: Tech
 		ItemLimit: 1
-		InstantCashDrain: true
+		PayUpFront: true
 		DisallowPaused: true
 	ProductionBar:
 		ProductionType: queue.helix
@@ -1729,7 +1727,7 @@ aircraft.helix:
 		AttackType: Hover
 		Armaments: primary, secondary, gatling
 		FacingTolerance: 80
-		PauseOnCondition:  leaflet
+		PauseOnCondition: leaflet
 	RevealsShroud:
 		Type: CenterPosition
 	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
@@ -1780,7 +1778,7 @@ aircraft.helix:
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
 		RequiresCondition: bunker_upgrade && loaded
-		PauseOnCondition:  leaflet
+		PauseOnCondition: leaflet
 	GrantConditionOnAttack@GATLING:
 		Condition: gatling
 		ArmamentNames: gatling
@@ -1903,9 +1901,9 @@ aircraft.assault_helix:
 	Inherits: aircraft.helix
 	Buildable:
 		Queue: queue.inf_gen_aircraft, queue.boss_gen_aircraft_merged
-		Description: Helicopter gunship armed with machine gun.\n\nCan carry 8 infantry.\n\nCan be upgraded to have a bunker.
+		Description: actor-aircraft-assault-helix.description
 	Tooltip:
-		Name: Assault Helix
+		Name: actor-aircraft-assault-helix.name
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker
 		MaxWeight: 8
