@@ -12,6 +12,11 @@
 	Image2x: glyphs-2x.png
 	Image3x: glyphs-3x.png
 
+^Flags:
+	Image: flags.png
+	Image2x: flags-2x.png
+	Image3x: flags-3x.png
+
 ^LoadScreen:
 	Image: loadscreen.png
 	Image2x: loadscreen-2x.png
@@ -589,29 +594,26 @@ strategic:
 		player_owned: 160, 142, 22, 22
 
 flags:
-	Inherits: ^Glyphs
+	Inherits: ^Flags
 	Regions:
-		prc: 226, 161, 30, 15
-		usa: 226, 177, 30, 15
-		gla: 226, 145, 30, 15
-		air: 226, 97, 30, 15
-		laser: 226, 113, 30, 15
-		super: 226, 129, 30, 15
-		toxin: 195, 145, 30, 15
-		demo: 195, 161, 30, 15
-		stealth: 195, 177, 30, 15
-		inf: 226, 49, 30, 15
-		nuke: 226, 65, 30, 15
-		tank: 226, 81, 30, 15
-		boss: 226, 33, 30, 15
-		Random: 226, 241, 30, 15
-		RandomUSA: 226, 225, 30, 15
-		RandomGLA: 226, 193, 30, 15
-		RandomPRC: 226, 209, 30, 15
-		spectator: 226, 241, 30, 15
-
-
-
+		Random: 93, 0, 30, 15
+		RandomUSA: 0, 0, 30, 15
+		RandomGLA: 31, 0, 30, 15
+		RandomPRC: 62, 0, 30, 15
+		usa: 0, 16, 30, 15
+		gla: 31, 16, 30, 15
+		prc: 62, 16, 30, 15
+		air: 0, 32, 30, 15
+		laser: 0, 48, 30, 15
+		super: 0, 64, 30, 15
+		toxin: 31, 32, 30, 15
+		demo: 31, 48, 30, 15
+		stealth: 31, 64, 30, 15
+		inf: 62, 32, 30, 15
+		nuke: 62, 48, 30, 15
+		tank: 62, 64, 30, 15
+		boss: 62, 80, 30, 15
+		spectator: 62, 0, 30, 15
 
 music:
 	Inherits: ^Glyphs
@@ -1065,10 +1067,10 @@ checkmark-cross-highlighted:
 checkmark-mute:
 	Inherits: ^Glyphs
 	Regions:
-		unchecked: 0, 170, 16, 16
-		unchecked-pressed: 17, 170, 16, 16
-		checked: 17, 170, 16, 16
-		checked-pressed: 0, 170, 16, 16
+		unchecked: 221, 34, 16, 16
+		unchecked-pressed: 238, 34, 16, 16
+		checked: 238, 34, 16, 16
+		checked-pressed: 221, 34, 16, 16
 
 checkmark-mute-highlighted:
 	Inherits: checkmark-mute
