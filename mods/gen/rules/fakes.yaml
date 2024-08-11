@@ -555,6 +555,27 @@ fake.scud_storm:
 		IntoActor: building.scud_storm
 	Valued:
 		Cost: 1000
+	FakePower:
+		PauseOnCondition: emp || hacked
+		Prerequisites:
+			1: fake.scud_storm
+		Icons:
+			1: fake_scud_storm
+		Cursor: nuke
+		ChargeInterval: 7500
+		Names:
+			1: Fake SCUD Storm
+		GenericNames:
+			1: SCUD Storm
+		GenericVisibility: Enemy
+		Descriptions:
+			1: Pretends to be charging a SCUD Storm for the enemies.
+		IncomingSpeechNotification: ScudLaunchDetected
+		AllowMultiple: True
+		DisplayTimerRelationships: Enemy, Neutral, Ally
+		OrderName: FakeSCUDStormPowerInfoOrder
+	ProvidesPrerequisite@buildingname:
+		Prerequisite: fake.scud_storm
 	RevealsShroud@SW:
 		Range: 2c0
 		ValidRelationships: Enemy

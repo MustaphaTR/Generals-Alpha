@@ -842,6 +842,10 @@ Player:
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 6c0
+			fake_scud_storm:
+				OrderName: FakeSCUDStormPowerInfoOrder
+				Consideration@1:
+					Against: Ally
 			nukepower:
 				OrderName: NukePowerInfoOrder
 				Against: Enemy
