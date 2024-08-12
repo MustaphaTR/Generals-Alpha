@@ -340,11 +340,23 @@ upgrade.bunker_busters:
 	Tooltip:
 		Name: actor-upgrade-bunker-busters.name
 	Buildable:
-		Queue: queue.usa_aircraft, queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged
+		Queue: queue.usa_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged
 		BuildAtProductionType: queue.usa_air_upgrade
 		BuildPaletteOrder: 7
 		ForceIconLocation: true
 		BuildDuration: 1000
+		Prerequisites: prerequisite.stealth_fighter, ~prerequisite.zh_units
+		Description: actor-upgrade-bunker-busters.description
+		ReadyAudio: BunkerBusters
+		ReadyTextNotification: Upgrade Complete: Bunker Busters
+	Buildable@Air:
+		Queue: queue.air_gen_aircraft
+		BuildAtProductionType: queue.usa_air_upgrade
+		BuildPaletteOrder: 7
+		ForceIconLocation: true
+		BuildDuration: 1000
+		BuildDurationModifier: 100
+		BuildLimit: 1
 		Prerequisites: ~prerequisite.zh_units
 		Description: actor-upgrade-bunker-busters.description
 		ReadyAudio: BunkerBusters
