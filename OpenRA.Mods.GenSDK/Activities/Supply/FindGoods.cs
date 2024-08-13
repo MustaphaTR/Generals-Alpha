@@ -109,7 +109,7 @@ namespace OpenRA.Mods.GenSDK.Activities
 
 				if (dock == null)
 				{
-					collector.CollectionBuilding = null;
+					collector.AssignCollectionBuilding(null);
 					if (collector.AllColletionDepleted)
 					{
 						Cancel(self, true);
@@ -119,7 +119,7 @@ namespace OpenRA.Mods.GenSDK.Activities
 					WaitAtParkingZone(self, collectorInfo.SearchForCollectionBuildingDelay, center, centerTrait);
 				}
 				else
-					collector.CollectionBuilding = dock;
+					collector.AssignCollectionBuilding(dock);
 
 				return false;
 			}
@@ -137,7 +137,7 @@ namespace OpenRA.Mods.GenSDK.Activities
 
 				if (dock == null)
 				{
-					collector.CollectionBuilding = null;
+					collector.AssignCollectionBuilding(null);
 					if (collector.AllColletionDepleted)
 					{
 						Cancel(self, true);
@@ -150,7 +150,7 @@ namespace OpenRA.Mods.GenSDK.Activities
 				else
 				{
 					// For Perf: leave rest of work next tick.
-					collector.CollectionBuilding = dock;
+					collector.AssignCollectionBuilding(dock);
 					return false;
 				}
 			}

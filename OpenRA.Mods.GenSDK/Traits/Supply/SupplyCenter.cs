@@ -229,7 +229,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 							colletorTrait.Info.DeliveryRelationships.HasRelationship(c.Owner.RelationshipWith(self.Owner))))
 						{
 							c.CancelActivity();
-							colletorTrait.DeliveryBuilding = self;
+							colletorTrait.AssignDeliveryBuilding(self);
 							colletorTrait.TakeTheChanceToDeliver();
 						}
 					}

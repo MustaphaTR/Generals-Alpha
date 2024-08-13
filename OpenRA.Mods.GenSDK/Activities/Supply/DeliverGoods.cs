@@ -87,12 +87,12 @@ namespace OpenRA.Mods.GenSDK.Activities
 
 				if (center == null)
 				{
-					collector.DeliveryBuilding = null;
+					collector.AssignDeliveryBuilding(null);
 					QueueChild(new Wait(collectorInfo.SearchForDeliveryBuildingDelay));
 					return false;
 				}
 				else
-					collector.DeliveryBuilding = center;
+					collector.AssignDeliveryBuilding(center);
 
 				return false;
 			}
@@ -107,14 +107,14 @@ namespace OpenRA.Mods.GenSDK.Activities
 
 				if (center == null)
 				{
-					collector.DeliveryBuilding = null;
+					collector.AssignDeliveryBuilding(null);
 					QueueChild(new Wait(collectorInfo.SearchForDeliveryBuildingDelay));
 					return false;
 				}
 				else
 				{
 					// For Perf: leave rest of work next tick.
-					collector.DeliveryBuilding = center;
+					collector.AssignDeliveryBuilding(center);
 					return false;
 				}
 			}

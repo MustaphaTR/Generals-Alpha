@@ -16,4 +16,10 @@ namespace OpenRA.Mods.GenSDK.Traits
 		void GiveResource(int amount, string harvester);
 		bool CanGiveResource(int amount);
 	}
+
+	public interface INotifySupplyCollectorAssigned
+	{
+		void AssignedToSupplyCenter(Actor collector, Actor center);
+		void AssignedToSupplyDock(Actor collector, Actor dock);
+	}
 }

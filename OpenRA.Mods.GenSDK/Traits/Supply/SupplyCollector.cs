@@ -136,12 +136,42 @@ namespace OpenRA.Mods.GenSDK.Traits
 			ResourceMultipliers = self.TraitsImplementing<IResourceValueModifier>().ToArray();
 
 			// Avoid stuck on production
-			DeliveryBuilding = self.World.ActorsHavingTrait<SupplyCenter>().ClosestToIgnoringPath(self);
+			AssignDeliveryBuilding(self.World.ActorsHavingTrait<SupplyCenter>().ClosestToIgnoringPath(self));
 
 			if (Info.SearchOnCreation)
 				self.World.AddFrameEndTask(w => self.QueueActivity(new FindGoods(self, Color.Green)));
 
 			CheckConditions(self);
+		}
+
+		public void AssignDeliveryBuilding(Actor center)
+		{
+			if (DeliveryBuilding == center)
+				return;
+
+			if (DeliveryBuilding != null && !DeliveryBuilding.IsDead)
+				foreach (var insca in DeliveryBuilding.TraitsImplementing<INotifySupplyCollectorAssigned>())
+					insca.AssignedToSupplyCenter(self, center);
+			if (center != null && !center.IsDead)
+				foreach (var insca in center.TraitsImplementing<INotifySupplyCollectorAssigned>())
+					insca.AssignedToSupplyCenter(self, center);
+
+			DeliveryBuilding = center;
+		}
+
+		public void AssignCollectionBuilding(Actor dock)
+		{
+			if (CollectionBuilding == dock)
+				return;
+
+			if (CollectionBuilding != null && !CollectionBuilding.IsDead)
+				foreach (var insca in CollectionBuilding.TraitsImplementing<INotifySupplyCollectorAssigned>())
+					insca.AssignedToSupplyDock(self, dock);
+			if (dock != null && !dock.IsDead)
+				foreach (var insca in dock.TraitsImplementing<INotifySupplyCollectorAssigned>())
+					insca.AssignedToSupplyDock(self, dock);
+
+			CollectionBuilding = dock;
 		}
 
 		void INotifyBlockingMove.OnNotifyBlockingMove(Actor self, Actor blocking)
@@ -266,9 +296,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 					return;
 				}
 
-				if (targetActor != CollectionBuilding)
-					CollectionBuilding = targetActor;
-
+				AssignCollectionBuilding(targetActor);
 				WorkingAtPortState = WorkingAtPortState.None;
 
 				self.QueueActivity(order.Queued, new FindGoods(self, Color.Green));
@@ -287,9 +315,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 					return;
 				}
 
-				if (targetActor != DeliveryBuilding)
-					DeliveryBuilding = targetActor;
-
+				AssignDeliveryBuilding(targetActor);
 				WorkingAtPortState = WorkingAtPortState.None;
 
 				self.QueueActivity(order.Queued, new DeliverGoods(self, Color.Green));

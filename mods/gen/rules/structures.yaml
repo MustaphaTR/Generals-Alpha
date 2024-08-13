@@ -1804,6 +1804,9 @@ building.gla_supply_stash:
 		ExitCell: 1,1
 	SupplyCenter:
 		DeliveryOffsets: 1,1
+	GrantExternalConditionToAssignedCollectors@CAMO_NETTING:
+		Condition: camo_netted
+		RequiresCondition: camo_netted && !emp && !hacked
 	WithIdleOverlay@RA_SILO:
 		Sequence: idle-ra
 		RequiresCondition: !build-incomplete

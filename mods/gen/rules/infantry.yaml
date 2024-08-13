@@ -99,6 +99,18 @@ infantry.worker:
 		-IdleSequences:
 		StandSequences: stand
 	-TakeCover:
+	ExternalCondition@CAMO_NETTING:
+		Condition: camo_netted
+	GrantConditionWhileCollectingSupplies@CAMO_NETTING:
+		Condition: working
+	Cloak@CAMO_NETTING:
+		InitialDelay: 60
+		CloakDelay: 60
+		UncloakOn: Attack, Unload, Infiltrate, Demolish
+		DetectionTypes: Cloak
+		IsPlayerPalette: true
+		CanBeForcedUncloak: true
+		RequiresCondition: camo_netted && working
 	Voiced:
 		VoiceSet: WorkerVoice
 		RequiresCondition: !worker_shoes
