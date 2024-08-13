@@ -1879,7 +1879,7 @@ infantry.hijacker:
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		CanBeForcedUncloak: true
-		RequiresCondition: !cloak-force-disabled && !stealth
+		RequiresCondition: !cloak-force-disabled && !stealth && !merged
 	Cloak@Stealth:
 		InitialDelay: 0
 		CloakDelay: 120
@@ -1887,7 +1887,7 @@ infantry.hijacker:
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		CanBeForcedUncloak: true
-		RequiresCondition: !cloak-force-disabled && stealth
+		RequiresCondition: !cloak-force-disabled && (stealth || merged)
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
