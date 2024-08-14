@@ -44,7 +44,7 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic.Ingame
 				.Where(a => a.IsInWorld && a.Owner == player)
 				.ToList();
 
-			if (!collectors.Any())
+			if (collectors.Count == 0)
 				return true;
 
 			var next = collectors

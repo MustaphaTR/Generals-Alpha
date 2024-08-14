@@ -28,8 +28,8 @@ namespace OpenRA.Mods.GenSDK.Orders
 			this.useCursor = useCursor;
 		}
 
-		public string OrderID { get; private set; }
-		public int OrderPriority { get; private set; }
+		public string OrderID { get; }
+		public int OrderPriority { get; }
 
 		public bool CanTarget(Actor self, in Target target, ref TargetModifiers modifiers, ref string cursor)
 		{
