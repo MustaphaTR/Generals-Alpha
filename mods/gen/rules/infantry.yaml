@@ -259,6 +259,18 @@ infantry.rebel:
 		Class: infantry.rebel
 	Tooltip:
 		Name: actor-infantry-rebel-name
+	Captures:
+		RequiresCondition: capture_building && !booby_traps
+	Captures@BOOBY_TRAP:
+		CaptureTypes: building
+		Voice: Capture
+		CaptureCompleteVoice: CaptureComplete
+		CaptureDelay: 375
+		ConsumedByCapture: False
+		ForceTargetRelationships: Enemy
+		EnterCursor: ability
+		EnterBlockedCursor: move-blocked
+		RequiresCondition: capture_building && booby_traps
 	Armament@PRIMARY:
 		Weapon: mg.rebel
 	Armament@PRIMARY_BOOBY_TRAP_DEFAULT:
@@ -278,18 +290,10 @@ infantry.rebel:
 		TargetRelationships: None
 		ForceTargetRelationships: Neutral, Ally
 		RequiresCondition: booby_traps
-	Captures:
-		RequiresCondition: capture_building && !booby_traps
-	Captures@BOOBY_TRAP:
-		CaptureTypes: building
-		Voice: Capture
-		CaptureCompleteVoice: CaptureComplete
-		CaptureDelay: 375
-		ConsumedByCapture: False
-		ForceTargetRelationships: Enemy
-		EnterCursor: ability
-		EnterBlockedCursor: move-blocked
-		RequiresCondition: capture_building && booby_traps
+	-AttackFrontal: # Workaround to make Captures@BOOBY_TRAP: properly take priority over AttackFrontal.
+	AttackFrontal:
+		PauseOnCondition: leaflet
+		FacingTolerance: 0
 	Cloak:
 		InitialDelay: 200
 		CloakDelay: 100
