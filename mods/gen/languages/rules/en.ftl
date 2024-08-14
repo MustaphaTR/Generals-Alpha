@@ -31,7 +31,7 @@ checkbox-mergegenerals =
 
 notification-all-units-revealed = All of our units has been revealed!
 
-## World
+## world.yaml
 dropdown-restrictions =
     .label = Restrictions
 
@@ -59,6 +59,8 @@ options-gpmodifier =
     .three = 3, 3, 3, 3, 3
     .triple = 3, 3, 3, 3, 9
     .all = 5, 0, 15, 0, 5
+
+resource-minerals = Valuable Minerals
 
 ## Defaults
 notification-unit-lost = Unit lost.
@@ -800,7 +802,10 @@ actor-infantry-missile-defender =
     vehicles and aircraft by force firing.
 
 actor-infantry-rpg-trooper-name = RPG Trooper
-actor-infantry-stinger-soldier.name = Stinger Soldier
+actor-infantry-stinger-soldier =
+   .name = Stinger Soldier
+   .fake-name = Fake Stinger Soldier
+meta-default-rocket-infantry-description = Anti-tank & anti-air infantry.
 
 actor-infantry-tank-hunter =
    .name = Tank Hunter
@@ -808,8 +813,6 @@ actor-infantry-tank-hunter =
     
     Can place TNT charges on vehicles and
     buildings by force firing.
-
-meta-default-rocket-infantry-description = Anti-tank & anti-air infantry.
 
 actor-infantry-grenadier =
    .name = Grendier
