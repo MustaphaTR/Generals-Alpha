@@ -1762,12 +1762,12 @@ infantry.super_hacker:
 		Name: disable
 		Weapon: disable_vechicle.superhacker.anim
 		LocalOffset: 0,0,196
-		PauseOnCondition: end_vehicle && deployed
+		PauseOnCondition: end_vehicle || deployed
 	Armament@DisableEnd:
 		Name: disable
 		Weapon: disable.black_lotus.end
 		LocalOffset: 0,0,196
-		PauseOnCondition: !end_vehicle && deployed
+		PauseOnCondition: !end_vehicle || deployed
 		ReloadingCondition: stop-hack
 	GrantConditionOnAttack@EndVehicle:
 		Condition: end_vehicle
