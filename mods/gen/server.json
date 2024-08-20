@@ -1,16 +1,15 @@
 {
     "mod": "gen",
-    "modversion": "gen-20220220",
-    "map": "fcc7c19e88689526b5fbdc20cc8fbd7e549f47de",
-    "timestep": 40,
-    "orderlatency": 3,
+    "modversion": "{DEV_VERSION}",
+    "map": "f3f5a8a2ac3c96ff6d709297bd036c9fdb0d785b",
     "allowspectators": true,
-	"modtitle": "Generals Alpha",
+    "modtitle": "Generals Alpha",
     "modwebsite": "https://www.moddb.com/mods/generals-alpha",
-    "modicon32": "https://raw.githubusercontent.com/MustaphaTR/Generals-Alpha/master/packaging/linux/mod_32x32.png",
-	"dedicated": true,
+    "modicon32": "https://raw.githubusercontent.com/MustaphaTR/Generals-Alpha/master/packaging/artwork/icon_32x32.png",
+    "dedicated": true,
     "allowversionmismatch": false,
     "enablesingleplayer": true,
+    "enablesyncreports": true,
     "options": {
         "startingcash": {
             "value": 10000,
@@ -32,25 +31,20 @@
             "preferredvalue": true,
             "locked": false
         },
-        "factundeploy": {
-            "value": true,
-            "preferredvalue": true,
-            "locked": false
-        },
         "creeps": {
             "value": true,
             "preferredvalue": true,
             "locked": false
         },
         "allybuild": {
-            "value": true,
-            "preferredvalue": true,
-            "locked": false
+            "value": false,
+            "preferredvalue": false,
+            "locked": true
         },
         "buildradius": {
-            "value": true,
-            "preferredvalue": true,
-            "locked": false
+            "value": false,
+            "preferredvalue": false,
+            "locked": true
         },
         "shortgame": {
             "value": true,
@@ -92,7 +86,7 @@
             "preferredvalue": true,
             "locked": false
         },
-        "limitsw": {
+        "docksresupply": {
             "value": false,
             "preferredvalue": false,
             "locked": false
@@ -102,7 +96,12 @@
             "preferredvalue": false,
             "locked": false
         },
-        "ccradius": {
+        "limitsw": {
+            "value": false,
+            "preferredvalue": false,
+            "locked": false
+        },
+        "mergegenerals": {
             "value": false,
             "preferredvalue": false,
             "locked": true
@@ -111,6 +110,57 @@
             "value": "normal",
             "preferredvalue": "normal",
             "locked": false
+        }
+    },
+    "gamespeed": {
+        "slowest": {
+            "timestep": 80,
+            "minOrderDelay": 0,
+            "maxOrderDelay": 15,
+            "legacyOrderDelay": 6,
+            "legacyTimestep": 80
+        },
+        "slower": {
+            "timestep": 50,
+            "minOrderDelay": 0,
+            "maxOrderDelay": 15,
+            "legacyOrderDelay": 9,
+            "legacyTimestep": 50
+        },
+        "default": {
+            "timestep": 40,
+            "minOrderDelay": 0,
+            "maxOrderDelay": 15,
+            "legacyOrderDelay": 9,
+            "legacyTimestep": 40
+        },
+        "fast": {
+            "timestep": 35,
+            "minOrderDelay": 0,
+            "maxOrderDelay": 15,
+            "legacyOrderDelay": 12,
+            "legacyTimestep": 35
+        },
+        "faster": {
+            "timestep": 30,
+            "minOrderDelay": 0,
+            "maxOrderDelay": 15,
+            "legacyOrderDelay": 12,
+            "legacyTimestep": 30
+        },
+        "fastest": {
+            "timestep": 20,
+            "minOrderDelay": 0,
+            "maxOrderDelay": 18,
+            "legacyOrderDelay": 18,
+            "legacyTimestep": 20
+        },
+        "superfast": {
+            "timestep": 5,
+            "minOrderDelay": 0,
+            "maxOrderDelay": 30,
+            "legacyOrderDelay": 27,
+            "legacyTimestep": 5
         }
     }
 }
