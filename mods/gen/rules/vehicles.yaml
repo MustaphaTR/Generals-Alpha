@@ -1021,13 +1021,18 @@ vehicle.ambulance:
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
-	WithRangeCircle:
+	WithRangeCircle@AMBULANCEHEAL:
 		Type: heal
 		Range: 4c0
 		Color: DD000066
-	ProximityExternalCondition:
+	ProximityExternalCondition@AMBULANCEHEAL:
 		Condition: ambulanceheal
 		Range: 4c0
+		RequiresCondition: ambulanceheal_enabled ## HACK, ProximityExternalCondition affect parent unit if enabled at actor creation.
+	GrantConditionAfterDelay@AMBULANCEHEAL:
+		Condition: ambulanceheal_enabled
+		Delay: 1
+		ShowSelectionBar: false
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker, Pilot
 		MaxWeight: 3
@@ -2257,7 +2262,12 @@ vehicle.assault_troop_crawler:
 	ProximityExternalCondition@SPEAKER:
 		Condition: speaker_tower
 		Range: 4c0
-	WithRangeCircle:
+		RequiresCondition: speaker_upgrade ## HACK, ProximityExternalCondition affect parent unit if enabled at actor creation.
+	GrantConditionAfterDelay@SPEAKER:
+		Condition: speaker_upgrade
+		Delay: 1
+		ShowSelectionBar: false
+	WithRangeCircle@SPEAKER:
 		Type: speaker
 		Range: 4c0
 		Color: DD000066
@@ -2400,7 +2410,12 @@ vehicle.attack_outpost:
 	ProximityExternalCondition@SPEAKER:
 		Condition: speaker_tower
 		Range: 4c0
-	WithRangeCircle:
+		RequiresCondition: speaker_upgrade ## HACK, ProximityExternalCondition affect parent unit if enabled at actor creation.
+	GrantConditionAfterDelay@SPEAKER:
+		Condition: speaker_upgrade
+		Delay: 1
+		ShowSelectionBar: false
+	WithRangeCircle@SPEAKER:
 		Type: speaker
 		Range: 4c0
 		Color: DD000066
@@ -3706,7 +3721,7 @@ vehicle.overlord_tank:
 		RevokeDelay: 25
 		RevokeAll: true
 		IsCyclic: false
-	WithRangeCircle:
+	WithRangeCircle@SPEAKER:
 		Type: speaker
 		Range: 4c0
 		Color: DD000066
@@ -3788,10 +3803,14 @@ vehicle.emparor_overlord:
 		ProductionType: queue.emparor_overlord_merged
 	WithSpriteTurret@Speaker:
 		-RequiresCondition:
-	WithRangeCircle:
+	WithRangeCircle@SPEAKER:
 		-RequiresCondition:
 	ProximityExternalCondition@SPEAKER:
-		-RequiresCondition:
+		RequiresCondition: speaker_upgrade ## HACK, ProximityExternalCondition affect parent unit if enabled at actor creation.
+	GrantConditionAfterDelay@SPEAKER:
+		Condition: speaker_upgrade
+		Delay: 1
+		ShowSelectionBar: false
 	ThrowsShrapnel@Turret:
 		Weapons: debris.emperor_overlord
 	Selectable:
