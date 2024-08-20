@@ -65,6 +65,7 @@ resource-minerals = Valuable Minerals
 ## Defaults
 notification-unit-lost = Unit lost.
 notification-building-being-captured = One of our buildings is being captured.
+notification-enemy-stealth-unit-detected = Enemy stealth unit detected.
 
 ## ai.yaml
 bot-easy-ai-name = Easy AI

@@ -2044,6 +2044,10 @@ infantry.colonel_burton:
 		Prerequisite: prerequisite.enough_colonel_burton
 	RenderSprites:
 		Image: infantry.colonel_burton
+	AnnounceOnSeen:
+		PingRadar: true
+		Notification: EnemyBurtonDetected
+		TextNotification: notification-enemy-stealth-unit-detected
 	Voiced:
 		VoiceSet: BurtonVoice
 	ActorStatValues:
@@ -2163,6 +2167,10 @@ infantry.jarmen_kell:
 		CargoType: GLAInfantry
 	Garrisoner:
 		Voice: Garrison
+	AnnounceOnSeen:
+		PingRadar: true
+		Notification: EnemyJarmenDetected
+		TextNotification: notification-enemy-stealth-unit-detected
 	Voiced:
 		VoiceSet: JarmenVoice
 	RenderSprites:
@@ -2413,6 +2421,10 @@ infantry.black_lotus:
 	WithProductionIconOverlay@Merged:
 		Types: Veterancy2
 		Prerequisites: prerequisite.mergegenerals
+	AnnounceOnSeen:
+		PingRadar: true
+		Notification: EnemyLotusDetected
+		TextNotification: notification-enemy-stealth-unit-detected
 	Voiced:
 		VoiceSet: LotusVoice
 	ActorStatValues:
