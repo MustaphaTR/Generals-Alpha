@@ -2458,8 +2458,11 @@
 	CapturableProgressBlink:
 		Sound: ucapture.aud
 	CaptureManager:
+		BeingCapturedCondition: being_captured
 		BeingCapturedNotification: BuildingBeingCaptured
 		BeingCapturedTextNotification: notification-building-being-captured
+	TriggersDelayedWeapon@BOOBY_TRAP:
+		RequiresCondition: being_captured
 	InstantlyRepairable:
 	RepairableBuilding:
 		RepairStep: 1500
