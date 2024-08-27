@@ -1252,7 +1252,10 @@ vehicle.quad_cannon:
 		WarnProbability: 0
 		CrushClasses: vehicle
 	Health:
-		HP: 30000
+		HP: 21900 # Should be 22000.
+	DamageMultiplier@ZH_UNITS:
+		RequiresCondition: zh_units
+		Modifier: 73 # 30000
 	Armor:
 		Type: vehicle.anti-air
 	Selectable:
@@ -1324,6 +1327,9 @@ vehicle.quad_cannon:
 		Upgrades: upgrade.ap_bullets, upgrade.junk_repair
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.demolitions, upgrade.ap_bullets, upgrade.junk_repair
+	ActorStatOverride@ZH_UNITS:
+		Health: 30000
+		RequiresCondition: zh_units
 
 vehicle.gatling_tank:
 	Inherits: ^Tank
@@ -3232,7 +3238,10 @@ vehicle.marauder_tank:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 50000
+		HP: 49000
+	DamageMultiplier@ZH_UNITS:
+		RequiresCondition: zh_units
+		Modifier: 98 # 50000
 	Armor:
 		Type: vehicle.tank
 	Mobile:
@@ -3503,6 +3512,9 @@ vehicle.marauder_tank:
 	ActorStatOverride@Merged:
 		Upgrades: upgrade.anthrax_gamma, upgrade.demolitions, upgrade.junk_repair
 		RequiresCondition: merged
+	ActorStatOverride@ZH_UNITS:
+		Health: 50000
+		RequiresCondition: zh_units
 
 vehicle.overlord_tank:
 	Inherits: ^Tank
