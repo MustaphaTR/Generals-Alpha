@@ -3785,11 +3785,11 @@ vehicle.emparor_overlord:
 		Name: actor-vehicle-emparor-overlord.name
 	Production:
 		Produces: queue.emparor_overlord
-		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !speaker_upgrade && !driver_killed && !merged && !as_cargo && !in_tunnel
+		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !driver_killed && !merged && !as_cargo && !in_tunnel
 	Production@Merged:
 		Produces: queue.emparor_overlord_merged
 		PauseOnCondition: emp || hacked || leaflet
-		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !speaker_upgrade && !driver_killed && merged && !as_cargo && !in_tunnel
+		RequiresCondition: !bunker_upgrade && !gatling_upgrade && !driver_killed && merged && !as_cargo && !in_tunnel
 	ProductionQueue:
 		Type: queue.emparor_overlord
 		LowPowerModifier: 300
