@@ -1789,6 +1789,7 @@ infantry.super_hacker:
 		DetectionTypes: Cloak
 		IsPlayerPalette: true
 		CanBeForcedUncloak: true
+		PauseOnCondition: in_internet_center
 		RequiresCondition: !cloak-force-disabled
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
