@@ -1120,6 +1120,9 @@ vehicle.sentry_drone:
 		Modifier: 84
 	Passenger:
 		Weight: 1
+		-CargoCondition:
+	SharedPassenger:
+		-CargoCondition:
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
@@ -2285,7 +2288,7 @@ vehicle.assault_troop_crawler:
 		Condition: ShouldUnload
 		ValidDamageStates: Critical, Heavy
 	IssueOrderToBot@AI:
-		RequiresCondition: loaded && ShouldUnload
+		RequiresCondition: bot_owner && loaded && ShouldUnload
 		OrderName: Unload
 		OrderChance: 100
 		OrderTrigger: Periodically
@@ -4355,6 +4358,9 @@ vehicle.combat_cycle:
 		Modifier: 75
 	Passenger:
 		Weight: 1
+		-CargoCondition:
+	SharedPassenger:
+		-CargoCondition:
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
@@ -4994,6 +5000,7 @@ vehicle.tech_mcc:
 	WithTextDecoration@SIDE:
 		Text: TECH
 		Color: 888888
+	-GrantConditionOnPrerequisite@MERGE_GENERALS:
 
 # used by laser general in no base mode
 vehicle.mobile_reactor:

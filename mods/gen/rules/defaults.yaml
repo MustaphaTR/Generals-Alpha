@@ -1444,6 +1444,8 @@
 		Delay: 1
 		Condition: update_queue
 		ShowSelectionBar: false
+	-GrantConditionOnFaction@Toxin:
+	-GrantConditionOnFaction@Demo:
 	-ActorStatOverride@ZH_UNITS:
 	ActorStatOverride@Stealth_ZH_UNITS:
 		Upgrades: upgrade.camo_netting
@@ -2289,11 +2291,13 @@
 		TargetTypes: GroundActor, Structure, NonGarrisonedStructure, C4, DetonateAttack, Disable, Defense
 	MustBeDestroyed:
 		RequiredForShortGame: false
+	-GrantConditionOnBotOwner@bot_owner:
 	-GivesBuildableArea@AI:
 	-AcceptsDeliveredCash:
 	-Capturable:
 	-CapturableProgressBar:
 	-CapturableProgressBlink:
+	-CaptureManager:
 	-DelayedWeaponAttachable@BOOBY_TRAP:
 	-TriggersDelayedWeapon@BOOBY_TRAP:
 	-Targetable@BOOBY_TRAP:
@@ -2316,6 +2320,7 @@
 	-Capturable:
 	-CapturableProgressBar:
 	-CapturableProgressBlink:
+	-CaptureManager:
 	-DelayedWeaponAttachable@BOOBY_TRAP:
 	-TriggersDelayedWeapon@BOOBY_TRAP:
 	-Targetable@BOOBY_TRAP:

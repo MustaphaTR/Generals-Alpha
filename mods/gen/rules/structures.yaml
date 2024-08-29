@@ -2330,6 +2330,7 @@ building.advanced_demo_trap:
 		Name: actor-building-advanced-demo-trap.name
 	SpawnActorOnDeath:
 		Actor: building.advanced_demo_trap.explode
+	-GrantConditionOnFaction@Toxin:
 	ActorStatValues:
 		Damage: 700
 	-ActorStatOverride@Toxin:
@@ -4255,6 +4256,7 @@ building.supply_drop_zone:
 		PauseOnCondition: emp || hacked
 	Exit:
 	-CashTricklerMultiplier@SUPPLY_LINES:
+	-GrantConditionOnPrerequisite@SUPPLY_LINES:
 	Voiced:
 		VoiceSet: SupplyDropVoice
 	ActorStatValues:
@@ -4396,6 +4398,7 @@ building.speaker_tower:
 	-Capturable:
 	-CapturableProgressBar:
 	-CapturableProgressBlink:
+	-CaptureManager:
 	-DelayedWeaponAttachable@BOOBY_TRAP:
 	-TriggersDelayedWeapon@BOOBY_TRAP:
 	-Targetable@BOOBY_TRAP:
@@ -4709,6 +4712,9 @@ building.scud_storm:
 	GrantConditionOnFaction@ANTHRAX_BETA:
 		Condition: anthrax_beta
 		Factions: toxin
+	GrantConditionOnFaction@Toxin:
+		Condition: toxin
+		Factions: toxin
 	GrantConditionOnFaction@Demo:
 		Condition: demo
 		Factions: demo
@@ -4815,6 +4821,9 @@ building.scud_storm.boss:
 		DisplayOrder: 65
 	ProductionBar:
 		ProductionType: queue.boss_gen_scud_storm
+	-GrantConditionOnPrerequisite@MERGE_GENERALS:
+	-GrantConditionOnFaction@Stealth:
+	-GrantConditionOnFaction@Toxin:
 	-ActorStatOverride@Toxin:
 	-ActorStatOverride@Toxin_ZH_UNITS:
 	-ActorStatOverride@Demo:
