@@ -826,10 +826,14 @@ actor-infantry-pathfinder =
 actor-infantry-terrorist =
    .name = Terrorist
    .description = Explodes.
+    
+    Can capture civilian vehicles to make car bombs.
 
 actor-infantry-toxin-terrorist =
    .name = Toxin Terrorist
    .description = Explodes and leaves toxins.
+    
+    Can capture civilian vehicles to make car bombs.
 
 actor-infantry-flamethrower =
    .name = Flamethrower
