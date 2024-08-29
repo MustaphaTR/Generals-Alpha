@@ -543,7 +543,7 @@ Player:
 	SupportPowerBotASModule:
 		RequiresCondition: enable-normal-ai || enable-hard-ai
 		Decisions:
-			spydrone:
+			spy_drone:
 				OrderName: SpyDronePowerInfoOrder
 				MinimumAttractiveness: 1
 				Against: Enemy
@@ -844,8 +844,16 @@ Player:
 					CheckRadius: 6c0
 			fake_scud_storm:
 				OrderName: FakeSCUDStormPowerInfoOrder
+				Against: Ally
+				IgnoreVisibility: true
+				MinimumAttractiveness: 1
+				Types: WaterActor, GroundActor, AirborneActor
 				Consideration@1:
 					Against: Ally
+					Types: Tank, Vehicle, Infantry, Water
+					Attractiveness: 2
+					TargetMetric: Value
+					CheckRadius: 1c0
 			nukepower:
 				OrderName: NukePowerInfoOrder
 				Against: Enemy
@@ -863,7 +871,7 @@ Player:
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0
-			tunnel:
+			sneak_attack:
 				OrderName: SneakAttackPowerInfoOrder
 				MinimumAttractiveness: 2200
 				Against: Enemy
@@ -893,7 +901,7 @@ Player:
 					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 8c0
-			GPS_scrambler:
+			gps_scrambler:
 				OrderName: GPSScramblerPowerInfoOrder
 				MinimumAttractiveness: 1000
 				IgnoreVisibility: true
@@ -905,7 +913,7 @@ Player:
 					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 7c0
-			Intelligence:
+			intelligence:
 				OrderName: IntelligencePowerInfoOrder
 				Against: Ally
 				IgnoreVisibility: true
@@ -917,7 +925,7 @@ Player:
 					Attractiveness: 2
 					TargetMetric: Value
 					CheckRadius: 1c0
-			IntelligenceZH:
+			intelligence_zh:
 				OrderName: IntelligenceZHPowerInfoOrder
 				Against: Ally
 				Types: WaterActor, GroundActor, AirborneActor
@@ -929,10 +937,3 @@ Player:
 					Attractiveness: 2
 					TargetMetric: Value
 					CheckRadius: 1c0
-			SupplyDrop:
-				OrderName: SupplyDropPowerInfoOrder
-				Against: Ally
-				IgnoreVisibility: true
-				MinimumAttractiveness: 1
-				Consideration@1:
-					Against: Ally
