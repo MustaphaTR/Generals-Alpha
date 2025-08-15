@@ -1,9 +1,9 @@
 Metadata:
-	Title: Generals Alpha
-	Version: gen-20240829
+	Title: mod-title
+	Version: 97740f3c320deb0e47277fa902de3f12d8dfaf09
 	Website: https://www.moddb.com/mods/generals-alpha
 	WebIcon32: https://raw.githubusercontent.com/MustaphaTR/Generals-Alpha/master/packaging/artwork/icon_32x32.png
-	WindowTitle: OpenRA - Generals Alpha
+	WindowTitle: mod-windowtitle
 
 ModCredits:
 	ModTabTitle: Generals Alpha
@@ -11,59 +11,62 @@ ModCredits:
 
 PackageFormats: Mix
 
-Packages:
-	~^SupportDir|Content/ra/v2/
-	~^SupportDir|Content/ra/v2/expand
-	~^SupportDir|Content/ra/v2/cnc
-	~^SupportDir|Content/ra/v2/movies
-	~^SupportDir|Content/gen/
-	^EngineDir
-	$gen: gen
-	^EngineDir|mods/ra: ra
-	^EngineDir|mods/common: common
-	~main.mix
-	~conquer.mix
-	~lores.mix: lores
-	~hires.mix
-	~local.mix
-	~sounds.mix
-	~speech.mix
-	~allies.mix
-	~russian.mix
-	~temperat.mix
-	~snow.mix
-	~interior.mix
-	~scores.mix
-	~expand2.mix
-	~hires1.mix
-	~desert.mix
-	gen|bits
-	gen|bits/audio
-	gen|bits/audio/cnc
-	gen|bits/audio/ra
-	gen|bits/audio/speech
-	gen|bits/audio/speech/mission
-	gen|bits/audio/speech/taunt
-	gen|bits/beacons
-	gen|bits/buildings
-	gen|bits/cameos
-	gen|bits/crates
-	gen|bits/terrain/bibs
-	gen|bits/terrain/desert
-	gen|bits/terrain/temperate
-	gen|bits/terrain/snow
-	gen|bits/flags
-	gen|bits/infantry
-	gen|bits/scripts
-	gen|bits/vehicles
-	gen|bits/vehicles/aircraft
-	gen|bits/vehicles/cars
-	gen|bits/weapons
-	gen|uibits
+FileSystem: ContentInstallerFileSystem
+	SystemPackages:
+		^EngineDir
+		$gen: gen
+		^EngineDir|mods/common: common
+		~^SupportDir|Content/ra/v2/: content
+		~^SupportDir|Content/gen/
+		gen|bits/scripts
+		gen|uibits
+	ContentPackages:
+		content|allies.mix
+		content|conquer.mix
+		content|interior.mix
+		content|lores.mix: lores
+		content|hires.mix
+		content|local.mix
+		content|russian.mix
+		content|snow.mix
+		content|sounds.mix
+		content|speech.mix
+		content|temperat.mix
+		content|expand
+		content|expand/expand2.mix
+		content|expand/lores1.mix
+		content|expand/hires1.mix
+		content|cnc/desert.mix
+		~content|movies
+		~content|scores.mix
+		~content|general.mix
+		# Below are mod-provided (system) packages that need to be loaded after the content packages so they can override content assets.
+		gen|bits
+		gen|bits/audio
+		gen|bits/audio/cnc
+		gen|bits/audio/ra
+		gen|bits/audio/speech
+		gen|bits/audio/speech/mission
+		gen|bits/audio/speech/taunt
+		gen|bits/beacons
+		gen|bits/buildings
+		gen|bits/cameos
+		gen|bits/crates
+		gen|bits/terrain/bibs
+		gen|bits/terrain/desert
+		gen|bits/terrain/temperate
+		gen|bits/terrain/snow
+		gen|bits/flags
+		gen|bits/infantry
+		gen|bits/vehicles
+		gen|bits/vehicles/aircraft
+		gen|bits/vehicles/cars
+		gen|bits/weapons
+	ContentInstallerMod: gen-content
 
 MapFolders:
 	gen|maps: System
-	~^SupportDir|maps/gen/gen-20240829: User
+	~^SupportDir|maps/gen/6048ee9b936f36c7215201591d058d9989b2c793: User
 
 Rules:
 	gen|rules/player/player.yaml
@@ -75,6 +78,7 @@ Rules:
 	gen|rules/world/locomotors.yaml
 	gen|rules/world/mp_start_units.yaml
 	gen|rules/world/palettes.yaml
+	gen|rules/world/map_generators.yaml
 	gen|rules/misc.yaml
 	gen|rules/defaults.yaml
 	gen|rules/structures.yaml
@@ -118,11 +122,7 @@ Cursors:
 Chrome:
 	gen|chrome.yaml
 
-Assemblies:
-	^BinDir|OpenRA.Mods.AS.dll
-	^BinDir|OpenRA.Mods.GenSDK.dll
-	^BinDir|OpenRA.Mods.Common.dll
-	^BinDir|OpenRA.Mods.Cnc.dll
+Assemblies: OpenRA.Mods.AS.dll, OpenRA.Mods.Common.dll, OpenRA.Mods.Cnc.dll, OpenRA.Mods.GenSDK.dll
 
 ChromeLayout:
 	gen|chrome/ingame.yaml
@@ -180,14 +180,17 @@ ChromeLayout:
 	gen|chrome/playerprofile.yaml
 	common|chrome/text-notifications.yaml
 
-Translations:
-	common|languages/en.ftl
-	common|languages/chrome/en.ftl
-	common|languages/rules/en.ftl
-	gen|languages/rules/en.ftl
-	gen|languages/chrome/en.ftl
-	gen|languages/difficulties/en.ftl
-	gen|languages/en.ftl
+FluentMessages:
+	common|fluent/common.ftl
+	common|fluent/chrome.ftl
+	common|fluent/hotkeys.ftl
+	common|fluent/rules.ftl
+	gen|fluent/gen.ftl
+	gen|fluent/rules.ftl
+	gen|fluent/chrome.ftl
+	gen|fluent/en.ftl
+
+AllowUnusedFluentMessagesInExternalPackages: true
 
 Weapons:
 	gen|weapons/ballistics.yaml
@@ -225,7 +228,6 @@ LoadScreen: LogoStripeLoadScreen
 	Image: gen|uibits/loadscreen.png
 	Image2x: gen|uibits/loadscreen-2x.png
 	Image3x: gen|uibits/loadscreen-3x.png
-	Text: Filling Crates..., Planting Trees..., Splitting Atoms..., Filling Supply Docks..., Preparing Toxins..., Clearing Mines..., Building Tech Structures..., Clearing Smudges..., Testing Communications..., Producing Parachutes..., Launching Satellites..., Charging Laptops..., Ranking Generals..., Ironing Uniforms..., Building the Chinese Empire..., Making the US of A..., Forming the GLA...
 
 ServerTraits:
 	LobbyCommands
@@ -275,7 +277,6 @@ Missions:
 	gen|missions.yaml
 
 MapGrid:
-	TileSize: 24,24
 	Type: Rectangular
 
 DefaultOrderGenerator: UnitOrderGenerator
@@ -328,50 +329,6 @@ GameSpeeds:
 			Name: options-game-speed.superfast
 			Timestep: 5
 			OrderLatency: 10
-
-ModContent:
-	InstallPromptMessage: Generals Alpha requires artwork and audio of original Red Alert.\n\nQuick Install will automatically download this content (without music\nor videos) from a mirror of the 2008 Red Alert freeware release.\n\nAdvanced Install includes options for copying the music, videos, and\nother content from an original game disc or digital installation.
-	QuickDownload: quickinstall
-	HeaderMessage: Game content may be extracted from the original game discs or an\nexisting digital install. OpenRA can also download the base game\nfiles from an online mirror of the 2008 freeware release of RA.
-	Packages:
-		ContentPackage@base:
-			Title: Red Alert Game Files
-			Identifier: base
-			TestFiles: ^SupportDir|Content/ra/v2/allies.mix, ^SupportDir|Content/ra/v2/conquer.mix, ^SupportDir|Content/ra/v2/interior.mix, ^SupportDir|Content/ra/v2/hires.mix, ^SupportDir|Content/ra/v2/lores.mix, ^SupportDir|Content/ra/v2/local.mix, ^SupportDir|Content/ra/v2/speech.mix, ^SupportDir|Content/ra/v2/russian.mix, ^SupportDir|Content/ra/v2/snow.mix, ^SupportDir|Content/ra/v2/sounds.mix, ^SupportDir|Content/ra/v2/temperat.mix
-			Sources: allied, soviet, tfd, ra-origin, cncr-steam, cncr-origin
-			Required: true
-			Download: basefiles
-		ContentPackage@aftermathbase:
-			Title: Aftermath Expansion Files
-			Identifier: aftermathbase
-			TestFiles: ^SupportDir|Content/ra/v2/expand/expand2.mix, ^SupportDir|Content/ra/v2/expand/hires1.mix, ^SupportDir|Content/ra/v2/expand/lores1.mix, ^SupportDir|Content/ra/v2/expand/chrotnk1.aud, ^SupportDir|Content/ra/v2/expand/fixit1.aud, ^SupportDir|Content/ra/v2/expand/jburn1.aud, ^SupportDir|Content/ra/v2/expand/jchrge1.aud, ^SupportDir|Content/ra/v2/expand/jcrisp1.aud, ^SupportDir|Content/ra/v2/expand/jdance1.aud, ^SupportDir|Content/ra/v2/expand/jjuice1.aud, ^SupportDir|Content/ra/v2/expand/jjump1.aud, ^SupportDir|Content/ra/v2/expand/jlight1.aud, ^SupportDir|Content/ra/v2/expand/jpower1.aud, ^SupportDir|Content/ra/v2/expand/jshock1.aud, ^SupportDir|Content/ra/v2/expand/jyes1.aud, ^SupportDir|Content/ra/v2/expand/madchrg2.aud, ^SupportDir|Content/ra/v2/expand/madexplo.aud, ^SupportDir|Content/ra/v2/expand/mboss1.aud, ^SupportDir|Content/ra/v2/expand/mhear1.aud, ^SupportDir|Content/ra/v2/expand/mhotdig1.aud, ^SupportDir|Content/ra/v2/expand/mhowdy1.aud, ^SupportDir|Content/ra/v2/expand/mhuh1.aud, ^SupportDir|Content/ra/v2/expand/mlaff1.aud, ^SupportDir|Content/ra/v2/expand/mrise1.aud, ^SupportDir|Content/ra/v2/expand/mwrench1.aud, ^SupportDir|Content/ra/v2/expand/myeehaw1.aud, ^SupportDir|Content/ra/v2/expand/myes1.aud
-			Sources: aftermath, tfd, ra-origin, cncr-steam, cncr-origin
-			Required: true
-			Download: aftermath
-		ContentPackage@cncdesert:
-			Title: C&C Desert Tileset
-			Identifier: cncdesert
-			TestFiles: ^SupportDir|Content/ra/v2/cnc/desert.mix
-			Sources: tfd, cnc-origin, cnc95, cncr-steam, cncr-origin
-			Required: true
-			Download: cncdesert
-		ContentPackage@genmusic:
-			Title: Generals Music
-			Identifier: genmusic
-			TestFiles: ^SupportDir|Content/gen/CHI_01.aud, ^SupportDir|Content/gen/GLA_01.aud, ^SupportDir|Content/gen/USA_01.aud
-			Download: genmusic
-	Downloads:
-		ra|installer/downloads.yaml
-		gen|installer/genmusic.yaml
-	Sources:
-		ra|installer/aftermath.yaml
-		ra|installer/allies95.yaml
-		ra|installer/cnc95.yaml
-		ra|installer/counterstrike.yaml
-		ra|installer/firstdecade.yaml
-		ra|installer/origin.yaml
-		ra|installer/soviet95.yaml
-		ra|installer/steam.yaml
 
 DiscordService:
 	ApplicationId: 1101187974890270750

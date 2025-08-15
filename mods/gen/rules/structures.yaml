@@ -91,46 +91,53 @@ building.usa_command_center:
 		DisplayOrder: 12
 	SpawnActorPower@SPY_DRONE:
 		PauseOnCondition: emp || hacked || sabotaged
-		StartFullyChargedForTheFirstTime: true
-		Actors:
-			1: aircraft.spy_drone
-		Prerequisites:
-			1: generals_power.spy_drone
-		LifeTime: -1
-		ChargeInterval: 1500
-		Icons:
-			1: spy_drone
+		OrderName: SpyDronePowerInfoOrder
 		Names:
 			1: Spy Drone
 		Descriptions:
 			1: Spawns a Spy Drone anywhere on the map.
-		StartFullyCharged: false
-		SelectTargetSpeechNotification: SelectTarget
-		OrderName: SpyDronePowerInfoOrder
-		EffectSequence: idle
-	SpawnActorPower@SPY_SATELLITE:
-		PauseOnCondition: emp || hacked || sabotaged
+		Prerequisites:
+			1: generals_power.spy_drone
+		Icons:
+			1: spy_drone
+		BlockedCursor: move-blocked
+		ChargeInterval: 1500
 		StartFullyChargedForTheFirstTime: true
 		Actors:
-			1: camera.spy_satellite
-		Prerequisites:
-			1: building.usa_command_center
-		LifeTime: 300
-		ChargeInterval: 1500
-		Icons:
-			1: spy_satellite
+			1: aircraft.spy_drone
+		LifeTime: -1
+		EffectSequence: idle
+		SelectTargetSpeechNotification: SelectTarget
+	SpawnActorPower@SPY_SATELLITE:
+		PauseOnCondition: emp || hacked || sabotaged
+		OrderName: SpySatellitePowerInfoOrder
 		Names:
 			1: Spy Satellite
 		Descriptions:
 			1: Reveals are large area of map for a while.\n\nAlso detects cloaked units in that area.
-		StartFullyCharged: false
-		SelectTargetSpeechNotification: SelectTarget
-		OrderName: SpySatellitePowerInfoOrder
+		Prerequisites:
+			1: building.usa_command_center
+		Icons:
+			1: spy_satellite
+		BlockedCursor: move-blocked
+		ChargeInterval: 1500
+		StartFullyChargedForTheFirstTime: true
+		Actors:
+			1: camera.spy_satellite
+		LifeTime: 300
 		EffectSequence: idle
+		SelectTargetSpeechNotification: SelectTarget
 	ParatroopersPower@PARADROP:
 		PauseOnCondition: emp || hacked || sabotaged
-		StartFullyChargedForTheFirstTime: true
 		OrderName: ParadropPowerInfoOrder
+		Names:
+			1: ParaDrop
+			2: ParaDrop
+			3: ParaDrop
+		Descriptions:
+			1: A B-52 drops 5 Rangers\nanywhere on the map.
+			2: 2 B-52s drop total of 10 Rangers\nanywhere on the map.
+			3: 4 B-52s drop total of 20 Rangers\nanywhere on the map.
 		Prerequisites:
 			1: generals_power.paradrop1
 			2: generals_power.paradrop2
@@ -140,14 +147,12 @@ building.usa_command_center:
 			2: paradrop2
 			3: paradrop3
 		ChargeInterval: 6000
-		Names:
-			1: ParaDrop
-			2: ParaDrop
-			3: ParaDrop
-		Descriptions:
-			1: A B-52 drops 5 Rangers\nanywhere on the map.
-			2: 2 B-52s drop total of 10 Rangers\nanywhere on the map.
-			3: 4 B-52s drop total of 20 Rangers\nanywhere on the map.
+		StartFullyChargedForTheFirstTime: true
+		DisplayBeacon: true
+		BeaconPosters:
+			1: paradrop1
+			2: paradrop2
+			3: paradrop3
 		UnitTypes:
 			1: aircraft.badger.paradrop
 			2: aircraft.badger.paradrop
@@ -160,20 +165,15 @@ building.usa_command_center:
 			1: 1
 			2: 2
 			3: 4
-		SelectTargetSpeechNotification: SelectTarget
 		AllowImpassableCells: false
 		QuantizedFacings: 8
 		CameraActor: camera.paradrop
-		DisplayBeacon: true
-		BeaconPosters:
-			1: paradrop1
-			2: paradrop2
-			3: paradrop3
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: paradirection
+		SelectTargetSpeechNotification: SelectTarget
 	AirstrikePower@A10:
 		PauseOnCondition: emp || hacked || sabotaged
 		StartFullyChargedForTheFirstTime: true
@@ -390,6 +390,7 @@ building.gla_command_center:
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: AmbushPowerInfoOrder
 		EffectSequence: idle
+		BlockedCursor: move-blocked
 	SpawnActorPower@TOXIN_AMBUSH:
 		PauseOnCondition: emp || hacked || sabotaged
 		StartFullyChargedForTheFirstTime: true
@@ -419,6 +420,7 @@ building.gla_command_center:
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: ToxinAmbushPowerInfoOrder
 		EffectSequence: idle
+		BlockedCursor: move-blocked
 	AirstrikePower@ANTHRAX_BOMB:
 		PauseOnCondition: emp || hacked || sabotaged
 		StartFullyChargedForTheFirstTime: true
@@ -485,6 +487,7 @@ building.gla_command_center:
 			2: gps_scrambler
 			3: gps_scrambler
 		OrderName: GPSScramblerPowerInfoOrder
+		BlockedCursor: move-blocked
 	SpawnActorPower@SNEAK_ATTACK:
 		PauseOnCondition: emp || hacked || sabotaged
 		StartFullyChargedForTheFirstTime: true
@@ -504,6 +507,7 @@ building.gla_command_center:
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: SneakAttackPowerInfoOrder
 		EffectSequence: idle
+		BlockedCursor: move-blocked
 	WithTextDecoration@SIDE:
 		Text: GLA
 		Color: 00FF00
@@ -640,6 +644,7 @@ building.prc_command_center:
 			2: frenzy2
 			3: frenzy3
 		OrderName: FrenzyPowerInfoOrder
+		BlockedCursor: move-blocked
 	CashHackPower@CASH_HACK:
 		PauseOnCondition: emp || hacked || sabotaged
 		StartFullyChargedForTheFirstTime: true
@@ -908,6 +913,7 @@ building.prc_command_center:
 		OrderName: SneakAttackPowerInfoOrder
 		RequiresCondition: boss
 		EffectSequence: idle
+		BlockedCursor: move-blocked
 	AirstrikePower@EMP:
 		PauseOnCondition: emp || hacked || sabotaged
 		StartFullyChargedForTheFirstTime: true
@@ -1259,11 +1265,11 @@ building.nuclear_reactor:
 		Name: actor-building-nuclear-reactor.name
 	Health:
 		HP: 150000
-	Explodes:
+	FireWarheadsOnDeath:
 		Type: CenterPosition
 		Weapon: explosion.nuclear_reactor
 		EmptyWeapon: explosion.nuclear_reactor
-	Explodes@Radiation:
+	FireWarheadsOnDeath@Radiation:
 		Type: Footprint
 		Weapon: explosion.nuclear_reactor.radioactivity
 		EmptyWeapon: explosion.nuclear_reactor.radioactivity
@@ -2237,7 +2243,7 @@ building.demo_trap:
 	GrantConditionOnFaction@Toxin:
 		Condition: toxin
 		Factions: toxin
-	-Explodes:
+	-FireWarheadsOnDeath:
 	-ShakeOnDeath:
 	-SoundOnDamageTransition:
 	-WithMakeAnimation:
@@ -2279,19 +2285,19 @@ building.demo_trap.explode:
 	-ExternalCondition@SELF_DESTRUCT:
 	-GrantConditionOnDamageState@UNCLOAK:
 	-GrantConditionOnDeploy:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: explosion.demo_trap
 		RequiresCondition: !toxin || merged
-	Explodes@Toxin:
+	FireWarheadsOnDeath@Toxin:
 		Weapon: explosion.demo_trap.toxin
 		RequiresCondition: toxin && !merged
-	Explodes@Toxin_Alpha:
+	FireWarheadsOnDeath@Toxin_Alpha:
 		Weapon: explosion.demo_trap.toxin_alpha
 		RequiresCondition: (toxin || merged) && !anthrax_beta && !anthrax_gamma
-	Explodes@Toxin_Beta:
+	FireWarheadsOnDeath@Toxin_Beta:
 		Weapon: explosion.demo_trap.toxin_beta
 		RequiresCondition: (toxin || merged) && anthrax_beta && !anthrax_gamma
-	Explodes@Toxin_Gamma:
+	FireWarheadsOnDeath@Toxin_Gamma:
 		Weapon: explosion.demo_trap.toxin_gamma
 		RequiresCondition: (toxin || merged) && anthrax_gamma
 	GrantConditionOnPrerequisite@ANTHRAX_BETA:
@@ -2339,10 +2345,10 @@ building.advanced_demo_trap.explode:
 	Inherits: building.demo_trap.explode
 	Tooltip:
 		Name: actor-building-advanced-demo-trap.name
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: explosion.advanced_demo_trap
 		-RequiresCondition:
-	-Explodes@Toxin:
+	-FireWarheadsOnDeath@Toxin:
 	RenderSprites:
 		Image: building.advanced_demo_trap
 	ActorStatValues:
@@ -3807,19 +3813,19 @@ building.strategy_center:
 		OrderName: CarpetBombingUSAPowerInfoOrder
 	ProduceActorPower@INTELLIGENCE:
 		PauseOnCondition: emp || hacked
-		StartFullyChargedForTheFirstTime: true
-		Prerequisites:
-			1: prerequisite.zh_units
+		OrderName: IntelligenceZHPowerInfoOrder
 		Names:
 			1: Intelligence
 		Descriptions:
 			1: Makes all enemy units visible for 30 seconds.
+		Prerequisites:
+			1: prerequisite.zh_units
 		Icons:
 			1: intelligence
+		ChargeInterval: 7500
+		StartFullyChargedForTheFirstTime: true
 		Actors: camera.intelligence
 		Type: Intelligence
-		ChargeInterval: 7500
-		OrderName: IntelligenceZHPowerInfoOrder
 	SupportPowerChargeBar:
 	Turreted:
 		TurnSpeed: 12
@@ -4182,19 +4188,19 @@ building.detention_camp:
 	Exit:
 	ProduceActorPower@INTELLIGENCE:
 		PauseOnCondition: emp || hacked
-		StartFullyChargedForTheFirstTime: true
-		Prerequisites:
-			1: !prerequisite.zh_units
+		OrderName: IntelligencePowerInfoOrder
 		Names:
 			1: Intelligence
 		Descriptions:
 			1: Makes all enemy units visible for 30 seconds.
+		Prerequisites:
+			1: !prerequisite.zh_units
 		Icons:
 			1: intelligence
+		ChargeInterval: 4500
+		StartFullyChargedForTheFirstTime: true
 		Actors: camera.intelligence
 		Type: Intelligence
-		ChargeInterval: 4500
-		OrderName: IntelligencePowerInfoOrder
 	SupportPowerChargeBar:
 	Voiced:
 		VoiceSet: DetentionCampVoice
@@ -4386,7 +4392,7 @@ building.speaker_tower:
 		Amount: -1
 	MustBeDestroyed:
 		RequiredForShortGame: false
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: SmallBuildingExplode
 		EmptyWeapon: SmallBuildingExplode
 	HitShape:
@@ -4487,24 +4493,25 @@ building.particle_cannon:
 	Exit:
 	SpawnActorPower@PARTICLE_CANNON:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
-		Actors:
-			1: hack.particle_beam
-		Prerequisites:
-			1: building.particle_cannon
-		LifeTime: -1
-		ChargeInterval: 6000
-		Icons:
-			1: particle_cannon
+		OrderName: ParticleCannonPowerInfoOrder
 		Names:
 			1: Particle Cannon
 		Descriptions:
 			1: Initiates an Particle Cannon strike.
+		Prerequisites:
+			1: building.particle_cannon
+		Icons:
+			1: particle_cannon
+		BlockedCursor: move-blocked
+		ChargeInterval: 6000
 		DisplayTimerRelationships: Enemy, Neutral, Ally
+		AllowMultiple: True
+		Actors:
+			1: hack.particle_beam
+		LifeTime: -1
+		EffectSequence: idle
 		SelectTargetSpeechNotification: SelectTarget
 		IncomingSpeechNotification: ParticleCannonLaunchDetected
-		AllowMultiple: True
-		OrderName: ParticleCannonPowerInfoOrder
-		EffectSequence: idle
 	SupportPowerChargeBar:
 	InfiltrateForSupportPowerReset:
 		Types: Sabotage
@@ -4720,28 +4727,28 @@ building.scud_storm:
 		Factions: demo
 	FireArmamentPower:
 		PauseOnCondition: emp || hacked || sabotaged
+		OrderName: SCUDStormPowerInfoOrder
+		Names:
+			1: SCUD Storm
+		Descriptions:
+			1: Fires 8 SCUD Missiles anywhere on the map.
 		Prerequisites:
 			1: building.scud_storm
 		Icons:
 			1: scud_storm
 		Cursor: nuke
 		ChargeInterval: 7500
-		ArmamentName: primary
-		Names:
-			1: SCUD Storm
-		Descriptions:
-			1: Fires 8 SCUD Missiles anywhere on the map.
-		SelectTargetSpeechNotification: SelectTarget
-		IncomingSpeechNotification: ScudLaunchDetected
-		AllowMultiple: True
 		DisplayTimerRelationships: Enemy, Neutral, Ally
+		AllowMultiple: True
 		DisplayBeacon: False
 		BeaconPosters:
 			1: scud_storm
+		ArmamentName: primary
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
-		OrderName: SCUDStormPowerInfoOrder
+		SelectTargetSpeechNotification: SelectTarget
+		IncomingSpeechNotification: ScudLaunchDetected
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: building.scud_storm
 	ProvidesPrerequisite@cruiser:
@@ -4962,34 +4969,34 @@ building.missile_silo:
 	Exit:
 	NukePower:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
-		Cursor: nuke
-		Prerequisites:
-			1: building.missile_silo
-		Icons:
-			1: atom_bomb
-		ChargeInterval: 9000
 		Names:
 			1: Atom Bomb
 		Descriptions:
 			1: Launches a devastating atomic bomb\nat a target location.
-		SelectTargetSpeechNotification: SelectTarget
-		IncomingSpeechNotification: NukeLaunchDetected
-		AllowMultiple: True
-		MissileWeapons:
-			1: atomic
-		SpawnOffset: 0,427,0
+		Prerequisites:
+			1: building.missile_silo
+		Icons:
+			1: atom_bomb
+		Cursor: nuke
+		ChargeInterval: 9000
 		DisplayTimerRelationships: Enemy, Neutral, Ally
+		AllowMultiple: True
 		DisplayBeacon: True
 		DisplayRadarPing: True
 		BeaconPosters:
 			1: atom_bomb
+		MissileWeapons:
+			1: atomic
+		MissileImage: atomic
+		SpawnOffset: 0,427,0
 		CameraRange: 7c0
 		CameraSpawnAdvance: 0
 		CameraRemoveDelay: 50
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
-		MissileImage: atomic
+		SelectTargetSpeechNotification: SelectTarget
+		IncomingSpeechNotification: NukeLaunchDetected
 	SupportPowerChargeBar:
 	InfiltrateForSupportPowerReset:
 		Types: Sabotage

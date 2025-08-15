@@ -192,7 +192,9 @@ Player:
 	Shroud:
 		FogCheckboxDisplayOrder: 3
 	FrozenActorLayer:
-	BaseAttackNotifier:
+	DamageNotifier:
+		ValidTargets: Structure
+		Notification: BaseAttack
 	PlayerStatistics:
 	PlaceBeacon:
 	GrantConditionOnPrerequisiteManager:
@@ -277,6 +279,7 @@ Player:
 		StartFullyCharged: false
 		OrderName: EmergencyRepairPowerInfoOrder
 		EffectSequence: idle
+		BlockedCursor: move-blocked
 	CrateSpawner:
 		DeliveryAircraft: aircraft.badger
 		QuantizedFacings: 16

@@ -219,7 +219,7 @@ vehicle.humvee:
 		PortCones: 512, 512, 512, 512
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
-	ThrowsShrapnel@Turret1:
+	FireProjectilesOnDeath@Turret1:
 		Weapons: debris.humvee.turret
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -365,18 +365,18 @@ vehicle.technical:
 	UnloadOnCondition@No_driver:
 		RequiresCondition: driver_killed
 	AcceptsDeliveredExperience:
-	ThrowsShrapnel@Mobile:
+	FireProjectilesOnDeath@Mobile:
 		Weapons: debris.technical.body
 		Pieces: 1, 1
 		Range: 2c0, 2c0
 		ConsiderFacing: true
 		RequiresCondition: moving
-	ThrowsShrapnel@Static:
+	FireProjectilesOnDeath@Static:
 		Weapons: debris.technical.body
 		Pieces: 1, 1
 		Range: 1c0, 1c0
 		RequiresCondition: !moving
-	ThrowsShrapnel@Turret:
+	FireProjectilesOnDeath@Turret:
 		Weapons: debris.technical.turret
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -483,6 +483,7 @@ vehicle.radar_van:
 		StartFullyCharged: false
 		OrderName: RadarScanPowerInfoOrder
 		EffectSequence: idle
+		BlockedCursor: move-blocked
 	Cloak@CRATE-1:
 		InitialDelay: 100
 		CloakDelay: 50
@@ -502,7 +503,7 @@ vehicle.radar_van:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.radar_van
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -689,7 +690,7 @@ vehicle.scorpion_tank:
 		Condition: toxin
 		Factions: toxin
 	AcceptsDeliveredExperience:
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.scorpion_tank
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -780,7 +781,7 @@ vehicle.crusader_tank:
 		Prerequisites: upgrade.composite_armor
 	SelectionDecorations:
 	AcceptsDeliveredExperience:
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.crusader_tank
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -919,7 +920,7 @@ vehicle.battlemaster_tank:
 	GrantConditionOnPrerequisite@AUTOLOADER:
 		Condition: autoloader
 		Prerequisites: upgrade.autoloader
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.battlemaster_tank
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -1317,7 +1318,7 @@ vehicle.quad_cannon:
 	WithSpriteTurret:
 	WithMuzzleOverlay:
 	AcceptsDeliveredExperience:
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.quad_cannon
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -1443,7 +1444,7 @@ vehicle.gatling_tank:
 	WithSpriteTurret:
 	WithMuzzleOverlay:
 	AcceptsDeliveredExperience:
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.gatling_tank
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -1614,7 +1615,7 @@ vehicle.toxin_tractor:
 	AutoTarget:
 		ScanRadius: 4
 	AcceptsDeliveredExperience:
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.scorpion_tank
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -1883,18 +1884,18 @@ vehicle.rocket_buggy:
 		RequiresCondition: !driver_killed
 		FacingTolerance: 0
 	AcceptsDeliveredExperience:
-	ThrowsShrapnel@Mobile:
+	FireProjectilesOnDeath@Mobile:
 		Weapons: debris.rocket_buggy.body
 		Pieces: 1, 1
 		Range: 2c0, 2c0
 		ConsiderFacing: true
 		RequiresCondition: moving
-	ThrowsShrapnel@Static:
+	FireProjectilesOnDeath@Static:
 		Weapons: debris.rocket_buggy.body
 		Pieces: 1, 1
 		Range: 1c0, 1c0
 		RequiresCondition: !moving
-	ThrowsShrapnel@Turret:
+	FireProjectilesOnDeath@Turret:
 		Weapons: debris.rocket_buggy.turret
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -2006,7 +2007,7 @@ vehicle.avenger:
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	AcceptsDeliveredExperience:
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.avenger
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -2383,7 +2384,7 @@ vehicle.listening_outpost:
 	DetectCloaked:
 		Range: 7c512
 		RequiresCondition: !moving
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.radar_van
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -2536,7 +2537,7 @@ vehicle.microwave_tank:
 		Color: DDDD0088
 		RequiresCondition: !firing
 	AcceptsDeliveredExperience:
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.radar_van
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -2649,7 +2650,7 @@ vehicle.ecm_tank:
 		PauseOnCondition: hacked || emp || leaflet
 		RequiresCondition: !driver_killed
 	WithSpriteTurret:
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.radar_van
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -2759,7 +2760,7 @@ vehicle.tomahawk_launcher:
 		Sequence: turret-empty
 		RequiresCondition: !ammo
 	AcceptsDeliveredExperience:
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.tomahawk_launcher
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -2928,7 +2929,7 @@ vehicle.scud_launcher:
 		RequiresCondition: !ammo
 		Sequence: empty-idle
 	SelectionDecorations:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: V2Explode
 	GrantConditionOnProduction@TOXIN_MISSILES:
 		Condition: toxin_missiles
@@ -2965,7 +2966,7 @@ vehicle.scud_launcher:
 	AutoTarget:
 		ScanRadius: 8
 	AcceptsDeliveredExperience:
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.scud_launcher
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -3065,7 +3066,7 @@ vehicle.inferno_cannon:
 		RequiresCondition: !driver_killed
 		FacingTolerance: 0
 	WithMuzzleOverlay:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: ArtilleryExplode
 		EmptyWeapon: UnitExplodeSmall
 		LoadedChance: 75
@@ -3075,7 +3076,7 @@ vehicle.inferno_cannon:
 		Types: Veterancy
 		Prerequisites: generals_power.arty_training
 	AcceptsDeliveredExperience:
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.nuke_cannon
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -3175,7 +3176,7 @@ vehicle.paladin_tank:
 		DamageCooldown: 150
 	SelectionDecorations:
 	AcceptsDeliveredExperience:
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.crusader_tank
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -3486,17 +3487,17 @@ vehicle.marauder_tank:
 		Condition: toxin
 		Factions: toxin
 	AcceptsDeliveredExperience:
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.scorpion_tank
 		Pieces: 1, 1
 		Range: 1c0, 1c0
 		RequiresCondition: !scrap_create_bonus
-	ThrowsShrapnel@CRATE-1:
+	FireProjectilesOnDeath@CRATE-1:
 		Weapons: debris.battlemaster_tank
 		Pieces: 1, 1
 		Range: 1c0, 1c0
 		RequiresCondition: scrap_create_bonus == 1
-	ThrowsShrapnel@CRATE-2:
+	FireProjectilesOnDeath@CRATE-2:
 		Weapons: debris.marauder_tank
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -3746,11 +3747,11 @@ vehicle.overlord_tank:
 		Range: 4c0
 		RequiresCondition: speaker_upgrade
 	AcceptsDeliveredExperience:
-	ThrowsShrapnel@Turret:
+	FireProjectilesOnDeath@Turret:
 		Weapons: debris.overlord_tank
 		Pieces: 1, 1
 		Range: 1c0, 1c0
-	ThrowsShrapnel@Gatling:
+	FireProjectilesOnDeath@Gatling:
 		Weapons: debris.gatling_tank
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -3826,7 +3827,7 @@ vehicle.emparor_overlord:
 		Condition: speaker_upgrade
 		Delay: 1
 		ShowSelectionBar: false
-	ThrowsShrapnel@Turret:
+	FireProjectilesOnDeath@Turret:
 		Weapons: debris.emperor_overlord
 	Selectable:
 		Class: vehicle.emparor_overlord
@@ -3936,23 +3937,23 @@ vehicle.bomb_truck:
 		CrushClasses: vehicle
 	DisguisingTurreted:
 		TurnSpeed: 1023
-	Explodes@Normal:
+	FireWarheadsOnDeath@Normal:
 		Weapon: BombTruckExplosion
 		EmptyWeapon: BombTruckExplosion
 		RequiresCondition: !hi_explosive_bombs
-	Explodes@BIO_BOMBS:
+	FireWarheadsOnDeath@BIO_BOMBS:
 		Weapon: BombTruckExplosion.toxin
 		EmptyWeapon: BombTruckExplosion.toxin
 		RequiresCondition: bio_bombs && !anthrax_beta && !anthrax_gamma
-	Explodes@ANTHRAX_BETA:
+	FireWarheadsOnDeath@ANTHRAX_BETA:
 		Weapon: BombTruckExplosion.toxin_beta
 		EmptyWeapon: BombTruckExplosion.toxin_beta
 		RequiresCondition: bio_bombs && anthrax_beta && !anthrax_gamma
-	Explodes@ANTHRAX_GAMMA:
+	FireWarheadsOnDeath@ANTHRAX_GAMMA:
 		Weapon: BombTruckExplosion.toxin_gamma
 		EmptyWeapon: BombTruckExplosion.toxin_gamma
 		RequiresCondition: bio_bombs && anthrax_gamma
-	Explodes@HI_EXPLOSIVE_BOMBS:
+	FireWarheadsOnDeath@HI_EXPLOSIVE_BOMBS:
 		Weapon: BombTruckExplosion.hi_exp
 		EmptyWeapon: BombTruckExplosion.hi_exp
 		RequiresCondition: hi_explosive_bombs
@@ -4185,7 +4186,7 @@ vehicle.nuke_cannon:
 		RevokeDelay: 75
 		RevokeAll: true
 		IsCyclic: false
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: explosion.nuke_cannon
 		EmptyWeapon: explosion.nuke_cannon
 	AmmoPool:
@@ -4230,7 +4231,7 @@ vehicle.nuke_cannon:
 		Delay: 75
 		ShowSelectionBar: false
 		RequiresCondition: !moving
-	ThrowsShrapnel:
+	FireProjectilesOnDeath:
 		Weapons: debris.nuke_cannon
 		Pieces: 1, 1
 		Range: 1c0, 1c0
@@ -4400,25 +4401,25 @@ vehicle.combat_cycle:
 	GrantConditionOnDeploy:
 		DeployedCondition: triggered
 		RequiresCondition: terrorist && !hacked && !emp && !leaflet
-	Explodes@Terrorist:
+	FireWarheadsOnDeath@Terrorist:
 		Weapon: explosion.terrorist.bike
 		EmptyWeapon: explosion.terrorist.bike
 		DeathTypes: Suicide
 		RequiresCondition: (terrorist || toxin_terrorist) && !demo
-	Explodes@TerroristDemo:
+	FireWarheadsOnDeath@TerroristDemo:
 		Weapon: explosion.terrorist.demo.bike
 		EmptyWeapon: explosion.terrorist.demo.bike
 		DeathTypes: Suicide
 		RequiresCondition: (terrorist || toxin_terrorist) && demo
-	Explodes@Terrorist_Toxin:
+	FireWarheadsOnDeath@Terrorist_Toxin:
 		Weapon: explosion.terrorist.toxin
 		EmptyWeapon: explosion.terrorist.toxin
 		RequiresCondition: toxin_terrorist && !anthrax_beta && !anthrax_gamma
-	Explodes@Terrorist_Toxin_Beta:
+	FireWarheadsOnDeath@Terrorist_Toxin_Beta:
 		Weapon: explosion.terrorist.toxin_beta
 		EmptyWeapon: explosion.terrorist.toxin_beta
 		RequiresCondition: toxin_terrorist && anthrax_beta && !anthrax_gamma
-	Explodes@Terrorist_Toxin_Gamma:
+	FireWarheadsOnDeath@Terrorist_Toxin_Gamma:
 		Weapon: explosion.terrorist.toxin_gamma
 		EmptyWeapon: explosion.terrorist.toxin_gamma
 		RequiresCondition: toxin_terrorist && anthrax_gamma

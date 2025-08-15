@@ -500,12 +500,12 @@ V19.Husk:
 	-Demolishable:
 	-HitShape:
 	-Health:
-	-Explodes:
+	-FireWarheadsOnDeath:
 	Interactable:
 
 BARL:
 	Inherits: ^AmmoBox
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: BarrelExplode
 	Tooltip:
 		Name: actor-barl-name
@@ -518,7 +518,7 @@ BARL:
 
 BRL3:
 	Inherits: ^AmmoBox
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: BarrelExplode
 	Tooltip:
 		Name: actor-brl3-name

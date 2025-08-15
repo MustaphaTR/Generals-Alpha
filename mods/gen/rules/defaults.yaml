@@ -572,7 +572,7 @@
 	ActorStatOverride@Demo:
 		Upgrades: upgrade.demolitions
 		RequiresCondition: demo || merged
-	Explodes@Demo:
+	FireWarheadsOnDeath@Demo:
 		Weapon: explosion.suicide
 		EmptyWeapon: explosion.suicide
 		RequiresCondition: (demo || merged) && demolitions
@@ -662,11 +662,11 @@
 	GrantConditionOnFaction@Nuke:
 		Condition: nuke
 		Factions: nuke
-	Explodes@NuclearTanks:
+	FireWarheadsOnDeath@NuclearTanks:
 		Weapon: explosion.nuclear_tanks
 		EmptyWeapon: explosion.nuclear_tanks
 		RequiresCondition: !nuke && !merged && nuclear_tanks && !isotope_stability
-	Explodes@NUKE_GEN:
+	FireWarheadsOnDeath@NUKE_GEN:
 		Weapon: explosion.nuclear_tanks.nuke
 		EmptyWeapon: explosion.nuclear_tanks.nuke
 		RequiresCondition: (nuke || merged) && !isotope_stability
@@ -1632,7 +1632,7 @@
 		WaterCorpseSequence:
 		WaterCorpsePalette:
 		ParachutingCondition: parachute
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 	WithFacingSpriteBody:
@@ -1728,10 +1728,10 @@
 		WaterCorpseSequence:
 		WaterCorpsePalette:
 		ParachutingCondition: parachute
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
-	Explodes@CAR_BOMB:
+	FireWarheadsOnDeath@CAR_BOMB:
 		Weapon: explosion.terrorist.bike
 		EmptyWeapon: explosion.terrorist.bike
 		DeathTypes: Suicide
@@ -2012,7 +2012,7 @@
 		RepairActors: tech.shipyard
 		CloseEnough: 3c0
 	WithDamageOverlay:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeShip
 		EmptyWeapon: UnitExplodeShip
 	Guard:
@@ -2094,7 +2094,7 @@
 		Categories: Aircraft
 	SpawnActorOnDeath:
 		RequiresCondition: airborne
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
 	ActorStatValues:
@@ -2160,7 +2160,7 @@
 		DamagedSounds: kaboom1.aud
 		DestroyedSounds: kaboom22.aud
 	WithSpriteBody:
-	Explodes:
+	FireWarheadsOnDeath:
 		Type: Footprint
 		Weapon: BuildingExplode
 		EmptyWeapon: BuildingExplode
@@ -2305,7 +2305,7 @@
 	DrawLineToTarget:
 	WithRangeCircle:
 		Color: DDDD0088
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: SmallBuildingExplode
 		EmptyWeapon: SmallBuildingExplode
 	MapEditorData:
@@ -2325,7 +2325,7 @@
 	-TriggersDelayedWeapon@BOOBY_TRAP:
 	-Targetable@BOOBY_TRAP:
 	-WithDecoration@BOOBY_TRAP:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: SmallBuildingExplode
 		EmptyWeapon: SmallBuildingExplode
 
@@ -2351,7 +2351,7 @@
 		SellSounds: cashturn.aud
 		ShowTooltipText: false
 	WithBuildingBib:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: SmallBuildingExplode
 		EmptyWeapon: SmallBuildingExplode
 	Voiced:
@@ -2501,7 +2501,7 @@
 	SpawnActorOnDeath@3:
 		Actor: c3
 		Probability: 15
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: CivBuildingExplosion
 	RenderSprites:
 		Palette: player
@@ -2584,7 +2584,7 @@
 	-Demolishable:
 	-HitShape:
 	-Health:
-	-Explodes:
+	-FireWarheadsOnDeath:
 	MapEditorData:
 		ExcludeTilesets: INTERIOR
 	Interactable:
@@ -2595,7 +2595,7 @@
 	-SelectionDecorations:
 	Health:
 		HP: 1000
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplode
 	Tooltip:
 		Name: meta-ammobox-name
@@ -2826,6 +2826,7 @@
 	Cloak:
 		CloakSound:
 		UncloakSound:
+		CloakStyle: None
 		DetectionTypes: Mine
 		InitialDelay: 0
 	Tooltip:

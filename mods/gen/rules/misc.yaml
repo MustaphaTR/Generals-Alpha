@@ -430,7 +430,7 @@ hack.mine:
 	Tooltip:
 		Name: actor-hack-mine-name
 	RejectsOrders:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: explosion.mine
 		EmptyWeapon: explosion.mine
 	RenderSprites:
@@ -442,7 +442,7 @@ hack.mine.neutron:
 		Name: actor-hack-mine-neutron-name
 	WithSpriteBody:
 		Sequence: idle-neutron
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: explosion.mine.neutron
 		EmptyWeapon: explosion.mine.neutron
 
@@ -572,7 +572,7 @@ hack.particle_beam:
 	AttackFrontal:
 	Armament:
 		Weapon: hack.particle_beam.follow
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: aoe.particle_beam
 		EmptyWeapon: aoe.particle_beam
 	AmbientSound:
@@ -692,7 +692,7 @@ CTFLAG:
 	WithBuildingBib:
 		HasMinibib: true
 	-HitShape:
-	-Explodes:
+	-FireWarheadsOnDeath:
 	-Selectable:
 	-SelectionDecorations:
 	-Targetable:

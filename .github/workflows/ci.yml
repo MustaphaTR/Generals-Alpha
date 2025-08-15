@@ -2,24 +2,31 @@ name: Continuous Integration
 
 on:
   push:
+    paths-ignore:
+      - '*.md'
   pull_request:
+    paths-ignore:
+      - '*.md'
 
 permissions:
   contents: read  #  to fetch code (actions/checkout)
 
 jobs:
   linux:
-    name: Linux (.NET 6.0)
+    name: Linux (.NET 8.0)
     runs-on: ubuntu-22.04
 
     steps:
-      - name: Clone Repository
-        uses: actions/checkout@v4
+      - name: Remove System .NET
+        run: sudo apt-get remove -y dotnet*
 
-      - name: Install .NET 6.0
+      - name: Clone Repository
+        uses: actions/checkout@v5
+
+      - name: Install .NET 8.0
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '6.0.x'
+          dotnet-version: '8.0.x'
 
       - name: Prepare Environment
         run: |
@@ -37,42 +44,18 @@ jobs:
           make check-scripts
           make test
 
-  linux-mono:
-    name: Linux (mono)
-    runs-on: ubuntu-22.04
-
-    steps:
-      - name: Clone Repository
-        uses: actions/checkout@v4
-
-      - name: Prepare Environment
-        run: |
-          . mod.config;
-          awk '/\r$$/ { exit(1); }' mod.config || (printf "Invalid mod.config format. File must be saved using unix-style (LF, not CRLF or CR) line endings.\n"; exit 1);
-
-      - name: Check Code
-        run: |
-          # check-packaging-scripts does not depend on .net/mono, so is not needed here
-          mono --version
-          make RUNTIME=mono check
-
-      - name: Check Mod
-        run: |
-          # check-scripts does not depend on .net/mono, so is not needed here
-          make RUNTIME=mono test
-
   windows:
-    name: Windows (.NET 6.0)
-    runs-on: windows-2019
+    name: Windows (.NET 8.0)
+    runs-on: windows-2022
 
     steps:
       - name: Clone Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: Install .NET 6.0
+      - name: Install .NET 8.0
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '6.0.x'
+          dotnet-version: '8.0.x'
 
       - name: Check Code
         shell: powershell
@@ -83,7 +66,7 @@ jobs:
 
       - name: Check Mods
         run: |
-          choco install lua --version 5.1.5.52
+          choco install lua --version 5.1.5.52 --no-progress
           $ENV:Path = $ENV:Path + ";C:\Program Files (x86)\Lua\5.1\"
           .\make.ps1 check-scripts
           .\make.ps1 test

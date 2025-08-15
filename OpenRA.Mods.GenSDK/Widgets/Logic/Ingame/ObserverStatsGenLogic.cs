@@ -39,43 +39,43 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 		"StatisticsArmyGraphKey")]
 	public class ObserverStatsGenLogic : ChromeLogic
 	{
-		[TranslationReference]
+		[FluentReference]
 		const string Minimal = "options-observer-stats.minimal";
 
-		[TranslationReference]
+		[FluentReference]
 		const string InformationNone = "options-observer-stats.none";
 
-		[TranslationReference]
+		[FluentReference]
 		const string Basic = "options-observer-stats.basic";
 
-		[TranslationReference]
+		[FluentReference]
 		const string Economy = "options-observer-stats.economy";
 
-		[TranslationReference]
+		[FluentReference]
 		const string Production = "options-observer-stats.production";
 
-		[TranslationReference]
+		[FluentReference]
 		const string SupportPowers = "options-observer-stats.support-powers";
 
-		[TranslationReference]
+		[FluentReference]
 		const string Combat = "options-observer-stats.combat";
 
-		[TranslationReference]
+		[FluentReference]
 		const string Army = "options-observer-stats.army";
 
-		[TranslationReference]
+		[FluentReference]
 		const string GPsAndUpgrades = "options-observer-stats.gps-and-upgrades";
 
-		[TranslationReference]
+		[FluentReference]
 		const string EarningsGraph = "options-observer-stats.earnings-graph";
 
-		[TranslationReference]
+		[FluentReference]
 		const string ArmyGraph = "options-observer-stats.army-graph";
 
-		[TranslationReference("team")]
+		[FluentReference("team")]
 		const string TeamNumber = "label-team-name";
 
-		[TranslationReference]
+		[FluentReference]
 		const string NoTeam = "label-no-team";
 
 		readonly ContainerWidget minimalStatsHeaders;
@@ -175,10 +175,10 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 			var statsDropDown = widget.Get<DropDownButtonWidget>("STATS_DROPDOWN");
 			StatsDropDownOption CreateStatsOption(string title, ObserverStatsGenPanel panel, ScrollItemWidget template, Action a)
 			{
-				title = TranslationProvider.GetString(title);
+				title = FluentProvider.GetMessage(title);
 				return new StatsDropDownOption
 				{
-					Title = TranslationProvider.GetString(title),
+					Title = FluentProvider.GetMessage(title),
 					IsSelected = () => activePanel == panel,
 					OnClick = () =>
 					{
@@ -199,11 +199,11 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 			{
 				new()
 				{
-					Title = TranslationProvider.GetString(InformationNone),
+					Title = FluentProvider.GetMessage(InformationNone),
 					IsSelected = () => activePanel == ObserverStatsGenPanel.None,
 					OnClick = () =>
 					{
-						var informationNone = TranslationProvider.GetString(InformationNone);
+						var informationNone = FluentProvider.GetMessage(InformationNone);
 						statsDropDown.GetText = () => informationNone;
 						playerStatsPanel.Visible = false;
 						ClearStats();
@@ -310,8 +310,8 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 					tt.IgnoreMouseOver = true;
 
 					var teamLabel = tt.Get<LabelWidget>("TEAM");
-					var teamText = team.Key > 0 ? TranslationProvider.GetString(TeamNumber, Translation.Arguments("team", team.Key))
-						: TranslationProvider.GetString(NoTeam);
+					var teamText = team.Key > 0 ? FluentProvider.GetMessage(TeamNumber, "team", team.Key)
+						: FluentProvider.GetMessage(NoTeam);
 					teamLabel.GetText = () => teamText;
 					tt.Bounds.Width = teamLabel.Bounds.Width = Game.Renderer.Fonts[tt.Font].Measure(teamText).X;
 

@@ -1014,7 +1014,7 @@ infantry.grenadier:
 		ProneOffset: 256,64,-331
 	WithInfantryBody:
 		DefaultAttackSequence: throw
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 	Voiced:
@@ -1150,12 +1150,12 @@ infantry.terrorist:
 		Speed: 25
 	SpeedMultiplier@DAMAGED:
 		Modifier: 60
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: explosion.terrorist
 		EmptyWeapon: explosion.terrorist
 		DeathTypes: Suicide
 		RequiresCondition: !demo && !merged
-	Explodes@Demo:
+	FireWarheadsOnDeath@Demo:
 		Weapon: explosion.suicide
 		EmptyWeapon: explosion.suicide
 		DeathTypes: Suicide
@@ -1206,15 +1206,15 @@ infantry.toxin_terrorist:
 		Description: actor-infantry-toxin-terrorist.description
 	Tooltip:
 		Name: actor-infantry-toxin-terrorist.name
-	Explodes@Toxin:
+	FireWarheadsOnDeath@Toxin:
 		Weapon: explosion.terrorist.toxin
 		EmptyWeapon: explosion.terrorist.toxin
 		RequiresCondition: !anthrax_beta && !anthrax_gamma
-	Explodes@Toxin_Beta:
+	FireWarheadsOnDeath@Toxin_Beta:
 		Weapon: explosion.terrorist.toxin_beta
 		EmptyWeapon: explosion.terrorist.toxin_beta
 		RequiresCondition: anthrax_beta && !anthrax_gamma
-	Explodes@Toxin_Gamma:
+	FireWarheadsOnDeath@Toxin_Gamma:
 		Weapon: explosion.terrorist.toxin_gamma
 		EmptyWeapon: explosion.terrorist.toxin_gamma
 		RequiresCondition: anthrax_gamma

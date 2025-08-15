@@ -50,8 +50,8 @@ namespace OpenRA.Mods.GenSDK.Traits
 		bool initialized;
 		int scanInterval;
 
-		readonly ActorIndex.OwnerAndNamesAndTrait<Mobile> dozers;
-		readonly ActorIndex.OwnerAndNamesAndTrait<Building> commandCenters;
+		readonly ActorIndex.OwnerAndNamesAndTrait<MobileInfo> dozers;
+		readonly ActorIndex.OwnerAndNamesAndTrait<BuildingInfo> commandCenters;
 
 		public InitialBaseAndWorkerBotModule(Actor self, InitialBaseAndWorkerBotModuleInfo info)
 			: base(info)
@@ -59,8 +59,8 @@ namespace OpenRA.Mods.GenSDK.Traits
 			world = self.World;
 			player = self.Owner;
 
-			dozers = new ActorIndex.OwnerAndNamesAndTrait<Mobile>(world, Info.DozerTypes, player);
-			commandCenters = new ActorIndex.OwnerAndNamesAndTrait<Building>(world, Info.CommandCenterTypes, player);
+			dozers = new ActorIndex.OwnerAndNamesAndTrait<MobileInfo>(world, Info.DozerTypes, player);
+			commandCenters = new ActorIndex.OwnerAndNamesAndTrait<BuildingInfo>(world, Info.CommandCenterTypes, player);
 		}
 
 		protected override void Created(Actor self)

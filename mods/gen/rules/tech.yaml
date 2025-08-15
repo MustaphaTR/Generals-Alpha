@@ -28,7 +28,7 @@ tech.oil_derrick:
 		Interval: 300
 		Amount: 200
 		PauseOnCondition: emp || hacked
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: BarrelExplode
 	GivesCashOnCapture:
 		Amount: 1000
@@ -285,7 +285,7 @@ tech.flame_tower:
 		Range: 5c0
 	ProvidesPrerequisite@buildingname:
 	AppearsOnMapPreview:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: BuildingExplode
 		EmptyWeapon: BuildingExplode
 	ActorStatValues:
@@ -658,11 +658,11 @@ tech.nuclear_bunker:
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
-	Explodes:
+	FireWarheadsOnDeath:
 		Type: CenterPosition
 		Weapon: explosion.nuclear_reactor
 		EmptyWeapon: explosion.nuclear_reactor
-	Explodes@Radiation:
+	FireWarheadsOnDeath@Radiation:
 		Type: Footprint
 		Weapon: explosion.nuclear_reactor.radioactivity
 		EmptyWeapon: explosion.nuclear_reactor.radioactivity
