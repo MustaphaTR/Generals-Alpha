@@ -3850,6 +3850,17 @@ building.strategy_center:
 	WithIdleOverlay@SEARCH_AND_DESTROY:
 		Sequence: search_and_destroy
 		RequiresCondition: search_and_destroy
+	FreeActor@AIBombardment:
+		Actor: strategy.bombardment
+		RequiresCondition: bot_owner && ai_random_bombardment
+	FreeActor@AIHoldTheLine:
+		Actor: strategy.hold_the_line
+		RequiresCondition: bot_owner && ai_random_hold_the_line
+	FreeActor@AISearchAndDestroy:
+		Actor: strategy.search_and_destroy
+		RequiresCondition: bot_owner && ai_random_search_and_destroy
+	GrantRandomCondition@AIStrategy:
+		Conditions: ai_random_bombardment, ai_random_hold_the_line, ai_random_search_and_destroy
 	AttackTurreted:
 		PauseOnCondition: build-incomplete || emp || hacked || lowpower
 	WithRangeCircle:
