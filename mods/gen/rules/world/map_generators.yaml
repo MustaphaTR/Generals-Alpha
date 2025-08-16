@@ -371,31 +371,26 @@
 							#supply.dock.20000.skewed_b: 1
 						MaximumExpansionResourceSpawns: 8 # 6
 						MaximumResourceSpawnsPerExpansion: 8 # 1
-			MultiChoiceOption@Buildings:
-				Label: label-ra-map-generator-option-buildings
+			MultiChoiceOption@Buildings-Type:
+				Label: label-ra-map-generator-option-buildings-type
 				Default: Standard
-				Choice@None:
-					Label: label-ra-map-generator-choice-buildings-none
+				Choice@OilOnly:
+					Label: label-ra-map-generator-choice-buildings-type-oil-only
 					Settings:
-						MinimumBuildings: 0
-						MaximumBuildings: 0
 						BuildingWeights:
+							tech.oil_derrick: 1
 				Choice@Standard:
-					Label: label-ra-map-generator-choice-buildings-standard
+					Label: label-ra-map-generator-choice-buildings-type-standard
 					Settings:
-						MinimumBuildings: 0
-						MaximumBuildings: 3
 						BuildingWeights:
 							tech.oil_refinery: 3
 							tech.hospital: 2
 							tech.repair_bay: 2
 							tech.reinforcements_pad: 1
 							tech.oil_derrick: 24
-				Choice@Extra:
-					Label: label-ra-map-generator-choice-buildings-extra
+				Choice@All:
+					Label: label-ra-map-generator-choice-buildings-type-all
 					Settings:
-						MinimumBuildings: 2
-						MaximumBuildings: 4
 						BuildingWeights:
 							tech.oil_refinery: 3
 							tech.hospital: 2
@@ -406,20 +401,14 @@
 							tech.power_plant: 1
 							tech.artillery_platform: 1
 							tech.oil_derrick: 36
-				Choice@OilOnly:
-					Label: label-ra-map-generator-choice-buildings-oil-only
-					Settings:
-						MinimumBuildings: 0
-						MaximumBuildings: 3
-						BuildingWeights:
-							tech.oil_derrick: 1
-				Choice@OilRush:
-					Label: label-ra-map-generator-choice-buildings-oil-rush
-					Settings:
-						MinimumBuildings: 8
-						MaximumBuildings: 10
-						BuildingWeights:
-							tech.oil_derrick: 1
+			IntegerOption@TechBuildingsMin:
+				Label: label-ra-map-generator-option-buildings-min
+				Parameter: MinimumBuildings
+				Default: 0
+			IntegerOption@TechBuildingsMax:
+				Label: label-ra-map-generator-option-buildings-max
+				Parameter: MaximumBuildings
+				Default: 3
 			MultiChoiceOption@Density:
 				Label: label-ra-map-generator-option-density
 				Default: Players
