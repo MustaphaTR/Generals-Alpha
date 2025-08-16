@@ -30,6 +30,9 @@
 	Buildable:
 		Queue: queue.strategy_center, queue.air_gen_strategy_center
 		BuildDuration: 175
+	ProductionTimeMultiplier@First:
+		Prerequisites: !strategy.bombardment, !strategy.hold_the_line, !strategy.search_and_destroy
+		Multiplier: 0
 	Valued:
 		Cost: 0
 	Doctrine:
