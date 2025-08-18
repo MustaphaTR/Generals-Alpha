@@ -188,6 +188,32 @@ husk.a10:
 		Image: aircraft.a10
 		PlayerPalette: cncplayer
 
+husk.spectre_gunship:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: actor-husk-spectre-gunship-name
+	Contrail@1:
+		Offset: -261,-650,0
+		TrailLength: 15
+	Contrail@2:
+		Offset: -85,-384,0
+		TrailLength: 16
+	Contrail@3:
+		Offset: -85,384,0
+		TrailLength: 16
+		StartColorAlpha: 128
+	Contrail@4:
+		Offset: -261,650,0
+		TrailLength: 15
+		StartColorAlpha: 128
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 90
+		MaximumPitch: 36
+	RenderSprites:
+		Image: aircraft.cargo_plane
+		PlayerPalette: cncplayer
+
 husk.mig:
 	Inherits: ^PlaneHusk
 	Inherits@REVEAL: ^Reveal300

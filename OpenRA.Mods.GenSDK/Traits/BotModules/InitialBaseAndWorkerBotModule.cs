@@ -21,7 +21,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 	public class InitialBaseAndWorkerBotModuleInfo : ConditionalTraitInfo
 	{
 		[Desc("Actor types that are dozers.")]
-		public readonly HashSet<string> DozerTypes = new();
+		public readonly HashSet<string> DozerTypes = [];
 
 		[Desc("Actor types that are able to produce dozers.")]
 		public readonly int MinimumDozerCount = 2;
@@ -30,7 +30,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		public readonly bool ProduceDozerAtStart = false;
 
 		[Desc("Actor types that are able to produce dozers.")]
-		public readonly HashSet<string> CommandCenterTypes = new();
+		public readonly HashSet<string> CommandCenterTypes = [];
 
 		[Desc("Delay (in ticks) between looking for dozers.")]
 		public readonly int ScanInterval = 179;

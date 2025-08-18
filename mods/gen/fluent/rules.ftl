@@ -80,6 +80,7 @@ actor-aircraft-cargo-plane-name = Cargo Plane
 actor-aircraft-b52-name = B-52
 actor-aircraft-badger-name = Badger
 actor-aircraft-b2-name = B-2
+actor-aircraft-sprectre-gunship-name = Sprectre Gunship
 
 actor-aircraft-mig =
    .name = MiG
@@ -294,6 +295,7 @@ faction-air =
     .description = General Granger:
     + Emergency Repair - Level 1 at 1 Star
     + Carpet Bombing
+    + Spectre Gunship in 3 Levels; First 2 at 3 Stars
     + Chinook has Point Defense Lasers
     + Planes have Point Defense Lasers
     + Combat Chinook
@@ -325,6 +327,7 @@ faction-super =
     .name = Superweapon General
     .description = General Alexander:
     + Leaflet Drop at 3 Stars
+    + Spectre Gunship in 3 Levels; First 2 at 3 Stars
     + EMP Patriot Missile System
     + Advanced Control Rods
     + Cheaper Particle Cannon
@@ -756,6 +759,7 @@ actor-tran-husk2-name = Chinook (Destroyed)
 actor-husk-chinook-name = Chinook
 actor-husk-badger-name = Badger
 actor-husk-a10-name = A-10 Thunderbolt
+actor-husk-sprectre-gunship-name = Sprectre Gunship
 actor-husk-mig-name = MiG
 actor-husk-raptor-name = Raptor
 actor-husk-king-raptor-name = King Raptor

@@ -238,6 +238,10 @@ Player:
 			generals_power.carpet_bombing: 1
 			generals_power.carpet_bombing.nuke: 1
 			generals_power.fuel_air_bomb: 1
+			generals_power.sprectre_gunship: 1
+			generals_power.sprectre_gunship1: 1
+			generals_power.sprectre_gunship2: 1
+			generals_power.sprectre_gunship3: 1
 			generals_power.leaflet_drop: 1
 			generals_power.anthrax_bomb: 1
 			generals_power.emp: 1
@@ -774,6 +778,40 @@ Player:
 				Consideration@2:
 					Against: Ally
 					Types: Vehicle, Tank, Infantry, Ship
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			spectre_gunship:
+				OrderName: SpectreGunshipPowerInfoOrder
+				MinimumAttractiveness: 2400
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
+				Consideration@1:
+					Against: Enemy
+					Types: WaterActor, GroundActor
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: AirborneActor, WaterActor, GroundActor
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			spectre_gunship_levelable:
+				OrderName: SpectreGunshipLevelablePowerInfoOrder
+				MinimumAttractiveness: 2400
+				Against: Enemy
+				Types: WaterActor, GroundActor, AirborneActor
+				Consideration@1:
+					Against: Enemy
+					Types: WaterActor, GroundActor
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: AirborneActor, WaterActor, GroundActor
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0

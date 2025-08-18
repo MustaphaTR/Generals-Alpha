@@ -98,6 +98,8 @@ cannon.technical:
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
 			aircraft.comanche.countermeasures: 75
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 30
 			aircraft.chinook: 50
 			building.normal: 50
 			building.tough: 50
@@ -328,6 +330,28 @@ cannon.overlord_tank.nuke:
 		Falloff: 100, 60, 20
 		MaxLevel: 2500
 
+cannon.spectre_gunship:
+	Inherits: ^Cannon
+	ReloadDelay: 19
+	Report: bstrweaa.wav, bstrweab.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 8000
+		Spread: 0c640
+		Versus:
+			infantry.stinger_site: 10
+			vehicle.battle_bus.crate-1: 90
+			vehicle.battle_bus.crate-2: 80
+			husk.battle_bus.crate-1: 80
+			husk.battle_bus.crate-2: 70
+			aircraft.normal.countermeasures: 90
+			aircraft.comanche: 130
+			aircraft.comanche.countermeasures: 110
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 40
+			aircraft.chinook: 50
+			building.tough: 80
+			building.internet_center: 70
+
 TurretGun:
 	Inherits: ^Cannon
 	ReloadDelay: 30
@@ -385,6 +409,8 @@ cannon.inferno_cannon:
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 40
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
@@ -444,6 +470,8 @@ cannon.nuke_cannon:
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 40
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
@@ -461,6 +489,8 @@ cannon.nuke_cannon:
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 40
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
@@ -538,6 +568,8 @@ cannon.strategy_center:
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 40
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
@@ -567,6 +599,8 @@ cannon.firebase:
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 40
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
@@ -596,6 +630,8 @@ cannon.artillery_platform:
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 40
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
@@ -626,6 +662,8 @@ cannon.cruiser:
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 40
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
@@ -651,6 +689,8 @@ cannon.gunboat:
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 40
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
@@ -732,6 +772,8 @@ grenade.grenadier:
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 40
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
@@ -772,6 +814,8 @@ ArtyBarrageWeapon1:
 			aircraft.normal.countermeasures: 90
 			aircraft.comanche: 130
 			aircraft.comanche.countermeasures: 110
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 40
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70

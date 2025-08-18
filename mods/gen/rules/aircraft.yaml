@@ -11,7 +11,6 @@
 		Repulsable: False
 		MaximumPitch: 56
 	-Selectable:
-	SelectionDecorations:
 	Contrail@1:
 		Offset: -432,560,0
 		StartColorAlpha: 128
@@ -312,7 +311,7 @@ aircraft.cargo_plane:
 		StartColorAlpha: 128
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 326
+		Speed: 290
 		Repulsable: False
 		MaximumPitch: 36
 	-Targetable@GROUND:
@@ -320,6 +319,155 @@ aircraft.cargo_plane:
 	RenderSprites:
 		Image: aircraft.cargo_plane
 		PlayerPalette: cncplayer
+
+aircraft.spectre_gunship:
+	Inherits: ^default.badger
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@COUNTERMEASURES: ^AffectedByCounterMeasures
+	Inherits@REVEAL: ^Reveal300
+	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+	Inherits@SLOW: ^SlowsWhenDamaged
+	-AutoTargetPriority@DEFAULT:
+	AutoTargetPriority@ATTACKANYTHING:
+		-RequiresCondition:
+	RevealsShroud:
+		Type: CenterPosition
+		RequiresCondition: spectre_guarding
+	RevealsShroudToIntelligenceOwner@INTELLIGENCE:
+		Type: CenterPosition
+		RequiresCondition: spectre_guarding
+	-Interactable:
+	Selectable:
+		Bounds: 1280, 1280
+	RejectsOrders:
+	Tooltip:
+		Name: actor-aircraft-sprectre-gunship-name
+	Health:
+		HP: 60000
+	Armor:
+		Type: aircraft.spectre
+		RequiresCondition: !countermeasures
+	Armor@COUNTERMEASURES:
+		Type: aircraft.spectre.countermeasures
+		RequiresCondition: countermeasures
+	DamageMultiplier@INCOMING:
+		Modifier: 0
+		RequiresCondition: !spectre_guarding
+	Contrail@1:
+		Offset: -261,-650,0
+		TrailLength: 15
+	Contrail@2:
+		Offset: -85,-384,0
+		TrailLength: 16
+	Contrail@3:
+		Offset: -85,384,0
+		TrailLength: 16
+		StartColorAlpha: 128
+	Contrail@4:
+		Offset: -261,650,0
+		TrailLength: 15
+		StartColorAlpha: 128
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 200
+		Repulsable: false
+		MaximumPitch: 36
+		Voice: Move
+	ExternalCondition@guard250:
+		Condition: spectre_guard_250
+	ExternalCondition@guard375:
+		Condition: spectre_guard_375
+	ExternalCondition@guard500:
+		Condition: spectre_guard_500
+	GrantCondition@GUARDING:
+		Condition: spectre_guarding
+		RequiresCondition: (spectre_guard_250 || spectre_guard_375 || spectre_guard_500) && !spectre_fly_off
+	SpeedMultiplier@NONDAMAGED-INCOMING:
+		Modifier: 145
+		RequiresCondition: !spectre_guarding && !damaged
+	SpeedMultiplier@NONDAMAGED:
+		Modifier: 60
+		RequiresCondition: spectre_guarding && !damaged
+	SpeedMultiplier@DAMAGED:
+		Modifier: 45
+		RequiresCondition: spectre_guarding && damaged
+	GrantConditionAfterDelay@FlyOff250:
+		Delay: 250
+		Condition: spectre_fly_off
+		RequiresCondition: spectre_guard_250
+	GrantConditionAfterDelay@FlyOff375:
+		Delay: 375
+		Condition: spectre_fly_off
+		RequiresCondition: spectre_guard_375
+	GrantConditionAfterDelay@FlyOff500:
+		Delay: 500
+		Condition: spectre_fly_off
+		RequiresCondition: spectre_guard_500
+	AutoFliesOff:
+		RequiresCondition: spectre_fly_off
+	-AttackFrontal:
+	AttackAircraft:
+		FacingTolerance: 512
+		Armaments: primary, gatling
+		RequiresCondition: spectre_guarding
+	ReloadDelayMultiplier@Gatling1:
+		RequiresCondition: gatling == 1
+		Types: gatling
+		Modifier: 50
+	ReloadDelayMultiplier@Gatling2:
+		RequiresCondition: gatling >= 2
+		Types: gatling
+		Modifier: 33
+	ReloadDelayMultiplier@Cannon1:
+		RequiresCondition: cannon == 1
+		Types: primary
+		Modifier: 67
+	ReloadDelayMultiplier@Cannon2:
+		RequiresCondition: cannon >= 2
+		Types: primary
+		Modifier: 50
+	Armament@Cannon:
+		Weapon: cannon.spectre_gunship
+		LocalOffset: 95,-384,-85, 95,384,-85
+		MuzzleSequence: muzzle-cannon
+	Armament@Gatling:
+		Name: gatling
+		Weapon: gatling.spectre_gunship
+		LocalOffset: 1024,0,-125
+		MuzzleSequence: muzzle-gatling
+	WithMuzzleOverlay:
+	GrantConditionOnAttack@gatling:
+		Condition: gatling
+		ArmamentNames: gatling
+		RequiredShotsPerInstance: 1
+		MaximumInstances: 2
+		RevokeDelay: 50
+		RevokeAll: true
+		IsCyclic: false
+	GrantConditionOnAttack@cannon:
+		Condition: cannon
+		ArmamentNames: primary
+		RequiredShotsPerInstance: 1
+		MaximumInstances: 2
+		RevokeDelay: 50
+		RevokeAll: true
+		IsCyclic: false
+	VoiceAnnouncement@EnRoute:
+		Voice: Arrive
+	VoiceAnnouncement@Depart:
+		Voice: Depart
+		RequiresCondition: spectre_fly_off
+	Voiced:
+		VoiceSet: SpectreGunshipVoice
+	SpawnActorOnDeath:
+		Actor: husk.spectre_gunship
+	RenderSprites:
+		Image: aircraft.cargo_plane
+		PlayerPalette: cncplayer
+	ActorStatValues:
+		Icon: icon
+		ShowShield: false
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 aircraft.mig:
 	Inherits: ^Fighter

@@ -275,6 +275,9 @@ generals_power.paradrop1:
 		BuildPaletteOrder: 9
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, !techlevel.vehicleonly
 		Description: actor-generals-power-paradrop1.description
+	BuildPaletteOrderModifier@Air:
+		Queue: queue.air_gen_generals_power
+		Modifier: -3 # 6
 	WithProductionIconOverlay:
 		Prerequisites: generals_power.paradrop1
 
@@ -287,6 +290,9 @@ generals_power.paradrop2:
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.paradrop1, !techlevel.vehicleonly
 		Description: actor-generals-power-paradrop2.description
+	BuildPaletteOrderModifier@Air:
+		Queue: queue.air_gen_generals_power
+		Modifier: -3 # 7
 	WithProductionIconOverlay:
 		Prerequisites: generals_power.paradrop2
 
@@ -299,6 +305,9 @@ generals_power.paradrop3:
 		BuildPaletteOrder: 11
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.paradrop2, !techlevel.vehicleonly
 		Description: actor-generals-power-paradrop3.description
+	BuildPaletteOrderModifier@Air:
+		Queue: queue.air_gen_generals_power
+		Modifier: -3 # 8
 	WithProductionIconOverlay:
 		Prerequisites: generals_power.paradrop3
 
@@ -595,6 +604,9 @@ generals_power.a101:
 		BuildPaletteOrder: 12
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points
 		Description: actor-generals-power-a101.description
+	BuildPaletteOrderModifier@Air:
+		Queue: queue.air_gen_generals_power
+		Modifier: -3 # 9
 	WithProductionIconOverlay:
 		Prerequisites: generals_power.a101
 
@@ -607,6 +619,9 @@ generals_power.a102:
 		BuildPaletteOrder: 13
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.a101
 		Description: actor-generals-power-a102.description
+	BuildPaletteOrderModifier@Air:
+		Queue: queue.air_gen_generals_power
+		Modifier: -3 # 10
 	WithProductionIconOverlay:
 		Prerequisites: generals_power.a102
 
@@ -619,6 +634,9 @@ generals_power.a103:
 		BuildPaletteOrder: 14
 		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.a102
 		Description: actor-generals-power-a103.description
+	BuildPaletteOrderModifier@Air:
+		Queue: queue.air_gen_generals_power
+		Modifier: -3 # 11
 	WithProductionIconOverlay:
 		Prerequisites: generals_power.a103
 
@@ -884,35 +902,16 @@ generals_power.fuel_air_bomb:
 		Name: actor-generals-power-fuel-air-bomb.name
 	Buildable:
 		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged
-		BuildPaletteOrder: 17
+		BuildPaletteOrder: 15
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points
 		Description: actor-generals-power-fuel-air-bomb.description
+	BuildPaletteOrderModifier@Boss:
+		Queue: queue.super_gen_generals_power, queue.usa_generals_power_merged
+		Modifier: 3 # 18
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.fuel_air_bomb
 	WithProductionIconOverlay:
 		Prerequisites: prerequisite.fuel_air_bomb
-
-generals_power.leaflet_drop:
-	Inherits: ^default.generals_power
-	Tooltip:
-		Name: actor-generals-power-leaflet-drop.name
-	Buildable:
-		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power
-		BuildPaletteOrder: 18
-		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~prerequisite.zh_units
-		Description: actor-generals-power-leaflet-drop.description
-	Buildable@Rank_3:
-		Queue: queue.super_gen_generals_power, queue.usa_generals_power_merged
-		BuildPaletteOrder: 18
-		BuildLimit: 1
-		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~prerequisite.zh_units
-		Description: actor-generals-power-leaflet-drop.description
-	ProvidesPrerequisite@powername:
-		Prerequisite: generals_power.leaflet_drop
-	WithProductionIconOverlay:
-		Prerequisites: generals_power.leaflet_drop
-	RenderSprites:
-		Image: generals_power.leaflet_drop
 
 generals_power.spectre_gunship:
 	Inherits: ^default.generals_power
@@ -920,13 +919,14 @@ generals_power.spectre_gunship:
 		Name: actor-generals-power-spectre-gunship.name
 	Buildable:
 		Queue: queue.usa_generals_power, queue.laser_gen_generals_power, queue.boss_gen_generals_power
-		BuildPaletteOrder: 30
-		Prerequisites: ~disabled # prerequisite.5_stars, prerequisite.has_points, ~prerequisite.zh_units
+		BuildPaletteOrder: 16
+		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~prerequisite.zh_units
 		Description: actor-generals-power-spectre-gunship.description
-	ProvidesPrerequisite@powername:
-		Prerequisite: prerequisite.spectre_gunship1
+	BuildPaletteOrderModifier@Boss:
+		Queue: queue.boss_gen_generals_power
+		Modifier: -3 # 13
 	WithProductionIconOverlay:
-		Prerequisites: prerequisite.spectre_gunship1
+		Prerequisites: generals_power.spectre_gunship
 
 generals_power.spectre_gunship1:
 	Inherits: generals_power.spectre_gunship
@@ -934,8 +934,13 @@ generals_power.spectre_gunship1:
 		Name: actor-generals-power-spectre-gunship1-name
 	Buildable:
 		Queue: queue.air_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged, queue.boss_gen_generals_power_merged
-		BuildPaletteOrder: 14
-		Prerequisites: ~disabled # prerequisite.3_stars, prerequisite.has_points, ~prerequisite.zh_units
+		BuildPaletteOrder: 15
+		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~prerequisite.zh_units
+	BuildPaletteOrderModifier@Boss:
+		Queue: queue.air_gen_generals_power, queue.boss_gen_generals_power_merged
+		Modifier: -3 # 12
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.spectre_gunship1
 
 generals_power.spectre_gunship2:
 	Inherits: ^default.generals_power
@@ -943,9 +948,12 @@ generals_power.spectre_gunship2:
 		Name: actor-generals-power-spectre-gunship2.name
 	Buildable:
 		Queue: queue.air_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged, queue.boss_gen_generals_power_merged
-		BuildPaletteOrder: 15
-		Prerequisites: ~disabled # prerequisite.3_stars, prerequisite.has_points, generals_power.spectre_gunship1, ~prerequisite.zh_units
+		BuildPaletteOrder: 16
+		Prerequisites: prerequisite.3_stars, prerequisite.has_points, generals_power.spectre_gunship1, ~prerequisite.zh_units
 		Description: actor-generals-power-spectre-gunship2.description
+	BuildPaletteOrderModifier@Boss:
+		Queue: queue.air_gen_generals_power, queue.boss_gen_generals_power_merged
+		Modifier: -3 # 13
 	WithProductionIconOverlay:
 		Prerequisites: generals_power.spectre_gunship2
 
@@ -955,11 +963,38 @@ generals_power.spectre_gunship3:
 		Name: actor-generals-power-spectre-gunship3.name
 	Buildable:
 		Queue: queue.air_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged, queue.boss_gen_generals_power_merged
-		BuildPaletteOrder: 16
-		Prerequisites: ~disabled # prerequisite.5_stars, prerequisite.has_points, generals_power.spectre_gunship2, ~prerequisite.zh_units
+		BuildPaletteOrder: 17
+		Prerequisites: prerequisite.5_stars, prerequisite.has_points, generals_power.spectre_gunship2, ~prerequisite.zh_units
 		Description: actor-generals-power-spectre-gunship3.description
+	BuildPaletteOrderModifier@Boss:
+		Queue: queue.air_gen_generals_power, queue.boss_gen_generals_power_merged
+		Modifier: -3 # 14
 	WithProductionIconOverlay:
 		Prerequisites: generals_power.spectre_gunship3
+
+generals_power.leaflet_drop:
+	Inherits: ^default.generals_power
+	Tooltip:
+		Name: actor-generals-power-leaflet-drop.name
+	Buildable:
+		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power
+		BuildPaletteOrder: 17
+		ForceIconLocation: true
+		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~prerequisite.zh_units
+		Description: actor-generals-power-leaflet-drop.description
+	Buildable@Rank_3:
+		Queue: queue.super_gen_generals_power, queue.usa_generals_power_merged
+		BuildPaletteOrder: 20
+		BuildLimit: 1
+		ForceIconLocation: true
+		Prerequisites: prerequisite.3_stars, prerequisite.has_points, ~prerequisite.zh_units
+		Description: actor-generals-power-leaflet-drop.description
+	ProvidesPrerequisite@powername:
+		Prerequisite: generals_power.leaflet_drop
+	WithProductionIconOverlay:
+		Prerequisites: generals_power.leaflet_drop
+	RenderSprites:
+		Image: generals_power.leaflet_drop
 
 generals_power.sneak_attack:
 	Inherits: ^default.generals_power
@@ -972,7 +1007,7 @@ generals_power.sneak_attack:
 		Prerequisites: prerequisite.5_stars, prerequisite.has_points, ~prerequisite.zh_units
 		Description: actor-generals-power-sneak-attack.description
 	BuildPaletteOrderModifier@Stealth:
-		Queue: queue.stealth_gen_generals_power, queue.boss_gen_generals_power, queue.boss_gen_generals_power_merged
+		Queue: queue.stealth_gen_generals_power, queue.boss_gen_generals_power
 		Modifier: -3 # 14
 	BuildPaletteOrderModifier@GLA_Merged:
 		Queue: queue.gla_generals_power_merged
@@ -998,7 +1033,7 @@ generals_power.emp:
 		Queue: queue.prc_generals_power_merged
 		Modifier: 6 # 21
 	BuildPaletteOrderModifier@Boss:
-		Queue: queue.boss_gen_generals_power, queue.boss_gen_generals_power_merged
+		Queue: queue.boss_gen_generals_power
 		Modifier: -3 # 12
 	WithProductionIconOverlay:
 		Prerequisites: generals_power.emp

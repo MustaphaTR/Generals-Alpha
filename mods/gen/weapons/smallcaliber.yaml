@@ -65,6 +65,8 @@ mg.comanche:
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
 			aircraft.comanche.countermeasures: 75
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 30
 			aircraft.chinook: 50
 			building.normal: 50
 			building.tough: 50
@@ -102,6 +104,8 @@ mg.helix:
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
 			aircraft.comanche.countermeasures: 75
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 30
 			aircraft.chinook: 50
 			building.normal: 50
 			building.tough: 50
@@ -180,6 +184,8 @@ mg.ranger:
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
 			aircraft.comanche.countermeasures: 75
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 30
 			aircraft.chinook: 50
 			building.normal: 50
 			building.tough: 50
@@ -248,6 +254,8 @@ mg.red_guard:
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
 			aircraft.comanche.countermeasures: 75
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 30
 			aircraft.chinook: 50
 			building.normal: 50
 			building.tough: 50
@@ -290,6 +298,8 @@ mg.colonel_burton:
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
 			aircraft.comanche.countermeasures: 75
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 30
 			aircraft.chinook: 50
 			building.normal: 50
 			building.tough: 50
@@ -346,6 +356,8 @@ mg.humvee:
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
 			aircraft.comanche.countermeasures: 75
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 30
 			aircraft.chinook: 50
 			building.normal: 50
 			building.tough: 50
@@ -397,6 +409,8 @@ mg.technical:
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
 			aircraft.comanche.countermeasures: 75
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 30
 			aircraft.chinook: 50
 			building.normal: 50
 			building.tough: 50
@@ -444,6 +458,8 @@ mg.tunnel_network:
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
 			aircraft.comanche.countermeasures: 75
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 30
 			aircraft.chinook: 50
 			building.normal: 50
 			building.tough: 50
@@ -479,6 +495,8 @@ mg.quad_cannon.ground:
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
 			aircraft.comanche.countermeasures: 75
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 30
 			aircraft.chinook: 50
 			building.normal: 50
 			building.tough: 50
@@ -544,6 +562,8 @@ gatling.minigunner.ground:
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
 			aircraft.comanche.countermeasures: 75
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 30
 			aircraft.chinook: 50
 			building.normal: 10
 			building.tough: 10
@@ -608,6 +628,8 @@ gatling.gatling_tank.ground:
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
 			aircraft.comanche.countermeasures: 75
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 30
 			aircraft.chinook: 50
 			building.normal: 10
 			building.tough: 10
@@ -666,6 +688,8 @@ gatling.gatling_cannon.ground:
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
 			aircraft.comanche.countermeasures: 75
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 30
 			aircraft.chinook: 50
 			building.normal: 10
 			building.tough: 10
@@ -689,6 +713,14 @@ gatling.gatling_cannon.air:
 			building.defense: 50
 			building.stinger_site: 50
 		DamageTypes: BulletDeath, IgnoreCM
+
+gatling.spectre_gunship:
+	Inherits: gatling.gatling_tank.ground
+	Report: vspewe1a.wav, vspewe1b.wav, vspewe1c.wav
+	ReloadDelay: 3
+	Range: 5c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 9000
 
 ^SnipeWeapon:
 	ReloadDelay: 80
@@ -798,6 +830,8 @@ mg.a10:
 			aircraft.normal.countermeasures: 75
 			aircraft.comanche: 120
 			aircraft.comanche.countermeasures: 75
+			aircraft.spectre: 40
+			aircraft.spectre.countermeasures: 30
 			aircraft.chinook: 50
 			building.normal: 10
 			building.tough: 10
