@@ -2003,22 +2003,22 @@ label-ra-map-generator-choice-resources-very-high =
 label-ra-map-generator-choice-resources-full =
    .label = Oreful
 
-label-ra-map-generator-option-buildings = Tech Structures
-label-ra-map-generator-choice-buildings-none =
+label-ra-map-generator-option-buildings-min = Min. Tech Structure Amount
+label-ra-map-generator-option-buildings-max = Max. Tech Structure Amount
+
+label-ra-map-generator-option-buildings-type = Tech Structure Types
+label-ra-map-generator-choice-buildings-type-none =
    .label = None
    .description = No tech structures
-label-ra-map-generator-choice-buildings-standard =
-   .label = Standard
-   .description = Oil Derricks, Oil Refineries, Hospitals, Repair Bays, Reinforcements Pads, Artillery Platforms
-label-ra-map-generator-choice-buildings-extra =
-   .label = Extra
-   .description = Oil Derricks, Oil Refineries, Hospitals, Repair Bays, Reinforcements Pads, Artillery Platforms, Communication Centers, Power Plants, Soviet Barracks
-label-ra-map-generator-choice-buildings-oil-only =
+label-ra-map-generator-choice-buildings-type-oil-only =
    .label = Oil Only
    .description = Oil Derricks only
-label-ra-map-generator-choice-buildings-oil-rush =
-   .label = Oil Rush
-   .description = Lots of Oil Derricks
+label-ra-map-generator-choice-buildings-type-standard =
+   .label = Standard
+   .description = Oil Derricks, Oil Refineries, Hospitals, Repair Bays, Reinforcements Pads, Artillery Platforms
+label-ra-map-generator-choice-buildings-type-all =
+   .label = All
+   .description = Oil Derricks, Oil Refineries, Hospitals, Repair Bays, Reinforcements Pads, Artillery Platforms, Communication Centers, Power Plants, Soviet Barracks
 
 label-ra-map-generator-option-density = Expansion Opportunities
 label-ra-map-generator-choice-density-players =
