@@ -520,7 +520,7 @@ cannon.strategy_center:
 	ReloadDelay: 175
 	Range: 10c0
 	MinRange: 2c512
-	Report: turret1.aud
+	Report: bstrweaa.wav, bstrweab.wav
 	Projectile: Bullet
 		Speed: 200
 		LaunchAngle: 62
@@ -550,7 +550,7 @@ cannon.firebase:
 	ReloadDelay: 50
 	Range: 6c896
 	MinRange: 1c256
-	Report: turret1.aud
+	Report: bstrweaa.wav, bstrweab.wav
 	Projectile: Bullet
 		Speed: 200
 		Inaccuracy: 0c384
@@ -579,7 +579,7 @@ cannon.artillery_platform:
 	ReloadDelay: 175
 	Range: 8c768
 	MinRange: 1c256
-	Report: turret1.aud
+	Report: bstrweaa.wav, bstrweab.wav
 	Projectile: Bullet
 		Speed: 200
 		Inaccuracy: 0c384
@@ -654,7 +654,6 @@ cannon.gunboat:
 			aircraft.chinook: 50
 			building.tough: 80
 			building.internet_center: 70
-
 
 molotov.angry_mob:
 	Inherits: ^Artillery
