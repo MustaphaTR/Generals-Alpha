@@ -1395,11 +1395,11 @@ vehicle.gatling_tank:
 		TurnSpeed: 32
 		Offset: 0,0,160
 	ReloadDelayMultiplier@Gatling1:
-		RequiresCondition: gatling >= 1
+		RequiresCondition: gatling == 1
 		Modifier: 50
 	ReloadDelayMultiplier@Gatling2:
 		RequiresCondition: gatling >= 2
-		Modifier: 50
+		Modifier: 34
 	Armament@GatlingAG:
 		Damage: 20
 		Weapon: gatling.gatling_tank.ground
@@ -1424,7 +1424,7 @@ vehicle.gatling_tank:
 		PauseOnCondition: reload-ground
 	GrantConditionOnAttack@gatling:
 		Condition: gatling
-		RequiredShotsPerInstance: 4
+		RequiredShotsPerInstance: 2, 6
 		MaximumInstances: 2
 		RevokeDelay: 25
 		RevokeAll: true
@@ -3563,13 +3563,13 @@ vehicle.overlord_tank:
 	FirepowerMultiplier@CHAIN_GUN:
 		Types: gatling
 	ReloadDelayMultiplier@Gatling1:
-		RequiresCondition: gatling >= 1
+		RequiresCondition: gatling == 1
 		Types: gatling
 		Modifier: 50
 	ReloadDelayMultiplier@Gatling2:
 		RequiresCondition: gatling >= 2
 		Types: gatling
-		Modifier: 50
+		Modifier: 34
 	Buildable:
 		Queue: queue.prc_vehicle, queue.nuke_gen_vehicle
 		BuildPaletteOrder: 6
@@ -3732,7 +3732,7 @@ vehicle.overlord_tank:
 	GrantConditionOnAttack@gatling:
 		Condition: gatling
 		ArmamentNames: gatling
-		RequiredShotsPerInstance: 4
+		RequiredShotsPerInstance: 1, 5
 		MaximumInstances: 2
 		RevokeDelay: 25
 		RevokeAll: true

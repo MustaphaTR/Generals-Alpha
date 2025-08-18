@@ -2399,11 +2399,11 @@ building.gatling_cannon:
 	-WithSpriteBody:
 	WithEmbeddedTurretSpriteBody:
 	ReloadDelayMultiplier@Gatling1:
-		RequiresCondition: gatling >= 1
+		RequiresCondition: gatling == 1
 		Modifier: 50
 	ReloadDelayMultiplier@Gatling2:
 		RequiresCondition: gatling >= 2
-		Modifier: 50
+		Modifier: 34
 	Armament@GatlingAG:
 		Weapon: gatling.gatling_cannon.ground
 		LocalOffset: 520,100,450, 520,-150,450
@@ -2427,7 +2427,7 @@ building.gatling_cannon:
 	WithMuzzleOverlay:
 	GrantConditionOnAttack@gatling:
 		Condition: gatling
-		RequiredShotsPerInstance: 4
+		RequiredShotsPerInstance: 1, 5
 		MaximumInstances: 2
 		RevokeDelay: 50
 		RevokeAll: true

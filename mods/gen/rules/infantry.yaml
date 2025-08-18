@@ -584,11 +584,11 @@ infantry.minigunner:
 	Tooltip:
 		Name: actor-infantry-minigunner.name
 	ReloadDelayMultiplier@Gatling1:
-		RequiresCondition: gatling >= 1
+		RequiresCondition: gatling == 1
 		Modifier: 50
 	ReloadDelayMultiplier@Gatling2:
 		RequiresCondition: gatling >= 2
-		Modifier: 50
+		Modifier: 34
 	Armament@GatlingAG:
 		Weapon: gatling.minigunner.ground
 	Armament@GatlingAA:
