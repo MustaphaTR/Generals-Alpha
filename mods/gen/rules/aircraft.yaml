@@ -340,6 +340,7 @@ aircraft.spectre_gunship:
 	Selectable:
 		Bounds: 1280, 1280
 	RejectsOrders:
+		Except: Attack, ForceAttack
 	Tooltip:
 		Name: actor-aircraft-sprectre-gunship-name
 	Health:
@@ -406,10 +407,11 @@ aircraft.spectre_gunship:
 	AutoFliesOff:
 		RequiresCondition: spectre_fly_off
 	-AttackFrontal:
-	AttackAircraft:
+	AttackSpectre:
 		FacingTolerance: 512
 		Armaments: primary, gatling
 		RequiresCondition: spectre_guarding
+	RenderSpectreCircle:
 	ReloadDelayMultiplier@Gatling1:
 		RequiresCondition: gatling == 1
 		Types: gatling
