@@ -91,6 +91,8 @@ aircraft.badger.paradrop:
 		OwnerChangedAffectsPassengers: false
 	Tooltip:
 		Name: actor-aircraft-b52-name
+	SpawnActorOnDeath:
+		Actor: husk.b52
 
 aircraft.badger.prc_paradrop:
 	Inherits: ^default.badger
@@ -128,6 +130,8 @@ aircraft.badger.fuel_air_bomb:
 		AmmoCondition: ammo
 	Tooltip:
 		Name: actor-aircraft-b52-name
+	SpawnActorOnDeath:
+		Actor: husk.b52
 
 aircraft.badger.leaflet:
 	Inherits: ^default.badger
@@ -149,6 +153,8 @@ aircraft.badger.leaflet:
 		AmmoCondition: ammo
 	Tooltip:
 		Name: actor-aircraft-b52-name
+	SpawnActorOnDeath:
+		Actor: husk.b52
 
 aircraft.b2:
 	Inherits: aircraft.badger.fuel_air_bomb
@@ -158,6 +164,8 @@ aircraft.b2:
 		Name: actor-aircraft-b2-name
 	Aircraft:
 		Speed: 200
+	SpawnActorOnDeath:
+		Actor: husk.b2
 	RenderSprites:
 		Image: aircraft.b2
 
@@ -199,6 +207,8 @@ aircraft.badger.anthrax_bomb:
 		AmmoCondition: ammo
 	Tooltip:
 		Name: actor-aircraft-b52-name
+	SpawnActorOnDeath:
+		Actor: husk.b52
 
 aircraft.badger.emp:
 	Inherits: ^default.badger

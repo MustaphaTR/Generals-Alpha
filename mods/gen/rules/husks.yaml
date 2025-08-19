@@ -171,6 +171,20 @@ husk.badger:
 		Image: aircraft.badger
 	-RevealOnDeath:
 
+husk.b52:
+	Inherits: husk.badger
+	Tooltip:
+		Name: actor-husk-b52-name
+
+husk.b2:
+	Inherits: husk.badger
+	Tooltip:
+		Name: actor-husk-b2-name
+	Aircraft:
+		Speed: 200
+	RenderSprites:
+		Image: aircraft.b2
+
 husk.a10:
 	Inherits: ^PlaneHusk
 	Tooltip:
