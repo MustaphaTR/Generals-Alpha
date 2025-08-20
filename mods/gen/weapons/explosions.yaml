@@ -585,6 +585,7 @@ explosion.mine:
 		Damage: 40000
 		AffectsParent: true
 		ValidTargets: Infantry, Vehicle, Tank
+		ValidRelationships: Enemy, Neutral
 		DamageTypes: TriggerProne, DefaultDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: large_explosion
@@ -605,11 +606,13 @@ explosion.mine.neutron:
 		Damage: 40000
 		AffectsParent: true
 		ValidTargets: Infantry
+		ValidRelationships: Enemy, Neutral
 		DamageTypes: TriggerProne, DefaultDeath
 	Warhead@2Dis: ChangeOwner
 		Range: 0c768
 		OwnerType: InternalName
 		ValidTargets: Vehicle, Tank
+		ValidRelationships: Enemy, Neutral
 		InvalidTargets: NoDriverKill
 	Warhead@3Eff: CreateEffect
 		Explosions: large_explosion
