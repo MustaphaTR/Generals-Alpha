@@ -21,7 +21,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 {
 	public class SupplyCenterInfo : TraitInfo, Requires<BuildingInfo>
 	{
-		public readonly HashSet<string> SupplyTypes = new() { "supply" };
+		public readonly HashSet<string> SupplyTypes = ["supply"];
 
 		[Desc("Store resources in silos. Adds cash directly without storing if set to false.")]
 		public readonly bool UseStorage = true;
@@ -31,7 +31,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 		[FieldLoader.Require]
 		[Desc("Where can the supply collectors can place the supplies.")]
-		public readonly CVec[] DeliveryOffsets = Array.Empty<CVec>();
+		public readonly CVec[] DeliveryOffsets = [];
 
 		[Desc("Trade supplies to only one collector in dock at a time.")]
 		public readonly bool DeliverOneByOne = true;
@@ -67,7 +67,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		PlayerResources playerResources;
 		IResourceValueModifier[] resourceMultipliers;
 
-		public readonly Dictionary<CPos, HashSet<CPos>> NoParkingOffsets = new();
+		public readonly Dictionary<CPos, HashSet<CPos>> NoParkingOffsets = [];
 
 		int currentDisplayTick = 0;
 		int currentDisplayValue = 0;

@@ -38,7 +38,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		INotifyKilled, INotifyActorDisposing
 	{
 		readonly Actor self;
-		readonly Dictionary<Actor, int> tokens = new();
+		readonly Dictionary<Actor, int> tokens = [];
 
 		public GrantExternalConditionToAssignedCollectors(Actor self, GrantExternalConditionToAssignedCollectorsInfo info)
 			: base(info)

@@ -18,21 +18,21 @@ namespace OpenRA.Mods.GenSDK.Traits
 {
 	public class SupplyDockInfo : TraitInfo
 	{
-		public readonly HashSet<string> SupplyTypes = new() { "supply" };
+		public readonly HashSet<string> SupplyTypes = ["supply"];
 
 		[Desc("How much supplies this actor carries.")]
 		public readonly int Capacity = 30000;
 
 		[FieldLoader.Require]
 		[Desc("Where can the supply collectors can collect the supplies from.")]
-		public readonly CVec[] CollectionOffsets = Array.Empty<CVec>();
+		public readonly CVec[] CollectionOffsets = [];
 
 		[Desc("Where can the aircraft supply collectors can collect the supplies from.")]
-		public readonly CVec[] AircraftCollectionOffsets = Array.Empty<CVec>();
+		public readonly CVec[] AircraftCollectionOffsets = [];
 
 		[Desc("Conditions to grant when dock has more than specified amount of supplies.",
 			"A dictionary of [integer]: [condition].")]
-		public readonly Dictionary<int, string> FullnessConditions = new();
+		public readonly Dictionary<int, string> FullnessConditions = [];
 
 		[Desc("Supplies check all collector reserved at this delay to pickout the invalid one.")]
 		public readonly int CheckReservedInterval = 5;
@@ -62,12 +62,12 @@ namespace OpenRA.Mods.GenSDK.Traits
 		public readonly SupplyDockInfo Info;
 		public int Amount;
 
-		readonly Dictionary<int, int> fullnessTokens = new();
+		readonly Dictionary<int, int> fullnessTokens = [];
 		readonly Func<CPos> getDockLocation;
 		readonly bool[] airOffsetsTaken;
 
 		// Aircraft use a reserve and unreserve logic to make them dock in different place
-		readonly Dictionary<Actor, int> reservedAirs = new();
+		readonly Dictionary<Actor, int> reservedAirs = [];
 		Actor collectorInTrade;
 
 		int ticks;

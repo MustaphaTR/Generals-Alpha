@@ -74,10 +74,8 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 			scanForIdleCollectorsTicks = Info.AssignRoleInterval;
 
-			var collectors = world.ActorsWithTrait<SupplyCollector>().Where(at => !unitCannotBeOrdered(at.Actor) && (info.CollectorTypes == null || info.CollectorTypes.Contains(at.Actor.Info.Name)));
-
 			// Find idle harvesters and give them orders:
-			foreach (var c in collectors)
+			foreach (var c in world.ActorsWithTrait<SupplyCollector>().Where(at => !unitCannotBeOrdered(at.Actor) && (info.CollectorTypes == null || info.CollectorTypes.Contains(at.Actor.Info.Name))))
 			{
 				if (!c.Actor.IsIdle && c.Actor.CurrentActivity is not FlyIdle)
 				{
@@ -86,21 +84,52 @@ namespace OpenRA.Mods.GenSDK.Traits
 				}
 
 				// Tell the idle harvester to quit slacking:
-				var newSafeSupply = FindNextSupply(c);
-				if (newSafeSupply.Type != TargetType.Invalid)
+				if (!c.Trait.IsEmpty)
 				{
-					AIUtils.BotDebug($"AI: Collector {c.Actor} is idle. Ordering to {newSafeSupply} collect.");
-					bot.QueueOrder(new Order("Collect", c.Actor, newSafeSupply, false));
+					// If we are not empty, go deliver it.
+					var nextSafeCenter = FindNextCenter(c);
+					if (nextSafeCenter.Type != TargetType.Invalid)
+					{
+						AIUtils.BotDebug($"AI: Collector {c.Actor} is idle and not empty. Ordering to {nextSafeCenter} deliver.");
+						bot.QueueOrder(new Order("Deliver", c.Actor, nextSafeCenter, false));
+					}
 				}
 				else
 				{
-					// If no resource, tell harvester to stop scanning by itself
-					AIUtils.BotDebug($"AI: no valid supply for Collector {c.Actor}.");
-					bot.QueueOrder(new Order("Stop", c.Actor, false));
+					// If we are empty, go collect some supplies.
+					var newSafeSupply = FindNextSupply(c);
+					if (newSafeSupply.Type != TargetType.Invalid)
+					{
+						AIUtils.BotDebug($"AI: Collector {c.Actor} is idle and empty. Ordering to {newSafeSupply} collect.");
+						bot.QueueOrder(new Order("Collect", c.Actor, newSafeSupply, false));
+					}
+					else
+					{
+						// If no resource, tell harvester to stop scanning by itself
+						AIUtils.BotDebug($"AI: no valid supply for Collector {c.Actor}.");
+						bot.QueueOrder(new Order("Stop", c.Actor, false));
+					}
 				}
+			}
+		}
 
+		Target FindNextCenter(TraitPair<SupplyCollector> collector)
+		{
+			var target = Target.Invalid;
+
+			foreach (var center in world.ActorsWithTrait<SupplyCenter>().Where(at => at.Actor.Owner == collector.Actor.Owner).OrderBy(at => (at.Actor.Location - collector.Actor.Location).LengthSquared))
+			{
+				if (center.Actor.IsDead || !center.Actor.IsInWorld || !collector.Trait.IsAcceptableDeliveryBuilding(center.Actor))
+					continue;
+
+				if (!AIUtils.PathExist(collector.Actor, center.Actor.Location, center.Actor))
+					continue;
+
+				target = Target.FromActor(center.Actor);
 				break;
 			}
+
+			return target;
 		}
 
 		Target FindNextSupply(TraitPair<SupplyCollector> collector)

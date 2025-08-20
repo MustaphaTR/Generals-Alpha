@@ -25,7 +25,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 	public class SupplyCollectorInfo : TraitInfo
 	{
-		public readonly HashSet<string> SupplyTypes = new() { "supply" };
+		public readonly HashSet<string> SupplyTypes = ["supply"];
 
 		public readonly bool AutoDeliverOnlyActorOwner = true;
 		public readonly PlayerRelationship DeliveryRelationships = PlayerRelationship.Ally;
@@ -70,7 +70,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 		[Desc("Conditions to grant when collector has more than specified amount of supplies.",
 			"A dictionary of [integer]: [condition].")]
-		public readonly Dictionary<int, string> FullnessConditions = new();
+		public readonly Dictionary<int, string> FullnessConditions = [];
 
 		[Desc("Collector faces mechanic before taking the supplies.")]
 		public readonly FacingWhenDock FacingWhenDockAtSupplyPile = FacingWhenDock.Any;
@@ -102,7 +102,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		readonly Mobile mobile;
 		readonly Actor self;
 
-		readonly Dictionary<int, int> fullnessTokens = new();
+		readonly Dictionary<int, int> fullnessTokens = [];
 
 		public int Amount;
 		int ISupplyCollector.Amount() { return Amount; }
@@ -434,14 +434,12 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 				if (path.Count > 0)
 					return accessibleDocks[path[0]].Actor;
-
-				return null;
 			}
 
 			return null;
 		}
 
-		bool IsAcceptableDeliveryBuilding(Actor supplyCenter, bool isAutomatic = false)
+		public bool IsAcceptableDeliveryBuilding(Actor supplyCenter, bool isAutomatic = false)
 		{
 			return Info.SupplyTypes.Overlaps(supplyCenter.Trait<SupplyCenter>().Info.SupplyTypes) &&
 				isAutomatic && Info.AutoDeliverOnlyActorOwner ? self.Owner == supplyCenter.Owner :
@@ -508,8 +506,6 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 				if (path.Count > 0)
 					return accessibleCenters[path[0]].Actor;
-
-				return null;
 			}
 
 			return null;
