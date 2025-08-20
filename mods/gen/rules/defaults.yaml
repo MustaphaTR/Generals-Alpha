@@ -1432,6 +1432,8 @@
 
 ^CanHaveCamoNettingFreeForStealthGen:
 	Inherits@CAMO: ^CanHaveCamoNetting
+	Production:
+		RequiresCondition: !merged && zh_units
 	ProductionQueue@CAMO_NETTING:
 		Type: queue.camo_netting
 		Factions: usa, air, laser, super, gla, prc, inf, nuke, tank, boss
@@ -1446,7 +1448,6 @@
 ^CanHaveCamoNettingStealthGenOnly:
 	Inherits@CAMO: ^CanHaveCamoNetting
 	Production:
-		Produces: queue.camo_netting
 		RequiresCondition: (stealth || merged) && zh_units
 	ProductionQueue@CAMO_NETTING:
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank, boss
