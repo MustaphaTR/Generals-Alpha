@@ -1398,7 +1398,7 @@ actor-upgrade-chemical-suits =
 
 actor-upgrade-supply-lines =
    .name = Supply Lines
-   .description = Increases output from Supply Centers, Supply Drop Zones and Oil Derricks by 10%.
+   .description = Increases output from Chinooks, Supply Drop Zones and Oil Derricks by 10%.
 
 actor-upgrade-moab =
    .name = Mother of All Bombs
