@@ -119,6 +119,7 @@ parabomb.emp:
 		Spread: 5c256
 		Damage: 1000000
 		ValidTargets: AirborneActor
+		InvalidTargets: ImmuneToEMP
 		DamageTypes: IgnoreCM
 	Warhead@2Dis: GrantExternalCondition
 		Delay: 1 ##Enable AirborneActor husk emp overlay
@@ -126,6 +127,7 @@ parabomb.emp:
 		Duration: 750
 		Condition: emp
 		ValidTargets: GroundActor, WaterActor, AirborneActor, EMPableHusk
+		InvalidTargets: ImmuneToEMP
 	Warhead@5EffWater: CreateEffect
 		Explosions: emp
 		ImpactSounds: sempexpl.wav

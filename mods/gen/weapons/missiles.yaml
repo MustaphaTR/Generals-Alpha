@@ -932,11 +932,12 @@ missile.emp_patriot.ground:
 		Duration: 250
 		Condition: emp
 		ValidTargets: GroundActor, WaterActor
+		InvalidTargets: ImmuneToEMP
 
 missile.emp_patriot.air:
 	Inherits: missile.patriot.air
 	Warhead@1Dam: SpreadDamage
-		Damage: 1000000
+		Damage: 3000
 	Warhead@3Eff: CreateEffect
 		Explosions: emp_small
 	Warhead@4Dis: GrantExternalCondition
@@ -945,6 +946,14 @@ missile.emp_patriot.air:
 		Duration: 250
 		Condition: emp
 		ValidTargets: AirborneActor, EMPableHusk
+		InvalidTargets: ImmuneToEMP
+	Warhead@5Dam: SpreadDamage
+		Spread: 0c128
+		Falloff: 100, 100
+		Damage: 1000000
+		ValidTargets: AirborneActor
+		InvalidTargets: ImmuneToEMP
+		DamageTypes: TriggerProne, ExplosionDeath
 
 missile.emp_patriot.super:
 	Inherits: missile.emp_patriot.ground
