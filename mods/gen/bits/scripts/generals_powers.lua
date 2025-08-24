@@ -13,6 +13,8 @@ if GPModifier == "one" then
 	PointsPerRank = { 1, 1, 1, 1, 1 }
 elseif GPModifier == "normal" then
 	PointsPerRank = { 1, 1, 1, 1, 3 }
+elseif GPModifier == "earlyend" then
+	PointsPerRank = { 1, 1, 1, 3, 1 }
 elseif GPModifier == "two" then
 	PointsPerRank = { 2, 2, 2, 2, 2 }
 elseif GPModifier == "double" then

@@ -54,6 +54,7 @@ options-gpmodifier =
     .disabled = 0, 0, 0, 0, 0
     .one = 1, 1, 1, 1, 1
     .normal = 1, 1, 1, 1, 3
+    .earlyend = 1, 1, 1, 3, 1
     .two = 2, 2, 2, 2, 2
     .double = 2, 2, 2, 2, 6
     .three = 3, 3, 3, 3, 3
