@@ -143,10 +143,10 @@ namespace OpenRA.Mods.GenSDK.Traits
 			if (IsTraitDisabled)
 				return null;
 
-			return new List<MiniYamlNode>()
-			{
+			return
+			[
 				new("InitialBaseCenter", FieldSaver.FormatValue(initialBaseCenter))
-			};
+			];
 		}
 
 		void IGameSaveTraitData.ResolveTraitData(Actor self, MiniYaml data)

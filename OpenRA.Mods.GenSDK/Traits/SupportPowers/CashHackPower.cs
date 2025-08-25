@@ -30,7 +30,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 		public readonly int Minimum = 0;
 
 		[Desc("Maximum amount of funds which will be stolen.")]
-		public readonly Dictionary<int, int> Maximums = new();
+		public readonly Dictionary<int, int> Maximums = [];
 
 		[Desc("Type of support power. Used for targerting along with 'CashHackable' trait on actors.")]
 		public readonly string Type = "Cash-Hack";

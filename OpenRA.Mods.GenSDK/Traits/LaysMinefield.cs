@@ -9,10 +9,8 @@
  */
 #endregion
 
-using System;
 using System.Collections.Generic;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.GenSDK.Traits
@@ -23,11 +21,11 @@ namespace OpenRA.Mods.GenSDK.Traits
 		[ActorReference]
 		[FieldLoader.Require]
 		[Desc("Types of mines to place, if multipile is defined, a random one will be selected.")]
-		public readonly HashSet<string> Mines = new();
+		public readonly HashSet<string> Mines = [];
 
 		[FieldLoader.Require]
 		[Desc("Locations to place the mines, from top-left of the building.")]
-		public readonly CVec[] Locations = Array.Empty<CVec>();
+		public readonly CVec[] Locations = [];
 
 		[Desc("Initial delay to create the mines.")]
 		public readonly int InitialDelay = 0;
@@ -43,8 +41,8 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 	public class LaysMinefield : PausableConditionalTrait<LaysMinefieldInfo>, INotifyKilled, INotifyOwnerChanged, INotifyActorDisposing, ITick
 	{
-		readonly List<Actor> mines = new();
-		readonly List<int> ticks = new();
+		readonly List<Actor> mines = [];
+		readonly List<int> ticks = [];
 
 		public LaysMinefield(LaysMinefieldInfo info)
 			: base(info)
@@ -84,11 +82,11 @@ namespace OpenRA.Mods.GenSDK.Traits
 
 			self.World.AddFrameEndTask(w =>
 			{
-				var mine = w.CreateActor(actor.ToLowerInvariant(), new TypeDictionary
-				{
+				var mine = w.CreateActor(actor.ToLowerInvariant(),
+				[
 					new OwnerInit(self.Owner),
 					new LocationInit(cell)
-				});
+				]);
 
 				mines[index] = mine;
 			});

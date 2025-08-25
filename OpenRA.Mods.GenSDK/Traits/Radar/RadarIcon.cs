@@ -19,8 +19,8 @@ namespace OpenRA.Mods.GenSDK.Traits.Radar
 {
 	public class RadarIconInfo : ConditionalTraitInfo
 	{
-		public readonly HashSet<CVec> Locations = new()
-		{
+		public readonly HashSet<CVec> Locations =
+		[
 			new CVec(-1, 0),
 			new CVec(-2, 0),
 			new CVec(1, 0),
@@ -29,7 +29,7 @@ namespace OpenRA.Mods.GenSDK.Traits.Radar
 			new CVec(0, -2),
 			new CVec(0, 1),
 			new CVec(0, 2)
-		};
+		];
 
 		public readonly Color Color = Color.White;
 

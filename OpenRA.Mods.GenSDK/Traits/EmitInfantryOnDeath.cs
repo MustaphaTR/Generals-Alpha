@@ -12,7 +12,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Yupgi_alert.Traits
@@ -24,11 +23,11 @@ namespace OpenRA.Mods.Yupgi_alert.Traits
 
 		[ActorReference]
 		[Desc("Be sure to use lowercase. Default value is \"e1\".")]
-		public readonly string[] ActorTypes = { "e1" };
+		public readonly string[] ActorTypes = ["e1"];
 
 		[Desc("Spawns actors only if the owner player's faction is in this list. " +
 			"Leave empty to allow all factions by default.")]
-		public readonly HashSet<string> Factions = new();
+		public readonly HashSet<string> Factions = [];
 
 		[Desc("Should an actor spawn after the player has been defeated (e.g. after surrendering)?")]
 		public readonly bool SpawnAfterDefeat = false;
@@ -65,7 +64,7 @@ namespace OpenRA.Mods.Yupgi_alert.Traits
 
 			var buildingInfo = self.Info.TraitInfoOrDefault<BuildingInfo>();
 
-			var eligibleLocations = buildingInfo != null ? buildingInfo.Tiles(self.Location).ToList() : new List<CPos>();
+			var eligibleLocations = buildingInfo != null ? buildingInfo.Tiles(self.Location).ToList() : [];
 			var actorTypes = info.ActorTypes.Select(a => new { Name = a, Cost = self.World.Map.Rules.Actors[a].TraitInfo<ValuedInfo>().Cost }).ToList();
 
 			while (eligibleLocations.Count > 0 && actorTypes.Any(a => a.Cost <= dudesValue))
@@ -76,11 +75,11 @@ namespace OpenRA.Mods.Yupgi_alert.Traits
 				eligibleLocations.Remove(loc);
 				dudesValue -= at.Cost;
 
-				self.World.AddFrameEndTask(w => w.CreateActor(at.Name, new TypeDictionary
-				{
+				self.World.AddFrameEndTask(w => w.CreateActor(at.Name,
+				[
 					new LocationInit(loc),
 					new OwnerInit(self.Owner),
-				}));
+				]));
 			}
 		}
 

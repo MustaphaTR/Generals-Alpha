@@ -30,10 +30,10 @@ namespace OpenRA.Mods.GenSDK.Traits
 		[Desc("Name of the unit can be pilot, whom will override the pilot in this actor.",
 			"This actor type needs to have the Parachutable trait defined.",
 			"Boolean defines if pilot needs level to eject. ")]
-		public readonly Dictionary<string, bool> PilotActorTypesOverrideWhenCapture = new();
+		public readonly Dictionary<string, bool> PilotActorTypesOverrideWhenCapture = [];
 
 		[Desc("Actor types that gives experience to this actor when capture.")]
-		public readonly HashSet<string> GiveExperiencePilotActorTypes = new();
+		public readonly HashSet<string> GiveExperiencePilotActorTypes = [];
 
 		[Desc("Probability that the aircraft's pilot gets ejected once the aircraft is destroyed.")]
 		public readonly int EjectSuccessRate = 100;
