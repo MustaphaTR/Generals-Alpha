@@ -61,7 +61,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 			Game.Sound.PlayToPlayer(SoundType.UI, manager.Self.Owner, Info.SelectTargetSound);
 			Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech",
 				Info.SelectTargetSpeechNotification, self.Owner.Faction.InternalName);
-			self.World.OrderGenerator = new SelectHackTarget(order, manager, this);
+			self.World.OrderGenerator = new SelectHackTarget(self.World, order, manager, this);
 		}
 
 		public override void Activate(Actor self, Order order, SupportPowerManager manager)
@@ -109,12 +109,11 @@ namespace OpenRA.Mods.GenSDK.Traits
 			readonly SupportPowerManager manager;
 			readonly string order;
 
-			public SelectHackTarget(string order, SupportPowerManager manager, CashHackPower power)
-			{
-				// Clear selection if using Left-Click Orders
-				if (Game.Settings.Game.UseClassicMouseStyle)
-					manager.Self.World.Selection.Clear();
+			protected override MouseActionType ActionType => MouseActionType.SupportPower;
 
+			public SelectHackTarget(World world, string order, SupportPowerManager manager, CashHackPower power)
+				: base(world)
+			{
 				this.manager = manager;
 				this.order = order;
 				this.power = power;

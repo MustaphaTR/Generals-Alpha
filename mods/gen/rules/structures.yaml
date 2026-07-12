@@ -94,9 +94,9 @@ building.usa_command_center:
 		PauseOnCondition: emp || hacked || sabotaged
 		OrderName: SpyDronePowerInfoOrder
 		Names:
-			1: Spy Drone
+			1: actor-building-usa-command-center.power-spy-drone-name
 		Descriptions:
-			1: Spawns a Spy Drone anywhere on the map.
+			1: actor-building-usa-command-center.power-spy-drone-description
 		Prerequisites:
 			1: generals_power.spy_drone
 		Icons:
@@ -113,9 +113,9 @@ building.usa_command_center:
 		PauseOnCondition: emp || hacked || sabotaged
 		OrderName: SpySatellitePowerInfoOrder
 		Names:
-			1: Spy Satellite
+			1: actor-building-usa-command-center.power-spy-satellite-name
 		Descriptions:
-			1: Reveals are large area of map for a while.\n\nAlso detects cloaked units in that area.
+			1: actor-building-usa-command-center.power-spy-satellite-description
 		Prerequisites:
 			1: building.usa_command_center
 		Icons:
@@ -132,13 +132,13 @@ building.usa_command_center:
 		PauseOnCondition: emp || hacked || sabotaged
 		OrderName: ParadropPowerInfoOrder
 		Names:
-			1: ParaDrop
-			2: ParaDrop
-			3: ParaDrop
+			1: actor-building-usa-command-center.power-paradrop-name
+			2: actor-building-usa-command-center.power-paradrop-name
+			3: actor-building-usa-command-center.power-paradrop-name
 		Descriptions:
-			1: A B-52 drops 5 Rangers\nanywhere on the map.
-			2: 2 B-52s drop total of 10 Rangers\nanywhere on the map.
-			3: 4 B-52s drop total of 20 Rangers\nanywhere on the map.
+			1: actor-building-usa-command-center.power-paradrop1-description
+			2: actor-building-usa-command-center.power-paradrop2-description
+			3: actor-building-usa-command-center.power-paradrop3-description
 		Prerequisites:
 			1: generals_power.paradrop1
 			2: generals_power.paradrop2
@@ -193,13 +193,13 @@ building.usa_command_center:
 			3: 3
 		QuantizedFacings: 8
 		Names:
-			1: A-10 Strike
-			2: A-10 Strike
-			3: A-10 Strike
+			1: actor-building-usa-command-center.power-a10-strike-name
+			2: actor-building-usa-command-center.power-a10-strike-name
+			3: actor-building-usa-command-center.power-a10-strike-name
 		Descriptions:
-			1: 1 A-10 Thunderbolt strikes anywhere on the map.
-			2: 2 A-10 Thunderbolts strike anywhere on the map.
-			3: 3 A-10 Thunderbolts strike anywhere on the map.
+			1: actor-building-usa-command-center.power-a10-strike1-description
+			2: actor-building-usa-command-center.power-a10-strike2-description
+			3: actor-building-usa-command-center.power-a10-strike3-description
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
 			1: aircraft.a10
@@ -232,11 +232,11 @@ building.usa_command_center:
 			2: 1
 		QuantizedFacings: 8
 		Names:
-			1: Fuel Air Bomb
-			2: Mother of All Bombs
+			1: actor-building-usa-command-center.power-fuel-air-bomb-name
+			2: actor-building-usa-command-center.power-moab-name
 		Descriptions:
-			1: A B-52 drops a Fuel Air Bomb at the target.
-			2: A B-2 drops a Mother of All Bombs at the target.
+			1: actor-building-usa-command-center.power-fuel-air-bomb-description
+			2: actor-building-usa-command-center.power-moab-description
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
 			1: aircraft.badger.fuel_air_bomb
@@ -256,9 +256,9 @@ building.usa_command_center:
 		PauseOnCondition: emp || hacked || sabotaged
 		OrderName: SpectreGunshipPowerInfoOrder
 		Names:
-			1: Spectre Gunship
+			1: actor-building-usa-command-center.power-spectre-gunship-name
 		Descriptions:
-			1: A Spectre Gunship fires down at the enemy units at the target area for 15 seconds.
+			1: actor-building-usa-command-center.power-spectre-gunship2-description
 		Prerequisites:
 			1: generals_power.spectre_gunship
 		Icons:
@@ -290,13 +290,13 @@ building.usa_command_center:
 		PauseOnCondition: emp || hacked || sabotaged
 		OrderName: SpectreGunshipLevelablePowerInfoOrder
 		Names:
-			1: Spectre Gunship
-			2: Spectre Gunship
-			3: Spectre Gunship
+			1: actor-building-usa-command-center.power-spectre-gunship-name
+			2: actor-building-usa-command-center.power-spectre-gunship-name
+			3: actor-building-usa-command-center.power-spectre-gunship-name
 		Descriptions:
-			1: A Spectre Gunship fires down at the enemy units at the target area for 10 seconds.
-			2: A Spectre Gunship fires down at the enemy units at the target area for 15 seconds.
-			3: A Spectre Gunship fires down at the enemy units at the target area for 20 seconds.
+			1: actor-building-usa-command-center.power-spectre-gunship1-description
+			2: actor-building-usa-command-center.power-spectre-gunship2-description
+			3: actor-building-usa-command-center.power-spectre-gunship3-description
 		Prerequisites:
 			1: generals_power.spectre_gunship1
 			2: generals_power.spectre_gunship2
@@ -350,9 +350,9 @@ building.usa_command_center:
 			1: 1
 		QuantizedFacings: 8
 		Names:
-			1: Leaflet Drops
+			1: actor-building-usa-command-center.power-leaflet-drop-name
 		Descriptions:
-			1: A B-52 drops Leaflets at the target, disabling enemy vehicles and infantry.
+			1: actor-building-usa-command-center.power-leaflet-drop-description
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
 			1: aircraft.badger.leaflet
@@ -466,13 +466,13 @@ building.gla_command_center:
 			2: ambush2
 			3: ambush3
 		Names:
-			1: Rebel Ambush
-			2: Rebel Ambush
-			3: Rebel Ambush
+			1: actor-building-gla-command-center.power-rebel-ambush-name
+			2: actor-building-gla-command-center.power-rebel-ambush-name
+			3: actor-building-gla-command-center.power-rebel-ambush-name
 		Descriptions:
-			1: Spawns 4 Rebels anywhere on the map.
-			2: Spawns 8 Rebels anywhere on the map.
-			3: Spawns 16 Rebels anywhere on the map.
+			1: actor-building-gla-command-center.power-rebel-ambush1-description
+			2: actor-building-gla-command-center.power-rebel-ambush2-description
+			3: actor-building-gla-command-center.power-rebel-ambush3-description
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: AmbushPowerInfoOrder
@@ -496,13 +496,13 @@ building.gla_command_center:
 			2: ambush2_toxin
 			3: ambush3_toxin
 		Names:
-			1: Toxin Rebel Ambush
-			2: Toxin Rebel Ambush
-			3: Toxin Rebel Ambush
+			1: actor-building-gla-command-center.power-toxin-rebel-ambush-name
+			2: actor-building-gla-command-center.power-toxin-rebel-ambush-name
+			3: actor-building-gla-command-center.power-toxin-rebel-ambush-name
 		Descriptions:
-			1: Spawns 4 Toxin Rebels anywhere on the map.
-			2: Spawns 8 Toxin Rebels anywhere on the map.
-			3: Spawns 16 Toxin Rebels anywhere on the map.
+			1: actor-building-gla-command-center.power-toxin-rebel-ambush1-description
+			2: actor-building-gla-command-center.power-toxin-rebel-ambush2-description
+			3: actor-building-gla-command-center.power-toxin-rebel-ambush3-description
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: ToxinAmbushPowerInfoOrder
@@ -520,9 +520,9 @@ building.gla_command_center:
 			1: 1
 		QuantizedFacings: 8
 		Names:
-			1: Anthrax Bomb
+			1: actor-building-gla-command-center.power-anthrax-bomb-name
 		Descriptions:
-			1: A B-52 drops an Anthrax Bomb at the target.
+			1: actor-building-gla-command-center.power-anthrax-bomb-description
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
 			1: aircraft.badger.anthrax_bomb
@@ -561,13 +561,13 @@ building.gla_command_center:
 			2: 0
 			3: 0
 		Names:
-			1: GPS Scrambler
-			2: GPS Scrambler
-			3: GPS Scrambler
+			1: actor-building-gla-command-center.power-gps-scrambler-name
+			2: actor-building-gla-command-center.power-gps-scrambler-name
+			3: actor-building-gla-command-center.power-gps-scrambler-name
 		Descriptions:
-			1: Makes 1 unit invisible while not firing.
-			2: Makes 5 units invisible while not firing.
-			3: Makes 9 units invisible while not firing.
+			1: actor-building-gla-command-center.power-gps-scrambler1-description
+			2: actor-building-gla-command-center.power-gps-scrambler2-description
+			3: actor-building-gla-command-center.power-gps-scrambler3-description
 		SelectTargetSpeechNotification: SelectTarget
 		Conditions:
 			1: gps_scrambler
@@ -587,9 +587,9 @@ building.gla_command_center:
 		Icons:
 			1: sneak_attack
 		Names:
-			1: Sneak Attack
+			1: actor-building-gla-command-center.power-sneak-attack-name
 		Descriptions:
-			1: Spawns a Tunnel Network anywhere on the map.
+			1: actor-building-gla-command-center.power-sneak-attack-description
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: SneakAttackPowerInfoOrder
@@ -713,13 +713,13 @@ building.prc_command_center:
 			2: 5,5
 			3: 5,5
 		Names:
-			1: Frenzy
-			2: Frenzy
-			3: Frenzy
+			1: actor-building-prc-command-center.power-frenzy-name
+			2: actor-building-prc-command-center.power-frenzy-name
+			3: actor-building-prc-command-center.power-frenzy-name
 		Descriptions:
-			1: Makes a group of units deal 10% more damage\nfor 10 seconds.
-			2: Makes a group of units deal 20% more damage\nfor 20 seconds.
-			3: Makes a group of units deal 30% more damage\nfor 30 seconds.
+			1: actor-building-prc-command-center.power-frenzy1-description
+			2: actor-building-prc-command-center.power-frenzy2-description
+			3: actor-building-prc-command-center.power-frenzy3-description
 		Durations:
 			1: 250
 			2: 500
@@ -749,13 +749,13 @@ building.prc_command_center:
 			2: cash_hack2
 			3: cash_hack3
 		Names:
-			1: Cash Hack
-			2: Cash Hack
-			3: Cash Hack
+			1: actor-building-prc-command-center.power-cash-hack-name
+			2: actor-building-prc-command-center.power-cash-hack-name
+			3: actor-building-prc-command-center.power-cash-hack-name
 		Descriptions:
-			1: Steals $1000 credits from enemy.\n\nTarget their Supply Center or Stash to do so.
-			2: Steals $2000 credits from enemy.\n\nTarget their Supply Center or Stash to do so.
-			3: Steals $4000 credits from enemy.\n\nTarget their Supply Center or Stash to do so.
+			1: actor-building-prc-command-center.power-cash-hack1-description
+			2: actor-building-prc-command-center.power-cash-hack2-description
+			3: actor-building-prc-command-center.power-cash-hack3-description
 		StartFullyCharged: false
 		OnFireSound: scashhac.aud
 		SelectTargetSpeechNotification: SelectTarget
@@ -774,13 +774,13 @@ building.prc_command_center:
 			3: paradrop3
 		ChargeInterval: 6000
 		Names:
-			1: ParaDrop
-			2: ParaDrop
-			3: ParaDrop
+			1: actor-building-prc-command-center.power-paradrop-name
+			2: actor-building-prc-command-center.power-paradrop-name
+			3: actor-building-prc-command-center.power-paradrop-name
 		Descriptions:
-			1: A Badger drops 5 Minigunners\nanywhere on the map.
-			2: 2 Badgers drop total of 10 Minigunners\nanywhere on the map.
-			3: 3 Badgers drop total of 15 Minigunners\nanywhere on the map.
+			1: actor-building-prc-command-center.power-paradrop1-description
+			2: actor-building-prc-command-center.power-paradrop2-description
+			3: actor-building-prc-command-center.power-paradrop3-description
 		UnitTypes:
 			1: aircraft.badger.prc_paradrop
 			2: aircraft.badger.prc_paradrop
@@ -828,13 +828,13 @@ building.prc_command_center:
 			2: arty_barrage2
 			3: arty_barrage3
 		Names:
-			1: Artillery Barrage
-			2: Artillery Barrage
-			3: Artillery Barrage
+			1: actor-building-prc-command-center.power-artillery-barrage-name
+			2: actor-building-prc-command-center.power-artillery-barrage-name
+			3: actor-building-prc-command-center.power-artillery-barrage-name
 		Descriptions:
-			1: Fires 12 Artillery Shells anywhere on the map.
-			2: Fires 24 Artillery Shells anywhere on the map.
-			3: Fires 36 Artillery Shells anywhere on the map.
+			1: actor-building-prc-command-center.power-artillery-barrage1-description
+			2: actor-building-prc-command-center.power-artillery-barrage2-description
+			3: actor-building-prc-command-center.power-artillery-barrage3-description
 		DisplayBeacon: true
 		BeaconPosters:
 			1: arty_barrage1
@@ -863,13 +863,13 @@ building.prc_command_center:
 			3: tank_drop3
 		ChargeInterval: 6000
 		Names:
-			1: Tank Drop
-			2: Tank Drop
-			3: Tank Drop
+			1: actor-building-prc-command-center.power-tank-drop-name
+			2: actor-building-prc-command-center.power-tank-drop-name
+			3: actor-building-prc-command-center.power-tank-drop-name
 		Descriptions:
-			1: A Badger drops 1 Battlemaster Tank\nanywhere on the map.
-			2: A Badger drops 2 Battlemaster Tanks\nanywhere on the map.
-			3: A Badger drops 4 Battlemaster Tanks\nanywhere on the map.
+			1: actor-building-prc-command-center.power-tank-drop1-description
+			2: actor-building-prc-command-center.power-tank-drop2-description
+			3: actor-building-prc-command-center.power-tank-drop3-description
 		UnitTypes:
 			1: aircraft.badger.tank_drop
 			2: aircraft.badger.tank_drop
@@ -908,9 +908,9 @@ building.prc_command_center:
 			1: 1
 		QuantizedFacings: 8
 		Names:
-			1: Cluster Mines
+			1: actor-building-prc-command-center.power-cluster-mines-name
 		Descriptions:
-			1: A Badger drops 13 Land Mines at the target.
+			1: actor-building-prc-command-center.power-cluster-mines-description
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
 			1: aircraft.badger.cluster_mines
@@ -936,9 +936,9 @@ building.prc_command_center:
 			1: 1
 		QuantizedFacings: 8
 		Names:
-			1: Carpet Bombing
+			1: actor-building-prc-command-center.power-carpet-bombing-name
 		Descriptions:
-			1: A Badger does carpet bombing at the target.
+			1: actor-building-prc-command-center.power-carpet-bombing-description
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
 			1: aircraft.badger.carpet
@@ -964,9 +964,9 @@ building.prc_command_center:
 			1: 1
 		QuantizedFacings: 8
 		Names:
-			1: Nuclear Carpet Bombing
+			1: actor-building-prc-command-center.power-nuclear-carpet-bombing-name
 		Descriptions:
-			1: A Badger does carpet bombing at the target with nuclear warheads.
+			1: actor-building-prc-command-center.power-nuclear-carpet-bombing-description
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
 			1: aircraft.badger.carpet.nuke
@@ -992,9 +992,9 @@ building.prc_command_center:
 			1: 1
 		QuantizedFacings: 8
 		Names:
-			1: E. M. Pulse
+			1: actor-building-prc-command-center.power-empulse-name
 		Descriptions:
-			1: A Badger drops an EMP at the target.
+			1: actor-building-prc-command-center.power-empulse-description
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
 			1: aircraft.badger.emp
@@ -1012,9 +1012,9 @@ building.prc_command_center:
 		PauseOnCondition: emp || hacked || sabotaged
 		OrderName: SpectreGunshipPowerInfoOrder
 		Names:
-			1: Spectre Gunship
+			1: actor-building-usa-command-center.power-spectre-gunship-name
 		Descriptions:
-			1: A Spectre Gunship fires down at the enemy units at the target area for 15 seconds.
+			1: actor-building-usa-command-center.power-spectre-gunship2-description
 		Prerequisites:
 			1: generals_power.spectre_gunship
 		Icons:
@@ -1054,9 +1054,9 @@ building.prc_command_center:
 		Icons:
 			1: sneak_attack
 		Names:
-			1: Sneak Attack
+			1: actor-building-gla-command-center.power-sneak-attack-name
 		Descriptions:
-			1: Spawns a Tunnel Network anywhere on the map.
+			1: actor-building-gla-command-center.power-sneak-attack-description
 		StartFullyCharged: false
 		SelectTargetSpeechNotification: SelectTarget
 		OrderName: SneakAttackPowerInfoOrder
@@ -3682,7 +3682,6 @@ building.prc_airfield:
 
 hack.dock:
 	Interactable:
-	AlwaysVisible:
 	Reservable:
 	GrantExternalConditionToOwner:
 		Condition: airdock
@@ -3908,9 +3907,9 @@ building.strategy_center:
 		PauseOnCondition: emp || hacked || lowpower
 		OrderName: CarpetBombingUSAPowerInfoOrder
 		Names:
-			1: Carpet Bombing
+			1: actor-building-strategy-center.power-carpet-bombing-name
 		Descriptions:
-			1: A B-2 does carpet bombing at the target.
+			1: actor-building-strategy-center.power-carpet-bombing-description
 		Prerequisites:
 			1: generals_power.carpet_bombing.airforce
 		Icons:
@@ -3936,9 +3935,9 @@ building.strategy_center:
 		PauseOnCondition: emp || hacked
 		OrderName: IntelligenceZHPowerInfoOrder
 		Names:
-			1: Intelligence
+			1: actor-building-detention-camp.power-intelligence-name
 		Descriptions:
-			1: Makes all enemy units visible for 30 seconds.
+			1: actor-building-detention-camp.power-intelligence-description
 		Prerequisites:
 			1: prerequisite.zh_units
 		Icons:
@@ -4322,9 +4321,9 @@ building.detention_camp:
 		PauseOnCondition: emp || hacked
 		OrderName: IntelligencePowerInfoOrder
 		Names:
-			1: Intelligence
+			1: actor-building-detention-camp.power-intelligence-name
 		Descriptions:
-			1: Makes all enemy units visible for 30 seconds.
+			1: actor-building-detention-camp.power-intelligence-description
 		Prerequisites:
 			1: !prerequisite.zh_units
 		Icons:
@@ -4627,9 +4626,9 @@ building.particle_cannon:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		OrderName: ParticleCannonPowerInfoOrder
 		Names:
-			1: Particle Cannon
+			1: actor-building-particle-cannon.power-name
 		Descriptions:
-			1: Initiates an Particle Cannon strike.
+			1: actor-building-particle-cannon.power-description
 		Prerequisites:
 			1: building.particle_cannon
 		Icons:
@@ -4861,9 +4860,9 @@ building.scud_storm:
 		PauseOnCondition: emp || hacked || sabotaged
 		OrderName: SCUDStormPowerInfoOrder
 		Names:
-			1: SCUD Storm
+			1: actor-building-scud-storm.name
 		Descriptions:
-			1: Fires 8 SCUD Missiles anywhere on the map.
+			1: actor-building-scud-storm.power-description
 		Prerequisites:
 			1: building.scud_storm
 		Icons:
@@ -5102,9 +5101,9 @@ building.missile_silo:
 	NukePower:
 		PauseOnCondition: emp || hacked || lowpower || sabotaged
 		Names:
-			1: Atom Bomb
+			1: actor-building-missile-silo.power-name
 		Descriptions:
-			1: Launches a devastating atomic bomb\nat a target location.
+			1: actor-building-missile-silo.power-description
 		Prerequisites:
 			1: building.missile_silo
 		Icons:
@@ -5375,55 +5374,46 @@ WOOD:
 		Type: woodfence
 
 prerequisite.command_center:
-	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: actor-prerequisite-command-center-name
 
 prerequisite.reactor:
-	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: actor-prerequisite-reactor-name
 
 prerequisite.barracks:
-	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: actor-prerequisite-barracks-name
 
 prerequisite.supply_center:
-	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: actor-prerequisite-supply-center-name
 
 prerequisite.tech_center:
-	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: actor-prerequisite-tech-center-name
 
 prerequisite.tech_center_or_boss_airfield:
-	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: actor-prerequisite-tech-center-or-boss-airfield-name
 
 prerequisite.tech_center_or_boss_sw:
-	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: actor-prerequisite-tech-center-or-boss-sw-name
 
 prerequisite.usa_airfield_or_war_factory:
-	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: actor-prerequisite-usa-airfield-or-war-factory-name
 
 prerequisite.prc_airfield_or_war_factory:
-	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: actor-prerequisite-prc-airfield-or-war-factory-name

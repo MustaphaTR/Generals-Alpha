@@ -184,11 +184,13 @@ ChromeLayout:
 FluentMessages:
 	common|fluent/common.ftl
 	common|fluent/chrome.ftl
+	common|fluent/ingame-debug.ftl
 	common|fluent/hotkeys.ftl
 	common|fluent/rules.ftl
 	gen|fluent/gen.ftl
 	gen|fluent/rules.ftl
 	gen|fluent/chrome.ftl
+	gen|fluent/hotkeys.ftl
 	gen|fluent/en.ftl
 
 AllowUnusedFluentMessagesInExternalPackages: true
@@ -232,9 +234,9 @@ LoadScreen: LogoStripeLoadScreen
 
 ServerTraits:
 	LobbyCommands
+	SkirmishLogic
 	PlayerPinger
 	MasterServerPinger
-	LobbySettingsNotification
 
 ChromeMetrics:
 	common|metrics.yaml

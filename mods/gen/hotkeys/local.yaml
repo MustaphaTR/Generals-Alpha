@@ -1,25 +1,29 @@
 CycleCollectors: N
-	Description: Cycle Collectors
-	Types: World, Player, Spectator
+	Description: hotkey-description-cyclecollectors
+	Types: World
+	Contexts: player, spectator
 
 ProductionTypeGeneralsPower: G
-	Description: Gen. Power
-	Types: Production, Player
+	Description: hotkey-description-productiontypegeneralspower
+	Types: Production
+	Contexts: player
 
 ProductionScrollUp: O
-	Description: Scroll up
-	Types: Production, Player
+	Description: hotkey-description-productionscollup
+	Types: Production
+	Contexts: player
 
 ProductionScrollDown: L
-	Description: Scroll down
-	Types: Production, Player
+	Description: hotkey-description-productionscolldown
+	Types: Production
+	Contexts: player
 
 StatisticsMinimal: BACKQUOTE
-	Description: Minimal statistics
+	Description: hotkey-description-statisticminimal
 	Types: Observer
-	Contexts: Spectator
+	Contexts: spectator
 
 StatisticsUpgrades: F8
-	Description: CP and Upgrade statistics
+	Description: hotkey-description-statisticupgrades
 	Types: Observer
-	Contexts: Spectator
+	Contexts: spectator

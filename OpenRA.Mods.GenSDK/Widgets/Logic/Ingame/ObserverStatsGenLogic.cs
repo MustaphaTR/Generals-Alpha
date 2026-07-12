@@ -651,7 +651,7 @@ namespace OpenRA.Mods.GenSDK.Widgets.Logic
 			flag.GetImageCollection = () => "flags";
 			flag.GetImageName = () => player.Faction.InternalName;
 
-			var playerName = template.Get<LabelWidget>("PLAYER");
+			var playerName = template.Get<LabelWithTooltipWidget>("PLAYER");
 			WidgetUtils.BindPlayerNameAndStatus(playerName, player);
 
 			playerName.GetColor = () => player.Color;

@@ -278,7 +278,6 @@ hack.artillery_barrager.1:
 	AmmoPool:
 		Ammo: 4
 		AmmoCondition: ammo
-	AlwaysVisible:
 	BodyOrientation:
 		QuantizedFacings: 1
 	Voiced:
@@ -337,6 +336,8 @@ aircraft.spectre_gunship:
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SLOW: ^SlowsWhenDamaged
+	AutoTarget:
+		-AttackAnythingCondition:
 	-AutoTargetPriority@DEFAULT:
 	AutoTargetPriority@ATTACKANYTHING:
 		-RequiresCondition:

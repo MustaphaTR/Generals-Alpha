@@ -31,6 +31,12 @@ checkbox-mergegenerals =
 
 notification-all-units-revealed = All of our units has been revealed!
 
+power-emergency-repair =
+    .name = Emergency Repair
+    .description1 = Repairs vehicles in 3 cell range by 30%.
+    .description2 = Repairs vehicles in 4 cell range by 60%.
+    .description3 = Repairs vehicles in 5 cell range by 90%.
+
 ## world.yaml
 dropdown-restrictions =
     .label = Restrictions
@@ -63,7 +69,7 @@ options-gpmodifier =
 
 resource-minerals = Valuable Minerals
 
-map-generator-experimental = Experimental RMG
+map-generator-classic = Map Generator
 map-generator-clear = Clear Terrain
 
 ## Defaults
@@ -762,7 +768,7 @@ actor-husk-badger-name = Badger
 actor-husk-b52-name = B-52
 actor-husk-b2-name = B-2
 actor-husk-a10-name = A-10 Thunderbolt
-actor-husk-sprectre-gunship-name = Sprectre Gunship
+actor-husk-spectre-gunship-name = Sprectre Gunship
 actor-husk-mig-name = MiG
 actor-husk-raptor-name = Raptor
 actor-husk-king-raptor-name = King Raptor
@@ -981,6 +987,30 @@ actor-building-usa-command-center =
     Provides Radar.
     
     Provides Spy Satellite support power.
+   .power-spy-drone-name = Spy Drone
+   .power-spy-drone-description = Spawns a Spy Drone anywhere on the map.
+   .power-spy-satellite-name = Spy Satellite
+   .power-spy-satellite-description = Reveals are large area of map for a while.
+    
+    Also detects cloaked units in that area.
+   .power-paradrop-name = ParaDrop
+   .power-paradrop1-description = A B-52 drops 5 Rangers anywhere on the map.
+   .power-paradrop2-description = 2 B-52s drop total of 10 Rangers anywhere on the map.
+   .power-paradrop3-description = 4 B-52s drop total of 20 Rangers anywhere on the map.
+   .power-a10-strike-name = A-10 Strike
+   .power-a10-strike1-description = 1 A-10 Thunderbolt strikes anywhere on the map.
+   .power-a10-strike2-description = 2 A-10 Thunderbolts strike anywhere on the map.
+   .power-a10-strike3-description = 3 A-10 Thunderbolts strike anywhere on the map.
+   .power-fuel-air-bomb-name = Fuel Air Bomb
+   .power-fuel-air-bomb-description = A B-52 drops a Fuel Air Bomb at the target.
+   .power-moab-name = Mother of All Bombs
+   .power-moab-description = A B-2 drops a Mother of All Bombs at the target.
+   .power-spectre-gunship-name = Spectre Gunship
+   .power-spectre-gunship1-description = A Spectre Gunship fires down at the enemy units at the target area for 10 seconds.
+   .power-spectre-gunship2-description = A Spectre Gunship fires down at the enemy units at the target area for 15 seconds.
+   .power-spectre-gunship3-description = A Spectre Gunship fires down at the enemy units at the target area for 20 seconds.
+   .power-leaflet-drop-name = Leaflet Drop
+   .power-leaflet-drop-description = A B-52 drops Leaflets at the target, disabling enemy vehicles and infantry.
 
 actor-building-gla-command-center =
    .name = GLA Command Center
@@ -990,12 +1020,56 @@ actor-building-gla-command-center =
    .fake-name = Fake Command Center
    .fake-description = Looks like a Command Center.
    .hole-name = GLA Hole (Command Center)
+   .power-rebel-ambush-name = Rebel Ambush
+   .power-rebel-ambush1-description = Spawns 4 Rebels anywhere on the map.
+   .power-rebel-ambush2-description = Spawns 8 Rebels anywhere on the map.
+   .power-rebel-ambush3-description = Spawns 16 Rebels anywhere on the map.
+   .power-toxin-rebel-ambush-name = Toxin Rebel Ambush
+   .power-toxin-rebel-ambush1-description = Spawns 4 Toxin Rebels anywhere on the map.
+   .power-toxin-rebel-ambush2-description = Spawns 8 Toxin Rebels anywhere on the map.
+   .power-toxin-rebel-ambush3-description = Spawns 16 Toxin Rebels anywhere on the map.
+   .power-anthrax-bomb-name = Anthrax Bomb
+   .power-anthrax-bomb-description = A B-52 drops an Anthrax Bomb at the target.
+   .power-gps-scrambler-name = GPS Scrambler
+   .power-gps-scrambler1-description = Makes 1 unit invisible while not firing.
+   .power-gps-scrambler2-description = Makes 5 units invisible while not firing.
+   .power-gps-scrambler3-description = Makes 9 units invisible while not firing.
+   .power-sneak-attack-name = Sneak Attack
+   .power-sneak-attack-description = Spawns a Tunnel Network anywhere on the map.
 
 actor-building-prc-command-center =
    .name = PRC Command Center
    .description = Produces construction vehicles.
     
     Researches and Provides General's Powers
+   .power-frenzy-name = Frenzy
+   .power-frenzy1-description = Makes a group of units deal 10% more damage for 10 seconds.
+   .power-frenzy2-description = Makes a group of units deal 20% more damage for 20 seconds.
+   .power-frenzy3-description = Makes a group of units deal 30% more damage for 30 seconds.
+   .power-cash-hack-name = Cash Hack
+   .power-cash-hack1-description = Steals $1000 credits from an enemy Supply Center or Stash.
+   .power-cash-hack2-description = Steals $2000 credits from an enemy Supply Center or Stash.
+   .power-cash-hack3-description = Steals $4000 credits from an enemy Supply Center or Stash.
+   .power-paradrop-name = ParaDrop
+   .power-paradrop1-description = A Badger drops 5 Minigunners anywhere on the map.
+   .power-paradrop2-description = 2 Badgers drop total of 10 Minigunners anywhere on the map.
+   .power-paradrop3-description = 3 Badgers drop total of 15 Minigunners anywhere on the map.
+   .power-artillery-barrage-name = Artillery Barrage
+   .power-artillery-barrage1-description = Fires 12 Artillery Shells anywhere on the map.
+   .power-artillery-barrage2-description = Fires 24 Artillery Shells anywhere on the map.
+   .power-artillery-barrage3-description = Fires 36 Artillery Shells anywhere on the map.
+   .power-tank-drop-name = Tank Drop
+   .power-tank-drop1-description = A Badger drops 1 Battlemaster Tank anywhere on the map.
+   .power-tank-drop2-description = A Badger drops 2 Battlemaster Tanks anywhere on the map.
+   .power-tank-drop3-description = A Badger drops 4 Battlemaster Tanks anywhere on the map.
+   .power-cluster-mines-name = Cluster Mines
+   .power-cluster-mines-description = A Badger drops 13 Land Mines at the target.
+   .power-carpet-bombing-name = Carpet Bombing
+   .power-carpet-bombing-description = A Badger does carpet bombing at the target.
+   .power-nuclear-carpet-bombing-name = Nuclear Carpet Bombing
+   .power-nuclear-carpet-bombing-description = A Badger does carpet bombing at the target with nuclear warheads.
+   .power-empulse-name = E. M. Pulse
+   .power-empulse-description = A Badger drops an EMP warhead at the target.
 
 meta-default-cold-fusion-reactor =
    .name = Cold Fusion Reactor
@@ -1149,6 +1223,8 @@ actor-building-internet-center =
 actor-building-strategy-center =
    .name = Strategy Center
    .description = Provides USA advanced technologies.
+   .power-carpet-bombing-name = Carpet Bombing
+   .power-carpet-bombing-description = A B-2 does carpet bombing at the target.
 
 actor-building-palace =
    .name = Palace
@@ -1166,6 +1242,8 @@ actor-building-propaganda-center =
 actor-building-detention-camp =
    .name = Detention Camp
    .description = Provides support power to reveal all enemy units for a while.
+   .power-intelligence-name = Intelligence
+   .power-intelligence-description = Makes all enemy units and buildings visible for 30 seconds.
 
 actor-building-supply-drop-zone =
    .name = Supply Drop Zone
@@ -1187,6 +1265,8 @@ actor-building-speaker-tower =
 actor-building-particle-cannon =
    .name = Particle Uplink Cannon
    .description = Provides Particle Cannon support power.
+   .power-name = Particle Cannon
+   .power-description = Initiates a Particle Cannon strike.
 
 actor-building-scud-storm =
    .name = SCUD Storm
@@ -1194,10 +1274,14 @@ actor-building-scud-storm =
    .fake-name = Fake SCUD Storm
    .fake-description = Looks like a SCUD Storm.
    .hole-name = GLA Hole (SCUD Storm)
+   .power-description = Fires 8 SCUD Missiles anywhere on the map.
+   .fake-power-description = Pretends to be charging a SCUD Storm for the enemies.
 
 actor-building-missile-silo =
    .name = Nuclear Missile Silo
    .description = Provides Atom Bomb support power.
+   .power-name = Atom Bomb
+   .power-description = Launches a devastating atomic bomb at a target location.
 
 actor-sbag =
    .name = Sandbag Wall
@@ -1648,6 +1732,10 @@ actor-vehicle-radar-van =
    .description = Provides radar.
     
     Gets cloak from Scrap Crates.
+   .power-name = Radar Van Scan
+   .power-description = Reveals are small area of map for a while.
+    
+    Also detects cloaked units in that area.
 
 actor-vehicle-scorpion-tank =
    .name = Scorpion Tank
@@ -1897,8 +1985,6 @@ actor-vehicle-mobile-reactor =
 ## map-generators.yaml
 label-random-map = Random Map
 label-clear-map-generator-option-tile = Tile
-label-clear-map-generator-choice-tile-clear =
-   .label = Clear
 label-clear-map-generator-choice-tile-grass =
    .label = Grass
 label-clear-map-generator-choice-tile-snow =
@@ -2007,16 +2093,11 @@ label-ra-map-generator-choice-resources-high =
    .label = High
 label-ra-map-generator-choice-resources-very-high =
    .label = Very High
-label-ra-map-generator-choice-resources-full =
-   .label = Oreful
 
 label-ra-map-generator-option-buildings-min = Min. Tech Structure Amount
 label-ra-map-generator-option-buildings-max = Max. Tech Structure Amount
 
 label-ra-map-generator-option-buildings-type = Tech Structure Types
-label-ra-map-generator-choice-buildings-type-none =
-   .label = None
-   .description = No tech structures
 label-ra-map-generator-choice-buildings-type-oil-only =
    .label = Oil Only
    .description = Oil Derricks only

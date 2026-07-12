@@ -1,5 +1,4 @@
 ^BasePlayer:
-	AlwaysVisible:
 	Shroud:
 	PlayerResources:
 		ResourceValues:
@@ -269,13 +268,13 @@ Player:
 			2: emergency_repair2
 			3: emergency_repair3
 		Names:
-			1: Emergency Repair
-			2: Emergency Repair
-			3: Emergency Repair
+			1: power-emergency-repair.name
+			2: power-emergency-repair.name
+			3: power-emergency-repair.name
 		Descriptions:
-			1: Repairs vehicles in 3 cell range by 30%.
-			2: Repairs vehicles in 4 cell range by 60%.
-			3: Repairs vehicles in 5 cell range by 90%.
+			1: power-emergency-repair.description1
+			2: power-emergency-repair.description2
+			3: power-emergency-repair.description3
 		StartFullyCharged: false
 		OrderName: EmergencyRepairPowerInfoOrder
 		EffectSequence: idle

@@ -33,7 +33,7 @@ namespace OpenRA.Mods.GenSDK.Traits
 	{
 		SupplyDock supplyDock;
 
-		[Sync]
+		[VerifySync]
 		int remainingTicks;
 
 		public ResupplyDock(ResupplyDockInfo info)

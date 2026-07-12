@@ -110,10 +110,10 @@ namespace OpenRA.Mods.GenSDK.Traits
 		public WorkingAtPortState WorkingAtPortState = WorkingAtPortState.None;
 		public IResourceValueModifier[] ResourceMultipliers;
 
-		[Sync]
+		[VerifySync]
 		public Actor DeliveryBuilding = null;
 
-		[Sync]
+		[VerifySync]
 		public Actor CollectionBuilding = null;
 
 		public Actor FindOtherCollectionBuildingAdvisor = null;

@@ -1,6 +1,5 @@
 ^default.generals_power:
 	Interactable:
-	AlwaysVisible:
 	Buildable:
 		Queue: queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.usa_generals_power_merged, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.gla_generals_power_merged, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.prc_generals_power_merged
 		BuildLimit: 1
@@ -1039,43 +1038,36 @@ generals_power.emp:
 		Prerequisites: generals_power.emp
 
 hack.has_points:
-	AlwaysVisible:
 	Interactable:
 	ProvidesPrerequisite@has_points:
 		Prerequisite: prerequisite.has_points
 
 hack.rank_3:
-	AlwaysVisible:
 	Interactable:
 	ProvidesPrerequisite@rank_3:
 		Prerequisite: prerequisite.3_stars
 
 hack.rank_5:
-	AlwaysVisible:
 	Interactable:
 	ProvidesPrerequisite@rank_5:
 		Prerequisite: prerequisite.5_stars
 
 prerequisite.has_points:
-	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: actor-prerequisite-has-points-name
 
 prerequisite.3_stars:
-	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: actor-prerequisite-3-stars-name
 
 prerequisite.5_stars:
-	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: actor-prerequisite-5-stars-name
 
 ^default.generals_power_prerequisite:
-	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: meta-default-generals-power-prerequisite-name
