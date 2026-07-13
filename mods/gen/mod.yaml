@@ -16,10 +16,12 @@ FileSystem: ContentInstallerFileSystem
 		^EngineDir
 		$gen: gen
 		^EngineDir|mods/common: common
+		^EngineDir|mods/ra: ra
 		~^SupportDir|Content/ra/v2/: content
 		~^SupportDir|Content/gen/
 		gen|bits/scripts
-		gen|uibits
+		ra|uibits: raui
+		gen|uibits: genui
 	ContentPackages:
 		content|allies.mix
 		content|conquer.mix
