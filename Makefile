@@ -48,7 +48,7 @@ MOD_SEARCH_PATHS = "$(shell $(PYTHON) -c "import os; print(os.path.realpath('.')
 MANIFEST_PATH = "mods/$(MOD_ID)/mod.yaml"
 HAS_LUAC = $(shell command -v luac 2> /dev/null)
 LUA_FILES = $(shell find mods/*/maps/* -iname '*.lua' 2> /dev/null)
-MOD_SOLUTION_FILES = $(shell find . -maxdepth 1 -iname '*.sln' 2> /dev/null)
+MOD_SOLUTION_FILES = $(shell find . -maxdepth 1 -iname '*.slnx' 2> /dev/null)
 
 MSBUILD = msbuild -verbosity:m -nologo
 DOTNET = dotnet
@@ -147,18 +147,18 @@ all: engine
 ifeq ($(RUNTIME), mono)
 	@command -v $(MSBUILD) >/dev/null || (echo "OpenRA requires the '$(MSBUILD)' tool provided by Mono >= 6.4."; exit 1)
 ifneq ("$(MOD_SOLUTION_FILES)","")
-	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:Build -restore -p:Configuration=${CONFIGURATION} -p:TargetPlatform=$(TARGETPLATFORM) -p:Mono=true \;
+	@find . -maxdepth 1 -name '*.slnx' -exec $(MSBUILD) -t:Build -restore -p:Configuration=${CONFIGURATION} -p:TargetPlatform=$(TARGETPLATFORM) -p:Mono=true \;
 endif
 else
-	@find . -maxdepth 1 -name '*.sln' -exec $(DOTNET) build -c ${CONFIGURATION} -p:TargetPlatform=$(TARGETPLATFORM) \;
+	@find . -maxdepth 1 -name '*.slnx' -exec $(DOTNET) build -c ${CONFIGURATION} -p:TargetPlatform=$(TARGETPLATFORM) \;
 endif
 
 clean: engine
 ifneq ("$(MOD_SOLUTION_FILES)","")
 ifeq ($(RUNTIME), mono)
-	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:clean \;
+	@find . -maxdepth 1 -name '*.slnx' -exec $(MSBUILD) -t:clean \;
 else
-	@find . -maxdepth 1 -name '*.sln' -exec $(DOTNET) clean \;
+	@find . -maxdepth 1 -name '*.slnx' -exec $(DOTNET) clean \;
 endif
 endif
 	@cd $(ENGINE_DIRECTORY) && make clean
