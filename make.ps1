@@ -5,7 +5,7 @@
 ###############################################################
 function All-Command
 {
-	If (!(Test-Path "*.sln"))
+	If (!(Test-Path "*.slnx"))
 	{
 		Write-Host "No custom solution file found. Aborting." -ForegroundColor Red
 		return
@@ -16,8 +16,10 @@ function All-Command
 		return
 	}
 
-	Write-Host "Building $modID in" $configuration "configuration..." -ForegroundColor Cyan
-	dotnet build -c $configuration --nologo -p:TargetPlatform=win-x64
+	$arch = $env:PROCESSOR_ARCHITECTURE
+	Write-Host "Building $modID in" $configuration "configuration..." $arch -ForegroundColor Cyan
+	$rid = if ($arch -eq "ARM64") { "win-arm64" } else { "win-x64" }
+	dotnet build -c $configuration --nologo -p:TargetPlatform=$rid
 
 	if ($lastexitcode -ne 0)
 	{
@@ -31,7 +33,7 @@ function All-Command
 
 function Clean-Command
 {
-	If (!(Test-Path "*.sln"))
+	If (!(Test-Path "*.slnx"))
 	{
 		Write-Host "No custom solution file found - nothing to clean. Aborting." -ForegroundColor Red
 		return
@@ -110,7 +112,7 @@ function Test-Command
 
 function Check-Command
 {
-	If (!(Test-Path "*.sln"))
+	If (!(Test-Path "*.slnx"))
 	{
 		Write-Host "No custom solution file found. Skipping static code checks." -ForegroundColor Cyan
 		return
@@ -120,7 +122,8 @@ function Check-Command
 
 	# Enabling EnforceCodeStyleInBuild and GenerateDocumentationFile as a workaround for some code style rules (in particular IDE0005) being bugged and not reporting warnings/errors otherwise.
 	dotnet clean -c Debug --nologo --verbosity minimal
-	dotnet build -c Debug --nologo -warnaserror -p:TargetPlatform=win-x64 -p:EnforceCodeStyleInBuild=true -p:GenerateDocumentationFile=true
+	$rid = if ($env:PROCESSOR_ARCHITECTURE -eq "ARM64") { "win-arm64" } else { "win-x64" }
+	dotnet build -c Debug --nologo -warnaserror -p:TargetPlatform=$rid -p:EnforceCodeStyleInBuild=true -p:GenerateDocumentationFile=true
 	if ($lastexitcode -ne 0)
 	{
 		Write-Host "Build failed." -ForegroundColor Red
