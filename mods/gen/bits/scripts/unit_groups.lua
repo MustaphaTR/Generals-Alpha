@@ -157,6 +157,12 @@ MissileSilo =
 	"building.missile_silo",
 }
 
+Hacker =
+{
+	"infantry.hacker",
+	"infantry.super_hacker",
+}
+
 Burton =
 {
 	"infantry.colonel_burton",

@@ -37,7 +37,7 @@ TrainHackers = function(owner, hacker, amount, rally_point, internet)
 				else
 					Trigger.OnEnteredFootprint({ rally_point }, function(enterer)
 						if enterer == a[1] then
-							a[1].Deploy()
+							a[1].SwitchToDeploy()
 						end
 					end)
 				end
@@ -73,4 +73,43 @@ RepairBase = function(owner, baseBuildings, modifier)
 
 		RepairBuilding(owner, actor, modifier)
 	end)
+end
+
+AttackAircraftTargets = { }
+--- Order an aircraft to seek and attack an enemy player's units whenever idle.
+--- Each target is focused until it can no longer be attacked.
+---@param aircraft actor
+---@param enemyPlayer player
+InitializeAttackAircraft = function(aircraft, enemyPlayer)
+	Trigger.OnIdle(aircraft, function()
+		local actorId = tostring(aircraft)
+		local target = AttackAircraftTargets[actorId]
+
+		if not target or not target.IsInWorld then
+			target = ChooseRandomTarget(aircraft, enemyPlayer)
+		end
+
+		if target then
+			AttackAircraftTargets[actorId] = target
+			aircraft.Attack(target)
+		else
+			AttackAircraftTargets[actorId] = nil
+			aircraft.ReturnToBase()
+		end
+	end)
+end
+
+--- Return a random enemy target for an actor.
+---@param unit actor Actor to be given a target.
+---@param enemyPlayer player Player to be targeted.
+---@return actor|nil
+ChooseRandomTarget = function(unit, enemyPlayer)
+	local target = nil
+	local enemies = Utils.Where(enemyPlayer.GetActors(), function(self)
+		return self.HasProperty("Health") and unit.CanTarget(self) and not Utils.Any({ "sbag", "fenc", "brik", "cycl", "barb" }, function(type) return self.Type == type end)
+	end)
+	if #enemies > 0 then
+		target = Utils.Random(enemies)
+	end
+	return target
 end

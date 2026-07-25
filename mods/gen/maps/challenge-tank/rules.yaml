@@ -1,23 +1,150 @@
 Player:
-	PlayerResources:
-		SelectableCash: 5000, 7500, 10000, 13000, 15000, 20000, 25000, 50000
-		DefaultCash: 13000
+	ExternalCondition@AIEasy:
+		Condition: difficulty-easy
+	ExternalCondition@AINormal:
+		Condition: difficulty-normal
+	ExternalCondition@AIHard:
+		Condition: difficulty-hard
+	BaseBuilderBotModule@AIEasy:
+		RequiresCondition: enable-campaign-ai && difficulty-easy
+		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.boss_gen_missile_silo_merged, queue.just_mine, queue.soviet_infantry, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power, queue.boss_gen_generals_power_merged
+		MinimumExcessPower: 3
+		MaximumExcessPower: 10
+		ExcessPowerIncrement: 2
+		ExcessPowerIncreaseThreshold: 4
+		MaxBaseRadius: 44
+		ProductionMinCashRequirement: 5000
+		PlaceDefenseTowardsEnemyChance: 67
+		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+		RefineryTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
+		SupplyDockTypes: supply.pile.a, supply.pile.b, supply.pile.c, supply.pile.d, supply.pile.e, supply.pile.f, supply.pile.g, supply.dock.30000.6x4, supply.dock.40000.6x4, supply.dock.20000.6x4, supply.dock.30000.4x6, supply.dock.40000.4x6, supply.dock.20000.4x6, supply.dock.30000.skewed_a, supply.dock.40000.skewed_a, supply.dock.20000.skewed_a, supply.dock.30000.skewed_b, supply.dock.40000.skewed_b, supply.dock.20000.skewed_b, supply.dock.2x2
+		PowerTypes: building.cold_fusion_reactor, building.cold_fusion_reactor.laser, building.advanced_cold_fusion_reactor, building.nuclear_reactor, building.advanced_nuclear_reactor
+		NavalProductionTypes: tech.shipyard
+		ProductionTypes: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, building.usa_airfield, building.prc_airfield
+		DefenseTypes: building.patriot, building.emp_patriot, building.laser_turret, building.firebase, building.stinger_site, building.tunnel_network, building.toxin_tunnel_network, building.bunker, building.fortified_bunker, building.gatling_cannon, tech.flame_tower
+		BuildingLimits:
+			building.nuclear_reactor: 15
+			building.advanced_nuclear_reactor: 15
+			building.prc_barracks: 1
+			building.prc_supply_center: 2
+			building.prc_war_factory: 2
+			building.prc_airfield: 2
+			building.internet_center: 1
+			building.propaganda_center: 1
+			building.speaker_tower: 5
+		BuildingFractions:
+			building.nuclear_reactor: 1
+			building.advanced_nuclear_reactor: 1
+			building.prc_barracks: 1
+			building.prc_supply_center: 1
+			building.prc_war_factory: 1
+			building.prc_airfield: 1
+			building.internet_center: 1
+			building.propaganda_center: 1
+			building.speaker_tower: 1
+	BaseBuilderBotModule@AINormal:
+		RequiresCondition: enable-campaign-ai && difficulty-normal
+		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.boss_gen_missile_silo_merged, queue.just_mine, queue.soviet_infantry, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power, queue.boss_gen_generals_power_merged
+		MinimumExcessPower: 3
+		MaximumExcessPower: 10
+		ExcessPowerIncrement: 2
+		ExcessPowerIncreaseThreshold: 4
+		MaxBaseRadius: 44
+		ProductionMinCashRequirement: 5000
+		PlaceDefenseTowardsEnemyChance: 67
+		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+		RefineryTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
+		SupplyDockTypes: supply.pile.a, supply.pile.b, supply.pile.c, supply.pile.d, supply.pile.e, supply.pile.f, supply.pile.g, supply.dock.30000.6x4, supply.dock.40000.6x4, supply.dock.20000.6x4, supply.dock.30000.4x6, supply.dock.40000.4x6, supply.dock.20000.4x6, supply.dock.30000.skewed_a, supply.dock.40000.skewed_a, supply.dock.20000.skewed_a, supply.dock.30000.skewed_b, supply.dock.40000.skewed_b, supply.dock.20000.skewed_b, supply.dock.2x2
+		PowerTypes: building.cold_fusion_reactor, building.cold_fusion_reactor.laser, building.advanced_cold_fusion_reactor, building.nuclear_reactor, building.advanced_nuclear_reactor
+		NavalProductionTypes: tech.shipyard
+		ProductionTypes: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, building.usa_airfield, building.prc_airfield
+		DefenseTypes: building.patriot, building.emp_patriot, building.laser_turret, building.firebase, building.stinger_site, building.tunnel_network, building.toxin_tunnel_network, building.bunker, building.fortified_bunker, building.gatling_cannon, tech.flame_tower
+		BuildingLimits:
+			building.nuclear_reactor: 15
+			building.advanced_nuclear_reactor: 15
+			building.prc_barracks: 1
+			building.prc_supply_center: 2
+			building.prc_war_factory: 2
+			building.prc_airfield: 2
+			building.internet_center: 1
+			building.propaganda_center: 1
+			building.missile_silo: 1
+			building.gatling_cannon: 5
+			building.speaker_tower: 5
+		BuildingFractions:
+			building.nuclear_reactor: 1
+			building.advanced_nuclear_reactor: 1
+			building.prc_barracks: 1
+			building.prc_supply_center: 1
+			building.prc_war_factory: 1
+			building.prc_airfield: 1
+			building.internet_center: 1
+			building.propaganda_center: 1
+			building.missile_silo: 1
+			building.gatling_cannon: 1
+			building.speaker_tower: 1
+		BuildingDelays:
+			building.missile_silo: 7500
+	BaseBuilderBotModule@AIHard:
+		RequiresCondition: enable-campaign-ai && difficulty-hard
+		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.boss_gen_missile_silo_merged, queue.just_mine, queue.soviet_infantry, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power, queue.boss_gen_generals_power_merged
+		MinimumExcessPower: 3
+		MaximumExcessPower: 10
+		ExcessPowerIncrement: 2
+		ExcessPowerIncreaseThreshold: 4
+		MaxBaseRadius: 44
+		ProductionMinCashRequirement: 5000
+		PlaceDefenseTowardsEnemyChance: 67
+		ConstructionYardTypes: building.usa_command_center, building.gla_command_center, building.prc_command_center, building.prc_command_center.radar, vehicle.usa_mcc, vehicle.gla_mcc, vehicle.prc_mcc
+		RefineryTypes: building.usa_supply_center, building.gla_supply_stash, building.prc_supply_center
+		SupplyDockTypes: supply.pile.a, supply.pile.b, supply.pile.c, supply.pile.d, supply.pile.e, supply.pile.f, supply.pile.g, supply.dock.30000.6x4, supply.dock.40000.6x4, supply.dock.20000.6x4, supply.dock.30000.4x6, supply.dock.40000.4x6, supply.dock.20000.4x6, supply.dock.30000.skewed_a, supply.dock.40000.skewed_a, supply.dock.20000.skewed_a, supply.dock.30000.skewed_b, supply.dock.40000.skewed_b, supply.dock.20000.skewed_b, supply.dock.2x2
+		PowerTypes: building.cold_fusion_reactor, building.cold_fusion_reactor.laser, building.advanced_cold_fusion_reactor, building.nuclear_reactor, building.advanced_nuclear_reactor
+		NavalProductionTypes: tech.shipyard
+		ProductionTypes: building.usa_barracks, building.gla_barracks, building.prc_barracks, building.usa_war_factory, building.arms_dealer, building.prc_war_factory, building.usa_airfield, building.prc_airfield
+		DefenseTypes: building.patriot, building.emp_patriot, building.laser_turret, building.firebase, building.stinger_site, building.tunnel_network, building.toxin_tunnel_network, building.bunker, building.fortified_bunker, building.gatling_cannon, tech.flame_tower
+		BuildingLimits:
+			building.nuclear_reactor: 15
+			building.advanced_nuclear_reactor: 15
+			building.prc_barracks: 1
+			building.prc_supply_center: 2
+			building.prc_war_factory: 2
+			building.prc_airfield: 2
+			building.internet_center: 1
+			building.propaganda_center: 1
+			building.missile_silo: 1
+			building.gatling_cannon: 5
+			building.speaker_tower: 5
+		BuildingFractions:
+			building.nuclear_reactor: 1
+			building.advanced_nuclear_reactor: 1
+			building.prc_barracks: 1
+			building.prc_supply_center: 1
+			building.prc_war_factory: 1
+			building.prc_airfield: 1
+			building.internet_center: 1
+			building.propaganda_center: 1
+			building.missile_silo: 1
+			building.gatling_cannon: 1
+			building.speaker_tower: 1
+		BuildingDelays:
+			building.missile_silo: 5000
+	UnitBuilderBotModule@AI:
+		RequiresCondition: enable-campaign-ai
+		ProductionMinCashRequirement: 5001
+		SupplyCollectorTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck
+		UnitQueues: queue.prc_collector, queue.prc_command_center
+		UnitsToBuild:
+			vehicle.supply_truck: 1
+			vehicle.prc_mcc: 1
+		UnitLimits:
+			vehicle.supply_truck: 2
+			vehicle.prc_mcc: 3
+		UnitDelays:
+			vehicle.prc_mcc: 1500
 
 World:
 	LuaScript:
 		Scripts: generals_powers.lua, campaign-global.lua, unit_groups.lua, challenge_tank.lua
-	ScriptLobbyDropdown@difficulty:
-		ID: difficulty
-		Label: dropdown-difficulty.label
-		Description: dropdown-difficulty.description
-		Values:
-			easy: options-difficulty.easy
-			normal: options-difficulty.normal
-			hard: options-difficulty.hard
-		Default: normal
-		DisplayOrder: 5
-	LobbySystemActorConditionCheckbox@CRATES:
-		Enabled: false
 
 building.bunker.filled:
 	Inherits: building.bunker
@@ -30,3 +157,14 @@ building.bunker.filled:
 		Icon: icon
 		IconPalette: chrome
 		TooltipActor: building.bunker
+
+building.internet_center:
+	-GrantConditionOnBotOwner@bot_owner:
+	-FreePassenger@AI_1:
+	-FreePassenger@AI_2:
+	-FreePassenger@AI_3:
+	-FreePassenger@AI_4:
+	-FreePassenger@AI_1_Infantry_or_Merged:
+	-FreePassenger@AI_2_Infantry_or_Merged:
+	-FreePassenger@AI_3_Infantry_or_Merged:
+	-FreePassenger@AI_4_Infantry_or_Merged:

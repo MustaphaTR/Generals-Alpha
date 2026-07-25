@@ -2,7 +2,7 @@ MapFormat: 12
 
 RequiresMod: gen
 
-Title: Challenge - Kwai (WIP)
+Title: Challenge - Kwai
 
 Author: Mustafa Alperen SEKİ
 
@@ -37,9 +37,12 @@ Players:
 		Enemies: Creeps, General Kwai
 	PlayerReference@General Kwai:
 		Name: General Kwai
+		LockFaction: True
 		Faction: tank
+		LockColor: True
 		Color: FF0000
 		Enemies: Creeps, Multi0
+		Bot: campaign
 
 Actors:
 	Actor34: supply.dock.30000.6x4
@@ -871,4 +874,6 @@ Actors:
 		Location: 160,65
 		TurretFacing: 896
 
-Rules: rules.yaml
+Rules: gen|rules/challenge-rules.yaml, rules.yaml
+
+FluentMessages: gen|fluent/campaign.ftl

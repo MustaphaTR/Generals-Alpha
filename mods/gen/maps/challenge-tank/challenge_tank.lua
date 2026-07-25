@@ -11,61 +11,167 @@ EnemyBase = { EnemyCommandCenter, EnemyBarracks, EnemyWarFactory1, EnemyWarFacto
 
 RandomTaunts = { "19", "15", "16", "17", "18", "20", "22", "23", "24", "25", "26", "27", "29", "30" }
 
-VehicleAttackForces =
+InfantryAttackForces =
 {
-	easy =
-	{
-		{ "vehicle.battlemaster_tank" },
-		{ "vehicle.gatling_tank" }
+	default = {
+		easy =
+		{
+			{ "infantry.red_guard" },
+			{ "infantry.red_guard", "infantry.red_guard" },
+			{ "infantry.tank_hunter" },
+			{ "infantry.tank_hunter" }
+		},
+		normal =
+		{
+			{ "infantry.red_guard", "infantry.red_guard" },
+			{ "infantry.red_guard", "infantry.red_guard", "infantry.red_guard" },
+			{ "infantry.tank_hunter" },
+			{ "infantry.tank_hunter", "infantry.tank_hunter" }
+		},
+		hard =
+		{
+			{ "infantry.red_guard", "infantry.red_guard" },
+			{ "infantry.red_guard", "infantry.red_guard", "infantry.red_guard" },
+			{ "infantry.red_guard", "infantry.red_guard", "infantry.red_guard", "infantry.red_guard" },
+			{ "infantry.tank_hunter", "infantry.tank_hunter" },
+			{ "infantry.tank_hunter", "infantry.tank_hunter", "infantry.tank_hunter" },
+			{ "infantry.tank_hunter", "infantry.tank_hunter", "infantry.tank_hunter", "infantry.tank_hunter" }
+		}
 	},
-	normal =
-	{
-		{ "vehicle.battlemaster_tank" },
-		{ "vehicle.battlemaster_tank", "vehicle.battlemaster_tank" },
-		{ "vehicle.gatling_tank" },
-		{ "vehicle.gatling_tank", "vehicle.gatling_tank" },
-		{ "vehicle.dragon_tank" },
-		{ "vehicle.emparor_overlord" }
-	},
-	hard =
-	{
-		{ "vehicle.battlemaster_tank", "vehicle.battlemaster_tank" },
-		{ "vehicle.battlemaster_tank", "vehicle.battlemaster_tank", "vehicle.battlemaster_tank" },
-		{ "vehicle.battlemaster_tank", "vehicle.battlemaster_tank", "vehicle.battlemaster_tank", "vehicle.battlemaster_tank" },
-		{ "vehicle.gatling_tank" },
-		{ "vehicle.gatling_tank", "vehicle.gatling_tank" },
-		{ "vehicle.gatling_tank", "vehicle.gatling_tank", "vehicle.gatling_tank" },
-		{ "vehicle.dragon_tank" },
-		{ "vehicle.dragon_tank", "vehicle.dragon_tank" },
-		{ "vehicle.emparor_overlord" },
-		{ "vehicle.emparor_overlord", "vehicle.emparor_overlord" }
+	merged = {
+		easy =
+		{
+			{ "infantry.minigunner" },
+			{ "infantry.minigunner", "infantry.minigunner" },
+			{ "infantry.tank_hunter" },
+			{ "infantry.tank_hunter" }
+		},
+		normal =
+		{
+			{ "infantry.minigunner", "infantry.minigunner" },
+			{ "infantry.minigunner", "infantry.minigunner", "infantry.minigunner" },
+			{ "infantry.tank_hunter" },
+			{ "infantry.tank_hunter", "infantry.tank_hunter" }
+		},
+		hard =
+		{
+			{ "infantry.minigunner", "infantry.minigunner" },
+			{ "infantry.minigunner", "infantry.minigunner", "infantry.minigunner" },
+			{ "infantry.minigunner", "infantry.minigunner", "infantry.minigunner", "infantry.minigunner" },
+			{ "infantry.tank_hunter", "infantry.tank_hunter" },
+			{ "infantry.tank_hunter", "infantry.tank_hunter", "infantry.tank_hunter" },
+			{ "infantry.tank_hunter", "infantry.tank_hunter", "infantry.tank_hunter", "infantry.tank_hunter" }
+		}
 	}
 }
 
-InfantryAttackForces =
+VehicleAttackForces =
 {
-	easy =
-	{
-		{ "infantry.red_guard" },
-		{ "infantry.red_guard", "infantry.red_guard" },
-		{ "infantry.tank_hunter" },
-		{ "infantry.tank_hunter" }
+	default = {
+		easy =
+		{
+			{ "vehicle.battlemaster_tank" },
+			{ "vehicle.gatling_tank" }
+		},
+		normal =
+		{
+			{ "vehicle.battlemaster_tank" },
+			{ "vehicle.battlemaster_tank", "vehicle.battlemaster_tank" },
+			{ "vehicle.gatling_tank" },
+			{ "vehicle.gatling_tank", "vehicle.gatling_tank" },
+			{ "vehicle.dragon_tank" },
+			{ "vehicle.troop_crawler" },
+			{ "vehicle.emparor_overlord" }
+		},
+		hard =
+		{
+			{ "vehicle.battlemaster_tank", "vehicle.battlemaster_tank" },
+			{ "vehicle.battlemaster_tank", "vehicle.battlemaster_tank", "vehicle.battlemaster_tank" },
+			{ "vehicle.battlemaster_tank", "vehicle.battlemaster_tank", "vehicle.battlemaster_tank", "vehicle.battlemaster_tank" },
+			{ "vehicle.gatling_tank" },
+			{ "vehicle.gatling_tank", "vehicle.gatling_tank" },
+			{ "vehicle.gatling_tank", "vehicle.gatling_tank", "vehicle.gatling_tank" },
+			{ "vehicle.dragon_tank" },
+			{ "vehicle.dragon_tank", "vehicle.dragon_tank" },
+			{ "vehicle.troop_crawler" },
+			{ "vehicle.emparor_overlord" },
+			{ "vehicle.emparor_overlord", "vehicle.emparor_overlord" }
+		}
 	},
-	normal =
-	{
-		{ "infantry.red_guard", "infantry.red_guard" },
-		{ "infantry.red_guard", "infantry.red_guard", "infantry.red_guard" },
-		{ "infantry.tank_hunter" },
-		{ "infantry.tank_hunter", "infantry.tank_hunter" }
+	merged = {
+		easy =
+		{
+			{ "vehicle.nuclear_battlemaster_tank" },
+			{ "vehicle.gatling_tank" }
+		},
+		normal =
+		{
+			{ "vehicle.nuclear_battlemaster_tank" },
+			{ "vehicle.nuclear_battlemaster_tank", "vehicle.nuclear_battlemaster_tank" },
+			{ "vehicle.gatling_tank" },
+			{ "vehicle.gatling_tank", "vehicle.gatling_tank" },
+			{ "vehicle.dragon_tank" },
+			{ "vehicle.assault_troop_crawler" },
+			{ "vehicle.emparor_overlord" }
+		},
+		hard =
+		{
+			{ "vehicle.nuclear_battlemaster_tank", "vehicle.nuclear_battlemaster_tank" },
+			{ "vehicle.nuclear_battlemaster_tank", "vehicle.nuclear_battlemaster_tank", "vehicle.nuclear_battlemaster_tank" },
+			{ "vehicle.nuclear_battlemaster_tank", "vehicle.nuclear_battlemaster_tank", "vehicle.nuclear_battlemaster_tank", "vehicle.nuclear_battlemaster_tank" },
+			{ "vehicle.gatling_tank" },
+			{ "vehicle.gatling_tank", "vehicle.gatling_tank" },
+			{ "vehicle.gatling_tank", "vehicle.gatling_tank", "vehicle.gatling_tank" },
+			{ "vehicle.dragon_tank" },
+			{ "vehicle.dragon_tank", "vehicle.dragon_tank" },
+			{ "vehicle.troop_crawler" },
+			{ "vehicle.emparor_overlord" },
+			{ "vehicle.emparor_overlord", "vehicle.emparor_overlord" }
+		}
 	},
-	hard =
-	{
-		{ "infantry.red_guard", "infantry.red_guard" },
-		{ "infantry.red_guard", "infantry.red_guard", "infantry.red_guard" },
-		{ "infantry.red_guard", "infantry.red_guard", "infantry.red_guard", "infantry.red_guard" },
-		{ "infantry.tank_hunter", "infantry.tank_hunter" },
-		{ "infantry.tank_hunter", "infantry.tank_hunter", "infantry.tank_hunter" },
-		{ "infantry.tank_hunter", "infantry.tank_hunter", "infantry.tank_hunter", "infantry.tank_hunter" }
+}
+
+AirAttackForces =
+{
+	default = {
+		easy =
+		{
+			{ "aircraft.mig" }
+		},
+		normal =
+		{
+			{ "aircraft.mig" },
+			{ "aircraft.mig", "aircraft.mig" },
+			{ "aircraft.helix" }
+		},
+		hard =
+		{
+			{ "aircraft.mig" },
+			{ "aircraft.mig", "aircraft.mig" },
+			{ "aircraft.mig", "aircraft.mig", "aircraft.mig", "aircraft.mig" },
+			{ "aircraft.helix" },
+			{ "aircraft.helix", "aircraft.helix" }
+		}
+	},
+	merged = {
+		easy =
+		{
+			{ "aircraft.mig" }
+		},
+		normal =
+		{
+			{ "aircraft.mig" },
+			{ "aircraft.mig", "aircraft.mig" },
+			{ "aircraft.assault_helix" }
+		},
+		hard =
+		{
+			{ "aircraft.mig" },
+			{ "aircraft.mig", "aircraft.mig" },
+			{ "aircraft.mig", "aircraft.mig", "aircraft.mig", "aircraft.mig" },
+			{ "aircraft.assault_helix" },
+			{ "aircraft.assault_helix", "aircraft.assault_helix" }
+		}
 	}
 }
 
@@ -81,6 +187,13 @@ InitialAttackDelay =
 	easy = DateTime.Minutes(3),
 	normal = DateTime.Minutes(2),
 	hard = DateTime.Minutes(1)
+}
+
+AirInitialAttackDelay =
+{
+	easy = DateTime.Minutes(10),
+	normal = DateTime.Minutes(8),
+	hard = DateTime.Minutes(6)
 }
 
 BackDoorAttackDelay =
@@ -157,6 +270,9 @@ Attack = function(units, paths)
 		if unit.Type == "vehicle.emparor_overlord" then
 			unit.Build({"upgrade.overlord_gatling"})
 		end
+		if unit.Type == "aircraft.helix" or unit.Type == "aircraft.assault_helix" then
+			unit.Build({"upgrade.helix_gatling", "upgrade.helix_napalm"})
+		end
 		for i = 1, #path do
 			if unit.HasProperty("AttackMove") then
 				unit.AttackMove(path[i].Location)
@@ -164,7 +280,11 @@ Attack = function(units, paths)
 				unit.Move(path[i].Location)
 			end
 		end
-		IdleHunt(unit)
+		if unit.Type ~= "aircraft.mig" then
+			IdleHunt(unit)
+		else
+			InitializeAttackAircraft(unit, player)
+		end
 	end)
 end
 
@@ -204,6 +324,7 @@ DifficultySetup = function()
 	if Difficulty == "easy" then
 		player.Cash = player.Cash + ((player.Cash * 3) / 13)
 		enemy.Cash = enemy.Cash + ((enemy.Cash * 14) / 13)
+		enemy.GrantCondition("difficulty-easy")
 
 		EnemyBunker1.Destroy()
 		EnemyBunker2.Destroy()
@@ -212,22 +333,23 @@ DifficultySetup = function()
 		EnemyBunker5.Destroy()
 		EnemyBunker6.Destroy()
 		EnemyBunker7.Destroy()
-
-		TrainHackers(enemy, "infantry.hacker", HackerCount[Difficulty], HackerWP1.Location, false )
-		TrainHackers(enemy, "infantry.hacker", HackerCount[Difficulty], HackerWP2.Location, false )
 	end
 
 	if Difficulty == "normal" then
 		enemy.Cash = enemy.Cash + ((enemy.Cash * 17) / 13)
-
-		TrainHackers(enemy, "infantry.hacker", HackerCount[Difficulty], HackerWP1.Location, false )
-		TrainHackers(enemy, "infantry.hacker", HackerCount[Difficulty], HackerWP2.Location, false )
+		enemy.GrantCondition("difficulty-normal")
 	end
 
 	if Difficulty == "hard" then
 		player.Cash = player.Cash - ((player.Cash * 3) / 13)
 		enemy.Cash = enemy.Cash + ((enemy.Cash * 20) / 13)
+		enemy.GrantCondition("difficulty-hard")
+	end
 
+	if MergeGenerals then
+		TrainHackers(enemy, "infantry.super_hacker", HackerCount[Difficulty], HackerWP1.Location, true )
+		TrainHackers(enemy, "infantry.super_hacker", HackerCount[Difficulty], HackerWP2.Location, true )
+	else
 		TrainHackers(enemy, "infantry.hacker", HackerCount[Difficulty], HackerWP1.Location, true )
 		TrainHackers(enemy, "infantry.hacker", HackerCount[Difficulty], HackerWP2.Location, true )
 	end
@@ -338,12 +460,12 @@ Tick = function()
 		Taunts.PlayTauntNotification(enemy, "68")
 	end
 
-	if #enemy.GetActorsByType("infantry.hacker") >= HackerCount[Difficulty] * 2 and not HackersBuilt then
+	if #enemy.GetActorsByTypes(Hacker) >= HackerCount[Difficulty] * 2 and not HackersBuilt then
 		HackersBuilt = true
 
 		if ProductionBegun then
 			local path = function() return EnemyAttackPath end
-			BuildAttackForce(InfantryAttackForces[Difficulty], EnemyBarracks, path)
+			BuildAttackForce(InfantryAttackForces[AttackForceList][Difficulty], EnemyBarracks, path)
 		end
 	end
 end
@@ -358,32 +480,57 @@ WorldLoaded = function()
 		ReducePoints(player)
 	end
 
+	MergeGenerals = player.HasPrerequisites({"prerequisite.mergegenerals"})
+	AttackForceList = "default"
+	if MergeGenerals then
+		AttackForceList = "merged"
+	end
+
 	DifficultySetup()
 	GiveGeneralPowers()
 	RepairBase(enemy, EnemyBase, 0.75)
 
 	ResearchUpgrade("building.prc_war_factory", "upgrade.chain_gun")
 	ResearchUpgrade("building.prc_airfield", "upgrade.mig_armor")
-	ResearchUpgrade("building.propaganda_center", "upgrade.nationalism")
-	ResearchUpgrade("building.missile_silo", "upgrade.nuclear_tanks")
+	if MergeGenerals then
+		ResearchUpgrade("building.propaganda_center", "upgrade.patriotism")
+	else
+		ResearchUpgrade("building.propaganda_center", "upgrade.nationalism")
+		ResearchUpgrade("building.missile_silo", "upgrade.nuclear_tanks")
+	end
 
 	EnemyAttackPath = CenterPaths
 
 	local path = function() return EnemyAttackPath end
 	Trigger.AfterDelay(InitialAttackDelay[Difficulty], function()
 		ProductionBegun = true
-		BuildAttackForce(VehicleAttackForces[Difficulty], EnemyWarFactory1, path)
-		BuildAttackForce(VehicleAttackForces[Difficulty], EnemyWarFactory2, path)
+		BuildAttackForce(VehicleAttackForces[AttackForceList][Difficulty], EnemyWarFactory1, path)
+		BuildAttackForce(VehicleAttackForces[AttackForceList][Difficulty], EnemyWarFactory2, path)
 
 		if HackersBuilt then
-			BuildAttackForce(InfantryAttackForces[Difficulty], EnemyBarracks, path)
+			BuildAttackForce(InfantryAttackForces[AttackForceList][Difficulty], EnemyBarracks, path)
+		end
+	end)
+	Trigger.AfterDelay(AirInitialAttackDelay[Difficulty], function()
+		BuildAttackForce(AirAttackForces[AttackForceList][Difficulty], EnemyAirfield1, path)
+		BuildAttackForce(AirAttackForces[AttackForceList][Difficulty], EnemyAirfield2, path)
+	end)
+
+	Trigger.OnBuildingPlaced(enemy, function(_, building)
+		table.insert(EnemyBase, building)
+		RepairBase(enemy, {building}, 0.75 )
+		if building.Type == "building.prc_barracks" then
+			BuildAttackForce(InfantryAttackForces[AttackForceList][Difficulty], building, path)
+		elseif building.Type == "building.prc_war_factory" then
+			BuildAttackForce(VehicleAttackForces[AttackForceList][Difficulty], building, path)
+		elseif building.Type == "building.prc_airfield" then
+			BuildAttackForce(AirAttackForces[AttackForceList][Difficulty], building, path)
 		end
 	end)
 
 	Trigger.AfterDelay(BackDoorAttackDelay[Difficulty], function()
 		EnemyAttackPath = CenterAndBackDoorPaths
 	end)
-
 	Trigger.AfterDelay(FlankAttackDelay[Difficulty], function()
 		EnemyAttackPath = AllPaths
 	end)

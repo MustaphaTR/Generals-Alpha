@@ -1,0 +1,31 @@
+Player:
+	PlayerResources:
+		SelectableCash: 5000, 7500, 10000, 13000, 15000, 20000, 25000, 50000
+		DefaultCash: 13000
+	ModularBot@CampaignAI:
+		Name: bot-campaign-ai.name
+		Type: campaign
+	GrantConditionOnBotOwner@campaign:
+		Condition: enable-campaign-ai
+		Bots: campaign
+	SupportPowerBotASModule:
+		RequiresCondition: enable-campaign-ai
+
+World:
+	ScriptLobbyDropdown@difficulty:
+		ID: difficulty
+		Label: dropdown-difficulty.label
+		Description: dropdown-difficulty.description
+		Values:
+			easy: options-difficulty.easy
+			normal: options-difficulty.normal
+			hard: options-difficulty.hard
+		Default: normal
+		DisplayOrder: 5
+	LobbySystemActorConditionCheckbox@CRATES:
+		Enabled: false
+
+^BotOwner:
+	GrantConditionOnBotOwner@bot_owner:
+		Condition: bot_owner
+		Bots: campaign
