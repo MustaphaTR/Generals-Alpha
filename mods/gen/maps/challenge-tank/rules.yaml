@@ -146,6 +146,17 @@ World:
 	LuaScript:
 		Scripts: generals_powers.lua, campaign-global.lua, unit_groups.lua, challenge_tank.lua
 
+building.nuclear_reactor:
+	TransformOnCondition@MERGE_GENERALS:
+		IntoActor: building.advanced_nuclear_reactor
+		RequiresCondition: merged
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
+
+building.advanced_nuclear_reactor:
+	-TransformOnCondition@MERGE_GENERALS:
+
 building.bunker.filled:
 	Inherits: building.bunker
 	-Buildable:

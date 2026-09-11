@@ -8,6 +8,8 @@ Player:
 	GrantConditionOnBotOwner@campaign:
 		Condition: enable-campaign-ai
 		Bots: campaign
+	BuildingRepairBotModule:
+		RequiresCondition: enable-campaign-ai
 	SupportPowerBotASModule:
 		RequiresCondition: enable-campaign-ai
 

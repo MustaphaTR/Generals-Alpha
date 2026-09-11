@@ -283,13 +283,13 @@ Attack = function(units, paths)
 		if unit.Type ~= "aircraft.mig" then
 			IdleHunt(unit)
 		else
-			InitializeAttackAircraft(unit, player)
+			InitializeAttackAircraft(unit, MP0)
 		end
 	end)
 end
 
 BuildAttackForce = function(unit_list, factory, paths)
-	if factory.IsDead or factory.Owner ~= enemy then
+	if factory.IsDead or factory.Owner ~= Enemy then
 		return
 	end
 
@@ -302,29 +302,39 @@ BuildAttackForce = function(unit_list, factory, paths)
 	end)
 end
 
+InitializeAttackProduction = function(building)
+	if building.Type == "building.prc_barracks" then
+		BuildAttackForce(InfantryAttackForces[AttackForceList][Difficulty], building, function() return EnemyAttackPath end)
+	elseif building.Type == "building.prc_war_factory" then
+		BuildAttackForce(VehicleAttackForces[AttackForceList][Difficulty], building, function() return EnemyAttackPath end)
+	elseif building.Type == "building.prc_airfield" then
+		BuildAttackForce(AirAttackForces[AttackForceList][Difficulty], building, function() return EnemyAttackPath end)
+	end
+end
+
 GiveGeneralPowers = function()
-	Actor.Create("generals_power.carpet_bombing",		true, { Owner = enemy })
-	Actor.Create("generals_power.cluster_mines",		true, { Owner = enemy })
-	Actor.Create("generals_power.arty_barrage1",		true, { Owner = enemy })
-	Actor.Create("generals_power.emergency_repair1",	true, { Owner = enemy })
-	Actor.Create("generals_power.emp",					true, { Owner = enemy })
+	Actor.Create("generals_power.carpet_bombing",		true, { Owner = Enemy })
+	Actor.Create("generals_power.cluster_mines",		true, { Owner = Enemy })
+	Actor.Create("generals_power.arty_barrage1",		true, { Owner = Enemy })
+	Actor.Create("generals_power.emergency_repair1",	true, { Owner = Enemy })
+	Actor.Create("generals_power.emp",					true, { Owner = Enemy })
 
 	if Difficulty == "hard" or Difficulty == "normal" then
-		Actor.Create("generals_power.arty_barrage2",		true, { Owner = enemy })
-		Actor.Create("generals_power.emergency_repair2",	true, { Owner = enemy })
+		Actor.Create("generals_power.arty_barrage2",		true, { Owner = Enemy })
+		Actor.Create("generals_power.emergency_repair2",	true, { Owner = Enemy })
 	end
 
 	if Difficulty == "hard" then
-		Actor.Create("generals_power.arty_barrage3",		true, { Owner = enemy })
-		Actor.Create("generals_power.emergency_repair3",	true, { Owner = enemy })
+		Actor.Create("generals_power.arty_barrage3",		true, { Owner = Enemy })
+		Actor.Create("generals_power.emergency_repair3",	true, { Owner = Enemy })
 	end
 end
 
 DifficultySetup = function()
 	if Difficulty == "easy" then
-		player.Cash = player.Cash + ((player.Cash * 3) / 13)
-		enemy.Cash = enemy.Cash + ((enemy.Cash * 14) / 13)
-		enemy.GrantCondition("difficulty-easy")
+		MP0.Cash = MP0.Cash + ((MP0.Cash * 3) / 13)
+		Enemy.Cash = Enemy.Cash + ((Enemy.Cash * 14) / 13)
+		Enemy.GrantCondition("difficulty-easy")
 
 		EnemyBunker1.Destroy()
 		EnemyBunker2.Destroy()
@@ -336,131 +346,127 @@ DifficultySetup = function()
 	end
 
 	if Difficulty == "normal" then
-		enemy.Cash = enemy.Cash + ((enemy.Cash * 17) / 13)
-		enemy.GrantCondition("difficulty-normal")
+		Enemy.Cash = Enemy.Cash + ((Enemy.Cash * 17) / 13)
+		Enemy.GrantCondition("difficulty-normal")
 	end
 
 	if Difficulty == "hard" then
-		player.Cash = player.Cash - ((player.Cash * 3) / 13)
-		enemy.Cash = enemy.Cash + ((enemy.Cash * 20) / 13)
-		enemy.GrantCondition("difficulty-hard")
+		MP0.Cash = MP0.Cash - ((MP0) / 13)
+		Enemy.Cash = Enemy.Cash + ((Enemy.Cash * 20) / 13)
+		Enemy.GrantCondition("difficulty-hard")
 	end
 
 	if MergeGenerals then
-		TrainHackers(enemy, "infantry.super_hacker", HackerCount[Difficulty], HackerWP1.Location, true )
-		TrainHackers(enemy, "infantry.super_hacker", HackerCount[Difficulty], HackerWP2.Location, true )
+		TrainHackers(Enemy, "infantry.super_hacker", HackerCount[Difficulty], HackerWP1.Location, true )
+		TrainHackers(Enemy, "infantry.super_hacker", HackerCount[Difficulty], HackerWP2.Location, true )
 	else
-		TrainHackers(enemy, "infantry.hacker", HackerCount[Difficulty], HackerWP1.Location, true )
-		TrainHackers(enemy, "infantry.hacker", HackerCount[Difficulty], HackerWP2.Location, true )
+		TrainHackers(Enemy, "infantry.hacker", HackerCount[Difficulty], HackerWP1.Location, true )
+		TrainHackers(Enemy, "infantry.hacker", HackerCount[Difficulty], HackerWP2.Location, true )
 	end
 end
 
-lowPowerTauntTimer = 0
-randomTauntTimer = Utils.RandomInteger(DateTime.Seconds(45), DateTime.Seconds(120))
-randomTauntToPlay = 1
+LowPowerTauntTimer = 0
+RandomTauntTimer = Utils.RandomInteger(DateTime.Seconds(45), DateTime.Seconds(120))
+RandomTauntToPlay = 1
 Tick = function()
 	if GPModifier ~= "disabled" then
 		TickGeneralsPowers()
 	end
 
-	randomTauntTimer = randomTauntTimer - 1
-	if randomTauntTimer == 0 then
-		randomTauntTimer = Utils.RandomInteger(DateTime.Seconds(45), DateTime.Seconds(120))
-		Taunts.PlayTauntNotification(enemy, RandomTaunts[randomTauntToPlay])
+	RandomTauntTimer = RandomTauntTimer - 1
+	if RandomTauntTimer == 0 then
+		RandomTauntTimer = Utils.RandomInteger(DateTime.Seconds(45), DateTime.Seconds(120))
+		Taunts.PlayTauntNotification(Enemy, RandomTaunts[RandomTauntToPlay])
 
-		if (randomTauntToPlay == 14) then
-			randomTauntToPlay = 1
+		if (RandomTauntToPlay == 14) then
+			RandomTauntToPlay = 1
 		else
-			randomTauntToPlay = randomTauntToPlay + 1
+			RandomTauntToPlay = RandomTauntToPlay + 1
 		end
 	end
 
-	if 301 > player.Cash and not lowCashTauntPlayed then
-		lowCashTauntPlayed = true
-		Taunts.PlayTauntNotification(enemy, "61")
+	if 301 > MP0.Cash and not LowCashTauntPlayed then
+		LowCashTauntPlayed = true
+		Taunts.PlayTauntNotification(Enemy, "61")
 	end
 
-	if player.PowerState == "Low" or player.PowerState == "Critical" then
-		if not lowPowerTaunt1Played then
-			lowPowerTaunt1Played = true
-			Taunts.PlayTauntNotification(enemy, "59")
+	if MP0.PowerState == "Low" or MP0.PowerState == "Critical" then
+		if not LowPowerTaunt1Played then
+			LowPowerTaunt1Played = true
+			Taunts.PlayTauntNotification(Enemy, "59")
 		end
 
-		if not lowPowerTaunt2Played and playerRecoveredFromFirstLowPower then
-			lowPowerTaunt2Played = true
-			Taunts.PlayTauntNotification(enemy, "60")
-		end
-	end
-
-	if lowPowerTaunt1Played then
-		lowPowerTauntTimer = lowPowerTauntTimer + 1
-		if player.PowerState == "Normal" and 1501 < lowPowerTauntTimer then
-			playerRecoveredFromFirstLowPower = true
+		if not LowPowerTaunt2Played and PlayerRecoveredFromFirstLowPower then
+			LowPowerTaunt2Played = true
+			Taunts.PlayTauntNotification(Enemy, "60")
 		end
 	end
 
-	if not barrBuildTauntPlayed and #player.GetActorsByTypes(Barracks) > 0 then
-		barrBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(enemy, "80")
-	end
-	if not wfacBuildTauntPlayed and #player.GetActorsByTypes(WarFactory) > 0 then
-		wfacBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(enemy, "79")
-	end
-	if not airfBuildTauntPlayed  and #player.GetActorsByTypes(Airfield) > 0 then
-		airfBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(enemy, "78")
-	end
-	if not oildBuildTauntPlayed  and #player.GetActorsByType("tech.oil_derrick") > 0 then
-		oildBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(enemy, "48")
-	end
-	if not pcanBuildTauntPlayed  and #player.GetActorsByTypes(ParticleCannon) > 0 then
-		pcanBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(enemy, "65")
-	end
-	if not scudBuildTauntPlayed  and #player.GetActorsByTypes(ScudStorm) > 0 then
-		scudBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(enemy, "63")
-	end
-	if not nukeBuildTauntPlayed  and #player.GetActorsByTypes(MissileSilo) > 0 then
-		nukeBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(enemy, "64")
-	end
-	if not brtnBuildTauntPlayed  and #player.GetActorsByTypes(Burton) > 0 then
-		brtnBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(enemy, "75")
-	end
-	if not jrmnBuildTauntPlayed  and #player.GetActorsByTypes(Jarmen) > 0 then
-		jrmnBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(enemy, "77")
-	end
-	if not lotsBuildTauntPlayed  and #player.GetActorsByTypes(Lotus) > 0 then
-		lotsBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(enemy, "76")
-	end
-	if not builBuildTauntPlayed  and #player.GetActorsByTypes(BaseBuilding) > 7 then
-		builBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(enemy, "70")
-	end
-	if not defeBuildTauntPlayed  and #player.GetActorsByTypes(BaseDefense) > 5 then
-		defeBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(enemy, "66")
-	end
-	if not infaBuildTauntPlayed  and #player.GetActorsByTypes(Infantry) > 11 then
-		infaBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(enemy, "69")
-	end
-	if not tankBuildTauntPlayed  and #player.GetActorsByTypes(Tank) > 5 then
-		tankBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(enemy, "67")
-	end
-	if not planBuildTauntPlayed  and #player.GetActorsByTypes(Plane) > 3 then
-		planBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(enemy, "68")
+	if LowPowerTaunt1Played then
+		LowPowerTauntTimer = LowPowerTauntTimer + 1
+		if MP0.PowerState == "Normal" and 1501 < LowPowerTauntTimer then
+			PlayerRecoveredFromFirstLowPower = true
+		end
 	end
 
-	if #enemy.GetActorsByTypes(Hacker) >= HackerCount[Difficulty] * 2 and not HackersBuilt then
+	if not BarrBuildTauntPlayed and #MP0.GetActorsByTypes(Barracks) > 0 then
+		BarrBuildTauntPlayed = true
+		Taunts.PlayTauntNotification(Enemy, "80")
+	end
+	if not WFacBuildTauntPlayed and #MP0.GetActorsByTypes(WarFactory) > 0 then
+		WFacBuildTauntPlayed = true
+		Taunts.PlayTauntNotification(Enemy, "79")
+	end
+	if not AirfBuildTauntPlayed  and #MP0.GetActorsByTypes(Airfield) > 0 then
+		AirfBuildTauntPlayed = true
+		Taunts.PlayTauntNotification(Enemy, "78")
+	end
+	if not PCanBuildTauntPlayed  and #MP0.GetActorsByTypes(ParticleCannon) > 0 then
+		PCanBuildTauntPlayed = true
+		Taunts.PlayTauntNotification(Enemy, "65")
+	end
+	if not ScudBuildTauntPlayed  and #MP0.GetActorsByTypes(ScudStorm) > 0 then
+		ScudBuildTauntPlayed = true
+		Taunts.PlayTauntNotification(Enemy, "63")
+	end
+	if not NukeBuildTauntPlayed  and #MP0.GetActorsByTypes(MissileSilo) > 0 then
+		NukeBuildTauntPlayed = true
+		Taunts.PlayTauntNotification(Enemy, "64")
+	end
+	if not BrtnBuildTauntPlayed  and #MP0.GetActorsByTypes(Burton) > 0 then
+		BrtnBuildTauntPlayed = true
+		Taunts.PlayTauntNotification(Enemy, "75")
+	end
+	if not JrmnBuildTauntPlayed  and #MP0.GetActorsByTypes(Jarmen) > 0 then
+		JrmnBuildTauntPlayed = true
+		Taunts.PlayTauntNotification(Enemy, "77")
+	end
+	if not LotsBuildTauntPlayed  and #MP0.GetActorsByTypes(Lotus) > 0 then
+		LotsBuildTauntPlayed = true
+		Taunts.PlayTauntNotification(Enemy, "76")
+	end
+	if not BuilBuildTauntPlayed  and #MP0.GetActorsByTypes(BaseBuilding) > 7 then
+		BuilBuildTauntPlayed = true
+		Taunts.PlayTauntNotification(Enemy, "70")
+	end
+	if not DefeBuildTauntPlayed  and #MP0.GetActorsByTypes(BaseDefense) > 5 then
+		DefeBuildTauntPlayed = true
+		Taunts.PlayTauntNotification(Enemy, "66")
+	end
+	if not InfaBuildTauntPlayed  and #MP0.GetActorsByTypes(Infantry) > 11 then
+		InfaBuildTauntPlayed = true
+		Taunts.PlayTauntNotification(Enemy, "69")
+	end
+	if not TankBuildTauntPlayed  and #MP0.GetActorsByTypes(Tank) > 5 then
+		TankBuildTauntPlayed = true
+		Taunts.PlayTauntNotification(Enemy, "67")
+	end
+	if not PlanBuildTauntPlayed  and #MP0.GetActorsByTypes(Plane) > 3 then
+		PlanBuildTauntPlayed = true
+		Taunts.PlayTauntNotification(Enemy, "68")
+	end
+
+	if #Enemy.GetActorsByTypes(Hacker) >= HackerCount[Difficulty] * 2 and not HackersBuilt then
 		HackersBuilt = true
 
 		if ProductionBegun then
@@ -471,8 +477,6 @@ Tick = function()
 end
 
 WorldLoaded = function()
-	player = Player.GetPlayer("Multi0")
-	enemy = Player.GetPlayer("General Kwai")
 	Players = Player.GetPlayers(function(p) return not p.IsNonCombatant end)
 	SetUpDefaults()
 
@@ -480,7 +484,11 @@ WorldLoaded = function()
 		ReducePoints(player)
 	end
 
-	MergeGenerals = player.HasPrerequisites({"prerequisite.mergegenerals"})
+	Neutral = Player.GetPlayer("Neutral")
+	MP0 = Player.GetPlayer("Multi0")
+	Enemy = Player.GetPlayer("ChallengeGeneral")
+
+	MergeGenerals = MP0.HasPrerequisites({"prerequisite.mergegenerals"})
 	AttackForceList = "default"
 	if MergeGenerals then
 		AttackForceList = "merged"
@@ -488,7 +496,6 @@ WorldLoaded = function()
 
 	DifficultySetup()
 	GiveGeneralPowers()
-	RepairBase(enemy, EnemyBase, 0.75)
 
 	ResearchUpgrade("building.prc_war_factory", "upgrade.chain_gun")
 	ResearchUpgrade("building.prc_airfield", "upgrade.mig_armor")
@@ -500,31 +507,29 @@ WorldLoaded = function()
 	end
 
 	EnemyAttackPath = CenterPaths
-
-	local path = function() return EnemyAttackPath end
 	Trigger.AfterDelay(InitialAttackDelay[Difficulty], function()
 		ProductionBegun = true
-		BuildAttackForce(VehicleAttackForces[AttackForceList][Difficulty], EnemyWarFactory1, path)
-		BuildAttackForce(VehicleAttackForces[AttackForceList][Difficulty], EnemyWarFactory2, path)
+		Utils.Do(Enemy.GetActorsByType("building.prc_war_factory"), function(building)
+			InitializeAttackProduction(building)
+		end)
 
 		if HackersBuilt then
-			BuildAttackForce(InfantryAttackForces[AttackForceList][Difficulty], EnemyBarracks, path)
+			Utils.Do(Enemy.GetActorsByType("building.prc_barracks"), function(building)
+				InitializeAttackProduction(building)
+			end)
 		end
 	end)
 	Trigger.AfterDelay(AirInitialAttackDelay[Difficulty], function()
-		BuildAttackForce(AirAttackForces[AttackForceList][Difficulty], EnemyAirfield1, path)
-		BuildAttackForce(AirAttackForces[AttackForceList][Difficulty], EnemyAirfield2, path)
+		Utils.Do(Enemy.GetActorsByType("building.prc_airfield"), function(building)
+			InitializeAttackProduction(building)
+		end)
 	end)
 
-	Trigger.OnBuildingPlaced(enemy, function(_, building)
+	Trigger.OnBuildingPlaced(Enemy, function(_, building)
 		table.insert(EnemyBase, building)
-		RepairBase(enemy, {building}, 0.75 )
-		if building.Type == "building.prc_barracks" then
-			BuildAttackForce(InfantryAttackForces[AttackForceList][Difficulty], building, path)
-		elseif building.Type == "building.prc_war_factory" then
-			BuildAttackForce(VehicleAttackForces[AttackForceList][Difficulty], building, path)
-		elseif building.Type == "building.prc_airfield" then
-			BuildAttackForce(AirAttackForces[AttackForceList][Difficulty], building, path)
+
+		if ProductionBegun then
+			InitializeAttackProduction(building)
 		end
 	end)
 
@@ -535,16 +540,24 @@ WorldLoaded = function()
 		EnemyAttackPath = AllPaths
 	end)
 
-	Trigger.OnAnyKilled(enemy.GetActorsByTypes(CommandCenter), function()
-		Taunts.PlayTauntNotification(enemy, "44")
+	Utils.Do(Neutral.GetActorsByType("tech.oil_derrick"), function(oild)
+		Trigger.OnCapture(oild, function(_, _, _, newOwner)
+			if not OildBuildTauntPlayed and newOwner == MP0 then
+				OildBuildTauntPlayed = true
+				Taunts.PlayTauntNotification(Enemy, "48")
+			end
+		end)
 	end)
-	Trigger.OnAnyKilled(enemy.GetActorsByTypes(Barracks), function()
-		Taunts.PlayTauntNotification(enemy, "39")
+	Trigger.OnAnyKilled(Enemy.GetActorsByTypes(CommandCenter), function()
+		Taunts.PlayTauntNotification(Enemy, "44")
 	end)
-	Trigger.OnAnyKilled(enemy.GetActorsByTypes(WarFactory), function()
-		Taunts.PlayTauntNotification(enemy, "40")
+	Trigger.OnAnyKilled(Enemy.GetActorsByTypes(Barracks), function()
+		Taunts.PlayTauntNotification(Enemy, "39")
 	end)
-	Trigger.OnAnyKilled(enemy.GetActorsByTypes(Airfield), function()
-		Taunts.PlayTauntNotification(enemy, "41")
+	Trigger.OnAnyKilled(Enemy.GetActorsByTypes(WarFactory), function()
+		Taunts.PlayTauntNotification(Enemy, "40")
+	end)
+	Trigger.OnAnyKilled(Enemy.GetActorsByTypes(Airfield), function()
+		Taunts.PlayTauntNotification(Enemy, "41")
 	end)
 end

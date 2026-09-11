@@ -97,6 +97,23 @@ Tank =
 	"vehicle.emparor_overlord"
 }
 
+Artillery =
+{
+	"vehicle.tomahawk_launcher",
+	"vehicle.rocket_buggy",
+	"vehicle.scud_launcher",
+	"vehicle.inferno_cannon",
+	"vehicle.nuke_cannon"
+}
+
+Dozer =
+{
+	"vehicle.usa_mcc",
+	"vehicle.gla_mcc",
+	"vehicle.prc_mcc",
+	"vehicle.tech_mcc"
+}
+
 Plane =
 {
 	"aircraft.raptor",
@@ -192,4 +209,67 @@ TechBuilding =
 	"tech.shipyard",
 	"tech.repair_bay",
 	"tech.communications_center"
+}
+
+CivilianBuilding =
+{
+	"v01",
+	"v01.snow",
+	"v25",
+	"v02",
+	"v02.snow",
+	"v20",
+	"v03",
+	"v03.snow",
+	"v21",
+	"v04",
+	"v04.snow",
+	"v24",
+	"v05",
+	"v05.snow",
+	"v26",
+	"v06",
+	"v06.snow",
+	"v22",
+	"v07",
+	"v07.snow",
+	"v30",
+	"v08",
+	"v08.snow",
+	"v29",
+	"v09",
+	"v09.snow",
+	"v28",
+	"v10",
+	"v10.snow",
+	"v27",
+	"v11",
+	"v11.snow",
+	"v23",
+	"v12",
+	"v12.snow",
+	"v13",
+	"v13.snow",
+	"v14",
+	"v14.snow",
+	"v15",
+	"v15.snow",
+	"v16",
+	"v16.snow",
+	"v17",
+	"v17.snow",
+	"v18",
+	"v18.snow",
+	"v31",
+	"v32",
+	"v33",
+	"v34",
+	"v35",
+	"v36",
+	"v37",
+	"rushouse",
+	"asianhut",
+	"snowhut",
+	"lhus",
+	"windmill"
 }
