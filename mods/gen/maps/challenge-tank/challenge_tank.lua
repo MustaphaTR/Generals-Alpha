@@ -473,10 +473,10 @@ end
 WorldLoaded = function()
 	player = Player.GetPlayer("Multi0")
 	enemy = Player.GetPlayer("General Kwai")
+	Players = Player.GetPlayers(function(p) return not p.IsNonCombatant end)
+	SetUpDefaults()
 
-	players = { player }
-
-	for _,player in pairs(players) do
+	for _,player in pairs(Players) do
 		ReducePoints(player)
 	end
 
