@@ -26,23 +26,13 @@ ResearchUpgrade = function(building, upgrade)
 	end
 end
 
-PatrolAttackMoveTo = function(unit, path, currentLoc, wait)
-	unit.AttackMove(path[currentLoc])
-	Trigger.AfterDelay(wait, function()
-		local nextLoc = currentLoc+1
-		if #path < nextLoc then
-			nextLoc = 1
-		end
-		PatrolAttackMoveTo(unit, path, nextLoc, wait)
-	end)
-end
 TrainPatrolDefense = function(owner, units, producer, path, wait)
 	local producers = owner.GetActorsByType(producer)
 	if #producers > 0 then
 		local built = Utils.Random(producers).Build(units, function(a)
 			Trigger.AfterDelay(DateTime.Seconds(1), function()
 				Utils.Do(a, function(unit)
-					PatrolAttackMoveTo(unit, path, 1, wait)
+					unit.Patrol(path, true, wait)
 				end)
 
 				Trigger.OnAllKilled(a, function()
@@ -89,6 +79,30 @@ TrainHackers = function(owner, hacker, amount, rally_point, internet)
 	else
 		Trigger.AfterDelay(DateTime.Seconds(15), function()
 			TrainHackers(owner, hacker, amount, rally_point, internet)
+		end)
+	end
+end
+
+TrainGarrisoners = function(owner, units, producer, garrisonables)
+	local producers = owner.GetActorsByType(producer)
+	if #producers > 0 then
+		local built = Utils.Random(producers).Build(units, function(a)
+			Trigger.AfterDelay(DateTime.Seconds(1), function()
+				local garrisonable = Utils.Random(garrisonables)
+				Utils.Do(a, function(unit)
+					unit.AttackMove(garrisonable.Location)
+					unit.EnterGarrisonable(garrisonable)
+				end)
+			end)
+		end)
+		if not built then
+			Trigger.AfterDelay(DateTime.Seconds(15), function()
+				TrainGarrisoners(owner, units, producer, garrisonables)
+			end)
+		end
+	else
+		Trigger.AfterDelay(DateTime.Seconds(15), function()
+			TrainGarrisoners(owner, units, producer, garrisonables)
 		end)
 	end
 end

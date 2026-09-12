@@ -36,6 +36,7 @@ BaseBuilding =
 	"building.strategy_center",
 	"building.palace",
 	"building.propaganda_center",
+	"fake.palace",
 	"building.detention_camp",
 	"building.supply_drop_zone",
 	"building.black_market",
@@ -61,6 +62,23 @@ BaseDefense =
 	"fake.toxin_tunnel_network",
 	"fake.stinger_site"
 }
+IsBaseDefense = function(actor)
+	return
+		actor.Type == "building.patriot" or
+		actor.Type == "building.laser_turret" or
+		actor.Type == "building.firebase" or
+		actor.Type == "building.tunnel_network" or
+		actor.Type == "building.tunnel_network.no_free_actor" or
+		actor.Type == "building.toxin_tunnel_network" or
+		actor.Type == "building.toxin_tunnel_network.no_free_actor" or
+		actor.Type == "building.stinger_site" or
+		actor.Type == "building.gatling_cannon" or
+		actor.Type == "building.bunker" or
+		actor.Type == "building.fortified_bunker" or
+		actor.Type == "fake.tunnel_network" or
+		actor.Type == "fake.toxin_tunnel_network" or
+		actor.Type == "fake.stinger_site"
+end
 
 Infantry =
 {
@@ -124,6 +142,16 @@ Plane =
 	"aircraft.aurora_alpha",
 	"aircraft.mig"
 }
+IsPlane = function(actor)
+	return
+		actor.Type == "aircraft.raptor" or
+		actor.Type == "aircraft.king_raptor" or
+		actor.Type == "aircraft.stealth_fighter" or
+		actor.Type == "aircraft.stealth_fighter.air" or
+		actor.Type == "aircraft.aurora" or
+		actor.Type == "aircraft.aurora_alpha" or
+		actor.Type == "aircraft.mig"
+end
 
 CommandCenter =
 {
@@ -141,6 +169,13 @@ Barracks =
 	"building.prc_barracks",
 	"fake.barracks"
 }
+IsBarracks = function(actor)
+	return
+		actor.Type == "building.usa_barracks" or
+		actor.Type == "building.gla_barracks" or
+		actor.Type == "building.prc_barracks" or
+		actor.Type == "fake.barracks"
+end
 
 WarFactory =
 {
@@ -149,6 +184,28 @@ WarFactory =
 	"building.prc_war_factory",
 	"fake.arms_dealer"
 }
+IsWarFactory = function(actor)
+	return
+		actor.Type == "building.usa_war_factory" or
+		actor.Type == "building.arms_dealer" or
+		actor.Type == "building.prc_war_factory" or
+		actor.Type == "fake.arms_dealer"
+end
+
+AdvancedBuilding =
+{
+	"building.strategy_center",
+	"building.palace",
+	"building.propaganda_center",
+	"fake.palace"
+}
+IsAdvancedBuilding = function(actor)
+	return
+		actor.Type == "building.strategy_center" or
+		actor.Type == "building.palace" or
+		actor.Type == "building.propaganda_center" or
+		actor.Type == "fake.palace"
+end
 
 Airfield =
 {
@@ -159,8 +216,13 @@ Airfield =
 ParticleCannon =
 {
 	"building.particle_cannon",
-	"building.particle_cannon.super",
+	"building.particle_cannon.super"
 }
+IsParticleCannon = function(actor)
+	return
+		actor.Type == "building.particle_cannon" or
+		actor.Type == "building.particle_cannon.super"
+end
 
 ScudStorm =
 {
@@ -168,11 +230,28 @@ ScudStorm =
 	"building.scud_storm.boss",
 	"fake.scud_storm"
 }
+IsScudStorm = function(actor)
+	return
+		actor.Type == "building.scud_storm" or
+		actor.Type == "building.scud_storm.boss" or
+		actor.Type == "fake.scud_storm"
+end
 
 MissileSilo =
 {
-	"building.missile_silo",
+	"building.missile_silo"
 }
+IsMissileSilo = function(actor)
+	return actor.Type == "building.missile_silo"
+end
+
+SuperWeapon = Utils.Concat(Utils.Concat(ParticleCannon, ScudStorm), MissileSilo)
+IsSuperWeapon = function(actor)
+	return
+		IsParticleCannon(actor) or
+		IsScudStorm(actor) or
+		IsMissileSilo(actor)
+end
 
 Hacker =
 {
@@ -245,21 +324,6 @@ CivilianBuilding =
 	"v27",
 	"v11",
 	"v11.snow",
-	"v23",
-	"v12",
-	"v12.snow",
-	"v13",
-	"v13.snow",
-	"v14",
-	"v14.snow",
-	"v15",
-	"v15.snow",
-	"v16",
-	"v16.snow",
-	"v17",
-	"v17.snow",
-	"v18",
-	"v18.snow",
 	"v31",
 	"v32",
 	"v33",

@@ -280,10 +280,10 @@ Attack = function(units, paths)
 				unit.Move(path[i].Location)
 			end
 		end
-		if unit.Type ~= "aircraft.mig" then
-			IdleHunt(unit)
-		else
+		if IsPlane(unit) then
 			InitializeAttackAircraft(unit, MP0)
+		else
+			IdleHunt(unit)
 		end
 	end)
 end
@@ -417,51 +417,51 @@ Tick = function()
 		WFacBuildTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "79")
 	end
-	if not AirfBuildTauntPlayed  and #MP0.GetActorsByTypes(Airfield) > 0 then
+	if not AirfBuildTauntPlayed and #MP0.GetActorsByTypes(Airfield) > 0 then
 		AirfBuildTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "78")
 	end
-	if not PCanBuildTauntPlayed  and #MP0.GetActorsByTypes(ParticleCannon) > 0 then
+	if not PCanBuildTauntPlayed and #MP0.GetActorsByTypes(ParticleCannon) > 0 then
 		PCanBuildTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "65")
 	end
-	if not ScudBuildTauntPlayed  and #MP0.GetActorsByTypes(ScudStorm) > 0 then
+	if not ScudBuildTauntPlayed and #MP0.GetActorsByTypes(ScudStorm) > 0 then
 		ScudBuildTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "63")
 	end
-	if not NukeBuildTauntPlayed  and #MP0.GetActorsByTypes(MissileSilo) > 0 then
+	if not NukeBuildTauntPlayed and #MP0.GetActorsByTypes(MissileSilo) > 0 then
 		NukeBuildTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "64")
 	end
-	if not BrtnBuildTauntPlayed  and #MP0.GetActorsByTypes(Burton) > 0 then
+	if not BrtnBuildTauntPlayed and #MP0.GetActorsByTypes(Burton) > 0 then
 		BrtnBuildTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "75")
 	end
-	if not JrmnBuildTauntPlayed  and #MP0.GetActorsByTypes(Jarmen) > 0 then
+	if not JrmnBuildTauntPlayed and #MP0.GetActorsByTypes(Jarmen) > 0 then
 		JrmnBuildTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "77")
 	end
-	if not LotsBuildTauntPlayed  and #MP0.GetActorsByTypes(Lotus) > 0 then
+	if not LotsBuildTauntPlayed and #MP0.GetActorsByTypes(Lotus) > 0 then
 		LotsBuildTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "76")
 	end
-	if not BuilBuildTauntPlayed  and #MP0.GetActorsByTypes(BaseBuilding) > 7 then
+	if not BuilBuildTauntPlayed and #MP0.GetActorsByTypes(BaseBuilding) > 7 then
 		BuilBuildTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "70")
 	end
-	if not DefeBuildTauntPlayed  and #MP0.GetActorsByTypes(BaseDefense) > 5 then
+	if not DefeBuildTauntPlayed and #MP0.GetActorsByTypes(BaseDefense) > 5 then
 		DefeBuildTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "66")
 	end
-	if not InfaBuildTauntPlayed  and #MP0.GetActorsByTypes(Infantry) > 11 then
+	if not InfaBuildTauntPlayed and #MP0.GetActorsByTypes(Infantry) > 11 then
 		InfaBuildTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "69")
 	end
-	if not TankBuildTauntPlayed  and #MP0.GetActorsByTypes(Tank) > 5 then
+	if not TankBuildTauntPlayed and #MP0.GetActorsByTypes(Tank) > 5 then
 		TankBuildTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "67")
 	end
-	if not PlanBuildTauntPlayed  and #MP0.GetActorsByTypes(Plane) > 3 then
+	if not PlanBuildTauntPlayed and #MP0.GetActorsByTypes(Plane) > 3 then
 		PlanBuildTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "68")
 	end
