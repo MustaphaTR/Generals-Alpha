@@ -604,6 +604,7 @@ aircraft.mig:
 		RequiresCondition: tactical_nuke_mig && (nuke || merged)
 	AttackAircraft:
 		FacingTolerance: 80
+		PersistentTargeting: false
 		PauseOnCondition: leaflet
 	RevealsShroud:
 		Type: CenterPosition
@@ -756,6 +757,7 @@ aircraft.raptor:
 		PauseOnCondition: !ammo || reload-ground
 	AttackAircraft:
 		FacingTolerance: 80
+		PersistentTargeting: false
 		PauseOnCondition: leaflet
 	RevealsShroud:
 		Type: CenterPosition
@@ -948,6 +950,7 @@ aircraft.stealth_fighter:
 		RequiresCondition: bunker_busters
 	AttackAircraft:
 		FacingTolerance: 80
+		PersistentTargeting: false
 		PauseOnCondition: leaflet
 	RevealsShroud:
 		Type: CenterPosition
@@ -1143,6 +1146,7 @@ aircraft.aurora:
 		Prerequisites: prerequisite.zh_units
 	AttackAircraft:
 		FacingTolerance: 80
+		PersistentTargeting: false
 		PauseOnCondition: leaflet
 	RevealsShroud:
 		Type: CenterPosition
