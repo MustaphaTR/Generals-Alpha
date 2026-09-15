@@ -32,9 +32,9 @@ namespace OpenRA.Mods.GenSDK.Activities
 		readonly Color? targetLineColor;
 		CPos? targetcell = null;
 
-		void WaitAtParkingZone(Actor self, int waitDuration, Actor center, SupplyCenter centerTriat)
+		void WaitAtParkingZone(Actor self, int waitDuration, Actor center, SupplyCenter centerTrait)
 		{
-			if (centerTriat == null || !centerTriat.AtNoParkingZone(center, self.Location))
+			if (centerTrait == null || !centerTrait.AtNoParkingZone(center, self.Location))
 				QueueChild(new Wait(waitDuration));
 			else
 				QueueChild(new Nudge(self));
