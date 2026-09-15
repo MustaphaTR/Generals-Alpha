@@ -12,6 +12,11 @@ TauntDerricks = { OilDerrick1, OilDerrick2, OilDerrick3, OilDerrick4, OilDerrick
 
 RandomTaunts = { "5", "7", "8", "9", "13", "14" }
 
+GarrisonableBuildings = {
+	easy = { WindmillVillage, LHouseVillage1, LHouseVillage2, SmallHouseVillage1, SmallHouseVillage2, SmallHouseVillage3, SmallHouseVillage4, SmallHouseVillage5, SmallHouseVillage6, SmallHouseVillage7, SmallHouseVillage8, MediumHouseVillage1, MediumHouseVillage2, MediumHouseVillage3, MediumHouseVillage4, MediumHouseVillage5, MediumHouseVillage6, MediumHouseVillage7, ChurchVillage, BigHouseVillage1, BigHouseVillage2, BigHouseVillage3, BigHouseVillage4, BigHouseVillage5, BigHouseVillage6 },
+	normal = { LHouseBridgeVillage, WindmillVillage, LHouseVillage1, LHouseVillage2, SmallHouseVillage1, SmallHouseVillage2, SmallHouseVillage3, SmallHouseVillage4, SmallHouseVillage5, SmallHouseVillage6, SmallHouseVillage7, SmallHouseVillage8, MediumHouseVillage1, MediumHouseVillage2, MediumHouseVillage3, MediumHouseVillage4, MediumHouseVillage5, MediumHouseVillage6, MediumHouseVillage7, ChurchVillage, BigHouseVillage1, BigHouseVillage2, BigHouseVillage3, BigHouseVillage4, BigHouseVillage5, BigHouseVillage6 },
+	hard = { MediumHouseVillage1, MediumHouseVillage2, MediumHouseVillage3, MediumHouseVillage4, MediumHouseVillage5, MediumHouseVillage6, MediumHouseVillage7, ChurchVillage, BigHouseVillage1, BigHouseVillage2, BigHouseVillage3, BigHouseVillage4, BigHouseVillage5, BigHouseVillage6 }
+}
 MaxGarrisonTeams = {
 	easy = 1,
 	normal = 3,
@@ -34,6 +39,12 @@ GarrisonTeams = {
 	}
 }
 
+ChinookTeams =
+{
+	{ "infantry.ranger", "infantry.ranger", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender" },
+	{ "infantry.ranger", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender" }
+}
+
 InfantryAttackForces =
 {
 	easy =
@@ -53,11 +64,10 @@ InfantryAttackForces =
 	},
 	hard =
 	{
-		{ "infantry.ranger", "infantry.ranger" },
-		{ "infantry.ranger", "infantry.ranger", "infantry.ranger" },
 		{ "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.ranger" },
-		{ "infantry.missile_defender", "infantry.missile_defender" },
-		{ "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender" },
+		{ "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.ranger" },
+		{ "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.missile_defender" },
+		{ "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.missile_defender", "infantry.missile_defender" },
 		{ "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender" }
 	}
 }
@@ -100,7 +110,8 @@ AirAttackForces =
 		easy =
 		{
 			{ "aircraft.king_raptor" },
-			{ "aircraft.king_raptor", "aircraft.king_raptor" }
+			{ "aircraft.king_raptor", "aircraft.king_raptor" },
+			{ "aircraft.comanche" }
 		},
 		normal =
 		{
@@ -108,7 +119,9 @@ AirAttackForces =
 			{ "aircraft.king_raptor", "aircraft.king_raptor" },
 			{ "aircraft.king_raptor", "aircraft.king_raptor", "aircraft.king_raptor" },
 			{ "aircraft.stealth_fighter.air" },
-			{ "aircraft.aurora_alpha" }
+			{ "aircraft.aurora_alpha" },
+			{ "aircraft.comanche" },
+			{ "aircraft.comanche", "aircraft.comanche" }
 		},
 		hard =
 		{
@@ -119,7 +132,10 @@ AirAttackForces =
 			{ "aircraft.stealth_fighter.air" },
 			{ "aircraft.stealth_fighter.air", "aircraft.stealth_fighter.air" },
 			{ "aircraft.aurora_alpha" },
-			{ "aircraft.aurora_alpha", "aircraft.aurora_alpha" }
+			{ "aircraft.aurora_alpha", "aircraft.aurora_alpha" },
+			{ "aircraft.comanche" },
+			{ "aircraft.comanche", "aircraft.comanche" },
+			{ "aircraft.comanche", "aircraft.comanche", "aircraft.comanche" }
 		}
 	}
 }
@@ -232,6 +248,29 @@ BuildAttackForce = function(unit_list, factory, paths)
 	end
 end
 
+BuildCombatChinookForce = function(chinook, unit_list, factory, paths)
+	if factory == nil or factory.IsDead or factory.Owner ~= Enemy then
+		return
+	end
+
+	local built = factory.Build(Utils.Random(unit_list), function(units)
+		Utils.Do(units, function(unit)
+			unit.EnterTransport(chinook)
+		end)
+		Trigger.OnAllRemovedFromWorld(units, function()
+			if not chinook.IsSupplyEmpty then
+				chinook.DeliverGoods()
+			end
+			Attack({ chinook }, paths)
+		end)
+	end)
+	if not built then
+		Trigger.AfterDelay(DateTime.Seconds(15), function()
+			BuildCombatChinookForce(chinook, unit_list, factory, paths)
+		end)
+	end
+end
+
 InitializeAttackProduction = function(building)
 	if building.Type == "building.usa_barracks" then
 		BuildAttackForce(InfantryAttackForces[Difficulty], building, function() return FlankPaths end)
@@ -242,9 +281,18 @@ end
 
 CurrentGarrisonTeamCount = 0
 BuildGarrisonForce = function()
-	TrainGarrisoners(Enemy, Utils.Random(GarrisonTeams[Difficulty]), "building.usa_barracks", Neutral.GetActorsByTypes(CivilianBuilding))
-	CurrentGarrisonTeamCount = CurrentGarrisonTeamCount + 1
-	if CurrentGarrisonTeamCount < MaxGarrisonTeams[Difficulty] then
+	local validGarrisonables = Utils.Where(GarrisonableBuildings[Difficulty], function(a)
+		return a.Owner == Neutral and a.Health > a.MaxHealth * 0.25
+	end)
+	if #validGarrisonables > 0 then
+		TrainGarrisoners(Enemy, Utils.Random(GarrisonTeams[Difficulty]), "building.usa_barracks", validGarrisonables)
+		CurrentGarrisonTeamCount = CurrentGarrisonTeamCount + 1
+		if CurrentGarrisonTeamCount < MaxGarrisonTeams[Difficulty] then
+			Trigger.AfterDelay(DateTime.Minutes(2), function()
+				BuildGarrisonForce()
+			end)
+		end
+	else
 		Trigger.AfterDelay(DateTime.Minutes(2), function()
 			BuildGarrisonForce()
 		end)
@@ -265,24 +313,6 @@ SendCinematicAircraft = function()
 			end)
 		end)
 	end)
-end
-
-GiveGeneralPowers = function()
-	Actor.Create("generals_power.spy_drone",				true, { Owner = Enemy })
-	Actor.Create("generals_power.carpet_bombing.airforce",	true, { Owner = Enemy })
-	Actor.Create("generals_power.a101",						true, { Owner = Enemy })
-	Actor.Create("generals_power.spectre_gunship1",			true, { Owner = Enemy })
-	Actor.Create("generals_power.fuel_air_bomb",			true, { Owner = Enemy })
-
-	if Difficulty == "hard" or Difficulty == "normal" then
-		Actor.Create("generals_power.a102",					true, { Owner = Enemy })
-		Actor.Create("generals_power.spectre_gunship2",		true, { Owner = Enemy })
-	end
-
-	if Difficulty == "hard" then
-		Actor.Create("generals_power.a103",					true, { Owner = Enemy })
-		Actor.Create("generals_power.spectre_gunship3",		true, { Owner = Enemy })
-	end
 end
 
 DifficultySetup = function()
@@ -329,6 +359,9 @@ PlayAirfieldKilledTaunt = function()
 		KilledAirfields = KilledAirfields + 1
 	elseif KilledAirfields == 3 then
 		Taunts.PlayTauntNotification(Enemy, "74")
+		KilledAirfields = KilledAirfields + 1
+	elseif KilledAirfields == 4 then
+		Taunts.PlayTauntNotification(Enemy, "37")
 		KilledAirfields = KilledAirfields + 1
 	end
 end
@@ -434,15 +467,6 @@ WorldLoaded = function()
 	end
 
 	DifficultySetup()
-	Trigger.OnBuildingPlaced(MP0, function(_, building)
-		if building.Type == "building.strategy_center" or building.Type == "building.palace" or building.Type == "building.propaganda_center" then
-			GiveGeneralPowers()
-		end
-	end)
-
-	ResearchUpgrade("building.usa_airfield", "upgrade.laser_guided_missiles")
-	ResearchUpgrade("building.strategy_center", "upgrade.adv_training")
-	ResearchUpgrade("building.strategy_center", "upgrade.moab")
 
 	EnemyAttackPath = CenterPaths
 	Trigger.AfterDelay(InitialAttackDelay[Difficulty], function()
@@ -464,7 +488,7 @@ WorldLoaded = function()
 			InitializeAttackProduction(building)
 		end
 		if building.Type == "building.usa_airfield" then
-			Trigger.OnKilled(building, function()
+			Trigger.OnKilledOrCaptured(building, function()
 				PlayAirfieldKilledTaunt()
 			end)
 		end
@@ -497,12 +521,31 @@ WorldLoaded = function()
 		Taunts.PlayTauntNotification(Enemy, "29")
 	end)
 	Utils.Do(Enemy.GetActorsByTypes(Airfield), function(airf)
-		Trigger.OnKilled(airf, function()
+		Trigger.OnKilledOrCaptured(airf, function()
 			PlayAirfieldKilledTaunt()
 		end)
 	end)
+	Trigger.OnSuperWeaponActivated(EnemyCommandCenter, function(_, orderName)
+		if not ParadropTauntPlayed and orderName == "ParadropPowerInfoOrder" then
+			ParadropTauntPlayed = true
+			Taunts.PlayTauntNotification(Enemy, "71")
+		end
+		if not FABTauntPlayed and orderName == "FuelAirBombPowerInfoOrder" then
+			FABTauntPlayed = true
+			Taunts.PlayTauntNotification(Enemy, "82")
+		end
+		if not A10TauntPlayed and orderName == "A10PowerInfoOrder" then
+			A10TauntPlayed = true
+			Taunts.PlayTauntNotification(Enemy, "84")
+		end
+	end)
 
-	Trigger.OnAnyProduction(function(_, actor) -- No ownership check; but the AI general can't/doesn't build these.
+	Trigger.OnAnyProduction(function(_, actor)
+		if actor.Type == "aircraft.combat_chinook" and actor.Owner == Enemy then
+			BuildCombatChinookForce(actor, ChinookTeams, Utils.Random(Enemy.GetActorsByType("building.usa_barracks")), function() return FlankPaths end)
+		end
+
+		-- No ownership check; but the AI general can't/doesn't build these.
 		if not BurtonBuildTauntPlayed and actor.Type == "infantry.colonel_burton" then
 			BurtonBuildTauntPlayed = true
 			Taunts.PlayTauntNotification(Enemy, "83")

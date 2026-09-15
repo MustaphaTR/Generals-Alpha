@@ -497,15 +497,6 @@ WorldLoaded = function()
 	DifficultySetup()
 	GiveGeneralPowers()
 
-	ResearchUpgrade("building.prc_war_factory", "upgrade.chain_gun")
-	ResearchUpgrade("building.prc_airfield", "upgrade.mig_armor")
-	if MergeGenerals then
-		ResearchUpgrade("building.propaganda_center", "upgrade.patriotism")
-	else
-		ResearchUpgrade("building.propaganda_center", "upgrade.nationalism")
-		ResearchUpgrade("building.missile_silo", "upgrade.nuclear_tanks")
-	end
-
 	EnemyAttackPath = CenterPaths
 	Trigger.AfterDelay(InitialAttackDelay[Difficulty], function()
 		ProductionBegun = true

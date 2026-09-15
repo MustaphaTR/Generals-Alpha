@@ -1,4 +1,9 @@
 Player:
+	Shroud:
+		ExploredMapCheckboxEnabled: True
+	ProvidesPrerequisite@AIWFac: # Allows General Granger to build Combat Chinooks despite his lack of a War Factory.
+		Prerequisite: building.usa_war_factory
+		RequiresCondition: enable-campaign-ai
 	ExternalCondition@AIEasy:
 		Condition: difficulty-easy
 	BaseBuilderBotModule@AIEasy:
@@ -34,6 +39,24 @@ Player:
 			building.usa_airfield: 1
 			building.strategy_center: 1
 			building.supply_drop_zone: 1
+			upgrade.adv_training: 1
+			upgrade.supply_lines: 1
+			upgrade.moab: 1
+			generals_power.spy_drone: 1
+			generals_power.carpet_bombing.airforce: 1
+			generals_power.paradrop1: 10
+			generals_power.paradrop2: 10
+			generals_power.paradrop3: 10
+			generals_power.a101: 1
+			generals_power.a102: 1
+			generals_power.a103: 1
+			generals_power.sprectre_gunship1: 1
+			generals_power.sprectre_gunship2: 1
+			generals_power.sprectre_gunship3: 1
+		BuildingDelays:
+			building.strategy_center: 25
+			generals_power.spy_drone: 250
+			generals_power.carpet_bombing.airforce: 300
 	BaseBuilderBotModule@AINotEasy:
 		RequiresCondition: enable-campaign-ai && !difficulty-easy
 		BuildingQueues: queue.usa_building, queue.air_gen_building, queue.laser_gen_building, queue.super_gen_building, queue.usa_building_merged, queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged, queue.prc_building, queue.inf_gen_building, queue.nuke_gen_building, queue.prc_building_merged, queue.boss_gen_building, queue.boss_gen_building_merged, queue.strategy_center, queue.air_gen_strategy_center, queue.palace, queue.toxin_gen_palace, queue.demo_gen_palace, queue.stealth_gen_palace, queue.palace_merged, queue.propaganda_center, queue.inf_gen_propaganda_center, queue.nuke_gen_propaganda_center, queue.tank_gen_propaganda_center, queue.propaganda_center_merged, queue.black_market, queue.stealth_gen_black_market, queue.boss_gen_particle_cannon, queue.boss_gen_scud_storm, queue.missile_silo, queue.inf_gen_missile_silo, queue.nuke_gen_missile_silo, queue.tank_gen_missile_silo, queue.boss_gen_missile_silo, queue.boss_gen_missile_silo_merged, queue.just_mine, queue.soviet_infantry, queue.usa_generals_power, queue.air_gen_generals_power, queue.laser_gen_generals_power, queue.super_gen_generals_power, queue.gla_generals_power, queue.toxin_gen_generals_power, queue.demo_gen_generals_power, queue.stealth_gen_generals_power, queue.prc_generals_power, queue.inf_gen_generals_power, queue.nuke_gen_generals_power, queue.tank_gen_generals_power, queue.boss_gen_generals_power, queue.boss_gen_generals_power_merged
@@ -69,6 +92,24 @@ Player:
 			building.strategy_center: 1
 			building.supply_drop_zone: 1
 			building.patriot: 1
+			upgrade.adv_training: 1
+			upgrade.supply_lines: 1
+			upgrade.moab: 1
+			generals_power.spy_drone: 1
+			generals_power.carpet_bombing.airforce: 1
+			generals_power.paradrop1: 10
+			generals_power.paradrop2: 10
+			generals_power.paradrop3: 10
+			generals_power.a101: 1
+			generals_power.a102: 1
+			generals_power.a103: 1
+			generals_power.sprectre_gunship1: 1
+			generals_power.sprectre_gunship2: 1
+			generals_power.sprectre_gunship3: 1
+		BuildingDelays:
+			building.strategy_center: 25
+			generals_power.spy_drone: 250
+			generals_power.carpet_bombing.airforce: 300
 	UnitBuilderBotModule@AI:
 		RequiresCondition: enable-campaign-ai
 		ProductionMinCashRequirement: 5001
@@ -80,6 +121,7 @@ Player:
 			vehicle.usa_mcc: 1
 			upgrade.control_rods: 1
 			upgrade.advanced_control_rods: 1
+			upgrade.laser_guided_missiles: 5
 		UnitLimits:
 			aircraft.chinook: 4
 			aircraft.combat_chinook: 1
@@ -89,6 +131,7 @@ Player:
 			queue.cold_fusion_reactor_merged: 1
 		UnitDelays:
 			vehicle.usa_mcc: 1500
+			aircraft.combat_chinook: 1250
 
 World:
 	LuaScript:

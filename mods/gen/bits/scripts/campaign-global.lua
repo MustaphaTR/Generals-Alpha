@@ -15,17 +15,6 @@ IdleHunt = function(actor)
 	end
 end
 
-ResearchUpgrade = function(building, upgrade)
-	local buildings = Enemy.GetActorsByType(building)
-	if #buildings > 0 then
-		buildings[1].Build( { upgrade } )
-	else
-		Trigger.AfterDelay(DateTime.Minutes(1), function()
-			ResearchUpgrade(building, upgrade)
-		end)
-	end
-end
-
 TrainPatrolDefense = function(owner, units, producer, path, wait)
 	local producers = owner.GetActorsByType(producer)
 	if #producers > 0 then
@@ -162,4 +151,16 @@ ChooseRandomTarget = function(unit, enemyPlayer)
 		target = Utils.Random(enemies)
 	end
 	return target
+end
+
+--- Used for debugging purposes.
+SpamPlayerXPInChat = function(player)
+	Trigger.AfterDelay(DateTime.Seconds(5), function ()
+		if Levels[player.InternalName] < 4 then
+			Media.DisplayMessage("Current Rank: " .. Ranks[Levels[player.InternalName] + 1] .. "\nGeneral's Points: " .. Points[player.InternalName] .. "\nProgress to Next Rank: " .. player.Experience - RankXPs[Levels[player.InternalName] + 1] .. "/" .. RankXPs[Levels[player.InternalName] + 2] - RankXPs[Levels[player.InternalName] + 1] .. "", "Debug", player.Color)
+		else 
+			Media.DisplayMessage("Current Rank: " .. Ranks[Levels[player.InternalName] + 1] .. "\nGeneral's Points: " .. Points[player.InternalName] .. "", "Debug", player.Color)
+		end
+		SpamPlayerXPInChat()
+	end)
 end

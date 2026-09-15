@@ -266,72 +266,9 @@ Actors:
 	Actor71: supply.dock.30000.skewed_b
 		Owner: Neutral
 		Location: 77,55
-	Actor73: v02
-		Owner: Neutral
-		Location: 86,58
-	Actor74: v04
-		Owner: Neutral
-		Location: 83,60
-	Actor75: v01
-		Owner: Neutral
-		Location: 86,41
-	Actor76: v03
-		Owner: Neutral
-		Location: 95,55
-	Actor78: v08
-		Owner: Neutral
-		Location: 93,61
-	Actor77: v09
-		Owner: Neutral
-		Location: 89,62
-	Actor80: v04
-		Owner: Neutral
-		Location: 92,41
-	Actor81: v10
-		Owner: Neutral
-		Location: 90,49
-	Actor82: v07
-		Owner: Neutral
-		Location: 81,46
-	Actor83: v05
-		Owner: Neutral
-		Location: 84,49
-	Actor84: asianhut
-		Owner: Neutral
-		Location: 83,52
-	Actor85: v05
-		Owner: Neutral
-		Location: 80,50
-	Actor86: v06
-		Owner: Neutral
-		Location: 78,48
-	Actor87: v11
-		Owner: Neutral
-		Location: 80,38
-	Actor88: v10
-		Owner: Neutral
-		Location: 96,64
-	Actor89: v07
-		Owner: Neutral
-		Location: 98,62
 	Actor90: v12
 		Owner: Neutral
 		Location: 88,43
-	Actor91: v07
-		Owner: Neutral
-		Location: 91,52
-	Actor92: v10
-		Owner: Neutral
-		Location: 91,55
-	Actor93: v02
-		Owner: Neutral
-		Location: 67,37
-	Actor94: v07
-		Owner: Neutral
-		Location: 71,29
-	Actor95: v03
-		Owner: Neutral
-		Location: 68,24
 	Actor101: supply.pile.b
 		Owner: Neutral
 		Location: 88,92
@@ -362,9 +299,6 @@ Actors:
 	Actor96: supply.dock.30000.skewed_b
 		Owner: Neutral
 		Location: 35,30
-	Actor0: lhus
-		Owner: Neutral
-		Location: 34,61
 	Actor1: wood
 		Owner: Neutral
 		Location: 80,37
@@ -728,9 +662,6 @@ Actors:
 		Owner: Neutral
 		Facing: 256
 		Location: 122,78
-	Actor97: v06
-		Owner: Neutral
-		Location: 121,77
 	Actor168: v14
 		Owner: Neutral
 		Location: 117,75
@@ -818,9 +749,6 @@ Actors:
 	CenterEnd2: waypoint
 		Owner: Neutral
 		Location: 57,86
-	Actor79: windmill
-		Owner: Neutral
-		Location: 100,54
 	Actor224: car.pickup_truck
 		Owner: Neutral
 		Location: 68,26
@@ -829,15 +757,6 @@ Actors:
 		Owner: Neutral
 		Location: 114,70
 		Facing: 256
-	Actor226: v10
-		Owner: Neutral
-		Location: 74,62
-	Actor227: lhus
-		Owner: Neutral
-		Location: 76,61
-	Actor228: lhus
-		Owner: Neutral
-		Location: 87,68
 	CenterWP1: waypoint
 		Owner: Neutral
 		Location: 67,44
@@ -847,12 +766,6 @@ Actors:
 	CenterWP3: waypoint
 		Owner: Neutral
 		Location: 80,62
-	Actor100: lhus
-		Owner: Neutral
-		Location: 95,91
-	Actor231: lhus
-		Owner: Neutral
-		Location: 107,83
 	FlankStart: waypoint
 		Owner: Neutral
 		Location: 110,40
@@ -1468,6 +1381,93 @@ Actors:
 	Actor389: uncrate
 		Owner: Neutral
 		Location: 79,39
+	LHouseLeft: lhus
+		Owner: Neutral
+		Location: 34,61
+	LHouseBridgePlayer: lhus
+		Owner: Neutral
+		Location: 95,91
+	LHouseBridgeVillage: lhus
+		Owner: Neutral
+		Location: 107,83
+	SouthFarmhouse: v06
+		Owner: Neutral
+		Location: 121,77
+	LHouseVillage1: lhus
+		Owner: Neutral
+		Location: 76,61
+	LHouseVillage2: lhus
+		Owner: Neutral
+		Location: 87,68
+	ChurchVillage: v01
+		Owner: Neutral
+		Location: 86,41
+	BigHouseVillage1: v03
+		Owner: Neutral
+		Location: 68,24
+	BigHouseVillage2: v02
+		Owner: Neutral
+		Location: 67,37
+	MediumHouseVillage1: v07
+		Owner: Neutral
+		Location: 71,29
+	SmallHouseVillage1: v11
+		Owner: Neutral
+		Location: 80,38
+	MediumHouseVillage2: v06
+		Owner: Neutral
+		Location: 78,48
+	MediumHouseVillage3: v05
+		Owner: Neutral
+		Location: 80,50
+	MediumHouseVillage4: v07
+		Owner: Neutral
+		Location: 81,46
+	MediumHouseVillage5: v05
+		Owner: Neutral
+		Location: 84,49
+	BigHouseVillage5: v04
+		Owner: Neutral
+		Location: 92,41
+	SmallHouseVillage2: asianhut
+		Owner: Neutral
+		Location: 83,52
+	SmallHouseVillage3: v10
+		Owner: Neutral
+		Location: 90,49
+	MediumHouseVillage6: v07
+		Owner: Neutral
+		Location: 91,52
+	BigHouseVillage3: v03
+		Owner: Neutral
+		Location: 95,55
+	BigHouseVillage4: v02
+		Owner: Neutral
+		Location: 86,58
+	SmallHouseVillage4: v10
+		Owner: Neutral
+		Location: 91,55
+	WindmillVillage: windmill
+		Owner: Neutral
+		Location: 100,54
+	BigHouseVillage6: v04
+		Owner: Neutral
+		Location: 83,60
+	SmallHouseVillage5: v10
+		Owner: Neutral
+		Location: 74,62
+	SmallHouseVillage6: v09
+		Owner: Neutral
+		Location: 89,62
+	SmallHouseVillage7: v08
+		Owner: Neutral
+		Location: 93,61
+	SmallHouseVillage8: v10
+		Owner: Neutral
+		Location: 96,64
+	MediumHouseVillage7: v07
+		Owner: Neutral
+		Location: 98,62
 
 Rules: gen|rules/challenge-rules.yaml, rules.yaml
 
