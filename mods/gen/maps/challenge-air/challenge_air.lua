@@ -8,9 +8,14 @@
 ]]
 
 EnemyBase = { EnemyCommandCenter, EnemyBarracks, EnemyAirfield1, EnemyAirfield2, EnemyAirfield3, EnemySupplyCenter, EnemySupplyDrop1, EnemySupplyDrop2, EnemyReactor1, EnemyReactor2, EnemyReactor3, EnemyReactor4, EnemyReactor5, EnemyReactor6, EnemyReactor7, EnemyReactor8, EnemyReactor9, EnemyReactor10, EnemyReactor11, EnemyReactor12, EnemyPatriot1, EnemyPatriot2, EnemyPatriot3, EnemyPatriot4, EnemyPatriot5, EnemyPatriot6, EnemyPatriot7, EnemyPatriot8, EnemyPatriot9, EnemyPatriot10, EnemyPatriot11 }
-TauntDerricks = { OilDerrick1, OilDerrick2, OilDerrick3, OilDerrick4, OilDerrick5 }
 
-RandomTaunts = { "5", "7", "8", "9", "13", "14" }
+RandomTaunts = { "5", "7", "9", "13", "14" }
+
+DerricksToCapture = {
+	easy = { OilDerrick1, OilDerrick2 },
+	normal = { OilDerrick3, OilDerrick4, OilDerrick5 },
+	hard = { OilDerrick1, OilDerrick2, OilDerrick3, OilDerrick4, OilDerrick5 }
+}
 
 GarrisonableBuildings = {
 	easy = { WindmillVillage, LHouseVillage1, LHouseVillage2, SmallHouseVillage1, SmallHouseVillage2, SmallHouseVillage3, SmallHouseVillage4, SmallHouseVillage5, SmallHouseVillage6, SmallHouseVillage7, SmallHouseVillage8, MediumHouseVillage1, MediumHouseVillage2, MediumHouseVillage3, MediumHouseVillage4, MediumHouseVillage5, MediumHouseVillage6, MediumHouseVillage7, ChurchVillage, BigHouseVillage1, BigHouseVillage2, BigHouseVillage3, BigHouseVillage4, BigHouseVillage5, BigHouseVillage6 },
@@ -39,31 +44,26 @@ GarrisonTeams = {
 	}
 }
 
-ChinookTeams =
-{
+ChinookTeams = {
 	{ "infantry.ranger", "infantry.ranger", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender" },
 	{ "infantry.ranger", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender" }
 }
 
-InfantryAttackForces =
-{
-	easy =
-	{
+InfantryAttackForces = {
+	easy = {
 		{ "infantry.ranger", "infantry.ranger" },
 		{ "infantry.ranger", "infantry.ranger", "infantry.ranger" },
 		{ "infantry.ranger", "infantry.missile_defender" },
 		{ "infantry.missile_defender", "infantry.missile_defender" }
 	},
-	normal =
-	{
+	normal = {
 		{ "infantry.ranger", "infantry.ranger", "infantry.ranger" },
 		{ "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.ranger" },
 		{ "infantry.ranger", "infantry.ranger", "infantry.missile_defender" },
 		{ "infantry.ranger", "infantry.ranger", "infantry.missile_defender", "infantry.missile_defender" },
 		{ "infantry.missile_defender", "infantry.missile_defender", "infantry.missile_defender" }
 	},
-	hard =
-	{
+	hard = {
 		{ "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.ranger" },
 		{ "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.ranger" },
 		{ "infantry.ranger", "infantry.ranger", "infantry.ranger", "infantry.missile_defender" },
@@ -72,17 +72,14 @@ InfantryAttackForces =
 	}
 }
 
-AirAttackForces =
-{
+AirAttackForces = {
 	default = {
-		easy =
-		{
+		easy = {
 			{ "aircraft.king_raptor" },
 			{ "aircraft.king_raptor", "aircraft.king_raptor" },
 			{ "aircraft.comanche" }
 		},
-		normal =
-		{
+		normal = {
 			{ "aircraft.king_raptor" },
 			{ "aircraft.king_raptor", "aircraft.king_raptor" },
 			{ "aircraft.king_raptor", "aircraft.king_raptor", "aircraft.king_raptor" },
@@ -91,8 +88,7 @@ AirAttackForces =
 			{ "aircraft.comanche" },
 			{ "aircraft.comanche", "aircraft.comanche" }
 		},
-		hard =
-		{
+		hard = {
 			{ "aircraft.king_raptor" },
 			{ "aircraft.king_raptor", "aircraft.king_raptor" },
 			{ "aircraft.king_raptor", "aircraft.king_raptor", "aircraft.king_raptor" },
@@ -107,14 +103,12 @@ AirAttackForces =
 		}
 	},
 	merged = {
-		easy =
-		{
+		easy = {
 			{ "aircraft.king_raptor" },
 			{ "aircraft.king_raptor", "aircraft.king_raptor" },
 			{ "aircraft.comanche" }
 		},
-		normal =
-		{
+		normal = {
 			{ "aircraft.king_raptor" },
 			{ "aircraft.king_raptor", "aircraft.king_raptor" },
 			{ "aircraft.king_raptor", "aircraft.king_raptor", "aircraft.king_raptor" },
@@ -123,8 +117,7 @@ AirAttackForces =
 			{ "aircraft.comanche" },
 			{ "aircraft.comanche", "aircraft.comanche" }
 		},
-		hard =
-		{
+		hard = {
 			{ "aircraft.king_raptor" },
 			{ "aircraft.king_raptor", "aircraft.king_raptor" },
 			{ "aircraft.king_raptor", "aircraft.king_raptor", "aircraft.king_raptor" },
@@ -140,30 +133,26 @@ AirAttackForces =
 	}
 }
 
-InitialAttackDelay =
-{
+InitialAttackDelay = {
 	easy = DateTime.Minutes(3),
 	normal = DateTime.Minutes(2),
 	hard = DateTime.Minutes(1)
 }
 
-BackDoorAttackDelay =
-{
+BackDoorAttackDelay = {
 	easy = DateTime.Minutes(4),
 	normal = DateTime.Minutes(3),
 	hard = DateTime.Minutes(2)
 }
 
-FlankAttackDelay =
-{
+FlankAttackDelay = {
 	easy = DateTime.Minutes(5),
 	normal = DateTime.Minutes(4),
 	hard = DateTime.Minutes(3)
 }
 
 EnemyAttackPath = CenterPaths
-CenterPaths =
-{
+CenterPaths = {
 	{ CenterStart, CenterEnd1 },
 	{ CenterStart, CenterWP1, CenterWP2, CenterWP3, CenterEnd1 },
 	{ CenterStart, CenterWP1, CenterWP2, CenterWP3, CenterEnd2 },
@@ -171,13 +160,11 @@ CenterPaths =
 	{ CenterStart, CenterWP3, CenterEnd2 }
 }
 
-FlankPaths =
-{
+FlankPaths = {
 	{ FlankStart, FlankWP1, FlankWP2, FlankWP3, FlankWP4, FlankEnd1 }
 }
 
-CenterAndBackDoorPaths =
-{
+CenterAndBackDoorPaths = {
 	{ CenterStart, CenterEnd1 },
 	{ CenterStart, CenterWP1, CenterWP2, CenterWP3, CenterEnd1 },
 	{ CenterStart, CenterWP1, CenterWP2, CenterWP3, CenterEnd2 },
@@ -188,8 +175,7 @@ CenterAndBackDoorPaths =
 	{ BackDoorStart, BackDoorWP4, BackDoorWP9, BackDoorWP10, BackDoorWP11, BackDoorEnd3 }
 }
 
-AllPaths =
-{
+AllPaths = {
 	{ CenterStart, CenterEnd1 },
 	{ CenterStart, CenterWP1, CenterWP2, CenterWP3, CenterEnd1 },
 	{ CenterStart, CenterWP1, CenterWP2, CenterWP3, CenterEnd2 },
@@ -254,6 +240,7 @@ BuildCombatChinookForce = function(chinook, unit_list, factory, paths)
 	end
 
 	local built = factory.Build(Utils.Random(unit_list), function(units)
+		chinook.Move(CombatChinookLoadWP.Location)
 		Utils.Do(units, function(unit)
 			unit.EnterTransport(chinook)
 		end)
@@ -295,6 +282,19 @@ BuildGarrisonForce = function()
 	else
 		Trigger.AfterDelay(DateTime.Minutes(2), function()
 			BuildGarrisonForce()
+		end)
+	end
+end
+
+CaptureOilDerricks = function(derricks)
+	local built = Utils.Random(Enemy.GetActorsByType("building.usa_barracks")).Build({ "infantry.ranger" }, function(a)
+		Utils.Do(derricks, function(oild)
+			a[1].Capture(oild)
+		end)
+	end)
+	if not built then
+		Trigger.AfterDelay(DateTime.Seconds(15), function()
+			CaptureOilDerricks(derricks)
 		end)
 	end
 end
@@ -366,6 +366,30 @@ PlayAirfieldKilledTaunt = function()
 	end
 end
 
+SetupSuperWeaponNotifications = function(building)
+	Trigger.OnSuperWeaponActivated(building, function(_, orderName)
+		if building.Owner == Enemy then
+			if not ParadropTauntPlayed and orderName == "ParadropPowerInfoOrder" then
+				ParadropTauntPlayed = true
+				Taunts.PlayTauntNotification(Enemy, "71")
+			end
+			if not FABTauntPlayed and orderName == "FuelAirBombPowerInfoOrder" then
+				FABTauntPlayed = true
+				Taunts.PlayTauntNotification(Enemy, "82")
+			end
+			if not A10TauntPlayed and orderName == "A10PowerInfoOrder" then
+				A10TauntPlayed = true
+				Taunts.PlayTauntNotification(Enemy, "84")
+			end
+		elseif building.Owner == MP0 then
+			if not AnthraxTauntPlayed and orderName == "AnthraxBombPowerInfoOrder" then
+				AnthraxTauntPlayed = true
+				Taunts.PlayTauntNotification(Enemy, "54")
+			end
+		end
+	end)
+end
+
 LowPowerTauntTimer = 0
 RandomTauntTimer = Utils.RandomInteger(DateTime.Seconds(45), DateTime.Seconds(120))
 RandomTauntToPlay = 1
@@ -420,22 +444,6 @@ Tick = function()
 	if not RangerBuildTauntPlayed and #MP0.GetActorsByType("infantry.ranger") > 9 then
 		RangerBuildTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "81")
-	end
-	if not DefeBuildTauntPlayed and #MP0.GetActorsByTypes(BaseDefense) > 5 then
-		DefeBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(Enemy, "52")
-	end
-	if not DozerBuildTauntPlayed and #MP0.GetActorsByTypes(Dozer) > 4 then
-		DozerBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(Enemy, "3")
-	end
-	if not TankBuildTauntPlayed and #MP0.GetActorsByTypes(Tank) > 5 then
-		TankBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(Enemy, "53")
-	end
-	if not ArtyBuildTauntPlayed and #MP0.GetActorsByTypes(Artillery) > 5 then
-		ArtyBuildTauntPlayed = true
-		Taunts.PlayTauntNotification(Enemy, "86")
 	end
 	if not GarrisonTauntPlayed and #MP0.GetActorsByTypes(CivilianBuilding) > 5 then
 		GarrisonTauntPlayed = true
@@ -492,6 +500,9 @@ WorldLoaded = function()
 				PlayAirfieldKilledTaunt()
 			end)
 		end
+		if building.Type == "building.usa_command_center" then
+			SetupSuperWeaponNotifications(building)
+		end
 	end)
 
 	Trigger.AfterDelay(BackDoorAttackDelay[Difficulty], function()
@@ -506,16 +517,22 @@ WorldLoaded = function()
 		Taunts.PlayTauntNotification(Enemy, "67")
 		SendCinematicAircraft()
 	end)
-	Utils.Do(TauntDerricks, function(oild)
-		Trigger.OnCapture(oild, function(_, _, _, newOwner)
+	Utils.Do(DerricksToCapture["hard"], function(oild)
+		Trigger.OnCapture(oild, function(_, _, oldOwner, newOwner)
 			if not OildBuildTauntPlayed and newOwner == MP0 then
 				OildBuildTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "33")
+			end
+			if oldOwner == Enemy then
+				CaptureOilDerricks({ oild })
 			end
 		end)
 	end)
 	Trigger.OnAnyKilled(Enemy.GetActorsByTypes(CommandCenter), function()
 		Taunts.PlayTauntNotification(Enemy, "11")
+	end)
+	Trigger.OnAnyKilled(Enemy.GetActorsByTypes(Barracks), function()
+		Taunts.PlayTauntNotification(Enemy, "30")
 	end)
 	Trigger.OnAnyKilled(Enemy.GetActorsByTypes(BaseDefense), function()
 		Taunts.PlayTauntNotification(Enemy, "29")
@@ -525,34 +542,39 @@ WorldLoaded = function()
 			PlayAirfieldKilledTaunt()
 		end)
 	end)
-	Trigger.OnSuperWeaponActivated(EnemyCommandCenter, function(_, orderName)
-		if not ParadropTauntPlayed and orderName == "ParadropPowerInfoOrder" then
-			ParadropTauntPlayed = true
-			Taunts.PlayTauntNotification(Enemy, "71")
-		end
-		if not FABTauntPlayed and orderName == "FuelAirBombPowerInfoOrder" then
-			FABTauntPlayed = true
-			Taunts.PlayTauntNotification(Enemy, "82")
-		end
-		if not A10TauntPlayed and orderName == "A10PowerInfoOrder" then
-			A10TauntPlayed = true
-			Taunts.PlayTauntNotification(Enemy, "84")
-		end
-	end)
+	SetupSuperWeaponNotifications(EnemyCommandCenter)
+	SetupSuperWeaponNotifications(MP0.GetActorsByTypes(CommandCenter)[1])
 
 	Trigger.OnAnyProduction(function(_, actor)
-		if actor.Type == "aircraft.combat_chinook" and actor.Owner == Enemy then
-			BuildCombatChinookForce(actor, ChinookTeams, Utils.Random(Enemy.GetActorsByType("building.usa_barracks")), function() return FlankPaths end)
+		if actor.Owner == Enemy then
+			if actor.Type == "aircraft.combat_chinook" then
+				BuildCombatChinookForce(actor, ChinookTeams, Utils.Random(Enemy.GetActorsByType("building.usa_barracks")), function() return FlankPaths end)
+			end
+			if actor.Type == "upgrade.capture_building" then
+				CaptureOilDerricks(DerricksToCapture[Difficulty])
+			end
 		end
 
-		-- No ownership check; but the AI general can't/doesn't build these.
-		if not BurtonBuildTauntPlayed and actor.Type == "infantry.colonel_burton" then
-			BurtonBuildTauntPlayed = true
-			Taunts.PlayTauntNotification(Enemy, "83")
-		end
-		if not ScudLauncherBuildTauntPlayed and actor.Type == "vehicle.scud_launcher" then
-			ScudLauncherBuildTauntPlayed = true
-			Taunts.PlayTauntNotification(Enemy, "87")
+		if actor.Owner == MP0 then
+			if not DozerBuildTauntPlayed and IsDozer(actor) and #MP0.GetActorsByTypes(Dozer) > 4 then
+				DozerBuildTauntPlayed = true
+				Taunts.PlayTauntNotification(Enemy, "3")
+			end
+			if not BurtonBuildTauntPlayed and actor.Type == "infantry.colonel_burton" then
+				BurtonBuildTauntPlayed = true
+				Taunts.PlayTauntNotification(Enemy, "83")
+			end
+			if not TankBuildTauntPlayed and IsTank(actor) and #MP0.GetActorsByTypes(Tank) > 3 then
+				TankBuildTauntPlayed = true
+				Taunts.PlayTauntNotification(Enemy, "53")
+			end
+			if not ScudLauncherBuildTauntPlayed and actor.Type == "vehicle.scud_launcher" then
+				ScudLauncherBuildTauntPlayed = true
+				Taunts.PlayTauntNotification(Enemy, "87")
+			elseif not ArtyBuildTauntPlayed and IsArtillery(actor) and #MP0.GetActorsByTypes(Artillery) > 3 then
+				ArtyBuildTauntPlayed = true
+				Taunts.PlayTauntNotification(Enemy, "86")
+			end
 		end
 	end)
 	Trigger.OnBuildingPlaced(MP0, function(_, building)
@@ -560,6 +582,9 @@ WorldLoaded = function()
 			PlayerBuiltWarFactory = true
 		end
 
+		if building.Type == "building.gla_command_center" then
+			SetupSuperWeaponNotifications(building)
+		end
 		if IsScudStorm(building) then
 			if not ScudBuildTauntPlayed then
 				ScudBuildTauntPlayed = true
@@ -567,6 +592,15 @@ WorldLoaded = function()
 			elseif not SecondScudBuildTauntPlayed and #MP0.GetActorsByTypes(ScudStorm) > 1 then
 				SecondScudBuildTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "79")
+			end
+		end
+		if IsAntiAir(building) then
+			if not AntiAirTauntPlayed and #MP0.GetActorsByTypes(AntiAir) > 6 then
+				AntiAirTauntPlayed = true
+				Taunts.PlayTauntNotification(Enemy, "52")
+			elseif not SecondAntiAirTauntPlayed and #MP0.GetActorsByTypes(AntiAir) > 10 then
+				SecondAntiAirTauntPlayed = true
+				Taunts.PlayTauntNotification(Enemy, "93")
 			end
 		end
 

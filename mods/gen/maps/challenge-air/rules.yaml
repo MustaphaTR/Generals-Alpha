@@ -114,13 +114,14 @@ Player:
 		RequiresCondition: enable-campaign-ai
 		ProductionMinCashRequirement: 5001
 		SupplyCollectorTypes: aircraft.chinook, aircraft.combat_chinook, infantry.worker, vehicle.supply_truck
-		UnitQueues: queue.air_gen_collector, queue.air_gen_aircraft, queue.usa_aircraft_merged, queue.usa_command_center, queue.cold_fusion_reactor, queue.cold_fusion_reactor_merged
+		UnitQueues: queue.air_gen_collector, queue.usa_infantry, queue.super_gen_infantry, queue.air_gen_aircraft, queue.usa_aircraft_merged, queue.usa_command_center, queue.cold_fusion_reactor, queue.cold_fusion_reactor_merged
 		UnitsToBuild:
 			aircraft.chinook: 1
 			aircraft.combat_chinook: 1
 			vehicle.usa_mcc: 1
 			upgrade.control_rods: 1
 			upgrade.advanced_control_rods: 1
+			upgrade.capture_building: 5
 			upgrade.laser_guided_missiles: 5
 		UnitLimits:
 			aircraft.chinook: 4

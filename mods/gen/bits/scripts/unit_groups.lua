@@ -65,6 +65,7 @@ BaseDefense =
 IsBaseDefense = function(actor)
 	return
 		actor.Type == "building.patriot" or
+		actor.Type == "building.emp_patriot" or
 		actor.Type == "building.laser_turret" or
 		actor.Type == "building.firebase" or
 		actor.Type == "building.tunnel_network" or
@@ -114,6 +115,17 @@ Tank =
 	"vehicle.overlord_tank",
 	"vehicle.emparor_overlord"
 }
+IsTank = function(actor)
+	return
+		actor.Type == "vehicle.crusader_tank" or
+		actor.Type == "vehicle.paladin_tank" or
+		actor.Type == "vehicle.scorpion_tank" or
+		actor.Type == "vehicle.marauder_tank" or
+		actor.Type == "vehicle.battlemaster_tank" or
+		actor.Type == "vehicle.nuclear_battlemaster_tank" or
+		actor.Type == "vehicle.overlord_tank" or
+		actor.Type == "vehicle.emparor_overlord"
+end
 
 Artillery =
 {
@@ -123,6 +135,14 @@ Artillery =
 	"vehicle.inferno_cannon",
 	"vehicle.nuke_cannon"
 }
+IsArtillery = function(actor)
+	return
+		actor.Type == "vehicle.tomahawk_launcher" or
+		actor.Type == "vehicle.rocket_buggy" or
+		actor.Type == "vehicle.scud_launcher" or
+		actor.Type == "vehicle.inferno_cannon" or
+		actor.Type == "vehicle.nuke_cannon"
+end
 
 Dozer =
 {
@@ -131,6 +151,13 @@ Dozer =
 	"vehicle.prc_mcc",
 	"vehicle.tech_mcc"
 }
+IsDozer = function(actor)
+	return
+		actor.Type == "vehicle.usa_mcc" or
+		actor.Type == "vehicle.gla_mcc" or
+		actor.Type == "vehicle.prc_mcc" or
+		actor.Type == "vehicle.tech_mcc"
+end
 
 Plane =
 {
@@ -273,8 +300,37 @@ Jarmen =
 Lotus =
 {
 	"infantry.black_lotus",
-	"infantry.super_lotus",
+	"infantry.super_lotus"
 }
+
+AntiAir =
+{
+	"building.patriot",
+	"building.emp_patriot",
+	"building.laser_turret",
+	"building.stinger_site",
+	"building.gatling_cannon",
+	"infantry.minigunner",
+	"infantry.rpg_trooper",
+	"infantry.missile_defender",
+	"infantry.tank_hunter",
+	"vehicle.avenger",
+	"vehicle.quad_cannon",
+	"vehicle.gatling_tank"
+}
+IsAntiAir = function(actor)
+	return
+		actor.Type == "building.patriot" or
+		actor.Type == "building.emp_patriot" or
+		actor.Type == "building.laser_turret" or
+		actor.Type == "building.stinger_site" or
+		actor.Type == "building.gatling_cannon" or
+		actor.Type == "infantry.minigunner" or
+		actor.Type == "infantry.rpg_trooper" or
+		actor.Type == "infantry.missile_defender" or
+		actor.Type == "infantry.tank_hunter" or
+		actor.Type == "vehicle.gatling_tank"
+end
 
 TechBuilding =
 {
