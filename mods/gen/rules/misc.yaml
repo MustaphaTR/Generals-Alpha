@@ -182,6 +182,8 @@ UNCRATE:
 	Inherits: ^Crate
 	Tooltip:
 		Name: actor-uncrate-name
+	Crate:
+		Duration: 0
 	GiveCashCrateAction:
 		Amount: 2000
 		SelectionShares: 1
@@ -250,6 +252,8 @@ crate.scrap:
 	Inherits: ^Crate
 	Tooltip:
 		Name: actor-crate-scrap-name
+	Crate:
+		Duration: 0
 	GiveCashCrateAction@1:
 		Amount: 25
 		SelectionShares: 1
