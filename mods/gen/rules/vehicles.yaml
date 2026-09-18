@@ -3948,6 +3948,10 @@ vehicle.bomb_truck:
 		CrushClasses: vehicle
 	DisguisingTurreted:
 		TurnSpeed: 1023
+	Turreted@EMPEROR_OVERLORD_SPINNER:
+		Turret: speaker
+		TurnSpeed: 1023
+		Offset: 0,0,256
 	FireWarheadsOnDeath@Normal:
 		Weapon: BombTruckExplosion
 		EmptyWeapon: BombTruckExplosion
@@ -4043,6 +4047,7 @@ vehicle.bomb_truck:
 			vehicle.radar_van: radar_van
 			vehicle.listening_outpost: listening_outpost
 			vehicle.attack_outpost: listening_outpost
+			vehicle.emparor_overlord: emparor_overlord
 			vehicle.usa_mcc: usa_mcc
 			vehicle.gla_mcc: gla_mcc
 			vehicle.prc_mcc: prc_mcc
@@ -4056,6 +4061,10 @@ vehicle.bomb_truck:
 		Offset: -256,0,256
 		PauseOnCondition: moving
 		RequiresCondition: listening_outpost
+	WithSpriteTurret@EMPEROR_OVERLORD_SPINNER:
+		Sequence: overlord_speaker
+		Turret: speaker
+		RequiresCondition: emparor_overlord
 	GrantConditionOnMovement:
 		Condition: moving
 	WithTextDecoration@SIDE_USA:
