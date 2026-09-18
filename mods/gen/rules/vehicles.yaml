@@ -2654,6 +2654,17 @@ vehicle.ecm_tank:
 		Weapons: debris.radar_van
 		Pieces: 1, 1
 		Range: 1c0, 1c0
+	ProducibleWithLevel@Tank:
+		Factions: tank
+		Prerequisites: !prerequisite.mergegenerals
+	ProducibleWithLevel@Merged:
+		Prerequisites: prerequisite.mergegenerals
+	WithProductionIconOverlay@Tank:
+		Types: Veterancy
+		Prerequisites: prerequisite.tank_gen_player, !prerequisite.mergegenerals
+	WithProductionIconOverlay@Merged:
+		Types: Veterancy2
+		Prerequisites: prerequisite.mergegenerals
 	Voiced:
 		VoiceSet: ECMTankVoice
 	ActorStatValues:
