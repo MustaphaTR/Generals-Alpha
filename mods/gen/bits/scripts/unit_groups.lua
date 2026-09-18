@@ -7,45 +7,164 @@
    information, see COPYING.
 ]]
 
-BaseBuilding =
-{
+CommandCenter = {
 	"building.usa_command_center",
 	"building.gla_command_center",
 	"building.prc_command_center",
 	"building.prc_command_center.radar",
-	"fake.command_center",
-	"building.advanced_cold_fusion_reactor",
+	"fake.command_center"
+}
+IsCommandCenter = function(actor)
+	return
+		actor.Type == "building.usa_command_center" or
+		actor.Type == "building.gla_command_center" or
+		actor.Type == "building.prc_command_center" or
+		actor.Type == "building.prc_command_center.radar" or
+		actor.Type == "fake.command_center"
+end
+
+PowerPlant = {
 	"building.cold_fusion_reactor",
 	"building.cold_fusion_reactor.laser",
+	"building.advanced_cold_fusion_reactor",
 	"building.nuclear_reactor",
-	"building.advanced_nuclear_reactor",
+	"building.advanced_nuclear_reactor"
+}
+IsPowerPlant = function(actor)
+	return
+		actor.Type == "building.cold_fusion_reactor" or
+		actor.Type == "building.cold_fusion_reactor.laser" or
+		actor.Type == "building.advanced_cold_fusion_reactor" or
+		actor.Type == "building.nuclear_reactor" or
+		actor.Type == "building.advanced_nuclear_reactor"
+end
+
+SupplyCenter = {
 	"building.usa_supply_center",
 	"building.gla_supply_stash",
 	"building.prc_supply_center",
-	"fake.supply_stash",
+	"fake.supply_stash"
+}
+IsSupplyCenter = function(actor)
+	return
+		actor.Type == "building.usa_supply_center" or
+		actor.Type == "building.gla_supply_stash" or
+		actor.Type == "building.prc_supply_center" or
+		actor.Type == "fake.supply_stash"
+end
+
+Barracks = {
 	"building.usa_barracks",
 	"building.gla_barracks",
 	"building.prc_barracks",
-	"fake.barracks",
+	"fake.barracks"
+}
+IsBarracks = function(actor)
+	return
+		actor.Type == "building.usa_barracks" or
+		actor.Type == "building.gla_barracks" or
+		actor.Type == "building.prc_barracks" or
+		actor.Type == "fake.barracks"
+end
+
+WarFactory = {
 	"building.usa_war_factory",
 	"building.arms_dealer",
 	"building.prc_war_factory",
-	"fake.arms_dealer",
+	"fake.arms_dealer"
+}
+IsWarFactory = function(actor)
+	return
+		actor.Type == "building.usa_war_factory" or
+		actor.Type == "building.arms_dealer" or
+		actor.Type == "building.prc_war_factory" or
+		actor.Type == "fake.arms_dealer"
+end
+
+Airfield = {
 	"building.usa_airfield",
-	"building.prc_airfield",
+	"building.prc_airfield"
+}
+IsAirfield = function(actor)
+	return
+		actor.Type == "building.usa_airfield" or
+		actor.Type == "building.prc_airfield"
+end
+
+AdvancedBuilding = {
 	"building.strategy_center",
 	"building.palace",
 	"building.propaganda_center",
-	"fake.palace",
+	"fake.palace"
+}
+IsAdvancedBuilding = function(actor)
+	return
+		actor.Type == "building.strategy_center" or
+		actor.Type == "building.palace" or
+		actor.Type == "building.propaganda_center" or
+		actor.Type == "fake.palace"
+end
+
+ParticleCannon = {
+	"building.particle_cannon",
+	"building.particle_cannon.super"
+}
+IsParticleCannon = function(actor)
+	return
+		actor.Type == "building.particle_cannon" or
+		actor.Type == "building.particle_cannon.super"
+end
+
+ScudStorm = {
+	"building.scud_storm",
+	"building.scud_storm.boss",
+	"fake.scud_storm"
+}
+IsScudStorm = function(actor)
+	return
+		actor.Type == "building.scud_storm" or
+		actor.Type == "building.scud_storm.boss" or
+		actor.Type == "fake.scud_storm"
+end
+
+MissileSilo = {
+	"building.missile_silo"
+}
+IsMissileSilo = function(actor)
+	return actor.Type == "building.missile_silo"
+end
+
+SuperWeapon = Utils.Concat(Utils.Concat(ParticleCannon, ScudStorm), MissileSilo)
+IsSuperWeapon = function(actor)
+	return
+		IsParticleCannon(actor) or
+		IsScudStorm(actor) or
+		IsMissileSilo(actor)
+end
+
+BaseBuilding = Utils.Concat(Utils.Concat(Utils.Concat(Utils.Concat(Utils.Concat(Utils.Concat(
+	CommandCenter, PowerPlant), SupplyCenter), Barracks), WarFactory), AdvancedBuilding), {
 	"building.detention_camp",
 	"building.supply_drop_zone",
 	"building.black_market",
 	"building.internet_center",
-	"fake.black_market"
-}
+	"fake.black_market" })
+IsBaseBuilding = function(actor)
+	return
+		IsCommandCenter(actor) or
+		IsPowerPlant(actor) or
+		IsSupplyCenter(actor) or
+		IsBarracks(actor) or
+		IsWarFactory(actor) or
+		IsAdvancedBuilding(actor) or
+		actor.Type == "building.detention_camp" or
+		actor.Type == "building.supply_drop_zone" or
+		actor.Type == "building.black_market" or
+		actor.Type == "building.internet_center" or
+		actor.Type == "fake.black_market"
+end
 
-BaseDefense =
-{
+BaseDefense = {
 	"building.patriot",
 	"building.emp_patriot",
 	"building.laser_turret",
@@ -81,8 +200,7 @@ IsBaseDefense = function(actor)
 		actor.Type == "fake.stinger_site"
 end
 
-Infantry =
-{
+Infantry = {
 	"infantry.ranger",
 	"infantry.missile_defender",
 	"infantry.pathfinder",
@@ -103,9 +221,27 @@ Infantry =
 	"infantry.grenadier",
 	"infantry.flamethrower"
 }
+IsInfantry = function(actor)
+	return
+		actor.Type == "vehicle.ranger" or
+		actor.Type == "vehicle.missile_defender" or
+		actor.Type == "vehicle.pathfinder" or
+		actor.Type == "vehicle.rebel" or
+		actor.Type == "vehicle.toxin_rebel" or
+		actor.Type == "vehicle.rpg_trooper" or
+		actor.Type == "vehicle.toxin_terrorist" or
+		actor.Type == "vehicle.angry_mob" or
+		actor.Type == "vehicle.hijacker" or
+		actor.Type == "vehicle.saboteur" or
+		actor.Type == "vehicle.minigunner" or
+		actor.Type == "vehicle.tank_hunter" or
+		IsHacker(actor) or
+		actor.Type == "vehicle.conscript" or
+		actor.Type == "vehicle.grenadier" or
+		actor.Type == "vehicle.flamethrower"
+end
 
-Tank =
-{
+Tank = {
 	"vehicle.crusader_tank",
 	"vehicle.paladin_tank",
 	"vehicle.scorpion_tank",
@@ -127,8 +263,7 @@ IsTank = function(actor)
 		actor.Type == "vehicle.emparor_overlord"
 end
 
-Artillery =
-{
+Artillery = {
 	"vehicle.tomahawk_launcher",
 	"vehicle.rocket_buggy",
 	"vehicle.scud_launcher",
@@ -144,8 +279,7 @@ IsArtillery = function(actor)
 		actor.Type == "vehicle.nuke_cannon"
 end
 
-Dozer =
-{
+Dozer = {
 	"vehicle.usa_mcc",
 	"vehicle.gla_mcc",
 	"vehicle.prc_mcc",
@@ -159,8 +293,7 @@ IsDozer = function(actor)
 		actor.Type == "vehicle.tech_mcc"
 end
 
-Plane =
-{
+Plane = {
 	"aircraft.raptor",
 	"aircraft.king_raptor",
 	"aircraft.stealth_fighter",
@@ -180,131 +313,64 @@ IsPlane = function(actor)
 		actor.Type == "aircraft.mig"
 end
 
-CommandCenter =
-{
-	"building.usa_command_center",
-	"building.gla_command_center",
-	"building.prc_command_center",
-	"building.prc_command_center.radar",
-	"fake.command_center"
+Helix = {
+	"aircraft.helix",
+	"aircraft.assault_helix"
 }
-
-Barracks =
-{
-	"building.usa_barracks",
-	"building.gla_barracks",
-	"building.prc_barracks",
-	"fake.barracks"
-}
-IsBarracks = function(actor)
+IsHelix = function(actor)
 	return
-		actor.Type == "building.usa_barracks" or
-		actor.Type == "building.gla_barracks" or
-		actor.Type == "building.prc_barracks" or
-		actor.Type == "fake.barracks"
+		actor.Type == "aircraft.helix" or
+		actor.Type == "aircraft.assault_helix"
 end
 
-WarFactory =
-{
-	"building.usa_war_factory",
-	"building.arms_dealer",
-	"building.prc_war_factory",
-	"fake.arms_dealer"
-}
-IsWarFactory = function(actor)
-	return
-		actor.Type == "building.usa_war_factory" or
-		actor.Type == "building.arms_dealer" or
-		actor.Type == "building.prc_war_factory" or
-		actor.Type == "fake.arms_dealer"
-end
-
-AdvancedBuilding =
-{
-	"building.strategy_center",
-	"building.palace",
-	"building.propaganda_center",
-	"fake.palace"
-}
-IsAdvancedBuilding = function(actor)
-	return
-		actor.Type == "building.strategy_center" or
-		actor.Type == "building.palace" or
-		actor.Type == "building.propaganda_center" or
-		actor.Type == "fake.palace"
-end
-
-Airfield =
-{
-	"building.usa_airfield",
-	"building.prc_airfield"
-}
-
-ParticleCannon =
-{
-	"building.particle_cannon",
-	"building.particle_cannon.super"
-}
-IsParticleCannon = function(actor)
-	return
-		actor.Type == "building.particle_cannon" or
-		actor.Type == "building.particle_cannon.super"
-end
-
-ScudStorm =
-{
-	"building.scud_storm",
-	"building.scud_storm.boss",
-	"fake.scud_storm"
-}
-IsScudStorm = function(actor)
-	return
-		actor.Type == "building.scud_storm" or
-		actor.Type == "building.scud_storm.boss" or
-		actor.Type == "fake.scud_storm"
-end
-
-MissileSilo =
-{
-	"building.missile_silo"
-}
-IsMissileSilo = function(actor)
-	return actor.Type == "building.missile_silo"
-end
-
-SuperWeapon = Utils.Concat(Utils.Concat(ParticleCannon, ScudStorm), MissileSilo)
-IsSuperWeapon = function(actor)
-	return
-		IsParticleCannon(actor) or
-		IsScudStorm(actor) or
-		IsMissileSilo(actor)
-end
-
-Hacker =
-{
+Hacker = {
 	"infantry.hacker",
 	"infantry.super_hacker",
 }
+IsHacker = function(actor)
+	return
+		actor.Type == "infantry.hacker" or
+		actor.Type == "infantry.super_hacker"
+end
 
-Burton =
-{
+Burton = {
 	"infantry.colonel_burton",
 }
+IsBurton = function(actor)
+	return actor.Type == "infantry.colonel_burton"
+end
 
-Jarmen =
-{
+Jarmen = {
 	"infantry.jarmen_kell",
 	"infantry.jarmen_kell.demo",
 }
+IsJarmen = function(actor)
+	return
+		actor.Type == "infantry.jarmen_kell" or
+		actor.Type == "infantry.jarmen_kell.demo"
+end
 
-Lotus =
-{
+Lotus = {
 	"infantry.black_lotus",
 	"infantry.super_lotus"
 }
+IsLotus = function(actor)
+	return
+		actor.Type == "infantry.black_lotus" or
+		actor.Type == "infantry.super_lotus"
+end
 
-AntiAir =
-{
+OverlordTank = {
+	"vehicle.overlord_tank",
+	"vehicle.emparor_overlord"
+}
+IsOverlordTank = function(actor)
+	return
+		actor.Type == "vehicle.overlord_tank" or
+		actor.Type == "vehicle.emparor_overlord"
+end
+
+AntiAir = {
 	"building.patriot",
 	"building.emp_patriot",
 	"building.laser_turret",
@@ -332,8 +398,7 @@ IsAntiAir = function(actor)
 		actor.Type == "vehicle.gatling_tank"
 end
 
-TechBuilding =
-{
+TechBuilding = {
 	"tech.oil_derrick",
 	"tech.oil_refinery",
 	"tech.hospital",
@@ -346,8 +411,7 @@ TechBuilding =
 	"tech.communications_center"
 }
 
-CivilianBuilding =
-{
+CivilianBuilding = {
 	"v01",
 	"v01.snow",
 	"v25",

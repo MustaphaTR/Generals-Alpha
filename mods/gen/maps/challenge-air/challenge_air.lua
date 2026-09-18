@@ -267,34 +267,21 @@ InitializeAttackProduction = function(building)
 end
 
 CurrentGarrisonTeamCount = 0
-BuildGarrisonForce = function()
+BuildGarrisonForce = function(producer)
 	local validGarrisonables = Utils.Where(GarrisonableBuildings[Difficulty], function(a)
 		return a.Owner == Neutral and a.Health > a.MaxHealth * 0.25
 	end)
 	if #validGarrisonables > 0 then
-		TrainGarrisoners(Enemy, Utils.Random(GarrisonTeams[Difficulty]), "building.usa_barracks", validGarrisonables)
+		TrainGarrisoners(Enemy, Utils.Random(GarrisonTeams[Difficulty]), producer, validGarrisonables)
 		CurrentGarrisonTeamCount = CurrentGarrisonTeamCount + 1
 		if CurrentGarrisonTeamCount < MaxGarrisonTeams[Difficulty] then
 			Trigger.AfterDelay(DateTime.Minutes(2), function()
-				BuildGarrisonForce()
+				BuildGarrisonForce(producer)
 			end)
 		end
 	else
 		Trigger.AfterDelay(DateTime.Minutes(2), function()
-			BuildGarrisonForce()
-		end)
-	end
-end
-
-CaptureOilDerricks = function(derricks)
-	local built = Utils.Random(Enemy.GetActorsByType("building.usa_barracks")).Build({ "infantry.ranger" }, function(a)
-		Utils.Do(derricks, function(oild)
-			a[1].Capture(oild)
-		end)
-	end)
-	if not built then
-		Trigger.AfterDelay(DateTime.Seconds(15), function()
-			CaptureOilDerricks(derricks)
+			BuildGarrisonForce(producer)
 		end)
 	end
 end
@@ -486,7 +473,7 @@ WorldLoaded = function()
 		Taunts.PlayTauntNotification(Enemy, "70")
 	end)
 	Trigger.AfterDelay(InitialAttackDelay[Difficulty] / 2, function()
-		BuildGarrisonForce()
+		BuildGarrisonForce("building.usa_barracks")
 	end)
 
 	Trigger.OnBuildingPlaced(Enemy, function(_, building)
@@ -524,7 +511,7 @@ WorldLoaded = function()
 				Taunts.PlayTauntNotification(Enemy, "33")
 			end
 			if oldOwner == Enemy then
-				CaptureOilDerricks({ oild })
+				CaptureTechBuildings({ oild }, "building.usa_barracks", "infantry.ranger")
 			end
 		end)
 	end)
@@ -551,7 +538,7 @@ WorldLoaded = function()
 				BuildCombatChinookForce(actor, ChinookTeams, Utils.Random(Enemy.GetActorsByType("building.usa_barracks")), function() return FlankPaths end)
 			end
 			if actor.Type == "upgrade.capture_building" then
-				CaptureOilDerricks(DerricksToCapture[Difficulty])
+				CaptureTechBuildings(DerricksToCapture[Difficulty], "building.usa_barracks", "infantry.ranger")
 			end
 		end
 
@@ -560,7 +547,7 @@ WorldLoaded = function()
 				DozerBuildTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "3")
 			end
-			if not BurtonBuildTauntPlayed and actor.Type == "infantry.colonel_burton" then
+			if not BurtonBuildTauntPlayed and IsBurton(actor) then
 				BurtonBuildTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "83")
 			end
@@ -604,19 +591,19 @@ WorldLoaded = function()
 			end
 		end
 
-		if not BarrKillTauntPlayed and IsBarracks(building) then
-			Trigger.OnKilled(building, function()
-				if not BarrKillTauntPlayed and #MP0.GetActorsByTypes(Barracks) == 0 then
-					BarrKillTauntPlayed = true
-					Taunts.PlayTauntNotification(Enemy, "23")
-				end
-			end)
-		end
 		if not DefenseKillTauntPlayed and IsBaseDefense(building) then
 			Trigger.OnKilled(building, function()
 				if not DefenseKillTauntPlayed then
 					DefenseKillTauntPlayed = true
 					Taunts.PlayTauntNotification(Enemy, "6")
+				end
+			end)
+		end
+		if not BarrKillTauntPlayed and IsBarracks(building) then
+			Trigger.OnKilled(building, function()
+				if not BarrKillTauntPlayed and #MP0.GetActorsByTypes(Barracks) == 0 then
+					BarrKillTauntPlayed = true
+					Taunts.PlayTauntNotification(Enemy, "23")
 				end
 			end)
 		end

@@ -16,9 +16,9 @@ Visibility: Lobby
 
 Categories: Challenge
 
-LockPreview: True
-
 HideSpawnPreviews: True
+
+LockPreview: True
 
 Players:
 	PlayerReference@Neutral:
@@ -39,12 +39,12 @@ Players:
 		Enemies: Creeps, ChallengeGeneral
 	PlayerReference@ChallengeGeneral:
 		Name: ChallengeGeneral
+		Bot: campaign
 		LockFaction: True
 		Faction: tank
 		LockColor: True
 		Color: FF0000
 		Enemies: Creeps, Multi0
-		Bot: campaign
 
 Actors:
 	Actor34: supply.dock.30000.6x4
@@ -140,9 +140,6 @@ Actors:
 	EnemyBarracks: building.prc_barracks
 		Owner: ChallengeGeneral
 		Location: 154,18
-	Actor60: tech.repair_bay
-		Owner: Neutral
-		Location: 85,19
 	EnemyReactor10: building.nuclear_reactor
 		Owner: ChallengeGeneral
 		TurretFacing: 368
@@ -269,9 +266,6 @@ Actors:
 	Actor92: supply.pile.c
 		Owner: Neutral
 		Location: 35,5
-	Actor95: tech.reinforcements_pad
-		Owner: Neutral
-		Location: 29,6
 	Actor122: supply.pile.b
 		Owner: Neutral
 		Location: 36,6
@@ -320,7 +314,7 @@ Actors:
 	Actor133: supply.pile.c
 		Owner: Neutral
 		Location: 54,61
-	Actor134: supply.dock.30000.skewed_a
+	PlayerSupplyDock: supply.dock.30000.skewed_a
 		Owner: Neutral
 		Location: 28,69
 	Actor135: supply.pile.c
@@ -335,15 +329,6 @@ Actors:
 	Actor138: mpspawn
 		Owner: Neutral
 		Location: 36,65
-	Actor146: tech.oil_derrick
-		Owner: Neutral
-		Location: 133,69
-	Actor147: tech.oil_derrick
-		Owner: Neutral
-		Location: 126,68
-	Actor148: v04
-		Owner: Neutral
-		Location: 122,63
 	Actor149: supply.pile.a
 		Owner: Neutral
 		Location: 130,73
@@ -365,9 +350,6 @@ Actors:
 	Actor155: supply.pile.b
 		Owner: Neutral
 		Location: 115,72
-	Actor156: v09
-		Owner: Neutral
-		Location: 111,73
 	Actor157: supply.pile.a
 		Owner: Neutral
 		Location: 108,65
@@ -383,24 +365,6 @@ Actors:
 	Actor163: supply.pile.f
 		Owner: Neutral
 		Location: 101,55
-	Actor164: v01
-		Owner: Neutral
-		Location: 82,45
-	Actor165: v04
-		Owner: Neutral
-		Location: 94,49
-	Actor166: v07
-		Owner: Neutral
-		Location: 90,59
-	Actor167: v08
-		Owner: Neutral
-		Location: 95,61
-	Actor168: v03
-		Owner: Neutral
-		Location: 103,51
-	Actor139: v02
-		Owner: Neutral
-		Location: 163,64
 	Actor141: supply.pile.b
 		Owner: Neutral
 		Location: 166,67
@@ -716,9 +680,6 @@ Actors:
 	Actor267: t13
 		Owner: Neutral
 		Location: 149,38
-	Actor268: v04
-		Owner: Neutral
-		Location: 111,56
 	HackerWP1: waypoint
 		Owner: Neutral
 		Location: 161,7
@@ -871,10 +832,247 @@ Actors:
 	FlankEnd2: waypoint
 		Owner: Neutral
 		Location: 34,54
-	Actor271: tech.artillery_platform
+	Actor0: t17
+		Owner: Neutral
+		Location: 174,47
+	Actor1: t10
+		Owner: Neutral
+		Location: 175,49
+	Actor2: t13
+		Owner: Neutral
+		Location: 177,50
+	Actor3: t10
+		Owner: Neutral
+		Location: 27,65
+	Actor4: t14
+		Owner: Neutral
+		Location: 26,62
+	Actor5: t17
+		Owner: Neutral
+		Location: 36,73
+	Actor6: t15
+		Owner: Neutral
+		Location: 38,72
+	Actor7: t14
+		Owner: Neutral
+		Location: 40,71
+	Actor8: t10
+		Owner: Neutral
+		Location: 46,66
+	Actor9: t13
+		Owner: Neutral
+		Location: 49,67
+	Actor10: t15
+		Owner: Neutral
+		Location: 51,66
+	Actor11: t11
+		Owner: Neutral
+		Location: 60,66
+	Actor12: t10
+		Owner: Neutral
+		Location: 61,67
+	Actor13: t15
+		Owner: Neutral
+		Location: 62,68
+	Actor14: t13
+		Owner: Neutral
+		Location: 64,69
+	Actor15: t10
+		Owner: Neutral
+		Location: 33,50
+	Actor16: t13
+		Owner: Neutral
+		Location: 34,51
+	Actor17: t15
+		Owner: Neutral
+		Location: 36,52
+	Actor18: t14
+		Owner: Neutral
+		Location: 37,53
+	Actor19: t17
+		Owner: Neutral
+		Location: 39,54
+	Actor20: t15
+		Owner: Neutral
+		Location: 41,56
+	Actor21: t14
+		Owner: Neutral
+		Location: 43,56
+	Actor22: t14
+		Owner: Neutral
+		Location: 41,58
+	Actor23: t15
+		Owner: Neutral
+		Location: 40,59
+	Actor24: t17
+		Owner: Neutral
+		Location: 40,60
+	Actor25: t13
+		Owner: Neutral
+		Location: 41,57
+	Actor26: t12
+		Owner: Neutral
+		Location: 159,24
+	Actor27: t10
+		Owner: Neutral
+		Location: 160,28
+	Actor29: t14
+		Owner: Neutral
+		Location: 161,34
+	Actor28: t15
+		Owner: Neutral
+		Location: 156,33
+	Actor30: t15
+		Owner: Neutral
+		Location: 148,25
+	Actor31: t10
+		Owner: Neutral
+		Location: 151,31
+	Actor32: t17
+		Owner: Neutral
+		Location: 150,28
+	Actor33: t17
+		Owner: Neutral
+		Location: 139,22
+	Actor35: t15
+		Owner: Neutral
+		Location: 137,23
+	Actor36: t10
+		Owner: Neutral
+		Location: 129,17
+	Actor37: t11
+		Owner: Neutral
+		Location: 130,18
+	Actor38: t14
+		Owner: Neutral
+		Location: 131,19
+	Actor39: t10
+		Owner: Neutral
+		Location: 126,4
+	Actor40: t15
+		Owner: Neutral
+		Location: 127,5
+	Actor41: t14
+		Owner: Neutral
+		Location: 136,9
+	Actor42: t12
+		Owner: Neutral
+		Location: 134,6
+	Actor43: t13
+		Owner: Neutral
+		Location: 142,16
+	Actor44: t14
+		Owner: Neutral
+		Location: 139,16
+	Actor46: t14
+		Owner: Neutral
+		Location: 149,15
+	Actor47: t14
+		Owner: Neutral
+		Location: 152,20
+	Actor49: t10
+		Owner: Neutral
+		Location: 162,19
+	Actor48: t15
+		Owner: Neutral
+		Location: 157,21
+	Actor50: t12
+		Owner: Neutral
+		Location: 161,11
+	Actor51: t15
+		Owner: Neutral
+		Location: 158,9
+	Actor52: t14
+		Owner: Neutral
+		Location: 165,13
+	Actor53: t13
+		Owner: Neutral
+		Location: 166,16
+	Actor54: t15
+		Owner: Neutral
+		Location: 172,21
+	Actor55: t14
+		Owner: Neutral
+		Location: 177,19
+	Actor56: t15
+		Owner: Neutral
+		Location: 166,20
+	Actor57: t14
+		Owner: Neutral
+		Location: 174,37
+	Actor58: t15
+		Owner: Neutral
+		Location: 174,35
+	Actor59: t11
+		Owner: Neutral
+		Location: 170,24
+	Actor61: t12
+		Owner: Neutral
+		Location: 171,23
+	Actor62: t10
+		Owner: Neutral
+		Location: 153,10
+	Actor63: t14
+		Owner: Neutral
+		Location: 149,7
+	Actor64: t15
+		Owner: Neutral
+		Location: 150,8
+	GuardSouth: waypoint
+		Owner: Neutral
+		Location: 167,27
+	GuardNorth: waypoint
+		Owner: Neutral
+		Location: 133,10
+	GuardMiddleNorth: waypoint
+		Owner: Neutral
+		Location: 145,17
+	GuardMiddleSouth: waypoint
+		Owner: Neutral
+		Location: 151,25
+	RepairBay: tech.repair_bay
+		Owner: Neutral
+		Location: 85,19
+	ReinforcementsPad: tech.reinforcements_pad
+		Owner: Neutral
+		Location: 29,6
+	ArtilleryPlatform: tech.artillery_platform
 		Owner: Neutral
 		Location: 160,65
 		TurretFacing: 896
+	OilDerrick1: tech.oil_derrick
+		Owner: Neutral
+		Location: 126,68
+	OilDerrick2: tech.oil_derrick
+		Owner: Neutral
+		Location: 133,69
+	Church: v01
+		Owner: Neutral
+		Location: 82,45
+	BigHouse2: v03
+		Owner: Neutral
+		Location: 103,51
+	BigHouse1: v04
+		Owner: Neutral
+		Location: 94,49
+	MediumHouse1: v07
+		Owner: Neutral
+		Location: 90,59
+	BigHouse3: v04
+		Owner: Neutral
+		Location: 111,56
+	BigHouse4: v04
+		Owner: Neutral
+		Location: 122,63
+	SmallHouse1: v08
+		Owner: Neutral
+		Location: 95,61
+	SmallHouse2: v09
+		Owner: Neutral
+		Location: 111,73
+	BigHouseArty: v02
+		Owner: Neutral
+		Location: 163,64
 
 Rules: gen|rules/challenge-rules.yaml, rules.yaml
 

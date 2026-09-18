@@ -41,6 +41,45 @@ TrainPatrolDefense = function(owner, units, producer, path, wait)
 	end
 end
 
+TrainStaticDefense = function(owner, units, producer, rally_point)
+	local producers = owner.GetActorsByType(producer)
+	if #producers > 0 then
+		local built = Utils.Random(producers).Build(units, function(a)
+			Trigger.AfterDelay(DateTime.Seconds(1), function()
+				Utils.Do(a, function(unit)
+					unit.AttackMove(rally_point)
+				end)
+
+				Trigger.OnAllKilled(a, function()
+					TrainStaticDefense(owner, units, producer, rally_point)
+				end)
+			end)
+		end)
+		if not built then
+			Trigger.AfterDelay(DateTime.Seconds(15), function()
+				TrainStaticDefense(owner, units, producer, rally_point)
+			end)
+		end
+	else
+		Trigger.AfterDelay(DateTime.Seconds(15), function()
+			TrainStaticDefense(owner, units, producer, rally_point)
+		end)
+	end
+end
+
+CaptureTechBuildings = function(buildings, factory, infantry)
+	local built = Utils.Random(Enemy.GetActorsByType(factory)).Build({ infantry }, function(a)
+		Utils.Do(Utils.Where(buildings, function(b) return not b.IsDead end), function(tech)
+			a[1].Capture(tech)
+		end)
+	end)
+	if not built then
+		Trigger.AfterDelay(DateTime.Seconds(15), function()
+			CaptureTechBuildings(buildings, factory, infantry)
+		end)
+	end
+end
+
 TrainHackers = function(owner, hacker, amount, rally_point, internet)
 	local barrackses = owner.GetActorsByType("building.prc_barracks")
 	if #barrackses > 0 then
@@ -56,6 +95,9 @@ TrainHackers = function(owner, hacker, amount, rally_point, internet)
 						end
 					end)
 				end
+			end)
+			Trigger.OnKilled(a[1], function()
+				TrainHackers(owner, hacker, 1, rally_point, internet)
 			end)
 		end)
 		if built and amount > 1 then
