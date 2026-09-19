@@ -1106,7 +1106,7 @@ aircraft.aurora:
 	Valued:
 		Cost: 2500
 	ProductionCostMultiplier@Airforce:
-		Queue: queue.air_gen_aircraft, queue.super_gen_aircraft
+		Queue: queue.air_gen_aircraft, queue.super_gen_aircraft, queue.usa_aircraft_merged, queue.boss_gen_aircraft_merged
 		Multiplier: 80 # 2000
 	Tooltip:
 		Name: actor-aircraft-aurora.name
@@ -1115,7 +1115,7 @@ aircraft.aurora:
 	Health:
 		HP: 8000
 	DamageMultiplier@Airforce:
-		RequiresCondition: air
+		RequiresCondition: air || merged
 		Modifier: 66
 	Armor:
 		Type: aircraft.normal
@@ -1144,6 +1144,9 @@ aircraft.aurora:
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	AttackAircraft:
 		FacingTolerance: 80
 		PersistentTargeting: false
@@ -1226,6 +1229,9 @@ aircraft.aurora:
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.countermeasures
 		RequiresCondition: !boss && zh_units
+	ActorStatOverride@Airforce:
+		Health: 12000
+		RequiresCondition: air || merged
 
 aircraft.aurora_alpha:
 	Inherits: aircraft.aurora
