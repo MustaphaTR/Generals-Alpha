@@ -297,7 +297,6 @@ Plane = {
 	"aircraft.raptor",
 	"aircraft.king_raptor",
 	"aircraft.stealth_fighter",
-	"aircraft.stealth_fighter.air",
 	"aircraft.aurora",
 	"aircraft.aurora_alpha",
 	"aircraft.mig"
@@ -307,7 +306,6 @@ IsPlane = function(actor)
 		actor.Type == "aircraft.raptor" or
 		actor.Type == "aircraft.king_raptor" or
 		actor.Type == "aircraft.stealth_fighter" or
-		actor.Type == "aircraft.stealth_fighter.air" or
 		actor.Type == "aircraft.aurora" or
 		actor.Type == "aircraft.aurora_alpha" or
 		actor.Type == "aircraft.mig"

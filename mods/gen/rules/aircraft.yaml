@@ -925,14 +925,33 @@ aircraft.stealth_fighter:
 		Prerequisites: prerequisite.stealth_fighter, !prerequisite.enoughair
 		Description: actor-aircraft-stealth-fighter.description
 		ReadyAudio: StealthFighterCreated
+	Buildable@Air:
+		Queue: queue.air_gen_aircraft, queue.usa_aircraft_merged
+		BuildAtProductionType: queue.usa_plane
+		BuildPaletteOrder: 3
+		ForceIconLocation: true
+		BuildDuration: 625
+		BuildDurationModifier: 100
+		Prerequisites: !prerequisite.enoughair
+		Description: actor-aircraft-stealth-fighter.description
+		ReadyAudio: StealthFighterCreated
 	Valued:
 		Cost: 1600
+	ProductionCostMultiplier@Airforce1:
+		Queue: queue.air_gen_aircraft, queue.usa_aircraft_merged
+		Multiplier: 7813 # 1250
+	ProductionCostMultiplier@Airforce2:
+		Queue: queue.air_gen_aircraft, queue.usa_aircraft_merged
+		Multiplier: 1 # 1250
 	Tooltip:
 		Name: actor-aircraft-stealth-fighter.name
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
 		HP: 12000
+	DamageMultiplier@Airforce:
+		RequiresCondition: air || merged
+		Modifier: 66
 	Armor:
 		Type: aircraft.normal
 		RequiresCondition: !countermeasures
@@ -951,6 +970,14 @@ aircraft.stealth_fighter:
 		LocalYaw: -40, 24
 		PauseOnCondition: !ammo
 		RequiresCondition: bunker_busters
+	Armament@PDLASER:
+		Weapon: laser.king_raptor.point_defense
+		LocalOffset: 0,213,-85
+		Name: pdlaser
+	PointDefense:
+		Armament: pdlaser
+		PointDefenseTypes: missilepd
+		RequiresCondition: air || merged
 	AttackAircraft:
 		FacingTolerance: 80
 		PersistentTargeting: false
@@ -1017,12 +1044,18 @@ aircraft.stealth_fighter:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	GrantConditionOnFaction@Airforce:
+		Condition: air
+		Factions: air
 	GrantConditionOnPrerequisite@BUNKER_BUSTERS:
 		Condition: bunker_busters
 		Prerequisites: upgrade.bunker_busters
 	GrantConditionOnPrerequisite@ZH_UNITS:
 		Condition: zh_units
 		Prerequisites: prerequisite.zh_units
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	Voiced:
 		VoiceSet: StealthFighterVoice
 	ProvidesPrerequisite:
@@ -1047,23 +1080,9 @@ aircraft.stealth_fighter:
 	ActorStatOverride@ZH_UNITS:
 		Upgrades: upgrade.adv_training, upgrade.laser_guided_missiles, upgrade.countermeasures, upgrade.bunker_busters
 		RequiresCondition: zh_units
-
-aircraft.stealth_fighter.air:
-	Inherits: aircraft.stealth_fighter
-	Buildable:
-		Queue: queue.air_gen_aircraft, queue.usa_aircraft_merged
-		Prerequisites: !prerequisite.enoughair
-	Valued:
-		Cost: 1250
-	Health:
-		HP: 18000
-	Armament@PDLASER:
-		Weapon: laser.king_raptor.point_defense
-		LocalOffset: 0,213,-85
-		Name: pdlaser
-	PointDefense:
-		Armament: pdlaser
-		PointDefenseTypes: missilepd
+	ActorStatOverride@Airforce:
+		Health: 18000
+		RequiresCondition: air || merged
 
 aircraft.aurora:
 	Inherits: ^Fighter
