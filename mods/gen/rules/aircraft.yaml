@@ -46,10 +46,13 @@
 	PointDefense:
 		Armament: pdlaser
 		PointDefenseTypes: missilepd
-		RequiresCondition: airforce
+		RequiresCondition: air || merged
 	GrantConditionOnFaction@Airforce:
-		Condition: airforce
+		Condition: air
 		Factions: air
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	RejectsOrders:
 	RenderSprites:
 		Image: aircraft.badger
@@ -1134,7 +1137,7 @@ aircraft.aurora:
 	PointDefense:
 		Armament: pdlaser
 		PointDefenseTypes: missilepd
-		RequiresCondition: air
+		RequiresCondition: air || merged
 	GrantConditionOnFaction@Airforce:
 		Condition: air
 		Factions: air
@@ -1526,7 +1529,7 @@ aircraft.chinook:
 	PointDefense:
 		Armament: pdlaser
 		PointDefenseTypes: missilepd
-		RequiresCondition: airforce
+		RequiresCondition: air || merged
 	Aircraft:
 		CruiseAltitude: 1928
 		IdealSeparation: 1280
@@ -1538,8 +1541,11 @@ aircraft.chinook:
 	SpeedMultiplier@DAMAGED:
 		Modifier: 40
 	GrantConditionOnFaction@Airforce:
-		Condition: airforce
+		Condition: air
 		Factions: air
+	GrantConditionOnPrerequisite@MERGE_GENERALS:
+		Condition: merged
+		Prerequisites: prerequisite.mergegenerals
 	Cargo:
 		Types: Infantry, GLAInfantry, Hacker, Pilot, Vehicle
 		MaxWeight: 8
