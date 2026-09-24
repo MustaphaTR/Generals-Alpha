@@ -50,57 +50,57 @@
 c1:
 	Inherits: ^default.civilian
 	Defaults:
-		Filename: c1.shp
+		Filename: gen|bits/infantry/c1.shp
 
 c2:
 	Inherits: ^default.civilian
 	Defaults:
-		Filename: c2.shp
+		Filename: gen|bits/infantry/c2.shp
 
 c3:
 	Inherits: ^default.civilian
 	Defaults:
-		Filename: c3.shp
+		Filename: gen|bits/infantry/c3.shp
 
 c4:
 	Inherits: ^default.civilian
 	Defaults:
-		Filename: c4.shp
+		Filename: gen|bits/infantry/c4.shp
 
 c5:
 	Inherits: ^default.civilian
 	Defaults:
-		Filename: c5.shp
+		Filename: gen|bits/infantry/c5.shp
 
 c6:
 	Inherits: ^default.civilian
 	Defaults:
-		Filename: c6.shp
+		Filename: gen|bits/infantry/c6.shp
 
 c7:
 	Inherits: ^default.civilian
 	Defaults:
-		Filename: c7.shp
+		Filename: gen|bits/infantry/c7.shp
 
 c8:
 	Inherits: ^default.civilian
 	Defaults:
-		Filename: c8.shp
+		Filename: gen|bits/infantry/c8.shp
 
 c9:
 	Inherits: ^default.civilian
 	Defaults:
-		Filename: c9.shp
+		Filename: gen|bits/infantry/c9.shp
 
 c10:
 	Inherits: ^default.civilian
 	Defaults:
-		Filename: c10.shp
+		Filename: gen|bits/infantry/c10.shp
 
 c11:
 	Inherits: ^default.civilian
 	Defaults:
-		Filename: c11.shp
+		Filename: gen|bits/infantry/c11.shp
 
 dog:
 	Inherits@DEATH: ^default.infantry_death
@@ -151,12 +151,12 @@ dog:
 		Length: 4
 		Facings: 8
 	icon:
-		Filename: dog_icon.shp
+		Filename: gen|bits/cameos/dog_icon.shp
 
 einstein:
 	Inherits@DEATH: ^default.infantry_death
 	Defaults:
-		Filename: einstein.shp
+		Filename: gen|bits/infantry/einstein.shp
 	stand:
 		Facings: 8
 	panic-run:
@@ -250,7 +250,7 @@ delphi:
 chan:
 	Inherits@DEATH: ^default.infantry_death
 	Defaults:
-		Filename: chan.shp
+		Filename: gen|bits/infantry/chan.shp
 	stand:
 		Facings: 8
 	panic-run:
@@ -294,73 +294,63 @@ chan:
 		Tick: 1600
 		ZOffset: -511
 
+^default.garrison_flag:
+	idle-flag:
+		Filename: gen|bits/flags/garflag_no_shadow.shp
+		Length: *
+
+^default.garrison_flag_shadow:
+	Inherits@flag: ^default.garrison_flag
+	idle-flag:
+		Filename: gen|bits/flags/garflag.shp
+
 v01:
+	Inherits@flag: ^default.garrison_flag
 	Defaults:
 		Filename: v01.tem
 	idle:
 	damaged-idle:
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -8, -22
 
 v01.snow:
+	Inherits: v01
 	Defaults:
 		Filename: v01.sno
-	idle:
-	damaged-idle:
-		Start: 1
-	idle-flag:
-		Filename: garflag.shp
-		Length: *
-		Offset: -8, -22
 
 v02:
+	Inherits@flag: ^default.garrison_flag
 	Defaults:
 		Filename: v02.tem
 	idle:
 	damaged-idle:
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -8, -14
 
 v02.snow:
+	Inherits: v02
 	Defaults:
 		Filename: v02.sno
-	idle:
-	damaged-idle:
-		Start: 1
-	idle-flag:
-		Filename: garflag.shp
-		Length: *
-		Offset: -8, -14
 
 v03:
+	Inherits@flag: ^default.garrison_flag_shadow
 	Defaults:
 		Filename: v03.tem
 	idle:
 	damaged-idle:
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -5, -15
 
 v03.snow:
+	Inherits: v03
 	Defaults:
 		Filename: v03.sno
-	idle:
-	damaged-idle:
-		Start: 1
-	idle-flag:
-		Filename: garflag.shp
-		Length: *
-		Offset: -5, -15
 
 v04:
+	Inherits@flag: ^default.garrison_flag_shadow
 	Defaults:
 		Filename: v04.tem
 	idle:
@@ -371,178 +361,117 @@ v04:
 	damaged-active:
 		Start: 3
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -7, -14
 
 v04.snow:
+	Inherits: v04
 	Defaults:
 		Filename: v04.sno
-	idle:
-	damaged-idle:
-		Start: 2
-	active:
-		Start: 1
-	damaged-active:
-		Start: 3
-	idle-flag:
-		Filename: garflag.shp
-		Length: *
-		Offset: -7, -14
 
 v05:
+	Inherits@flag: ^default.garrison_flag_shadow
 	Defaults:
 		Filename: v05.tem
 	idle:
 	damaged-idle:
 		Start: 2
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: 1, -11
 
 v05.snow:
+	Inherits: v05
 	Defaults:
 		Filename: v05.sno
-	idle:
-	damaged-idle:
-		Start: 2
-	idle-flag:
-		Filename: garflag.shp
-		Length: *
-		Offset: 1, -11
 
 v06:
+	Inherits@flag: ^default.garrison_flag_shadow
 	Defaults:
 		Filename: v06.tem
 	idle:
 	damaged-idle:
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -6, -11
 
 v06.snow:
+	Inherits: v06
 	Defaults:
 		Filename: v06.sno
-	idle:
-	damaged-idle:
-		Start: 1
-	idle-flag:
-		Filename: garflag.shp
-		Length: *
-		Offset: -6, -11
 
 v07:
+	Inherits@flag: ^default.garrison_flag_shadow
 	Defaults:
 		Filename: v07.tem
 	idle:
 	damaged-idle:
 		Start: 2
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -4, -10
 
 v07.snow:
+	Inherits: v07
 	Defaults:
 		Filename: v07.sno
-	idle:
-	damaged-idle:
-		Start: 2
-	idle-flag:
-		Filename: garflag.shp
-		Length: *
-		Offset: -4, -10
 
 v08:
+	Inherits@flag: ^default.garrison_flag_shadow
 	Defaults:
 		Filename: v08.tem
 	idle:
 	damaged-idle:
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -6, -15
 
 v08.snow:
+	Inherits: v08
 	Defaults:
 		Filename: v08.sno
-	idle:
-	damaged-idle:
-		Start: 1
-	idle-flag:
-		Filename: garflag.shp
-		Length: *
-		Offset: -6, -15
 
 v09:
+	Inherits@flag: ^default.garrison_flag_shadow
 	Defaults:
 		Filename: v09.tem
 	idle:
 	damaged-idle:
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -6, -15
 
 v09.snow:
+	Inherits: v09
 	Defaults:
 		Filename: v09.sno
-	idle:
-	damaged-idle:
-		Start: 1
-	idle-flag:
-		Filename: garflag.shp
-		Length: *
-		Offset: -6, -15
 
 v10:
+	Inherits@flag: ^default.garrison_flag_shadow
 	Defaults:
 		Filename: v10.tem
 	idle:
 	damaged-idle:
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -6, -13
 
 v10.snow:
+	Inherits: v10
 	Defaults:
 		Filename: v10.sno
-	idle:
-	damaged-idle:
-		Start: 1
-	idle-flag:
-		Filename: garflag.shp
-		Length: *
-		Offset: -6, -13
 
 v11:
+	Inherits@flag: ^default.garrison_flag_shadow
 	Defaults:
 		Filename: v11.tem
 	idle:
 	damaged-idle:
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -6, -17
 
 v11.snow:
+	Inherits: v11
 	Defaults:
 		Filename: v11.sno
-	idle:
-	damaged-idle:
-		Start: 1
-	idle-flag:
-		Filename: garflag.shp
-		Length: *
-		Offset: -6, -17
 
 v12:
 	Defaults:
@@ -552,11 +481,9 @@ v12:
 		Start: 1
 
 v12.snow:
+	Inherits: v12
 	Defaults:
 		Filename: v12.sno
-	idle:
-	damaged-idle:
-		Start: 1
 
 v13:
 	Defaults:
@@ -566,11 +493,9 @@ v13:
 		Start: 1
 
 v13.snow:
+	Inherits: v13
 	Defaults:
 		Filename: v13.sno
-	idle:
-	damaged-idle:
-		Start: 1
 
 v14:
 	Defaults:
@@ -582,13 +507,9 @@ v14:
 		ZOffset: -512
 
 v14.snow:
+	Inherits: v14
 	Defaults:
 		Filename: v14.sno
-	idle:
-		ZOffset: -512
-	damaged-idle:
-		Start: 1
-		ZOffset: -512
 
 v15:
 	Defaults:
@@ -600,13 +521,9 @@ v15:
 		ZOffset: -512
 
 v15.snow:
+	Inherits: v15
 	Defaults:
 		Filename: v15.sno
-	idle:
-		ZOffset: -512
-	damaged-idle:
-		Start: 1
-		ZOffset: -512
 
 v16:
 	Defaults:
@@ -618,13 +535,9 @@ v16:
 		ZOffset: -512
 
 v16.snow:
+	Inherits: v16
 	Defaults:
 		Filename: v16.sno
-	idle:
-		ZOffset: -512
-	damaged-idle:
-		Start: 1
-		ZOffset: -512
 
 v17:
 	Defaults:
@@ -636,13 +549,9 @@ v17:
 		ZOffset: -512
 
 v17.snow:
+	Inherits: v17
 	Defaults:
 		Filename: v17.sno
-	idle:
-		ZOffset: -512
-	damaged-idle:
-		Start: 1
-		ZOffset: -512
 
 v18:
 	Defaults:
@@ -654,20 +563,16 @@ v18:
 		ZOffset: -512
 
 v18.snow:
+	Inherits: v18
 	Defaults:
 		Filename: v18.sno
-	idle:
-		ZOffset: -512
-	damaged-idle:
-		Start: 1
-		ZOffset: -512
 
 rice:
+	Defaults:
+		Filename: gen|bits/buildings/rice.tem
 	idle:
-		Filename: rice.tem
 		ZOffset: -512
 	damaged-idle:
-		Filename: rice.tem
 		Start: 1
 		ZOffset: -512
 
@@ -694,7 +599,7 @@ v19.husk:
 
 utilpol1:
 	Defaults:
-		Filename: utilpol1.shp
+		Filename: gen|bits/buildings/utilpol1.shp
 	idle:
 	damaged-idle:
 		Start: 1
@@ -703,7 +608,7 @@ utilpol1:
 
 utilpol2:
 	Defaults:
-		Filename: utilpol2.shp
+		Filename: gen|bits/buildings/utilpol2.shp
 	idle:
 	damaged-idle:
 		Start: 1
@@ -712,44 +617,42 @@ utilpol2:
 
 ammobox1:
 	idle:
-		Filename: ammobox1.shp
+		Filename: gen|bits/buildings/ammobox1.shp
 
 ammobox2:
 	idle:
-		Filename: ammobox2.shp
+		Filename: gen|bits/buildings/ammobox2.shp
 
 ammobox3:
 	idle:
-		Filename: ammobox3.shp
+		Filename: gen|bits/buildings/ammobox3.shp
 
 tanktrap1:
 	idle:
-		Filename: tanktrap1.shp
+		Filename: gen|bits/buildings/tanktrap1.shp
 
 tanktrap2:
 	idle:
-		Filename: tanktrap2.shp
+		Filename: gen|bits/buildings/tanktrap2.shp
 
 rushouse:
+	Inherits@flag: ^default.garrison_flag_shadow
 	Defaults:
-		Filename: rushouse.shp
+		Filename: gen|bits/buildings/rushouse.shp
 	idle:
 	damaged-idle:
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: 1, -24
 
 asianhut:
+	Inherits@flag: ^default.garrison_flag_shadow
 	Defaults:
-		Filename: asianhut.shp
+		Filename: gen|bits/buildings/asianhut.shp
 	idle:
 	damaged-idle:
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -4, -15
 
 barb:
@@ -779,218 +682,202 @@ brl3:
 		Filename: brl3.shp
 
 v20:
-	idle:
+	Inherits@flag: ^default.garrison_flag_shadow
+	Defaults:
 		Filename: v20.des
+	idle:
 		Length: 3
 		Tick: 120
 	damaged-idle:
-		Filename: v20.des
 		Start: 3
 		Length: 3
 		Tick: 120
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: 4, -7
 
 v21:
-	idle:
+	Inherits@flag: ^default.garrison_flag_shadow
+	Defaults:
 		Filename: v21.des
+	idle:
 		Length: 3
 		Tick: 120
 	damaged-idle:
-		Filename: v21.des
 		Start: 3
 		Length: 3
 		Tick: 120
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: 5, -11
 
 v22:
-	idle:
+	Inherits@flag: ^default.garrison_flag_shadow
+	Defaults:
 		Filename: v22.des
+	idle:
 		Length: 3
 		Tick: 120
 	damaged-idle:
-		Filename: v22.des
 		Start: 3
 		Length: 3
 		Tick: 120
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -4, -10
 
 v23:
-	idle:
+	Defaults:
 		Filename: v23.des
+	idle:
 		Length: 3
 		Tick: 120
 	damaged-idle:
-		Filename: v23.des
 		Start: 3
 		Length: 3
 		Tick: 120
 
 v24:
+	Inherits@flag: ^default.garrison_flag_shadow
+	Defaults:
+		Filename: v24.des
 	idle:
-		Filename: v24.des
 	damaged-idle:
-		Filename: v24.des
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -11, -12
 
 v25:
+	Inherits@flag: ^default.garrison_flag
+	Defaults:
+		Filename: v25.des
 	idle:
-		Filename: v25.des
 	damaged-idle:
-		Filename: v25.des
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -3, -28
 
 v26:
+	Inherits@flag: ^default.garrison_flag_shadow
+	Defaults:
+		Filename: v26.des
 	idle:
-		Filename: v26.des
 	damaged-idle:
-		Filename: v26.des
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -3, -11
 
 v27:
+	Inherits@flag: ^default.garrison_flag_shadow
+	Defaults:
+		Filename: v27.des
 	idle:
-		Filename: v27.des
 	damaged-idle:
-		Filename: v27.des
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: 0, -17
 
 v28:
+	Inherits@flag: ^default.garrison_flag_shadow
+	Defaults:
+		Filename: v28.des
 	idle:
-		Filename: v28.des
 	damaged-idle:
-		Filename: v28.des
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: 2, -17
 
 v29:
+	Inherits@flag: ^default.garrison_flag_shadow
+	Defaults:
+		Filename: v29.des
 	idle:
-		Filename: v29.des
 	damaged-idle:
-		Filename: v29.des
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -6, -15
 
 v30:
+	Inherits@flag: ^default.garrison_flag_shadow
+	Defaults:
+		Filename: v30.des
 	idle:
-		Filename: v30.des
 	damaged-idle:
-		Filename: v30.des
 		Start: 2
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: 1, -16
 
 v31:
+	Inherits@flag: ^default.garrison_flag_shadow
+	Defaults:
+		Filename: v31.des
 	idle:
-		Filename: v31.des
 	damaged-idle:
-		Filename: v31.des
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: 9, -16
 
 v32:
+	Inherits@flag: ^default.garrison_flag_shadow
+	Defaults:
+		Filename: v32.des
 	idle:
-		Filename: v32.des
 	damaged-idle:
-		Filename: v32.des
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -6, -11
 
 v33:
+	Inherits@flag: ^default.garrison_flag_shadow
+	Defaults:
+		Filename: v33.des
 	idle:
-		Filename: v33.des
 	damaged-idle:
-		Filename: v33.des
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: 5, -11
 
 v34:
+	Inherits@flag: ^default.garrison_flag_shadow
+	Defaults:
+		Filename: v34.des
 	idle:
-		Filename: v34.des
 	damaged-idle:
-		Filename: v34.des
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -1, -23
 
 v35:
+	Inherits@flag: ^default.garrison_flag_shadow
+	Defaults:
+		Filename: v35.des
 	idle:
-		Filename: v35.des
 	damaged-idle:
-		Filename: v35.des
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: 0, -22
 
 v36:
+	Inherits@flag: ^default.garrison_flag_shadow
+	Defaults:
+		Filename: v36.des
 	idle:
-		Filename: v36.des
 	damaged-idle:
-		Filename: v36.des
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -3, -20
 
 v37:
+	Inherits@flag: ^default.garrison_flag_shadow
+	Defaults:
+		Filename: v37.des
 	idle:
-		Filename: v37.des
 	damaged-idle:
-		Filename: v37.des
 		Start: 1
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: 11, -19
 
 snowhut:
+	Inherits@flag: ^default.garrison_flag_shadow
 	Defaults:
-		Filename: snowhut.shp
+		Filename: gen|bits/buildings/snowhut.shp
 		Offset: 0,-5
 		Scale: 0.7
 	idle:
@@ -1000,14 +887,13 @@ snowhut:
 		Start: 3
 		Tick: 120
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
-		Scale: 1.0
 		Offset: -2, -20
+		Scale: 1.0
 
 lhus:
+	Inherits@flag: ^default.garrison_flag_shadow
 	Defaults:
-		Filename: lhus.shp
+		Filename: gen|bits/buildings/lhus.shp
 		Offset: 0,-16
 	idle:
 		Length: 16
@@ -1017,13 +903,12 @@ lhus:
 		Tick: 180
 		Length: 8
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -1, -49
 
 windmill:
+	Inherits@flag: ^default.garrison_flag_shadow
 	Defaults:
-		Filename: windmill.shp
+		Filename: gen|bits/buildings/windmill.shp
 		Offset: 0,-16
 	idle:
 		Length: 8
@@ -1033,96 +918,89 @@ windmill:
 		Length: 8
 		Tick: 80
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: 0, -39
 
-car.automobile_1:
+^default.car_32:
 	idle:
-		Filename: bcab.shp
 		Facings: -32
 		ShadowStart: 32
+
+^default.car_64:
+	idle:
+		Facings: -32
+		ShadowStart: 32
+
+car.automobile_1:
+	Inherits: ^default.car_32
+	idle:
+		Filename: gen|bits/vehicles/cars/bcab.shp
 
 car.automobile_2:
+	Inherits: ^default.car_32
 	idle:
-		Filename: belair.shp
-		Facings: -32
-		ShadowStart: 32
+		Filename: gen|bits/vehicles/cars/belair.shp
 
 car.automobile_3:
+	Inherits: ^default.car_64
 	idle:
-		Filename: bcar.shp
-		Facings: -64
-		ShadowStart: 64
+		Filename: gen|bits/vehicles/cars/bcar.shp
 
 car.automobile_4:
+	Inherits: ^default.car_64
 	idle:
-		Filename: budgatti.shp
-		Facings: -64
-		ShadowStart: 64
+		Filename: gen|bits/vehicles/cars/budgatti.shp
 
 car.automobile_5:
+	Inherits: ^default.car_64
 	idle:
-		Filename: stang.shp
-		Facings: -64
-		ShadowStart: 64
+		Filename: gen|bits/vehicles/cars/stang.shp
 
 car.automobile_6:
+	Inherits: ^default.car_64
 	idle:
-		Filename: porsche90.shp
-		Facings: -64
-		ShadowStart: 64
+		Filename: gen|bits/vehicles/cars/porsche90.shp
 
 car.automobile_7:
+	Inherits: ^default.car_64
 	idle:
-		Filename: suvw.shp
-		Facings: -64
-		ShadowStart: 64
+		Filename: gen|bits/vehicles/cars/suvw.shp
 
 car.ambulance:
+	Inherits: ^default.car_64
 	idle:
-		Filename: amb.shp
-		Facings: -64
-		ShadowStart: 64
+		Filename: gen|bits/vehicles/cars/amb.shp
 
 car.cement_mixer:
+	Inherits: ^default.car_64
 	idle:
-		Filename: cement.shp
-		Facings: -64
-		ShadowStart: 64
+		Filename: gen|bits/vehicles/cars/cement.shp
 
 car.taxi:
+	Inherits: ^default.car_64
 	idle:
-		Filename: taxi.shp
-		Facings: -64
-		ShadowStart: 64
+		Filename: gen|bits/vehicles/cars/taxi.shp
 
 car.limousine:
+	Inherits: ^default.car_64
 	idle:
-		Filename: limo.shp
-		Facings: -64
-		ShadowStart: 64
+		Filename: gen|bits/vehicles/cars/limo.shp
 
 car.police_car:
+	Inherits: ^default.car_64
 	idle:
-		Filename: cop.shp
-		Facings: -64
-		ShadowStart: 64
+		Filename: gen|bits/vehicles/cars/cop.shp
 
 car.fire_truck:
+	Inherits: ^default.car_32
 	idle:
-		Filename: fire.shp
-		Facings: -32
-		ShadowStart: 32
+		Filename: gen|bits/vehicles/cars/fire.shp
 
 car.pickup_truck:
+	Inherits: ^default.car_64
 	idle:
-		Filename: ptruck.shp
-		Facings: -64
-		ShadowStart: 64
+		Filename: gen|bits/vehicles/cars/ptruck.shp
 
 car.school_bus:
+	Inherits: ^default.car_32
 	idle:
-		Filename: sbus.shp
-		Facings: -32
-		ShadowStart: 32
+		Filename: gen|bits/vehicles/cars/sbus.shp

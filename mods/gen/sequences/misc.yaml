@@ -20,7 +20,7 @@ disabled_fx:
 		Filename: emp_fx02.shp
 		Tick: 20
 	idle3:
-		Filename: hack-tiny.shp
+		Filename: gen|bits/weapons/hack-tiny.shp
 		Length: *
 		#AlphaFade: true
 		Offset: 0, -15, 15
@@ -52,15 +52,15 @@ explosion:
 		ZOffset: 2047
 		IgnoreWorldTint: true
 	counter-flare:
-		Filename: countermeasures_flare.shp
+		Filename: gen|bits/vehicles/aircraft/countermeasures_flare.shp
 	piff:
 		Filename: piff.shp
 	piffs:
 		Filename: piffpiff.shp
 	water_piff:
-		Filename: wpiff.shp
+		Filename: gen|bits/weapons/wpiff.shp
 	water_piffs:
-		Filename: wpifpif.shp
+		Filename: gen|bits/weapons/wpifpif.shp
 	small_explosion:
 		Filename: veh-hit3.shp
 	med_explosion:
@@ -74,52 +74,52 @@ explosion:
 		Filename: veh-hit1.shp
 		ZOffset: 511 # only used by AA weapons, so a high ZOffset to overlay buildings isn't needed
 	anth_alpha_explo:
-		Filename: anth_alpha_explo.shp
+		Filename: gen|bits/weapons/anth_alpha_explo.shp
 		AlphaFade: true
 	anth_beta_explo:
-		Filename: anth_beta_explo.shp
+		Filename: gen|bits/weapons/anth_beta_explo.shp
 		AlphaFade: true
 	anth_gamma_explo: ## use td-pal
-		Filename: anth_gamma_explo.shp
+		Filename: gen|bits/weapons/anth_gamma_explo.shp
 		AlphaFade: true
 	dust_green:
-		Filename: dust-green.shp
+		Filename: gen|bits/weapons/dust-green.shp
 		Offset: 0, 10, 0
 	dust_blue:
-		Filename: dust-blue.shp
+		Filename: gen|bits/weapons/dust-blue.shp
 		Offset: 0, 10, 0
 	dust_purp: ## use td-pal
-		Filename: dust-purp.shp
+		Filename: gen|bits/weapons/dust-purp.shp
 		Offset: 0, 10, 0
 	large_splash:
 		Filename: h2o_exp1.shp
 	napalm:
 		Filename: napalm2.shp
 	blue_napalm:
-		Filename: blue_napalm2.shp
+		Filename: gen|bits/weapons/blue_napalm2.shp
 	building_napalm:
 		Filename: napalm2.shp
 		FlipX: true
 	firestorm:
-		Filename: firestorm.shp
+		Filename: gen|bits/weapons/firestorm.shp
 		Offset: 0,-15,15
 	firestormsmall:
-		Filename: firestorm-small.shp
+		Filename: gen|bits/weapons/firestorm-small.shp
 		Tick: 20
 		Offset: 0,-8,8
 	firestorm-black:
-		Filename: firestorm-black.shp
+		Filename: gen|bits/weapons/firestorm-black.shp
 		Offset: 0,-15,15
 	firestormsmall-black:
-		Filename: firestorm-small-black.shp
+		Filename: gen|bits/weapons/firestorm-small-black.shp
 		Tick: 20
 		Offset: 0,-8,8
 	nuke:
 		Filename: atomsfx.shp
 	mininuke:
-		Filename: miniatomsfx.shp
+		Filename: gen|bits/weapons/miniatomsfx.shp
 	miniernuke:
-		Filename: minieratomsfx.shp
+		Filename: gen|bits/weapons/minieratomsfx.shp
 	med_splash:
 		Filename: h2o_exp2.shp
 	self_destruct:
@@ -135,40 +135,40 @@ explosion:
 		Filename: frag1.shp
 		Offset: -2,0
 	small_napalm:
-		Filename: napalm1.shp
+		Filename: gen|bits/weapons/napalm1.shp
 	large_napalm:
 		Filename: napalm3.shp
 	tiny_twlt:
-		Filename: twlt-tiny.shp
+		Filename: gen|bits/weapons/twlt-tiny.shp
 	small_twlt:
-		Filename: twlt-small.shp
+		Filename: gen|bits/weapons/twlt-small.shp
 	large_twlt:
-		Filename: twlt-large.shp
+		Filename: gen|bits/weapons/twlt-large.shp
 	small_clsn:
-		Filename: clsn-small.shp
+		Filename: gen|bits/weapons/clsn-small.shp
 	small_clsn_fx:
-		Filename: clsn-small.shp
+		Filename: gen|bits/weapons/clsn-small.shp
 		FlipX: true
 	big_clsn:
-		Filename: clsn-big.shp
+		Filename: gen|bits/weapons/clsn-big.shp
 	big_clsn_fx:
-		Filename: clsn-big.shp
+		Filename: gen|bits/weapons/clsn-big.shp
 		FlipX: true
 	smallspark:
 		Filename: smallspark.shp
 	fuel_air:
-		Filename: fuel-air.shp
+		Filename: gen|bits/weapons/fuel-air.shp
 		Tick: 20
 		AlphaFade: true
 	flashbang:
-		Filename: flash.shp
+		Filename: gen|bits/weapons/flash.shp
 	emp:
-		Filename: empfx1.shp
+		Filename: gen|bits/weapons/empfx1.shp
 	emp_small:
-		Filename: empfx2.shp
+		Filename: gen|bits/weapons/empfx2.shp
 		Length: 8
 	particle_ring:
-		Filename: particlering.shp
+		Filename: gen|bits/weapons/particlering.shp
 	corpse:
 		Filename: corpse1.tem
 		TilesetFilenames:
@@ -193,7 +193,7 @@ burn-l:
 
 blue_burn-l:
 	Defaults:
-		Filename: blue_burn-l.shp
+		Filename: gen|bits/weapons/blue_burn-l.shp
 	idle:
 		Length: *
 		ZOffset: 2000
@@ -359,59 +359,59 @@ beacon:
 		Offset: 0,0
 		ZOffset: 2047
 	carpet_bombing_airforce:
-		Filename: carpet_bombing_airforce_beacon.png
+		Filename: gen|bits/beacons/carpet_bombing_airforce_beacon.png
 	paradrop1:
-		Filename: paradrop1_beacon.png
+		Filename: gen|bits/beacons/paradrop1_beacon.png
 	paradrop2:
-		Filename: paradrop2_beacon.png
+		Filename: gen|bits/beacons/paradrop2_beacon.png
 	paradrop3:
-		Filename: paradrop3_beacon.png
+		Filename: gen|bits/beacons/paradrop3_beacon.png
 	a101:
-		Filename: a101_beacon.png
+		Filename: gen|bits/beacons/a101_beacon.png
 	a102:
-		Filename: a102_beacon.png
+		Filename: gen|bits/beacons/a102_beacon.png
 	a103:
-		Filename: a103_beacon.png
+		Filename: gen|bits/beacons/a103_beacon.png
 	spectre_gunship:
-		Filename: spectre_gunship_beacon.png
+		Filename: gen|bits/beacons/spectre_gunship_beacon.png
 	spectre_gunship1:
-		Filename: spectre_gunship1_beacon.png
+		Filename: gen|bits/beacons/spectre_gunship1_beacon.png
 	spectre_gunship2:
-		Filename: spectre_gunship2_beacon.png
+		Filename: gen|bits/beacons/spectre_gunship2_beacon.png
 	spectre_gunship3:
-		Filename: spectre_gunship3_beacon.png
+		Filename: gen|bits/beacons/spectre_gunship3_beacon.png
 	leaflet_drop:
-		Filename: leaflet_drop_beacon.png
+		Filename: gen|bits/beacons/leaflet_drop_beacon.png
 	fuel_air_bomb:
-		Filename: fuel_air_bomb_beacon.png
+		Filename: gen|bits/beacons/fuel_air_bomb_beacon.png
 	moab:
-		Filename: moab_beacon.png
+		Filename: gen|bits/beacons/moab_beacon.png
 	anthrax_bomb:
-		Filename: anthrax_bomb_beacon.png
+		Filename: gen|bits/beacons/anthrax_bomb_beacon.png
 	emp:
-		Filename: emp_beacon.png
+		Filename: gen|bits/beacons/emp_beacon.png
 	cluster_mines:
-		Filename: cluster_mines_beacon.png
+		Filename: gen|bits/beacons/cluster_mines_beacon.png
 	carpet_bombing:
-		Filename: carpet_bombing_beacon.png
+		Filename: gen|bits/beacons/carpet_bombing_beacon.png
 	carpet_bombing_nuke:
-		Filename: carpet_bombing_nuke_beacon.png
+		Filename: gen|bits/beacons/carpet_bombing_nuke_beacon.png
 	tank_drop1:
-		Filename: tank_drop1_beacon.png
+		Filename: gen|bits/beacons/tank_drop1_beacon.png
 	tank_drop2:
-		Filename: tank_drop2_beacon.png
+		Filename: gen|bits/beacons/tank_drop2_beacon.png
 	tank_drop3:
-		Filename: tank_drop3_beacon.png
+		Filename: gen|bits/beacons/tank_drop3_beacon.png
 	arty_barrage1:
-		Filename: arty_barrage1_beacon.png
+		Filename: gen|bits/beacons/arty_barrage1_beacon.png
 	arty_barrage2:
-		Filename: arty_barrage2_beacon.png
+		Filename: gen|bits/beacons/arty_barrage2_beacon.png
 	arty_barrage3:
-		Filename: arty_barrage3_beacon.png
+		Filename: gen|bits/beacons/arty_barrage3_beacon.png
 	atom_bomb:
-		Filename: atom_bomb_beacon.png
+		Filename: gen|bits/beacons/atom_bomb_beacon.png
 	scud_storm:
-		Filename: scud_storm_beacon.png
+		Filename: gen|bits/beacons/scud_storm_beacon.png
 	clock:
 		Filename: beaconclock.shp
 
@@ -440,7 +440,7 @@ dragon:
 
 dragonbig:
 	idle:
-		Filename: dragonbig.shp
+		Filename: gen|bits/weapons/dragonbig.shp
 		Facings: 32
 		ZOffset: 1023
 
@@ -470,7 +470,7 @@ bomb:
 
 grenade:
 	idle:
-		Filename: grenade.shp
+		Filename: gen|bits/weapons/grenade.shp
 		Length: *
 		ZOffset: 1023
 
@@ -505,7 +505,7 @@ fb1:
 
 blue_fb1:
 	idle:
-		Filename: blue_fb1.shp
+		Filename: gen|bits/weapons/blue_fb1.shp
 		Length: *
 		ZOffset: 1023
 
@@ -573,25 +573,25 @@ fb2:
 
 blue_fb2:
 	idle:
-		Filename: blue_fb2.shp
+		Filename: gen|bits/weapons/blue_fb2.shp
 		Length: *
 		ZOffset: 1023
 
 fb3:
 	idle:
-		Filename: fb3.shp
+		Filename: gen|bits/weapons/fb3.shp
 		Facings: 32
 		ZOffset: 1023
 
 fb4:
 	idle:
-		Filename: fb4.shp
+		Filename: gen|bits/weapons/fb4.shp
 		Length: *
 		ZOffset: 1023
 
 scrate:
 	Defaults:
-		Filename: scrate.shp
+		Filename: gen|bits/crates/scrate.shp
 		ZOffset: -511
 	idle:
 	land:
@@ -603,7 +603,7 @@ scrate:
 
 wcrate:
 	Defaults:
-		Filename: wcrate.shp
+		Filename: gen|bits/crates/wcrate.shp
 		ZOffset: -511
 	idle:
 	land:
@@ -614,7 +614,7 @@ wcrate:
 
 xcratea:
 	Defaults:
-		Filename: xcratea.shp
+		Filename: gen|bits/crates/xcratea.shp
 	idle:
 		ZOffset: -511
 	land:
@@ -628,7 +628,7 @@ xcratea:
 
 xcrateb:
 	Defaults:
-		Filename: xcrateb.shp
+		Filename: gen|bits/crates/xcrateb.shp
 	idle:
 		ZOffset: -511
 	land:
@@ -642,7 +642,7 @@ xcrateb:
 
 xcratec:
 	Defaults:
-		Filename: xcratec.shp
+		Filename: gen|bits/crates/xcratec.shp
 	idle:
 		ZOffset: -511
 	land:
@@ -656,7 +656,7 @@ xcratec:
 
 xcrated:
 	Defaults:
-		Filename: xcrated.shp
+		Filename: gen|bits/crates/xcrated.shp
 	idle:
 		ZOffset: -511
 	land:
@@ -741,19 +741,19 @@ parabomb:
 
 bomberbomb:
 	idle:
-		Filename: bomberbomb.shp
+		Filename: gen|bits/weapons/bomberbomb.shp
 		Facings: -32
 		ZOffset: 1023
 
 orcabomb:
 	idle:
-		Filename: orcabomb.shp
+		Filename: gen|bits/weapons/orcabomb.shp
 		Facings: -32
 		ZOffset: 1023
 
 leaflet:
 	Defaults:
-		Filename: leaflet.shp
+		Filename: gen|bits/weapons/leaflet.shp
 		Tick: 5000
 	idle:
 		Length: *
@@ -837,7 +837,7 @@ car_bomb:
 
 tnt:
 	idle:
-		Filename: bombcurs.shp
+		Filename: gen|bits/weapons/bombcurs.shp
 		Length: *
 		Tick: 500
 		ZOffset: 2047
@@ -862,9 +862,9 @@ iconstripes:
 	Defaults:
 		Offset: -1, 0
 	upgraded:
-		Filename: cameo-upgraded.png
+		Filename: gen|bits/cameos/cameo-upgraded.png
 	taken:
-		Filename: cameo-taken.png
+		Filename: gen|bits/cameos/cameo-taken.png
 
 atomic:
 	up:
@@ -878,14 +878,14 @@ atomic:
 
 ionsfx:
 	idle:
-		Filename: ionsfx.shp
+		Filename: gen|bits/weapons/ionsfx.shp
 		Length: *
 		Offset: 0, -78
 		ZOffset: 1023
 
 bubbles:
 	idle:
-		Filename: bubbles.shp
+		Filename: gen|bits/weapons/bubbles.shp
 		Length: *
 		Tick: 220
 
@@ -904,119 +904,119 @@ camera:
 		Filename: camera.shp
 		Length: *
 	icon:
-		Filename: xxicon.shp
+		Filename: gen|bits/cameos/xxicon.shp
 
 icon:
 	emergency_repair1:
-		Filename: emergency_repair1_icon.png
+		Filename: gen|bits/cameos/emergency_repair1_icon.png
 	emergency_repair2:
-		Filename: emergency_repair2_icon.png
+		Filename: gen|bits/cameos/emergency_repair2_icon.png
 	emergency_repair3:
-		Filename: emergency_repair3_icon.png
+		Filename: gen|bits/cameos/emergency_repair3_icon.png
 	spy_satellite:
-		Filename: spy_satellite_icon.png
+		Filename: gen|bits/cameos/spy_satellite_icon.png
 	spy_drone:
-		Filename: spy_drone_icon.png
+		Filename: gen|bits/cameos/spy_drone_icon.png
 	carpet_bombing_airforce:
-		Filename: carpet_bombing_airforce_icon.png
+		Filename: gen|bits/cameos/carpet_bombing_airforce_icon.png
 	paradrop1:
-		Filename: paradrop1_icon.png
+		Filename: gen|bits/cameos/paradrop1_icon.png
 	paradrop2:
-		Filename: paradrop2_icon.png
+		Filename: gen|bits/cameos/paradrop2_icon.png
 	paradrop3:
-		Filename: paradrop3_icon.png
+		Filename: gen|bits/cameos/paradrop3_icon.png
 	a101:
-		Filename: a101_icon.png
+		Filename: gen|bits/cameos/a101_icon.png
 	a102:
-		Filename: a102_icon.png
+		Filename: gen|bits/cameos/a102_icon.png
 	a103:
-		Filename: a103_icon.png
+		Filename: gen|bits/cameos/a103_icon.png
 	spectre_gunship:
-		Filename: spectre_gunship_icon.png
+		Filename: gen|bits/cameos/spectre_gunship_icon.png
 	spectre_gunship1:
-		Filename: spectre_gunship1_icon.png
+		Filename: gen|bits/cameos/spectre_gunship1_icon.png
 	spectre_gunship2:
-		Filename: spectre_gunship2_icon.png
+		Filename: gen|bits/cameos/spectre_gunship2_icon.png
 	spectre_gunship3:
-		Filename: spectre_gunship3_icon.png
+		Filename: gen|bits/cameos/spectre_gunship3_icon.png
 	leaflet_drop:
-		Filename: leaflet_drop_icon.png
+		Filename: gen|bits/cameos/leaflet_drop_icon.png
 	fuel_air_bomb:
-		Filename: fuel_air_bomb_icon.png
+		Filename: gen|bits/cameos/fuel_air_bomb_icon.png
 	moab:
-		Filename: moab_icon.png
+		Filename: gen|bits/cameos/moab_icon.png
 	intelligence:
-		Filename: intelligence_icon.png
+		Filename: gen|bits/cameos/intelligence_icon.png
 	supply_drop:
-		Filename: supply_drop_zone_icon.png
+		Filename: gen|bits/cameos/supply_drop_zone_icon.png
 	ambush1:
-		Filename: ambush1_icon.png
+		Filename: gen|bits/cameos/ambush1_icon.png
 	ambush2:
-		Filename: ambush2_icon.png
+		Filename: gen|bits/cameos/ambush2_icon.png
 	ambush3:
-		Filename: ambush3_icon.png
+		Filename: gen|bits/cameos/ambush3_icon.png
 	ambush1_toxin:
-		Filename: ambush1_toxin_icon.png
+		Filename: gen|bits/cameos/ambush1_toxin_icon.png
 	ambush2_toxin:
-		Filename: ambush2_toxin_icon.png
+		Filename: gen|bits/cameos/ambush2_toxin_icon.png
 	ambush3_toxin:
-		Filename: ambush3_toxin_icon.png
+		Filename: gen|bits/cameos/ambush3_toxin_icon.png
 	gps_scrambler1:
-		Filename: gps_scrambler1_icon.png
+		Filename: gen|bits/cameos/gps_scrambler1_icon.png
 	gps_scrambler2:
-		Filename: gps_scrambler2_icon.png
+		Filename: gen|bits/cameos/gps_scrambler2_icon.png
 	gps_scrambler3:
-		Filename: gps_scrambler3_icon.png
+		Filename: gen|bits/cameos/gps_scrambler3_icon.png
 	anthrax_bomb:
-		Filename: anthrax_bomb_icon.png
+		Filename: gen|bits/cameos/anthrax_bomb_icon.png
 	radar_van_scan:
-		Filename: radar_van_scan_icon.png
+		Filename: gen|bits/cameos/radar_van_scan_icon.png
 	sneak_attack:
-		Filename: sneak_attack_icon.png
+		Filename: gen|bits/cameos/sneak_attack_icon.png
 	frenzy1:
-		Filename: frenzy1_icon.png
+		Filename: gen|bits/cameos/frenzy1_icon.png
 	frenzy2:
-		Filename: frenzy2_icon.png
+		Filename: gen|bits/cameos/frenzy2_icon.png
 	frenzy3:
-		Filename: frenzy3_icon.png
+		Filename: gen|bits/cameos/frenzy3_icon.png
 	cash_hack1:
-		Filename: cash_hack1_icon.png
+		Filename: gen|bits/cameos/cash_hack1_icon.png
 	cash_hack2:
-		Filename: cash_hack2_icon.png
+		Filename: gen|bits/cameos/cash_hack2_icon.png
 	cash_hack3:
-		Filename: cash_hack3_icon.png
+		Filename: gen|bits/cameos/cash_hack3_icon.png
 	arty_barrage1:
-		Filename: arty_barrage1_icon.png
+		Filename: gen|bits/cameos/arty_barrage1_icon.png
 	arty_barrage2:
-		Filename: arty_barrage2_icon.png
+		Filename: gen|bits/cameos/arty_barrage2_icon.png
 	arty_barrage3:
-		Filename: arty_barrage3_icon.png
+		Filename: gen|bits/cameos/arty_barrage3_icon.png
 	tank_drop1:
-		Filename: tank_drop1_icon.png
+		Filename: gen|bits/cameos/tank_drop1_icon.png
 	tank_drop2:
-		Filename: tank_drop2_icon.png
+		Filename: gen|bits/cameos/tank_drop2_icon.png
 	tank_drop3:
-		Filename: tank_drop3_icon.png
+		Filename: gen|bits/cameos/tank_drop3_icon.png
 	cluster_mines:
-		Filename: cluster_mines_icon.png
+		Filename: gen|bits/cameos/cluster_mines_icon.png
 	carpet_bombing:
-		Filename: carpet_bombing_icon.png
+		Filename: gen|bits/cameos/carpet_bombing_icon.png
 	carpet_bombing_nuke:
-		Filename: carpet_bombing_nuke_icon.png
+		Filename: gen|bits/cameos/carpet_bombing_nuke_icon.png
 	emp:
-		Filename: emp_icon.png
+		Filename: gen|bits/cameos/emp_icon.png
 	particle_cannon:
-		Filename: particle_cannon_ability_icon.png
+		Filename: gen|bits/cameos/particle_cannon_ability_icon.png
 	scud_storm:
-		Filename: scud_storm_ability_icon.png
+		Filename: gen|bits/cameos/scud_storm_ability_icon.png
 	fake_scud_storm:
-		Filename: fake_scud_storm_ability_icon.png
+		Filename: gen|bits/cameos/fake_scud_storm_ability_icon.png
 	atom_bomb:
-		Filename: atom_bomb_icon.png
+		Filename: gen|bits/cameos/atom_bomb_icon.png
 	xxicon:
-		Filename: xxicon.shp
+		Filename: gen|bits/cameos/xxicon.shp
 	emptyicon:
-		Filename: emptyicon.shp
+		Filename: gen|bits/cameos/emptyicon.shp
 
 invis:
 	Defaults:
@@ -1046,14 +1046,14 @@ minp:
 		Filename: minp.shp
 		ZOffset: -512
 	icon:
-		Filename: land_mine_icon.png
+		Filename: gen|bits/cameos/land_mine_icon.png
 
 minv:
 	idle:
 		Filename: minv.shp
 		ZOffset: -512
 	icon:
-		Filename: land_mine_icon.png
+		Filename: gen|bits/cameos/land_mine_icon.png
 
 overlay:
 	Defaults:
@@ -1229,215 +1229,179 @@ snow_craters:
 		Filename: cr6.sno
 
 supply.pile.a:
+	Defaults:
+		Filename: gen|bits/buildings/pilea.shp
 	idle:
-		Filename: pilea.shp
 	idle-100:
-		Filename: pilea.shp
 	idle-66:
-		Filename: pilea.shp
 		Start: 1
 	idle-33:
-		Filename: pilea.shp
 		Start: 2
 
 supply.pile.b:
+	Defaults:
+		Filename: gen|bits/buildings/pileb.shp
 	idle:
-		Filename: pileb.shp
 	idle-100:
-		Filename: pileb.shp
 	idle-66:
-		Filename: pileb.shp
 		Start: 1
 	idle-33:
-		Filename: pileb.shp
 		Start: 2
 
 supply.pile.c:
+	Defaults:
+		Filename: gen|bits/buildings/pilec.shp
 	idle:
-		Filename: pilec.shp
 	idle-100:
-		Filename: pilec.shp
 	idle-75:
-		Filename: pilec.shp
 		Start: 1
 	idle-50:
-		Filename: pilec.shp
 		Start: 2
 	idle-25:
-		Filename: pilec.shp
 		Start: 3
 
 supply.pile.d:
+	Defaults:
+		Filename: gen|bits/buildings/piled.shp
 	idle:
-		Filename: piled.shp
 	idle-100:
-		Filename: piled.shp
 	idle-66:
-		Filename: piled.shp
 		Start: 1
 	idle-33:
-		Filename: piled.shp
 		Start: 2
 
 supply.pile.e:
+	Defaults:
+		Filename: gen|bits/buildings/pilee.shp
 	idle:
-		Filename: pilee.shp
 	idle-100:
-		Filename: pilee.shp
 	idle-66:
-		Filename: pilee.shp
 		Start: 1
 	idle-33:
-		Filename: pilee.shp
 		Start: 2
 
 supply.pile.f:
+	Defaults:
+		Filename: gen|bits/buildings/pilef.shp
 	idle:
-		Filename: pilef.shp
 	idle-100:
-		Filename: pilef.shp
 	idle-66:
-		Filename: pilef.shp
 		Start: 1
 	idle-33:
-		Filename: pilef.shp
 		Start: 2
 
 supply.pile.g:
+	Defaults:
+		Filename: gen|bits/buildings/pileg.shp
 	idle:
-		Filename: pileg.shp
 	idle-100:
-		Filename: pileg.shp
 	idle-80:
-		Filename: pileg.shp
 		Start: 1
 	idle-60:
-		Filename: pileg.shp
 		Start: 2
 	idle-40:
-		Filename: pileg.shp
 		Start: 3
 	idle-20:
-		Filename: pileg.shp
 		Start: 4
 
 supply.dock.6x4:
 	Defaults:
+		Filename: gen|bits/buildings/dock_6x4.shp
 		ZOffset: -1c511
 	idle:
-		Filename: dock_6x4.shp
 	idle-100:
-		Filename: dock_6x4.shp
 	idle-75:
-		Filename: dock_6x4.shp
 		Start: 1
 	idle-50:
-		Filename: dock_6x4.shp
 		Start: 2
 	idle-25:
-		Filename: dock_6x4.shp
 		Start: 3
 	bib-tem:
-		Filename: dock_6x4_bib.tem
+		Filename: gen|bits/buildings/dock_6x4_bib.tem
 		ZOffset: -2c511
 	bib-sno:
-		Filename: dock_6x4_bib.sno
+		Filename: gen|bits/buildings/dock_6x4_bib.sno
 		ZOffset: -2c511
 	bib-des:
-		Filename: dock_6x4_bib.des
+		Filename: gen|bits/buildings/dock_6x4_bib.des
 		ZOffset: -2c511
 
 supply.dock.4x6:
 	Defaults:
+		Filename: gen|bits/buildings/dock_4x6.shp
 		ZOffset: -1c511
 	idle:
-		Filename: dock_4x6.shp
 	idle-100:
-		Filename: dock_4x6.shp
 	idle-75:
-		Filename: dock_4x6.shp
 		Start: 1
 	idle-50:
-		Filename: dock_4x6.shp
 		Start: 2
 	idle-25:
-		Filename: dock_4x6.shp
 		Start: 3
 	bib-tem:
-		Filename: dock_4x6_bib.tem
+		Filename: gen|bits/buildings/dock_4x6_bib.tem
 		ZOffset: -2c511
 	bib-sno:
-		Filename: dock_4x6_bib.sno
+		Filename: gen|bits/buildings/dock_4x6_bib.sno
 		ZOffset: -2c511
 	bib-des:
-		Filename: dock_4x6_bib.des
+		Filename: gen|bits/buildings/dock_4x6_bib.des
 		ZOffset: -2c511
 
 supply.dock.skewed_a:
 	Defaults:
+		Filename: gen|bits/buildings/dock_skewed_a.shp
 		ZOffset: -1c511
 	idle:
-		Filename: dock_skewed_a.shp
 	idle-100:
-		Filename: dock_skewed_a.shp
 	idle-75:
-		Filename: dock_skewed_a.shp
 		Start: 1
 	idle-50:
-		Filename: dock_skewed_a.shp
 		Start: 2
 	idle-25:
-		Filename: dock_skewed_a.shp
 		Start: 3
 	bib-tem:
-		Filename: dock_skewed_a_bib.tem
+		Filename: gen|bits/buildings/dock_skewed_a_bib.tem
 		ZOffset: -2c511
 	bib-sno:
-		Filename: dock_skewed_a_bib.sno
+		Filename: gen|bits/buildings/dock_skewed_a_bib.sno
 		ZOffset: -2c511
 	bib-des:
-		Filename: dock_skewed_a_bib.des
+		Filename: gen|bits/buildings/dock_skewed_a_bib.des
 		ZOffset: -2c511
 
 supply.dock.skewed_b:
 	Defaults:
+		Filename: gen|bits/buildings/dock_skewed_b.shp
 		ZOffset: -1c511
 	idle:
-		Filename: dock_skewed_b.shp
 	idle-100:
-		Filename: dock_skewed_b.shp
 	idle-75:
-		Filename: dock_skewed_b.shp
 		Start: 1
 	idle-50:
-		Filename: dock_skewed_b.shp
 		Start: 2
 	idle-25:
-		Filename: dock_skewed_b.shp
 		Start: 3
 	bib-tem:
-		Filename: dock_skewed_b_bib.tem
+		Filename: gen|bits/buildings/dock_skewed_b_bib.tem
 		ZOffset: -2c511
 	bib-sno:
-		Filename: dock_skewed_b_bib.sno
+		Filename: gen|bits/buildings/dock_skewed_b_bib.sno
 		ZOffset: -2c511
 	bib-des:
-		Filename: dock_skewed_b_bib.des
+		Filename: gen|bits/buildings/dock_skewed_b_bib.des
 		ZOffset: -2c511
 
 supply.dock.2x2:
+	Defaults:
+		Filename: gen|bits/buildings/dock_2x2.shp
 	idle:
-		Filename: dock_2x2.shp
 	idle-100:
-		Filename: dock_2x2.shp
 	idle-75:
-		Filename: dock_2x2.shp
 		Start: 1
 	idle-50:
-		Filename: dock_2x2.shp
 		Start: 2
 	idle-25:
-		Filename: dock_2x2.shp
 		Start: 3
 	bib:
 		Filename: bib3.tem
@@ -1457,25 +1421,16 @@ supply.dock.2x2:
 
 railmine:
 	idle:
-		Filename: railmine.tem
+		Filename: gen|bits/buildings/railmine.tem
 		TilesetFilenames:
-			SNOW: railmine.sno
-			DESERT: railmine.des
+			SNOW: gen|bits/buildings/railmine.sno
+			DESERT: gen|bits/buildings/railmine.des
 		ZOffset: -512
 
 ctflag:
+	Inherits: ^default.flag
 	idle:
-		Filename: ctflag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		TilesetFilenames:
-			SNOW: mbGAP.sno
-			INTERIOR: mbGAP.int
-			DESERT: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/ctflag.shp
 
 hack.particle_beam:
 	Defaults:
@@ -1484,15 +1439,15 @@ hack.particle_beam:
 		IgnoreWorldTint: true
 		Offset: 0, -50
 	idle:
-		Filename: particlebeam.shp
+		Filename: gen|bits/weapons/particlebeam.shp
 	make:
-		Filename: particlebeamake.shp
+		Filename: gen|bits/weapons/particlebeamake.shp
 	die:
-		Filename: particlebeamake.shp
+		Filename: gen|bits/weapons/particlebeamake.shp
 		Frames: 8, 7, 6, 5, 4, 3, 2, 1, 0
 	icon:
 		Offset: 0, 0
-		Filename: particle_cannon_ability_icon.png
+		Filename: gen|bits/cameos/particle_cannon_ability_icon.png
 
 hack.cameo_filler:
 	icon:

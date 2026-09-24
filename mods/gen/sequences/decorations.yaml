@@ -744,926 +744,233 @@ t09.husk:
 		Length: 8
 		Tick: 80
 
-flag.british:
+^default.flag:
 	idle:
-		Filename: british_flag.shp
 		Length: 9
 		Tick: 50
 		Offset: 0,-12
 	bib:
-		Filename: mbGAP.tem
+		Filename: gen|bits/terrain/bibs/mbGAP.tem
 		Length: *
 	bib-Snow:
-		Filename: mbGAP.sno
+		Filename: gen|bits/terrain/bibs/mbGAP.sno
 		Length: *
 	bib-SnowRoad:
-		Filename: mbGAP.sno
+		Filename: gen|bits/terrain/bibs/mbGAP.sno
 		Length: *
 	bib-Sand:
-		Filename: mbGAP.des
+		Filename: gen|bits/terrain/bibs/mbGAP.des
 		Length: *
 	bib-SandRoad:
-		Filename: mbGAP.des
+		Filename: gen|bits/terrain/bibs/mbGAP.des
 		Length: *
+
+flag.british:
+	Inherits: ^default.flag
+	idle:
+		Filename: gen|bits/flags/british_flag.shp
 
 flag.french:
+	Inherits: ^default.flag
 	idle:
-		Filename: french_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/french_flag.shp
 
 flag.french.2:
+	Inherits: ^default.flag
 	idle:
-		Filename: french_flag_2.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/french_flag_2.shp
 
 flag.german:
+	Inherits: ^default.flag
 	idle:
-		Filename: german_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/german_flag.shp
 
 flag.greek:
+	Inherits: ^default.flag
 	idle:
-		Filename: greek_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/greek_flag.shp
 
 flag.spanish:
+	Inherits: ^default.flag
 	idle:
-		Filename: spanish_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/spanish_flag.shp
 
 flag.turkish:
+	Inherits: ^default.flag
 	idle:
-		Filename: turkish_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/turkish_flag.shp
 
 flag.belgian:
+	Inherits: ^default.flag
 	idle:
-		Filename: belgian_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/belgian_flag.shp
 
 flag.dutch:
+	Inherits: ^default.flag
 	idle:
-		Filename: dutch_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/dutch_flag.shp
 
 flag.luxembourgish:
+	Inherits: ^default.flag
 	idle:
-		Filename: luxembourgish_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/luxembourgish_flag.shp
 
 flag.american:
+	Inherits: ^default.flag
 	idle:
-		Filename: usa_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/usa_flag.shp
 
 flag.italian:
+	Inherits: ^default.flag
 	idle:
-		Filename: italian_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/italian_flag.shp
 
 flag.austrian:
+	Inherits: ^default.flag
 	idle:
-		Filename: austrian_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/austrian_flag.shp
 
 flag.hungarian:
+	Inherits: ^default.flag
 	idle:
-		Filename: hungarian_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/hungarian_flag.shp
 
 flag.bulgarian:
+	Inherits: ^default.flag
 	idle:
-		Filename: bulgarian_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/bulgarian_flag.shp
 
 flag.irish:
+	Inherits: ^default.flag
 	idle:
-		Filename: irish_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/irish_flag.shp
 
 flag.danish:
+	Inherits: ^default.flag
 	idle:
-		Filename: danish_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/danish_flag.shp
 
 flag.finnish:
+	Inherits: ^default.flag
 	idle:
-		Filename: finnish_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/finnish_flag.shp
 
 flag.swedish:
+	Inherits: ^default.flag
 	idle:
-		Filename: swedish_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/swedish_flag.shp
 
 flag.polish:
+	Inherits: ^default.flag
 	idle:
-		Filename: polish_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/polish_flag.shp
 
 flag.nigerian:
+	Inherits: ^default.flag
 	idle:
-		Filename: nigerian_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/nigerian_flag.shp
 
 flag.chilean:
+	Inherits: ^default.flag
 	idle:
-		Filename: chilean_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/chilean_flag.shp
 
 flag.peruvian:
+	Inherits: ^default.flag
 	idle:
-		Filename: peruvian_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/peruvian_flag.shp
 
 flag.japanese:
+	Inherits: ^default.flag
 	idle:
-		Filename: japanese_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/japanese_flag.shp
 
 flag.indonesian:
+	Inherits: ^default.flag
 	idle:
-		Filename: indonesian_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/indonesian_flag.shp
 
 flag.chinese:
+	Inherits: ^default.flag
 	idle:
-		Filename: chinese_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/chinese_flag.shp
 
 flag.ussr:
+	Inherits: ^default.flag
 	idle:
-		Filename: ussr_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/ussr_flag.shp
 
 flag.russian:
+	Inherits: ^default.flag
 	idle:
-		Filename: russian_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/russian_flag.shp
 
 flag.russian_sfsr:
+	Inherits: ^default.flag
 	idle:
-		Filename: russian_sfsr_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/russian_sfsr_flag.shp
 
 flag.ukrainian_ssr:
+	Inherits: ^default.flag
 	idle:
-		Filename: ukrainian_ssr_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/ukrainian_ssr_flag.shp
 
 flag.moldovan_ssr:
+	Inherits: ^default.flag
 	idle:
-		Filename: moldovan_ssr_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/moldovan_ssr_flag.shp
 
 flag.azerbaijani_ssr:
+	Inherits: ^default.flag
 	idle:
-		Filename: azerbaijani_ssr_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/azerbaijani_ssr_flag.shp
 
 flag.armenian_ssr:
+	Inherits: ^default.flag
 	idle:
-		Filename: armenian_ssr_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/armenian_ssr_flag.shp
 
 flag.kazakh_ssr:
+	Inherits: ^default.flag
 	idle:
-		Filename: kazakh_ssr_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/kazakh_ssr_flag.shp
 
 flag.uzbek_ssr:
+	Inherits: ^default.flag
 	idle:
-		Filename: uzbek_ssr_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/uzbek_ssr_flag.shp
 
 flag.vietnamese:
+	Inherits: ^default.flag
 	idle:
-		Filename: vietnamese_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/vietnamese_flag.shp
 
 flag.yemeni:
+	Inherits: ^default.flag
 	idle:
-		Filename: yemeni_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/yemeni_flag.shp
 
 flag.syrian:
+	Inherits: ^default.flag
 	idle:
-		Filename: syrian_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/syrian_flag.shp
 
 flag.bangladeshi:
+	Inherits: ^default.flag
 	idle:
-		Filename: bangladeshi_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/bangladeshi_flag.shp
 
 flag.libyan_green:
+	Inherits: ^default.flag
 	idle:
-		Filename: libyan_flag_green.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/libyan_flag_green.shp
 
 flag.saudi:
+	Inherits: ^default.flag
 	idle:
-		Filename: saudi_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/saudi_flag.shp
 
 flag.gla:
+	Inherits: ^default.flag
 	idle:
-		Filename: gla_flag.shp
-		Length: 9
-		Tick: 50
-		Offset: 0,-12
-	bib:
-		Filename: mbGAP.tem
-		Length: *
-	bib-Snow:
-		Filename: mbGAP.sno
-		Length: *
-	bib-SnowRoad:
-		Filename: mbGAP.sno
-		Length: *
-	bib-Sand:
-		Filename: mbGAP.des
-		Length: *
-	bib-SandRoad:
-		Filename: mbGAP.des
-		Length: *
+		Filename: gen|bits/flags/gla_flag.shp

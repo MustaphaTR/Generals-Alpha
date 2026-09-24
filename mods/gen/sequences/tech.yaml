@@ -1,6 +1,6 @@
 tech.oil_derrick:
 	Defaults:
-		Filename: oilb.shp
+		Filename: gen|bits/buildings/oilb.shp
 		Offset: 0,-6
 	idle:
 	damaged-idle:
@@ -23,12 +23,12 @@ tech.oil_derrick:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: oil_derrick_icon.png
+		Filename: gen|bits/cameos/oil_derrick_icon.png
 		Offset: 0,0
 
 tech.oil_refinery:
 	Defaults:
-		Filename: oil_refinery.shp
+		Filename: gen|bits/buildings/oil_refinery.shp
 	idle:
 	damaged-idle:
 		Start: 1
@@ -39,7 +39,7 @@ tech.oil_refinery:
 		Filename: biomake.shp
 		Length: *
 	icon:
-		Filename: oil_refinery_icon.png
+		Filename: gen|bits/cameos/oil_refinery_icon.png
 
 tech.hospital:
 	Defaults:
@@ -56,31 +56,31 @@ tech.hospital:
 		Filename: hospmake.shp
 		Length: *
 	bib:
-		Filename: mbHOSP.tem
+		Filename: gen|bits/terrain/bibs/mbHOSP.tem
 		Length: *
 		Offset: 0,1
 	bib-Snow:
-		Filename: mbHOSP.sno
+		Filename: gen|bits/terrain/bibs/mbHOSP.sno
 		Length: *
 		Offset: 0,1
 	bib-SnowRoad:
-		Filename: mbHOSP.sno
+		Filename: gen|bits/terrain/bibs/mbHOSP.sno
 		Length: *
 		Offset: 0,1
 	bib-Sand:
-		Filename: mbHOSP.des
+		Filename: gen|bits/terrain/bibs/mbHOSP.des
 		Length: *
 		Offset: 0,1
 	bib-SandRoad:
-		Filename: mbHOSP.des
+		Filename: gen|bits/terrain/bibs/mbHOSP.des
 		Length: *
 		Offset: 0,1
 	icon:
-		Filename: hospital_icon.png
+		Filename: gen|bits/cameos/hospital_icon.png
 
 tech.artillery_platform:
 	Defaults:
-		Filename: bunker.shp
+		Filename: gen|bits/buildings/bunker.shp
 	idle:
 		Filename: agun.shp
 		Facings: 32
@@ -98,10 +98,10 @@ tech.artillery_platform:
 		Start: 1
 		ZOffset: -512
 	make:
-		Filename: bunker_make.shp
+		Filename: gen|bits/buildings/bunker_make.shp
 		Length: *
 	muzzle:
-		Filename: gunfire2.shp
+		Filename: gen|bits/weapons/gunfire2.shp
 		Length: *
 	bib:
 		Filename: bib3.tem
@@ -119,7 +119,7 @@ tech.artillery_platform:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: artillery_platform_icon.png
+		Filename: gen|bits/cameos/artillery_platform_icon.png
 
 tech.communications_center:
 	Defaults:
@@ -149,7 +149,7 @@ tech.communications_center:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: communications_center_icon.shp
+		Filename: gen|bits/cameos/communications_center_icon.shp
 
 tech.soviet_barracks:
 	Defaults:
@@ -158,7 +158,7 @@ tech.soviet_barracks:
 	damaged-idle:
 		Start: 1
 	make:
-		Filename: fcommake.shp
+		Filename: gen|bits/buildings/fcommake.shp
 		Length: *
 	bib:
 		Filename: bib3.tem
@@ -191,33 +191,33 @@ tech.flame_tower:
 		Length: *
 		Offset: 0,-2
 	bib:
-		Filename: mbFTUR.tem
+		Filename: gen|bits/terrain/bibs/mbFTUR.tem
 		Length: *
 	bib-Snow:
-		Filename: mbFTUR.sno
+		Filename: gen|bits/terrain/bibs/mbFTUR.sno
 		Length: *
 	bib-SnowRoad:
-		Filename: mbFTUR.sno
+		Filename: gen|bits/terrain/bibs/mbFTUR.sno
 		Length: *
 	bib-Sand:
-		Filename: mbFTUR.des
+		Filename: gen|bits/terrain/bibs/mbFTUR.des
 		Length: *
 	bib-SandRoad:
-		Filename: mbFTUR.des
+		Filename: gen|bits/terrain/bibs/mbFTUR.des
 		Length: *
 	icon:
-		Filename: flame_tower_icon.shp
+		Filename: gen|bits/cameos/flame_tower_icon.shp
 
 tech.power_plant:
 	Defaults:
-		Filename: power_plant.shp
+		Filename: gen|bits/buildings/power_plant.shp
 	idle:
 		Offset: 0,-10
 	damaged-idle:
 		Start: 1
 		Offset: 0,-10
 	make:
-		Filename: power_plant_make.shp
+		Filename: gen|bits/buildings/power_plant_make.shp
 		Length: *
 		Offset: 0,-10
 	bib:
@@ -236,21 +236,21 @@ tech.power_plant:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: power_plant_icon.shp
+		Filename: gen|bits/cameos/power_plant_icon.shp
 
 tech.repair_bay:
 	Defaults:
-		Filename: repair_bay.shp
+		Filename: gen|bits/buildings/repair_bay.shp
 	idle:
 		Offset: 0, -6
 	idle-roof:
-		Filename: repair_bay_shadow.shp
+		Filename: gen|bits/buildings/repair_bay_shadow.shp
 		Offset: 0, -6
 	damaged-idle:
 		Start: 1
 		Offset: 0, -6
 	damaged-roof:
-		Filename: repair_bay_shadow.shp
+		Filename: gen|bits/buildings/repair_bay_shadow.shp
 		Start: 1
 		Offset: 0, -6
 	bib:
@@ -269,11 +269,11 @@ tech.repair_bay:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: repair_bay_icon.png
+		Filename: gen|bits/cameos/repair_bay_icon.png
 
 tech.reinforcements_pad:
 	Defaults:
-		Filename: reinforcements_pad.shp
+		Filename: gen|bits/buildings/reinforcements_pad.shp
 	idle:
 		ZOffset: -1c511
 	damaged-idle:
@@ -287,36 +287,36 @@ tech.reinforcements_pad:
 		Length: 7
 		ZOffset: -1c511
 	make:
-		Filename: reinforcements_pad_make.shp
+		Filename: gen|bits/buildings/reinforcements_pad_make.shp
 		Length: 14
 		Tick: 60
 	bib:
-		Filename: mbFIX.tem
+		Filename: gen|bits/terrain/bibs/mbFIX.tem
 		Length: *
 		ZOffset: -1c511
 		Offset: 0,-4
 	bib-Snow:
-		Filename: mbFIX.sno
+		Filename: gen|bits/terrain/bibs/mbFIX.sno
 		Length: *
 		ZOffset: -1c511
 		Offset: 0,-4
 	bib-SnowRoad:
-		Filename: mbFIX.sno
+		Filename: gen|bits/terrain/bibs/mbFIX.sno
 		Length: *
 		ZOffset: -1c511
 		Offset: 0,-4
 	bib-Sand:
-		Filename: mbFIX.des
+		Filename: gen|bits/terrain/bibs/mbFIX.des
 		Length: *
 		ZOffset: -1c511
 		Offset: 0,-4
 	bib-SandRoad:
-		Filename: mbFIX.des
+		Filename: gen|bits/terrain/bibs/mbFIX.des
 		Length: *
 		ZOffset: -1c511
 		Offset: 0,-4
 	icon:
-		Filename: reinforcements_pad_icon.png
+		Filename: gen|bits/cameos/reinforcements_pad_icon.png
 
 tech.shipyard:
 	Defaults:
@@ -328,9 +328,7 @@ tech.shipyard:
 		Filename: syrdmake.shp
 		Length: *
 	icon:
-		Filename: syrdicon.shp
-	fake-icon:
-		Filename: syrficon.shp
+		Filename: gen|bits/cameos/shipyard_icon.shp
 
 tech.nuclear_bunker:
 	Defaults:
@@ -342,5 +340,5 @@ tech.nuclear_bunker:
 		Start: 2
 		Tick: 800
 	make:
-		Filename: shipyard_icon.shp
+		Filename: biomake.shp
 		Length: *

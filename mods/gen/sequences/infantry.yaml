@@ -7,15 +7,15 @@
 		Length: *
 		Tick: 80
 	die7:
-		Filename: toxin_death_green.shp
+		Filename: gen|bits/infantry/toxin_death_green.shp
 		Length: *
 		Tick: 60
 	die8:
-		Filename: toxin_death_blue.shp
+		Filename: gen|bits/infantry/toxin_death_blue.shp
 		Length: *
 		Tick: 60
 	die9:
-		Filename: toxin_death_purple.shp
+		Filename: gen|bits/infantry/toxin_death_purple.shp
 		Length: *
 		Tick: 60
 	die-crushed:
@@ -83,7 +83,7 @@ infantry.pilot:
 		Length: 18
 		Tick: 80
 	icon:
-		Filename: pilot_icon.png
+		Filename: gen|bits/cameos/pilot_icon.png
 
 ^default.mg_infantry:
 	Inherits@DEATH: ^default.infantry_death
@@ -199,27 +199,27 @@ infantry.pilot:
 infantry.ranger:
 	Inherits: ^default.mg_infantry
 	icon:
-		Filename: ranger_icon.png
+		Filename: gen|bits/cameos/ranger_icon.png
 
 infantry.rebel:
 	Inherits: ^default.mg_infantry
 	icon:
-		Filename: rebel_icon.png
+		Filename: gen|bits/cameos/rebel_icon.png
 
 infantry.red_guard:
 	Inherits: ^default.mg_infantry
 	icon:
-		Filename: red_guard_icon.png
+		Filename: gen|bits/cameos/red_guard_icon.png
 
 infantry.minigunner:
 	Inherits: ^default.mg_infantry
 	icon:
-		Filename: minigunner_icon.png
+		Filename: gen|bits/cameos/minigunner_icon.png
 
 infantry.conscript:
 	Inherits: ^default.mg_infantry
 	icon:
-		Filename: conscript_icon.shp
+		Filename: gen|bits/cameos/conscript_icon.shp
 
 infantry.toxin_rebel:
 	Inherits@DEATH: ^default.infantry_death
@@ -228,20 +228,20 @@ infantry.toxin_rebel:
 	stand:
 		Facings: 8
 	stand-beta:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Facings: 8
 	stand-gamma:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Facings: 8
 	stand2:
 		Start: 8
 		Facings: 8
 	stand2-beta:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 8
 		Facings: 8
 	stand2-gamma:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 8
 		Facings: 8
 	run:
@@ -250,13 +250,13 @@ infantry.toxin_rebel:
 		Facings: 8
 		Tick: 100
 	run-beta:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 16
 		Length: 6
 		Facings: 8
 		Tick: 100
 	run-gamma:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 16
 		Length: 6
 		Facings: 8
@@ -266,12 +266,12 @@ infantry.toxin_rebel:
 		Length: 16
 		Facings: 8
 	shoot-beta:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 64
 		Length: 16
 		Facings: 8
 	shoot-gamma:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 64
 		Length: 16
 		Facings: 8
@@ -280,12 +280,12 @@ infantry.toxin_rebel:
 		Length: 2
 		Facings: 8
 	liedown-beta:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 192
 		Length: 2
 		Facings: 8
 	liedown-gamma:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 192
 		Length: 2
 		Facings: 8
@@ -294,12 +294,12 @@ infantry.toxin_rebel:
 		Length: 2
 		Facings: 8
 	standup-beta:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 240
 		Length: 2
 		Facings: 8
 	standup-gamma:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 240
 		Length: 2
 		Facings: 8
@@ -308,12 +308,12 @@ infantry.toxin_rebel:
 		Stride: 4
 		Facings: 8
 	prone-stand-beta:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 208
 		Stride: 4
 		Facings: 8
 	prone-stand-gamma:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 208
 		Stride: 4
 		Facings: 8
@@ -322,12 +322,12 @@ infantry.toxin_rebel:
 		Stride: 4
 		Facings: 8
 	prone-stand2-beta:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 208
 		Stride: 4
 		Facings: 8
 	prone-stand2-gamma:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 208
 		Stride: 4
 		Facings: 8
@@ -337,13 +337,13 @@ infantry.toxin_rebel:
 		Facings: 8
 		Tick: 100
 	prone-run-beta:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 208
 		Length: 4
 		Facings: 8
 		Tick: 100
 	prone-run-gamma:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 208
 		Length: 4
 		Facings: 8
@@ -353,12 +353,12 @@ infantry.toxin_rebel:
 		Length: 16
 		Facings: 8
 	prone-shoot-beta:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 256
 		Length: 16
 		Facings: 8
 	prone-shoot-gamma:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 256
 		Length: 16
 		Facings: 8
@@ -367,12 +367,12 @@ infantry.toxin_rebel:
 		Length: 16
 		Tick: 120
 	idle1-beta:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 384
 		Length: 16
 		Tick: 120
 	idle1-gamma:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 384
 		Length: 16
 		Tick: 120
@@ -381,12 +381,12 @@ infantry.toxin_rebel:
 		Length: 16
 		Tick: 120
 	idle2-beta:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 400
 		Length: 16
 		Tick: 120
 	idle2-gamma:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 400
 		Length: 16
 		Tick: 120
@@ -396,13 +396,13 @@ infantry.toxin_rebel:
 		Facings: 8
 		Tick: 120
 	cheer-beta:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 588
 		Length: 3
 		Facings: 8
 		Tick: 120
 	cheer-gamma:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 588
 		Length: 3
 		Facings: 8
@@ -412,12 +412,12 @@ infantry.toxin_rebel:
 		Length: 9
 		Tick: 80
 	die-beta1:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 509
 		Length: 9
 		Tick: 80
 	die-gamma1:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 509
 		Length: 9
 		Tick: 80
@@ -426,12 +426,12 @@ infantry.toxin_rebel:
 		Length: 8
 		Tick: 80
 	die-beta2:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 518
 		Length: 8
 		Tick: 80
 	die-gamma2:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 518
 		Length: 8
 		Tick: 80
@@ -440,12 +440,12 @@ infantry.toxin_rebel:
 		Length: 8
 		Tick: 80
 	die-beta3:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 526
 		Length: 8
 		Tick: 80
 	die-gamma3:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 526
 		Length: 8
 		Tick: 80
@@ -454,12 +454,12 @@ infantry.toxin_rebel:
 		Length: 12
 		Tick: 80
 	die-beta4:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 534
 		Length: 12
 		Tick: 80
 	die-gamma4:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 534
 		Length: 12
 		Tick: 80
@@ -468,17 +468,17 @@ infantry.toxin_rebel:
 		Length: 18
 		Tick: 80
 	die-beta5:
-		Filename: e5_beta.shp
+		Filename: gen|bits/infantry/e5_beta.shp
 		Start: 546
 		Length: 18
 		Tick: 80
 	die-gamma5:
-		Filename: e5_gamma.shp
+		Filename: gen|bits/infantry/e5_gamma.shp
 		Start: 546
 		Length: 18
 		Tick: 80
 	icon:
-		Filename: toxin_rebel_icon.png
+		Filename: gen|bits/cameos/toxin_rebel_icon.png
 
 infantry.stinger_soldier:
 	Inherits@DEATH: ^default.infantry_death
@@ -551,7 +551,7 @@ infantry.stinger_soldier:
 infantry.missile_defender:
 	Inherits: infantry.stinger_soldier
 	Defaults:
-		Filename: misdef.shp
+		Filename: gen|bits/infantry/misdef.shp
 	aim:
 		Start: 64
 		Length: 1
@@ -565,21 +565,21 @@ infantry.missile_defender:
 		Facings: 8
 		Tick: 200
 	icon:
-		Filename: missile_defender_icon.png
+		Filename: gen|bits/cameos/missile_defender_icon.png
 
 infantry.rpg_trooper:
 	Inherits: infantry.stinger_soldier
 	Defaults:
-		Filename: rpg.shp
+		Filename: gen|bits/infantry/rpg.shp
 	icon:
-		Filename: rpg_trooper_icon.png
+		Filename: gen|bits/cameos/rpg_trooper_icon.png
 
 infantry.tank_hunter:
 	Inherits: infantry.stinger_soldier
 	Defaults:
-		Filename: hunt.shp
+		Filename: gen|bits/infantry/hunt.shp
 	icon:
-		Filename: tank_hunter_icon.png
+		Filename: gen|bits/cameos/tank_hunter_icon.png
 
 infantry.grenadier:
 	Inherits@DEATH: ^default.infantry_death
@@ -647,12 +647,12 @@ infantry.grenadier:
 		Length: 12
 		Facings: 8
 	icon:
-		Filename: grenadier_icon.shp
+		Filename: gen|bits/cameos/grenadier_icon.shp
 
 infantry.pathfinder:
 	Inherits@DEATH: ^default.infantry_death
 	Defaults:
-		Filename: sniper.shp
+		Filename: gen|bits/infantry/sniper.shp
 	stand:
 		Facings: 8
 	stand2:
@@ -721,12 +721,12 @@ infantry.pathfinder:
 		Stride: 6
 		Facings: 8
 	icon:
-		Filename: pathfinder_icon.png
+		Filename: gen|bits/cameos/pathfinder_icon.png
 
 infantry.terrorist:
 	Inherits@DEATH: ^default.infantry_death
 	Defaults:
-		Filename: terror.shp
+		Filename: gen|bits/infantry/terror.shp
 	stand:
 		Facings: 8
 	panic-stand:
@@ -762,12 +762,12 @@ infantry.terrorist:
 		Facings: 8
 		Tick: 80
 	icon:
-		Filename: terrorist_icon.png
+		Filename: gen|bits/cameos/terrorist_icon.png
 
 infantry.toxin_terrorist:
 	Inherits: infantry.terrorist
 	icon:
-		Filename: toxin_terrorist_icon.png
+		Filename: gen|bits/cameos/toxin_terrorist_icon.png
 
 infantry.flamethrower:
 	Inherits@DEATH: ^default.infantry_death
@@ -835,12 +835,12 @@ infantry.flamethrower:
 		Length: 16
 		Facings: 8
 	icon:
-		Filename: flamethrower_icon.shp
+		Filename: gen|bits/cameos/flamethrower_icon.shp
 
 hack.angry_mob.male:
 	Inherits@DEATH: ^default.infantry_death
 	Defaults:
-		Filename: mob_male.shp
+		Filename: gen|bits/infantry/mob_male.shp
 	idle:
 		Filename: invis.shp
 		Facings: 1
@@ -887,12 +887,12 @@ hack.angry_mob.male:
 		Start: 0
 		Length: 1
 	icon:
-		Filename: worker_icon.png
+		Filename: gen|bits/cameos/angry_mob_icon.png
 
 hack.angry_mob.female:
 	Inherits@DEATH: ^default.infantry_death
 	Defaults:
-		Filename: mob_female.shp
+		Filename: gen|bits/infantry/mob_female.shp
 	stand:
 		Facings: 8
 	panic-stand:
@@ -930,13 +930,15 @@ hack.angry_mob.female:
 
 hack.angry_mob.molotov:
 	Inherits: infantry.grenadier
+	icon:
+		Filename: gen|bits/cameos/angry_mob_icon.png
 
 infantry.angry_mob:
 	Inherits@DEATH: ^default.infantry_death
 	idle:
 		Filename: invis.shp
 	icon:
-		Filename: angry_mob_icon.png
+		Filename: gen|bits/cameos/angry_mob_icon.png
 
 infantry.hacker:
 	Inherits@DEATH: ^default.infantry_death
@@ -995,12 +997,12 @@ infantry.hacker:
 		Facings: 8
 		Tick: 100
 	icon:
-		Filename: hacker_icon.png
+		Filename: gen|bits/cameos/hacker_icon.png
 
 infantry.super_hacker:
 	Inherits: infantry.hacker
 	icon:
-		Filename: super_hacker_icon.png
+		Filename: gen|bits/cameos/super_hacker_icon.png
 
 infantry.hijacker:
 	Inherits@DEATH: ^default.infantry_death
@@ -1047,12 +1049,12 @@ infantry.hijacker:
 		Facings: 8
 		Tick: 80
 	icon:
-		Filename: hijacker_icon.png
+		Filename: gen|bits/cameos/hijacker_icon.png
 
 infantry.colonel_burton:
 	Inherits@DEATH: ^default.infantry_death
 	Defaults:
-		Filename: rmbo.shp
+		Filename: gen|bits/infantry/rmbo.shp
 	stand:
 		Facings: 8
 	stand2:
@@ -1130,17 +1132,17 @@ infantry.colonel_burton:
 		Length: 18
 		Tick: 80
 	die-crushed:
-		Filename: e1rot.shp
+		Filename: gen|bits/infantry/e1rot.shp
 		-TilesetFilenames:
 		Start: 16
 		Length: 4
 	icon:
-		Filename: colonel_burton_icon.png
+		Filename: gen|bits/cameos/colonel_burton_icon.png
 
 infantry.jarmen_kell:
 	Inherits@DEATH: ^default.infantry_death
 	Defaults:
-		Filename: kell.shp
+		Filename: gen|bits/infantry/kell.shp
 	stand:
 		Facings: 8
 	stand2:
@@ -1209,7 +1211,7 @@ infantry.jarmen_kell:
 		Stride: 6
 		Facings: 8
 	icon:
-		Filename: jarmen_kell_icon.png
+		Filename: gen|bits/cameos/jarmen_kell_icon.png
 
 infantry.black_lotus:
 	Inherits@DEATH: ^default.infantry_death
@@ -1267,17 +1269,17 @@ infantry.black_lotus:
 		Facings: 8
 		Tick: 100
 	icon:
-		Filename: black_lotus_icon.png
+		Filename: gen|bits/cameos/black_lotus_icon.png
 
 infantry.super_lotus:
 	Inherits: infantry.black_lotus
 	icon:
-		Filename: super_lotus_icon.png
+		Filename: gen|bits/cameos/super_lotus_icon.png
 
 infantry.saboteur:
 	Inherits@DEATH: ^default.infantry_death
 	Defaults:
-		Filename: saboteur.shp
+		Filename: gen|bits/infantry/saboteur.shp
 	stand:
 		Facings: 8
 	stand2:
@@ -1338,7 +1340,7 @@ infantry.saboteur:
 		Length: 8
 		Facings: 8
 	icon:
-		Filename: saboteur_icon.png
+		Filename: gen|bits/cameos/saboteur_icon.png
 
 medi:
 	Inherits@DEATH: ^default.infantry_death

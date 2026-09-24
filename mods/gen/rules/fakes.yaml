@@ -73,6 +73,9 @@ fake.command_center:
 		Palette: player
 		IsPlayerPalette: true
 		RequiresCondition: !build-incomplete && stealth
+	WithIdleOverlay@FORTIFY:
+		Sequence: idle-fortified
+		RequiresCondition: !build-incomplete && fortified_structures
 	GrantConditionOnFaction@Toxin:
 		Condition: toxin
 		Factions: toxin
@@ -142,6 +145,9 @@ fake.barracks:
 	WithBuildingBib:
 	-WithSpriteBody:
 	WithTerrainDependantSpriteBody:
+	WithIdleOverlay@FORTIFY:
+		Sequence: idle-fortified
+		RequiresCondition: !build-incomplete && fortified_structures
 	RenderSprites:
 		Image: building.gla_barracks
 	TransformOnCondition:
@@ -214,6 +220,9 @@ fake.supply_stash:
 	WithIdleOverlay@RA_SILO:
 		Sequence: idle-ra
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@FORTIFY:
+		Sequence: idle-fortified
+		RequiresCondition: !build-incomplete && fortified_structures
 	RenderSprites:
 		Image: building.gla_supply_stash
 	TransformOnCondition:
@@ -285,6 +294,9 @@ fake.arms_dealer:
 	WithProductionDoorOverlay:
 		Sequence: build-top
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@FORTIFY:
+		Sequence: idle-fortified
+		RequiresCondition: !build-incomplete && fortified_structures
 	RenderSprites:
 		Image: building.arms_dealer
 	TransformOnCondition:
@@ -358,6 +370,9 @@ fake.palace:
 		OwnerChangedAffectsPassengers: false
 	WithBuildingBib:
 	ActorPreviewPlaceBuildingPreview:
+	WithIdleOverlay@FORTIFY:
+		Sequence: idle-fortified
+		RequiresCondition: !build-incomplete && fortified_structures
 	RenderSprites:
 		Image: building.palace
 		PlayerPalette: cncplayer
@@ -426,6 +441,9 @@ fake.black_market:
 	ProductionBar:
 		ProductionType: queue.black_market.fake
 	WithBuildingBib:
+	WithIdleOverlay@FORTIFY:
+		Sequence: idle-fortified
+		RequiresCondition: !build-incomplete && fortified_structures
 	RenderSprites:
 		Image: building.black_market
 	TransformOnCondition:

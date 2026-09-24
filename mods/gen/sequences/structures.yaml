@@ -1,6 +1,6 @@
 building.usa_command_center:
 	Defaults:
-		Filename: usa_command_center.shp
+		Filename: gen|bits/buildings/usa_command_center.shp
 	idle:
 		Length: 4
 		Tick: 100
@@ -17,21 +17,21 @@ building.usa_command_center:
 		Length: 20
 		Tick: 100
 	idle-usa:
-		Filename: usa_command_center_symbols.shp
+		Filename: gen|bits/buildings/usa_command_center_symbols.shp
 	idle-air:
-		Filename: usa_command_center_symbols.shp
+		Filename: gen|bits/buildings/usa_command_center_symbols.shp
 		Start: 1
 	idle-laser:
-		Filename: usa_command_center_symbols.shp
+		Filename: gen|bits/buildings/usa_command_center_symbols.shp
 		Start: 2
 	idle-super:
-		Filename: usa_command_center_symbols.shp
+		Filename: gen|bits/buildings/usa_command_center_symbols.shp
 		Start: 3
 	dead:
 		Start: 48
 		Tick: 800
 	make:
-		Filename: usa_command_center_make.shp
+		Filename: gen|bits/buildings/usa_command_center_make.shp
 		Length: *
 		Tick: 80
 	bib:
@@ -50,11 +50,11 @@ building.usa_command_center:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: usa_command_center_icon.png
+		Filename: gen|bits/cameos/usa_command_center_icon.png
 
 building.gla_command_center:
 	Defaults:
-		Filename: fact.shp
+		Filename: gen|bits/buildings/fact.shp
 	idle:
 	build:
 		Start: 1
@@ -65,21 +65,24 @@ building.gla_command_center:
 		Start: 27
 		Length: 25
 	idle-gla:
-		Filename: gla_prc_command_center_symbols.shp
+		Filename: gen|bits/buildings/gla_prc_command_center_symbols.shp
 	idle-toxin:
-		Filename: gla_prc_command_center_symbols.shp
+		Filename: gen|bits/buildings/gla_prc_command_center_symbols.shp
 		Start: 1
 	idle-demo:
-		Filename: gla_prc_command_center_symbols.shp
+		Filename: gen|bits/buildings/gla_prc_command_center_symbols.shp
 		Start: 2
 	idle-stealth:
-		Filename: gla_prc_command_center_symbols.shp
+		Filename: gen|bits/buildings/gla_prc_command_center_symbols.shp
 		Start: 3
+	idle-fortified:
+		Filename: gen|bits/buildings/fact_fortified.png
+		Offset: 1, -9
 	dead:
-		Filename: factdead.shp
+		Filename: gen|bits/buildings/factdead.shp
 		Tick: 800
 	make:
-		Filename: factmake.shp
+		Filename: gen|bits/buildings/factmake.shp
 		Length: *
 	bib:
 		Filename: bib2.tem
@@ -99,38 +102,38 @@ building.gla_command_center:
 	active:
 		Filename: invis.shp
 	icon:
-		Filename: gla_command_center_icon.png
+		Filename: gen|bits/cameos/gla_command_center_icon.png
 	fake-icon:
-		Filename: fake_command_center_icon.png
+		Filename: gen|bits/cameos/fake_command_center_icon.png
 
 building.prc_command_center:
 	Inherits: building.gla_command_center
 	radar:
-		Filename: prc_radar.shp
+		Filename: gen|bits/buildings/prc_radar.shp
 		Length: 16
 		Tick: 100
 		Offset: 19, -20
 	damaged-radar:
-		Filename: prc_radar.shp
+		Filename: gen|bits/buildings/prc_radar.shp
 		Start: 16
 		Offset: 19, -20
 	idle-prc:
-		Filename: gla_prc_command_center_symbols.shp
+		Filename: gen|bits/buildings/gla_prc_command_center_symbols.shp
 		Start: 4
 	idle-inf:
-		Filename: gla_prc_command_center_symbols.shp
+		Filename: gen|bits/buildings/gla_prc_command_center_symbols.shp
 		Start: 5
 	idle-nuke:
-		Filename: gla_prc_command_center_symbols.shp
+		Filename: gen|bits/buildings/gla_prc_command_center_symbols.shp
 		Start: 6
 	idle-tank:
-		Filename: gla_prc_command_center_symbols.shp
+		Filename: gen|bits/buildings/gla_prc_command_center_symbols.shp
 		Start: 7
 	idle-boss:
-		Filename: gla_prc_command_center_symbols.shp
+		Filename: gen|bits/buildings/gla_prc_command_center_symbols.shp
 		Start: 8
 	icon:
-		Filename: prc_command_center_icon.png
+		Filename: gen|bits/cameos/prc_command_center_icon.png
 
 building.cold_fusion_reactor:
 	Defaults:
@@ -139,27 +142,27 @@ building.cold_fusion_reactor:
 	damaged-idle:
 		Start: 1
 	idle-no-rods:
-		Filename: control_rods.png
+		Filename: gen|bits/buildings/control_rods.png
 	damaged-idle-no-rods:
-		Filename: control_rods.png
+		Filename: gen|bits/buildings/control_rods.png
 		Start: 1
 	idle-rods:
-		Filename: control_rods.png
+		Filename: gen|bits/buildings/control_rods.png
 		Start: 2
 	damaged-idle-rods:
-		Filename: control_rods.png
+		Filename: gen|bits/buildings/control_rods.png
 		Start: 3
 	idle-adv-rods:
-		Filename: control_rods.png
+		Filename: gen|bits/buildings/control_rods.png
 		Start: 4
 	damaged-idle-adv-rods:
-		Filename: control_rods.png
+		Filename: gen|bits/buildings/control_rods.png
 		Start: 5
 	make:
 		Filename: powrmake.shp
 		Length: *
 	dead:
-		Filename: powrdead.shp
+		Filename: gen|bits/buildings/powrdead.shp
 		Tick: 800
 	bib:
 		Filename: bib3.tem
@@ -177,16 +180,16 @@ building.cold_fusion_reactor:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: cold_fusion_reactor_icon.png
+		Filename: gen|bits/cameos/cold_fusion_reactor_icon.png
 
 building.advanced_cold_fusion_reactor:
 	Inherits: building.cold_fusion_reactor
 	icon:
-		Filename: advanced_cold_fusion_reactor_icon.png
+		Filename: gen|bits/cameos/advanced_cold_fusion_reactor_icon.png
 
 building.nuclear_reactor:
 	Defaults:
-		Filename: nuclear_reactor.shp
+		Filename: gen|bits/buildings/nuclear_reactor.shp
 	idle:
 		Length: 4
 		Tick: 1000
@@ -195,7 +198,7 @@ building.nuclear_reactor:
 		Length: 4
 		Tick: 1000
 	idle-overcharge:
-		Filename: nuclear_reactor_overcharge.shp
+		Filename: gen|bits/buildings/nuclear_reactor_overcharge.shp
 		Frames: 0, 1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1
 		Length: *
 		Offset: 18,18
@@ -204,7 +207,7 @@ building.nuclear_reactor:
 		Start: 8
 		Tick: 800
 	make:
-		Filename: nuclear_reactor_make.shp
+		Filename: gen|bits/buildings/nuclear_reactor_make.shp
 		Length: *
 		Tick: 80
 	bib:
@@ -223,11 +226,11 @@ building.nuclear_reactor:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: nuclear_reactor_icon.png
+		Filename: gen|bits/cameos/nuclear_reactor_icon.png
 
 building.advanced_nuclear_reactor:
 	Defaults:
-		Filename: advanced_nuclear_reactor.shp
+		Filename: gen|bits/buildings/advanced_nuclear_reactor.shp
 	idle:
 		Length: 4
 		Tick: 1000
@@ -236,7 +239,7 @@ building.advanced_nuclear_reactor:
 		Length: 4
 		Tick: 1000
 	idle-overcharge:
-		Filename: nuclear_reactor_overcharge.shp
+		Filename: gen|bits/buildings/nuclear_reactor_overcharge.shp
 		Frames: 0, 1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1
 		Length: *
 		Offset: -22,18
@@ -245,7 +248,7 @@ building.advanced_nuclear_reactor:
 		Start: 8
 		Tick: 800
 	make:
-		Filename: advanced_nuclear_reactor_make.shp
+		Filename: gen|bits/buildings/advanced_nuclear_reactor_make.shp
 		Length: *
 		Tick: 80
 	bib:
@@ -264,11 +267,11 @@ building.advanced_nuclear_reactor:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: advanced_nuclear_reactor_icon.png
+		Filename: gen|bits/cameos/advanced_nuclear_reactor_icon.png
 
 building.usa_barracks:
 	Defaults:
-		Filename: usa_barracks.shp
+		Filename: gen|bits/buildings/usa_barracks.shp
 	idle:
 		Length: 10
 		Tick: 100
@@ -280,7 +283,7 @@ building.usa_barracks:
 		Start: 20
 		Tick: 800
 	make:
-		Filename: usa_barracks_make.shp
+		Filename: gen|bits/buildings/usa_barracks_make.shp
 		Length: *
 		Tick: 80
 	bib:
@@ -299,58 +302,61 @@ building.usa_barracks:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: usa_barracks_icon.png
+		Filename: gen|bits/cameos/usa_barracks_icon.png
 
 building.gla_barracks:
 	idle:
-		Filename: tent.tem
+		Filename: gen|bits/buildings/tent.tem
 		Length: 10
 	idle-Snow:
-		Filename: tent.sno
+		Filename: gen|bits/buildings/tent.sno
 		Length: 10
 	idle-SnowRoad:
-		Filename: tent.sno
+		Filename: gen|bits/buildings/tent.sno
 		Length: 10
 	idle-Sand:
-		Filename: tent.des
+		Filename: gen|bits/buildings/tent.des
 		Length: 10
 	idle-SandRoad:
-		Filename: tent.des
+		Filename: gen|bits/buildings/tent.des
 		Length: 10
 	damaged-idle:
-		Filename: tent.tem
+		Filename: gen|bits/buildings/tent.tem
 		Start: 10
 		Length: 10
 	damaged-idle-Snow:
-		Filename: tent.sno
+		Filename: gen|bits/buildings/tent.sno
 		Start: 10
 		Length: 10
 	damaged-idle-SnowRoad:
-		Filename: tent.sno
+		Filename: gen|bits/buildings/tent.sno
 		Start: 10
 		Length: 10
 	damaged-idle-Sand:
-		Filename: tent.des
+		Filename: gen|bits/buildings/tent.des
 		Start: 10
 		Length: 10
 	damaged-idle-SandRoad:
-		Filename: tent.des
+		Filename: gen|bits/buildings/tent.des
 		Start: 10
 		Length: 10
+	idle-fortified:
+		Filename: gen|bits/buildings/tent_fortified.png
+		Offset: 0, 1
 	make:
-		Filename: tentmake.tem
+		Filename: gen|bits/buildings/tentmake.tem
 		Length: *
 	make-Snow:
-		Filename: tentmake.sno
+		Filename: gen|bits/buildings/tentmake.sno
 		Length: *
 	make-SnowRoad:
-		Filename: tentmake.des
+		Filename: gen|bits/buildings/tentmake.des
 		Length: *
 	make-Sand:
-		Filename: tentmake.des
+		Filename: gen|bits/buildings/tentmake.des
 		Length: *
 	make-SnowRoad:
-		Filename: tentmake.des
+		Filename: gen|bits/buildings/tentmake.des
 		Length: *
 	bib:
 		Filename: bib3.tem
@@ -368,9 +374,9 @@ building.gla_barracks:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: gla_barracks_icon.png
+		Filename: gen|bits/cameos/gla_barracks_icon.png
 	fake-icon:
-		Filename: fake_barracks_icon.png
+		Filename: gen|bits/cameos/fake_barracks_icon.png
 
 building.prc_barracks:
 	Defaults:
@@ -402,21 +408,21 @@ building.prc_barracks:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: prc_barracks_icon.png
+		Filename: gen|bits/cameos/prc_barracks_icon.png
 
 building.mine:
 	idle:
 		Filename: minp.shp
 		ZOffset: -512
 	idle-neutron:
-		Filename: minn.shp
+		Filename: gen|bits/buildings/minn.shp
 		ZOffset: -512
 	icon:
-		Filename: land_mine_icon.png
+		Filename: gen|bits/cameos/land_mine_icon.png
 
 building.usa_supply_center:
 	Defaults:
-		Filename: usa_supply_center.shp
+		Filename: gen|bits/buildings/usa_supply_center.shp
 	idle:
 		Length: 6
 		Tick: 120
@@ -431,16 +437,16 @@ building.usa_supply_center:
 		Tick: 800
 		Offset: 2,4
 	make:
-		Filename: usa_supply_center_make.shp
+		Filename: gen|bits/buildings/usa_supply_center_make.shp
 		Length: *
 		Tick: 80
 		Offset: 2,4
 	resources:
-		Filename: usa_supply_center_tower.shp
+		Filename: gen|bits/buildings/usa_supply_center_tower.shp
 		Length: 6
 		Offset: -30,-17
 	damaged-resources:
-		Filename: usa_supply_center_tower.shp
+		Filename: gen|bits/buildings/usa_supply_center_tower.shp
 		Start: 6
 		Length: 6
 		Offset: -30,-17
@@ -460,25 +466,28 @@ building.usa_supply_center:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: usa_supply_center_icon.png
+		Filename: gen|bits/cameos/usa_supply_center_icon.png
 
 building.gla_supply_stash:
 	Defaults:
-		Filename: supply_stash.shp
+		Filename: gen|bits/buildings/supply_stash.shp
 	idle:
 		Offset: 0,-1
 	damaged-idle:
 		Start: 5
 		Offset: 0,-1
 	idle-ra:
-		Filename: silo2.shp
+		Filename: gen|bits/buildings/silo2.shp
 		Offset: -12,23
 	damaged-idle-ra:
-		Filename: silo2.shp
+		Filename: gen|bits/buildings/silo2.shp
 		Start: 9
 		Offset: -12,23
+	idle-fortified:
+		Filename: gen|bits/buildings/supply_stash_fortified.png
+		Offset: -2, 10
 	make:
-		Filename: supply_stash_make.shp
+		Filename: gen|bits/buildings/supply_stash_make.shp
 		Length: *
 		Offset: 0,11
 	bib:
@@ -497,9 +506,9 @@ building.gla_supply_stash:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: gla_supply_stash_icon.png
+		Filename: gen|bits/cameos/gla_supply_stash_icon.png
 	fake-icon:
-		Filename: fake_supply_stash_icon.png
+		Filename: gen|bits/cameos/fake_supply_stash_icon.png
 
 building.prc_supply_center:
 	Defaults:
@@ -509,17 +518,17 @@ building.prc_supply_center:
 	damaged-idle:
 		ZOffset: -1c511
 	idle-top:
-		Filename: proctop.shp
+		Filename: gen|bits/buildings/proctop.shp
 		ZOffset: 0
 	damaged-idle-top:
-		Filename: proctop.shp
+		Filename: gen|bits/buildings/proctop.shp
 		Start: 1
 		ZOffset: 0
 	make:
 		Filename: procmake.shp
 		Length: *
 	dead:
-		Filename: procdead.shp
+		Filename: gen|bits/buildings/procdead.shp
 		Tick: 800
 	bib:
 		Filename: bib2.tem
@@ -537,11 +546,11 @@ building.prc_supply_center:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: prc_supply_center_icon.png
+		Filename: gen|bits/cameos/prc_supply_center_icon.png
 
 building.patriot:
 	Defaults:
-		Filename: patriot_missile.shp
+		Filename: gen|bits/buildings/patriot_missile.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -552,7 +561,7 @@ building.patriot:
 		UseClassicFacings: True
 		Offset: -1,-2
 	make:
-		Filename: patriot_missile_make.shp
+		Filename: gen|bits/buildings/patriot_missile_make.shp
 		Length: *
 		Offset: -1,-2
 	muzzle:
@@ -561,27 +570,27 @@ building.patriot:
 		Facings: 8
 		Offset: -1,6
 	bib:
-		Filename: mbGUN.tem
+		Filename: gen|bits/terrain/bibs/mbGUN.tem
 		Length: *
 	bib-Snow:
-		Filename: mbGUN.sno
+		Filename: gen|bits/terrain/bibs/mbGUN.sno
 		Length: *
 	bib-SnowRoad:
-		Filename: mbGUN.sno
+		Filename: gen|bits/terrain/bibs/mbGUN.sno
 		Length: *
 	bib-Sand:
-		Filename: mbGUN.des
+		Filename: gen|bits/terrain/bibs/mbGUN.des
 		Length: *
 	bib-SandRoad:
-		Filename: mbGUN.des
+		Filename: gen|bits/terrain/bibs/mbGUN.des
 		Length: *
 	icon:
-		Filename: patriot_icon.png
+		Filename: gen|bits/cameos/patriot_icon.png
 
 building.emp_patriot:
 	Inherits: building.patriot
 	icon:
-		Filename: emp_patriot_icon.png
+		Filename: gen|bits/cameos/emp_patriot_icon.png
 
 building.laser_turret:
 	Defaults:
@@ -605,43 +614,43 @@ building.laser_turret:
 		Facings: 32
 		UseClassicFacings: True
 	muzzle:
-		Filename: gunfire2.shp
+		Filename: gen|bits/weapons/gunfire2.shp
 		Length: 5
 	bib:
-		Filename: mbGUN.tem
+		Filename: gen|bits/terrain/bibs/mbGUN.tem
 		Length: *
 	bib-Snow:
-		Filename: mbGUN.sno
+		Filename: gen|bits/terrain/bibs/mbGUN.sno
 		Length: *
 	bib-SnowRoad:
-		Filename: mbGUN.sno
+		Filename: gen|bits/terrain/bibs/mbGUN.sno
 		Length: *
 	bib-Sand:
-		Filename: mbGUN.des
+		Filename: gen|bits/terrain/bibs/mbGUN.des
 		Length: *
 	bib-SandRoad:
-		Filename: mbGUN.des
+		Filename: gen|bits/terrain/bibs/mbGUN.des
 		Length: *
 	icon:
-		Filename: laser_turret_icon.png
+		Filename: gen|bits/cameos/laser_turret_icon.png
 
 building.demo_trap:
 	idle:
-		Filename: demo_trap.shp
+		Filename: gen|bits/buildings/demo_trap.shp
 		Offset: 2, 0
 	icon:
-		Filename: demo_trap_icon.png
+		Filename: gen|bits/cameos/demo_trap_icon.png
 	fake-icon:
-		Filename: fake_demo_trap_icon.png
+		Filename: gen|bits/cameos/fake_demo_trap_icon.png
 
 building.advanced_demo_trap:
 	idle:
-		Filename: advanced_demo_trap.shp
+		Filename: gen|bits/buildings/advanced_demo_trap.shp
 		Offset: 2, 0
 	icon:
-		Filename: advanced_demo_trap_icon.png
+		Filename: gen|bits/cameos/advanced_demo_trap_icon.png
 	fake-icon:
-		Filename: fake_advanced_demo_trap_icon.png
+		Filename: gen|bits/cameos/fake_advanced_demo_trap_icon.png
 
 building.gatling_cannon:
 	Defaults:
@@ -670,26 +679,26 @@ building.gatling_cannon:
 		UseClassicFacings: True
 		Offset: 0,-13
 	muzzle:
-		Filename: gunfire2.shp
+		Filename: gen|bits/weapons/gunfire2.shp
 		Start: 1
 		Length: 4
 	bib:
-		Filename: mbAGUN.tem
+		Filename: gen|bits/terrain/bibs/mbAGUN.tem
 		Length: *
 	bib-Snow:
-		Filename: mbAGUN.sno
+		Filename: gen|bits/terrain/bibs/mbAGUN.sno
 		Length: *
 	bib-SnowRoad:
-		Filename: mbAGUN.sno
+		Filename: gen|bits/terrain/bibs/mbAGUN.sno
 		Length: *
 	bib-Sand:
-		Filename: mbAGUN.des
+		Filename: gen|bits/terrain/bibs/mbAGUN.des
 		Length: *
 	bib-SandRoad:
-		Filename: mbAGUN.des
+		Filename: gen|bits/terrain/bibs/mbAGUN.des
 		Length: *
 	icon:
-		Filename: gatling_cannon_icon.png
+		Filename: gen|bits/cameos/gatling_cannon_icon.png
 
 building.firebase:
 	Defaults:
@@ -733,63 +742,62 @@ building.firebase:
 		Offset: 12,12
 		ZOffset: -512
 	make:
-		Filename: firebase_make.shp
+		Filename: gen|bits/buildings/firebase_make.shp
 		Length: *
 		Offset: 0,-1
 	muzzle:
-		Filename: gunfire2.shp
+		Filename: gen|bits/weapons/gunfire2.shp
 		Length: *
 	icon:
-		Filename: firebase_icon.png
+		Filename: gen|bits/cameos/firebase_icon.png
 
 building.bunker:
+	Inherits: ^default.garrison_flag_shadow
 	Defaults:
-		Filename: bunker.shp
+		Filename: gen|bits/buildings/bunker.shp
 	idle:
 	damaged-idle:
 		Start: 1
 	make:
-		Filename: bunker_make.shp
+		Filename: gen|bits/buildings/bunker_make.shp
 		Length: *
 	idle-flag:
-		Filename: garflag.shp
-		Length: *
 		Offset: -1,-20
 	muzzle:
 		Filename: minigun.shp
 		Length: 6
 		Facings: 8
 	bib:
-		Filename: mbPBOX.tem
+		Filename: gen|bits/terrain/bibs/mbPBOX.tem
 		Length: *
 		Offset: 0,-2
 	bib-Snow:
-		Filename: mbPBOX.sno
+		Filename: gen|bits/terrain/bibs/mbPBOX.sno
 		Length: *
 		Offset: 0,-2
 	bib-SnowRoad:
-		Filename: mbPBOX.sno
+		Filename: gen|bits/terrain/bibs/mbPBOX.sno
 		Length: *
 		Offset: 0,-2
 	bib-Sand:
-		Filename: mbPBOX.des
+		Filename: gen|bits/terrain/bibs/mbPBOX.des
 		Length: *
 		Offset: 0,-2
 	bib-SandRoad:
-		Filename: mbPBOX.des
+		Filename: gen|bits/terrain/bibs/mbPBOX.des
 		Length: *
 		Offset: 0,-2
 	icon:
-		Filename: bunker_icon.png
+		Filename: gen|bits/cameos/bunker_icon.png
 
 building.fortified_bunker:
 	Inherits: building.bunker
 	icon:
-		Filename: fortified_bunker_icon.png
+		Filename: gen|bits/cameos/fortified_bunker_icon.png
 
 building.usa_war_factory:
 	Defaults:
-		Filename: usa_war_factory.shp
+		Filename: gen|bits/buildings/usa_war_factory.shp
 		Offset: 0,-12
 	idle:
 		ZOffset: -511
@@ -800,19 +808,19 @@ building.usa_war_factory:
 		Start: 2
 		Tick: 800
 	build-top:
-		Filename: usa_war_factory_door.shp
+		Filename: gen|bits/buildings/usa_war_factory_door.shp
 		Length: 10
 		ZOffset: -1024
 	damaged-build-top:
-		Filename: usa_war_factory_door.shp
+		Filename: gen|bits/buildings/usa_war_factory_door.shp
 		Start: 10
 		Length: 10
 		ZOffset: -1024
 	place:
-		Filename: usa_war_factory_make.shp
+		Filename: gen|bits/buildings/usa_war_factory_make.shp
 		Start: 19
 	make:
-		Filename: usa_war_factory_make.shp
+		Filename: gen|bits/buildings/usa_war_factory_make.shp
 		Length: *
 		Tick: 80
 	bib:
@@ -836,7 +844,7 @@ building.usa_war_factory:
 		Length: *
 		Offset: 0,0
 	icon:
-		Filename: usa_war_factory_icon.png
+		Filename: gen|bits/cameos/usa_war_factory_icon.png
 		Offset: 0,0
 
 building.arms_dealer:
@@ -852,12 +860,16 @@ building.arms_dealer:
 		Filename: weapmake.shp
 		Length: *
 	build-top:
-		Filename: weap3.shp
+		Filename: gen|bits/buildings/weap3.shp
 		Length: 10
 	damaged-build-top:
 		Filename: weap2.shp
 		Start: 4
 		Length: 4
+	idle-fortified:
+		Filename: gen|bits/buildings/weap_fortified.png
+		Offset: -1, -1
+		ZOffset: 1024
 	bib:
 		Filename: bib2.tem
 		Length: *
@@ -874,68 +886,68 @@ building.arms_dealer:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: arms_dealer_icon.png
+		Filename: gen|bits/cameos/arms_dealer_icon.png
 	fake-icon:
-		Filename: fake_arms_dealer_icon.png
+		Filename: gen|bits/cameos/fake_arms_dealer_icon.png
 
 building.prc_war_factory:
 	Inherits: building.arms_dealer
 	icon:
-		Filename: prc_war_factory_icon.png
+		Filename: gen|bits/cameos/prc_war_factory_icon.png
 
 building.tunnel_network:
 	idle:
-		Filename: hbox.tem
+		Filename: gen|bits/buildings/hbox.tem
 	idle-Snow:
-		Filename: hbox.sno
+		Filename: gen|bits/buildings/hbox.sno
 	idle-SnowRoad:
-		Filename: hbox.sno
+		Filename: gen|bits/buildings/hbox.sno
 	idle-Sand:
-		Filename: hbox.des
+		Filename: gen|bits/buildings/hbox.des
 	idle-SandRoad:
-		Filename: hbox.des
+		Filename: gen|bits/buildings/hbox.des
 	damaged-idle:
-		Filename: hbox.tem
+		Filename: gen|bits/buildings/hbox.tem
 		Start: 2
 	damaged-idle-Snow:
-		Filename: hbox.sno
+		Filename: gen|bits/buildings/hbox.sno
 		Start: 2
 	damaged-idle-SnowRoad:
-		Filename: hbox.sno
+		Filename: gen|bits/buildings/hbox.sno
 		Start: 2
 	damaged-idle-Sand:
-		Filename: hbox.des
+		Filename: gen|bits/buildings/hbox.des
 		Start: 2
 	damaged-idle-SandRoad:
-		Filename: hbox.des
+		Filename: gen|bits/buildings/hbox.des
 		Start: 2
 	make:
-		Filename: hboxmake.tem
+		Filename: gen|bits/buildings/hboxmake.tem
 		Length: *
 	turret:
 		Filename: gun.shp
 		Facings: 32
 		UseClassicFacings: True
 	muzzle:
-		Filename: gunfire2.shp
+		Filename: gen|bits/weapons/gunfire2.shp
 		Length: 5
 	icon:
-		Filename: tunnel_network_icon.png
+		Filename: gen|bits/cameos/tunnel_network_icon.png
 	fake-icon:
-		Filename: fake_tunnel_network_icon.png
+		Filename: gen|bits/cameos/fake_tunnel_network_icon.png
 	sneak-icon:
-		Filename: tunnel_network_sneak_attack_icon.png
+		Filename: gen|bits/cameos/tunnel_network_sneak_attack_icon.png
 
 building.toxin_tunnel_network:
 	Inherits: building.tunnel_network
 	icon:
-		Filename: toxin_tunnel_network_icon.png
+		Filename: gen|bits/cameos/toxin_tunnel_network_icon.png
 	fake-icon:
-		Filename: fake_toxin_tunnel_network_icon.png
+		Filename: gen|bits/cameos/fake_toxin_tunnel_network_icon.png
 
 building.stinger_site:
 	Defaults:
-		Filename: stinger_site.shp
+		Filename: gen|bits/buildings/stinger_site.shp
 	idle:
 	damaged-idle:
 		Start: 2
@@ -946,7 +958,7 @@ building.stinger_site:
 	hole:
 		Start: 4
 	make:
-		Filename: stinger_site_make.shp
+		Filename: gen|bits/buildings/stinger_site_make.shp
 		Length: *
 		Tick: 80
 	bib:
@@ -965,15 +977,15 @@ building.stinger_site:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: stinger_site_icon.png
+		Filename: gen|bits/cameos/stinger_site_icon.png
 	fake-icon:
-		Filename: fake_stinger_site_icon.png
+		Filename: gen|bits/cameos/fake_stinger_site_icon.png
 	hole-icon:
-		Filename: gla_hole_icon.png
+		Filename: gen|bits/cameos/gla_hole_icon.png
 
 building.usa_airfield:
 	Defaults:
-		Filename: usa_airfield.shp
+		Filename: gen|bits/buildings/usa_airfield.shp
 	idle:
 		Tick: 120
 		Offset: 0,8
@@ -995,12 +1007,12 @@ building.usa_airfield:
 		Offset: 0,8
 		ZOffset: -1023
 	idle-dish:
-		Filename: usa_airfield_dish.shp
+		Filename: gen|bits/buildings/usa_airfield_dish.shp
 		Length: 16
 		Tick: 160
 		Offset: 0,8
 	damaged-idle-dish:
-		Filename: usa_airfield_dish.shp
+		Filename: gen|bits/buildings/usa_airfield_dish.shp
 		Start: 16
 		Length: 16
 		Tick: 160
@@ -1011,16 +1023,16 @@ building.usa_airfield:
 		Offset: 0,8
 		ZOffset: -1023
 	make:
-		Filename: usa_airfield_make.shp
+		Filename: gen|bits/buildings/usa_airfield_make.shp
 		Length: *
 		Tick: 80
 		Offset: 0,8
 	icon:
-		Filename: usa_airfield_icon.png
+		Filename: gen|bits/cameos/usa_airfield_icon.png
 
 building.prc_airfield:
 	Defaults:
-		Filename: prc_airfield.shp
+		Filename: gen|bits/buildings/prc_airfield.shp
 	idle:
 		ZOffset: -1023
 		Offset: 0,-4
@@ -1029,56 +1041,56 @@ building.prc_airfield:
 		ZOffset: -1023
 		Offset: 0,-4
 	idle-flag:
-		Filename: prc_airfield_flag.shp
+		Filename: gen|bits/buildings/prc_airfield_flag.shp
 		Length: *
 		Tick: 160
 		ZOffset: -1023
 		Offset: 0,-4
 	active:
-		Filename: prc_airfield_light.shp
+		Filename: gen|bits/buildings/prc_airfield_light.shp
 		Length: 8
 		Tick: 160
 		ZOffset: -1023
 		Offset: 0,-4
 	damaged-active:
-		Filename: prc_airfield_light.shp
+		Filename: gen|bits/buildings/prc_airfield_light.shp
 		Start: 8
 		Length: 8
 		Tick: 160
 		ZOffset: -1023
 		Offset: 0,-4
 	make:
-		Filename: prc_airfield_make.shp
+		Filename: gen|bits/buildings/prc_airfield_make.shp
 		Length: *
 		Offset: 0,-4
 	icon:
-		Filename: prc_airfield_icon.png
+		Filename: gen|bits/cameos/prc_airfield_icon.png
 
 building.strategy_center:
 	Defaults:
-		Filename: strategy_center.shp
+		Filename: gen|bits/buildings/strategy_center.shp
 		Offset: 10,-12
 	idle:
 	damaged-idle:
 		Start: 1
 	make:
-		Filename: strategy_center_make.shp
+		Filename: gen|bits/buildings/strategy_center_make.shp
 		Length: *
 	active:
 		Filename: sputdoor.shp
 		Length: *
 		Offset: -4,0
 	hold_the_line:
-		Filename: strategy_center_hold_the_line.shp
+		Filename: gen|bits/buildings/strategy_center_hold_the_line.shp
 		Offset: 12,-12
 	damaged-hold_the_line:
-		Filename: strategy_center_hold_the_line.shp
+		Filename: gen|bits/buildings/strategy_center_hold_the_line.shp
 		Start: 1
 		Offset: 12,-12
 	search_and_destroy:
-		Filename: strategy_center_search_and_destroy.shp
+		Filename: gen|bits/buildings/strategy_center_search_and_destroy.shp
 	damaged-search_and_destroy:
-		Filename: strategy_center_search_and_destroy.shp
+		Filename: gen|bits/buildings/strategy_center_search_and_destroy.shp
 		Start: 1
 	turret:
 		Filename: agun.shp
@@ -1112,16 +1124,22 @@ building.strategy_center:
 		Length: *
 		Offset: 0,0
 	icon:
-		Filename: strategy_center_icon.png
+		Filename: gen|bits/cameos/strategy_center_icon.png
 		Offset: 0,0
 
 building.palace:
+	Inherits: ^default.garrison_flag
 	Defaults:
-		Filename: palace.shp
+		Filename: gen|bits/buildings/palace.shp
 		Offset: 0,-12
 	idle:
 	damaged-idle:
 		Start: 5
+	idle-flag:
+		Offset: 2, -59
+	idle-fortified:
+		Filename: gen|bits/buildings/palace_fortified.png
+		Offset: -5, 0
 	active:
 		Length: 5
 	damaged-active:
@@ -1131,7 +1149,7 @@ building.palace:
 		Start: 10
 		Tick: 800
 	make:
-		Filename: palace_make.shp
+		Filename: gen|bits/buildings/palace_make.shp
 		Length: *
 		Tick: 60
 	bib:
@@ -1155,10 +1173,10 @@ building.palace:
 		Length: *
 		Offset: 0,0
 	icon:
-		Filename: palace_icon.png
+		Filename: gen|bits/cameos/palace_icon.png
 		Offset: 0,0
 	fake-icon:
-		Filename: fake_palace_icon.png
+		Filename: gen|bits/cameos/fake_palace_icon.png
 		Offset: 0,0
 
 building.propaganda_center:
@@ -1186,7 +1204,7 @@ building.propaganda_center:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: propaganda_center_icon.png
+		Filename: gen|bits/cameos/propaganda_center_icon.png
 
 building.detention_camp:
 	Defaults:
@@ -1198,7 +1216,7 @@ building.detention_camp:
 		Start: 2
 		Tick: 800
 	make:
-		Filename: missmake.shp
+		Filename: gen|bits/buildings/missmake.shp
 		Length: *
 	bib:
 		Filename: bib2.tem
@@ -1216,7 +1234,7 @@ building.detention_camp:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: detention_camp_icon.png
+		Filename: gen|bits/cameos/detention_camp_icon.png
 
 building.supply_drop_zone:
 	Defaults:
@@ -1261,17 +1279,20 @@ building.supply_drop_zone:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: supply_drop_zone_icon.png
+		Filename: gen|bits/cameos/supply_drop_zone_icon.png
 
 building.black_market:
 	Defaults:
-		Filename: black_market.shp
+		Filename: gen|bits/buildings/black_market.shp
 	idle:
 		Start: 30
 		Offset: 0, -8
 	damaged-idle:
 		Start: 31
 		Offset: 0, -8
+	idle-fortified:
+		Filename: gen|bits/buildings/black_market_fortified.png
+		Offset: 3, -6
 	make:
 		Length: 31
 		Offset: 0, -8
@@ -1291,25 +1312,34 @@ building.black_market:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: black_market_icon.png
+		Filename: gen|bits/cameos/black_market_icon.png
 	fake-icon:
-		Filename: fake_black_market_icon.png
+		Filename: gen|bits/cameos/fake_black_market_icon.png
 
 building.internet_center:
 	Defaults:
-		Filename: internet_center.shp
+		Filename: gen|bits/buildings/internet_center.shp
 	idle:
+		Filename: invis.shp
+	idle-slow:
 		Length: 16
 		Tick: 100
-	damaged-idle:
+	damaged-idle-slow:
 		Start: 16
 		Length: 16
 		Tick: 100
+	idle-fast:
+		Length: 16
+		Tick: 50
+	damaged-idle-fast:
+		Start: 16
+		Length: 16
+		Tick: 50
 	dead:
 		Start: 32
 		Tick: 800
 	make:
-		Filename: internet_center_make.shp
+		Filename: gen|bits/buildings/internet_center_make.shp
 		Length: *
 		Tick: 80
 	bib:
@@ -1328,11 +1358,11 @@ building.internet_center:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: internet_center_icon.png
+		Filename: gen|bits/cameos/internet_center_icon.png
 
 building.speaker_tower:
 	Defaults:
-		Filename: gap.shp
+		Filename: gen|bits/buildings/gap.shp
 	idle:
 		Length: 32
 		Offset: 0,-14
@@ -1341,30 +1371,30 @@ building.speaker_tower:
 		Length: 32
 		Offset: 0,-14
 	make:
-		Filename: gapmake.shp
+		Filename: gen|bits/buildings/gapmake.shp
 		Length: *
 		Offset: 0,-14
 	bib:
-		Filename: mbGAP.tem
+		Filename: gen|bits/terrain/bibs/mbGAP.tem
 		Length: *
 	bib-Snow:
-		Filename: mbGAP.sno
+		Filename: gen|bits/terrain/bibs/mbGAP.sno
 		Length: *
 	bib-SnowRoad:
-		Filename: mbGAP.sno
+		Filename: gen|bits/terrain/bibs/mbGAP.sno
 		Length: *
 	bib-Sand:
-		Filename: mbGAP.des
+		Filename: gen|bits/terrain/bibs/mbGAP.des
 		Length: *
 	bib-SandRoad:
-		Filename: mbGAP.des
+		Filename: gen|bits/terrain/bibs/mbGAP.des
 		Length: *
 	icon:
-		Filename: speaker_tower_icon.png
+		Filename: gen|bits/cameos/speaker_tower_icon.png
 
 building.particle_cannon:
 	Defaults:
-		Filename: particle_cannon.shp
+		Filename: gen|bits/buildings/particle_cannon.shp
 	idle:
 		Length: 16
 		Tick: 100
@@ -1376,7 +1406,7 @@ building.particle_cannon:
 		Start: 32
 		Tick: 800
 	make:
-		Filename: particle_cannon_make.shp
+		Filename: gen|bits/buildings/particle_cannon_make.shp
 		Length: *
 		Tick: 80
 	bib:
@@ -1395,12 +1425,12 @@ building.particle_cannon:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: particle_cannon_icon.png
+		Filename: gen|bits/cameos/particle_cannon_icon.png
 
 building.particle_cannon.super:
 	Inherits: building.particle_cannon
 	icon:
-		Filename: particle_cannon_super_icon.png
+		Filename: gen|bits/cameos/particle_cannon_super_icon.png
 
 building.scud_storm:
 	idle:
@@ -1430,9 +1460,9 @@ building.scud_storm:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: scud_storm_icon.png
+		Filename: gen|bits/cameos/scud_storm_icon.png
 	fake-icon:
-		Filename: fake_scud_storm_icon.png
+		Filename: gen|bits/cameos/fake_scud_storm_icon.png
 
 building.missile_silo:
 	idle:
@@ -1442,9 +1472,9 @@ building.missile_silo:
 	idle-SnowRoad:
 		Filename: mslo.sno
 	idle-Sand:
-		Filename: mslo.des
+		Filename: gen|bits/buildings/mslo.des
 	idle-SandRoad:
-		Filename: mslo.des
+		Filename: gen|bits/buildings/mslo.des
 	damaged-idle:
 		Filename: mslo.tem
 		Start: 8
@@ -1455,10 +1485,10 @@ building.missile_silo:
 		Filename: mslo.sno
 		Start: 8
 	damaged-idle-Sand:
-		Filename: mslo.des
+		Filename: gen|bits/buildings/mslo.des
 		Start: 8
 	damaged-idle-SandRoad:
-		Filename: mslo.des
+		Filename: gen|bits/buildings/mslo.des
 		Start: 8
 	make:
 		Filename: mslomake.tem
@@ -1470,10 +1500,10 @@ building.missile_silo:
 		Filename: mslomake.sno
 		Length: *
 	make-Sand:
-		Filename: mslomake.des
+		Filename: gen|bits/buildings/mslomake.des
 		Length: *
 	make-SandRoad:
-		Filename: mslomake.des
+		Filename: gen|bits/buildings/mslomake.des
 		Length: *
 	active:
 		Filename: mslo.tem
@@ -1486,7 +1516,7 @@ building.missile_silo:
 		Length: 7
 		Tick: 80
 	active-sand:
-		Filename: mslo.des
+		Filename: gen|bits/buildings/mslo.des
 		Start: 1
 		Length: 7
 		Tick: 80
@@ -1499,7 +1529,7 @@ building.missile_silo:
 		Start: 9
 		Length: 7
 	damaged-active-sand:
-		Filename: mslo.des
+		Filename: gen|bits/buildings/mslo.des
 		Start: 9
 		Length: 7
 	bib:
@@ -1518,11 +1548,11 @@ building.missile_silo:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: missile_silo_icon.png
+		Filename: gen|bits/cameos/missile_silo_icon.png
 
 hole.supply_stash:
 	idle:
-		Filename: hole_supply.shp
+		Filename: gen|bits/buildings/hole_supply.shp
 	bib:
 		Filename: bib3.tem
 		Length: *
@@ -1539,11 +1569,11 @@ hole.supply_stash:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: gla_hole_icon.png
+		Filename: gen|bits/cameos/gla_hole_icon.png
 
 hole.2x2:
 	idle:
-		Filename: hole4848.shp
+		Filename: gen|bits/buildings/hole4848.shp
 	bib:
 		Filename: bib3.tem
 		Length: *
@@ -1560,11 +1590,11 @@ hole.2x2:
 		Filename: bib3.des
 		Length: *
 	icon:
-		Filename: gla_hole_icon.png
+		Filename: gen|bits/cameos/gla_hole_icon.png
 
 hole.3x2:
 	idle:
-		Filename: hole7248.shp
+		Filename: gen|bits/buildings/hole7248.shp
 	bib:
 		Filename: bib2.tem
 		Length: *
@@ -1581,11 +1611,11 @@ hole.3x2:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: gla_hole_icon.png
+		Filename: gen|bits/cameos/gla_hole_icon.png
 
 hole.3x3:
 	idle:
-		Filename: hole7272.shp
+		Filename: gen|bits/buildings/hole7272.shp
 	bib:
 		Filename: bib2.tem
 		Length: *
@@ -1602,7 +1632,7 @@ hole.3x3:
 		Filename: bib2.des
 		Length: *
 	icon:
-		Filename: gla_hole_icon.png
+		Filename: gen|bits/cameos/gla_hole_icon.png
 
 kenn:
 	Defaults:
@@ -1614,11 +1644,19 @@ kenn:
 		Filename: kennmake.shp
 		Length: *
 	bib:
-		Filename: mbSILO.tem
-		TilesetFilenames:
-			SNOW: mbSILO.sno
-			INTERIOR: mbSILO.int
-			DESERT: mbSILO.des
+		Filename: gen|bits/terrain/bibs/mbSILO.tem
+		Length: *
+	bib-Snow:
+		Filename: gen|bits/terrain/bibs/mbSILO.sno
+		Length: *
+	bib-SnowRoad:
+		Filename: gen|bits/terrain/bibs/mbSILO.sno
+		Length: *
+	bib-Sand:
+		Filename: gen|bits/terrain/bibs/mbSILO.des
+		Length: *
+	bib-SandRoad:
+		Filename: gen|bits/terrain/bibs/mbSILO.des
 		Length: *
 	icon:
 		Filename: kennicon.shp
@@ -1663,14 +1701,20 @@ fix:
 		Length: *
 		Offset: 0,1
 	bib:
-		Filename: mbFIX.tem
-		TilesetFilenames:
-			SNOW: mbFIX.sno
-			INTERIOR: mbFIX.int
-			DESERT: mbFIX.des
+		Filename: gen|bits/terrain/bibs/mbFIX.tem
 		Length: *
-		ZOffset: -1c511
-		Offset: 0,-4
+	bib-Snow:
+		Filename: gen|bits/terrain/bibs/mbFIX.sno
+		Length: *
+	bib-SnowRoad:
+		Filename: gen|bits/terrain/bibs/mbFIX.sno
+		Length: *
+	bib-Sand:
+		Filename: gen|bits/terrain/bibs/mbFIX.des
+		Length: *
+	bib-SandRoad:
+		Filename: gen|bits/terrain/bibs/mbFIX.des
+		Length: *
 	icon:
 		Filename: fixicon.shp
 
@@ -1697,11 +1741,19 @@ tsla:
 		Tick: 100
 		Offset: 0,-13
 	bib:
-		Filename: mbTSLA.tem
-		TilesetFilenames:
-			SNOW: mbTSLA.sno
-			INTERIOR: mbTSLA.int
-			DESERT: mbTSLA.des
+		Filename: gen|bits/terrain/bibs/mbTSLA.tem
+		Length: *
+	bib-Snow:
+		Filename: gen|bits/terrain/bibs/mbTSLA.sno
+		Length: *
+	bib-SnowRoad:
+		Filename: gen|bits/terrain/bibs/mbTSLA.sno
+		Length: *
+	bib-Sand:
+		Filename: gen|bits/terrain/bibs/mbTSLA.des
+		Length: *
+	bib-SandRoad:
+		Filename: gen|bits/terrain/bibs/mbTSLA.des
 		Length: *
 	icon:
 		Filename: tslaicon.shp
@@ -1726,13 +1778,20 @@ iron:
 		Length: *
 		Offset: 0,-12
 	bib:
-		Filename: mbIRON.tem
-		TilesetFilenames:
-			SNOW: mbIRON.sno
-			INTERIOR: mbIRON.int
-			DESERT: mbIRON.des
+		Filename: gen|bits/terrain/bibs/mbIRON.tem
 		Length: *
-		Offset: 0,2
+	bib-Snow:
+		Filename: gen|bits/terrain/bibs/mbIRON.sno
+		Length: *
+	bib-SnowRoad:
+		Filename: gen|bits/terrain/bibs/mbIRON.sno
+		Length: *
+	bib-Sand:
+		Filename: gen|bits/terrain/bibs/mbIRON.des
+		Length: *
+	bib-SandRoad:
+		Filename: gen|bits/terrain/bibs/mbIRON.des
+		Length: *
 	icon:
 		Filename: ironicon.shp
 
@@ -1751,13 +1810,20 @@ pdox:
 		Filename: pdoxmake.shp
 		Length: *
 	bib:
-		Filename: mbPDOX.tem
-		TilesetFilenames:
-			SNOW: mbPDOX.sno
-			INTERIOR: mbPDOX.int
-			DESERT: mbPDOX.des
+		Filename: gen|bits/terrain/bibs/mbPDOX.tem
 		Length: *
-		Offset: 0,-4
+	bib-Snow:
+		Filename: gen|bits/terrain/bibs/mbPDOX.sno
+		Length: *
+	bib-SnowRoad:
+		Filename: gen|bits/terrain/bibs/mbPDOX.sno
+		Length: *
+	bib-Sand:
+		Filename: gen|bits/terrain/bibs/mbPDOX.des
+		Length: *
+	bib-SandRoad:
+		Filename: gen|bits/terrain/bibs/mbPDOX.des
+		Length: *
 	icon:
 		Filename: pdoxicon.shp
 
@@ -1777,7 +1843,7 @@ brik:
 
 vgate:
 	Defaults:
-		Filename: vgate.shp
+		Filename: gen|bits/buildings/vgate.shp
 	make:
 		Length: 7
 	idle:
@@ -1791,7 +1857,7 @@ vgate:
 
 agate:
 	Defaults:
-		Filename: agate.shp
+		Filename: gen|bits/buildings/agate.shp
 	make:
 		Length: 7
 	idle:
@@ -1806,7 +1872,7 @@ agate:
 sgate:
 	Inherits: agate
 	Defaults:
-		Filename: sgate.shp
+		Filename: gen|bits/buildings/sgate.shp
 
 sbag:
 	idle:
@@ -1831,4 +1897,4 @@ cycl:
 		Start: 16
 		Length: 16
 	icon:
-		Filename: cyclicon.shp
+		Filename: gen|bits/cameos/cyclicon.shp

@@ -617,6 +617,9 @@ building.gla_command_center:
 		Palette: player
 		IsPlayerPalette: true
 		RequiresCondition: !build-incomplete && stealth
+	WithIdleOverlay@FORTIFY:
+		Sequence: idle-fortified
+		RequiresCondition: !build-incomplete && fortified_structures
 	GrantConditionOnFaction@Toxin:
 		Condition: toxin
 		Factions: toxin
@@ -1617,6 +1620,9 @@ building.gla_barracks:
 		SpawnAfterDefeat: false
 	-WithSpriteBody:
 	WithTerrainDependantSpriteBody:
+	WithIdleOverlay@FORTIFY:
+		Sequence: idle-fortified
+		RequiresCondition: !build-incomplete && fortified_structures
 	Voiced:
 		VoiceSet: GLABarracksVoice
 	ActorStatOverride@Stealth_ZH_UNITS:
@@ -1936,6 +1942,9 @@ building.gla_supply_stash:
 	WithIdleOverlay@RA_SILO:
 		Sequence: idle-ra
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@FORTIFY:
+		Sequence: idle-fortified
+		RequiresCondition: !build-incomplete && fortified_structures
 	-WithDeathAnimation:
 	FreeActor:
 		Actor: infantry.worker
@@ -2978,6 +2987,9 @@ building.arms_dealer:
 		Actor: hole.arms_dealer
 		SpawnAfterDefeat: false
 	-Power:
+	WithIdleOverlay@FORTIFY:
+		Sequence: idle-fortified
+		RequiresCondition: !build-incomplete && fortified_structures
 	Voiced:
 		VoiceSet: GLAArmsDealerVoice
 	ActorStatOverride@Stealth_ZH_UNITS:
@@ -3824,6 +3836,13 @@ building.internet_center:
 	GrantConditionOnPrerequisite@MERGE_GENERALS:
 		Condition: merged
 		Prerequisites: prerequisite.mergegenerals
+	WithIdleOverlay@SATELLITE_HACK1:
+		Sequence: idle-slow
+		PauseOnCondition: !satellite_hack1
+		RequiresCondition: !build-incomplete && !satellite_hack2
+	WithIdleOverlay@SATELLITE_HACK2:
+		Sequence: idle-fast
+		RequiresCondition: !build-incomplete && satellite_hack2
 	Voiced:
 		VoiceSet: InternetCenterVoice
 	RenderSprites:
@@ -4068,6 +4087,7 @@ building.palace:
 		OwnerChangedAffectsPassengers: false
 		AfterUnloadDelay: 0
 		EjectOnDeathDamage: 0
+		LoadedCondition: loaded
 		PauseOnCondition: emp || hacked
 	WithCargoSounds:
 		EnterSounds: ggarenta.wav, ggarentb.wav, ggarentc.wav
@@ -4148,6 +4168,14 @@ building.palace:
 	ProductionBar@Merged:
 		ProductionType: queue.palace_merged
 	Exit:
+	WithIdleOverlay@flag:
+		Sequence: idle-flag
+		Palette: player
+		IsPlayerPalette: true
+		RequiresCondition: loaded
+	WithIdleOverlay@FORTIFY:
+		Sequence: idle-fortified
+		RequiresCondition: !build-incomplete && fortified_structures
 	WithDeathAnimation:
 		DeathSequence: dead
 		DeathSequencePalette: cncplayer
@@ -4470,6 +4498,9 @@ building.black_market:
 		Type: building.normal
 	WithBuildingBib:
 	ProvidesPrerequisite@buildingname:
+	WithIdleOverlay@FORTIFY:
+		Sequence: idle-fortified
+		RequiresCondition: !build-incomplete && fortified_structures
 	SpawnActorOnDeath:
 		Actor: hole.black_market
 		SpawnAfterDefeat: false

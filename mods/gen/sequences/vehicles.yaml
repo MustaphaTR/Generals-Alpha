@@ -1,6 +1,6 @@
 vehicle.supply_truck:
 	Defaults:
-		Filename: harvempty.shp
+		Filename: gen|bits/vehicles/harvempty.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -18,48 +18,48 @@ vehicle.supply_truck:
 		Length: 8
 		Facings: 8
 	half-idle:
-		Filename: harvhalf.shp
+		Filename: gen|bits/vehicles/harvhalf.shp
 		Facings: 32
 		UseClassicFacings: True
 	half-harvest:
-		Filename: harvhalf.shp
+		Filename: gen|bits/vehicles/harvhalf.shp
 		Start: 32
 		Length: 8
 		Facings: 8
 	full-idle:
-		Filename: harv.shp
+		Filename: gen|bits/vehicles/harv.shp
 		Facings: 32
 		UseClassicFacings: True
 	full-harvest:
-		Filename: harv.shp
+		Filename: gen|bits/vehicles/harv.shp
 		Start: 32
 		Length: 8
 		Facings: 8
 	deliver:
-		Filename: harv.shp
+		Filename: gen|bits/vehicles/harv.shp
 		Frames: 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 104, 103, 102, 101, 100, 99, 98, 97, 96
 		Length: 21
 		Tick: 20
 	icon:
-		Filename: supply_truck_icon.png
+		Filename: gen|bits/cameos/supply_truck_icon.png
 
 husk.supply_truck.full:
 	idle:
-		Filename: hhusk.shp
+		Filename: gen|bits/vehicles/hhusk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -1023
 
 husk.supply_truck.empty:
 	idle:
-		Filename: hhusk2.shp
+		Filename: gen|bits/vehicles/hhusk2.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -1023
 
 vehicle.humvee:
 	Defaults:
-		Filename: humvee.shp
+		Filename: gen|bits/vehicles/humvee.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -68,14 +68,14 @@ vehicle.humvee:
 		Facings: 32
 		UseClassicFacings: True
 	turret2:
-		Filename: humvee_tau.shp
+		Filename: gen|bits/vehicles/humvee_tau.shp
 		Facings: 32
 	muzzle:
 		Filename: minigun.shp
 		Length: 6
 		Facings: 8
 	icon:
-		Filename: humvee_icon.png
+		Filename: gen|bits/cameos/humvee_icon.png
 
 vehicle.technical:
 	Defaults:
@@ -92,7 +92,7 @@ vehicle.technical:
 		Length: 6
 		Facings: 8
 	icon:
-		Filename: technical_icon.png
+		Filename: gen|bits/cameos/technical_icon.png
 
 vehicle.radar_van:
 	Defaults:
@@ -106,7 +106,7 @@ vehicle.radar_van:
 		Start: 32
 		Length: 32
 	icon:
-		Filename: radar_van_icon.png
+		Filename: gen|bits/cameos/radar_van_icon.png
 
 vehicle.scorpion_tank:
 	Defaults:
@@ -128,10 +128,10 @@ vehicle.scorpion_tank:
 		Filename: invis.shp
 		Facings: 1
 	muzzle:
-		Filename: gunfire2.shp
+		Filename: gen|bits/weapons/gunfire2.shp
 		Length: 2
 	icon:
-		Filename: scorpion_tank_icon.png
+		Filename: gen|bits/cameos/scorpion_tank_icon.png
 
 husk.scorpion_tank:
 	Defaults:
@@ -157,7 +157,7 @@ husk.scorpion_tank:
 
 vehicle.crusader_tank:
 	Defaults:
-		Filename: crusader_tank.shp
+		Filename: gen|bits/vehicles/crusader_tank.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -166,19 +166,19 @@ vehicle.crusader_tank:
 		Facings: 32
 		UseClassicFacings: True
 	muzzle:
-		Filename: gunfire2.shp
+		Filename: gen|bits/weapons/gunfire2.shp
 		Length: 5
 	icon:
-		Filename: crusader_tank_icon.png
+		Filename: gen|bits/cameos/crusader_tank_icon.png
 
 vehicle.laser_tank:
 	Inherits: vehicle.crusader_tank
 	icon:
-		Filename: laser_tank_icon.png
+		Filename: gen|bits/cameos/laser_tank_icon.png
 
 husk.crusader_tank:
 	Defaults:
-		Filename: crusader_tank.shp
+		Filename: gen|bits/vehicles/crusader_tank.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -200,15 +200,15 @@ vehicle.battlemaster_tank:
 		Facings: 32
 		UseClassicFacings: True
 	muzzle:
-		Filename: gunfire2.shp
+		Filename: gen|bits/weapons/gunfire2.shp
 		Length: 5
 	icon:
-		Filename: battlemaster_tank_icon.png
+		Filename: gen|bits/cameos/battlemaster_tank_icon.png
 
 vehicle.nuclear_battlemaster_tank:
 	Inherits: vehicle.battlemaster_tank
 	icon:
-		Filename: nuclear_battlemaster_tank_icon.png
+		Filename: gen|bits/cameos/nuclear_battlemaster_tank_icon.png
 
 husk.battlemaster_tank:
 	idle:
@@ -231,11 +231,11 @@ vehicle.ambulance:
 	turret:
 		Filename: invis.shp
 	icon:
-		Filename: ambulance_icon.png
+		Filename: gen|bits/cameos/ambulance_icon.png
 
 vehicle.sentry_drone:
 	Defaults:
-		Filename: sentry_drone.shp
+		Filename: gen|bits/vehicles/sentry_drone.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -250,7 +250,7 @@ vehicle.sentry_drone:
 		Length: 6
 		Facings: 8
 	icon:
-		Filename: sentry_drone_icon.png
+		Filename: gen|bits/cameos/sentry_drone_icon.png
 
 vehicle.quad_cannon:
 	idle:
@@ -258,7 +258,7 @@ vehicle.quad_cannon:
 		Facings: 32
 		UseClassicFacings: True
 	turret:
-		Filename: quad_cannon_turret.shp
+		Filename: gen|bits/vehicles/quad_cannon_turret.shp
 		Facings: 32
 		UseClassicFacings: True
 	muzzle:
@@ -266,7 +266,7 @@ vehicle.quad_cannon:
 		Length: 6
 		Facings: 8
 	icon:
-		Filename: quad_cannon_icon.png
+		Filename: gen|bits/cameos/quad_cannon_icon.png
 
 vehicle.gatling_tank:
 	idle:
@@ -274,7 +274,7 @@ vehicle.gatling_tank:
 		Facings: 32
 		UseClassicFacings: True
 	turret:
-		Filename: gatling_tank.shp
+		Filename: gen|bits/vehicles/gatling_tank.shp
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True
@@ -283,11 +283,11 @@ vehicle.gatling_tank:
 		Length: 6
 		Facings: 8
 	icon:
-		Filename: gatling_tank_icon.png
+		Filename: gen|bits/cameos/gatling_tank_icon.png
 
 vehicle.rocket_buggy:
 	idle:
-		Filename: rocket_buggy.shp
+		Filename: gen|bits/vehicles/rocket_buggy.shp
 		Facings: 32
 		UseClassicFacings: True
 	turret:
@@ -297,7 +297,7 @@ vehicle.rocket_buggy:
 		Start: 38
 		Facings: 32
 	icon:
-		Filename: rocket_buggy_icon.png
+		Filename: gen|bits/cameos/rocket_buggy_icon.png
 
 vehicle.toxin_tractor:
 	idle:
@@ -310,21 +310,21 @@ vehicle.toxin_tractor:
 		Facings: 32
 		UseClassicFacings: True
 	icon:
-		Filename: toxin_tractor_icon.png
+		Filename: gen|bits/cameos/toxin_tractor_icon.png
 
 vehicle.dragon_tank:
 	idle:
-		Filename: dragon_tank.shp
+		Filename: gen|bits/vehicles/dragon_tank.shp
 		Facings: 32
 		UseClassicFacings: True
 	turret:
 		Filename: invis.shp
 	icon:
-		Filename: dragon_tank_icon.png
+		Filename: gen|bits/cameos/dragon_tank_icon.png
 
 vehicle.battle_bus:
 	Defaults:
-		Filename: battle_bus.shp
+		Filename: gen|bits/vehicles/battle_bus.shp
 	idle:
 		Facings: 32
 		ShadowStart: 64
@@ -339,29 +339,28 @@ vehicle.battle_bus:
 		UseClassicFacings: True
 		Offset: 0, 3
 	icon:
-		Filename: battle_bus_icon.png
+		Filename: gen|bits/cameos/battle_bus_icon.png
 
 vehicle.troop_crawler:
-	idle:
+	Defaults:
 		Filename: apc.shp
+	idle:
 		Facings: 32
 		UseClassicFacings: True
 	turret:
 		Filename: invis.shp
 	open:
-		Filename: apc.shp
 		Start: 32
 		Length: 3
 	unload:
-		Filename: apc.shp
 		Start: 32
 	icon:
-		Filename: troop_crawler_icon.png
+		Filename: gen|bits/cameos/troop_crawler_icon.png
 
 vehicle.assault_troop_crawler:
 	Inherits: vehicle.troop_crawler
 	icon:
-		Filename: assault_troop_crawler_icon.png
+		Filename: gen|bits/cameos/assault_troop_crawler_icon.png
 
 vehicle.listening_outpost:
 	idle:
@@ -375,16 +374,16 @@ vehicle.listening_outpost:
 		Start: 32
 		Length: 32
 	icon:
-		Filename: listening_outpost_icon.png
+		Filename: gen|bits/cameos/listening_outpost_icon.png
 
 vehicle.attack_outpost:
 	Inherits: vehicle.listening_outpost
 	icon:
-		Filename: attack_outpost_icon.png
+		Filename: gen|bits/cameos/attack_outpost_icon.png
 
 vehicle.microwave_tank:
 	idle:
-		Filename: humvee.shp
+		Filename: gen|bits/vehicles/humvee.shp
 		Facings: 32
 		UseClassicFacings: True
 	turret:
@@ -392,7 +391,7 @@ vehicle.microwave_tank:
 		Start: 32
 		Facings: 32
 	icon:
-		Filename: microwave_tank_icon.png
+		Filename: gen|bits/cameos/microwave_tank_icon.png
 
 vehicle.ecm_tank:
 	idle:
@@ -404,27 +403,27 @@ vehicle.ecm_tank:
 		Start: 32
 		Facings: 32
 	icon:
-		Filename: ecm_tank_icon.png
+		Filename: gen|bits/cameos/ecm_tank_icon.png
 
 vehicle.avenger:
 	idle:
-		Filename: msam.shp
+		Filename: gen|bits/vehicles/msam.shp
 		Facings: 32
 		UseClassicFacings: True
 	turret:
-		Filename: ftrk.shp
+		Filename: gen|bits/vehicles/ftrk.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 	muzzle:
-		Filename: gunfire2.shp
+		Filename: gen|bits/weapons/gunfire2.shp
 		Length: 2
 	icon:
-		Filename: avenger_icon.png
+		Filename: gen|bits/cameos/avenger_icon.png
 
 vehicle.tomahawk_launcher:
 	Defaults:
-		Filename: tomahawk_launcher.shp
+		Filename: gen|bits/vehicles/tomahawk_launcher.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -441,7 +440,7 @@ vehicle.tomahawk_launcher:
 		Facings: 32
 		UseClassicFacings: True
 	icon:
-		Filename: tomahawk_launcher_icon.png
+		Filename: gen|bits/cameos/tomahawk_launcher_icon.png
 
 vehicle.scud_launcher:
 	Defaults:
@@ -456,7 +455,7 @@ vehicle.scud_launcher:
 	turret:
 		Filename: invis.shp
 	icon:
-		Filename: scud_launcher_icon.png
+		Filename: gen|bits/cameos/scud_launcher_icon.png
 
 vehicle.inferno_cannon:
 	idle:
@@ -466,35 +465,35 @@ vehicle.inferno_cannon:
 	turret:
 		Filename: invis.shp
 	muzzle:
-		Filename: gunfire2.shp
+		Filename: gen|bits/weapons/gunfire2.shp
 		Length: 5
 	icon:
-		Filename: inferno_cannon_icon.png
+		Filename: gen|bits/cameos/inferno_cannon_icon.png
 
 vehicle.paladin_tank:
 	idle:
-		Filename: paladin_tank.shp
+		Filename: gen|bits/vehicles/paladin_tank.shp
 		Facings: 32
 		UseClassicFacings: True
 	turret:
-		Filename: crusader_tank.shp
+		Filename: gen|bits/vehicles/crusader_tank.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
 	muzzle:
-		Filename: gunfire2.shp
+		Filename: gen|bits/weapons/gunfire2.shp
 		Length: 5
 	icon:
-		Filename: paladin_tank_icon.png
+		Filename: gen|bits/cameos/paladin_tank_icon.png
 
 husk.paladin_tank:
 	idle:
-		Filename: paladin_tank.shp
+		Filename: gen|bits/vehicles/paladin_tank.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 	turret:
-		Filename: crusader_tank.shp
+		Filename: gen|bits/vehicles/crusader_tank.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
@@ -522,10 +521,10 @@ vehicle.marauder_tank:
 		Facings: 32
 		UseClassicFacings: True
 	muzzle:
-		Filename: gunfire2.shp
+		Filename: gen|bits/weapons/gunfire2.shp
 		Length: 5
 	icon:
-		Filename: marauder_tank_icon.png
+		Filename: gen|bits/cameos/marauder_tank_icon.png
 
 husk.marauder_tank:
 	idle:
@@ -542,7 +541,7 @@ husk.marauder_tank:
 
 vehicle.overlord_tank:
 	Defaults:
-		Filename: overlord_tank.shp
+		Filename: gen|bits/vehicles/overlord_tank.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -551,40 +550,40 @@ vehicle.overlord_tank:
 		Facings: 32
 		UseClassicFacings: True
 	turret_gatling:
-		Filename: gatling_tank.shp
+		Filename: gen|bits/vehicles/gatling_tank.shp
 		Start: 64
 		Facings: 32
 		UseClassicFacings: True
 	turret_bunker:
-		Filename: overlord_tank_bunker.shp
+		Filename: gen|bits/vehicles/overlord_tank_bunker.shp
 	turret_speaker:
-		Filename: overlord_tank_speaker.shp
+		Filename: gen|bits/vehicles/overlord_tank_speaker.shp
 		Length: 32
 	muzzle:
-		Filename: gunfire2.shp
+		Filename: gen|bits/weapons/gunfire2.shp
 		Length: 5
 	muzzle2:
 		Filename: minigun.shp
 		Length: 6
 		Facings: 8
 	icon:
-		Filename: overlord_tank_icon.png
+		Filename: gen|bits/cameos/overlord_tank_icon.png
 
 vehicle.emparor_overlord:
 	Inherits: vehicle.overlord_tank
 	turret:
-		Filename: emperor_overlord.shp
+		Filename: gen|bits/vehicles/emperor_overlord.shp
 	icon:
-		Filename: emperor_overlord_icon.png
+		Filename: gen|bits/cameos/emperor_overlord_icon.png
 
 husk.overlord_tank:
 	idle:
-		Filename: 4tnk.shp
+		Filename: gen|bits/vehicles/overlord_tank.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 	turret:
-		Filename: 4tnk.shp
+		Filename: gen|bits/vehicles/overlord_tank.shp
 		Start: 32
 		Facings: 32
 		UseClassicFacings: True
@@ -593,7 +592,7 @@ husk.overlord_tank:
 husk.emperor_overlord:
 	Inherits: husk.overlord_tank
 	turret:
-		Filename: emperor_overlord.shp
+		Filename: gen|bits/vehicles/emperor_overlord.shp
 
 colorpicker.overlord_tank:
 	Inherits: vehicle.overlord_tank
@@ -612,43 +611,43 @@ vehicle.bomb_truck:
 		Start: 32
 		Length: 32
 	overlord_speaker:
-		Filename: overlord_tank_speaker.shp
+		Filename: gen|bits/vehicles/overlord_tank_speaker.shp
 		Length: 32
 	icon:
-		Filename: bomb_truck_icon.png
+		Filename: gen|bits/cameos/bomb_truck_icon.png
 
 vehicle.nuke_cannon:
 	idle:
-		Filename: overlord_tank.shp
+		Filename: gen|bits/vehicles/overlord_tank.shp
 		Facings: 32
 		UseClassicFacings: True
 	turret:
-		Filename: nuke_cannon_turret.shp
+		Filename: gen|bits/vehicles/nuke_cannon_turret.shp
 		Facings: 32
 		UseClassicFacings: True
 	muzzle:
-		Filename: gunfire2.shp
+		Filename: gen|bits/weapons/gunfire2.shp
 		Length: 5
 	icon:
-		Filename: nuke_cannon_icon.png
+		Filename: gen|bits/cameos/nuke_cannon_icon.png
 
 husk.nuke_cannon:
 	idle:
-		Filename: overlord_tank.shp
+		Filename: gen|bits/vehicles/overlord_tank.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 	turret:
-		Filename: nuke_cannon_turret.shp
+		Filename: gen|bits/vehicles/nuke_cannon_turret.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 
 vehicle.combat_cycle:
 	Defaults:
-		Filename: combat_cycle.shp
+		Filename: gen|bits/vehicles/combat_cycle.shp
 	idle:
-		Filename: combat_cycle_empty.shp
+		Filename: gen|bits/vehicles/combat_cycle_empty.shp
 		Facings: 8
 		ShadowStart: 8
 	idle-other:
@@ -673,7 +672,7 @@ vehicle.combat_cycle:
 		Start: 72
 		ShadowStart: 184
 	icon:
-		Filename: combat_cycle_icon.png
+		Filename: gen|bits/cameos/combat_cycle_icon.png
 
 ^default.mcc:
 	idle:
@@ -686,17 +685,17 @@ vehicle.combat_cycle:
 vehicle.usa_mcc:
 	Inherits: ^default.mcc
 	icon:
-		Filename: usa_mcc_icon.png
+		Filename: gen|bits/cameos/usa_mcc_icon.png
 
 vehicle.gla_mcc:
 	Inherits: ^default.mcc
 	icon:
-		Filename: gla_mcc_icon.png
+		Filename: gen|bits/cameos/gla_mcc_icon.png
 
 vehicle.prc_mcc:
 	Inherits: ^default.mcc
 	icon:
-		Filename: prc_mcc_icon.png
+		Filename: gen|bits/cameos/prc_mcc_icon.png
 
 vehicle.tech_mcc:
 	Inherits: ^default.mcc
@@ -705,14 +704,14 @@ vehicle.tech_mcc:
 
 husk.mcc:
 	idle:
-		Filename: mcvhusk.shp
+		Filename: gen|bits/vehicles/mcvhusk.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -1023
 
 vehicle.mobile_reactor:
 	Defaults:
-		Filename: mgg.shp
+		Filename: gen|bits/vehicles/mgg.shp
 	idle:
 		Facings: 32
 		UseClassicFacings: True
@@ -723,21 +722,20 @@ vehicle.mobile_reactor:
 		Start: 32
 		Length: 1
 	icon:
-		Filename: mobile_reactor_icon.shp
+		Filename: gen|bits/cameos/mobile_reactor_icon.shp
 
-mgg.destroyed:
+husk.mobile_reactor:
+	Defaults:
+		Filename: gen|bits/vehicles/mgg.shp
 	idle:
-		Filename: mgg.shp
 		Facings: 32
 		UseClassicFacings: True
 		ZOffset: -512
 	spinner:
-		Filename: mgg.shp
 		Start: 32
 		Length: 8
 		ZOffset: -512
 	spinner-idle:
-		Filename: mgg.shp
 		Start: 32
 
 ttnk:
@@ -758,7 +756,7 @@ ctnk:
 		Facings: 32
 		UseClassicFacings: True
 	muzzle:
-		Filename: gunfire2.shp
+		Filename: gen|bits/weapons/gunfire2.shp
 		Length: 5
 	icon:
 		Filename: ctnkicon.shp
