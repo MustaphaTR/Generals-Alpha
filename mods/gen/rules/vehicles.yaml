@@ -4673,6 +4673,9 @@ vehicle.combat_cycle:
 		Speed: 30
 		TurnSpeed: 16
 		Voice: Move
+		CanMoveBackward: true
+		MaxBackwardCells: 2
+		BackwardDuration: -1
 		PauseOnCondition: hacked || driver_killed || emp || leaflet || deployed
 	SpeedMultiplier@DAMAGED:
 		Modifier: 84
@@ -4806,10 +4809,6 @@ vehicle.usa_mcc:
 		DisplayOrder: 5
 	Voiced:
 		VoiceSet: USAMCCVoice
-	Mobile:
-		CanMoveBackward: true
-		MaxBackwardCells: 2
-		BackwardDuration: -1
 	WithTextDecoration@SIDE:
 		Text: USA
 		Color: 0000FF
