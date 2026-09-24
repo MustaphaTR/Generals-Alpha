@@ -4998,7 +4998,9 @@ vehicle.tech_mcc:
 	Inherits: ^default.mcc
 	Inherits@REVEAL: ^Reveal300
 	Buildable:
-		Queue: queue.disabled
+		Queue: queue.usa_command_center, queue.gla_command_center, queue.prc_command_center
+		BuildPaletteOrder: 3
+		Prerequisites: ~disabled
 	Tooltip:
 		Name: actor-vehicle-tech-mcc-name
 	Production:
@@ -5017,6 +5019,8 @@ vehicle.tech_mcc:
 		CannotPlaceAudio: BuildingCannotPlaceAudio
 		ReadyAudio: ConstructionComplete
 		DisplayOrder: 99
+	Voiced:
+		VoiceSet: VehicleVoice
 	WithTextDecoration@SIDE:
 		Text: TECH
 		Color: 888888
