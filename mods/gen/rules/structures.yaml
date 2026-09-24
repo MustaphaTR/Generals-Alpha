@@ -4012,6 +4012,9 @@ building.strategy_center:
 	ActorStatOverride:
 		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 		RequiresCondition: bombardment
+	ActorStatOverride@HOLD_THE_LINE:
+		Health: 300000
+		RequiresCondition: hold_the_line
 
 building.palace:
 	Inherits: ^Building

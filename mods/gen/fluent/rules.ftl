@@ -1640,19 +1640,19 @@ actor-strategy-bombardment =
    .name = Bombardment
    .description = Increases all units' damage by 20%.
     
-    Gives Strategy Center an Artillery piece.
+    Gives the Strategy Center an Artillery piece.
 
 actor-strategy-hold-the-line =
    .name = Hold the Line
    .description = Increases all units' armor by 10%.
     
-    Doubles Strategy Center's armor.
+    Doubles the Strategy Center's health.
 
 actor-strategy-search-and-destroy =
    .name = Search and Destroy
-   .description = Increases all units' fire range by 20%.
+   .description = Increases all units' firing range by 20%.
     
-    Gives Strategy Center ability to detect stealth units.
+    Gives the Strategy Center ability to detect stealth units.
 
 actor-fake-to-real-command-center =
    .name = Turn To Real Command Center
