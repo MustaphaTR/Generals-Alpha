@@ -461,7 +461,6 @@ fake.black_market:
 
 fake.scud_storm:
 	Inherits: ^FakeBuilding
-	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
@@ -597,39 +596,25 @@ fake.scud_storm:
 	GrantConditionOnFaction@Stealth:
 		Condition: stealth
 		Factions: stealth
-	ActorStatOverride@ZH_UNITS:
-		ValidRelationships: Ally
 	ActorStatOverride@Enemy:
 		TooltipActor: building.scud_storm
 		Health: 400000
 	ActorStatOverride@Enemy_UPGRADE:
 		Upgrades: upgrade.anthrax_beta
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: !toxin && !demo && !stealth && !merged && !zh_units
-	ActorStatOverride@Enemy_UPGRADE_ZH_UNITS:
-		Upgrades: upgrade.anthrax_beta, upgrade.fortified_structures
-		ValidRelationships: Enemy, Neutral
-		RequiresCondition: !toxin && !demo && !stealth && !merged && zh_units
+		RequiresCondition: !toxin && !demo && !stealth && !merged
 	ActorStatOverride@Enemy_UPGRADE_Toxin:
 		Upgrades: upgrade.anthrax_gamma
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: (toxin || merged) && !zh_units
-	ActorStatOverride@Enemy_UPGRADE_Toxin_ZH_UNITS:
-		Upgrades: upgrade.anthrax_gamma, upgrade.fortified_structures
+		RequiresCondition: toxin && !merged
+	ActorStatOverride@Enemy_UPGRADE_Stealth:
+		Upgrades: upgrade.anthrax_beta, upgrade.camo_netting
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: toxin && !merged && zh_units
-	ActorStatOverride@Enemy_UPGRADE_Demo:
-		Upgrades: upgrade.fortified_structures
+		RequiresCondition: stealth && !merged
+	ActorStatOverride@Enemy_UPGRADE_Merged:
+		Upgrades: upgrade.anthrax_gamma, upgrade.camo_netting
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: demo && !merged && zh_units
-	ActorStatOverride@Enemy_UPGRADE_Stealth_ZH_UNITS:
-		Upgrades: upgrade.anthrax_beta, upgrade.fortified_structures, upgrade.camo_netting
-		ValidRelationships: Enemy, Neutral
-		RequiresCondition: stealth && !merged && zh_units
-	ActorStatOverride@Enemy_UPGRADE_Merged_ZH_UNITS:
-		Upgrades: upgrade.anthrax_gamma, upgrade.fortified_structures, upgrade.camo_netting
-		ValidRelationships: Enemy, Neutral
-		RequiresCondition: merged && zh_units
+		RequiresCondition: merged
 
 fake.demo_trap:
 	Inherits: ^FakeDefense

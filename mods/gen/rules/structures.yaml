@@ -4682,7 +4682,6 @@ building.particle_cannon.super:
 building.scud_storm:
 	Inherits: ^Building
 	Inherits@CAMO: ^CanHaveCamoNettingStealthGenOnly
-	Inherits@FORTIFY: ^AffectedByFortifiedStructures
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SABOTAGE: ^CanBeSabotaged
 	Inherits@SHAPE: ^2x2Shape
@@ -4908,27 +4907,18 @@ building.scud_storm:
 		Delay: 100
 	ActorStatValues:
 		Upgrades: upgrade.anthrax_beta
-	ActorStatOverride@ZH_UNITS:
-		Upgrades: upgrade.anthrax_beta, upgrade.fortified_structures
-		RequiresCondition: !toxin && !demo && !stealth && !merged && zh_units
 	ActorStatOverride@Toxin:
 		Upgrades: upgrade.anthrax_gamma
-		RequiresCondition: (toxin || merged) && !zh_units
-	ActorStatOverride@Toxin_ZH_UNITS:
-		Upgrades: upgrade.anthrax_gamma, upgrade.fortified_structures
-		RequiresCondition: toxin && !merged && zh_units
+		RequiresCondition: toxin && !merged
 	ActorStatOverride@Demo:
 		Upgrades:
-		RequiresCondition: demo && !merged && !zh_units
-	ActorStatOverride@Demo_ZH_UNITS:
-		Upgrades: upgrade.fortified_structures
-		RequiresCondition: demo && !merged && zh_units
-	ActorStatOverride@Stealth_ZH_UNITS:
-		Upgrades: upgrade.anthrax_beta, upgrade.fortified_structures, upgrade.camo_netting
-		RequiresCondition: stealth && !merged && zh_units
-	ActorStatOverride@Merged_ZH_UNITS:
-		Upgrades: upgrade.anthrax_gamma, upgrade.fortified_structures, upgrade.camo_netting
-		RequiresCondition: merged && zh_units
+		RequiresCondition: demo && !merged
+	ActorStatOverride@Stealth:
+		Upgrades: upgrade.anthrax_beta, upgrade.camo_netting
+		RequiresCondition: stealth && !merged
+	ActorStatOverride@Merged:
+		Upgrades: upgrade.anthrax_gamma, upgrade.camo_netting
+		RequiresCondition: merged
 
 building.scud_storm.boss:
 	Inherits: building.scud_storm
@@ -4961,11 +4951,9 @@ building.scud_storm.boss:
 	-GrantConditionOnFaction@Stealth:
 	-GrantConditionOnFaction@Toxin:
 	-ActorStatOverride@Toxin:
-	-ActorStatOverride@Toxin_ZH_UNITS:
 	-ActorStatOverride@Demo:
-	-ActorStatOverride@Demo_ZH_UNITS:
-	-ActorStatOverride@Stealth_ZH_UNITS:
-	-ActorStatOverride@Merged_ZH_UNITS:
+	-ActorStatOverride@Stealth:
+	-ActorStatOverride@Merged:
 
 building.missile_silo:
 	Inherits: ^Building
