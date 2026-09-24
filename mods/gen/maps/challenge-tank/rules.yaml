@@ -201,6 +201,7 @@ building.nuclear_reactor:
 
 building.advanced_nuclear_reactor:
 	-TransformOnCondition@MERGE_GENERALS:
+	-GrantConditionOnPrerequisite@MERGE_GENERALS:
 
 building.bunker.filled:
 	Inherits: building.bunker
@@ -215,7 +216,6 @@ building.bunker.filled:
 		TooltipActor: building.bunker
 
 building.internet_center:
-	-GrantConditionOnBotOwner@bot_owner:
 	-FreePassenger@AI_1:
 	-FreePassenger@AI_2:
 	-FreePassenger@AI_3:
@@ -224,3 +224,9 @@ building.internet_center:
 	-FreePassenger@AI_2_Infantry_or_Merged:
 	-FreePassenger@AI_3_Infantry_or_Merged:
 	-FreePassenger@AI_4_Infantry_or_Merged:
+	-GrantConditionAfterDelay@AI_1:
+	-GrantConditionAfterDelay@AI_2:
+	-GrantConditionAfterDelay@AI_3:
+	-GrantConditionAfterDelay@AI_4:
+	-GrantConditionOnFaction@Infantry:
+	-GrantConditionOnPrerequisite@MERGE_GENERALS:

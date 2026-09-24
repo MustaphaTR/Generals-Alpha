@@ -747,7 +747,7 @@ WorldLoaded = function()
 			PCanBuildTauntPlayed = true
 			Taunts.PlayTauntNotification(Enemy, "65")
 
-			Trigger.OnSuperWeaponActivated(building, function()
+			Trigger.OnSupportPowerActivated(building, function()
 				if not PCanFireTauntPlayed then
 					PCanFireTauntPlayed = true
 					Taunts.PlayTauntNotification(Enemy, "73")
@@ -758,7 +758,7 @@ WorldLoaded = function()
 			ScudBuildTauntPlayed = true
 			Taunts.PlayTauntNotification(Enemy, "63")
 
-			Trigger.OnSuperWeaponActivated(building, function()
+			Trigger.OnSupportPowerActivated(building, function()
 				if not ScudFireTauntPlayed then
 					ScudFireTauntPlayed = true
 					Taunts.PlayTauntNotification(Enemy, "71")
@@ -769,7 +769,7 @@ WorldLoaded = function()
 			NukeBuildTauntPlayed = true
 			Taunts.PlayTauntNotification(Enemy, "64")
 
-			Trigger.OnSuperWeaponActivated(building, function()
+			Trigger.OnSupportPowerActivated(building, function()
 				if not NukeFireTauntPlayed then
 					NukeFireTauntPlayed = true
 					Taunts.PlayTauntNotification(Enemy, "72")

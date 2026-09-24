@@ -353,9 +353,9 @@ PlayAirfieldKilledTaunt = function()
 	end
 end
 
-SetupSuperWeaponNotifications = function(building)
-	Trigger.OnSuperWeaponActivated(building, function(_, orderName)
-		if building.Owner == Enemy then
+SetupSupportPowerNotifications = function(building)
+	if building.Owner == Enemy then
+		Trigger.OnSupportPowerActivated(building, function(_, orderName)
 			if not ParadropTauntPlayed and orderName == "ParadropPowerInfoOrder" then
 				ParadropTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "71")
@@ -368,13 +368,15 @@ SetupSuperWeaponNotifications = function(building)
 				A10TauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "84")
 			end
-		elseif building.Owner == MP0 then
+		end)
+	elseif building.Owner == MP0 then
+		Trigger.OnSupportPowerActivated(building, function(_, orderName)
 			if not AnthraxTauntPlayed and orderName == "AnthraxBombPowerInfoOrder" then
 				AnthraxTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "54")
 			end
-		end
-	end)
+		end)
+	end
 end
 
 LowPowerTauntTimer = 0
@@ -529,8 +531,8 @@ WorldLoaded = function()
 			PlayAirfieldKilledTaunt()
 		end)
 	end)
-	SetupSuperWeaponNotifications(EnemyCommandCenter)
-	SetupSuperWeaponNotifications(MP0.GetActorsByTypes(CommandCenter)[1])
+	SetupSupportPowerNotifications(EnemyCommandCenter)
+	SetupSupportPowerNotifications(MP0.GetActorsByTypes(CommandCenter)[1])
 
 	Trigger.OnAnyProduction(function(_, actor)
 		if actor.Owner == Enemy then
@@ -570,7 +572,7 @@ WorldLoaded = function()
 		end
 
 		if building.Type == "building.gla_command_center" then
-			SetupSuperWeaponNotifications(building)
+			SetupSupportPowerNotifications(building)
 		end
 		if IsScudStorm(building) then
 			if not ScudBuildTauntPlayed then
