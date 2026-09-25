@@ -4664,7 +4664,6 @@ vehicle.combat_cycle:
 	Selectable:
 		Priority: 4
 		DecorationBounds: 1792, 1792
-	SelectionDecorations:
 	Health:
 		HP: 25000
 	Armor:
@@ -5003,6 +5002,8 @@ vehicle.tech_mcc:
 		Prerequisites: ~disabled
 	Tooltip:
 		Name: actor-vehicle-tech-mcc-name
+	Mobile:
+		Voice: Action
 	Production:
 		Produces: queue.tech_building
 		PauseOnCondition: emp || leaflet || hacked || moving || deployed
@@ -5024,6 +5025,8 @@ vehicle.tech_mcc:
 	WithTextDecoration@SIDE:
 		Text: TECH
 		Color: 888888
+	GrantTimedConditionOnDeploy@DISARM:
+		Voice: Action
 	-GrantConditionOnPrerequisite@MERGE_GENERALS:
 
 # used by laser general in no base mode
