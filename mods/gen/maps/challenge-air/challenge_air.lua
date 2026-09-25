@@ -9,7 +9,13 @@
 
 EnemyBase = { EnemyCommandCenter, EnemyBarracks, EnemyAirfield1, EnemyAirfield2, EnemyAirfield3, EnemySupplyCenter, EnemySupplyDrop1, EnemySupplyDrop2, EnemyReactor1, EnemyReactor2, EnemyReactor3, EnemyReactor4, EnemyReactor5, EnemyReactor6, EnemyReactor7, EnemyReactor8, EnemyReactor9, EnemyReactor10, EnemyReactor11, EnemyReactor12, EnemyPatriot1, EnemyPatriot2, EnemyPatriot3, EnemyPatriot4, EnemyPatriot5, EnemyPatriot6, EnemyPatriot7, EnemyPatriot8, EnemyPatriot9, EnemyPatriot10, EnemyPatriot11 }
 
-RandomTaunts = { "5", "7", "9", "13", "14" }
+RandomTaunts = {
+	{ "13", 5 },
+	{ "14", 5 },
+	{ "15", 3 },
+	{ "16", 7 },
+	{ "17", 4 }
+}
 
 DerricksToCapture = {
 	easy = { OilDerrick1, OilDerrick2 },
@@ -235,24 +241,31 @@ BuildAttackForce = function(unit_list, factory, paths)
 end
 
 BuildCombatChinookForce = function(chinook, unit_list, factory, paths)
-	if factory == nil or factory.IsDead or factory.Owner ~= Enemy then
+	if chinook.IsDead then
 		return
 	end
 
-	local built = factory.Build(Utils.Random(unit_list), function(units)
-		chinook.Move(CombatChinookLoadWP.Location)
-		Utils.Do(units, function(unit)
-			unit.EnterTransport(chinook)
+	local factories = chinook.Owner.GetActorsByType(factory)
+	if #factories > 0 then
+		local built = Utils.Random(factories).Build(Utils.Random(unit_list), function(units)
+			chinook.Move(CombatChinookLoadWP.Location)
+			Utils.Do(units, function(unit)
+				unit.EnterTransport(chinook)
+			end)
+			Trigger.OnAllRemovedFromWorld(units, function()
+				if not chinook.IsSupplyEmpty then
+					chinook.DeliverGoods()
+				end
+				Attack({ chinook }, paths)
+			end)
 		end)
-		Trigger.OnAllRemovedFromWorld(units, function()
-			if not chinook.IsSupplyEmpty then
-				chinook.DeliverGoods()
-			end
-			Attack({ chinook }, paths)
-		end)
-	end)
-	if not built then
-		Trigger.AfterDelay(DateTime.Seconds(15), function()
+		if not built then
+			Trigger.AfterDelay(DateTime.Seconds(15), function()
+				BuildCombatChinookForce(chinook, unit_list, factory, paths)
+			end)
+		end
+	else
+		Trigger.AfterDelay(DateTime.Seconds(30), function()
 			BuildCombatChinookForce(chinook, unit_list, factory, paths)
 		end)
 	end
@@ -297,6 +310,15 @@ SendCinematicAircraft = function()
 			Media.PlaySpeechNotification(MP0, "RaptorCreated")
 			Trigger.AfterDelay(DateTime.Seconds(5), function()
 				Taunts.PlayTauntNotification(Enemy, "69")
+				SetTauntPlaying(DateTime.Seconds(3))
+
+				Trigger.OnEnteredProximityTrigger(PlayerBaseCenter.CenterPosition, WDist.New(20 * 1024), function(a, id)
+					if a.Owner == Enemy and not TauntPlaying and IsPlane(a) and #Map.ActorsInCircle(PlayerBaseCenter.CenterPosition, WDist.New(20 * 1024), function(a) return a.Owner == Enemy and IsPlane(a) end) > 1 then
+						Trigger.RemoveProximityTrigger(id)
+						Taunts.PlayTauntNotification(Enemy, "9")
+						SetTauntPlaying(DateTime.Seconds(2))
+					end
+				end)
 			end)
 		end)
 	end)
@@ -335,84 +357,102 @@ end
 
 KilledAirfields = 0
 PlayAirfieldKilledTaunt = function()
-	if KilledAirfields == 0 then
-		Taunts.PlayTauntNotification(Enemy, "28")
-		KilledAirfields = KilledAirfields + 1
-	elseif KilledAirfields == 1 then
-		Taunts.PlayTauntNotification(Enemy, "72")
-		KilledAirfields = KilledAirfields + 1
-	elseif KilledAirfields == 2 then
-		Taunts.PlayTauntNotification(Enemy, "73")
-		KilledAirfields = KilledAirfields + 1
-	elseif KilledAirfields == 3 then
-		Taunts.PlayTauntNotification(Enemy, "74")
-		KilledAirfields = KilledAirfields + 1
-	elseif KilledAirfields == 4 then
-		Taunts.PlayTauntNotification(Enemy, "37")
-		KilledAirfields = KilledAirfields + 1
+	if not TauntPlaying then
+		if KilledAirfields == 0 then
+			Taunts.PlayTauntNotification(Enemy, "28")
+			SetTauntPlaying(DateTime.Seconds(3))
+			KilledAirfields = KilledAirfields + 1
+		elseif KilledAirfields == 1 then
+			Taunts.PlayTauntNotification(Enemy, "72")
+			SetTauntPlaying(DateTime.Seconds(5))
+			KilledAirfields = KilledAirfields + 1
+		elseif KilledAirfields == 2 then
+			Taunts.PlayTauntNotification(Enemy, "73")
+			SetTauntPlaying(DateTime.Seconds(5))
+			KilledAirfields = KilledAirfields + 1
+		elseif KilledAirfields == 3 then
+			Taunts.PlayTauntNotification(Enemy, "74")
+			SetTauntPlaying(DateTime.Seconds(6))
+			KilledAirfields = KilledAirfields + 1
+		elseif KilledAirfields == 4 then
+			Taunts.PlayTauntNotification(Enemy, "37")
+			SetTauntPlaying(DateTime.Seconds(3))
+			KilledAirfields = KilledAirfields + 1
+		end
 	end
 end
 
 SetupSupportPowerNotifications = function(building)
 	if building.Owner == Enemy then
 		Trigger.OnSupportPowerActivated(building, function(_, orderName)
-			if not ParadropTauntPlayed and orderName == "ParadropPowerInfoOrder" then
+			if not ParadropTauntPlayed and not TauntPlaying and orderName == "ParadropPowerInfoOrder" then
 				ParadropTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "71")
+				SetTauntPlaying(DateTime.Seconds(4))
 			end
-			if not FABTauntPlayed and orderName == "FuelAirBombPowerInfoOrder" then
+			if not FABTauntPlayed and not TauntPlaying and orderName == "FuelAirBombPowerInfoOrder" then
 				FABTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "82")
+				SetTauntPlaying(DateTime.Seconds(8))
 			end
-			if not A10TauntPlayed and orderName == "A10PowerInfoOrder" then
+			if not A10TauntPlayed and not TauntPlaying and orderName == "A10PowerInfoOrder" then
 				A10TauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "84")
+				SetTauntPlaying(DateTime.Seconds(6))
 			end
 		end)
 	elseif building.Owner == MP0 then
 		Trigger.OnSupportPowerActivated(building, function(_, orderName)
-			if not AnthraxTauntPlayed and orderName == "AnthraxBombPowerInfoOrder" then
+			if not AnthraxTauntPlayed and not TauntPlaying and orderName == "AnthraxBombPowerInfoOrder" then
 				AnthraxTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "54")
+				SetTauntPlaying(DateTime.Seconds(3))
 			end
 		end)
 	end
 end
 
-LowPowerTauntTimer = 0
-RandomTauntTimer = Utils.RandomInteger(DateTime.Seconds(45), DateTime.Seconds(120))
 RandomTauntToPlay = 1
+PlayRandomTaunt = function()
+	Trigger.AfterDelay(Utils.RandomInteger(DateTime.Seconds(45), DateTime.Seconds(75)), function()
+		if (#Map.ActorsInCircle(PlayerBaseCenter.CenterPosition, WDist.New(30 * 1024), function(a) return a.Owner == Enemy and IsAircraft(a) end) < 2) then
+			Taunts.PlayTauntNotification(Enemy, RandomTaunts[RandomTauntToPlay][1])
+			SetTauntPlaying(RandomTaunts[RandomTauntToPlay][2])
+
+			if (RandomTauntToPlay == 5) then
+				RandomTauntToPlay = 1
+			else
+				RandomTauntToPlay = RandomTauntToPlay + 1
+			end
+		end
+
+		PlayRandomTaunt()
+	end)
+end
+
+LowPowerTauntTimer = 0
 Tick = function()
 	if GPModifier ~= "disabled" then
 		TickGeneralsPowers()
 	end
 
-	RandomTauntTimer = RandomTauntTimer - 1
-	if RandomTauntTimer == 0 then
-		RandomTauntTimer = Utils.RandomInteger(DateTime.Seconds(45), DateTime.Seconds(120))
-		Taunts.PlayTauntNotification(Enemy, RandomTaunts[RandomTauntToPlay])
-
-		if (RandomTauntToPlay == 7) then
-			RandomTauntToPlay = 1
-		else
-			RandomTauntToPlay = RandomTauntToPlay + 1
-		end
-	end
-
-	if 301 > MP0.Cash and not LowCashTauntPlayed then
+	if 301 > MP0.Cash and not LowCashTauntPlayed and not TauntPlaying then
 		LowCashTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "48")
+		SetTauntPlaying(DateTime.Seconds(6))
 	end
 
 	if MP0.PowerState == "Low" or MP0.PowerState == "Critical" then
-		if not LowPowerTaunt1Played then
+		if not LowPowerTaunt1Played and not TauntPlaying then
 			LowPowerTaunt1Played = true
 			Taunts.PlayTauntNotification(Enemy, "46")
+			SetTauntPlaying(DateTime.Seconds(3))
 		end
 
-		if not LowPowerTaunt2Played and PlayerRecoveredFromFirstLowPower then
+		if not LowPowerTaunt2Played and PlayerRecoveredFromFirstLowPower and not TauntPlaying then
 			LowPowerTaunt2Played = true
 			Taunts.PlayTauntNotification(Enemy, "47")
+			SetTauntPlaying(DateTime.Seconds(4))
 		end
 	end
 
@@ -424,24 +464,22 @@ Tick = function()
 	end
 
 	if Enemy.PowerState == "Low" or Enemy.PowerState == "Critical" then
-		if not EnemyLowPowerTauntPlayed then
+		if not EnemyLowPowerTauntPlayed and not TauntPlaying then
 			EnemyLowPowerTauntPlayed = true
 			Taunts.PlayTauntNotification(Enemy, "49")
+			SetTauntPlaying(DateTime.Seconds(5))
 		end
 	end
 
-	if not RangerBuildTauntPlayed and #MP0.GetActorsByType("infantry.ranger") > 9 then
+	if not RangerBuildTauntPlayed and not TauntPlaying and #MP0.GetActorsByType("infantry.ranger") > 9 then
 		RangerBuildTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "81")
+		SetTauntPlaying(DateTime.Seconds(5))
 	end
-	if not GarrisonTauntPlayed and #MP0.GetActorsByTypes(CivilianBuilding) > 5 then
+	if not GarrisonTauntPlayed and not TauntPlaying and #MP0.GetActorsByTypes(CivilianBuilding) > 5 then
 		GarrisonTauntPlayed = true
 		Taunts.PlayTauntNotification(Enemy, "55")
-	end
-
-	if not EnemyPlaneTauntPlayed and #MP0.GetActorsByTypes(Plane) > 9 then
-		EnemyPlaneTauntPlayed = true
-		Taunts.PlayTauntNotification(Enemy, "51")
+		SetTauntPlaying(DateTime.Seconds(5))
 	end
 end
 
@@ -465,6 +503,11 @@ WorldLoaded = function()
 
 	DifficultySetup()
 
+	Trigger.OnObjectiveCompleted(MP0, function()
+		Taunts.PlayTauntNotification(Enemy, "64")
+		SetTauntPlaying(DateTime.Seconds(4))
+	end)
+
 	EnemyAttackPath = CenterPaths
 	Trigger.AfterDelay(InitialAttackDelay[Difficulty], function()
 		ProductionBegun = true
@@ -473,9 +516,12 @@ WorldLoaded = function()
 		end)
 
 		Taunts.PlayTauntNotification(Enemy, "70")
+		SetTauntPlaying(DateTime.Seconds(3))
 	end)
 	Trigger.AfterDelay(InitialAttackDelay[Difficulty] / 2, function()
 		BuildGarrisonForce("building.usa_barracks")
+		Taunts.PlayTauntNotification(Enemy, "14")
+		SetTauntPlaying(DateTime.Seconds(5))
 	end)
 
 	Trigger.OnBuildingPlaced(Enemy, function(_, building)
@@ -490,7 +536,7 @@ WorldLoaded = function()
 			end)
 		end
 		if building.Type == "building.usa_command_center" then
-			SetupSuperWeaponNotifications(building)
+			SetupSupportPowerNotifications(building)
 		end
 	end)
 
@@ -508,23 +554,27 @@ WorldLoaded = function()
 	end)
 	Utils.Do(DerricksToCapture["hard"], function(oild)
 		Trigger.OnCapture(oild, function(_, _, oldOwner, newOwner)
-			if not OildBuildTauntPlayed and newOwner == MP0 then
+			if not OildBuildTauntPlayed and not TauntPlaying and newOwner == MP0 then
 				OildBuildTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "33")
+				SetTauntPlaying(DateTime.Seconds(5))
 			end
 			if oldOwner == Enemy then
-				CaptureTechBuildings({ oild }, "building.usa_barracks", "infantry.ranger")
+				CaptureTechBuildings(Enemy, { oild }, "building.usa_barracks", "infantry.ranger")
 			end
 		end)
 	end)
 	Trigger.OnAnyKilled(Enemy.GetActorsByTypes(CommandCenter), function()
 		Taunts.PlayTauntNotification(Enemy, "11")
+		SetTauntPlaying(DateTime.Seconds(3))
 	end)
 	Trigger.OnAnyKilled(Enemy.GetActorsByTypes(Barracks), function()
 		Taunts.PlayTauntNotification(Enemy, "30")
+		SetTauntPlaying(DateTime.Seconds(7))
 	end)
 	Trigger.OnAnyKilled(Enemy.GetActorsByTypes(BaseDefense), function()
 		Taunts.PlayTauntNotification(Enemy, "29")
+		SetTauntPlaying(DateTime.Seconds(3))
 	end)
 	Utils.Do(Enemy.GetActorsByTypes(Airfield), function(airf)
 		Trigger.OnKilledOrCaptured(airf, function()
@@ -534,94 +584,208 @@ WorldLoaded = function()
 	SetupSupportPowerNotifications(EnemyCommandCenter)
 	SetupSupportPowerNotifications(MP0.GetActorsByTypes(CommandCenter)[1])
 
+	Trigger.OnEnteredProximityTrigger(EnemyBaseCenter.CenterPosition, WDist.New(17 * 1024), function(a, id)
+		if a.Owner == MP0 and not TauntPlaying and IsAircraft(a) then
+			Trigger.RemoveProximityTrigger(id)
+			Taunts.PlayTauntNotification(Enemy, "35")
+			SetTauntPlaying(DateTime.Seconds(2))
+		end
+	end)
+	Trigger.OnEnteredProximityTrigger(SupplyDockNorth.CenterPosition, WDist.New(8 * 1024), function(a, id)
+		if a.Owner == MP0 and not TauntPlaying and IsSupplyCollector(a) or IsDozer(a) then
+			Trigger.RemoveProximityTrigger(id)
+			if not ExpansionTauntPlayed then
+				ExpansionTauntPlayed = true
+				Taunts.PlayTauntNotification(Enemy, "38")
+				SetTauntPlaying(DateTime.Seconds(4))
+			end
+		end
+	end)
+	Trigger.OnEnteredProximityTrigger(SupplyDockSouth.CenterPosition, WDist.New(6 * 1024), function(a, id)
+		if a.Owner == MP0 and not TauntPlaying and IsSupplyCollector(a) or IsDozer(a) then
+			Trigger.RemoveProximityTrigger(id)
+			if not ExpansionTauntPlayed then
+				ExpansionTauntPlayed = true
+				Taunts.PlayTauntNotification(Enemy, "38")
+				SetTauntPlaying(DateTime.Seconds(4))
+			end
+		end
+	end)
+
 	Trigger.OnAnyProduction(function(_, actor)
 		if actor.Owner == Enemy then
 			if actor.Type == "aircraft.combat_chinook" then
-				BuildCombatChinookForce(actor, ChinookTeams, Utils.Random(Enemy.GetActorsByType("building.usa_barracks")), function() return FlankPaths end)
+				BuildCombatChinookForce(actor, ChinookTeams, "building.usa_barracks", function() return FlankPaths end)
 			end
 			if actor.Type == "upgrade.capture_building" then
-				CaptureTechBuildings(DerricksToCapture[Difficulty], "building.usa_barracks", "infantry.ranger")
+				CaptureTechBuildings(Enemy, DerricksToCapture[Difficulty], "building.usa_barracks", "infantry.ranger")
+			end
+
+			if not EnemyAuroraTauntPlayed and not TauntPlaying and IsAurora(actor) and #Enemy.GetActorsByTypes(Aurora) > 1 then
+				EnemyAuroraTauntPlayed = true
+				Taunts.PlayTauntNotification(Enemy, "7")
+				SetTauntPlaying(DateTime.Seconds(3))
+			elseif not EnemyPlaneTauntPlayed and not TauntPlaying and IsPlane(actor) and #Enemy.GetActorsByTypes(Plane) > 9 then
+				EnemyPlaneTauntPlayed = true
+				Taunts.PlayTauntNotification(Enemy, "8")
+				SetTauntPlaying(DateTime.Seconds(4))
+			end
+			if not EnemyAuroraKilledTauntPlayed and IsAurora(actor) then
+				Trigger.OnKilled(actor, function()
+					if not EnemyAuroraKilledTauntPlayed and not TauntPlaying then
+						EnemyAuroraKilledTauntPlayed = true
+						Taunts.PlayTauntNotification(Enemy, "32")
+						SetTauntPlaying(DateTime.Seconds(3))
+					end
+				end)
 			end
 		end
 
 		if actor.Owner == MP0 then
-			if not DozerBuildTauntPlayed and IsDozer(actor) and #MP0.GetActorsByTypes(Dozer) > 4 then
+			if (not PlayerDamagedTauntPlayed or not RandomTauntsStarted) and actor.HasProperty("Health") then
+				Trigger.OnDamaged(actor, function(_, attacker)
+					if attacker.Owner == Enemy then
+						if not PlayerDamagedTauntPlayed and not TauntPlaying then
+							PlayerDamagedTauntPlayed = true
+							Taunts.PlayTauntNotification(Enemy, "5")
+							SetTauntPlaying(DateTime.Seconds(5))
+						end
+
+						if not RandomTauntsStarted then
+							RandomTauntsStarted = true
+							PlayRandomTaunt()
+						end
+					end
+				end)
+			end
+
+			if not DozerBuildTauntPlayed and not TauntPlaying and IsDozer(actor) and #MP0.GetActorsByTypes(Dozer) > 4 then
 				DozerBuildTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "3")
+				SetTauntPlaying(DateTime.Seconds(4))
 			end
-			if not BurtonBuildTauntPlayed and IsBurton(actor) then
+			if not BurtonBuildTauntPlayed and not TauntPlaying and IsBurton(actor) then
 				BurtonBuildTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "83")
+				SetTauntPlaying(DateTime.Seconds(5))
 			end
-			if not TankBuildTauntPlayed and IsTank(actor) and #MP0.GetActorsByTypes(Tank) > 3 then
+			if not TankBuildTauntPlayed and not TauntPlaying and IsTank(actor) and #MP0.GetActorsByTypes(Tank) > 3 then
 				TankBuildTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "53")
+				SetTauntPlaying(DateTime.Seconds(4))
 			end
-			if not ScudLauncherBuildTauntPlayed and actor.Type == "vehicle.scud_launcher" then
+			if not ScudLauncherBuildTauntPlayed and not TauntPlaying and actor.Type == "vehicle.scud_launcher" then
 				ScudLauncherBuildTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "87")
-			elseif not ArtyBuildTauntPlayed and IsArtillery(actor) and #MP0.GetActorsByTypes(Artillery) > 3 then
+				SetTauntPlaying(DateTime.Seconds(6))
+			elseif not ArtyBuildTauntPlayed and not TauntPlaying and IsArtillery(actor) and #MP0.GetActorsByTypes(Artillery) > 3 then
 				ArtyBuildTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "86")
+				SetTauntPlaying(DateTime.Seconds(5))
 			end
 		end
 	end)
+	MP0BaseBuildingsLost = 0
+	MP0BaseDefensesLost = 0
 	Trigger.OnBuildingPlaced(MP0, function(_, building)
-		if IsWarFactory(building) then
-			PlayerBuiltWarFactory = true
+		if not PlayerDamagedTauntPlayed or not RandomTauntsStarted then
+			Trigger.OnDamaged(building, function(_, attacker)
+				if attacker.Owner == Enemy then
+					if not PlayerDamagedTauntPlayed and not TauntPlaying then
+						PlayerDamagedTauntPlayed = true
+						Taunts.PlayTauntNotification(Enemy, "5")
+						SetTauntPlaying(DateTime.Seconds(5))
+					end
+
+					if not RandomTauntsStarted then
+						RandomTauntsStarted = true
+						PlayRandomTaunt()
+					end
+				end
+			end)
 		end
 
 		if building.Type == "building.gla_command_center" then
 			SetupSupportPowerNotifications(building)
 		end
 		if IsScudStorm(building) then
-			if not ScudBuildTauntPlayed then
+			if not ScudBuildTauntPlayed and not TauntPlaying then
 				ScudBuildTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "51")
-			elseif not SecondScudBuildTauntPlayed and #MP0.GetActorsByTypes(ScudStorm) > 1 then
+				SetTauntPlaying(DateTime.Seconds(4))
+			elseif not SecondScudBuildTauntPlayed and not TauntPlaying and #MP0.GetActorsByTypes(ScudStorm) > 1 then
 				SecondScudBuildTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "79")
+				SetTauntPlaying(DateTime.Seconds(5))
 			end
 		end
 		if IsAntiAir(building) then
-			if not AntiAirTauntPlayed and #MP0.GetActorsByTypes(AntiAir) > 6 then
+			if not AntiAirTauntPlayed and not TauntPlaying and #MP0.GetActorsByTypes(AntiAir) > 6 then
 				AntiAirTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "52")
-			elseif not SecondAntiAirTauntPlayed and #MP0.GetActorsByTypes(AntiAir) > 10 then
+				SetTauntPlaying(DateTime.Seconds(6))
+			elseif not SecondAntiAirTauntPlayed and not TauntPlaying and #MP0.GetActorsByTypes(AntiAir) > 10 then
 				SecondAntiAirTauntPlayed = true
 				Taunts.PlayTauntNotification(Enemy, "93")
+				SetTauntPlaying(DateTime.Seconds(3))
 			end
 		end
 
-		if not DefenseKillTauntPlayed and IsBaseDefense(building) then
-			Trigger.OnKilled(building, function()
-				if not DefenseKillTauntPlayed then
-					DefenseKillTauntPlayed = true
-					Taunts.PlayTauntNotification(Enemy, "6")
-				end
-			end)
+		if IsBaseDefense(building) then
+			if not DefenseKillTauntPlayed then
+				Trigger.OnKilled(building, function()
+					if not DefenseKillTauntPlayed and not TauntPlaying then
+						DefenseKillTauntPlayed = true
+						Taunts.PlayTauntNotification(Enemy, "6")
+						SetTauntPlaying(DateTime.Seconds(8))
+					end
+				end)
+			end
+			if not TooManyDefensesKillTauntPlayed then
+				Trigger.OnKilled(building, function()
+					MP0BaseDefensesLost = MP0BaseDefensesLost + 1
+					if not TooManyDefensesKillTauntPlayed and not TauntPlaying and MP0BaseDefensesLost > 2 then
+						TooManyDefensesKillTauntPlayed = true
+						Taunts.PlayTauntNotification(Enemy, "24")
+						SetTauntPlaying(DateTime.Seconds(3))
+					end
+				end)
+			end
 		end
 		if not BarrKillTauntPlayed and IsBarracks(building) then
 			Trigger.OnKilled(building, function()
-				if not BarrKillTauntPlayed and #MP0.GetActorsByTypes(Barracks) == 0 then
+				if not BarrKillTauntPlayed and not TauntPlaying and #MP0.GetActorsByTypes(Barracks) == 0 then
 					BarrKillTauntPlayed = true
 					Taunts.PlayTauntNotification(Enemy, "23")
+					SetTauntPlaying(DateTime.Seconds(3))
 				end
 			end)
 		end
 		if not WFacSWKillTauntPlayed and (IsWarFactory(building) or IsSuperWeapon(building)) then
 			Trigger.OnKilled(building, function()
-				if not WFacSWKillTauntPlayed then
+				if not WFacSWKillTauntPlayed and not TauntPlaying then
 					WFacSWKillTauntPlayed = true
 					Taunts.PlayTauntNotification(Enemy, "22")
+					SetTauntPlaying(DateTime.Seconds(4))
 				end
 			end)
 		end
 		if not AdvBuildKillTauntPlayed and IsAdvancedBuilding(building) then
 			Trigger.OnKilled(building, function()
-				if not AdvBuildKillTauntPlayed then
+				if not AdvBuildKillTauntPlayed and not TauntPlaying then
 					AdvBuildKillTauntPlayed = true
 					Taunts.PlayTauntNotification(Enemy, "10")
+					SetTauntPlaying(DateTime.Seconds(2))
+				end
+			end)
+		end
+		if not TooManyBuildingKillTauntPlayed and IsBaseBuilding(building) then
+			Trigger.OnKilled(building, function()
+				MP0BaseBuildingsLost = MP0BaseBuildingsLost + 1
+				if not TooManyBuildingKillTauntPlayed and not TauntPlaying and MP0BaseBuildingsLost > 4 then
+					TooManyBuildingKillTauntPlayed = true
+					Taunts.PlayTauntNotification(Enemy, "25")
+					SetTauntPlaying(DateTime.Seconds(7))
 				end
 			end)
 		end

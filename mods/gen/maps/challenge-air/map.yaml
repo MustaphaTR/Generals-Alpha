@@ -125,9 +125,6 @@ Actors:
 	EnemySupplyDrop2: building.supply_drop_zone
 		Owner: ChallengeGeneral
 		Location: 96,21
-	Actor30: supply.dock.30000.skewed_a
-		Owner: Neutral
-		Location: 100,21
 	Actor31: tc04
 		Owner: Neutral
 		Location: 82,14
@@ -263,9 +260,6 @@ Actors:
 	EnemyPatriot11: building.patriot
 		Owner: ChallengeGeneral
 		Location: 83,27
-	Actor71: supply.dock.30000.skewed_b
-		Owner: Neutral
-		Location: 77,55
 	Actor90: v12
 		Owner: Neutral
 		Location: 88,43
@@ -275,18 +269,12 @@ Actors:
 	Actor102: supply.pile.d
 		Owner: Neutral
 		Location: 85,91
-	Actor99: supply.dock.30000.6x4
-		Owner: Neutral
-		Location: 118,90
 	OilDerrick6: tech.oil_derrick
 		Owner: Neutral
 		Location: 53,98
-	Actor104: mpspawn
+	PlayerBaseCenter: mpspawn
 		Owner: Neutral
 		Location: 41,88
-	Actor103: supply.dock.30000.skewed_a
-		Owner: Neutral
-		Location: 31,91
 	OilDerrick7: tech.oil_derrick
 		Owner: Neutral
 		Location: 45,73
@@ -296,9 +284,6 @@ Actors:
 	Actor109: v10
 		Owner: Neutral
 		Location: 55,77
-	Actor96: supply.dock.30000.skewed_b
-		Owner: Neutral
-		Location: 35,30
 	Actor1: wood
 		Owner: Neutral
 		Location: 80,37
@@ -1471,6 +1456,24 @@ Actors:
 	CombatChinookLoadWP: waypoint
 		Owner: Neutral
 		Location: 100,18
+	EnemyBaseCenter: waypoint
+		Owner: Neutral
+		Location: 109,19
+	SupplyDockNorth: supply.dock.30000.skewed_b
+		Owner: Neutral
+		Location: 35,30
+	SupplyDockSouth: supply.dock.30000.6x4
+		Owner: Neutral
+		Location: 118,90
+	SupplyDockVillage: supply.dock.30000.skewed_b
+		Owner: Neutral
+		Location: 77,55
+	SupplyDockEnemy: supply.dock.30000.skewed_a
+		Owner: Neutral
+		Location: 100,21
+	SupplyDockPlayer: supply.dock.30000.skewed_a
+		Owner: Neutral
+		Location: 31,91
 
 Rules: gen|rules/challenge-rules.yaml, rules.yaml
 

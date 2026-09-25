@@ -494,17 +494,9 @@ PlayWFacKilledTaunt = function()
 	end
 end
 
-LowPowerTauntTimer = 0
-RandomTauntTimer = Utils.RandomInteger(DateTime.Seconds(45), DateTime.Seconds(120))
 RandomTauntToPlay = 1
-Tick = function()
-	if GPModifier ~= "disabled" then
-		TickGeneralsPowers()
-	end
-
-	RandomTauntTimer = RandomTauntTimer - 1
-	if RandomTauntTimer == 0 then
-		RandomTauntTimer = Utils.RandomInteger(DateTime.Seconds(45), DateTime.Seconds(120))
+PlayRandomTaunt = function()
+	Trigger.AfterDelay(Utils.RandomInteger(DateTime.Seconds(45), DateTime.Seconds(120)), function()
 		Taunts.PlayTauntNotification(Enemy, RandomTaunts[RandomTauntToPlay])
 
 		if (RandomTauntToPlay == 14) then
@@ -512,6 +504,15 @@ Tick = function()
 		else
 			RandomTauntToPlay = RandomTauntToPlay + 1
 		end
+
+		PlayRandomTaunt()
+	end)
+end
+
+LowPowerTauntTimer = 0
+Tick = function()
+	if GPModifier ~= "disabled" then
+		TickGeneralsPowers()
 	end
 
 	if 301 > MP0.Cash and not LowCashTauntPlayed then
@@ -567,6 +568,7 @@ WorldLoaded = function()
 	end
 
 	DifficultySetup()
+	PlayRandomTaunt()
 
 	EnemyAttackPath = CenterPaths
 	Trigger.AfterDelay(InitialAttackDelay[Difficulty], function()
@@ -674,7 +676,7 @@ WorldLoaded = function()
 						BuildAttackForce(InfantryAttackForces[AttackForceList][Difficulty], EnemyBarracks, function() return EnemyAttackPath end)
 					end
 					if #Enemy.GetActorsByType("upgrade.capture_building") > 0 then
-						CaptureTechBuildings(TechToCapture[Difficulty], "building.prc_barracks", CaptureActor[AttackForceList])
+						CaptureTechBuildings(Enemy, TechToCapture[Difficulty], "building.prc_barracks", CaptureActor[AttackForceList])
 					end
 					Trigger.AfterDelay(InitialAttackDelay[Difficulty] / 2, function()
 						BuildGarrisonForce("building.prc_barracks")
@@ -683,7 +685,7 @@ WorldLoaded = function()
 			end
 			if actor.Type == "upgrade.capture_building" then
 				if HackersBuilt then
-					CaptureTechBuildings(TechToCapture[Difficulty], "building.prc_barracks", CaptureActor[AttackForceList])
+					CaptureTechBuildings(Enemy, TechToCapture[Difficulty], "building.prc_barracks", CaptureActor[AttackForceList])
 				end
 			end
 		end
