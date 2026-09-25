@@ -620,19 +620,19 @@ fake.scud_storm:
 	ActorStatOverride@Enemy_UPGRADE:
 		Upgrades: upgrade.anthrax_beta
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: !toxin && !demo && !stealth && !merged
+		RequiresCondition: !toxin && !demo && !(stealth && zh_units) && !merged
 	ActorStatOverride@Enemy_UPGRADE_Toxin:
 		Upgrades: upgrade.anthrax_gamma
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: toxin && !merged
-	ActorStatOverride@Enemy_UPGRADE_Stealth:
+		RequiresCondition: (toxin && !merged) || (!zh_units && merged)
+	ActorStatOverride@Enemy_UPGRADE_Stealth_ZH_UNITS:
 		Upgrades: upgrade.anthrax_beta, upgrade.camo_netting
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: stealth && !merged
-	ActorStatOverride@Enemy_UPGRADE_Merged:
+		RequiresCondition: stealth && zh_units && !merged
+	ActorStatOverride@Enemy_UPGRADE_Merged_ZH_UNITS:
 		Upgrades: upgrade.anthrax_gamma, upgrade.camo_netting
 		ValidRelationships: Enemy, Neutral
-		RequiresCondition: merged
+		RequiresCondition: zh_units && merged
 
 fake.demo_trap:
 	Inherits: ^FakeDefense

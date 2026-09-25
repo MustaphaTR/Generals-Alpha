@@ -4943,16 +4943,16 @@ building.scud_storm:
 		Upgrades: upgrade.anthrax_beta
 	ActorStatOverride@Toxin:
 		Upgrades: upgrade.anthrax_gamma
-		RequiresCondition: toxin && !merged
+		RequiresCondition: (toxin && !merged) || (!zh_units && merged)
 	ActorStatOverride@Demo:
 		Upgrades:
 		RequiresCondition: demo && !merged
-	ActorStatOverride@Stealth:
+	ActorStatOverride@Stealth_ZH_UNITS:
 		Upgrades: upgrade.anthrax_beta, upgrade.camo_netting
-		RequiresCondition: stealth && !merged
-	ActorStatOverride@Merged:
+		RequiresCondition: stealth && zh_units && !merged
+	ActorStatOverride@Merged_ZH_UNITS:
 		Upgrades: upgrade.anthrax_gamma, upgrade.camo_netting
-		RequiresCondition: merged
+		RequiresCondition: zh_units && merged
 
 building.scud_storm.boss:
 	Inherits: building.scud_storm
@@ -4986,8 +4986,8 @@ building.scud_storm.boss:
 	-GrantConditionOnFaction@Toxin:
 	-ActorStatOverride@Toxin:
 	-ActorStatOverride@Demo:
-	-ActorStatOverride@Stealth:
-	-ActorStatOverride@Merged:
+	-ActorStatOverride@Stealth_ZH_UNITS:
+	-ActorStatOverride@Merged_ZH_UNITS:
 
 building.missile_silo:
 	Inherits: ^Building
