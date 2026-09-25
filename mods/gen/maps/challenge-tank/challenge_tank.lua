@@ -741,7 +741,7 @@ WorldLoaded = function()
 		end
 		if not AirfBuildTauntPlayed and IsAirfield(building) then
 			AirfBuildTauntPlayed = true
-			Taunts.PlayTauntNotification(Enemy, "79")
+			Taunts.PlayTauntNotification(Enemy, "78")
 		end
 		if not PCanBuildTauntPlayed and IsParticleCannon(building) then
 			PCanBuildTauntPlayed = true
