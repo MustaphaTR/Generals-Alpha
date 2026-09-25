@@ -605,6 +605,9 @@ fake.scud_storm:
 	GrantConditionOnPrerequisite@MERGE_GENERALS:
 		Condition: merged
 		Prerequisites: prerequisite.mergegenerals
+	GrantConditionOnPrerequisite@ZH_UNITS:
+		Condition: zh_units
+		Prerequisites: prerequisite.zh_units
 	GrantConditionOnFaction@Toxin:
 		Condition: toxin
 		Factions: toxin

@@ -304,6 +304,45 @@
 					Players: 8, 16
 					Parameters:
 						Rotations: 8
+			MultiChoiceOption@Density:
+				Label: label-ra-map-generator-option-density
+				Default: Players
+				Priority: 1
+				Choice@Players:
+					Label: label-ra-map-generator-choice-density-players
+					Parameters:
+						AreaEntityBonus: 0
+						PlayerCountEntityBonus: 1000000
+				Choice@AreaAndPlayers:
+					Label: label-ra-map-generator-choice-density-area-and-players
+					Parameters:
+						AreaEntityBonus: 200
+						PlayerCountEntityBonus: 500000
+				Choice@AreaVeryLow:
+					Label: label-ra-map-generator-choice-density-area-very-low
+					Parameters:
+						AreaEntityBonus: 100
+						PlayerCountEntityBonus: 0
+				Choice@AreaLow:
+					Label: label-ra-map-generator-choice-density-area-low
+					Parameters:
+						AreaEntityBonus: 200
+						PlayerCountEntityBonus: 0
+				Choice@AreaMedium:
+					Label: label-ra-map-generator-choice-density-area-medium
+					Parameters:
+						AreaEntityBonus: 400
+						PlayerCountEntityBonus: 0
+				Choice@AreaHigh:
+					Label: label-ra-map-generator-choice-density-area-high
+					Parameters:
+						AreaEntityBonus: 600
+						PlayerCountEntityBonus: 0
+				Choice@AreaVeryHigh:
+					Label: label-ra-map-generator-choice-density-area-very-high
+					Parameters:
+						AreaEntityBonus: 800
+						PlayerCountEntityBonus: 0
 			MultiChoiceOption@Resources:
 				Label: label-ra-map-generator-option-resources
 				Default: Medium
@@ -410,7 +449,8 @@
 							tech.hospital: 2
 							tech.repair_bay: 2
 							tech.reinforcements_pad: 1
-							tech.oil_derrick: 24
+							tech.artillery_platform: 1
+							tech.oil_derrick: 20
 				Choice@All:
 					Label: label-ra-map-generator-choice-buildings-type-all
 					Parameters:
@@ -419,11 +459,11 @@
 							tech.hospital: 2
 							tech.repair_bay: 2
 							tech.reinforcements_pad: 1
+							tech.artillery_platform: 1
 							tech.communications_center: 1
 							tech.soviet_barracks: 1
 							tech.power_plant: 1
-							tech.artillery_platform: 1
-							tech.oil_derrick: 36
+							tech.oil_derrick: 30
 			IntegerOption@TechBuildingsMin:
 				Label: label-ra-map-generator-option-buildings-min
 				Parameter: MinimumBuildings
@@ -432,45 +472,6 @@
 				Label: label-ra-map-generator-option-buildings-max
 				Parameter: MaximumBuildings
 				Default: 3
-			MultiChoiceOption@Density:
-				Label: label-ra-map-generator-option-density
-				Default: Players
-				Priority: 1
-				Choice@Players:
-					Label: label-ra-map-generator-choice-density-players
-					Parameters:
-						AreaEntityBonus: 0
-						PlayerCountEntityBonus: 1000000
-				Choice@AreaAndPlayers:
-					Label: label-ra-map-generator-choice-density-area-and-players
-					Parameters:
-						AreaEntityBonus: 200
-						PlayerCountEntityBonus: 500000
-				Choice@AreaVeryLow:
-					Label: label-ra-map-generator-choice-density-area-very-low
-					Parameters:
-						AreaEntityBonus: 100
-						PlayerCountEntityBonus: 0
-				Choice@AreaLow:
-					Label: label-ra-map-generator-choice-density-area-low
-					Parameters:
-						AreaEntityBonus: 200
-						PlayerCountEntityBonus: 0
-				Choice@AreaMedium:
-					Label: label-ra-map-generator-choice-density-area-medium
-					Parameters:
-						AreaEntityBonus: 400
-						PlayerCountEntityBonus: 0
-				Choice@AreaHigh:
-					Label: label-ra-map-generator-choice-density-area-high
-					Parameters:
-						AreaEntityBonus: 600
-						PlayerCountEntityBonus: 0
-				Choice@AreaVeryHigh:
-					Label: label-ra-map-generator-choice-density-area-very-high
-					Parameters:
-						AreaEntityBonus: 800
-						PlayerCountEntityBonus: 0
 			MultiChoiceOption@CivilianDensity:
 				Label: label-ra-map-generator-option-civilian-density
 				Default: Default
