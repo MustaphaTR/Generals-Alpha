@@ -887,7 +887,7 @@ hack.angry_mob.male:
 		Start: 0
 		Length: 1
 	icon:
-		Filename: gen|bits/cameos/angry_mob_icon.png
+		Filename: gen|bits/cameos/worker_icon.png
 
 hack.angry_mob.female:
 	Inherits@DEATH: ^default.infantry_death
@@ -930,8 +930,6 @@ hack.angry_mob.female:
 
 hack.angry_mob.molotov:
 	Inherits: infantry.grenadier
-	icon:
-		Filename: gen|bits/cameos/angry_mob_icon.png
 
 infantry.angry_mob:
 	Inherits@DEATH: ^default.infantry_death
