@@ -103,19 +103,21 @@ TrainHackers = function(owner, hacker, amount, rally_point, internet)
 	local barrackses = owner.GetActorsByType("building.prc_barracks")
 	if #barrackses > 0 then
 		local built = barrackses[1].Build( { hacker }, function(a)
+			local unit = a[1]
 			Trigger.AfterDelay(DateTime.Seconds(1), function()
-				a[1].Move(rally_point)
-				if internet then
-					a[1].EnterTransport(owner.GetActorsByType("building.internet_center")[1])
+				unit.Move(rally_point)
+				local internetCenters = Utils.Where(owner.GetActorsByType("building.internet_center"), function(ic) return ic.PassengerCount < 8 end)
+				if internet and #internetCenters > 0 then
+					unit.EnterTransport(internetCenters[1])
 				else
 					Trigger.OnEnteredFootprint({ rally_point }, function(enterer)
-						if enterer == a[1] then
-							a[1].SwitchToDeploy()
+						if enterer == unit then
+							unit.SwitchToDeploy()
 						end
 					end)
 				end
 			end)
-			Trigger.OnKilled(a[1], function()
+			Trigger.OnKilled(unit, function()
 				TrainHackers(owner, hacker, 1, rally_point, internet)
 			end)
 		end)

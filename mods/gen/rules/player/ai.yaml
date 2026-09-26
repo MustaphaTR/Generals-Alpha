@@ -67,9 +67,9 @@ Player:
 	ProvidesPrerequisite@AIDiscount:
 		RequiresCondition: enable-any-ai
 		Prerequisite: AIDiscount
-	GeneralCollectorBotModule@AI:
+	GeneralCollectorBotModule:
 		RequiresCondition: enable-any-ai
-	ExternalBotOrdersManager@AI:
+	ExternalBotOrdersManager:
 		RequiresCondition: enable-any-ai
 	BaseBuilderBotModule@AIBase:
 		RequiresCondition: enable-any-ai

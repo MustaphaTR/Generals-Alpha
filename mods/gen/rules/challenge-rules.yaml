@@ -10,6 +10,10 @@ Player:
 	GrantConditionOnBotOwner@campaign:
 		Condition: enable-campaign-ai
 		Bots: campaign
+	GeneralCollectorBotModule:
+		RequiresCondition: enable-campaign-ai
+	ExternalBotOrdersManager:
+		RequiresCondition: enable-campaign-ai
 	BuildingRepairBotModule:
 		RequiresCondition: enable-campaign-ai
 	SupportPowerBotASModule:
@@ -33,3 +37,7 @@ World:
 	GrantConditionOnBotOwner@bot_owner:
 		Condition: bot_owner
 		Bots: campaign
+
+vehicle.troop_crawler:
+	IssueOrderToBot@AI:
+		OrderTrigger: Damage
