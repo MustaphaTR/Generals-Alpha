@@ -9,6 +9,14 @@
 
 Difficulty = Map.LobbyOption("difficulty")
 
+TauntPlaying = false
+SetTauntPlaying = function(length)
+	TauntPlaying = true
+	Trigger.AfterDelay(length, function()
+		TauntPlaying = false
+	end)
+end
+
 IdleHunt = function(actor)
 	if actor.HasProperty("Hunt") and not actor.IsDead then
 		Trigger.OnIdle(actor, actor.Hunt)
@@ -67,15 +75,26 @@ TrainStaticDefense = function(owner, units, producer, rally_point)
 	end
 end
 
-CaptureTechBuildings = function(buildings, factory, infantry)
-	local built = Utils.Random(Enemy.GetActorsByType(factory)).Build({ infantry }, function(a)
-		Utils.Do(Utils.Where(buildings, function(b) return not b.IsDead end), function(tech)
-			a[1].Capture(tech)
+CaptureTechBuildings = function(player, buildings, factory, infantry)
+	if Utils.All(buildings, function(b) return b.IsDead or b.Owner == player end) then
+		return
+	end
+
+	local factories = player.GetActorsByType(factory)
+	if #factories > 0 then
+		local built = Utils.Random(factories).Build({ infantry }, function(a)
+			Utils.Do(Utils.Where(buildings, function(b) return not b.IsDead end), function(tech)
+				a[1].Capture(tech)
+			end)
 		end)
-	end)
-	if not built then
-		Trigger.AfterDelay(DateTime.Seconds(15), function()
-			CaptureTechBuildings(buildings, factory, infantry)
+		if not built then
+			Trigger.AfterDelay(DateTime.Seconds(15), function()
+				CaptureTechBuildings(player, buildings, factory, infantry)
+			end)
+		end
+	else
+		Trigger.AfterDelay(DateTime.Seconds(30), function()
+			CaptureTechBuildings(player, buildings, factory, infantry)
 		end)
 	end
 end

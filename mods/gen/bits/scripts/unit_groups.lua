@@ -148,7 +148,8 @@ BaseBuilding = Utils.Concat(Utils.Concat(Utils.Concat(Utils.Concat(Utils.Concat(
 	"building.supply_drop_zone",
 	"building.black_market",
 	"building.internet_center",
-	"fake.black_market" })
+	"fake.black_market"
+})
 IsBaseBuilding = function(actor)
 	return
 		IsCommandCenter(actor) or
@@ -293,21 +294,28 @@ IsDozer = function(actor)
 		actor.Type == "vehicle.tech_mcc"
 end
 
-Plane = {
+Aurora = {
+	"aircraft.aurora",
+	"aircraft.aurora_alpha"
+}
+IsAurora = function(actor)
+	return
+		actor.Type == "aircraft.aurora" or
+		actor.Type == "aircraft.aurora_alpha"
+end
+
+Plane = Utils.Concat(Aurora, {
 	"aircraft.raptor",
 	"aircraft.king_raptor",
 	"aircraft.stealth_fighter",
-	"aircraft.aurora",
-	"aircraft.aurora_alpha",
 	"aircraft.mig"
-}
+})
 IsPlane = function(actor)
 	return
 		actor.Type == "aircraft.raptor" or
 		actor.Type == "aircraft.king_raptor" or
 		actor.Type == "aircraft.stealth_fighter" or
-		actor.Type == "aircraft.aurora" or
-		actor.Type == "aircraft.aurora_alpha" or
+		IsAurora(actor) or
 		actor.Type == "aircraft.mig"
 end
 
@@ -319,6 +327,31 @@ IsHelix = function(actor)
 	return
 		actor.Type == "aircraft.helix" or
 		actor.Type == "aircraft.assault_helix"
+end
+
+Chinook = {
+	"aircraft.chinook",
+	"aircraft.combat_chinook"
+}
+IsChinook = function(actor)
+	return
+		actor.Type == "aircraft.chinook" or
+		actor.Type == "aircraft.combat_chinook"
+end
+
+Helicopter = Utils.Concat(Helix, Utils.Concat(Chinook, {"aircraft.comanche"}))
+IsHelicopter = function(actor)
+	return
+		IsHelix(actor) or
+		actor.Type == "aircraft.comanche" or
+		IsChinook(actor)
+end
+
+Aircraft = Utils.Concat(Plane, Helicopter)
+IsAircraft = function(actor)
+	return
+		IsPlane(actor) or
+		IsHelicopter(actor)
 end
 
 Hacker = {
@@ -366,6 +399,17 @@ IsOverlordTank = function(actor)
 	return
 		actor.Type == "vehicle.overlord_tank" or
 		actor.Type == "vehicle.emparor_overlord"
+end
+
+SupplyCollector = Utils.Concat(Chinook, {
+	"infantry.worker",
+	"vehicle.supply_truck"
+})
+IsSupplyCollector = function(actor)
+	return
+		IsChinook(actor) or
+		actor.Type == "infantry.worker" or
+		actor.Type == "vehicle.supply_truck"
 end
 
 AntiAir = {
