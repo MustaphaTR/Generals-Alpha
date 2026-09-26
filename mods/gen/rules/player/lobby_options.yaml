@@ -34,3 +34,18 @@
 		Enabled: False
 		DisplayOrder: 10
 		Prerequisites: prerequisite.mergegenerals
+	LobbyPrerequisiteCheckbox@LIMITHEROS:
+		ID: limitheroes
+		Label: checkbox-limitheroes.label
+		Description: checkbox-limitheroes.description
+		Enabled: True
+		DisplayOrder: 12
+		Prerequisites: prerequisite.limited_heroes
+	LobbyPrerequisiteCheckbox@INDESTRUCTIBLETECH:
+		ID: indestructibletech
+		Label: checkbox-indestructibletech.label
+		Description: checkbox-indestructibletech.description
+		Enabled: False
+		DisplayOrder: 13
+		Prerequisites: prerequisite.indestructible_tech
+		

@@ -960,7 +960,40 @@
 		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: tnt_charge
 
+^HeroLimitCargoHack:
+	Cargo:
+		PassengerConditions:
+			infantry.colonel_burton: burton
+			infantry.jarmen_kell: jarmen
+			infantry.jarmen_kell.demo: jarmen
+			infantry.black_lotus: lotus
+			infantry.super_lotus: lotus
+	ProvidesPrerequisite@LIMIT_BURTON:
+		Prerequisite: prerequisite.enough_colonel_burton
+		RequiresCondition: limited_heroes && burton
+	ProvidesPrerequisite@LIMIT_KELL:
+		Prerequisite: prerequisite.enough_jarmen_kell
+		RequiresCondition: limited_heroes && jarmen
+	ProvidesPrerequisite@LIMIT_LOTUS:
+		Prerequisite: prerequisite.enough_black_lotus
+		RequiresCondition: limited_heroes && lotus
+	GrantConditionOnPrerequisite@LIMIT:
+		Condition: limited_heroes
+		Prerequisites: prerequisite.limited_heroes
+
+^HeroLimitSharedCargoHack:
+	Inherits@HERO_HACK: ^HeroLimitCargoHack
+	-Cargo:
+	SharedCargo:
+		PassengerConditions:
+			infantry.colonel_burton: burton
+			infantry.jarmen_kell: jarmen
+			infantry.jarmen_kell.demo: jarmen
+			infantry.black_lotus: lotus
+			infantry.super_lotus: lotus
+
 ^WithCargoRangeCircle:
+	Inherits@HERO_HACK: ^HeroLimitCargoHack
 	Cargo:
 		PassengerConditions:
 			infantry.ranger: range_circle.133
@@ -974,9 +1007,6 @@
 			infantry.grenadier: range_circle.160
 			infantry.pathfinder: range_circle.400
 			infantry.flamethrower: range_circle.200
-			infantry.colonel_burton: range_circle.166
-			infantry.jarmen_kell: range_circle.330
-			infantry.jarmen_kell.demo: range_circle.330
 	WithRangeCircle@133:
 		Range: 3c341
 		Color: DDDD0088
@@ -988,7 +1018,7 @@
 	WithRangeCircle@166:
 		Range: 4c133
 		Color: DDDD0088
-		RequiresCondition: range_circle.166 || range_circle.minigunner
+		RequiresCondition: range_circle.minigunner || burton
 	WithRangeCircle@200:
 		Range: 5c0
 		Color: DDDD0088
@@ -1005,7 +1035,7 @@
 	WithRangeCircle@300:
 		Range: 8c256
 		Color: DDDD0088
-		RequiresCondition: range_circle.330
+		RequiresCondition: jarmen
 	WithRangeCircle@400:
 		Range: 10c0
 		Color: DDDD0088
@@ -1032,9 +1062,11 @@
 			infantry.grenadier: range_circle.160
 			infantry.pathfinder: range_circle.400
 			infantry.flamethrower: range_circle.200
-			infantry.colonel_burton: range_circle.166
-			infantry.jarmen_kell: range_circle.330
-			infantry.jarmen_kell.demo: range_circle.330
+			infantry.colonel_burton: burton
+			infantry.jarmen_kell: jarmen
+			infantry.jarmen_kell.demo: jarmen
+			infantry.black_lotus: lotus
+			infantry.super_lotus: lotus
 
 ^KilledWithoutAirfield:
 	ChangesHealth@PLANE:
@@ -2496,6 +2528,17 @@
 		Position: Center
 		Palette: player
 		IsPlayerPalette: True
+	Targetable:
+		RequiresCondition: !indestructible_tech
+	Targetable@TNT:
+		RequiresCondition: !tnt_charge && !indestructible_tech
+	Targetable@TIMED_DEMO_BOMB:
+		RequiresCondition: !timed_demo_bomb && !indestructible_tech
+	Targetable@CAPTURE:
+		TargetTypes: Capture, Disable
+	GrantConditionOnPrerequisite@INDESTRUCTIBLE_TECH:
+		Condition: indestructible_tech
+		Prerequisites: prerequisite.indestructible_tech
 	MapEditorData:
 		Categories: Tech building
 

@@ -29,6 +29,14 @@ checkbox-mergegenerals =
     .label = Merge Generals
     .description = Regardless of chosen general, effects from all 3 generals are given
 
+checkbox-limitheroes =
+    .label = Limit Heroes
+    .description = Allow only 1 of each Hero unit to be built
+
+checkbox-indestructibletech =
+    .label = Indestructible Tech
+    .description = Tech Buildings cannot be damaged or destroyed, only captured
+
 notification-all-units-revealed = All of our units has been revealed!
 
 power-emergency-repair =

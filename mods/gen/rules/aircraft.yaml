@@ -1488,6 +1488,7 @@ aircraft.a10:
 aircraft.chinook:
 	Inherits: ^Helicopter
 	Inherits@CARGO: ^CargoPips
+	Inherits@HERO_HACK: ^HeroLimitCargoHack
 	Inherits@PILOT: ^Pilot-NonUSAircraft
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -1792,6 +1793,7 @@ aircraft.helix:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@HERO_HACK: ^HeroLimitCargoHack
 	Inherits@PILOT: ^Pilot-NonUSAircraft
 	Inherits@REVEAL: ^Reveal600
 	Inherits@SLOW: ^SlowsWhenDamaged

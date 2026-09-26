@@ -3106,6 +3106,7 @@ building.prc_war_factory:
 
 ^default.tunnel_network:
 	Inherits: ^Defense
+	Inherits@HERO_HACK: ^HeroLimitSharedCargoHack
 	Inherits@REVEAL: ^Reveal200
 	Inherits@SHAPE: ^2x2Shape
 	Inherits@SHARED_CARGO: ^SharedCargoPips

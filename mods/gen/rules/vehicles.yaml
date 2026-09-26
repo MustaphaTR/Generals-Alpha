@@ -78,6 +78,7 @@ vehicle.humvee:
 	Inherits@CARGO: ^CargoPips
 	Inherits@DRONE: ^CanHaveDrones
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@HERO_HACK: ^HeroLimitCargoHack
 	Inherits@PILOT: ^Pilot-USVehicle
 	Inherits@REVEAL: ^Reveal320
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -252,6 +253,7 @@ vehicle.technical:
 	Inherits@CARGO: ^CargoPips
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@HERO_HACK: ^HeroLimitCargoHack
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal300
@@ -976,6 +978,7 @@ vehicle.ambulance:
 	Inherits: ^Vehicle
 	Inherits@CARGO: ^CargoPips
 	Inherits@DRONE: ^CanHaveDrones
+	Inherits@HERO_HACK: ^HeroLimitCargoHack
 	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -2027,6 +2030,7 @@ vehicle.battle_bus:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CARGO: ^CargoPips
 	Inherits@DEMOLITION: ^AffectedByDemolitions
+	Inherits@HERO_HACK: ^HeroLimitCargoHack
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal200
@@ -2174,6 +2178,7 @@ vehicle.battle_bus:
 vehicle.troop_crawler:
 	Inherits: ^Tank
 	Inherits@CARGO: ^CargoPips
+	Inherits@HERO_HACK: ^HeroLimitCargoHack
 	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal400
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -2299,6 +2304,7 @@ vehicle.listening_outpost:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CARGO: ^CargoPips
+	Inherits@HERO_HACK: ^HeroLimitCargoHack
 	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal500
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -3534,9 +3540,10 @@ vehicle.marauder_tank:
 vehicle.overlord_tank:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CARGO: ^CargoPips
 	Inherits@CHAIN_GUN: ^AffectedByChainGun
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@HERO_HACK: ^HeroLimitCargoHack
 	Inherits@NUCLEAR_TANKS: ^AffectedByNuclearTanks
 	Inherits@PILOT: ^Pilot-NonUSVehicle
 	Inherits@REVEAL: ^Reveal200
@@ -3723,7 +3730,7 @@ vehicle.overlord_tank:
 		Delay: 3
 		StartIfBelow: 50
 		DamageCooldown: 150
-	Cargo@BUNKER_UPGRADE:
+	Cargo:
 		Types: Infantry, GLAInfantry, Hacker
 		MaxWeight: 5
 		EjectOnDeathDamage: 50
@@ -4294,6 +4301,7 @@ vehicle.combat_cycle:
 	Inherits@CARGO: ^CargoPips
 	Inherits@DEMOLITION: ^AffectedByDemolitions
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@HERO_HACK: ^HeroLimitCargoHack
 	Inherits@JUNK_REPAIR: ^AffectedByJunkRepair
 	Inherits@REVEAL: ^Reveal300
 	Inherits@SLOW: ^SlowsWhenDamaged
@@ -4490,8 +4498,6 @@ vehicle.combat_cycle:
 			infantry.toxin_terrorist: toxin_terrorist
 			infantry.hijacker: hijacker
 			infantry.saboteur: saboteur
-			infantry.jarmen_kell: jarmen
-			infantry.jarmen_kell.demo: jarmen
 	FreePassenger@rebel:
 		Actors: infantry.rebel
 		RequiresCondition: !toxin && !demo && !boss

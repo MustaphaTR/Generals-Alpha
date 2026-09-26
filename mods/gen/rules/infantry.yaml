@@ -1947,7 +1947,6 @@ infantry.colonel_burton:
 		Prerequisites: building.strategy_center, !prerequisite.enough_colonel_burton, !techlevel.notech
 		Description: actor-infantry-colonel-burton.description
 		ReadyAudio: BurtonCreated
-		BuildLimit: 1
 	Buildable@Boss:
 		Queue: queue.boss_gen_infantry, queue.boss_gen_infantry_merged
 		BuildPaletteOrder: 7
@@ -1957,7 +1956,6 @@ infantry.colonel_burton:
 		Prerequisites: building.particle_cannon, !prerequisite.enough_colonel_burton, !techlevel.nosw
 		Description: actor-infantry-colonel-burton.description
 		ReadyAudio: BurtonCreated
-		BuildLimit: 1
 	Mobile:
 		Speed: 30
 		Voice: Move
@@ -2043,6 +2041,10 @@ infantry.colonel_burton:
 		ValidDamageStates: Critical
 	ProvidesPrerequisite@LIMIT:
 		Prerequisite: prerequisite.enough_colonel_burton
+		RequiresCondition: limited_heroes
+	GrantConditionOnPrerequisite@LIMIT:
+		Condition: limited_heroes
+		Prerequisites: prerequisite.limited_heroes
 	RenderSprites:
 		Image: infantry.colonel_burton
 	AnnounceOnSeen:
@@ -2095,7 +2097,6 @@ infantry.jarmen_kell:
 		Prerequisites: building.palace, !prerequisite.enough_jarmen_kell, !techlevel.notech
 		Description: actor-infantry-jarmen-kell.description
 		ReadyAudio: JarmenCreated
-		BuildLimit: 1
 	Buildable@Boss:
 		Queue: queue.boss_gen_infantry
 		BuildPaletteOrder: 9
@@ -2105,7 +2106,6 @@ infantry.jarmen_kell:
 		Prerequisites: building.scud_storm, !prerequisite.enough_jarmen_kell, !techlevel.nosw
 		Description: actor-infantry-jarmen-kell.description
 		ReadyAudio: JarmenCreated
-		BuildLimit: 1
 	Health:
 		HP: 20000
 	Armor:
@@ -2164,6 +2164,10 @@ infantry.jarmen_kell:
 		Delay: 750
 	ProvidesPrerequisite@LIMIT:
 		Prerequisite: prerequisite.enough_jarmen_kell
+		RequiresCondition: limited_heroes
+	GrantConditionOnPrerequisite@LIMIT:
+		Condition: limited_heroes
+		Prerequisites: prerequisite.limited_heroes
 	Passenger:
 		CargoType: GLAInfantry
 	Garrisoner:
@@ -2244,7 +2248,6 @@ infantry.black_lotus:
 		Prerequisites: building.propaganda_center, !prerequisite.enough_black_lotus, !techlevel.notech
 		Description: actor-infantry-black-lotus.description
 		ReadyAudio: LotusCreated
-		BuildLimit: 1
 	Buildable@Boss:
 		Queue: queue.boss_gen_infantry
 		BuildPaletteOrder: 10
@@ -2253,7 +2256,6 @@ infantry.black_lotus:
 		Prerequisites: building.missile_silo, !prerequisite.enough_black_lotus, !techlevel.nosw
 		Description: actor-infantry-black-lotus.description
 		ReadyAudio: LotusCreated
-		BuildLimit: 1
 	Valued:
 		Cost: 1500
 	ProductionCostMultiplier@Nuke1:
@@ -2292,6 +2294,10 @@ infantry.black_lotus:
 		DefaultAttackSequence: stand2
 	ProvidesPrerequisite@LIMIT:
 		Prerequisite: prerequisite.enough_black_lotus
+		RequiresCondition: limited_heroes
+	GrantConditionOnPrerequisite@LIMIT:
+		Condition: limited_heroes
+		Prerequisites: prerequisite.limited_heroes
 	Cloak:
 		InitialDelay: 250
 		CloakDelay: 120
