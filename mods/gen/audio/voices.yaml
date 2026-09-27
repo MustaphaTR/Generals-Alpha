@@ -19,9 +19,10 @@ GenericVoice:
 		Move: ackno,affirm1,noprob,overout,ritaway,roger,ugotit
 		Action: ackno,affirm1,noprob,overout,ritaway,roger,ugotit
 		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Poisoned: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
 		Burned: dedman10
 		Zapped: dedman6
-	DisableVariants: Die, Burned, Zapped
+	DisableVariants: Die, Poisoned, Burned, Zapped
 
 VehicleVoice:
 	Variants:
@@ -47,6 +48,7 @@ EngineerVoice:
 		Select: eengin1,eyessir1
 		Action: eaffirm1,emovout1
 		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Poisoned: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
 		Burned: dedman10
 		Zapped: dedman6
 
@@ -55,6 +57,7 @@ MedicVoice:
 		Select: mrespon1,myessir1
 		Action: maffirm1,mmovout1
 		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Poisoned: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
 		Burned: dedman10
 		Zapped: dedman6
 
@@ -65,6 +68,7 @@ DogVoice:
 		Action: dogy1
 		Attack: dogg5p
 		Die: dogw5,dogw7
+		Poisoned: dogw6
 		Burned: dogw6
 		Zapped: dogw6
 
@@ -72,23 +76,26 @@ CivilianMaleVoice:
 	Voices:
 		Select: guyyeah1
 		Action: guyokay1
-		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
-		Burned: dedman10
-		Zapped: dedman6
+		Die: icimadia, icimadib, icimadic, icimadid, icimadie, icimadif, icimadig, icimadih, icimadii, icimadij
+		Poisoned: idigtoxa, idigtoxb, idigtoxc, idigtoxd, idigtoxe, idigtoxf, idigtoxg, idigtoxh
+		Burned: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
+		Zapped: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
 
 CivilianFemaleVoice:
 	Voices:
 		Select: girlyeah
 		Action: girlokay
-		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
-		Burned: dedman10
-		Zapped: dedman6
+		Die: icifcdia, icifcdib, icifcdic, icifcdid, icifcdie, icifcdif, icifcdig, icifcdih, icifcdii, icifcdij
+		Poisoned: idiftoxa, idiftoxb, idiftoxc, idiftoxd
+		Burned: idiffira, idiffirb, idiffirc, idiffird
+		Zapped: idiffira, idiffirb, idiffirc, idiffird
 
 EinsteinVoice:
 	Voices:
 		Select: einah1
 		Action: einok1,einyes1
 		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Poisoned: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
 		Burned: dedman10
 		Zapped: dedman6
 
@@ -97,6 +104,7 @@ AntVoice:
 		Select: antbite
 		Action: antbite
 		Die: antdie
+		Poisoned: antdie
 		Burned: antdie
 		Zapped: antdie
 
@@ -107,6 +115,7 @@ StavrosVoice:
 		Action: stavcrse, stavyes, stavmov
 		Attack: stavcrse, stavyes
 		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Poisoned: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
 		Burned: dedman10
 		Zapped: dedman6
 
@@ -291,8 +300,9 @@ PilotVoice:
 		Move: ipilmoa, ipilmob, ipilmoc, ipilmod, ipilmoe, ipilmof
 		Action: ipilena, ipilenb, ipilenc, ipilend, ipilene
 		Die: ipildia, ipildib, ipildic, ipildid, ipildie
-		Burned: ipildia, ipildib, ipildic, ipildid, ipildie
-		Zapped: ipildia, ipildib, ipildic, ipildid, ipildie
+		Poisoned: idiutoxa, idiutoxb, idiutoxc, idiutoxd, idiutoxe, idiutoxf, idiutoxg, idiutoxh
+		Burned: idiufira, idiufirb, idiufirc, idiufird, idiufire, idiufirf, idiufirg, idiufirh
+		Zapped: idiufira, idiufirb, idiufirc, idiufird, idiufire, idiufirf, idiufirg, idiufirh
 
 WorkerVoice:
 	Voices:
@@ -303,8 +313,9 @@ WorkerVoice:
 		Disarm: iworcla, iworclb, iworclc, iworcld, iworcle, iworclf, iworclg
 		Repair: iworrea, iworreb, iworrec, iworred, iworree, iworref
 		Die: iwordia, iwordib, iwordic, iwordid, iwordie, iwordif, iwordig, iwordih
-		Burned: iwordia, iwordib, iwordic, iwordid, iwordie, iwordif, iwordig, iwordih
-		Zapped: iwordia, iwordib, iwordic, iwordid, iwordie, iwordif, iwordig, iwordih
+		Poisoned: idigtoxa, idigtoxb, idigtoxc, idigtoxd, idigtoxe, idigtoxf, idigtoxg, idigtoxh
+		Burned: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
+		Zapped: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
 
 WorkerWithShoesVoice:
 	Inherits: WorkerVoice
@@ -321,8 +332,9 @@ RangerVoice:
 		Capture: irancaa, irancab, irancac, irancad, irancae
 		CaptureComplete: irancoa, irancob, irancoc, irancod
 		Die: irandia, irandib, irandic, irandid, irandie, irandif, irandig, irandih, irandii, irandij, irandik, irandil
-		Burned: irandia, irandib, irandic, irandid, irandie, irandif, irandig, irandih, irandii, irandij, irandik, irandil
-		Zapped: irandia, irandib, irandic, irandid, irandie, irandif, irandig, irandih, irandii, irandij, irandik, irandil
+		Poisoned: idiutoxa, idiutoxb, idiutoxc, idiutoxd, idiutoxe, idiutoxf, idiutoxg, idiutoxh
+		Burned: idiufira, idiufirb, idiufirc, idiufird, idiufire, idiufirf, idiufirg, idiufirh
+		Zapped: idiufira, idiufirb, idiufirc, idiufird, idiufire, idiufirf, idiufirg, idiufirh
 
 RebelVoice:
 	Voices:
@@ -334,8 +346,9 @@ RebelVoice:
 		Capture: irebcaa, irebcab, irebcac, irebcad, irebcae, irebcaf
 		CaptureComplete: irebcoa, irebcob, irebcoc, irebcod, irebcoe
 		Die: irebdia, irebdib, irebdic, irebdid, irebdie, irebdif, irebdig, irebdih, irebdii, irebdij
-		Burned: irebdia, irebdib, irebdic, irebdid, irebdie, irebdif, irebdig, irebdih, irebdii, irebdij
-		Zapped: irebdia, irebdib, irebdic, irebdid, irebdie, irebdif, irebdig, irebdih, irebdii, irebdij
+		Poisoned: idigtoxa, idigtoxb, idigtoxc, idigtoxd, idigtoxe, idigtoxf, idigtoxg, idigtoxh
+		Burned: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
+		Zapped: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
 
 ToxinRebelVoice:
 	Voices:
@@ -347,8 +360,9 @@ ToxinRebelVoice:
 		Capture: irebcaa, irebcab, irebcac, irebcad, irebcae, irebcaf
 		CaptureComplete: irebcoa, irebcob, irebcoc, irebcod, irebcoe
 		Die: irebdia, irebdib, irebdic, irebdid, irebdie, irebdif, irebdig, irebdih, irebdii, irebdij
-		Burned: irebdia, irebdib, irebdic, irebdid, irebdie, irebdif, irebdig, irebdih, irebdii, irebdij
-		Zapped: irebdia, irebdib, irebdic, irebdid, irebdie, irebdif, irebdig, irebdih, irebdii, irebdij
+		Poisoned: idigtoxa, idigtoxb, idigtoxc, idigtoxd, idigtoxe, idigtoxf, idigtoxg, idigtoxh
+		Burned: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
+		Zapped: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
 
 RedGuardVoice:
 	Voices:
@@ -360,8 +374,9 @@ RedGuardVoice:
 		Capture: iredcaa, iredcab, iredcac, iredcad, iredcae
 		CaptureComplete: iredcoa, iredcob, iredcoc, iredcod, iredcoe
 		Die: ireddia, ireddib, ireddic, ireddid, ireddie, ireddif, ireddig, ireddih, ireddii, ireddij, ireddik, ireddil
-		Burned: ireddia, ireddib, ireddic, ireddid, ireddie, ireddif, ireddig, ireddih, ireddii, ireddij, ireddik, ireddil
-		Zapped: ireddia, ireddib, ireddic, ireddid, ireddie, ireddif, ireddig, ireddih, ireddii, ireddij, ireddik, ireddil
+		Poisoned: idictoxa, idictoxb, idictoxc, idictoxd, idictoxe, idictoxf, idictoxg, idictoxh
+		Burned: idicfira, idicfirb, idicfirc, idicfird, idicfire, idicfirf, idicfirg, idicfirh
+		Zapped: idicfira, idicfirb, idicfirc, idicfird, idicfire, idicfirf, idicfirg, idicfirh
 
 MinigunnerVoice:
 	Voices:
@@ -373,8 +388,9 @@ MinigunnerVoice:
 		Capture: iredcaa, iredcab, iredcac, iredcad, iredcae
 		CaptureComplete: iredcoa, iredcob, iredcoc, iredcod, iredcoe
 		Die: ireddia, ireddib, ireddic, ireddid, ireddie, ireddif, ireddig, ireddih, ireddii, ireddij, ireddik, ireddil
-		Burned: ireddia, ireddib, ireddic, ireddid, ireddie, ireddif, ireddig, ireddih, ireddii, ireddij, ireddik, ireddil
-		Zapped: ireddia, ireddib, ireddic, ireddid, ireddie, ireddif, ireddig, ireddih, ireddii, ireddij, ireddik, ireddil
+		Poisoned: idictoxa, idictoxb, idictoxc, idictoxd, idictoxe, idictoxf, idictoxg, idictoxh
+		Burned: idicfira, idicfirb, idicfirc, idicfird, idicfire, idicfirf, idicfirg, idicfirh
+		Zapped: idicfira, idicfirb, idicfirc, idicfird, idicfire, idicfirf, idicfirg, idicfirh
 
 ConscriptVoice:
 	Voices:
@@ -384,8 +400,9 @@ ConscriptVoice:
 		Action: iconata, iconatb, iconatc, iconatd
 		Capture: iconmoa, iconmob, iconmoc
 		Die: icondia, icondib, icondic, icondid, icondie
-		Burned: icondia, icondib, icondic, icondid, icondie
-		Zapped: icondia, icondib, icondic, icondid, icondie
+		Poisoned: idictoxa, idictoxb, idictoxc, idictoxd, idictoxe, idictoxf, idictoxg, idictoxh
+		Burned: idicfira, idicfirb, idicfirc, idicfird, idicfire, idicfirf, idicfirg, idicfirh
+		Zapped: idicfira, idicfirb, idicfirc, idicfird, idicfire, idicfirf, idicfirg, idicfirh
 
 MissileDefenderVoice:
 	Voices:
@@ -395,8 +412,9 @@ MissileDefenderVoice:
 		Garrison: imisgaa, imisgab, imisgac, imisgad
 		Action: imisata, imisatb, imisatc, imisatd, imisate, imisatf, imisatg, imisath
 		Die: imisdia, imisdib, imisdic, imisdid, imisdie, imisdif, imisdig, imisdih, imisdii, imisdij
-		Burned: imisdia, imisdib, imisdic, imisdid, imisdie, imisdif, imisdig, imisdih, imisdii, imisdij
-		Zapped: imisdia, imisdib, imisdic, imisdid, imisdie, imisdif, imisdig, imisdih, imisdii, imisdij
+		Poisoned: idiutoxa, idiutoxb, idiutoxc, idiutoxd, idiutoxe, idiutoxf, idiutoxg, idiutoxh
+		Burned: idiufira, idiufirb, idiufirc, idiufird, idiufire, idiufirf, idiufirg, idiufirh
+		Zapped: idiufira, idiufirb, idiufirc, idiufird, idiufire, idiufirf, idiufirg, idiufirh
 
 RPGTrooperVoice:
 	Voices:
@@ -406,8 +424,9 @@ RPGTrooperVoice:
 		Garrison: irpggaa, irpggab, irpggac
 		Action: irpgata, irpgatb, irpgatc, irpgatd, irpgate, irpgatf
 		Die: irpgdia, irpgdib, irpgdic, irpgdid, irpgdie, irpgdif, irpgdig, irpgdih, irpgdii, irpgdij
-		Burned: irpgdia, irpgdib, irpgdic, irpgdid, irpgdie, irpgdif, irpgdig, irpgdih, irpgdii, irpgdij
-		Zapped: irpgdia, irpgdib, irpgdic, irpgdid, irpgdie, irpgdif, irpgdig, irpgdih, irpgdii, irpgdij
+		Poisoned: idigtoxa, idigtoxb, idigtoxc, idigtoxd, idigtoxe, idigtoxf, idigtoxg, idigtoxh
+		Burned: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
+		Zapped: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
 
 TankHunterVoice:
 	Voices:
@@ -416,8 +435,9 @@ TankHunterVoice:
 		Move: itanmoa, itanmob, itanmoc, itanmod, itanmoe
 		Action: itanata, itanatb, itanatc, itanatd, itanate
 		Die: itandia, itandib, itandic, itandid, itandie
-		Burned: itandia, itandib, itandic, itandid, itandie
-		Zapped: itandia, itandib, itandic, itandid, itandie
+		Poisoned: idictoxa, idictoxb, idictoxc, idictoxd, idictoxe, idictoxf, idictoxg, idictoxh
+		Burned: idicfira, idicfirb, idicfirc, idicfird, idicfire, idicfirf, idicfirg, idicfirh
+		Zapped: idicfira, idicfirb, idicfirc, idicfird, idicfire, idicfirf, idicfirg, idicfirh
 
 PathfinderVoice:
 	Voices:
@@ -427,8 +447,9 @@ PathfinderVoice:
 		Garrison: ipatgaa, ipatgab, ipatgac, ipatgad
 		Action: ipatata, ipatatb, ipatatc, ipatatd, ipatate
 		Die: ipatdia, ipatdib, ipatdic, ipatdid, ipatdie
-		Burned: ipatdia, ipatdib, ipatdic, ipatdid, ipatdie
-		Zapped: ipatdia, ipatdib, ipatdic, ipatdid, ipatdie
+		Poisoned: idiutoxa, idiutoxb, idiutoxc, idiutoxd, idiutoxe, idiutoxf, idiutoxg, idiutoxh
+		Burned: idiufira, idiufirb, idiufirc, idiufird, idiufire, idiufirf, idiufirg, idiufirh
+		Zapped: idiufira, idiufirb, idiufirc, idiufird, idiufire, idiufirf, idiufirg, idiufirh
 
 TerroristVoice:
 	Voices:
@@ -438,8 +459,9 @@ TerroristVoice:
 		Action: iterata, iteratb, iteratc, iteratd, iterate
 		Capture: itera2a, itera2b, itera2c, itera2d, itera2e
 		Die: iterdia, iterdib, iterdic, iterdid, iterdie
-		Burned: iterdia, iterdib, iterdic, iterdid, iterdie
-		Zapped: iterdia, iterdib, iterdic, iterdid, iterdie
+		Poisoned: idigtoxa, idigtoxb, idigtoxc, idigtoxd, idigtoxe, idigtoxf, idigtoxg, idigtoxh
+		Burned: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
+		Zapped: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
 
 SaboteurVoice:
 	Voices:
@@ -448,8 +470,9 @@ SaboteurVoice:
 		Move: isabmoa, isabmob, isabmoc, isabmod, isabmoe
 		Action: isabata, isabatb, isabatc, isabatd, isabate
 		Die: isabdia, isabdib, isabdic, isabdid, isabdie
-		Burned: isabdia, isabdib, isabdic, isabdid, isabdie
-		Zapped: isabdia, isabdib, isabdic, isabdid, isabdie
+		Poisoned: idigtoxa, idigtoxb, idigtoxc, idigtoxd, idigtoxe, idigtoxf, idigtoxg, idigtoxh
+		Burned: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
+		Zapped: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
 
 AngryMobVoice:
 	Voices:
@@ -458,8 +481,20 @@ AngryMobVoice:
 		Move: iangmova, iangmovb, iangmovc, iangmovd, iangmove, iangmovf
 		Action: iangatta, iangattb, iangattc, iangattd
 		Die: icimadia, icimadib, icimadic, icimadid, icimadie, icimadif, icimadig, icimadih, icimadii, icimadij
-		Burned: icimadia, icimadib, icimadic, icimadid, icimadie, icimadif, icimadig, icimadih, icimadii, icimadij
-		Zapped: icimadia, icimadib, icimadic, icimadid, icimadie, icimadif, icimadig, icimadih, icimadii, icimadij
+		Poisoned: idigtoxa, idigtoxb, idigtoxc, idigtoxd, idigtoxe, idigtoxf, idigtoxg, idigtoxh
+		Burned: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
+		Zapped: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
+
+AngryMobFemaleVoice:
+	Voices:
+		Attack: iangatta, iangattb, iangattc, iangattd
+		Select: iangsela, iangselb, iangselc, iangseld
+		Move: iangmova, iangmovb, iangmovc, iangmovd, iangmove, iangmovf
+		Action: iangatta, iangattb, iangattc, iangattd
+		Die: icifcdia, icifcdib, icifcdic, icifcdid, icifcdie, icifcdif, icifcdig, icifcdih, icifcdii, icifcdij
+		Poisoned: idiftoxa, idiftoxb, idiftoxc, idiftoxd
+		Burned: idiffira, idiffirb, idiffirc, idiffird
+		Zapped: idiffira, idiffirb, idiffirc, idiffird
 
 HackerVoice:
 	Voices:
@@ -469,8 +504,9 @@ HackerVoice:
 		Action: ihacata, ihacatb, ihacatc, ihacatd, ihacate, ihacatf
 		Deploy: ihaca2a, ihaca2b, ihaca2c
 		Die: ihacdia, ihacdib, ihacdic, ihacdid, ihacdie
-		Burned: ihacdia, ihacdib, ihacdic, ihacdid, ihacdie
-		Zapped: ihacdia, ihacdib, ihacdic, ihacdid, ihacdie
+		Poisoned: idictoxa, idictoxb, idictoxc, idictoxd, idictoxe, idictoxf, idictoxg, idictoxh
+		Burned: idicfira, idicfirb, idicfirc, idicfird, idicfire, idicfirf, idicfirg, idicfirh
+		Zapped: idicfira, idicfirb, idicfirc, idicfird, idicfire, idicfirf, idicfirg, idicfirh
 
 SuperHackerVoice:
 	Voices:
@@ -480,8 +516,9 @@ SuperHackerVoice:
 		Action: ihacata, ihacatb, ihacatc, ihacatd, ihacate, ihacatf
 		Deploy: ihaca2a, ihaca2b, ihaca2c
 		Die: ihacdia, ihacdib, ihacdic, ihacdid, ihacdie
-		Burned: ihacdia, ihacdib, ihacdic, ihacdid, ihacdie
-		Zapped: ihacdia, ihacdib, ihacdic, ihacdid, ihacdie
+		Poisoned: idictoxa, idictoxb, idictoxc, idictoxd, idictoxe, idictoxf, idictoxg, idictoxh
+		Burned: idicfira, idicfirb, idicfirc, idicfird, idicfire, idicfirf, idicfirg, idicfirh
+		Zapped: idicfira, idicfirb, idicfirc, idicfird, idicfire, idicfirf, idicfirg, idicfirh
 
 HijackerVoice:
 	Voices:
@@ -490,8 +527,9 @@ HijackerVoice:
 		Move: ihijmoa, ihijmob, ihijmoc, ihijmod, ihijmoe
 		Action: ihijata, ihijatb, ihijatc, ihijatd, ihijate
 		Die: ihijdia, ihijdib, ihijdic, ihijdid, ihijdie
-		Burned: ihijdia, ihijdib, ihijdic, ihijdid, ihijdie
-		Zapped: ihijdia, ihijdib, ihijdic, ihijdid, ihijdie
+		Poisoned: idigtoxa, idigtoxb, idigtoxc, idigtoxd, idigtoxe, idigtoxf, idigtoxg, idigtoxh
+		Burned: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
+		Zapped: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
 
 BurtonVoice:
 	Voices:
@@ -501,8 +539,9 @@ BurtonVoice:
 		Garrison: icolgaa, icolgab, icolgac
 		Action: icolata, icolatb, icolatc, icolatd, icolate
 		Die: icoldia, icoldib, icoldic, icoldid, icoldie
-		Burned: icoldia, icoldib, icoldic, icoldid, icoldie
-		Zapped: icoldia, icoldib, icoldic, icoldid, icoldie
+		Poisoned: idiutoxa, idiutoxb, idiutoxc, idiutoxd, idiutoxe, idiutoxf, idiutoxg, idiutoxh
+		Burned: idiufira, idiufirb, idiufirc, idiufird, idiufire, idiufirf, idiufirg, idiufirh
+		Zapped: idiufira, idiufirb, idiufirc, idiufird, idiufire, idiufirf, idiufirg, idiufirh
 		Demolish: icolmta, icolmtb
 
 JarmenVoice:
@@ -513,8 +552,9 @@ JarmenVoice:
 		Garrison: ijargaa, ijargab, ijargac
 		Action: ijarata, ijaratb, ijaratc, ijaratd, ijarate
 		Die: ijardia, ijardib, ijardic, ijardid, ijardie
-		Burned: ijardia, ijardib, ijardic, ijardid, ijardie
-		Zapped: ijardia, ijardib, ijardic, ijardid, ijardie
+		Poisoned: idigtoxa, idigtoxb, idigtoxc, idigtoxd, idigtoxe, idigtoxf, idigtoxg, idigtoxh
+		Burned: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
+		Zapped: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
 
 DemoJarmenVoice:
 	Voices:
@@ -524,8 +564,9 @@ DemoJarmenVoice:
 		Garrison: ijargaa, ijargab, ijargac
 		Action: ijarata, ijaratb, ijaratc, ijaratd, ijarate
 		Die: ijardia, ijardib, ijardic, ijardid, ijardie
-		Burned: ijardia, ijardib, ijardic, ijardid, ijardie
-		Zapped: ijardia, ijardib, ijardic, ijardid, ijardie
+		Poisoned: idigtoxa, idigtoxb, idigtoxc, idigtoxd, idigtoxe, idigtoxf, idigtoxg, idigtoxh
+		Burned: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
+		Zapped: idigfira, idigfirb, idigfirc, idigfird, idigfire, idigfirf, idigfirg, idigfirh
 		Demolish: ijadmda, ijadmdb, ijadmdc
 
 LotusVoice:
@@ -537,8 +578,9 @@ LotusVoice:
 		CashHack: iblamma, iblammb, iblammc
 		Disable: iblamva, iblamvb, iblamvc
 		Die: ibladia, ibladib, ibladic, ibladid, ibladie
-		Burned: ibladia, ibladib, ibladic, ibladid, ibladie
-		Zapped: ibladia, ibladib, ibladic, ibladid, ibladie
+		Poisoned: idiftoxa, idiftoxb, idiftoxc, idiftoxd
+		Burned: idiffira, idiffirb, idiffirc, idiffird
+		Zapped: idiffira, idiffirb, idiffirc, idiffird
 
 CarVoice:
 	Voices:
