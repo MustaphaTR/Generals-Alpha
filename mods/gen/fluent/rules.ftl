@@ -847,6 +847,12 @@ actor-infantry-pathfinder =
    .name = Pathfinder
    .description = Elite sniper infantry.
 
+actor-infantry-agent =
+   .name = Agent
+   .description = CIA Agent armed with a machine gun.
+    
+    Can place C4 charges on structures by force firing.
+
 actor-infantry-terrorist =
    .name = Terrorist
    .description = Explodes.

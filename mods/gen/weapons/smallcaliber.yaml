@@ -321,6 +321,14 @@ mg.colonel_burton.at:
 	Inherits: mg.colonel_burton
 	InvalidTargets: Infantry, Structure
 
+mg.agent.ab:
+	Inherits: mg.colonel_burton
+	ValidTargets: Structure
+
+mg.agent.au:
+	Inherits: mg.colonel_burton
+	InvalidTargets: Structure
+
 M60mg:
 	Inherits: ^LightMG
 	ReloadDelay: 30

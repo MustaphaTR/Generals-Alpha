@@ -18,6 +18,7 @@ infantry.pilot:
 		BuildDurationModifier: 100
 		Prerequisites: ~disabled
 		Description: actor-infantry-pilot.description
+		ReadyAudio: PilotCreated
 	Valued:
 		Cost: 100
 	Tooltip:
@@ -1112,6 +1113,99 @@ infantry.pathfinder:
 		Image: infantry.pathfinder
 	ActorStatValues:
 		Damage: 100
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+		Upgrades: upgrade.adv_training
+	ActorStatOverride@ZH_UNITS:
+		Upgrades: upgrade.adv_training, upgrade.chemical_suits
+		RequiresCondition: zh_units
+
+infantry.agent:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHEM: ^AffectedByChemicalSuits
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@REVEAL: ^Reveal150
+	Inherits@SLOW: ^SlowsWhenDamaged
+	Inherits@TRAINING: ^AffectedByAdvancedTraining
+	GivesExperience:
+		Experience: 50
+	GivesExperienceMultiplier@RANK-1:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 1
+	GivesExperienceMultiplier@RANK-2:
+		Modifier: 200
+		RequiresCondition: rank-veteran == 2
+	GivesExperienceMultiplier@RANK-ELITE:
+		Modifier: 300
+		RequiresCondition: rank-elite
+	GainsExperience:
+		Conditions:
+			200: rank-veteran
+			300: rank-veteran
+			600: rank-veteran
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: actor-infantry-agent.name
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: queue.usa_infantry, queue.super_gen_infantry
+		BuildPaletteOrder: 7
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		Prerequisites: ~disabled
+		Description: actor-infantry-agent.description
+		ReadyAudio: AgentCreated
+	Mobile:
+		Speed: 20
+		Voice: Move
+	SpeedMultiplier@DAMAGED:
+		Modifier: 50
+	Guard:
+		Voice: Move
+	Health:
+		HP: 10000
+	Armor:
+		Type: infantry.normal
+	Passenger:
+		CustomPipType: red
+		Voice: Move
+	SharedPassenger:
+		CustomPipType: red
+		Voice: Move
+	Garrisoner:
+		CustomPipType: red
+		Voice: Move
+	AutoTarget:
+		ScanRadius: 8
+	Armament@PRIMARY_BUILDING:
+		Weapon: mg.agent.ab
+		ForceTargetRelationships: None
+	Armament@PRIMARY_UNIT:
+		Weapon: mg.agent.au
+	Armament@GARRISON:
+		Name: garrison
+		Weapon: mg.colonel_burton.garrison
+	Armament@TIMED_DEMO_BOMB:
+		Name: timed_demo_bomb
+		Weapon: attach.colonel_burton.timed
+		Cursor: c4
+		OutsideRangeCursor: c4
+		TargetRelationships: None
+	AttackFrontal:
+		Armaments: primary, timed_demo_bomb
+		Voice: Attack
+		PauseOnCondition: leaflet
+		FacingTolerance: 0
+	AttackMove:
+		Voice: Attack
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Voiced:
+		VoiceSet: AgentVoice
+	ActorStatValues:
+		Damage: 40
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.adv_training
 	ActorStatOverride@ZH_UNITS:

@@ -1340,6 +1340,11 @@ infantry.saboteur:
 	icon:
 		Filename: gen|bits/cameos/saboteur_icon.png
 
+infantry.agent:
+	Inherits: infantry.saboteur
+	icon:
+		Filename: gen|bits/cameos/cia_agent_icon.png
+
 medi:
 	Inherits@DEATH: ^default.infantry_death
 	Defaults:
