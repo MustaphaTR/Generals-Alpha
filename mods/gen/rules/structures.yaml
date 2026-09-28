@@ -5058,7 +5058,7 @@ building.missile_silo:
 	ProductionQueue@Nuke:
 		Type: queue.nuke_gen_missile_silo
 		Factions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
-		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, inf, prc, nuke, tank
+		AlwaysShowForFactions: usa, air, laser, super, gla, toxin, demo, stealth, prc, inf, nuke, tank
 		Group: Tech
 		QueuedAudio: Training
 		PayUpFront: true
@@ -5206,8 +5206,6 @@ SBAG:
 		Name: actor-sbag.name
 	Health:
 		HP: 30000
-	Armor:
-		Type: building.normal
 	LineBuild:
 		Range: 8
 		NodeTypes: sandbag
@@ -5235,8 +5233,6 @@ FENC:
 		Name: actor-fenc.name
 	Health:
 		HP: 30000
-	Armor:
-		Type: building.normal
 	LineBuild:
 		Range: 8
 		NodeTypes: fence
@@ -5267,8 +5263,6 @@ CYCL:
 		Name: actor-cycl.name
 	Health:
 		HP: 30000
-	Armor:
-		Type: building.normal
 	LineBuild:
 		Range: 8
 		NodeTypes: chain
@@ -5311,6 +5305,53 @@ BRIK:
 	WithWallSpriteBody:
 		Type: concrete
 
+BARB:
+	Inherits: ^Wall
+	Buildable:
+		Queue: queue.tech_building
+		BuildPaletteOrder: 15
+		ForceIconLocation: true
+		BuildDuration: 75
+		BuildDurationModifier: 100
+		Prerequisites: ~prerequisite.walls
+		Description: actor-barb.description
+		ReadyTextNotification: Construction Complete: Barbed-Wire Fence
+	Valued:
+		Cost: 50
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: actor-barb.name
+	LineBuild:
+		NodeTypes: barbwire
+	LineBuildNode:
+		Types: barbwire
+	WithWallSpriteBody:
+		Type: barbwire
+
+WOOD:
+	Inherits: ^Wall
+	Buildable:
+		Queue: queue.tech_building
+		BuildPaletteOrder: 16
+		BuildDuration: 75
+		BuildDurationModifier: 100
+		Prerequisites: ~prerequisite.walls
+		Description: actor-wood.description
+		ReadyTextNotification: Construction Complete: Wooden Fence
+	Valued:
+		Cost: 50
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: actor-wood.name
+	LineBuild:
+		NodeTypes: woodfence
+	LineBuildNode:
+		Types: woodfence
+	WithWallSpriteBody:
+		Type: woodfence
+
 VGATE:
 	Inherits: ^Gate
 	HitShape:
@@ -5348,36 +5389,12 @@ HGATE:
 	RenderSprites:
 		Image: agate
 		FactionImages:
-			usa: agate
-			gla: agate
 			prc: sgate
+			inf: sgate
+			tank: sgate
+			nuke: sgate
+			boss: sgate
 	Gate:
-
-BARB:
-	Inherits: ^Wall
-	Tooltip:
-		Name: actor-barb-name
-	Armor:
-		Type: building.normal
-	LineBuild:
-		NodeTypes: barbwire
-	LineBuildNode:
-		Types: barbwire
-	WithWallSpriteBody:
-		Type: barbwire
-
-WOOD:
-	Inherits: ^Wall
-	Tooltip:
-		Name: actor-wood-name
-	Armor:
-		Type: building.normal
-	LineBuild:
-		NodeTypes: woodfence
-	LineBuildNode:
-		Types: woodfence
-	WithWallSpriteBody:
-		Type: woodfence
 
 prerequisite.command_center:
 	Interactable:
