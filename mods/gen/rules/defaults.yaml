@@ -2320,6 +2320,7 @@
 		RequiresCondition: sabotaged
 		Condition: disabled
 	GrantConditionOnInfiltration:
+		Duration: 750
 		Types: Sabotage
 		Condition: sabotaged
 	Targetable@SABOTAGE:
@@ -2332,6 +2333,18 @@
 		RequiresCondition: sabotaged
 		Offset: -512,0,0
 		IsDecoration: true ## so this doesn't affect by cloak palette
+
+^CanBeSabotagedShort:
+	Inherits@SABOTAGE: ^CanBeSabotaged
+	GrantConditionOnInfiltration:
+		Duration: 375
+
+^CanBeSabotagedForPowerReset:
+	Inherits@SABOTAGE: ^CanBeSabotaged
+	GrantConditionOnInfiltration:
+		Duration: 250
+	InfiltrateForSupportPowerReset:
+		Types: Sabotage
 
 ^SabotagableFake:
 	Inherits@SABOTAGE: ^CanBeSabotaged

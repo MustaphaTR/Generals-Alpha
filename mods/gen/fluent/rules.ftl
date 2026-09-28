@@ -873,7 +873,12 @@ actor-infantry-flamethrower =
 
 actor-infantry-saboteur =
    .name = Saboteur
-   .description = Infiltrates enemy structures to disable them for a while.
+   .description = Stealth infantry capable of infiltrating enemy structures to different effects.
+    - Command Centers and Super Weapons reset the ability timers and are disabled for 10 seconds.
+    - Power Plants shut down the power base-wide for 30 seconds.
+    - Supply Centers and Stashes get up to $1000 stolen.
+    - Barracks, War Factories and Airfields are disabled for 30 seconds.
+    - Other valid buildings are disabled for 15 seconds.
     
     Can climb cliffs.
 

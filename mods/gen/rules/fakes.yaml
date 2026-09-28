@@ -1,8 +1,8 @@
 fake.command_center:
 	Inherits: ^FakeBuilding
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
-	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal300
+	Inherits@SABOTAGE: ^SabotagableFake
 	Inherits@SHAPE: ^3x3Shape
 	HitShape:
 		Type: Rectangle
@@ -105,8 +105,8 @@ fake.command_center:
 fake.barracks:
 	Inherits: ^FakeBuilding
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
-	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SABOTAGE: ^SabotagableFake
 	Inherits@SHAPE: ^2x2Shape
 	GivesExperience:
 		Experience: 25
@@ -179,8 +179,8 @@ fake.barracks:
 fake.supply_stash:
 	Inherits: ^FakeBuilding
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
-	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SABOTAGE: ^SabotagableFake
 	Inherits@SHAPE: ^2x2Shape
 	HitShape:
 		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
@@ -256,8 +256,8 @@ fake.supply_stash:
 fake.arms_dealer:
 	Inherits: ^FakeBuilding
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
-	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SABOTAGE: ^SabotagableFake
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged
@@ -329,8 +329,8 @@ fake.palace:
 	Inherits: ^FakeBuilding
 	Inherits@CARGO: ^CargoPips
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
-	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal300
+	Inherits@SABOTAGE: ^SabotagableFake
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged
@@ -406,8 +406,8 @@ fake.palace:
 fake.black_market:
 	Inherits: ^FakeBuilding
 	Inherits@FORTIFY: ^AffectedByFortifiedStructures
-	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SABOTAGE: ^SabotagableFake
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged
@@ -479,8 +479,8 @@ fake.black_market:
 
 fake.scud_storm:
 	Inherits: ^FakeBuilding
-	Inherits@INFILTRATE: ^SabotagableFake
 	Inherits@REVEAL: ^Reveal200
+	Inherits@SABOTAGE: ^SabotagableFake
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: queue.gla_building, queue.toxin_gen_building, queue.demo_gen_building, queue.gla_building_merged
