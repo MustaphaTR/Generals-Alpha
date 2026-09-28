@@ -1317,14 +1317,20 @@ actor-cycl =
    .description = Stops infantry and light vehicles.
     Can be crushed by tanks.
 
+actor-barb =
+   .name = Barbed-Wire Fence
+   .description = Stops infantry and light vehicles.
+
+actor-wood =
+   .name = Wooden Fence
+   .description = Stops infantry and light vehicles.
+
 actor-brik =
    .name = Concrete Wall
    .description = Stop units and blocks enemy fire.
 
 actor-vgate-name = Vertical Gate
 actor-hgate-name = Horizontal Gate
-actor-barb-name = Barbed-Wire Fence
-actor-wood-name = Wooden Fence
 actor-prerequisite-command-center-name = Command Center
 actor-prerequisite-reactor-name = Reactor
 actor-prerequisite-barracks-name = Barracks

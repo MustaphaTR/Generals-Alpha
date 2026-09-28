@@ -2,18 +2,21 @@ CRATE:
 	Inherits: ^Crate
 	GiveCashCrateAction@500:
 		Amount: 500
-		SelectionShares: 20
 		UseCashTick: true
+		Sound: gcramona.wav
+		SelectionShares: 20
 		Prerequisites: !hack.no_bases
 	GiveCashCrateAction@1000:
 		Amount: 1000
-		SelectionShares: 60
 		UseCashTick: true
+		Sound: gcramona.wav
+		SelectionShares: 60
 		Prerequisites: !hack.no_bases
 	GiveCashCrateAction@1500:
 		Amount: 1500
-		SelectionShares: 20
 		UseCashTick: true
+		Sound: gcramona.wav
+		SelectionShares: 20
 		Prerequisites: !hack.no_bases
 	LevelUpCrateAction:
 		SelectionShares: 80
@@ -173,8 +176,9 @@ MONEYCRATE:
 		Name: actor-moneycrate-name
 	GiveCashCrateAction:
 		Amount: 500
-		SelectionShares: 1
 		UseCashTick: true
+		Sound: gcramona.wav
+		SelectionShares: 1
 	RenderSprites:
 		Image: wcrate
 
@@ -186,8 +190,9 @@ UNCRATE:
 		Duration: 0
 	GiveCashCrateAction:
 		Amount: 2000
-		SelectionShares: 1
 		UseCashTick: true
+		Sound: gcramona.wav
+		SelectionShares: 1
 
 SUPPLYCRATE:
 	Inherits: ^Crate
@@ -195,8 +200,9 @@ SUPPLYCRATE:
 		Name: actor-supplycrate-name
 	GiveCashCrateAction:
 		Amount: 1500
-		SelectionShares: 1
 		UseCashTick: true
+		Sound: gcramona.wav
+		SelectionShares: 1
 	Parachutable:
 		KilledOnImpassableTerrain: true
 	RenderSprites:
@@ -240,6 +246,14 @@ crate.supply_drop:
 		InitialDelay: 200
 		Amount: 1500
 		RequiresCondition: !parachute
+	SoundAnnouncement:
+		SoundFiles: gcramona.wav
+		OneShot: true
+		RequiresCondition: !parachute && play_sound
+	GrantConditionAfterDelay: # !parachute isn't enough for some reason; it plays when parachuting without this.
+		Condition: play_sound
+		ShowSelectionBar: false
+		Delay: 10
 	KillsSelf:
 		RemoveInstead: true
 		Delay: 13
@@ -256,20 +270,23 @@ crate.scrap:
 		Duration: 0
 	GiveCashCrateAction@1:
 		Amount: 25
-		SelectionShares: 1
 		UseCashTick: true
+		SoundFiles: gcramona.wav
+		SelectionShares: 3
 	GiveCashCrateAction@2:
 		Amount: 50
-		SelectionShares: 2
 		UseCashTick: true
+		SoundFiles: gcramona.wav
+		SelectionShares: 6
 	GiveCashCrateAction@3:
 		Amount: 75
-		SelectionShares: 1
 		UseCashTick: true
+		SoundFiles: gcramona.wav
+		SelectionShares: 3
 	LevelUpCrateAction:
-		SelectionShares: 1
+		SelectionShares: 4
 	GrantExternalConditionCrateAction@SCRAP_CREATE_BONUS:
-		SelectionShares: 1000
+		SelectionShares: 4000
 		Condition: scrap_create_bonus
 		Sound: gsalvage.wav
 	RenderSprites:
