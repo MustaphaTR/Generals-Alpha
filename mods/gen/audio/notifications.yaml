@@ -294,18 +294,31 @@ Speech:
 	DisablePrefixes: USABuilding, GLABuilding, PRCBuilding, USAConstructionComplete, GLAConstructionComplete, PRCConstructionComplete, USABuildingCannotPlaceAudio, GLABuildingCannotPlaceAudio, PRCBuildingCannotPlaceAudio, Bombardment, SearchAndDestroy, HoldTheLine, CamoNetting, BioBombsBuilding, HiExplosiveBombsBuilding, BioBombsReady, HiExplosiveBombsReady, OverlordBunkerBuilding, OverlordGatlingBuilding, OverlordSpeakerBuilding, OverlordBunkerReady, OverlordGatlingReady, OverlordSpeakerReady, HelixBunkerBuilding, HelixGatlingBuilding, HelixSpeakerBuilding, HelixNapalmBuilding, HelixNukeBuilding, HelixBunkerReady, HelixGatlingReady, HelixSpeakerReady, HelixNapalmReady, HelixNukeReady, Flashbang, BoobyTraps, TOW, ScorpionRocket, ChainGun, BlackNapalm, RocketPods, LaserGuide, Countermeasures, BunkerBusters, MiGArmor, AdvancedTraining, DroneArmor, CompositeArmor, ChemicalSuits, SupplyLines, Camouflage, ToxinShells, AnthraxBeta, AnthraxGamma, ArmTheMob, Nationalism, Patriotism, Subliminal, Autoloader, APBullets, APRockets, RadarVanScan, BuggyAmmo, JunkRepair, WorkerShoes, UraniumShells, NuclearTanks, WorkerCreated, PilotCreated, AgentCreated, RangerCreated, RebelCreated, ToxinRebelCreated, RedGuardCreated, MinigunnerCreated, ConscriptCreated, MissileDefenderCreated, RPGTrooperCreated, TankHunterCreated, PathfinderCreated, TerroristCreated, SaboteurCreated, AngryMobCreated, HackerCreated, SuperHackerCreated, HijackerCreated, BurtonCreated, JarmenCreated, DemoJarmenCreated, LotusCreated, USAMCCCreated, PRCMCCCreated, SupplyTruckCreated, CrusaderTankCreated, LaserTankCreated, ScorpionTankCreated, BattlemasterTankCreated, PaladinTankCreated, MarauderTankCreated, OverlordTankCreated, HumveeCreated, TechnicalCreated, CycleCreated, GatlingTankCreated, QuadCannonCreated, RadarVanCreated, TomahawkCreated, RocketBuggyCreated, InfernoCannonCreated, ScudLauncherCreated, NukeCannonCreated, AmbulanceCreated, ToxinTractorCreated, DragonTankCreated, AvengerCreated, BombTruckCreated, BattleBusCreated, TroopCrawlerCreated, AssaultTroopCrawlerCreated, ListeningOutpostCreated, MicrowaveTankCreated, ECMTankCreated, RaptorCreated, KingRaptorCreated, MiGCreated, StealthFighterCreated, AuroraCreated, ChinookCreated, CombatChinookCreated, ComancheCreated, HelixCreated, NoAudio, MIS_PRC1_A, MIS_PRC1_B, MIS_PRC1_C, MIS_PRC1_D, MIS_PRC1_E, MIS_PRC1_F, MIS_PRC1_G, MIS_PRC1_H, MIS_PRC1_I, MIS_PRC1_J
 
 Sounds:
+	DefaultVariant:
 	Notifications:
-		RadarUp: radaron2
-		RadarDown: radardn1
+		RadarUp: gradarup.wav
+		RadarDown: gradardn.wav
 		CashTickUp: cashup1
+			VolumeModifier: 0.33
+			InterruptType: Overlap
 		CashTickDown: cashdn1
-		LevelUp: hydrod1
-		DisablePower: bleep11
-		EnablePower: bleep12
-		ChatLine: rabeep1
-		ClickSound: ramenu1
-		ClickDisabledSound:
-		Beacon: beepslct
-		AlertBuzzer: buzzy1
-		AlertBleep: bleep6
-		BaseSetup: bleep9
+			VolumeModifier: 0.33
+			InterruptType: Overlap
+		LevelUp: gunitpra.wav
+		ChatLine: ucommess.wav
+			InterruptType: Interrupt
+		PlayerJoined: ucomopen.wav
+			InterruptType: Interrupt
+		LobbyOptionChanged: umenucld.wav
+			InterruptType: Interrupt
+		PlayerLeft: ulogoshr.wav
+			InterruptType: Interrupt
+		ClickSound: umenucla.wav
+			InterruptType: Overlap
+		ClickDisabledSound: umenuclb.wav
+			InterruptType: Overlap
+		Beacon: uradarpi.wav
+			InterruptType: Interrupt
+		AlertBuzzer: buzzy1.aud
+		AlertBleep: bleep6.aud
+		BaseSetup: bleep9.aud
