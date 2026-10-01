@@ -4957,7 +4957,11 @@ building.scud_storm.boss:
 	Production:
 		Produces: queue.boss_gen_scud_storm
 		PauseOnCondition: emp || hacked || sabotaged
-		-RequiresCondition:
+		RequiresCondition: !merged
+	Production@Nuke_or_Merged:
+		Produces: queue.boss_gen_scud_storm_merged
+		PauseOnCondition: emp || hacked || sabotaged
+		RequiresCondition: merged
 	-ProductionQueue@JUST_MINE:
 	-ProductionQueue@CAMO_NETTING:
 	ProductionQueue@Boss:
@@ -4969,15 +4973,28 @@ building.scud_storm.boss:
 		PayUpFront: true
 		DisallowPaused: true
 		DisplayOrder: 65
+	ProductionQueue@Boss_Merged:
+		Type: queue.boss_gen_scud_storm_merged
+		Factions: boss
+		AlwaysShowForFactions: boss
+		Group: Tech
+		QueuedAudio: Training
+		PayUpFront: true
+		DisallowPaused: true
+		LowPowerModifier: 200
+		DisplayOrder: 66
 	ProductionBar:
 		ProductionType: queue.boss_gen_scud_storm
-	-GrantConditionOnPrerequisite@MERGE_GENERALS:
 	-GrantConditionOnFaction@Stealth:
 	-GrantConditionOnFaction@Toxin:
+	ActorStatValues:
+		LocalUpgrades: upgrade.land_mines, upgrade.neutron_mines, upgrade.camo_netting
 	-ActorStatOverride@Toxin:
 	-ActorStatOverride@Demo:
 	-ActorStatOverride@Stealth_ZH_UNITS:
 	-ActorStatOverride@Merged_ZH_UNITS:
+	ActorStatOverride@ZH_UNITS:
+		Upgrades: upgrade.land_mines, upgrade.neutron_mines, upgrade.camo_netting
 
 building.missile_silo:
 	Inherits: ^Building
