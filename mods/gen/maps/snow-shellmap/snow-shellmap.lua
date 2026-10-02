@@ -170,21 +170,10 @@ GiveMeMines = function(unit)
 	unit.GrantCondition("land_mines")
 end
 
-ticks = 768
-speed = 5
-
-Tick = function()
-	ticks = ticks + 1
-
-	local t = (ticks + 45) % (360 * speed) * (math.pi / 180) / speed;
-	Camera.Position = viewportOrigin + WVec.New(15360 * math.sin(t), 20480 * math.cos(t), 0)
-end
-
 WorldLoaded = function()
 	usa = Player.GetPlayer("USA")
 	gla = Player.GetPlayer("GLA")
 	prc = Player.GetPlayer("PRC")
-	viewportOrigin = Camera.Position
 
 	SetupDefensiveUnits()
 	SetupFactories()
