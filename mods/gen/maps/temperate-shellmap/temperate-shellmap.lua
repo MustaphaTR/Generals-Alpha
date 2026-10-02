@@ -26,11 +26,6 @@ ProducedUnitTypes =
 MiG1Waypoints = { MiG11, MiG12, MiG13 }
 MiG2Waypoints = { MiG21, MiG22, MiG23 }
 
-StrategyTypes = { "strategy.bombardment", "strategy.search_and_destroy", "strategy.hold_the_line" }
-DroneUpgrades = { "upgrade.scout_drone", "upgrade.battle_drone" }
-SCUDUpgrades = { "upgrade.toxin_missiles", "upgrade.hi_explosive_missiles" }
-OverlordUpgrades = { "upgrade.overlord_gatling", "upgrade.overlord_speaker" }
-
 ParadropWaypoints = { Paradrop1, Paradrop2, Paradrop3 }
 
 FusionReactors = { USAReactor1, USAReactor2, USAReactor3, USAReactor4, USAReactor5, USAReactor6 }
@@ -50,7 +45,7 @@ BindActorTriggers = function(a)
 		end)
 	else
 		if a.HasProperty("Hunt") then
-			if a.Owner == gla then
+			if a.Owner == GLA then
 				Trigger.OnIdle(a, function(a)
 					if a.IsInWorld then
 						a.AttackMove(USADropZoneTarget.Location)
@@ -64,7 +59,7 @@ BindActorTriggers = function(a)
 				end)
 			end
 		else
-			if a.Owner == gla then
+			if a.Owner == GLA then
 				Trigger.OnIdle(a, function(a)
 					if a.IsInWorld then
 						a.Move(USADropZoneTarget.Location)
@@ -98,30 +93,6 @@ BindActorTriggers = function(a)
 	end
 end
 
-ProduceUnits = function(t)
-	local factory = t.factory
-	if not factory.IsDead then
-		local unitType = t.types[Utils.RandomInteger(1, #t.types + 1)]
-		factory.Wait(Actor.BuildTime(unitType))
-		factory.Produce(unitType)
-		factory.CallFunc(function() ProduceUnits(t) end)
-	end
-end
-
-SelectUpgrade = function(actor, upgrades)
-	local upgradeType = upgrades[Utils.RandomInteger(1, #upgrades + 1)]
-	actor.Produce(upgradeType)
-end
-
-SetupDefensiveUnits = function()
-	Utils.Do(Map.NamedActors, function(a)
-		if (a.Owner == prc or a.Owner == gla or a.Owner == usa) and a.HasProperty("AcceptsCondition") and a.AcceptsCondition("unkillable") then
-			a.GrantCondition("unkillable")
-			a.Stance = "Defend"
-		end
-	end)
-end
-
 SetupFactories = function()
 	Utils.Do(ProducedUnitTypes, function(production)
 		Trigger.OnProduction(production.factory, function(_, a) BindActorTriggers(a) end)
@@ -130,7 +101,7 @@ end
 
 SendMiGs = function(waypoints)
 	local migEntryPath = { waypoints[1].Location, waypoints[2].Location }
-	local migs = Reinforcements.Reinforce(prc, { "aircraft.mig" }, migEntryPath, 4)
+	local migs = Reinforcements.Reinforce(PRC, { "aircraft.mig" }, migEntryPath, 4)
 	Utils.Do(migs, function(mig)
 		mig.Move(waypoints[2].Location)
 		mig.Move(waypoints[3].Location)
@@ -140,48 +111,12 @@ SendMiGs = function(waypoints)
 	Trigger.AfterDelay(DateTime.Seconds(40), function() SendMiGs(waypoints) end)
 end
 
-SendAirstrike = function(proxy, target, direction, timer)
-	proxy.TargetAirstrike(target.CenterPosition, direction)
-
-	Trigger.AfterDelay(timer, function() SendAirstrike(proxy, target, direction, timer) end)
-end
-
-SendParadrop = function()
-	local lz = Utils.Random(ParadropWaypoints)
-	local units = PowerproxyPara.TargetParatroopers(lz.CenterPosition)
-
-	Utils.Do(units, function(a)
-		BindActorTriggers(a)
-	end)
-
-	Trigger.AfterDelay(DateTime.Minutes(4), SendParadrop)
-end
-
-SummonActor = function(actor, owner, location, date_time)
-	Trigger.AfterDelay(date_time, function()
-		local a = Actor.Create(actor, true, { Owner = owner, Facing = Angle.North, Location = location})
-		if a.HasProperty("Hunt") then
-			Trigger.OnIdle(a, function(a)
-				if a.IsInWorld then
-					a.Hunt()
-				end
-			end)
-		end
-
-		SummonActor(actor, owner, location, date_time)
-	end)
-end
-
-GiveMeMines = function(unit)
-	unit.GrantCondition("land_mines")
-end
-
 WorldLoaded = function()
-	usa = Player.GetPlayer("USA")
-	gla = Player.GetPlayer("GLA")
-	prc = Player.GetPlayer("PRC")
+	USA = Player.GetPlayer("USA")
+	GLA = Player.GetPlayer("GLA")
+	PRC = Player.GetPlayer("PRC")
 
-	SetupDefensiveUnits()
+	SetupDefensiveUnits({ USA, GLA, PRC})
 	SetupFactories()
 	Utils.Do(ProducedUnitTypes, ProduceUnits)
 
@@ -204,15 +139,15 @@ WorldLoaded = function()
 	GLAShipyard.RallyPoint = GLAShipyardRally.Location
 	PRCShipyard.RallyPoint = PRCShipyardRally.Location
 
-	PowerproxyPara = Actor.Create("powerproxy.paradrop", false, { Owner = usa })
-	PowerproxyA10 = Actor.Create("powerproxy.a10", false, { Owner = usa })
-	PowerproxyArty = Actor.Create("powerproxy.artillery_barrage", false, { Owner = prc })
+	PowerproxyPara = Actor.Create("powerproxy.paradrop", false, { Owner = USA })
+	PowerproxyA10 = Actor.Create("powerproxy.a10", false, { Owner = USA })
+	PowerproxyArty = Actor.Create("powerproxy.artillery_barrage", false, { Owner = PRC })
 
 	Trigger.AfterDelay(DateTime.Seconds(40), function() SendMiGs(MiG1Waypoints) end)
 	Trigger.AfterDelay(DateTime.Seconds(40), function() SendMiGs(MiG2Waypoints) end)
 
-	Trigger.AfterDelay(DateTime.Minutes(4) + DateTime.Seconds(15), function() SendParadrop() end)
+	Trigger.AfterDelay(DateTime.Minutes(4) + DateTime.Seconds(15), function() SendParadrop(PowerproxyPara, DateTime.Minutes(4)) end)
 	Trigger.AfterDelay(DateTime.Minutes(4) + DateTime.Seconds(25), function() SendAirstrike(PowerproxyA10, A10Waypoint, Angle.West, DateTime.Minutes(4)) end)
 	Trigger.AfterDelay(DateTime.Minutes(5), function() SendAirstrike(PowerproxyArty, ArtyBarrWaypoint, Angle.East, DateTime.Minutes(5)) end)
-	SummonActor("hack.rebel_spawner.8", gla, AmbushLocation1.Location, DateTime.Minutes(4))
+	SummonActor("hack.rebel_spawner.8", GLA, AmbushLocation1.Location, DateTime.Minutes(4))
 end

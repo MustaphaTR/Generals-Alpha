@@ -17,12 +17,6 @@ ProducedUnitTypes =
 	{ factory = USAAirfield, types = { "aircraft.raptor", "aircraft.stealth_fighter" } }
 }
 
-StrategyTypes = { "strategy.bombardment", "strategy.search_and_destroy", "strategy.hold_the_line" }
-DroneUpgrades = { "upgrade.scout_drone", "upgrade.battle_drone" }
-SCUDUpgrades = { "upgrade.toxin_missiles", "upgrade.hi_explosive_missiles" }
-BombTruckUpgrades = { "upgrade.bio_bombs", "upgrade.hi_explosive_bombs" }
-OverlordUpgrades = { "upgrade.overlord_gatling", "upgrade.overlord_speaker" }
-
 TunnelTeams =
 { 
 	{ "vehicle.technical", "vehicle.technical", "vehicle.toxin_tractor", "vehicle.scorpion_tank", "infantry.rebel", "infantry.rebel" },
@@ -113,30 +107,6 @@ BindActorTriggers = function(a)
 	end
 end
 
-ProduceUnits = function(t)
-	local factory = t.factory
-	if not factory.IsDead then
-		local unitType = t.types[Utils.RandomInteger(1, #t.types + 1)]
-		factory.Wait(Actor.BuildTime(unitType))
-		factory.Produce(unitType)
-		factory.CallFunc(function() ProduceUnits(t) end)
-	end
-end
-
-SelectUpgrade = function(actor, upgrades)
-	local upgradeType = upgrades[Utils.RandomInteger(1, #upgrades + 1)]
-	actor.Produce(upgradeType)
-end
-
-SetupDefensiveUnits = function()
-	Utils.Do(Map.NamedActors, function(a)
-		if (a.Owner == prc or a.Owner == gla or a.Owner == usa) and a.HasProperty("AcceptsCondition") and a.AcceptsCondition("unkillable") then
-			a.GrantCondition("unkillable")
-			a.Stance = "Defend"
-		end
-	end)
-end
-
 SetupFactories = function()
 	Utils.Do(ProducedUnitTypes, function(production)
 		Trigger.OnProduction(production.factory, function(_, a) BindActorTriggers(a) end)
@@ -166,16 +136,12 @@ SendAttack = function(owner, teams, waypoint, target, interval)
 	end)
 end
 
-GiveMeMines = function(unit)
-	unit.GrantCondition("land_mines")
-end
-
 WorldLoaded = function()
-	usa = Player.GetPlayer("USA")
-	gla = Player.GetPlayer("GLA")
-	prc = Player.GetPlayer("PRC")
+	USA = Player.GetPlayer("USA")
+	GLA = Player.GetPlayer("GLA")
+	PRC = Player.GetPlayer("PRC")
 
-	SetupDefensiveUnits()
+	SetupDefensiveUnits({ USA, GLA, PRC})
 	SetupFactories()
 	Utils.Do(ProducedUnitTypes, ProduceUnits)
 
@@ -188,10 +154,10 @@ WorldLoaded = function()
 		SelectUpgrade(a, { "upgrade.control_rods" } )
 	end)
 
-	SendAttack(usa, BottomLeftTeams, BottomLeftTeamWP, USAStrategyTarget, DateTime.Seconds(50))
-	SendAttack(gla, TopRightTeams, TopRightTeamWP, USAStrategyTarget, DateTime.Seconds(60))
-	SendAttack(gla, TunnelTeams, TunnelTeamWP, USAStrategyTarget, DateTime.Seconds(30))
-	SendAttack(gla, WarFactoryTeams, WarFactoryTeamWP, USASupplyTarget, DateTime.Seconds(80))
+	SendAttack(USA, BottomLeftTeams, BottomLeftTeamWP, USAStrategyTarget, DateTime.Seconds(50))
+	SendAttack(GLA, TopRightTeams, TopRightTeamWP, USAStrategyTarget, DateTime.Seconds(60))
+	SendAttack(GLA, TunnelTeams, TunnelTeamWP, USAStrategyTarget, DateTime.Seconds(30))
+	SendAttack(GLA, WarFactoryTeams, WarFactoryTeamWP, USASupplyTarget, DateTime.Seconds(80))
 
 	GiveMeMines(GatlingCannon1)
 	GiveMeMines(GatlingCannon2)
